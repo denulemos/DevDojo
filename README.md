@@ -8,6 +8,9 @@ Constantemente en actualizacion (Siempre y cuando siga estudiando)
 
 ## Contenido (Ultima actualizacion Febrero 2024) 💙
 * Accesibilidad 
-* Antipatrones 
-* APIs 
-* Virtualizacion 
+* Antipatrones
+* Monolitos vs Microservicios
+* RESTful
+* Virtualizacion
+* Package.json
+* Tipos de Programacion
