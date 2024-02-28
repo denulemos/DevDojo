@@ -9,8 +9,20 @@ Constantemente en actualizacion (Siempre y cuando siga estudiando)
 ## Contenido (Ultima actualizacion Febrero 2024) 💙
 * Accesibilidad 
 * Antipatrones
+* Ciberseguridad
+* CSS
+* Criptografia
+* Cookies
+* Disponibilidad
+* Hilos
+* Hooks (React y Redux)
+* HTML
+* Javascript
 * Monolitos vs Microservicios
-* RESTful
-* Virtualizacion
 * Package.json
+* RESTful
+* SQL
+* Testing
 * Tipos de Programacion
+* Typescript
+* Virtualizacion
