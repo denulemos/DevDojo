@@ -1,5 +1,39 @@
 # SQL
 
+## **Cuáles son los elementos de una base de datos?**
+
+- **Tablas: Contienen la información**
+- **Vistas: Parecidas a la tabla, son para consultas, más rápidas**
+- **Índices: Uno o más columnas de una tabla para encontrar la data más rápido, es como el índice de un libro**
+- **Triggers: Disparadores que ejecutan código de SQL cuando se inserta, borra o se updatea un campo (CRUD (Create, Read, Update, Delete))**
+- **Procedures: Pedazos de código SQL que se ejecuta**
+- **Constraints: Previenen inconsistencia de datos en una columna**
+- **Reglas:** Se especifican valores válidos para ser insertados en una tabla o columna.
+
+
+## **Cuales son los elementos de Data Control Language? (DCL)**
+
+- GRANT - Dar permisos específicos a una tabla y/o objeto
+- REVOKE - Revocar permisos
+
+## ** Lenguaje de manipulación de datos (DML)**
+
+Las sentencias de lenguaje de manipulación de datos (DML) son utilizadas para gestionar datos dentro de las bases de datos . Algunos ejemplos:
+
+- SELECT - para obtener datos de una base de datos.
+- INSERT - para insertar datos a una tabla.
+- UPDATE - para modificar datos existentes dentro de una tabla.
+- DELETE - elimina todos los registros de la tabla; no borra los espacios asignados a los registros.
+
+## **Lenguaje de definición de datos (DDL)**
+
+Las sentencias DDL se utilizan para crear y modificar la estructura de las tablas así como otros objetos de la base de datos.
+
+- CREATE - para crear objetos en la base de datos.
+- ALTER - modifica la estructura de la base de datos.
+- DROP - borra objetos de la base de datos.
+- TRUNCATE - elimina todos los registros de la tabla, incluyendo todos los espacios asignados a los registros. Además, reinicia los campos autonuméricos.
+
 ## **Algunos tips de Performance SQL**
 
 - Cada índice creado en la tabla incrementa el tiempo en que se llevan a cabo los insert, updates o deletes, por lo que el número de índices en una tabla no deben de ser muchos. Use sólo los índices necesarios, para PK y para FK, y según el uso de los datos (WHERE, ORDER BY, GROUP BY). Si la tabla es de solo lectura entonces el número de índices se puede incrementar.
