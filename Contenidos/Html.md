@@ -103,3 +103,197 @@ Históricamente los navegadores, además de la propia comunidad de usuarios, han
 ## **Para que es el Doctype?**
 
 Permite al navegador entender el tipo de documento y a que estructura responde como HTML o XHTML
+
+---
+
+# **Botones en HTML**
+
+La mayoría de formularios dispone de un botón para enviar al servidor los datos introducidos por el usuario:
+
+```css
+<input type="submit" name="buscar" value="Buscar">
+```
+
+El valor del atributo type para este control de formulario es submit. El navegador se encarga de enviar
+automáticamente, los datos cuando el usuario pincha sobre este tipo de botón. El valor del atributo value es el
+texto que muestra el botón. Si no se establece el atributo value, el navegador muestra el texto predefinido
+Enviar consulta. También podemos trabajar con `<button> Enviar </button>` este cumple el mismo propósito qué el `<input type=”submit”>`
+
+## **Botón de Reseteo del Formulario**
+
+Aunque su uso era muy popular hace unos años, la mayoría de formularios modernos ya no utilizan este tipo de botón. Se trata de un botón especial que borra todos los datos introducidos por el usuario y devuelve el formulario a su estado original:
+
+```css
+<input type="reset" name="limpiar" value="Borrar datos del formulario" />
+```
+
+El valor del atributo type para este control de formulario es reset. Cuando el usuario pulsa este botón, el navegador borra toda la información introducida y muestra el formulario en su estado original. Si el formulario no contenía originalmente ningún valor, el botón de reset lo vuelve a mostrar vacío. si el formulario contenía información, el botón reset vuelve a mostrar la misma información original.
+Como es habitual en los botones de formulario, el atributo value permite establecer el texto que muestra el botón. Si no es utiliza este atributo, el navegador muestra el texto predefinido del botón, que en este caso es Restablecer.
+
+## **Checkbox**
+
+Los checkbox o "casillas de verificación" son controles de formulario que permiten al usuario seleccionar y deseleccionar opciones individualmente. Aunque en ocasiones se muestran varios checkbox juntos, cada uno de ellos es completamente independiente del resto. Por este motivo, se utilizan cuando el usuario puede activar y desactivar varias opciones relacionadas pero no excluyentes.
+
+```css
+<input name="puesto_directivo" type="checkbox" value="direccion"/> Dirección
+<input name="puesto_tecnico" type="checkbox" value="tecnico"/> Técnico
+<input name="puesto_empleado" type="checkbox" value="empleado"/> Empleado
+```
+
+El valor del atributo type para estos controles de formulario es checkbox. Como se muestra en el ejemplo anterior, el texto que se encuentra al lado de cada checkbox no se puede establecer mediante ningún
+atributo, por lo que es necesario añadirlo manualmente fuera del control del formulario. Si no se añade un texto al lado de la etiqueta <input /> del checkbox, el usuario sólo ve un pequeño cuadrado sin ninguna información relativa a la finalidad de ese checkbox.
+El valor del atributo value, junto con el valor del atributo name, es la información que llega al servidor cuando el usuario envía el formulario.
+Si se quiere mostrar un checkbox seleccionado por defecto, se utiliza el atributo checked. Si el valor del atributo es checked, el checkbox se muestra seleccionado. En cualquier otro caso, el checkbox permanece sin seleccionar. Aunque resulta redundante que el nombre y el valor del atributo sean idénticos, es obligatorio indicarlo de esta forma porque los atributos en XHTML no pueden tener valores vacíos:
+
+```html
+<input type="checkbox" checked="checked" ... /> // Checkbox seleccionado por defecto
+```
+
+## **Radiobutton**
+
+Los controles de tipo radiobutton son similares a los controles de tipo checkbox, pero presentan una diferencia muy importante: son mutuamente excluyentes. Los radiobutton se utilizan cuando el usuario solamente puede escoger una opción entre las distintas opciones relacionadas que se le presentan. Cada vez que se selecciona una opción, automáticamente se deselecciona la otra opción que estaba seleccionaba.
+
+```html
+<input type="radio" name="sexo" value="hombre" checked="checked" /> Hombre
+<input type="radio" name="sexo" value="mujer" /> Mujer
+```
+
+El valor del atributo type para estos controles de formulario es radio. El atributo name se emplea para indicar los radiobutton que están relacionados. Por lo tanto, cuando varios radiobutton tienen el mismo valor en su atributo name, el navegador sabe que están relacionados y puede des seleccionar una opción del grupo de radiobutton cuando se seleccione otra opción.
+
+---
+
+# **Botones en HTML**
+
+## **Que son los Vínculos?**
+
+El lenguaje de marcado HTML se definió teniendo en cuenta algunas de las características que existían en ese momento para la publicación digital de contenidos. Entre los conceptos utilizados en su creación, se encuentra el mecanismo de "hipertexto".
+Los enlaces se utilizan para establecer relaciones entre dos recursos. Aunque la mayoría de enlaces relacionan páginas web, también es posible enlazar otros recursos como imágenes, documentos y archivos.
+Una característica que no se suele tener en cuenta en los enlaces es que están formados por dos extremos y un sentido. En otras palabras, el enlace comienza en un recurso y apunta hacia otro recurso. Cada uno de los dos extremos se llaman "anchors" en inglés, que se puede traducir literalmente como "anclas".
+
+## **URL**
+
+Antes de empezar a crear enlaces, es necesario comprender y dominar el concepto de URL. Él acrónimo URL (del inglés Uniform Resource Locator) hace referencia al identificador único de cada recurso disponible en Internet. La URL de un recurso tiene dos objetivos principales:
+
+- Identificar de forma única a ese recurso
+- Permitir localizar de forma eficiente ese recurso
+
+En primer lugar, las URL permiten que cada página HTML publicada en Internet tenga un nombre único que permita diferenciarla de las demás. De esta forma es posible crear enlaces que apunten de forma inequívoca a una determinada página.
+Si se accede a la página principal de Google, la dirección que muestra el navegador es: Si se accede a la página principal de Google, la dirección que muestra el navegador es: [http://www.google.com](http://www.google.com/)
+La cadena de texto [http://www.google.com](http://www.google.com/) es la URL completa de la página principal de Google. La URL de las páginas es imprescindible para crear los enlaces, ya que permite distinguir una página de otra.
+El segundo objetivo de las URL es el de permitir la localización eficiente de cada recurso de Internet.
+Para ello es necesario comprender las diferentes partes que forman las URL. Una URL sencilla siempre está formada por las mismas tres partes. Si por ejemplo se considera la siguiente URL:
+http://www.librosweb.es/xhtml/capitulo4.html
+
+Las partes que componen la URL anterior son:
+
+- Protocolo (http://): el mecanismo que debe utilizar el navegador para acceder a ese recurso. Todas
+las páginas web utilizan http://. Las páginas web seguras (por ejemplo las de los bancos y las de los servicios de email) utilizan https:// (se añade una letra s).
+- Servidor ([www.librosweb.es](http://www.librosweb.es/)): simplificando mucho su explicación, se trata del ordenador en el que se
+encuentra guardada la página que se quiere acceder. Los navegadores son capaces de
+obtener la dirección de cada servidor a partir de su nombre.
+- Ruta (/xhtml/capitulo4.html): camino que se debe seguir, una vez que se ha llegado al servidor, para
+localizar el recurso específico que se quiere acceder.
+
+Por tanto, las URL no sólo identifican de forma única a cada recurso de Internet, sino que también proporcionan a los navegadores la información necesaria para poder llegar hasta ese recurso.
+La mayoría de URL son tan sencillas como la URL mostrada anteriormente. No obstante, existen URL complejas formadas por más partes.
+
+http://www.alistapart.com/comments/webstandards2008?page=5#42
+
+Las cinco partes que forman la URL anterior son:
+
+- Protocolo (http://)
+- Servidor ([www.alistapart.com](http://www.alistapart.com/))
+- Ruta (/comments/webstandards2008)
+- Consulta (?page=5): información adicional necesaria para que el servidor localice correctamente el recurso que se quiere acceder. Siempre comienza con el carácter ? y
+contiene una sucesión de palabras separadas por = y &
+- Sección (#42): permite que el navegador se posicione automáticamente en una sección de la página web. Siempre comienza con el carácter #
+
+Como las URL utilizan los caracteres :, =, & y / para separar sus partes, estos caracteres están reservados y no se pueden utilizar libremente. Además, algunos caracteres no están reservados pero pueden ser problemáticos si se utilizan en la propia URL.
+Si es necesario incluir estos caracteres reservados y especiales en una URL, se sustituyen por combinaciones de caracteres seguros. Esta sustitución se denomina codificación de caracteres y el servidor realiza el proceso inverso (decodificación) cuando le llega una URL con los caracteres codificados.
+Por otra parte, aunque desde hace tiempo ya es posible incluir en las URL caracteres de otros idiomas que no sean el inglés, aún no es completamente seguro utilizar estos caracteres en las URL. Si se utilizan letras como ñ, á, é o ç, es posible que algunos navegadores no las interpreten de forma correcta.
+Teniendo en cuenta las dos tablas anteriores de codificación de caracteres, es fácil crear las URL correctas sin caracteres problemáticos:
+
+```html
+<a href=”mipagina.html” > Mi página </a>
+```
+
+## **Vínculos Relativos**
+
+Los vínculos relativos son aquellos que permiten interconectar los archivos de nuestro sitio (internos, dentro de nuestro sitio o servidor).
+Si por ejemplo quiero ir de mi archivo index a mi contacto.html lo haré de la siguiente forma:
+
+```html
+<!doctype html>
+
+<title>Vinculo</title>
+<a href="contacto.html" title="Contacto"> Contacto </a>
+```
+
+En el ejemplo anterior, hemos visto también cómo se ha agregado el atributo title, este es obligatorio por cuestiones de accesibilidad y también nos permite describir nuestros vínculos para hacer aparecer un etiqueta amarilla llamada tooltip con dicha información.
+Si mi archivo contacto se encontrase dentro de una carpeta la ruta a marcar sería la siguiente:
+
+```html
+<!doctype html>
+
+<title>Vinculo</title>
+<a href="en/contacto.html" title="Contacto"> Contacto </a>
+```
+
+## **Vínculos Absolutos**
+
+Las URL completas también se llaman URL absolutas, ya que el navegador no necesita disponer de información adicional para localizar el recurso enlazado. Si se utilizan siempre las URL absolutas, los enlaces están completamente definidos.
+Sin embargo, escribir siempre las URL completas es bastante aburrido, cuesta mucho tiempo y hace imposible cambiar la ubicación de los contenidos de un sitio web. Por ese motivo, casi todos los sitios web de Internet utilizan URL relativas siempre que es posible.
+
+Una URL relativa es una versión abreviada de una URL absoluta. Su objetivo es eliminar todas las partes de la URL absoluta que se pueden adivinar a partir de la información de contexto de la página web. En otras palabras, las URL relativas aprovechan la inteligencia de los navegadores para crear URL incompletas que los navegadores pueden completar deduciendo la información
+que falta.
+
+## **Vínculo de correo electrónico**
+
+```html
+<a href="mailto:nombre@direccion.com" title="Dirección de email para solicitar más
+información"> Solicita más información </a>
+```
+
+Al clickear sobre el enlace anterior, se abre automáticamente el programa de correo electrónico del ordenador del usuario y se establece la dirección de envío al valor indicado después de mailto: La sintaxis es la misma que la de un enlace normal, salvo que se cambia el prefijo http:// por mailto:
+La sintaxis de mailto: permite utilizarlo para otros ejemplos más complejos:
+
+```html
+<!-- Envío del correo electrónico a varias direcciones a la vez -->
+<a href="mailto:nombre@direccion.com,otro_nombre@direccion.com">Solicita más
+información</a>
+
+<!-- Añadir un "asunto" inicial al correo electrónico -->
+<a href="mailto:nombre@direccion.com?subject=Solicitud de más información">Solicita más
+información</a>
+
+<!-- Añadir un texto inicial en el cuerpo del correo electrónico -->
+<a href="mailto:nombre@direccion.com?body=Estaría interesado en solicitar más
+información sobre sus productos">Solicita más información</a>
+```
+
+Todas las opciones anteriores se pueden combinar entre sí para realizar ejemplos más avanzados. Aunque el uso de mailto: puede parecer una ventaja, su uso está desaconsejado. Si se incluye una dirección de correo electrónico directamente en una página web, es muy probable que en poco tiempo esa dirección de email se encuentre llena de correo electrónico basura o "spam", ya que existen programas automáticos encargados de rastrear sistemáticamente todas las páginas web de Internet para encontrar direcciones de correo electrónico válidas.
+
+La forma de mostrar las direcciones de correo electrónico en las páginas web consiste en incluir la dirección en una imagen o indicarla de forma que solamente los usuarios puedan entenderlo:
+
+```html
+<p>La dirección de correo es <strong>nombre (arroba) direccion.com</strong></p>
+<p>La dirección de correo es <strong>nombre_arroba_direccion.com</strong></p>
+<p>La dirección de correo es <strong>nombreQUITAESTO@direccion.com</strong></p>
+<p>La dirección de correo es <strong>nombre(ARROBA)direccion.com</strong></p>
+<p>La dirección de correo es <strong>nombre @ direccion .com</strong></p>
+```
+## **Vínculo Ancla**
+
+Alguna vez fuiste a una página donde al hacerle clic a un vínculo te llevo a una parte de la misma, eso se llama ancla.
+Por ejemplo en wikipedia, o en otras páginas vemos constantemente su uso, por ejemplo:
+
+```html
+<a href="#mirespuesta"> Pregunta </a>
+
+<p><a id="respuesta"></a>Respuesta </p>
+```
+
+De esta forma al hacerle clic a la primer pregunta me llevará a su correspondiente respuesta. Lo que hace el ancla en realidad es mover la barra de scroll al punto de mostrarme dónde está la otra parte del vínculo.
+
+---
+
