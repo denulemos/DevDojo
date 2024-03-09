@@ -6,7 +6,7 @@ Constantemente en actualizacion
 
 **Proximamente version en Inglés** 🏴
 
-## Contenido (Ultima actualizacion Febrero 2024) 💙
+## Contenido (Ultima actualizacion Marzo 2024) 💙
 * [Accesibilidad](https://github.com/denulemos/denobible/blob/master/Contenidos/Accesibilidad.md)
 * [Antipatrones](https://github.com/denulemos/denobible/blob/master/Contenidos/Antipatrones.md)
 * [Ciberseguridad](https://github.com/denulemos/denobible/blob/master/Contenidos/Ciberseguridad.md)
