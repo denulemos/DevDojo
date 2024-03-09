@@ -158,4 +158,173 @@ VALUES (1, 'England')
 - Es preferible usar constraints en la definición de las tablas para mantener la integridad referencial en vez de usar triggers ya que son más rápidos. Solo usar triggers para auditar, validaciones que no se puedan hacer con constraints.
 - Siempre acceder las tablas en el mismo orden en todos los sp’s y triggers, de esta manera evitamos generar deadlocks asi como también mantener las transacciones lo más pequeñas posibles. También hacer que las aplicaciones reintenten la transacción en caso de generarse un deadlock (error 1205).
 - No hacer llamado de funciones repetitivamente en los sp’s o triggers, en lugar de eso hacer el llamado una sola vez y guardarlo en alguna variable
-- También toma en cuenta el consumo de CPU que generan tus consultas.
+- También toma en cuenta el consumo de CPU que generan tus consultas
+
+---
+
+# Triggers
+
+## **DML TRIGGERS**
+
+Son procedimientos almacenados que se ejecutan automáticamente ante un evento DML (Update – Delete – Insert) que afecta una **tabla o vista.**
+
+Se los puede utilizar para, una vez desencadenados:
+
+- Forzar reglas de negocio
+- Mantener la integridad de datos
+- Querear otras tablas
+- Ejecutar complejas instrucciones SQL
+
+La integridad debiera ser forzada al nivel más bajo por índices que formen parte de un Primary Key o Foreing Key contraints -
+
+Los CHECK Constraints son otra alternativa
+
+Para asegurar la Integridad Referencial nada mejor que los Foreing Key
+
+Los DML TRIGGERS son especialmente utilizados cuando, con el simple uso de un constraint, no se cubren las necesidades de una aplicación
+
+## **Consideraciones Generales y Beneficio**
+
+No se pueden invocar por si mismos, se disparan automáticamente
+
+- No reciben ni retornan parámetros
+- A diferencia de los constraint “check” pueden hacer referencia a otras tablas (por ejemplo se puede controlar una inserción en una tabla de ventas si y solo si el valor de un campo stock de una tabla artículos sea mayor a x cantidad)
+- Se pueden crear más de un trigger para un mismo evento en una tabla, con lo cual se pueden controlar múltiples alternativas sobre la misma tabla.
+- Permiten evaluar el estado de una tabla antes y después de una modificación y tomar acciones acorde a la evaluación
+- Permiten customizar mensajes de error, algo que los constraints en general no permiten.
+- Los triggers DML utilizan dos tablas especiales denominadas **Inserted** y **Deleted**.
+- Son tablas creadas automáticamente por el SQL con la misma estructura que la tabla sobre la cual está definido el trigger
+- La tabla **Inserted** solo tiene datos en operaciones de Insert y Update
+- La tabla **Deleted** sólo tiene datos en operaciones de Delete y Update
+- En caso de un update las tablas Inserted y Deleted tienen data al mismo tiempo.
+- No se pueden modificar los datos de estas tablas
+
+```sql
+CREATE TRIGGER <Nombre del Trigger> 
+ON <Nombre de la Tabla>
+AFTER <INSERT,DELETE,UPDATE>
+      AS
+BEGIN
+SET NOCOUNT ON;
+-- Inserta aquí las instrucciones
+END
+```
+
+### Ejemplos
+
+1. Se graba un histórico de stock cada vez que se modifica un artículo de la tabla “articulos”
+
+```sql
+-----------------------------------------------------------------
+      --  TRIGGER DML                                                                            
+      --  Detalle: este trigger genera un histórico de stock cada vez 
+          que se modifica la existencia de un artículo --
+      -----------------------------------------------------------------
+      CREATE TRIGGER TR_ARTICULOS
+      ON ARTICULOS
+      AFTER UPDATE
+      AS 
+        BEGIN
+         INSERT INTO HCO_STOCK
+         (IDARTICULO, STOCK, FECHA)
+         SELECT IDARTICULO, STOCK, getdate()
+         FROM INSERTED
+        END
+
+       --- Con este evento UPDATE se desencadena el Trigger
+
+      UPDATE ARTICULOS
+      SET STOCK = STOCK + 10
+      WHERE IDARTICULO = 1
+```
+
+1. Podemos hacer que el trigger del ejemplo 1 se desencadene sólo si una columna es afectada
+
+```sql
+CREATE TRIGGER TR_ARTICULOS
+      ON ARTICULOS
+      AFTER UPDATE
+      AS 
+        BEGIN
+           IF UPDATE (STOCK)    -- sólo si actualiza STOCK
+            BEGIN
+             INSERT INTO HCO_STOCK
+             (IDARTICULO, STOCK, FECHA)
+             SELECT IDARTICULO, STOCK, getdate()
+             FROM INSERTED
+            END
+END
+```
+
+1. Podemos hacer que el trigger deshaga toda la operación incluyendo un ROLLBACK
+
+```sql
+CREATE TRIGGER TR_ARTICULOS
+      ON ARTICULOS
+      AFTER UPDATE
+      AS 
+        BEGIN
+             INSERT INTO HCO_ARTICULOS
+             (IDARTICULO, STOCK, FECHA)
+             SELECT IDARTOCULO, STOCK, getdate()
+             FROM INSERTED
+                
+             ROLLBACK 
+END
+```
+
+1. Podemos DESACTIVAR/ACTIVAR un Trigger o Todos lo Triggers de la tabla
+
+```sql
+----------------------------------------------------------
+      -- Desactivar y Activar Todos los Triggers de una Tabla --
+      ---------------------------------------------------------
+
+      -- Desactiva todos los trigger de la tabla ARTICULOS
+      ALTER TABLE ARTICULOS DISABLE TRIGGER ALL
+      GO
+      -- Activa todos los trigger de la tabla ARTICULOS
+      ALTER TABLE ARTICULOS ENABLE TRIGGER ALL
+
+      ----------------------------------------------------
+      -- Desactivar y Activar Un Trigger en Particular --
+      ---------------------------------------------------
+
+      -- Desactiva el trigger TR_STOCK
+      DISABLE TRIGGER TR_STOCK ON ARTICULOS
+      GO
+      -- Activa el trigger TR_STOCK
+      ENABLE TRIGGER TR_STOCK ON ARTICULOS
+      GO
+```
+
+## **DDL Triggers**
+
+Son triggers especiales que se crean **a nivel de base de datos** y que disparan en respuesta a eventos DML  (Update – Delete – Insert). Suelen ser utilizados para ejecutar tareas administrativas en una base de datos auditando y regulando cierta clase de eventos.
+
+```sql
+CREATE TRIGGER <Nombre del Trigger> 
+ON DATABASE 
+FOR <DROP TABLE, ALTER TABLE>
+AS
+BEGIN
+   SET NOCOUNT ON;
+   -- Inserta aquí las instrucciones
+END
+```
+
+El siguiente trigger impide que sentencias DROP TABLE y ALTER TABLE a nivel de Base de Datos
+
+```sql
+CREATE TRIGGER TR_Seguridad
+       ON DATABASE FOR DROP_TABLE, ALTER_TABLE
+       AS
+       BEGIN
+         RAISERROR ('No está permitido borrar ni modificar tablas !' , 16, 1)
+         ROLLBACK TRANSACTION 
+
+       END
+```
+
+---
+
