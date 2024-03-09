@@ -169,3 +169,102 @@ Pueden infiltrar un pendrive con una etiqueta engañosa para que sea usado por a
 
 **Triada de la seguridad informática:** No repudio, Autenticidad, Responsabilidad y Fiabilidad.
 
+---
+
+# Seguridad Perimetral
+
+- Conjunto de sistemas de detección electrónica hecho para proteger perímetros internos y externos
+- Su funcion es detectar, disuadir, y hasta parar un ataque con antelación
+- Algunos sistemas son: Firewall, DMZ, UTM, IDS, WAF, Web Filtering, AppControl, Antivirus y Antispam
+
+## **IDS (Intrusion Detection System)**
+
+- **Es un sistema de detección de intrusiones es un componente que inspecciona los datos de una red o equipo en busca de elementos sospechosos**
+- Recopilar info para analizar y correlacionar
+- Sus elementos básicos son: Sensor, consola y un protocolo de comunicación entre ambos
+- Su comportamiento en las redes influye el sniffing de paquetes
+- Si detecta un posible ataque, manda una alarma
+
+## **Tecnicas de detección de intrusiones**
+
+- **Reconocimiento de Firmas: Identificación de eventos y acciones conocidas**
+- **Detección Anomalías: Identificación de comportamientos raros**
+- **Anomalía de protocolos:** Identificación de paquetes TCP/IP raros.
+
+## **Tipos de IDS**
+
+- **NIDS (Network IDS): Elemento de red que inspecciona el tráfico de la misma.**
+- **HIDS (Host IDS): Software que inspecciona los eventos dentro del marco de un sistema operativo.**
+- **Monitor Logs: Correlaciona y analiza los logs de sistemas y aplicaciones.**
+- **Verificador Integridad:** Chequea la integridad de archivos de un sistema
+
+## **Es una amenaza.. Verdadero o Falso?**
+
+- **Verdadero Positivo: Debería generarse una alarma y ésta se genera.**
+- **Falso Positivo: No debería generarse una alarma, pero ésta se genera**
+- **Verdadero Negativo: No debería generarse una alarma, y ésta no se genera.**
+- **Falso Negativo:** Debería generarse una alarma, pero ésta no se genera
+
+## **Indicadores de una intrusión**
+
+- Modificación de software y archivos de configuración.
+- Bajo rendimiento inusual en el sistema.
+- Cuelgues y reinicios en el sistema.
+- Períodos en los cuales los logs no registran datos.
+- Ausencia de logs o incompletos.
+- Procesos desconocidos.
+- Cambios en los permisos del sistema de archivos.
+- Cambios raros en el tamaño de los archivos.
+- Problemas de disponibilidad en los sistemas.
+- Conexiones desde y hacia lugares desconocidos.
+- Repetición de intentos de conexiones.
+- Presencia de archivos extraños. Ausencia de archivos determinados.
+
+Si el IDS Detecta algún tipo de ataque toma las siguientes medidas:
+
+- Bloquear la dirección IP del atacante en el Firewall.
+- Alertar al administrador.
+- Generar logs con toda la información posible.
+- Guardar toda la evidencia y captura de paquetes.
+- Lanzar otras aplicaciones para actuar sobre el evento
+
+---
+
+# Firewalls
+
+- Un Firewall divide una red segura de una red insegura, normalmente una privada de una publica
+- Su función principal es examinar los paquetes en busca de coincidencia con las reglas definidas.
+- El filtrado es en sentido entrante y saliente. También es por dirección de Origen / Destino, puerto Origen / Destino, protocolo de capa superior y por estado de conexión
+- También puede crear logs y generar alarmas
+- Toma acciones en base a cierto criterio y acepta o rechaza los paquetes
+
+El firewall **NO** protege conexiones que NO pasen por el Firewall, no protege contra el Malware, no protege contra acciones internas y no protege contra ataques de ingeniería social
+
+**Tipos de Firewall**
+
+**Packet Filters**
+
+- Filtran en Capa 3 (Internet Protocol IP)
+- Sólo entienden direcciones IP
+- Aplicable a Routers
+
+**Circuit Level Gateways**
+
+- Filtran en Capa 4 (TCP)
+- No filtran paquetes individuales sino sesiones
+- Entienden de puertos y sesiones
+
+**Application Level Gateways**
+
+- Filtran en Capa 7 (Application)
+- Se utilizan como Proxy.
+- Entienden comandos específicos de los protocolos.
+
+**Stateful Multilayer**
+
+- Filtran en todas las capas anteriores (Application, TCP y IP)
+- Son más costosos y difíciles de administrar.
+- Tienen gran capacidad de análisis y filtrado.
+
+---
+
