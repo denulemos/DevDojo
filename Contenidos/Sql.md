@@ -328,3 +328,191 @@ CREATE TRIGGER TR_Seguridad
 
 ---
 
+# Funciones tipo Rowset
+
+### 🤍 **Acceso a consulta en servidor externo que tiene una base Sql Server**
+
+```sql
+SELECT a.*  
+FROM OPENROWSET('SQLNCLI', 'Server=Seattle1;Trusted_Connection=yes;',  
+     'SELECT GroupName, Name, DepartmentID  
+      FROM AdventureWorks2012.HumanResources.Department  
+      ORDER BY GroupName, Name') AS a;
+```
+
+**'SQLNCLI'**: Es el nombre del proveedor OLEDB para conectarse (nombre del driver a usar según el motor)
+
+**Seattle1**: Nombre del servidor externo.
+
+**Trusted_Connection=yes**; Tipo de autenticación, misma que Windows.
+
+### 🤍 **Acceso a tabla de base de datos Access**
+
+```sql
+SELECT CustomerID, CompanyName  
+   FROM OPENROWSET('Microsoft.Jet.OLEDB.4.0',  
+      'C:\Program Files\Microsoft Office\OFFICE11\SAMPLES\Northwind.mdb';  
+      'admin';'',Customers);
+```
+
+**'Microsoft.Jet.OLEDB.4.0'**: Es el nombre del proveedor OLEDB para conectarse (nombre del driver a usar según el motor)
+
+**'C:\Program Files\Microsoft Office\OFFICE11\SAMPLES\Northwind.mdb'**: Nombre del archive de base de datos Access.
+
+**'admin**'; Usuario de ingreso a la base.
+
+### 🤍 **Acceso a tabla de Access con JOIN a tabla de base de datos** **origen**
+
+```sql
+USE Northwind  ;  
+GO  
+SELECT c.*, o.*  
+FROM Northwind.dbo.Customers AS c   
+   INNER JOIN OPENROWSET('Microsoft.Jet.OLEDB.4.0',   
+   'C:\Program Files\Microsoft Office\OFFICE11\SAMPLES\Northwind.mdb';'admin';'', Orders)      
+   AS o   
+   ON c.CustomerID = o.CustomerID ;  
+GO
+```
+
+### 🤍 **Acceso a servidor externo con otro motor de base de datos**
+
+Usar una consulta desde un *servidor vinculado de SQL Server* mediante **OPENQUERY** puede ser necesario en diferentes escenarios. Por ejemplo podemos necesitarlo para cargar una tabla intermedia con los datos de venta que sacamos de ***MySql*** a través de un servidor vinculado en ***SQLServer***.
+
+---
+
+Vamos con un ejemplo donde consultamos una tabla de ***Mysql*** directamente:
+
+```sql
+SELECT *
+FROM Ventas.CABECERAS
+WHERE date_format(FECHA, '%Y-%m-%d') >= '2012-12-01'
+```
+
+Esta misma consulta, lanzada desde SQL Server usando **OPENQUERY**  y un servidor vinculado llamado **'*MY*'** para acceder sería:
+
+```sql
+SELECT *
+FROM OPENQUERY  (MY, 'SELECT * FROM Ventas.CABECERAS
+WHERE date_format(FECHA, ''%Y-%m-%d'') >= '''2012-12-01''')
+```
+
+### 🤍 **Diferencia entre OPENROWSET y OPENQUERY**
+
+- **OPENROWSET:** hay que indicar toda la información de conexión de los datos externos (String de conexión o ConnectionString).
+- **OPENQUERY:** se indica el nombre del servidor linkeado al motor desde donde ejecuto las consultas.
+
+---
+
+# JOINS
+
+### 🟡 **Inner Join**
+
+Solo muestra lo que tiene en comun A y B
+
+```sql
+SELECT loginID
+FROM tabla1 AS e
+   INNER JOIN Ventas.vendedor AS s
+   ON e.idnegocio = s.idnegocio
+
+(El id negocio debe estar en tabla a y b)
+```
+
+### 🟡 **Outer Join (Con left y right join)**
+
+El left Join, por ejemplo, con dos tablas A y B, devuelve todo lo de la tabla A y lo que este también en la tabla AB, sí no quiero esto último, agrego un WHERE tabla_b IS NULL . El right join es lo mismo pero con B. El full Join toma absolutamente todo de ambas tablas, agregando el NULL anterior con ambas tablas, ahi es donde se muestran ambas tablas menos lo que tienen en común.
+
+```sql
+SELECT p.nombre, pr.productoid
+FROM produccion.producto p
+LEFT OUTER JOIN
+produccion.producto pr
+ON p.productoid = pr.productoid
+```
+
+### 🟡 **Cross Join**
+
+El producto cartesiano entre ese set de datos. Son todas las posibles combinaciones de rows entre todas las tablas aplicadas.Puede tardar mucho en procesar si se tiene mucha data.
+
+### 🟡 **Self Join**
+
+Un Join que referencia a la misma tabla.
+
+```sql
+SELECT A.CustomerName AS CustomerName1, B.CustomerName AS CustomerName2, A.City
+FROM Customers A, Customers B
+WHERE A.CustomerID <> B.CustomerID --No se repiten ID
+AND A.City <> B.City --Esta linea hace que no se repitan ciudades 
+ORDER BY A.City;
+```
+
+### 🟡 UNIÓN
+
+Con los set de datos finales se trata de unificar a un set único
+
+Elimina los duplicados entre ambos conjuntos de entrada (**ES UN DISTINCT IMPLÍCITO**).
+
+```sql
+SELECT * a
+UNIÓN ALL
+Select * b
+```
+
+### 🟡 EXCEPT
+
+De un set de datos se saca los que no estan en el 2do set de datos a relacionar, todo lo de a de tabla1, menos lo que este también en b tabla2
+
+Retorna filas del conjunto de la izquierda que no están incluidas en el conjunto de la derecha entrada (**ES UN DISTINCT IMPLÍCITO**)
+
+```sql
+SELECT a
+FROM tabla1
+EXCEPT
+SELECT b
+FROM tabla2
+```
+
+### 🟡 INTERSECT
+
+Intersección entre dos tablas. Lo contrario a EXCEPT. Retorna filas en común a ambos conjuntos de entrada (**ES UN DISTINCT IMPLÍCITO**).
+
+### 🟡 TOP
+
+Top de los resultados de una query, es decir, las X primeras (En el ejemplo, 10) de un SELECT
+
+```sql
+SELECT TOP (10)
+nombres, apellidos
+FROM tabla1
+```
+---
+
+# Normalizacion
+
+### 💛 Cual es la definición?
+
+Definición formal: La normalización es el proceso mediante el cual se transforman datos complejos a un conjunto de estructuras de datos más pequeñas, que además de ser más simples y más estables, son más fáciles de mantener.
+
+También se puede entender la normalización como una serie de reglas que sirven para ayudar a los diseñadores de bases de datos a desarrollar un esquema que minimice los problemas de lógica.
+
+### 💛 Cuales son los objetivos de la Normalización?
+
+- Evitar redundancia
+- Evitar problemas de actualización
+- Asegurar la integridad
+- Asegurar que no hayan 2 registros iguales
+- Todos los datos de una determinada propiedad
+deben ser del mismo tipo.
+- Ejemplo “Nacimiento” debe tener una fecha.
+
+### 💛 Cuales son los grados de Normalización?
+
+- Primera forma normal
+- Segunda forma normal
+- Tercera formal normal
+
+Cada una de estas formas normales tiene sus reglas.
+Una base de datos no es necesario que este siempre en la 3era forma normal, puede ocurrir que para resolver
+problemas complejos, no se requiera de algún dato en la 3era forma.
+
