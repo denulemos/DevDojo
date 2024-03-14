@@ -616,3 +616,39 @@ Son partes que no sirven de nuestro codigo, como por ejemplo:
 - Constructores sin implementacion puestos por defecto
 - Getters y Setters de todas las variables privadas de una clase que puede ser que no se usen nunca
 - Variables y funciones que no se usan nunca
+
+---
+
+# Acronimos
+
+### 👮 DRY
+
+Don’t Repeat Yourself, si hay una pieza de programación que se repite en mas de un lugar, se debe crear una función de la misma
+
+### 👮 SOLID
+
+Son 5 principios
+
+- Single Responsibility Principle
+- Open Closed Principle
+- Lisvok Substitution
+- Interface Segregation
+- Dependency Inversion
+
+### 👮 KISS
+
+Keep it Simple Stupid, no escribir codigo que nadie pueda entender o leer, mantener todo simple
+
+### 👮 LOD
+
+Law Of Demeter, quien puede hablar con quien, una unidad puede comunicarse solo con sus unidades cercanas
+
+### 👮 SOC
+
+Separation of Concerns, Cada unidad deberia tener una unica responsabilidad, un ejemplo es el patron MVC
+
+### 👮 YAGNI
+
+You Aren’t Gonna Need it! No escribir codigo de mas solo porque puede que lo necesites mas adelante. Implementar algo solo si es necesario en el momento
+
+---
