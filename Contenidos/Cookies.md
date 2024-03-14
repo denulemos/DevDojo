@@ -76,3 +76,40 @@ function addCookie(cname, value) {
 addCookie(“username”,”denulemos”);
 console.log(document.cookie);
 ```
+
+### ✨ ¿Cual es la diferencia entre Cookies, SessionStorage y LocalStorage?
+
+|  | Cookies | Local Storage | Session Storage |
+| --- | --- | --- | --- |
+| Capacidad | 4kb | 10 mb | 5 mb |
+| Navegadores | HTML 4 / 5 | HTML 5 | HTML 5 |
+| Accesible desde | Cualquier ventana | Cualquier ventana | Tab donde fue creada |
+| Expira | Seteado a mano, si no se aclara, vence cuando termina la sesion | Nunca | Cuando se cierra la tab |
+| Storage Location | Navegador y Server | Navegador | Navegador |
+| Enviado con Requests | Si | No | No |
+| Tipo de dato | Tod | Solo guarda Strings. Si queremos guardar objetos, arrays, u otros, debemos converirlos en String con JSON.stringify() |  |
+| Deberia usarse |  | Para guardar informacion NO sensible ya que es facilmente accesible |  |
+- Las cookies se usan para Auth mas que nada
+
+```jsx
+// Local Storage
+localStorage.setItem(’item’, ‘valor’)
+localStorage.getItem(’item’)
+localStorage.removeItem('item')
+localStorage.clear();
+localStorage.key(1); // Obtener un valor/string de una posicion particular
+
+// Session Storage
+sessionStorage.setItem('item', 'valor);
+sessionStorage.getItem('item')
+sessionStorage.removeItem('item')
+sessionStorage.clear();
+
+// Cookies
+document.cookie = "item=true";
+// Con expire date
+document.cookie= "item=true; expires= Fri, 31 Dec 9999 23:59:59 GMT; path=/"
+document.cookie // No se puede obtener una sola cookie por vez, 
+// todas se almacenan en un String, deben parsearse
+
+```
