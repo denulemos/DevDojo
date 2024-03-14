@@ -8,12 +8,15 @@ Documentacion tecnica en formato de preguntas-respuestas y teoria sobre diversos
 
 ## Contenido (Ultima actualizacion Marzo 2024) 💙
 * [Accesibilidad](https://github.com/denulemos/denobible/blob/master/Contenidos/Accesibilidad.md)
+* [Angular](https://github.com/denulemos/DenoCuriosityNotes/blob/master/Contenidos/Angular.md)
 * [Antipatrones](https://github.com/denulemos/denobible/blob/master/Contenidos/Antipatrones.md)
+* [C#](https://github.com/denulemos/DenoCuriosityNotes/blob/master/Contenidos/CSHarp.md)
 * [Codigo Limpio](https://github.com/denulemos/DenoCuriosityNotes/blob/master/Contenidos/CodigoLimpio.md)
 * [Ciberseguridad](https://github.com/denulemos/denobible/blob/master/Contenidos/Ciberseguridad.md)
 * [Colecciones de Datos](https://github.com/denulemos/DenoCuriosityNotes/blob/master/Contenidos/ColeccionesDatos.md)
 * [Criptografia](https://github.com/denulemos/denobible/blob/master/Contenidos/Criptografia.md)
 * [Cookies](https://github.com/denulemos/denobible/blob/master/Contenidos/Cookies.md)
+* [Derecho](https://github.com/denulemos/DenoCuriosityNotes/blob/master/Contenidos/Derecho.md)
 * [Design Thinking](https://github.com/denulemos/DenoCuriosityNotes/blob/master/Contenidos/DesignThinking.md)
 * [Disponibilidad](https://github.com/denulemos/denobible/blob/master/Contenidos/Disponibilidad.md)
 * [Estilos (CSS, SASS...)](https://github.com/denulemos/DenoCuriosityNotes/blob/master/Contenidos/Estilos.md)
@@ -23,6 +26,7 @@ Documentacion tecnica en formato de preguntas-respuestas y teoria sobre diversos
 * [Javascript](https://github.com/denulemos/denobible/blob/master/Contenidos/Javascript.md)
 * [Monolitos vs Microservicios](https://github.com/denulemos/denobible/blob/master/Contenidos/MonolitosVsMicroservicios.md)
 * [Package.json](https://github.com/denulemos/denobible/blob/master/Contenidos/PackageJson.md)
+* [Python](https://github.com/denulemos/DenoCuriosityNotes/blob/master/Contenidos/Python.md)
 * [RESTful](https://github.com/denulemos/denobible/blob/master/Contenidos/RESTful.md)
 * [Redux](https://github.com/denulemos/DenoCuriosityNotes/blob/master/Contenidos/Redux.md)
 * [Sistemas Operativos](https://github.com/denulemos/DenoCuriosityNotes/blob/master/Contenidos/SistemasOperativos.md)
