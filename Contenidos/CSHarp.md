@@ -151,12 +151,10 @@ Type conversion: as |
 | Desigualdad | ≠ |
 | Bitwise AND | & |
 | Bitwise XOR | ^ |
-| Bitwise OR | | |
 | Logical AND | && |
-| Logical OR | || |
 | Condicional ternario | ?: |
 | Asignación | =, *=, /=, %=, +=, -=, <<=, >>=, &=,
-^=, |= |
+^= |
 
 ### 💜 Asociatividad
 
@@ -202,3 +200,156 @@ void Foo()
 	Console.WriteLine(s); // Error
 }
 ```
+
+---
+
+# Namespaces
+
+### 🟢 Concepto de namespaces (Espacios de nombres)
+
+Del mismo modo que los archivos se organizan en directorios, los tipos de datos se organizan en espacios de nombres.
+Por un lado estos espacios permiten tener más organizados los tipos de datos, lo que facilita su localización. De hecho, esta es la forma en que se encuentra organizada la librería de clases base (BCL) del Framework .NET, de modo que todas las clases más usadas en cualquier aplicación
+pertenecen al espacio de nombres llamado System, las de acceso a bases de datos en `System.Data`, las de operaciones de entrada/salida en `System.IO`, etc.
+Por otro lado, los espacios de nombres también permiten usar en un mismo programa varias clases con igual nombre si pertenecen a espacios diferentes. La idea es que cada fabricante defina sus tipos dentro de un espacio de nombres propio para que no hayan conflictos si
+varios fabricantes definen clases con el mismo nombre y se quieren usar a la vez en un mismo programa. Para que esto funciones no han de coincidir los nombres los espacios de cada fabricante.
+
+### 🟢 Definicion de Namespaces
+
+Para definir un espacio de nombres se utiliza la siguiente sintaxis:
+
+```csharp
+namespace <nombreEspacio>
+{
+	<tipos>
+}
+```
+
+Los tipos que se definan en `<tipos>` pasarán a considerase pertenecientes al espacio de nombres llamado `<nombreEspacio>`.
+Como veremos más adelante, aparte de clases esto tipos pueden ser también interfaces, estructuras, tipos enumerados y delegados. A continuación se muestra un ejemplo en el que definimos una clase de
+nombre `ClaseEjemplo` perteneciente a un espacio de nombres llamado EspacioEjemplo:
+
+```csharp
+namespace EspacioEjemplo
+{
+	class ClaseEjemplo
+		{}
+}
+```
+
+El verdadero nombre de una clase, al que se denomina nombre completamente calificado, es el nombre que le demos al declararla prefijado por la concatenación de todos los espacios de nombres a los que pertenece ordenados del más externo al más interno y seguido cada uno de ellos por un punto. Por ejemplo, el verdadero nombre de la clase `ClaseEjemplo` antes definida es `EspacioEjemplo.ClaseEjemplo`.
+
+Si no definimos una clase dentro de una definición de espacio de nombres, se considera que ésta pertenece al denominado espacio de nombres global y su nombre completamente calificado coincidirá con el nombre que le demos al definirla.
+Aparte de definiciones de tipo, también es posible incluir como miembros de un espacio de nombres a otros espacios de nombres. Podemos anidar espacios de nombres:
+
+```csharp
+namespace EspacioEjemplo
+{
+	namespace EspacioEjemplo2
+	{
+		class ClaseEjemplo
+		{}
+	}
+}
+```
+
+Ahora `ClaseEjemplo` tendrá
+`EspacioEjemplo.EspacioEjemplo2.ClaseEjemplo` como nombre completamente calificado. En realidad es posible compactar las definiciones de espacios de nombres anidados usando esta sintaxis de calificación completa para dar el nombre del espacio de nombres a
+definir. Es decir, el último ejemplo es equivalente a:
+
+```csharp
+namespace EspacioEjemplo.EspacioEjemplo2
+{
+	class ClaseEjemplo
+		{}
+}
+```
+
+En ambos casos lo que se ha definido es una clase llamada `ClaseEjemplo` perteneciente al espacio de nombres llamado `EspacioEjemplo2` que, a su vez, pertenece al espacio de nombres llamado `EspacioEjemplo`.
+
+### 🟢 Importación de espacios de nombres
+
+### Using
+
+Si desde código perteneciente a una clase definida en un cierto espacio de nombres se desea hacer referencia a tipos definidos en otros espacios de nombres, se ha de referir a los mismos usando su nombre completamente calificado. Por ejemplo:
+
+```csharp
+namespace EspacioEjemplo.EspacioEjemplo2 {
+	class ClaseEjemplo
+	{}
+}
+class Principal // Pertenece al espacio de nombres
+global {
+public static void Main () {
+	EspacioEjemplo.EspacioEjemplo2.ClaseEjemplo c = new EspacioEjemplo.EspacioEjemplo2.ClaseEjemplo();
+}
+}
+```
+
+Como puede resultar muy pesado tener que escribir nombres tan largos en cada referencia a tipos, en C# se ha incluido un mecanismo de importación de espacios de nombres que usa la siguiente sintaxis:
+
+```csharp
+using <espacioNombres>;
+```
+
+Este tipo de sentencias siempre ha de aparecer dentro de una definición de espacio de nombres antes que cualquier definición de miembros de la misma y permiten indicar cuáles serán los espacios de nombres que se usarán implícitamente dentro de ese espacio de nombres. A los miembros de los espacios de nombres así importados se les podrá hacer referencia sin tener que usar calificación completa, por ejemplo:
+
+```csharp
+using EspacioEjemplo.EspacioEjemplo2;
+namespace EspacioEjemplo.EspacioEjemplo2
+{
+	class ClaseEjemplo
+	{}
+}
+// (1)
+class Principal // Pertenece al espacio de nombres
+global
+{
+public static void ()
+{
+// EspacioEjemplo.EspacioEjemplo2. está implícito
+ClaseEjemplo c = new ClaseEjemplo();
+}
+}
+```
+
+Nótese que la sentencia using no podría haberse incluido en la zona marcada en el código como (1) porque se violaría la regla de que todo using ha aparecer en un espacio de nombres antes que cualquier definición de miembro. Sin embargo, el siguiente código si que sería válido:
+
+```csharp
+namespace EspacioEjemplo.EspacioEjemplo2
+{
+	class ClaseEjemplo
+	{}
+}
+
+namespace Principal
+{
+	using EspacioEjemplo.EspacioEjemplo2;
+	class Principal // Pertenece al espacio de nombres
+	global
+{
+public static void Main()
+{
+	ClaseEjemplo c = new ClaseEjemplo();
+}
+}
+}
+```
+
+En este caso el using aparece antes que cualquier otra definición de tipos dentro del espacio de nombres en que se incluye (Principal) Sin embargo, ahora la importación hecha con el using sólo será válida dentro de código incluido en ese mismo espacio de nombres, mientras
+que en el caso anterior era válida en todo el archivo al estar incluida en el espacio de nombres global.
+Si una sentencia using importa miembros de igual nombre que miembros definidos en el espacio de nombres donde se incluye, el using no se produce error alguno pero se da preferencia a los miembros no importados. Un ejemplo:
+
+```csharp
+namespace N1.N2 {
+	class A {}
+	class B {}
+}
+
+namespace N3 {
+	using N1.N2;
+	class A {}
+	class C: A {}
+}
+```
+
+En este ejemplo C deriva de N3.A en vez de N1.N2.A. Si queremos que ocurra lo contrario tendremos que referenciar a N1.N2.A por su nombre completo al definir C o, como se explica a continuación, usar un alias.
