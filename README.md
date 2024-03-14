@@ -1,8 +1,8 @@
 # DenoCuriosityNotes 📘 (Version en Español 🇦🇷)
 
-Documentacion tecnica en formato de preguntas-respuestas y teoria sobre diversos temas de tecnologia y programacion. El credito va a todos los creadores de contenido - cursos - clases que me ayudaron a estudiar a lo largo de todos estos anios. 
+Documentacion tecnica en formato de preguntas-respuestas y teoria sobre diversos temas de tecnologia y programacion. El credito va a todos los creadores de contenido - cursos - clases que me ayudaron a estudiar a lo largo de todo este tiempo. 
 
-Constantemente en actualizacion 
+*Constantemente en actualizacion*
 
 **Proximamente version en Inglés** 🏴
 
