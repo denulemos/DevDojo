@@ -8,6 +8,7 @@ Documentacion tecnica en formato de preguntas-respuestas y teoria sobre diversos
 
 ## Contenido (Ultima actualizacion Marzo 2024) 💙
 * [Accesibilidad](https://github.com/denulemos/denobible/blob/master/Contenidos/Accesibilidad.md)
+* [Android](https://github.com/denulemos/denobible/blob/master/Contenidos/Android.md)
 * [Angular](https://github.com/denulemos/DenoCuriosityNotes/blob/master/Contenidos/Angular.md)
 * [Antipatrones](https://github.com/denulemos/denobible/blob/master/Contenidos/Antipatrones.md)
 * [C#](https://github.com/denulemos/DenoCuriosityNotes/blob/master/Contenidos/CSHarp.md)
@@ -29,6 +30,7 @@ Documentacion tecnica en formato de preguntas-respuestas y teoria sobre diversos
 * [Python](https://github.com/denulemos/DenoCuriosityNotes/blob/master/Contenidos/Python.md)
 * [RESTful](https://github.com/denulemos/denobible/blob/master/Contenidos/RESTful.md)
 * [Redux](https://github.com/denulemos/DenoCuriosityNotes/blob/master/Contenidos/Redux.md)
+* [RESTful](https://github.com/denulemos/DenoCuriosityNotes/blob/master/Contenidos/RESTful.md)
 * [Sistemas Operativos](https://github.com/denulemos/DenoCuriosityNotes/blob/master/Contenidos/SistemasOperativos.md)
 * [SQL](https://github.com/denulemos/denobible/blob/master/Contenidos/Sql.md)
 * [Testing](https://github.com/denulemos/denobible/blob/master/Contenidos/Testing.md)
