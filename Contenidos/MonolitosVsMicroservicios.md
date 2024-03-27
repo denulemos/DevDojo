@@ -9,6 +9,15 @@ Las características clave de los microservicios incluyen la independencia de im
 La adopción de microservicios también proporciona una mayor flexibilidad en términos de tecnologías utilizadas para cada servicio. Los equipos pueden seleccionar las herramientas y lenguajes de programación más adecuados para cada tarea, siempre y cuando se respeten las interfaces de comunicación establecidas.
 A pesar de estas ventajas, la arquitectura de microservicios no está exenta de desafíos. La complejidad en la gestión de múltiples servicios, la necesidad de una infraestructura robusta para el descubrimiento y la comunicación entre servicios, así como la necesidad de un diseño resiliente que permita la operación del sistema aún cuando un microservicio falle.
 
+- Las funciones Lamba funcionan como microservicios
+- Es complicado de implementar, hay que pensar la arquitectura y demás
+- Es un conjunto de servicios pequeños que corren sus propios procesos, se deployan de manera independiente, y hay poco manejo centralizado de los mismos.
+- Pueden estar escritos en distintos lenguajes, funcionar con distitnas bases de datos y funcionar de distintas maneras
+- Es el encapsulamiento a la maxima potencia, cada servicio se encarga de una y solo una sola, de tal manera que si se cae uno, el resto del servicio no se inmuta
+- Otra manera de manejo es replicar los servicios que se van necesitando. Es mas optimo ya que puedo distribuir mejor los recursos a nivel arquitectura, además posee escalamiento independiente.
+- Tiene desventajas. El testeo es complicado, el monitoreo es complicado, la resiliencia es cara, se necesitan mas dev para su mantenimiento.
+- Se debe intentar que no hayan dependencias fuertes entre microservicios para cuando suceden errores. Se deben tener cuidado con librerias de terceros y se deben pensar en los protocolos a utilizar.
+
 ## **Que son los monolitos?**
 
 Los monolitos representan una arquitectura tradicional en el desarrollo de aplicaciones web, caracterizada por consolidar todas las funcionalidades de un sistema en un único bloque de código. A diferencia de los microservicios, donde cada función se implementa de manera independiente, los monolitos son estructuras más compactas y centralizadas.
