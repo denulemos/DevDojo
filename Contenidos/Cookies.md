@@ -113,3 +113,14 @@ document.cookie // No se puede obtener una sola cookie por vez,
 // todas se almacenan en un String, deben parsearse
 
 ```
+
+### ✨ ¿Como puedo borrar una cookie?
+
+Para borrar una cookie, debemos setear la fecha de expiracion a una fecha pasada, de esta manera, el navegador la eliminara automaticamente.
+
+```jsx
+function deleteCookie(cname) {
+  document.cookie = cname + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+}
+```
+
