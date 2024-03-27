@@ -682,3 +682,199 @@ Los beneficios que trae a un organización la implementación de la norma ISO 27
 - **Mejora de la competitividad**. Permite mejorar la competitividad de la organización y su imagen institucional a nivel nacional e internacional
 
 ---
+
+# Prueba informática y las pericias
+
+### 💛 **La prueba**
+
+Las resoluciones judiciales se dictan contemplando dos cosas, los hechos y las normas que se le aplican. Los hechos son del pasado (como sucedio el choque de dos autos). Para aplicar una norma entonces se tiene que tener por verdadero un conjunto de hechos para tener por verdaderos otro conjunto que se debe probar. La prueba es la realizacion de los actos necesarios para que un tribunar tenga acreditados los hechos necesarios para fundar un derecho.
+
+Existen muchos medios de prueba, documental, testimonial, etc.. Uno de estos es la **prueba pericial,** donde se designan peritos, profesionales en X disciplina para realizar una investigacion.
+
+### 💛 **La prueba judicial y los criterios de evaluacion**
+
+****Los informes no terminan de resolver el problema de los hechos, ellos solo informan al juez y este es el que decide que hacer. Aunque, aun así, son de mucha importancia
+
+### 💛 **Objetos de una pericia informatica**
+
+****El objeto de una pericia esta ligado a la investigacion que se haga, como la existencia de archivos encriptados, busquedas de copias de resguardo, origen de programas, etc..
+
+### 💛 **Procedimiento de una pericia**
+
+- Identificación del objeto a peritar. Se debe identificar inequívocamente mediante una descripción cuidadosa.
+- Preservación. Se debe tener especial cuidado en que los procedimientos que se deban realizar no alteren el objeto de tal manera que todo lo que se realice pueda repetirse de idéntico modo. Si es necesario copiar archivos, se deben identificar las copias para su entrega y si es posible firmarlas electrónicamente.
+- Aplicación de la metodología de la investigación que sea adecuada al objetivo que se le ha indicado al perito con identificación de las herramientas utilizadas en la operación.
+- Proceder al análisis, es decir, los objetos que se han identificado se someten a las pruebas que correspondan de tal manera que, utilizando los mismos elementos, se llegue a los mismos resultados.
+- Elaborar las conclusiones. Esta es una etapa intelectual en la que el profesional utiliza el conocimiento de la ciencia y el arte de la informática para llegar a determinadas conclusiones que respondan a los puntos de pericia que ha ordenado el juez.
+- Realizar el informe correspondiente para ser entregado al tribunal.
+
+### 💛 **El informe pericial informatico**
+
+La pericia se dirige a quienes no son especialistas por eso debe mantener un lenguaje claro para ser entendido por cualquiera.
+
+- Debe iniciarle con los datos objetivos (nombre del perito, domicilio, teléfono, carátula del expediente y su número, nombre del tribunal al que se dirige, etc.
+- Copia de los puntos de pericia que fueron encomendados.
+- La descripción pormenorizada del objeto de estudio y de las medidas realizadas estableciendo día y hora de inicio y duración de la medida.
+- La metodología empleada en la pericia, los elementos utilizados, los resguardos y el procedimiento de conservación.
+- El análisis efectuado.
+- Las conclusiones en forma de respuesta a los puntos de pericia ordenados.
+- Toda aquella información que el perito considere conveniente para el esclarecimiento del caso. Puede ser explicaciones adicionales, nuevos elementos que el perito considere relevantes, etc.
+
+### 💛 **El problema de la pericia informatica y la interdisciplinariedad**
+
+Cuando un juez pide una pericia es porque debe resolver un caso. En la mayoría de los casos se conoce lo que hay que hacer, pero no se sabe hacerlo. Ello porque si bien se trata de rigurosas disciplinas, es de conocimiento común lo que esas disciplinas hacen y muchos de los elementos que manejan. Pero con las pericias informáticas sucede que no se desconocen solamente cómo se debe investigar, sino que se tienen ideas totalmente erróneas sobre el funcionamiento de los sistemas. Esto lleva a un problema de una inusitada gravedad y la causa común de que las pericias informáticas no cumplan su cometido. Las pericias son correctas en cuanto han realizado un análisis adecuado y las conclusiones son las debidas, pero quien debe interpretarlas, el juez, o no las entiende o las confunde. Esta circunstancia no reside simplemente en las dificultades del lenguaje técnico, sino en las concepciones erróneas de los operadores jurídicos respecto al funcionamiento de las redes, las características de los correos electrónicos, las posibilidades de editar archivos, etc. Es usual que los puntos de pericia estén mal planteados ya que tal como son dados al perito no permitirán resolver la cuestión. Entonces lo que debe hacer el perito antes de comenzar el desarrollo de la pericia es preguntarse qué es lo que es relevante para el juez. Por ejemplo, si se trata de una pericia en un ámbito criminal, el perito debe estudiar el tipo penal para ver cuáles son las condiciones requeridas para su cumplimiento. Siempre al juez penal lo que le interesa es determinar si un caso se puede subsumir en la conducta descripta en el tipo. Por su parte en el ámbito de la responsabilidad civil, el perito debe estudiar si existen daños, si se produjeron como consecuencia de una acción determinada o como consecuencia de la misma actividad independiente de los sistemas. Debe también poder determinar el modelo de conducta profesional y establecer si en el caso se lo siguió, etc. etc. Pero siempre debe conocer el problema jurídico que motiva la necesidad de la pericia y no guiarse exclusivamente por los puntos de pericia que le fueron planteados.
+
+---
+
+# Responsabilidad civil aplicada a la Informática
+
+### 💙 **La responsabilidad civil y la informática**
+
+Es un error decir que en informática no hay nada regulado, en informática se aplican las mismas normas que en cualquier otro ámbito, podríamos decir que en informática está todo regulado desde antes de que esta exista. Los problemas no son falta de regulación, sino de incomprensión de los operadores jurídicos con respecto sobre lo que deben tratar y decidir.
+
+### 💙 **El problema del daño causado por un tercero por injurias realizadas en un sitio web**
+
+Pongámosle el ejemplo de que alguien viene y comenta en una página de negocios que alguien de un negocio es un estafador, y que gracias a este comentario, a este negocio le va mal, además los pobladores de donde es el dueño de este negocio se asombran y algunos sospechan de ellos (Damnificados).
+
+Intervienen 3 personajes, **dueño del sitio, tercero del comentario no identificado y los damnificados.** Queremos saber sí los damnificados pueden cobrar una indemnización.
+
+- Existe daño. Los damnificados pierden oportunidad de negocio, también sufrieron daño moral y personal
+- Existe relación causal entre el daño y la publicación. En el orden natural de las cosas, cuando se realiza una publicación de este estilo la gente pierde oportunidades
+- La acción es ilegal, no se hace en defensa propia o de un tercero por alguna amenaza
+- Factor de atribución: dolo. Este tercero no identificado hizo el daño queriendo hacerlo
+
+Conclusión: Este tercero debe pagar, el tema es que como no se sabe quien es, no se le puede cobrar, así que los damnificados buscan otra opción.
+
+- El daño y la relación de causalidad ya quedaron establecidas.
+- Factor de atribución: culpa. Del dueño, por no haber tomado los recaudos para que el daño no se produzca. El dueño debería haber revisado los mensajes antes de que se publicaran. No hacerlo provocó el daño y es quien debe pagar.
+
+Respuesta del dueño: se exige una conducta imposible. Nadie puede exigir conductas imposibles. Hay sistemas moderadores pero son fáciles de traspasar. Los sistemas que se crearon en internet son incontrolables por lo que no puede aplicarse el factor culpa porque el modelo a seguir no puede ser realizar una conducta imposible.
+
+- Los damnificados intentan aplicar el factor actividad riesgosa
+- Para rechazar el factor culpa, el dueño efectuó todos los argumentos para fundamentar el factor actividad riesgosa, la actividad riesgosa es aquella que es incontrolable.
+- No se reprocha al dueño haber hecho el sistema, sí no que por aplicación del favor atribución objetivo de actividad riesgosa debe pagar
+
+El dueño pretende defenderse diciendo que existe un factor de distribución de la responsabilidad, el tercero no identificado. El llamado tercero no identificado es un dependiente del dueño, y para determinar sí hay dependencia, debemos comprobar que hay una relación de interés económica entre el dueño y el dependiente. Al dueño del sitio le interesa que la gente escriba comentarios porque de esa forma la página se hace más interesante. Además, quienes ingresan a la página tienen indicaciones de cómo registrarse y de cómo escribir, en consecuencia, el dueño del sitio debe pagar la indemnización por ser el principal respecto al supuesto tercero.
+
+Además se debe probar que ese tercero exista. En conclusión, este caso tiene muchas consecuencias y todavía no se encuentra 100% resultó en muchos países, sí lo generalizamos, llegaríamos a la conclusión de que casi todas las publicaciones serán civilmente responsables por los comentarios en sus páginas lo que llevaría a la eliminación de la posibilidad de su misma existencia.
+
+Parece un argumento contrario el de la existencia de muchos sitios en donde leemos comentarios malos. Un contraargumento podría ser que simplemente esta situación no llegó al ámbito judicial.
+
+Por otra parte, sí se resolviera en forma contraria existe un ámbito (el de los comentarios) en el cual se podrían realizar injurias gratuitamente y sin consecuencias civiles lo que daría la falta de funcionamiento del sistema de reparaciones.
+
+Esta situación anómala es una de las muchas a las que se ha llegado como consecuencia del uso de internet y que aún no han tenido una respuesta.
+
+### 💙 **El problema de las pizzas de autor ([www.pizzacomoarte.com.ar](http://www.pizzacomoarte.com.ar/))**
+
+Hacemos la página web pizza como arte para un comercio. Leyendo los libros, aprendimos que hay 3 tipos de funciones para las páginas en cuanto a las actividades comerciales
+
+- Las que informan sobre los productos, precios, etc..
+- La que permite realizar la operación de compra, y el producto físico debe ser enviado de alguna manera, y además muestran la información
+- Las páginas sobre las que se puede realizar todas las operaciones sin intervenir objetos físicos
+
+La página que se hará será la del segundo tipo, donde se podrá ver la información de los productos y venderlos para que luego sean enviados al domicilio del comprador. Además, desarrollamos un programa que permite diseñar pizzas. Este emprendimiento tuvo tanto éxito que se cerró el local y se empezó a recorrer todo Argentina. Del precio cobrado se le enviará a fin de mes el 70% a la pizzeria.
+
+Un dia se preparaba una fiesta de egresados, se hizo un encargo y él mismo cayó en una pizzería que tenía problema con roedores, el mismo dia que debían hacerse las pizzas, el cocinero pasó antes de ir a su trabajo por un comercio donde compró un raticida, y terminó poniéndolo como sí fuera sal en las pizzas. Esto dio una intoxicación de 300 personas.
+
+- **¿Existe daño?** Sí, daño emergente y daño personal. Las indemnizaciones serán altas.
+- **¿Hay relación causal?** Sí, en el orden natural de las cosas, cuando se pone veneno en las pizzas, se produce un tipo de daño.
+- **¿La contaminación fue ilícita?** Sí, no fue un acto defensivo ni del ejercicio regular de un derecho. Es ilegal dañar a otro, a menos que haya una adecuada justificación.
+- **¿Hay factor subjetivo de dolor?** No, nadie quiso el resultado
+
+**¿Hay algún factor subjetivo culpable?**
+
+Sí, el cocinero actuó con culpa por no haber seguido la conducta que se le puede exigir a un cocinero. Su acción fue torpe. Cumplido el factor de atribución, el cocinero debe pagar, pero su patrimonio no va a alcanzar para pagar todo.
+
+Encontrar a un solo responsable no termina el problema, ya que puede haber más de uno.
+
+**Existe factor de atribución objetivo de riesgo creado?**
+
+No, el daño se produce por un hecho humano, no por la intervención de un hecho o una cosa que haya descontrolado todo.
+
+**Existe factor de atribución de dependencia?** Para eso tiene que darse un principal y un dependiente que genere el daño. El daño es generado por el cocinero que es dependiente de la pizzería que cometió el hecho. Esta última también es responsable por el daño en su carácter de principal.
+
+**¿Los dueños del sitio son responsables?** Sí, porque también son los platos principales del cocinero. El concepto de principal es amplio y abarca no solo a los contratantes laborales de alguien, sí no a todos para los cuales ese alguien hace un trabajo beneficiando los económicamente.
+
+Ahora que el sitio está quebrado, resulta imposible evitar los daños que este hecho ocasionó al resto de pizzerías asociadas. Esto es culpa del **factor dependencia.**
+
+Podríamos colocar un cartel que dijera “Usted ha diseñado su pizza y esta será preparada por X pizzería, ubicada en y con este teléfono, y por su cuenta nosotros facilitamos la operación”, también se agregara una cláusula al contrato que se haga a futuro, así, no habrá relación de dependencia ni responsabilidad civil. Nuestro trabajo está en el diseño de la pizza y no en su preparación.
+
+### 💙 **Responsabilidad de programadores, administradores de redes**
+
+Estos roles son profesionales que pueden ser sujetos de la responsabilidad civil por el factor culpa. Sí en su trabajo no cumplen con el modelo exigible que puede establecerse a partir de las normas de la ciencia y el arte de la programación y, como consecuencia de su mala labor, se producen daños, deberán indemnizarlos.
+
+Para eximirse, deberá demostrar que su labor sí correspondió con el modelo. Tendrían que, mientras hacen sus tareas, analizar de qué manera podrían probar la corrección de su conducta profesional.
+
+Cuando en el contrato que no une con un cliente se establece el compromiso respecto un resultado determinado y no una labor, su responsabilidad será objetiva, sólo se eximirá sí puede demostrar la intervención de un tercero, de la víctima o que se encuadre en el marco de fuerza mayor.
+
+Los gerentes no son principales en el sentido de factor de atribución respecto a sus subordinados. Es necesario tener en claro que la palabra dependiente en sentido jurídico no es la misma que en sentido administrativo. Un dependiente administrativo no es un dependiente en el sentido del factor de atribución. El análisis de la responsabilidad civil debe ser un elemento más en el diseño de sistemas y en el diseño de las actividades profesionales
+
+---
+
+# Firmas y Certificados Digitales
+
+### 🌀 ¿Qué es una Firma Digital?
+
+Una firma digital, que no debe confundirse con un certificado digital, es una técnica matemática utilizada para validar la autenticidad e integridad de un mensaje, software o documento digital.
+
+La firma digital, a diferencia de una firma tradicional, no es un nombre sino que consta de dos "claves" o secuencias de caracteres separadas. Consiste en aplicar mecanismos criptográficos al contenido de un mensaje o documento con el objetivo de demostrar al receptor del mensaje autenticación, no repudio e integridad.
+
+● Que el emisor del mensaje es real (autenticación);
+● Que éste no puede negar que envió el mensaje (no repudio);
+● Que el mensaje no ha sido alterado desde su emisión (integridad)
+
+La firma digital es legal, pero su objetivo no es dar fe de un acto de voluntad por parte del firmante como la firma electrónica, sino tan sólo encriptar los datos de un documento para conferir mayor seguridad.
+La firma digital se puede aplicar a una gama más amplia de tipos de archivos, como películas, sonidos, música, etc., haciéndola más versátil que la tradicional firma de papel.
+
+### 🌀 ¿Cuál es la diferencia entre una Firma digital y electrónica?
+
+| Firma Digital | Firma Electrónica |
+| --- | --- |
+| La firma digital es, por tanto, una parte fundamental de la firma electrónica avanzada y de la firma electrónica cualificada, pero no de la firma electrónica simple. | Una firma electrónica simple sería por ejemplo, un número de
+identificación personal (PIN) ingresado en un cajero automático del banco o hacer clic en "aceptar" o "en desacuerdo" en un
+contrato electrónico de "términos y condiciones". |
+| Evita la suplantación de identidad y permite la autenticación e identificación en toda clase de procesos administrativos, burocráticos o fiscales, etc | Este tipo de firma electrónica no permite atribuir la firma
+electrónica de un firmante a ese firmante en concreto, por lo que
+no reúne las características de la firma digital. |
+|  | La firma electrónica es una expresión genérica y mucho más
+amplia relativa a los datos electrónicos, la firma digital es la
+firma con criptografía basada en clave pública. |
+
+### 🌀 ¿Cómo funcionan las Firmas Digitales?
+
+Se basan en la criptografía de clave pública. Hay tres algoritmos involucrados con el proceso de firma digital:
+
+- Generación de dos claves que están matemáticamente vinculadas: un algoritmo
+proporciona una clave privada junto con su clave pública correspondiente.
+- Firma: este algoritmo produce una firma al recibir una clave privada y el mensaje
+que se está firmando.
+- Verificación: este algoritmo comprueba la autenticidad del mensaje al verificarlo
+junto con la firma y la clave pública
+
+### 🌀 ¿Qué es un Hash?
+
+Es un algoritmo que consigue crear a partir de una entrada (ya sea un texto, una contraseña o un archivo, por ejemplo) una salida alfanumérica de longitud normalmente fija, que representa un resumen de toda la información que se le ha dado.
+Es decir, a partir de los datos de la entrada crea una cadena que solo puede volverse a crear con esos mismos datos.
+
+Para crear una firma digital, el software de firma crea un hash unidireccional de los datos electrónicos que se deben firmar. La clave privada se usa para encriptar el hash. El hash cifrado junto con otra información es la firma digital.
+Cualquier cambio en los datos, incluso cambiando o eliminando un solo carácter, da como resultado un valor diferente. Este atributo permite a otros validar la integridad de los datos mediante el uso de la clave pública del firmante para descifrar el hash.
+
+Si el hash descifrado coincide con un segundo hash calculado de los mismos datos, prueba que los datos no han cambiado desde que se firmó. Si los dos hash no coinciden, los datos se han alterado de algún modo (integridad) o la firma se ha creado con una clave privada que no corresponde a la clave pública presentada por el firmante (autenticación).
+Las firmas digitales dificultan que el firmante niegue haber firmado algo (no repudio), suponiendo que su clave privada no se haya visto comprometida, ya que la firma digital es única tanto para el documento como para el firmante, y los une.
+
+Un certificado digital es un documento electrónico que contiene la firma digital de la autoridad emisora del certificado, vincula una clave pública con una identidad y se puede usar para verificar que una clave pública pertenece a una persona o entidad en particular.
+Las firmas digitales se usan ampliamente para proporcionar pruebas de autenticidad, integridad de los datos y no repudio de las comunicaciones y transacciones realizadas a través de Internet.
+
+### 🌀 ¿Qué es un Certificado Digital?
+
+Es el único medio que permite garantizar técnica y legalmente la identidad de una persona en Internet. Se trata de un requisito indispensable para que las instituciones puedan ofrecer servicios seguros a través de Internet.
+
+- Permite la firma electrónica de documentos: El receptor de un documento firmado puede tener la seguridad de que éste es el original y no ha sido manipulado y el autor de la firma electrónica no podrá negar la autoría de esta firma.
+- Habilita cifrar las comunicaciones: Solamente el destinatario de la información podrá acceder al contenido de la misma.
+
+Consta de una pareja de claves criptográficas, una pública y una privada. El titular del certificado debe mantener bajo su poder la clave privada, ya que si ésta es sustraída, el sustractor podría suplantar la identidad del titular en la red.
+En este caso el titular debe revocar el certificado lo antes posible, igual que se anula una tarjeta de crédito sustraída.
+
+La clave pública forma parte de lo que se denomina Certificado Digital en sí, que es un documento digital que contiene la clave pública junto con los datos del titular, todo ello firmado electrónicamente por una Autoridad de Certificación, que es una tercera entidad de confianza que asegura que la clave pública se corresponde con los datos del titular.
+
+La Firma Electrónica sólo puede realizarse con la clave privada. La Autoridad de Certificación se encarga de emitir los certificados para los titulares tras comprobar su identidad. El formato de los Certificados Digitales está definido por el estándar internacional ITU-T X.509. De esta forma, los certificados pueden ser leídos o escritos por cualquier aplicación que cumpla con el mencionado estándar.
