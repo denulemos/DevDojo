@@ -31,6 +31,33 @@ html, body {
 }
 ```
 
+### **Pseudoclases**
+
+Si vemos los vínculos, tiene un color asignado que podemos cambiarlo por ejemplo si le pasamos el
+mouse por arriba al elemento , eso lo haremos con lo que se llaman pseudo clases pero es necesario
+trabajar de forma interna para poder hacerlo, por ejemplo
+
+```html
+<head>
+	<style>
+		a:hover {color: pink;}
+	</style>
+</head>
+```
+
+En el ejemplo anterior hemos dicho que los vínculos al pasarle el mouse por arriba se verán en otro color, por ejemplo en el caso anterior en pink.
+Tenemos varias pseudo clases:
+
+- a:hover => cuando pasamos el mouse por arriba del vínculo
+- a:link => cuando aún no hemos visitado al vínculo
+- a:visited => cuando hemos visitado al vínculo
+- a:active => cuando le hacemos clic al vínculo
+
+```css
+a {color: white; text-decoration:none;}
+a:hover {text-decoration:underline; }
+```
+
 ---
 
 # SASS

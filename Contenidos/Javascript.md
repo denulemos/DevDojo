@@ -945,3 +945,110 @@ try {
 ```
 
 ---
+
+# Arrow Functions
+
+Es otra manera de escribir las funciones en javascript, argumento + flecha + contenido de la funcion. Estas dos funciones hacen lo mismo
+
+```jsx
+var funcion = value => value (no es necesario poner el return literalmente)
+
+var funcion = function (value) {
+  return value; 
+}
+```
+
+En el caso de que la funcion reciba más de un parámetro
+
+```jsx
+var sum = (n1, n2) => n1 + n2;
+
+------------------------
+
+var sum = function (n1,n2) {
+  return n1 + n2;
+};
+```
+
+y en el caso de no recibir ningún argumento
+
+```jsx
+var getname = () => ‘hola’;
+
+------------------------
+
+var getname = function () {
+  return ‘hola’;
+};
+```
+
+Con esto podemos declarar la variable directamente con el return de la funcion. también podemos prescindir de la palabra function
+
+```jsx
+var sum = (n1, n2) => {
+  return n1 + n2;
+};
+
+------------------------
+
+var sum = function (n1, n2) {
+  return n1 + n2;
+};
+```
+
+Sí queremos una funcion que no haga nada
+
+```jsx
+var nada = () => {};
+
+------------------------
+
+var nada = function(){}
+```
+
+Sí queremos devolver un objeto
+
+```html
+var objeto = id => ({id : id, nombre : ‘hola’});
+
+------------------------
+
+var objeto = function (id) {
+  return {
+    id : id,
+    nombre : ‘hola’
+   };
+};
+```
+
+---
+
+### **Funciones invocadas inmediatamente**
+
+Esto nos deja crear funciones anonimas y llamarlas sin guardar una referencia de las mismas. Es util cuando queremos armar un patrón aislado del resto del programa
+
+```jsx
+let person = ((name) => {
+    return {
+      getname: function() {
+         return name;
+      }
+    }
+})(‘hola’);
+
+console.log(person.getname());
+
+------------------------
+
+let person = function(name){
+  return {
+   getname : function() {
+      return name;
+      }
+   }
+}(‘hola’);
+
+console.log(person.getname());
+```
+
+---

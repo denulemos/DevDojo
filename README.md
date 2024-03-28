@@ -6,7 +6,7 @@ Documentacion tecnica en formato de preguntas-respuestas y teoria sobre diversos
 
 **Proximamente version en Inglés** 🏴
 
-## Contenido (Ultima actualizacion Marzo 2024) 💙
+## Contenido (Constantemente en actualizacion) 💙
 * [Accesibilidad](https://github.com/denulemos/denobible/blob/master/Contenidos/Accesibilidad.md)
 * [Android](https://github.com/denulemos/denobible/blob/master/Contenidos/Android.md)
 * [Angular](https://github.com/denulemos/DenoCuriosityNotes/blob/master/Contenidos/Angular.md)
@@ -35,6 +35,7 @@ Documentacion tecnica en formato de preguntas-respuestas y teoria sobre diversos
 * [Package.json](https://github.com/denulemos/denobible/blob/master/Contenidos/PackageJson.md)
 * [Patrones Disenio](https://github.com/denulemos/DenoCuriosityNotes/blob/master/Contenidos/PatronesDiseño.md)
 * [Performance](https://github.com/denulemos/DenoCuriosityNotes/blob/master/Contenidos/Performance.md)
+* [Pilas y Colas](https://github.com/denulemos/DenoCuriosityNotes/blob/master/Contenidos/PilasYColas.md)
 * [Polimorfismo](https://github.com/denulemos/DenoCuriosityNotes/blob/master/Contenidos/Polimorfismo.md)
 * [Python](https://github.com/denulemos/DenoCuriosityNotes/blob/master/Contenidos/Python.md)
 * [RESTful](https://github.com/denulemos/denobible/blob/master/Contenidos/RESTful.md)

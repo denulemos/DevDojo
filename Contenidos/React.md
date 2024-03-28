@@ -2,7 +2,7 @@
 
 Es el desarrollo de lo que el cliente va a ver. Consiste, básicamente, en HTML, CSS y JS. Como desarrolladores que somos, somos conscientes de que, a medida que crecen nuestros productos, se vuelven cada vez más complejos, y de ahí nació React como librería.
 
-### ☑️ **¿Qué es React?**
+### **¿Qué es React?**
 
 React fue creado por Facebook en el año 2013, y sigue siendo mantenida por él. (ahora Meta). Algunos ejemplos de proveedores que usan React son, además de Facebook, PayPal, Netflix, etc., páginas con un gran flujo de usuarios al día de hoy.
 
@@ -16,7 +16,7 @@ Al ser una libreria, se puede usar directamente en un HTML (aunque no es la mane
 
 Tambien se puede trabajar del lado del servidor con Node, aplicaciones mobile con React Native y de escritorio con Electron. Todo con el mismo tipo de codigo.
 
-### ☑️ **¿De qué hablamos cuando hablamos de una SPA (Single Page App)?**
+### **¿De qué hablamos cuando hablamos de una SPA (Single Page App)?**
 
 Una SPA (Single Page Application) son apps web que simulan ser una única página con contenido dinámico. La idea es darle la “ilusión” al usuario de que está navegando una aplicación de escritorio, que no recarga, no se satura, etc.
 
@@ -30,9 +30,167 @@ En resumen:
 - La página no se satura ni realiza peticiones constantes al servidor. Únicamente se pide lo necesario.
 - No nos interesa el backend, únicamente lo que recibimos de él.
 
+
+### **Para que es el comando React eject?**
+
+`create-react-app` encapsula todos los modulos npm para usar internamente asi el package.json queda bastante limpio. Eject lo que hace es deshacer este encapsulamiento y pasar a mostrar todo lo que esta instalado. 
+
+Es para cuando necesitamos hacer cosas mas complejas o para instalar modulos que puedan interactuar con modulos ya instalados. 
+
+### **Como evitar mandar muchos eventos inutiles, por ejemplo, ejecutar un search por letra?**
+
+Debounce es un termino de electronica que ayuda a que, por ejemplo, si apretamos varias veces un boton, no se manden muchas veces las instrucciones
+
+```jsx
+function useDebounce(value: string, delay: number) {
+	const [debouncedValue, setDebouncedValue] = useState(value);
+
+	useEffect(() => {
+			const timeoutId = setTimeout(() => {
+				setDebouncedValue(value)
+		}, delay)
+
+		return () => clearTimeout(timeoutId)
+}, [value])
+
+return debouncedValue;
+}
+
+// Luego en el component que tiene el search
+
+const queryDebouncedValue = useDebounce(query, 300)
+
+useEffect(() => {
+api.search(queryDebouncedValue).then(setProducts);
+}, [queryDebouncedValue]);
+```
+
+### **Que es async rendering?**
+
+Permite que el renderizado pueda interrumpirse, permitiendo renderizar varios arboles de componentes a la vez sin necesidad de bloquear el hilo principal del navegador.
+
+### **Que funcion cumple el StrictMode?**
+
+Permite identificar potenciales problemas en la aplicacion. Habilita un modo seguro en sus componentes anidados, avisando asi del uso de recursos obsoletos, efectos colaterales, ciclos de vida inseguros, entre otros
+
+</**StrictMode**>
+
+<**Componente2**/>
+
+<**Componente1**/>
+
+<**StrictMode**>
+
+### **Cual es la diferencia entre el montaje y el renderizado de un componente?**
+
+Que significa prop drilling y como evitarlo?
+
+Es cuando las props que se comparten acumulan demasiadas dependencias. Da lugar a flujos de datos profundos, dificiles de identificar y refactorizar. Dos formas de resolverlo son:
+
+- Composicion de componentes frente a un mismo juego de datos compartido por varios componentes
+- Redux o API Context, aptas para escenarios mas complejos donde conviene manejar un estado global.
+
+### **Que es un componente controlado?**
+
+Son componentes que reciben informacion en forma de props y se valen de callbacks como onChange para mutar el estado del componente. Son dumb components. 
+
+### **Como limitar el alcance de los estilos de React?**
+
+Usando namespaces que da lugar a un tratamiento mas predecible y modular de los componentes. Entre las tecnicas estan CSS modules, bibliotecas CSS, etc..
+
+NO se aconsejan los estilos inline por cuestiones de rendimiento de React
+
+### **Que es un state / estado?**
+
+Son objetos que contienen ciertos datos dentro de ellos. Los datos pueden ser alterados durante el ciclo de vida de un componente dependiendo de los eventos que sucedan.
+
+### **Que son los limites de error?**
+
+Son una funcion que asigna ciertos errores especificos dentro de los componentes secundarios, los airla y luego intercambia el area bloqueada con una interfaz de usuario de respaldo. Los limites de error son como un sistema de seguridad para el dev si algo no sale bien.
+
+### **Que son las Ref?**
+
+Permite a react manipular directamente el DOM Sin necesidad de actualizar un componente, asumen cambios en los mismos que no se pueden resolver mediante el traspaso de props o cuyo impacto se limita al propio componente no siendo rentable renderizarlo de nuevo. 
+
+```
+class AnimatedSpinner extends Component {
+
+  constructor() {
+    super()
+    this.animationRef = React.createRef()    // 1. creación
+  }
+
+  triggerAnimation() {
+    this.animationRef.current.className.add('animated')  // 3. acceso
+  }
+
+  render() {
+    return (
+      <>
+        <div ref={this.animationRef} className="spinner"> </div>     // 2. asociación
+        <button onClick={this.triggerAnimation}> Animar </button>
+
+    )
+  }
+}
+```
+
+### **Cual es la diferencia entre un componente y un elemento**
+
+Un componente de Ract acepta entradas y devuelve un elemento, es una descripcion de lo que se puede ver en pantalla
+
+### **JSX es entendido por los navegadores?**
+
+No. Los navegadores solo leen JS. Debe ser convertido.
+
+
+### **Para que sirven las claves o Keys en React**
+
+Se usan las claves para diferenciar entre simples elementos DOM virtuales con los que son unicos. Ayudan a React a reciclar elementos DOM existentes para que la libreria pueda ejecutarse y renderizarse mas rápidamente, ya que React recicla los elementos que no fueron modificados de los que si para no renderizarlos cuando no es necesario. Este elemento se usa mas que nada en iteraciones de listas. 
+
+El key no afecta el renderizado en si, es por eso que igualmente funciona el render, solo se muestra un warning. 
+
+### **Hay diferencias entre un componente contenedor y un componente de presentacion?**
+
+Un componente contenedor se enfoca en dar datos a la presentacion y a otros contenedores. Son responsables de mantener el funcionamiento del todo. Los componentes de presentacion son los responsables del aspecto visual. 
+
+### **Para que son los eventos sinteticos (SyntheticEvent) ?**
+
+Funcionan de la misma forma que los eventos normales de los exploradores. Los eventos sinteticos usan codigo que puede ser aplicado en multiples exploradores web mientras que los eventos normales se enfocan en un solo navegador
+
+Ayuda a que el dev no se preocupe tanto en como manejar un evento segun el navegador para el cual esta desarrollando, ya que estos eventos simulan muchos eventos y garantiza el mismo comportamiento.
+
+### **Como funcionaba la delegacion de eventos?**
+
+React crea un unico manejador de eventos y lo agrega al elemento raiz del  `index.html`, React no tiene que tener en cuenta los manejadores de eventos en los nodos DOM cuando le toca actualizarlo. Asi fue hasta React 17. 
+
+Ahora se agrega al elemento raiz de la app en vez del HTML
+
+###  Como se crea un objeto con un metodo “Hello” que escribe “Hello <name>” en la consola?
+
+```jsx
+const p = {
+	name: 'Denu',
+	hello: () => console.log(`hello ${name}`)`
+}
+
+p.hello(); // denu
+p.name = 'Deno';
+p.hello(); // deno
+```
+
+Y como haria el nombre inmutable?
+
+```jsx
+Object.freeze(p)
+p.name = 'Pedrito' // Si uso 'use strict' tiraria un error en consola
+p.hello(); // denu
+```
+
+
 ---
 
-# ☑️ **React Native**
+# **React Native**
 
 Es la misma libreria pero para desarrollar aplicaciones nativas para Android e iOS, solo nos preocupamos por la logica de negocio y la maquetacion. El mismo codigo JS genera codigo nativo para ambas plataformas.
 
@@ -53,9 +211,13 @@ Posee algunas diferencias con respecto a ReactJS con respecto a los elementos de
 
 Otra cosa que debemos tener en cuenta es Webpack, es un File Loader, este crea un bundle que contiene todos los archivos, creando un solo HTML con todo, para que pueda ser interpretado por el navegador.
 
+### **Que diferencia a ReactjS de React Native**
+
+ReactJS es una libreria, React Native es una plataforma completa de multiples caracteristicas con la que se podran crear apps desde cero.
+
 ---
 
-# ☑️ **JSX**
+# **JSX**
 
 React por defecto usa JavaScript, y también podemos utilizar TypeScript. Generalmente, se recomienda TS por un tema de mantenimiento, y aun así, no se utiliza 100% JS, si no, JSX.
 
