@@ -49,4 +49,26 @@ const Restaurant = ({history}) => {
 - **Performance**: Al tener que cargar varios frontends, puede afectar la performance
 - **Seguridad**: Al tener varios frontends, puede haber problemas de seguridad
 
+---
+
+### Pregunta entrevista: Microfrontends vs monolito. ¿Has tenido arquitectura de microfrontends en algunos de tus proyectos? ¿Qué beneficios y desventajas ves en la introducción de la arquitectura de microfrontends en algunos de tus proyectos?
+
+Los Beneficios principales en la introducción de la arquitectura de microfrontends son:
+
+- Escalabilidad y mantenibilidad: Permite escalar y mantener diferentes partes de la aplicación de forma independiente, lo que facilita la gestión de equipos y la evolución de la aplicación a medida que crece.
+
+- Flexibilidad tecnológica: Permite el uso de diferentes tecnologías y frameworks en cada microfrontend, lo que facilita la adopción de nuevas tecnologías y la actualización de componentes sin afectar a toda la aplicación.
+
+- Desarrollo paralelo: Permite que equipos separados trabajen en diferentes partes de la aplicación simultáneamente, lo que acelera el desarrollo y reduce los cuellos de botella.
+
+Sin embargo, también hay algunas desventajas potenciales en la introducción de la arquitectura de microfrontends:
+
+- Complejidad inicial: La introducción de microfrontends puede requerir un esfuerzo adicional en la configuración inicial y la gestión de la comunicación entre los diferentes microservicios.
+
+- Mayor sobrecarga de red: Al dividir la aplicación en múltiples microfrontends, puede aumentar la cantidad de solicitudes de red y la complejidad de la gestión de la comunicación entre ellos.
+
+- Posible fragmentación de la experiencia del usuario: Si no se gestiona adecuadamente, la arquitectura de microfrontends puede resultar en una experiencia de usuario fragmentada debido a las diferencias en la navegación y la interacción entre los diferentes microservicios.
+
+En resumen, mientras que la arquitectura de microfrontends ofrece beneficios significativos en términos de escalabilidad y flexibilidad, también introduce complejidades adicionales que deben ser consideradas y gestionadas cuidadosamente en función de las necesidades específicas de cada proyecto.
+
 

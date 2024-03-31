@@ -50,3 +50,22 @@ Sí agrego un **Git ignore** se ignoran los archivos cache propios del Programa
 - -local : Configurar un solo repositorio
 - -global: Una configuracion para mi usuario solamente
 - -system: Para todos los usuarios
+
+---
+
+# Git branching strategies (trunk base dev. vs git flow)
+
+En el desarrollo basado en tronco, se trabaja principalmente en una sola rama (generalmente llamada "tronco" o "master"), y las características se desarrollan y se integran directamente en esta rama principal. En cambio, en Git flow, se utilizan múltiples ramas para gestionar diferentes tipos de cambios, como características, versiones de lanzamiento y correcciones de errores.
+
+En resumen, mientras que el desarrollo basado en tronco enfatiza la simplicidad y la integración continua, Git flow proporciona un modelo más estructurado para gestionar el flujo de trabajo en proyectos más grandes con diferentes necesidades de versión y despliegue. La elección entre ambos enfoques depende de los requisitos y la complejidad del proyecto.
+
+### 🧡 Git Flow
+
+- **Master:** Es la rama principal, la que se va a subir a producción.
+- **Develop:** Es la rama de desarrollo, donde se van a hacer los cambios.
+- **Feature:** Es la rama donde se van a hacer los cambios de una nueva funcionalidad.
+- **Hotfix:** Es la rama donde se van a hacer los cambios de una funcionalidad que no esta funcionando bien.
+- **Release:** Es la rama donde se van a hacer los cambios de una nueva versión.
+
+---
+
