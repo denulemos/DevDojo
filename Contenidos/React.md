@@ -682,5 +682,91 @@ test('should show the results', async () => {
 
 ---
 
+# **Ciclos de Vida Componentes**
+
+React provee de metodos especificos para los ciclos de vida de los componentes, en este caso, veremos en los de clase. Se llaman cuando el componente se monta, actualiza o desmonta, veamos las deficiones:
+
+- Monta: El componente se renderiza en la pagina
+- Desmonta: El componente es removido de la pagina
+
+Varios de los estados que veremos a continuacion se encuentran deprecados, y deben usarse con un tag UNSAFE para su uso
+
+### **componentWillReceiveProps()**
+
+Se ejecuta cuando hay alguna actualizacion de alguna prop
+
+```markdown
+componentWillReceiveProps(nextProps) {
+    if (nextProps.whatever !== this.props.whatever) {
+        // do something important here
+    }
+}
+```
+
+### **componentDidMount()**
+
+Se llama cuando el componente es renderizado en la pagina. Se puede usar para inicializar cosas, como para pedir la informacion inicial de los componentes.
+
+```markdown
+componentDidMount() {
+    // get the data I need to correctly display
+}
+```
+
+### **componentWillUnmount()**
+
+Es llamado antes de que el componente sea desmontado del DOM. Se puede usar para liberar recursos. No existe un “DidUnmount” ya que, una vez que se desmonta, ya no se puede hacer nada por el mismo.
+
+```markdown
+componentWillUnmount() {
+    // teardown or cleanup your code before your component disappears
+    // (E.g. remove event listeners)
+}
+```
+
+### **componentWillMount()**
+
+Corresponde a cuando el componente va a montarse, se ejecuta antes de su montaje, es como el constructor del mismo.
+
+```markdown
+componentWillMount() {
+    // setup your state
+}
+```
+
+### **componentDidUpdate()**
+
+Se llama cuando el componente se actualiza en el DOM. Podemos hacerlo para, por ejemplo, para avisar que el counter fue incrementado en uno.
+
+```markdown
+componentDidUpdate() {
+    alert('Number of clicks: ' + this.state.count);
+}
+```
+
+### **shouldComponentUpdate()**
+
+Nos permite decidir si debemos ejecutar o no el render. Muestra con que valores, o bajo que condiciones, se realizará la actualizacion.
+
+```markdown
+shouldComponentUpdate(nextProps, nextState) {
+    // return true if want it to update
+    // return false if not
+}
+```
+
+### **componentWillUpdate() — DEPRECADO**
+
+Es cuando se esta por ejecutar el render. Nos ayuda a setear valores globales justo antes del mismo.
+
+```markdown
+componentWillUpdate() {
+    // set some global variables
+}
+```
+
+---
+
+
 
 
