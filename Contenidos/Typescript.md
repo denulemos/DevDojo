@@ -116,4 +116,27 @@ class Person {
 }
 ```
 
+## **Cómo se transpilan las interfaces de TypeScript?**
 
+Las interfaces de TypeScript no se transpilan directamente a código JavaScript, ya que son una característica estática de TypeScript que se utiliza principalmente para proporcionar comprobaciones estáticas de tipo durante el desarrollo. Durante el proceso de transpilación de TypeScript a JavaScript, las interfaces se eliminan del código resultante, ya que no tienen un equivalente en JavaScript.
+
+En lugar de transpilarse, las interfaces de TypeScript son utilizadas por el compilador para realizar comprobaciones de tipos estáticos durante la fase de desarrollo. Esto significa que las interfaces ayudan a detectar errores de tipo en tiempo de compilación y a proporcionar un mejor soporte para el desarrollo de software a gran escala en TypeScript. Una vez que el código TypeScript se ha transpilado a JavaScript, las interfaces no tienen ningún impacto en el código resultante, ya que se eliminan durante el proceso de transpilación.
+
+## **Cómo hago que las props de una interface sean opcionales?**
+
+Para hacer todas las propiedades de una interfaz opcionales en TypeScript, puedes utilizar la característica de TypeScript llamada "intersección" junto con el tipo parcial ("Partial"). 
+
+```typescript
+interface MyInterface {
+  prop1: string;
+  prop2: number;
+}
+
+// Todas las propiedades de MyInterface ahora son opcionales
+type PartialMyInterface = Partial<MyInterface>;
+
+// Ejemplo de uso
+const obj: PartialMyInterface = {}; // Todas las propiedades son opcionales
+```
+
+En este ejemplo, `Partial<MyInterface>` crea un nuevo tipo que tiene todas las propiedades de `MyInterface`, pero las declara como opcionales. Esto permite que cada propiedad pueda ser `undefined` o simplemente omitida al crear un objeto que cumpla con este tipo.
