@@ -695,7 +695,7 @@ Varios de los estados que veremos a continuacion se encuentran deprecados, y deb
 
 Se ejecuta cuando hay alguna actualizacion de alguna prop
 
-```markdown
+```jsx
 componentWillReceiveProps(nextProps) {
     if (nextProps.whatever !== this.props.whatever) {
         // do something important here
@@ -707,7 +707,7 @@ componentWillReceiveProps(nextProps) {
 
 Se llama cuando el componente es renderizado en la pagina. Se puede usar para inicializar cosas, como para pedir la informacion inicial de los componentes.
 
-```markdown
+```jsx
 componentDidMount() {
     // get the data I need to correctly display
 }
@@ -717,7 +717,7 @@ componentDidMount() {
 
 Es llamado antes de que el componente sea desmontado del DOM. Se puede usar para liberar recursos. No existe un “DidUnmount” ya que, una vez que se desmonta, ya no se puede hacer nada por el mismo.
 
-```markdown
+```jsx
 componentWillUnmount() {
     // teardown or cleanup your code before your component disappears
     // (E.g. remove event listeners)
@@ -728,7 +728,7 @@ componentWillUnmount() {
 
 Corresponde a cuando el componente va a montarse, se ejecuta antes de su montaje, es como el constructor del mismo.
 
-```markdown
+```jsx
 componentWillMount() {
     // setup your state
 }
@@ -738,7 +738,7 @@ componentWillMount() {
 
 Se llama cuando el componente se actualiza en el DOM. Podemos hacerlo para, por ejemplo, para avisar que el counter fue incrementado en uno.
 
-```markdown
+```jsx
 componentDidUpdate() {
     alert('Number of clicks: ' + this.state.count);
 }
@@ -748,7 +748,7 @@ componentDidUpdate() {
 
 Nos permite decidir si debemos ejecutar o no el render. Muestra con que valores, o bajo que condiciones, se realizará la actualizacion.
 
-```markdown
+```jsx
 shouldComponentUpdate(nextProps, nextState) {
     // return true if want it to update
     // return false if not
@@ -759,7 +759,7 @@ shouldComponentUpdate(nextProps, nextState) {
 
 Es cuando se esta por ejecutar el render. Nos ayuda a setear valores globales justo antes del mismo.
 
-```markdown
+```jsx
 componentWillUpdate() {
     // set some global variables
 }

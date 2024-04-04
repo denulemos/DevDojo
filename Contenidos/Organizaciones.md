@@ -2,9 +2,9 @@
 
 ### 💙 **Organización**
 
-****Es un conjunto de entidades (personas o no personas), con varios objetivos y/o metas en común basado en valores, con estructura, recursos, entorno, que manejan información y realizan actividades.
+Es un conjunto de entidades (personas o no personas), con varios objetivos y/o metas en común basado en valores, con estructura, recursos, entorno, que manejan información y realizan actividades.
 
-****Toda organización provee un servicio.
+Toda organización provee un servicio.
 
 **Tipos de organizaciones:**
 
@@ -31,11 +31,11 @@ Creencias o convicciones del grupo que conforma a la organización, son los prin
 
 ### 💙 **Objetivos**
 
-****Los fines a donde va la actividad de la organización. Pueden ser propios, para los empleados o para el afuera.
+Los fines a donde va la actividad de la organización. Pueden ser propios, para los empleados o para el afuera.
 
 ### 💙 **Metas**
 
-****Son fines específicos, expresados de forma cuantitativa.
+Son fines específicos, expresados de forma cuantitativa.
 
 ### 💙 **Activos**
 
@@ -43,7 +43,7 @@ Cualquier cosa útil y/o valiosa de la organización
 
 ### 💙 **Recursos**
 
-****Productos activos productivos de la empresa, son pocos, y por eso tienen mucho valor $$. Los hay de distintos tipos como:
+Productos activos productivos de la empresa, son pocos, y por eso tienen mucho valor $$. Los hay de distintos tipos como:
 
 - Tangibles: Financieros y físicos. Son sostenidos por un contrato, como por ejemplo el valor de un jugador de fútbol.
 - Intangibles: Tecnológicos y de reputación, como la confianza que infunden en el cliente.
@@ -73,10 +73,10 @@ Elementos externos que afectan o influyen en la actividad de una organización. 
 
 Es toda persona y/o organización que tiene algún tipo de relación o interés sobre un proyecto, ese o no en el. Hay de distintos tipos:
 
-- **Empresas y/o organizaciones pueden agregar certificaciones, aprobaciones, permisos para ser ejecutado**
-- **Usuarios Quienes van a usar el producto de nuestro proyecto.**
-- **Afectados Personas que no están relacionadas con el proyecto pero que se ven afectadas en algún aspecto por este**
-- **La propia organización , los trabajadores, supervisores, etc..**
+- Empresas y/o organizaciones pueden agregar certificaciones, aprobaciones, permisos para ser ejecutado
+- Usuarios Quienes van a usar el producto de nuestro proyecto.
+- Afectados Personas que no están relacionadas con el proyecto pero que se ven afectadas en algún aspecto por este
+- La propia organización , los trabajadores, supervisores, etc..
 
 ### 💙 **Excelencia Empresarial**
 

@@ -1,6 +1,6 @@
 # Microservicios vs Monolitos
 
-## **Que son los microservicios?**
+### **Que son los microservicios?**
 
 Es un enfoque de arquitectura basado en la idea de "divide y venceras". La aplicacion se divide en servicios
 mas pequenios, cada uno con una funcion particular. Es una solucion modular y distribuida.
@@ -18,7 +18,7 @@ A pesar de estas ventajas, la arquitectura de microservicios no está exenta de 
 - Tiene desventajas. El testeo es complicado, el monitoreo es complicado, la resiliencia es cara, se necesitan mas dev para su mantenimiento.
 - Se debe intentar que no hayan dependencias fuertes entre microservicios para cuando suceden errores. Se deben tener cuidado con librerias de terceros y se deben pensar en los protocolos a utilizar.
 
-## **Que son los monolitos?**
+### **Que son los monolitos?**
 
 Los monolitos representan una arquitectura tradicional en el desarrollo de aplicaciones web, caracterizada por consolidar todas las funcionalidades de un sistema en un único bloque de código. A diferencia de los microservicios, donde cada función se implementa de manera independiente, los monolitos son estructuras más compactas y centralizadas.
 En un monolito, todas las partes de una aplicación, como la interfaz de usuario, la lógica de negocio y la persistencia de datos, coexisten en la misma base de código. Esta simplicidad estructural puede facilitar el desarrollo inicial y la comprensión global del sistema, ya que todas las partes están directamente interconectadas. Además, los monolitos suelen ser más sencillos de implementar, desplegar y gestionar, ya que toda la aplicación se ejecuta como una entidad única.
@@ -26,7 +26,7 @@ La arquitectura de monolitos ha sido históricamente la elección predeterminada
 La escalabilidad también puede ser un desafío en los monolitos, ya que toda la aplicación debe ser escalada verticalmente, es decir, aumentando los recursos de la máquina que ejecuta el monolito. Esto puede resultar costoso y menos eficiente en comparación con la escalabilidad horizontal que ofrecen los microservicios.
 Si bien durante los últimos años, la arquitectura de monolitos ha sido sujeta de cuestionamientos sobre si puede satisfacer las demandas de aplicaciones modernas altamente escalables y distribuida, existen muchas aplicaciones de gran escala que siguen utilizando este enfoque. En los últimos meses hemos visto este discurso ser ajustado para preguntarnos si realmente las aplicaciones modernas requieren una arquitectura de microservicios o no.
 
-## **En que se comparan los microservicios con los monolitos?**
+### **En que se comparan los microservicios con los monolitos?**
 
 Si hablamos de frameworks del backend, encontramos una distinción clara entre aquellos que son más usados en monolitos, de los que son usados en microservicios, y tiene que ver con el tamaño del framework. Podemos distinguir dos principales categorías entre los frameworks web tradicionales, y los llamados micro frameworks. 
 Hablamos de frameworks web tradicionales a los que históricamente han integrado la vista, y la lógica del negocio en una misma base de código, hablamos sobre todo de frameworks MVC como Ruby on Rails, Django, Laravel, .NET, Spring, por mencionar algunos, pero también podemos incluir a algunos modernos que aplican este mismo principio de una misma base de código como Next.js.
@@ -35,7 +35,7 @@ Por otro lado, los conocidos como micro frameworks, se tratan de frameworks poco
 Estos micro frameworks son ideales para la arquitectura de micro servicios, porque al ofrecer una base mínima de convenciones y funcionalidades, permiten que proyectos de funcionalidad específica sean implementados, sin que se incluyan funcionalidades que no han de ser utilizadas.
 Un ejemplo claro es el del motor de render de vistas, encargado de generar el HTML con la información de la capa de datos, comúnmente de un modelo, los frameworks “grandes” suelen incluir un sistema de render de vistas por defecto, mientras que los micro frameworks no lo incluyen y más bien requieren que el desarrollador configure el de su preferencia. Para una arquitectura de micro servicios donde la interfaz está separada de otros servicios que manejan datos, es ideal que dichos servicios se desarrollen sobre frameworks que no incluyan un motor de render de vistas que no será utilizado.
 
-## **Es hora de escalar, ¿cuál elijo?**
+### **Es hora de escalar, ¿cuál elijo?**
 
 Existen dos principales áreas de análisis: hasta dónde puede escalar (viabilidad), y cómo se aprovechan los recursos de la infraestructura (eficiencia).
 
@@ -47,7 +47,7 @@ La arquitectura de microservicios responde mejor a organizaciones grandes, donde
 Por otro lado, para un equipo mediano a pequeño, una arquitectura de monolito puede eficientizar el desarrollo de nuevas características, ya que algunos miembros del equipo pueden necesitar contexto de la operación de múltiples componentes del sistema.
 En resumen, escalar eficientemente para altas cargas de tráfico, y para empresas de gran tamaño, suelen ser las principales razones para migrar de monolitos a microservicios, mientras que también, podemos decir que un equipo pequeño, sin importar la escala de tráfico que maneja, puede beneficiarse de una arquitectura de monolito.
 
-## **Despliegue a producción, ¿qué cambia?**
+### **Despliegue a producción, ¿qué cambia?**
 
 En el caso de monolitos, la implementación ocurre de manera unitaria, ya que toda la aplicación se desarrolla sobre la misma base de código. Esto simplifica el proceso de despliegue, ya que no hay necesidad de coordinar múltiples servicios. No existe un problema de coordinación de versiones, como posiblemente suceda con los microservicios, luego de que todos los componentes comparten el mismo código, esto minimiza los conflictos por gestión de versiones. El despliegue de monolitos suele requerir una orquestación menos compleja, ya que todas las dependencias están presentes en un único entorno. Sin embargo, esto también implica que cualquier error en una parte del sistema puede tener impactos en la totalidad de la aplicación.
 
@@ -55,7 +55,7 @@ En el contexto de los microservicios, cada servicio puede ser desarrollado, prob
 
 En resumen, la elección entre monolitos y microservicios en el despliegue depende de las necesidades específicas del proyecto. Monolitos ofrecen simplicidad, coherencia; microservicios brindan independencia y escalabilidad.
 
-## **Teniendo en cuenta a la nube, que cambia?**
+### **Teniendo en cuenta a la nube, que cambia?**
 
 Cuando se trata de monolitos, el despliegue sigue siendo unitario, pero la nube ofrece oportunidades para optimizar recursos. La capacidad de escalar verticalmente en entornos basados en la nube permite ajustar los recursos de manera más eficiente, aunque aún se comparte la misma base de código. La coordinación de versiones puede ser menos compleja, pero la nube proporciona herramientas para gestionar actualizaciones y rollbacks de manera más flexible, facilitando el mantenimiento de la coherencia en el despliegue.
 

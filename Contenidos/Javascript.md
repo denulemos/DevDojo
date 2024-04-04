@@ -6,7 +6,7 @@ Es un estándar para JS para escribir funciones complejas, es popular ya que tra
 
 ### **Diferencia entre let, var y const**
 
-La diferencia es el alcance de cada uno
+La diferencia es el alcance de cada uno.
 
 let es una constante. var es una variable normal.
 

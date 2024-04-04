@@ -165,7 +165,7 @@ No usar roles redundantes, por ejemplo:
 😡 <ul role="list">...</ul>
 ```
 
-- Usar <form> o <section> sin el atributo name es un 😡 definitivo
+- Usar `<form>` o `<section>` sin el atributo name es un 😡 definitivo
 
 ```jsx
 <section aria-label="Introduction to stamp collecting">

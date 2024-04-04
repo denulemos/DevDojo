@@ -1,22 +1,22 @@
 # Ciberseguridad 👮
 
-## **Que quiere decir "Ciberataque"?**
+### **Que quiere decir "Ciberataque"?**
 
 Es cualquier maniobra ofensiva de explotación deliberada que tiene como objetivo tomar el control, desestabilizar o dañar un sistema informático.
 
-## **Que quiere decir "Ciberamenazas"?**
+### **Que quiere decir "Ciberamenazas"?**
 
 Representa un evento con potencial de daño que puede afectar negativamente a las operaciones de una organización o a sus activos
 
-## **Que quiere decir "Vulnerabilidad"?**
+### **Que quiere decir "Vulnerabilidad"?**
 
 Representa una condición de debilidad en los sistemas informáticos que permiten la materialización del daño
 
-## **Que es el ciberespacio?**
+### **Que es el ciberespacio?**
 
 El ciberespacio es un ambiente complejo en donde interactúan los seres humanos, el software y los servicios disponibles en Internet, soportados por el hardware y las redes de comunicaciones de todo el mundo
 
-## **Cuales son los componentes del Ciberespacio?**
+### **Cuales son los componentes del Ciberespacio?**
 
 - Personas
 - Software
@@ -24,7 +24,7 @@ El ciberespacio es un ambiente complejo en donde interactúan los seres humanos,
 - Dispositivos Informaticos
 - Redes Digitales
 
-## **Cuales son los problemas del Ciberespacio?**
+### **Cuales son los problemas del Ciberespacio?**
 
 - Ciberdelincuencia
 - Robo de Informacion
@@ -34,7 +34,7 @@ El ciberespacio es un ambiente complejo en donde interactúan los seres humanos,
 - Daños informáticos
 - Ciberataques
 
-## **Cuales son las ciberamenazas actuales?**
+### **Cuales son las ciberamenazas actuales?**
 
 | Nombre | Descripcion |
 | --- | --- |
@@ -64,13 +64,13 @@ El ciberespacio es un ambiente complejo en donde interactúan los seres humanos,
 | Online Scams | Se recopila información por premios que no existen, es publicidad engañosa  |
 | Local Network Hack | Simula el ataque de una persona con acceso físico tratando de acceder de manera no permitida por una red local  |
 
-## **Que es la Ciberseguridad?**
+### **Que es la Ciberseguridad?**
 
 La Ciberseguridad surge como resultado de una visión amplia de los aspectos de seguridad que se deben tener a fin de poder minimizar los riesgos que proponen los nuevos desafíos y retos del ciberespacio. Se define como el conjunto de medidas de protección de la información, a través del tratamiento de las amenazas que ponen en riesgo a la misma y que es tratada por los sistemas de información interconectados
 
 La Ciberseguridad se centra únicamente en los activos digitales conectados a Internet. Mantiene su atención principalmente en los riesgos provenientes únicamente del ciberespacio. Extiende su visión a la protección de la infraestructura crítica de información
 
-## **Cual es el perfil del Oficial de seguridad informatica?**
+### **Cual es el perfil del Oficial de seguridad informatica?**
 
 El oficial de seguridad informática tiene la función de brindar los servicios de seguridad en la organización, a través de la planeación, coordinación y administración de los procesos de seguridad informática, así como difundir la cultura de seguridad informática entre todos los miembros de la organización
 
@@ -84,7 +84,7 @@ El oficial de seguridad informática tiene la función de brindar los servicios 
 - Responder de manera inmediata ante incidentes de seguridad informática.
 - Investigar los ciberdelitos
 
-## **De qué pasos consta la metodologia de ciberseguridad?**
+### **De qué pasos consta la metodologia de ciberseguridad?**
 
 - **Identificar**: se debe entender el funcionamiento de la organización para minimizar el riesgo de los sistemas, activos, datos y capacidades.
 - **Proteger**: se deben diseñar salvaguardas para limitar el impacto de los eventos potenciales sobre los servicios y las infraestructuras críticas
@@ -92,7 +92,7 @@ El oficial de seguridad informática tiene la función de brindar los servicios 
 - **Responder**: tomar las medidas apropiadas después de enterarse de un evento de seguridad.
 - **Recuperar**: planificar la capacidad de recuperación y la reparación oportuna de capacidades y servicios comprometidos
 
-## **De qué pasos criterios de seguridad consta la metodologia de ciberseguridad?**
+### **De qué pasos criterios de seguridad consta la metodologia de ciberseguridad?**
 
 - Debido a los nuevos desafíos que vienen aparejados con las tecnologías, la rama de la ciberseguridad dentro de una organización debe ser considerada transversal, enfocándose principalmente en el resguardo de sus activos informáticos, pero también haciendohincapié en la concientización del factor humano
 - Al momento de evaluar una tecnología, se debe prestar atención al entorno donde se va a implementar, su relación con otros entornos y/o plataformas y/o servicios, su alcance y sus canales de comunicación
@@ -101,7 +101,7 @@ El oficial de seguridad informática tiene la función de brindar los servicios 
 - Es importante efectuar una validación univoca de la identidad de los actores
 - Se debe poder garantizar, en todo momento, una trazabilidad completa de la operatoria
 
-## **Cuales son algunas medidas comunes contra los ataques?**
+### **Cuales son algunas medidas comunes contra los ataques?**
 
 * Restringir el acceso a la base de datos: No dejarla expuesta en la red para que cualquiera pueda conectarse. Recomendable tener una lista de IPs u origenes que pueden conectarse a la misma.
 * Guardar de forma segura informacion sensible: No guardar en texto plano informacion sensible por si la BD se ve comprometida. Un ejemplo son las contraseñas, Se recomienda aplicar Hashing con algoritmos especializados.
@@ -111,7 +111,7 @@ El oficial de seguridad informática tiene la función de brindar los servicios 
 * No guardar informacion sensible del lado del cliente: No guardar informacion sensible en cookies o Local Storage ya que son almacenamientos de facil acceso.
 * **Honeypot** Es un dispositivo destinado a ser atacado para estudiar el comportamiento de los atacantes o desviar su atención.
 
-## **Cuales son algunas modalidades comunes de ataques?**
+### **Cuales son algunas modalidades comunes de ataques?**
 
 - **Black Box (Blind):** Security Tester, no cuenta con info sobre el objetivo
 - **Double Black Box (Double Blind):** El cliente no sabe nada sobre el test que hará, cómo ni cuándo
@@ -119,7 +119,7 @@ El oficial de seguridad informática tiene la función de brindar los servicios 
 - **Gray Box:** Internal Testing, examina el nivel de acceso desde la red interna, solo sabe info parcial sobre los objetivos puestos por el cliente
 - **Double Gray Box:** El cliente sabe que tipo de test se va a hacer, pero no como ni cuando.
   
-## **Cuales son las etapas en un proceso de hacking?**
+### **Cuales son las etapas en un proceso de hacking?**
 
 (Exploración de un sistema, Explotación de las vulnerabilidades, Corrupción del Sistema, Búsqueda de Vulnerabilidades y Eliminación de pruebas)
 - **Reconocimiento** Recolectar info sobre la víctima, Riesgo Moderado
@@ -128,7 +128,7 @@ El oficial de seguridad informática tiene la función de brindar los servicios 
 - **Mantener el acceso** Una vez dentro, buscar el reingreso al mismo sin riesgos
 - **Eliminar rastros** Eliminar evidencia y evitar acciones legales
 
-## **Que son los ataques internos?**
+### **Que son los ataques internos?**
 
 Muchos ataques son desde dentro de la misma organización, se infiltran o hablan con empleados para obtener información sobre la víctima/empresa
 
@@ -140,7 +140,7 @@ Pueden infiltrar un pendrive con una etiqueta engañosa para que sea usado por a
 
 **Contramedidas:** Control de acceso, mínimo privilegio sí no es necesario, separación de tareas, política legal, etc...
 
-## **Que tipos de Ingenierias sociales existen?**
+### **Que tipos de Ingenierias sociales existen?**
 
 - **Human Based:** La interacción de persona a persona, de forma remota o por llamada telefónica
     - **Impersonalización:** Ganar acceso físico simulando ser un usuario válido
@@ -155,7 +155,7 @@ Pueden infiltrar un pendrive con una etiqueta engañosa para que sea usado por a
     - Pop Ups
 - **Ingeniería social Inversa:** Es la más usada, es para que el usuario contacte al atacante sí este lo solicita
 
-## **Que es la triada CIA?**
+### **Que es la triada CIA?**
 
 **Confidencialidad:** Solo accede a la info gente autorizada
 
@@ -177,7 +177,7 @@ Pueden infiltrar un pendrive con una etiqueta engañosa para que sea usado por a
 - Su funcion es detectar, disuadir, y hasta parar un ataque con antelación
 - Algunos sistemas son: Firewall, DMZ, UTM, IDS, WAF, Web Filtering, AppControl, Antivirus y Antispam
 
-## **IDS (Intrusion Detection System)**
+### **IDS (Intrusion Detection System)**
 
 - **Es un sistema de detección de intrusiones es un componente que inspecciona los datos de una red o equipo en busca de elementos sospechosos**
 - Recopilar info para analizar y correlacionar
@@ -185,27 +185,27 @@ Pueden infiltrar un pendrive con una etiqueta engañosa para que sea usado por a
 - Su comportamiento en las redes influye el sniffing de paquetes
 - Si detecta un posible ataque, manda una alarma
 
-## **Tecnicas de detección de intrusiones**
+### **Tecnicas de detección de intrusiones**
 
 - **Reconocimiento de Firmas: Identificación de eventos y acciones conocidas**
 - **Detección Anomalías: Identificación de comportamientos raros**
 - **Anomalía de protocolos:** Identificación de paquetes TCP/IP raros.
 
-## **Tipos de IDS**
+### **Tipos de IDS**
 
 - **NIDS (Network IDS): Elemento de red que inspecciona el tráfico de la misma.**
 - **HIDS (Host IDS): Software que inspecciona los eventos dentro del marco de un sistema operativo.**
 - **Monitor Logs: Correlaciona y analiza los logs de sistemas y aplicaciones.**
 - **Verificador Integridad:** Chequea la integridad de archivos de un sistema
 
-## **Es una amenaza.. Verdadero o Falso?**
+### **Es una amenaza.. Verdadero o Falso?**
 
-- **Verdadero Positivo: Debería generarse una alarma y ésta se genera.**
-- **Falso Positivo: No debería generarse una alarma, pero ésta se genera**
-- **Verdadero Negativo: No debería generarse una alarma, y ésta no se genera.**
+- **Verdadero Positivo**: Debería generarse una alarma y ésta se genera.
+- **Falso Positivo**: No debería generarse una alarma, pero ésta se genera
+- **Verdadero Negativo**: No debería generarse una alarma, y ésta no se genera.
 - **Falso Negativo:** Debería generarse una alarma, pero ésta no se genera
 
-## **Indicadores de una intrusión**
+### **Indicadores de una intrusión**
 
 - Modificación de software y archivos de configuración.
 - Bajo rendimiento inusual en el sistema.

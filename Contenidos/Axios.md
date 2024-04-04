@@ -2,7 +2,7 @@
 
 Axios es una librería que nos permite hacer peticiones HTTP desde el cliente. Es muy similar a la función `fetch` de JavaScript, pero con una sintaxis más sencilla y fácil de usar.
 
-## **Instalación**
+### **Instalación**
 
 Para instalar Axios, simplemente debemos incluir el siguiente script en nuestro HTML:
 
@@ -12,7 +12,7 @@ Para instalar Axios, simplemente debemos incluir el siguiente script en nuestro 
 
 ### GET
 
-```
+```jsx
 axios.get('http://webcode.me').then(resp => {
 
     console.log(resp.data);
@@ -33,7 +33,7 @@ const config = {
 
 ### POST
 
-```
+```jsx
 async function makeGetRequest() {
 
     let payload = { name: 'John Doe', occupation: 'gardener' };
@@ -82,7 +82,7 @@ Promise.all([getUserAccount(), getUserPermissions()])
 
 ### Multiples GET
 
-```
+```jsx
 async function makeRequests(urls) {
 
     const fetchUrl = (url) => axios.get(url);
@@ -100,7 +100,7 @@ async function makeRequests(urls) {
 
 ### DELETE
 
-```
+```jsx
 async function makePostRequest() {
 
     let res = await axios.delete('http://localhost:3000/users/2/');

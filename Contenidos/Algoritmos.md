@@ -1,5 +1,43 @@
 # Algoritmos - Conceptos generales
 
+### 🧠 Binary Search
+
+Encontrar elementos en un vector ordenado de forma rápida sin recorrer todo el vector corriendo el comienzo para no recorrer lo ya recorrido. 
+
+![Algoritmo de búsqueda binaria](src/log1.png)
+
+### 🧠 ¿Podemos aplicar Binary Search a una Linked List ordenada?
+
+No, no se puede, ya que encontrar el index del elemento del medio es demasiado complicado.
+
+### 🧠 Bubble Sort
+
+Es el más simple de todos. Da vuelta los elementos si estan en el orden incorrecto de a pares. Para darse cuenta de que está ordenado, debe hacer una pasada completa sin hacer ningun swipe. 
+
+![Algoritmo de búsqueda binaria](src/log2.png)
+
+### 🧠 Binary Search Tree
+
+El mismo tiene las propiedades de:
+
+- Cada hijo izquierdo tiene un valor mas pequeño que su padre
+- Cada hijo derecho tiene un valor mas grande que su padre
+- Cada nodo puede tener hasta dos hijos.
+
+![Algoritmo de búsqueda binaria](src/log3.png)
+
+```jsx
+function TreeNode(val, left, right) {
+     this.val = val
+     this.left = left
+     this.right = right
+ }
+```
+
+### 🧠 ¿Porque se dice que buscar un nodo en un BST es mas eficiente que en un Simple Binary Tree?
+
+Porque, por la particularidad que tienen los hijos de los nodos de un BST (que uno es mas chico que el otro), se puede seguir el recorrido mas facilmente. Hace que la busqueda sea mucha mas eficiente.
+
 ### 🧠 ¿Cuales son los beneficios de un Linked List sobre un Array?
 
 Consideremos un escenario donde debemos guardar mucha data en un array, pero, la memoria para guardar esa data no esta disponible de forma continua, en ese caso, no podemos usar un Array. 

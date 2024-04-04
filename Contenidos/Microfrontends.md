@@ -1,6 +1,6 @@
 # Microfrontends
 
-## **¿Qué resuelve?**
+### **¿Qué resuelve?**
 
 Tenemos la aplicacion monolitica que tiene tanto el BD, Backend y Frotend en un solo monolito, y generalmente con un solo equipo manejandolo. A medida que va creciendo, se va separando el backend del frontend. 
 
@@ -32,18 +32,18 @@ const Restaurant = ({history}) => {
 * Cada frontend debe tener su propio repositorio: Para que cada equipo tenga 100% de control sobre esa aplicacion.  
 * Cada aplicacion debe poder desplegarse de forma independiente: No deben haber dependencias entre frontends
 
-## **Comunicacion entre microfrontends**
+### **Comunicacion entre microfrontends**
 
 - **Event Bus**: Es un canal de comunicacion entre los microfrontends. Se puede usar un bus de eventos para comunicar los microfrontends entre si.
 - **API Gateway**: Es un punto de entrada para todas las peticiones de los microfrontends. Se encarga de enrutar las peticiones a los microservicios correspondientes.
 
-## **¿Cuando usarlo?**
+### **¿Cuando usarlo?**
 
 - **Cuando se tiene un equipo grande**: Para que cada equipo se encargue de una parte del negocio
 - **Cuando se tiene una aplicacion grande**: Para que sea mas facil de mantener y escalar
 - **Cuando se tiene una aplicacion con muchas funcionalidades**: Para que cada microfrontend se encargue de una funcionalidad especifica
 
-## **Desventajas**
+### **Desventajas**
 
 - **Complejidad**: Es mas complejo que un monolito
 - **Performance**: Al tener que cargar varios frontends, puede afectar la performance
