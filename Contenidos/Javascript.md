@@ -1,16 +1,27 @@
 # Javascript
 
-## **Que es ECMAScript?**
+### **Que es ECMAScript?**
 
 Es un estándar para JS para escribir funciones complejas, es popular ya que trajo nuevas convenciones y funciones orientadas a objetos a JS.
 
-## **Diferencia entre var y Let**
+### **Diferencia entre let, var y const**
+
+La diferencia es el alcance de cada uno
 
 let es una constante. var es una variable normal.
 
 ```jsx
+
+var saludar = "hey, hola";
+var saludar = "dice Hola tambien";
+    saludar = "dice Hola tambien";
+
+
 let camper = 'James';
 let camper = 'David'; // throws an error
+let saludar = "dice Hola";
+    saludar = "dice Hola tambien";
+let saludar = "dice Hola tambien"; // error: Identifier 'saludar' has already been declared
 ```
 
 Sí pongo un “use Strict” en la parte alta del codigo, la consola me va a tirar error cuando trate de codear algo de manera “insegura” o poco practica.
@@ -20,9 +31,17 @@ Sí pongo un “use Strict” en la parte alta del codigo, la consola me va a ti
 x = 3.14; // throws an error because x is not declared
 ```
 
-Cuando declaras una variable con **var,** 
-es declarada de manera global, o local sí esta adentro de una funcion, en cambio con **let,** 
-sí declaro la funcion dentro de un block, statement o expresion, se va a declarar solo dentro de estas y no globalmente.
+Cuando declaras una variable con **var,** es declarada de manera global, o local sí esta adentro de una funcion.
+
+- Pueden ser modificadas y re-declaradas dentro de su ambito.
+- Puede ser declarada sin ser inicializada, se inicializa con undefined por defecto.
+- Puede ser declarada global o dentro de una funcion.
+
+En cambio con **let,** sí declaro la funcion dentro de un block, statement o expresion, se va a declarar solo dentro de estas y no globalmente.
+
+- No puede ser Re declarado pero si modificado.
+- Puede ser declarada sin ser inicializada, no se inicializa solo. 
+- Funciona a nivel bloque.
 
 ```jsx
 var numArray = [];
@@ -49,8 +68,7 @@ console.log(i);
 // returns "i is not defined"
 ```
 
-También se puede declarar usando la palabra **const**
-, que es una constante. Se declara y no puede ser cambiada en su valor, solo sirve de lectura.
+También se puede declarar usando la palabra **const**, que es una constante. Se declara y no puede ser cambiada en su valor, solo sirve de lectura.
 
 ```jsx
 "use strict"
@@ -58,7 +76,7 @@ const FAV_PET = "Cats";
 FAV_PET = "Dogs"; // returns error
 ```
 
-Se recomienda poner el nombre de las constantes en mayúscula, pose las mismas caracteristicas que el let.
+Se recomienda poner el nombre de las constantes en mayúscula, pose las mismas caracteristicas que el let
 
 ```jsx
 "use strict";
@@ -70,7 +88,7 @@ console.log(s); // returns [5, 6, 45]
 
 Los array sí pueden ser modificados en sí mismos, lo que no se puede es apuntar a otro array distinto.
 
-## **Funciones**
+### **Funciones**
 
 En javascript aveces no necesitamos nombrar nuestras funciones, especialmente cuando pasamos una funcion como argumento a otra funcion. Para eso las **funciones inline**, no les ponemos nombre a las funciones porque no vamos a necesitarlas en ningún otro lado.
 
@@ -104,7 +122,7 @@ console.log(greeting("John")); // Hello John
 console.log(greeting()); // Hello Anonymous Por defecto
 ```
 
-## **Función Object.freeze**
+### **Función Object.freeze**
 
 Es una funcion que evita que puedas modificar propiedades de un objeto o una variable
 
@@ -122,7 +140,7 @@ console.log(obj);
 
 Cuando intento modificar algo, no tira error, simplemente lo ignora.
 
-## **Extraer valores de objetos**
+### **Extraer valores de objetos**
 
 ```jsx
 const user = { name: 'John Doe', age: 34 };
@@ -136,7 +154,7 @@ const { name, age } = user;
 
 Es lo mismo que el anterior, guardo ambas propiedades del objeto User en dos variables name, age, en una sola declaracion de constantes
 
-## **Rest Operator**
+### **Rest Operator**
 
 Con esto, se pueden crear funciones que pueden tomar una variable cantidad de argumentos, y estos pueden ser accedidos luego por estar guardados en un Array de dentro de la misma funcion
 
@@ -228,7 +246,7 @@ console.log(greeting); // prints
 
 Se usa otro tipo de “comilla” cuando se quiere invocar al String (`) y no es necesario poner /n para que se haga un salto de línea en el texto de salida
 
-## **Export Fallback con export default**
+### **Export Fallback con export default**
 
 Lo mismo que el anterior, sí queremos exportar una funcion, cuando la declaramos, la exportamos. Se usa cuando quiero exportar solo un valor o funcion, solo puedo elegir un valor que tenga esta propiedad de exportacion, tampoco se puede usar con const, var o let.
 
@@ -244,7 +262,7 @@ Despues lo importo agregandole un nombre de variable cualquiera e invocandolo no
 import add from "math_functions";
 add(5,4); //Devuelve el resultado de acuerdo al metodo exportado anteriormente
 ```
-## **Usar * para importar todo**
+### **Usar * para importar todo**
 
 ```jsx
 import * as object_with_name_of_your_choice from "file_path_goes_here"
@@ -281,7 +299,7 @@ const foo = "bar";
 export { capitalizeString, foo }
 ```
 
-## **Diferencia entre import y require**
+### **Diferencia entre import y require**
 
 - Require: Se usa para importar las funciones y el codigo en un archivo externo. Esto posee un problema, el cual es que este codigo puede ser muy largo y solo necesito una parte del codigo.
 - Import: Herramienta de ES6 para importar solo los componentes que necesitamos de un archivo.
@@ -290,7 +308,7 @@ export { capitalizeString, foo }
 import { countItems } from "math_array_functions"
 ```
 
-## **Uso de getters y setters**
+### **Uso de getters y setters**
 
 ```jsx
 class Book {
@@ -312,7 +330,7 @@ lol.writer = 'wut';
 console.log(lol.writer);  // wut
 ```
 
-## **Creacion de Constructores**
+### **Creacion de Constructores**
 
 ```jsx
 var SpaceShuttle = function(targetPlanet){
@@ -332,7 +350,7 @@ class SpaceShuttle {
 const zeus = new SpaceShuttle('Jupiter');
 ```
 
-## **Generar una funcion en un objeto**
+### **Generar una funcion en un objeto**
 
 ```jsx
 const person = {
@@ -343,7 +361,7 @@ const person = {
 };
 ```
 
-## **Otra manera de crear un objeto**
+### **Otra manera de crear un objeto**
 
 ```jsx
 const createPerson = (name, age, gender) => {
@@ -361,7 +379,7 @@ console.log(createPerson("Zodiac Hasbro", 56, "male")); // returns a proper obje
 
 Se crea un objeto con un name= “Zodiac Hasbro”, age=56 and gender=”male”
 
-## **Cuales son las diferencias entre Java y Javascript? **
+### **Cuales son las diferencias entre Java y Javascript? **
 
 1. **JavaScript** ha sido un lenguaje interpretado, y **Java** compilado. Los programas de **JavaScript** son archivos de texto que se integra directamente en las páginas HTML y es interpretado (sin estar compilado) por el cliente (navegador), mientras que en **Java** se compilan a un archivo especial para que ser optimizados a un lenguaje intermedio llamado bytecode, y leído posteriormente en un ordenador que lo ejecute.
 2. **Java** es un lenguaje de programación orientado a objetos puros (OOP), mientras que **JavaScript** está basado en prototipos y, puede emular la programación orientada a objetos.
@@ -370,21 +388,21 @@ Se crea un objeto con un name= “Zodiac Hasbro”, age=56 and gender=”male”
 5. **Java** tiene variables definidas que no se pueden cambiar y es más complejo, **JavaScript** puede ser cambiante, dándole flexibilidad y es más sencillo.
 6. **JavaScript** es débilmente tipado, una misma variable puede contener primero un texto, luego un número, un array o un objeto. Esto, que parece una ventaja, también es fuente de posibles errores si no controlamos correctamente lo que ocurre en nuestro código. **Java** es fuertemente tipado, todas las variables tienen un tipo determinado y, una vez definidas, no se pueden cambiar.
 
-## **Entre JS y un script ASP, ¿Cual es mas rápido?**
+### **Entre JS y un script ASP, ¿Cual es mas rápido?**
 
 JavaScript es más rápido porque es un lenguaje del lado del cliente y no necesita la ayuda del servidor web para ejecutarse. Por otra parte el ASP es un lenguaje del lado del servidor. Motivo por el que siempre es más lento que JavaScript. Sin embargo, Javascript ahora, también puede ser usado como un lenguaje de lado del servidor (server side) (nodejs).
 
-## **Que son las variables no declaradas y no definidas?**
+### **Que son las variables no declaradas y no definidas?**
 
 **Variables no declaradas**: son las que no existen en un programa, y no se declaran. Si el programa trata de leer su valor entonces va a arrojar un error.
 
 **Variables no definidas**: son aquellas declaradas en el programa, pero no tienen asignado ningún valor. Si el programa quiere leer el valor de  variable no definida, se devuelve un valor no definido.
 
-## **Qué es el namespacing de JS? **
+### **Qué es el namespacing de JS? **
 
 Namespacing se utiliza para agrupar funciones, variables, etc con un nombre único.  Esto mejora la modularidad en codificación y permite la reutilización del código.
 
-## **¿Qué es una funcion Declarativa y una Expresiva? **
+### **¿Qué es una funcion Declarativa y una Expresiva? **
 
 En las **Funciones Declarativas** usamos la palabra reservada `Function` para poder declararla
 
@@ -408,15 +426,15 @@ nombre(‘Diego’);
 
 A las funciones declarativas se les aplica hoisting, a la otra no, hoisting se aplica solo a las palabra sreservadas `var` y `function`, es decir, a la expresion de funcion podriamos llamarla recien despues de declararla.
 
-## **Porque no se recomienda usar innerHTML?**
+### **Porque no se recomienda usar innerHTML?**
 
 No se recomienda su uso porque es muy lento dado que refresca el contenido cada vez. Es más fácil insertar un código errado en el documento y hacer que la página web sea inestable.
 
-## **Que es la tipificacion de Variables?**
+### **Que es la tipificacion de Variables?**
 
 La tipificación de variables, sirve para asignar un número a una variable y después asignar un string a la misma variable.
 
-## **Cómo se pueden crear objetos genéricos?**
+### **Cómo se pueden crear objetos genéricos?**
 
 ```jsx
 var myObjeto = new Object({
@@ -428,11 +446,79 @@ var myObjeto = new Object({
 {nombre: "Diego", apeliido: "Querales", edad: 25}
 ```
 
-## **Para que se usa Void(0)?**
+### **¿Qué es un Callback Hell?**
+
+Ocurren cuando una gran cantidad de callbacks anidan (Conjuntos) en un lugar específico, resultando imposibles de leer o en general trabajar con ellos.
+
+Pueden ser resueltos. Esto se realiza con la ayuda de lo que conocemos como un **proceso de modularización**. La manera, en la que funciona este proceso es simplemente dividiendo los callback en funciones completamente independientes una de la otra.
+
+```jsx
+checkWeather('buenos aires', (error, weather) => {
+	if (error) throw error;
+
+	if (weather === 'well') {
+		return checkFlights('buenos aires', (err, flights) => {
+			if (err) throw err;
+
+			buyTicket(flights[0], (e, ticket) => {
+				if (e) throw e;
+				console.log('ticket nº %d', ticket.number);
+			});
+		});
+	}
+
+	console.log('el clima es malo');
+});
+```
+
+Tambien se puede solucionar usando Promises
+
+```jsx
+checkWatcher('buenos aires')
+	.then(weather => {
+		if (weather === 'well') {
+			return checkFlights('buenos aires');
+		}
+		throw new Error('el clima es malo');
+	})
+	.then(flights => buyTicket(flights[0]))
+	.then(ticket => {
+		console.log('ticket nº %d', ticket.number);
+	})
+	.catch(error => console.error(error));
+```
+
+```jsx
+const operation = (num1, num2, callback) => {
+	return callback(num1, num2)
+}
+
+operation(1,3,(a,b) => a + b)
+operation(1,3,(a,b) => a * b)
+```
+
+
+### **¿Qué son los "stubs"?**
+
+**Stubs,** *son ciertas funciones que copian el comportamiento de módulos específicos.* Son utilizados en casos de prueba ya que pueden brindar las respuestas necesarias para resolver algunos problemas que pueden surgir dentro de los módulos.
+
+### **¿Cuál es la diferencia entre funciones de "bloqueo" y "no bloqueo"?**
+
+Cuando emites una función de bloqueo, las demás piezas de código detienen su ejecución hasta que haya sido completado un evento designado de Entrada/Salida.
+
+A su vez, las funciones de no bloqueo le permiten al desarrollador realizar múltiples tareas (Manteniendo múltiples códigos en ejecución) mientras que simultáneamente se realizan múltiples eventos de Entrada/Salida.
+
+### **Como funciona el context en JS?**
+
+Es el valor del `this`, que es una referencia al objeto “dueño” del codigo que esta siendo ejecutado. 
+
+Por ejemplo, `window` es un objeto global al que se puede acceder con this.
+
+### **Para que se usa Void(0)?**
 
 Se usa Void(0) para prevenir que la página sea actualizada. También, se usa para llamar a otro método sin que se actualice la página.
 
-## **Diferencia entre primitivo y objeto**
+### **Diferencia entre primitivo y objeto**
 
 - Los primitivos se pasan por valor, los objetos se pasan por referencia
 - Los primitivos se copian por valor y los objetos se copian por referencia
@@ -464,7 +550,7 @@ Que pasa si tengo dos objetos almacenados en distintas variables?
 
 Y si creamos dos objetos, los mismos al ser igualados no seran iguales aunque su contenido sea el mismo, ya que la referencia es distinta.
 
-## **Que es Truthy and Falsy?**
+### **Que es Truthy and Falsy?**
 
 Son valores que por defecto son True o False
 
@@ -485,7 +571,7 @@ Boolean({}); //true aunque el objeto esté vacío
 Boolean(function(){}); //Cualquier función es verdadera también
 ```
 
-## **Que son las funciones de alto nivel / Higher order Function?**
+#### **Que son las funciones de alto nivel / Higher order Function?**
 
 Habían muchas funcionalidades que se estaban repitiendo, entonces JS decidio hacerlas nativas, como iteraciones. Funciones de orden mayor es que reciben como parametro los iterables y un callback, que se ejecutaba en cada elemento iterado.
 
@@ -497,7 +583,7 @@ Por ejemplo, si tenemos botones y queremos hacer eventos para todos los botones,
 
 Agregamos el evento al container y dependiendo donde es el click (en cual boton), se detecta una cierta clase o propiedad, y se ejecuta el evento correspondiente utilizando [`e.target`](http://e.target) para identificar el elemento, por ejemplo.
 
-## **Bubble vs Capture**
+### **Bubble vs Capture**
 
 Cuando agregamos un elemento parece que solo lo agregamos a un elemento DOM pero en realidad este se propaga en una direccion. Podemos elegir cual direccion escuchan nuestros eventos. 
 
@@ -505,7 +591,7 @@ Cuando agregamos un elemento parece que solo lo agregamos a un elemento DOM pero
 - Fase Target
 - Fase Bubbling
 
-## **isNaN vs Math.isNaN**
+### **isNaN vs Math.isNaN**
 
 NaN son operaciones aritmeticas que no pueden ser representadas correctamente. Ambas funciones tienen como objetivo identificar si un valor es NaN. `isNaN` global aplica una coercion de tipos al argumento que le pasamos, `Math.isNan` no lo hace, lo que hace que sea mas seguro de usar para valores no numericos. 
 
@@ -514,7 +600,7 @@ isNaN('denu') // devolvera true porque primero intentará convertir la cadena a 
 Number.isNaN('denu') // false porque no convertirá la cadena a numero
 ```
 
-## **Cual es la diferencia entre foreach, map y reduce**
+### **Cual es la diferencia entre foreach, map y reduce**
 
 - **Foreach** itera por cada uno. Ejecuta la función que se le pasa por parámetro para cada elemento del array. Este método no devuelve nada, por lo tanto, si intentamos guardar su ejecución en una variable lo que ocurrirá es que esa variable tomará el valor de undefined.
 
@@ -554,7 +640,7 @@ total;
 // Prints 60
 ```
 
-## **Cual es la diferencia entre Map y Weakmap?**
+### **Cual es la diferencia entre Map y Weakmap?**
 
 Son casi iguales, son la clasica estructura de datos de diccionario, su diferencia es que se puede acceder a los clave-valores de un Map usando .values o .keys
 
@@ -584,7 +670,7 @@ Weakmap es una caja negra en donde solo se puede acceder a los valores si se tie
 
 Weakmap, ademas, solo admite objetos como clave, estos estan debilmente referenciados por lo que puede ser recolectados por el garbage collector de JS si asi lo considera, destruyendo esa entrada en el Weakmap y liberando memoria.
 
-## **Que es Symbol?**
+### **Que es Symbol?**
 
 Son valores primitivos de JS (como String, boolean, etc..) agregados al ES6. Son valores unicos en JS, antes si queriamos tener un valor unico debiamos usar objetos (porque solo son iguales a ellos mismos), es util para crear constantes
 
@@ -608,7 +694,7 @@ obj[sym1] = 'a'
 obj[sym2] = 'b'
 ```
 
-## **Que es un Event listener?**
+### **Que es un Event listener?**
 
 Supongamos que estamos usando una libreria para renderizar items de una coleccion de datos, esta expone un componente llamado RenderItem que tiene una sola prop disponible onClick que no acepta ningun parametro. ¿Y si quiero mandarle un argumento? 
 
@@ -638,7 +724,7 @@ return (
 
 Creamos una funcion que recibe el titulo que se quiere mostrar y retorna otra funcion que cumple con la definicion de la funcion que RenderItem recibe como prop.
 
-## **Que es el Function Factory?**
+### **Que es el Function Factory?**
 
 Son funciones que crean funciones u objetos. Con este patron se puede implementar Currying
 
@@ -672,7 +758,7 @@ const crearUsuario = ({ userName, avatar }) => ({
     */
 ```
 
-## **Que es la expresion de Funcion Inmediatamente Invocada - Immediately-invoked Function Expression (IIFE)?**
+### **Que es la expresion de Funcion Inmediatamente Invocada - Immediately-invoked Function Expression (IIFE)?**
 
 Es una tecnica que se usaba para emular las variables privadas. 
 
@@ -694,7 +780,7 @@ x.get() // "otro valor"
 x.valorPrivado //Error
 ```
 
-## **Que es decodeURL y encodeURL?**
+### **Que es decodeURL y encodeURL?**
 
 - EncodeURL es para convertir una URL a su codificacion hexadecimal
 
@@ -708,7 +794,7 @@ encodeURI(uri) // my%20test.asp?name=st%C3%A5le&car=saab
 decodeURI(uri) // my test.asp?name=ståle&car=saab
 ```
 
-## **Que es escape y unescape?**
+### **Que es escape y unescape?**
 
 - Escape es la responsable de codificar un string para hacer el pase de informacion de un ordenador a otro por una red
 
@@ -722,7 +808,7 @@ escape ("Hola? Como estas tu?")); // Hola%3F%20Como%20estas%20tu%21
 unescape("Hola%3F%20Como%20estas%20tu%21") // Hola? Como estas tu?
 ```
 
-## **Como se implementan Promises?**
+### **Como se implementan Promises?**
 
 Las promises son una buena forma de manejar operaciones asincronicas. Puede tener 3 estados, `Pending`, `Fulfilled` y `Rejected`. Son utiles cuando hay que manejar mas de una operacion asincronica una despues de la otra, para eso se puede usar **Promise Chaining** usando then() y catch() para el manejo de cada una. 
 
@@ -755,7 +841,7 @@ let promise = new Promise(function(resolve, reject){
 });
 ```
 
-## **Qué es una variable global, como se declara y cuales problemas puede tener?**
+### **Qué es una variable global, como se declara y cuales problemas puede tener?**
 
 Se pueden usar en todo el codigo, no tienen alcance. Se declara sin usar `var` en la declaracion
 
@@ -765,7 +851,7 @@ miVariableGlobal = 'Hola mundo'
 
 Puede dar al choque entre variables locales y globales por nombre. Ademas es dificil limpiar el codigo basado en variables globales
 
-## **Cuál es la diferencia entre Promises, Callbacks y Async/Await?**
+### **Cuál es la diferencia entre Promises, Callbacks y Async/Await?**
 
 Con las promesas no sabemos cuando se resolverá, pero se puede seguir utilizando la app mientras tanto. Async Await fuerza una espera en la función. 
 
@@ -826,8 +912,81 @@ Es como una “llamada de vuelta”. Es muy raro su uso hoy en día. Generalment
 Es complicado de entender y su manejo puede ser dificil
 
 ```jsx
-const doAsyncStuff
+const doAsyncStuff = (numero1, numero2, callback){
+  const resultado = numero1 + numero2;
+  return setTimeout(()=> {
+    callback(resultado);
+  }, 500)
+
+  doAsyncStuff(1,3,(result) => {
+    console.log(result)
+  })
+}
 ```
+
+### **Como funciona setTimeout?**
+
+Permite ejecutar un fragmento de código una vez pasa un tiempo determinado.
+
+Por ejemplo, el codigo imprimirá “Hola Mundo” despues de 2 segundos
+
+```jsx
+setTimeout(function(){
+	console.log('hola mundo');
+}, 2000);
+```
+
+El primer parámetro es la función a ejecutar, puede ser hecha ahi mismo como en el ejemplo anterior, o ya estar hecha como en este ejemplo: 
+
+```jsx
+function saludos(nombre, rol) {
+	console.log(`hola mi nombre es ${nombre} y mi rol es ${rol}`);
+}
+
+setTimeout(saludos, 3000, "denu", "administrador");
+```
+
+¿Porque no pasar los parametros directamente a la funcion y recien despues del tiempo? Porque JS ejecutará la funcion sin esperar al timeout, ya que estarias pasando una llamada a la funcion, no la referencia a la funcion. 
+
+```jsx
+setTimeout(saludos('denu', 'admin'), 3000); // NO 
+```
+
+Si quiero cancelar un setTimeout debo utilizar `clearTimeout()`
+
+```jsx
+const timeoutid = setTimeout (function() {
+	console.log('hola');
+}, 2000);
+
+clearTimeout(timeoutid)
+```
+
+### **Cuales son las funciones array de JS?**
+
+```jsx
+[1,2,3].push(4) // [1,2,3,4]
+[1,2,3].pop() // [1,2]
+[1,2,3].shift() // [2,3]
+[1,2,3].unshift(0) // [0,1,2,3]
+['a', 'b'].concat('c') // ['a', 'b', 'c']
+['a', 'b'].join('-') // a-b
+['a', 'b'].slice(1) // ['a']
+['a', 'b'].indexOf('b') // 1
+['a', 'b'].includes('b') // true
+[3,5,6,8].find((n) => n % 2 === 0) // 6
+[2,4,3,5].findIndex((n) => n % 2 !== 0) // 2
+[3,4,8,6].map((n) => n * 2) // [6,8,16,12]
+[1,4,7,8].filter((n) => n % 2 === 0) // [4,8]
+[2,4,3,7].reduce((acc, cur) => acc + cur) // 16
+[2,3,4,5].every((x) => x < 6) // true
+[3,5,6,8].some((n) => n > 6) // true
+[1,2,3,4].reverse() // [4,3,2,1]
+[3,5,7,8].at(-2) // 7
+[1,2,3].forEach(x => console.log(x))
+```
+
+### **Cuales son las funciones array de JS?**
 
 ---
 
@@ -850,7 +1009,7 @@ Sin embargo, no serán la mejor opción cuando tengamos que hacer (con frecuenci
 
 Para este segundo caso, probablemente sea mejor considerar en uso de un motor de base de datos.
 
-### 💙 Manejo de Archivos en NodeJS
+## Manejo de Archivos en NodeJS
 
 Al igual que la mayoría de los lenguajes, NodeJS cuenta con una librería (o módulo, en js) para interactuar con el sistema de archivos (o File System) de tu computadora.
 Para poder usar este módulo solo debemos importarla al comienzo de nuestro archivo fuente, utilizando la función `require( module | path )`:
@@ -930,7 +1089,7 @@ Está función devuelve una lista de strings con los nombres de los archivos y c
 const listaDeNombresDeArchivos = fs.readdirSync(rutaDeLaCarpeta)
 ```
 
-### 💙 Manejo de errores
+###  Manejo de errores
 
 Es importante mencionar que todas las funciones que acabamos de describir pueden lanzar excepciones en el caso de encontrarse con algún imprevisto que impida su ejecución. La forma adecuada de manejar estas excepciones será ejecutando el código en cuestión dentro de una cláusula: `try / catch`.
 
