@@ -421,7 +421,7 @@ public void processRequestBatch(){
 
 # Code Smells
 
-# 🟢 **¿Qué es un Code Smell?**
+## 🟢 **¿Qué es un Code Smell?**
 
 Son sintomas de que el codigo no es todo lo limpio que deberia. Hay distintos tipos de code smells como:
 
@@ -435,7 +435,183 @@ Son sintomas de que el codigo no es todo lo limpio que deberia. Hay distintos ti
 
 Nadie se va a volver experto teniendo esta lista de memoria, nunca va a ser una lista completa de todos los problemas que puede tener el código.
 
-# 🟢**Code Smells en los Comentarios**
+---
+
+## 🟢**Code Smells en los Test**
+
+### 👉**Tests insuficientes**
+
+Se deben probar todas las posibilidades de una funcion. Si no se prueban todas las condiciones, los tests son insuficientes.
+
+### 👉**No usar una herramienta de cobertura**
+
+Se muestran claramente las lineas que no estan siendo cubiertas por los tests. Son faciles de instalar.
+
+### 👉**Evitar los tests triviales**
+
+Aunque una funcionalidad parezca trivial, hacer un test igual. Es una gran fuente de bugs.
+
+### 👉**Test ignorado o comentado**
+
+Segun Robert C. Martin “A veces tenemos dudas sobre los detalles de una funcionalidad, porque los requisitos no están claros. Podemos expresar estas dudas con un test comentado, o con un test con `@ignore`. La opcion que elijas depende de si tu test compila o no"
+
+Si hay dudas en los tests, hay dudas en los requisitos
+
+### 👉**No testear condiciones limite**
+
+Son los mayores generadores de bugs, hay que testearlos. No solo testear las condiciones normales del código.
+
+### 👉**No buscar bugs de forma exhaustiva**
+
+Los bugs tienden a estar cerca unos de otros. Si encontrás un bug, revisar, pueden haber más
+
+### 👉**Los patrones de fallo son reveladores**
+
+Si vemos que una funcion falla cuando mandamos un String con caracteres en blanco, debemos manejar esto.
+
+### 👉**La cobertura de codigo es reveladora**
+
+Se pueden encontrar los motivos de fallo con las lineas que no estan analizadas
+
+### 👉**Tests lentos**
+
+Los tests deben ser rapidos, ya que deben ser ejecutados muchas veces al dia.
+
+---
+
+## 🟢**Code Smells en Java**
+
+### 👉**Listas de imports muy largas**
+
+Si usas dos o mas clases de un paquete, importar directamente todo el paquete.
+
+### 👉**Herencia de constante**
+
+Se debe evitar el uso de herencia para estos mecanismos. Por ejemplo `Game` hereda de `GameConstants`. Se debe usar `GameConstants.NUMBER_OF_LEVELS` o importarlo directamente. No se debe usar herencia para crear estos mecanismos.
+
+```jsx
+public class EasyGame extends Game {
+    private int currentLevel;
+    public Double calculateProgress(){
+        return currentLevel / NUMBER_OF_LEVELS;
+    }
+}
+
+public abstract class Game implements GameConstants {
+    public Double calculateProgress();
+}
+
+public interface GameConstants {
+    public static final int NUMBER_OF_LEVELS = 10;
+}
+```
+
+### 👉**Enums vs Constantes**
+
+Usar enums siempre y cuando sea posible. Es mas potente en funcionalidad y claridad. Tambien nos permiten declarar funciones abstractas para cada valor, como `numberOfLevels` por nivel.
+
+```jsx
+public class Game {
+	private int currentLevel;
+	DifficultyLevel difficultyLevel;
+
+	public int levelsLeft() {
+		return difficultyLevel.numberOfLevels() - currentLevel;
+	}
+}
+
+public enum DifficultyLevel {
+	EASY {
+		public int numberOfLevels() {
+			return 20;
+		}
+	},
+	MEDIUM {
+		public int numberOfLevels() {
+			return 30;
+		}
+	},
+	HARD {
+		public int numberOfLevels(){
+			return 50;
+		}
+	}
+
+	public abstract int numberOfLevels();
+}
+```
+
+Se evitan los condicionales por nivel de dificultad en el ejemplo.
+
+---
+
+## 🟢**Code Smells en Nombres**
+
+### 👉**Nombres en nivel de abstraccion incorrecto**
+
+Si tenemos una clase `FtpFileDownloader` que implementa la interfaz, ya no recibiria una web url.
+
+```jsx
+public interface FileDownloader {
+	File download(String webUrl);
+}
+```
+
+### 👉**No usar nomenclatura estandar**
+
+- Por ejemplo, usar la palabra `Singleton` para clases que usen ese patrón, la palabra `Controller` cuando se trata de un controlador, etc..
+- Sobreescribir metodos `toString` que ya tienen las clases Java en lugar de crear un metodo propio. No reinventar la rueda
+
+### 👉**No usar nombres largos para largos alcances**
+
+- Se pueden usar nombres de pocos caracteres para alcances cortos, pero si el alcance es mayor, el nombre largo es necesario. El ejemplo de un alcance acotado es en el caso de `i` para un bucle.
+
+```jsx
+for (int i = 0; i < numberOfRequests; i++) {
+	processRequest(requests.get(i));
+}
+
+// NOPE
+public class Car {
+	private int hp;
+}
+
+// SIP
+public class Car {
+	private int horsePower;
+}
+```
+
+### 👉**Usar Codificaciones**
+
+- Evitar los nombres con codificaciones que distraigan al lector
+- Un ejemplo malo son las variables, por ejemplo `intVariable` o `strName`. No es necesario agregar el prefijo `str` si ya se sabe que se trata de un String.
+
+### 👉**Ocultar efectos secundarios**
+
+Si existen efectos secundarios, los nombres de las variables y funciones deben describirlo. Por ejemplo, en el caso de esta funcion `login`, se hace mas de una cosa, y no es aclarado. Se debe separar en dos funciones o cambiar el nombre (recomendable la primera)
+
+```jsx
+public Boolean login (User user) {
+    User databaseUser = userRepository.findByUsername(user.getUsername());
+
+    if (validCredentials(user, databaseUser)) {
+        return true;
+    }
+
+    // Esto esta de mas
+    if (checkNumberOfTries(user.getIp()) > MAX_TRIES) {
+        blockUser(user);
+    }
+
+    return false;
+
+}
+```
+
+---
+
+## 🟢**Code Smells en los Comentarios**
 
 Hay distintos sintomas dentro de un Code Smells. En este primer punto son:
 
@@ -468,7 +644,9 @@ Los comentarios utiles deben estar bien redactados, sin faltas de ortografia y d
 
 Nunca dejar codigo comentado, ya que se guarda el registro de cambios en Git. El codigo que no se necesita, se borra.
 
-# 🟢**Code Smells en el entorno**
+---
+
+## 🟢**Code Smells en el entorno**
 
 ### 👉**Que la compilacion requiera mas de un paso**
 
@@ -485,7 +663,9 @@ Los test se deben ejecutar con un unico comando facil, rapido y obvio, al igual 
 
 Tambien hay herramientas de automatizacion para los tests, con comandos especificos para los tests. En maven existe `mvn test`
 
-# 🟢**Code Smells en Funciones**
+---
+
+## 🟢**Code Smells en Funciones**
 
 ### 👉**Demasiados parametros / argumentos**
 
@@ -512,6 +692,189 @@ int main() {
   return 0;
 }
 ```
+
+### 👉**Comportamiento incorrecto en los limites del codigo**
+
+Muchos bugs del codigo estan en los limites de los condicionales o bucles de los codigos.
+
+```java
+private final List<String> thirtyOneDayMonths = Arrays.asList("January", "March", "May", "July", "August", "October", "December");
+
+private final List<String> thirtyDayMonths = Arrays.asList("April", "June", "September", "November");
+
+public int getNumberOfDaysInMonth(String month) {
+  if (thirtyOneDayMonths.contains(month)) {
+    return 31;
+  }
+  if (thirtyDayMonths.contains(month)) {
+    return 30;
+  }
+  return 28;
+}
+```
+
+Si un año es biciesto, el codigo seria incorrecto
+
+### 👉**No encapsular las condiciones limite**
+
+Las condiciones limite son los focos mas importantes de bug. Es importante encapsularlas bien y tenerlas bien definidas.
+
+Si tenemos que definir una variable mas para que quede mas claro, lo hacemos.
+
+```jsx
+if (level + 1 == game.getMaxLevel()) {
+	loadFinalBoss();
+}
+
+Integer nextLevel = level + 1;
+if (nextLevel == game.getMaxLevel()) {
+	loadFinalBoss();
+}
+```
+
+### 👉**Metodos estaticos inapropiados**
+
+Los metodos estaticos no operan bajo ninguna instancia. Se debe pensar si un metodo es realmente estatico antes de declararlo como tal.
+
+En el caso del ejemplo, deberia ser una funcion de `Employee` si deseamos que sea polimorfica y calcule distinto dependiendo del tipo de Employee.
+
+```java
+public class HourlyPayCalculator {
+    public static Double calculatePay(Employee employee, Double overtimeRate)
+}
+```
+
+### 👉**No ser precisos**
+
+Se debe tener precision sobre las decisiones que se tomen sobre el codigo. No ser vago con las decisiones.
+
+- Si se va a calcular dinero, usar enteros y manejar el redondeo
+- Si se va a tratar con concurrencia, asegurar que no hayan carreras criticas
+- Si hay metodos que pueden lanzar excepciones, tratarlas.
+
+### 👉**Darle mas peso a convenciones que a la estructura**
+
+Las convenciones son importantes pero el diseño del software es mas importante. No uses MVC si no es la apropiada para tu codigo.
+
+### 👉**Navegacion Transitiva**
+
+- Un modulo debe saber lo menos posible sobre los demás
+- Si A usa a B, y B usa a C, evitar `a.getB().getC()`, desde A hay que acceder a B para acceder a C. Y si queremos intercalar una clase D, tenemos que modificar estos llamados agregando `getD()` en el medio.
+- Segun la Ley de Demeter hay que escribir codigo timido, A debe ser timido y no llamar a una funcion de C a traves de B. Debe conocer lo menos posible sobre los demás.
+- Asi es como se forman las arquitecturas rigidas, si surge la necesidad de modificarla, será muy costoso.
+
+### 👉**Que las funciones hagan mas de una cosa**
+
+Las funciones deben hacer una sola cosa, ya que hace que sean mas legibles y faciles de testear.
+
+### 👉**Usar condicionales negativos**
+
+Siempre es mejor usar condicionales positivos. Se debe cambiar el nombre a lo que sea necesario
+
+```java
+if (!isNotValid) {
+    // ...
+}
+
+if (isValid) {
+    // ...
+}
+```
+
+### 👉**Envidia del ambito de otra clase**
+
+Cuando una clase esta interesada en demasiada info de otra clase. Es un problema de diseño. Lo ideal es que los metodos de una clase esten interesadas en su propia clase, y no tenga que usar variables ni funciones de otra clase.
+
+En el ejemplo, `GameRankCalculator` tiene "envidia" de la clase `user`, ya que pide demasiadas cosas del mismo
+
+```java
+
+public class GameRankCalculator {
+    public Rank calculateRank(User user) {
+        Double hoursPlayed = user.getHoursPlayed();
+        int gamesPlayed = user.getGamesPlayed();
+        int achievements = user.getAchievements();
+
+        Double winPercentage = gamesPlayed / user.getGamesWon();
+        Double rank = hoursPlayed * gamesPlayed * achievements * winPercentage;
+
+        return new Rank(rank);
+    }
+}
+```
+
+### 👉**Acomplamiento artificial**
+
+Los elementos que no dependan entre si no deben estar acoplados. Por ejemplo, en el caso de PI dentro del ejemplo, nos conviene hacer una variable global del mismo, ya que es un valor que puede ser usado por cualquier otro elemento del codigo y no es algo exclusivo del Circulo.
+
+```java
+public class Circle {
+    private static final Double PI = 3.14159265359;
+    private Double radius;
+    public Circle(Double radius) {
+        this.radius = radius;
+    }
+    public Double calculateArea() {
+        return PI * radius * radius;
+    }
+}
+```
+
+### 👉**Clases base dependen de las derivadas**
+
+Las clases base no deben saber nada de sus derivadas. En el ejemplo, `PlaneGeometry` no deberia tener logica asociada ni a `Rectangle` ni a `Triangle` que lo heredan, deberian encargarse ellos de sus especificaciones de clase. La clase base no deberia depender de quien la hereda.
+
+Se recomendaria aplicar `getNumberOfSides` como abstracto.
+
+```java
+public class PlaneGeometry {
+    public int getNumberOfSides() {
+        if (this instanceof Rectangle) {
+            return 4;
+        }
+        if (this instanceof Triangle) {
+            return 3;
+        }
+        return 0;
+    }
+}
+
+public class Rectangle extends PlaneGeometry {}
+public class Triangle extends PlaneGeometry {}
+
+```
+
+### 👉**Ser arbitrario**
+
+Si la estructura del codigo es arbitraria, otros haran lo mismo sobre el, ensuciando mas el codigo. Las decisiones deben ser consistentes.
+
+
+### 👉**No usar convenciones**
+
+Es importante seguir las normas establecidas para un lenguaje de programacion en particular, como las formas de llamar a las variables, tamaños de lineas, etc..
+
+Todo el equipo debe seguir las mismas normas, si no, el codigo no sera homogeneo
+
+### 👉**Responsabilidad fuera de lugar**
+
+- El codigo debe ser escrito en el lugar mas natural para un lector
+- No escribir el codigo donde mas convenga, si no, donde se esperaria leer
+- Esto puede ir acoplado al ejemplo de PI acoplado con Circle, cuando quedaria mas claro que exista en una clase de constantes matematicas llamada `Math`
+
+### 👉**Funciones que no dicen lo que hacen**
+
+Los nombres de las funciones deben ser explicativos, por ejemplo:
+
+```
+Date newDate = oldDate.add(5)
+```
+
+¿Qué estamos agregando acá? ¿Son 5 horas, minutos, segundos, dias?
+
+### 👉**No conocer el algoritmo**
+
+Se deben entender los algoritmos complicados, si no los entendemos, el codigo no será todo lo limpio que puede ser. Si no se entiende, se debe refactorizar.
+
 ### 👉**Pasar Flags como argumento**
 
 Un flag, boolean, indica que la funcion hace mas de una cosa. Cada funcion debe hacer unicamente una cosa.
@@ -533,7 +896,7 @@ public Double calculateDiscount(Item item, boolean isPremium) {
 
 Son funciones que no se llaman nunca. Deben eliminarse, y si llegamos a necesitarlas en un futuro, se guardan en el historial de Git.
 
-# 🟢**Code Smells Generales**
+## 🟢**Code Smells Generales**
 
 ### 👉**Mezclar muchos lenguajes en un solo fichero**
 
