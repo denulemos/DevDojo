@@ -122,6 +122,11 @@ console.log(greeting("John")); // Hello John
 console.log(greeting()); // Hello Anonymous Por defecto
 ```
 
+### **Para que sirve event.preventDefault()?**
+
+Los botones de los form en HTML por defecto hacen un submit, lo que puede llevar a que se recargue la pagina. Para evitar esto, se usa `event.preventDefault()` para evitar que se ejecute el comportamiento por defecto del evento.
+
+
 ### **Función Object.freeze**
 
 Es una funcion que evita que puedas modificar propiedades de un objeto o una variable
@@ -962,32 +967,6 @@ const timeoutid = setTimeout (function() {
 clearTimeout(timeoutid)
 ```
 
-### **Cuales son las funciones array de JS?**
-
-```jsx
-[1,2,3].push(4) // [1,2,3,4]
-[1,2,3].pop() // [1,2]
-[1,2,3].shift() // [2,3]
-[1,2,3].unshift(0) // [0,1,2,3]
-['a', 'b'].concat('c') // ['a', 'b', 'c']
-['a', 'b'].join('-') // a-b
-['a', 'b'].slice(1) // ['a']
-['a', 'b'].indexOf('b') // 1
-['a', 'b'].includes('b') // true
-[3,5,6,8].find((n) => n % 2 === 0) // 6
-[2,4,3,5].findIndex((n) => n % 2 !== 0) // 2
-[3,4,8,6].map((n) => n * 2) // [6,8,16,12]
-[1,4,7,8].filter((n) => n % 2 === 0) // [4,8]
-[2,4,3,7].reduce((acc, cur) => acc + cur) // 16
-[2,3,4,5].every((x) => x < 6) // true
-[3,5,6,8].some((n) => n > 6) // true
-[1,2,3,4].reverse() // [4,3,2,1]
-[3,5,7,8].at(-2) // 7
-[1,2,3].forEach(x => console.log(x))
-```
-
-### **Cuales son las funciones array de JS?**
-
 ---
 
 # Manejo de Archivos
@@ -1089,6 +1068,8 @@ Está función devuelve una lista de strings con los nombres de los archivos y c
 const listaDeNombresDeArchivos = fs.readdirSync(rutaDeLaCarpeta)
 ```
 
+---
+
 ###  Manejo de errores
 
 Es importante mencionar que todas las funciones que acabamos de describir pueden lanzar excepciones en el caso de encontrarse con algún imprevisto que impida su ejecución. La forma adecuada de manejar estas excepciones será ejecutando el código en cuestión dentro de una cláusula: `try / catch`.
@@ -1105,7 +1086,7 @@ try {
 
 ---
 
-# Arrow Functions
+### Arrow Functions
 
 Es otra manera de escribir las funciones en javascript, argumento + flecha + contenido de la funcion. Estas dos funciones hacen lo mismo
 
