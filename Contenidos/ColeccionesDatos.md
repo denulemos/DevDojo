@@ -360,3 +360,25 @@ console.log(array); // Imprime: ['a', 'b', 'c']
 // Recorre el array
 [1,2,3].forEach(x => console.log(x))
 ```
+
+### Funcion .sort()
+
+`.sort()` es una funcion que viene en Javascript. Funciona bien con numeros simples, pero no con numeros complejos como, por ejemplo, 10.
+
+```javascript
+[2,3,1].sort() => [1,2,3];
+[2,10,3].sort() => [10, 2, 3];
+```
+
+Esto es porque esta funcion primero conviene los numeros a String y los ordena alfabeticamente. Es por eso que es necesario usar una funcion de callback.
+
+```javascript
+const sortedValues = inputValues.sort((a, b) => {
+    return a - b;
+  });
+```
+
+Esta funcion devuelve un numero. El mismo determina lo siguiente:
+- Si el numero es negativo, acomoda a antes que b.
+- Si es positivo, b va antes que a
+- Si es cero, no cambia nada

@@ -10,11 +10,83 @@ Encontrar elementos en un vector ordenado de forma rápida sin recorrer todo el 
 
 No, no se puede, ya que encontrar el index del elemento del medio es demasiado complicado.
 
+### 🧠 Selection Sort
+
+Busca el valor más pequeño de la matriz y lo intercambia con el primer valor de la matriz. A continuación, encuentra el siguiente valor más pequeño de la matriz y lo intercambia con el segundo valor de la matriz. Continúa iterando a través de la matriz hasta que está completamente ordenada.
+
+```javascript
+const selectionSort = (array) => {
+  for (let i = 0; i < array.length; i++) {
+    let minIndex = i;
+
+// Inicializo el for desde uno mas del index donde estoy parado
+    for (let j = i + 1; j < array.length; j++) {
+        // Si el valor actual de j es menor que minIndex, reemplazo minIndex por este nuevo valor
+    if (array[j] < array[minIndex]) {
+        minIndex = j;
+      }
+    }
+
+// Luego de que nuestro for interno finalizo, hago el swap de valores 
+    const temp = array[i];
+    array[i] = array[minIndex];
+    array[minIndex] = temp;
+  }
+}
+```
+
+### 🧠 Insertion Sort
+
+Este algoritmo funciona construyendo una matriz ordenada al principio de la lista. Comienza la matriz ordenada con el primer elemento. A continuación, inspecciona el siguiente elemento y lo cambia hacia atrás en la matriz ordenada hasta que esté en una posición ordenada, y así sucesivamente.
+
+```javascript
+const insertionSort = (array) => {
+    // Un algoritmo de ordenación por inserción comienza la ordenación al principio de la lista, lo que significa que el primer elemento ya está ordenado.
+  for (let i = 1; i < array.length; i++){
+    const currValue = array[i];
+    let j = i - 1; 
+    // Mientras no vaya mas alla del inicio del array, y mientras no se encuentre un valor mas pequenio del guardado en currValue
+      while(j >= 0 && array[j] > currValue) {
+        array[j + 1] = array[j];
+        // evitar el loop
+        j--;
+      }
+
+      array[j + 1] = currValue;
+  }
+}
+```
+
 ### 🧠 Bubble Sort
 
 Es el más simple de todos. Da vuelta los elementos si estan en el orden incorrecto de a pares. Para darse cuenta de que está ordenado, debe hacer una pasada completa sin hacer ningun swipe. 
 
 ![Algoritmo de búsqueda binaria](src/log2.png)
+
+```javascript
+const bubbleSort = (array) => {
+  for (let i = 0; i < array.length; i++) {
+    // Itera por todos los elementos menos el ultimo, por eso length - 1
+    for (let j = 0; j < array.length - 1; j++) {
+        // Es el elemento actual (j) mayor al siguiente? (j + 1)
+      if (array[j] > array[j + 1]) {
+
+        // Si se cumple la condicion, darlos vuelta
+        const temp = array[j];
+
+        // Asigno al elemento actual el valor siguiente
+        array[j] = array[j + 1];
+
+        // Asigno al valor siguiente el elemento actual
+        array[j + 1] = temp;
+      }
+    }
+  }
+
+    // devuelvo el array ordenado
+    return array;
+}
+```
 
 ### 🧠 Binary Search Tree
 
