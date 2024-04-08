@@ -451,7 +451,7 @@ var myObjeto = new Object({
 {nombre: "Diego", apeliido: "Querales", edad: 25}
 ```
 
-### **¿Qué es un Callback Hell?**
+### **Callback Hell**
 
 Ocurren cuando una gran cantidad de callbacks anidan (Conjuntos) en un lugar específico, resultando imposibles de leer o en general trabajar con ellos.
 
@@ -459,18 +459,18 @@ Pueden ser resueltos. Esto se realiza con la ayuda de lo que conocemos como un 
 
 ```jsx
 checkWeather('buenos aires', (error, weather) => {
-	if (error) throw error;
+ if (error) throw error;
 
-	if (weather === 'well') {
-		return checkFlights('buenos aires', (err, flights) => {
-			if (err) throw err;
+ if (weather === 'well') {
+  return checkFlights('buenos aires', (err, flights) => {
+  if (err) throw err;
 
-			buyTicket(flights[0], (e, ticket) => {
-				if (e) throw e;
-				console.log('ticket nº %d', ticket.number);
-			});
-		});
-	}
+   buyTicket(flights[0], (e, ticket) => {
+    if (e) throw e;
+    console.log('ticket nº %d', ticket.number);
+   });
+  });
+ }
 
 	console.log('el clima es malo');
 });
@@ -503,23 +503,23 @@ operation(1,3,(a,b) => a * b)
 ```
 
 
-### **¿Qué son los "stubs"?**
+### **Stubs**
 
 **Stubs,** *son ciertas funciones que copian el comportamiento de módulos específicos.* Son utilizados en casos de prueba ya que pueden brindar las respuestas necesarias para resolver algunos problemas que pueden surgir dentro de los módulos.
 
-### **¿Cuál es la diferencia entre funciones de "bloqueo" y "no bloqueo"?**
+### **Funciones de "bloqueo" y "no bloqueo"**
 
 Cuando emites una función de bloqueo, las demás piezas de código detienen su ejecución hasta que haya sido completado un evento designado de Entrada/Salida.
 
 A su vez, las funciones de no bloqueo le permiten al desarrollador realizar múltiples tareas (Manteniendo múltiples códigos en ejecución) mientras que simultáneamente se realizan múltiples eventos de Entrada/Salida.
 
-### **Como funciona el context en JS?**
+### **Context**
 
 Es el valor del `this`, que es una referencia al objeto “dueño” del codigo que esta siendo ejecutado. 
 
 Por ejemplo, `window` es un objeto global al que se puede acceder con this.
 
-### **Para que se usa Void(0)?**
+### **Void(0)**
 
 Se usa Void(0) para prevenir que la página sea actualizada. También, se usa para llamar a otro método sin que se actualice la página.
 
@@ -555,7 +555,7 @@ Que pasa si tengo dos objetos almacenados en distintas variables?
 
 Y si creamos dos objetos, los mismos al ser igualados no seran iguales aunque su contenido sea el mismo, ya que la referencia es distinta.
 
-### **Que es Truthy and Falsy?**
+### **Truthy and Falsy**
 
 Son valores que por defecto son True o False
 
@@ -576,13 +576,13 @@ Boolean({}); //true aunque el objeto esté vacío
 Boolean(function(){}); //Cualquier función es verdadera también
 ```
 
-#### **Que son las funciones de alto nivel / Higher order Function?**
+#### **Funciones de alto nivel / Higher order Function**
 
 Habían muchas funcionalidades que se estaban repitiendo, entonces JS decidio hacerlas nativas, como iteraciones. Funciones de orden mayor es que reciben como parametro los iterables y un callback, que se ejecutaba en cada elemento iterado.
 
 Hoy en dia todo esto esta abstraído y solo pasamos el callback.
 
-## **Que es el event delegation?**
+## **Event delegation**
 
 Por ejemplo, si tenemos botones y queremos hacer eventos para todos los botones, no es viable hacer un evento por boton ya que no es escalable.
 
@@ -605,7 +605,7 @@ isNaN('denu') // devolvera true porque primero intentará convertir la cadena a 
 Number.isNaN('denu') // false porque no convertirá la cadena a numero
 ```
 
-### **Cual es la diferencia entre foreach, map y reduce**
+### **Diferencia entre foreach, map y reduce**
 
 - **Foreach** itera por cada uno. Ejecuta la función que se le pasa por parámetro para cada elemento del array. Este método no devuelve nada, por lo tanto, si intentamos guardar su ejecución en una variable lo que ocurrirá es que esa variable tomará el valor de undefined.
 
@@ -628,7 +628,7 @@ console.log(numbers); // undefined
 - **Map**: Devuelve una nueva matriz aplicando la funcion de devolucion de llamada en cada elemento de la matriz.
 
 ```jsx
-var result = [1,2,3,4].map(function (item) { return item * 2; });
+var result = [1,2,3,4].map((item) => { return item * 2; });
 console.log(result);
 // Resultado
 [2,4,6,8]
@@ -645,7 +645,7 @@ total;
 // Prints 60
 ```
 
-### **Cual es la diferencia entre Map y Weakmap?**
+### **Diferencia entre Map y Weakmap**
 
 Son casi iguales, son la clasica estructura de datos de diccionario, su diferencia es que se puede acceder a los clave-valores de un Map usando .values o .keys
 
@@ -666,7 +666,7 @@ map.keys() // {'denu'}
 map.values() // {'lemon'}
 
 // Weakmap
-weakMap.get(obj)) // lemon weakmap
+weakMap.get(obj) // lemon weakmap
 weakMap.keys() // ERROR
 weakMap.values() // ERROR
 ```

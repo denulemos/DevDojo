@@ -330,25 +330,26 @@ console.log(array); // Imprime: ['a', 'b', 'c']
 ['a', 'b'].includes('b') // true
 
 // Devuelve el primer elemento que cumple con la condición
-[3,5,6,8].find((n) => n % 2 === 0) // 6
+[3,5,6,8].find((valorActual) => valorActual % 2 === 0) // 6
 
 // Devuelve el index del primer elemento que cumple con la condición
-[2,4,3,5].findIndex((n) => n % 2 !== 0) // 2
+[2,4,3,5].findIndex((valorActual) => valorActual % 2 !== 0) // 2
 
 // Devuelve un nuevo array con los elementos modificados, en este caso los multiplica por 2. Devuelve un nuevo array, no muta el array modificado
 const array = [3,4,8,6].map((n) => n * 2) // [6,8,16,12]
 
 // Devuelve un nuevo array con los elementos que cumplan con la condición
-[1,4,7,8].filter((n) => n % 2 === 0) // [4,8]
+// Si el valorActual cumple con la condicion, queda en el array, de lo contrario, se quita
+[1,4,7,8].filter((valorActual) => valorActual % 2 === 0) // [4,8]
 
 // Devuelve un solo valor, en este caso la suma de los elementos
 [2,4,3,7].reduce((accumulator, currentValue) => accumulator + currentValue) // 16
 
 // Devuelve true si todos los elementos cumplen con la condicion
-[2,3,4,5].every((x) => x < 6) // true
+[2,3,4,5].every((valorActual) => valorActual < 6) // true
 
 // Devuelve true si algunos de los elementos cumplen con la condicion
-[3,5,6,8].some((n) => n > 6) // true
+[3,5,6,8].some((valorActual) => valorActual > 6) // true
 
 // Da vuelta el Array
 [1,2,3,4].reverse() // [4,3,2,1]
