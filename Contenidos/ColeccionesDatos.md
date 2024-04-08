@@ -304,7 +304,7 @@ console.log(array); // Imprime: ['a', 'b', 'c']
 // Agrega al final
 [1,2,3].push(4) // [1,2,3,4]
 
-// Elimina el último
+// Quita y devuelve el último elemento
 [1,2,3].pop() // [1,2]
 
 // Quita y devuelve el primer elemento
@@ -335,8 +335,8 @@ console.log(array); // Imprime: ['a', 'b', 'c']
 // Devuelve el index del primer elemento que cumple con la condición
 [2,4,3,5].findIndex((n) => n % 2 !== 0) // 2
 
-// Devuelve un nuevo array con los elementos modificados, en este caso los multiplica por 2
-[3,4,8,6].map((n) => n * 2) // [6,8,16,12]
+// Devuelve un nuevo array con los elementos modificados, en este caso los multiplica por 2. Devuelve un nuevo array, no muta el array modificado
+const array = [3,4,8,6].map((n) => n * 2) // [6,8,16,12]
 
 // Devuelve un nuevo array con los elementos que cumplan con la condición
 [1,4,7,8].filter((n) => n % 2 === 0) // [4,8]
@@ -359,6 +359,11 @@ console.log(array); // Imprime: ['a', 'b', 'c']
 
 // Recorre el array
 [1,2,3].forEach(x => console.log(x))
+
+// Conviene valores a un array
+"hola".split() => ['h','o','l','a'];
+//Se puede separar la palabra dependiendo de un regex
+"hola, denu".split(/,\s*/g) => ['hola', 'denu'];
 ```
 
 ### Funcion .sort()
