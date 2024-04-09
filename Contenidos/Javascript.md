@@ -645,6 +645,24 @@ total;
 // Prints 60
 ```
 
+### **Metodos String**
+
+```javascript
+
+// .includes() Detecta y devuelve true o false si el String posee un substring en el 
+const str = 'This is my example string!';
+const substr = 'my';
+
+console.log(str.includes(substr)); // true
+
+//.indexOf() es otra forma de saber si un substring se encuentra dentro de un string si el mismo no funciona
+stringObj.indexOf("string to check for") // -1 Si no se encuentra
+
+//.replace Reemplaza de un String o un regex un valor por otro, no muta al objeto en si, devuelve lo nuevo
+array[0] = array[0].replace("PM", '') // Quita el PM del string dentro de ese array 
+
+```
+
 ### **Diferencia entre Map y Weakmap**
 
 Son casi iguales, son la clasica estructura de datos de diccionario, su diferencia es que se puede acceder a los clave-valores de un Map usando .values o .keys

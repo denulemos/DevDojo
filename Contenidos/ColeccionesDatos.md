@@ -344,6 +344,8 @@ const array = [3,4,8,6].map((n) => n * 2) // [6,8,16,12]
 
 // Devuelve un solo valor, en este caso la suma de los elementos
 [2,4,3,7].reduce((accumulator, currentValue) => accumulator + currentValue) // 16
+// El accomulator puede ser inicializado de antemano, si no, se toma como valor inicial el primer elemento del array
+[2,4,3,7].reduce((accumulator, currentValue) => accumulator + currentValue, 0)
 
 // Devuelve true si todos los elementos cumplen con la condicion
 [2,3,4,5].every((valorActual) => valorActual < 6) // true
