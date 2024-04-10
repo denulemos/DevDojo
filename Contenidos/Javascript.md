@@ -230,7 +230,7 @@ const { start : { x: startX, y: startY }} = a;
 console.log(startX, startY); // 5, 6
 ```
 
-## **Creando Strings con Template Literals**
+## **Creando Strings con Template Literal - Template Strings**
 
 Es un tipo especial de String que hace que el manejo de String complejos sea más facil, pudiendo crear Strings multilinea para invocarlos luego, por ejemplo:
 
@@ -447,6 +447,36 @@ var myObjeto = new Object({
 })
 // Salida por consola
 {nombre: "Diego", apeliido: "Querales", edad: 25}
+```
+
+### **Callback**
+
+Es una funcion que se ejecuta dentro de otra, una funcion que se pasa como parametro a otra.
+
+```javascript
+array.sort((a, b) => a - b); 
+```
+
+### **Diferencia entre `for in` y `for of`**
+
+- For in toma los indices de los elementos que estan siendo recorridos
+
+```javascript
+const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+for (const index in digits) {
+  console.log(digits[index]);
+}
+```
+
+- For of toma los valores en si
+
+```javascript
+const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+for (const digit of digits) {
+  console.log(digit);
+}
 ```
 
 ### **Callback Hell**
