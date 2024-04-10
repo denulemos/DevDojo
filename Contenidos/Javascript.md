@@ -126,6 +126,10 @@ console.log(greeting()); // Hello Anonymous Por defecto
 
 Los botones de los form en HTML por defecto hacen un submit, lo que puede llevar a que se recargue la pagina. Para evitar esto, se usa `event.preventDefault()` para evitar que se ejecute el comportamiento por defecto del evento.
 
+**Diferencia entre blur y focus**
+
+Focus es cuando uno se para sobre un input, blur es el hecho de salir de ese input. Son dos eventos diferentes. 
+
 
 ### **Función Object.freeze**
 
@@ -230,7 +234,7 @@ const { start : { x: startX, y: startY }} = a;
 console.log(startX, startY); // 5, 6
 ```
 
-## **Creando Strings con Template Literal - Template Strings**
+### **Creando Strings con Template Literal - Template Strings**
 
 Es un tipo especial de String que hace que el manejo de String complejos sea más facil, pudiendo crear Strings multilinea para invocarlos luego, por ejemplo:
 
@@ -282,7 +286,7 @@ Sí quiero solo importar una funcion exportada de otra clase
 import { add } from './math_functions.js';
 ```
 
-## **Export**
+### **Export**
 
 Cuando queremos que una funcion, o algo de codigo, sea usable en otra parte, debemos **exportarlo** antes de **importarlo** en otro lado
 
@@ -610,7 +614,7 @@ Habían muchas funcionalidades que se estaban repitiendo, entonces JS decidio ha
 
 Hoy en dia todo esto esta abstraído y solo pasamos el callback.
 
-## **Event delegation**
+### **Event delegation**
 
 Por ejemplo, si tenemos botones y queremos hacer eventos para todos los botones, no es viable hacer un evento por boton ya que no es escalable.
 
@@ -1034,9 +1038,8 @@ Sin embargo, no serán la mejor opción cuando tengamos que hacer (con frecuenci
 
 Para este segundo caso, probablemente sea mejor considerar en uso de un motor de base de datos.
 
-## Manejo de Archivos en NodeJS
-
 Al igual que la mayoría de los lenguajes, NodeJS cuenta con una librería (o módulo, en js) para interactuar con el sistema de archivos (o File System) de tu computadora.
+
 Para poder usar este módulo solo debemos importarla al comienzo de nuestro archivo fuente, utilizando la función `require( module | path )`:
 
 ```jsx

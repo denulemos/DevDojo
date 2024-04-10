@@ -42,7 +42,6 @@ Documentacion tecnica en formato de preguntas-respuestas y teoria sobre diversos
 * [Organizaciones](https://github.com/denulemos/denobible/blob/master/Contenidos/Organizaciones.md)
 * [Package.json](https://github.com/denulemos/denobible/blob/master/Contenidos/PackageJson.md)
 * [Patrones Disenio](https://github.com/denulemos/DenoCuriosityNotes/blob/master/Contenidos/PatronesDiseño.md)
-* [Performance](https://github.com/denulemos/DenoCuriosityNotes/blob/master/Contenidos/Performance.md)
 * [Pilas y Colas](https://github.com/denulemos/DenoCuriosityNotes/blob/master/Contenidos/PilasYColas.md)
 * [Polimorfismo](https://github.com/denulemos/DenoCuriosityNotes/blob/master/Contenidos/Polimorfismo.md)
 * [Python](https://github.com/denulemos/DenoCuriosityNotes/blob/master/Contenidos/Python.md)

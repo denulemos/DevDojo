@@ -130,3 +130,222 @@ Un Array es una estructura de datos que almacena elementos de forma contigua en 
 
 Un Linked List es una estructura de datos que almacena elementos de forma no contigua en la memoria. Un Doubly Linked List es una estructura de datos que almacena elementos de forma no contigua en la memoria, pero cada nodo tiene un link al nodo anterior y al siguiente.
 
+---
+
+# Big O - Performance de un Algoritmo
+
+O viene por la palabra Orden. La n representa un número o el tamaño de un conjunto
+
+Podemos ejecutar nuestro algoritmo y medir cuanto tiempo tarda en ejecutarse, pero es algo muy variable, dependiendo el algoritmo, el tiempo de ejecución escala con la entrada (lo que recibe), como por ejemplo los algoritmos de búsqueda que pueden funcionar bien con cantidades pequeñas de datos y muy mal con cantidades muy grandes.
+
+La mejor opcion es la que crece menos ante el aumento de datos de entrada
+
+### 🔹**Reglas para calcular Big O**
+
+- Se ignoran las constantes
+
+```html
+3 * O(1) => O(1)
+0(n/2) => O(n)
+```
+
+- Dominancia de términos: Siempre nos quedaremos con el peor caso.
+
+```html
+O(n) < O(n^2)
+O(n log n) < O(2^n)
+```
+
+### 🔹**Calcular Big O**
+
+Supongamos que necesitamos llevar unas valijas a la casa de un primo. No importan cuantas valijas llevemos, el tiempo siempre será el mismo, 5 minutos.
+
+Si quiero llevar las valijas corriendo, supongamos que solo puedo llevar 2 valijas por corrida, entonces, el tiempo que tardaré subirá exponencialmente, dependo de mi entrada, y el tiempo sube de manera lineal.
+
+![](C:\Codigo\Bibler\Contenidos\src\perf1.png)
+
+### 🔹**Notación Asintótica**
+
+La notacion asintotica nos permite simplificar estos graficos, es como redondear decimales.
+
+En desarollo nos interesa el limite superior, que es la notacion de **Big 0, es el comportamiento en el peor de los casos**.
+
+Asi podremos calificar nuestros algoritmos con distintas complejidades. Si mi algoritmo es n² entre mas crezca la entrada, peor se va a comportar, como se puede ver en el siguiente grafico
+
+![performance](C:\Codigo\Bibler\Contenidos\src\perf2.png)
+
+- **O(1)** => Tiempo constante, el algoritmo no variará su rendimiento con la entrada. Por ejemplo, asignaciones de variables.
+
+```jsx
+x = x+1; O(1)
+y = 200*3; O(1)
+print(y); O(1)
+O(1) + O(1) + O(1) = O(1)
+```
+
+- **O(n)** => Crecimiento Lineal, indica que el crecimiento de complejidad del algoritmo es proporcional al input. Mas datos, mas complejidad. Aparece en iteraciones.
+
+```jsx
+for (int i = 0; i<n; i++) 
+	print(arr[1]);
+
+// O(1)
+```
+
+- n * O(1) = O(n) | La impresion es de complejidad O(1), pero se ejecuta n veces dependiendo del input ya que esta dentro de un bucle for
+
+```jsx
+y = 2+2; // O(1)
+
+//O(n)
+for(int i = 0; i<n; i++)
+	print(arr[1]);
+
+// n + O(1) => O(n)
+```
+
+- **O(n^2)** => El crecimiento en complejidad es proporcional al cuadrado del tamaño del input. Son los menos recomendados para datos grandes. Aparece sobre iteraciones dentro de iteraciones. Se le dice **complejidad cuadratica.**
+
+```jsx
+for(int i = 0; i<n; i++) // O(n)
+	for (int j = 0; i<k; j++) { // O(n)
+		print(m[i][j]); // O(1)
+	}
+
+n * n * O(1) => O(n^2)
+```
+
+No importa si tenemos un algoritmo muy complejo dentro de un if al que probablemente no se entre dependiendo la entrada, SIEMPRE se toma el peor caso posible.
+
+### 🔹**¿Cómo analizamos el codigo?**
+
+Cualquier función se considera O(1) (constante) siempre y cuando no sea un ciclo, no tenga recursion y no sea una llamada a una funcion que no sea de tiempo constante
+
+```jsx
+entrada = input() // O(1)
+x = 5 // O(1)
+
+if entrada == "hola":
+	print("saludo" * x) // O(1)
+
+// n es la entrada
+for (int i = 1; i <=n; i += c) { // O(n)
+	// CUalquier sentencia O(1)
+}
+```
+
+Los ciclos son considerados `O(n) `, siendo n la entrada. Depende que tan grande sea la entrada, cuanto se recorrerá. Pero, si se itera solo 3 veces, se considera `O(1)`, ya que la entrada es indiferente en la cantidad de ciclos de ejecución.
+
+Si hay dos bucles anidados, se considera `O(n^2)`, la complejidad depende del ciclo de adentro del ciclo padre.
+
+```javascript
+// n es la entrada
+for (int i = 1; i <= n; i += c) {
+    // O(n^2)
+    for (int j = 1; j <= n; j += c) {
+        // Cualquier sentencia O(1)
+    }
+}
+```
+
+Si la variable del ciclo, en lugar de estar incrementandose por un numero constante, se multiplica o divide, se vuelve `O(log(n))`, va incrementandose de manera exponencial con su entrada.
+
+```javascript
+// n es la entrada
+// O(log(n))
+for (int i = 1; i <= n; i *= c) {
+    // Cualquier sentencia O(1)
+}
+```
+
+Si es mucho mas complejo lo que sucede con la variable que itera, se vuelve `O(log(log(n))`
+
+```javascript
+// O(log(log(n))) - Hay muchas mas operaciones dentro de ese for
+for (int i = 2; i <= n; i = pow(i,c)) {
+    // Cualquier sentencia O(1)
+}
+```
+
+Sumamos todas las complejidades del codigo y lo simplificamos. Tomamos el termino mas significativo, el pedazo de codigo mas grande, para sacar la complejidad total de todo el codigo.
+
+Las lineas dentro de un bucle tendrán el mismo tipo de complejidad que su ciclo padre.
+
+```javascript
+public static void main(String[] args){
+    int []arr = {5,3,4,8,7,5,4,2,4}; // 1
+    
+    for (int j = 1; j < arr.length; j++) { // n
+        int actual = arr[j]; // n
+        
+        int i = j - 1; // n
+       	while (i >= 0 && arr[i] > actual) { // n^2
+            arr[i+1] = arr[i]; // n^2
+            i --; // n^2 - Ya que su padre es // n^2
+        }
+        
+        arr[i + 1] = actual;
+    }
+}
+```
+
+Con esto, hacemos la siguiente operación:
+
+`3n^2 + 4n + 1 = O(n^2)`
+
+Nos quedamos con el termino mas significativo, que seria n^2
+
+🔹**Multiplicacion de Runtimes**
+
+Si mi código es "Hace esto y luego hace esto otro", se agrega al Runtime 
+
+```javascript
+// O(A+B)
+for (int a : arrA) {
+    print(a);
+}
+for (int b: arrB) {
+    print(b);
+}
+```
+
+En cambio, si mi codigo es del estilo "Mientras haces esto, hace esto otro", se multiplica el runtime
+
+```javascript
+// O(AB)
+for (int a: arrA) {
+	for (int b: arrB) {
+		print(a + "," + b);
+	}
+}
+```
+
+### 🔹**Complejidad Espacial**
+
+Es la cantidad de memoria que debemos usar para resolver un problema de decision.
+
+La memoria se puede reusar, y el tiempo no, es la principal diferencia entre ambas mediciones (tiempo / espacio). A los inputs se los considera read-only.
+
+---
+
+### Ejemplos de Ejercicios
+
+En este caso es O(N) (Muy bueno), el hecho de que iteremos dos veces el array no importa. 
+
+```javascript
+void foo(int[] array) {
+    int sum = 0;
+    int product = 1;
+    for (int i = 0; i < array.length; i++) { // O(N)
+        sum += array[i];
+    }
+    for (int i = 0; i < array.length; i++) { // O(N)
+        product *= array[i];
+    }
+    
+    System.out.println(sum + product);
+}
+```
+
+---
+
