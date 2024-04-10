@@ -18,7 +18,7 @@ Documentacion tecnica en formato de preguntas-respuestas y teoria sobre diversos
 * [Ciclos de Vida](https://github.com/denulemos/denobible/blob/master/Contenidos/CiclosDeVida.md)
 * [Codigo Limpio](https://github.com/denulemos/DenoCuriosityNotes/blob/master/Contenidos/CodigoLimpio.md)
 * [Ciberseguridad](https://github.com/denulemos/denobible/blob/master/Contenidos/Ciberseguridad.md)
-* [Colecciones de Datos](https://github.com/denulemos/DenoCuriosityNotes/blob/master/Contenidos/ColeccionesDatos.md)
+* [Estructuras de Datos](https://github.com/denulemos/DenoCuriosityNotes/blob/master/Contenidos/EstructurasDatos.md)
 * [Criptografia](https://github.com/denulemos/denobible/blob/master/Contenidos/Criptografia.md)
 * [Cookies](https://github.com/denulemos/denobible/blob/master/Contenidos/Cookies.md)
 * [Derecho](https://github.com/denulemos/DenoCuriosityNotes/blob/master/Contenidos/Derecho.md)

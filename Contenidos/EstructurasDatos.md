@@ -1,4 +1,4 @@
-# Colecciones de Datos (Arrays)
+# Estructuras de datos (Arrays)
 
 **Algunos ejemplos pueden estar en Java**
 
@@ -390,3 +390,7 @@ Esta funcion devuelve un numero. El mismo determina lo siguiente:
 - Si el numero es negativo, acomoda a antes que b.
 - Si es positivo, b va antes que a
 - Si es cero, no cambia nada
+
+### **Set() en Javascript**
+
+Es una estructura de datos que solo permite valores unicos. Si paso un array a un set, va a eliminar todos los valores duplicados.

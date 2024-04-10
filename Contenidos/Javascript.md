@@ -360,7 +360,7 @@ const zeus = new SpaceShuttle('Jupiter');
 ```jsx
 const person = {
   name: "Taylor",
-  sayHello: function() {
+  sayHello: () => {
     return `Hello! My name is ${this.name}.`;
   }
 };
@@ -371,20 +371,18 @@ const person = {
 ```jsx
 const createPerson = (name, age, gender) => {
  "use strict";
- // change code below this line
  return {
   name,
    age,
   gender
  };
- // change code above this line
 };
-console.log(createPerson("Zodiac Hasbro", 56, "male")); // returns a proper object
+console.log(createPerson("Zodiac Hasbro", 56, "male")); 
 ```
 
 Se crea un objeto con un name= “Zodiac Hasbro”, age=56 and gender=”male”
 
-### **Cuales son las diferencias entre Java y Javascript? **
+### **Diferencias entre Java y Javascript**
 
 1. **JavaScript** ha sido un lenguaje interpretado, y **Java** compilado. Los programas de **JavaScript** son archivos de texto que se integra directamente en las páginas HTML y es interpretado (sin estar compilado) por el cliente (navegador), mientras que en **Java** se compilan a un archivo especial para que ser optimizados a un lenguaje intermedio llamado bytecode, y leído posteriormente en un ordenador que lo ejecute.
 2. **Java** es un lenguaje de programación orientado a objetos puros (OOP), mientras que **JavaScript** está basado en prototipos y, puede emular la programación orientada a objetos.
