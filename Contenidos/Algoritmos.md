@@ -174,6 +174,33 @@ Asi podremos calificar nuestros algoritmos con distintas complejidades. Si mi al
 
 ![performance](C:\Codigo\Bibler\Contenidos\src\perf2.png)
 
+* **O(N!) =>** Es el peor de todos. Tambien para funciones recursivas en general.
+
+```javascript
+void nFactorialExample(int n) {
+  for (int i = 0; i < n; i++){
+    nFactorialExample(n - 1);
+  }
+}
+
+// Factorial de 3: 3x2 = 6
+// Factorial de 6: 6x5x4x3x2 = 720
+```
+
+* **O(2'N) =>** Responde a las secuencias fibonacci recursivas. Es una complejidad exponencial. Tambien cuando se trata de arboles. 
+
+```javascript
+// Ejemplo poco eficiente - Recursiva
+int fibonacci (int n) {
+  if (n < 2) return n;
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
+```
+
+* **O (N log N) =>** Aplica a Merge Sort, Heap Sort y Quick Sort, que son los mas eficientes.
+
+* **O(log n)** => Es muy comun verlo en la busqueda binaria, ya que se situa a la mitad de un array ordenado y de ahi, mediante comparacion, encuentra el elemento.  
+
 - **O(1)** => Tiempo constante, el algoritmo no variará su rendimiento con la entrada. Por ejemplo, asignaciones de variables.
 
 ```jsx
@@ -181,6 +208,11 @@ x = x+1; O(1)
 y = 200*3; O(1)
 print(y); O(1)
 O(1) + O(1) + O(1) = O(1)
+
+int max(int a, int b) {
+  if (a >= b) return a;
+  return b;
+}
 ```
 
 - **O(n)** => Crecimiento Lineal, indica que el crecimiento de complejidad del algoritmo es proporcional al input. Mas datos, mas complejidad. Aparece en iteraciones.
@@ -189,10 +221,16 @@ O(1) + O(1) + O(1) = O(1)
 for (int i = 0; i<n; i++) 
 	print(arr[1]);
 
-// O(1)
+// En el peor de los casos se recorre el array entero para encontrar a un solo empleado.
+Employee linearSeach(Employee[] employees, String name) {
+  for (Employee e: employees) {
+    if (name.equals(e.getName())) return e;
+  }
+  return null;
+}
 ```
 
-- n * O(1) = O(n) | La impresion es de complejidad O(1), pero se ejecuta n veces dependiendo del input ya que esta dentro de un bucle for
+- **n * O(1) = O(n)** | La impresion es de complejidad O(1), pero se ejecuta n veces dependiendo del input ya que esta dentro de un bucle for
 
 ```jsx
 y = 2+2; // O(1)
@@ -213,6 +251,14 @@ for(int i = 0; i<n; i++) // O(n)
 	}
 
 n * n * O(1) => O(n^2)
+
+void printPairs(int[] array) {
+  for (int x: array) {
+    for (int y : array) {
+      System.out.println(x y);
+    }
+  }
+}
 ```
 
 No importa si tenemos un algoritmo muy complejo dentro de un if al que probablemente no se entre dependiendo la entrada, SIEMPRE se toma el peor caso posible.
@@ -326,6 +372,8 @@ Es la cantidad de memoria que debemos usar para resolver un problema de decision
 
 La memoria se puede reusar, y el tiempo no, es la principal diferencia entre ambas mediciones (tiempo / espacio). A los inputs se los considera read-only.
 
+La idea es encontrar un equilibrio entre ambas complejidades. Por ejemplo, el uso de un Hash Map puede hacer que la complejidad temporal sea menor, ya que requiere menos tiempo, pero la complejidad espacial puede ser mayor, ya que requiere memoria adicional. 
+
 ---
 
 ### Ejemplos de Ejercicios
@@ -347,5 +395,138 @@ void foo(int[] array) {
 }
 ```
 
----
+`O(N)` - La complejidad crece dependiendo de la entrada de datos, es decir, el array que recibe y tendra que recorrer. 
+
+```javascript
+int sum = 0;
+int product = 1;
+
+for (int val: array) {
+  sum +=val;
+  product *=val;
+}
+```
+
+`O(2N'2) == O(N'2 + N'2) === O(N'2)`. Se deben eliminar los terminos no dominantes
+
+```javascript
+int sum = 0;
+int result = 0;
+
+// O(N) - No Dominante
+for (int val: array) {
+  sum +=val;
+}
+
+// O(N'2) - Dominante. Si optimizamos solo esta parte, podremos obtener todos los beneficios
+for (int x : array) {
+  for (int y: array) {
+    result += x * y - sum;
+  }
+}
+```
+
+A simple vista parece `O(N)`, porque recorre solo dos veces los dos array por separado, pero estos array pueden tener tamanios distintos, entonces seria `O(A + B)`, A siendo el tamanio de arrayA y B de arrayB
+
+```javascript
+int sum = 0;
+
+for (int val: arrayA) {
+  sum += val;
+}
+
+for (int val: arrayB){
+  sum += val;
+}
+```
+
+O(N), solo se necesita recorrer la mitad del array, y si el mismo crece de tamanio, la complejidad crecera con el. 
+
+```javascript
+void reverseArray(int [] array) {
+  // Recorre el array hasta la mitad
+  for (int i = 0; i < array.length / 2; i++) {
+    // Calculamos la posicion nueva del elemento
+    int reversePosition = array.length - 1 - i;
+    // Posicion actual
+    int tmpVal = array[i];
+    
+    // Cambiamos de lugar
+    array[i] = array[reversePosition];
+    array[reversePosition] = tmpVal;
+  }
+}
+```
+
+O(N'2) 
+
+```javascript
+// Imprimir parejas de valores de un array
+void printUnorderedPairs(int[] array) {
+  for (int i = 0; i< array.length - 1; i++) {
+    for (int j = i+1; j < array.length; j++) {
+      System.out.println(ij);
+    }
+  }
+}
+```
+
+O(N) - Si B crece, el tiempo crece. Seria O(B)
+
+```javascript
+// Calcular el producto de dos numeros sin usar la funcion predeterminada. Sumar B veces el valor A
+int product(int a, int b) {
+  int result = 0;
+  // B define que tan grande es este for
+  for (int i = 0; i < b; i++) {
+    result += a;
+  }
+  return result;
+}
+```
+
+O(N'2) - Tengo dos complejidades lineales.
+
+```javascript
+// copiar un array a otro de forma poco eficiente - elemento a elemento a un array creado desde cero
+
+// O(N) - recorre el array
+// Se recibe un arrray
+int[] copyArray(int[] array) {
+  // Se guarda una copia del array
+  int[] copy = new int[0];
+  for (int val: array) {
+    copy = appendToNew(copy, val);
+  }
+  return copy
+}
+
+
+// O(N) - recorre el array recibido
+// Se pasa la copia del array y el valor a agregar en esa copia
+int[] appendToNew(int[] array, int val) {
+  // Creo un array un poco mayor
+  int[] bigger = new int[array.length + 1];
+  for (int i = 0; i < array.length; i++){
+    bigger[i] = array[i];
+  }
+  
+  bigger[bigger.length - 1] = val;
+  return bigger;
+}
+```
+
+O(AB) 
+
+```javascript
+void printPairsTwoArrays(int[] arrayA, int[] arrayB) {
+  // Aca recorro el arrayA - O(A)
+  for (int valA : arrayA) {
+    // Aca el arrayB - O(B)
+    for (int valB: arrayB) {
+      System.out.println(valA, valB);
+    }
+  }
+}
+```
 

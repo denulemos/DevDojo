@@ -394,3 +394,12 @@ Esta funcion devuelve un numero. El mismo determina lo siguiente:
 ### **Set() en Javascript**
 
 Es una estructura de datos que solo permite valores unicos. Si paso un array a un set, va a eliminar todos los valores duplicados.
+
+### HashTables (.Map)
+
+Es una estructura de datos que almacena valores dado su Hash (int o long). Son muy eficientes para una busqueda dada por clave. 
+
+Sus operaciones son:
+
+* Insertar nuevo par clave, valor - `index = hash(key) % array_length` , su complejidad es `O(1)`
+* Obtener un valor mediante su clave, su complejidad es `O(1)` en un caso promedio, `O(N)` en el peor de los casos, en general si la funcion Hash es inadecuada. 
