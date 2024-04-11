@@ -863,15 +863,15 @@ escape ("Hola? Como estas tu?")); // Hola%3F%20Como%20estas%20tu%21
 unescape("Hola%3F%20Como%20estas%20tu%21") // Hola? Como estas tu?
 ```
 
-### **Como se implementan Promises?**
+### **Promises**
 
 Las promises son una buena forma de manejar operaciones asincronicas. Puede tener 3 estados, `Pending`, `Fulfilled` y `Rejected`. Son utiles cuando hay que manejar mas de una operacion asincronica una despues de la otra, para eso se puede usar **Promise Chaining** usando then() y catch() para el manejo de cada una. 
 
 Se pueden implementar por ejemplo, en un Lazy loading.
 
 ```jsx
-function sum (a, b) {
-return Promise(function (resolve, reject) { 
+sum = (a, b) => {
+return Promise((resolve, reject) => { 
  setTimeout(function () {  // mandar respuesta despues de 1 seg
    if (typeof a !== "number" || typeof b !== "number") {   // testeamos inputs
 		 return reject(new TypeError("Inputs must be numbers"));
@@ -880,18 +880,19 @@ return Promise(function (resolve, reject) {
 	 }, 1000);
 	});
 }
+
 var myPromise = sum(10, 5);
-myPromsise.then(function (result) {
+myPromsise.then( (result) => {
 	document.write(" 10 + 5: ", result);
 	return sum(null, "foo"); // Invalid data and return another promise
-	}).then(function () {  // Won't be called because of the error
-	}).catch(function (err) { // The catch handler is called instead, after another second
+	}).then(() => {  // Won't be called because of the error
+  }).catch((err) => { // The catch handler is called instead, after another second
 		console.error(err);  // => Please provide two numbers to sum.
 	});
 
 // Otra manera de crear una Promise
 
-let promise = new Promise(function(resolve, reject){
+let promise = new Promise((resolve, reject) =>{
 	// hacer algo
 });
 ```
