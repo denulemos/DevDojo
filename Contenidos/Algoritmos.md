@@ -937,6 +937,99 @@ Sus operaciones son:
 * Insertar nuevo par clave, valor - `index = hash(key) % array_length` , su complejidad es `O(1)`
 * Obtener un valor mediante su clave, su complejidad es `O(1)` en un caso promedio, `O(N)` en el peor de los casos, en general si la funcion Hash es inadecuada. 
 
+### Linked Lists
+
+Es una estructura de datos que representa una secuencia de nodos. 
+
+* Es una lista enlazada simple, un nodo apunta al siguiente.
+* Doble, el nodo apunta al siguiente y al anterior nodo. 
+
+Los nodos almacenan cualquier tipo de informacion
+
+```java
+public class Node {
+  // Referencia al nodo siguiente
+	public Node next;
+  // Valor del nodo en este caso int
+	public int value;
+
+	public Node(int value) {
+		this.value = value;
+	}
+}
+```
+
+Sus operaciones mas comunes son:
+
+* **Insercion al final de la lista**: Se obtiene el nodo primero de la lista (head), hasta llegar a uno que no tenga un nodo siguiente, significa que es el ultimo. Ahi inserto su referencia next al nuevo nodo, y este nuevo nodo, sin referencia a next
+* **Eliminar un nodo**: Si es el head, solo se mueve la referencia a head al nodo siguiente. Para cualquier otro nodo, simplemente cambio las referencias al mismo en next (`node.next = node.next.next`)
+
+Sus ventajas son:
+
+* Capacidad de insertar un nodo en cualquier posicion de la lista de manera directa, sin mover nada. Solo cambio las referencias de los nodos.
+* Se puede hacer referencia solo al valor
+
+Sus inconvenientes son:
+
+* El acceso a un item aleatorio es complicado. Se deben recorrer todos los nodos hasta llegar a donde queremos, esto es ineficiente. 
+
+```java
+public class SingleLinkedList {
+  public Node head; // El primer nodo de todos
+  
+  public void agregarAlFinal(int value) {
+    // Si es el primer elemento de todos
+    if (head == null) {
+      head = new Node(value);
+      return;
+    }
+    
+    Node current = head;
+    // Mientras no encuentre un nodo sin referencia next (el ultimo)
+    while (current.next != null) {
+      current = current.next;
+    }
+    
+    current.next = new Node(value);
+  }
+  
+  public void eliminarNodo(int value) {
+    // No hay elementos a eliminar porque no hay lista
+    if (head == null) return;
+    
+    if (head.value == value) {
+      // Si el elemento a borrar es el head, paso el head al segundo elemento de la lista
+      head = head.next;
+      return;
+    }
+    
+    Node current = head;
+    while(current.next != null) {
+      if (current.next.value == value) {
+        current.next = current.next.next;
+        return
+      }
+      
+      current = current.next;
+    }
+  }
+  
+  public void print() {
+    if (head == null) return;
+    
+    Node current = head;
+    while (current.next != null) {
+      System.out.println(current.value);
+      current = current.next;
+    }
+  }
+  
+  
+}
+```
+
+
+
 ---
 
 # Generics
