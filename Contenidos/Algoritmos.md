@@ -110,21 +110,11 @@ function TreeNode(val, left, right) {
 
 Porque, por la particularidad que tienen los hijos de los nodos de un BST (que uno es mas chico que el otro), se puede seguir el recorrido mas facilmente. Hace que la busqueda sea mucha mas eficiente.
 
-### 🧠 ¿Cuales son los beneficios de un Linked List sobre un Array?
-
-Consideremos un escenario donde debemos guardar mucha data en un array, pero, la memoria para guardar esa data no esta disponible de forma continua, en ese caso, no podemos usar un Array. 
-
-En un Linked List, como cada nodo esta conectado con un link, no es necesario que la memoria sea continua. 
-
 ### 🧠 ¿Cual es el uso de una Doubly-Linked List cuando se lo compara con un Singly Linked List?
 
 Un Singly Linked List se tienen links derechos, pero no podemos ir para atrás ya que siempre apuntan al siguiente. El DLL posee en cada nodo 3 campos, uno que apunta al nodo anterior, otro al siguiente. 
 
-Se puede reconocer cuando un nodo es el primero ya que su link anterior es Nulo, lo mismo con el último. Es mas eficiente acceder a los elementos en un DLL.
-
-### 🧠 ¿Cual es la diferencia entre un Array y un Linked List?
-
-Un Array es una estructura de datos que almacena elementos de forma contigua en la memoria. Un Linked List es una estructura de datos que almacena elementos de forma no contigua en la memoria.
+Se puede reconocer cuando un nodo es el primero ya que su link anterior es Nulo, lo mismo con el último. Es mas eficiente acceder a los elementos en un DLL
 
 ### 🧠 ¿Cual es la diferencia entre un Linked List y un Doubly Linked List?
 
@@ -924,9 +914,19 @@ Esta funcion devuelve un numero. El mismo determina lo siguiente:
 - Si es positivo, b va antes que a
 - Si es cero, no cambia nada
 
-### **Set() en Javascript**
+### **Set() en Javascript** (HashSet)
 
 Es una estructura de datos que solo permite valores unicos. Si paso un array a un set, va a eliminar todos los valores duplicados.
+
+* `new Set()` -> Crea el set nuevo, si es desde un array, elimina duplicados
+* `Add() `
+* `Delete()`
+* `Has()` -> Devuelve true o false si el valor ya existe
+* `clear() `-> Remover todos los elementos del set
+* `Values()` -> devuelve un iterator con todos los valores
+* `forEach()`
+* `keys() `-> mismo con values
+* `Entries()` -> devuelve un iterator con [value, value] pares
 
 ### HashTables (.Map)
 
@@ -1028,7 +1028,15 @@ public class SingleLinkedList {
 }
 ```
 
+#### ¿Cuales son los beneficios de un Linked List sobre un Array?
 
+Consideremos un escenario donde debemos guardar mucha data en un array, pero, la memoria para guardar esa data no esta disponible de forma continua, en ese caso, no podemos usar un Array. 
+
+En un Linked List, como cada nodo esta conectado con un link, no es necesario que la memoria sea continua. 
+
+#### ¿Cual es la diferencia entre un Array y un Linked List?
+
+Un Array es una estructura de datos que almacena elementos de forma contigua en la memoria. Un Linked List es una estructura de datos que almacena elementos de forma no contigua en la memoria.
 
 ---
 
