@@ -88,28 +88,6 @@ const bubbleSort = (array) => {
 }
 ```
 
-### 🧠 Binary Search Tree
-
-El mismo tiene las propiedades de:
-
-- Cada hijo izquierdo tiene un valor mas pequeño que su padre
-- Cada hijo derecho tiene un valor mas grande que su padre
-- Cada nodo puede tener hasta dos hijos.
-
-![Algoritmo de búsqueda binaria](src/log3.png)
-
-```jsx
-function TreeNode(val, left, right) {
-     this.val = val
-     this.left = left
-     this.right = right
- }
-```
-
-### 🧠 ¿Porque se dice que buscar un nodo en un BST es mas eficiente que en un Simple Binary Tree?
-
-Porque, por la particularidad que tienen los hijos de los nodos de un BST (que uno es mas chico que el otro), se puede seguir el recorrido mas facilmente. Hace que la busqueda sea mucha mas eficiente.
-
 ### 🧠 ¿Cual es el uso de una Doubly-Linked List cuando se lo compara con un Singly Linked List?
 
 Un Singly Linked List se tienen links derechos, pero no podemos ir para atrás ya que siempre apuntan al siguiente. El DLL posee en cada nodo 3 campos, uno que apunta al nodo anterior, otro al siguiente. 
@@ -1193,3 +1171,60 @@ System.out.println(“Primera persona en la fila: “ + filaDePasajeros.remove()
 ```
 
 Quitan el primer elemento disponible en cada estructura, dejando ambas estructuras vacías pues las dos tenían un único elemento cada una. Ahora el método *isEmpty()* de ambas devolverá *true*
+
+---
+
+# Arboles :deciduous_tree:
+
+Es una estructura donde un nodo tiene un solo padre y muchos hijos. Siempre hay una raiz. 
+
+```java
+public class Node {
+  public int value;
+  public Node[] hijos;
+  
+  // Puede ser cualquier tipo de dato, no solo int
+  public Node(int value) {
+    this.value = value;
+  }
+}
+```
+
+### Binary Tree
+
+Un arbol en donde cada nodo debe tener como MAXIMO 2 hijos.
+
+### Binary Search Tree
+
+Cada nodo puede tener MAXIMO 2 hijos, y cada descendiente del lado izquierdo debe tener un valor menor o igual al padre y los de la derecha deben tener un valor mayor o igual al padre.
+
+El mismo tiene las propiedades de:
+
+- Cada hijo izquierdo tiene un valor mas pequeño que su padre
+- Cada hijo derecho tiene un valor mas grande que su padre
+- Cada nodo puede tener hasta dos hijos.
+
+![Algoritmo de búsqueda binaria](src/log3.png)
+
+```jsx
+function TreeNode(val, left, right) {
+     this.val = val
+     this.left = left
+     this.right = right
+ }
+```
+
+#### ¿Porque se dice que buscar un nodo en un BST es mas eficiente que en un Simple Binary Tree?
+
+Porque, por la particularidad que tienen los hijos de los nodos de un BST (que uno es mas chico que el otro), se puede seguir el recorrido mas facilmente. Hace que la busqueda sea mucha mas eficiente.
+
+### Complete Binary Tree
+
+En este arbol todos los niveles estan completos excepto por el ultimo. Si el ultimo nivel no esta completo, debe estar ocupado de izquierda a derecha. Por ejemplo, todos los nodos tienen 2 hijos excepto el ultimo que tiene uno solo. 
+
+Es un arbol 100% balanceado. 
+
+
+
+
+
