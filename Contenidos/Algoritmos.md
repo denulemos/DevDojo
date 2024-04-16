@@ -10,9 +10,19 @@ Encontrar elementos en un vector ordenado de forma rápida sin recorrer todo el 
 
 No, no se puede, ya que encontrar el index del elemento del medio es demasiado complicado.
 
-### 🧠 Selection Sort
+----
 
-Busca el valor más pequeño de la matriz y lo intercambia con el primer valor de la matriz. A continuación, encuentra el siguiente valor más pequeño de la matriz y lo intercambia con el segundo valor de la matriz. Continúa iterando a través de la matriz hasta que está completamente ordenada.
+# Algoritmos de Ordenamiento 🧠
+
+###  Selection Sort
+
+![Selection Sort Tutorials & Notes | Algorithms | HackerEarth](https://he-s3.s3.amazonaws.com/media/uploads/2888f5b.png)
+
+Se busca el elemento mas pequeño y se pone en primera posición
+
+Se busca el segundo mas pequeño y se pone segundo
+
+Se repite el proceso hasta llegar a la ultima posición
 
 ```javascript
 const selectionSort = (array) => {
@@ -35,9 +45,13 @@ const selectionSort = (array) => {
 }
 ```
 
-### 🧠 Insertion Sort
+###  Insertion Sort
 
-Este algoritmo funciona construyendo una matriz ordenada al principio de la lista. Comienza la matriz ordenada con el primer elemento. A continuación, inspecciona el siguiente elemento y lo cambia hacia atrás en la matriz ordenada hasta que esté en una posición ordenada, y así sucesivamente.
+Este algoritmo funciona construyendo una matriz ordenada al principio de la lista. 
+
+Comienza la matriz ordenada con el primer elemento. 
+
+Inspecciona el siguiente elemento y lo cambia hacia atrás en la matriz ordenada hasta que esté en una posición ordenada, y así sucesivamente.
 
 ```javascript
 const insertionSort = (array) => {
@@ -57,9 +71,13 @@ const insertionSort = (array) => {
 }
 ```
 
-### 🧠 Bubble Sort
+###  Bubble Sort
 
-Es el más simple de todos. Da vuelta los elementos si estan en el orden incorrecto de a pares. Para darse cuenta de que está ordenado, debe hacer una pasada completa sin hacer ningun swipe. 
+Es el más simple de todos. 
+
+Da vuelta los elementos si estan en el orden incorrecto de a pares. 
+
+Para darse cuenta de que está ordenado, debe hacer una pasada completa sin hacer ningun swipe. 
 
 ![Algoritmo de búsqueda binaria](src/log2.png)
 
@@ -88,15 +106,65 @@ const bubbleSort = (array) => {
 }
 ```
 
-### 🧠 ¿Cual es el uso de una Doubly-Linked List cuando se lo compara con un Singly Linked List?
+### Merge Sort
 
-Un Singly Linked List se tienen links derechos, pero no podemos ir para atrás ya que siempre apuntan al siguiente. El DLL posee en cada nodo 3 campos, uno que apunta al nodo anterior, otro al siguiente. 
+![Understanding Merge Sort-Sorting Algorithm -4 | by Jaykishan Sewak | Medium](https://miro.medium.com/v2/resize:fit:672/1*WQ4YJMWRFrGHLK1KQDeDHQ.png)
 
-Se puede reconocer cuando un nodo es el primero ya que su link anterior es Nulo, lo mismo con el último. Es mas eficiente acceder a los elementos en un DLL
+Aplica el principio divide y vencerás.
 
-### 🧠 ¿Cual es la diferencia entre un Linked List y un Doubly Linked List?
+Divide el array a la mitad de forma sucesiva
 
-Un Linked List es una estructura de datos que almacena elementos de forma no contigua en la memoria. Un Doubly Linked List es una estructura de datos que almacena elementos de forma no contigua en la memoria, pero cada nodo tiene un link al nodo anterior y al siguiente.
+Se mezclan pares de subarray hasta volver a juntar el array completo
+
+Es recursivo
+
+ ```javascript
+ // Función principal para ordenar un array utilizando Merge Sort
+ function mergeSort(arr) {
+     // Caso base: si el array tiene 0 o 1 elemento, ya está ordenado
+     if (arr.length <= 1) {
+         return arr;
+     }
+     
+     // Encuentra el punto medio del array
+     const mid = Math.floor(arr.length / 2);
+     
+     // Divide el array en mitades
+     const left = arr.slice(0, mid);
+     const right = arr.slice(mid);
+     
+     // Ordena recursivamente las mitades izquierda y derecha
+     return merge(mergeSort(left), mergeSort(right));
+ }
+ 
+ // Función para combinar y ordenar dos arrays ordenados
+ function merge(left, right) {
+     // Array para almacenar el resultado fusionado
+     let result = [];
+     // Índices para recorrer los arrays izquierdo y derecho
+     let leftIndex = 0;
+     let rightIndex = 0;
+ 
+     // Mientras haya elementos en ambos arrays
+     while (leftIndex < left.length && rightIndex < right.length) {
+         // Compara los elementos actuales de ambos arrays
+         if (left[leftIndex] < right[rightIndex]) {
+             // Si el elemento izquierdo es menor, añádelo al resultado y avanza al siguiente elemento del array izquierdo
+             result.push(left[leftIndex]);
+             leftIndex++;
+         } else {
+             // Si el elemento derecho es menor, añádelo al resultado y avanza al siguiente elemento del array derecho
+             result.push(right[rightIndex]);
+             rightIndex++;
+         }
+     }
+ 
+     // Después de salir del bucle, uno de los arrays puede tener elementos restantes
+     
+ 
+ ```
+
+
 
 ---
 
@@ -814,15 +882,18 @@ console.log(array); // Imprime: ['a', 'b', 'c']
 // Agrega al principio
 [1,2,3].unshift(0) // [0,1,2,3]
 
-// Agrega
-['a', 'b'].concat('c') // ['a', 'b', 'c']
+//  Combina dos o más arreglos y devuelve un nuevo arreglo.
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+arr1.concat(arr2); // [1, 2, 3, 4, 5, 6]
 
 // Devuelve un array donde cada elemento del array tiene en el medio
 // el valor pasado como argumento
 ['a', 'b'].join('-') // a-b
 
-// 
-['a', 'b'].slice(1) // ['a']
+// Devuelve una copia superficial de una porción del arreglo en un nuevo arreglo seleccionando los elementos desde el inicio hasta el final (o hasta un índice especificado).
+const arr = [1, 2, 3, 4, 5];
+arr.slice(1, 4); // Copia desde el índice 1 hasta el índice 3 [2, 3, 4]
 
 // Devuelve el index del elemento, si no lo encuentra, devuelve -1
 ['a', 'b'].indexOf('b') // 1
@@ -853,6 +924,11 @@ const array = [3,4,8,6].map((n) => n * 2) // [6,8,16,12]
 
 // Devuelve true si algunos de los elementos cumplen con la condicion
 [3,5,6,8].some((valorActual) => valorActual > 6) // true
+
+// Cambia el contenido de un arreglo eliminando elementos existentes y/o agregando nuevos elementos.
+const arr = [1, 2, 3, 4, 5];
+arr.splice(2, 1, "a", "b"); // Elimina 1 elemento desde el índice 2 y agrega "a" y "b" [1, 2, "a", "b", 4, 5]
+splice(indice, cantidad elementos a eliminar, agrego, agrego);
 
 // Da vuelta el Array
 [1,2,3,4].reverse() // [4,3,2,1]
@@ -906,6 +982,35 @@ Es una estructura de datos que solo permite valores unicos. Si paso un array a u
 * `keys() `-> mismo con values
 * `Entries()` -> devuelve un iterator con [value, value] pares
 
+```javascript
+// Crear una nueva instancia de Set
+const mySet = new Set();
+
+// Agregar elementos al Set
+mySet.add("apple");
+mySet.add("banana");
+mySet.add("orange");
+mySet.add("apple"); // Los Sets no permiten elementos duplicados, por lo que esta línea no tendrá ningún efecto
+
+// Verificar si un elemento existe en el Set
+console.log(mySet.has("apple")); // Output: true
+console.log(mySet.has("grape")); // Output: false
+
+// Eliminar un elemento del Set
+mySet.delete("banana");
+
+// Iterar sobre los elementos del Set
+for (let item of mySet) {
+    console.log(item);
+}
+// Output:
+// apple
+// orange
+
+```
+
+
+
 ### HashTables (.Map)
 
 Es una estructura de datos que almacena valores dado su Hash (int o long). Son muy eficientes para una busqueda dada por clave. 
@@ -914,6 +1019,65 @@ Sus operaciones son:
 
 * Insertar nuevo par clave, valor - `index = hash(key) % array_length` , su complejidad es `O(1)`
 * Obtener un valor mediante su clave, su complejidad es `O(1)` en un caso promedio, `O(N)` en el peor de los casos, en general si la funcion Hash es inadecuada. 
+
+```javascript
+// Definición de una Hashtable
+const hashtable = {};
+
+// Agregar elementos a la Hashtable
+hashtable["key1"] = "value1";
+hashtable["key2"] = "value2";
+hashtable["key3"] = "value3";
+
+// Acceder a elementos en la Hashtable
+console.log(hashtable["key1"]); // Output: "value1"
+console.log(hashtable["key2"]); // Output: "value2"
+
+// Verificar si una clave existe en la Hashtable
+console.log("key4" in hashtable); // Output: false
+
+// Eliminar un elemento de la Hashtable
+delete hashtable["key3"];
+
+// Iterar sobre las claves de la Hashtable
+for (let key in hashtable) {
+    console.log(key + ": " + hashtable[key]);
+}
+// Output:
+// key1: value1
+// key2: value2
+
+----
+
+// Crear una nueva instancia de Map
+const myMap = new Map();
+
+// Agregar elementos a la Map
+myMap.set("key1", "value1");
+myMap.set("key2", "value2");
+myMap.set("key3", "value3");
+
+// Acceder a elementos en la Map
+console.log(myMap.get("key1")); // Output: "value1"
+console.log(myMap.get("key2")); // Output: "value2"
+
+// Verificar si una clave existe en la Map
+console.log(myMap.has("key4")); // Output: false
+
+// Eliminar un elemento de la Map
+myMap.delete("key3");
+
+// Iterar sobre las claves y valores de la Map
+for (let [key, value] of myMap) {
+    console.log(key + ": " + value);
+}
+// Output:
+// key1: value1
+// key2: value2
+
+```
+
+
 
 ### Linked Lists
 
@@ -1015,6 +1179,16 @@ En un Linked List, como cada nodo esta conectado con un link, no es necesario qu
 #### ¿Cual es la diferencia entre un Array y un Linked List?
 
 Un Array es una estructura de datos que almacena elementos de forma contigua en la memoria. Un Linked List es una estructura de datos que almacena elementos de forma no contigua en la memoria.
+
+### ¿Cual es el uso de una Doubly-Linked List cuando se lo compara con un Singly Linked List?
+
+Un Singly Linked List se tienen links derechos, pero no podemos ir para atrás ya que siempre apuntan al siguiente. El DLL posee en cada nodo 3 campos, uno que apunta al nodo anterior, otro al siguiente. 
+
+Se puede reconocer cuando un nodo es el primero ya que su link anterior es Nulo, lo mismo con el último. Es mas eficiente acceder a los elementos en un DLL
+
+### ¿Cual es la diferencia entre un Linked List y un Doubly Linked List?
+
+Un Linked List es una estructura de datos que almacena elementos de forma no contigua en la memoria. Un Doubly Linked List es una estructura de datos que almacena elementos de forma no contigua en la memoria, pero cada nodo tiene un link al nodo anterior y al siguiente.
 
 ---
 
@@ -1248,4 +1422,187 @@ Primero la rama izquierda, luego la derecha y luego el padre
 Son problemas que se pueden dividir en subproblemas. Por ejemplo: Calcula el elemento, obten los primero n elementos o un metodo que compute todos..
 
 TODOS los algoritmos recursivos tienen una alternativa iterativa. Su complejidad espacial es `O(cantidad de llamadas)`. 
+
+Ejemplos de Recursividad:
+
+### Factorial
+
+```javascript
+// Función recursiva para calcular el factorial de un número
+function factorial(n) {
+    // Caso base: factorial de 0 es 1
+    if (n === 0) {
+        return 1;
+    }
+    // Caso recursivo: n * factorial(n-1)
+    else {
+        return n * factorial(n - 1);
+    }
+}
+
+// Ejemplo de uso
+console.log(factorial(5)); // Output: 120
+
+```
+
+### Recorrido de un Binary Tree
+
+```javascript
+// Definición de la clase TreeNode para un árbol binario
+class TreeNode {
+    constructor(value) {
+        this.value = value;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+// Función recursiva para recorrer un árbol binario en orden (in-order traversal)
+function inOrderTraversal(node) {
+    if (node !== null) {
+        inOrderTraversal(node.left); // Visita el nodo izquierdo
+        console.log(node.value);    // Imprime el valor del nodo actual
+        inOrderTraversal(node.right);// Visita el nodo derecho
+    }
+}
+
+// Crear un árbol binario de ejemplo
+const root = new TreeNode(1);
+root.left = new TreeNode(2);
+root.right = new TreeNode(3);
+root.left.left = new TreeNode(4);
+root.left.right = new TreeNode(5);
+
+// Ejemplo de uso
+console.log("Recorrido in-order del árbol binario:");
+inOrderTraversal(root);
+
+```
+
+---
+
+# Heaps
+
+Un heap, también conocido como montículo, es una estructura de datos que se utiliza para mantener un conjunto de elementos donde cada elemento tiene una relación de orden con respecto a los demás elementos. La propiedad fundamental de un heap es que el elemento en la raíz (ya sea el más grande o el más pequeño, dependiendo del tipo de heap) siempre cumple con esta relación de orden con respecto a sus hijos.
+
+Hay dos tipos principales de heaps:
+
+1. **Max-Heap**: En un max-heap, el valor de cada nodo es mayor o igual que los valores de sus hijos. Esto significa que el elemento en la raíz es el más grande de todos los elementos en el heap.
+2. **Min-Heap**: En un min-heap, el valor de cada nodo es menor o igual que los valores de sus hijos. Esto significa que el elemento en la raíz es el más pequeño de todos los elementos en el heap.
+
+Los heaps se utilizan comúnmente para implementar las siguientes estructuras de datos y algoritmos:
+
+- Cola de prioridad: Se puede utilizar un min-heap o un max-heap para implementar una cola de prioridad, donde los elementos se insertan con una prioridad y se eliminan de acuerdo con esa prioridad.
+- Algoritmos de ordenación eficientes: Algunos algoritmos de ordenación, como heapsort, utilizan heaps para ordenar eficientemente un conjunto de elementos.
+- Algoritmos de búsqueda eficientes: Algunos algoritmos de búsqueda, como el algoritmo de Dijkstra para encontrar el camino más corto en un grafo, utilizan colas de prioridad basadas en heaps para buscar eficientemente el siguiente nodo a visitar.
+
+Los heaps proporcionan operaciones eficientes para insertar nuevos elementos, eliminar el elemento mínimo o máximo, y encontrar el elemento mínimo o máximo. Estas operaciones tienen una complejidad de tiempo logarítmica en el peor de los casos, lo que hace que los heaps sean una estructura de datos muy eficiente para ciertas aplicaciones.
+
+```javascript
+class MinHeap {
+    constructor() {
+        this.heap = [];
+    }
+
+    // Función para obtener el índice del padre de un nodo en el heap
+    parentIndex(index) {
+        return Math.floor((index - 1) / 2);
+    }
+
+    // Función para obtener el índice del hijo izquierdo de un nodo en el heap
+    leftChildIndex(index) {
+        return index * 2 + 1;
+    }
+
+    // Función para obtener el índice del hijo derecho de un nodo en el heap
+    rightChildIndex(index) {
+        return index * 2 + 2;
+    }
+
+    // Función para intercambiar dos elementos en el heap
+    swap(index1, index2) {
+        const temp = this.heap[index1];
+        this.heap[index1] = this.heap[index2];
+        this.heap[index2] = temp;
+    }
+
+    // Función para insertar un nuevo elemento en el heap
+    insert(value) {
+        // Agregar el nuevo elemento al final del heap
+        this.heap.push(value);
+        // Reajustar el heap para mantener la propiedad de heap
+        this.heapifyUp();
+    }
+
+    // Función para reajustar el heap hacia arriba (hacia la raíz)
+    heapifyUp() {
+        let currentIndex = this.heap.length - 1;
+        while (currentIndex > 0) {
+            const parentIndex = this.parentIndex(currentIndex);
+            // Si el valor del nodo actual es menor que el valor del padre, intercambiamos los nodos
+            if (this.heap[currentIndex] < this.heap[parentIndex]) {
+                this.swap(currentIndex, parentIndex);
+                currentIndex = parentIndex;
+            } else {
+                break; // Si el valor del nodo actual es mayor o igual al valor del padre, el heap está en orden
+            }
+        }
+    }
+
+    // Función para extraer el elemento mínimo (raíz) del heap
+    extractMin() {
+        if (this.heap.length === 0) {
+            return null;
+        }
+        if (this.heap.length === 1) {
+            return this.heap.pop();
+        }
+        const minValue = this.heap[0];
+        // Reemplazar la raíz con el último elemento del heap
+        this.heap[0] = this.heap.pop();
+        // Reajustar el heap para mantener la propiedad de heap
+        this.heapifyDown();
+        return minValue;
+    }
+
+    // Función para reajustar el heap hacia abajo (hacia las hojas)
+    heapifyDown() {
+        let currentIndex = 0;
+        while (true) {
+            const leftChildIndex = this.leftChildIndex(currentIndex);
+            const rightChildIndex = this.rightChildIndex(currentIndex);
+            let smallestIndex = currentIndex;
+
+            // Encontrar el índice del hijo con el valor más pequeño
+            if (leftChildIndex < this.heap.length && this.heap[leftChildIndex] < this.heap[smallestIndex]) {
+                smallestIndex = leftChildIndex;
+            }
+            if (rightChildIndex < this.heap.length && this.heap[rightChildIndex] < this.heap[smallestIndex]) {
+                smallestIndex = rightChildIndex;
+            }
+
+            // Si el valor del nodo actual es mayor o igual que los valores de los hijos, el heap está en orden
+            if (smallestIndex === currentIndex) {
+                break;
+            }
+
+            // Si el valor del nodo actual es mayor que el valor del hijo más pequeño, intercambiamos los nodos
+            this.swap(currentIndex, smallestIndex);
+            currentIndex = smallestIndex;
+        }
+    }
+}
+
+// Ejemplo de uso de MinHeap
+const minHeap = new MinHeap();
+minHeap.insert(3);
+minHeap.insert(2);
+minHeap.insert(1);
+minHeap.insert(5);
+minHeap.insert(4);
+console.log(minHeap.heap); // Output: [1, 2, 3, 5, 4]
+
+console.log(minHeap.extractMin()); // Output: 1
+console.log(minHeap.heap); // Output: [2, 4, 3, 5]
+```
 
