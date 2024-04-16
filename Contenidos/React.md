@@ -69,6 +69,12 @@ api.search(queryDebouncedValue).then(setProducts);
 
 Permite que el renderizado pueda interrumpirse, permitiendo renderizar varios arboles de componentes a la vez sin necesidad de bloquear el hilo principal del navegador.
 
+### Que es React Fiber?
+
+La arquitectura de React hizo que fuera muy facil para trabajar no solo en web si no tambien en mobile (React Native) y en hasta aplicaciones de Realidad Virtual. Asi los dev de React decidieron separar su algoritmo de reconciliacion (el que compara los cambios entre DOM y VDOM) y el lienzo donde esos cambios se muestran (Web, Mobile, etc..)
+
+Es una estructura de datos que representa un trabajo por hacer.
+
 ### **Que funcion cumple el StrictMode?**
 
 Permite identificar potenciales problemas en la aplicacion. Habilita un modo seguro en sus componentes anidados, avisando asi del uso de recursos obsoletos, efectos colaterales, ciclos de vida inseguros, entre otros
@@ -767,6 +773,39 @@ componentWillUpdate() {
 
 ---
 
+# ContextAPI
 
+Es una manera de tener un estado global sin dependencias como Redux, ya que viene desde React 16.3.
 
+Se pueden pasar state o funciones desde el componente principal hacia los hijos, nos evitamos pasarlo por cada uno de los componentes, es algo global.
 
+Cuenta con el hook `useContext` que facilita el acceso a los datos del Context.
+
+Children refiere a los componentes dentro del Provider que recibirán estos datos.
+
+Provider: De donde vienen los datos
+
+```
+import {createContext} from 'react';
+
+const QuoteContext = createContext();
+
+const QuoteProvider = ({children}) => {
+  return (
+    <QuoteContext.Provider
+    value=({})>
+      {children}
+    </QuoteContext.Provider>
+  )
+}
+
+export { QuoteProvider }
+export default QuoteContext;
+```
+
+Dentro de value ponemos lo que queremos exportar para el resto de componentes, y luego, lo consumimos de la siguiente manera:
+
+```
+// Donde entre llaves ponemos lo que queremos consumir de ese Context.
+const {} = useContext(QuoteContext);
+```

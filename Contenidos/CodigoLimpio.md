@@ -1016,6 +1016,478 @@ You Aren’t Gonna Need it! No escribir codigo de mas solo porque puede que lo n
 
 ---
 
+# SOLID
+
+Propuesto por Robert C. Martin
+
+S -> Single Responsibility Principle (Principio de responsabilidad unica)
+
+O -> Open-Closed Principle (Principio abierto-cerrado)
+
+L -> Liskov Substitution Principle (Principio de Sustitucion de Liskov)
+
+I -> Interface Segregation Principle (Principio de segregacion de interfaz)
+
+D -> Dependency Inversion Principle (Principio de inversion de dependencia)
+
+Nos ayudaran a
+
+- Crear software escalable con nuevas funcionalidades
+- Crear una arquitectura limpia y mantenible
+- Escribir Código mas facil de leer y entender
+- Módulos con alta cohesion y bajo acoplamiento
+
+### Acoplamiento (Evitar)
+
+Grado en que dos modulo software estan relacionados entre si. Con un buen diseño, se crean modulos poco acoplados, haciendo que si se modifica un modulo, afecte lo menos posible al resto (Misma logica con las arquitecturas de microservicios o microfrontends)
+
+```javascript
+// -----------Módulo con acoplamiento alto-----------
+const HighCouplingModule = (function() {
+    // Función para calcular el área de un círculo
+    function calculateCircleArea(radius) {
+        return Math.PI * radius ** 2;
+    }
+
+    // Función para calcular el área de un rectángulo
+    function calculateRectangleArea(length, width) {
+        return length * width;
+    }
+
+    // Función para imprimir el área de una forma geométrica
+    function printArea(shape, ...args) {
+        let area;
+        if (shape === 'circle') {
+            area = calculateCircleArea(...args);
+        } else if (shape === 'rectangle') {
+            area = calculateRectangleArea(...args);
+        } else {
+            throw new Error("Shape not supported");
+        }
+        console.log(`The area of the ${shape} is: ${area}`);
+    }
+
+    // Exponer las funciones públicas del módulo
+    return {
+        printArea
+    };
+})();
+
+// Uso del módulo con acoplamiento alto
+HighCouplingModule.printArea('circle', 5); // Output: The area of the circle is: 78.53981633974483
+HighCouplingModule.printArea('rectangle', 4, 6); // Output: The area of the rectangle is: 24
+
+// -----------Módulo con acoplamiento bajo-----------
+
+const LowCouplingModule = (function() {
+    // Función para calcular el área de un círculo
+    function calculateCircleArea(radius) {
+        return Math.PI * radius ** 2;
+    }
+
+    // Función para calcular el área de un rectángulo
+    function calculateRectangleArea(length, width) {
+        return length * width;
+    }
+
+    // Exponer las funciones públicas del módulo
+    return {
+        calculateCircleArea,
+        calculateRectangleArea
+    };
+})();
+
+// Módulo independiente
+const IndependentModule = (function() {
+    // Función para imprimir el área de una forma geométrica
+    function printArea(shape, ...args) {
+        let area;
+        if (shape === 'circle') {
+            area = LowCouplingModule.calculateCircleArea(...args);
+        } else if (shape === 'rectangle') {
+            area = LowCouplingModule.calculateRectangleArea(...args);
+        } else {
+            throw new Error("Shape not supported");
+        }
+        console.log(`The area of the ${shape} is: ${area}`);
+    }
+
+    // Exponer las funciones públicas del módulo
+    return {
+        printArea
+    };
+})();
+
+// Uso del módulo con acoplamiento bajo
+IndependentModule.printArea('circle', 5); // Output: The area of the circle is: 78.53981633974483
+IndependentModule.printArea('rectangle', 4, 6); // Output: The area of the rectangle is: 24
+
+```
+
+
+
+### Cohesion (Tener mucho)
+
+Es el grado en que los elementos de un modulo estan relacionados entre si. Mientas mas alta la cohesion en el codigo, mejor
+
+En el ejemplo la cohesion es baja, las funciones se relacionan con distintas variables. Se podria separar en 2 clases, una que sea para el manejo de niveles y otra para el manejo del jugador.
+
+Ejemplo de alta cohesion:
+
+```javascript
+// Módulo para manejar operaciones relacionadas con formas geométricas
+const GeometryModule = (function() {
+    // Función para calcular el área de un círculo
+    function calculateCircleArea(radius) {
+        return Math.PI * radius ** 2;
+    }
+
+    // Función para calcular el perímetro de un círculo
+    function calculateCirclePerimeter(radius) {
+        return 2 * Math.PI * radius;
+    }
+
+    // Función para calcular el área de un rectángulo
+    function calculateRectangleArea(length, width) {
+        return length * width;
+    }
+
+    // Función para calcular el perímetro de un rectángulo
+    function calculateRectanglePerimeter(length, width) {
+        return 2 * (length + width);
+    }
+
+    // Exponer las funciones públicas del módulo
+    return {
+        calculateCircleArea,
+        calculateCirclePerimeter,
+        calculateRectangleArea,
+        calculateRectanglePerimeter
+    };
+})();
+
+// Uso del módulo de geometría
+console.log(GeometryModule.calculateCircleArea(5)); // Output: 78.53981633974483
+console.log(GeometryModule.calculateRectanglePerimeter(4, 6)); // Output: 20
+
+---
+    
+// Módulo con baja cohesión
+const LowCohesionModule = (function() {
+    // Función para calcular el área de un círculo
+    function calculateCircleArea(radius) {
+        return Math.PI * radius ** 2;
+    }
+
+    // Función para convertir un número a binario
+    function decimalToBinary(number) {
+        return number.toString(2);
+    }
+
+    // Función para generar un número aleatorio
+    function generateRandomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    // Función para validar un correo electrónico
+    function validateEmail(email) {
+        return /\S+@\S+\.\S+/.test(email);
+    }
+
+    // Exponer las funciones públicas del módulo
+    return {
+        calculateCircleArea,
+        decimalToBinary,
+        generateRandomNumber,
+        validateEmail
+    };
+})();
+
+// Uso del módulo de baja cohesión
+console.log(LowCohesionModule.calculateCircleArea(5)); // Output: 78.53981633974483
+console.log(LowCohesionModule.decimalToBinary(10)); // Output: "1010"
+console.log(LowCohesionModule.generateRandomNumber(1, 100)); // Output: un número aleatorio entre 1 y 100
+console.log(LowCohesionModule.validateEmail("example@example.com")); // Output: true
+
+
+```
+
+### Single Responsibility Principle
+
+- Puede ser un nombre confuso. No quiere decir que un modulo debe hacer una sola cosa, si no que **un modulo debe tener una unica razon para cambiar**
+- Un modulo debe ser responsable de solo un usuario o interesado del sistema
+- Un modulo es una clase dentro de POO.
+
+Hay ciertos sintomas que diagnostican el no cumplimiento de SRP
+
+```javascript
+// Clase con una única responsabilidad: gestionar la lógica relacionada con el manejo de usuarios
+class UserManager {
+    // Método para agregar un nuevo usuario a la base de datos
+    addUser(user) {
+        // Lógica para agregar un usuario a la base de datos
+        console.log(`User added: ${user.name}`);
+    }
+
+    // Método para enviar un correo electrónico de bienvenida a un nuevo usuario
+    sendWelcomeEmail(user) {
+        // Lógica para enviar un correo electrónico de bienvenida al nuevo usuario
+        console.log(`Welcome email sent to: ${user.email}`);
+    }
+
+    // Método para generar un informe de usuarios registrados
+    generateUserReport() {
+        // Lógica para generar un informe de usuarios registrados
+        console.log("Generating user report...");
+    }
+}
+
+// Clase que representa un usuario del sistema
+class User {
+    constructor(name, email) {
+        this.name = name;
+        this.email = email;
+    }
+}
+
+// Uso de las clases
+const userManager = new UserManager();
+
+const newUser = new User("John", "john@example.com");
+userManager.addUser(newUser); // Output: User added: John
+userManager.sendWelcomeEmail(newUser); // Output: Welcome email sent to: john@example.com
+userManager.generateUserReport(); // Output: Generating user report...
+
+```
+
+### Dependency Inversion Principle
+
+Los sistemas mas flexibles son los que dependen de abstracciones y no concreciones. En Java significa que se debe depender de interfaces y clases abstractas, no de implementaciones directas. Hace necesario un mecanismo que nos cree las instancias de las implementaciones que queremos.
+
+La clase `Switch` no depende directamente de la clase `LightBulb`, sino que depende de la abstracción `SwitchableDevice`. Esto permite que `Switch` sea más flexible y pueda controlar cualquier dispositivo que implemente la interfaz `SwitchableDevice`, no solo la bombilla. Además, la clase `LightBulb` sigue cumpliendo con el DIP al depender de una abstracción (`SwitchableDevice`) en lugar de depender directamente de `Switch`. Esto facilita la reutilización y el mantenimiento del código, ya que los componentes son más independientes y menos propensos a cambios.
+
+```javascript
+// Abstracción para un dispositivo que se puede encender y apagar
+class SwitchableDevice {
+    turnOn() {} // Método para encender el dispositivo
+    turnOff() {} // Método para apagar el dispositivo
+}
+
+// Clase para representar una bombilla
+class LightBulb extends SwitchableDevice {
+    turnOn() {
+        console.log("Light bulb turned on");
+    }
+
+    turnOff() {
+        console.log("Light bulb turned off");
+    }
+}
+
+// Clase para representar un interruptor
+class Switch {
+    constructor(device) {
+        this.device = device;
+    }
+
+    press() {
+        if (this.isOn) {
+            this.device.turnOff();
+            this.isOn = false;
+        } else {
+            this.device.turnOn();
+            this.isOn = true;
+        }
+    }
+}
+
+// Uso de las clases
+const lightBulb = new LightBulb(); // Creamos una bombilla
+const switchButton = new Switch(lightBulb); // Creamos un interruptor y lo asociamos con la bombilla
+
+switchButton.press(); // Output: Light bulb turned on
+switchButton.press(); // Output: Light bulb turned off
+
+```
+
+### Open Closed Principle
+
+**Un artefacto de software debe estar abierto para su extension, pero cerrado para su modificacion**. Se debe poder aumentar la funcionalidad sin modificar el funcionamiento ya existente.
+
+¿Cómo se consigue?
+
+- Separando el Software en componentes de alta cohesion.
+- Que la direccion de las dependencias sea la correcta (se vera con mas detalle mas adelante).
+- Se deben proteger a los componentes de alto nivel de los cambios en los componentes de bajo nivel.
+
+```
+// Clase base para representar formas
+class Shape {
+    area() {
+        // Método para calcular el área de la forma
+        throw new Error("This method must be overridden");
+    }
+}
+
+// Clase para representar un rectángulo
+class Rectangle extends Shape {
+    constructor(width, height) {
+        super();
+        this.width = width;
+        this.height = height;
+    }
+
+    area() {
+        // Sobrescribimos el método para calcular el área de un rectángulo
+        return this.width * this.height;
+    }
+}
+
+// Clase para representar un círculo
+class Circle extends Shape {
+    constructor(radius) {
+        super();
+        this.radius = radius;
+    }
+
+    area() {
+        // Sobrescribimos el método para calcular el área de un círculo
+        return Math.PI * this.radius ** 2;
+    }
+}
+
+// Uso de las clases
+const rectangle = new Rectangle(4, 5);
+const circle = new Circle(3);
+
+console.log(rectangle.area()); // Output: 20
+console.log(circle.area()); // Output: 28.274333882308138
+
+```
+
+###  Interface Segregation Principle
+
+El Principio de Segregación de Interfaces (ISP) establece que una clase no debe depender de interfaces que no utiliza. En otras palabras, las interfaces deben ser lo suficientemente específicas para cada cliente, evitando que los clientes dependan de métodos que no necesitan.
+
+Supongamos que tenemos una interfaz `Worker` (Trabajador) que define diferentes acciones que un trabajador puede realizar. Sin embargo, algunos tipos de trabajadores solo necesitan implementar un subconjunto de estas acciones. Aplicaremos el ISP para dividir la interfaz `Worker` en interfaces más específicas:
+
+```javascript
+// Interfaz original para un trabajador
+class Worker {
+    work() {}
+    eat() {}
+    sleep() {}
+}
+
+// Interfaz para un trabajador que solo necesita trabajar
+class WorkOnlyWorker {
+    work() {}
+}
+
+// Interfaz para un trabajador que solo necesita comer
+class EatOnlyWorker {
+    eat() {}
+}
+
+// Interfaz para un trabajador que solo necesita dormir
+class SleepOnlyWorker {
+    sleep() {}
+}
+
+// Clase para un programador que solo necesita trabajar
+class Programmer extends WorkOnlyWorker {
+    work() {
+        console.log("Programming...");
+    }
+}
+
+// Clase para un camarero que solo necesita trabajar y comer
+class Waiter extends WorkOnlyWorker, EatOnlyWorker {
+    work() {
+        console.log("Taking orders...");
+    }
+
+    eat() {
+        console.log("Eating during break...");
+    }
+}
+
+// Uso de las clases
+const programmer = new Programmer();
+const waiter = new Waiter();
+
+programmer.work(); // Output: Programming...
+waiter.work(); // Output: Taking orders...
+waiter.eat(); // Output: Eating during break...
+
+```
+
+En este ejemplo, la interfaz `Worker` se divide en interfaces más específicas (`WorkOnlyWorker`, `EatOnlyWorker` y `SleepOnlyWorker`) que contienen solo los métodos necesarios para cada tipo de trabajador. Las clases concretas (`Programmer` y `Waiter`) implementan las interfaces relevantes para su tipo de trabajo, evitando así la dependencia de métodos que no necesitan. Esto cumple con el Principio de Segregación de Interfaces.
+
+### Liskov Substitution Principle
+
+El Principio de Sustitución de Liskov (LSP) establece que los objetos de un programa deberían ser reemplazables por instancias de sus subtipos sin alterar la corrección del programa. En otras palabras, si tenemos una clase base y una subclase que la extiende, deberíamos poder usar un objeto de la subclase en lugar de un objeto de la clase base sin cambiar el comportamiento del programa.
+
+Supongamos que tenemos una clase `Rectangle` (Rectángulo) y una subclase `Square` (Cuadrado). Según el LSP, deberíamos poder usar un objeto de tipo `Square` donde se espera un objeto de tipo `Rectangle` sin alterar el comportamiento esperado del programa:
+
+```javascript
+// Clase base para representar un rectángulo
+class Rectangle {
+    constructor(width, height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    setWidth(width) {
+        this.width = width;
+    }
+
+    setHeight(height) {
+        this.height = height;
+    }
+
+    area() {
+        return this.width * this.height;
+    }
+}
+
+// Subclase para representar un cuadrado
+class Square extends Rectangle {
+    constructor(side) {
+        super(side, side);
+    }
+
+    setWidth(width) {
+        this.width = width;
+        this.height = width;
+    }
+
+    setHeight(height) {
+        this.width = height;
+        this.height = height;
+    }
+}
+
+// Función para calcular el área de un rectángulo
+function calculateArea(rectangle) {
+    rectangle.setWidth(5);
+    rectangle.setHeight(4);
+    console.log("Area:", rectangle.area());
+}
+
+// Uso de las clases
+const rectangle = new Rectangle(5, 4);
+const square = new Square(5);
+
+calculateArea(rectangle); // Output: Area: 20
+calculateArea(square); // Output: Area: 25
+
+```
+
+En este ejemplo, la clase `Square` es una subclase de `Rectangle` y sobrescribe los métodos `setWidth()` y `setHeight()` para asegurarse de que siempre tenga la misma anchura y altura. Aunque `Square` es una subclase de `Rectangle`, podemos usar un objeto de tipo `Square` donde se espera un objeto de tipo `Rectangle` (como en la función `calculateArea()`) sin cambiar el comportamiento esperado del programa. Esto cumple con el Principio de Sustitución de Liskov.
+
+---
+
 # Code Reviews
 
 ### ✅ Cuales son los beneficios de una Code Review?

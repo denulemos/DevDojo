@@ -749,7 +749,368 @@ obj[sym1] = 'a'
 obj[sym2] = 'b'
 ```
 
-### **Que es un Event listener?**
+### Cual es la diferencia entre un event loop, microtask y macrotask?
+
+Javascript ejecuta una linea de codigo por vez. **Event Loop** se encarga de gestionar las funciones asincronas.
+
+Funciona con una Call Stack y una Callback Queue. Cuando hay una linea en ejecucion, se agrega al Call Stack, y cuando finaliza, se elimina. La Queue tiene las funciones callback que deben ejecutarse, no debe haber ninguna funcion ejecutandose en la Call Stack ni debe haber otra funcion adelante suyo en la Queue.
+
+Cuando ejecutamos una funcion con setTimeout, la misma se entrega a Timers API, y aunque setTimeout sea cero, habrá un retraso en la ejecucion de esta funcion, haciendo que tenga que esperar en la Queue a que termine de ejecutarse el codigo asincrono. 
+
+![js](src/js1.png)
+
+* macroTasks: [setTimeout](https://developer.mozilla.org/docs/Web/API/WindowTimers/setTimeout), [setInterval](https://developer.mozilla.org/docs/Web/API/WindowTimers/setInterval), [setImmediate](https://developer.mozilla.org/docs/Web/API/Window/setImmediate), [requestAnimationFrame](https://developer.mozilla.org/docs/Web/API/window/requestAnimationFrame), [I/O](https://developer.mozilla.org/docs/Mozilla/Projects/NSPR/Reference/I_O_Functions), UI rendering
+* microTasks: [process.nextTick](https://nodejs.org/uk/docs/guides/event-loop-timers-and-nexttick/), [Promises](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise), [queueMicrotask](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/queueMicrotask), [MutationObserver](https://developer.mozilla.org/docs/Web/API/MutationObserver)
+
+Solo despues de que las task en las microTasks estan completas, event loop tomará las task de macrotasks. Mientras mas microtasks haya, mas delay habra en los macrotasks. Se recomienda usar microtasks cuando se necesitan hacer cosas de forma asincrona, de otra manera, siempre es recomendado usar macrotasks.
+
+En resumen, su funcionamiento en ingles seria:
+
+- *Tasks* are taken from the *Task (MacroTask) Queue*.
+- *Task* from the *Task Queue* is a *Macrotask* != a *Microtask*.
+- *Microtasks* are processed when the current task ends and the *microtask* queue is cleared before the next *macrotask* cycle.
+- *Microtasks* can enqueue other *microtasks*. All are executed before the next task inline.
+- UI rendering is run after all microtasks execution (NA for nodejs).
+
+### Prototypes y Herencia Prototype (Prototype Inheritance)
+
+Las funciones y clases tienen una propiedad llamada `Prototype` donde reside la información que es usada para crear los objetos. Todos los miembros del objeto Prototype del constructor seran miembros del objeto una vez instanciado con new.
+
+Los prototypes son un mecanismo por el cual los objetos en JS heredan caracteristicas entre si.
+
+```jsx
+class C {
+  m1() {}
+  m2() {}
+}
+ 
+const obj = new C();
+console.assert( typeof obj.m1 === 'function' );
+console.assert( typeof obj.m2 === 'function' );
+```
+
+![js2](src/js2.png)
+
+Otro ejemplo es si creamos un objeto persona:
+
+```jsx
+// definimos el objeto persona
+function Persona(nombre, apellido, edad, genero, intereses) {
+
+  // definiendo de propiedades y métodos
+  this.first = first;
+  this.last = last;
+//...
+}
+
+// lo instanciamos
+var person1 = new Persona('Bob', 'Smith', 32, 'hombre', ['music', 'skiing']);
+```
+
+Y si queremos ver lo que contiene el objeto, no solo contiene sus atributos si no, otros miembros como valueOf o Watch que estan definidos en el objeto.
+
+![js3](src/js3.png)
+
+Todos los objetos de JS heredan metodos de un Prototype, `Object.prototype` es el eslabon mas alto de la cadena de herencia.
+
+Con prototype podemos agregar nuevos atributos y metodos a un objeto que no se encuentran en su constructor
+
+```jsx
+function Person(first, last, age, eyecolor) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eyecolor;
+}
+
+// Atributos
+Person.prototype.nationality = "English";
+
+// Metodos
+Person.prototype.name = function() {
+  return this.firstName + " " + this.lastName;
+};
+```
+
+### Diferencia entre class y function
+
+class tiene un alcance comprendido por llaves, al igual que las variables let. function es local a la funcion donde fue definida, no podemos usar una clase o funcion constructora por fuera del alcance en donde se encuentra.
+
+```jsx
+// Class
+{
+  class C {
+  }
+}
+
+// Function
+function x () {
+  function C () {
+  }
+}
+ 
+// uso de ambas
+try {
+  const obj = new C();
+  console.assert( false );
+} catch (err) {
+  console.assert( 
+    err.message === 'C is not defined'
+  );
+}
+```
+
+Ambas pueden ser definidas de forma anonima. Sus referencias funcionan igual que con object, no se envia una copia, si no una referencia de la misma.
+
+```jsx
+const C = class {}; 
+const C = function () {};
+
+console.assert( typeof  C === 'function' );
+```
+
+### Qué es el "demultiplexer"?
+
+El **demultiplexer,** *es una interfaz encargada de las notificaciones dentro de Node JS.* Es utilizado para recopilar información de eventos específicos y formar preguntas, brindando así lo que se conoce como un **Evento QUE**.
+
+### Qué es "REPL" y para qué sirve?
+
+REPL, acrónimo en Ingles de "Leer, Evaluar, Imprimir, Bucle". Este shell es utilizado para realizar declaraciones específicas en JavaScript.
+
+### Que es la Coercion explicita e Implicita?
+
+Coercion es la forma en la que podemos cambiar de un tipo de valor a otro
+
+- **Coercion explícita:** Obligamos que un valor de un tipo cambie a otro valor de otro tipo
+
+```jsx
+//Aquí obligamos a la variable a convertirse en string (coerción explícita)
+var c = String(a); 
+console.log(c);
+
+//Aquí obligamos a la variable a convertirse en número (coerción explícita)
+var d = Number(c); 
+console.log(d);
+```
+
+- **Coercion Implicita:** El lenguaje cambia el tipo de valor por detrás
+
+```jsx
+//Convierte a 4 en un string y lo concatena con el "7", por esto regresa un string de valor "47"
+var a = 4 + "7"; 
+
+//Convierte al "7" en un número y realiza la operación, por esto devuelve 28
+4 * "7"; 
+
+var a = 20;
+var b = a + ""; //Aquí concatenamos para convertir la variable a string (coerción implícita)
+console.log(b); 
+```
+
+### Que es currying?
+
+Es una tecnica que nos permite invocar una funcion con menos parametros de los que esperaria inciialmente, dejando para despues la especificacion de estos parametros que no llegaron. Permite ejecutar especializacion y composicion.
+
+```jsx
+function multiplicar(a) {
+
+    return function (b) {
+        return function (c)  {
+            return a * b * c
+        }
+    }
+}
+let mc1 = multiplicar(1);
+let mc2 = mc1(2);
+let res = mc2(3);
+console.log(res);
+
+let res2 = multiplicar(1)(2)(3);
+console.log(res2);
+
+---
+
+// Función de suma de dos números
+function sum(x, y) {
+    return x + y;
+}
+
+// Función curry para sumar dos números
+function currySum(x) {
+    // Devolvemos una función que espera el segundo argumento (y) y devuelve la suma de x e y
+    return function(y) {
+        return x + y;
+    };
+}
+
+// Uso de la función currySum para sumar dos números
+const curriedSum = currySum(5); // Creamos una nueva función que suma 5 a un número dado
+
+// Ahora podemos usar curriedSum para sumar 5 a diferentes números
+console.log(curriedSum(3)); // Output: 8
+console.log(curriedSum(7)); // Output: 12
+
+// Otra forma de implementar currying en JavaScript es utilizando funciones de flecha
+const arrowCurrySum = x => y => x + y;
+
+// Uso de la función arrowCurrySum para sumar dos números
+const arrowCurriedSum = arrowCurrySum(5); // Creamos una nueva función que suma 5 a un número dado
+
+// Ahora podemos usar arrowCurriedSum para sumar 5 a diferentes números
+console.log(arrowCurriedSum(3)); // Output: 8
+console.log(arrowCurriedSum(7)); // Output: 12
+
+```
+
+Por ejemplo, tenemos la siguiente funcion:
+
+```jsx
+const multiply = (a, b) => a * b;
+```
+
+Y si queremos reescribirla con este metodo, quedaria algo asi
+
+```jsx
+const curriedMultiply = a => b => a * b;
+
+// Seria algo asi por atrás
+
+const curriedMultiply = function(a) {
+  return function(b) {
+    return a * b;
+  }
+}
+
+// Y asi podemos invocar a la funcion asi
+curriedMultiply(2)(3)
+```
+
+Podemos tambien ejemplificarlo con errores de consola, por ejemplo, tenemos esta función que escribe mensajes en logs
+
+```jsx
+function log(level, date, message) {
+  console.log(`[${level}]: ${date} - ${message}`);
+}
+log('critical', new Date(), 'Some message');
+```
+
+Si lo currificamos, se puede tener una mini aplicacion que logee los mensajes “criticos”
+
+```jsx
+function curriedLog = level => date => message => {
+  console.log(`[${level}]: ${date} - ${message}`);
+}
+
+const logCritical = curriedLog('critical');
+
+logCritical(new Date())('Some message'); // Podemos usarla para loggear mensajes criticos
+```
+
+### Variable Hoisting
+
+Es un mecanismo de JS en el que las variables y declaraciones de funciones se mueven a la parte superior de su ambito antes de la ejecucion del codigo.
+
+```jsx
+console.log (saludar);
+    var saludar = "dice hola"
+
+// es decir
+
+var saludar;
+    console.log(saludar); // saludar is undefined
+    saludar = "dice hola"
+```
+
+Es el usar las variables antes de que sean declaradas.
+
+### Cual es la diferencia entre setTimeout() y setInterval()?
+
+- `SetTimeout` nos permite ejecutar una funcion una vez despues del intervalo de tiempo
+
+```jsx
+*setTimeout(sayHi, 1000, "Hola", "John");*
+```
+
+- `SetInterval` nos permite ejecutar una funcion repetidamente. Esperando el intervalo, ejecutando y asi sucesivamente.
+
+```jsx
+let timerId = setInterval(() => alert('tick'), 2000);
+
+// después de 5 segundos parar
+setTimeout(() => { clearInterval(timerId); alert('stop'); }, 5000);
+```
+
+### Cual es la diferencia entre call, bind y apply?
+
+Por ejemplo tenemos dos objetos y una funcion
+
+```jsx
+const user = {
+	name: 'Marcos'
+};
+
+const business = {
+	name: 'Headbook'
+}
+
+function showInfo(likes, friends){
+	return `${this.name} tiene ${likes} likes y ${friends}`
+}
+```
+
+En ese caso, el [`this.name`](http://this.name)hace referencia al contexto global. ¿Como hacer para matchearlo de manera dinamica por objeto?
+
+```jsx
+showInfo.call(user, 4, 5); // le pasamos la referencia que deseamos y las props
+// Marcos tiene 4 likes y 5 amigos
+
+showInfo.apply(user, [4,5]); // lo mismo pero los params deben ir en un array
+
+const newFunction = showInfo.bind(user); 
+newFunction(10,15); // hacemos otra funcion que toma otro contexto
+```
+
+Basicamente los 3 asocian un objeto a `this`
+
+### Closure
+
+Se tiene un closure cuando una funcion accede a una variable fuera de su contexto. Una funcion puede acceder y usar valores definidos fuera de su contexto.
+
+```jsx
+const valor = 1
+function obtenerModulo() {
+    let datos = [1,2,3,4,5,6,7,8,9,10,11]
+    return datos.filter(item => item % valor === 0) // se usa valor, definido fuera de la funcion
+}
+```
+
+### ¿Que es async, preload y prefetch?
+
+En JavaScript, `async`, `preload` y `prefetch` son conceptos relacionados pero diferentes:
+
+1. **Async/Await**:
+   - `async` y `await` son características introducidas en JavaScript para facilitar la escritura y gestión de código asíncrono.
+   - `async` se utiliza para declarar que una función devuelve una promesa. Esto permite que la función se pueda utilizar con `await` para esperar la resolución de la promesa dentro de un contexto asíncrono.
+   - `await` se utiliza dentro de funciones `async` para esperar la resolución de una promesa antes de continuar con la ejecución del código.
+   - Estas características son útiles para trabajar con operaciones asíncronas, como solicitudes HTTP, operaciones de lectura/escritura de archivos, y otras operaciones que pueden tomar tiempo y no bloquean la ejecución del código.
+
+2. **Preload**:
+   - `preload` es una directiva HTML que se utiliza para indicar al navegador que cargue un recurso de manera prioritaria.
+   - Se puede usar en elementos `<link>` o en elementos `<script>` para pre-cargar recursos como archivos CSS, JavaScript, fuentes web, etc.
+   - El navegador descarga estos recursos en segundo plano mientras procesa el resto del contenido de la página. Esto puede mejorar significativamente los tiempos de carga de la página al garantizar que los recursos importantes se carguen antes de que sean necesarios.
+
+3. **Prefetch**:
+   - `prefetch` es similar a `preload`, pero se utiliza para indicar al navegador que cargue recursos que probablemente se necesitarán en el futuro, pero no de manera inmediata.
+   - Se utiliza principalmente para cargar recursos relacionados con rutas de navegación o acciones del usuario que aún no se han realizado.
+   - Al igual que `preload`, se puede usar en elementos `<link>` o en elementos `<script>`, y ayuda a mejorar el rendimiento de la aplicación al anticiparse a las necesidades futuras de recursos.
+
+En resumen, `async` y `await` se utilizan en JavaScript para trabajar con código asíncrono de manera más legible y manejable, mientras que `preload` y `prefetch` son directivas HTML utilizadas para optimizar la carga de recursos en las páginas web, priorizando recursos importantes o anticipándose a las necesidades futuras de recursos.
+
+### Document.ready vs Window.onload
+
+`Document.ready` se ejecuta despues de cargar todo el HTML. `Window.onload` se ejecuta cuando ya cargo completamente todo el contenido, mas adelante.
+
+### **Qué es un Event listener?**
 
 Supongamos que estamos usando una libreria para renderizar items de una coleccion de datos, esta expone un componente llamado RenderItem que tiene una sola prop disponible onClick que no acepta ningun parametro. ¿Y si quiero mandarle un argumento? 
 
