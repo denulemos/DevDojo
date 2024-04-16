@@ -1177,6 +1177,7 @@ Quitan el primer elemento disponible en cada estructura, dejando ambas estructur
 # Arboles :deciduous_tree:
 
 Es una estructura donde un nodo tiene un solo padre y muchos hijos. Siempre hay una raiz. 
+Es excelente para cuando queremos insertar conjuntos de datos ordenados o para las búsquedas. 
 
 ```java
 public class Node {
@@ -1224,7 +1225,27 @@ En este arbol todos los niveles estan completos excepto por el ultimo. Si el ult
 
 Es un arbol 100% balanceado. 
 
+## Maneras de recorrer un Arbol
 
+![Tree Traversal: Inorder, Preorder, Postorder, and Level-order](https://assets-global.website-files.com/5d0dc87aac109e1ffdbe379c/60e18e09daeb6db6f4995305_-Vsv_RLYEukjbDMgKxKJpxTnA246o-X1OjUPkl5HvnSiR-dFU4w5qKNaUtw-rq8wD4vMTGxFKtjvKCt7Uthmidpl_ajqRpVqgAH57N1HTpQ5MGBE4HCvE0dq7gTeM4-JtFLkQShX.png)
 
+### In-Order Traversal
 
+Rama izquierda del nodo, a continuación el propio nodo y después la rama derecha. Se empieza por la raiz
+
+### Pre-order traversal
+
+Primero el nodo padre, despues izquierda y luego derecha
+
+### Post-order traversal
+
+Primero la rama izquierda, luego la derecha y luego el padre
+
+---
+
+# Recursividad :loop:
+
+Son problemas que se pueden dividir en subproblemas. Por ejemplo: Calcula el elemento, obten los primero n elementos o un metodo que compute todos..
+
+TODOS los algoritmos recursivos tienen una alternativa iterativa. Su complejidad espacial es `O(cantidad de llamadas)`. 
 
