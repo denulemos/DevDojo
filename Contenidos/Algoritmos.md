@@ -1647,8 +1647,43 @@ test.indexOf("hola", +infinito) // Por defecto empieza desde mas infinito
 // Object.create() -- Crea un nuevo objeto con el prototipo de pasamos por parametro
 const objeto = {nombre: "denu"};
 const persona = Object.create(objeto);
-console.log(persona.nombre);
+console.log(persona.nombre); // denu
 
+const persona = {
+    init: function (nombre) {
+        this.nombre = nombre;
+        return this; 
+    },
+    saludar: function() {
+        console.log("hola, soy " + this.nombre);
+        return this;
+    }
+}
+
+const objeto = Object.create(persona).init("denu"); // init funcionaria como constructor
+console.log(objeto.saludar()) // "hola, soy denu"
+
+// Object.assign() -- Clona o mergea objetos
+
+const persona = {
+    nombre: "denu",
+    apellido: "perez"
+}
+
+const persona2 {
+    ojos: "verdes"
+}
+
+const clon = Object.assign({}, persona); // No es una referencia, es una copia
+const fusion = Object.assign({}, persona, persona2); // El primer parametro es el objeto destino, inicializado en vacio
+
+// Map - Object
+const mapToObject = map => Object.fromEntries(map.entries());
+mapToObject(new Map([['a', 1], ['b', 2]])); // {a: 1, b: 2}
+
+// Object - Map
+const objectToMap = obj => new Map(Object.entries(obj));
+objectToMap({a: 1, b: 2}); // Map {'a' => 1, 'b' => 2}
 
 ```
 
