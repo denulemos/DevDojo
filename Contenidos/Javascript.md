@@ -545,7 +545,7 @@ Cuando emites una función de bloqueo, las demás piezas de código detienen s
 
 A su vez, las funciones de no bloqueo le permiten al desarrollador realizar múltiples tareas (Manteniendo múltiples códigos en ejecución) mientras que simultáneamente se realizan múltiples eventos de Entrada/Salida.
 
-### **Context**
+### **Context - Contextos**
 
 Es el valor del `this`, que es una referencia al objeto “dueño” del codigo que esta siendo ejecutado. 
 
@@ -571,7 +571,7 @@ animal = 'gato'
 console.log(mascota) // perro, se copio por valor y no referencia
 ```
 
-Caso **objetos**
+Caso **objetos** ( Como puedo clonar un objeto ?)
 
 ```jsx
 let animal = {
@@ -581,11 +581,22 @@ let animal = {
 let mascota = animal
 animal.especie = 'gato'
 console.log(mascota.nombre) // gato, se copio referencia no valor 
+
+---
+    
+let object = {a: 1, b:2};
+let referencia = object; // Esto es solo una referencia
+
+let clone = {...object}; // Esto si es un clon
+let clone2 = Object.assign({}, object);// Esto si es un clon
+
+clone.foo = "foo";
+clone2.foo = "denu";
+
+console.log(object);// { a: 1, b: 2 }
+console.log(referencia); // { a: 1, b: 2 }
+console.log(clone); // { a: 1, b: 2, foo: 'foo' }
 ```
-
-Que pasa si tengo dos objetos almacenados en distintas variables?
-
-Y si creamos dos objetos, los mismos al ser igualados no seran iguales aunque su contenido sea el mismo, ya que la referencia es distinta.
 
 ### **Truthy and Falsy**
 
@@ -1099,7 +1110,50 @@ newFunction(10,15); // hacemos otra funcion que toma otro contexto
 
 Basicamente los 3 asocian un objeto a `this`
 
-### Closure
+### Variable Shadowing - Ocultamiento de Variables
+
+Se produce cuando una variable que esta en un scope mas reducido tiene el mismo nombre que otra que esta en un scope superior siguiendo la cadena
+
+```javascript
+function test() {
+
+var variable = "hola";
+console.log(variable); 
+
+	function test1() {
+		var variable = "denu";
+    	console.log(variable); 
+	}
+
+  test1(); // denu
+}
+
+test(); // hola
+```
+
+
+
+### Scopes en Javascript
+
+Es el contexto actual de ejecución. 
+
+Cuando hacemos referencia a una variable, javascript busca su definicion en cada entorno, o Scope, esto depende de como (var, const, let) y donde la declaremos (fuera o dentro de una funcion).
+
+```javascript
+var variable = "global"; // Variable global, todos pueden acceder a ella
+
+function test() { // Tiene acceso a variable y variable1
+    var variable1 = "hola"; // Variable local -hola
+}
+
+function test2() { // Tiene acceso a variable y variable1
+    var variable1 = "chau"; // Variable local - chau
+}
+```
+
+Entre scopes hay jerarquia. Primero se busca la variable en el mismo scope local, luego en el scope padre y luego el global.
+
+### Closures
 
 Se tiene un closure cuando una función accede a una variable fuera de su contexto. Una funcion puede acceder y usar valores definidos fuera de su contexto.
 

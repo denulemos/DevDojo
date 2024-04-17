@@ -1606,3 +1606,49 @@ console.log(minHeap.extractMin()); // Output: 1
 console.log(minHeap.heap); // Output: [2, 4, 3, 5]
 ```
 
+---
+
+# Strings :construction_worker:
+
+### Metodos de Strings en Javascript
+
+```javascript
+// Creacion de Strings
+const notAnObject = "Hola";
+const yesAnObject = new String("Hola"); // Acceso a todos los metodos del OBJETO String
+
+// Descubrir el tamaño de mi String -- LOS ESPACIOS CUENTAN COMO UN ESPACIO
+const test = "hola";
+test.length // 4
+
+// Acceder a un caracter en especifico
+const test = "hola";
+test[0] // h
+test[test.length - 1] // a
+test.charAt(0) // h
+
+// Obtener el index de una letra - Case sensitive
+const test = "hola denu hola"; 
+test.indexOf("hola"); // 0 -- primera ocurrencia de la palabra
+test.indexOf("holax"); // -1
+test.lastIndexOf("hola"); // 10 -- ultima ocurrencia de la palabra
+test.lastIndexOf("holax"); // -1
+test.indexOf("hola", 0); // Se puede aclarar desde donde comienza, por defecto comienza desde cero
+test.indexOf("hola", +infinito) // Por defecto empieza desde mas infinito
+```
+
+---
+
+# Objetos
+
+### Métodos de Objectos en Javascript
+
+```javascript
+// Object.create() -- Crea un nuevo objeto con el prototipo de pasamos por parametro
+const objeto = {nombre: "denu"};
+const persona = Object.create(objeto);
+console.log(persona.nombre);
+
+
+```
+
