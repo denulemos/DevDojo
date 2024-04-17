@@ -614,6 +614,33 @@ Habían muchas funcionalidades que se estaban repitiendo, entonces JS decidio ha
 
 Hoy en dia todo esto esta abstraído y solo pasamos el callback.
 
+Ejemplos puede ser .map, .filter, .reduce
+
+```javascript
+// Función de orden superior que toma una función como argumento
+function operacionMatematica(x, y, operacion) {
+  return operacion(x, y);
+}
+
+// Funciones que serán pasadas como argumentos a la función de orden superior
+function suma(a, b) {
+  return a + b;
+}
+
+function resta(a, b) {
+  return a - b;
+}
+
+function multiplicacion(a, b) {
+  return a * b;
+}
+
+// Uso de la función de orden superior con diferentes funciones como argumentos
+console.log(operacionMatematica(5, 3, suma)); // Devuelve 8 (5 + 3)
+console.log(operacionMatematica(10, 4, resta)); // Devuelve 6 (10 - 4)
+console.log(operacionMatematica(6, 2, multiplicacion)); // Devuelve 12 (6 * 2)
+```
+
 ### **Event delegation**
 
 Por ejemplo, si tenemos botones y queremos hacer eventos para todos los botones, no es viable hacer un evento por boton ya que no es escalable.
@@ -1500,6 +1527,9 @@ try {
 ### Arrow Functions
 
 Es otra manera de escribir las funciones en javascript, argumento + flecha + contenido de la funcion. Estas dos funciones hacen lo mismo
+
+- Podemos prencidir del return si es una funcion de una sola linea
+- No se pueden usar arrow function como funciones de constructores
 
 ```jsx
 var funcion = value => value (no es necesario poner el return literalmente)
