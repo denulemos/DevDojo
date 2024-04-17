@@ -13,6 +13,35 @@ La etiqueta span trabaja como contenedor de línea, no se puede ampliar para ocu
 
 Para cuando, por ejemplo, tengo una libreria de componentes. Para mostrar cada uno como se veria en un entorno lo mas real e individual posible con todas sus configuraciones posibles
 
+**Que es la ESpecificidad (Specificity) de CSS?**
+
+Es como el navegador determina que propiedad de CSS se debe aplicar a un elemento si hay varios en juego o muchos selectores.
+
+Va del mas alto al mas bajo en especificidad: 
+
+- Estilos inline (Se aplica siempre)
+- IDs
+- Clases, atributos y pseudo-clases
+- Elementos y pseudo-elementos (Compite)
+
+```css
+section p {
+    color: red;
+}
+
+// Se va a aplicar este, ya que es el mas reciente en aparecer, y tiene una especificidad mayor
+.p1 {
+    color: green;
+}
+
+-----
+<section>
+	<p class="p1">Hola</p>
+</section>
+```
+
+
+
 ### **Que es BEM?**
 
 Block element modifier, consiste en escribir nombres de clases que dejen en claro que es lo que se esta representando en el HTML y en el CSS

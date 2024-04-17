@@ -1074,7 +1074,7 @@ Basicamente los 3 asocian un objeto a `this`
 
 ### Closure
 
-Se tiene un closure cuando una funcion accede a una variable fuera de su contexto. Una funcion puede acceder y usar valores definidos fuera de su contexto.
+Se tiene un closure cuando una función accede a una variable fuera de su contexto. Una funcion puede acceder y usar valores definidos fuera de su contexto.
 
 ```jsx
 const valor = 1

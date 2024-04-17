@@ -14,6 +14,14 @@ Para que una interconexión sea realmente global, todas las redes que se conecta
 Es decir, el protocolo de comunicación de Internet debe ser una implementación estándar que garantice la conexión desde cualquier origen hasta cualquier destino.
 Durante la década del  ́70, un grupo de investigadores de Estados Unidos creó un protocolo de comunicación que denominaron TCP/IP, y conectaron entre sí a un conjunto de redes de computadoras a pedido del gobierno de ese país, sin saber que el proyecto resultaría tan exitoso y tendría alcance global. De esta forma, TCP/IP se convirtió en el modelo de comunicación de las redes que componen Internet.
 
+🟢 **Que sucede cuando escribo una URL en el navegador y hago click en Enter**?
+
+- El browser tiene que encontrar la manera de traducir esa URL a una IP. Para eso usa el DNS, que es como un libro telefonico.
+  - Busca el IP adress en el DNS Cache
+  - Si no lo encuentra, ISP inicia una consula al DNS para buscar direcciones en estos DNS
+  - Si no lo encuentra ahi, el navegador envia una peticion HTTP para encontrarlo en internet
+  - Una vez encontrado, se establece una conexion con el servidor. Esto se llama conexion TCP.
+
 ### 🟢 **Como se define la Interconexión?**
 
 Probablemente la computadora que utilizamos a diario en la oficina esté conectada a una red de computadoras. En nuestra casa, la computadora portátil, tablet y celulares los vinculamos a un dispositivo inalámbrico que luego se conecta a la red de fibra óptica de la empresa que nos brinda servicio de Internet y de televisión por cable o telefonía. Éste se comunica a la red de otro Proveedor de Servicios de Internet o ISP (por sus siglas en inglés) más grande, que llega a un número mayor de hogares y empresas, y así sucesivamente. A su vez, estos proveedores de acceso internacional se interconectan con otros más grandes, denominados Carriers, a través de fibras ópticas transcontinentales y satélites, entre otros.
@@ -71,7 +79,7 @@ Los distintos criterios de clasificación de redes son:
 
 ### 🟢 **Redes Inalámbricas**
 
-****El término red inalámbrica se utiliza en informática para designar la conexión de nodos sin necesidad de una conexión física , esta se da por medio de ondas electromagnéticas. La transmisión y la recepción se realizan a través de puertos.  En la actualidad este tipo de redes ha cobrado gran importancia, ya que entre sus principales ventajas se puede destacar su costo, ya que se elimina todo el cable Ethernet y conexiones físicas entre nodos, sin embargo también cuenta con una desventaja considerable ya que para este tipo de red se debe tener un nivel de seguridad mucho más exigente y robusto para evitar el uso no autorizado.
+El término red inalámbrica se utiliza en informática para designar la conexión de nodos sin necesidad de una conexión física , esta se da por medio de ondas electromagnéticas. La transmisión y la recepción se realizan a través de puertos.  En la actualidad este tipo de redes ha cobrado gran importancia, ya que entre sus principales ventajas se puede destacar su costo, ya que se elimina todo el cable Ethernet y conexiones físicas entre nodos, sin embargo también cuenta con una desventaja considerable ya que para este tipo de red se debe tener un nivel de seguridad mucho más exigente y robusto para evitar el uso no autorizado.
 
 Algunos medios de conexión son:
 
@@ -254,3 +262,107 @@ Cada dispositivo tiene su propia dirección TCP/IP. Por lo general, el dispositi
 Podés consultar tu IP pública desde una página web como https://www.cual-es-mi-ip.net/
 
 Conceptualmente, el número obtenido se puede asemejar a la “dirección” de una habitación de hotel, en la que la gerencia del mismo sabe que puede encontrarlo o el número de teléfono de tu celular.
+
+---
+
+# APIs
+
+Cada vez que entramos a una pagina web, estamos haciendo un request de data a la API del mismo, es decir, un **GET request** a la URL, devolviendonos por lo general, el HTML del sitio.
+
+También podemos usar las API cuando no necesitamos una respuesta HTML, sí hacemos una llamada a una URL particular, de por ejemplo, twitter, nos devolvera un JSON..
+
+```jsx
+[{
+   "created_at": "Thu Apr 06 15:28:43 +0000 2017",
+   "text": "Happy coding everyone!",
+   "favorite_count": 1000,
+   ...
+}]
+```
+
+Esto significa que la cuenta twitteo “Happy coding everyone!” y tuvo 1000 favoritos. Se devuelve en formato JSON ya que es más facil de leer. Esto nos sirve para construir nuestra propia aplicación usando la data de la API de twitter.
+
+**API-->** Application Programming Interface, diferentes apps necesitan distintos formatos de respuesta ante distintas necesidades.
+
+### Creando una request con Javascript
+
+1. Una forma de crear una nueva request con JS es con la herramienta **XMLHttpRequest(),** algo que podemos guardar tranquilamente en una variable:
+
+```jsx
+var request = new XMLHttpRequest();
+```
+
+1. Tendríamos que poner en otra variable, la URL a la que queremos hacer la llamada
+
+```jsx
+var url = www.twitter.com
+```
+
+1. Luego con un **request.open()** especificamos el tipo de llamada que deseamos hacer, con la URL a la que se lo queremos hacer. El false es para desactivar la especificación de un código más complejo durante la espera de la respuesta de la API, en este caso es false ya que todavía no se entra en detalles
+
+```jsx
+request.open(“GET”, url, false);
+```
+
+1. Ya que tenemos la request abierta, solo nos queda mandarla
+
+```jsx
+request.send();
+```
+
+1. También podemos imprimir en consola la respuesta de la api mediante
+
+```jsx
+console.log(request.response);
+```
+
+### **Poniendo en practica las API**
+
+1. Ponemos un titulo
+
+```jsx
+console.log(“Cat Fact”);
+```
+
+1. Creamos una variable con la herramienta deseada
+
+```jsx
+var request = new XMLHttpRequest();
+```
+
+1. Agregamos la URL a la que vamos a hacer el llamado
+
+```jsx
+var url = "https://cat-fact.herokuapp.com/facts/random"
+```
+
+1. Abrir la request
+
+```jsx
+request.open(“GET”, url, false);
+```
+
+1. Mandamos la request a la API
+
+```jsx
+request.send();
+```
+
+1. Creamos una variable con lo que trae la API
+
+```jsx
+var response = request.responseText;
+```
+
+1. Crear una variable para formatear la respuesta como un objecto JSON
+
+```jsx
+var data = JSON.parse(response);
+```
+
+1. Imprimimos el formateo, solo queremos que nos traiga el campo “text”
+
+```jsx
+console.log(data[“text”]);
+```
+
