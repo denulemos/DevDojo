@@ -671,6 +671,19 @@ Tambien hay herramientas de automatizacion para los tests, con comandos especifi
 
 Las funciones mas faciles de leer son las que no reciben parametros. Mientras mas parametros, mayor es la complejidad. No se recomiendan mas de 3 parametros, y si es el caso, se recomienda refactorizar, separando esta funcion en varias funciones mas pequeñas o encapsulando los argumentos en una clase
 
+👉**Intenciones ocultas dificiles de apreciar**
+
+- El codigo debe ser lo mas expresivo posible
+- De nada vale un codigo que ocupa poco espacio si no lo entendemos. Mejor aclarar lo mas posible antes que priorizar el ahorro de caracteres
+
+En este ejemplo podemos ver que se ahorraron muchas letras en los nombres de las funciones, haciendo que sea muy confuso de leer
+
+```javascript
+public int otCalc(){
+	return isWkn * wkRte + (int) Math.round(0.5 * wkRte * ...);
+}
+```
+
 ### 👉**Una función recibe parametros de salida**
 
 Los argumentos de salida con los que se le pasan a una funcion para que esta guarde el resultado, en vez de usar un return, como en el caso del ejemplo el parametro `int* result`, que solo sirve para guardar el resultado en una variable global. Siempre se debe usar el `return`
@@ -917,6 +930,38 @@ Month month = MonthDate.StringToMonth(String monthName);
 ```
 
 Esperamos que esta funcion pase el parametro `July` a un enum `Month.JULY`. Que haga lo mismo con `jULY` y `july`, si el codigo no hace lo que se espera en estos casos, se pierde confianza en el, y se debe estar revisando lo que hace cada linea.
+
+👉**No usar variables explicatorias**
+
+Crear variables intermedias hace que el codigo quede mucho mas claro. Por ejemplo, en la imagen podemos ver la primera imagen que es una funcion de una sola linea, que queda mucho mas clara en su segunda version, agregando una variable intermedia para calcular un cateto.
+
+```javascript
+public Double calcularArea(Double hipotenusa, Double cateto) {
+    return Math.sqrt(hipotenusa*hipotenusa - cateto*cateto) * cateto / 2;
+}
+
+public Double calcularArea (Double hipotenusa, Double cateto) {
+    Double cateto_2 = Math.sqrt(hipotenusa*hipotenusa - cateto*cateto);
+    
+    return cateto * cateto_2 / 2;
+}
+```
+
+No se debe sacrificar claridad por menos lineas.
+
+👉**Usar numeros magicos en lugar de constantes**
+
+Se deben pasar numeros que no se sabe que son como en el primer caso a constantes, como sucede en su segunda refactorizacion.
+
+```javascript
+public Double getAnnualSalary() {
+    return 200.0 * 0.6..
+}
+
+public Double getAnnualSalary() {
+    return WORKING_DAYS * WORKING_HOURS_PER_DAY...
+}
+```
 
 ### 👉**Anular mecanismos de seguridad**
 
