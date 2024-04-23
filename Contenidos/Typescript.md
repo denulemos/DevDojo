@@ -1,6 +1,6 @@
 # Typescript
 
-## **Qué es TypeScript?**
+### **Qué es TypeScript?**
 
 Es un superset de JavaScript, es el mismo JavaScript pero le extiende características, o posee cosas propias. 
 
@@ -12,7 +12,7 @@ Es mantenido por Microsoft
 - Mejora el intellisense
 - Nos permite la **inyección de dependencias**
 
-## **Cuáles son sus características superadoras?**
+### **Cuáles son sus características superadoras?**
 
 Su tipado estricto ayuda a saber como funcionan las cosas, por ejemplo, en este código Javascript
 
@@ -50,7 +50,7 @@ interface Producto {
 
 - Retorna un arreglo de dos números
 
-## **Cómo declaro una variable?**
+### **Cómo declaro una variable?**
 
 ```tsx
 let nombre: string = 'Denu'; // Tipo explicito
@@ -64,7 +64,7 @@ let arrayVariable: (boolean | string | number)[] = ['Denu', 22, false]
 
 ```
 
-## **Cómo declaro un objeto?**
+### **Cómo declaro un objeto?**
 
 ```tsx
 interface Personaje {
@@ -82,7 +82,7 @@ const personaje: Personaje = {
 
 personaje.nacionalidad = 'Costa Rica';
 ```
-## **Cómo declaro una función?**
+### **Cómo declaro una función?**
 
 ```tsx
 function sumar (a: number, b:number) : number {
@@ -94,7 +94,7 @@ const sumar = (a?: number, b: number = 2) : number => {
 }
 ```
 
-## **Cómo una clase?**
+### **Cómo una clase?**
 
 ```tsx
 class Person {
@@ -116,13 +116,13 @@ class Person {
 }
 ```
 
-## **Cómo se transpilan las interfaces de TypeScript?**
+### **Cómo se transpilan las interfaces de TypeScript?**
 
 Las interfaces de TypeScript no se transpilan directamente a código JavaScript, ya que son una característica estática de TypeScript que se utiliza principalmente para proporcionar comprobaciones estáticas de tipo durante el desarrollo. Durante el proceso de transpilación de TypeScript a JavaScript, las interfaces se eliminan del código resultante, ya que no tienen un equivalente en JavaScript.
 
 En lugar de transpilarse, las interfaces de TypeScript son utilizadas por el compilador para realizar comprobaciones de tipos estáticos durante la fase de desarrollo. Esto significa que las interfaces ayudan a detectar errores de tipo en tiempo de compilación y a proporcionar un mejor soporte para el desarrollo de software a gran escala en TypeScript. Una vez que el código TypeScript se ha transpilado a JavaScript, las interfaces no tienen ningún impacto en el código resultante, ya que se eliminan durante el proceso de transpilación.
 
-## **Cómo hago que las props de una interface sean opcionales?**
+### **Cómo hago que las props de una interface sean opcionales?**
 
 Para hacer todas las propiedades de una interfaz opcionales en TypeScript, puedes utilizar la característica de TypeScript llamada "intersección" junto con el tipo parcial ("Partial"). 
 
@@ -140,3 +140,43 @@ const obj: PartialMyInterface = {}; // Todas las propiedades son opcionales
 ```
 
 En este ejemplo, `Partial<MyInterface>` crea un nuevo tipo que tiene todas las propiedades de `MyInterface`, pero las declara como opcionales. Esto permite que cada propiedad pueda ser `undefined` o simplemente omitida al crear un objeto que cumpla con este tipo.
+
+### **Herencia en Typescript**
+
+```typescript
+class Beer extends Drink {
+	private alcohol: number;
+
+	constructor(name: string, price: number, alcohol: number) {
+		super(name, price);
+		this.alcohol = alcohol;
+	}
+}
+
+const beer = new Beer('Imperial', 1000, 5);
+```
+
+### **Interfaces en Typescript**
+
+Nos permite categorizar objetos, es decir, que un objeto tenga un comportamiento ya esperado. Es un contrato.
+
+```typescript	
+interface Product {
+	name: string;
+	price: number;
+}
+
+const beer: Product = {
+	name: 'Imperial',
+	price: 1000
+}
+
+class Beer extends Drink implements Product {
+	private alcohol: number;
+
+	constructor(name: string, price: number, alcohol: number) {
+		super(name, price);
+		this.alcohol = alcohol;
+	}
+}
+```

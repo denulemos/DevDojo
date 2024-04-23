@@ -87,6 +87,8 @@ Las consecuencias de implementar un patrón de diseño se refieren a lo positivo
 
 # **Patrones Comportamiento**
 
+Como los objetos se van a comportar y a cambiar su comportamiento.
+
 - **State**: Suele presentarse cuando es necesario que un objeto modifique su comportamiento cuando cambia su estado interno (Muy usado en React). Empleo alto.
 - **Strategy**: Permite disponer de varios métodos para resolver un problema y permitir elegir cual de ellos se usara en tiempo de ejecución. Uso alto.
 - **Observer**: Define una dependencia entre un objeto determinado a muchos otros (llamados observadores) de manera que cuando se produce un cambio de estado en el sujeto observado, los observadores dependen de el para que el resto se actualice solo. Uso alto.
@@ -148,3 +150,31 @@ El concepto se puede aplicar a la ingeniería en general, e incluso a cualquier 
 - **Problema del yoyó (yo-yo problem)**: Construir estructuras (por ejemplo de herencia) que son difíciles de comprender debido a su excesiva fragmentación.
 - **Singletonitis**: Abuso de la utilización del patrón singleton. Este concepto es también aplicable a cualquier tipo de patrón de diseño en el que se abuse de su implementación en lugares no adecuados o necesarios. Suele ocurrir con programadores con poca experiencia
 - **YAFL (“yet another layer” u otra capa más no deseada)**: Se trata de añadir capas innecesarias a un programa, sub-programa, biblioteca o framework. Esta tendencia se extendió bastante después de que se publicase el primer libro sobre patrones.
+
+---
+
+# Patrones de Diseño en Javascript y Typescript
+
+### Singleton
+
+Obliga a que exista solo un objeto de un tipo. Se puede usar para crear un objeto que se encargue de la conexión a una base de datos, para que no se creen múltiples conexiones.
+
+```javascript
+class Singleton {
+    constructor() {
+        // Si la instancia no existe, se crea
+        if (!Singleton.instance) {
+            Singleton.instance = this;
+        }
+
+        // Si no, se devuelve lo que ya existe
+        return Singleton.instance;
+    }
+}
+
+const singleton = new Singleton();
+const singleton2 = new Singleton(); // Devuelve la misma instancia
+```
+
+
+
