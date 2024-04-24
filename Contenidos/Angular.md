@@ -1,5 +1,29 @@
 # Angular
 
+### ⭕ Diferencia entre AngularJS y Angular
+
+AngularJS y Angular son dos frameworks de JavaScript desarrollados por Google, pero tienen diferencias significativas en cuanto a su arquitectura y características.
+
+1. **AngularJS (1.x)**:
+   - AngularJS es el primer framework de JavaScript desarrollado por Google. Se lanzó en 2010.
+   - Utiliza un enfoque MVC (Modelo-Vista-Controlador) para el desarrollo de aplicaciones web.
+   - AngularJS usa la sintaxis de enlace de datos bidireccional para sincronizar automáticamente los datos del modelo y la vista.
+   - Usa directivas para extender el HTML con nuevas funcionalidades.
+   - Utiliza inyección de dependencias para facilitar la creación y administración de componentes.
+   - AngularJS se basa en JavaScript puro y no requiere TypeScript.
+
+2. **Angular (2+)**:
+   - Angular, también conocido como Angular 2 y versiones posteriores, es una reescritura completa de AngularJS.
+   - Se lanzó en 2016 y fue reconstruido con TypeScript.
+   - Adopta un enfoque de componentes, donde las aplicaciones se construyen a partir de componentes independientes y reutilizables.
+   - Utiliza un enfoque unidireccional para la vinculación de datos, lo que mejora el rendimiento y la previsibilidad.
+   - Angular cuenta con un enfoque modular, lo que permite la carga bajo demanda de características y optimización del rendimiento.
+   - Ofrece una mejor optimización para dispositivos móviles y es más adecuado para el desarrollo de aplicaciones empresariales complejas.
+   - Angular proporciona herramientas integradas para realizar pruebas unitarias y de extremo a extremo.
+   - Angular es compatible con las últimas especificaciones de JavaScript (ES6/ES7) y TypeScript.
+
+En resumen, AngularJS es el primer framework desarrollado por Google, que utiliza un enfoque MVC y está basado en JavaScript puro, mientras que Angular es una reescritura completa en TypeScript, con un enfoque de componentes, vinculación de datos unidireccional y una arquitectura más modular y optimizada para aplicaciones empresariales modernas.
+
 ### ⭕ Comandos Iniciales
 
 - `npm i -g @ angular/cli` Instalación de Angular
