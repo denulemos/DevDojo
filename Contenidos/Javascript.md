@@ -1165,6 +1165,31 @@ function obtenerModulo() {
 }
 ```
 
+### Fetch API 
+
+Es una interfaz moderna que permite hacer peticiones HTTP desde el navegador. Es una alternativa a XMLHttpRequest y es más fácil de usar y más potente.
+
+```jsx
+fetch('https://api.github.com/users')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error(error));
+
+// Otra forma de hacerlo
+
+async function fetchData() {
+  try {
+    const response = await fetch('https://api.github.com/users');
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+```
+
+
+
 ### ¿Que es async, preload y prefetch?
 
 En JavaScript, `async`, `preload` y `prefetch` son conceptos relacionados pero diferentes:
