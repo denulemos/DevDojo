@@ -32,6 +32,14 @@ Mediante estas configuraciones se **deberia** buscar que Typescript sea lo mas e
 }
 ```
 
+### **Watch Mode**
+
+Typescript al ejecutarse es traducido a Javascript. Para que Typescript esté pendiente de los cambios en los archivos y los compile automáticamente, se puede usar el siguiente comando
+
+```bash
+tsc --watch
+```
+
 ### **Cuáles son sus características superadoras?**
 
 Su tipado estricto ayuda a saber como funcionan las cosas, por ejemplo, en este código Javascript
@@ -72,6 +80,8 @@ interface Producto {
 
 ### **Cómo declaro una variable?**
 
+Por defecto, implicitamente Typescript asigna un tipo a las variables, pero se puede asignar un tipo explicito. `any` deberia evitarse a toda costa, a menos que sea un elemento reutilizable. 
+
 ```tsx
 let nombre: string = 'Denu'; // Tipo explicito
 let nombre= 'Denu' // Tipo implicito
@@ -81,8 +91,57 @@ let variable: number | string = 95;
 variable = 'Denu'
 
 let arrayVariable: (boolean | string | number)[] = ['Denu', 22, false]
-
 ```
+
+### **Tuples - Tuplas**
+
+El primer dato del Array SIEMPRE sera un string y el segundo un number.
+
+```tsx
+let persona: [string, number] = ['Denu', 24];
+
+persona[0] = 10; // Error
+persona[1] = 'Denu'; // Error
+
+persona[0] = 'Denu';
+persona[1] = 24;
+```
+
+### **Tipo de dato Never**
+
+Es un tipo de dato que representa un valor que nunca ocurre. Se utiliza principalmente para funciones que lanzan excepciones o que nunca terminan de ejecutarse. 
+
+No es undefined ni es void. Es never.
+
+```tsx
+function error(mensaje: string): never {
+	throw new Error(mensaje);
+}
+
+function loopInfinito(): never {
+	while (true) {
+		console.log('Hola');
+	}
+}
+```
+
+### **Tipo de dato Any**
+
+Es un tipo de dato que puede ser cualquier cosa, es decir, que no tiene un tipo de dato específico. Se debe evitar su uso en la medida de lo posible, ya que puede llevar a errores en tiempo de ejecución y dificultar el mantenimiento del código. 
+
+```tsx
+let variable: any = 'Denu';
+variable = 22;
+variable = true;
+```
+En Javascript se traspilaria a
+
+```jsx
+let variable = 'Denu';
+variable = 22;
+variable = true;
+```
+
 
 ### **Cómo declaro un objeto?**
 
@@ -112,6 +171,20 @@ function sumar (a: number, b:number) : number {
 const sumar = (a?: number, b: number = 2) : number => {
 	return a + b;
 }
+```
+
+### **Parametros REST**
+
+Una funcion puede recibir tantos argumentos como uno quiera, y los parametros REST son una manera de hacer esto.
+
+Por ejemplo en la proxima funcion puedo enviar tantos numeros como yo quiera sumar. Guarda los elementos en el array `numeros`
+
+```tsx
+function sumar(a: number, b: number, ...numeros: number[]): number {
+	return numeros.reduce((acc, curr) => acc + curr, 0);
+}
+
+sumar(1, 2, 3, 4, 5, 6, 7, 8, 9, 10); // 55
 ```
 
 ### **Cómo una clase?**

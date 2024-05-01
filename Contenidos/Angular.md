@@ -1,6 +1,6 @@
 # Angular
 
-### ⭕ Diferencia entre AngularJS y Angular
+### Diferencia entre AngularJS y Angular
 
 AngularJS y Angular son dos frameworks de JavaScript desarrollados por Google, pero tienen diferencias significativas en cuanto a su arquitectura y características.
 
@@ -24,13 +24,13 @@ AngularJS y Angular son dos frameworks de JavaScript desarrollados por Google, p
 
 En resumen, AngularJS es el primer framework desarrollado por Google, que utiliza un enfoque MVC y está basado en JavaScript puro, mientras que Angular es una reescritura completa en TypeScript, con un enfoque de componentes, vinculación de datos unidireccional y una arquitectura más modular y optimizada para aplicaciones empresariales modernas.
 
-### ⭕ Características
+### Características
 
 - Se lanzan nuevas versiones cada 6 meses
 - Usa TypeScript para mantener una uniformidad en toda la aplicación
 - Cuando se hace referencia a Angular a secas, es de la versión 2 para arriba. La versión de Angular 1 es AngularJS
 
-### ⭕ ¿Qué es la interpolación?
+### ¿Qué es la interpolación?
 
 Es la forma que desde la lógica de TS podemos pasar datos a renderizar en el template HTML. 
 
@@ -40,7 +40,7 @@ Es la forma que desde la lógica de TS podemos pasar datos a renderizar en el te
 <img src="{img}" alt="imagen"/>
 ```
 
-### ⭕ ¿Qué es un Decorador?
+### ¿Qué es un Decorador?
 
 Indica como debe comportarse el componente. Dentro de este decorador, puedes observar el selector del componente (un nombre para el mismo), el template HTML y la hoja de estilos que usará.
 
@@ -52,7 +52,7 @@ Indica como debe comportarse el componente. Dentro de este decorador, puedes obs
 })
 ```
 
-### ⭕ ¿Qué es Property Binding?
+### ¿Qué es Property Binding?
 
 Es la forma que tiene Angular de controlar y cambiar las propiedades de los elementos HTML usando corchetes [] 
 
@@ -78,7 +78,7 @@ Al establecer una propiedad de elemento en un valor de datos que no sea un Strin
 
 Se recomienda comprender los “Event binding” para entender el flujo de datos de la aplicacion y como este interactua con “interpolation” y “Property Binding”.
 
-### ⭕ Event Binding en Angular (Manejo de Eventos)
+### Event Binding en Angular (Manejo de Eventos)
 
 ```tsx
 <button (click)="onSave()">Save</button>
@@ -105,13 +105,13 @@ handleClick($event: Event) {
 
 - Usar () en el template html es sinónimo de llamar “addEventListener()”
 
-### ⭕ ¿Cuál es el flujo de datos de la aplicación?
+### ¿Cuál es el flujo de datos de la aplicación?
 
 - Enlace unidireccional [] para enlazar desde la capa lógica (component.ts) a la vista (html).
 - Enlace unidireccional () para enlazar de la vista (html) a la capa lógica (component.ts).
 - Enlace bidireccional [()] para enlazar una secuencia de vista bidireccional a la capa lógica (component.ts).
 
-### ⭕ ¿Qué es Data Binding?
+### ¿Qué es Data Binding?
 
 El atributo **ngModel** permite el **intercambio de datos de forma bidireccional** entre el componente y la vista. Lo que suceda en el componente, se verá reflejado en la vista. Lo que se suceda en la vista, inmediatamente impactará en el componente.
 
@@ -138,7 +138,7 @@ import { FormsModule } from '@angular/forms';
 export class AppModule { }
 ```
 
-### ⭕ ¿Cómo se usa ngIf?
+### ¿Cómo se usa ngIf?
 
 ```tsx
 <div *ngIf="show">
@@ -174,7 +174,7 @@ Se usa para expresar si se debe mostrar o no un elemento
 
 En el `elseif`, si la primera condición es verdadera, se muestra el div correspondiente, de lo contrario, se muestra el componente dentro del `ng-template` con el ID correspondiente. 
 
-### ⭕ ¿Cómo se usa ngFor?
+### ¿Cómo se usa ngFor?
 
 El *ngFor es otra de las estructuras de control en Angular, que nos sirve para iterar un array
 
@@ -203,13 +203,13 @@ El *ngFor es otra de las estructuras de control en Angular, que nos sirve para i
 
 ```
 
-### ⭕ ¿Qué es un Módulo?
+### ¿Qué es un Módulo?
 
 Las aplicaciones de Angular son Modulares, en Angular existe NgModules. Sirve para mantener la lógica de un flujo de trabajo de la aplicación. Por ejemplo, se tiene un e-commerce, con sus módulos correspondientes, usuarios vendedores, compradores, productos, etc.. 
 
 Son diseños lógicos que se encargan de trabajar dentro de la aplicación, se usan para poder importar librerías u otros módulos dentro de los mismos. Cada módulo hasta puede tener su propio ruteo. 
 
-### ⭕ ¿Qué es un Modelo?
+### ¿Qué es un Modelo?
 
 Es un archivo, por ejemplo,  product.model.ts donde se definen, de un objeto, de qué tipo son los elementos que la componen.  Una forma más deductiva de conocer las propiedades del array de objetos, es definiendo una interface donde se declaran cada una de sus propiedades y el tipo de dato que contendrá
 
@@ -231,7 +231,7 @@ import { Student } from './student.model';
 students: Student[] = [{...}]
 ```
 
-### ⭕ ¿Cómo se usa ngSwitch?
+### ¿Cómo se usa ngSwitch?
 
 El funcionamiento de esta directiva es exactamente igual que el de un switch de programación, donde el resultante de una expresión definirá cual es el elemento del DOM (el tag) que se mostrará. Para ello se utilizan los atributos `[ngSwitch]` igualado a una variable definida en código (la cual será la que cambie su valor) y los atributos `*ngSwitchCase` igualados a los posibles valores que puede tomar la variable. Cuando la variable tome el valor de uno de los `*ngSwitchCase` se mostrará el tag asignado. También se puede incluir un tag con el atributo `*ngDefaultSwitch` para que se muestre siempre y cuando el valor de la variable no está contemplado en ninguno de los casos.
 
