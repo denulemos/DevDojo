@@ -12,6 +12,26 @@ Es mantenido por Microsoft
 - Mejora el intellisense
 - Nos permite la **inyección de dependencias**
 
+### **TSConfig.json**
+
+Es el archivo de configuración de TypeScript, en el se definen las reglas de compilación de TypeScript.
+
+Mediante estas configuraciones se **deberia** buscar que Typescript sea lo mas estricto posible.
+
+```json
+{
+	"compilerOptions": {
+		"target": "es5", // A que versión de JS se compilará
+		"module": "commonjs", // Sistema de modulos
+		"strict": true, // Habilita todas las opciones estrictas
+		"noImplicitAny": true, // No permite any
+		"esModuleInterop": true, // Permite importar modulos de ES6
+		"skipLibCheck": true, // No revisa las librerias
+		"forceConsistentCasingInFileNames": true, // Obliga a que los nombres de archivos sean consistentes
+	}
+}
+```
+
 ### **Cuáles son sus características superadoras?**
 
 Su tipado estricto ayuda a saber como funcionan las cosas, por ejemplo, en este código Javascript

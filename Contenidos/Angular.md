@@ -24,15 +24,6 @@ AngularJS y Angular son dos frameworks de JavaScript desarrollados por Google, p
 
 En resumen, AngularJS es el primer framework desarrollado por Google, que utiliza un enfoque MVC y está basado en JavaScript puro, mientras que Angular es una reescritura completa en TypeScript, con un enfoque de componentes, vinculación de datos unidireccional y una arquitectura más modular y optimizada para aplicaciones empresariales modernas.
 
-### ⭕ Comandos Iniciales
-
-- `npm i -g @ angular/cli` Instalación de Angular
-- `ng new proyecto-nuevo —routing —style=css`
-- `ng version` Verificación versión Angular
-- `ng serve` Ejecutar el proyecto, si se le agrega el parametro `-o` se abrirá el navegador automáticamente, y con `—-port=3500` podemos elegir el puerto, `ng s`
-- `ng s —host=0.0.0.0` ⇒ Si tengo varios dispositivos conectados en un mismo host, en la misma red local
-- Generar un modulo ⇒  `ng generate modules/nombre-modulo` | `ng g m nombre-modulo —routing` (modules/ ya que se genera dentro de esa carpeta, si no existe, con el nombre es necesario),
-
 ### ⭕ Características
 
 - Se lanzan nuevas versiones cada 6 meses
