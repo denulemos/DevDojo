@@ -22,8 +22,8 @@
 | [Nombrar algunas ARIA existentes](#acc16)    | 
 | [¿Qué prácticas conlleva tener un HTML accesible?](#acc17)    | 
 
-## [Algoritmos - Logica](#alg) 
 
+## [Algoritmos - Logica](#alg) 
 | Temas   |
 |----------|
 | [Binary Search](#alg1)    | 
@@ -83,7 +83,67 @@
 | [Metodos de Strings en Javascript](#alg55) |
 | [Métodos de Objectos en Javascript](#alg56) |
 
-  
+
+## [Ciclos de Vida de Software](#cic) 
+| Temas   |
+|----------|
+| [¿Qué es el ciclo de vida de un software?](#cic1)    |
+| [Iterativo e Incremental](#cic2)    |
+| [De waterfall a Agile](#cic3)    |
+
+
+## [Typescript](#typ) 
+| Temas   |
+|----------|
+| [Qué es TypeScript?](#typ1)    |
+| [TSConfig.json](#typ2)    |
+| [Watch Mode](#typ3)    |
+| [Cuáles son sus características superadoras?](#typ4)    |
+| [Cómo declaro una variable?](#typ5)    |
+| [Tuples - Tuplas](#typ6)    |
+| [Tipo de dato Never](#typ7)    |
+| [Tipo de dato Any](#typ8)    |
+| [Cómo declaro un objeto?](#typ9)    |
+| [Cómo declaro una función?](#typ10)    |
+| [Parametros REST](#typ11)    |
+|[Cómo creo una clase?](#typ12)    |
+| [Cómo se transpilan las interfaces de TypeScript?](#typ13)    |
+| [Cómo hago que las props de una interface sean opcionales?](#typ14)    |
+| [Herencia en Typescript](#typ15)    |
+| [Interfaces en Typescript](#typ16)    |
+
+
+## [Variables](#var) 
+| Temas   |
+|----------|
+| [¿Qué es una Variable?](#var1)    |
+| [¿En qué se diferencia una variable común, nativa, de un objeto?](#var2)    |
+| [¿A qué nos referimos cuando hablamos de tipos de datos?](#var3)    |
+| [¿Cómo se declara una variable?](#var4)    |
+| [Nombres de Variables](#var5)    |
+
+
+## [Styles - Estilos](#sty) 
+| Temas   |
+|----------|
+| [Cuál es la diferencia entre div y span?](#sty1)    |
+| [Qué es la Especificidad (Specificity) de CSS?](#sty2)    |
+|[Que es BEM?](#sty3)    |
+| [Como declaro variables en CSS?](#sty4)    |
+| [Pseudoclases](#sty5)    |
+|[Qué es Sass?](#sty6)    |
+| [Cual es la diferencia entre .sass y scss?](#sty7)    |
+| [Sass reemplaza a CSS?](#sty8)    |
+| [Comentarios en Sass](#sty9)    |
+| [Variables en SASS](#sty10)    |
+| [Partials en SASS](#sty11)    |
+| [Imports en SASS](#sty12)    |
+| [Interpolacion en SASS](#sty13)    |
+| [Nesting en SASS](#sty14)    |
+| [Selectores en SASS](#sty15)    |
+| [Mixins en SASS](#sty16)    |
+| [Condicionales if-else en SASS](#sty17)    |
+
 
 ---
 <a id="acc"></a>
@@ -2500,3 +2560,747 @@ const objectToMap = obj => new Map(Object.entries(obj));
 objectToMap({a: 1, b: 2}); // Map {'a' => 1, 'b' => 2}
 
 ```
+
+---
+
+<a id="cic"></a>
+# Ciclos de Vida de Software
+
+<a id="cic1"></a>
+### ¿Qué es el ciclo de vida de un software?
+
+Tradicionalmente el desarrollo de aplicaciones informáticas se llevaba a cabo de forma individualizada, a base de codificar (generar líneas de código) y probar lo realizado cuanto antes. La misma persona escribía el código, lo ejecutaba y, si fallaba, lo depuraba. El proceso se realizaba sin ninguna planificación previa y sin que soliese existir documentación alguna. Debido a que la movilidad en el trabajo era baja, los ejecutivos estaban seguros de que esa persona estaría allí cuando se produjese algún fallo. En principio, el hecho de que desde un primer momento se vaya generando código, podría considerarse como un síntoma de enorme progreso, pero puede suponer posteriormente un gran retroceso e incluso la necesidad de desechar una gran parte de lo realizado en el caso de que existan errores y no se puedan llevar a cabo las modificaciones necesarias para subsanarlos (por ejemplo, si al 90% del código se descubre que el diseño de la base de datos es incorrecto, puede suponer desechar el trabajo y tener que comenzar de nuevo). Con este enfoque, cualquier cosa que no sea codificación pura y dura no se realiza (como, por ejemplo, actividades de planificación, de documentación, de aseguramiento de la calidad).
+
+Esta forma de desarrollar aplicaciones es muy común en muchas organizaciones y, generalmente, se utiliza cuando no se elige o sigue un enfoque de desarrollo (ciclo de vida) concreto y/o apenas se realiza la actividad de planificación. Además, otro factor que juega a favor de este enfoque de *codificar y probar* es que requiere poca experiencia y cualquier persona podrá fácilmente familiarizarse con él [MCCONNELL, 1997].
+
+Esta forma de desarrollar software puede ser eficaz en programas pequeños. Para otro tipo de proyectos, puede resultar peligrosa su utilización, ya que no se puede conocer el progreso del proyecto, ni tampoco su calidad, simplemente se está codificando y probando hasta que finaliza el proyecto. Otras maneras de realizar el desarrollo software, como se verán en los siguientes apartados, permitirán, por ejemplo, conocer el progreso, detectar un error lo antes posible, etc.
+
+Por lo tanto, es probable que las aplicaciones realizadas según este enfoque de *codificar y probar:*
+
+- Sean poco flexibles, y ante posibles modificaciones (por cambios en los requerimientos del cliente, cambios en el hardware, etc.) se incremente el coste de los proyectos e, incluso, en ocasiones, resulten virtualmente irrealizables debido a la naturaleza personalizada de los programas y a la falta de documentación (lo que provocará problemas de mantenimiento).
+- Sean incompletas o no reflejen bien las necesidades del cliente, es decir, que no realicen todas las funciones requeridas y, además, lo hagan con una escasa fiabilidad.
+- Provoquen el descontento de los clientes, pues se producen retrasos en la entrega (no se conoce el momento exacto en el que se entregarán), aparecen errores una vez que la aplicación ha sido entregada (lógico al no haberse realizado de forma sistemática actividades de verificación y validación en el proyecto).
+
+Por tanto, es necesario que todo esfuerzo en el desarrollo del software conlleve un enfoque lógico para su realización. Dicho enfoque debe abarcar toda la vida del sistema, comenzando con su concepción y finalizando cuando ya no se utiliza o se retira [SIGWART, 1990].
+
+El ciclo de vida software es la descripción de las distintas formas de desarrollo de un proyecto o aplicación informática, es decir, la orientación que debe seguirse para obtener, a partir de los requerimientos del cliente, sistemas que puedan ser utilizados por dicho cliente. También puede definirse como el conjunto de fases o etapas, procesos y actividades requeridas para ofertar, desarrollar, probar, integrar, explotar y mantener un producto software.
+
+Las funciones principales de un ciclo de vida software son:
+
+- Determinar el orden de las fases y procesos involucrados en el desarrollo del software y su evolución (teniendo en cuenta el modelo de procesos que se utilice como referencia).
+- Establecer los criterios de transición para pasar de una fase a la siguiente (productos intermedios). Todo ello, incluye los criterios para la terminación de la fase actual y los criterios para seleccionar e iniciar la fase siguiente.
+
+El ciclo de vida software da respuesta a las siguientes preguntas de la gestión de un proyecto de software:
+
+- ¿Qué haré a continuación?
+- ¿Cuánto tiempo continuaré haciéndolo?
+
+El ciclo de vida que se seleccione en un proyecto [DAVIS, 1988] influirá en el éxito del proyecto, y puede ayudar a asegurar que cada paso que se dé acorte más la consecución del objetivo. Dependiendo del ciclo de vida que se seleccione, se puede aumentar la velocidad de desarrollo, mejorar la calidad, el control y el seguimiento del proyecto, minimizar gastos y riesgos, o mejorar las relaciones con los clientes. Una selección ineficaz puede ser una fuente constante de ralentización del trabajo, trabajo repetitivo, innecesario y frustrante.
+
+Algunas de las ventajas que aporta el enfoque de ciclo de vida residen en lo siguiente:
+
+- En las primeras fases, aunque no haya líneas de código, pensar el diseño es avanzar en la construcción del sistema, pues posteriormente resulta más fácil la codificación
+- Asegura un desarrollo progresivo, con controles sistemáticos, que permite detectar precozmente los defectos.
+- Se controla el sobrepasar los plazos de entrega y los costes excesivos mediante un adecuado seguimiento del progreso.
+- La documentación se realiza de manera formal y estandarizada simultáneamente al desarrollo, lo que facilita la comunicación interna entre el equipo de desarrollo y la de éste con los usuarios. También aumenta la visibilidad y la posibilidad de control para la gestión del proyecto.
+- Supone una guía para el personal de desarrollo, marcando las tareas a realizar en cada momento.
+- Minimiza la necesidad de rehacer trabajo y los problemas de puesta a punto.
+
+<a id="cic2"></a>
+### Iterativo e Incremental
+
+Es dividir el desarrollo en partes y cada parte es una **iteración**, que resulta un **incremento.** Las iteraciones deben ser controladas, es decir, planificarse. Los desarrolladores tienen en cuenta lo que deben hacer en funcion de los casos de uso de cada iteración.
+
+- Reduce el riesgo a los costes de un solo incremento
+- Reduce retrasos en el calendario
+- Acelera el desarrollo. Se trabaja más a corto plazo
+
+<a id="cic3"></a>
+### De waterfall a Agile
+
+Se comprenden las siguientes fases:
+
+- Especificación de requerimientos al principio de todo, y de ahí se congelan.
+- Diseño
+- Construcción
+- Integración
+- Debugging
+- Instalación
+- Mantenimiento
+
+Consta de una evolución secuencial, los problemas se dieron por el entorno constantemente cambiante que tiene la industria. Según estudios, se sacó la conclusión de que la participación del usuario y el empleo de períodos de tiempo más cortos son claves para incrementar el éxito, de ahí surgieron varias otras metodologías:
+
+- Espiral
+- Iterativo
+- Agile
+
+---
+
+<a id="typ"></a>
+# Typescript
+
+<a id="typ1"></a>
+### **Qué es TypeScript?**
+
+Es un superset de JavaScript, es el mismo JavaScript pero le extiende características, o posee cosas propias. 
+
+Es mantenido por Microsoft
+
+- Ofrece tipado estricto y flexible
+- Mejora la legibilidad del código
+- Nos permite usar características modernas de Javascript sin miedo a la compatibilidad
+- Mejora el intellisense
+- Nos permite la **inyección de dependencias**
+
+<a id="typ2"></a>
+### **TSConfig.json**
+
+Es el archivo de configuración de TypeScript, en el se definen las reglas de compilación de TypeScript.
+
+Mediante estas configuraciones se **deberia** buscar que Typescript sea lo mas estricto posible.
+
+```json
+{
+	"compilerOptions": {
+		"target": "es5", // A que versión de JS se compilará
+		"module": "commonjs", // Sistema de modulos
+		"strict": true, // Habilita todas las opciones estrictas
+		"noImplicitAny": true, // No permite any
+		"esModuleInterop": true, // Permite importar modulos de ES6
+		"skipLibCheck": true, // No revisa las librerias
+		"forceConsistentCasingInFileNames": true, // Obliga a que los nombres de archivos sean consistentes
+	}
+}
+```
+
+<a id="typ3"></a>
+### **Watch Mode**
+
+Typescript al ejecutarse es traducido a Javascript. Para que Typescript esté pendiente de los cambios en los archivos y los compile automáticamente, se puede usar el siguiente comando
+
+```bash
+tsc --watch
+```
+
+<a id="typ4"></a>
+### **Cuáles son sus características superadoras?**
+
+Su tipado estricto ayuda a saber como funcionan las cosas, por ejemplo, en este código Javascript
+
+```jsx
+function calcularISV (productos) {
+	let total = 0;
+	
+	productos.forEach( ({precio}) => {
+		total += precio;
+	}
+
+	return [total, total * 0.15]
+}
+```
+
+- No sabemos de que tipo de dato son los productos
+- Como luce un producto
+- Que propiedades debe tener el producto para que el código funcione
+
+Entonces, en Typescript quedaría algo así la firma de nuestro método
+
+```tsx
+function calcularISV(productos: Producto[]): [number, number] {}
+```
+
+- Productos es un arreglo del tipo Producto
+- ¿Cómo luce Producto? Se puede definir con una interfaz
+
+```tsx
+interface Producto {
+	desc: string;
+	precio: number;
+}
+```
+
+- Retorna un arreglo de dos números
+
+<a id="typ5"></a>
+### **Cómo declaro una variable?**
+
+Por defecto, implicitamente Typescript asigna un tipo a las variables, pero se puede asignar un tipo explicito. `any` deberia evitarse a toda costa, a menos que sea un elemento reutilizable. 
+
+```tsx
+let nombre: string = 'Denu'; // Tipo explicito
+let nombre= 'Denu' // Tipo implicito
+
+// Variable de dos posibles tipos
+let variable: number | string = 95;
+variable = 'Denu'
+
+let arrayVariable: (boolean | string | number)[] = ['Denu', 22, false]
+```
+
+<a id="typ6"></a>
+### **Tuples - Tuplas**
+
+El primer dato del Array SIEMPRE sera un string y el segundo un number.
+
+```tsx
+let persona: [string, number] = ['Denu', 24];
+
+persona[0] = 10; // Error
+persona[1] = 'Denu'; // Error
+
+persona[0] = 'Denu';
+persona[1] = 24;
+```
+
+<a id="typ7"></a>
+### **Tipo de dato Never**
+
+Es un tipo de dato que representa un valor que nunca ocurre. Se utiliza principalmente para funciones que lanzan excepciones o que nunca terminan de ejecutarse. 
+
+No es undefined ni es void. Es never.
+
+```tsx
+function error(mensaje: string): never {
+	throw new Error(mensaje);
+}
+
+function loopInfinito(): never {
+	while (true) {
+		console.log('Hola');
+	}
+}
+```
+
+<a id="typ8"></a>
+### **Tipo de dato Any**
+
+Es un tipo de dato que puede ser cualquier cosa, es decir, que no tiene un tipo de dato específico. Se debe evitar su uso en la medida de lo posible, ya que puede llevar a errores en tiempo de ejecución y dificultar el mantenimiento del código. 
+
+```tsx
+let variable: any = 'Denu';
+variable = 22;
+variable = true;
+```
+En Javascript se traspilaria a
+
+```jsx
+let variable = 'Denu';
+variable = 22;
+variable = true;
+```
+
+<a id="typ9"></a>
+### **Cómo declaro un objeto?**
+
+```tsx
+interface Personaje {
+	nombre: string;
+	edad: number;
+	habilidades: string[];
+	nacionalidad?: string; // opcional
+}
+
+const personaje: Personaje = {
+	nombre: 'Denu',
+	edad: 24,
+	habilidades: ['volar', 'comer']
+}
+
+personaje.nacionalidad = 'Costa Rica';
+```
+
+<a id="typ10"></a>
+### **Cómo declaro una función?**
+
+```tsx
+function sumar (a: number, b:number) : number {
+	return a + b;
+}
+
+const sumar = (a?: number, b: number = 2) : number => {
+	return a + b;
+}
+```
+
+<a id="typ11"></a>
+### **Parametros REST**
+
+Una funcion puede recibir tantos argumentos como uno quiera, y los parametros REST son una manera de hacer esto.
+
+Por ejemplo en la proxima funcion puedo enviar tantos numeros como yo quiera sumar. Guarda los elementos en el array `numeros`
+
+```tsx
+function sumar(a: number, b: number, ...numeros: number[]): number {
+	return numeros.reduce((acc, curr) => acc + curr, 0);
+}
+
+sumar(1, 2, 3, 4, 5, 6, 7, 8, 9, 10); // 55
+```
+
+<a id="typ12"></a>
+### **Cómo creo una clase?**
+
+```tsx
+class Person {
+	private age: number;
+	apellido: string; // por defecto es public
+
+		constructor(age: number, apellido: string) {
+			this.age = age;
+			this.apellido = apellido;
+		}
+}
+
+const denu = new Person(24, 'Lemon');
+
+// ---- Forma resumida ----
+
+class Person {
+	constructor(private age: number, public apellido: string) {}
+}
+```
+
+<a id="typ13"></a>
+### **Cómo se transpilan las interfaces de TypeScript?**
+
+Las interfaces de TypeScript no se transpilan directamente a código JavaScript, ya que son una característica estática de TypeScript que se utiliza principalmente para proporcionar comprobaciones estáticas de tipo durante el desarrollo. Durante el proceso de transpilación de TypeScript a JavaScript, las interfaces se eliminan del código resultante, ya que no tienen un equivalente en JavaScript.
+
+En lugar de transpilarse, las interfaces de TypeScript son utilizadas por el compilador para realizar comprobaciones de tipos estáticos durante la fase de desarrollo. Esto significa que las interfaces ayudan a detectar errores de tipo en tiempo de compilación y a proporcionar un mejor soporte para el desarrollo de software a gran escala en TypeScript. Una vez que el código TypeScript se ha transpilado a JavaScript, las interfaces no tienen ningún impacto en el código resultante, ya que se eliminan durante el proceso de transpilación.
+
+<a id="typ14"></a>
+### **Cómo hago que las props de una interface sean opcionales?**
+
+Para hacer todas las propiedades de una interfaz opcionales en TypeScript, puedes utilizar la característica de TypeScript llamada "intersección" junto con el tipo parcial ("Partial"). 
+
+```typescript
+interface MyInterface {
+  prop1: string;
+  prop2: number;
+}
+
+// Todas las propiedades de MyInterface ahora son opcionales
+type PartialMyInterface = Partial<MyInterface>;
+
+// Ejemplo de uso
+const obj: PartialMyInterface = {}; // Todas las propiedades son opcionales
+```
+
+En este ejemplo, `Partial<MyInterface>` crea un nuevo tipo que tiene todas las propiedades de `MyInterface`, pero las declara como opcionales. Esto permite que cada propiedad pueda ser `undefined` o simplemente omitida al crear un objeto que cumpla con este tipo.
+
+<a id="typ15"></a>
+### **Herencia en Typescript**
+
+```typescript
+class Beer extends Drink {
+	private alcohol: number;
+
+	constructor(name: string, price: number, alcohol: number) {
+		super(name, price);
+		this.alcohol = alcohol;
+	}
+}
+
+const beer = new Beer('Imperial', 1000, 5);
+```
+
+<a id="typ16"></a>
+### **Interfaces en Typescript**
+
+Nos permite categorizar objetos, es decir, que un objeto tenga un comportamiento ya esperado. Es un contrato.
+
+```typescript	
+interface Product {
+	name: string;
+	price: number;
+}
+
+const beer: Product = {
+	name: 'Imperial',
+	price: 1000
+}
+
+class Beer extends Drink implements Product {
+	private alcohol: number;
+
+	constructor(name: string, price: number, alcohol: number) {
+		super(name, price);
+		this.alcohol = alcohol;
+	}
+}
+```
+
+---
+
+<a id="var"></a>
+# Variables
+
+<a id="var1"></a>
+### **¿Qué es una Variable?**
+
+Una *variable* es un *contenedor* que tiene un valor o dato. Desde el punto de vista técnico, es un espacio de la memoria en el que guardamos ese determinado valor (o dato). 
+
+Todas las variables tienen características comunes (por ejemplo un nombre que las identifica) y otras que difieren según el tipo de dato que contengan. Si pudiéramos ver qué contiene internamente una variable, veríamos que en algunos casos contiene directamente el valor y en otros (como en el caso de los objetos) otra cosa.
+
+<a id="var2"></a>
+### **¿En qué se diferencia una variable común, nativa, de un objeto?**
+
+Consideraremos que las variables nativas son entidades elementales: un número, un carácter, un valor verdadero o falso, que son entendidas por el lenguaje y asociadas a un tipo de dato *reconocible* por el entorno donde el programa corre, mientras que los objetos son entidades complejas que pueden estar formadas por la agrupación de más de un elemento, incluyendo *campos* y *métodos*. Pero todas ocupan un espacio de memoria (que puede ser mayor o menor).
+
+Ahora bien, las variables nativas guardan en sí mismas sus valores, y su tamaño está determinado por el tamaño definido del tipo de dato. En el caso de los objetos, como cada clase tiene su propia definición y el tamaño de sus *instancias solamente puede ser resuelto en tiempo de ejecución*, solamente guardarán la *dirección de memoria* de la *instancia*. Es lo que comúnmente se conoce como puntero.
+
+Es por eso que cuando a una variable de "tipo clase" no se le asigna ningún valor posee *null* como valor *por defecto*. Este *null* implica que la variable no guarda ningún objeto, y es por eso que produce un error de ejecución cuando se intenta acceder a un método de la instancia cuando ésta aún no se ha creado.
+
+<a id="var3"></a>
+### **¿A qué nos referimos cuando hablamos de tipos de datos?**
+
+En los programas en Java puede ser necesario tanto el uso de datos elementales como de datos complejos. Por eso se usa el término “Tipos de datos” para englobar a cualquier cosa que ocupe un espacio de memoria y que pueda ir tomando distintos valores o características durante la ejecución del programa. Es decir, en vez de hablar de tipos de variables o de tipos de objetos, hablaremos simplemente de tipos de datos.
+
+En Java diferenciamos dos tipos de datos: por un lado, los tipos primitivos, que se corresponden con los tipos de variables en lenguajes como C y que son los datos elementales que hemos citado. Por otro lado, los tipos objeto (que normalmente incluyen métodos)
+
+![Cola](src/variables1.png)
+
+<a id="var4"></a>
+### **¿Cómo se declara una variable?**
+
+Para definir una variable seguiremos la estructura:
+
+```jsx
+tipoDato nombreVariable;
+
+String profesor;
+
+int capacidad;
+
+boolean funciona;
+```
+
+Una vez declaradas, podemos asignarles valor de la siguiente manera:
+
+```jsx
+profesor = "Catalina";
+
+capacidad = 10;
+
+funciona = true;
+```
+
+Si cuando declaramos una variable ya sabemos el valor inicial que queremos que tome, podemos asignarlo en el mismo momento. Por ejemplo:
+
+```jsx
+String profesor = "Catalina";
+```
+
+<a id="var5"></a>
+### **Nombres de Variables**
+
+Cuando vayamos a dar un nombre a una variable deberemos tener en cuenta una serie de normas. Es decir, no podemos poner el nombre que nos dé la gana a una variable.
+
+Es recomendable que los nombres de los identificadores sean legibles y no acrónimos que no podamos leer. De tal manera que a la hora de verlos se auto-documenten por sí mismos. Además estos identificadores nunca podrán coincidir con las palabras reservadas ni comenzar con un número.
+
+Algunas reglas no escritas, pero que se han asumido *por convención* son:
+
+- Los identificadores siempre se escriben en minúsculas. (pe. nombre). Y si son dos o más palabras, el inicio de cada siguiente palabra se escriba en mayúsculas (pe. nombrePersona)
+- Si el identificador implica que sea una constante (es decir que hayamos utilizado los modificadores *final static*), dicho nombre se suele escribir en mayúsculas (pe. LETRA). Y si la constante está compuesta de dos palabras, estas se separan con un subrayado (pe. LETRA_PI).
+
+---
+
+<a id="sty"></a>
+# Styles - Estilos
+
+<a id="sty1"></a>
+### **Cuál es la diferencia entre div y span?**
+La etiqueta span trabaja como contenedor de línea, no se puede ampliar para ocupar un párrafo, debe usarse para edicion de frases en parrafos, y div trabaja como contenedor de bloque, y puede expandirse.
+
+![image](https://github.com/denulemos/denobible/assets/32619895/e5463d4a-0cee-45ff-862b-f872e139ba9c)
+
+<a id="sty2"></a>
+### **Qué es la Especificidad (Specificity) de CSS?**
+
+Es como el navegador determina que propiedad de CSS se debe aplicar a un elemento si hay varios en juego o muchos selectores.
+
+Va del mas alto al mas bajo en especificidad: 
+
+- Estilos inline (Se aplica siempre)
+- IDs
+- Clases, atributos y pseudo-clases
+- Elementos y pseudo-elementos (Compite)
+
+```css
+section p {
+    color: red;
+}
+
+// Se va a aplicar este, ya que es el mas reciente en aparecer, y tiene una especificidad mayor
+.p1 {
+    color: green;
+}
+
+-----
+<section>
+	<p class="p1">Hola</p>
+</section>
+```
+
+<a id="sty3"></a>
+### **Que es BEM?**
+
+Block element modifier, consiste en escribir nombres de clases que dejen en claro que es lo que se esta representando en el HTML y en el CSS
+
+`bloque__elemento-modificador_elemento (header__title-warning)`
+
+<a id="sty4"></a>
+### **Como declaro variables en CSS?**
+
+```jsx
+:root {
+    --color-3: #000000;
+} 
+
+html, body {
+    background-color: var(--color-3);
+}
+```
+
+<a id="sty5"></a>
+### **Pseudoclases**
+
+Si vemos los vínculos, tiene un color asignado que podemos cambiarlo por ejemplo si le pasamos el
+mouse por arriba al elemento , eso lo haremos con lo que se llaman pseudo clases pero es necesario
+trabajar de forma interna para poder hacerlo, por ejemplo
+
+```html
+<head>
+	<style>
+		a:hover {color: pink;}
+	</style>
+</head>
+```
+
+En el ejemplo anterior hemos dicho que los vínculos al pasarle el mouse por arriba se verán en otro color, por ejemplo en el caso anterior en pink.
+Tenemos varias pseudo clases:
+
+- a:hover => cuando pasamos el mouse por arriba del vínculo
+- a:link => cuando aún no hemos visitado al vínculo
+- a:visited => cuando hemos visitado al vínculo
+- a:active => cuando le hacemos clic al vínculo
+
+```css
+a {color: white; text-decoration:none;}
+a:hover {text-decoration:underline; }
+```
+
+<a id="sty6"></a>
+### **Qué es Sass?**
+
+Es un preprocesador que nos permite escribir codigo CSS de una forma mas dinamica, agregando sintaxis de un lenguaje de programacion, incluyendo variables, funciones, modulos y valores
+
+Ayuda a tener un codigo modular, simple y escalable. 
+
+- Es completamente compatible con CSS
+- Se puede escribir codigo mucho mas rapidamente
+- Muchos framework actualmente estan construidos con sass
+- Hay mucha documentacion
+
+<a id="sty7"></a>
+### **Cual es la diferencia entre .sass y scss?**
+
+La primera no utiliza llaves, solo tabulaciones, que se interpretan como bloques de codigo. La segunda es mas similar a CSS ya que utiliza llaves, y con funcionalidades extra
+
+<a id="sty8"></a>
+### **Sass reemplaza a CSS?**
+
+No, es una herramienta para escribir CSS de forma mas rapida, esto se compila a CSS. Es CSS con "superpoderes".
+
+En el HTML se hace el link al Stylesheet .css que es compilado desde sass.
+
+<a id="sty9"></a>
+### **Comentarios en Sass**
+
+```scss
+// Los comentarios de 2 barras no aparecen en el CSS compilado
+
+/* 
+	Este tipo de comentarios si aparecen en el codigo CSS compilado
+*/
+```
+
+<a id="sty10"></a>
+### **Variables en SASS**
+
+```scss
+$color: red;
+
+h1 {
+	// Se pueden declarar fuera y dentro de los bloques de estilos en SASS
+	$font: Arial;
+	font-family: $font;
+
+	color: $color;
+}
+```
+
+<a id="sty11"></a>
+### **Partials en SASS**
+
+Si tengo dos archivos en mi directorio sass, y no quiero que los dos aparezcan convertidos a css, si no que ambos esten combinados en un solo css (esto para que no ocupe tanto espacio), simplemente le pongo guion bajo al nombre del archivo sass que deseo combinar
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bd504db2-9bd9-4188-9b25-c304a0d8ab82/Untitled.png)
+
+El archivo con el guion bajo en su nombre no sera compilado, sera llamado en otro elemento que lo utilizara. 
+
+```scss
+// No es necesario ni la extension ni el guion 
+// bajo en el nombre del archivo a importar
+@use 'variables';
+
+body {
+	color: variables.$primary;
+}
+```
+
+<a id="sty12"></a>
+### **Imports en SASS**
+
+Puedo modificar los valores de las variables que importo al momento de referenciar al archivo
+
+```scss
+@use 'variables' with (
+	$primary: pink;
+);
+
+color: variables.$primary;
+```
+
+Para que esto pueda ser modificado, se le debe agregar una propiedad a la declaración de la variable, un `!default`
+
+```scss
+$primary: pink !default;
+```
+
+Cuando una variable es declarada en el mismo archivo sass donde es usada (generalmente arriba de todo del archivo y por fuera de cualquier bloque de estilos) se le dice que tiene un **scope global**
+
+<a id="sty13"></a>
+### **Interpolacion en SASS**
+
+```scss
+$selector: '.hero';
+$propiedad: 'color';
+
+#{$selector} {
+	#{$propiedad}: red;
+}
+
+// Es lo mismo que =>
+
+.hero {
+	color: red;
+}
+```
+
+<a id="sty14"></a>
+### **Nesting en SASS**
+
+```scss
+// ----- SASS -----
+
+.hero {
+	//..estilos 1
+		nav {
+			//.. estilos 2
+				a {
+					//..estilos 3
+				}
+		}
+}
+
+// ----- CSS -----
+
+.hero {
+	//..estilos 1
+}
+
+.hero nav {
+	//..estilos 2
+}
+
+.hero nav a {
+	// ..estilos 3
+}
+```
+<a id="sty15"></a>
+### **Selectores en SASS**
+
+```scss
+// Selector de hijo directo (.item es hijo directo de .card)
+
+.card > {
+	.item {}
+}
+
+.card {
+	> .item {}
+}
+```
+
+<a id="sty16"></a>
+### **Mixins en SASS**
+
+Es un grupo de declaraciones de CSS que pueden reutilizarse. Por ejemplo, si uso box-shadow, tendria que escribir varios estilos para varios navegadores 
+
+```jsx
+div {
+  -webkit-box-shadow: 0px 0px 4px #fff;
+  -moz-box-shadow: 0px 0px 4px #fff;
+  -ms-box-shadow: 0px 0px 4px #fff;
+  box-shadow: 0px 0px 4px #fff;
+}
+```
+
+Entonces en SASS podemos usar mixins, que son como funciones que podemos invocar para reutilizar el codigo. Hasta tiene parametros y todo para cambiar los valores
+
+```jsx
+@mixin box-shadow($x, $y, $blur, $c){ 
+  -webkit-box-shadow: $x $y $blur $c;
+  -moz-box-shadow: $x $y $blur $c;
+  -ms-box-shadow: $x $y $blur $c;
+  box-shadow: $x $y $blur $c;
+}
+```
+
+Luego llamamos al mixin utilizando la directiva `include`
+
+```jsx
+div {
+  @include box-shadow(0px, 0px, 4px, #fff);
+}
+```
+
+<a id="sty17"></a>
+### **Condicionales if-else en SASS**
+
+Se puede utilizar if-else dentro de los mixins en SASS
+
+```jsx
+@mixin make-bold($bool) {
+  @if $bool == true {
+    font-weight: bold;
+  }
+}
+
+@mixin text-effect($val) {
+  @if $val == danger {
+    color: red;
+  }
+  @else if $val == alert {
+    color: yellow;
+  }
+  @else if $val == success {
+    color: green;
+  }
+  @else {
+    color: black;
+  }
+}
+```
+
+---
