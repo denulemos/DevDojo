@@ -1,26 +1,3 @@
-# Organizaciones
-
-### 💙 **Organización**
-
-Es un conjunto de entidades (personas o no personas), con varios objetivos y/o metas en común basado en valores, con estructura, recursos, entorno, que manejan información y realizan actividades.
-
-Toda organización provee un servicio.
-
-**Tipos de organizaciones:**
-
-- Sector privado: Independiente del gobierno, quieren tener ganancia.Un subconjunto de las mismas son las empresas. La forma de identificar lo que tiene una organización (Capital, recursos..) es el **Contrato social.**
-- Organizaciones sin fines de lucro: Usan sus ganancias para soportar sus objetivos. Suelen ser voluntarios o públicos.
-- Sector público: Servicios del gobierno
-- Sector voluntario o caridad: Se enfocan en causas de caridad pública.Toda organización está armada sobre un valor, misión y visión.
-
-### 💙 **Misión**
-
-Es el motivo, propósito o razón de ser de la existencia de una empresa y/o organización
-
-- Que pretende lograr en dónde está
-- Que hace en su entorno
-- A quién va  a afectar eso que quiere hacer
-
 ### 💙 **Visión**
 
 A dónde va esa empresa a largo plazo, teniendo en cuenta a las nuevas tecnologías, los cambios, los clientes, etc..
