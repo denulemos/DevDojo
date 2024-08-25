@@ -141,6 +141,19 @@
 | [Mixins en SASS](#sty16)    |
 | [Condicionales if-else en SASS](#sty17)    |
 
+## [React](#rea) 
+| Temas   |
+|----------|
+| [useCallback](#rea1)    |
+| [useDispatch](#rea2)    |
+| [useEffect](#rea3)    |
+| [useState](#rea4)    |
+| [useSelector](#rea5)    |
+| [useRef](#rea6)    |
+| [useMemo](#rea7)    |
+| [useReducer](#rea8)    |
+| [useLayoutEffect](#rea9)    |
+
 ## [QA](#qa) 
 | Temas   |
 |----------|
@@ -153,8 +166,7 @@
 | [Que test de performance existen?](#qa7)    |
 | [Que tipos de testing hay?](#qa8)    |
 | [Que verifica el Unit Test?](#qa9)    |
-| [Que test de performance existen?](#qa10)    |
-| [Que test de performance existen?](#qa11)    |
+| [Principios FIRST de los Unit test](#qa10)    |
 
 ---
 <a id="acc"></a>
@@ -3439,3 +3451,409 @@ Son comparables a comprobar si una batería de un teléfono móvil está cargada
 ### **Que verifica el Unit Test?**
 
 Una prueba unitaria verifica la funcionalidad de los elementos más pequeños testables de una aplicación―clases y funciones―lo que permite a los desarrolladores detectar fallos y aislarlos. Las pruebas unitarias demuestran que, dado un determinado input, la función devuelve el resultado esperado. Una colección de pruebas unitarias conforma un conjunto de pruebas (test suite).
+
+<a id="qa10"></a>
+### **Principios FIRST de los Unit test**
+
+**Rápido**
+
+Las pruebas deben ejecutarse rápidamente. Todo un conjunto de pruebas unitarias debería tomar segundos en ejecutarse. Cuanto más rápidas sean las pruebas, más de ellas podrás incluir en el conjunto y con mayor frecuencia podrás ejecutarlas. Cuando las pruebas se ejecutan lentamente, tu equipo no las ejecutará con frecuencia. Como resultado, es posible que no encuentres problemas lo suficientemente pronto como para corregirlos fácilmente, lo que limita tu capacidad para limpiar el código y resulta en un deterioro gradual de la calidad del mismo.
+
+**Independiente**
+
+Las pruebas no deben depender unas de otras. Una prueba no debe establecer las condiciones para la siguiente. Los miembros de tu equipo deberían poder ejecutar cada prueba de forma independiente y en cualquier orden. Cuando las pruebas dependen entre sí, la primera que falla provoca una cascada de fallos posteriores, dificultando el diagnóstico y ocultando defectos posteriores.
+
+**Repetible**
+
+Las pruebas deben ser repetibles en cualquier entorno. Si las pruebas unitarias pasan cuando se ejecutan una por una pero fallan al ejecutar todo el conjunto de pruebas, o si pasan en tu máquina de desarrollo pero fallan en el servidor de integración continua, hay un defecto de diseño. Tu equipo debería poder ejecutar las pruebas con éxito en el entorno de producción, en el entorno de QA y en las laptops, para que nunca haya una excusa para no hacerlo.
+
+**Autovalidación**
+
+Las pruebas deben tener una salida booleana y pasar o fallar. La misma prueba que falla ahora y pasa después es inestable y compromete todo el conjunto de pruebas. Las pruebas inestables llevan a consecuencias negativas. Los desarrolladores dejan de confiar en las pruebas y empiezan a ignorarlas, lo que dificulta identificar las pruebas no inestables que fallan en un mar de pruebas inestables. No deberías tener que leer un archivo de registro o comparar manualmente dos archivos de texto para determinar si una prueba pasa. Si no son autovalidantes, entonces el fallo se vuelve subjetivo y ejecutar las pruebas requiere una evaluación manual prolongada
+
+
+---
+
+<a id="rea"></a>
+# React
+
+<a id="rea1"></a>
+### **useCallback**
+
+Tiene dos casos de uso:
+
+- Cuando queremos mandar una función a un componente hijo
+- Cuando tenemos un useEffect y el efecto tiene una dependencia que es la función, se recomienda usar el useCallback
+
+Lo importamos de la siguiente manera
+
+```jsx
+import React, {useState, useCallback} from "react";
+```
+
+Y lo usamos de la siguiente manera:
+
+```jsx
+const [counter, setCounter] = useState(10);
+
+// const increment = () => {
+//    setCounter(counter + 1);
+//}
+
+const increment = useCallback((num) => {
+    setCounter(c => c + num);
+}, [setCounter])
+```
+
+Se toma como referencia el setCounter, y la c de la función del useCallback hace referencia al counter.
+
+Para solucionar el segundo caso de uso, tenemos que hacer lo siguiente:
+
+```jsx
+const increment = useCallback((num) => {
+    setCounter(c => c + num);
+}, [setCounter]);
+
+useEffect(() => {
+    // code
+}, [increment])
+```
+
+Si no tuviéramos el useCallback, el useEffect se dispararía ante cada cambio de la función increment.
+
+<a id="rea2"></a>
+### **useDispatch**
+
+Es para ejecutar las acciones que podamos tener en nuestro Redux
+
+```jsx
+const [name, setName] = useState("");
+const [price, setPrice] = useState(0);
+
+const dispatch = useDispatch();
+
+const addProduct = (product) => {
+    dispatch({
+        type: "ADD_PRODUCT",
+        payload: product,
+    });
+};
+
+const submitNewProduct = (e) => {
+    e.preventDefault();
+
+    if (!name.trim()) {
+        console.log("Name is required");
+        return;
+    }
+
+    if (price <= 0) {
+        console.log("Price is required");
+        return;
+    }
+
+    addProduct({
+        name,
+        price,
+    });
+};
+```
+
+<a id="rea3"></a>
+### **useEffect**
+
+Reemplaza las funciones del ciclo de vida para los componentes de función, los combina en uno solo, es un Hook.
+
+```jsx
+import React, {useEffect} from 'react';
+```
+
+Requiere ser importado para ser usado
+
+Por ejemplo, en el caso del contador, quedaria algo asi con Hooks
+
+```jsx
+function Counter() {
+    const [counter, setCounter] = useState(0);
+
+    useEffect(()=> {
+        alert("Amount of Clicks: " + counter);
+    })
+
+    function increment() {
+        setCounter(counter++);
+    }
+
+    return <div>
+    <p>{counter}</p>
+    <button onClick={increment}>Increment</button>
+    </div>;
+}
+```
+
+Cuando el componente se monta y actualiza se ejecuta el useEffect()
+
+Si queremos que useEffect se ejecute solo ante la actualización del componente y no cuando se monta, agregamos un pequeño array vacío al final del useEffect(). Este array puede llenarse de dependencia que puede que usemos al ejecutar el Hook.
+
+```jsx
+useEffect(() => {
+    // Codigo
+}), []);
+```
+
+Y si queremos que cumpla una función de “clean up” como en el caso del componentWillUnmount(), podemos devolver una función que limpie lo necesario
+
+```jsx
+useEffect(() => {
+    return () => {
+        // cleanup, se ejecuta ultimo
+    };
+});
+```
+
+Si queremos que nuestro useEffect funcione como un componentDidMount() y un componentDidUpdate()
+
+```jsx
+useEffect(() => {console.log("Update"); });
+```
+
+Si queremos que funcione como un componentDidMount() (Solo se ejecuta cuando es montado)
+
+```jsx
+useEffect(() => {console.log("Mount");}, []);
+```
+
+Y si queremos que se ejecute ante el cambio de un state
+
+```jsx
+
+useEffect(() => {console.log("Mount");}, [state]);
+```
+
+<a id="rea4"></a>
+### **useState**
+
+Hooks permiten usar los state dentro de los componentes funcionales. El más común es el useState que necesita ser importado de la siguiente manera para ser usado
+
+`import React, {useState} from 'react';`
+
+Y lo manejamos de la siguiente manera:
+
+```jsx
+function Hello() {
+  const [name, setName] = useState("David");
+
+  return <h1>Hola {name} </h1>;
+}
+```
+
+name es la manera en la que nos referimos al state en si, `useState` lo inicializa con algún valor, y setName queda como la funcion para modificar el mismo.
+
+Tambien podemos manejar objetos dentro de los `useState`
+
+```jsx
+const [coordenadas, serCoodernadas] = useState ({
+  latitud: null, longitud: null });
+
+setCoordenadas({latitud: 12, longitud: 13});
+```
+
+Los Hooks solo pueden ser usados dentro de un componente funcional, en el caso de los componentes de clase, debemos usar el this para referenciar a un estado.
+
+<a id="rea5"></a>
+### **useSelector**
+
+Es para acceder a un state dentro del componente. Es decir, si tenemos un state de error, poder reflejar algo en la UI en funcion de su valor. 
+
+```jsx
+const error = useSelector(state => state.error)
+```
+
+<a id="rea6"></a>
+### **useRef**
+
+Es otro Hook que viene con React. Asi que debe ser importado en conjunto
+
+```jsx
+import React, {useRef} from 'react';
+```
+
+Su utilidad es para hacer referencia a un item en particular sin necesitar que la página o el componente vuelvan a ser renderizados.
+
+Un caso de uso es, teniendo un input de texto y un botón, hacer que el cuadro de texto se seleccione cuando el botón es accionado.
+
+Inicializamos el ref:
+
+```jsx
+const inputRef = useRef();
+```
+
+Agregamos el ref al elemento deseado, en este caso, el input de texto:
+
+```jsx
+<input
+    ref={inputRef}
+    className="form-control"
+    placeholder="Nombre"
+/>
+```
+
+Y se lo agregamos a la función que se ejecuta en el `onClick` del botón, en este caso, la función `handleClick`
+
+```jsx
+const handleClick = () => {
+    inputRef.current.select();
+}
+```
+
+Y si hacemos un console.log de este ref, podemos ver que hace referencia al item de input que configuramos, con todas sus propiedades
+
+!https://miro.medium.com/max/1236/1*UY_6duTresBTHq5p35M8EQ.png
+
+Esto no es el uso más común de este Hook de React. Podemos usarlo para chequear si un componente está montado (o no, si se tiene la referencia es porque el componente no está montado actualmente)
+
+Entonces ante un desmonte del componente, actualizamos el valor de la refernecia de `isMounted` a `false`, como se puede ver en el useEffect() (Recordar que cuando esta en el return, se ejecuta en el **`componentWillUnmount**()` )
+
+Lo podemos utilizar para no llamar a un servicio cuando el componente esta desmontado, por ejemplo.
+
+```jsx
+const isMounted = useRef(true);
+const [state, setState] = useState({data});
+
+useEffect(() => {
+    return () => {
+        isMounted.current = false;
+    }
+}, [])
+```
+
+Notar que nos referimos al valor del ref o para su cambio con current
+
+<a id="rea7"></a>
+### **useMemo**
+
+Primero para entender este Hook, debemos entender el uso de Memo en React.
+
+Para prevenir que un componente vuelva a renderizarse si sus props son las mismas usamos Memo, lo memorizamos.
+
+Lo podemos hacer de dos maneras, con memo desde React, si la prop “value” no cambia del valor anterior, el componente no vuelve a renderizarse.
+
+```jsx
+import React, {memo} from 'react';
+
+export const Small = memo(({value}) => {
+    console.log("Me volvi a llamar");
+    // http?
+    
+    return (
+        <small>{value}</small>
+    )
+})
+```
+
+En el caso del uso del Hook useMemo, es muy parecido a Memo.
+
+```jsx
+const memoProcesoPesado = useMemo(() => procesoPesado(counter), [counter]);
+```
+
+Se recibe como primer parámetro una función en callback, y como segundo parámetro una variable o estado que debemos chequear su valor para memorizar, o no, la función.
+
+El valor se almacena en la variable memoProcesoPesado, y lo usamos en lugar de la función en todas sus referencias de uso
+
+```jsx
+<p> {memoProcesoPesado} </p>
+```
+
+Lo que hace, en resumen, es que si el valor de counter no cambia, la función no se re-ejecuta ante cada nuevo renderizado, solo se vuelve a procesar si counter cambia, no es necesario que sea la misma variable que la función recibe por parámetros.
+
+Evitar re-renderizado de, por ejemplo, una lista
+
+```jsx
+const twoRandomProducts = useMemo(() => [...products]
+.sort(() => (Math.random() > ...))
+.slice(0,2), [products]); // dependencia de products, si products no cambia, memo no cambia
+```
+
+<a id="rea8"></a>
+### **useReducer**
+
+Es una alternativa a useState que se utiliza de la siguiente manera al momento de inicializar el componente:
+
+`const [state, dispatch] = useReducer(reducer, initialArg, init);`
+
+- **init** es usado como funcion para inicializar el state en caso de que el mismo sea procesado o haga varias acciones.
+- **dispatch** ayuda a disparar las acciones hacia el reducer
+
+Cuando son estados simples, es preferible el useState, pero si es algo bastante amplio y con muchas acciones que deben estar cambiando mediante props, ahí puede considerarse el useReducer con el Reducer correspondiente.
+
+```jsx
+const initialState = {count: 0};
+
+function reducer(state, action){
+  switch(action.type) {
+    case 'increment':
+      return {count: state.count + 1};
+    case 'decrement':
+      return {count: state.count - 1};
+    default:
+      throw new Error();
+  }
+}
+
+function Counter() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+  return (
+    <>
+      Count: {state.count}
+      <button onCLick={() => dispatch({type: 'decrement'}))> - </button>
+      <button onCLick={() => dispatch({type: 'increment'}))> + </button>
+    </>
+  );
+}
+```
+
+<a id="rea9"></a>
+### **useLayoutEffect**
+
+No es un Hook muy común en si mismo. Se dispara de forma asíncrona después de que todas las manipulaciones del DOM se hayan hecho, se usa para tomar referencias, como por ejemplos, tamaños de cajas de textos, etc...
+
+La misma documentación de React recomienda usar `useEffect` en su lugar para evitar el bloqueo de actualizaciones visuales.
+
+Se activa en las mismas fases del `componentDidMount` y `componentDidUpdate` que podiamos ver en los componentes de clase y sus ciclos de vida.
+
+Por ejemplo, para recoger el tamaño de un elemento de nuestro DOM, hacemos lo siguiente.
+
+Lo importamos como un Hook nativo de React
+
+```jsx
+import React, {useLayoutEffect} from 'react';
+```
+
+Posee la misma estructura que el useEffect, en el ejemplo este console.log se ejecutará ante cada primer renderizado del componente por su array final []
+
+```jsx
+useLayoutEffect(() => {
+    console.log("hola");
+}, [])
+```
+
+Podemos complementar el ejemplo con useRef, y agregarlo al elemento que queremos evaluar.
+
+```jsx
+const pTag = useRef();
+
+useLayoutEffect(() => {
+	console.log(pTag.current.getBoundingClientRect());
+}, [quote]);
+```
+
+En este ejemplo podemos ver que se creó la referencia (pTag) ya posicionada en el elemento a evaluar, y, cada vez que cambia la variable quote de nuestro componente, se ejecutará el `useLayoutEffect`, tomando el tamaño del rectángulo que contiene al elemento, para eso sirve el **`getBoundingClientRect()`** usado en este caso.
+
+Una vez hecho esto, nos aparecerá esto en la consola del navegador ⇒ 
+
+!https://miro.medium.com/max/1400/1*ehoXFftQ5DCge88ZZtS7cQ.png
+
+El primero es cuando el DOM todavía no renderizo el elemento, por eso es todo valor cero. El segundo es cuando ya está renderizado.
+
+Ante cada cambio de quote que se haga, volverá a cero y volverá a tener otro valor, ya que este elemento es el que contiene el valor de quote, de longitud variable (es una frase random)
