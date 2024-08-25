@@ -120,16 +120,6 @@
 | [Interfaces en Typescript](#typ16)    |
 
 
-## [Variables](#var) 
-| Temas   |
-|----------|
-| [¿Qué es una Variable?](#var1)    |
-| [¿En qué se diferencia una variable común, nativa, de un objeto?](#var2)    |
-| [¿A qué nos referimos cuando hablamos de tipos de datos?](#var3)    |
-| [¿Cómo se declara una variable?](#var4)    |
-| [Nombres de Variables](#var5)    |
-
-
 ## [Styles - Estilos](#sty) 
 | Temas   |
 |----------|
@@ -151,6 +141,20 @@
 | [Mixins en SASS](#sty16)    |
 | [Condicionales if-else en SASS](#sty17)    |
 
+## [QA](#qa) 
+| Temas   |
+|----------|
+| [Que es el testing?](#qa1)    |
+| [Que es un Test Limpio?](#qa2)    |
+| [Cuando empezar a testear?](#qa3)    |
+| [Cuando terminar de testear?](#qa4)    |
+| [Diferencia entre coverage y confianza](#qa5)    |
+| [Diferencia entre unit test e Integration Test](#qa6)    |
+| [Que test de performance existen?](#qa7)    |
+| [Que tipos de testing hay?](#qa8)    |
+| [Que verifica el Unit Test?](#qa9)    |
+| [Que test de performance existen?](#qa10)    |
+| [Que test de performance existen?](#qa11)    |
 
 ---
 <a id="acc"></a>
@@ -3349,3 +3353,89 @@ Se puede utilizar if-else dentro de los mixins en SASS
 ```
 
 ---
+
+<a id="qa"></a>
+# QA
+
+<a id="qa1"></a>
+### **Que es el testing?**
+
+Mide la calidad del producto, el producto debe cumplir con lo que debería. El testing es para hacer visible la calidad
+
+<a id="qa2"></a>
+### **Que es un Test Limpio?**
+
+- Camino feliz, caso positivo
+- **Flujo normal de un caso de uso sin errores, p**or ejemplo un Login con datos válidos
+- Por cada caso limpio “debería” tener 5 sucios
+- Es el test más importante, el sistema debería hacer lo que debe hacer en principio.
+
+<a id="qa3"></a>
+### **Cuando empezar a testear?**
+
+**Cuando hay una primera versión estable de los requerimientos**, se debe ver si estos tienen sentido, etc.. Se deben encontrar errores en la etapa de definición para ahorrar tiempo y dinero en un futuro.
+
+<a id="qa4"></a>
+### **Cuando terminar de testear?**
+
+- Depende de diversos criterios que el tester y el desarrollador acordaron con anterioridad.
+- Cuando se testeo y no se encontró ningún error
+- Cuando hay un Fault-rate bajo (se debe cumplir con un estándar predeterminado)
+- Ya se encontraron ciertos números de errores en total
+
+<a id="qa5"></a>
+### **Diferencia entre coverage y confianza**
+
+- La confianza es que tan parecido son los test a un comportamiento que puede tener el usuario con nuestro sistema. Generalmente se refleja en el e2e.
+- Coverage son la cantidad de lineas de codigo cubiertas por tests
+
+<a id="qa6"></a>
+### **Diferencia entre unit test e Integration Test**
+
+Las pruebas unitarias (Unit testing) prueban los componentes individuales del software de forma aislada; son pruebas que generalmente realiza el mismo desarrollador. Es una prueba de caja blanca.
+
+El test de integración (Integration Test) prueba la interfaz entre dos unidades o módulos del software, verificando cómo se comportan los módulos combinados entre sí. Se ejecuta después de las pruebas unitarias. Es una prueba de caja negra que generalmente realiza un tester.
+
+| Unit Test | Integration Test |
+| --- | --- |
+Se enfoca en una pieza específica del sistema de manera aislada |	Se enfoca en la interacción entre unidades, módulos o componentes |
+Son más fáciles de escribir, más rápidas de ejecutar y más económicas de mantener	| Son más complejas, más lentas de ejecutar y más costosas de mantener |
+Verifican la consistencia interna del código sobre el cual se tiene control total	| Verifican cómo se integra tu código con otro código |
+No tienen dependencias externas; cualquier dependencia externa es simulada o eliminada |	A menudo requieren interacción con dependencias externas, como bases de datos, servicios de red, hardware, etc. |
+Te indican la pieza exacta del código donde se encuentra el error |	Indican qué módulos o componentes contienen el error
+Son comparables a comprobar si una batería de un teléfono móvil está cargada o si la tarjeta SIM está activada |	Son comparables a comprobar si la batería y la tarjeta SIM de un teléfono móvil están ensambladas para encender el teléfono
+
+<a id="qa7"></a>
+### **Que test de performance existen?**
+
+- Load Test: Se simula el maximo uso del sistema, con maxima cantidad de usuarios.
+- Stess Test: Se incrementara la cantidad de llamados a los servicios del sistema hasta que rompa, indicara la mayor cantidad de usuarios que el sistema podra soportar y cuanto tiempo tarda en recuperarse
+- Resistance Test: Es test testear el sistema durante periodos de tiempo mas largos para revelar otros tipos de problemas.
+- Test de aceleracion: Se testea como carga el contenido para usuarios con conexiones mas lentas.
+- Peak Testing: Se simula que sucede con el sistema cuando llega a un pico de trafico
+- Escalability Test: Testeamos, por ejemplo, cuanto podra el sistema escalar si agregamos otro servidor, o escalamos la instancia ya existente.
+- **Prueba de volumen:**
+    - Que el **software soporte muchos datos**
+    - Enfocado en base de datos y transacciones
+
+<a id="qa8"></a>
+### **Que tipos de testing hay?**
+
+- Integracion - Integration: Que un **código con otro se integre bien**, a veces lo hace el tester o el dev, Ejecutada por el **integrador**
+- Unit:
+    - Código que prueba una unidad de código, envió valores y veo lo que resuelve, por desarrolladores
+    - No es TDD (Desarrollo definido por pruebas).
+    - Es la primera etapa de prueba
+- Static: Se identifican errores mientras se van escribiendo
+- **Test de Regresión:**
+    - Es el test de todo, **que una implementación no rompa algo ya hecho**.
+    - Se hace en primera sobre casos positivos
+- **Test de Humo:** Test rápido que **verifica que la versión está estable**
+ (pocos test básicos, todos positivos por lo general)
+- **Prueba aceptación usuario: El usuario interactúa con el sistema**, es casi siempre positivo, que lo que necesite funcione bien, esto en un entorno de **testing en alpha**
+- **Pruebas beta:** Lo mismo que el anterior pero en un entorno productivo en prueba, el desarrollador no está presente. El mismo vuelve para recibir un feedback del usuario
+
+<a id="qa9"></a>
+### **Que verifica el Unit Test?**
+
+Una prueba unitaria verifica la funcionalidad de los elementos más pequeños testables de una aplicación―clases y funciones―lo que permite a los desarrolladores detectar fallos y aislarlos. Las pruebas unitarias demuestran que, dado un determinado input, la función devuelve el resultado esperado. Una colección de pruebas unitarias conforma un conjunto de pruebas (test suite).
