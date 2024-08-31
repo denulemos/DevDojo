@@ -97,6 +97,13 @@
 | [De waterfall a Agile](#cic3)    |
 | [¿Cuál es el concepto de Organización?](#cic4)|
 | [El concepto de "Misión de una Organización"](#cic5)|
+| [El concepto de "Visión de una Organización"](#cic6)|
+| [El concepto de "Valores de una Organización"](#cic7)|
+| [El concepto de "Excelencia Empresarial"](#cic8)|
+| [El concepto de Interesados (Stakeholders)](#cic9)|
+| [El concepto de "Objetivos de una Organización"](#cic10)|
+| [El concepto de "Entorno de una Organización"](#cic11)|
+| [Recursos de una Organizacion](#cic12)|
 
 ## [Typescript](#typ)
 
@@ -154,6 +161,23 @@
 | [useMemo](#rea7)    |
 | [useReducer](#rea8)    |
 | [useLayoutEffect](#rea9)    |
+| [Diferencia entre AngularJS y Angular](#rea10)    |
+| [¿Qué son los modulos en Angular?](#rea11)    |
+| [¿Qué es Property Binding?](#rea12)    |
+| [¿Cuál es el flujo de datos una aplicación Angular?](#rea13)    |
+| [¿Qué es un Decorador en Angular?](#rea14)    |
+| [Event Binding en Angular (Manejo de Eventos)](#rea15)    |
+| [Data Binding en Angular](#rea16)    |
+| [Como puedo mejorar la performance de mi Frontend?](#rea17)    |
+
+## [Desarrollo Mobile](#mob)
+
+| Temas   |
+|----------|
+| [¿Qué es el Manifest.xml en Android y qué funciones cumple?](#mob1)    |
+| [¿Cómo se ejecutan las aplicaciones en Android y qué son los archivos DEX?](#mob2)    |
+| [¿Qué es el Android Runtime y cómo se ejecutan las aplicaciones en Android?](#mob3)    |
+| [¿Qué constituye la base de Android y qué funciones proporciona el kernel de Linux?](#mob4)    |
 
 ## [QA](#qa)
 
@@ -169,6 +193,46 @@
 | [Que tipos de testing hay?](#qa8)    |
 | [Que verifica el Unit Test?](#qa9)    |
 | [Principios FIRST de los Unit test](#qa10)    |
+
+## [Control de Versiones y Cambios](#cam)
+
+| Temas   |
+|----------|
+| [Para que nos sirve Git?](#cam1)    |
+| [Conceptos base de Git](#cam2)    |
+| [Algunos comandos de Git](#cam3)    |
+| [Git Flow](#cam4)    |
+| [trunk base dev. vs git flow](#cam5)    |
+
+## [Conceptos Codigo Limpio y Diseño](#cod)
+
+| Temas   |
+|----------|
+| [¿De qué trata el código limpio?](#cod1)    |
+| [Nombres Significativos en Codigo Limpio](#cod2)    |
+| [Dependency Inversion Principle](#cod3)    |
+| [Concepto SOLID](#cod4)    |
+| [Concepto DRY](#cod5)    |
+| [Concepto KISS](#cod6)    |
+| [Concepto YAGNI](#cod7)    |
+| [Concepto LOD](#cod8)    |
+| [Funciones Limpias](#cod9)    |
+| [Unico Nivel de abstraccion](#cod10)    |
+| [Manejo limpio de Parametros](#cod11)    |
+| [Cuales son los beneficios de una Code Review?](#cod12)   |
+| [Que tipos de Code review existen?](#cod13)   |
+
+## [Hardware](#har)
+
+| Temas   |
+|----------|
+| [Gabinete](#har1)    |
+| [Motherboard](#har2)    |
+| [Microprocesador](#har3)    |
+| [Memoria RAM](#har4)    |
+| [Disco Rigido](#har5)    |
+| [Lectograbadora CD/DVD](#har6)    |
+| [Placas adicionales](#har7)    |
 
 ---
 <a id="acc"></a>
@@ -2743,7 +2807,7 @@ Algunas reglas no escritas, pero que se han asumido *por convención* son:
 
 <a id="cic1"></a>
 
-### ¿Qué es el ciclo de vida de un software?
+### **¿Qué es el ciclo de vida de un software?**
 
 Tradicionalmente el desarrollo de aplicaciones informáticas se llevaba a cabo de forma individualizada, a base de codificar (generar líneas de código) y probar lo realizado cuanto antes. La misma persona escribía el código, lo ejecutaba y, si fallaba, lo depuraba. El proceso se realizaba sin ninguna planificación previa y sin que soliese existir documentación alguna. Debido a que la movilidad en el trabajo era baja, los ejecutivos estaban seguros de que esa persona estaría allí cuando se produjese algún fallo. En principio, el hecho de que desde un primer momento se vaya generando código, podría considerarse como un síntoma de enorme progreso, pero puede suponer posteriormente un gran retroceso e incluso la necesidad de desechar una gran parte de lo realizado en el caso de que existan errores y no se puedan llevar a cabo las modificaciones necesarias para subsanarlos (por ejemplo, si al 90% del código se descubre que el diseño de la base de datos es incorrecto, puede suponer desechar el trabajo y tener que comenzar de nuevo). Con este enfoque, cualquier cosa que no sea codificación pura y dura no se realiza (como, por ejemplo, actividades de planificación, de documentación, de aseguramiento de la calidad).
 
@@ -2784,7 +2848,7 @@ Algunas de las ventajas que aporta el enfoque de ciclo de vida residen en lo sig
 
 <a id="cic2"></a>
 
-### Iterativo e Incremental
+### **Iterativo e Incremental**
 
 Es dividir el desarrollo en partes y cada parte es una **iteración**, que resulta un **incremento.** Las iteraciones deben ser controladas, es decir, planificarse. Los desarrolladores tienen en cuenta lo que deben hacer en funcion de los casos de uso de cada iteración.
 
@@ -2794,7 +2858,7 @@ Es dividir el desarrollo en partes y cada parte es una **iteración**, que resul
 
 <a id="cic3"></a>
 
-### De waterfall a Agile
+### **De waterfall a Agile**
 
 Se comprenden las siguientes fases:
 
@@ -2814,7 +2878,7 @@ Consta de una evolución secuencial, los problemas se dieron por el entorno cons
 
 <a id="cic4"></a>
 
-### ¿Cuál es el concepto de Organización?
+### **¿Cuál es el concepto de Organización?**
 
 Una organización es un conjunto de entidades (personas o no personas) con varios objetivos y/o metas en común, basada en valores, con estructura, recursos y entorno, que maneja información y realiza actividades.
 
@@ -2830,7 +2894,7 @@ Toda organización está construida sobre valores, una misión y una visión.
 
 <a id="cic5"></a>
 
-### El concepto de "Misión de una Organización"
+### **El concepto de "Misión de una Organización"**
 
 Se refiere a la declaración que define el propósito fundamental y único de una organización, estableciendo su razón de ser. La misión describe la naturaleza de la organización y lo que la distingue de otras entidades similares. Es una guía para las acciones de la organización, reflejando las metas y valores de la misma y proporcionando un marco para las estrategias y políticas operativas. La misión suele responder a las siguientes preguntas:
 
@@ -2856,6 +2920,79 @@ El concepto de Misión de una Organización se refiere al motivo, propósito o r
 * Qué pretende lograr en su contexto actual.
 * Qué acciones realiza en su entorno.
 * A quiénes afectarán las acciones que planea llevar a cabo.
+
+<a id="cic6"></a>
+
+### **El concepto de "Visión de una Organización"**
+
+A dónde va esa empresa a largo plazo, teniendo en cuenta a las nuevas tecnologías, los cambios, los clientes, etc..
+
+<a id="cic7"></a>
+
+### **El concepto de "Valores de una Organización"**
+
+Creencias o convicciones del grupo que conforma a la organización, son los principios de comportamiento que posee la organización. Se demuestran con un código de conducta, etc..
+
+<a id="cic8"></a>
+
+### **El concepto de "Excelencia Empresarial"**
+
+Es el conjunto de **prácticas sobresalientes** en la gestión de la organización que conllevan al logro de ciertas cosas. Lograr esta excelencia es responder de buena manera a dos necesidades: -Mantener lo esencial y lo que funciona
+
+- Responder con agilidad a los cambios del entorno
+
+Se impulsa a hacer equipos de alto rendimiento, con un líder, disminuyendo cada vez más los cursos jerárquicos.
+
+**Un modelo de calidad o de excelencia** es una metodología para comprobar la excelencia de la organización, es como una autoevaluación de la misma.
+
+<a id="cic9"></a>
+
+### **El concepto de Interesados (Stakeholders)**
+
+Es toda persona y/o organización que tiene algún tipo de relación o interés sobre un proyecto, ese o no en el. Hay de distintos tipos:
+
+- Empresas y/o organizaciones pueden agregar certificaciones, aprobaciones, permisos para ser ejecutado
+- Usuarios Quienes van a usar el producto de nuestro proyecto.
+- Afectados Personas que no están relacionadas con el proyecto pero que se ven afectadas en algún aspecto por este
+- La propia organización , los trabajadores, supervisores, etc..
+
+<a id="cic10"></a>
+
+### **El concepto de "Objetivos de una Organización"**
+
+Los fines a donde va la actividad de la organización. Pueden ser propios, para los empleados o para el afuera.
+
+<a id="cic11"></a>
+
+### **El concepto de "Entorno de una Organización"**
+
+Elementos externos que afectan o influyen en la actividad de una organización. Es un concepto. Entre la empresa y el entorno hay una relación constante:
+
+- Entorno General: sistema social, político y económico en el que se mueve la organización. La cultura de la población, el marco jurídico y la forma de conducta
+- Entorno próximo: Organizaciones que influyen de forma directa o indirecta en el accionar de la organización, como el estado.
+- Entorno Intermedio: Pueden ser los sindicatos o las cámaras comerciales.
+
+<a id="cic12"></a>
+
+### **Recursos de una Organizacion**
+
+Productos activos productivos de la empresa, son pocos, y por eso tienen mucho valor $$. Los hay de distintos tipos como:
+
+- Tangibles: Financieros y físicos. Son sostenidos por un contrato, como por ejemplo el valor de un jugador de fútbol.
+- Intangibles: Tecnológicos y de reputación, como la confianza que infunden en el cliente.
+
+Otro tipo de clasificación puede ser...
+
+- Humanos *Renovables y No renovables (Materiales y No materiales)
+- No Humanos  *Renovables y No renovables (Materiales y No Materiales)
+
+**Recursos económicos:** Lo patrimonial de la empresa, individuo, una empresa, etc.. ****
+
+**Recursos financieros:** Disponibilidad financiera, liquidez, disposición del efectivo, etc..
+
+**Bienes de uso:** Edificios, autos, sufren procesos de amortización. El único que no se amortiza son los terrenos o campos
+
+**Bienes de cambio:** Están para vender o cambiar y representan ganancia para la empresa.
 
 ---
 
@@ -4004,3 +4141,694 @@ Una vez hecho esto, nos aparecerá esto en la consola del navegador ⇒
 El primero es cuando el DOM todavía no renderizo el elemento, por eso es todo valor cero. El segundo es cuando ya está renderizado.
 
 Ante cada cambio de quote que se haga, volverá a cero y volverá a tener otro valor, ya que este elemento es el que contiene el valor de quote, de longitud variable (es una frase random)
+
+<a id="rea10"></a>
+
+### **Diferencia entre AngularJS y Angular**
+
+AngularJS y Angular son dos frameworks de JavaScript desarrollados por Google, pero tienen diferencias significativas en cuanto a su arquitectura y características.
+
+1. **AngularJS (1.x)**:
+   - AngularJS es el primer framework de JavaScript desarrollado por Google. Se lanzó en 2010.
+   - Utiliza un enfoque MVC (Modelo-Vista-Controlador) para el desarrollo de aplicaciones web.
+   - AngularJS usa la sintaxis de enlace de datos bidireccional para sincronizar automáticamente los datos del modelo y la vista.
+   - Usa directivas para extender el HTML con nuevas funcionalidades.
+   - Utiliza inyección de dependencias para facilitar la creación y administración de componentes.
+   - AngularJS se basa en JavaScript puro y no requiere TypeScript.
+
+2. **Angular (2+)**:
+   - Angular, también conocido como Angular 2 y versiones posteriores, es una reescritura completa de AngularJS.
+   - Se lanzó en 2016 y fue reconstruido con TypeScript.
+   - Adopta un enfoque de componentes, donde las aplicaciones se construyen a partir de componentes independientes y reutilizables.
+   - Utiliza un enfoque unidireccional para la vinculación de datos, lo que mejora el rendimiento y la previsibilidad.
+   - Angular cuenta con un enfoque modular, lo que permite la carga bajo demanda de características y optimización del rendimiento.
+   - Ofrece una mejor optimización para dispositivos móviles y es más adecuado para el desarrollo de aplicaciones empresariales complejas.
+   - Angular proporciona herramientas integradas para realizar pruebas unitarias y de extremo a extremo.
+   - Angular es compatible con las últimas especificaciones de JavaScript (ES6/ES7) y TypeScript.
+
+En resumen, AngularJS es el primer framework desarrollado por Google, que utiliza un enfoque MVC y está basado en JavaScript puro, mientras que Angular es una reescritura completa en TypeScript, con un enfoque de componentes, vinculación de datos unidireccional y una arquitectura más modular y optimizada para aplicaciones empresariales modernas.
+
+<a id="rea11"></a>
+
+### **¿Qué son los modulos en Angular?**
+
+Las aplicaciones de Angular son Modulares, en Angular existe NgModules. Sirve para mantener la lógica de un flujo de trabajo de la aplicación. Por ejemplo, se tiene un e-commerce, con sus módulos correspondientes, usuarios vendedores, compradores, productos, etc.. 
+
+Son diseños lógicos que se encargan de trabajar dentro de la aplicación, se usan para poder importar librerías u otros módulos dentro de los mismos. Cada módulo hasta puede tener su propio ruteo. 
+
+<a id="rea12"></a>
+
+### **¿Qué es Property Binding?**
+
+Es la forma que tiene Angular de controlar y cambiar las propiedades de los elementos HTML usando corchetes [] 
+
+```tsx
+<input [value]="empresa" [disabled]="habilitado"  />
+
+// Empresa y habilitado son datos dinamicos
+```
+
+Los corchetes (square brakets) hacen que Angular evalúe el lado derecho de la asignación como una expresión dinámica. Sin los corchetes, Angular trata el lado derecho como un literal de cadena y establece la propiedad en ese valor estático.
+
+A menudo, “interpolation” y “Property Binding” pueden lograr los mismos resultados. Los siguientes pares de enlaces hacen lo mismo.
+
+```tsx
+// Interpolacion
+<p><img src="{{itemImageUrl}}"> is the <i>interpolated</i> image.</p>
+
+// Property Binding
+<p><img [src]="itemImageUrl"> is the <i>property bound</i> image.</p>
+```
+
+Al establecer una propiedad de elemento en un valor de datos que no sea un String a secas (por ejemplo, objetos), debe usar “Property Binding”. 
+
+Se recomienda comprender los “Event binding” para entender el flujo de datos de la aplicacion y como este interactua con “interpolation” y “Property Binding”.
+
+<a id="rea13"></a>
+
+### **¿Cuál es el flujo de datos una aplicación Angular?**
+
+- Enlace unidireccional [] para enlazar desde la capa lógica (component.ts) a la vista (html).
+- Enlace unidireccional () para enlazar de la vista (html) a la capa lógica (component.ts).
+- Enlace bidireccional [()] para enlazar una secuencia de vista bidireccional a la capa lógica (component.ts).
+
+<a id="rea14"></a>
+
+### **¿Qué es un Decorador en Angular?**
+
+Indica como debe comportarse el componente. Dentro de este decorador, puedes observar el selector del componente (un nombre para el mismo), el template HTML y la hoja de estilos que usará.
+
+```tsx
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+```
+
+<a id="rea15"></a>
+
+### **Event Binding en Angular (Manejo de Eventos)**
+
+```tsx
+<button (click)="onSave()">Save</button>
+
+// Multiples eventos
+<button (click)="clickEvent()" (mouseenter)="mouseEnterEvent()">Click Me</button>
+
+<button (click)="handleClick($event)">Save</button>
+
+<button (click)="value = value + 1">Presioname</button>
+
+// -- En app.component.ts ---
+
+btnDisabled = true;
+
+onSave() {
+	this.btnDisabled = false; // Se usa this para hacer referencia al contexto actual
+}
+
+handleClick($event: Event) {
+    const element = event.target as HTMLElement;
+}
+```
+
+- Usar () en el template html es sinónimo de llamar “addEventListener()”
+
+<a id="rea16"></a>
+
+### **Data Binding en Angular**
+
+El atributo **ngModel** permite el **intercambio de datos de forma bidireccional** entre el componente y la vista. Lo que suceda en el componente, se verá reflejado en la vista. Lo que se suceda en la vista, inmediatamente impactará en el componente.
+
+```tsx
+<input #nameInput="ngModel" [(ngModel)]="name" />
+
+<p>{{nameInput.valid}}</p> // true o false dependiendo de validaciones html
+```
+
+Si no quieres la bidireccionalidad, solo colocamos los corchetes `[ngModel]` para que la comunicación sea unidireccional. Para utilizar ngModel, es necesario hacer uso e importar **Angular Forms**
+
+```tsx
+... // -- app.module.ts ---
+import { FormsModule } from '@angular/forms';
+
+@NgModule({
+  declarations: [ ... ],
+  imports: [
+    FormsModule
+  ],
+  providers: [],
+  bootstrap: [ ... ]
+})
+export class AppModule { }
+```
+
+<a id="rea17"></a>
+
+### **Como puedo mejorar la performance de mi Frontend?**
+
+**Paginacion**: No se puede renderizar mucha informacion al mismo tiempo, hace un payload gigante, y satura a la base de datos. Es preferible pedir de a pedazos de data para disminuir el peso en el Backend
+
+**Queries Optimistics**: Mostrar el cambio en la UI independientemente del resultado del servidor, como el like de Instagram, primero se anima, luego se ejecuta la peticion de forma asincrona, y luego se tiene en cuenta el resultado
+
+**Pedir solo lo necesario**: Solo pedir los datos necesarios, no traer cosas de más. Hay muchas aplicaciones hechas front-first, donde el back adapta sus servicios a lo que el front necesita. 
+
+**Tener un connection state**: Si no hay internet, no realizar peticiones. Como Youtube, cualquier cosa que quiera hacer el cliente sin internet, no se va a realizar para nada. 
+
+**Group Notifications**: Si la aplicacion utiliza notificaciones, hacerlo de a grupos para no hacer jobs grandes
+
+**Evitar queries expensive**: Por ejemplo, Twitter no da la opcion de seguir o dejar de seguir gente de a grupos grandes ya que es innecesariamente caro para el servidor
+
+⚛️ **Podemos usar el Profiler que viene con React Dev Tools**
+En caso de componentes lentos en React, podemos usar esta herramienta y ver cual fue el componente que causo el problema.
+
+- Flame Chart: Representa el estado de la aplicacion para un commit en particular
+- Component chart: Ver cuantas veces se proceso un componente en particular
+
+Para testear el rendimiento de una web se puede utilizar Lighthouse de Google en DevTools  
+
+**Lazy Loading**: No cargar todas las imagenes de una, ir cargando a medida que el usuario lo va necesitando. 
+
+**Usar Cache**: Si manejamos payloads muy grandes, no conviene cargar todo esto en memoria, se recomienda usar un cache, ir guardando estos payloads y volver a consultarlos a medida que sea necesario
+
+**Usar HTTP 2**: Si necesito hacer demasiados request en paralelo (cosa que no es recomendable), HTTP 2 tiene una coneexion TCP muy buena, para el multiplexing (no siempre es aplicable)
+
+**Hacer UI que llamen lo menos posible al backend**: Que sean UI que dependan de pocos llamados para funcionar (si se puede, ya que hay dependencias entre payloads) 
+
+⚛️ **No pasar props que no son necesarios**: El propering afecta al rendimiento en React. El estado debe estar tan cerca como pueda de donde se esté usando. Mientras mas props recibimos, mayor es la dependencia con el componente padre. 
+
+⚛️ **Evitar renderizados de mas**: Usar useMemo (memorizacion en React) para evitar renderizados o componentes puros
+
+**Tener varias zonas de disponibilidad**: Esto para evitar la latencia en la obtencion de recursos.
+
+---
+
+<a id="mob"></a>
+
+# Desarrollo Mobile
+
+<a id="mob1"></a>
+
+### **¿Qué es el Manifest.xml en Android y qué funciones cumple?**
+
+El Manifest.xml es un archivo de configuración en Android que describe la estructura y los requisitos de una aplicación. Contiene información como los componentes de la aplicación, permisos necesarios, hardware y software requerido, entre otros detalles, y es fundamental para el funcionamiento adecuado de la aplicación en el sistema Android.
+
+<a id="mob2"></a>
+
+### **¿Cómo se ejecutan las aplicaciones en Android y qué son los archivos DEX?**
+
+Cada aplicación en Android se ejecuta en una instancia de la máquina virtual Dalvik, utilizando archivos DEX (Dalvik Executable). Estos archivos contienen bytecode optimizado para Dalvik, permitiendo la ejecución eficiente de múltiples instancias de la máquina virtual.
+
+<a id="mob3"></a>
+
+### **¿Qué es el Android Runtime y cómo se ejecutan las aplicaciones en Android?**
+
+El Android Runtime es el entorno de ejecución de aplicaciones de Android. Las aplicaciones de Android se ejecutan en el Android Runtime, que utiliza el compilador de tiempo de ejecución ART para convertir el código de la aplicación en código nativo que se ejecuta en el dispositivo.
+
+<a id="mob4"></a>
+
+### **¿Qué constituye la base de Android y qué funciones proporciona el kernel de Linux?**
+
+La base de Android es el núcleo de Linux, que proporciona un entorno seguro y estable para la ejecución de aplicaciones y protege al sistema de fallos y malware. El kernel de Linux proporciona funciones como la administración de memoria, la administración de energía, la administración de dispositivos, la administración de procesos y la seguridad.
+
+---
+
+<a id="cod"></a>
+
+# Conceptos Codigo Limpio y Metodos
+
+<a id="cod1"></a>
+
+### **¿De qué trata el código limpio?**
+
+- Es un codigo facil de leer, entender y modificar
+- Se recomienda leer el código de otras personas para aprender como son las distintas implementaciones para seguir limpiando nuestro código.
+- No es posible escribir codigo perfecto a la primera, se consigue mediante un proceso de iteracion continuo que lo va mejorando
+- La refactorizacion es segura ya que esta pensada la existencia de los Test Unitarios
+- Es recomendable programar en ingles ya que los lenguajes estan en ingles y la mayoria del codigo tambien, las librerias, etc..
+
+<a id="cod2"></a>
+
+### **Nombres Significativos en Codigo Limpio**
+
+En el dia a dia nombramos muchas cosas (clases, paquetes, ficheros, etc..), se deben aclarar nombres claros.
+
+Se deben buscar nombres que revelen intención, es decir:
+
+DON´T
+
+```
+int d; // Day
+int m; // Month
+int y; // Year
+```
+
+DO
+
+```
+int dayOfBirth;
+int monthOfBirth;
+int yearOfBirth;for (int i = 0; i < numberOfRequests; i++){
+    processRequest(requests.get(i));
+}
+```
+
+- Con el nombre en si mismo ya se debe saber la intencion de la variable y lo que almacena.
+- En el caso de los bucles for (como se puede ver en el ejemplo con el int i) se pueden aceptar las declaraciones de variable de una sola letra ya que se realizan solo para hacer iteraciones
+
+Tambien se debe evitar la desinformacion
+
+- Se deben evitar los nombres largos y poco significativos, por ejemplo `ServiceForEfficientUpdateMysqlDatabase` vs `ServiceForEfficientBackupMysqlDatabase`, son largos, podriamos decir que son explicativos, pero a simple vista pueden ser confundidos ya que solo cambia una palabra de ellas entre si.
+- Otro ejemplo es `Map<Integer, String> employeeList`, ¿Es realmente una lista?, no, es un mapa, confunde al programador.
+- Otro ejemplo son dos clases, una llamada `ProductData` y otra `ProductInfo`, ¿Cual es la diferencia entre Data e Info? Podrian ser lo mismo
+
+Se deben buscar nombres pronunciables, que sean faciles de buscar. Es mejor elegir un nombre largo a uno corto que no deja claro su significado
+
+DON´T
+
+```
+public class InfRcrd {
+    private String nm;
+    private String snm;
+}
+```
+
+DO
+
+```
+public class Employee {
+    private String name;
+    private String surname;
+}
+```
+
+- Se deben evitar las abreviaciones innecesarias
+- Los nombres de las clases deben ser nombres, y las funciones deben ser verbos. Es decir, una clase NO debe llamarse `createEmployee`, y un metodo NO deberia llamarse `EmployeeName` ya que no corresponde con su proposito.
+
+<a id="cod3"></a>
+
+### **Dependency Inversion Principle**
+
+Los sistemas mas flexibles son los que dependen de abstracciones y no concreciones. En Java significa que se debe depender de interfaces y clases abstractas, no de implementaciones directas. Hace necesario un mecanismo que nos cree las instancias de las implementaciones que queremos.
+
+La clase `Switch` no depende directamente de la clase `LightBulb`, sino que depende de la abstracción `SwitchableDevice`. Esto permite que `Switch` sea más flexible y pueda controlar cualquier dispositivo que implemente la interfaz `SwitchableDevice`, no solo la bombilla. Además, la clase `LightBulb` sigue cumpliendo con el DIP al depender de una abstracción (`SwitchableDevice`) en lugar de depender directamente de `Switch`. Esto facilita la reutilización y el mantenimiento del código, ya que los componentes son más independientes y menos propensos a cambios.
+
+```javascript
+// Abstracción para un dispositivo que se puede encender y apagar
+class SwitchableDevice {
+    turnOn() {} // Método para encender el dispositivo
+    turnOff() {} // Método para apagar el dispositivo
+}
+
+// Clase para representar una bombilla
+class LightBulb extends SwitchableDevice {
+    turnOn() {
+        console.log("Light bulb turned on");
+    }
+
+    turnOff() {
+        console.log("Light bulb turned off");
+    }
+}
+
+// Clase para representar un interruptor
+class Switch {
+    constructor(device) {
+        this.device = device;
+    }
+
+    press() {
+        if (this.isOn) {
+            this.device.turnOff();
+            this.isOn = false;
+        } else {
+            this.device.turnOn();
+            this.isOn = true;
+        }
+    }
+}
+
+// Uso de las clases
+const lightBulb = new LightBulb(); // Creamos una bombilla
+const switchButton = new Switch(lightBulb); // Creamos un interruptor y lo asociamos con la bombilla
+
+switchButton.press(); // Output: Light bulb turned on
+switchButton.press(); // Output: Light bulb turned off
+
+```
+
+<a id="cod4"></a>
+
+### **Concepto SOLID**
+
+Propuesto por Robert C. Martin
+
+S -> Single Responsibility Principle (Principio de responsabilidad unica)
+
+O -> Open-Closed Principle (Principio abierto-cerrado)
+
+L -> Liskov Substitution Principle (Principio de Sustitucion de Liskov)
+
+I -> Interface Segregation Principle (Principio de segregacion de interfaz)
+
+D -> Dependency Inversion Principle (Principio de inversion de dependencia)
+
+Nos ayudaran a
+
+- Crear software escalable con nuevas funcionalidades
+- Crear una arquitectura limpia y mantenible
+- Escribir Código mas facil de leer y entender
+- Módulos con alta cohesion y bajo acoplamiento
+
+<a id="cod5"></a>
+
+### **Concepto DRY**
+
+Don’t Repeat Yourself, si hay una pieza de programación que se repite en mas de un lugar, se debe crear una función de la misma
+
+<a id="cod6"></a>
+
+### **Concepto KISS**
+
+Keep it Simple Stupid, no escribir codigo que nadie pueda entender o leer, mantener todo simple
+
+<a id="cod7"></a>
+
+### **Concepto YAGNI**
+
+You Aren’t Gonna Need it! No escribir codigo de mas solo porque puede que lo necesites mas adelante. Implementar algo solo si es necesario en el momento
+
+<a id="cod8"></a>
+
+### **Concepto LOD**
+
+Law Of Demeter, quien puede hablar con quien, una unidad puede comunicarse solo con sus unidades cercanas
+
+<a id="cod9"></a>
+
+### **Funciones Limpias**
+
+- Las funciones deben ser claras, concisas, faciles de leer y modificar
+- Deben ser pequeñas, deben hacer una unica cosa, un unico nivel de abstraccion. Debemos separar lo mas posible todas las funciones, haciendo que sean reutilizables.
+- No deben recibir muchos parametros
+- No tienen efectos secundarios por fuera de su proposito principal
+- Devuelven excepciones en lugar de codigos de error
+
+<a id="cod10"></a>
+
+### **Unico Nivel de abstraccion**
+
+Separar las responsabilidades en las entidades correspondientes.
+
+DON´T
+
+```java
+public class Person {
+    public void drive (Car car) {
+        car.openDoor();
+        car.setDriver(this);
+        // Esto no es responsabilidad de la Persona, es responsabilidad del Vehiculo
+        car.getBattery().connect();
+        car.setEngine().start();
+    }
+}
+```
+
+DO
+
+```java
+public class Car {
+    Battery battery;
+    Engine engine;    public void start(){
+        battery.connect();
+        engine.start();
+    }
+}public class Person {
+    public void drive (Car car){
+        car.openDoor();
+        car.setDriver(this);
+        car.start();
+    }
+}
+```
+
+<a id="cod11"></a>
+
+### **Manejo limpio de Parametros**
+
+Se deben evitar las funciones que reciben mas de 3 argumentos, muchos argumentos es una mala encapsulación. La mejor funcion es la que menos argumentos recibe.
+
+DON´T
+
+```java
+public User createUser(String username, String password, String name, String lastname, String address);public Circle createCircle(double x, double y, double radius)
+```
+
+DO
+
+```java
+public User createUser(UserFormData userFormData)// Pasamos x e y a un objeto "Point" (centro del circulo) que es mucho mas explicativo
+public Circle createCircle(Point center, double radius)
+```
+
+<a id="cod12"></a>
+
+### **Cuales son los beneficios de una Code Review?**
+
+Los objetivos clave de la revisión de código son identificar errores de desarrollo iniciales y facilitar una base de código mantenible. El proceso de revisión de código puede ayudar a su equipo a prever posibles problemas técnicos que son mucho más fáciles de abordar en una etapa temprana.
+
+La revisión de código resulta en varios otros beneficios para sus proyectos y equipo; lo más significativo: menos defectos, mejor intercambio de conocimientos, estándares más consistentes y mejor cumplimiento.
+
+**Menos defectos**
+
+A menudo es más fácil para un revisor con una perspectiva externa identificar errores estructurales (por ejemplo, código muerto, errores de lógica o algoritmos, preocupaciones de rendimiento o arquitectura, etc.) y errores funcionales (cuando el código no funciona como se esperaba).
+
+Incluso las revisiones de código cortas e informales pueden tener un impacto significativo en la calidad del código y la frecuencia de errores.
+
+**Compartir conocimiento**
+
+El valioso conocimiento que su equipo comparte durante el proceso de revisión de código se relaciona principalmente con la funcionalidad de una aplicación específica, su dominio y su lógica empresarial. También cubre las mejores prácticas de codificación, incluyendo técnicas de optimización y refactorización.
+
+El intercambio de conocimientos garantiza que todos los miembros del equipo estén en la misma página y fortalece la comunicación y cooperación positivas.
+
+**Standards Consistentes**
+
+La revisión de código garantiza que los miembros de su equipo sigan la guía de estilo acordada. La consistencia en una base de código hace que sea más fácil de leer y comprender, previene errores y facilita la colaboración entre desarrolladores regulares y migratorios. El código legible es más reutilizable, sin errores y a prueba de futuros cambios.
+
+El autor del código puede no ser capaz de juzgar la legibilidad de su fragmento de código tan fácilmente como lo puede hacer un revisor. Seguir estándares consistentes hace que la cooperación entre autores y revisores de código sea más fácil.
+
+**Compliance**
+
+La revisión de código es una excelente manera de evitar trampas técnicas comunes. Por ejemplo, si su aplicación tiene requisitos estrictos de seguridad, su especialista en seguridad local debería revisarla para asegurarse de que cumpla con los requisitos de cumplimiento.
+
+Un revisor también puede detectar y reemplazar dependencias externas recién introducidas con licencias inapropiadas o vulnerabilidades conocidas antes de que aparezcan en producción.
+
+Que puede suceder si evito una Code Review? 
+
+**Menos Calidad de Código estructural**
+
+La falta de revisión de código puede afectar la calidad estructural del código, haciéndolo ilegible y difícil de mantener.
+
+**Menos Calidad de código Funcional**
+
+Eludir la revisión de código puede afectar negativamente la calidad funcional del código. El código de baja calidad, a su vez, disminuye la calidad del producto.
+
+**Se comparte poco conocimiento**
+
+La falta de revisión de código puede hacer que algunos miembros de tu equipo pierdan información importante. Esto puede llevar a una situación en la que varios miembros del equipo estén implementando funcionalidades similares en lugar de reutilizar la solución existente.
+
+Además, la falta de compartir conocimientos adecuadamente puede resultar en la pérdida de algunas funcionalidades empresariales reutilizables.
+
+**Re-trabajo**
+
+La falta de transparencia y retroalimentación temprana en tu equipo puede requerir retrabajo en una etapa posterior. Por ejemplo, mientras trabajan en dos módulos diferentes, varios miembros del equipo pueden incorporar diferentes enfoques técnicos. Para hacer que la base de código sea consistente, uno de los enfoques tendrá que ser refactorizado.
+
+Este tipo de situación puede llevar a conflictos interpersonales entre los miembros del equipo, así como trabajo adicional.
+
+**Posibles problemas técnicos**
+
+Sin revisión de código, tu equipo tiene una mayor probabilidad de introducir problemas de seguridad que afecten a los usuarios finales. Estos problemas podrían llevar a brechas de datos sensibles, vulnerabilidad a ataques de ransomware y otras consecuencias negativas para tus clientes y la reputación de tu empresa...
+
+<a id="cod13"></a>
+
+### **Que tipos de Code review existen?**
+
+**Peer Review**
+
+La revisión por pares permite que varios miembros del equipo revisen el código en diferentes momentos. Su conveniencia lo convierte en un tipo de revisión popular.
+
+Con la ayuda del sistema de control de versiones, el autor pone el código a disposición de otros miembros del equipo para su revisión. Después, el autor comienza a trabajar en otra tarea mientras sus compañeros realizan la revisión. Diversas herramientas y estrategias de ramificación facilitan el proceso.
+
+La revisión por pares puede ser interna o externa. Cuando su equipo realiza una revisión interna por pares, es una excelente manera de mejorar el intercambio de conocimientos. Su equipo también puede optar por la ayuda de un especialista externo con experiencia específica que no forma parte del equipo.
+
+**Specialist Review**
+
+La revisión de un especialista es un ejemplo de práctica de revisión de código entre equipos.
+
+A veces, un fragmento de código puede requerir la revisión de un especialista que tiene habilidades específicas y conocimientos profundos en un área particular. Muy a menudo, este tipo de especialista no forma parte del equipo de desarrollo.
+
+La revisión de un especialista podría ser una revisión arquitectónica, de seguridad o de rendimiento. Este tipo de revisión puede ser requerida periódicamente o a pedido.
+
+**Instant Code Review**
+
+La revisión instantánea de código permite que varios miembros del equipo revisen el código simultáneamente. Por lo general, se lleva a cabo como programación en pareja: cuando dos miembros del equipo escriben código y lo revisan línea por línea.
+
+Este enfoque puede ser apropiado para dos desarrolladores de aproximadamente el mismo nivel de madurez que trabajan juntos en un problema empresarial complejo. También es útil si los desarrolladores más senior quieren ayudar a los desarrolladores junior a mejorar sus habilidades técnicas: un desarrollador senior codifica y explica lo que está haciendo línea por línea, mientras que un desarrollador junior observa y aprende. El mismo principio se aplica a la integración, cuando un recién llegado observa y escucha a otro miembro del equipo codificando y explicando las ideas esenciales línea por línea.
+
+---
+
+<a id="cam"></a>
+
+# Control de Versiones y Cambios
+
+<a id="cam1"></a>
+
+### **Para que nos sirve Git?**
+
+Son herramientas que nos permiten saber, entre otras cosas:
+
+- Quien
+- Cuando
+- Porque
+
+Nos permite separar nueva funcionalidad de la estable.
+
+<a id="cam2"></a>
+
+### **Conceptos base de Git**
+
+- **Repositorio remoto:** Es el lugar centralizado donde se guardan los archivos.
+- **Repositorio local**: Es el lugar dentro de la computadora donde se guardan los archivos.
+- **Working directory:** Copia del repositorio donde voy a empezar a trabajar.
+- **Versión**: Captura del repositorio en un determinado momento.
+- **Commit**: Modificaciones que le hacemos a los archivos del repositorio en nuestra computadora.
+- **Branch**: Son referencias a un commit específico o al más actualizado. Por convención tenemos una llamada master o main
+
+<a id="cam3"></a>
+
+### **Algunos comandos de Git**
+
+**`git init`:** Iniciar repositorio GIT en ese directorio
+
+**`git status`:** Ver el estado de los archivos, sí estan untracked o para subir. (Sí no quiero tanto texto pongo git status -s)
+
+**`git add “archivo” o *.exe` :** Para agregar los archivos que aparecen como untracked en el estado
+
+**`git commit -m “mensaje”` :** Para commitear, y poner de referencia que cambios se hicieron. El mensaje debe estar entre comillas
+
+**`git log`:** Para ver los cambios hechos hasta el momento
+
+**`git remote add origin (link)` :** Para agregar un link de GitHub para subir el proyecto
+
+**`git push -u origin master`:** Para subir el contenido al repositorio online
+
+**`git clone (url)` :** Para clonar el repositorio git de ese link
+
+**`git pull origin master`:** Para ver los cambios en nuestro repositorio
+
+`git branch (nombre branch)`: Crear un branch
+
+`git log --graph --all --oneline`: Ver todos los commits resumidos
+
+Sí agrego un **Git ignore** se ignoran los archivos cache propios del Programa
+
+### **Niveles de configuración**
+
+- -local : Configurar un solo repositorio
+- -global: Una configuracion para mi usuario solamente
+- -system: Para todos los usuarios
+
+<a id="cam4"></a>
+
+### **Git Flow**
+
+- **Master:** Es la rama principal, la que se va a subir a producción.
+- **Develop:** Es la rama de desarrollo, donde se van a hacer los cambios.
+- **Feature:** Es la rama donde se van a hacer los cambios de una nueva funcionalidad.
+- **Hotfix:** Es la rama donde se van a hacer los cambios de una funcionalidad que no esta funcionando bien.
+- **Release:** Es la rama donde se van a hacer los cambios de una nueva versión.
+
+<a id="cam5"></a>
+
+### **trunk base dev. vs git flow**
+
+En el desarrollo basado en tronco, se trabaja principalmente en una sola rama (generalmente llamada "tronco" o "master"), y las características se desarrollan y se integran directamente en esta rama principal. En cambio, en Git flow, se utilizan múltiples ramas para gestionar diferentes tipos de cambios, como características, versiones de lanzamiento y correcciones de errores.
+
+En resumen, mientras que el desarrollo basado en tronco enfatiza la simplicidad y la integración continua, Git flow proporciona un modelo más estructurado para gestionar el flujo de trabajo en proyectos más grandes con diferentes necesidades de versión y despliegue. La elección entre ambos enfoques depende de los requisitos y la complejidad del proyecto.
+
+---
+
+<a id="har"></a>
+
+# Hardware
+
+<a id="har1"></a>
+
+### **Gabinete**
+
+Es el principal contenedor de todos los componentes de una computadora. Más allá del diseño, la búsqueda de un buen gabinete debe incluir una mirada atenta a estos aspectos técnicos:
+
+- **La chapa**: La misma debe ser de buena calidad para garantizar una adecuada protección de los componentes.
+- **La fuente**: Es importante que sea compatible con el tipo de motherboard que vamos a usar, y sus requerimientos de consumo eléctrico, ya que podemos tener problemas de funcionamiento si la cantidad de potencia que nuestra fuente entrega no es suficiente para el equipo que estamos ensamblando.
+- **Ventilación**: Es un punto clave, porque cuanto más potente es el procesador, más será el calor que va a emitir, y debemos asegurarnos que el gabinete posee buenas cualidades de disipación del calor y flujo de aire en su interior.
+- **Tamaño**: La selección del mismo estará relacionada con el tipo de uso que le daremos al equipo, considerando que a menor tamaño de gabinete menor será el espacio entre los componentes y por consiguiente será más complicada la disipación de calor y el trabajo sobre el mismo cuando se requiera realizar cambios o reparaciones.
+
+<a id="har2"></a>
+
+### **Motherboard**
+
+Es el elemento principal de toda la PC, en el que se encuentran todos los demás aparatos y dispositivos. La principal funcion es generar a través de un circuito eléctrico la conexión entre los componentes. De ella depende tanto el rendimiento del sistema en índole general como así también el funcionamiento de los elementos que lo componen.
+
+Se diseña básicamente para realizar tareas específicas vitales para el funcionamiento del ordenador (Conexión física, Administración, Control de energia, Comunicación datos, Temporización, Sincronismo, Control y monitoreo.. ). Para que la placa base cumpla con su cometido, lleva instalado un software muy básico denominado BIOS (Basic Input / Output System).
+
+- **Zócalo del microprocesador**: Lugar donde se alojara el microprocesador, existen diversos modelos para cada marca de procesadores, por lo que debemos asegurarnos que estamos usando el mother indicado para el mismo, de lo contrario no podremos colocar el procesador.
+- **Chipset Northbridge**: Es uno de los chips más importantes. Su función es conectar al microprocesador con la memoria RAM, el puerto AGP y el puerto PCI express.
+- **Chipset Southbridge**: Su misión es controlar todas las funciones de entrada y salida. Además se conecta al Northbridge por medio de un bus específico.
+- **Slot de expansion**: Son ranuras que permiten la incorporación de tarjetas especificas adicionales. Pueden ser usados para ingresar tarjetas de video, sonido, etc..
+- **Puertos I/O (Entrada y Salida)**:  Son puertos que nos permiten interconectar nuestra computadora con otros dispositivos externos.
+- **Zócalos de memoria**: Albergan a las memorias RAM que se adicionan al mother.
+- **Memoria ROM**: Aloja al BIOS del mother, este es el que nos permite configurar al sistema y sus componentes.
+- **Pila**: Mantiene tensión continua en el mother de modo de guardar todas las configuraciones necesarias.
+- **Conectores Serial ATA**: Son conectores de alto rendimiento. Se usan para conectar discos rígidos de gran capacidad y reemplazan al IDE.
+- **Conectores IDE - FDD (sin uso)**: Se encargan de generar la conexión entre la disquetera, el rígido y las lectograbadoras.
+
+<a id="har3"></a>
+
+### **Microprocesador**
+
+Es la parte de la pc diseñada para llevar a cabo la ejecucion de los programas. Es comparable a un cerebro, su funcion se basa en la ejecucion de instrucciones a muy bajo nivel haciendo operaciones logicas simples. Tiene millones de elementos microscopicos llamados transistores.
+
+<a id="har4"></a>
+
+### **Memoria RAM**
+
+Es donde la computadora guarda los datos que esta usando al momento de procesarlos o trabajar con ellos. El almacenamiento es considerado temporal porque los datos y programas permanecen en ella mientras la computadora esta encendida, desapareciendo cuando la misma se apaga.  Físicamente, estan constituidas por un conjunto de chips o módulos de chips normalmente conectados a la tarjeta madre. Son rectangulos negros soldados en grupos a unas placas con pines/contactos. La diferencia entre la RAM y otros tipos de memoria de almacenamiento, es que la RAM es mucho más rapida.
+
+<a id="har5"></a>
+
+### **Disco Rigido**
+
+Es el dispositivo encargado de almacenar informacion de forma persistente en la PC. Generalmente usan un sistema de grabacion magnetica analogica. En este disco encontramos dentro de la carcasa una serie de platos metalicos apilados girando a gran velocidad. Sobre estos se situan los cabezales encargados de leer o escribir los impulsos magneticos.  El disco rigido es el sistema de almacenamiento más importante de la pc, y en el se guarda, por ejemplo el SO.
+
+- **IDE/ATA**: Es el standar más difundido en el mercado, a traves de los años fue mejorando la velocidad de transferencia de datos entre dispositivos, pero actualmente se encuentra en retirada.
+- **SCSI**: Es una interfaz standar para la transferencia de datos entre periféricos en el bus de la pc, fue usada en servidores y computadoras con necesidad de gran velocidad de transferencia de datos.
+- **SATA**: Es la reemplazante del IDE. Es actualmente el estandar más usado en el mercado, mejorando las velocidades.
+
+<a id="har6"></a>
+
+### **Lectograbadora CD/DVD**
+
+Permiten la lectura de CDs y DVDs. La realizan a traves de la utilización de discos opticos los cuales son leidos y escritos mediante un laser. Permiten guardar grandes cantidades de datos en espacios reducidos.
+
+<a id="har7"></a>
+
+### **Placas adicionales**
+
+- **Placa de red**: permite conectar una pc a una red de computadoras. Esto nos deja compartir y acceder a varios recursos que esten disponibles en la red.
+- **MODEM**: Dispositivo que transforma las señas digitales de una computadora en analogicas y viceversa, para poder enviar/recibir paquetes de datos.
+- **Placa de video**: Componente electronico requerido para generar una señal de video que se manda a una pantalla de video por medio de un cable. Se pueden visualizar los datos que procesa la computadora en un lenguaje humano.
+- **Placa de sonido**: Permite reproducir sonidos.
+
+---
+
