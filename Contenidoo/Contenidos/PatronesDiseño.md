@@ -1,31 +1,5 @@
-# Diseño de Software
 
-### **Domain Driven Design**
 
-Este diseño se enfoca en el dominio del problema, es decir, en el problema que se está tratando de resolver. Se enfoca en el lenguaje que se usa para describir el problema y en cómo se resuelve. Se basa en la idea de que el diseño de software debe reflejar el dominio del problema, y no al revés.
-
-Por ejemplo, para desarrollar el software de un hospital, debo tener en cuenta las necesidades del usuario y sobre todo, si es necesario, un marco juridico, mas si se trata de informacion sensible sobre pacientes.
-
-**Software del modelo del dominio anemico**: No tiene un conocimiento sobre el dominio donde el software se desempeña. 
-
-**Software del modelo del dominio rico**: Tiene un conocimiento profundo sobre el dominio donde el software se desempeña.
-
-Se deben conocer las reglas, casos de uso, y las necesidades del usuario para poder desarrollar un software que se adapte a las necesidades del usuario. Se deben conocer los datos que necesitan recopilar los medicos, las enfermeras, y los pacientes, y cómo se deben almacenar y procesar esos datos.
-
-### **¿Qué es un patrón de diseño?**
-
-Un patrón de diseño es una solución descubierta para un problema informático que se presenta recurrentemente y de una forma especifica, para que sea reutilizada en otros desarrollos en cualquier otro lenguaje.
-
-### **En qué se inspiran los patrones de diseño?**
-
-Se inspiran en los patrones de construcción en la arquitectura, en esa disciplina se usa el mismo concepto para la comunicación entre colegas y en otros procesos de la disciplina.
-
-### **¿Qué se obtiene con la implementación de patrones de diseño?**
-
-- **Reutilización de código**: Se puede reutilizar el código que ya ha sido probado y que se sabe que funciona.
-- **Facilita la comunicación**: Los patrones de diseño permiten que los desarrolladores se comuniquen de una manera más efectiva.
-- **Facilita el mantenimiento del código**: Los patrones de diseño permiten que el código sea más fácil de mantener.
-- **Facilita la escalabilidad del código**: Los patrones de diseño permiten que el código sea más fácil de escalar.
 
 ### **¿Para qué sirven los patrones de diseño?**
 
