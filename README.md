@@ -212,6 +212,9 @@
 | [Event Binding en Angular (Manejo de Eventos)](#rea15)    |
 | [Data Binding en Angular](#rea16)    |
 | [Como puedo mejorar la performance de mi Frontend?](#rea17)    |
+| [¿Que es Redux?](#rea18)    |
+| [Cuando conviene usar Redux?](#rea19)    |
+| [¿Cuales son los beneficios de usar Redux?](#rea20)    |
 
 ## [Desarrollo Mobile](#mob)
 
@@ -4715,6 +4718,37 @@ Para testear el rendimiento de una web se puede utilizar Lighthouse de Google en
 ⚛️ **Evitar renderizados de mas**: Usar useMemo (memorizacion en React) para evitar renderizados o componentes puros
 
 **Tener varias zonas de disponibilidad**: Esto para evitar la latencia en la obtencion de recursos.
+
+<a id="rea18"></a>
+
+### **¿Que es Redux?**
+
+Redux permitira manejar el state global de manera facil conforme van creciendo, tambien ayuda a manejar los datos dependiendo de las acciones del usuario. Fue creado por un dev del equipo de React. 
+
+- Solo hay 1 state principal
+- El state cambia depende lo que pase en la interfaz de usuario
+- Solo ciertas funciones cambiarán el State
+- Solo se hace un cambio a la vez
+
+<a id="rea19"></a>
+
+### **Cuando conviene usar Redux?**
+
+Si la app es pequeña, se recomienda ContextAPI o hooks. Si es grande, y va a ser mantenido por varias personas, se recomeinda Redux
+
+- No hace la app mas rapida
+- Existe Redux para muchos frameworks, no solo React
+- No es necesario usarlo en cada proyecto
+
+<a id="rea20"></a>
+
+### **¿Cuales son los beneficios de usar Redux?**
+
+- Como su estructura es muy estricta, es muy facil de mantener y de organizar, tambien es muy estable.
+- Da una fiable representacion del servidor, es muy util especialmente para presentaciones preliminares. Puede optimizar, por ejemplo, motores de busqueda.
+- Provee muchas herramientas para los devs
+- Es facil de probar, las funciones de redux y el codigo en si son pequeñas y atomicas.
+
 
 ---
 

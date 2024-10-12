@@ -1,21 +1,4 @@
-# Redux
 
-### ✅ ¿Que es Redux?
-
-Redux permitira manejar el state global de manera facil conforme van creciendo, tambien ayuda a manejar los datos dependiendo de las acciones del usuario. Fue creado por un dev del equipo de React. 
-
-- Solo hay 1 state principal
-- El state cambia depende lo que pase en la interfaz de usuario
-- Solo ciertas funciones cambiarán el State
-- Solo se hace un cambio a la vez
-
-### ✅ ¿Cuando se recomeinda usar?
-
-Si la app es pequeña, se recomienda ContextAPI o hooks. Si es grande, y va a ser mantenido por varias personas, se recomeinda Redux
-
-- No hace la app mas rapida
-- Existe Redux para muchos frameworks, no solo React
-- No es necesario usarlo en cada proyecto
 
 ### ✅ ¿Cual es el flujo de Redux?
 
@@ -60,13 +43,6 @@ Contras Context
 ### ✅  ¿Que es un generador?
 
 Es una funcion que tiene la opcion de suspenderse hasta que sea invocada. En Redux se le saca mucho provecho. Es una funcion que itera y tiene la habilidad de suspenderse. 
-
-### ✅  ¿Cuales son los beneficios de usar Redux?
-
-- Como su estructura es muy estricta, es muy facil de mantener y de organizar, tambien es muy estable.
-- Da una fiable representacion del servidor, es muy util especialmente para presentaciones preliminares. Puede optimizar, por ejemplo, motores de busqueda.
-- Provee muchas herramientas para los devs
-- Es facil de probar, las funciones de redux y el codigo en si son pequeñas y atomicas.
 
 ### ✅  ¿Que tan distinto es de Flux y MVC?
 
