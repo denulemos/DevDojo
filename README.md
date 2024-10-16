@@ -30,7 +30,6 @@
 | [Qué es un Firewall?](#seg24)    |
 | [Tipos de Firewall](#seg25)    |
 
-
 ## [Accesibilidad](#acc)  
 
 | Temas   |
@@ -191,7 +190,7 @@
 | [Mixins en SASS](#sty16)    |
 | [Condicionales if-else en SASS](#sty17)    |
 
-## [Frontend Frameworks and Libraries](#rea)
+## [Javascript Frameworks and Libraries](#rea)
 
 | Temas   |
 |----------|
@@ -215,6 +214,11 @@
 | [¿Que es Redux?](#rea18)    |
 | [Cuando conviene usar Redux?](#rea19)    |
 | [¿Cuales son los beneficios de usar Redux?](#rea20)    |
+| [Redux vs ContextAPI](#rea21)    |
+| [¿Cual es el flujo de Redux?](#rea22)    |
+| [Que es ContextAPI?](#rea23)    |
+| [Que es React Fiber?](#rea24)    |
+| [Para que sirven las claves o Keys en React?](#rea25)    |
 
 ## [Desarrollo Mobile](#mob)
 
@@ -271,6 +275,16 @@
 | [¿Qué es un patrón de diseño?](#cod15)   |
 | [En qué se inspiran los patrones de diseño?](#cod16)   |
 | [¿Qué se obtiene con la implementación de patrones de diseño?](#cod17)   |
+| [¿Para qué sirven los patrones de diseño?](#cod18)   |
+| [¿Cuáles son los elementos de un patrón de diseño?](#cod19)   |
+| [¿Cuáles son los tipos de patrones de diseño?](#cod20)   |
+| [¿Qué es la intención y motivación de un patrón de diseño?](#cod21)   |
+| [¿Qué es la aplicabilidad de un patrón de diseño?](#cod22)   |
+| [¿Qué es la estructura de un patrón de diseño?](#cod23)   |
+| [¿Quiénes son los participantes de un patrón de diseño?](#cod24)   |
+| [Patrones Estructurales](#cod25)   |
+| [Patrones Creacionales](#cod26)   |
+| [Patrones Comportamiento](#cod27)   |
 
 ## [Hardware - Sistemas](#har)
 
@@ -293,7 +307,7 @@
 | [Que es una maquina virtual de sistema?](#har15)    |
 | [Que es una maquina virtual de procesos?](#har16)    |
 
-## [Arquitectura](#arc)
+## [Arquitectura y Redes](#arc)
 
 | Temas   |
 |----------|
@@ -311,6 +325,11 @@
 | [Qué es un sistema de alta disponibilidad?](#arc12)    |
 | [Qué es un CDN?](#arc13)    |
 | [Qué es un balanceador de carga?](#arc14)    |
+| [Que es una cookie?](#arc15)    |
+| [Que es el cookie tracking?](#arc16)    |
+| [Como creo una cookie con Javascript?](#arc17)    |
+| [¿Cual es la diferencia entre Cookies, SessionStorage y LocalStorage?](#arc18)    |
+| [¿Como puedo borrar una cookie?](#arc19)    |
 
 ---
 
@@ -4749,6 +4768,119 @@ Si la app es pequeña, se recomienda ContextAPI o hooks. Si es grande, y va a se
 - Provee muchas herramientas para los devs
 - Es facil de probar, las funciones de redux y el codigo en si son pequeñas y atomicas.
 
+<a id="rea21"></a>
+
+### **Redux vs ContextAPI**
+
+**Context**
+
+- Context es una herramienta de React que permite pasar datos a traves del arbol de componentes sin tener que pasar props manualmente en cada nivel
+- Context es una buena opcion para datos que son necesarios en muchos componentes de la aplicacion
+- Context es una buena opcion para datos que no cambian frecuentemente
+- Context viene integrado a React
+- Es facil de entender para principiantes
+- No requiere mucho codigo boilerplate
+
+**Redux**
+
+- Redux es una libreria de manejo de estado que permite manejar el estado de la aplicacion de manera predecible
+- Redux es una buena opcion para datos que cambian frecuentemente
+- Redux es una buena opcion para aplicaciones grandes con muchos componentes
+- Redux no viene integrado a React, se debe instalar por separado
+
+<a id="rea22"></a>
+
+### **¿Cual es el flujo de Redux?**
+
+Store
+
+- Contiene el state y solo hay un Store por app
+
+Dispatch
+
+- Ejecuta una accion, es una funcion que maneja un state
+
+```jsx
+dispatch(addProductOk(product))
+```
+
+Actions
+
+- Objetos en JS con tipo y payload (datos que modificaran el state)
+- Los componentes no deben modificar el state directamente, se modifica por medio de funciones llamadas Actions
+
+Subscribe
+
+- Similar al event listener para el state
+
+Reducer
+
+- Funciones que saben que hacer con las acciones y el payload
+
+<a id="rea23"></a>
+
+### **Que es ContextAPI?**
+
+Es una manera de tener un estado global sin dependencias como Redux, ya que viene desde React 16.3.
+
+Se pueden pasar state o funciones desde el componente principal hacia los hijos, nos evitamos pasarlo por cada uno de los componentes, es algo global.
+
+Cuenta con el hook `useContext` que facilita el acceso a los datos del Context.
+
+Children refiere a los componentes dentro del Provider que recibirán estos datos.
+
+Provider: De donde vienen los datos
+
+```jsx
+import {createContext} from 'react';
+
+const QuoteContext = createContext();
+
+const QuoteProvider = ({children}) => {
+  return (
+    <QuoteContext.Provider
+    value=({})>
+      {children}
+    </QuoteContext.Provider>
+  )
+}
+
+export { QuoteProvider }
+export default QuoteContext;
+```
+
+Dentro de value ponemos lo que queremos exportar para el resto de componentes, y luego, lo consumimos de la siguiente manera:
+
+```jsx
+// Donde entre llaves ponemos lo que queremos consumir de ese Context.
+const {} = useContext(QuoteContext);
+```
+
+<a id="rea24"></a>
+
+### **Que es React Fiber?**
+
+La arquitectura de React hizo que fuera muy facil para trabajar no solo en web si no tambien en mobile (React Native) y en hasta aplicaciones de Realidad Virtual. Asi los dev de React decidieron separar su algoritmo de reconciliacion (el que compara los cambios entre DOM y VDOM) y el lienzo donde esos cambios se muestran (Web, Mobile, etc..)
+
+Es una estructura de datos que representa un trabajo por hacer.
+
+<a id="rea25"></a>
+
+### **Para que sirven las claves o Keys en React?**
+
+Se usan las claves para diferenciar entre simples elementos DOM virtuales con los que son unicos. Ayudan a React a reciclar elementos DOM existentes para que la libreria pueda ejecutarse y renderizarse mas rápidamente, ya que React recicla los elementos que no fueron modificados de los que si para no renderizarlos cuando no es necesario. Este elemento se usa mas que nada en iteraciones de listas. 
+
+El key no afecta el renderizado en si, es por eso que igualmente funciona el render, solo se muestra un warning. 
+
+```jsx
+const numbers = [1, 2, 3, 4, 5];
+const listItems = numbers.map((number) =>
+  <li key={number.toString()}>
+    {number}
+  </li>
+);
+```
+
 
 ---
 
@@ -5138,6 +5270,97 @@ Se inspiran en los patrones de construcción en la arquitectura, en esa discipli
 - **Facilita la comunicación**: Los patrones de diseño permiten que los desarrolladores se comuniquen de una manera más efectiva.
 - **Facilita el mantenimiento del código**: Los patrones de diseño permiten que el código sea más fácil de mantener.
 - **Facilita la escalabilidad del código**: Los patrones de diseño permiten que el código sea más fácil de escalar.
+
+<a id="cod18"></a>
+
+### **¿Para qué sirven los patrones de diseño?**
+
+Son soluciones basándonos en la experimentación de problemas comunes y recurrentes en varios proyectos de programación. Algunos pueden parecer abstractos en su explicación, le delegan al diseñador el esfuerzo de reconocer el problema y adaptar la solución. Son utilizados también como un facilitador de la comunicación, es decir, si todos los especialistas de IT conocen estos patrones de diseño, pueden ver cualquier proyecto y ya intuir como funciona, y cuál es la idea detrás de su tipo de organización. Son diseños orientados al cambio.
+
+<a id="cod19"></a>
+
+### **¿Cuáles son los elementos de un patrón de diseño?**
+
+Los elementos de un patrón de diseño incluyen el nombre del patrón, que es el nombre por el cual el patrón es reconocido o conocido. Puede haber más de un nombre para un mismo patrón.
+
+<a id="cod20"></a>
+
+### **¿Cuáles son los tipos de patrones de diseño?**
+
+- **Creacionales**: Se encargan de la creación de objetos, tratan de abstraer el proceso de creación de objetos. Resuelven problemas relacionados con la creación o instanciacion de objetos
+- **Estructurales**: Se encargan de la composición de clases o de objetos. Resuelven problemas relacionados a la estructura y composición interna de los objetos, como problemas de asociación y agregación. No son fáciles de entender a la primera, y la mayoría son muy abstractos.
+- **Comportamiento**: Se encargan de la comunicación entre objetos.  Estudian el comportamiento orientado a la comunicación entre objetos y conjuntos de objetos
+- **De arquitectura**: Son patrones a nivel componente, normalmente operan en algún tipo de capa lógica. Expresan un esquema organizativo fundamental. El primer patrón postulado que define a este en GoF es el MVC
+- **De interacción**: La primera aplicación de este se dio en el diseño de interfaces de usuarios. Son 5 patrones de interfaz, Windows per task, Few Panes, Standard Panes, Nouns and Verbs y Short Menú.
+- **Del GRASP**: Son patrones generales de software relacionados con la asignación de responsabilidades. Son una serie de buenas prácticas de aplicación recomendable en el diseño de software que provienen de autores anteriores y paradigmas previos.
+- **De negocio**: Obedecen a situaciones de negocio específico
+- **Dialécticos**: Son patrones de bajo nivel específicos para un lenguaje de programación o entorno concreto
+
+<a id="cod21"></a>
+
+### **¿Qué es la intención y motivación de un patrón de diseño?**
+
+La intención y motivación de un patrón de diseño se refiere a un resumen del problema que resuelve este patrón. Es un párrafo breve que explica su necesidad.
+
+<a id="cod22"></a>
+
+### **¿Qué es la aplicabilidad de un patrón de diseño?**
+
+La aplicabilidad de un patrón de diseño menciona los usos más comunes y los criterios para aplicar cierto patrón. Suelen cambiar mucho con el tiempo dependiendo de la evolución de algunos frameworks o lenguajes.
+
+<a id="cod23"></a>
+
+### **¿Qué es la estructura de un patrón de diseño?**
+
+La estructura de un patrón de diseño es una enumeración y descripción de las entidades o clases concretas y abstractas, que explican los roles dentro del patrón. Pueden ser pequeños diagramas de clases que describan las clases e interfaces participantes o componentes del patrón.
+
+<a id="cod24"></a>
+
+### **¿Quiénes son los participantes de un patrón de diseño?**
+
+Los participantes de un patrón de diseño son tanto las clases abstractas como concretas que participan en el patrón en las documentaciones.
+
+<a id="cod25"></a>
+
+### **Patrones Estructurales**
+
+- **Adapter**: Se adapta a un determinado objeto para que pueda ser usado por otro, dado que de otro modo no se podría. Su nivel de uso es muy alto
+- **Bridge**: Nos permite separar a una abstracción de su implementación. Su uso es nivel medio a bajo
+- **Composite**: Permite, ayuda y simplifica la forma de tratar a objetos simples y compuestos de un mismo modo. Su uso es medio
+- **Decorador**: Suma o añade funcionalidad a un objeto de manera dinámica. Su empleo es medio, se emplea usualmente con Composite.
+- **Facade**: Provee de una interfaz o punto de entrada para acceder a la funcionalidad de un grupo de objetos de un sub sistema. Su utilización es alto.
+- **Flyweight**: El patrón busca reducir la redundancia de objetos que viven en memoria cuando se trata de objetos pequeños con la misma información. Su empleo es medio, alto.
+
+<a id="cod26"></a>
+
+### **Patrones Creacionales**
+
+- **Singleton**: Se ocupa de que exista una unica instancia de un determinado objeto. Es muy usado
+- **Factory Method y/o Factory Simple**: Busca simplificar la creacion de objetos de una determinada familia definiendo una interfaz en comun. Su nivel de uso es alto.
+- **Abstract Factory:** Busca centralizar la fabricación de objetos de distintas familias en únicamente un lugar. Su empleo es bajo.
+- **Builder**: Se ocupa de construir objetos complejos. Su empleo es bajo.
+- **Prototype**: Nos permite crear una copia exacta (o casi) de un objeto en memoria directamente sin necesidad de interactuar con su caso. Su utilización es bajo.
+- **Object Pool**: No es un patrón GoF. Permite generar, tener, mantener y reutilizar una serie de objetos en memoria para reducir el trabajo de los Garbage Collector. Su uso es medio a alto.
+
+<a id="cod27"></a>
+
+### **Patrones Comportamiento**
+
+Como los objetos se van a comportar y a cambiar su comportamiento.
+
+- **State**: Suele presentarse cuando es necesario que un objeto modifique su comportamiento cuando cambia su estado interno (Muy usado en React). Empleo alto.
+- **Strategy**: Permite disponer de varios métodos para resolver un problema y permitir elegir cual de ellos se usara en tiempo de ejecución. Uso alto.
+- **Observer**: Define una dependencia entre un objeto determinado a muchos otros (llamados observadores) de manera que cuando se produce un cambio de estado en el sujeto observado, los observadores dependen de el para que el resto se actualice solo. Uso alto.
+- **Mediator**: Es cuando se define que un objeto coordine la comunicación entre objetos de distintas clases y que no fueron diseñados para comunicarse entre si. Empleo medio a bajo.
+- **Command**: Encapsula una operación en un objeto, permitiendo ejecutar esa operacion sin conocer el contenido de la misma. Empleo medio.
+- **Template method**: Define en una operación el esqueleto de un algoritmo, delegando en las subclases algunos de sus pasos. Esto permite que las subclases redefinan ciertos pasos de un algoritmo sin cambiar su estructura. Uso medio a bajo
+- **Memento**: Permite volver a estados anteriores de un objeto y/o sistema. Uso medio bajo
+- **Iterator**: Permite recorrer sobre objetos compuestos independientemente de la implementación de los mismos
+- **Interpreter**: Dado un lenguaje, define una gramática para dicho lenguaje, asi como las herramientas para interpretarlo. Uso bajo.
+- **Chain of Responsability**: Permite establecer la linea que deben llevar los mensajes para que los objetos hagan la tarea indicada
+- **Visitor**: Permite definir nuevas operaciones sobre una jerarquía de clases sin cambiar las clases sobre las que opera. Uso bajo
+
+
 
 ---
 
@@ -5600,5 +5823,138 @@ Un CDN (Content Delivery Network) es una red de servidores distribuidos geográf
 
 Un balanceador de carga es un dispositivo de red que distribuye el tráfico de red entre múltiples servidores o dispositivos de red para garantizar que el tráfico se distribuya de manera uniforme y eficiente entre los servidores. Los balanceadores de carga se utilizan para mejorar la escalabilidad, la disponibilidad y el rendimiento de las aplicaciones web y los servicios en línea al distribuir la carga de trabajo entre múltiples servidores y garantizar que los servidores no se sobrecarguen.
 
----
+<a id="arc15"></a>
 
+### **Que es una cookie?**
+
+Las cookies son textos planos con poca dificultad para entender de que se tratan, guardados localmente en cada pc. Se puede saber para que sirve cada cookie con solo leerlo
+
+1. Hacer una request a una page desde el server
+2. El server responde con la pagina y las cookies
+3. El browser muestra la pagina y guarda las cookies
+
+Otras propiedades de las cookies son..
+
+- Son simples, contienen un par de “variable” y “valor” en sí mismo, y pesan menos de 4KB, las cookies son válidas en un solo dominio, el host del dominio actual, excluyendo subdominios, aunque podemos hacer que una cookie sea válida también para los subdominios estableciendo una propiedad específica de dominio, es decir, en vez de que el dominio sea [www.facebook.com](http://www.facebook.com/), que el dominio sea facebook.com, pudiendo poner cualquier cosa además del www.
+- Los sitios web suelen usar las cookies para **identificar a los usuarios**, y sus **preferencias**, también para trackear el **comportamiento en la web**, es por eso que guardan en sí mismos info del usuario y su estatus online.
+- Las cookies también sirven para que un usuario entre a la misma web y no tenga que logearse una y otra vez, para lograr esto se crea una cookie única en cada navegador con las **credenciales del usuario**. Y cada vez que el usuario ingresa, el sitio checkea sí esa credencial existe, y sí no existe, la pide.
+- Cuando se crea una cookie, también se crea con una fecha de expiracion bajo el label **Expires**, con una fecha y una hora en particular. Esto se hace por cuestiones de seguridad, ya que sí alguien logra “robar” una cookie de auteticacion, podria logearse con la cuenta de cierta persona, esto se evita ya que la cookie checkea sí se trata del mismo nevegador el que pretende acceder a esa cookie.
+
+<a id="arc16"></a>
+
+### **Que es el cookie tracking?**
+
+Las cookies cumplen un rol importante no solo en la autenticacion sí no también en el track de tu comportamiento online, esto con un **tracking cookie**. Usualmente, muchas paginas usan herramientas de trackeo de otros lugares y no propios, lo cual hace que se pueda trackear la actividad de distintas web al mismo tiempo.
+
+Tracking pixel: Es un pequeño pedazo de codigo que es pedido desde el dominio de la web que hace el tracking para insertar la cookie, es invisible para el usuario en la web.
+
+```html
+<img height="0" width="0" alt="" src="http://track.com"/>
+```
+
+El tracking cookie puede tener mucha informacion, como la IP y el navegador que se esta usando.
+
+```html
+TrackingID=3984720234; Ip=11.0.1.1; origin=stuff.com
+```
+
+El tracking puede servirle a muchas empresas para obtener informacion exacta acerca del perfil del usuario, y así, ofrecer publicidad, dando a muchos problemas de privacidad para los usuarios, es por eso que se pide permiso antes de guardar cookies.
+
+
+<a id="arc17"></a>
+
+### **Como creo una cookie con Javascript?**
+
+1. Crear una funcion de Javascript
+
+```jsx
+function addCookie() {}
+```
+
+2. Le agregamos dos parametros a la funcion. **cname** 
+es el nombre de la cookie, y **value** 
+para el valor de la cookie
+
+```jsx
+function addCookie(cname, value) { }
+```
+
+3. Para crear la cookie debemos llamar a la funcion **document.cookie**
+
+```jsx
+function addCookie(cname, value) {
+   document.cookie= cname + “=” + value + “;”
+ }
+```
+
+4. Ya teniendo esta funcion creada, podemos crear una cookie por fuera de la funcion, como **username**
+
+```jsx
+function addCookie(cname, value) {
+   document.cookie= cname + “=” + value + “;”
+     }
+
+addCookie(“username”,”denukennedy”);
+```
+
+5. Para ver la cookie creada, invocamos a un console log.
+
+```jsx
+function addCookie(cname, value) {
+   document.cookie= cname + “=” + value + “;”
+     }
+
+addCookie(“username”,”denulemos”);
+console.log(document.cookie);
+```
+
+<a id="arc18"></a>
+
+### **¿Cual es la diferencia entre Cookies, SessionStorage y LocalStorage?**
+
+|  | Cookies | Local Storage | Session Storage |
+| --- | --- | --- | --- |
+| Capacidad | 4kb | 10 mb | 5 mb |
+| Navegadores | HTML 4 / 5 | HTML 5 | HTML 5 |
+| Accesible desde | Cualquier ventana | Cualquier ventana | Tab donde fue creada |
+| Expira | Seteado a mano, si no se aclara, vence cuando termina la sesion | Nunca | Cuando se cierra la tab |
+| Storage Location | Navegador y Server | Navegador | Navegador |
+| Enviado con Requests | Si | No | No |
+| Tipo de dato | Tod | Solo guarda Strings. Si queremos guardar objetos, arrays, u otros, debemos converirlos en String con JSON.stringify() |  |
+| Deberia usarse |  | Para guardar informacion NO sensible ya que es facilmente accesible |  |
+- Las cookies se usan para Auth mas que nada
+
+```jsx
+// Local Storage
+localStorage.setItem(’item’, ‘valor’)
+localStorage.getItem(’item’)
+localStorage.removeItem('item')
+localStorage.clear();
+localStorage.key(1); // Obtener un valor/string de una posicion particular
+
+// Session Storage
+sessionStorage.setItem('item', 'valor);
+sessionStorage.getItem('item')
+sessionStorage.removeItem('item')
+sessionStorage.clear();
+
+// Cookies
+document.cookie = "item=true";
+// Con expire date
+document.cookie= "item=true; expires= Fri, 31 Dec 9999 23:59:59 GMT; path=/"
+document.cookie // No se puede obtener una sola cookie por vez, 
+// todas se almacenan en un String, deben parsearse
+
+```
+
+<a id="arc19"></a>
+
+### **¿Como puedo borrar una cookie?**
+
+Para borrar una cookie, debemos setear la fecha de expiracion a una fecha pasada, de esta manera, el navegador la eliminara automaticamente.
+
+```jsx
+function deleteCookie(cname) {
+  document.cookie = cname + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+}
+```

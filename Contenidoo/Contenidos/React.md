@@ -69,11 +69,6 @@ api.search(queryDebouncedValue).then(setProducts);
 
 Permite que el renderizado pueda interrumpirse, permitiendo renderizar varios arboles de componentes a la vez sin necesidad de bloquear el hilo principal del navegador.
 
-### Que es React Fiber?
-
-La arquitectura de React hizo que fuera muy facil para trabajar no solo en web si no tambien en mobile (React Native) y en hasta aplicaciones de Realidad Virtual. Asi los dev de React decidieron separar su algoritmo de reconciliacion (el que compara los cambios entre DOM y VDOM) y el lienzo donde esos cambios se muestran (Web, Mobile, etc..)
-
-Es una estructura de datos que representa un trabajo por hacer.
 
 ### **Que funcion cumple el StrictMode?**
 
@@ -149,12 +144,6 @@ Un componente de Ract acepta entradas y devuelve un elemento, es una descripcion
 
 No. Los navegadores solo leen JS. Debe ser convertido.
 
-
-### **Para que sirven las claves o Keys en React**
-
-Se usan las claves para diferenciar entre simples elementos DOM virtuales con los que son unicos. Ayudan a React a reciclar elementos DOM existentes para que la libreria pueda ejecutarse y renderizarse mas rápidamente, ya que React recicla los elementos que no fueron modificados de los que si para no renderizarlos cuando no es necesario. Este elemento se usa mas que nada en iteraciones de listas. 
-
-El key no afecta el renderizado en si, es por eso que igualmente funciona el render, solo se muestra un warning. 
 
 ### **Hay diferencias entre un componente contenedor y un componente de presentacion?**
 
@@ -771,41 +760,3 @@ componentWillUpdate() {
 }
 ```
 
----
-
-# ContextAPI
-
-Es una manera de tener un estado global sin dependencias como Redux, ya que viene desde React 16.3.
-
-Se pueden pasar state o funciones desde el componente principal hacia los hijos, nos evitamos pasarlo por cada uno de los componentes, es algo global.
-
-Cuenta con el hook `useContext` que facilita el acceso a los datos del Context.
-
-Children refiere a los componentes dentro del Provider que recibirán estos datos.
-
-Provider: De donde vienen los datos
-
-```
-import {createContext} from 'react';
-
-const QuoteContext = createContext();
-
-const QuoteProvider = ({children}) => {
-  return (
-    <QuoteContext.Provider
-    value=({})>
-      {children}
-    </QuoteContext.Provider>
-  )
-}
-
-export { QuoteProvider }
-export default QuoteContext;
-```
-
-Dentro de value ponemos lo que queremos exportar para el resto de componentes, y luego, lo consumimos de la siguiente manera:
-
-```
-// Donde entre llaves ponemos lo que queremos consumir de ese Context.
-const {} = useContext(QuoteContext);
-```
