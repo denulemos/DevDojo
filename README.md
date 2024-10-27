@@ -1,4 +1,4 @@
-# DevDojo
+# DevDojo - El machete del Dev
 
 ## [Seguridad](#seg)  
 
