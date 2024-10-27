@@ -29,6 +29,11 @@
 | [Es una amenaza.. Verdadero o Falso?](#seg23)    |
 | [Qué es un Firewall?](#seg24)    |
 | [Tipos de Firewall](#seg25)    |
+| [Que es la Criptografia?](#seg26)    |
+| [Que es una funcion Hash?](#seg27)    |
+| [Cuáles son los requisitos de un Cripto sistema?](#seg28)    |
+| [Como funciona el Crifrado Simetrico?](#seg29)    |
+| [Como funciona el Crifrado Asimetrico?](#seg30)    |
 
 ## [Accesibilidad](#acc)  
 
@@ -187,6 +192,29 @@
 
 | Temas   |
 |----------|
+| [Cual es la diferencia entre h1, h2, etc?](#rea40)    |
+| [Cual es la importancia del uso de todos los elementos HTML?](#rea41)    |
+| [Que son los atributos de los elementos HTML?](#rea42)    |
+| [Cuáles son las partes de un documento HTML?](#rea43)    |
+| [Puedo escribir las etiquetas en mayúscula y minúscula?](#rea44)    |
+| [Qué son los mapa de imagen?](#rea45)    |
+| [Que es el tag DataList?](#rea46)    |
+| [¿Qué es React?](#rea47)    |
+| [¿De qué hablamos cuando hablamos de una SPA (Single Page App)?](#rea48)    |
+| [Para que es el comando React eject?](#rea49)    |
+| [(Performance) Como evitar mandar muchos eventos inutiles, por ejemplo, ejecutar un search por letra?](#rea50)    |
+| [Que es async rendering?](#rea51)    |
+| [Que son las Ref?](#rea52)    |
+| [Para que son los eventos sinteticos (SyntheticEvent)?](#rea53)    |
+| [Que significa prop drilling y como evitarlo?](#rea54)    |
+| [De que tratan los Ciclos de Vida Componentes?](#rea62)    |
+| [componentWillReceiveProps()](#rea55)    |
+| [componentDidMount()](#rea56)    |
+| [componentWillUnmount()](#rea57)    |
+| [componentWillMount()](#rea58)    |
+| [componentDidUpdate()](#rea59)    |
+| [shouldComponentUpdate()](#rea60)    |
+| [componentWillUpdate()](#rea61)    |
 | [useCallback](#rea1)    |
 | [useDispatch](#rea2)    |
 | [useEffect](#rea3)    |
@@ -225,6 +253,7 @@
 | [Que es el server side rendering?](#rea36)    |
 | [Que es Tree Shaking?](#rea37)    |
 | [¿Que es el SEO?](#rea38)    |
+| [¿Qué es el Virtual DOM?](#rea39)    |
 
 ## [Desarrollo Mobile](#mob)
 
@@ -307,6 +336,10 @@
 | [Qué es la programacion declarativa?](#cod41)   |
 | [Que es la Programacion Imperativa?](#cod42)   |
 | [Qué es la Programacion Estructurada?](#cod43)   |
+| [Que es un antipatron?](#cod44)   |
+| [Que tipos de antipatrones para el diseño de Software existen?](#cod45)   |
+| [Que tipos de Antipatrones para el Diseño Orientado a Objetos existen?](#cod46)   |
+| [Singleton](#cod47)   |
 
 ## [Hardware, Sistemas, Infraestructura y Arquitectura](#har)
 
@@ -381,6 +414,28 @@
 | [¿Cual es la diferencia entre Cookies, SessionStorage y LocalStorage?](#arc18)    |
 | [¿Como puedo borrar una cookie?](#arc19)    |
 | [¿Que es CORS?](#arc20)    |
+
+## [Bases de Datos](#bd)  
+
+| Temas   |
+|----------|
+| [Cuáles son los elementos de una base de datos?](#bd1)    |
+| [Cuales son los elementos de Data Control Language? (DCL)](#bd2)    |
+| [Lenguaje de manipulación de datos (DML)](#bd3)    |
+| [Lenguaje de definición de datos (DDL)](#bd4)    |
+| [Qué es la normalizacion?](#bd5)    |
+| [Cuales son los objetivos de la Normalización?](#bd6)    |
+| [Cuales son los grados de Normalización?](#bd7)    |
+| [Algunos tips de Performance SQL](#bd8)    |
+| [DDL Triggers](#bd9)    |
+| [Inner Join](#bd10)    |
+| [Outer Join (Con left y right join)](#bd11)    |
+| [UNIÓN](#bd15)    |
+| [TOP](#bd16)    |
+| [Self Join](#bd12)    |
+| [EXCEPT](#bd13)    |
+| [DML Triggers](#bd14)    |
+| [Diferencia entre OPENROWSET y OPENQUERY](#bd17)    |
 
 ---
 
@@ -700,6 +755,64 @@ El firewall **NO** protege conexiones que NO pasen por el Firewall, no protege c
 - Filtran en todas las capas anteriores (Application, TCP y IP)
 - Son más costosos y difíciles de administrar.
 - Tienen gran capacidad de análisis y filtrado.
+
+<a id="seg26"></a>
+
+### **Que es la Criptografia?**
+
+- Técnica que protege documentos y datos
+- Uso de cifras/códigos para ocultar cierta información para que sea decodificada por quien pueda (y deba) hacerlo
+- Es una rama de las matemáticas y de la informática en cierta forma
+- **Usos: Correo electrónico, E-commerce, Servicios web (HTTPS) y Networking**
+
+**Los elementos básicos de un sistema criptográfico son:** Criptograma, Texto Claro y Algoritmo de Cifrado
+
+<a id="seg27"></a>
+
+### **Que es una funcion Hash?**
+
+- Es una funcion matemática fácil de calcular
+- Uno puede hacer un algoritmo **unidireccional** (no se puede decodificar, o no se debería)
+- Sirve para certificar que la informacion es veridica y no fue modificada
+- Se usa para el concepto de firma digital y en blockchain
+- **Compresión:** Son de longitud única su resultado
+- **Difusión: Sí se modifica la mitad de un bit del mensaje original, el hash cambia la mitad de sus bits.**
+- Mensaje => Algoritmo criptográfico (clave k) => Mensaje Cifrado (C)
+
+**Principales algoritmos hash:** MD4, SHA 56, Sha1, etc..
+
+<a id="seg28"></a>
+
+### **Cuáles son los requisitos de un Cripto sistema?**
+
+- Integridad, confidencialidad y no repudio
+- El algoritmo debe ser rápido y fiable, no debe haber retardo entre el cifrado y descifrado
+- No debe ser posible contar con una clave para deshashearla
+- Un esquema de cifrado es computacionalmente inseguro sí el texto cifrado generado cumple El costo de romper el cifrado es bajo y la información está dentro de la vida útil
+
+<a id="seg29"></a>
+
+### **Como funciona el Crifrado Simetrico?**
+
+Se descifra con una misma clave (Clave secreta), el emisor se lo tiene que "pasar" al receptor, lo cual significa una vulnerabilidad porque si son poco cuidadosos, cualquiera podría obtener esa clave y obtener la información privada. Es un proceso rápido. Que la clave sea muy segura es muy importante. También se le dice de clave privada porque es una sola clave. Con este sistema de clave pública se hizo SSH luego, que es una manera de establecer una comunicación segura entre páginas webs (servidores) y clientes.
+
+Las debilidades del Cifrado simetrico son..
+
+- Debilidades de clave única
+- Mala gestión de claves
+- Criptosistemas asimétricos
+- Lo que se cifra con una clave se descifra con otra clave
+
+<a id="seg30"></a>
+
+### **Como funciona el Crifrado Asimetrico?**
+
+- También se le dice de **clave pública**.
+- Hay 2 claves, una para cifrar y otra para descifrar.
+- Tenemos que tener cuidado de que la clave pública no dé lugar a que se adivine de cierta manera a la clave privada. Lo ideal es que se descifra con la clave privada, es decir, una que tenga el receptor, es como tener una cuenta que no puedo resolver si no tengo los números para saber qué es lo que tengo que sumar.
+- Sí quiero darle confidencialidad a un documento, y que lo vea solo el destinatario, cifrar el documento con la **clave pública** del destinatario
+- Está pensado para pasar por lugares poco seguros, es por eso que se considera un sistema menos vulnerable.
+- Hay 3 tipos de cifrado en este tipo de cifrado, RSA (La seguridad de este algoritmo radica en el problema de la factorización de números enteros (números primos grandes), DSA, edDSA y ECDSA (El sistema está basado en curvas elípticas el cual emplea puntos sobre las curvas para la generación del par de claves).
 
 ---
 <a id="acc"></a>
@@ -4219,6 +4332,326 @@ Las pruebas deben tener una salida booleana y pasar o fallar. La misma prueba qu
 
 # Frontend Frameworks and Libraries
 
+<a id="rea40"></a>
+
+### **Cual es la diferencia entre h1, h2, etc?**
+
+Los elementos de encabezado h1 a h6 se utilizan para indicar la importancia del contenido que les sigue. Cuanto menor sea el número, mayor será la importancia, por lo que los elementos h2 tienen menos importancia que los elementos h1. Utiliza solo un elemento h1 por página y coloca los encabezados de menor importancia debajo de los de mayor importancia.
+
+<a id="rea41"></a>
+
+### **Cual es la importancia del uso de todos los elementos HTML?**
+
+HTML5 tiene algunos elementos que identifican diferentes áreas de contenido. Estos elementos hacen que tu HTML sea más fácil de leer y ayudan con la Optimización para Motores de Búsqueda (SEO) y la accesibilidad.
+
+<a id="rea42"></a>
+
+### **Que son los atributos de los elementos HTML?**
+
+Los atributos HTML son palabras especiales utilizadas dentro de la etiqueta de apertura de un elemento para controlar el comportamiento del elemento. El atributo src en un elemento img especifica la URL de la imagen (dónde se encuentra la imagen).
+
+`<img src="linkaimagen.com/fcc_secondary.svg">`
+
+<a id="rea43"></a>
+
+### **Cuáles son las partes de un documento HTML?**
+
+Además de todo esto, un documento HTML ha de estar delimitado por la etiqueta HTML.
+Dentro de este documento, podemos asimismo distinguir dos partes principales:
+
+- La cabecera, delimitada por la etiqueta HEAD, donde colocaremos etiquetas de índole informativo, como por ejemplo el titulo de nuestra página. El contenido de la cabecera no suele aparecer en el cuerpo de la página, pero sirve a los navegadores y otros sistemas para encontrar información útil para entender y procesar el documento.
+- El cuerpo, flanqueado por la etiqueta BODY, que será donde colocaremos nuestro texto e imágenes delimitados a su vez por otras etiquetas como las que hemos visto.
+
+El resultado de un documento básico tiene la siguiente estructura:
+
+```html
+<html>
+	<head>
+		<title>Mi documento básico</title>
+	</head>
+<body>
+	<p>Este es el cuerpo de mi primera página HTML</p>
+	<p>Este segundo párrafo también forma parte del cuerpo</p>
+</body>
+</html>
+```
+
+<a id="rea44"></a>
+
+### **Puedo escribir las etiquetas en mayúscula y minúscula?**
+
+En HTML las mayúsculas y minúsculas son indiferentes. Quiere decir que las etiquetas pueden ser escritas con cualquier tipo de combinación de mayúsculas y minúsculas. Resulta, sin embargo, aconsejable acostumbrarse a escribirlas en minúscula, ya que otras tecnologías que pueden c onvivir
+con nuestro HTML (XML por ejemplo) no son tan permisivas y nunca viene mal hacernos a las buenas costumbres desde el principio, para evitar fallos triviales en un futuro.
+
+<a id="rea45"></a>
+
+### **Qué son los mapa de imagen?**
+
+Aunque el uso de los mapas de imagen se ha reducido drásticamente en los últimos años, aún se utilizan en algunos sitios especializados. Muchas agencias de viaje y sitios relacionados utilizan mapas geográficos para
+seleccionar el destino del viaje.
+
+Un mapa de imagen permite definir diferentes zonas "pinchables" dentro de una imagen. El usuario puede clickear sobre cada una de las zonas definidas y cada una de ellas puede apuntar a una URL diferente.
+Siguiendo el ejemplo anterior, una sola imagen que muestre un mapa de todos los continentes puede definir una zona diferente para cada continente. De esta forma, el usuario puede clickear sobre la zona correspondiente a cada continente para que el navegador muestre la página que contiene los viajes disponibles a ese destino.
+Las zonas o regiones que se pueden definir en una imagen se crean mediante rectángulos, círculos y polígonos. Para crear un mapa de imagen, en primer lugar se inserta la imagen original mediante la etiqueta <img>. A continuación, se utiliza la etiqueta `<map>` para definir las zonas o regiones de la imagen. Cada zona se define mediante la etiqueta `<area>`.
+
+<img width="197" alt="image" src="https://github.com/denulemos/denobible/assets/32619895/627950b8-7461-48b2-9846-5be8d3f355b0">
+
+Ejemplo de imagen que incluye un mapa de imagen
+Utilizando un círculo, dos rectángulos y un polígono se pueden definir fácilmente cuatro zonas clickeables en la imagen mediante el siguiente código HTML:
+
+```jsx
+<img src="imagen.gif" usemap="#mapa_zonas" />
+<map name="mapa_zonas">
+<area shape="rect" coords="20,25,84,113" href="rectangulo.html" />
+<area shape="polygon" coords="90,25,162,26,163,96,89,25,90,24"
+href="triangulo.html" /> <area shape="circle" coords="130,114,29"
+href="circulo.html" />
+area shape="rect" coords="19,156,170,211" [href="mailto:rectangulo@direccion.com](mailto:href=%22mailto:rectangulo@direccion.com)" />
+<area shape="default" nohref="nohref" />
+</map>
+```
+
+La verdad es que los mapas de imágenes son tediosos a veces de crear, y para eso contamos con generadores online por ejemplo:
+https://www.image-maps.com/
+
+<a id="rea46"></a>
+
+### **Que es el tag DataList?**
+
+Se usa para proveer con un autocomplete a algunos elementos
+
+```jsx
+<form action="action_page.php" method="get">
+<input list="browsers" name="browser" id="browser">
+<datalist id="browsers">
+	<option value="Edge"
+	<option value="Firefox">
+</datalist>
+</form>
+```
+
+<a id="rea47"></a>
+
+### **¿Qué es React?**
+
+React fue creado por Facebook en el año 2013, y sigue siendo mantenida por él. (ahora Meta). Algunos ejemplos de proveedores que usan React son, además de Facebook, PayPal, Netflix, etc., páginas con un gran flujo de usuarios al día de hoy.
+
+Es rápido y escalable. Es declarativo y basado en componentes. Aclaramos que es lo que queremos renderizar, pero no el cómo. Al ser declarativo, hace que sea facil el seguir patrones de diseño.
+
+Su trabajo es predecible, toda la info va en una sola via. Nos ayuda a prevenir mutaciones involuntarias.
+
+Funciona con la llamada **Programación Reactiva**, cada componente reacciona y se vuelve a renderizar (o no) cuando se produce un cambio de estado o llegan ciertas propiedades.
+
+Al ser una libreria, se puede usar directamente en un HTML (aunque no es la manera mas común), y esta hecho para aplicaciones de cualquier magnitud.
+
+Tambien se puede trabajar del lado del servidor con Node, aplicaciones mobile con React Native y de escritorio con Electron. Todo con el mismo tipo de codigo.
+
+<a id="rea48"></a>
+
+### **¿De qué hablamos cuando hablamos de una SPA (Single Page App)?**
+
+Una SPA (Single Page Application) son apps web que simulan ser una única página con contenido dinámico. La idea es darle la “ilusión” al usuario de que está navegando una aplicación de escritorio, que no recarga, no se satura, etc.
+
+Las únicas recargas, o pantallas de carga, son cuando se está trayendo información del servidor. No se recarga toda la página, aun así, solo ciertas partes, dando a una experiencia mucho más fluida.
+
+Este tipo de apps SPA interactúan con dos servicios, REST y Serverless (Firebase es un ejemplo, donde únicamente consumimos su servicio), los cuales descentralizan la lógica de la app de la interfaz gráfica.
+
+En resumen:
+
+- Se evita la constante recarga entera de la página
+- La página no se satura ni realiza peticiones constantes al servidor. Únicamente se pide lo necesario.
+- No nos interesa el backend, únicamente lo que recibimos de él.
+
+<a id="rea49"></a>
+
+### **Para que es el comando React eject?**
+
+`create-react-app` encapsula todos los modulos npm para usar internamente asi el package.json queda bastante limpio. Eject lo que hace es deshacer este encapsulamiento y pasar a mostrar todo lo que esta instalado. 
+
+Es para cuando necesitamos hacer cosas mas complejas o para instalar modulos que puedan interactuar con modulos ya instalados. 
+
+<a id="rea50"></a>
+
+### **(Performance) Como evitar mandar muchos eventos inutiles, por ejemplo, ejecutar un search por letra?**
+
+Debounce es un termino de electronica que ayuda a que, por ejemplo, si apretamos varias veces un boton, no se manden muchas veces las instrucciones
+
+```jsx
+function useDebounce(value: string, delay: number) {
+	const [debouncedValue, setDebouncedValue] = useState(value);
+
+	useEffect(() => {
+			const timeoutId = setTimeout(() => {
+				setDebouncedValue(value)
+		}, delay)
+
+		return () => clearTimeout(timeoutId)
+}, [value])
+
+return debouncedValue;
+}
+
+// Luego en el component que tiene el search
+
+const queryDebouncedValue = useDebounce(query, 300)
+
+useEffect(() => {
+api.search(queryDebouncedValue).then(setProducts);
+}, [queryDebouncedValue]);
+```
+
+<a id="rea51"></a>
+
+### **Que es async rendering?**
+
+Permite que el renderizado pueda interrumpirse, permitiendo renderizar varios arboles de componentes a la vez sin necesidad de bloquear el hilo principal del navegador.
+
+<a id="rea52"></a>
+
+### **Que son las Ref?**
+
+Permite a react manipular directamente el DOM Sin necesidad de actualizar un componente, asumen cambios en los mismos que no se pueden resolver mediante el traspaso de props o cuyo impacto se limita al propio componente no siendo rentable renderizarlo de nuevo. 
+
+```jsx
+class AnimatedSpinner extends Component {
+
+  constructor() {
+    super()
+    this.animationRef = React.createRef()    // 1. creación
+  }
+
+  triggerAnimation() {
+    this.animationRef.current.className.add('animated')  // 3. acceso
+  }
+
+  render() {
+    return (
+      <>
+        <div ref={this.animationRef} className="spinner"> </div>     // 2. asociación
+        <button onClick={this.triggerAnimation}> Animar </button>
+
+    )
+  }
+}
+```
+
+<a id="rea53"></a>
+
+### **Para que son los eventos sinteticos (SyntheticEvent)?**
+
+Funcionan de la misma forma que los eventos normales de los exploradores. Los eventos sinteticos usan codigo que puede ser aplicado en multiples exploradores web mientras que los eventos normales se enfocan en un solo navegador
+
+Ayuda a que el dev no se preocupe tanto en como manejar un evento segun el navegador para el cual esta desarrollando, ya que estos eventos simulan muchos eventos y garantiza el mismo comportamiento.
+
+<a id="rea54"></a>
+
+### **Que significa prop drilling y como evitarlo?**
+
+Es cuando las props que se comparten acumulan demasiadas dependencias. Da lugar a flujos de datos profundos, dificiles de identificar y refactorizar. Dos formas de resolverlo son:
+
+- Composicion de componentes frente a un mismo juego de datos compartido por varios componentes
+- Redux o API Context, aptas para escenarios mas complejos donde conviene manejar un estado global.
+
+<a id="rea62"></a>
+
+### **De que tratan los Ciclos de Vida Componentes?**
+
+React provee de metodos especificos para los ciclos de vida de los componentes, en este caso, veremos en los de clase. Se llaman cuando el componente se monta, actualiza o desmonta, veamos las deficiones:
+
+- Monta: El componente se renderiza en la pagina
+- Desmonta: El componente es removido de la pagina
+
+Varios de los estados que veremos a continuacion se encuentran deprecados, y deben usarse con un tag UNSAFE para su uso
+
+<a id="rea55"></a>
+
+### **componentWillReceiveProps()**
+
+Se ejecuta cuando hay alguna actualizacion de alguna prop
+
+```jsx
+componentWillReceiveProps(nextProps) {
+    if (nextProps.whatever !== this.props.whatever) {
+        // do something important here
+    }
+}
+```
+
+<a id="rea56"></a>
+
+### **componentDidMount()**
+
+Se llama cuando el componente es renderizado en la pagina. Se puede usar para inicializar cosas, como para pedir la informacion inicial de los componentes.
+
+```jsx
+componentDidMount() {
+    // get the data I need to correctly display
+}
+```
+
+<a id="rea57"></a>
+
+### **componentWillUnmount()**
+
+Es llamado antes de que el componente sea desmontado del DOM. Se puede usar para liberar recursos. No existe un “DidUnmount” ya que, una vez que se desmonta, ya no se puede hacer nada por el mismo.
+
+```jsx
+componentWillUnmount() {
+    // teardown or cleanup your code before your component disappears
+    // (E.g. remove event listeners)
+}
+```
+
+<a id="rea58"></a>
+
+### **componentWillMount()**
+
+Corresponde a cuando el componente va a montarse, se ejecuta antes de su montaje, es como el constructor del mismo.
+
+```jsx
+componentWillMount() {
+    // setup your state
+}
+```
+
+<a id="rea59"></a>
+
+### **componentWillMount()**
+
+Se llama cuando el componente se actualiza en el DOM. Podemos hacerlo para, por ejemplo, para avisar que el counter fue incrementado en uno.
+
+```jsx
+componentDidUpdate() {
+    alert('Number of clicks: ' + this.state.count);
+}
+```
+
+<a id="rea60"></a>
+
+### **shouldComponentUpdate()**
+
+Nos permite decidir si debemos ejecutar o no el render. Muestra con que valores, o bajo que condiciones, se realizará la actualizacion.
+
+```jsx
+shouldComponentUpdate(nextProps, nextState) {
+    // return true if want it to update
+    // return false if not
+}
+```
+
+<a id="rea61"></a>
+
+### **componentWillUpdate()**
+
+Es cuando se esta por ejecutar el render. Nos ayuda a setear valores globales justo antes del mismo.
+
+```jsx
+componentWillUpdate() {
+    // set some global variables
+}
+```
+
+
 <a id="rea1"></a>
 
 ### **useCallback**
@@ -5110,6 +5543,25 @@ Es Search Engine Optimization, es lo que hace que un sitio sea encontrado por Go
 ```
 
 - Crear diseños accesibles, crear paginas para los usuarios, no solo para los motores de busqueda. Un ejemplo para testear la accesibilidad, es cargar la pagina sin JS habilitado.
+
+<a id="rea39"></a>
+
+### **¿Qué es el Virtual DOM?**
+
+Para que React pueda efectuar esta suerte de “recarga parcial por pedazos” de una página, debe usar el Virtual DOM, que es una representación del DOM real.
+
+Cuando un elemento cambia, primero se actualiza el VDOM de forma muy rápida, luego, React compara este VDOM propio con el DOM real, y basándonos en sus diferencias, únicamente aplica los cambios necesarios para que ambos coincidan.
+
+Todo sale de app.js, que contiene X cantidad de componentes, y estos poseen Z cantidad de componentes en sí mismos. Si actualizamos a `app.js`, se actualiza la página entera, pero si actualizamos algo dentro de estos componentes, únicamente se actualizará de este componente “para arriba” en la jerarquía de componentes.
+
+Más arriba la jerarquía, más refrescos habrá. Un componente hijo, idealmente, no deberia necesitar modificar el estado del componente padre.
+
+- Aumenta la velocidad de la aplicacion
+- No acapara mucha memoria, hace que el uso de la misma sea mucho mas eficiente
+- Provee una capa adicional de Scripting, dandole un peso mas a la CPU
+
+![Virtual Dom](src/vdom.png)
+
 ---
 
 <a id="mob"></a>
@@ -6048,6 +6500,72 @@ Ejemplos de lenguajes imperativos hay muchos: C, C++, Java, Perl y un infinito e
 
 En ella las imposiciones se ven divididas en estructuras. Pueden ser estructura de control de flujo (if/else), de repeticiones (for/while) o pueden ser estructuras de ordenamiento(bloques de código, generalmente delimitados por TABs o por llaves o corchetes)
 
+<a id="cod44"></a>
+
+### **Que es un antipatron?**
+
+Un antipatrón de diseño es una implementación que invariablemente conduce a una mala solución. Al documentarse junto con los patrones de diseño, se dan argumentos para no escoger malos caminos en lugar de simplemente usar la intuición y el sentido común.
+El término se origina inspirado en el libro Design Patterns, el libro Anti-Patterns describe los antipatrones como la contrapartida natural al estudio de los patrones de diseño.
+El estudio formal de errores que se repiten permite reconocer y reconducir los elementos involucrados hacia una mejor solución. Los antipatrones no se mencionan en el libro original de Design Patterns, puesto que éste es anterior.
+Los antipatrones se consideran una parte importante de una buena práctica de programación. Es decir, un buen programador procurará evitar los antipatrones siempre que sea posible, lo que requiere su reconocimiento e identificación tan pronto como sea posible, dentro del ciclo de vida del software.
+El concepto se puede aplicar a la ingeniería en general, e incluso a cualquier tarea realizada por el hombre. Aunque no se escucha con frecuencia fuera del campo ingenieril, la noción está ampliamente extendida.
+
+<a id="cod45"></a>
+
+### **Que tipos de antipatrones para el diseño de Software existen?**
+
+- **Base de datos como comunicador de procesos (Database as IPC)**: Es cuando usamos una base de datos para comunicar procesos para uno o varias máquinas, en lugar de hacer una comunicación entre procesos directa (que es más adecuada).
+- **Objeto todopoderoso (BLOB Object)**: Simple, cuando hacemos que toda la funcionalidad se haga en un solo objeto (aplicable también a cualquier tipo de componente).
+- **Clase Gorda (Fat class)**: Es la que le sigue a la anterior, se trata de dotar a una clase con demasiados atributos y/o métodos, haciéndola responsable lógicas de negocio que no les correspondan
+- **Botón mágico (Magic Push-button)**: Se trata de desarrollar lógica de negocio en los métodos de interacción de pantallas de usuario.
+- **Carrera de obstáculos (Race Hazard)**: Incapacidad de prever las consecuencias de diferentes sucesiones de eventos. En otras palabras es no tener visión o trazabilidad de la lógica que se dispara en cada evento.
+- **Entrada chapuza (Input Kludge)**: No especificar e implementar el manejo de entradas inválidas. En otras palabras, es cuando no validamos los datos que entran al sistema.
+- **Fábrica de combustible (Gas Factory)**: Diseñar de manera innecesariamente compleja. Dicho de otro modo, sobre modelar, diseñar por demás, diseñar funcionalidad que no sabremos cuando.
+- **Gran bola de lodo (Big Ball of Mud)**: Construir un sistema sin estructura definida. Sin una estructura la implementación se desmorona.
+- **Interfaz inflada (Interface Bloat)**: Pretender que una interfaz sea tan potente que resulta extremadamente difícil de implementar.
+- **Punto de vista ambiguo (Ambiguous Viewpoint)**: Presentar un modelo sin concretar ciertos aspectos, postergando así decisiones conflictivas para más adelante.
+- **Re-dependencia (Re-coupling)**: Introducir dependencias ( o relaciones entre objetos) innecesarias.
+- **Sistema de cañerías de calefacción (Stovepipe System)**: Construir un sistema difícilmente mantenible, ensamblando componentes poco relacionados.
+
+<a id="cod46"></a>
+
+### **Que tipos de Antipatrones para el Diseño Orientado a Objetos existen?**
+
+- **Acoplamiento secuencial (Sequential coupling)**: Construir una clase que necesita que sus métodos se invoquen en un orden determinado o secuencia.
+- **Base Bean**: Heredar funcionalidad de una clase utilidad en lugar de delegar lo que se necesite en ella.
+- **Fallo de clase vacía (Empty Subclass Failure)**: Crear una clase que no supera el test de la subclase vacía, es decir, que se comporta de manera diferente cuando se invoca desde una subclase que no añade modificación o funcionalidad alguna.
+- **Llamar a Super (Call Super)**: Obligar a las subclases a llamar a un método de la superclase que ha sido sobrescrito.
+- **Modelo de dominio Anémico (Anemic Domain Model)**: Usar un modelo del dominio sin ninguna lógica de negocio que de valor. Esto no es un enfoque orientado a objetos porque cada objeto debería tener tanto propiedades como comportamiento asociado específico (que haga transformaciones) y no solo para llevar datos desde la base a la pantalla.
+- **Objeto Sumidero (Object Cesspool)**: Reusar objetos no adecuados realmente para el fin que se persigue.
+- **Poltergeist**: Emplear objetos cuyo único propósito es pasar la información a terceros objetos sin aportar valor o realizar transformaciones.
+- **Problema del círculo-elipse (circle-ellipse problem)** : Crear variables de tipo pensando en los valores de posibles subtipos, generando problemas de bifurcaciones lógicas que no son predecibles.
+- **Problema del yoyó (yo-yo problem)**: Construir estructuras (por ejemplo de herencia) que son difíciles de comprender debido a su excesiva fragmentación.
+- **Singletonitis**: Abuso de la utilización del patrón singleton. Este concepto es también aplicable a cualquier tipo de patrón de diseño en el que se abuse de su implementación en lugares no adecuados o necesarios. Suele ocurrir con programadores con poca experiencia
+- **YAFL (“yet another layer” u otra capa más no deseada)**: Se trata de añadir capas innecesarias a un programa, sub-programa, biblioteca o framework. Esta tendencia se extendió bastante después de que se publicase el primer libro sobre patrones.
+
+<a id="cod47"></a>
+
+### **Singleton**
+
+Obliga a que exista solo un objeto de un tipo. Se puede usar para crear un objeto que se encargue de la conexión a una base de datos, para que no se creen múltiples conexiones.
+
+```javascript
+class Singleton {
+    constructor() {
+        // Si la instancia no existe, se crea
+        if (!Singleton.instance) {
+            Singleton.instance = this;
+        }
+
+        // Si no, se devuelve lo que ya existe
+        return Singleton.instance;
+    }
+}
+
+const singleton = new Singleton();
+const singleton2 = new Singleton(); // Devuelve la misma instancia
+```
+
 ---
 
 <a id="cam"></a>
@@ -6956,3 +7474,468 @@ function deleteCookie(cname) {
 Es un mecanismo que usa cabeceras HTTP adicionales para permitir que un user-agent obtenga permiso para acceder a recursos seleccionados desde un servidor en un origen distinto (dominio) al que pertenece. Por ejemplo, si tengo mi dominio [`denisse.com`](http://denisse.com), uso XMLHttpRequest para cargar el recurso [`http://api.domain-b.com/data.json`](http://api.domain-b.com/data.json)
 
 Tambien sirve para obtener fuentes externas, texturas webGL, Imagenes, hojas de estilos y Scripts. 
+
+---
+
+<a id="bd"></a>
+
+# Bases de Datos
+
+<a id="bd1"></a>
+
+### **Cuáles son los elementos de una base de datos?**
+
+- **Tablas**: Contienen la información
+- **Vistas**: Parecidas a la tabla, son para consultas, más rápidas
+- **Índices**: Uno o más columnas de una tabla para encontrar la data más rápido, es como el índice de un libro
+- **Triggers**: Disparadores que ejecutan código de SQL cuando se inserta, borra o se updatea un campo (CRUD (Create, Read, Update, Delete))
+- **Procedures**: Pedazos de código SQL que se ejecuta
+- **Constraints**: Previenen inconsistencia de datos en una columna
+- **Reglas:** Se especifican valores válidos para ser insertados en una tabla o columna.
+
+<a id="bd2"></a>
+
+### **Cuales son los elementos de Data Control Language? (DCL)**
+
+- GRANT - Dar permisos específicos a una tabla y/o objeto
+- REVOKE - Revocar permisos
+
+<a id="bd3"></a>
+
+### **Lenguaje de manipulación de datos (DML)**
+
+Las sentencias de lenguaje de manipulación de datos (DML) son utilizadas para gestionar datos dentro de las bases de datos . Algunos ejemplos:
+
+- SELECT - para obtener datos de una base de datos.
+- INSERT - para insertar datos a una tabla.
+- UPDATE - para modificar datos existentes dentro de una tabla.
+- DELETE - elimina todos los registros de la tabla; no borra los espacios asignados a los registros.
+
+<a id="bd4"></a>
+
+### **Lenguaje de definición de datos (DDL)**
+
+Las sentencias DDL se utilizan para crear y modificar la estructura de las tablas así como otros objetos de la base de datos.
+
+- CREATE - para crear objetos en la base de datos.
+- ALTER - modifica la estructura de la base de datos.
+- DROP - borra objetos de la base de datos.
+- TRUNCATE - elimina todos los registros de la tabla, incluyendo todos los espacios asignados a los registros. Además, reinicia los campos autonuméricos.
+
+<a id="bd5"></a>
+
+### **Qué es la normalizacion?**
+
+Definición formal: La normalización es el proceso mediante el cual se transforman datos complejos a un conjunto de estructuras de datos más pequeñas, que además de ser más simples y más estables, son más fáciles de mantener.
+
+También se puede entender la normalización como una serie de reglas que sirven para ayudar a los diseñadores de bases de datos a desarrollar un esquema que minimice los problemas de lógica.
+
+<a id="bd6"></a>
+
+### **Cuales son los objetivos de la Normalización?**
+
+- Evitar redundancia
+- Evitar problemas de actualización
+- Asegurar la integridad
+- Asegurar que no hayan 2 registros iguales
+- Todos los datos de una determinada propiedad
+deben ser del mismo tipo.
+- Ejemplo “Nacimiento” debe tener una fecha.
+
+<a id="bd7"></a>
+
+### **Cuales son los grados de Normalización?**
+
+- Primera forma normal
+- Segunda forma normal
+- Tercera formal normal
+
+Cada una de estas formas normales tiene sus reglas.
+Una base de datos no es necesario que este siempre en la 3era forma normal, puede ocurrir que para resolver
+problemas complejos, no se requiera de algún dato en la 3era forma.
+
+<a id="bd8"></a>
+
+### **Algunos tips de Performance SQL**
+
+- Cada índice creado en la tabla incrementa el tiempo en que se llevan a cabo los insert, updates o deletes, por lo que el número de índices en una tabla no deben de ser muchos. Use sólo los índices necesarios, para PK y para FK, y según el uso de los datos (WHERE, ORDER BY, GROUP BY). Si la tabla es de solo lectura entonces el número de índices se puede incrementar.
+- Manteen los índices lo más pequeño que puedas, reduciéndolo se reducen el número de IO para leerlo (esto depende de la complejidad de claves del índice).
+- Trata de que los índices creados sean sobre campos de tipo enteros y no de carácter.
+- Si se crean índices compuestos el orden en que se creen es muy importante. Trata de colocar primero la columna que sea más selectiva, es decir donde no se repitan mucho los valores y después la menos selectiva. También debes de tomar en consideración la forma en que escribes tus queries (tener en cuenta el orden de ejecución del query).
+- Los índices clustered funcionan mucho mejor que los nonclustered si se necesitan hacer consultas sobre un rango de valores o se necesitan ordenar datos por medio de GROUP BY o ORDER BY.
+- Para tablas que son modificadas con mucha frecuencia (UPDATE, INSERT, DELETE) es recomendable usar un FILLFACTOR diferente de 0 o 100. Relacionado al espacio en disco reservado para almacenar el índice
+- No utilizar SELECT * en las consultas, siempre se deben de definir las columnas que se quieren extraer, esto reduce el I/O mejorando el performance. Indicar sólo las columnas necesarias.
+- Evitar el uso de cursores, es mejor usar loops con sentencias WHILE, es más rápido, pero para poder hacer uso de esto es necesario tener definida en la tabla una clave que identifique al registro (primary key o unique).
+
+```sql
+--Usando cursores
+ 
+declare @bd varchar(50)
+DECLARE bdcursor cursor for
+select name from master..sysdatabases where name not in ('master','tempdb','msdb')
+open bdcursor
+fetch bdcursor into @bd
+WHILE @@FETCH_STATUS = 0
+BEGIN
+print 'Base de Datos: ' + @bd 
+fetch bdcursor into @bd
+END
+DEALLOCATE bdcursor
+ 
+ 
+--Sin cursores
+DECLARE @dbName VARCHAR(50)
+SET @dbName = ''
+ 
+WHILE @dbName IS NOT NULL
+BEGIN
+SELECT @dbName = MIN( Name )
+FROM master..sysdatabases
+WHERE name not in ('master','tempdb','msdb') and Name > @dbName
+ 
+IF @dbName IS NOT NULL
+BEGIN
+print 'Base de Datos: ' + @dbName
+END
+END
+```
+
+- Evitar el uso de tablas temporales ya que generan más IO, considerar primero el uso de queries más avanzados, vistas, como tipo de dato tabla, tablas derivadas, cte.
+
+```sql
+-- Tipo de dato tabla
+DECLARE @TableVar TABLE
+  (Cola int PRIMARY KEY,
+   Colb char(3))
+ 
+INSERT INTO @TableVar VALUES (1, 'abc')
+INSERT INTO @TableVar VALUES (2, 'def')
+ 
+SELECT * FROM @TableVar
+GO
+ 
+-- Tabla derivada
+SELECT ST.stor_id, ST.stor_name
+FROM stores AS ST,
+     (SELECT stor_id, COUNT(DISTINCT title_id) AS title_count
+      FROM sales
+      GROUP BY stor_id
+     ) AS SA
+WHERE ST.stor_id = SA.stor_id
+AND SA.title_count = (SELECT COUNT(*) FROM titles)
+```
+
+- Evitar el uso de ‘%’ al inicio de la palabra cuando se busca por medio de un LIKE ya que provoca un index scan, el cual elimina el propósito del índice, en cambio el segundo ejemplo realiza un index scan. Evite en las búsquedas usar operadores del tipo <> y NOT ya que resultan en table scan e index scan (scan=recorre entrada por entrada tanto en tablas como en índices).
+
+```sql
+SELECT LocationID FROM Locations WHERE Specialities LIKE '%pples'
+SELECT LocationID FROM Locations WHERE Specialities LIKE 'A%s'
+```
+
+- Hacer uso de SHOWPLAN_TEXT o SHOWPLAN_ALL para analizar los queries. Alternativamente puede usar la interfaz gráfica para mostrar el plan de ejecución estimado (Query analizar).
+
+```sql
+USE AdventureWorks;  
+GO  
+SET SHOWPLAN_TEXT ON;  
+GO  
+SELECT *  
+FROM Production.Product   
+WHERE ProductID = 905;  
+GO  
+SET SHOWPLAN_TEXT OFF;  
+GO
+```
+
+- Utilizar SET NOCOUNT ON en los sp’s
+- No poner a los sps el prefijo sp_, ya que las búsquedas se llevan a cabo primero en master. La base master tiene los sp del motor de base de datos entre otras cosas.
+- Tratar de no hacer uso de campos tipo text o ntext para almacenar datos largos (text y ntext están deprecados), ya que no se pueden realizar updates directamente sobre ellos o hacer inserts. Para esto se debe hacer uso de READTEXT, WRITETEXT y UPDATETEXT. También SQL Server tiene demasiados BUGS para replicar tipos de datos de este tipo. Por lo que si no se tiene piensa guardar un dato mayor a 8K utilice char(8000) o varchar(8000) o varchar(max).
+- Tratar de no usar tipos de datos binary o image dentro de la base de datos. En su caso almacenar la ruta de los archivos ya que tiene mucho mejor performance.
+- Siempre en las sentencias de insert colocar las columnas a las que se va a insertar.
+
+```sql
+CREATE TABLE EuropeanCountries
+(
+CountryID int PRIMARY KEY,
+CountryName varchar(25)
+)
+-- Here's an INSERT statement without a column list , that works perfectly:
+INSERT INTO EuropeanCountries
+VALUES (1, 'Ireland')
+
+-- Now, let's add a new column to this table:
+
+ALTER TABLE EuropeanCountries
+ADD EuroSupport bit
+
+-- Server: Msg 213, Level 16, State 4, Line 1
+-- Insert Error: Column name or number of supplied values does not match table definition.
+
+-- Esto se evita de la siguiente manera
+INSERT INTO EuropeanCountries
+(CountryID, CountryName)
+VALUES (1, 'England')
+```
+
+- Es preferible usar constraints en la definición de las tablas para mantener la integridad referencial en vez de usar triggers ya que son más rápidos. Solo usar triggers para auditar, validaciones que no se puedan hacer con constraints.
+- Siempre acceder las tablas en el mismo orden en todos los sp’s y triggers, de esta manera evitamos generar deadlocks asi como también mantener las transacciones lo más pequeñas posibles. También hacer que las aplicaciones reintenten la transacción en caso de generarse un deadlock (error 1205).
+- No hacer llamado de funciones repetitivamente en los sp’s o triggers, en lugar de eso hacer el llamado una sola vez y guardarlo en alguna variable
+- También toma en cuenta el consumo de CPU que generan tus consultas
+
+<a id="bd9"></a>
+
+### **DDL Triggers**
+
+Son triggers especiales que se crean **a nivel de base de datos** y que disparan en respuesta a eventos DML  (Update – Delete – Insert). Suelen ser utilizados para ejecutar tareas administrativas en una base de datos auditando y regulando cierta clase de eventos.
+
+```sql
+CREATE TRIGGER <Nombre del Trigger> 
+ON DATABASE 
+FOR <DROP TABLE, ALTER TABLE>
+AS
+BEGIN
+   SET NOCOUNT ON;
+   -- Inserta aquí las instrucciones
+END
+```
+
+El siguiente trigger impide que sentencias DROP TABLE y ALTER TABLE a nivel de Base de Datos
+
+```sql
+CREATE TRIGGER TR_Seguridad
+       ON DATABASE FOR DROP_TABLE, ALTER_TABLE
+       AS
+       BEGIN
+         RAISERROR ('No está permitido borrar ni modificar tablas !' , 16, 1)
+         ROLLBACK TRANSACTION 
+
+       END
+```
+
+<a id="bd10"></a>
+
+### **Inner Join**
+
+Solo muestra lo que tiene en comun A y B
+
+```sql
+SELECT loginID
+FROM tabla1 AS e
+   INNER JOIN Ventas.vendedor AS s
+   ON e.idnegocio = s.idnegocio
+
+(El id negocio debe estar en tabla a y b)
+```
+
+<a id="bd11"></a>
+
+### **Outer Join (Con left y right join)**
+
+El left Join, por ejemplo, con dos tablas A y B, devuelve todo lo de la tabla A y lo que este también en la tabla AB, sí no quiero esto último, agrego un WHERE tabla_b IS NULL . El right join es lo mismo pero con B. El full Join toma absolutamente todo de ambas tablas, agregando el NULL anterior con ambas tablas, ahi es donde se muestran ambas tablas menos lo que tienen en común.
+
+```sql
+SELECT p.nombre, pr.productoid
+FROM produccion.producto p
+LEFT OUTER JOIN
+produccion.producto pr
+ON p.productoid = pr.productoid
+```
+
+<a id="bd15"></a>
+
+### **UNIÓN**
+
+Con los set de datos finales se trata de unificar a un set único
+
+Elimina los duplicados entre ambos conjuntos de entrada (**ES UN DISTINCT IMPLÍCITO**).
+
+```sql
+SELECT * a
+UNIÓN ALL
+Select * b
+```
+
+<a id="bd16"></a>
+
+### **TOP**
+
+Top de los resultados de una query, es decir, las X primeras (En el ejemplo, 10) de un SELECT
+
+```sql
+SELECT TOP (10)
+nombres, apellidos
+FROM tabla1
+```
+
+<a id="bd12"></a>
+
+### **Self Join**
+
+Un Join que referencia a la misma tabla.
+
+```sql
+SELECT A.CustomerName AS CustomerName1, B.CustomerName AS CustomerName2, A.City
+FROM Customers A, Customers B
+WHERE A.CustomerID <> B.CustomerID --No se repiten ID
+AND A.City <> B.City --Esta linea hace que no se repitan ciudades 
+ORDER BY A.City;
+```
+
+<a id="bd13"></a>
+
+### **EXCEPT**
+
+De un set de datos se saca los que no estan en el 2do set de datos a relacionar, todo lo de a de tabla1, menos lo que este también en b tabla2
+
+Retorna filas del conjunto de la izquierda que no están incluidas en el conjunto de la derecha entrada (**ES UN DISTINCT IMPLÍCITO**)
+
+```sql
+SELECT a
+FROM tabla1
+EXCEPT
+SELECT b
+FROM tabla2
+```
+
+<a id="bd14"></a>
+
+### **DML Triggers**
+
+Son procedimientos almacenados que se ejecutan automáticamente ante un evento DML (Update – Delete – Insert) que afecta una **tabla o vista.**
+
+Se los puede utilizar para, una vez desencadenados:
+
+- Forzar reglas de negocio
+- Mantener la integridad de datos
+- Querear otras tablas
+- Ejecutar complejas instrucciones SQL
+
+La integridad debiera ser forzada al nivel más bajo por índices que formen parte de un Primary Key o Foreing Key contraints -
+
+Los CHECK Constraints son otra alternativa
+
+Para asegurar la Integridad Referencial nada mejor que los Foreing Key
+
+Los DML TRIGGERS son especialmente utilizados cuando, con el simple uso de un constraint, no se cubren las necesidades de una aplicación
+
+**Consideraciones Generales y Beneficio**
+
+No se pueden invocar por si mismos, se disparan automáticamente
+
+- No reciben ni retornan parámetros
+- A diferencia de los constraint “check” pueden hacer referencia a otras tablas (por ejemplo se puede controlar una inserción en una tabla de ventas si y solo si el valor de un campo stock de una tabla artículos sea mayor a x cantidad)
+- Se pueden crear más de un trigger para un mismo evento en una tabla, con lo cual se pueden controlar múltiples alternativas sobre la misma tabla.
+- Permiten evaluar el estado de una tabla antes y después de una modificación y tomar acciones acorde a la evaluación
+- Permiten customizar mensajes de error, algo que los constraints en general no permiten.
+- Los triggers DML utilizan dos tablas especiales denominadas **Inserted** y **Deleted**.
+- Son tablas creadas automáticamente por el SQL con la misma estructura que la tabla sobre la cual está definido el trigger
+- La tabla **Inserted** solo tiene datos en operaciones de Insert y Update
+- La tabla **Deleted** sólo tiene datos en operaciones de Delete y Update
+- En caso de un update las tablas Inserted y Deleted tienen data al mismo tiempo.
+- No se pueden modificar los datos de estas tablas
+
+```sql
+CREATE TRIGGER <Nombre del Trigger> 
+ON <Nombre de la Tabla>
+AFTER <INSERT,DELETE,UPDATE>
+      AS
+BEGIN
+SET NOCOUNT ON;
+-- Inserta aquí las instrucciones
+END
+```
+
+**Ejemplos**
+
+1. Se graba un histórico de stock cada vez que se modifica un artículo de la tabla “articulos”
+
+```sql
+-----------------------------------------------------------------
+      --  TRIGGER DML                                                                            
+      --  Detalle: este trigger genera un histórico de stock cada vez 
+          que se modifica la existencia de un artículo --
+      -----------------------------------------------------------------
+      CREATE TRIGGER TR_ARTICULOS
+      ON ARTICULOS
+      AFTER UPDATE
+      AS 
+        BEGIN
+         INSERT INTO HCO_STOCK
+         (IDARTICULO, STOCK, FECHA)
+         SELECT IDARTICULO, STOCK, getdate()
+         FROM INSERTED
+        END
+
+       --- Con este evento UPDATE se desencadena el Trigger
+
+      UPDATE ARTICULOS
+      SET STOCK = STOCK + 10
+      WHERE IDARTICULO = 1
+```
+
+2. Podemos hacer que el trigger del ejemplo 1 se desencadene sólo si una columna es afectada
+
+```sql
+CREATE TRIGGER TR_ARTICULOS
+      ON ARTICULOS
+      AFTER UPDATE
+      AS 
+        BEGIN
+           IF UPDATE (STOCK)    -- sólo si actualiza STOCK
+            BEGIN
+             INSERT INTO HCO_STOCK
+             (IDARTICULO, STOCK, FECHA)
+             SELECT IDARTICULO, STOCK, getdate()
+             FROM INSERTED
+            END
+END
+```
+
+3. Podemos hacer que el trigger deshaga toda la operación incluyendo un ROLLBACK
+
+```sql
+CREATE TRIGGER TR_ARTICULOS
+      ON ARTICULOS
+      AFTER UPDATE
+      AS 
+        BEGIN
+             INSERT INTO HCO_ARTICULOS
+             (IDARTICULO, STOCK, FECHA)
+             SELECT IDARTOCULO, STOCK, getdate()
+             FROM INSERTED
+                
+             ROLLBACK 
+END
+```
+
+4. Podemos DESACTIVAR/ACTIVAR un Trigger o Todos lo Triggers de la tabla
+
+```sql
+----------------------------------------------------------
+      -- Desactivar y Activar Todos los Triggers de una Tabla --
+      ---------------------------------------------------------
+
+      -- Desactiva todos los trigger de la tabla ARTICULOS
+      ALTER TABLE ARTICULOS DISABLE TRIGGER ALL
+      GO
+      -- Activa todos los trigger de la tabla ARTICULOS
+      ALTER TABLE ARTICULOS ENABLE TRIGGER ALL
+
+      ----------------------------------------------------
+      -- Desactivar y Activar Un Trigger en Particular --
+      ---------------------------------------------------
+
+      -- Desactiva el trigger TR_STOCK
+      DISABLE TRIGGER TR_STOCK ON ARTICULOS
+      GO
+      -- Activa el trigger TR_STOCK
+      ENABLE TRIGGER TR_STOCK ON ARTICULOS
+      GO
+```
+
+<a id="bd17"></a>
+
+### **Diferencia entre OPENROWSET y OPENQUERY**
+
+- **OPENROWSET:** hay que indicar toda la información de conexión de los datos externos (String de conexión o ConnectionString).
+- **OPENQUERY:** se indica el nombre del servidor linkeado al motor desde donde ejecuto las consultas.
