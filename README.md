@@ -212,6 +212,19 @@
 | [Que es ContextAPI?](#rea23)    |
 | [Que es React Fiber?](#rea24)    |
 | [Para que sirven las claves o Keys en React?](#rea25)    |
+| [Que es ECMAScript?](#rea26)    |
+| [Que es decodeURL y encodeURL?](#rea27)    |
+| [Que es escape y unescape?](#rea28)    |
+| [¿Que es async, preload y prefetch?](#rea29)    |
+| [Cual es la diferencia entre call, bind y apply?](#rea30)    |
+| [Cual es la diferencia entre setTimeout() y setInterval()?](#rea31)    |
+| [Qué es "REPL" y para qué sirve?](#rea32)    |
+| [Qué es el "demultiplexer"?](#rea33)    |
+| [Que hace Babel?](#rea34)    |
+| [Que hace Webpack?](#rea35)    |
+| [Que es el server side rendering?](#rea36)    |
+| [Que es Tree Shaking?](#rea37)    |
+| [¿Que es el SEO?](#rea38)    |
 
 ## [Desarrollo Mobile](#mob)
 
@@ -278,6 +291,22 @@
 | [Patrones Estructurales](#cod25)   |
 | [Patrones Creacionales](#cod26)   |
 | [Patrones Comportamiento](#cod27)   |
+| [Excepciones en lugar de codigos de error](#cod28)   |
+| [Manejo de Comentarios en el codigo](#cod29)   |
+| [Acomplamiento artificial](#cod30)   |
+| [Unchecked Exceptions](#cod31)   |
+| [Excepciones en lugar de códigos de error](#cod32)   |
+| [Gestión de errores](#cod33)   |
+| [Indentación](#cod34)   |
+| [Código en el nivel de abstracción incorrecto](#cod35)   |
+| [Acoplamiento (Evitar)](#cod36)   |
+| [Cohesion (Fomentar)](#cod37)   |
+| [Uso de numeros magicos en lugar de constantes](#cod38)   |
+| [Qué es la Programación orientada a Objetos?](#cod39)   |
+| [Qué es la programación procedural?](#cod40)   |
+| [Qué es la programacion declarativa?](#cod41)   |
+| [Que es la Programacion Imperativa?](#cod42)   |
+| [Qué es la Programacion Estructurada?](#cod43)   |
 
 ## [Hardware, Sistemas, Infraestructura y Arquitectura](#har)
 
@@ -351,6 +380,7 @@
 | [Como creo una cookie con Javascript?](#arc17)    |
 | [¿Cual es la diferencia entre Cookies, SessionStorage y LocalStorage?](#arc18)    |
 | [¿Como puedo borrar una cookie?](#arc19)    |
+| [¿Que es CORS?](#arc20)    |
 
 ---
 
@@ -4902,7 +4932,184 @@ const listItems = numbers.map((number) =>
 );
 ```
 
+<a id="rea26"></a>
 
+### **Que es ECMAScript?**
+
+Es un estándar para JS para escribir funciones complejas, es popular ya que trajo nuevas convenciones y funciones orientadas a objetos a JS.
+
+<a id="rea27"></a>
+
+### **Que es decodeURL y encodeURL?**
+
+- EncodeURL es para convertir una URL a su codificacion hexadecimal
+
+```jsx
+encodeURI(uri) // my%20test.asp?name=st%C3%A5le&car=saab
+```
+
+- DecodeURL es para convertir la URL codificada a la normal
+
+```jsx
+decodeURI(uri) // my test.asp?name=ståle&car=saab
+```
+
+<a id="rea28"></a>
+
+### **Que es escape y unescape?**
+
+- Escape es la responsable de codificar un string para hacer el pase de informacion de un ordenador a otro por una red
+
+```jsx
+escape ("Hola? Como estas tu?")); // Hola%3F%20Como%20estas%20tu%21
+```
+
+- Unescape la decodifica
+
+```jsx
+unescape("Hola%3F%20Como%20estas%20tu%21") // Hola? Como estas tu?
+```
+
+<a id="rea29"></a>
+
+### **¿Que es async, preload y prefetch?**
+
+En JavaScript, `async`, `preload` y `prefetch` son conceptos relacionados pero diferentes:
+
+1. **Async/Await**:
+   - `async` y `await` son características introducidas en JavaScript para facilitar la escritura y gestión de código asíncrono.
+   - `async` se utiliza para declarar que una función devuelve una promesa. Esto permite que la función se pueda utilizar con `await` para esperar la resolución de la promesa dentro de un contexto asíncrono.
+   - `await` se utiliza dentro de funciones `async` para esperar la resolución de una promesa antes de continuar con la ejecución del código.
+   - Estas características son útiles para trabajar con operaciones asíncronas, como solicitudes HTTP, operaciones de lectura/escritura de archivos, y otras operaciones que pueden tomar tiempo y no bloquean la ejecución del código.
+
+2. **Preload**:
+   - `preload` es una directiva HTML que se utiliza para indicar al navegador que cargue un recurso de manera prioritaria.
+   - Se puede usar en elementos `<link>` o en elementos `<script>` para pre-cargar recursos como archivos CSS, JavaScript, fuentes web, etc.
+   - El navegador descarga estos recursos en segundo plano mientras procesa el resto del contenido de la página. Esto puede mejorar significativamente los tiempos de carga de la página al garantizar que los recursos importantes se carguen antes de que sean necesarios.
+
+3. **Prefetch**:
+   - `prefetch` es similar a `preload`, pero se utiliza para indicar al navegador que cargue recursos que probablemente se necesitarán en el futuro, pero no de manera inmediata.
+   - Se utiliza principalmente para cargar recursos relacionados con rutas de navegación o acciones del usuario que aún no se han realizado.
+   - Al igual que `preload`, se puede usar en elementos `<link>` o en elementos `<script>`, y ayuda a mejorar el rendimiento de la aplicación al anticiparse a las necesidades futuras de recursos.
+
+En resumen, `async` y `await` se utilizan en JavaScript para trabajar con código asíncrono de manera más legible y manejable, mientras que `preload` y `prefetch` son directivas HTML utilizadas para optimizar la carga de recursos en las páginas web, priorizando recursos importantes o anticipándose a las necesidades futuras de recursos.
+
+<a id="rea30"></a>
+
+### **Cual es la diferencia entre call, bind y apply?**
+
+Por ejemplo tenemos dos objetos y una funcion
+
+```jsx
+const user = {
+	name: 'Marcos'
+};
+
+const business = {
+	name: 'Headbook'
+}
+
+function showInfo(likes, friends){
+	return `${this.name} tiene ${likes} likes y ${friends}`
+}
+```
+
+En ese caso, el [`this.name`](http://this.name)hace referencia al contexto global. ¿Como hacer para matchearlo de manera dinamica por objeto?
+
+```jsx
+showInfo.call(user, 4, 5); // le pasamos la referencia que deseamos y las props
+// Marcos tiene 4 likes y 5 amigos
+
+showInfo.apply(user, [4,5]); // lo mismo pero los params deben ir en un array
+
+const newFunction = showInfo.bind(user); 
+newFunction(10,15); // hacemos otra funcion que toma otro contexto
+```
+
+Basicamente los 3 asocian un objeto a `this`
+
+<a id="rea31"></a>
+
+### **Cual es la diferencia entre setTimeout() y setInterval()?**
+
+- `SetTimeout` nos permite ejecutar una funcion una vez despues del intervalo de tiempo
+
+```jsx
+*setTimeout(sayHi, 1000, "Hola", "John");*
+```
+
+- `SetInterval` nos permite ejecutar una funcion repetidamente. Esperando el intervalo, ejecutando y asi sucesivamente.
+
+```jsx
+let timerId = setInterval(() => alert('tick'), 2000);
+
+// después de 5 segundos parar
+setTimeout(() => { clearInterval(timerId); alert('stop'); }, 5000);
+```
+
+<a id="rea32"></a>
+
+### **Qué es "REPL" y para qué sirve?**
+
+REPL, acrónimo en Ingles de "Leer, Evaluar, Imprimir, Bucle". Este shell es utilizado para realizar declaraciones específicas en JavaScript.
+
+<a id="rea33"></a>
+
+### **Qué es el "demultiplexer"?**
+
+El **demultiplexer,** *es una interfaz encargada de las notificaciones dentro de Node JS.* Es utilizado para recopilar información de eventos específicos y formar preguntas, brindando así lo que se conoce como un **Evento QUE**.
+
+<a id="rea34"></a>
+
+### **Que hace Babel?**
+
+Babel es un compilador para JavaScript. Permite transformar codigo escrito con las ultimas caracteristicas y traducirlo en codigo de JS bien vanilla que pueda ser entendido por navegadores antiguos.
+
+<a id="rea35"></a>
+
+### **Que hace Webpack?**
+
+Es el responsable de producir los bundles a partir del codigo Front. Es un Module Bundler, hay otras opciones como Gulp, Rollup, etc.. 
+
+Los bundles son paquetes de codigo necesarios para poder llevar a produccion un proyecto, traspilando el codigo y el empaquetado de los modulos en uno o varios archivos compactados, minimizados y optimizados. Es lo que se hace cuando se hace `build`.
+
+<a id="rea36"></a>
+
+### **Que es el server side rendering?**
+
+Es crear paginas HTML renderizadas en servidor para que lleguen listas. Se crean usando NodeJS que generalmente se usa con Express (para utilizar verbos de HTTP). 
+
+NextJS es una opcion para usar esto. Favorecen mucho al SEO ya que renderizan la pagina antes de que pueda ser enviada al navegador. 
+
+<a id="rea37"></a>
+
+### **Que es Tree Shaking?**
+
+Es remover codigo no usado, como, por ejemplo, imports y exports que no fueron usados. Esto lo hace webpack y Rollup de manera automatica. 
+
+<a id="rea38"></a>
+
+### **¿Que es el SEO?**
+
+Es Search Engine Optimization, es lo que hace que un sitio sea encontrado por Google, y HTML hace un aporte con su metadata para que esto suceda. Por ejemplo, no se recomienda usar muchos <h1> en un HTML para no afectar al SEO. 
+
+- Describir la pagina con titulos y fragmentos unicos. Uso de <title> y utilizar terminos claros. Todas las paginas del sitio deben tener una meta descripcion para que aparezca la misma en los resultados del buscador
+
+```html
+<head>
+	<title>Bienvenidos</title>
+	<meta name="description" content="Sitio web">
+</head>
+```
+
+- Usar codigos de estado HTTP Significativos. Google usa rastreadores sobre los sitios web, o robots, es un programa que descubre y analiza sitios web, en google se llama Google Bot, que usa codigos de estado HTTP. Si uso codigos significativos, le indico al robot si esta pagina debe ser indexada, o no (por ejemplo, si es 404, no es trackeado)
+- Solucionar problemas con imagenes y carga diferida. Cargar cuando el usuario este por verlas.
+
+```html
+<img src="image.jpg" alt="..." loading="lazy">
+```
+
+- Crear diseños accesibles, crear paginas para los usuarios, no solo para los motores de busqueda. Un ejemplo para testear la accesibilidad, es cargar la pagina sin JS habilitado.
 ---
 
 <a id="mob"></a>
@@ -5381,7 +5588,465 @@ Como los objetos se van a comportar y a cambiar su comportamiento.
 - **Chain of Responsability**: Permite establecer la linea que deben llevar los mensajes para que los objetos hagan la tarea indicada
 - **Visitor**: Permite definir nuevas operaciones sobre una jerarquía de clases sin cambiar las clases sobre las que opera. Uso bajo
 
+<a id="cod28"></a>
 
+### **Excepciones en lugar de codigos de error**
+
+Conviene encerrar todo nuestro codigo que puede fallar dentro de un try/catch y manejarlo mediante el mismo que logear los errores al momento en que suceden, el flujo normal queda mucho mas claro.
+
+DON´T
+
+```java
+public void restoreDatabase(){
+    if (state() == 'OK'){
+        realizoUnaAccion();
+        if (state() == 'OK'){
+            Logger.log("Todo salio bien");
+        }
+        else {
+            Logger.log("Error");
+        }
+    }
+    else {
+        Logger.log("Error");
+    }
+}
+```
+
+DO
+
+```java
+public void restoreDatabase(){
+    try {
+        realizoUnaAccion(); // Throws excepcionUna
+        realizoOtraAccion(); // Throws excepcionDos
+        Logger.log('Todo Salio Bien')
+    }
+    catch (excepcionUna e){
+        Logger.log("Ocurrio un error");
+    }
+    catch (excepcionDos e){
+        Logger.log("Ocurrio un error");
+    }
+}
+```
+
+Tambien seria ideal separar las funciones try/catch en una sola funcion, asi tenemos los caminos por separado. Cada funcion puede tratar con un solo nivel de abstraccion.
+
+```java
+public void restoreDatabase(){
+    try {
+        realizoTodasLasAcciones(); // Throws excepcionUna y excepcionDos
+    }
+    catch (excepcionUna e){
+        Logger.log("Ocurrio un error");
+    }
+    catch (excepcionDos e){
+        Logger.log("Ocurrio un error");
+    }
+}
+```
+
+<a id="cod29"></a>
+
+### **Manejo de Comentarios en el codigo**
+
+Se nos enseña mucho que debemos comentar mucho nuestro codigo. El buen codigo deberia poder leerse con casi ningun comentario.
+
+- Solo agregar comentarios cuando es estrictamente necesario
+- Los comentarios se desactualizan muy rapidamente ya que el codigo cambia mucho, son muy complicados de mantener, por eso no son aconsejables
+- Si el codigo tiene demasiados comentarios es porque no se entiende (Refactorizacion necesaria) o porque los comentarios son demasiado obvios (eliminarlos en ese caso)
+- Los comentarios de Javadocs en una API publica si son comentarios utiles.
+
+DON´T
+
+```java
+// --- En este caso el comentario esta ya que la condicion del if no es lo suficientemente explicativa por si misma ---
+
+// Check if password is secure
+if (password != null && password.length > 9 && !password.contains(username)){}
+// --- Comentario generado automaticamente por javadoc, no nos suma nada, es innecesario ---
+
+/*
+* @param title The title of the book
+* @param descripcion The description of the book
+* 
+*/
+public void addBook(String title, String description){}
+
+// --- NUNCA dejar codigo comentado pensando que lo vamos a usar en un futuro, para eso usamos control de versiones ---
+
+//public void oldWayOfAddingBook(Request request){}
+```
+
+DO
+
+```java
+// --- Reemplazamos la condicion confusa por una funcion que resume lo que hace ---
+
+if(isSecure(password))
+// --- Se explican cosas que suman al codigo, por ejemplo, que busca matchear un regex que no se puede ver a simple vista ---
+// Matches Date in format 17-09-2022 18:05:15
+Pattern.matches(regexDate, date);
+
+// --- Se dejan cosas en TODO para un futuro ---
+// TODO expect this method to change when..
+public void login (User user) {}
+```
+
+<a id="cod30"></a>
+
+### **Acomplamiento artificial**
+
+Los elementos que no dependan entre si no deben estar acoplados. Por ejemplo, en el caso de PI dentro del ejemplo, nos conviene hacer una variable global del mismo, ya que es un valor que puede ser usado por cualquier otro elemento del codigo y no es algo exclusivo del Circulo.
+
+```java
+public class Circle {
+    private static final Double PI = 3.14159265359;
+    private Double radius;
+    public Circle(Double radius) {
+        this.radius = radius;
+    }
+    public Double calculateArea() {
+        return PI * radius * radius;
+    }
+}
+```
+
+<a id="cod31"></a>
+
+### **Unchecked Exceptions**
+
+- Son excepciones que heredan de `RuntimeException`, como `NullPointerException`, muy común en Java, y en lenguajes compilados
+- Se pueden tratar con try-catch pero no es necesario al 100%
+- Las excepciones checked son las excepciones normales que heredan de `Exception`, si no son tratadas, el programa directamente no compila, ensucia mucho el codigo.
+- Se recomienda usar checked Excepcions si se trata de una libreria critica donde se quiera obligar a quien usa la liberia a manejar estas excepciones.
+
+```jsx
+public class Driver {
+    public void startDriving() {
+        try {
+            startCar();
+        }
+        catch (CarCrashException e) {
+            logger.log(e);
+        }
+    }
+}
+
+public class Car {
+    public void start() throws BatteryDeadException, EngineStartException {
+        // ...
+    }
+}
+
+public class Battery {
+    public void start() throws BatteryDeadException {
+        // ...
+    }
+}
+
+public class Engine {
+    public void start() throws EngineStartException {
+        // ...
+    }
+}
+```
+
+<a id="cod32"></a>
+
+### **Excepciones en lugar de códigos de error**
+
+Usando excepciones no hay porque tratar el error en el momento. Nos conviene separar la gestion de errores del codigo con el flujo correcto.
+
+```jsx
+public void sendShutDown() {
+    try {
+        tryToShutDown();
+    }
+    catch (DeviceShutDownError e) {
+        logger.log(e);
+    }
+}
+
+private void tryToShutDown() throws DeviceShutDownError {
+    DeviceHandle handle = getHandle(DEV1); // Throws DeviceShutDownError
+    // ...
+    sendShutDown(handle);
+}
+```
+
+<a id="cod33"></a>
+
+### **Gestión de errores**
+
+- Se debe buscar un codigo limpio pero tambien robusto en si mismo
+- La gestion de errores puede ensuciar el codigo, hay que prestarle especial atención
+- Se deben devolver excepciones en lugar de códigos de error
+- Se deben usar excepciones unchecked
+- No devolver ni pasar `null`
+
+<a id="cod34"></a>
+
+### **Indentación**
+
+- Se recomiendan dos o cuatro espacios de indentacion
+- El maximo recomendado de caracteres por linea es de 100 caracteres, si no, se tendrá que partir la linea
+- Se deben seguir siempre las mismas reglas
+
+DON´T
+
+```java
+public Integer tripleSum(Integer a, Integer b, Integer c){
+if (a==null||b==null||c==null){
+return null;
+}
+return a+b+c;
+}
+```
+
+<a id="cod35"></a>
+
+### **Código en el nivel de abstracción incorrecto**
+
+El método `changeRadioChannel` esta mal, ya que no todos los vehículos tienen radio. El método no debería estar en esa clase tan general como lo es `Vehicle`
+
+```java
+public class Vehicle() {
+  public void turnOn();
+  public void turnOff();
+  public Integer getLeftAutonomyInKm();
+  public void changeRadioChannel(RadioCHannel selectedChannel);
+}
+```
+
+<a id="cod36"></a>
+
+### **Acoplamiento (Evitar)**
+
+Grado en que dos modulo software estan relacionados entre si. Con un buen diseño, se crean modulos poco acoplados, haciendo que si se modifica un modulo, afecte lo menos posible al resto (Misma logica con las arquitecturas de microservicios o microfrontends)
+
+```javascript
+// -----------Módulo con acoplamiento alto-----------
+const HighCouplingModule = (function() {
+    // Función para calcular el área de un círculo
+    function calculateCircleArea(radius) {
+        return Math.PI * radius ** 2;
+    }
+
+    // Función para calcular el área de un rectángulo
+    function calculateRectangleArea(length, width) {
+        return length * width;
+    }
+
+    // Función para imprimir el área de una forma geométrica
+    function printArea(shape, ...args) {
+        let area;
+        if (shape === 'circle') {
+            area = calculateCircleArea(...args);
+        } else if (shape === 'rectangle') {
+            area = calculateRectangleArea(...args);
+        } else {
+            throw new Error("Shape not supported");
+        }
+        console.log(`The area of the ${shape} is: ${area}`);
+    }
+
+    // Exponer las funciones públicas del módulo
+    return {
+        printArea
+    };
+})();
+
+// Uso del módulo con acoplamiento alto
+HighCouplingModule.printArea('circle', 5); // Output: The area of the circle is: 78.53981633974483
+HighCouplingModule.printArea('rectangle', 4, 6); // Output: The area of the rectangle is: 24
+
+// -----------Módulo con acoplamiento bajo-----------
+
+const LowCouplingModule = (function() {
+    // Función para calcular el área de un círculo
+    function calculateCircleArea(radius) {
+        return Math.PI * radius ** 2;
+    }
+
+    // Función para calcular el área de un rectángulo
+    function calculateRectangleArea(length, width) {
+        return length * width;
+    }
+
+    // Exponer las funciones públicas del módulo
+    return {
+        calculateCircleArea,
+        calculateRectangleArea
+    };
+})();
+
+// Módulo independiente
+const IndependentModule = (function() {
+    // Función para imprimir el área de una forma geométrica
+    function printArea(shape, ...args) {
+        let area;
+        if (shape === 'circle') {
+            area = LowCouplingModule.calculateCircleArea(...args);
+        } else if (shape === 'rectangle') {
+            area = LowCouplingModule.calculateRectangleArea(...args);
+        } else {
+            throw new Error("Shape not supported");
+        }
+        console.log(`The area of the ${shape} is: ${area}`);
+    }
+
+    // Exponer las funciones públicas del módulo
+    return {
+        printArea
+    };
+})();
+
+// Uso del módulo con acoplamiento bajo
+IndependentModule.printArea('circle', 5); // Output: The area of the circle is: 78.53981633974483
+IndependentModule.printArea('rectangle', 4, 6); // Output: The area of the rectangle is: 24
+```
+
+<a id="cod37"></a>
+
+### **Cohesion (Fomentar)**
+
+Es el grado en que los elementos de un modulo estan relacionados entre si. Mientas mas alta la cohesion en el codigo, mejor
+
+En el ejemplo la cohesion es baja, las funciones se relacionan con distintas variables. Se podria separar en 2 clases, una que sea para el manejo de niveles y otra para el manejo del jugador.
+
+Ejemplo de alta cohesion:
+
+```javascript
+// Módulo para manejar operaciones relacionadas con formas geométricas
+const GeometryModule = (function() {
+    // Función para calcular el área de un círculo
+    function calculateCircleArea(radius) {
+        return Math.PI * radius ** 2;
+    }
+
+    // Función para calcular el perímetro de un círculo
+    function calculateCirclePerimeter(radius) {
+        return 2 * Math.PI * radius;
+    }
+
+    // Función para calcular el área de un rectángulo
+    function calculateRectangleArea(length, width) {
+        return length * width;
+    }
+
+    // Función para calcular el perímetro de un rectángulo
+    function calculateRectanglePerimeter(length, width) {
+        return 2 * (length + width);
+    }
+
+    // Exponer las funciones públicas del módulo
+    return {
+        calculateCircleArea,
+        calculateCirclePerimeter,
+        calculateRectangleArea,
+        calculateRectanglePerimeter
+    };
+})();
+
+// Uso del módulo de geometría
+console.log(GeometryModule.calculateCircleArea(5)); // Output: 78.53981633974483
+console.log(GeometryModule.calculateRectanglePerimeter(4, 6)); // Output: 20
+
+---
+    
+// Módulo con baja cohesión
+const LowCohesionModule = (function() {
+    // Función para calcular el área de un círculo
+    function calculateCircleArea(radius) {
+        return Math.PI * radius ** 2;
+    }
+
+    // Función para convertir un número a binario
+    function decimalToBinary(number) {
+        return number.toString(2);
+    }
+
+    // Función para generar un número aleatorio
+    function generateRandomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    // Función para validar un correo electrónico
+    function validateEmail(email) {
+        return /\S+@\S+\.\S+/.test(email);
+    }
+
+    // Exponer las funciones públicas del módulo
+    return {
+        calculateCircleArea,
+        decimalToBinary,
+        generateRandomNumber,
+        validateEmail
+    };
+})();
+
+// Uso del módulo de baja cohesión
+console.log(LowCohesionModule.calculateCircleArea(5)); // Output: 78.53981633974483
+console.log(LowCohesionModule.decimalToBinary(10)); // Output: "1010"
+console.log(LowCohesionModule.generateRandomNumber(1, 100)); // Output: un número aleatorio entre 1 y 100
+console.log(LowCohesionModule.validateEmail("example@example.com")); // Output: true
+```
+
+<a id="cod38"></a>
+
+### **Uso de numeros magicos en lugar de constantes**
+
+Se deben pasar numeros que no se sabe que son como en el primer caso a constantes, como sucede en su segunda refactorizacion.
+
+```javascript
+public Double getAnnualSalary() {
+    return 200.0 * 0.6..
+}
+
+public Double getAnnualSalary() {
+    return WORKING_DAYS * WORKING_HOURS_PER_DAY...
+}
+```
+
+<a id="cod39"></a>
+
+### **Qué es la Programación orientada a Objetos?**
+
+En ella las instrucciones tratan de modelar un sistema con base en la realidad, haciendo más cercanos los conceptos que vemos en ella. Es por eso que en la programación orientada a objetos aparecen conceptos de clase, objeto, atributo, método, etc., que en el fondo no dejan de ser bloques de código. Asimismo, cabe notar que también hacen uso de estructuras de control y repetición.
+
+<a id="cod40"></a>
+
+### **Qué es la programación procedural?**
+
+En ella las imposiciones o instrucciones se pueden agrupar en “procedimientos”. Cada procedimiento es un bloque (la programación procedural es una forma de programación estructurada) que se dedica a un cambio de una parte específica del estado del sistema. Estos bloques son conocidos típicamente como “funciones” o “subrutinas”
+
+<a id="cod41"></a>
+
+### **Qué es la programacion declarativa?**
+
+Los lenguajes declarativos, en el paradigma declarativo de programación, se utilizan para describir la estructura del sistema y describir qué hace el sistema. Una vez descrita “la misión” del programa, el cómo se llega al resultado depende de la implementación interna del propio lenguaje.
+Generalmente, se define a la programación declarativa como “no-imperativa”. Es decir, es todo lo que la imperativa no es. En este sentido, la programación declarativa dice qué debe hacer el sistema, en donde la ejecución no afecte otras partes del sistema y pueda representarse como una serie de premisas matemáticas (funciones/transformaciones). En un lenguaje imperativo, entonces, el sistema pasará de un estado a otro ejecutando una serie de pasos, un algoritmo. En un lenguaje declarativo se debe describir el estado inicial, el estado final y luego el propio motor del lenguaje hará todo lo necesario para ir de un estado al otro
+El ejemplo más claro de un lenguaje declarativo es SQL. En SQL se describe qué información debe extraerse de una o más tablas, sin control sobre la forma de obtenerlo. Cómo se obtiene lo maneja el motor de la base. Otro ejemplo ubicuo es HTML. En HTML se describe, por ejemplo, que debe existir cierto texto, centrado y en negrita, sin especificar ningún tipo de lógica ni control de flujo. Cómo es que veremos el texto centrado y en negrita dependerá de cada navegador
+
+<a id="cod42"></a>
+
+### **Que es la Programacion Imperativa?**
+
+Los lenguajes imperativos definen al paradigma imperativo de programación. En este paradigma se usa el lenguaje para describir cómo cambia el estado del sistema.
+
+Típicamente, hay instrucciones (imposiciones) ordenadas en forma de líneas de texto, una debajo de la otra, que se ejecutan de forma secuencial. El lenguaje imperativo describe cómo opera el sistema.
+
+La programación imperativa es la más “natural”, dado que surge desde el mismísimo hardware, donde se ejecuta instrucciones de máquina. Estas instrucciones, en su más bajo nivel, mueven registros de datos de un lugar a otro, alteran valores, etc. Es decir, cambian el estado de los integrados, de la memoria, del procesador, en fin, de nuestra computadora. A medida que subimos de nivel, los lenguajes siguen haciendo lo mismo, solo que con estructuras más complejas como variables, instrucciones complejas (como bucles, modificadores de visibilidad, e incluso cosas más complejas como las anotaciones).
+
+Ejemplos de lenguajes imperativos hay muchos: C, C++, Java, Perl y un infinito etcétera. En todos estos lenguajes se escriben líneas de código que describen los pasos de una algoritmo para lograr un resultado.
+
+<a id="cod43"></a>
+
+### **Qué es la Programacion Estructurada?**
+
+En ella las imposiciones se ven divididas en estructuras. Pueden ser estructura de control de flujo (if/else), de repeticiones (for/while) o pueden ser estructuras de ordenamiento(bloques de código, generalmente delimitados por TABs o por llaves o corchetes)
 
 ---
 
@@ -6283,3 +6948,11 @@ function deleteCookie(cname) {
   document.cookie = cname + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 }
 ```
+
+<a id="arc20"></a>
+
+### **¿Que es CORS?**
+
+Es un mecanismo que usa cabeceras HTTP adicionales para permitir que un user-agent obtenga permiso para acceder a recursos seleccionados desde un servidor en un origen distinto (dominio) al que pertenece. Por ejemplo, si tengo mi dominio [`denisse.com`](http://denisse.com), uso XMLHttpRequest para cargar el recurso [`http://api.domain-b.com/data.json`](http://api.domain-b.com/data.json)
+
+Tambien sirve para obtener fuentes externas, texturas webGL, Imagenes, hojas de estilos y Scripts. 

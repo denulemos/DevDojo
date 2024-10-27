@@ -1,8 +1,3 @@
-# Javascript
-
-### **Que es ECMAScript?**
-
-Es un estándar para JS para escribir funciones complejas, es popular ya que trajo nuevas convenciones y funciones orientadas a objetos a JS.
 
 ### **Diferencia entre let, var y const**
 
@@ -907,13 +902,6 @@ const C = function () {};
 console.assert( typeof  C === 'function' );
 ```
 
-### Qué es el "demultiplexer"?
-
-El **demultiplexer,** *es una interfaz encargada de las notificaciones dentro de Node JS.* Es utilizado para recopilar información de eventos específicos y formar preguntas, brindando así lo que se conoce como un **Evento QUE**.
-
-### Qué es "REPL" y para qué sirve?
-
-REPL, acrónimo en Ingles de "Leer, Evaluar, Imprimir, Bucle". Este shell es utilizado para realizar declaraciones específicas en JavaScript.
 
 ### Que es la Coercion explicita e Implicita?
 
@@ -1061,55 +1049,6 @@ var saludar;
 
 Es el usar las variables antes de que sean declaradas.
 
-### Cual es la diferencia entre setTimeout() y setInterval()?
-
-- `SetTimeout` nos permite ejecutar una funcion una vez despues del intervalo de tiempo
-
-```jsx
-*setTimeout(sayHi, 1000, "Hola", "John");*
-```
-
-- `SetInterval` nos permite ejecutar una funcion repetidamente. Esperando el intervalo, ejecutando y asi sucesivamente.
-
-```jsx
-let timerId = setInterval(() => alert('tick'), 2000);
-
-// después de 5 segundos parar
-setTimeout(() => { clearInterval(timerId); alert('stop'); }, 5000);
-```
-
-### Cual es la diferencia entre call, bind y apply?
-
-Por ejemplo tenemos dos objetos y una funcion
-
-```jsx
-const user = {
-	name: 'Marcos'
-};
-
-const business = {
-	name: 'Headbook'
-}
-
-function showInfo(likes, friends){
-	return `${this.name} tiene ${likes} likes y ${friends}`
-}
-```
-
-En ese caso, el [`this.name`](http://this.name)hace referencia al contexto global. ¿Como hacer para matchearlo de manera dinamica por objeto?
-
-```jsx
-showInfo.call(user, 4, 5); // le pasamos la referencia que deseamos y las props
-// Marcos tiene 4 likes y 5 amigos
-
-showInfo.apply(user, [4,5]); // lo mismo pero los params deben ir en un array
-
-const newFunction = showInfo.bind(user); 
-newFunction(10,15); // hacemos otra funcion que toma otro contexto
-```
-
-Basicamente los 3 asocian un objeto a `this`
-
 ### Variable Shadowing - Ocultamiento de Variables
 
 Se produce cuando una variable que esta en un scope mas reducido tiene el mismo nombre que otra que esta en un scope superior siguiendo la cadena
@@ -1188,29 +1127,6 @@ async function fetchData() {
 }
 ```
 
-
-
-### ¿Que es async, preload y prefetch?
-
-En JavaScript, `async`, `preload` y `prefetch` son conceptos relacionados pero diferentes:
-
-1. **Async/Await**:
-   - `async` y `await` son características introducidas en JavaScript para facilitar la escritura y gestión de código asíncrono.
-   - `async` se utiliza para declarar que una función devuelve una promesa. Esto permite que la función se pueda utilizar con `await` para esperar la resolución de la promesa dentro de un contexto asíncrono.
-   - `await` se utiliza dentro de funciones `async` para esperar la resolución de una promesa antes de continuar con la ejecución del código.
-   - Estas características son útiles para trabajar con operaciones asíncronas, como solicitudes HTTP, operaciones de lectura/escritura de archivos, y otras operaciones que pueden tomar tiempo y no bloquean la ejecución del código.
-
-2. **Preload**:
-   - `preload` es una directiva HTML que se utiliza para indicar al navegador que cargue un recurso de manera prioritaria.
-   - Se puede usar en elementos `<link>` o en elementos `<script>` para pre-cargar recursos como archivos CSS, JavaScript, fuentes web, etc.
-   - El navegador descarga estos recursos en segundo plano mientras procesa el resto del contenido de la página. Esto puede mejorar significativamente los tiempos de carga de la página al garantizar que los recursos importantes se carguen antes de que sean necesarios.
-
-3. **Prefetch**:
-   - `prefetch` es similar a `preload`, pero se utiliza para indicar al navegador que cargue recursos que probablemente se necesitarán en el futuro, pero no de manera inmediata.
-   - Se utiliza principalmente para cargar recursos relacionados con rutas de navegación o acciones del usuario que aún no se han realizado.
-   - Al igual que `preload`, se puede usar en elementos `<link>` o en elementos `<script>`, y ayuda a mejorar el rendimiento de la aplicación al anticiparse a las necesidades futuras de recursos.
-
-En resumen, `async` y `await` se utilizan en JavaScript para trabajar con código asíncrono de manera más legible y manejable, mientras que `preload` y `prefetch` son directivas HTML utilizadas para optimizar la carga de recursos en las páginas web, priorizando recursos importantes o anticipándose a las necesidades futuras de recursos.
 
 ### Document.ready vs Window.onload
 
@@ -1302,33 +1218,8 @@ x.get() // "otro valor"
 x.valorPrivado //Error
 ```
 
-### **Que es decodeURL y encodeURL?**
 
-- EncodeURL es para convertir una URL a su codificacion hexadecimal
 
-```jsx
-encodeURI(uri) // my%20test.asp?name=st%C3%A5le&car=saab
-```
-
-- DecodeURL es para convertir la URL codificada a la normal
-
-```jsx
-decodeURI(uri) // my test.asp?name=ståle&car=saab
-```
-
-### **Que es escape y unescape?**
-
-- Escape es la responsable de codificar un string para hacer el pase de informacion de un ordenador a otro por una red
-
-```jsx
-escape ("Hola? Como estas tu?")); // Hola%3F%20Como%20estas%20tu%21
-```
-
-- Unescape la decodifica
-
-```jsx
-unescape("Hola%3F%20Como%20estas%20tu%21") // Hola? Como estas tu?
-```
 
 ### **Promises**
 
