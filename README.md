@@ -134,6 +134,19 @@
 | [Como funciona setTimeout?](#var10)    |
 | [Event delegation](#var11)    |
 | [Callback Hell](#var12)    |
+| [Funciones de "bloqueo" y "no bloqueo"](#var13)    |
+| [Diferencia entre primitivo y objeto](#var14)    |
+| [Bubble vs Capture](#var15)    |
+| [Rest Operator](#var16)    |
+| [Creando Strings con Template Literal - Template Strings](#var17)    |
+| [Export Fallback con export default](#var18)    |
+| [Que son las variables no declaradas y no definidas?](#var19)    |
+| [Que es el Function Factory?](#var20)    |
+| [Promises](#var21)    |
+| [Cuál es la diferencia entre Promises, Callbacks y Async/Await?](#var22)    |
+| [Que es el Currying?](#var23)    |
+| [Variable Hoisting](#var24)    |
+| [Diferencia entre class y function](#var25)    |
 
 ## [Organizacion en Software - Derecho en IT](#cic)
 
@@ -3639,6 +3652,498 @@ const operation = (num1, num2, callback) => {
 
 operation(1,3,(a,b) => a + b)
 operation(1,3,(a,b) => a * b)
+```
+
+<a id="var13"></a>
+
+### **Funciones de "bloqueo" y "no bloqueo"**
+
+Cuando emites una función de bloqueo, las demás piezas de código detienen su ejecución hasta que haya sido completado un evento designado de Entrada/Salida.
+
+A su vez, las funciones de no bloqueo le permiten al desarrollador realizar múltiples tareas (Manteniendo múltiples códigos en ejecución) mientras que simultáneamente se realizan múltiples eventos de Entrada/Salida.
+
+<a id="var14"></a>
+
+### **Diferencia entre primitivo y objeto**
+
+- Los primitivos se pasan por valor, los objetos se pasan por referencia
+- Los primitivos se copian por valor y los objetos se copian por referencia
+- Los primitivos se comparan por valor y los objetos por referencia
+- Los primitivos son inmutables, el unico elemento inmutable del objeto es su referencia, el valor puede ser modificado.
+
+Casos **primitivos**
+
+```jsx
+let animal = ‘perro’
+let mascota = animal
+animal = 'gato'
+console.log(mascota) // perro, se copio por valor y no referencia
+```
+
+Caso **objetos** ( Como puedo clonar un objeto ?)
+
+```jsx
+let animal = {
+  nombre: 'perro'
+}
+
+let mascota = animal
+animal.especie = 'gato'
+console.log(mascota.nombre) // gato, se copio referencia no valor 
+
+---
+    
+let object = {a: 1, b:2};
+let referencia = object; // Esto es solo una referencia
+
+let clone = {...object}; // Esto si es un clon
+let clone2 = Object.assign({}, object);// Esto si es un clon
+
+clone.foo = "foo";
+clone2.foo = "denu";
+
+console.log(object);// { a: 1, b: 2 }
+console.log(referencia); // { a: 1, b: 2 }
+console.log(clone); // { a: 1, b: 2, foo: 'foo' }
+```
+
+<a id="var15"></a>
+
+### **Bubble vs Capture**
+
+Cuando agregamos un elemento parece que solo lo agregamos a un elemento DOM pero en realidad este se propaga en una direccion. Podemos elegir cual direccion escuchan nuestros eventos. 
+
+- Fase Capture: Llega al evento que dispara el evento
+- Fase Target
+- Fase Bubbling
+
+<a id="var16"></a>
+
+### **Rest Operator**
+
+Con esto, se pueden crear funciones que pueden tomar una variable cantidad de argumentos, y estos pueden ser accedidos luego por estar guardados en un Array de dentro de la misma funcion
+
+```jsx
+function howMany(...args) {
+  return "You have passed " + args.length + " arguments.";
+}
+console.log(howMany(0, 1, 2)); // You have passed 3 arguments
+console.log(howMany("string", null, [1, 2, 3], { })); // You have passed 4 argume
+```
+
+Es decir, esta funcion..
+
+```jsx
+const product = (function() {
+	"use strict";
+	return function product(n1, n2, n3) {
+		const args = [n1, n2, n3];
+		return args.reduce((a, b) => a * b, 1);
+	};
+})();
+console.log(product(2, 4, 6));//48
+```
+
+Es lo mismo que esta
+
+```jsx
+const product = (function() {
+	"use strict";
+	return function product(...n) {		
+		return n.reduce((a, b) => a * b, 1);
+	};
+})();
+console.log(product(2, 4, 6));//48
+```
+
+Otra funcion puede ser sacar el valor maximo de un Array de la siguiente manera
+
+```jsx
+const arr = [6, 89, 3, 45];
+const maximus = Math.max(...arr); // returns 89
+```
+
+Esto también se puede usar con **objetos,** 
+escribir este codigo
+
+```jsx
+var voxel = {x: 3.6, y: 7.4, z: 6.54 };
+var x = voxel.x; // x = 3.6
+var y = voxel.y; // y = 7.4
+var z = voxel.z; // z = 6.54
+```
+
+Es lo mismo que hacer esto
+
+```jsx
+const { x, y, z } = voxel; // x = 3.6, y = 7.4, z = 6.54
+```
+
+También podemos transformar los objetos nested en variables
+
+```jsx
+const a = {
+  start: { x: 5, y: 6},
+  end: { x: 6, y: -9 }
+};
+const { start : { x: startX, y: startY }} = a;
+console.log(startX, startY); // 5, 6
+```
+
+<a id="var17"></a>
+
+### **Creando Strings con Template Literal - Template Strings**
+
+Es un tipo especial de String que hace que el manejo de String complejos sea más facil, pudiendo crear Strings multilinea para invocarlos luego, por ejemplo:
+
+```jsx
+const person = {
+  name: "Zodiac Hasbro",
+  age: 56
+};
+
+// Template literal with multi-line and string interpolation
+const greeting = `Hello, my name is ${person.name}!
+I am ${person.age} years old.`;
+
+console.log(greeting); // prints
+// Hello, my name is Zodiac Hasbro!
+// I am 56 years old.
+```
+
+Se usa otro tipo de “comilla” cuando se quiere invocar al String (`) y no es necesario poner /n para que se haga un salto de línea en el texto de salida
+
+<a id="var18"></a>
+
+### **Export Fallback con export default**
+
+Lo mismo que el anterior, sí queremos exportar una funcion, cuando la declaramos, la exportamos. Se usa cuando quiero exportar solo un valor o funcion, solo puedo elegir un valor que tenga esta propiedad de exportacion, tampoco se puede usar con const, var o let.
+
+```jsx
+export default function add(x,y) {
+  return x + y;
+}
+```
+
+Despues lo importo agregandole un nombre de variable cualquiera e invocandolo normalmente.
+
+```jsx
+import add from "math_functions";
+add(5,4); //Devuelve el resultado de acuerdo al metodo exportado anteriormente
+```
+
+<a id="var19"></a>
+
+### **Que son las variables no declaradas y no definidas?**
+
+**Variables no declaradas**: son las que no existen en un programa, y no se declaran. Si el programa trata de leer su valor entonces va a arrojar un error.
+
+**Variables no definidas**: son aquellas declaradas en el programa, pero no tienen asignado ningún valor. Si el programa quiere leer el valor de  variable no definida, se devuelve un valor no definido.
+
+<a id="var20"></a>
+
+### **Que es el Function Factory?**
+
+Son funciones que crean funciones u objetos. Con este patron se puede implementar Currying
+
+```jsx
+const crearUsuario = ({ userName, avatar }) => ({
+      id: crearUnID(),
+      userName,
+      avatar,
+      cambiarUserName (userName) {
+        this.userName = userName;
+        return this;
+      },
+      cambiarAvatar (url) {
+        // ejecuta logica para obtener el avatar desde la url
+        const nuevoAvatar = obtenerAvtarDesdeUrl(url)
+        this.avatar = nuevoAvatar
+        return this
+      }
+    });
+    
+        console.log(crearUsuario({ userName: 'Bender', avatar: 'bender.png' }));
+    
+    {
+      "id":"17hakg9a7jas",
+      "avatar": "bender.png",
+      "userName": "Bender",
+      "cambiarUsername": [Function cambiarUsername]
+      "cambiarAvatar": [Function cambiarAvatar]
+    
+    }
+    */
+```
+
+<a id="var21"></a>
+
+### **Promises**
+
+Las promises son una buena forma de manejar operaciones asincronicas. Puede tener 3 estados, `Pending`, `Fulfilled` y `Rejected`. Son utiles cuando hay que manejar mas de una operacion asincronica una despues de la otra, para eso se puede usar **Promise Chaining** usando then() y catch() para el manejo de cada una. 
+
+Se pueden implementar por ejemplo, en un Lazy loading.
+
+```jsx
+sum = (a, b) => {
+return Promise((resolve, reject) => { 
+ setTimeout(function () {  // mandar respuesta despues de 1 seg
+   if (typeof a !== "number" || typeof b !== "number") {   // testeamos inputs
+		 return reject(new TypeError("Inputs must be numbers"));
+   }
+	   resolve(a + b);
+	 }, 1000);
+	});
+}
+
+var myPromise = sum(10, 5);
+myPromsise.then( (result) => {
+	document.write(" 10 + 5: ", result);
+	return sum(null, "foo"); // Invalid data and return another promise
+	}).then(() => {  // Won't be called because of the error
+  }).catch((err) => { // The catch handler is called instead, after another second
+		console.error(err);  // => Please provide two numbers to sum.
+	});
+
+// Otra manera de crear una Promise
+
+let promise = new Promise((resolve, reject) =>{
+	// hacer algo
+});
+```
+
+<a id="var22"></a>
+
+### **Cuál es la diferencia entre Promises, Callbacks y Async/Await?**
+
+Con las promesas no sabemos cuando se resolverá, pero se puede seguir utilizando la app mientras tanto. Async Await fuerza una espera en la función. 
+
+Ejemplo **Async/await** ⇒ 
+
+Hay un stop en la ejecucion. No se puede continuar.
+
+```
+async function secondFunction() {
+  await fetch('url servicio', {
+    method: 'get',
+    headers: {
+      'Authorization': 'data',
+      'Content-Type': 'data'
+    },
+    body: JSON.stringify(data),
+    mode: 'cors',
+    cache: 'default'
+  })
+    .then(response => ....)
+}
+```
+
+Ejemplo de **Promise ⇒**
+
+Fetch ya funciona con Promises. Posee una sintaxis amigable y los errores son faciles de manejar. 
+
+`resolve` se utiliza cuando se resuelve todo ok, `reject` cuando sucede un error. Promise en si mismo es un callback.
+
+```jsx
+const promise = new Promise((resolve, reject) => {
+	// cosas que pueden suceder
+	);
+});
+
+promise
+	.then(number => console.log(number))
+	.catch(error => console.error(error));
+
+
+const doAsyncStuffWithPromises = (numero1, numero2) => {
+	const resultado = numero1 + numero2;
+	return new Promise(resolve => {
+		setTimeout(()=> {
+			resolve(resultado)
+		}, 500)
+	})
+}
+
+doAsyncStuffWithPromises(1,3).then(result => console.log(result));
+}
+```
+
+Ejemplo **Callback** ⇒
+
+Es como una “llamada de vuelta”. Es muy raro su uso hoy en día. Generalmente es el ultimo parámetro. Se usa con proyectos de NodeJS. 
+
+Es complicado de entender y su manejo puede ser dificil
+
+```jsx
+const doAsyncStuff = (numero1, numero2, callback){
+  const resultado = numero1 + numero2;
+  return setTimeout(()=> {
+    callback(resultado);
+  }, 500)
+
+  doAsyncStuff(1,3,(result) => {
+    console.log(result)
+  })
+}
+```
+
+<a id="var23"></a>
+
+### **Que es el Currying?**
+
+Es una tecnica que nos permite invocar una funcion con menos parametros de los que esperaria inciialmente, dejando para despues la especificacion de estos parametros que no llegaron. Permite ejecutar especializacion y composicion.
+
+```jsx
+function multiplicar(a) {
+
+    return function (b) {
+        return function (c)  {
+            return a * b * c
+        }
+    }
+}
+let mc1 = multiplicar(1);
+let mc2 = mc1(2);
+let res = mc2(3);
+console.log(res);
+
+let res2 = multiplicar(1)(2)(3);
+console.log(res2);
+
+---
+
+// Función de suma de dos números
+function sum(x, y) {
+    return x + y;
+}
+
+// Función curry para sumar dos números
+function currySum(x) {
+    // Devolvemos una función que espera el segundo argumento (y) y devuelve la suma de x e y
+    return function(y) {
+        return x + y;
+    };
+}
+
+// Uso de la función currySum para sumar dos números
+const curriedSum = currySum(5); // Creamos una nueva función que suma 5 a un número dado
+
+// Ahora podemos usar curriedSum para sumar 5 a diferentes números
+console.log(curriedSum(3)); // Output: 8
+console.log(curriedSum(7)); // Output: 12
+
+// Otra forma de implementar currying en JavaScript es utilizando funciones de flecha
+const arrowCurrySum = x => y => x + y;
+
+// Uso de la función arrowCurrySum para sumar dos números
+const arrowCurriedSum = arrowCurrySum(5); // Creamos una nueva función que suma 5 a un número dado
+
+// Ahora podemos usar arrowCurriedSum para sumar 5 a diferentes números
+console.log(arrowCurriedSum(3)); // Output: 8
+console.log(arrowCurriedSum(7)); // Output: 12
+
+```
+
+Por ejemplo, tenemos la siguiente funcion:
+
+```jsx
+const multiply = (a, b) => a * b;
+```
+
+Y si queremos reescribirla con este metodo, quedaria algo asi
+
+```jsx
+const curriedMultiply = a => b => a * b;
+
+// Seria algo asi por atrás
+
+const curriedMultiply = function(a) {
+  return function(b) {
+    return a * b;
+  }
+}
+
+// Y asi podemos invocar a la funcion asi
+curriedMultiply(2)(3)
+```
+
+Podemos tambien ejemplificarlo con errores de consola, por ejemplo, tenemos esta función que escribe mensajes en logs
+
+```jsx
+function log(level, date, message) {
+  console.log(`[${level}]: ${date} - ${message}`);
+}
+log('critical', new Date(), 'Some message');
+```
+
+Si lo currificamos, se puede tener una mini aplicacion que logee los mensajes “criticos”
+
+```jsx
+function curriedLog = level => date => message => {
+  console.log(`[${level}]: ${date} - ${message}`);
+}
+
+const logCritical = curriedLog('critical');
+
+logCritical(new Date())('Some message'); // Podemos usarla para loggear mensajes criticos
+```
+
+<a id="var24"></a>
+
+### **Variable Hoisting**
+
+Es un mecanismo de JS en el que las variables y declaraciones de funciones se mueven a la parte superior de su ambito antes de la ejecucion del codigo.
+
+```jsx
+console.log (saludar);
+    var saludar = "dice hola"
+
+// es decir
+
+var saludar;
+    console.log(saludar); // saludar is undefined
+    saludar = "dice hola"
+```
+
+Es el usar las variables antes de que sean declaradas.
+
+<a id="var25"></a>
+
+### **Diferencia entre class y function**
+
+class tiene un alcance comprendido por llaves, al igual que las variables let. function es local a la funcion donde fue definida, no podemos usar una clase o funcion constructora por fuera del alcance en donde se encuentra.
+
+```jsx
+// Class
+{
+  class C {
+  }
+}
+
+// Function
+function x () {
+  function C () {
+  }
+}
+ 
+// uso de ambas
+try {
+  const obj = new C();
+  console.assert( false );
+} catch (err) {
+  console.assert( 
+    err.message === 'C is not defined'
+  );
+}
+```
+
+Ambas pueden ser definidas de forma anonima. Sus referencias funcionan igual que con object, no se envia una copia, si no una referencia de la misma.
+
+```jsx
+const C = class {}; 
+const C = function () {};
+
+console.assert( typeof  C === 'function' );
 ```
 
 ---
