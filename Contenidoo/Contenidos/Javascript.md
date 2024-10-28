@@ -1,43 +1,4 @@
 
-### **Funciones**
-
-En javascript aveces no necesitamos nombrar nuestras funciones, especialmente cuando pasamos una funcion como argumento a otra funcion. Para eso las **funciones inline**, no les ponemos nombre a las funciones porque no vamos a necesitarlas en ningún otro lado.
-```jsx
-const myFunc = function() {
-  const myVar = "value";
-  return myVar; }
-```
-
-Otra cosa que ofrece ES6 es reemplazar el cuerpo de la funcion por una flecha, en el caso de que el cuerpo no sea necesario y la funcion solo conste de un return, es decir
-
-```jsx
-const myFunc = () => "value" //Igual a return “value”;
-```
-
-También podemos realizar operaciones en una sola linea
-
-```jsx
-// doubles input value and returns it
-const doubler = (item) => item * 2;
-```
-
-También podemos setear **parametros por defecto** 
- en nuestras funciones, sí llamamos a la funcion sin pasarle parametro, tomara el ya seteado por defecto.
-
-```jsx
-function greeting(name = "Anonymous") {
-  return "Hello " + name;
-}
-console.log(greeting("John")); // Hello John
-console.log(greeting()); // Hello Anonymous Por defecto
-```
-
-
-**Diferencia entre blur y focus**
-
-Focus es cuando uno se para sobre un input, blur es el hecho de salir de ese input. Son dos eventos diferentes. 
-
-
 ### **Extraer valores de objetos**
 
 ```jsx
@@ -87,26 +48,6 @@ const capitalizeString = (string) => {
 }
 const foo = "bar";
 export { capitalizeString, foo }
-```
-
-### **Creacion de Constructores**
-
-```jsx
-var SpaceShuttle = function(targetPlanet){
-  this.targetPlanet = targetPlanet;
-}
-var zeus = new SpaceShuttle('Jupiter');
-```
-
-Esto se puede reemplazar por..
-
-```jsx
-class SpaceShuttle {
-  constructor(targetPlanet){
-    this.targetPlanet = targetPlanet;
-  }
-}
-const zeus = new SpaceShuttle('Jupiter');
 ```
 
 ### **Generar una funcion en un objeto**
@@ -196,30 +137,6 @@ Es una funcion que se ejecuta dentro de otra, una funcion que se pasa como param
 array.sort((a, b) => a - b); 
 ```
 
-### **Diferencia entre `for in` y `for of`**
-
-- For in toma los indices de los elementos que estan siendo recorridos
-
-```javascript
-const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-for (const index in digits) {
-  console.log(digits[index]);
-}
-```
-
-- For of toma los valores en si
-
-```javascript
-const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-for (const digit of digits) {
-  console.log(digit);
-}
-```
-
-
-
 ### **Stubs**
 
 **Stubs,** *son ciertas funciones que copian el comportamiento de módulos específicos.* Son utilizados en casos de prueba ya que pueden brindar las respuestas necesarias para resolver algunos problemas que pueden surgir dentro de los módulos.
@@ -298,46 +215,6 @@ isNaN('denu') // devolvera true porque primero intentará convertir la cadena a 
 Number.isNaN('denu') // false porque no convertirá la cadena a numero
 ```
 
-### **Diferencia entre foreach, map y reduce**
-
-- **Foreach** itera por cada uno. Ejecuta la función que se le pasa por parámetro para cada elemento del array. Este método no devuelve nada, por lo tanto, si intentamos guardar su ejecución en una variable lo que ocurrirá es que esa variable tomará el valor de undefined.
-
-```jsx
-[1, 2, 3, 4].forEach(function (item) {   
-   console.log(item); 
-});
-// Imprimirá por consola
-1
-2
-3
-4
-
-let numbers = [1, 2, 3, 4].forEach(function (item) {   
-     console.log(item); 
-});
-console.log(numbers); // undefined
-```
-
-- **Map**: Devuelve una nueva matriz aplicando la funcion de devolucion de llamada en cada elemento de la matriz.
-
-```jsx
-var result = [1,2,3,4].map((item) => { return item * 2; });
-console.log(result);
-// Resultado
-[2,4,6,8]
-```
-
-- **Reduce** tiene un acumulador y todo. Nos permite, dada una función, “reducirlo” o “transformar” los elementos de un arreglo en un nuevo y único valor.
-
-```jsx
-var myArray = [10, 20, 30];
-var total = myArray.reduce((accumulator, number) => {
- return accumulator + number;
-});
-total;
-// Prints 60
-```
-
 ### **Metodos String**
 
 ```javascript
@@ -355,36 +232,6 @@ stringObj.indexOf("string to check for") // -1 Si no se encuentra
 array[0] = array[0].replace("PM", '') // Quita el PM del string dentro de ese array 
 
 ```
-
-### **Diferencia entre Map y Weakmap**
-
-Son casi iguales, son la clasica estructura de datos de diccionario, su diferencia es que se puede acceder a los clave-valores de un Map usando .values o .keys
-
-```jsx
-const map = new Map()
-const weakMap = new weakMap()
-
-const obj = {
-	hola: 'mundo',
-}
-
-map.set('denu', 'lemon')
-weakMap.set(myObjKey, 'lemon weakmap')
-
-// Map
-map.get('denu') // lemon
-map.keys() // {'denu'}
-map.values() // {'lemon'}
-
-// Weakmap
-weakMap.get(obj) // lemon weakmap
-weakMap.keys() // ERROR
-weakMap.values() // ERROR
-```
-
-Weakmap es una caja negra en donde solo se puede acceder a los valores si se tiene la Key. 
-
-Weakmap, ademas, solo admite objetos como clave, estos estan debilmente referenciados por lo que puede ser recolectados por el garbage collector de JS si asi lo considera, destruyendo esa entrada en el Weakmap y liberando memoria.
 
 ### **Que es Symbol?**
 
@@ -432,66 +279,6 @@ En resumen, su funcionamiento en ingles seria:
 - *Microtasks* are processed when the current task ends and the *microtask* queue is cleared before the next *macrotask* cycle.
 - *Microtasks* can enqueue other *microtasks*. All are executed before the next task inline.
 - UI rendering is run after all microtasks execution (NA for nodejs).
-
-### Prototypes y Herencia Prototype (Prototype Inheritance)
-
-Las funciones y clases tienen una propiedad llamada `Prototype` donde reside la información que es usada para crear los objetos. Todos los miembros del objeto Prototype del constructor seran miembros del objeto una vez instanciado con new.
-
-Los prototypes son un mecanismo por el cual los objetos en JS heredan caracteristicas entre si.
-
-```jsx
-class C {
-  m1() {}
-  m2() {}
-}
- 
-const obj = new C();
-console.assert( typeof obj.m1 === 'function' );
-console.assert( typeof obj.m2 === 'function' );
-```
-
-![js2](src/js2.png)
-
-Otro ejemplo es si creamos un objeto persona:
-
-```jsx
-// definimos el objeto persona
-function Persona(nombre, apellido, edad, genero, intereses) {
-
-  // definiendo de propiedades y métodos
-  this.first = first;
-  this.last = last;
-//...
-}
-
-// lo instanciamos
-var person1 = new Persona('Bob', 'Smith', 32, 'hombre', ['music', 'skiing']);
-```
-
-Y si queremos ver lo que contiene el objeto, no solo contiene sus atributos si no, otros miembros como valueOf o Watch que estan definidos en el objeto.
-
-![js3](src/js3.png)
-
-Todos los objetos de JS heredan metodos de un Prototype, `Object.prototype` es el eslabon mas alto de la cadena de herencia.
-
-Con prototype podemos agregar nuevos atributos y metodos a un objeto que no se encuentran en su constructor
-
-```jsx
-function Person(first, last, age, eyecolor) {
-  this.firstName = first;
-  this.lastName = last;
-  this.age = age;
-  this.eyeColor = eyecolor;
-}
-
-// Atributos
-Person.prototype.nationality = "English";
-
-// Metodos
-Person.prototype.name = function() {
-  return this.firstName + " " + this.lastName;
-};
-```
 
 
 ### Que es la Coercion explicita e Implicita?
@@ -658,18 +445,6 @@ x.set("Otro valor")
 x.get() // "otro valor"
 x.valorPrivado //Error
 ```
-
-
-### **Qué es una variable global, como se declara y cuales problemas puede tener?**
-
-Se pueden usar en todo el codigo, no tienen alcance. Se declara sin usar `var` en la declaracion
-
-```jsx
-miVariableGlobal = 'Hola mundo'
-```
-
-Puede dar al choque entre variables locales y globales por nombre. Ademas es dificil limpiar el codigo basado en variables globales
-
 
 ---
 

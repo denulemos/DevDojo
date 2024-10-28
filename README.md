@@ -147,6 +147,13 @@
 | [Que es el Currying?](#var23)    |
 | [Variable Hoisting](#var24)    |
 | [Diferencia entre class y function](#var25)    |
+| [Prototypes y Herencia Prototype (Prototype Inheritance)](#var26)    |
+| [Funciones en Javascript](#var27)    |
+| [Creacion de Constructores](#var28)    |
+| [Diferencia entre `for in` y `for of`](#var29)    |
+| [Diferencia entre Map y Weakmap](#var30)    |
+| [Qué es una variable global, como se declara y cuales problemas puede tener?](#var31)    |
+| [Diferencia entre foreach, map y reduce](#var32)    |
 
 ## [Organizacion en Software - Derecho en IT](#cic)
 
@@ -4144,6 +4151,235 @@ const C = class {};
 const C = function () {};
 
 console.assert( typeof  C === 'function' );
+```
+
+<a id="var26"></a>
+
+### **Prototypes y Herencia Prototype (Prototype Inheritance)**
+
+Las funciones y clases tienen una propiedad llamada `Prototype` donde reside la información que es usada para crear los objetos. Todos los miembros del objeto Prototype del constructor seran miembros del objeto una vez instanciado con new.
+
+Los prototypes son un mecanismo por el cual los objetos en JS heredan caracteristicas entre si.
+
+```jsx
+class C {
+  m1() {}
+  m2() {}
+}
+ 
+const obj = new C();
+console.assert( typeof obj.m1 === 'function' );
+console.assert( typeof obj.m2 === 'function' );
+```
+
+![js2](src/js2.png)
+
+Otro ejemplo es si creamos un objeto persona:
+
+```jsx
+// definimos el objeto persona
+function Persona(nombre, apellido, edad, genero, intereses) {
+
+  // definiendo de propiedades y métodos
+  this.first = first;
+  this.last = last;
+//...
+}
+
+// lo instanciamos
+var person1 = new Persona('Bob', 'Smith', 32, 'hombre', ['music', 'skiing']);
+```
+
+Y si queremos ver lo que contiene el objeto, no solo contiene sus atributos si no, otros miembros como valueOf o Watch que estan definidos en el objeto.
+
+![js3](src/js3.png)
+
+Todos los objetos de JS heredan metodos de un Prototype, `Object.prototype` es el eslabon mas alto de la cadena de herencia.
+
+Con prototype podemos agregar nuevos atributos y metodos a un objeto que no se encuentran en su constructor
+
+```jsx
+function Person(first, last, age, eyecolor) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eyecolor;
+}
+
+// Atributos
+Person.prototype.nationality = "English";
+
+// Metodos
+Person.prototype.name = function() {
+  return this.firstName + " " + this.lastName;
+};
+```
+
+<a id="var27"></a>
+
+### **Funciones en Javascript**
+
+En javascript aveces no necesitamos nombrar nuestras funciones, especialmente cuando pasamos una funcion como argumento a otra funcion. Para eso las **funciones inline**, no les ponemos nombre a las funciones porque no vamos a necesitarlas en ningún otro lado.
+```jsx
+const myFunc = function() {
+  const myVar = "value";
+  return myVar; }
+```
+
+Otra cosa que ofrece ES6 es reemplazar el cuerpo de la funcion por una flecha, en el caso de que el cuerpo no sea necesario y la funcion solo conste de un return, es decir
+
+```jsx
+const myFunc = () => "value" //Igual a return “value”;
+```
+
+También podemos realizar operaciones en una sola linea
+
+```jsx
+// doubles input value and returns it
+const doubler = (item) => item * 2;
+```
+
+También podemos setear **parametros por defecto** 
+ en nuestras funciones, sí llamamos a la funcion sin pasarle parametro, tomara el ya seteado por defecto.
+
+```jsx
+function greeting(name = "Anonymous") {
+  return "Hello " + name;
+}
+console.log(greeting("John")); // Hello John
+console.log(greeting()); // Hello Anonymous Por defecto
+```
+
+<a id="var28"></a>
+
+### **Creacion de Constructores**
+
+```jsx
+var SpaceShuttle = function(targetPlanet){
+  this.targetPlanet = targetPlanet;
+}
+var zeus = new SpaceShuttle('Jupiter');
+```
+
+Esto se puede reemplazar por..
+
+```jsx
+class SpaceShuttle {
+  constructor(targetPlanet){
+    this.targetPlanet = targetPlanet;
+  }
+}
+const zeus = new SpaceShuttle('Jupiter');
+```
+
+<a id="var29"></a>
+
+### **Diferencia entre `for in` y `for of`**
+
+- For in toma los indices de los elementos que estan siendo recorridos
+
+```javascript
+const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+for (const index in digits) {
+  console.log(digits[index]);
+}
+```
+
+- For of toma los valores en si
+
+```javascript
+const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+for (const digit of digits) {
+  console.log(digit);
+}
+```
+
+<a id="var30"></a>
+
+### **Diferencia entre Map y Weakmap**
+
+Son casi iguales, son la clasica estructura de datos de diccionario, su diferencia es que se puede acceder a los clave-valores de un Map usando .values o .keys
+
+```jsx
+const map = new Map()
+const weakMap = new weakMap()
+
+const obj = {
+	hola: 'mundo',
+}
+
+map.set('denu', 'lemon')
+weakMap.set(myObjKey, 'lemon weakmap')
+
+// Map
+map.get('denu') // lemon
+map.keys() // {'denu'}
+map.values() // {'lemon'}
+
+// Weakmap
+weakMap.get(obj) // lemon weakmap
+weakMap.keys() // ERROR
+weakMap.values() // ERROR
+```
+
+Weakmap es una caja negra en donde solo se puede acceder a los valores si se tiene la Key. 
+
+Weakmap, ademas, solo admite objetos como clave, estos estan debilmente referenciados por lo que puede ser recolectados por el garbage collector de JS si asi lo considera, destruyendo esa entrada en el Weakmap y liberando memoria.
+
+<a id="var31"></a>
+
+### **Qué es una variable global, como se declara y cuales problemas puede tener?**
+
+Se pueden usar en todo el codigo, no tienen alcance. Se declara sin usar `var` en la declaracion
+
+```jsx
+miVariableGlobal = 'Hola mundo'
+```
+
+Puede dar al choque entre variables locales y globales por nombre. Ademas es dificil limpiar el codigo basado en variables globales
+
+<a id="var32"></a>
+
+### **Diferencia entre foreach, map y reduce**
+
+- **Foreach** itera por cada uno. Ejecuta la función que se le pasa por parámetro para cada elemento del array. Este método no devuelve nada, por lo tanto, si intentamos guardar su ejecución en una variable lo que ocurrirá es que esa variable tomará el valor de undefined.
+
+```jsx
+[1, 2, 3, 4].forEach(function (item) {   
+   console.log(item); 
+});
+// Imprimirá por consola
+1
+2
+3
+4
+
+let numbers = [1, 2, 3, 4].forEach(function (item) {   
+     console.log(item); 
+});
+console.log(numbers); // undefined
+```
+
+- **Map**: Devuelve una nueva matriz aplicando la funcion de devolucion de llamada en cada elemento de la matriz.
+
+```jsx
+var result = [1,2,3,4].map((item) => { return item * 2; });
+console.log(result);
+// Resultado
+[2,4,6,8]
+```
+
+- **Reduce** tiene un acumulador y todo. Nos permite, dada una función, “reducirlo” o “transformar” los elementos de un arreglo en un nuevo y único valor.
+
+```jsx
+var myArray = [10, 20, 30];
+var total = myArray.reduce((accumulator, number) => {
+ return accumulator + number;
+});
+total;
+// Prints 60
 ```
 
 ---
