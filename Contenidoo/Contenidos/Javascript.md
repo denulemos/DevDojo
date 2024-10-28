@@ -341,56 +341,6 @@ for (const digit of digits) {
 }
 ```
 
-### **Callback Hell**
-
-Ocurren cuando una gran cantidad de callbacks anidan (Conjuntos) en un lugar específico, resultando imposibles de leer o en general trabajar con ellos.
-
-Pueden ser resueltos. Esto se realiza con la ayuda de lo que conocemos como un **proceso de modularización**. La manera, en la que funciona este proceso es simplemente dividiendo los callback en funciones completamente independientes una de la otra.
-
-```jsx
-checkWeather('buenos aires', (error, weather) => {
- if (error) throw error;
-
- if (weather === 'well') {
-  return checkFlights('buenos aires', (err, flights) => {
-  if (err) throw err;
-
-   buyTicket(flights[0], (e, ticket) => {
-    if (e) throw e;
-    console.log('ticket nº %d', ticket.number);
-   });
-  });
- }
-
-	console.log('el clima es malo');
-});
-```
-
-Tambien se puede solucionar usando Promises
-
-```jsx
-checkWatcher('buenos aires')
-	.then(weather => {
-		if (weather === 'well') {
-			return checkFlights('buenos aires');
-		}
-		throw new Error('el clima es malo');
-	})
-	.then(flights => buyTicket(flights[0]))
-	.then(ticket => {
-		console.log('ticket nº %d', ticket.number);
-	})
-	.catch(error => console.error(error));
-```
-
-```jsx
-const operation = (num1, num2, callback) => {
-	return callback(num1, num2)
-}
-
-operation(1,3,(a,b) => a + b)
-operation(1,3,(a,b) => a * b)
-```
 
 
 ### **Stubs**
@@ -510,11 +460,6 @@ console.log(operacionMatematica(10, 4, resta)); // Devuelve 6 (10 - 4)
 console.log(operacionMatematica(6, 2, multiplicacion)); // Devuelve 12 (6 * 2)
 ```
 
-### **Event delegation**
-
-Por ejemplo, si tenemos botones y queremos hacer eventos para todos los botones, no es viable hacer un evento por boton ya que no es escalable.
-
-Agregamos el evento al container y dependiendo donde es el click (en cual boton), se detecta una cierta clase o propiedad, y se ejecuta el evento correspondiente utilizando [`e.target`](http://e.target) para identificar el elemento, por ejemplo.
 
 ### **Bubble vs Capture**
 
@@ -1201,43 +1146,6 @@ const doAsyncStuff = (numero1, numero2, callback){
 }
 ```
 
-### **Como funciona setTimeout?**
-
-Permite ejecutar un fragmento de código una vez pasa un tiempo determinado.
-
-Por ejemplo, el codigo imprimirá “Hola Mundo” despues de 2 segundos
-
-```jsx
-setTimeout(function(){
-	console.log('hola mundo');
-}, 2000);
-```
-
-El primer parámetro es la función a ejecutar, puede ser hecha ahi mismo como en el ejemplo anterior, o ya estar hecha como en este ejemplo: 
-
-```jsx
-function saludos(nombre, rol) {
-	console.log(`hola mi nombre es ${nombre} y mi rol es ${rol}`);
-}
-
-setTimeout(saludos, 3000, "denu", "administrador");
-```
-
-¿Porque no pasar los parametros directamente a la funcion y recien despues del tiempo? Porque JS ejecutará la funcion sin esperar al timeout, ya que estarias pasando una llamada a la funcion, no la referencia a la funcion. 
-
-```jsx
-setTimeout(saludos('denu', 'admin'), 3000); // NO 
-```
-
-Si quiero cancelar un setTimeout debo utilizar `clearTimeout()`
-
-```jsx
-const timeoutid = setTimeout (function() {
-	console.log('hola');
-}, 2000);
-
-clearTimeout(timeoutid)
-```
 
 ---
 
