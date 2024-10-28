@@ -154,6 +154,9 @@
 | [Diferencia entre Map y Weakmap](#var30)    |
 | [Qué es una variable global, como se declara y cuales problemas puede tener?](#var31)    |
 | [Diferencia entre foreach, map y reduce](#var32)    |
+| [Porque no se recomienda usar innerHTML?](#var33)    |
+| [Entre JS y un script ASP, ¿Cual es mas rápido?](#var34)    |
+| [¿Qué es una funcion Declarativa y una Expresiva?](#var35)    |
 
 ## [Organizacion en Software - Derecho en IT](#cic)
 
@@ -4381,6 +4384,44 @@ var total = myArray.reduce((accumulator, number) => {
 total;
 // Prints 60
 ```
+
+<a id="var33"></a>
+
+### **Porque no se recomienda usar innerHTML?**
+
+No se recomienda su uso porque es muy lento dado que refresca el contenido cada vez. Es más fácil insertar un código errado en el documento y hacer que la página web sea inestable.
+
+<a id="var34"></a>
+
+### **Entre JS y un script ASP, ¿Cual es mas rápido?**
+
+JavaScript es más rápido porque es un lenguaje del lado del cliente y no necesita la ayuda del servidor web para ejecutarse. Por otra parte el ASP es un lenguaje del lado del servidor. Motivo por el que siempre es más lento que JavaScript. Sin embargo, Javascript ahora, también puede ser usado como un lenguaje de lado del servidor (server side) (nodejs).
+
+<a id="var35"></a>
+
+### **¿Qué es una funcion Declarativa y una Expresiva?**
+
+En las **Funciones Declarativas** usamos la palabra reservada `Function` para poder declararla
+
+```jsx
+ function saludar(nombre) {
+	console.log(`Hola ${nombre}`);
+}
+
+saludar('Diego');
+```
+
+La **Expresiva (Expresion de Funcion)** es cuando la declaramos tipo variable como funcion anonima
+
+```jsx
+var nombre = function(nombre){
+    console.log(`Hola ${nombre}`)
+}
+
+nombre(‘Diego’);
+```
+
+A las funciones declarativas se les aplica hoisting, a la otra no, hoisting se aplica solo a las palabra sreservadas `var` y `function`, es decir, a la expresion de funcion podriamos llamarla recien despues de declararla.
 
 ---
 

@@ -77,41 +77,12 @@ console.log(createPerson("Zodiac Hasbro", 56, "male"));
 
 Se crea un objeto con un name= “Zodiac Hasbro”, age=56 and gender=”male”
 
-### **Entre JS y un script ASP, ¿Cual es mas rápido?**
 
-JavaScript es más rápido porque es un lenguaje del lado del cliente y no necesita la ayuda del servidor web para ejecutarse. Por otra parte el ASP es un lenguaje del lado del servidor. Motivo por el que siempre es más lento que JavaScript. Sin embargo, Javascript ahora, también puede ser usado como un lenguaje de lado del servidor (server side) (nodejs).
-
-### **Qué es el namespacing de JS? **
+### **Qué es el namespacing de JS?**
 
 Namespacing se utiliza para agrupar funciones, variables, etc con un nombre único.  Esto mejora la modularidad en codificación y permite la reutilización del código.
 
-### **¿Qué es una funcion Declarativa y una Expresiva? **
 
-En las **Funciones Declarativas** usamos la palabra reservada `Function` para poder declararla
-
-```jsx
- function saludar(nombre) {
-	console.log(`Hola ${nombre}`);
-}
-
-saludar('Diego');
-```
-
-La **Expresiva (Expresion de Funcion)** es cuando la declaramos tipo variable como funcion anonima
-
-```jsx
-var nombre = function(nombre){
-    console.log(`Hola ${nombre}`)
-}
-
-nombre(‘Diego’);
-```
-
-A las funciones declarativas se les aplica hoisting, a la otra no, hoisting se aplica solo a las palabra sreservadas `var` y `function`, es decir, a la expresion de funcion podriamos llamarla recien despues de declararla.
-
-### **Porque no se recomienda usar innerHTML?**
-
-No se recomienda su uso porque es muy lento dado que refresca el contenido cada vez. Es más fácil insertar un código errado en el documento y hacer que la página web sea inestable.
 
 ### **Que es la tipificacion de Variables?**
 
