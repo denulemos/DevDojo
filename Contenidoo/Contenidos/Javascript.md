@@ -1,92 +1,7 @@
 
-### **Diferencia entre let, var y const**
-
-La diferencia es el alcance de cada uno.
-
-let es una constante. var es una variable normal.
-
-```jsx
-
-var saludar = "hey, hola";
-var saludar = "dice Hola tambien";
-    saludar = "dice Hola tambien";
-
-
-let camper = 'James';
-let camper = 'David'; // throws an error
-let saludar = "dice Hola";
-    saludar = "dice Hola tambien";
-let saludar = "dice Hola tambien"; // error: Identifier 'saludar' has already been declared
-```
-
-Sí pongo un “use Strict” en la parte alta del codigo, la consola me va a tirar error cuando trate de codear algo de manera “insegura” o poco practica.
-
-```jsx
-"use strict";
-x = 3.14; // throws an error because x is not declared
-```
-
-Cuando declaras una variable con **var,** es declarada de manera global, o local sí esta adentro de una funcion.
-
-- Pueden ser modificadas y re-declaradas dentro de su ambito.
-- Puede ser declarada sin ser inicializada, se inicializa con undefined por defecto.
-- Puede ser declarada global o dentro de una funcion.
-
-En cambio con **let,** sí declaro la funcion dentro de un block, statement o expresion, se va a declarar solo dentro de estas y no globalmente.
-
-- No puede ser Re declarado pero si modificado.
-- Puede ser declarada sin ser inicializada, no se inicializa solo. 
-- Funciona a nivel bloque.
-
-```jsx
-var numArray = [];
-for (var i = 0; i < 3; i++) {
-  numArray.push(i);
-}
-console.log(numArray);
-// returns [0, 1, 2]
-console.log(i);
-// returns 3
-
-'use strict';
-let printNumTwo;
-for (let i = 0; i < 3; i++) {
-  if (i === 2) {
-    printNumTwo = function() {
-      return i;
-    };
-  }
-}
-console.log(printNumTwo());
-// returns 2
-console.log(i);
-// returns "i is not defined"
-```
-
-También se puede declarar usando la palabra **const**, que es una constante. Se declara y no puede ser cambiada en su valor, solo sirve de lectura.
-
-```jsx
-"use strict"
-const FAV_PET = "Cats";
-FAV_PET = "Dogs"; // returns error
-```
-
-Se recomienda poner el nombre de las constantes en mayúscula, pose las mismas caracteristicas que el let
-
-```jsx
-"use strict";
-const s = [5, 6, 7];
-s = [1, 2, 3]; // throws error, trying to assign a const
-s[2] = 45; // works just as it would with an array declared with var or let
-console.log(s); // returns [5, 6, 45]
-```
-
-Los array sí pueden ser modificados en sí mismos, lo que no se puede es apuntar a otro array distinto.
-
 ### **Funciones**
 
 En javascript aveces no necesitamos nombrar nuestras funciones, especialmente cuando pasamos una funcion como argumento a otra funcion. Para eso las **funciones inline**, no les ponemos nombre a las funciones porque no vamos a necesitarlas en ningún otro lado.
-
 ```jsx
 const myFunc = function() {
   const myVar = "value";
@@ -117,32 +32,11 @@ console.log(greeting("John")); // Hello John
 console.log(greeting()); // Hello Anonymous Por defecto
 ```
 
-### **Para que sirve event.preventDefault()?**
-
-Los botones de los form en HTML por defecto hacen un submit, lo que puede llevar a que se recargue la pagina. Para evitar esto, se usa `event.preventDefault()` para evitar que se ejecute el comportamiento por defecto del evento.
 
 **Diferencia entre blur y focus**
 
 Focus es cuando uno se para sobre un input, blur es el hecho de salir de ese input. Son dos eventos diferentes. 
 
-
-### **Función Object.freeze**
-
-Es una funcion que evita que puedas modificar propiedades de un objeto o una variable
-
-```jsx
-let obj = {
-  name:"FreeCodeCamp",
-  review:"Awesome"
-};
-Object.freeze(obj);
-obj.review = "bad"; //will be ignored. Mutation not allowed
-obj.newProp = "Test"; // will be ignored. Mutation not allowed
-console.log(obj); 
-// { name: "FreeCodeCamp", review:"Awesome"}
-```
-
-Cuando intento modificar algo, no tira error, simplemente lo ignora.
 
 ### **Extraer valores de objetos**
 
@@ -301,37 +195,6 @@ const capitalizeString = (string) => {
 }
 const foo = "bar";
 export { capitalizeString, foo }
-```
-
-### **Diferencia entre import y require**
-
-- Require: Se usa para importar las funciones y el codigo en un archivo externo. Esto posee un problema, el cual es que este codigo puede ser muy largo y solo necesito una parte del codigo.
-- Import: Herramienta de ES6 para importar solo los componentes que necesitamos de un archivo.
-
-```jsx
-import { countItems } from "math_array_functions"
-```
-
-### **Uso de getters y setters**
-
-```jsx
-class Book {
-  constructor(author) {
-    this._author = author;
-  }
-  // getter
-  get writer(){
-    return this._author;
-  }
-  // setter
-  set writer(updatedAuthor){
-    this._author = updatedAuthor;
-  }
-}
-const lol = new Book('anonymous');
-console.log(lol.writer);  // anonymous
-lol.writer = 'wut';
-console.log(lol.writer);  // wut
 ```
 
 ### **Creacion de Constructores**

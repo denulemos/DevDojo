@@ -1,30 +1,3 @@
-# Derecho 👮
-
----
-# Propiedad intelectual e informática
-
-### 🤍 **Derecho de cita**
-
-En los libros hay citas de varias obras que son hechas sin autorización, pero eso no es ilegal, ya que se está usando el **derecho de cita**. A veces las obras necesitan citas textuales y el régimen autoriza a hacerlo en algunos casos. En argentina se permite en dos condiciones:
-
-- Que sea el mínimo necesario y no sean más de 1000 palabras, u 8 compases sí es música. Señalar al autor y a la obra
-- Que se haga en contexto de cita, solo en la medida que la cita lo requiera. La cita debe estar embebida en la nueva obra, debe ser necesaria
-
-En otros países se maneja la cantidad de palabras por porcentajes, o es un criterio más flexible. Nada dice la ley sobre imágenes o filmaciones, donde habrá que recurrir al concepto jurídico de lo “razonable”, con varias interpretaciones. Estas reglamentaciones se hicieron pensando en los libros que una vez impresos son inmodificables.
-
-La tecnología del Servicio Web es distinta, fue creada con el objetivo de desvincular la estructura fija del que escribe con la estructura del que lee. El archivo web no tiene una estructura determinada, es dada por cada lector. Por ejemplo, sí desarrollamos una web que remite a otras web (como quitandolas), contamos con las mismas regulaciones de los libros? Ahora imaginemos una cita dinámica, lo citado cambia cada X cantidad de tiempo. En estos casos no tenemos respuesta ya que no tenemos normas jurídicas que se adapten a la realidad tecnológica actual.
-
-### 🤍 **Propiedad intelectual y derechos de traducción**
-
-Muchas obras son hechas en un idioma y luego se traducen a otro, algo que se considera una obra que requiere esfuerzo intelectual, originalidad y creatividad. Cada traducción expresa algunos aspectos de la obra original.
-
-La ley reconoce a los traductores derechos sobre su traducción, basada en las características de novedad, originalidad y creatividad que desarrollan. Para contar con estos derechos, la traducción no tiene que ser legítima, debe hacerse con autorización del autor en caso de que existan derechos de propiedad vigentes. Cuando la traducción es hecha por computadora, no se le llamaría traducción ya que la PC no tiene el espíritu necesario para reconocimiento de derechos de propiedad intelectual de traducción.
-
-### 🤍 **Propiedad intelectual y derechos de ejecución**
-
-Algunas obras están destinadas a ser interpretadas o ejecutadas, como la música o las obras de teatro, o ciertas obras. Cada ejecución difiere y hay preferencias. El sistema de propiedad intelectual también reconoce el derecho sobre las ejecuciones porque en cada una el intérprete contribuye a sus dotes de novedad, originalidad y creatividad, ya que las ejecuciones no son mecánicas, se realizan a base de decisiones.
-
-Los programas que sintetizan el habla o reproducen obras musicales se perfeccionan y ¿se puede reclamar derecho sobre estas? No, porque para la ley solo se pueden poseer derechos sí una persona humana ha dejado la impronta de su espíritu en la ejecución.
 
 ### 🤍 **Fotografías, Filmaciones e Informática**
 

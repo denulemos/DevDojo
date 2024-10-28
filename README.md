@@ -127,8 +127,12 @@
 | [¿A qué nos referimos cuando hablamos de tipos de datos?](#var3)    |
 | [¿Cómo se declara una variable?](#var4)    |
 | [Nombres de Variables](#var5)    |
+| [Diferencia entre let, var y const](#var6)    |
+| [Para que sirve event.preventDefault()?](#var7)    |
+| [Función Object.freeze](#var8)    |
+| [Diferencia entre import y require](#var9)    |
 
-## [Organizacion en Software](#cic)
+## [Organizacion en Software - Derecho en IT](#cic)
 
 | Temas   |
 |----------|
@@ -144,6 +148,9 @@
 | [El concepto de "Objetivos de una Organización"](#cic10)|
 | [El concepto de "Entorno de una Organización"](#cic11)|
 | [Recursos de una Organizacion](#cic12)|
+| [Propiedad intelectual e informática - Derecho de Cita](#cic13)|
+| [Propiedad intelectual y derechos de traducción](#cic14)|
+| [Propiedad intelectual y derechos de ejecución](#cic15)|
 
 ## [Typescript](#typ)
 
@@ -340,6 +347,12 @@
 | [Que tipos de antipatrones para el diseño de Software existen?](#cod45)   |
 | [Que tipos de Antipatrones para el Diseño Orientado a Objetos existen?](#cod46)   |
 | [Singleton](#cod47)   |
+| [Que es el Polimorfismo?](#cod48)   |
+| [Que es el Upcasting?](#cod49)   |
+| [Que es el Downcasting?](#cod50)   |
+| [¿Cómo se produce la ligadura tardía y dinámica que posibilita el polimorfismo?](#cod51)   |
+| [El Principio de Sustitución de Liskov](#cod52)   |
+| [¿Cómo ejemplificarías el uso de polimorfismo en Java usando una colección de objetos?](#cod53)   |
 
 ## [Hardware, Sistemas, Infraestructura y Arquitectura](#har)
 
@@ -3379,11 +3392,156 @@ Algunas reglas no escritas, pero que se han asumido *por convención* son:
 * Los identificadores siempre se escriben en minúsculas. (pe. nombre). Y si son dos o más palabras, el inicio de cada siguiente palabra se escriba en mayúsculas (pe. nombrePersona)
 * Si el identificador implica que sea una constante (es decir que hayamos utilizado los modificadores *final static*), dicho nombre se suele escribir en mayúsculas (pe. LETRA). Y si la constante está compuesta de dos palabras, estas se separan con un subrayado (pe. LETRA_PI).
 
+<a id="var6"></a>
+
+### **Diferencia entre let, var y const**
+
+La diferencia es el alcance de cada uno.
+
+let es una constante. var es una variable normal.
+
+```jsx
+
+var saludar = "hey, hola";
+var saludar = "dice Hola tambien";
+    saludar = "dice Hola tambien";
+
+
+let camper = 'James';
+let camper = 'David'; // throws an error
+let saludar = "dice Hola";
+    saludar = "dice Hola tambien";
+let saludar = "dice Hola tambien"; // error: Identifier 'saludar' has already been declared
+```
+
+Sí pongo un “use Strict” en la parte alta del codigo, la consola me va a tirar error cuando trate de codear algo de manera “insegura” o poco practica.
+
+```jsx
+"use strict";
+x = 3.14; // throws an error because x is not declared
+```
+
+Cuando declaras una variable con **var,** es declarada de manera global, o local sí esta adentro de una funcion.
+
+- Pueden ser modificadas y re-declaradas dentro de su ambito.
+- Puede ser declarada sin ser inicializada, se inicializa con undefined por defecto.
+- Puede ser declarada global o dentro de una funcion.
+
+En cambio con **let,** sí declaro la funcion dentro de un block, statement o expresion, se va a declarar solo dentro de estas y no globalmente.
+
+- No puede ser Re declarado pero si modificado.
+- Puede ser declarada sin ser inicializada, no se inicializa solo. 
+- Funciona a nivel bloque.
+
+```jsx
+var numArray = [];
+for (var i = 0; i < 3; i++) {
+  numArray.push(i);
+}
+console.log(numArray);
+// returns [0, 1, 2]
+console.log(i);
+// returns 3
+
+'use strict';
+let printNumTwo;
+for (let i = 0; i < 3; i++) {
+  if (i === 2) {
+    printNumTwo = function() {
+      return i;
+    };
+  }
+}
+console.log(printNumTwo());
+// returns 2
+console.log(i);
+// returns "i is not defined"
+```
+
+También se puede declarar usando la palabra **const**, que es una constante. Se declara y no puede ser cambiada en su valor, solo sirve de lectura.
+
+```jsx
+"use strict"
+const FAV_PET = "Cats";
+FAV_PET = "Dogs"; // returns error
+```
+
+Se recomienda poner el nombre de las constantes en mayúscula, pose las mismas caracteristicas que el let
+
+```jsx
+"use strict";
+const s = [5, 6, 7];
+s = [1, 2, 3]; // throws error, trying to assign a const
+s[2] = 45; // works just as it would with an array declared with var or let
+console.log(s); // returns [5, 6, 45]
+```
+
+Los array sí pueden ser modificados en sí mismos, lo que no se puede es apuntar a otro array distinto.
+
+<a id="var7"></a>
+
+### **Para que sirve event.preventDefault()?**
+
+Los botones de los form en HTML por defecto hacen un submit, lo que puede llevar a que se recargue la pagina. Para evitar esto, se usa `event.preventDefault()` para evitar que se ejecute el comportamiento por defecto del evento.
+
+<a id="var8"></a>
+
+### **Función Object.freeze**
+
+Es una funcion que evita que puedas modificar propiedades de un objeto o una variable
+
+```jsx
+let obj = {
+  name:"FreeCodeCamp",
+  review:"Awesome"
+};
+Object.freeze(obj);
+obj.review = "bad"; //will be ignored. Mutation not allowed
+obj.newProp = "Test"; // will be ignored. Mutation not allowed
+console.log(obj); 
+// { name: "FreeCodeCamp", review:"Awesome"}
+```
+
+Cuando intento modificar algo, no tira error, simplemente lo ignora.
+
+<a id="var9"></a>
+
+### **Diferencia entre import y require**
+
+- Require: Se usa para importar las funciones y el codigo en un archivo externo. Esto posee un problema, el cual es que este codigo puede ser muy largo y solo necesito una parte del codigo.
+- Import: Herramienta de ES6 para importar solo los componentes que necesitamos de un archivo.
+
+```jsx
+import { countItems } from "math_array_functions"
+```
+
+### **Uso de getters y setters**
+
+```jsx
+class Book {
+  constructor(author) {
+    this._author = author;
+  }
+  // getter
+  get writer(){
+    return this._author;
+  }
+  // setter
+  set writer(updatedAuthor){
+    this._author = updatedAuthor;
+  }
+}
+const lol = new Book('anonymous');
+console.log(lol.writer);  // anonymous
+lol.writer = 'wut';
+console.log(lol.writer);  // wut
+```
+
 ---
 
 <a id="cic"></a>
 
-# Organizacion en Software
+# Organizacion en Software - Derecho en IT
 
 <a id="cic1"></a>
 
@@ -3573,6 +3731,35 @@ Otro tipo de clasificación puede ser...
 **Bienes de uso:** Edificios, autos, sufren procesos de amortización. El único que no se amortiza son los terrenos o campos
 
 **Bienes de cambio:** Están para vender o cambiar y representan ganancia para la empresa.
+
+<a id="cic13"></a>
+
+### **Propiedad intelectual e informática - Derecho de Cita**
+
+En los libros hay citas de varias obras que son hechas sin autorización, pero eso no es ilegal, ya que se está usando el **derecho de cita**. A veces las obras necesitan citas textuales y el régimen autoriza a hacerlo en algunos casos. En argentina se permite en dos condiciones:
+
+- Que sea el mínimo necesario y no sean más de 1000 palabras, u 8 compases sí es música. Señalar al autor y a la obra
+- Que se haga en contexto de cita, solo en la medida que la cita lo requiera. La cita debe estar embebida en la nueva obra, debe ser necesaria
+
+En otros países se maneja la cantidad de palabras por porcentajes, o es un criterio más flexible. Nada dice la ley sobre imágenes o filmaciones, donde habrá que recurrir al concepto jurídico de lo “razonable”, con varias interpretaciones. Estas reglamentaciones se hicieron pensando en los libros que una vez impresos son inmodificables.
+
+La tecnología del Servicio Web es distinta, fue creada con el objetivo de desvincular la estructura fija del que escribe con la estructura del que lee. El archivo web no tiene una estructura determinada, es dada por cada lector. Por ejemplo, sí desarrollamos una web que remite a otras web (como quitandolas), contamos con las mismas regulaciones de los libros? Ahora imaginemos una cita dinámica, lo citado cambia cada X cantidad de tiempo. En estos casos no tenemos respuesta ya que no tenemos normas jurídicas que se adapten a la realidad tecnológica actual.
+
+<a id="cic14"></a>
+
+### **Propiedad intelectual y derechos de traducción**
+
+Muchas obras son hechas en un idioma y luego se traducen a otro, algo que se considera una obra que requiere esfuerzo intelectual, originalidad y creatividad. Cada traducción expresa algunos aspectos de la obra original.
+
+La ley reconoce a los traductores derechos sobre su traducción, basada en las características de novedad, originalidad y creatividad que desarrollan. Para contar con estos derechos, la traducción no tiene que ser legítima, debe hacerse con autorización del autor en caso de que existan derechos de propiedad vigentes. Cuando la traducción es hecha por computadora, no se le llamaría traducción ya que la PC no tiene el espíritu necesario para reconocimiento de derechos de propiedad intelectual de traducción.
+
+<a id="cic15"></a>
+
+### **Propiedad intelectual y derechos de ejecución**
+
+Algunas obras están destinadas a ser interpretadas o ejecutadas, como la música o las obras de teatro, o ciertas obras. Cada ejecución difiere y hay preferencias. El sistema de propiedad intelectual también reconoce el derecho sobre las ejecuciones porque en cada una el intérprete contribuye a sus dotes de novedad, originalidad y creatividad, ya que las ejecuciones no son mecánicas, se realizan a base de decisiones.
+
+Los programas que sintetizan el habla o reproducen obras musicales se perfeccionan y ¿se puede reclamar derecho sobre estas? No, porque para la ley solo se pueden poseer derechos sí una persona humana ha dejado la impronta de su espíritu en la ejecución.
 
 ---
 
@@ -6564,6 +6751,110 @@ class Singleton {
 
 const singleton = new Singleton();
 const singleton2 = new Singleton(); // Devuelve la misma instancia
+```
+
+<a id="cod48"></a>
+
+### **Que es el Polimorfismo?**
+
+Conocido también como ***ligadura dinámica***, ***ligadura tardía*** (***late binding***), el concepto fundamental del ***Polimorfismo*** es “mismo mensaje, distinta implementación” y consiste en implementar o reemplazar el método de una clase con otro método llamado exactamente igual pero escrito en otra clase (derivada de la primera).
+
+Para que se produzca esta ligadura tardía (que efectivamente se produce **en *tiempo de ejecución***, cuando el objeto es asignado a la variable) se requieren algunas cosas:
+
+- Que las clase implicadas tengan declarado (y directa o indirectamente implementado) un método con ***exactamente la misma firma***.
+- Que la variable que guarde el objeto sea de la clase de ***mayor jerarquía*** entre las todas las implicadas (la que todos los objetos posibles tengan en común).
+- Que no se trate de un método *de clase* (***static***).
+- Que no se trate de un método privado (porque no se puede heredar).
+- Que no haya sido declarado como ***final***, porque no podrá ser definido.
+
+Si se cumplen estos requisitos, usando **siempre la misma *llamada* o *invocación***  y**sea cual sea el objeto asignado**, **la variable declarada expondrá** a través de su*capa de abstracción* o *API* (*application programming interface*, o *interfaz de acceso programático*) ***distinta implementación***. Así, cuando una variable que contiene una instancia propia o de cualquiera de sus subclases invoca a un método, la versión del método que se ejecutará no será necesariamente la que figura en la clase de la variable declarada, sino la existente en la clase de la instancia referida por la variable. Dicho de otra manera, **la versión del método que será ejecutada depende de la clase del objeto referenciado, no de la variable que lo referencia**.
+
+El polimorfismo es una de las principales aplicaciones de la herencia y supone el principal motivo de las clases abstractas
+
+En POO polimorfismo se refiere a la propiedad por la que es posible enviar mensajes sintácticamente iguales a objetos de distinta clase
+
+El único requisito que deben cumplir los objetos que se utilizan de manera polimórfica es saber responder al mensaje que se les envía
+
+Para que el objeto pueda responder al mensaje, la clase debe contener el método (mensaje)
+
+Para garantizar que dos clases distintas contengan el  mismo método, debemos hacer que estas  lo hereden de una clase superior
+
+En el ejemplo de los polígonos, creamos una clase abstracta Poligono con un método abstracto obtenerSuperficie(). Este método no tiene implementación en la clase Poligono porque cada polígono tiene su propia fórmula para calcular la superficie, pero al declarar el método, establecemos un contrato que asegura que cualquier subclase de Poligono tendrá que implementar su propio cálculo de superficie. De esta forma, logramos que cada subclase, como Cuadrado, Triangulo o Circulo, implemente su cálculo específico de superficie, usando polimorfismo para permitir diferentes comportamientos en una misma estructura.
+
+<a id="cod49"></a>
+
+### **Que es el Upcasting?**
+
+Es la posibilidad de tratar a un objeto de una subclase como un objeto de la superclase.
+
+Esto se logra apuntando a un objeto de una subclase con un puntero de su superclase.
+
+```jsx
+Perro fido;
+Mascota a;
+fido = new Perro("Fido", "Bull Dog");
+a = fido;
+```
+
+Tras la conexión polimorfa únicamente podemos acceder a los atributos y métodos pertenecientes a la clase asociada a la referencia
+
+<a id="cod50"></a>
+
+### **Que es el Downcasting?**
+
+Es la posibilidad de volver a tratar el objeto con un puntero a la clase a la que pertenece
+
+Se utiliza para volver a acceder a todos los atributos y métodos del mismo
+
+A diferencia del upcasting, siempre se hace indicando cual es la subclase
+
+```jsx
+Perro fido;
+Mascota a;
+Perro  mismoFido;
+       
+fido = new Perro("Fido",
+               "Bull Dog");
+a = fido;
+mismoFido = (Perro) a;
+```
+
+Es posible que al hacer un downcasting se produzca un error debido a que la clase a la que pertenezca el objeto no coincida con la clase del puntero.
+
+Para evitarlo podemos utilizar la instrucción de Java instanceof.
+
+```jsx
+if (a instanceof Perro)
+      mismoFido = (Perro) a;
+```
+
+<a id="cod51"></a>
+
+### **¿Cómo se produce la ligadura tardía y dinámica que posibilita el polimorfismo?**
+
+Gracias a los punteros o referencias: cuando se crea una variable el lenguaje registra en una lista interna cada método declarado para esa clase y espera a que se “guarde” un objeto en la variable a través de una asignación. Cuando se produce la asignación del objeto, se recorre internamente la lista de métodos de la declarados en la variable que pueden ser sobreescritos y se compara con los métodos disponibles para el objeto (propios o heredados). Si la firma coincide, el método encontrado en el objeto asignado se asociará a la declaración existente y sobreescribirá la referencia y sustituirá el enlace al método original, si éste estaba implementado.
+
+<a id="cod52"></a>
+
+### **El Principio de Sustitución de Liskov**
+
+El ***Principio de Sustitución de Liskov*** fue acuñado por **Barbara Liskov** en 1987 durante una conferencia sobre *Jerarquía y Abstracción de datos*. Este principio dice que al sobreescribir un método se debe asegurar que éste mantenga el espíritu original del método, sin alterar ni dejar de cumplir la premisa o responsabilidad declarada inicialmente para el mismo. Según este principio, **una clase derivada no únicamente *es*, sino que *debe comportarse* como la clase base**. Por ejemplo, si hay un método *abrirPuerta()*, una clase derivada no debería hacer que su *abrirPuerta()* abra las ventanas, o prenda la radio. A nivel declarativo y de programación puede estar perfecto, pero no sería correcto. Puede tener otra forma de abrir la puerta, pero no hacer otra cosa.
+
+<a id="cod53"></a>
+
+### **¿Cómo ejemplificarías el uso de polimorfismo en Java usando una colección de objetos?**
+
+En Java, el polimorfismo se puede ver claramente al trabajar con una colección de objetos que comparten una clase base. En este ejemplo, creamos una lista ArrayList<Poligono> y agregamos instancias de Cuadrado, Triangulo y Circulo. Cuando recorremos esta colección, llamamos al método obtenerSuperficie() de cada polígono, y cada uno calcula su superficie utilizando su propia implementación del método. Así, aunque estamos llamando al mismo método, el comportamiento es diferente según el tipo específico de polígono:
+
+```java
+ArrayList<Poligono> poligonos = new ArrayList<>();
+poligonos.add(new Cuadrado("#FF0000", 50));
+poligonos.add(new Triangulo("#00FF00", 50, 50));
+poligonos.add(new Circulo("#0000FF", 25));
+
+for (Poligono poligono : poligonos) {
+    System.out.printf("%s Superficie=%f\n", poligono, poligono.obtenerSuperficie());
+}
 ```
 
 ---
