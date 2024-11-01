@@ -399,6 +399,11 @@
 | [El Principio de Sustitución de Liskov](#cod52)   |
 | [¿Cómo ejemplificarías el uso de polimorfismo en Java usando una colección de objetos?](#cod53)   |
 | [Qué es la densidad de codigo?](#cod54)   |
+| [La importancia del orden de las funciones](#cod55)   |
+| [Porque se deberia evitar retornar null?](#cod56)   |
+| [Porque se deberia evitar el uso de variables globales?](#cod57)   |
+| [¿Qué es un Code Smell?](#cod58)   |
+| [Code Smells en los Tests](#cod59)   |
 
 ## [Hardware, Sistemas, Infraestructura y Arquitectura](#har)
 
@@ -8174,6 +8179,101 @@ public Integer tripleSum(Integer a, Integer b, Integer c) {
    return a + b + c;
 }
 ```
+
+<a id="cod55"></a>
+
+### **La importancia del orden de las funciones**
+
+El orden de las funciones es para facilitar la lectura. En el ejemplo, primero ponemos la funcion `a()` que a su vez, consume a `b()` y `c()`, haciendo que la lectura sea ordenada.
+
+```
+public void a(){
+    b();
+    c();
+}public void b(){}public void c(){}
+```
+
+<a id="cod56"></a>
+
+### **Porque se deberia evitar retornar null?**
+
+- No se debe devolver null en una funcion
+- Al devolver null, obligamos que se chequee ese null, es una gran fuente de bugs, por ejemplo, es recomendable devolver una lista vacia en vez de un null
+- No debemos pasar null en los parametros de una funcion, obligamos a que se chequee que estos parametros no sean nulos para ejecutar correctamente.
+
+DON'T
+
+```jsx
+public void processRequestBatch() {
+  List<Request> requestList = getRequestList();
+  if (requestList != null) {
+    for (Request r: requestList) {
+      processRequest(r);
+    }
+  }
+}
+```
+
+DO
+
+```jsx
+public void processRequestBatch(){
+  List<Request> requestList = getRequestList();
+  for (Request r: requestList) {
+    processRequest(r);
+  }
+}
+```
+
+<a id="cod57"></a>
+
+### **Porque se deberia evitar el uso de variables globales?**
+
+- Las variables globales pueden ser modificadas por cualquier parte del código, lo que puede llevar a errores difíciles de rastrear.
+- Las variables globales pueden ser accedidas por cualquier parte del código, lo que puede llevar a dependencias no deseadas.
+- Las variables globales pueden ser difíciles de depurar y mantener, ya que su alcance es global y no está claro dónde se utilizan o modifican.
+- Las variables globales pueden causar problemas de concurrencia si se acceden y modifican desde múltiples hilos de ejecución.
+- Las variables globales pueden dificultar la reutilización del código, ya que las dependencias globales pueden hacer que sea difícil separar las partes del código en módulos independientes.
+
+<a id="cod58"></a>
+
+### **¿Qué es un Code Smell?**
+
+Son sintomas de que el codigo no es todo lo limpio que deberia. Hay distintos tipos de code smells como:
+
+- En los comentarios
+- En el entorno de desarrollo
+- En las funciones
+- Code Smells Generales
+- Code Smells en Java u otros lenguajes
+- En los nombres
+- En los tests
+
+Nadie se va a volver experto teniendo esta lista de memoria, nunca va a ser una lista completa de todos los problemas que puede tener el código.
+
+<a id="cod59"></a>
+
+### **Code Smells en los Tests**
+
+**Tests insuficientes** Se deben probar todas las posibilidades de una funcion. Si no se prueban todas las condiciones, los tests son insuficientes.
+
+**No usar una herramienta de cobertura** Se muestran claramente las lineas que no estan siendo cubiertas por los tests. Son faciles de instalar.
+
+**Evitar los tests triviales** Aunque una funcionalidad parezca trivial, hacer un test igual. Es una gran fuente de bugs.
+
+**Test ignorado o comentado** Segun Robert C. Martin “A veces tenemos dudas sobre los detalles de una funcionalidad, porque los requisitos no están claros. Podemos expresar estas dudas con un test comentado, o con un test con `@ignore`. La opcion que elijas depende de si tu test compila o no"
+
+Si hay dudas en los tests, hay dudas en los requisitos
+
+**No testear condiciones limite** Son los mayores generadores de bugs, hay que testearlos. No solo testear las condiciones normales del código.
+
+**No buscar bugs de forma exhaustiva** Los bugs tienden a estar cerca unos de otros. Si encontrás un bug, revisar, pueden haber más.
+
+**Los patrones de fallo son reveladores** Si vemos que una funcion falla cuando mandamos un String con caracteres en blanco, debemos manejar esto.
+
+**La cobertura de codigo es reveladora** Se pueden encontrar los motivos de fallo con las lineas que no estan analizadas
+
+**Los tests deben ser rápidos** Si los tests tardan mucho, no se van a correr. Deben ser rápidos para que se corran seguido.
 
 ---
 
