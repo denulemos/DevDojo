@@ -1,42 +1,4 @@
 
-### 💙**Formato Codigo**
-
-Hay dos tipos de formato:
-
-- Vertical: Densidad, distancia y orden
-- Horizontal: Densidad e Indentación
-
-Todos los miembros de un equipo deben escribir bajo las mismas reglas (Se recomienda el Styleguide de Google)
-
-### 💙**Densidad**
-
-Numero de lineas que hay en un bloque de codigo en concreto. Deben haber lineas en blanco que separen conceptos.
-
-### 💙Densidad Horizontal
-
-Mismo concepto pero de manera horizontal, entre caracteres
-
-DON´T
-
-```
-public Integer tripleSum(Integer a, Integer b, Integer c){
-   if (a==null||b==null||c==null){
-       return null;
-   }
-   return a+b+c;
-}
-```
-
-DO
-
-```
-public Integer tripleSum(Integer a, Integer b, Integer c) {
-   if (a == null || b == null|| c == null){
-       return null;
-   }
-   return a + b + c;
-}
-```
 
 ### 💙**Orden**
 

@@ -226,6 +226,10 @@
 | Temas   |
 |----------|
 | [Cual es la diferencia entre h1, h2, etc?](#rea40)    |
+| [Para que es el Doctype?](#rea54)    |
+| [Atributo placeholder para campos en HTML](#rea55)    |
+| [Vínculos Relativos en HTML](#rea56)    |
+| [Vínculos Absolutos en HTML](#rea57)    |
 | [Cual es la importancia del uso de todos los elementos HTML?](#rea41)    |
 | [Que son los atributos de los elementos HTML?](#rea42)    |
 | [Cuáles son las partes de un documento HTML?](#rea43)    |
@@ -288,7 +292,20 @@
 | [¿Que es el SEO?](#rea38)    |
 | [¿Qué es el Virtual DOM?](#rea39)    |
 | [Qué es el namespacing de JS?](#rea40)    |
-
+| [Que es la tipificacion de Variables?](#rea41)    |
+| [Concepto Truthy and Falsy](#rea42)    |
+| [Funciones de alto nivel / Higher order Function](#rea43)    |
+| [Que es la Coercion explicita e Implicita?](#rea44)    |
+| [Que es el Scope en Javascript?](#rea45)    |
+| [Fetch API](#rea46)    |
+| [Cómo se pueden crear objetos genéricos?](#rea47)    |
+| [Document.ready vs Window.onload](#rea48)    |
+| [Que es la expresion de Funcion Inmediatamente Invocada - Immediately-invoked Function Expression (IIFE)?](#rea49)    |
+| [Qué es un Event listener?](#rea50)    |
+| [isNaN vs Math.isNaN](#rea51)    |
+| [Que es Symbol?](#rea52)    |
+| [Cual es la diferencia entre un event loop, microtask y macrotask?](#rea53)    |
+| [Variable Shadowing - Ocultamiento de Variables](#rea54)    |
 
 ## [Desarrollo Mobile](#mob)
 
@@ -381,6 +398,7 @@
 | [¿Cómo se produce la ligadura tardía y dinámica que posibilita el polimorfismo?](#cod51)   |
 | [El Principio de Sustitución de Liskov](#cod52)   |
 | [¿Cómo ejemplificarías el uso de polimorfismo en Java usando una colección de objetos?](#cod53)   |
+| [Qué es la densidad de codigo?](#cod54)   |
 
 ## [Hardware, Sistemas, Infraestructura y Arquitectura](#har)
 
@@ -5413,6 +5431,59 @@ Las pruebas deben tener una salida booleana y pasar o fallar. La misma prueba qu
 
 Los elementos de encabezado h1 a h6 se utilizan para indicar la importancia del contenido que les sigue. Cuanto menor sea el número, mayor será la importancia, por lo que los elementos h2 tienen menos importancia que los elementos h1. Utiliza solo un elemento h1 por página y coloca los encabezados de menor importancia debajo de los de mayor importancia.
 
+<a id="rea54"></a>
+
+### **Para que es el Doctype?**
+
+El doctype es una declaración que se utiliza en un documento HTML para informar al navegador web sobre la versión de HTML en la que esá escrito el documento. El doctype debe ser la primera línea de un documento HTML y se utiliza para garantizar que el navegador web interprete el documento correctamente.
+
+<a id="rea55"></a>
+
+### **Atributo placeholder para campos en HTML**
+
+El atributo placeholder me permite , guiar al usuario con referencia lo que tiene que colocar dentro de nuestro campo. Por ejemplo:
+
+```html
+<label> Nombre <br> <input type=”text” placeholder=”Nombre Completo”> </label>
+```
+
+<a id="rea56"></a>
+
+### **Vínculos Relativos en HTML**
+
+Los vínculos relativos son aquellos que permiten interconectar los archivos de nuestro sitio (internos, dentro de nuestro sitio o servidor).
+Si por ejemplo quiero ir de mi archivo index a mi contacto.html lo haré de la siguiente forma:
+
+```html
+<!doctype html>
+
+<title>Vinculo</title>
+<a href="contacto.html" title="Contacto"> Contacto </a>
+```
+
+En el ejemplo anterior, hemos visto también cómo se ha agregado el atributo title, este es obligatorio por cuestiones de accesibilidad y también nos permite describir nuestros vínculos para hacer aparecer un etiqueta amarilla llamada tooltip con dicha información.
+Si mi archivo contacto se encontrase dentro de una carpeta la ruta a marcar sería la siguiente:
+
+```html
+<!doctype html>
+
+<title>Vinculo</title>
+<a href="en/contacto.html" title="Contacto"> Contacto </a>
+```
+
+<a id="rea57"></a>
+
+### **Vínculos Absolutos en HTML**
+
+Los vínculos absolutos son aquellos que permiten interconectar los archivos de nuestro sitio (internos, dentro de nuestro sitio o servidor).
+
+```html
+<!doctype html>
+
+<title>Vinculo</title>
+<a href="https://www.google.com" title="Contacto"> Contacto </a>
+```
+
 <a id="rea41"></a>
 
 ### **Cual es la importancia del uso de todos los elementos HTML?**
@@ -6643,6 +6714,327 @@ Más arriba la jerarquía, más refrescos habrá. Un componente hijo, idealmente
 
 Namespacing se utiliza para agrupar funciones, variables, etc con un nombre único.  Esto mejora la modularidad en codificación y permite la reutilización del código.
 
+<a id="rea41"></a>
+
+### **Que es la tipificacion de Variables?**
+
+La tipificación de variables, sirve para asignar un número a una variable y después asignar un string a la misma variable.
+
+<a id="rea42"></a>
+
+### **Concepto Truthy and Falsy**
+
+En JavaScript, un valor se considera "falsy" si se convierte en `false` cuando se evalúa en un contexto booleano. 
+
+```jsx
+// Falso
+Boolean(0); //false
+Boolean(null); //false
+Boolean(NaN); //false
+Boolean(undefined); //false
+Boolean(false); //false
+Boolean(""); //false
+
+// Verdadero:
+Boolean(1); //true para 1 o cualquier número diferente de cero (0)
+Boolean("a"); //true para cualquier caracter o espacio en blanco en el string
+Boolean([]); //true aunque el array esté vacío
+Boolean({}); //true aunque el objeto esté vacío
+Boolean(function(){}); //Cualquier función es verdadera también
+```
+
+<a id="rea43"></a>
+
+### **Funciones de alto nivel / Higher order Function**
+
+Habían muchas funcionalidades que se estaban repitiendo, entonces JS decidio hacerlas nativas, como iteraciones. Funciones de orden mayor es que reciben como parametro los iterables y un callback, que se ejecutaba en cada elemento iterado.
+
+Hoy en dia todo esto esta abstraído y solo pasamos el callback.
+
+Ejemplos puede ser .map, .filter, .reduce
+
+```javascript
+// Función de orden superior que toma una función como argumento
+function operacionMatematica(x, y, operacion) {
+  return operacion(x, y);
+}
+
+// Funciones que serán pasadas como argumentos a la función de orden superior
+function suma(a, b) {
+  return a + b;
+}
+
+function resta(a, b) {
+  return a - b;
+}
+
+function multiplicacion(a, b) {
+  return a * b;
+}
+
+// Uso de la función de orden superior con diferentes funciones como argumentos
+console.log(operacionMatematica(5, 3, suma)); // Devuelve 8 (5 + 3)
+console.log(operacionMatematica(10, 4, resta)); // Devuelve 6 (10 - 4)
+console.log(operacionMatematica(6, 2, multiplicacion)); // Devuelve 12 (6 * 2)
+```
+
+<a id="rea44"></a>
+
+### **Que es la Coercion explicita e Implicita?**
+
+Coercion es la forma en la que podemos cambiar de un tipo de valor a otro
+
+- **Coercion explícita:** Obligamos que un valor de un tipo cambie a otro valor de otro tipo
+
+```jsx
+//Aquí obligamos a la variable a convertirse en string (coerción explícita)
+var c = String(a); 
+console.log(c);
+
+//Aquí obligamos a la variable a convertirse en número (coerción explícita)
+var d = Number(c); 
+console.log(d);
+```
+
+- **Coercion Implicita:** El lenguaje cambia el tipo de valor por detrás
+
+```jsx
+//Convierte a 4 en un string y lo concatena con el "7", por esto regresa un string de valor "47"
+var a = 4 + "7"; 
+
+//Convierte al "7" en un número y realiza la operación, por esto devuelve 28
+4 * "7"; 
+
+var a = 20;
+var b = a + ""; //Aquí concatenamos para convertir la variable a string (coerción implícita)
+console.log(b); 
+```
+
+<a id="rea45"></a>
+
+### **Que es el Scope en Javascript?**
+
+Es el contexto actual de ejecución. 
+
+Cuando hacemos referencia a una variable, javascript busca su definicion en cada entorno, o Scope, esto depende de como (var, const, let) y donde la declaremos (fuera o dentro de una funcion).
+
+```javascript
+var variable = "global"; // Variable global, todos pueden acceder a ella
+
+function test() { // Tiene acceso a variable y variable1
+    var variable1 = "hola"; // Variable local -hola
+}
+
+function test2() { // Tiene acceso a variable y variable1
+    var variable1 = "chau"; // Variable local - chau
+}
+```
+
+Entre scopes hay jerarquia. Primero se busca la variable en el mismo scope local, luego en el scope padre y luego el global.
+
+<a id="rea46"></a>
+
+### **Fetch API**
+
+Es una interfaz moderna que permite hacer peticiones HTTP desde el navegador. Es una alternativa a XMLHttpRequest y es más fácil de usar y más potente.
+
+```jsx
+fetch('https://api.github.com/users')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error(error));
+
+// Otra forma de hacerlo
+
+async function fetchData() {
+  try {
+    const response = await fetch('https://api.github.com/users');
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+```
+
+<a id="rea47"></a>
+
+### **Cómo se pueden crear objetos genéricos?**
+
+```jsx
+var myObjeto = new Object({
+'nombre': 'Diego',
+'apeliido': 'Querales',
+'edad': 25,
+})
+// Salida por consola
+{nombre: "Diego", apeliido: "Querales", edad: 25}
+```
+
+<a id="rea48"></a>
+
+### **Document.ready vs Window.onload**
+
+`Document.ready` se ejecuta despues de cargar todo el HTML. `Window.onload` se ejecuta cuando ya cargo completamente todo el contenido, mas adelante.
+
+<a id="rea49"></a>
+
+### **Que es la expresion de Funcion Inmediatamente Invocada - Immediately-invoked Function Expression (IIFE)?**
+
+Es una tecnica que se usaba para emular las variables privadas. 
+
+```jsx
+const modulo = (function(){
+	function metodoPrivado () {
+	}
+	const valorPrivado = "algo"
+	return {
+	  get: valorPrivado,
+	  set: function(v) { valorPrivador = v }
+	}
+})()
+
+var x = modulo()
+x.get() // "algo"
+x.set("Otro valor")
+x.get() // "otro valor"
+x.valorPrivado //Error
+```
+
+<a id="rea50"></a>
+
+### **Qué es un Event listener?**
+
+Supongamos que estamos usando una libreria para renderizar items de una coleccion de datos, esta expone un componente llamado RenderItem que tiene una sola prop disponible onClick que no acepta ningun parametro. ¿Y si quiero mandarle un argumento? 
+
+```jsx
+// Esta es el closure
+// en es5
+function onItemClick(titulo) {
+    return function() {
+      alert("Click en " + titulo)
+    }
+}
+// en es6
+const onItemClick = titulo => () => alert(`Click en ${titulo}`)
+
+return (
+  <Contenedor>
+{items.map(item => {
+return (
+   <RenderItem onClick={onItemClick(item.titulo)}>
+    <Titulo>{item.titulo}</Titulo>
+  </RenderItem>
+)
+})}
+</Contenedor>
+)
+```
+
+Creamos una funcion que recibe el titulo que se quiere mostrar y retorna otra funcion que cumple con la definicion de la funcion que RenderItem recibe como prop.
+
+<a id="rea51"></a>
+
+### **isNaN vs Math.isNaN**
+
+NaN son operaciones aritmeticas que no pueden ser representadas correctamente. Ambas funciones tienen como objetivo identificar si un valor es NaN. `isNaN` global aplica una coercion de tipos al argumento que le pasamos, `Math.isNan` no lo hace, lo que hace que sea mas seguro de usar para valores no numericos. 
+
+```jsx
+isNaN('denu') // devolvera true porque primero intentará convertir la cadena a un numero
+Number.isNaN('denu') // false porque no convertirá la cadena a numero
+```
+
+### **Metodos String**
+
+```javascript
+
+// .includes() Detecta y devuelve true o false si el String posee un substring en el 
+const str = 'This is my example string!';
+const substr = 'my';
+
+console.log(str.includes(substr)); // true
+
+//.indexOf() es otra forma de saber si un substring se encuentra dentro de un string si el mismo no funciona
+stringObj.indexOf("string to check for") // -1 Si no se encuentra
+
+//.replace Reemplaza de un String o un regex un valor por otro, no muta al objeto en si, devuelve lo nuevo
+array[0] = array[0].replace("PM", '') // Quita el PM del string dentro de ese array 
+```
+
+<a id="rea52"></a>
+
+### **Que es Symbol?**
+
+Son valores primitivos de JS (como String, boolean, etc..) agregados al ES6. Son valores unicos en JS, antes si queriamos tener un valor unico debiamos usar objetos (porque solo son iguales a ellos mismos), es util para crear constantes
+
+```jsx
+let sym1 = Symbol()
+let sym2 = Symbol('denu')
+let sym3 = Symbol()
+
+sym1 === sym3 // false
+```
+
+Tambien sirve para crear claves unicas en los objetos, donde los autores de librerias, navegadores web o cualquier runtime de ES podra evitar que hubieran colisiones al momento de agregar una prop u objeto global 
+
+```jsx
+const sym1 = Symbol()
+const sym2 = Symbol()
+
+const obj = {}
+
+obj[sym1] = 'a'
+obj[sym2] = 'b'
+```
+
+<a id="rea53"></a>
+
+### **Cual es la diferencia entre un event loop, microtask y macrotask?**
+
+Javascript ejecuta una linea de codigo por vez. **Event Loop** se encarga de gestionar las funciones asincronas.
+
+Funciona con una Call Stack y una Callback Queue. Cuando hay una linea en ejecucion, se agrega al Call Stack, y cuando finaliza, se elimina. La Queue tiene las funciones callback que deben ejecutarse, no debe haber ninguna funcion ejecutandose en la Call Stack ni debe haber otra funcion adelante suyo en la Queue.
+
+Cuando ejecutamos una funcion con setTimeout, la misma se entrega a Timers API, y aunque setTimeout sea cero, habrá un retraso en la ejecucion de esta funcion, haciendo que tenga que esperar en la Queue a que termine de ejecutarse el codigo asincrono. 
+
+![js](src/js1.png)
+
+* macroTasks: [setTimeout](https://developer.mozilla.org/docs/Web/API/WindowTimers/setTimeout), [setInterval](https://developer.mozilla.org/docs/Web/API/WindowTimers/setInterval), [setImmediate](https://developer.mozilla.org/docs/Web/API/Window/setImmediate), [requestAnimationFrame](https://developer.mozilla.org/docs/Web/API/window/requestAnimationFrame), [I/O](https://developer.mozilla.org/docs/Mozilla/Projects/NSPR/Reference/I_O_Functions), UI rendering
+* microTasks: [process.nextTick](https://nodejs.org/uk/docs/guides/event-loop-timers-and-nexttick/), [Promises](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise), [queueMicrotask](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/queueMicrotask), [MutationObserver](https://developer.mozilla.org/docs/Web/API/MutationObserver)
+
+Solo despues de que las task en las microTasks estan completas, event loop tomará las task de macrotasks. Mientras mas microtasks haya, mas delay habra en los macrotasks. Se recomienda usar microtasks cuando se necesitan hacer cosas de forma asincrona, de otra manera, siempre es recomendado usar macrotasks.
+
+En resumen, su funcionamiento en ingles seria:
+
+- *Tasks* are taken from the *Task (MacroTask) Queue*.
+- *Task* from the *Task Queue* is a *Macrotask* != a *Microtask*.
+- *Microtasks* are processed when the current task ends and the *microtask* queue is cleared before the next *macrotask* cycle.
+- *Microtasks* can enqueue other *microtasks*. All are executed before the next task inline.
+- UI rendering is run after all microtasks execution (NA for nodejs).
+
+<a id="rea54"></a>
+
+### **Variable Shadowing - Ocultamiento de Variables**
+
+Se produce cuando una variable que esta en un scope mas reducido tiene el mismo nombre que otra que esta en un scope superior siguiendo la cadena
+
+```javascript
+function test() {
+
+var variable = "hola";
+console.log(variable); 
+
+	function test1() {
+		var variable = "denu";
+    	console.log(variable); 
+	}
+
+  test1(); // denu
+}
+
+test(); // hola
+```
+
 ---
 
 <a id="mob"></a>
@@ -7748,6 +8140,38 @@ poligonos.add(new Circulo("#0000FF", 25));
 
 for (Poligono poligono : poligonos) {
     System.out.printf("%s Superficie=%f\n", poligono, poligono.obtenerSuperficie());
+}
+```
+
+<a id="cod54"></a>
+
+### **Qué es la densidad de codigo?**
+
+La densidad de código es una métrica que mide la cantidad de código fuente en un programa en relación con la cantidad de comentarios y líneas en blanco. Se utiliza para evaluar la legibilidad y mantenibilidad del código, ya que un código con una alta densidad de código puede ser difícil de entender y modificar.
+
+**Densidad Horizontal**
+
+Mismo concepto pero de manera horizontal, entre caracteres
+
+DON´T
+
+```java
+public Integer tripleSum(Integer a, Integer b, Integer c){
+   if (a==null||b==null||c==null){
+       return null;
+   }
+   return a+b+c;
+}
+```
+
+DO
+
+```java
+public Integer tripleSum(Integer a, Integer b, Integer c) {
+   if (a == null || b == null|| c == null){
+       return null;
+   }
+   return a + b + c;
 }
 ```
 
