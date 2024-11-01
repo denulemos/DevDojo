@@ -78,12 +78,6 @@ console.log(createPerson("Zodiac Hasbro", 56, "male"));
 Se crea un objeto con un name= “Zodiac Hasbro”, age=56 and gender=”male”
 
 
-### **Qué es el namespacing de JS?**
-
-Namespacing se utiliza para agrupar funciones, variables, etc con un nombre único.  Esto mejora la modularidad en codificación y permite la reutilización del código.
-
-
-
 ### **Que es la tipificacion de Variables?**
 
 La tipificación de variables, sirve para asignar un número a una variable y después asignar un string a la misma variable.

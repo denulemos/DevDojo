@@ -287,6 +287,8 @@
 | [Que es Tree Shaking?](#rea37)    |
 | [¿Que es el SEO?](#rea38)    |
 | [¿Qué es el Virtual DOM?](#rea39)    |
+| [Qué es el namespacing de JS?](#rea40)    |
+
 
 ## [Desarrollo Mobile](#mob)
 
@@ -6634,6 +6636,12 @@ Más arriba la jerarquía, más refrescos habrá. Un componente hijo, idealmente
 - Provee una capa adicional de Scripting, dandole un peso mas a la CPU
 
 ![Virtual Dom](src/vdom.png)
+
+<a id="rea40"></a>
+
+### **Qué es el namespacing de JS?**
+
+Namespacing se utiliza para agrupar funciones, variables, etc con un nombre único.  Esto mejora la modularidad en codificación y permite la reutilización del código.
 
 ---
 
