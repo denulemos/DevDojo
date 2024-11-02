@@ -33,7 +33,7 @@
 | [Que es una funcion Hash?](#seg27)    |
 | [Cuáles son los requisitos de un Cripto sistema?](#seg28)    |
 | [Como funciona el Crifrado Simetrico?](#seg29)    |
-| [Como funciona el Crifrado Asimetrico?](#seg30)    |
+| [Adquisicion en Informatica Forense](#seg30)    |
 
 ## [Accesibilidad](#acc)  
 
@@ -177,6 +177,13 @@
 | [Propiedad intelectual e informática - Derecho de Cita](#cic13)|
 | [Propiedad intelectual y derechos de traducción](#cic14)|
 | [Propiedad intelectual y derechos de ejecución](#cic15)|
+| [Fotografías, Filmaciones e Informática](#cic16)|
+| [Fraude a la propiedad intelectual](#cic17)|
+| [El análisis de las obras intelectuales en la actividad informática](#cic18)|
+| [Dignidad Humana y su protección, valores comprometidos](#cic19)|
+| [Derechos sobre la imagen personal](#cic20)|
+| [Casos en los que no es necesario el consentimiento](#cic21)|
+
 
 ## [Typescript](#typ)
 
@@ -345,6 +352,8 @@
 
 | Temas   |
 |----------|
+| [Ejemplo de Pseudo-código](#diag1)    |
+| [Diagramas de Nassi-Schneiderman](#diag2)    |
 | [¿De qué trata el código limpio?](#cod1)    |
 | [Nombres Significativos en Codigo Limpio](#cod2)    |
 | [Dependency Inversion Principle](#cod3)    |
@@ -404,6 +413,15 @@
 | [Porque se deberia evitar el uso de variables globales?](#cod57)   |
 | [¿Qué es un Code Smell?](#cod58)   |
 | [Code Smells en los Tests](#cod59)   |
+| [Code Smells en Codigo](#cod60)   |
+| [Code Smells en Nombres](#cod61)     |
+| [Code Smells en Comentarios](#cod62)     |
+| [Code Smells en el entorno](#cod63)     |
+| [Code Smells en Funciones](#cod64)     |
+| [Single Responsibility Principle](#cod65)     |
+| [Open/Closed Principle](#cod66)     |
+| [Interface Segregation Principle](#cod67)     |
+| [Liskov Substitution Principle](#cod68)     |
 
 ## [Hardware, Sistemas, Infraestructura y Arquitectura](#har)
 
@@ -478,6 +496,10 @@
 | [¿Cual es la diferencia entre Cookies, SessionStorage y LocalStorage?](#arc18)    |
 | [¿Como puedo borrar una cookie?](#arc19)    |
 | [¿Que es CORS?](#arc20)    |
+| [¿Que es un Sistema Operativo?](#arc21)    |
+| [FCFS (First come, first served)](#arc22)    |
+| [SPN/SJF (Shorted Process Next/Shorted Job First))](#arc23)    |
+| [SRT (Shortest Remaining Time)](#arc24)    |
 
 ## [Bases de Datos](#bd)  
 
@@ -877,6 +899,30 @@ Las debilidades del Cifrado simetrico son..
 - Sí quiero darle confidencialidad a un documento, y que lo vea solo el destinatario, cifrar el documento con la **clave pública** del destinatario
 - Está pensado para pasar por lugares poco seguros, es por eso que se considera un sistema menos vulnerable.
 - Hay 3 tipos de cifrado en este tipo de cifrado, RSA (La seguridad de este algoritmo radica en el problema de la factorización de números enteros (números primos grandes), DSA, edDSA y ECDSA (El sistema está basado en curvas elípticas el cual emplea puntos sobre las curvas para la generación del par de claves).
+
+<a id="seg31"></a>
+
+### **Adquisicion en Informatica Forense**
+
+En el campo de la Informática Forense, uno de los puntos más importantes es la recolección de la evidencia, también conocido como Adquisición Forense, ya que, si al momento de tomar la evidencia no se toman los recaudos correspondientes puede echarse a perder todo el análisis posterior. Es muy importante recalcar este punto debido a que la alteración de la evidencia llevará a la invalidez de toda la investigación.
+
+Un punto a considerar al momento de realizar las copias bit a bit es que necesitaremos de tiempo, ya que, es un proceso que suele demandar varias horas.
+
+En nuestro caso de estudio, trabajaremos con la distribución de DEFT 8.2, la cual dispone de todas las herramientas necesarias para realizar la toma de evidencia. Para la misma utilizaremos una herramienta muy sencilla y útil a la vez: dd.
+
+Sin embargo, daremos un paseo por un listado de buenas prácticas que son recomendables realizar previo a la recolección de la evidencia.
+
+**Adquisición física** Se entiende por adquisición física a la adquisición forense de la capacidad absoluta de un medio de almacenamiento. Qué quiere decir esto? Se refiere a que si nuestro disco es de 1TB, se realizará la copia del TB completo.
+
+**Adquisición lógica** En el caso de la adquisición lógica, se adquiere por volúmen lógico, por partición. Esto quiere decir que si nuestro disco es de 1TB pero dentro tenemos una partición de 100GB podríamos únicamente realizar la copia bit a bit solo de esos 100GB. Pero, como se imaginarán, estaríamos descartando datos que podrían ayudar a la causa.
+
+**Adquisición directa** Se llama Adquisición Directa cuando se extrae el medio de almacenamiento y se conecta al equipo de analista forense con el fin de realizar su copia bit a bit.
+
+**Adquisición indirecta** En el caso de la adquisición Indirecta a la adquisición forense realizada por medio de un SW utilizando la red como medio de transmisión para almacenar la copia en un equipo remoto. En este caso deben tener en cuenta que si el proceso de copia bit a bit es largo, hacerlo por la red demandará de mucho más tiempo.
+
+**Adquisición por hardware** Como supondrán, en este caso nos referimos a realizar la adquisición por un dispositivo que se encuentra diseñado para realizar copias forenses. Los mismos, por lo general, traen un bloqueador de escritura para evitar contaminar la evidencia.
+
+**Adquisición por Software** En este caso, se utilizará para realizar la adquisición software confeccionado para llevar a cabo la copia bit a bit. En este caso, tenemos que preocuparnos de que el disco no se monte con permisos de escritura, ya que, si esto sucede estaríamos contaminando la evidencia. Con estas herramientas estaremos trabajando durante esta clase.
 
 ---
 <a id="acc"></a>
@@ -4672,6 +4718,52 @@ Algunas obras están destinadas a ser interpretadas o ejecutadas, como la músic
 
 Los programas que sintetizan el habla o reproducen obras musicales se perfeccionan y ¿se puede reclamar derecho sobre estas? No, porque para la ley solo se pueden poseer derechos sí una persona humana ha dejado la impronta de su espíritu en la ejecución.
 
+<a id="cic16"></a>
+
+### **Fotografías, Filmaciones e Informática**
+
+Algunas fotografías son obras intelectuales y otras no. Para que lo sea, debe poseer los requisitos de novedad, originalidad y creatividad. La ley Argentina establece un régimen diferenciado de protección, el plazo es de 20 años a contar desde su primera publicación. Se deberá inscribir dejando constancia de esa fecha, lugar de publicación y autor. ¿Una computadora puede realizar una fotografía artística? No.
+
+<a id="cic17"></a>
+
+### **Fraude a la propiedad intelectual**
+
+Se establecen penas sobre la reproducción de obras intelectuales, la pena es de 1 mes a 6 años y el tipo es Defraudar => Derechos de propiedad intelectual.
+
+<a id="cic18"></a>
+
+### **El análisis de las obras intelectuales en la actividad informática**
+
+Aunque una obra califique como obra intelectual y tenga toda la protección de la ley, se debe determinar sí se encuentra en el dominio privado o público, donde se podrán reproducir sin autorización.
+
+<a id="cic19"></a>
+
+### **Dignidad Humana y su protección, valores comprometidos**
+
+La dignidad es el centro de todos los derechos, es el principio mediante se explican construcciones juridicas y de las socluciones que se dan en casos individuales, el individuo no puede renunciar a su propia dignidad, por eso no son legales los “contratos” de esclavitud, etc..
+
+Hay un tipo de derechos que son extrapatrimoniales, **derechos personalísimos**, unidos a la persona y a los que nadie puede renunciar. Sí una persona sufre un daño a su dignidad, puede pedir su cese y la indemnización correspondiente, sin necesidad de probar que se realizó un daño concreto. La **intimidad personal** es el derecho de contar con un ámbito restringido de vida dentro del cual nadie no autorizado pueda ingresar o conocer sin autorización. Con el uso de las PC, se han multiplicado los problemas relativos a las violaciones de ámbitos privados, en un dispositivo podemos guardar información muy relevante sobre nosotros. En las redes sociales quedan grabados nuestros vínculos, opiniones, etc.. lo que nos hace muy vulnerables ante acciones no deseadas.
+
+<a id="cic20"></a>
+
+### **Derechos sobre la imagen personal**
+
+El derecho a la imagen protege no solo la imagen visual (también formas de presentarla por fotos, videos, etc..), sino también la imagen sonora de las personas (su voz). El objetivo es que nadie pueda captar ni reproducir ni difundir la imagen visual ni auditiva de una persona sin su permiso, cada uno es dueño exclusivo de su imagen.
+
+Sí una persona presta su consentimiento para que se publique una imagen, puede revocar cuando decida, y sí esta revocación produce perjuicio al antes autorizado, se le debe resarcir. La autorización para sacar una foto no autoriza su difusión, son dos permisos distintos.
+
+<a id="cic21"></a>
+
+### **Casos en los que no es necesario el consentimiento**
+
+La ley elabora los casos en donde no es necesario el consentimiento de las personas cuya imagen sea captada o difundida
+
+- Que la persona participe de actos públicos. Sí la imagen es de la calle y de forma casual es tomada por la persona que circulaba, entonces no será necesario su consentimiento. Pero sí el objetivo es señalar a alguien por alguna característica especial, entonces sí se deberá requerir su consentimiento
+- Que haya interés científico, cultural o educacional prioritario. Se deberán tomar medidas necesarias para que la imagen no produzca un daño innecesario, eliminar cuanto se pueda la imagen en la medida en que pueda mantenerse el objetivo científico, educacional o cultural
+- Que sea el ejercicio regular del derecho de informar sobre acontecimientos de interés general
+
+Se chocan dos derechos. El de informar y el derecho a preservar la imagen. Se deberá determinar en cada caso cuál prevalecerá. Sí hay conflicto, se irá al tribunal.
+
 ---
 
 <a id="typ"></a>
@@ -7076,6 +7168,186 @@ La base de Android es el núcleo de Linux, que proporciona un entorno seguro y e
 
 # Conceptos Codigo Limpio, Objetos y Diseño
 
+<a id="diag1"></a>
+
+### **Ejemplo de Pseudo-código**
+
+```pseudocode
+1. pedir el primer numero
+2. se guarda el numero en la variable numero 
+3. se pide el 2do numero 
+4. se guarda el 2do numero en la variable numero 2 
+5. preguntarle al usuario que cuenta quiere hacer 
+6. si el usuario quiere division se chequea que la varieble 2 no sea 0 
+7. si alguna de las variebles es cero debe aparecer un perro rojo
+8. realizar la cuenta 
+9. guardar resultado en la varieble resultado 
+10. se muestra el resultado
+
+1. Solicitar el nombre al usuario
+2. Guardar nombre en la variable “nombre”
+3. Solicitar la cantidad de horas trabajadas
+4. Guardar la cantidad en la variable “cantHoras”
+5. calcular el importe a abonar haciendo: importeTotal = cantHoras * VALOR_HORA
+6. Mostrar por pantalla: “El empleado ”, nombre, “ debe cobrar: $”, importeTotal
+```
+
+<a id="diag2"></a>
+
+### **Diagramas de Nassi-Schneiderman**
+
+![Diagrama de Nassi-Schneiderman](src/diag1.png)
+
+**Mostrar mensajes por pantalla**
+
+Para representar una salida por pantalla, debe utilizarse un rectángulo, en cuyo ángulo superior izquierdo lleve un pequeño cuadrado marcando una S de Salida.
+
+![Diagrama de Nassi-Schneiderman](src/diag2.png)
+
+**Leer datos desde el teclado**
+
+La E en lugar de la S nos marca una Entrada, es decir, que el programa espera que el usuario ingrese un dato.
+
+En el rectángulo, debe ir el nombre de la variable en dónde se va a almacenar el dato. Asignación de valores a variables.
+
+![Diagrama de Nassi-Schneiderman](src/diag3.png)
+
+**Asignar valores a variables**
+
+Para asignarle un dato a una variable, se debe poner a la izquierda de la sentencia el nombre de la variable que va a recibir un valor, el signo “=” y el valor a asignarle. Este valor puede ser:
+
+- Un valor propiamente dicho.
+- Una constante (se le asigna el valor de la constante).
+- Una variable (se le asigna el valor de la variable).
+- El resultado de una operación aritmética o lógica.
+
+Por ejemplo:
+
+![Diagrama de Nassi-Schneiderman](src/diag4.png)
+
+Como sucede en este caso, en el que la variable importeTotal recibe el resultado del producto del valor de una constante por una variable, el valor puede darse por alguna operación aritmética o lógica.
+
+**Operadores**
+
+Los operadores son la herramienta que tenemos para indicarle al programa que debe realizar cierta operación. Existen operadores aritméticos (suma, resta, etc..), de relación (Numero mayor a otro numero, etc..) o lógicos (AND, OR, XOR..).
+
+![Diagrama de Nassi-Schneiderman](src/diag5.png)
+
+```jsx
+int a = 8;
+int b = 3;
+System.out.println(“La suma de a + b es ” + (a + b));
+```
+
+**Decisiones simples**
+
+![Diagrama de Nassi-Schneiderman](src/diag6.png)
+
+```jsx
+if (a>b) {
+  System.out.println(“el valor de a es mayor que el de b”);
+} else {
+  System.out.println(“el valor de b es mayor o igual que el de a”);
+}
+```
+
+En caso de que un empleado trabaje más de 40 horas, el valor hora aumentará en un 15%. De esta forma, luego de pedirle al usuario que ingrese la cantidad de horas trabajadas, debemos resolver cuánto es el sueldo real, antes de multiplicarlo por esta cantidad
+
+```php
+// declaración de constantes
+const int VALOR_HORA_CAT1 = 20;
+const int VALOR_HORA_CAT2 = 30;
+const int TOPE_HORAS = 40;
+
+// declaración de variables
+string nombre;
+float cantHoras;
+float importeTotal;
+```
+
+**Decisiones múltiples. Sentencia switch**
+
+A diferencia de un si condicional, existen oportunidades en que se debe decidir entre más de dos posibilidades. Las decisiones múltiples también se basan en una comparación, pero que puede resolver múltiples resultados.
+
+Hasta ahora, a los programadores del ejercicio se les pagaba según la cantidad de horas trabajadas. Vamos a cambiar esta estrategia de pago y utilizaremos algo más real con el mundo de los sistemas. Dependiendo del Rol que cumpla, podemos decir que un programador Junior está en la categoría 1, un semi-senior en la categoría 2 y un senior en la categoría 3.
+
+Vamos a solicitarle entonces, un dato más al usuario. La categoría del programador. De esta forma, las constantes y variables quedarían de este modo:
+
+```php
+// Declaración de constantes
+const int VALOR_HORA_CAT1 = 20;
+const int VALOR_HORA_CAT2 = 30;
+const int VALOR_HORA_CAT3 = 40;
+const int ERROR = -1;
+
+// Declaración de variables
+string nombre;
+float cantHoras;
+float importeTotal;
+int categoria;
+```
+
+![Diagrama de Nassi-Schneiderman](src/diag7.png)
+
+La variable categoria nos indica qué es lo que estamos evaluando. Los números 1, 2 y 3 indican las opciones posibles. Por último, este diagrama incluye un valor default (por defecto), el cual se ejecuta siempre y cuando la condición o variable evaluada no corresponda con ninguna opción.
+
+![Diagrama de Nassi-Schneiderman](src/diag8.png)
+
+**While (ciclo 0-n)**
+
+Se lo llama así porque puede ser que no haya posibilidad de *entrar* al ciclo (porque ya antes de entrar la condición del ciclo no se cumple) y porque, una vez que se entró al ciclo, lo único que permitirá que se salga es que la condición deje de cumplirse. Este ciclo es conocido como *while* y se caracteriza porque la condición de permanencia antecede al bloque de instrucciones que conforman el ciclo:
+
+![Diagrama de Nassi-Schneiderman](src/diag9.png)
+
+```jsx
+while (condicion_de_permanencia) {
+  instruccion o bloque de instruccciones;
+}
+```
+
+Es muy probable que el ciclo esté controlado por una o más variables que, incluidas dentro de la condición de permanencia, determinen a partir de su *estado* (si la condición relacionada con la variable de control se cumple o no) y, por lo tanto, si se permanece dentro del ciclo o si sale y continúa con el resto del programa. Por eso, podemos ver también este ciclo de esta manera:
+
+![Diagrama de Nassi-Schneiderman](src/diag10.png)
+
+Uno de los usos habituales de los ciclos es el ingreso validado de valores. Como muchas veces los programas interactúan con usuarios y éstos casi inevitablemente cometerán errores, es muy importante que los datos que vamos a usar en nuestros programas estén controlados, siendo sus valores acordes a lo que esperamos.
+
+Veamos un ejemplo: queremos que alguien ingrese el número de día de la semana para que nosotros, a partir de eso, hagamos algo (no importa qué). Por eso, controlaremos que el número esté dentro del rango esperado (un número entre 1 y 7), caso contrario deberíamos informar del error y volver a pedir el número. El diagrama es el siguiente:
+
+![Diagrama de Nassi-Schneiderman](src/diag11.png)
+
+```java
+int numeroDeDia;
+System.out.print("Ingresa el numero de dia de la semana (1 a 7)");
+numeroDeDia = Integer.parseInt(input.nextLine());
+while (numeroDeDia < 1 || numeroDeDia > 7) {
+  System.out.print("Me parece que te equivocaste. " +
+    "Ingresa el numero de dia de la semana " +
+    "asegurandote de que sea un numero " +
+    "entre el 1 y el 7 (inclusive):");
+  numeroDeDia = Integer.parseInt(input.nextLine());
+}
+```
+
+**Do-while (ciclo 1-n)**
+
+Se lo llama *ciclo 1-n* porque, a diferencia del *while*, su condición de permanencia se escribe y chequea luego de ejecutar el bloque de instrucciones que conforman el ciclo. Por lo tanto, siempre se entrará al ciclo aunque, al igual que en el caso de *while*, una vez que se entró al ciclo sólo se permitirá salir de él cuando la condición deje de cumplirse.
+
+![Diagrama de Nassi-Schneiderman](src/diag12.png)
+
+```java
+do {
+  instruccion o bloque de instruccciones;
+} while (condicion_de_permanencia);
+```
+
+Haciendo un paralelo con lo que dijimos anteriormente para el while, podemos ver a este ciclo de esta manera:
+
+![Diagrama de Nassi-Schneiderman](src/diag13.png)
+
+Es importante aquí resaltar que no hay dos puntos de actualización de la variable de control, y que éste es apenas se ingresa al ciclo, ni antes ni después.
+
+Veamos el ejemplo de la carga del día de semana tal como se haría con este ciclo. Dado que el dato se carga apenas antes de ser procesado, y dentro del ciclo, en caso de desear un tratamiento especial en caso de error implicaría que usemos un *if* para mostrar el problema. Para hacer eso, aconsejamos usar el ciclo *while*.
+
 <a id="cod1"></a>
 
 ### **¿De qué trata el código limpio?**
@@ -8275,6 +8547,646 @@ Si hay dudas en los tests, hay dudas en los requisitos
 
 **Los tests deben ser rápidos** Si los tests tardan mucho, no se van a correr. Deben ser rápidos para que se corran seguido.
 
+<a id="cod60"></a>
+
+### **Code Smells en Codigo**
+
+**Mezclar muchos lenguajes en un solo fichero** En el ejemplo podemos ver que se mezclan Java y HTML en un mismo archivo. A veces puede ser razonable (CSS + JS), pero en casos como el ejemplo, solo ensucia el codigo.
+
+```java
+public String getUserProfilePage (User user) {
+  return "<html> <body>...."
+}
+```
+
+**No usar variables explicatorias** Crear variables intermedias hace que el codigo quede mucho mas claro. Por ejemplo, en la imagen podemos ver la primera imagen que es una funcion de una sola linea, que queda mucho mas clara en su segunda version, agregando una variable intermedia para calcular un cateto.
+
+```javascript
+public Double calcularArea(Double hipotenusa, Double cateto) {
+    return Math.sqrt(hipotenusa*hipotenusa - cateto*cateto) * cateto / 2;
+}
+
+public Double calcularArea (Double hipotenusa, Double cateto) {
+    Double cateto_2 = Math.sqrt(hipotenusa*hipotenusa - cateto*cateto);
+    
+    return cateto * cateto_2 / 2;
+}
+```
+
+No se debe sacrificar claridad por menos lineas.
+
+**Duplicidad** Tener codigo repetido entre funciones y clases es algo común, es una oportunidad perdida para generar una nueva abstraccion. Si tenemos duplicidad entre varias clases, puede indicar la necesidad de una nueva jerarquia.
+Ademas es dificil de mantener, ya que si cambiamos una parte de ese codigo, debemos repetirlo en todos los lugares en donde se encuentra.
+
+**Demasiada Información** Poner demasiados metodos, demasiados get/set, etc, cuando no sabemos si hace falta. Los modulos bien definidos tienen interfaces muy pequeñas que permiten hacer mucho con pocos metodos.
+
+- Exponer solo lo necesario
+- Esconde los datos, ofrece operaciones, que no todo tenga get/set si no es necesario.
+
+**Código Muerto** Código que no se usa debe ser eliminado. Por ejemplo:
+
+- Funciones que no se llaman
+- Condiciones en el switch/case que no se dan nunca, al igual que con el if
+- try/catch con excepciones que nunca se lanzan
+
+Se debe borrar sin miedo, Git recuerda todo.
+
+**Basura** Son partes que no sirven de nuestro codigo, como por ejemplo:
+
+- Constructores sin implementacion puestos por defecto
+- Getters y Setters de todas las variables privadas de una clase que puede ser que no se usen nunca
+- Variables y funciones que no se usan nunca
+
+**Inconsistencia**
+
+- Si haces algo de una forma, hacelo siempre de la misma forma, tanto nombre como logica
+- Si, por ejemplo, se elije la palabra “delete” para eliminar algo, no cambiarlo en otro lado por “remove”
+- Esto hace que nuestro codigo sea mucho mas facil de leer para otros y para uno mismo
+
+**Distancia Vertical** Las variables y funciones deben estar cerca de donde se usen
+
+- Las variables locales deben ser declaradas antes de ser usadas
+- Las funciones privadas deben estar debajo de la primera funcion que las usa
+- No queremos que codigo local este puesto a muchas lineas de distancia de donde es usado ya que hace que sea complicado de leer
+
+**Comportamiento obvio no implementado**
+
+```
+Month month = MonthDate.StringToMonth(String monthName);
+```
+
+Esperamos que esta funcion pase el parametro `July` a un enum `Month.JULY`. Que haga lo mismo con `jULY` y `july`, si el codigo no hace lo que se espera en estos casos, se pierde confianza en el, y se debe estar revisando lo que hace cada linea.
+
+
+**Listas de imports muy largas** Si usas dos o mas clases de un paquete, importar directamente todo el paquete.
+
+**Herencia de constante** Se debe evitar el uso de herencia para estos mecanismos. Por ejemplo `Game` hereda de `GameConstants`. Se debe usar `GameConstants.NUMBER_OF_LEVELS` o importarlo directamente. No se debe usar herencia para crear estos mecanismos.
+
+```jsx
+public class EasyGame extends Game {
+    private int currentLevel;
+    public Double calculateProgress(){
+        return currentLevel / NUMBER_OF_LEVELS;
+    }
+}
+
+public abstract class Game implements GameConstants {
+    public Double calculateProgress();
+}
+
+public interface GameConstants {
+    public static final int NUMBER_OF_LEVELS = 10;
+}
+```
+
+**Enums vs Constantes** Usar enums siempre y cuando sea posible. Es mas potente en funcionalidad y claridad. Tambien nos permiten declarar funciones abstractas para cada valor, como `numberOfLevels` por nivel.
+
+```jsx
+public class Game {
+	private int currentLevel;
+	DifficultyLevel difficultyLevel;
+
+	public int levelsLeft() {
+		return difficultyLevel.numberOfLevels() - currentLevel;
+	}
+}
+
+public enum DifficultyLevel {
+	EASY {
+		public int numberOfLevels() {
+			return 20;
+		}
+	},
+	MEDIUM {
+		public int numberOfLevels() {
+			return 30;
+		}
+	},
+	HARD {
+		public int numberOfLevels(){
+			return 50;
+		}
+	}
+
+	public abstract int numberOfLevels();
+}
+```
+
+Se evitan los condicionales por nivel de dificultad en el ejemplo.
+
+<a id="cod61"></a>
+
+### **Code Smells en Nombres**
+
+**Nombres en nivel de abstraccion incorrecto** Si tenemos una clase `FtpFileDownloader` que implementa la interfaz, ya no recibiria una web url.
+
+```jsx
+public interface FileDownloader {
+	File download(String webUrl);
+}
+```
+
+**No usar nomenclatura estandar**
+
+- Por ejemplo, usar la palabra `Singleton` para clases que usen ese patrón, la palabra `Controller` cuando se trata de un controlador, etc..
+- Sobreescribir metodos `toString` que ya tienen las clases Java en lugar de crear un metodo propio. No reinventar la rueda
+
+**No usar nombres largos para largos alcances** Se pueden usar nombres de pocos caracteres para alcances cortos, pero si el alcance es mayor, el nombre largo es necesario. El ejemplo de un alcance acotado es en el caso de `i` para un bucle.
+
+```jsx
+for (int i = 0; i < numberOfRequests; i++) {
+	processRequest(requests.get(i));
+}
+
+// NOPE
+public class Car {
+	private int hp;
+}
+
+// SIP
+public class Car {
+	private int horsePower;
+}
+```
+
+**Usar Codificaciones**
+
+- Evitar los nombres con codificaciones que distraigan al lector
+- Un ejemplo malo son las variables, por ejemplo `intVariable` o `strName`. No es necesario agregar el prefijo `str` si ya se sabe que se trata de un String.
+
+**Ocultar efectos secundarios** Si existen efectos secundarios, los nombres de las variables y funciones deben describirlo. Por ejemplo, en el caso de esta funcion `login`, se hace mas de una cosa, y no es aclarado. Se debe separar en dos funciones o cambiar el nombre (recomendable la primera)
+
+```jsx
+public Boolean login (User user) {
+    User databaseUser = userRepository.findByUsername(user.getUsername());
+
+    if (validCredentials(user, databaseUser)) {
+        return true;
+    }
+
+    // Esto esta de mas
+    if (checkNumberOfTries(user.getIp()) > MAX_TRIES) {
+        blockUser(user);
+    }
+
+    return false;
+
+}
+```
+
+<a id="cod62"></a>
+
+### **Code Smells en Comentarios**
+
+**Informacion Inapropiada** Todo comentario que contenga informacion que este mejor documentada en otro sistema debe ser movida.
+Por ejemplo en este caso, el autor del codigo ya esta siendo registrado por Git, no es necesario que haya un comentario que lo indique, lo mismo con los TODO
+
+DON´T
+
+```java
+//@author Denisse Lemos
+public class Comments {}
+```
+
+**Comentario Obsoleto** Los comentarios deben estar actualizados al codigo actual para que no confundan al programador.
+
+**Comentario Redundante** Comentarios innecesarios de, por ejemplo, javadoc. Que no aportan valor al codigo
+
+**Comentario mal redactado** Los comentarios utiles deben estar bien redactados, sin faltas de ortografia y directo.
+
+**Código Comentado** Nunca dejar codigo comentado, ya que se guarda el registro de cambios en Git. El codigo que no se necesita, se borra.
+
+<a id="cod63"></a>
+
+### **Code Smells en el entorno**
+
+**Que la compilacion requiera mas de un paso** Se debe ser capaz de hacer un checkout del codigo fuente con un solo comando y compilarlo con otro solo comando. Si el codigo es simple y no tiene dependencias, es facil de hacer, pero a medida que va creciendo en dependencia, puede ser que se necesite compilar las dependencias por separado para luego compilar el proyecto, para esto se crearon muchas herramientas para automatizar el build del codigo. En Java el mas usado es Maven o Apache, en JS es Grunt, entre otros…
+
+```
+git clone {nuestroProyecto}
+mvn install
+```
+ 
+**Los test requieren mas de un paso** Los test se deben ejecutar con un unico comando facil, rapido y obvio, al igual que la compilacion. Si esto no se cumple, pueden haber altas chances de que los test no suelan correrse por el trabajo que conllevan en si mismos. La idea es ejecutarlos muy seguido.
+Tambien hay herramientas de automatizacion para los tests, con comandos especificos para los tests. En maven existe `mvn test`
+
+<a id="cod64"></a>
+
+### **Code Smells en Funciones**
+
+**Demasiados parametros / argumentos** Las funciones mas faciles de leer son las que no reciben parametros. Mientras mas parametros, mayor es la complejidad. No se recomiendan mas de 3 parametros, y si es el caso, se recomienda refactorizar, separando esta funcion en varias funciones mas pequeñas o encapsulando los argumentos en una clase
+
+**Intenciones ocultas dificiles de apreciar**
+
+- El codigo debe ser lo mas expresivo posible
+- De nada vale un codigo que ocupa poco espacio si no lo entendemos. Mejor aclarar lo mas posible antes que priorizar el ahorro de caracteres
+
+En este ejemplo podemos ver que se ahorraron muchas letras en los nombres de las funciones, haciendo que sea muy confuso de leer
+
+```javascript
+public int otCalc(){
+	return isWkn * wkRte + (int) Math.round(0.5 * wkRte * ...);
+}
+```
+
+**Una función recibe parametros de salida** Los argumentos de salida con los que se le pasan a una funcion para que esta guarde el resultado, en vez de usar un return, como en el caso del ejemplo el parametro `int* result`, que solo sirve para guardar el resultado en una variable global. Siempre se debe usar el `return`
+Estos argumentos son muy usados en lenguajes como C.
+
+```c
+#include <stdio.h>
+
+void suma (int input1, int input2, int* result) {
+  *result = input1 + input2;
+}
+
+int main() {
+  int result;
+  suma(1,2,&result);
+  printf("Result: %d\n", result);
+
+  return 0;
+}
+```
+
+**Comportamiento incorrecto en los limites del codigo** Muchos bugs del codigo estan en los limites de los condicionales o bucles de los codigos.
+
+```java
+private final List<String> thirtyOneDayMonths = Arrays.asList("January", "March", "May", "July", "August", "October", "December");
+
+private final List<String> thirtyDayMonths = Arrays.asList("April", "June", "September", "November");
+
+public int getNumberOfDaysInMonth(String month) {
+  if (thirtyOneDayMonths.contains(month)) {
+    return 31;
+  }
+  if (thirtyDayMonths.contains(month)) {
+    return 30;
+  }
+  return 28;
+}
+```
+
+Si un año es biciesto, el codigo seria incorrecto
+
+**No encapsular las condiciones limite** Las condiciones limite son los focos mas importantes de bug. Es importante encapsularlas bien y tenerlas bien definidas.
+Si tenemos que definir una variable mas para que quede mas claro, lo hacemos.
+
+```jsx
+if (level + 1 == game.getMaxLevel()) {
+	loadFinalBoss();
+}
+
+Integer nextLevel = level + 1;
+if (nextLevel == game.getMaxLevel()) {
+	loadFinalBoss();
+}
+```
+
+**Metodos estaticos inapropiados** Los metodos estaticos no operan bajo ninguna instancia. Se debe pensar si un metodo es realmente estatico antes de declararlo como tal.
+En el caso del ejemplo, deberia ser una funcion de `Employee` si deseamos que sea polimorfica y calcule distinto dependiendo del tipo de Employee.
+
+```java
+public class HourlyPayCalculator {
+    public static Double calculatePay(Employee employee, Double overtimeRate)
+}
+```
+
+**No ser precisos** Se debe tener precision sobre las decisiones que se tomen sobre el codigo. No ser vago con las decisiones.
+
+- Si se va a calcular dinero, usar enteros y manejar el redondeo
+- Si se va a tratar con concurrencia, asegurar que no hayan carreras criticas
+- Si hay metodos que pueden lanzar excepciones, tratarlas.
+
+**Darle mas peso a convenciones que a la estructura** Las convenciones son importantes pero el diseño del software es mas importante. No uses MVC si no es la apropiada para tu codigo.
+
+**Navegacion Transitiva**
+
+- Un modulo debe saber lo menos posible sobre los demás
+- Si A usa a B, y B usa a C, evitar `a.getB().getC()`, desde A hay que acceder a B para acceder a C. Y si queremos intercalar una clase D, tenemos que modificar estos llamados agregando `getD()` en el medio.
+- Segun la Ley de Demeter hay que escribir codigo timido, A debe ser timido y no llamar a una funcion de C a traves de B. Debe conocer lo menos posible sobre los demás.
+- Asi es como se forman las arquitecturas rigidas, si surge la necesidad de modificarla, será muy costoso.
+
+**Usar condicionales negativos** Siempre es mejor usar condicionales positivos. Se debe cambiar el nombre a lo que sea necesario
+
+```java
+if (!isNotValid) {
+    // ...
+}
+
+if (isValid) {
+    // ...
+}
+```
+
+**Envidia del ambito de otra clase** Cuando una clase esta interesada en demasiada info de otra clase. Es un problema de diseño. Lo ideal es que los metodos de una clase esten interesadas en su propia clase, y no tenga que usar variables ni funciones de otra clase.
+En el ejemplo, `GameRankCalculator` tiene "envidia" de la clase `user`, ya que pide demasiadas cosas del mismo
+
+```java
+
+public class GameRankCalculator {
+    public Rank calculateRank(User user) {
+        Double hoursPlayed = user.getHoursPlayed();
+        int gamesPlayed = user.getGamesPlayed();
+        int achievements = user.getAchievements();
+
+        Double winPercentage = gamesPlayed / user.getGamesWon();
+        Double rank = hoursPlayed * gamesPlayed * achievements * winPercentage;
+
+        return new Rank(rank);
+    }
+}
+```
+
+**Clases base dependen de las derivadas** Las clases base no deben saber nada de sus derivadas. En el ejemplo, `PlaneGeometry` no deberia tener logica asociada ni a `Rectangle` ni a `Triangle` que lo heredan, deberian encargarse ellos de sus especificaciones de clase. La clase base no deberia depender de quien la hereda.
+Se recomendaria aplicar `getNumberOfSides` como abstracto.
+
+```java
+public class PlaneGeometry {
+    public int getNumberOfSides() {
+        if (this instanceof Rectangle) {
+            return 4;
+        }
+        if (this instanceof Triangle) {
+            return 3;
+        }
+        return 0;
+    }
+}
+
+public class Rectangle extends PlaneGeometry {}
+public class Triangle extends PlaneGeometry {}
+```
+
+**Ser arbitrario** Si la estructura del codigo es arbitraria, otros haran lo mismo sobre el, ensuciando mas el codigo. Las decisiones deben ser consistentes.
+
+**No usar convenciones** Es importante seguir las normas establecidas para un lenguaje de programacion en particular, como las formas de llamar a las variables, tamaños de lineas, etc..
+Todo el equipo debe seguir las mismas normas, si no, el codigo no sera homogeneo
+
+**Responsabilidad fuera de lugar**
+
+- El codigo debe ser escrito en el lugar mas natural para un lector
+- No escribir el codigo donde mas convenga, si no, donde se esperaria leer
+- Esto puede ir acoplado al ejemplo de PI acoplado con Circle, cuando quedaria mas claro que exista en una clase de constantes matematicas llamada `Math`
+
+**Funciones que no dicen lo que hacen** Los nombres de las funciones deben ser explicativos, por ejemplo:
+
+```
+Date newDate = oldDate.add(5)
+```
+
+¿Qué estamos agregando acá? ¿Son 5 horas, minutos, segundos, dias?
+
+**No conocer el algoritmo** Se deben entender los algoritmos complicados, si no los entendemos, el codigo no será todo lo limpio que puede ser. Si no se entiende, se debe refactorizar.
+
+**Pasar Flags como argumento** Un flag, boolean, indica que la funcion hace mas de una cosa. Cada funcion debe hacer unicamente una cosa.
+
+```java
+private static final Double PREMIUM_DISCOUNT_FACTOR = 0.2;
+private static final Double REGULAR_DISCOUNT_FACTOR = 0.1;
+
+public Double calculateDiscount(Item item, boolean isPremium) {
+  if (isPremium) {
+    return item.getPrice() * PREMIUM_DISCOUNT_FACTOR;
+  }
+  return item.getPrice() * REGULAR_DISCOUNT_FACTOR;
+}
+```
+
+**Funciones muertas — Dead Functions** Son funciones que no se llaman nunca. Deben eliminarse, y si llegamos a necesitarlas en un futuro, se guardan en el historial de Git.
+
+<a id="cod65"></a>
+
+### **Single Responsibility Principle**
+
+- Puede ser un nombre confuso. No quiere decir que un modulo debe hacer una sola cosa, si no que **un modulo debe tener una unica razon para cambiar**
+- Un modulo debe ser responsable de solo un usuario o interesado del sistema
+- Un modulo es una clase dentro de POO.
+
+Hay ciertos sintomas que diagnostican el no cumplimiento de SRP
+
+```javascript
+// Clase con una única responsabilidad: gestionar la lógica relacionada con el manejo de usuarios
+class UserManager {
+    // Método para agregar un nuevo usuario a la base de datos
+    addUser(user) {
+        // Lógica para agregar un usuario a la base de datos
+        console.log(`User added: ${user.name}`);
+    }
+
+    // Método para enviar un correo electrónico de bienvenida a un nuevo usuario
+    sendWelcomeEmail(user) {
+        // Lógica para enviar un correo electrónico de bienvenida al nuevo usuario
+        console.log(`Welcome email sent to: ${user.email}`);
+    }
+
+    // Método para generar un informe de usuarios registrados
+    generateUserReport() {
+        // Lógica para generar un informe de usuarios registrados
+        console.log("Generating user report...");
+    }
+}
+
+// Clase que representa un usuario del sistema
+class User {
+    constructor(name, email) {
+        this.name = name;
+        this.email = email;
+    }
+}
+
+// Uso de las clases
+const userManager = new UserManager();
+
+const newUser = new User("John", "john@example.com");
+userManager.addUser(newUser); // Output: User added: John
+userManager.sendWelcomeEmail(newUser); // Output: Welcome email sent to: john@example.com
+userManager.generateUserReport(); // Output: Generating user report...
+
+```
+
+<a id="cod66"></a>
+
+### **Open/Closed Principle**
+
+**Un artefacto de software debe estar abierto para su extension, pero cerrado para su modificacion**. Se debe poder aumentar la funcionalidad sin modificar el funcionamiento ya existente.
+
+¿Cómo se consigue?
+
+- Separando el Software en componentes de alta cohesion.
+- Que la direccion de las dependencias sea la correcta (se vera con mas detalle mas adelante).
+- Se deben proteger a los componentes de alto nivel de los cambios en los componentes de bajo nivel.
+
+```java
+// Clase base para representar formas
+class Shape {
+    area() {
+        // Método para calcular el área de la forma
+        throw new Error("This method must be overridden");
+    }
+}
+
+// Clase para representar un rectángulo
+class Rectangle extends Shape {
+    constructor(width, height) {
+        super();
+        this.width = width;
+        this.height = height;
+    }
+
+    area() {
+        // Sobrescribimos el método para calcular el área de un rectángulo
+        return this.width * this.height;
+    }
+}
+
+// Clase para representar un círculo
+class Circle extends Shape {
+    constructor(radius) {
+        super();
+        this.radius = radius;
+    }
+
+    area() {
+        // Sobrescribimos el método para calcular el área de un círculo
+        return Math.PI * this.radius ** 2;
+    }
+}
+
+// Uso de las clases
+const rectangle = new Rectangle(4, 5);
+const circle = new Circle(3);
+
+console.log(rectangle.area()); // Output: 20
+console.log(circle.area()); // Output: 28.274333882308138
+
+```
+
+<a id="cod67"></a>
+
+### **Interface Segregation Principle**
+
+El Principio de Segregación de Interfaces (ISP) establece que una clase no debe depender de interfaces que no utiliza. En otras palabras, las interfaces deben ser lo suficientemente específicas para cada cliente, evitando que los clientes dependan de métodos que no necesitan.
+
+Supongamos que tenemos una interfaz `Worker` (Trabajador) que define diferentes acciones que un trabajador puede realizar. Sin embargo, algunos tipos de trabajadores solo necesitan implementar un subconjunto de estas acciones. Aplicaremos el ISP para dividir la interfaz `Worker` en interfaces más específicas:
+
+```javascript
+// Interfaz original para un trabajador
+class Worker {
+    work() {}
+    eat() {}
+    sleep() {}
+}
+
+// Interfaz para un trabajador que solo necesita trabajar
+class WorkOnlyWorker {
+    work() {}
+}
+
+// Interfaz para un trabajador que solo necesita comer
+class EatOnlyWorker {
+    eat() {}
+}
+
+// Interfaz para un trabajador que solo necesita dormir
+class SleepOnlyWorker {
+    sleep() {}
+}
+
+// Clase para un programador que solo necesita trabajar
+class Programmer extends WorkOnlyWorker {
+    work() {
+        console.log("Programming...");
+    }
+}
+
+// Clase para un camarero que solo necesita trabajar y comer
+class Waiter extends WorkOnlyWorker, EatOnlyWorker {
+    work() {
+        console.log("Taking orders...");
+    }
+
+    eat() {
+        console.log("Eating during break...");
+    }
+}
+
+// Uso de las clases
+const programmer = new Programmer();
+const waiter = new Waiter();
+
+programmer.work(); // Output: Programming...
+waiter.work(); // Output: Taking orders...
+waiter.eat(); // Output: Eating during break...
+
+```
+
+En este ejemplo, la interfaz `Worker` se divide en interfaces más específicas (`WorkOnlyWorker`, `EatOnlyWorker` y `SleepOnlyWorker`) que contienen solo los métodos necesarios para cada tipo de trabajador. Las clases concretas (`Programmer` y `Waiter`) implementan las interfaces relevantes para su tipo de trabajo, evitando así la dependencia de métodos que no necesitan. Esto cumple con el Principio de Segregación de Interfaces.
+
+<a id="cod68"></a>
+
+### **Liskov Substitution Principle**
+
+El Principio de Sustitución de Liskov (LSP) establece que los objetos de un programa deberían ser reemplazables por instancias de sus subtipos sin alterar la corrección del programa. En otras palabras, si tenemos una clase base y una subclase que la extiende, deberíamos poder usar un objeto de la subclase en lugar de un objeto de la clase base sin cambiar el comportamiento del programa.
+
+Supongamos que tenemos una clase `Rectangle` (Rectángulo) y una subclase `Square` (Cuadrado). Según el LSP, deberíamos poder usar un objeto de tipo `Square` donde se espera un objeto de tipo `Rectangle` sin alterar el comportamiento esperado del programa:
+
+```javascript
+// Clase base para representar un rectángulo
+class Rectangle {
+    constructor(width, height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    setWidth(width) {
+        this.width = width;
+    }
+
+    setHeight(height) {
+        this.height = height;
+    }
+
+    area() {
+        return this.width * this.height;
+    }
+}
+
+// Subclase para representar un cuadrado
+class Square extends Rectangle {
+    constructor(side) {
+        super(side, side);
+    }
+
+    setWidth(width) {
+        this.width = width;
+        this.height = width;
+    }
+
+    setHeight(height) {
+        this.width = height;
+        this.height = height;
+    }
+}
+
+// Función para calcular el área de un rectángulo
+function calculateArea(rectangle) {
+    rectangle.setWidth(5);
+    rectangle.setHeight(4);
+    console.log("Area:", rectangle.area());
+}
+
+// Uso de las clases
+const rectangle = new Rectangle(5, 4);
+const square = new Square(5);
+
+calculateArea(rectangle); // Output: Area: 20
+calculateArea(square); // Output: Area: 25
+
+```
+
+En este ejemplo, la clase `Square` es una subclase de `Rectangle` y sobrescribe los métodos `setWidth()` y `setHeight()` para asegurarse de que siempre tenga la misma anchura y altura. Aunque `Square` es una subclase de `Rectangle`, podemos usar un objeto de tipo `Square` donde se espera un objeto de tipo `Rectangle` (como en la función `calculateArea()`) sin cambiar el comportamiento esperado del programa. Esto cumple con el Principio de Sustitución de Liskov.
+
+
 ---
 
 <a id="cam"></a>
@@ -9183,6 +10095,54 @@ function deleteCookie(cname) {
 Es un mecanismo que usa cabeceras HTTP adicionales para permitir que un user-agent obtenga permiso para acceder a recursos seleccionados desde un servidor en un origen distinto (dominio) al que pertenece. Por ejemplo, si tengo mi dominio [`denisse.com`](http://denisse.com), uso XMLHttpRequest para cargar el recurso [`http://api.domain-b.com/data.json`](http://api.domain-b.com/data.json)
 
 Tambien sirve para obtener fuentes externas, texturas webGL, Imagenes, hojas de estilos y Scripts. 
+
+<a id="arc21"></a>
+
+### **¿Que es un Sistema Operativo?**
+
+Un sistema operativo debe asignar los recursos de la computadora entre las necesidades potencialmente competitivas de múltiples procesos.En el caso del procesador, el recurso que se debe asignar es el tiempo de ejecución en el procesador. La forma de asignarlo es la planificación.La función de planificación debe estar diseñada para satisfacer varios objetivos que incluyen:
+
+- Equidad
+- Ausencia de inanición de cualquier proceso
+- Uso eficiente del tiempo del procesador
+- Baja sobrecarga
+
+**Objetivos**
+
+- Asignar procesos a ejecutar por el/los procesador/es
+- Tiempo de respuesta
+- Rendimiento del sistema
+- Rendimiento del procesador
+
+En un sistema de un solo procesador, sólo se puede ejecutar un proceso a la vez. Otros deberán esperar hasta que la CPU esté libre y se pueda reprogramar. El objetivo de la multiprogramación es tener algún proceso en marcha en todo momento, para maximizar la utilización de la CPU.
+
+La idea es relativamente simple. Un proceso se ejecuta hasta que debe esperar, típicamente para la terminación de una petición de E/S. En un sistema informático simple, la CPU se queda inactiva. Todo este tiempo de espera se desperdicia (no se realiza ningún trabajo útil). Con la multiprogramación, se trata de utilizar este tiempo de manera productiva. Para esto, se mantienen varios procesos en la memoria a la vez. Cuando un proceso tiene que esperar, el sistema operativo toma la CPU saca a ese proceso y da la CPU a otro proceso. Cada vez que un proceso tiene que esperar, otro proceso puede asumir el uso de la CPU.La programación de este tipo es una función fundamental del sistema operativo.
+
+<a id="arc22"></a>
+
+### **FCFS (First come, first served)**
+
+El algoritmo de programación de CPU más sencillo es el algoritmo de programación de la primera llegada, primero servido (FCFS).
+
+Con este esquema, el proceso que primero solicita la CPU es el primero que se le asigna. La implementación de la directiva FCFS se administra fácilmente con una cola FIFO.
+
+Cuando un proceso entra en la cola lista, su PCB está vinculado a la final de la cola. Cuando la CPU está libre, se asigna al proceso en la cabeza de la cola. El proceso en ejecución se elimina de la cola. El código para la programación FCFS es fácil de escribir y entender. El lado negativo de este algoritmo es el tiempo medio de espera que a menudo bastante largo
+
+<a id="arc23"></a>
+
+### **SPN/SJF (Shorted Process Next/Shorted Job First)**
+
+Un enfoque diferente para la planificación de la CPU es el algoritmo de planificación de la tarea más corta (SJF). Este algoritmo asocia con cada proceso la longitud de la siguiente ráfaga de CPU del proceso. Cuando la CPU está disponible, se la asigna al proceso que tiene la ráfaga de CPU más pequeña. Si las siguientes ráfagas de CPU de dos procesos son las mismas, se puede utilizar la planificación FCFS para romper el empate.
+
+Aunque el algoritmo SJF es óptimo, no se puede implementar en el nivel de programación de CPU a corto plazo, debido a que no hay manera de saber la longitud de la próxima ráfaga de la CPU. Una aproximación a este problema es tratar de aproximar la programación SJF. Es posible que no se conozca la longitud de la siguiente ráfaga de CPU, pero se podría predecir su valor, asumiendo que la próxima ráfaga de uso de la CPU sea similar, en duración, a las anteriores. Mediante el cálculo de una aproximación de la duración de la siguiente ráfaga de la CPU, se puede seleccionar el proceso con la ráfaga de CPU más corta prevista
+
+<a id="arc24"></a>
+
+### **SRT (Shortest Remaining Time)**
+
+Es un método de planificación con selección del proceso con tiempo restante más corto. (Versión expropiativa del proceso más corto -política SPN-).
+
+El proceso en CPU es desalojado si llega a la cola un proceso con duración más corta. Para esto, se debe estimar el tiempo de procesamiento
 
 ---
 

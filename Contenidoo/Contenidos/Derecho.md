@@ -1,42 +1,4 @@
 
-### 🤍 **Fotografías, Filmaciones e Informática**
-
-Algunas fotografías son obras intelectuales y otras no. Para que lo sea, debe poseer los requisitos de novedad, originalidad y creatividad. La ley Argentina establece un régimen diferenciado de protección, el plazo es de 20 años a contar desde su primera publicación. Se deberá inscribir dejando constancia de esa fecha, lugar de publicación y autor. ¿Una computadora puede realizar una fotografía artística? No.
-
-### 🤍 **Fraude a la propiedad intelectual**
-
-Se establecen penas sobre la reproducción de obras intelectuales, la pena es de 1 mes a 6 años y el tipo es Defraudar => Derechos de propiedad intelectual.
-
-### 🤍 **El análisis de las obras intelectuales en la actividad informática**
-
-Aunque una obra califique como obra intelectual y tenga toda la protección de la ley, se debe determinar sí se encuentra en el dominio privado o público, donde se podrán reproducir sin autorización.
-
-# Proteccion de la persona y derecho a la intimidad
-
----
-
-### 🤍 **Dignidad Humana y su protección, valores comprometidos**
-
-La dignidad es el centro de todos los derechos, es el principio mediante se explican construcciones juridicas y de las socluciones que se dan en casos individuales, el individuo no puede renunciar a su propia dignidad, por eso no son legales los “contratos” de esclavitud, etc..
-
-Hay un tipo de derechos que son extrapatrimoniales, **derechos personalísimos**, unidos a la persona y a los que nadie puede renunciar. Sí una persona sufre un daño a su dignidad, puede pedir su cese y la indemnización correspondiente, sin necesidad de probar que se realizó un daño concreto. La **intimidad personal** es el derecho de contar con un ámbito restringido de vida dentro del cual nadie no autorizado pueda ingresar o conocer sin autorización. Con el uso de las PC, se han multiplicado los problemas relativos a las violaciones de ámbitos privados, en un dispositivo podemos guardar información muy relevante sobre nosotros. En las redes sociales quedan grabados nuestros vínculos, opiniones, etc.. lo que nos hace muy vulnerables ante acciones no deseadas.
-
-### 🤍 **Derechos sobre la imagen personal**
-
-El derecho a la imagen protege no solo la imagen visual (también formas de presentarla por fotos, videos, etc..), sino también la imagen sonora de las personas (su voz). El objetivo es que nadie pueda captar ni reproducir ni difundir la imagen visual ni auditiva de una persona sin su permiso, cada uno es dueño exclusivo de su imagen.
-
-Sí una persona presta su consentimiento para que se publique una imagen, puede revocar cuando decida, y sí esta revocación produce perjuicio al antes autorizado, se le debe resarcir. La autorización para sacar una foto no autoriza su difusión, son dos permisos distintos.
-
-### 🤍 **Casos en los que no es necesario el consentimiento**
-
-La ley elabora los casos en donde no es necesario el consentimiento de las personas cuya imagen sea captada o difundida
-
-- Que la persona participe de actos públicos. Sí la imagen es de la calle y de forma casual es tomada por la persona que circulaba, entonces no será necesario su consentimiento. Pero sí el objetivo es señalar a alguien por alguna característica especial, entonces sí se deberá requerir su consentimiento
-- Que haya interés científico, cultural o educacional prioritario. Se deberán tomar medidas necesarias para que la imagen no produzca un daño innecesario, eliminar cuanto se pueda la imagen en la medida en que pueda mantenerse el objetivo científico, educacional o cultural
-- Que sea el ejercicio regular del derecho de informar sobre acontecimientos de interés general
-
-Se chocan dos derechos. El de informar y el derecho a preservar la imagen. Se deberá determinar en cada caso cuál prevalecerá. Sí hay conflicto, se irá al tribunal.
-
 ### 🤍 **Imagen de personas públicas**
 
 Personas por propia voluntad se expusieron al conocimiento público, como famosos, políticos, etc.. La imagen de estas personas puede mostrarse sin su consentimiento porque hacerlo es de interés público, respetando ámbitos de intimidad, tampoco vulnerando su dignidad
