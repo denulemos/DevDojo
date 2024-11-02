@@ -183,7 +183,27 @@
 | [Dignidad Humana y su protección, valores comprometidos](#cic19)|
 | [Derechos sobre la imagen personal](#cic20)|
 | [Casos en los que no es necesario el consentimiento](#cic21)|
-
+| [Imagen de personas públicas](#cic22)|
+| [Imagen de personas fallecidas](#cic23)|
+| [Caso de la mujer en la tribuna](#cic24)|
+| [El caso de los espías](#cic25)|
+| [El software y los problemas de su encuadramiento legal](#cic26)|
+| [El software como Obra Intelectual](#cic27)|
+| [El software como invención](#cic28)|
+| [El software como un nuevo objeto jurídico](#cic29)|
+| [La prisión de los conceptos jurídicos](#cic30)|
+| [Distintas etapas de la tecnología y distintos problemas](#cic31)|
+| [El software y la protección por el régimen de la propiedad intelectual](#cic32)|
+| [Software propietario, abierto y libre.](#cic33)|
+| [Consecuencias de la inclusión de los programas dentro del régimen de propiedad intelectual](#cic34)|
+| [Las ideas no pueden ser de nadie](#cic35)|
+| [Obras intelectuales e inventos, marcas comerciales, diseños industriales](#cic36)|
+| [Obras Intelectuales](#cic37)|
+| [El carácter temporal](#cic38)|
+| [Características: Novedad, originalidad, creatividad](#cic39)|
+| [*Derechos sobre la obra, personalísimos y de explotación económica](#cic40)|
+| [Origen de las firmas](#cic41)|
+| [Firma desde el derecho](#cic42)|
 
 ## [Typescript](#typ)
 
@@ -4763,6 +4783,225 @@ La ley elabora los casos en donde no es necesario el consentimiento de las perso
 - Que sea el ejercicio regular del derecho de informar sobre acontecimientos de interés general
 
 Se chocan dos derechos. El de informar y el derecho a preservar la imagen. Se deberá determinar en cada caso cuál prevalecerá. Sí hay conflicto, se irá al tribunal.
+
+<a id="cic22"></a>
+
+### **Imagen de personas públicas**
+
+Personas por propia voluntad se expusieron al conocimiento público, como famosos, políticos, etc.. La imagen de estas personas puede mostrarse sin su consentimiento porque hacerlo es de interés público, respetando ámbitos de intimidad, tampoco vulnerando su dignidad
+
+<a id="cic23"></a>
+
+### **Imagen de personas fallecidas**
+
+Serán los herederos quienes deberán prestar el consentimiento en los mismos términos como sí fuera una persona viva. Pasados los 20 años de muerto, pasará a ser libre, siempre y cuando no sea ofensiva, sí lo resulta, los herederos podrán aún así, reclamar.
+
+<a id="cic24"></a>
+
+### **Caso de la mujer en la tribuna**
+
+Una revista capta una foto en un acto público, con 5 personas, en el medio una mujer. La foto podría publicarse ya que la regla dice que no se necesita consentimiento cuando se trata de un acto público. Pero antes de su publicación, la revista difumina a todas las personas menos a la mujer, entonces la mujer demanda a la revista por haber difundido esta imagen sin su consentimiento. La mujer triunfa en el juicio y la revista debe indemnizarla.
+
+Supongamos que la mujer vuelve a otro acto público, y se saca otra foto, y por cuestiones de la naturaleza, salen difuminados todos menos ella. La mujer hace otro juicio, y esta vez la revista gana el juicio, aunque la foto sea casi igual, ya que lo que define el resultado jurídico no es el hecho en sí, sino el contexto.
+
+<a id="cic25"></a>
+
+### **El caso de los espías**
+
+Se saca una foto de gente caminando en la calle y a una persona se le tapa el rostro con una franja negra. Esta misma persona se reconoce y hace un juicio. La revista argumenta que no es la misma persona y que tiene derecho a publicar esta imagen ya que es una imagen sucedida en público. El demandante prueba que es él, y dice que sí bien fue un acto público, el hecho de haberle tapado la cara, lo individualizan, haciendo que su participación dejará de ser casual. Por esto mismo, el demandante gana el juicio.
+
+En las redes sociales se suben fotos constantemente de personas, ¿Pueden estas demandar a los usuarios?
+
+- El consentimiento no debe ser necesariamente expreso, ya con que la persona participe de la imagen es algo
+- Con consentimiento, igualmente es revocable como consecuencia de que se trata de un derecho personalísimo.
+- Sí se trata de terceros, la ley autoriza el uso de la imagen sí es un acto público o estos terceros aparecen casualmente en la imagen.
+
+El derecho de la imagen no se respeta en las redes sociales. Esto se debe a dos cosas, el desconocimiento y la dificultad de los operadores jurídicos en preparar la prueba en las que se van a apoyar. Aunque no negamos que en un futuro esto pueda evolucionar.
+
+<a id="cic26"></a>
+
+### **El software y los problemas de su encuadramiento legal**
+
+Antes del software, existían regímenes de protección de objetos inmateriales, como el derecho de propiedad intelectual y el derecho de patentes de invención. El problema fue en cual de esos regímenes jurídicos corresponde encuadrarlo o sí el software por sus características intrínsecas era una obra intelectual o un invento.
+
+En 1967, la OMPI (Organización Mundial de la Propiedad Intelectual) estableció que el software era una obra intelectual, y que por lo tanto, se le aplicaría el régimen de protección de las obras intelectuales. En 1991, la OMPI estableció que el software era una obra intelectual, pero que también podía ser considerado un invento, y que por lo tanto, se le aplicaría el régimen de protección de las patentes de invención.
+
+<a id="cic27"></a>
+
+### **El software como Obra Intelectual**
+
+¿Cumple con los requisitos?
+
+- **Novedoso: Puede serlo**
+- **Originario: Se plantean dudas**
+- **Creativo: Lo creativo es lo contrario de lo trivial, implica una forma de expresar la idea germinal que sea distinta, que no lo pueda desarrollar cualquiera, es el descubrimiento de la obra intelectual. El software puede cumplir con este requisito.**
+
+Las dudas se plantean respecto al carácter de originariedad. El sistema de propiedad intelectual es heredero ideológico del romanticismo según el cual las obras intelectuales son las que provienen del espíritu individualista de una persona. El espíritu de las personas producen obras, y ellas son las expresiones de ideas que se protegen.
+
+Sí el software es una técnica, un procedimiento para lograr la realización de una tarea, no sería una obra originaria, y tampoco sería una obra intelectual en los términos que el derecho exige.
+
+El software puede ser una creación originaria, cuando se programa se lo puede hacer llevando melodías, contrapuntos y ritmos, puede ser elaborado siguiendo sentidos estéticos, lo que sería parecido al arte puro. Todo sin perjuicio de los objetivos prácticos y operativos de los programas.
+
+<a id="cic28"></a>
+
+### **El software como invención**
+
+Un invento para ser protegido debe ser un desarrollo destinado a la solución de un problema práctico que termine en un producto tangible. Las ideas y procedimientos intelectuales están fuera de la protección de las patentes. No se puede proteger por este sistema a conceptos abstractos y sus combinaciones.
+
+Los inventos deben aportar una solución a un problema de naturaleza técnica y el software no fue visto así porque por “problema de naturaleza técnica” se entendió un problema fundamentalmente de naturaleza material.
+
+El régimen de patentes generaba otro problema, un invento. Al igual que una obra intelectual, debe ser novedoso. Una obra intelectual existe desde que se crea y se considera novedosa hasta que alguien entabla una demanda sosteniendo que ha sido copiada. Para otorgar una patente, la oficina correspondiente debe verificar que lo sea, debe verificar que nunca se haya desarrollado en ninguna parte del mundo. Constituía un obstáculo de difícil solución en el sistema legal.
+
+<a id="cic29"></a>
+
+### **El software como un nuevo objeto jurídico**
+
+Esta era la polémica situación tanto en la doctrina como en las fluctuantes decisiones judiciales en muchos países. Una nueva posición sostuvo que el software no se encuadra ni en el sistema de propiedad intelectual ni en el de patentes, por lo que no correspondía generar un sistema conceptual novedoso para esta creación contemporánea. Esta posición, no tuvo adherentes destacados y fue descartada.
+
+<a id="cic30"></a>
+
+### **La prisión de los conceptos jurídicos**
+
+El derecho tiene la funcion de solucionar problemas. Para hacerlo crea estructuras conceptuales que forman subsistemas dentro de estructuras generales. Se producen contradicciones entre distintas partes, vacíos, etc.. También se producen prisiones conceptuales. Una vez se desarrollan los conceptos, se explican, suele perderse en el olvido el problema para el cual se crearon.
+
+Al generarse un mundo conceptual nuevo se olvida el carácter de los problemas que se buscaba resolver y que originaron las construcciones. Nos vemos compelidos por estos conceptos porque las cosas reales son obligadas a encuadrarse en ellos. A los problemas se los encuadra de la manera más conocida, donde haya luz, y paso esto con el software y sus problemas de protección. Podemos hacer un razonamiento distinto, en vez de preguntarnos en qué régimen jurídico es más adecuado para integrar el software, podemos preguntarnos en qué régimen sería más conveniente incluirlo, para los de, usuarios y la sociedad.
+
+<a id="cic31"></a>
+
+### **Distintas etapas de la tecnología y distintos problemas**
+
+Antes, cuando las PC no eran tan comunes de tener, el problema era la copia de los procedimientos o algoritmos de programación. El peligro era en ese entonces el espionaje industrial porque eran verdaderos espías quienes trafican ilegalmente con fórmulas de programación. Cuando las computadoras pudieron compartir el software, el problema cambió, con la aparición de las PC más personales se generalizó la copia ilegal de los programas, a punto del escándalo. La necesidad era evitar la copia de los programas, la copia de los archivos, la copia lisa y llana por medios electrónicos. El régimen jurídico apropiado para este contexto era el de la propiedad intelectual que lo que hace es impedir la reproducción ilegal lisa y llana. El régimen de la propiedad intelectual cuenta con un tipo penal de fraude que resultaba adecuado para ser aplicado a las organizaciones dedicadas a la copia ilegal.
+
+<a id="cic32"></a>
+
+### **El software y la protección por el régimen de la propiedad intelectual**
+
+Se acordó que el software será protegido por el mismo régimen de la propiedad intelectual. No necesitamos resolver el problema respecto a sí el software es o no es una obra intelectual, simplemente le damos el mismo régimen de protección de las obras intelectuales. El incorporarlas dentro del régimen generó dificultades que se fueron viendo con el tiempo.
+
+En Argentina, por la ley 25036 se modificó la ley 11723 de propiedad intelectual y se le agregaron una serie de normas relativas a los programas de computación y a las BD. La primera dificultad es saber sí para que los programas de computación y las BD estén protegidos se requiere que se cumplan requisitos como cumplen las obras intelectuales por el solo hecho de serlo. Las soluciones judiciales han sido vacilantes, también la ley especifica que cuando un programa se elabore por dependientes contratados para hacerlo, el titular de los derechos será quien los contrato, salvo que se acuerde lo contrario. Esto es importante saberlo ya que permite realizar contratos en que las partes obtengan de una forma más adecuada la satisfacción de sus intereses. Las formas en que puede darse la copia ilegal de un programa son 3, porque 3 son las formas en que un programa se expresa.
+
+El programa es un texto que un programador escribe, el archivo resultante es sometido a un proceso que genera nuevos archivos llamados archivos objetos, y esos archivos pueden correrse en la computadora por donde aparecen dibujos en la pantalla, opciones, se transforman datos que se exponen por periféricos. Esto permite 3 tipos de copias:
+
+- Del programa como texto, esto puede suceder sí se puede acceder al código fuente del programa
+- Copia de los archivos que se ejecutan, la más común, cuando se copian sin tener licencia.
+- El programa mientras es ejecutado por la computadora, va mostrando imágenes combinadas, también es posible copiar en su despliegue.
+
+El derecho de propiedad intelectual protege contra las copias ilegales y las consecuencias son dos, la comisión del delito de fraude a la propiedad intelectual y la obligación de reparar civilmente los daños.
+
+<a id="cic33"></a>
+
+### **Software propietario, abierto y libre.**
+
+- **Propietario**: que se encuentra protegido y existe un titular. No puede reproducirse sin autorización.
+- **Software de dominio público**: no existe titular o este lo ha liberado y es de libre uso.
+- **Software libre:** es un software amparado por los derechos de propiedad intelectual, pero que el o los autores han establecido una licencia de uso amplia de acuerdo a ciertos principios. Normalmente está autorizada la copia sin necesidad de autorización expresa siempre y cuando se respeten ciertas condiciones.
+- **Software abierto**: software que se distribuye con el programa fuente. Más allá de ello, puede estar autorizada la modificación o no.
+
+<a id="cic34"></a>
+
+### **Consecuencias de la inclusión de los programas dentro del régimen de propiedad intelectual**
+
+El régimen de propiedad intelectual fue creado dentro de un contexto tecnológico muy determinado, fundamentalmente la tecnología de edición de libros y la ideología del romanticismo europeo. Ante una realidad nueva, como fue la creación de las computadoras y los programas, se buscó la protección y se ajustó su inclusión en el régimen de propiedad intelectual lo que ha traído varias consecuencias poco funcionales:
+
+- El límite temporal de la protección de estos derechos intenta establecer una ecuación de equilibrio entre los derechos del autor, inventor o creador por una parte y los de la sociedad por la otra. El software, por sus características, cuenta con un tiempo de explotación o de vida útil reducido en comparación a las obras intelectuales. Con lo cual protegerlos durante los mismos períodos resulta ridículo. Proteger un programa de computación por un lapso de 70 años después de la muerte del autor o por 70.000 años resulta ser lo mismo, una protección infinita; por ello se rompe el equilibrio en perjuicio de la sociedad.
+- El derecho de cita se vuelve materialmente imposible porque el mismo concepto resulta ser absurdo en el ámbito del software.
+- No se entiende si para estar protegidos los programas se deben respetar ciertas características de novedad, originalidad y creatividad o en qué sentido podrían entenderse.
+- No existe conciencia social del delito de fraude a la propiedad intelectual de los programas por lo cual resulta escandaloso que hasta los mismos gobiernos utilicen programas ilícitamente obtenidos. Por ello resulta crucial desarrollar nuevas alternativas de protección que se ajusten a la realidad tecnológica y a los valores de la sociedad actual.
+
+<a id="cic35"></a>
+
+### **Las ideas no pueden ser de nadie**
+
+Las ideas no pueden robar, para robar el objeto debe ser ajeno y las ideas como tales no son propiedad. Todas nuestras actividades son producto de nuestras ideas, el humano funciona a ideas. Una cosa es una idea para hacer algo y otra es su expresión concreta. No es lo mismo la idea que inspira a una canción que la canción en sí. Existe la concepción de la idea y, tras una elaboración, lo producido por esa idea.
+
+El derecho actúa sobre estas ideas, y lo hace con el siguiente proceso:
+
+https://lh7-us.googleusercontent.com/lEQzeAdxNA8h_IK9gHcQ_LL9gIbH17IwrHLArC5MdcuKbjfxeZ6pdhCAWXwKPv6xfxQo9qIlo5TGm891X5eZNnUQNfzsFNkXKTSX6Hsusm2dP__AxWNHLi9OqAyEJESoPgpcObF6K7FvGOhANwan0g
+
+- Por una ley, se crea un concepto que agrupa un conjunto de los objetos creados, como la obra intelectual. Se agrupan las elaboraciones en conjuntos circunscriptos.
+
+Las clasificaciones que se producen como consecuencia de este paso podrían haber sido distintas:
+
+- Dicta para ese conjunto un sistema jurídico, es decir, normas que establecerán el momento en que se adquiere la propiedad
+- La ley establece tipos penales para para quien viole los derechos de los de ahora propietarios de lo creado
+
+Algunos conceptos quedaron encuadrados caracterizados, definidos, mientras que otras de las realidades producidas por las ideas no merecieron ese tratamiento legislativo. Esa diferencia sucede porque la ley protege algunas de esas creaciones y otras no conforme lo que los legisladores entienden son los valores e intereses de una sociedad.
+
+<a id="cic36"></a>
+
+### **Obras intelectuales e inventos, marcas comerciales, diseños industriales**
+
+Hay obras artísticas literarias, científicas, etc.., donde el material (sonidos de la canción, libro, etc..) carece de importancia en cuanto a la obra, es solo un soporte y lo relevante es el sentido. También están las cosas tangibles que solucionan problemas prácticos y son de utilidad material. En el primer caso, el objetivo de la obra es satisfacer necesidades espirituales, el segundo busca resolver problemas prácticos y son de importancia económica.
+
+A las primeras la ley las agrupa como **obras intelectuales**, y las segundas son protegidas con el **régimen de patentes de invención.**
+
+- “¿Patentaste tu idea?” => Las ideas como tal no están protegidas y lo único que se patenta son los inventos.
+
+De forma parecida se protegieron las marcas comerciales, símbolos que identifican un producto dentro de un mercado y diseños industriales.
+
+<a id="cic37"></a>
+
+### **Obras Intelectuales**
+
+Son creaciones artísticas, literarias, científicas y pedagógicas. La protección fundamental es que nadie puede reproducirlas sin el consentimiento del autor, titular, etc..
+
+- Es **internacional**. Se hizo con características mínimas comunes a todos los países. Una obra de Argentina se protege en todo el mundo.
+- Se adquiere en el mismo momento de la creación
+- Se inscriben en los registros de la propiedad intelectual. Esta no otorga la propiedad, sino que tiene como funcion esencial cuidar la prueba sobre quien es el que la creó. No es una prueba definitiva, pero demuestra que el dia de la inscripción estaba en poder de quien lo realizó
+- Es **temporal**, pasado x tiempo dejan de pertenecer al autor o a sus descendientes y se convierten en uso público.
+
+<a id="cic38"></a>
+
+### **El carácter temporal**
+
+¿Por qué una obra intelectual es temporal? La ley establece que las obras intelectuales pertenecen a sus creadores por un tiempo y luego pasarán al patrimonio común, no al estado como se suele creer. Serán de uso público. En 1933 en Argentina se establecieron 30 años desde la muerte del autor de vencimiento, y a medida que se mejoraron las comunicaciones, tecnología de impresión y reproducción de libros, el plazo debía disminuir porque la explotación económica de las obras intelectuales se hacía más veloz. Hoy en día la obra se encuentra protegida toda la vida del autor y luego a sus herederos por 70 años desde el 1 de enero desde su muerte.
+
+<a id="cic39"></a>
+
+### **Características: Novedad, originalidad, creatividad**
+
+No cualquier creación producto del trabajo intelectual es una obra intelectual
+
+- **Debe ser novedosa**: No debe existir antes. Toda obra intelectual tiene parecidos, similitudes, podríamos decir que toda obra intelectual es la modificación de otra anterior previamente existente. Una creación para ser una obra intelectual debe ser novedosa.
+- **Debe ser originaria**: Es una obra que nace del espíritu de una persona, dentro del ambiente ideológico en el cual se desarrolló el sistema de la propiedad intelectual el espíritu se expresa en la poesía, música, novelas, esculturas. Esas producciones del espíritu son las que están protegidas por el sistema de propiedad intelectual. Solo son originarias obras de contenido artístico, literario, científico o pedagógico.
+- **Debe ser creativa:** Lo creativo es lo distinto. El espíritu se manifiesta a través de obras únicas y que pueden expresar una singularidad que enriquece el universo. En la práctica judicial se aplica un criterio amplio ya que no se evalúa el valor estético sino la singularidad.
+
+<a id="cic40"></a>
+
+### ***Derechos sobre la obra, personalísimos y de explotación económica**
+
+Como expresión de una idea se produce una obra intelectual. Reproducir una obra puede ser hecho de muchas formas, fotocopiando un libro, cantando una canción, etc.. ¿Qué derechos concretos tiene el autor? **Derechos personalísimos y derechos de explotación económica**.
+
+Los derechos personalísimos son derechos inalienables, no pueden ser enajenados ni por el titular de esos derechos, son derechos de la persona humana. El autor no puede renunciar a esos derechos como no puede renunciar a su libertad, nombre, cuerpo, etc..
+
+- **Derechos de autoría:** Sí el autor de una novela hace un contrato con una editorial para publicar y editar la obra, sí hay una cláusula que autoriza publicar la obra con el nombre de otra persona como autor, esta no tendría validez.
+- **Derecho de integridad:** es el derecho inalienable a que la obra se mantenga intacta, sin agregados, según el autor la hizo. Cualquier cláusula contraria será nula
+- **Derecho de arrepentimiento:** Sí el autor se arrepiente una vez que sus libros están a la venta, el editor no puede seguir vendiendo. El autor debe pagar los daños que produce su decisión. Por el motivo que sea.
+    
+    https://lh7-us.googleusercontent.com/DkRMPgn0J8E2o8YK-jpsJNTl_MJ5ybdJBYQyBl6OvBKELvIFeq5_yzPZWcJWtiiwqDwxLQCoApPbtiPEjEPfuoZDpz122odphA4z5PAOmB5V27CVKPkGGhG4EDHxAXvocdCzCo1WjhLincN4mo2VDw
+    
+
+El derecho de explotación económica permite al autor difundir su obra a través de autorizaciones de reproducción, pagas o gratuitas. El autor realiza convenios que establecen dentro de la totalidad de lo posible, los límites de lo autorizado. El autor diseña lo que va a entregar a través de convenios.
+
+<a id="cic41"></a>
+
+### **Origen de las firmas**
+
+El humano, cada persona, tiene características únicas, irrepetibles, en su modo de escribir. El derecho aprovechó esto para darle sentido jurídico a la firma, se inventó junto con el establecimiento de consecuencias legales a los documentos en los cuales alguien la estampa su firma.
+
+“Firma” refiere a lo firme, a lo afirmado. Antes de la firma hubo otro sistema, con sellos. Las personas tenían un anillo-sello que los identificaba y con el marcaban los documentos.
+
+La firma es un acto personalísimo, no puede ser delegado. La firma es un acto de voluntad, de adhesión a un contenido. La firma es un acto de fe, de confianza, de creencia en la palabra dada. La firma es un acto de responsabilidad, de asunción de las consecuencias de lo firmado.
+
+<a id="cic42"></a>
+
+### **Firma desde el derecho**
+
+La firma identifica a la persona, autentifica el documento firmado y el firmante hace saber que presta su consentimiento sobre lo expresado en el documento. La firma a mano también se llama **autógrafa**. Lo que permitió la difusión de la firma a mano fue la característica de poder determinarse su autenticidad, en el caso de que alguien diga que una firma no es suya, hay maneras de saber sí lo es o no.
+
+La invención de la escritura y la proliferación de documentos permitieron desarrollar actividades importantes, como cosas financieras o de negocios. La ventaja de la firma es que determina al autor y la autenticidad del documento por el gesto de la mano firmante. No se puede firmar documentos digitales, solo documentos en papel.
+
+
 
 ---
 
