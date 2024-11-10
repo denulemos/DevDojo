@@ -6,6 +6,8 @@
 
 </div>
 
+<a name="seg-base"></a>
+
 ## [Seguridad](#seg)  
 
 | Temas   |
@@ -43,6 +45,9 @@
 | [Adquisicion en Informatica Forense](#seg31)    |
 | [El informe pericial informatico](#seg32)    |
 
+
+<a name="acc-base"></a>
+
 ## [Accesibilidad](#acc)  
 
 | Temas   |
@@ -64,6 +69,8 @@
 | [CSS accesible](#acc15)    |
 | [Nombrar algunas ARIA existentes](#acc16)    |
 | [¿Qué prácticas conlleva tener un HTML accesible?](#acc17)    |
+
+<a name="alg-base"></a>
 
 ## [Algoritmos - Logica](#alg)
 
@@ -166,6 +173,8 @@
 | [Entre JS y un script ASP, ¿Cual es mas rápido?](#var34)    |
 | [¿Qué es una funcion Declarativa y una Expresiva?](#var35)    |
 
+<a name="cic-base"></a>
+
 ## [Organizacion en Software - Derecho en IT](#cic)
 
 | Temas   |
@@ -236,6 +245,8 @@
 | [El problema del daño causado por un tercero por injurias realizadas en un sitio web](#cic64)|
 | [Beneficios para una organización de implementar ISO 27001](#cic65)|
 
+<a name="typ-base"></a>
+
 ## [Typescript](#typ)
 
 | Temas   |
@@ -256,6 +267,8 @@
 | [Cómo hago que las props de una interface sean opcionales?](#typ14)    |
 | [Herencia en Typescript](#typ15)    |
 | [Interfaces en Typescript](#typ16)    |
+
+<a name="sty-base"></a>
 
 ## [Styles - Estilos](#sty)
 
@@ -279,12 +292,14 @@
 | [Mixins en SASS](#sty16)    |
 | [Condicionales if-else en SASS](#sty17)    |
 
+<a name="rea-base"></a>
+
 ## [Javascript Frameworks and Libraries](#rea)
 
 | Temas   |
 |----------|
-| [Cual es la diferencia entre h1, h2, etc?](#rea40)    |
-| [Para que es el Doctype?](#rea54)    |
+| [¿Cuál es la diferencia entre h1, h2, etc.?](#rea40)    |
+| [¿Para qué es el Doctype?](#rea54)    |
 | [Atributo placeholder para campos en HTML](#rea55)    |
 | [Vínculos Relativos en HTML](#rea56)    |
 | [Vínculos Absolutos en HTML](#rea57)    |
@@ -373,6 +388,8 @@
 | [¿Cómo se ejecutan las aplicaciones en Android y qué son los archivos DEX?](#mob2)    |
 | [¿Qué es el Android Runtime y cómo se ejecutan las aplicaciones en Android?](#mob3)    |
 | [¿Qué constituye la base de Android y qué funciones proporciona el kernel de Linux?](#mob4)    |
+
+<a name="qa-base"></a>
 
 ## [QA](#qa)
 
@@ -584,11 +601,15 @@
 
 ### **Qué quiere decir "Ciberataque"?**
 
+[Volver al indice](#seg-base)
+
 Es cualquier maniobra ofensiva de explotación deliberada que tiene como objetivo tomar el control, desestabilizar o dañar un sistema informático.
 
 <a id="seg2"></a>
 
 ### **Que quiere decir "Ciberamenazas"?**
+
+[Volver al indice](#seg-base)
 
 Representa un evento con potencial de daño que puede afectar negativamente a las operaciones de una organización o a sus activos.
 
@@ -596,17 +617,23 @@ Representa un evento con potencial de daño que puede afectar negativamente a la
 
 ### **¿Qué quiere decir "Vulnerabilidad"?**
 
+[Volver al indice](#seg-base)
+
 Representa una condición de debilidad en los sistemas informáticos que permiten la materialización del daño
 
 <a id="seg4"></a>
 
 ### **¿Qué es el ciberespacio?**
 
+[Volver al indice](#seg-base)
+
 El ciberespacio es un ambiente complejo en donde interactúan los seres humanos, el software y los servicios disponibles en Internet, soportados por el hardware y las redes de comunicaciones de todo el mundo
 
 <a id="seg5"></a>
 
 ### **¿Cuáles son los componentes del Ciberespacio?**
+
+[Volver al indice](#seg-base)
 
 - Personas
 - Software
@@ -617,6 +644,8 @@ El ciberespacio es un ambiente complejo en donde interactúan los seres humanos,
 <a id="seg6"></a>
 
 ### **Cuales son los problemas del Ciberespacio?**
+
+[Volver al indice](#seg-base)
 
 - Ciberdelincuencia
 - Robo de Informacion
@@ -629,6 +658,8 @@ El ciberespacio es un ambiente complejo en donde interactúan los seres humanos,
 <a id="seg7"></a>
 
 ### **¿Cuáles son las ciberamenazas actuales?**
+
+[Volver al indice](#seg-base)
 
 | Nombre | Descripcion |
 | --- | --- |
@@ -662,6 +693,8 @@ El ciberespacio es un ambiente complejo en donde interactúan los seres humanos,
 
 ### **¿Qué es la Ciberseguridad?**
 
+[Volver al indice](#seg-base)
+
 La Ciberseguridad surge como resultado de una visión amplia de los aspectos de seguridad que se deben tener a fin de poder minimizar los riesgos que proponen los nuevos desafíos y retos del ciberespacio. Se define como el conjunto de medidas de protección de la información, a través del tratamiento de las amenazas que ponen en riesgo a la misma y que es tratada por los sistemas de información interconectados
 
 La Ciberseguridad se centra únicamente en los activos digitales conectados a Internet. Mantiene su atención principalmente en los riesgos provenientes únicamente del ciberespacio. Extiende su visión a la protección de la infraestructura crítica de información
@@ -669,6 +702,8 @@ La Ciberseguridad se centra únicamente en los activos digitales conectados a In
 <a id="seg9"></a>
 
 ### **¿Cuál es el perfil del Oficial de seguridad informática?**
+
+[Volver al indice](#seg-base)
 
 El oficial de seguridad informática tiene la función de brindar los servicios de seguridad en la organización, a través de la planeación, coordinación y administración de los procesos de seguridad informática, así como difundir la cultura de seguridad informática entre todos los miembros de la organización
 
@@ -686,6 +721,8 @@ El oficial de seguridad informática tiene la función de brindar los servicios 
 
 ### **¿De qué pasos consta la metodología de ciberseguridad?**
 
+[Volver al indice](#seg-base)
+
 - **Identificar**: se debe entender el funcionamiento de la organización para minimizar el riesgo de los sistemas, activos, datos y capacidades.
 - **Proteger**: se deben diseñar salvaguardas para limitar el impacto de los eventos potenciales sobre los servicios y las infraestructuras críticas
 - **Detectar**: ejecutar actividades para identificar la ocurrencia de un evento de ciberseguridad.
@@ -695,6 +732,8 @@ El oficial de seguridad informática tiene la función de brindar los servicios 
 <a id="seg11"></a>
 
 ### **¿De qué pasos criterios de seguridad consta la metodología de ciberseguridad?**
+
+[Volver al indice](#seg-base)
 
 - Debido a los nuevos desafíos que vienen aparejados con las tecnologías, la rama de la ciberseguridad dentro de una organización debe ser considerada transversal, enfocándose principalmente en el resguardo de sus activos informáticos, pero también haciendohincapié en la concientización del factor humano
 - Al momento de evaluar una tecnología, se debe prestar atención al entorno donde se va a implementar, su relación con otros entornos y/o plataformas y/o servicios, su alcance y sus canales de comunicación
@@ -706,6 +745,8 @@ El oficial de seguridad informática tiene la función de brindar los servicios 
 <a id="seg12"></a>
 
 ### **¿Cuáles son algunas medidas comunes contra los ataques?**
+
+[Volver al indice](#seg-base)
 
 * Restringir el acceso a la base de datos: No dejarla expuesta en la red para que cualquiera pueda conectarse. Recomendable tener una lista de IPs u origenes que pueden conectarse a la misma.
 * Guardar de forma segura informacion sensible: No guardar en texto plano informacion sensible por si la BD se ve comprometida. Un ejemplo son las contraseñas, Se recomienda aplicar Hashing con algoritmos especializados.
@@ -719,6 +760,8 @@ El oficial de seguridad informática tiene la función de brindar los servicios 
 
 ### **Cuales son algunas modalidades comunes de ataques?**
 
+[Volver al indice](#seg-base)
+
 - **Black Box (Blind):** Security Tester, no cuenta con info sobre el objetivo
 - **Double Black Box (Double Blind):** El cliente no sabe nada sobre el test que hará, cómo ni cuándo
 - **White Box:** El ST sabe todo sobre el objetivo, la forma, etc..
@@ -728,6 +771,8 @@ El oficial de seguridad informática tiene la función de brindar los servicios 
 <a id="seg14"></a>
 
 ### **Cuales son algunas modalidades comunes de ataques?**
+
+[Volver al indice](#seg-base)
 
 (Exploración de un sistema, Explotación de las vulnerabilidades, Corrupción del Sistema, Búsqueda de Vulnerabilidades y Eliminación de pruebas)
 
@@ -740,6 +785,8 @@ El oficial de seguridad informática tiene la función de brindar los servicios 
 <a id="seg15"></a>
 
 ### **Que son los ataques internos?**
+
+[Volver al indice](#seg-base)
 
 Muchos ataques son desde dentro de la misma organización, se infiltran o hablan con empleados para obtener información sobre la víctima/empresa
 
@@ -754,6 +801,8 @@ Pueden infiltrar un pendrive con una etiqueta engañosa para que sea usado por a
 <a id="seg16"></a>
 
 ### **Que tipos de Ingenierias sociales existen?**
+
+[Volver al indice](#seg-base)
 
 - **Human Based:** La interacción de persona a persona, de forma remota o por llamada telefónica
     - **Impersonalización:** Ganar acceso físico simulando ser un usuario válido
@@ -772,6 +821,8 @@ Pueden infiltrar un pendrive con una etiqueta engañosa para que sea usado por a
 
 ### **Que tipos de Ingenierias sociales existen?**
 
+[Volver al indice](#seg-base)
+
 **Confidencialidad:** Solo accede a la info gente autorizada
 
 **Autenticidad:** Quien dice ser es verdadero
@@ -788,6 +839,8 @@ Pueden infiltrar un pendrive con una etiqueta engañosa para que sea usado por a
 
 ### **Que es la seguridad perimetral?**
 
+[Volver al indice](#seg-base)
+
 - Conjunto de sistemas de detección electrónica hecho para proteger perímetros internos y externos
 - Su funcion es detectar, disuadir, y hasta parar un ataque con antelación
 - Algunos sistemas son: Firewall, DMZ, UTM, IDS, WAF, Web Filtering, AppControl, Antivirus y Antispam
@@ -795,6 +848,8 @@ Pueden infiltrar un pendrive con una etiqueta engañosa para que sea usado por a
 <a id="seg19"></a>
 
 ### **IDS (Intrusion Detection System)**
+
+[Volver al indice](#seg-base)
 
 - Es un sistema de detección de intrusiones es un componente que inspecciona los datos de una red o equipo en busca de elementos sospechosos
 - Recopilar info para analizar y correlacionar
@@ -806,6 +861,8 @@ Pueden infiltrar un pendrive con una etiqueta engañosa para que sea usado por a
 
 ### **Tecnicas de detección de intrusiones**
 
+[Volver al indice](#seg-base)
+
 - **Reconocimiento de Firmas: Identificación de eventos y acciones conocidas**
 - **Detección Anomalías: Identificación de comportamientos raros**
 - **Anomalía de protocolos:** Identificación de paquetes TCP/IP raros.
@@ -813,6 +870,8 @@ Pueden infiltrar un pendrive con una etiqueta engañosa para que sea usado por a
 <a id="seg21"></a>
 
 ### **Indicadores de una intrusión**
+
+[Volver al indice](#seg-base)
 
 - Modificación de software y archivos de configuración.
 - Bajo rendimiento inusual en el sistema.
@@ -839,14 +898,18 @@ Si el IDS Detecta algún tipo de ataque toma las siguientes medidas:
 
 ### **Tipos de IDS**
 
-- **NIDS (Network IDS): Elemento de red que inspecciona el tráfico de la misma.**
-- **HIDS (Host IDS): Software que inspecciona los eventos dentro del marco de un sistema operativo.**
-- **Monitor Logs: Correlaciona y analiza los logs de sistemas y aplicaciones.**
+[Volver al indice](#seg-base)
+
+- **NIDS (Network IDS)**: Elemento de red que inspecciona el tráfico de la misma.
+- **HIDS (Host IDS)**: Software que inspecciona los eventos dentro del marco de un sistema operativo.
+- **Monitor Logs**: Correlaciona y analiza los logs de sistemas y aplicaciones.
 - **Verificador Integridad:** Chequea la integridad de archivos de un sistema
 
 <a id="seg23"></a>
 
 ### **Es una amenaza.. Verdadero o Falso?**
+
+[Volver al indice](#seg-base)
 
 - **Verdadero Positivo**: Debería generarse una alarma y ésta se genera.
 - **Falso Positivo**: No debería generarse una alarma, pero ésta se genera
@@ -856,6 +919,8 @@ Si el IDS Detecta algún tipo de ataque toma las siguientes medidas:
 <a id="seg24"></a>
 
 ### **Qué es un Firewall?**
+
+[Volver al indice](#seg-base)
 
 - Un Firewall divide una red segura de una red insegura, normalmente una privada de una publica
 - Su función principal es examinar los paquetes en busca de coincidencia con las reglas definidas.
@@ -868,6 +933,8 @@ El firewall **NO** protege conexiones que NO pasen por el Firewall, no protege c
 <a id="seg25"></a>
 
 ### **Tipos de Firewall**
+
+[Volver al indice](#seg-base)
 
 **Packet Filters**
 
@@ -897,6 +964,8 @@ El firewall **NO** protege conexiones que NO pasen por el Firewall, no protege c
 
 ### **Que es la Criptografia?**
 
+[Volver al indice](#seg-base)
+
 - Técnica que protege documentos y datos
 - Uso de cifras/códigos para ocultar cierta información para que sea decodificada por quien pueda (y deba) hacerlo
 - Es una rama de las matemáticas y de la informática en cierta forma
@@ -907,6 +976,8 @@ El firewall **NO** protege conexiones que NO pasen por el Firewall, no protege c
 <a id="seg27"></a>
 
 ### **Que es una funcion Hash?**
+
+[Volver al indice](#seg-base)
 
 Es un algoritmo que consigue crear a partir de una entrada (ya sea un texto, una contraseña o un archivo, por ejemplo) una salida alfanumérica de longitud normalmente fija, que representa un resumen de toda la información que se le ha dado.
 Es decir, a partir de los datos de la entrada crea una cadena que solo puede volverse a crear con esos mismos datos.
@@ -934,6 +1005,8 @@ Las firmas digitales se usan ampliamente para proporcionar pruebas de autenticid
 
 ### **Cuáles son los requisitos de un Cripto sistema?**
 
+[Volver al indice](#seg-base)
+
 - Integridad, confidencialidad y no repudio
 - El algoritmo debe ser rápido y fiable, no debe haber retardo entre el cifrado y descifrado
 - No debe ser posible contar con una clave para deshashearla
@@ -942,6 +1015,8 @@ Las firmas digitales se usan ampliamente para proporcionar pruebas de autenticid
 <a id="seg29"></a>
 
 ### **Como funciona el Crifrado Simetrico?**
+
+[Volver al indice](#seg-base)
 
 Se descifra con una misma clave (Clave secreta), el emisor se lo tiene que "pasar" al receptor, lo cual significa una vulnerabilidad porque si son poco cuidadosos, cualquiera podría obtener esa clave y obtener la información privada. Es un proceso rápido. Que la clave sea muy segura es muy importante. También se le dice de clave privada porque es una sola clave. Con este sistema de clave pública se hizo SSH luego, que es una manera de establecer una comunicación segura entre páginas webs (servidores) y clientes.
 
@@ -956,6 +1031,8 @@ Las debilidades del Cifrado simetrico son..
 
 ### **Como funciona el Crifrado Asimetrico?**
 
+[Volver al indice](#seg-base)
+
 - También se le dice de **clave pública**.
 - Hay 2 claves, una para cifrar y otra para descifrar.
 - Tenemos que tener cuidado de que la clave pública no dé lugar a que se adivine de cierta manera a la clave privada. Lo ideal es que se descifra con la clave privada, es decir, una que tenga el receptor, es como tener una cuenta que no puedo resolver si no tengo los números para saber qué es lo que tengo que sumar.
@@ -966,6 +1043,8 @@ Las debilidades del Cifrado simetrico son..
 <a id="seg31"></a>
 
 ### **Adquisicion en Informatica Forense**
+
+[Volver al indice](#seg-base)
 
 En el campo de la Informática Forense, uno de los puntos más importantes es la recolección de la evidencia, también conocido como Adquisición Forense, ya que, si al momento de tomar la evidencia no se toman los recaudos correspondientes puede echarse a perder todo el análisis posterior. Es muy importante recalcar este punto debido a que la alteración de la evidencia llevará a la invalidez de toda la investigación.
 
@@ -993,6 +1072,8 @@ Sin embargo, daremos un paseo por un listado de buenas prácticas que son recome
 
 ### **El informe pericial informatico**
 
+[Volver al indice](#seg-base)
+
 La pericia se dirige a quienes no son especialistas por eso debe mantener un lenguaje claro para ser entendido por cualquiera.
 
 - Debe iniciarle con los datos objetivos (nombre del perito, domicilio, teléfono, carátula del expediente y su número, nombre del tribunal al que se dirige, etc.
@@ -1012,11 +1093,15 @@ La pericia se dirige a quienes no son especialistas por eso debe mantener un len
 
 ### **¿Qué es la accesibilidad web?**
 
+[Volver al indice](#acc-base)
+
 Es la práctica continua de asegurarnos de que todo lo que desarrollamos para la web se pueda usar, interpretar y operar por la mayor cantidad de personas posibles.
 
 <a id="acc2"></a>
 
 ### **¿Cuáles son sus beneficios?**
+
+[Volver al indice](#acc-base)
 
 * Mejora la experiencia de usuario.
 * Mejora el SEO.
@@ -1029,6 +1114,8 @@ Es la práctica continua de asegurarnos de que todo lo que desarrollamos para la
 
 ### **¿Qué significa A11y?**
 
+[Volver al indice](#acc-base)
+
 Es una abreviación de la palabra "accessibility" y se utiliza para referirse a la accesibilidad web. La "A" y la "y" son las letras que comienzan y terminan la palabra, mientras que el "11" representa las 11 letras que hay en medio.
 
 a|ccessibilit|y = a11y
@@ -1036,6 +1123,8 @@ a|ccessibilit|y = a11y
 <a id="acc4"></a>
 
 ### **¿Cuáles son las herramientas más usadas en accesibilidad?**
+
+[Volver al indice](#acc-base)
 
 * Screen Readers
 * Braille Output devices
@@ -1046,11 +1135,15 @@ a|ccessibilit|y = a11y
 
 ### **¿Qué es un Screen Reader?**
 
+[Volver al indice](#acc-base)
+
 Es un software que convierte el texto en voz o en braille. Es utilizado por personas ciegas o con baja visión para poder navegar por la web.
 
 <a id="acc6"></a>
 
 ### **¿Qué es el contraste de color?**
+
+[Volver al indice](#acc-base)
 
 Es la diferencia entre el color del texto y el color del fondo. Un buen contraste es importante para que las personas con discapacidad visual puedan leer el contenido.
 
@@ -1058,17 +1151,23 @@ Es la diferencia entre el color del texto y el color del fondo. Un buen contrast
 
 ### **¿Qué es el texto alternativo?**
 
+[Volver al indice](#acc-base)
+
 Es una descripción alternativa que se le da a una imagen, para que las personas con discapacidad visual puedan entender de qué se trata la imagen.
 
 <a id="acc8"></a>
 
 ### **¿Qué es el teclado virtual?**
 
+[Volver al indice](#acc-base)
+
 Es una herramienta que permite a las personas con discapacidad motriz o que no pueden utilizar un teclado físico, poder navegar por la web.
 
 <a id="acc9"></a>
 
 ### **¿De qué trata el Web Content Accessibility Guidelines (WCAG)?**
+
+[Volver al indice](#acc-base)
 
 Son estándares internacionales de accesibilidad apuntados a web y mobile nativo. Fueron creados por W3C (World Wide Web Consortium), que construyeron estándares también en HTML y CSS.
 
@@ -1088,6 +1187,8 @@ Generalmente, el nivel AAA, el cual es el más avanzado, es al que debemos apunt
 
 ### **¿De qué tratan los principios POUR - Principios WCAG?**
 
+[Volver al indice](#acc-base)
+
 POUR significa Perceivable, Operable, Understandable y Robust, la idea es aplicar los 4.
 
 * **Perceivable (Perceptible)**: Todos los usuarios deberían poder percibir la información importante en la pantalla, para cumplir este se deben agregar alt a las imágenes, agregar transcritos a videos y/o audios y no apoyarnos 100% sobre el color de las cosas.
@@ -1098,6 +1199,8 @@ POUR significa Perceivable, Operable, Understandable y Robust, la idea es aplica
 <a id="acc11"></a>
 
 ### **¿Qué es ARIA - Accessible Rich Internet Applications?**
+
+[Volver al indice](#acc-base)
 
 Fue desarrollado por WAI (Web Accessibility Initiative), es un set de atributos que se pueden agregar a los elementos HTML para aumentar la accesibilidad.
 No cambia la apariencia ni el comportamiento de los elementos, esta diferencia solo puede ser notada por los usuarios con discapacidades. Es responsabilidad del Dev hacer que el sitio sea lo más accesible posible.
@@ -1145,6 +1248,8 @@ Son usados para definir cada parte en particular de la página. Se recomienda qu
 <a id="acc12"></a>
 
 ### **¿Cuándo es necesario utilizar ARIA?**
+
+[Volver al indice](#acc-base)
 
 Usar ARIA en un elemento no hace que el mismo sea accesible automáticamente, se debe usar correctamente si se decide usar. Se debe usar ARIA cuando un elemento HTML no tiene soporte de accesibilidad, es decir, los elementos que no son semánticos.
 
@@ -1224,6 +1329,8 @@ Se debe agregar el título de la página para que el Screen Reader le diga a los
 
 ### **Contenido Dinámico y Accesibilidad**
 
+[Volver al indice](#acc-base)
+
 Una de las funcionalidades de JS es la habilidad de agregar código HTML de manera dinámica. Por ejemplo, si quiero mostrar un mensaje que le avise al usuario que se loggeo correctamente:
 
 * Agrego el HTML:
@@ -1253,6 +1360,8 @@ Se debe usar JS simple y conciso.
 <a id="acc14"></a>
 
 ### **Manejo de Focus**
+
+[Volver al indice](#acc-base)
 
 Cuando un componente no está manejado de forma correcta puede crear un **keyboard trap**, ya que es muy probable que el focus quede trabado en un solo componente, es muy común que esto pase en los modales.
 
@@ -1463,6 +1572,8 @@ Se debe también manejar el focus a nivel página, poniendo énfasis en las SPA 
 
 ### **CSS Accesible**
 
+[Volver al indice](#acc-base)
+
 Se puede hacer que cierto CSS Custom sea visto solo por el Screen Reader, esto se usa cuando tengo muchos gráficos en la pagina pero necesito que haya un texto alternativo para el mismo
 
 ```css
@@ -1485,6 +1596,8 @@ Hay varios tipos de problemas de visión con respecto a los colores, el más com
 <a id="acc16"></a>
 
 ### **Que practicas conlleva tener un HTML Accesible?**
+
+[Volver al indice](#acc-base)
 
 * Se deben poner captions en las tables
 
@@ -1633,6 +1746,8 @@ Hay varios tipos de problemas de visión con respecto a los colores, el más com
 
 ### **Nombrar algunas ARIAS existentes**
 
+[Volver al indice](#acc-base)
+
 * `aria-expanded`: Se usa cuando un dropdown está expandido o no
 
 ```html
@@ -1712,6 +1827,8 @@ Hay varios tipos de problemas de visión con respecto a los colores, el más com
 
 ### **Binary Search**
 
+[Volver al indice](#alg-base)
+
 Encontrar elementos en un vector ordenado de forma rápida sin recorrer todo el vector corriendo el comienzo para no recorrer lo ya recorrido.
 
 ```jsx
@@ -1742,11 +1859,15 @@ console.log(binarySearch(arr, 5)); // 4
 
 ### **Podemos aplicar Binary Search a una Linked List ordenada?**
 
+[Volver al indice](#alg-base)
+
 No, no se puede, ya que encontrar el index del elemento del medio es demasiado complicado.
 
 <a id="alg3"></a>
 
 ### **Selection Sort (Ordenamiento)**
+
+[Volver al indice](#alg-base)
 
 ![Selection Sort Tutorials & Notes | Algorithms | HackerEarth](https://he-s3.s3.amazonaws.com/media/uploads/2888f5b.png)
 
@@ -1781,6 +1902,8 @@ const selectionSort = (array) => {
 
 ### **Insertion Sort (Ordenamiento)**
 
+[Volver al indice](#alg-base)
+
 Este algoritmo funciona construyendo una matriz ordenada al principio de la lista.
 
 Comienza la matriz ordenada con el primer elemento.
@@ -1808,6 +1931,8 @@ const insertionSort = (array) => {
 <a id="alg5"></a>
 
 ### **Bubble Sort (Ordenamiento)**
+
+[Volver al indice](#alg-base)
 
 Es el más simple de todos.
 
@@ -1845,6 +1970,8 @@ const bubbleSort = (array) => {
 <a id="alg6"></a>
 
 ### **Merge Sort (Ordenamiento)**
+
+[Volver al indice](#alg-base)
 
 ![Understanding Merge Sort-Sorting Algorithm -4 | by Jaykishan Sewak | Medium](https://miro.medium.com/v2/resize:fit:672/1*WQ4YJMWRFrGHLK1KQDeDHQ.png)
 
@@ -1905,6 +2032,8 @@ Es recursivo
 
 ### **Big O - ¿Qué es?**
 
+[Volver al indice](#alg-base)
+
 O viene por la palabra Orden. La n representa un número o el tamaño de un conjunto
 
 Podemos ejecutar nuestro algoritmo y medir cuanto tiempo tarda en ejecutarse, pero es algo muy variable, dependiendo el algoritmo, el tiempo de ejecución escala con la entrada (lo que recibe), como por ejemplo los algoritmos de búsqueda que pueden funcionar bien con cantidades pequeñas de datos y muy mal con cantidades muy grandes.
@@ -1914,6 +2043,8 @@ La mejor opcion es la que crece menos ante el aumento de datos de entrada
 <a id="alg8"></a>
 
 ### **Reglas para calcular Big O**
+
+[Volver al indice](#alg-base)
 
 * Se ignoran las constantes
 
@@ -1970,6 +2101,8 @@ O(n + 1) => O(n)
 
 ### **Calcular Big O**
 
+[Volver al indice](#alg-base)
+
 Supongamos que necesitamos llevar unas valijas a la casa de un primo. No importan cuantas valijas llevemos, el tiempo siempre será el mismo, 5 minutos.
 
 Si quiero llevar las valijas corriendo, supongamos que solo puedo llevar 2 valijas por corrida, entonces, el tiempo que tardaré subirá exponencialmente, dependo de mi entrada, y el tiempo sube de manera lineal.
@@ -1979,6 +2112,8 @@ Si quiero llevar las valijas corriendo, supongamos que solo puedo llevar 2 valij
 <a id="alg10"></a>
 
 ### **Notación Asintótica**
+
+[Volver al indice](#alg-base)
 
 La notacion asintotica nos permite simplificar estos graficos, es como redondear decimales.
 
@@ -2081,6 +2216,8 @@ No importa si tenemos un algoritmo muy complejo dentro de un if al que probablem
 
 ### **¿Cómo analizamos el codigo?**
 
+[Volver al indice](#alg-base)
+
 Cualquier función se considera O(1) (constante) siempre y cuando no sea un ciclo, no tenga recursion y no sea una llamada a una funcion que no sea de tiempo constante
 
 ```jsx
@@ -2161,6 +2298,8 @@ Nos quedamos con el termino mas significativo, que seria n^2
 
 ### **Multiplicacion de Runtimes**
 
+[Volver al indice](#alg-base)
+
 Si mi código es "Hace esto y luego hace esto otro", se agrega al Runtime
 
 ```javascript
@@ -2187,6 +2326,8 @@ for (int a: arrA) {
 <a id="alg14"></a>
 
 ### **Ejemplos de Ejercicios**
+
+[Volver al indice](#alg-base)
 
 En este caso es O(N) (Muy bueno), el hecho de que iteremos dos veces el array no importa.
 
@@ -2344,6 +2485,8 @@ void printPairsTwoArrays(int[] arrayA, int[] arrayB) {
 
 ### **Estructuras de datos (Arrays)**
 
+[Volver al indice](#alg-base)
+
 Las colecciones de objetos son comunes en la programación moderna, especialmente bajo el paradigma de la Programación Orientada a Objetos (POO). Como su nombre lo indica, las colecciones de objetos permiten reunir elementos de un mismo tipo y, si existen, de sus subtipos. Esto significa que, desde el punto de vista de la POO, dentro de una colección podemos almacenar en memoria objetos de una misma clase, así como de sus subclases.
 
 En Java, la forma más simple de trabajar con colecciones de objetos es utilizando la clase `ArrayList`, que permite guardar de forma dinámica y secuencial un elemento detrás del otro, acceder a ellos y eliminarlos cuando lo necesitemos.
@@ -2363,12 +2506,20 @@ En Java, los `ArrayList` son una implementación de la interfaz `List`. También
 
 ### **Especificando la clase de contenido de un ArrayList**
 
+[Volver al indice](#alg-base)
+
 Esta clase tiene una particularidad: para instanciar un ArrayList debemos indicar la clase de elementos que contendrá. Crear el ArrayList sin especificar la clase de elementos que contendrá está permitido, pero indicará una alerta y asumirá que sus elementos son de la clase Object. Los ArrayLists soportan que en su definición se indique cuál será la clase que tomaremos como clase base para añadir elementos a la estructura.
-Si necesitamos crear una colección de objetos que pueda guardar cualquier clase de elemento, debemos asociarla a la clase Object, pero la clase Object no conocerá los métodos y atributos específicos de cada elemento que pongamos en la lista, y esto impedirá acceder a sus atributos y métodos particulares en forma automática. Más adelante veremos cómo reconocer y acceder a los atributos y miembros específicos de un elemento de una clase derivada.
+Si necesitamos crear una colección de objetos que pueda guardar cualquier clase de elemento, debemos asociarla a la clase Object, pero la clase Object no conocerá los métodos y atributos específicos de cada elemento que pongamos en la lista, y esto impedirá acceder a sus atributos y métodos particulares en forma automática.
+
+```java
+ArrayList<Object> coleccion = new ArrayList<>();
+```
 
 <a id="alg17"></a>
 
 ### **Creación de un ArrayList**
+
+[Volver al indice](#alg-base)
 
 Como primera medida importaremos el paquete correspondiente a partir de la adición de su namespace (Esto al momento de escritura de este apunte):
 
@@ -2410,7 +2561,9 @@ ArrayList<String> palabras = new ArrayList<>();
 
 ### **Agregar un elemento a un ArrayList**
 
-Para agregar un elemento a un ArrayList utilizaremos el método add(elemento), el cual permite agregar un nuevo elemento al final de la estructura (es decir, como último elemento). Hay forma de indicar específicamente dónde insertar el nuevo elemento, pero eso excede lo que hoy queremos aprender.
+[Volver al indice](#alg-base)
+
+Para agregar un elemento a un ArrayList utilizaremos el método add(elemento), el cual permite agregar un nuevo elemento al final de la estructura (es decir, como último elemento). 
 
 Por ejemplo, para agregar un elemento, podemos hacer:
 
@@ -2434,6 +2587,8 @@ numeros.add(19); // insertará el número 19 en la colección
 
 ### **Obtener el elemento n de un ArrayList**
 
+[Volver al indice](#alg-base)
+
 Para obtener el elemento n del ArrayList utilizaremos el método get(n), donde n es la posición en la cual está el elemento. El valor de n debe estar entre 0 y size()-1, caso contrario se producirá un error de ejecución.
 Para obtener el primer elemento de la colección haremos:
 
@@ -2446,6 +2601,8 @@ Esto guardará la referencia al elemento sin quitarlo de la lista (no hace una c
 <a id="alg20"></a>
 
 ### **Extraer el elemento n de un ArrayList**
+
+[Volver al indice](#alg-base)
 
 Para extraer el elemento n del ArrayList utilizaremos el método remove(n ), donde n es la posición en la cual está el elemento. El tratamiento es similar al caso del get(): el valor de n debe estar entre 0 y size()-1, caso contrario se producirá un error de ejecución. A diferencia del get(), remove() extrae el elemento de la posición, y si éste no era el último, su lugar será ocupado por el siguiente elemento (y así hasta el final), acortando el tamaño de la estructura en 1.
 Por ejemplo, para extraer el primer elemento de la colección haremos:
@@ -2462,6 +2619,8 @@ Pero sacar un elemento de la colección, como vimos más arriba, tiene algunas c
 <a id="alg21"></a>
 
 ### **Recorrer el ArrayList completo con for-each**
+
+[Volver al indice](#alg-base)
 
 El ciclo conocido como for-each es una variante del for tradicional que, en vez de utilizar un valor índice para iterar una determinada cantidad de veces, utiliza un iterador implícito para visitar en cada ciclo cada los elementos cargados en la lista, de a uno por vez, del primero al último elemento. Para eso necesita una variable local en la cual guardará temporalmente la referencia al elemento visitado.
 La estructura del for-each es la que sigue:
@@ -2486,6 +2645,8 @@ Este ejemplo podría leerse como “para cada persona que esté en la colección
 <a id="alg22"></a>
 
 ### **Buscar un elemento en la colección**
+
+[Volver al indice](#alg-base)
 
 Utilizar el ciclo for-each es muy fácil y cómodo, pero no tiene una manera natural de abandonar el recorrido por la colección sin recorrerlo por completo. El inconveniente de esto es que si estamos buscando un elemento específico y ya lo encontramos, o si ya sabemos que no lo encontraremos, seguiríamos recorriendo la estructura hasta el final innecesariamente.
 Hay formas de recorrer la estructura parcialmente. Una de ellas es utilizando
@@ -2522,6 +2683,8 @@ El ejemplo anterior utilizará el ciclo while para recorrer la estructura mientr
 
 ### **Remover algunos de los elementos del ArrayList**
 
+[Volver al indice](#alg-base)
+
 Un tratamiento similar debemos aplicar cuando queremos extraer algunos elementos de la colección, pero no todos. El tema, en este caso, pasa porque al remover un elemento determinado, los posteriores se adelantan en una posición. Esto hace que al incrementar el valor del índice inmediatamente después de extraer el elemento, como todos los elementos posteriores se movieron para adelante una posición, en la posición que acabamos de abandonar ha quedado, si existe, un elemento que no hemos visitado. Para que esto no suceda, sólo debemos avanzar cuando el elemento recién visitado no haya sido extraído. Si lo hemos extraído, nos quedaremos en esa posición esperando a que los  elementos se reacomoden (que todos los posteriores ocupen su nuevo lugar) y, así, no perder el nuevo elemento que cayó en la posición donde estamos parados.
 Veamos el siguiente ejemplo: supongamos que tenemos una colección de números con los valores 1, 7, 4, 9, 17, 22. No es necesario que estén ordenados. Lo que intentaremos es dejar sólo los números impares, eliminando los pares:
 
@@ -2549,6 +2712,8 @@ Nosotros seguiremos parados en la posición 2, donde ahora, en vez del 4 que ext
 <a id="alg24"></a>
 
 ### **Creando colecciones como atributo de una clase**
+
+[Volver al indice](#alg-base)
 
 Supongamos que tenemos la clase Club, y que el club mantiene una lista de sus socios.
 Para esto, crearemos el atributo privado socios, que será un ArrayList de elemento de clase Socio. Si bien podemos instanciar aquí la colección, sólo la declararemos y le asignaremos el valor null para que la colección sea creada explícitamente en el constructor de la clase Club, pues consideramos que es el mejor lugar para hacerlo:
@@ -2592,6 +2757,8 @@ Así devolvemos null o el socio encontrado, que ya ha sido removido de la colecc
 
 ### **Devolver una colección secundaria**
 
+[Volver al indice](#alg-base)
+
 Siguiendo con el ejemplo anterior, supongamos que queremos devolver una colección con todos los socios vitalicios del club. Para eso podríamos hacer algo como lo que sigue:
 
 ```java
@@ -2612,6 +2779,8 @@ No pasará nada: todos los socios estarán en la lista principal, y aquellos que
 <a id="alg26"></a>
 
 ### Qué es un "array-like" en Javascript?
+
+[Volver al indice](#alg-base)
 
 Un array-like es un objeto que tiene propiedades indexadas y una propiedad length. Aunque no es un array, se comporta como tal. Por ejemplo, el objeto arguments es un array-like.
 
@@ -2648,6 +2817,8 @@ console.log(array); // Imprime: ['a', 'b', 'c']
 <a id="alg27"></a>
 
 ### **Cuales son las funciones array de JavaScript?**
+
+[Volver al indice](#alg-base)
 
 ```jsx
 // Agrega al final
@@ -2730,6 +2901,8 @@ splice(indice, cantidad elementos a eliminar, agrego, agrego);
 
 ### Funcion .sort()
 
+[Volver al indice](#alg-base)
+
 `.sort()` es una funcion que viene en Javascript. Funciona bien con numeros simples, pero no con numeros complejos como, por ejemplo, 10.
 
 ```javascript
@@ -2753,6 +2926,8 @@ Esta funcion devuelve un numero. El mismo determina lo siguiente:
 <a id="alg29"></a>
 
 ### **Set() en Javascript** (HashSet)
+
+[Volver al indice](#alg-base)
 
 Es una estructura de datos que solo permite valores unicos. Si paso un array a un set, va a eliminar todos los valores duplicados.
 
@@ -2796,6 +2971,8 @@ for (let item of mySet) {
 <a id="alg30"></a>
 
 ### HashTables (.Map)
+
+[Volver al indice](#alg-base)
 
 Es una estructura de datos que almacena valores dado su Hash (int o long). Son muy eficientes para una busqueda dada por clave.
 
@@ -2864,6 +3041,8 @@ for (let [key, value] of myMap) {
 <a id="alg31"></a>
 
 ### Linked Lists
+
+[Volver al indice](#alg-base)
 
 Es una estructura de datos que representa una secuencia de nodos.
 
@@ -2956,6 +3135,8 @@ public class SingleLinkedList {
 
 #### ¿Cuales son los beneficios de un Linked List sobre un Array?
 
+[Volver al indice](#alg-base)
+
 Un Array es una estructura de datos que almacena elementos de forma contigua en la memoria. Un Linked List es una estructura de datos que almacena elementos de forma no contigua en la memoria.
 
 Consideremos un escenario donde debemos guardar mucha data en un array, pero, la memoria para guardar esa data no esta disponible de forma continua, en ese caso, no podemos usar un Array.
@@ -2966,6 +3147,8 @@ En un Linked List, como cada nodo esta conectado con un link, no es necesario qu
 
 ### ¿Cual es el uso de una Doubly-Linked List cuando se lo compara con un Singly Linked List?
 
+[Volver al indice](#alg-base)
+
 Un Singly Linked List se tienen links derechos, pero no podemos ir para atrás ya que siempre apuntan al siguiente. El DLL posee en cada nodo 3 campos, uno que apunta al nodo anterior, otro al siguiente.
 
 Se puede reconocer cuando un nodo es el primero ya que su link anterior es Nulo, lo mismo con el último. Es mas eficiente acceder a los elementos en un DLL
@@ -2974,11 +3157,15 @@ Se puede reconocer cuando un nodo es el primero ya que su link anterior es Nulo,
 
 ### ¿Cual es la diferencia entre un Linked List y un Doubly Linked List?
 
+[Volver al indice](#alg-base)
+
 Un Linked List es una estructura de datos que almacena elementos de forma no contigua en la memoria. Un Doubly Linked List es una estructura de datos que almacena elementos de forma no contigua en la memoria, pero cada nodo tiene un link al nodo anterior y al siguiente.
 
 <a id="alg35"></a>
 
 ### Generics
+
+[Volver al indice](#alg-base)
 
 Cada tipo primitivo (int, boolean, float..) tiene su clase hermana. Las clases siempre empiezan en mayus, los minuscula son llamados clases envoltorio.
 
@@ -2992,12 +3179,13 @@ Character --> char
 edades.add(45) == edades.add(new Integer(45));
 ```
 
-Los ArrayList reconocen el tipo de dato que evaluan <String> / <Integer> por los **Generics**
-que ya vienen con java.
+Los ArrayList reconocen el tipo de dato que evaluan <String> / <Integer> por los **Generics** que ya vienen con java.
 
 <a id="alg36"></a>
 
 ### Estructuras de Datos
+
+[Volver al indice](#alg-base)
 
 Manera de estructurar datos, Array, ArrayList, Pila, Cola..
 
@@ -3057,6 +3245,8 @@ private class IteratorSorteador implements Iterator<T>{
 
 ### Qué son las Pilas y Colas?
 
+[Volver al indice](#alg-base)
+
 Un Tipo de dato abstracto (TDA) es una estructura que integra un conjunto de datos (elementos) con un grupo de operaciones permitidas específicas que determinan la forma en la cual esos elementos son manipulados.
 
 Cada TDA provee de una interfaz a través de la cual podemos realizar las operaciones permitidas, abstrayéndose de cómo estas están implementadas. Esto quiere decir que un mismo TDA puede ser implementado utilizando distintas estructuras de datos internas, pero proveyendo siempre la misma funcionalidad a través de su interfaz (API).
@@ -3075,6 +3265,8 @@ Un detalle que tienen en común ambas estructuras es que **no permiten**
 
 ### Colas
 
+[Volver al indice](#alg-base)
+
 El primer par de implementaciones que mostramos son las pertenecientes al TDA **`Cola<*TipoElemento*>`** donde, al igual que se hace con ArrayList, *TipoElemento* indica qué clase de elemento podrá contener (puede ser tanto una *clase* como una *interfaz*).
 
 Se puede ver que ambas implementaciones coinciden en el cumplimiento de la interfaz. Puede ser que la implementación con ArrayList sea más simple, pero no olvidemos el trabajo que hace el propio ArrayList en su manejo interno de su contenido, Así, lo único que tendremos que hacer siempre es agregar los nuevos elementos al final (usando el método *`add()`* de ArrayList) y siempre sacando el primer elemento (usando `remove(0)` también del ArrayList). También podemos transferir el valor del método *`isEmpty()`* de ArrayList al propio método *`isEmpty()`* de la cola).
@@ -3086,6 +3278,8 @@ La segunda implementación, basada en nodos, puede parecer más complicada, pero
 <a id="alg39"></a>
 
 ### Pilas
+
+[Volver al indice](#alg-base)
 
 Veamos ahora las implementaciones de **`Pila<*TipoElemento*>`**
 
@@ -3102,6 +3296,8 @@ Un detalle a tener en cuenta en cuanto a la implementación con nodos es que no 
 <a id="alg41"></a>
 
 ### Uso de Pilas y Colas
+
+[Volver al indice](#alg-base)
 
 Para utilizar las estructuras haremos algo muy parecido a lo que hacemos con ArrayList: las declararemos indicando el tipo de elemento contenido dentro de los paréntesis agudos. Pero a diferencia de cuando usamos ArrayList, aquí estamos declarando las estructuras usando interfaces, y con éstas no se pueden crear instancias pues no están implementadas. Por eso, para poder crear alguna instancia de cualquier TDA deberemos elegir alguna de sus implementaciones
 
@@ -3144,6 +3340,8 @@ Quitan el primer elemento disponible en cada estructura, dejando ambas estructur
 
 ### Arboles
 
+[Volver al indice](#alg-base)
+
 Es una estructura donde un nodo tiene un solo padre y muchos hijos. Siempre hay una raiz.
 Es excelente para cuando queremos insertar conjuntos de datos ordenados o para las búsquedas.
 
@@ -3163,11 +3361,25 @@ public class Node {
 
 ### Qué es un Binary Tree?
 
+[Volver al indice](#alg-base)
+
 Un arbol en donde cada nodo debe tener como MAXIMO 2 hijos.
+
+```javascript
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+```
 
 <a id="alg44"></a>
 
 ### Qué es un Binary Search Tree?
+
+[Volver al indice](#alg-base)
 
 Cada nodo puede tener MAXIMO 2 hijos, y cada descendiente del lado izquierdo debe tener un valor menor o igual al padre y los de la derecha deben tener un valor mayor o igual al padre.
 
@@ -3191,19 +3403,43 @@ function TreeNode(val, left, right) {
 
 #### ¿Porque se dice que buscar un nodo en un BST es mas eficiente que en un Simple Binary Tree?
 
+[Volver al indice](#alg-base)
+
 Porque, por la particularidad que tienen los hijos de los nodos de un BST (que uno es mas chico que el otro), se puede seguir el recorrido mas facilmente. Hace que la busqueda sea mucha mas eficiente.
 
 <a id="alg46"></a>
 
 ### Complete Binary Tree
 
+[Volver al indice](#alg-base)
+
 En este arbol todos los niveles estan completos excepto por el ultimo. Si el ultimo nivel no esta completo, debe estar ocupado de izquierda a derecha. Por ejemplo, todos los nodos tienen 2 hijos excepto el ultimo que tiene uno solo.
 
 Es un arbol 100% balanceado.
 
+```javascript 
+// Definición de la clase TreeNode para un árbol binario
+class TreeNode {
+    constructor(value) {
+        this.value = value;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+// Crear un árbol binario de ejemplo
+const root = new TreeNode(1);
+root.left = new TreeNode(2);
+root.right = new TreeNode(3);
+root.left.left = new TreeNode(4);
+root.left.right = new TreeNode(5);
+```
+
 <a id="alg47"></a>
 
 ### Maneras de recorrer un Arbol
+
+[Volver al indice](#alg-base)
 
 ![Tree Traversal: Inorder, Preorder, Postorder, and Level-order](https://assets-global.website-files.com/5d0dc87aac109e1ffdbe379c/60e18e09daeb6db6f4995305_-Vsv_RLYEukjbDMgKxKJpxTnA246o-X1OjUPkl5HvnSiR-dFU4w5qKNaUtw-rq8wD4vMTGxFKtjvKCt7Uthmidpl_ajqRpVqgAH57N1HTpQ5MGBE4HCvE0dq7gTeM4-JtFLkQShX.png)
 
@@ -3211,17 +3447,23 @@ Es un arbol 100% balanceado.
 
 ### In-Order Traversal
 
+[Volver al indice](#alg-base)
+
 Rama izquierda del nodo, a continuación el propio nodo y después la rama derecha. Se empieza por la raiz
 
 <a id="alg49"></a>
 
 ### Pre-order traversal
 
+[Volver al indice](#alg-base)
+
 Primero el nodo padre, despues izquierda y luego derecha
 
 <a id="alg50"></a>
 
 ### Recorrido de un Binary Tree
+
+[Volver al indice](#alg-base)
 
 ```javascript
 // Definición de la clase TreeNode para un árbol binario
@@ -3259,11 +3501,15 @@ inOrderTraversal(root);
 
 ### Post-order traversal
 
+[Volver al indice](#alg-base)
+
 Primero la rama izquierda, luego la derecha y luego el padre
 
 <a id="alg52"></a>
 
 ### Recursividad
+
+[Volver al indice](#alg-base)
 
 Son problemas que se pueden dividir en subproblemas. Por ejemplo: Calcula el elemento, obten los primero n elementos o un metodo que compute todos..
 
@@ -3272,6 +3518,10 @@ TODOS los algoritmos recursivos tienen una alternativa iterativa. Su complejidad
 <a id="alg53"></a>
 
 ### Factorial
+
+[Volver al indice](#alg-base)
+
+El factorial de un número entero positivo n, denotado como n!, es el producto de todos los enteros positivos menores o iguales a n. Por ejemplo, el factorial de 5 se denota como 5! y se calcula como 5! = 5 * 4 * 3 * 2 * 1 = 120.
 
 ```javascript
 // Función recursiva para calcular el factorial de un número
@@ -3294,6 +3544,8 @@ console.log(factorial(5)); // Output: 120
 <a id="alg54"></a>
 
 ### Heaps
+
+[Volver al indice](#alg-base)
 
 Un heap, también conocido como montículo, es una estructura de datos que se utiliza para mantener un conjunto de elementos donde cada elemento tiene una relación de orden con respecto a los demás elementos. La propiedad fundamental de un heap es que el elemento en la raíz (ya sea el más grande o el más pequeño, dependiendo del tipo de heap) siempre cumple con esta relación de orden con respecto a sus hijos.
 
@@ -3422,6 +3674,8 @@ console.log(minHeap.heap); // Output: [2, 4, 3, 5]
 
 ### Metodos de Strings en Javascript
 
+[Volver al indice](#alg-base)
+
 ```javascript
 // Creacion de Strings
 const notAnObject = "Hola";
@@ -3450,6 +3704,8 @@ test.indexOf("hola", +infinito) // Por defecto empieza desde mas infinito
 <a id="alg56"></a>
 
 ### Métodos de Objectos en Javascript
+
+[Volver al indice](#alg-base)
 
 ```javascript
 // Object.create() -- Crea un nuevo objeto con el prototipo de pasamos por parametro
@@ -3499,6 +3755,8 @@ objectToMap({a: 1, b: 2}); // Map {'a' => 1, 'b' => 2}
 
 ### **¿Qué es una Variable?**
 
+[Volver al indice](#alg-base)
+
 Una *variable* es un *contenedor* que tiene un valor o dato. Desde el punto de vista técnico, es un espacio de la memoria en el que guardamos ese determinado valor (o dato).
 
 Todas las variables tienen características comunes (por ejemplo un nombre que las identifica) y otras que difieren según el tipo de dato que contengan. Si pudiéramos ver qué contiene internamente una variable, veríamos que en algunos casos contiene directamente el valor y en otros (como en el caso de los objetos) otra cosa.
@@ -3506,6 +3764,8 @@ Todas las variables tienen características comunes (por ejemplo un nombre que l
 <a id="var2"></a>
 
 ### **¿En qué se diferencia una variable común, nativa, de un objeto?**
+
+[Volver al indice](#alg-base)
 
 Consideraremos que las variables nativas son entidades elementales: un número, un carácter, un valor verdadero o falso, que son entendidas por el lenguaje y asociadas a un tipo de dato *reconocible* por el entorno donde el programa corre, mientras que los objetos son entidades complejas que pueden estar formadas por la agrupación de más de un elemento, incluyendo *campos* y *métodos*. Pero todas ocupan un espacio de memoria (que puede ser mayor o menor).
 
@@ -3517,6 +3777,8 @@ Es por eso que cuando a una variable de "tipo clase" no se le asigna ningún val
 
 ### **¿A qué nos referimos cuando hablamos de tipos de datos?**
 
+[Volver al indice](#alg-base)
+
 En los programas en Java puede ser necesario tanto el uso de datos elementales como de datos complejos. Por eso se usa el término “Tipos de datos” para englobar a cualquier cosa que ocupe un espacio de memoria y que pueda ir tomando distintos valores o características durante la ejecución del programa. Es decir, en vez de hablar de tipos de variables o de tipos de objetos, hablaremos simplemente de tipos de datos.
 
 En Java diferenciamos dos tipos de datos: por un lado, los tipos primitivos, que se corresponden con los tipos de variables en lenguajes como C y que son los datos elementales que hemos citado. Por otro lado, los tipos objeto (que normalmente incluyen métodos)
@@ -3526,6 +3788,8 @@ En Java diferenciamos dos tipos de datos: por un lado, los tipos primitivos, que
 <a id="var4"></a>
 
 ### **¿Cómo se declara una variable?**
+
+[Volver al indice](#alg-base)
 
 Para definir una variable seguiremos la estructura:
 
@@ -3559,6 +3823,8 @@ String profesor = "Catalina";
 
 ### **Nombres de Variables**
 
+[Volver al indice](#alg-base)
+
 Cuando vayamos a dar un nombre a una variable deberemos tener en cuenta una serie de normas. Es decir, no podemos poner el nombre que nos dé la gana a una variable.
 
 Es recomendable que los nombres de los identificadores sean legibles y no acrónimos que no podamos leer. De tal manera que a la hora de verlos se auto-documenten por sí mismos. Además estos identificadores nunca podrán coincidir con las palabras reservadas ni comenzar con un número.
@@ -3571,6 +3837,8 @@ Algunas reglas no escritas, pero que se han asumido *por convención* son:
 <a id="var6"></a>
 
 ### **Diferencia entre let, var y const**
+
+[Volver al indice](#alg-base)
 
 La diferencia es el alcance de cada uno.
 
@@ -3658,11 +3926,15 @@ Los array sí pueden ser modificados en sí mismos, lo que no se puede es apunta
 
 ### **Para que sirve event.preventDefault()?**
 
+[Volver al indice](#alg-base)
+
 Los botones de los form en HTML por defecto hacen un submit, lo que puede llevar a que se recargue la pagina. Para evitar esto, se usa `event.preventDefault()` para evitar que se ejecute el comportamiento por defecto del evento.
 
 <a id="var8"></a>
 
 ### **Función Object.freeze**
+
+[Volver al indice](#alg-base)
 
 Es una funcion que evita que puedas modificar propiedades de un objeto o una variable
 
@@ -3683,6 +3955,8 @@ Cuando intento modificar algo, no tira error, simplemente lo ignora.
 <a id="var9"></a>
 
 ### **Diferencia entre import y require**
+
+[Volver al indice](#alg-base)
 
 - Require: Se usa para importar las funciones y el codigo en un archivo externo. Esto posee un problema, el cual es que este codigo puede ser muy largo y solo necesito una parte del codigo.
 - Import: Herramienta de ES6 para importar solo los componentes que necesitamos de un archivo.
@@ -3716,6 +3990,8 @@ console.log(lol.writer);  // wut
 <a id="var10"></a>
 
 ### **Como funciona setTimeout?**
+
+[Volver al indice](#alg-base)
 
 Permite ejecutar un fragmento de código una vez pasa un tiempo determinado.
 
@@ -3757,6 +4033,8 @@ clearTimeout(timeoutid)
 
 ### **Event delegation**
 
+[Volver al indice](#alg-base)
+
 Por ejemplo, si tenemos botones y queremos hacer eventos para todos los botones, no es viable hacer un evento por boton ya que no es escalable.
 
 Agregamos el evento al container y dependiendo donde es el click (en cual boton), se detecta una cierta clase o propiedad, y se ejecuta el evento correspondiente utilizando [`e.target`](http://e.target) para identificar el elemento, por ejemplo.
@@ -3764,6 +4042,8 @@ Agregamos el evento al container y dependiendo donde es el click (en cual boton)
 <a id="var12"></a>
 
 ### **Callback Hell**
+
+[Volver al indice](#alg-base)
 
 Ocurren cuando una gran cantidad de callbacks anidan (Conjuntos) en un lugar específico, resultando imposibles de leer o en general trabajar con ellos.
 
@@ -3818,6 +4098,8 @@ operation(1,3,(a,b) => a * b)
 
 ### **Funciones de "bloqueo" y "no bloqueo"**
 
+[Volver al indice](#alg-base)
+
 Cuando emites una función de bloqueo, las demás piezas de código detienen su ejecución hasta que haya sido completado un evento designado de Entrada/Salida.
 
 A su vez, las funciones de no bloqueo le permiten al desarrollador realizar múltiples tareas (Manteniendo múltiples códigos en ejecución) mientras que simultáneamente se realizan múltiples eventos de Entrada/Salida.
@@ -3825,6 +4107,8 @@ A su vez, las funciones de no bloqueo le permiten al desarrollador realizar mú
 <a id="var14"></a>
 
 ### **Diferencia entre primitivo y objeto**
+
+[Volver al indice](#alg-base)
 
 - Los primitivos se pasan por valor, los objetos se pasan por referencia
 - Los primitivos se copian por valor y los objetos se copian por referencia
@@ -3871,6 +4155,8 @@ console.log(clone); // { a: 1, b: 2, foo: 'foo' }
 
 ### **Bubble vs Capture**
 
+[Volver al indice](#alg-base)
+
 Cuando agregamos un elemento parece que solo lo agregamos a un elemento DOM pero en realidad este se propaga en una direccion. Podemos elegir cual direccion escuchan nuestros eventos. 
 
 - Fase Capture: Llega al evento que dispara el evento
@@ -3880,6 +4166,8 @@ Cuando agregamos un elemento parece que solo lo agregamos a un elemento DOM pero
 <a id="var16"></a>
 
 ### **Rest Operator**
+
+[Volver al indice](#alg-base)
 
 Con esto, se pueden crear funciones que pueden tomar una variable cantidad de argumentos, y estos pueden ser accedidos luego por estar guardados en un Array de dentro de la misma funcion
 
@@ -3954,6 +4242,8 @@ console.log(startX, startY); // 5, 6
 
 ### **Creando Strings con Template Literal - Template Strings**
 
+[Volver al indice](#alg-base)
+
 Es un tipo especial de String que hace que el manejo de String complejos sea más facil, pudiendo crear Strings multilinea para invocarlos luego, por ejemplo:
 
 ```jsx
@@ -3977,6 +4267,8 @@ Se usa otro tipo de “comilla” cuando se quiere invocar al String (`) y no es
 
 ### **Export Fallback con export default**
 
+[Volver al indice](#alg-base)
+
 Lo mismo que el anterior, sí queremos exportar una funcion, cuando la declaramos, la exportamos. Se usa cuando quiero exportar solo un valor o funcion, solo puedo elegir un valor que tenga esta propiedad de exportacion, tampoco se puede usar con const, var o let.
 
 ```jsx
@@ -3996,6 +4288,8 @@ add(5,4); //Devuelve el resultado de acuerdo al metodo exportado anteriormente
 
 ### **Que son las variables no declaradas y no definidas?**
 
+[Volver al indice](#alg-base)
+
 **Variables no declaradas**: son las que no existen en un programa, y no se declaran. Si el programa trata de leer su valor entonces va a arrojar un error.
 
 **Variables no definidas**: son aquellas declaradas en el programa, pero no tienen asignado ningún valor. Si el programa quiere leer el valor de  variable no definida, se devuelve un valor no definido.
@@ -4003,6 +4297,8 @@ add(5,4); //Devuelve el resultado de acuerdo al metodo exportado anteriormente
 <a id="var20"></a>
 
 ### **Que es el Function Factory?**
+
+[Volver al indice](#alg-base)
 
 Son funciones que crean funciones u objetos. Con este patron se puede implementar Currying
 
@@ -4040,6 +4336,8 @@ const crearUsuario = ({ userName, avatar }) => ({
 
 ### **Promises**
 
+[Volver al indice](#alg-base)
+
 Las promises son una buena forma de manejar operaciones asincronicas. Puede tener 3 estados, `Pending`, `Fulfilled` y `Rejected`. Son utiles cuando hay que manejar mas de una operacion asincronica una despues de la otra, para eso se puede usar **Promise Chaining** usando then() y catch() para el manejo de cada una. 
 
 Se pueden implementar por ejemplo, en un Lazy loading.
@@ -4076,13 +4374,15 @@ let promise = new Promise((resolve, reject) =>{
 
 ### **Cuál es la diferencia entre Promises, Callbacks y Async/Await?**
 
+[Volver al indice](#alg-base)
+
 Con las promesas no sabemos cuando se resolverá, pero se puede seguir utilizando la app mientras tanto. Async Await fuerza una espera en la función. 
 
 Ejemplo **Async/await** ⇒ 
 
 Hay un stop en la ejecucion. No se puede continuar.
 
-```
+```javascript
 async function secondFunction() {
   await fetch('url servicio', {
     method: 'get',
@@ -4150,6 +4450,8 @@ const doAsyncStuff = (numero1, numero2, callback){
 <a id="var23"></a>
 
 ### **Que es el Currying?**
+
+[Volver al indice](#alg-base)
 
 Es una tecnica que nos permite invocar una funcion con menos parametros de los que esperaria inciialmente, dejando para despues la especificacion de estos parametros que no llegaron. Permite ejecutar especializacion y composicion.
 
@@ -4252,6 +4554,8 @@ logCritical(new Date())('Some message'); // Podemos usarla para loggear mensajes
 
 ### **Variable Hoisting**
 
+[Volver al indice](#alg-base)
+
 Es un mecanismo de JS en el que las variables y declaraciones de funciones se mueven a la parte superior de su ambito antes de la ejecucion del codigo.
 
 ```jsx
@@ -4270,6 +4574,8 @@ Es el usar las variables antes de que sean declaradas.
 <a id="var25"></a>
 
 ### **Diferencia entre class y function**
+
+[Volver al indice](#alg-base)
 
 class tiene un alcance comprendido por llaves, al igual que las variables let. function es local a la funcion donde fue definida, no podemos usar una clase o funcion constructora por fuera del alcance en donde se encuentra.
 
@@ -4309,6 +4615,8 @@ console.assert( typeof  C === 'function' );
 <a id="var26"></a>
 
 ### **Prototypes y Herencia Prototype (Prototype Inheritance)**
+
+[Volver al indice](#alg-base)
 
 Las funciones y clases tienen una propiedad llamada `Prototype` donde reside la información que es usada para crear los objetos. Todos los miembros del objeto Prototype del constructor seran miembros del objeto una vez instanciado con new.
 
@@ -4372,6 +4680,8 @@ Person.prototype.name = function() {
 
 ### **Funciones en Javascript**
 
+[Volver al indice](#alg-base)
+
 En javascript aveces no necesitamos nombrar nuestras funciones, especialmente cuando pasamos una funcion como argumento a otra funcion. Para eso las **funciones inline**, no les ponemos nombre a las funciones porque no vamos a necesitarlas en ningún otro lado.
 ```jsx
 const myFunc = function() {
@@ -4407,6 +4717,8 @@ console.log(greeting()); // Hello Anonymous Por defecto
 
 ### **Creacion de Constructores**
 
+[Volver al indice](#alg-base)
+
 ```jsx
 var SpaceShuttle = function(targetPlanet){
   this.targetPlanet = targetPlanet;
@@ -4428,6 +4740,8 @@ const zeus = new SpaceShuttle('Jupiter');
 <a id="var29"></a>
 
 ### **Diferencia entre `for in` y `for of`**
+
+[Volver al indice](#alg-base)
 
 - For in toma los indices de los elementos que estan siendo recorridos
 
@@ -4452,6 +4766,8 @@ for (const digit of digits) {
 <a id="var30"></a>
 
 ### **Diferencia entre Map y Weakmap**
+
+[Volver al indice](#alg-base)
 
 Son casi iguales, son la clasica estructura de datos de diccionario, su diferencia es que se puede acceder a los clave-valores de un Map usando .values o .keys
 
@@ -4484,6 +4800,8 @@ Weakmap, ademas, solo admite objetos como clave, estos estan debilmente referenc
 <a id="var31"></a>
 
 ### **Qué es una variable global, como se declara y cuales problemas puede tener?**
+
+[Volver al indice](#alg-base)
 
 Se pueden usar en todo el codigo, no tienen alcance. Se declara sin usar `var` en la declaracion
 
@@ -4539,17 +4857,23 @@ total;
 
 ### **Porque no se recomienda usar innerHTML?**
 
+[Volver al indice](#alg-base)
+
 No se recomienda su uso porque es muy lento dado que refresca el contenido cada vez. Es más fácil insertar un código errado en el documento y hacer que la página web sea inestable.
 
 <a id="var34"></a>
 
 ### **Entre JS y un script ASP, ¿Cual es mas rápido?**
 
+[Volver al indice](#alg-base)
+
 JavaScript es más rápido porque es un lenguaje del lado del cliente y no necesita la ayuda del servidor web para ejecutarse. Por otra parte el ASP es un lenguaje del lado del servidor. Motivo por el que siempre es más lento que JavaScript. Sin embargo, Javascript ahora, también puede ser usado como un lenguaje de lado del servidor (server side) (nodejs).
 
 <a id="var35"></a>
 
 ### **¿Qué es una funcion Declarativa y una Expresiva?**
+
+[Volver al indice](#alg-base)
 
 En las **Funciones Declarativas** usamos la palabra reservada `Function` para poder declararla
 
@@ -4582,6 +4906,8 @@ A las funciones declarativas se les aplica hoisting, a la otra no, hoisting se a
 <a id="cic1"></a>
 
 ### **¿Qué es el ciclo de vida de un software?**
+
+[Volver al indice](#cic-base)
 
 Tradicionalmente el desarrollo de aplicaciones informáticas se llevaba a cabo de forma individualizada, a base de codificar (generar líneas de código) y probar lo realizado cuanto antes. La misma persona escribía el código, lo ejecutaba y, si fallaba, lo depuraba. El proceso se realizaba sin ninguna planificación previa y sin que soliese existir documentación alguna. Debido a que la movilidad en el trabajo era baja, los ejecutivos estaban seguros de que esa persona estaría allí cuando se produjese algún fallo. En principio, el hecho de que desde un primer momento se vaya generando código, podría considerarse como un síntoma de enorme progreso, pero puede suponer posteriormente un gran retroceso e incluso la necesidad de desechar una gran parte de lo realizado en el caso de que existan errores y no se puedan llevar a cabo las modificaciones necesarias para subsanarlos (por ejemplo, si al 90% del código se descubre que el diseño de la base de datos es incorrecto, puede suponer desechar el trabajo y tener que comenzar de nuevo). Con este enfoque, cualquier cosa que no sea codificación pura y dura no se realiza (como, por ejemplo, actividades de planificación, de documentación, de aseguramiento de la calidad).
 
@@ -4624,6 +4950,8 @@ Algunas de las ventajas que aporta el enfoque de ciclo de vida residen en lo sig
 
 ### **Iterativo e Incremental**
 
+[Volver al indice](#cic-base)
+
 Es dividir el desarrollo en partes y cada parte es una **iteración**, que resulta un **incremento.** Las iteraciones deben ser controladas, es decir, planificarse. Los desarrolladores tienen en cuenta lo que deben hacer en funcion de los casos de uso de cada iteración.
 
 * Reduce el riesgo a los costes de un solo incremento
@@ -4633,6 +4961,8 @@ Es dividir el desarrollo en partes y cada parte es una **iteración**, que resul
 <a id="cic3"></a>
 
 ### **De waterfall a Agile**
+
+[Volver al indice](#cic-base)
 
 Se comprenden las siguientes fases:
 
@@ -4654,6 +4984,8 @@ Consta de una evolución secuencial, los problemas se dieron por el entorno cons
 
 ### **¿Cuál es el concepto de Organización?**
 
+[Volver al indice](#cic-base)
+
 Una organización es un conjunto de entidades (personas o no personas) con varios objetivos y/o metas en común, basada en valores, con estructura, recursos y entorno, que maneja información y realiza actividades.
 
 Toda organización provee un servicio.
@@ -4669,6 +5001,8 @@ Toda organización está construida sobre valores, una misión y una visión.
 <a id="cic5"></a>
 
 ### **El concepto de "Misión de una Organización"**
+
+[Volver al indice](#cic-base)
 
 Se refiere a la declaración que define el propósito fundamental y único de una organización, estableciendo su razón de ser. La misión describe la naturaleza de la organización y lo que la distingue de otras entidades similares. Es una guía para las acciones de la organización, reflejando las metas y valores de la misma y proporcionando un marco para las estrategias y políticas operativas. La misión suele responder a las siguientes preguntas:
 
@@ -4699,17 +5033,23 @@ El concepto de Misión de una Organización se refiere al motivo, propósito o r
 
 ### **El concepto de "Visión de una Organización"**
 
+[Volver al indice](#cic-base)
+
 A dónde va esa empresa a largo plazo, teniendo en cuenta a las nuevas tecnologías, los cambios, los clientes, etc..
 
 <a id="cic7"></a>
 
 ### **El concepto de "Valores de una Organización"**
 
+[Volver al indice](#cic-base)
+
 Creencias o convicciones del grupo que conforma a la organización, son los principios de comportamiento que posee la organización. Se demuestran con un código de conducta, etc..
 
 <a id="cic8"></a>
 
 ### **El concepto de "Excelencia Empresarial"**
+
+[Volver al indice](#cic-base)
 
 Es el conjunto de **prácticas sobresalientes** en la gestión de la organización que conllevan al logro de ciertas cosas. Lograr esta excelencia es responder de buena manera a dos necesidades: -Mantener lo esencial y lo que funciona
 
@@ -4723,6 +5063,8 @@ Se impulsa a hacer equipos de alto rendimiento, con un líder, disminuyendo cada
 
 ### **El concepto de Interesados (Stakeholders)**
 
+[Volver al indice](#cic-base)
+
 Es toda persona y/o organización que tiene algún tipo de relación o interés sobre un proyecto, ese o no en el. Hay de distintos tipos:
 
 - Empresas y/o organizaciones pueden agregar certificaciones, aprobaciones, permisos para ser ejecutado
@@ -4734,11 +5076,15 @@ Es toda persona y/o organización que tiene algún tipo de relación o interés 
 
 ### **El concepto de "Objetivos de una Organización"**
 
+[Volver al indice](#cic-base)
+
 Los fines a donde va la actividad de la organización. Pueden ser propios, para los empleados o para el afuera.
 
 <a id="cic11"></a>
 
 ### **El concepto de "Entorno de una Organización"**
+
+[Volver al indice](#cic-base)
 
 Elementos externos que afectan o influyen en la actividad de una organización. Es un concepto. Entre la empresa y el entorno hay una relación constante:
 
@@ -4749,6 +5095,8 @@ Elementos externos que afectan o influyen en la actividad de una organización. 
 <a id="cic12"></a>
 
 ### **Recursos de una Organizacion**
+
+[Volver al indice](#cic-base)
 
 Productos activos productivos de la empresa, son pocos, y por eso tienen mucho valor $$. Los hay de distintos tipos como:
 
@@ -4772,6 +5120,8 @@ Otro tipo de clasificación puede ser...
 
 ### **Propiedad intelectual e informática - Derecho de Cita**
 
+[Volver al indice](#cic-base)
+
 En los libros hay citas de varias obras que son hechas sin autorización, pero eso no es ilegal, ya que se está usando el **derecho de cita**. A veces las obras necesitan citas textuales y el régimen autoriza a hacerlo en algunos casos. En argentina se permite en dos condiciones:
 
 - Que sea el mínimo necesario y no sean más de 1000 palabras, u 8 compases sí es música. Señalar al autor y a la obra
@@ -4785,6 +5135,8 @@ La tecnología del Servicio Web es distinta, fue creada con el objetivo de desvi
 
 ### **Propiedad intelectual y derechos de traducción**
 
+[Volver al indice](#cic-base)
+
 Muchas obras son hechas en un idioma y luego se traducen a otro, algo que se considera una obra que requiere esfuerzo intelectual, originalidad y creatividad. Cada traducción expresa algunos aspectos de la obra original.
 
 La ley reconoce a los traductores derechos sobre su traducción, basada en las características de novedad, originalidad y creatividad que desarrollan. Para contar con estos derechos, la traducción no tiene que ser legítima, debe hacerse con autorización del autor en caso de que existan derechos de propiedad vigentes. Cuando la traducción es hecha por computadora, no se le llamaría traducción ya que la PC no tiene el espíritu necesario para reconocimiento de derechos de propiedad intelectual de traducción.
@@ -4792,6 +5144,8 @@ La ley reconoce a los traductores derechos sobre su traducción, basada en las c
 <a id="cic15"></a>
 
 ### **Propiedad intelectual y derechos de ejecución**
+
+[Volver al indice](#cic-base)
 
 Algunas obras están destinadas a ser interpretadas o ejecutadas, como la música o las obras de teatro, o ciertas obras. Cada ejecución difiere y hay preferencias. El sistema de propiedad intelectual también reconoce el derecho sobre las ejecuciones porque en cada una el intérprete contribuye a sus dotes de novedad, originalidad y creatividad, ya que las ejecuciones no son mecánicas, se realizan a base de decisiones.
 
@@ -4801,11 +5155,15 @@ Los programas que sintetizan el habla o reproducen obras musicales se perfeccion
 
 ### **Fotografías, Filmaciones e Informática**
 
+[Volver al indice](#cic-base)
+
 Algunas fotografías son obras intelectuales y otras no. Para que lo sea, debe poseer los requisitos de novedad, originalidad y creatividad. La ley Argentina establece un régimen diferenciado de protección, el plazo es de 20 años a contar desde su primera publicación. Se deberá inscribir dejando constancia de esa fecha, lugar de publicación y autor. ¿Una computadora puede realizar una fotografía artística? No.
 
 <a id="cic17"></a>
 
 ### **Fraude a la propiedad intelectual**
+
+[Volver al indice](#cic-base)
 
 Se establecen penas sobre la reproducción de obras intelectuales, la pena es de 1 mes a 6 años y el tipo es Defraudar => Derechos de propiedad intelectual.
 
@@ -4813,11 +5171,15 @@ Se establecen penas sobre la reproducción de obras intelectuales, la pena es de
 
 ### **El análisis de las obras intelectuales en la actividad informática**
 
+[Volver al indice](#cic-base)
+
 Aunque una obra califique como obra intelectual y tenga toda la protección de la ley, se debe determinar sí se encuentra en el dominio privado o público, donde se podrán reproducir sin autorización.
 
 <a id="cic19"></a>
 
 ### **Dignidad Humana y su protección, valores comprometidos**
+
+[Volver al indice](#cic-base)
 
 La dignidad es el centro de todos los derechos, es el principio mediante se explican construcciones juridicas y de las socluciones que se dan en casos individuales, el individuo no puede renunciar a su propia dignidad, por eso no son legales los “contratos” de esclavitud, etc..
 
@@ -4827,6 +5189,8 @@ Hay un tipo de derechos que son extrapatrimoniales, **derechos personalísimos**
 
 ### **Derechos sobre la imagen personal**
 
+[Volver al indice](#cic-base)
+
 El derecho a la imagen protege no solo la imagen visual (también formas de presentarla por fotos, videos, etc..), sino también la imagen sonora de las personas (su voz). El objetivo es que nadie pueda captar ni reproducir ni difundir la imagen visual ni auditiva de una persona sin su permiso, cada uno es dueño exclusivo de su imagen.
 
 Sí una persona presta su consentimiento para que se publique una imagen, puede revocar cuando decida, y sí esta revocación produce perjuicio al antes autorizado, se le debe resarcir. La autorización para sacar una foto no autoriza su difusión, son dos permisos distintos.
@@ -4834,6 +5198,8 @@ Sí una persona presta su consentimiento para que se publique una imagen, puede 
 <a id="cic21"></a>
 
 ### **Casos en los que no es necesario el consentimiento**
+
+[Volver al indice](#cic-base)
 
 La ley elabora los casos en donde no es necesario el consentimiento de las personas cuya imagen sea captada o difundida
 
@@ -4853,11 +5219,15 @@ Personas por propia voluntad se expusieron al conocimiento público, como famoso
 
 ### **Imagen de personas fallecidas**
 
+[Volver al indice](#cic-base)
+
 Serán los herederos quienes deberán prestar el consentimiento en los mismos términos como sí fuera una persona viva. Pasados los 20 años de muerto, pasará a ser libre, siempre y cuando no sea ofensiva, sí lo resulta, los herederos podrán aún así, reclamar.
 
 <a id="cic24"></a>
 
 ### **Caso de la mujer en la tribuna**
+
+[Volver al indice](#cic-base)
 
 Una revista capta una foto en un acto público, con 5 personas, en el medio una mujer. La foto podría publicarse ya que la regla dice que no se necesita consentimiento cuando se trata de un acto público. Pero antes de su publicación, la revista difumina a todas las personas menos a la mujer, entonces la mujer demanda a la revista por haber difundido esta imagen sin su consentimiento. La mujer triunfa en el juicio y la revista debe indemnizarla.
 
@@ -4866,6 +5236,8 @@ Supongamos que la mujer vuelve a otro acto público, y se saca otra foto, y por 
 <a id="cic25"></a>
 
 ### **El caso de los espías**
+
+[Volver al indice](#cic-base)
 
 Se saca una foto de gente caminando en la calle y a una persona se le tapa el rostro con una franja negra. Esta misma persona se reconoce y hace un juicio. La revista argumenta que no es la misma persona y que tiene derecho a publicar esta imagen ya que es una imagen sucedida en público. El demandante prueba que es él, y dice que sí bien fue un acto público, el hecho de haberle tapado la cara, lo individualizan, haciendo que su participación dejará de ser casual. Por esto mismo, el demandante gana el juicio.
 
@@ -4881,6 +5253,8 @@ El derecho de la imagen no se respeta en las redes sociales. Esto se debe a dos 
 
 ### **El software y los problemas de su encuadramiento legal**
 
+[Volver al indice](#cic-base)
+
 Antes del software, existían regímenes de protección de objetos inmateriales, como el derecho de propiedad intelectual y el derecho de patentes de invención. El problema fue en cual de esos regímenes jurídicos corresponde encuadrarlo o sí el software por sus características intrínsecas era una obra intelectual o un invento.
 
 En 1967, la OMPI (Organización Mundial de la Propiedad Intelectual) estableció que el software era una obra intelectual, y que por lo tanto, se le aplicaría el régimen de protección de las obras intelectuales. En 1991, la OMPI estableció que el software era una obra intelectual, pero que también podía ser considerado un invento, y que por lo tanto, se le aplicaría el régimen de protección de las patentes de invención.
@@ -4888,6 +5262,8 @@ En 1967, la OMPI (Organización Mundial de la Propiedad Intelectual) estableció
 <a id="cic27"></a>
 
 ### **El software como Obra Intelectual**
+
+[Volver al indice](#cic-base)
 
 ¿Cumple con los requisitos?
 
@@ -4905,6 +5281,8 @@ El software puede ser una creación originaria, cuando se programa se lo puede h
 
 ### **El software como invención**
 
+[Volver al indice](#cic-base)
+
 Un invento para ser protegido debe ser un desarrollo destinado a la solución de un problema práctico que termine en un producto tangible. Las ideas y procedimientos intelectuales están fuera de la protección de las patentes. No se puede proteger por este sistema a conceptos abstractos y sus combinaciones.
 
 Los inventos deben aportar una solución a un problema de naturaleza técnica y el software no fue visto así porque por “problema de naturaleza técnica” se entendió un problema fundamentalmente de naturaleza material.
@@ -4915,11 +5293,15 @@ El régimen de patentes generaba otro problema, un invento. Al igual que una obr
 
 ### **El software como un nuevo objeto jurídico**
 
+[Volver al indice](#cic-base)
+
 Esta era la polémica situación tanto en la doctrina como en las fluctuantes decisiones judiciales en muchos países. Una nueva posición sostuvo que el software no se encuadra ni en el sistema de propiedad intelectual ni en el de patentes, por lo que no correspondía generar un sistema conceptual novedoso para esta creación contemporánea. Esta posición, no tuvo adherentes destacados y fue descartada.
 
 <a id="cic30"></a>
 
 ### **La prisión de los conceptos jurídicos**
+
+[Volver al indice](#cic-base)
 
 El derecho tiene la funcion de solucionar problemas. Para hacerlo crea estructuras conceptuales que forman subsistemas dentro de estructuras generales. Se producen contradicciones entre distintas partes, vacíos, etc.. También se producen prisiones conceptuales. Una vez se desarrollan los conceptos, se explican, suele perderse en el olvido el problema para el cual se crearon.
 
@@ -4929,11 +5311,15 @@ Al generarse un mundo conceptual nuevo se olvida el carácter de los problemas q
 
 ### **Distintas etapas de la tecnología y distintos problemas**
 
+[Volver al indice](#cic-base)
+
 Antes, cuando las PC no eran tan comunes de tener, el problema era la copia de los procedimientos o algoritmos de programación. El peligro era en ese entonces el espionaje industrial porque eran verdaderos espías quienes trafican ilegalmente con fórmulas de programación. Cuando las computadoras pudieron compartir el software, el problema cambió, con la aparición de las PC más personales se generalizó la copia ilegal de los programas, a punto del escándalo. La necesidad era evitar la copia de los programas, la copia de los archivos, la copia lisa y llana por medios electrónicos. El régimen jurídico apropiado para este contexto era el de la propiedad intelectual que lo que hace es impedir la reproducción ilegal lisa y llana. El régimen de la propiedad intelectual cuenta con un tipo penal de fraude que resultaba adecuado para ser aplicado a las organizaciones dedicadas a la copia ilegal.
 
 <a id="cic32"></a>
 
 ### **El software y la protección por el régimen de la propiedad intelectual**
+
+[Volver al indice](#cic-base)
 
 Se acordó que el software será protegido por el mismo régimen de la propiedad intelectual. No necesitamos resolver el problema respecto a sí el software es o no es una obra intelectual, simplemente le damos el mismo régimen de protección de las obras intelectuales. El incorporarlas dentro del régimen generó dificultades que se fueron viendo con el tiempo.
 
@@ -4951,6 +5337,8 @@ El derecho de propiedad intelectual protege contra las copias ilegales y las con
 
 ### **Software propietario, abierto y libre.**
 
+[Volver al indice](#cic-base)
+
 - **Propietario**: que se encuentra protegido y existe un titular. No puede reproducirse sin autorización.
 - **Software de dominio público**: no existe titular o este lo ha liberado y es de libre uso.
 - **Software libre:** es un software amparado por los derechos de propiedad intelectual, pero que el o los autores han establecido una licencia de uso amplia de acuerdo a ciertos principios. Normalmente está autorizada la copia sin necesidad de autorización expresa siempre y cuando se respeten ciertas condiciones.
@@ -4959,6 +5347,8 @@ El derecho de propiedad intelectual protege contra las copias ilegales y las con
 <a id="cic34"></a>
 
 ### **Consecuencias de la inclusión de los programas dentro del régimen de propiedad intelectual**
+
+[Volver al indice](#cic-base)
 
 El régimen de propiedad intelectual fue creado dentro de un contexto tecnológico muy determinado, fundamentalmente la tecnología de edición de libros y la ideología del romanticismo europeo. Ante una realidad nueva, como fue la creación de las computadoras y los programas, se buscó la protección y se ajustó su inclusión en el régimen de propiedad intelectual lo que ha traído varias consecuencias poco funcionales:
 
@@ -4970,6 +5360,8 @@ El régimen de propiedad intelectual fue creado dentro de un contexto tecnológi
 <a id="cic35"></a>
 
 ### **Las ideas no pueden ser de nadie**
+
+[Volver al indice](#cic-base)
 
 Las ideas no pueden robar, para robar el objeto debe ser ajeno y las ideas como tales no son propiedad. Todas nuestras actividades son producto de nuestras ideas, el humano funciona a ideas. Una cosa es una idea para hacer algo y otra es su expresión concreta. No es lo mismo la idea que inspira a una canción que la canción en sí. Existe la concepción de la idea y, tras una elaboración, lo producido por esa idea.
 
@@ -4990,6 +5382,8 @@ Algunos conceptos quedaron encuadrados caracterizados, definidos, mientras que o
 
 ### **Obras intelectuales e inventos, marcas comerciales, diseños industriales**
 
+[Volver al indice](#cic-base)
+
 Hay obras artísticas literarias, científicas, etc.., donde el material (sonidos de la canción, libro, etc..) carece de importancia en cuanto a la obra, es solo un soporte y lo relevante es el sentido. También están las cosas tangibles que solucionan problemas prácticos y son de utilidad material. En el primer caso, el objetivo de la obra es satisfacer necesidades espirituales, el segundo busca resolver problemas prácticos y son de importancia económica.
 
 A las primeras la ley las agrupa como **obras intelectuales**, y las segundas son protegidas con el **régimen de patentes de invención.**
@@ -5002,6 +5396,8 @@ De forma parecida se protegieron las marcas comerciales, símbolos que identific
 
 ### **Obras Intelectuales**
 
+[Volver al indice](#cic-base)
+
 Son creaciones artísticas, literarias, científicas y pedagógicas. La protección fundamental es que nadie puede reproducirlas sin el consentimiento del autor, titular, etc..
 
 - Es **internacional**. Se hizo con características mínimas comunes a todos los países. Una obra de Argentina se protege en todo el mundo.
@@ -5013,11 +5409,15 @@ Son creaciones artísticas, literarias, científicas y pedagógicas. La protecci
 
 ### **El carácter temporal**
 
+[Volver al indice](#cic-base)
+
 ¿Por qué una obra intelectual es temporal? La ley establece que las obras intelectuales pertenecen a sus creadores por un tiempo y luego pasarán al patrimonio común, no al estado como se suele creer. Serán de uso público. En 1933 en Argentina se establecieron 30 años desde la muerte del autor de vencimiento, y a medida que se mejoraron las comunicaciones, tecnología de impresión y reproducción de libros, el plazo debía disminuir porque la explotación económica de las obras intelectuales se hacía más veloz. Hoy en día la obra se encuentra protegida toda la vida del autor y luego a sus herederos por 70 años desde el 1 de enero desde su muerte.
 
 <a id="cic39"></a>
 
 ### **Características: Novedad, originalidad, creatividad**
+
+[Volver al indice](#cic-base)
 
 No cualquier creación producto del trabajo intelectual es una obra intelectual
 
@@ -5028,6 +5428,8 @@ No cualquier creación producto del trabajo intelectual es una obra intelectual
 <a id="cic40"></a>
 
 ### ***Derechos sobre la obra, personalísimos y de explotación económica**
+
+[Volver al indice](#cic-base)
 
 Como expresión de una idea se produce una obra intelectual. Reproducir una obra puede ser hecho de muchas formas, fotocopiando un libro, cantando una canción, etc.. ¿Qué derechos concretos tiene el autor? **Derechos personalísimos y derechos de explotación económica**.
 
@@ -5046,6 +5448,8 @@ El derecho de explotación económica permite al autor difundir su obra a travé
 
 ### **Origen de las firmas**
 
+[Volver al indice](#cic-base)
+
 El humano, cada persona, tiene características únicas, irrepetibles, en su modo de escribir. El derecho aprovechó esto para darle sentido jurídico a la firma, se inventó junto con el establecimiento de consecuencias legales a los documentos en los cuales alguien la estampa su firma.
 
 “Firma” refiere a lo firme, a lo afirmado. Antes de la firma hubo otro sistema, con sellos. Las personas tenían un anillo-sello que los identificaba y con el marcaban los documentos.
@@ -5056,6 +5460,8 @@ La firma es un acto personalísimo, no puede ser delegado. La firma es un acto d
 
 ### **Firma desde el derecho**
 
+[Volver al indice](#cic-base)
+
 La firma identifica a la persona, autentifica el documento firmado y el firmante hace saber que presta su consentimiento sobre lo expresado en el documento. La firma a mano también se llama **autógrafa**. Lo que permitió la difusión de la firma a mano fue la característica de poder determinarse su autenticidad, en el caso de que alguien diga que una firma no es suya, hay maneras de saber sí lo es o no.
 
 La invención de la escritura y la proliferación de documentos permitieron desarrollar actividades importantes, como cosas financieras o de negocios. La ventaja de la firma es que determina al autor y la autenticidad del documento por el gesto de la mano firmante. No se puede firmar documentos digitales, solo documentos en papel.
@@ -5063,6 +5469,8 @@ La invención de la escritura y la proliferación de documentos permitieron desa
 <a id="cic43"></a>
 
 ### **Firma electrónica y firma digital**
+
+[Volver al indice](#cic-base)
 
 | Firma Digital | Firma Electrónica |
 | --- | --- |
@@ -5123,6 +5531,8 @@ De estos principios podemos decir:
 
 ### **La firma digital y la criptografía**
 
+[Volver al indice](#cic-base)
+
 La firma digital es un equivalente funcional de la firma manuscrita. Sirve para que las personas presten su consentimiento respecto a las expresiones en los documentos que se firman. Los procedimientos tecnológicos no son en sí un problema jurídico, sí no, informático. Una tecnología posterior podría cambiarlos a todos y la funcion jurídica se mantendrá idéntica, siempre se asegure la soberanía del usuario y el control de los procedimientos en el ámbito de su responsabilidad.
 
 La criptografía se aplica para asegurar que solo quien cuente con la clave privada pueda firmar. La relación matemática entre la clave pública y privada está protegida, porque sí bien desde la pública se obtiene la privada. El proceso para intercambiar un contrato es:
@@ -5134,6 +5544,8 @@ La criptografía se aplica para asegurar que solo quien cuente con la clave priv
 <a id="cic45"></a>
 
 ### **Personas en el derecho**
+
+[Volver al indice](#cic-base)
 
 Todos aquellos que puedan tener derechos y obligaciones pertenecerán al mundo jurídico y se llamarán personas. No son solo humanos, sino también las personas jurídicas y todas tienen que tener un patrimonio que con el tiempo va cambiando e incluye el patrimonio moral.
 Estas personas establecen vínculos entre sí y con el Estado Nacional que también es una persona, así como las municipalidades, fundaciones, etc..
@@ -5147,6 +5559,8 @@ Sí una persona humana hace un negocio de poco éxito que da deudas, las debe af
 <a id="cic46"></a>
 
 ### **Elementos de un contrato**
+
+[Volver al indice](#cic-base)
 
 Es un acuerdo entre dos o más personas para crear obligaciones, o para modificarlas, extinguirlas o regularlas. Pueden tener cualquier contenido, siempre y cuando no se contrapongan con las leyes. No es necesario que un contrato sea de una clase determinada, puede tener cualquier obligación para las partes.
 
@@ -5165,6 +5579,8 @@ Para hacer un contrato hay que establecer estos elementos:
 
 ### **Contratos sobre Hardware**
 
+[Volver al indice](#cic-base)
+
 El hardware se compra, así que el contrato es de compraventa, una parte conviene la entrega de una cosa y la otra paga un precio. El Código Civil y comercial de Argentina establece unas normas que son de aplicación supletoria (sí las partes no acordaron sobre ello, son las que regirán)
 
 - El comprador debe pagar el precio en el tiempo convenido
@@ -5178,6 +5594,8 @@ El hardware se compra, así que el contrato es de compraventa, una parte convien
 
 ### **Contratos sobre Software**
 
+[Volver al indice](#cic-base)
+
 En los contratos de desarrollo de software no sólo es relevante aclarar las funciones que los programas deberán cumplir, sino que se deberá hacer referencia al hardware y las limitaciones para ejecutarlos. La poca claridad de, por ejemplo, plazos de entrega, pruebas, etc.. Son las comunes causas de conflicto entre las partes, a veces en relaciones de buena fe, como causa tienen la mala redacción de los contratos por falta de previsión en cuanto a las obligaciones de las partes.
 
 En el caso de Licencias de Software estándar, se deben establecer los tiempos, las actualizaciones y el límite de licencias, y la cantidad de copias a correrse al mismo tiempo. En el desarrollo de webs deberían contemplarse el problema de las obras intelectuales que podrían crearse para lo cual se deberá referir al sistema de protección de la propiedad intelectual. Deberá recordarse que cuando se hagan tareas en relación de dependencia los derechos de explotación económica quedarán en manos de quien encargó la tarea, salvo que se aclare lo contrario.
@@ -5185,6 +5603,8 @@ En el caso de Licencias de Software estándar, se deben establecer los tiempos, 
 <a id="cic49"></a>
 
 ### **Los contratos de obra y de servicios**
+
+[Volver al indice](#cic-base)
 
 En los contratos de obra o servicios, una persona de forma independiente se obliga a favor de otra a realizar una obra o proveer un servicio a cambio de una retribución. La diferencia entre ambos es que en el contrato de servicios la persona se obliga a realizar la tarea correctamente, pero independientemente de que se logren los resultados, en el de obra el compromiso es de un resultado.
 
@@ -5196,6 +5616,8 @@ Sí existe relación de dependencia con el prestador del servicio, entonces esta
 
 ### **El problema de la protección de la información**
 
+[Volver al indice](#cic-base)
+
 Con la generalización de la informática se ha producido un aumento del problema de la protección de la información, especialmente la de los datos personales. Muchos contratos que se hacen son de mantenimiento de bases de datos con información sensible de las personas. La ley de protección de datos personales impone obligaciones a quienes las manejan en cuanto a la corrección de los datos, el derecho de acceso por los interesados, la modificación en caso de datos erróneos, etc..
 
 En la realización de contratos que involucre entregar al contratante bases de datos o acceso a estas es necesario agregar las normas relativas a su protección y manejo de tal manera que se cumplan con las disposiciones legales y también evitar provocar daños con consecuencias de responsabilidad civil.
@@ -5203,6 +5625,8 @@ En la realización de contratos que involucre entregar al contratante bases de d
 <a id="cic51"></a>
 
 ### **Responsabilidad Civil - El daño y sus categorías**
+
+[Volver al indice](#cic-base)
 
 - **Daño emergente:** El damnificado debe disminuir su patrimonio para reparar cosas, o debe suplantar los servicios que le daban con gastos de transporte, gastos médicos, etc..
 - **Lucro cesante:** Un flujo económico que entraba al patrimonio del damnificado se detiene por el daño. No es problema de output del patrimonio, sí no de input
@@ -5213,6 +5637,8 @@ En la realización de contratos que involucre entregar al contratante bases de d
 
 ### **Relación de causalidad con el hecho dañoso**
 
+[Volver al indice](#cic-base)
+
 El daño es producido por un hecho dañoso. Para que haya un daño se deben dar condiciones, de todas ellas, debemos establecer una que nos diga cual vamos a considerar causa del hecho.
 A produce B cuando en el orden natural y corriente de las cosas A produce B. La causalidad jurídica se diferencia de la causalidad física. Podemos ver que en el mundo hay daños producidos por causas, pero no sabemos nada respecto a quien o quienes deban pagarlos
 
@@ -5220,11 +5646,15 @@ A produce B cuando en el orden natural y corriente de las cosas A produce B. La 
 
 ### **Significado de los factores de atribución**
 
+[Volver al indice](#cic-base)
+
 Sí hay daño y un hecho ilegal en relación de causalidad, para que haya responsabilidad civil, falta una regla que nos indique quien debe pagar. A este conjunto de reglas se les dice **factor de atribución de la responsabilidad civil**. Sí la regla señala a alguien como responsable, este deberá pagar la indemnización, será un monto a pagar por una o más personas. El objetivo es restaurar patrimonios disminuidos y no beneficiar a los que cometieron actos dañosos
 
 <a id="cic54"></a>
 
 ### **Factores de atribución subjetivos**
+
+[Volver al indice](#cic-base)
 
 Son subjetivos porque dependen de la acción de un sujeto y son, el dolo y la culpa.
 
@@ -5236,6 +5666,8 @@ La culpa puede medirse porque las conductas imprudentes tienen distinta gravedad
 <a id="cic55"></a>
 
 ### **Factores de atribución objetivos**
+
+[Volver al indice](#cic-base)
 
 En este caso no nos interesa la actitud de nadie. Son reglas objetivas que establecen que alguien debe pagar por encontrarse en X situación. El reproche que podemos encontrar en los casos de dolo o de culpa en los factores objetivos no existe.
 
@@ -5254,6 +5686,8 @@ Sí aplicamos el sistema visto hasta ahora se puede dar un resultado muy injusto
 
 ### **Factores de distribución de la responsabilidad civil**
 
+[Volver al indice](#cic-base)
+
 - **Dolo de la victima: Sí la victima lo provoco con intención**
 - **Dolo de un tercero: Sí un tercero, por ejemplo, empuja a otro a la calle para que sea atropellado**
 - **Culpa de la víctima: Sí la víctima por su torpeza contribuyó al daño**
@@ -5266,6 +5700,8 @@ En casos de distribución por culpa, la misma puede ser total o parcial. Esto de
 
 ### **Tipicidad penal informática - El problema de la tipicidad penal**
 
+[Volver al indice](#cic-base)
+
 La ley penal dice que conductas son delitos por el procedimiento llamado **tipificación**, asociar una pena a una conducta que es descripta. Esta característica del derecho penal moderno protege a las personas que con anticipación pueden saber qué conductas son delitos y cuáles no.
 Pero todo se sostiene sobre el supuesto de que todas las conductas pueden ser descriptas de una forma tan clara que no haya dudas sobre la inclusión, o no, de una acción, más allá de las interpretaciones judiciales. Hubo veces donde los tribunales no se pusieron de acuerdo con casos determinados o en casos confusos (mal hecho) o “abierto” (no perfectamente determinado, mal hecho), pero más allá de esto, el sistema ha funcionado.
 En los casos de tribunales, los abogados y fiscales debaten la prueba de la existencia de los hechos y la subsunción de los hechos al tipo, la descripción puede ser clara, pero el hecho concreto, las particularidades del mismo pueden generar dudas.
@@ -5274,6 +5710,8 @@ Pero todos están de acuerdo en que sí no cae de una forma clara en el tipo pen
 <a id="cic58"></a>
 
 ### **La aparición de la informática y lo que produjo**
+
+[Volver al indice](#cic-base)
 
 El desarrollo del procesamiento automatizado, la representación digital de la realidad y las redes de comunicaciones dieron 2 realidades con relevancia en el mundo penal
 
@@ -5288,6 +5726,8 @@ Esto dio a que varias situaciones quedarán fuera del sistema penal a pesar de m
 
 ### **Metodos de analisis de tipo penales**
 
+[Volver al indice](#cic-base)
+
 Por ejemplo, pidámosle a alguien que piense una acción molesta, como hacer sonar una bocina en la calle. Ahora, que intente tipificar esta accion, pero sin verbos, por ejemplo, “Sera reprimido con prision de..”. Todos los intentos fallaron.
 
 El verbo es la expresión gramatical de una acción y el delito es una acción, sin verbo no puede explicarse, el núcleo del tipo penal es el verbo y a él tiene que dirigirse nuestra atención. Además del verbo pueden existir otros elementos sobre los que debemos aclarar el significado porque, sin ellos, no habrá tipo, porque sí el tipo tiene muchos elementos, todos deben cumplirse para que se cumpla el acuerdo entre acción y tipo.
@@ -5295,6 +5735,8 @@ El verbo es la expresión gramatical de una acción y el delito es una acción, 
 <a id="cic60"></a>
 
 ### **El problema de la tipificación de los delitos informáticos**
+
+[Volver al indice](#cic-base)
 
 Al tipificar, se tiene en cuenta una acción, se la imagina y a partir de esto se redacta la ley penal. Se estima su gravedad y se decide la pena. Una buena tipificación tiene como sustento un conocimiento de los casos que se incluyen. Pueden producirse dos tipos de errores llamados **Errores de tipificación Clase A (Error-A) y Clase B (Error-B).**
 
@@ -5326,6 +5768,8 @@ Resistieron violentamente => el  restablecimiento  de  una  comunicación  inter
 
 ### **Normas de SGSI**
 
+[Volver al indice](#cic-base)
+
 Un sistema de gestión de seguridad de la información (SGSI) consiste en el conjunto de políticas, procedimientos y directrices junto a los recursos y actividades asociadas que son administradas colectivamente por una organización, en la búsqueda de proteger sus activos de información esenciales
 
 - **ISO-IEC 27001**: se enfoca al proceso y modelo PDCA de mejora continua.
@@ -5335,6 +5779,8 @@ Un sistema de gestión de seguridad de la información (SGSI) consiste en el con
 <a id="cic62"></a>
 
 ### **ISO/IEC 27001**
+
+[Volver al indice](#cic-base)
 
 La norma ISO 27001 es una solución de mejora continua en base a la cual puede desarrollarse un sistema de gestión de seguridad de la información (SGSI) que permita evaluar todo tipo de riesgos o amenazas susceptibles de poner en peligro la información de una organización tanto propia como datos de terceros. Por otro lado, también permite establecer los controles y estrategias más adecuadas para eliminar o minimizar dichos peligros
 
@@ -5409,6 +5855,8 @@ Es fundamental realizar revisiones periódicas del SGSI por parte de la alta dir
 
 ### **Responsabilidad de programadores, administradores de redes**
 
+[Volver al indice](#cic-base)
+
 Estos roles son profesionales que pueden ser sujetos de la responsabilidad civil por el factor culpa. Sí en su trabajo no cumplen con el modelo exigible que puede establecerse a partir de las normas de la ciencia y el arte de la programación y, como consecuencia de su mala labor, se producen daños, deberán indemnizarlos.
 
 Para eximirse, deberá demostrar que su labor sí correspondió con el modelo. Tendrían que, mientras hacen sus tareas, analizar de qué manera podrían probar la corrección de su conducta profesional.
@@ -5420,6 +5868,8 @@ Los gerentes no son principales en el sentido de factor de atribución respecto 
 <a id="cic64"></a>
 
 ### **El problema del daño causado por un tercero por injurias realizadas en un sitio web**
+
+[Volver al indice](#cic-base)
 
 Pongámosle el ejemplo de que alguien viene y comenta en una página de negocios que alguien de un negocio es un estafador, y que gracias a este comentario, a este negocio le va mal, además los pobladores de donde es el dueño de este negocio se asombran y algunos sospechan de ellos (Damnificados).
 
@@ -5490,6 +5940,8 @@ Podríamos colocar un cartel que dijera “Usted ha diseñado su pizza y esta se
 
 ### **Beneficios para una organización de implementar ISO 27001**
 
+[Volver al indice](#cic-base)
+
 Los beneficios que trae a un organización la implementación de la norma ISO 27001 son los siguientes:
 
 - **Incremento de la confianza**. La confiabilidad de la organización aumenta en los clientes, proveedores y socios, dado que certificar la norma demuestra el compromiso de la misma en materia de seguridad de la información.
@@ -5515,6 +5967,8 @@ Los beneficios que trae a un organización la implementación de la norma ISO 27
 
 ### **Qué es TypeScript?**
 
+[Volver al indice](#typ-base)
+
 Es un superset de JavaScript, es el mismo JavaScript pero le extiende características, o posee cosas propias.
 
 Es mantenido por Microsoft
@@ -5528,6 +5982,8 @@ Es mantenido por Microsoft
 <a id="typ2"></a>
 
 ### **TSConfig.json**
+
+[Volver al indice](#typ-base)
 
 Es el archivo de configuración de TypeScript, en el se definen las reglas de compilación de TypeScript.
 
@@ -5551,6 +6007,8 @@ Mediante estas configuraciones se **deberia** buscar que Typescript sea lo mas e
 
 ### **Watch Mode**
 
+[Volver al indice](#typ-base)
+
 Typescript al ejecutarse es traducido a Javascript. Para que Typescript esté pendiente de los cambios en los archivos y los compile automáticamente, se puede usar el siguiente comando
 
 ```bash
@@ -5560,6 +6018,8 @@ tsc --watch
 <a id="typ4"></a>
 
 ### **Cuáles son sus características superadoras?**
+
+[Volver al indice](#typ-base)
 
 Su tipado estricto ayuda a saber como funcionan las cosas, por ejemplo, en este código Javascript
 
@@ -5601,6 +6061,8 @@ interface Producto {
 
 ### **Cómo declaro una variable?**
 
+[Volver al indice](#typ-base)
+
 Por defecto, implicitamente Typescript asigna un tipo a las variables, pero se puede asignar un tipo explicito. `any` deberia evitarse a toda costa, a menos que sea un elemento reutilizable.
 
 ```tsx
@@ -5634,6 +6096,8 @@ persona[1] = 24;
 
 ### **Tipo de dato Never**
 
+[Volver al indice](#typ-base)
+
 Es un tipo de dato que representa un valor que nunca ocurre. Se utiliza principalmente para funciones que lanzan excepciones o que nunca terminan de ejecutarse.
 
 No es undefined ni es void. Es never.
@@ -5654,6 +6118,8 @@ function loopInfinito(): never {
 
 ### **Tipo de dato Any**
 
+[Volver al indice](#typ-base)
+
 Es un tipo de dato que puede ser cualquier cosa, es decir, que no tiene un tipo de dato específico. Se debe evitar su uso en la medida de lo posible, ya que puede llevar a errores en tiempo de ejecución y dificultar el mantenimiento del código.
 
 ```tsx
@@ -5673,6 +6139,8 @@ variable = true;
 <a id="typ9"></a>
 
 ### **Cómo declaro un objeto?**
+
+[Volver al indice](#typ-base)
 
 ```tsx
 interface Personaje {
@@ -5709,6 +6177,8 @@ const sumar = (a?: number, b: number = 2) : number => {
 
 ### **Parametros REST**
 
+[Volver al indice](#typ-base)
+
 Una funcion puede recibir tantos argumentos como uno quiera, y los parametros REST son una manera de hacer esto.
 
 Por ejemplo en la proxima funcion puedo enviar tantos numeros como yo quiera sumar. Guarda los elementos en el array `numeros`
@@ -5724,6 +6194,8 @@ sumar(1, 2, 3, 4, 5, 6, 7, 8, 9, 10); // 55
 <a id="typ12"></a>
 
 ### **Cómo creo una clase?**
+
+[Volver al indice](#typ-base)
 
 ```tsx
 class Person {
@@ -5749,6 +6221,8 @@ class Person {
 
 ### **Cómo se transpilan las interfaces de TypeScript?**
 
+[Volver al indice](#typ-base)
+
 Las interfaces de TypeScript no se transpilan directamente a código JavaScript, ya que son una característica estática de TypeScript que se utiliza principalmente para proporcionar comprobaciones estáticas de tipo durante el desarrollo. Durante el proceso de transpilación de TypeScript a JavaScript, las interfaces se eliminan del código resultante, ya que no tienen un equivalente en JavaScript.
 
 En lugar de transpilarse, las interfaces de TypeScript son utilizadas por el compilador para realizar comprobaciones de tipos estáticos durante la fase de desarrollo. Esto significa que las interfaces ayudan a detectar errores de tipo en tiempo de compilación y a proporcionar un mejor soporte para el desarrollo de software a gran escala en TypeScript. Una vez que el código TypeScript se ha transpilado a JavaScript, las interfaces no tienen ningún impacto en el código resultante, ya que se eliminan durante el proceso de transpilación.
@@ -5756,6 +6230,8 @@ En lugar de transpilarse, las interfaces de TypeScript son utilizadas por el com
 <a id="typ14"></a>
 
 ### **Cómo hago que las props de una interface sean opcionales?**
+
+[Volver al indice](#typ-base)
 
 Para hacer todas las propiedades de una interfaz opcionales en TypeScript, puedes utilizar la característica de TypeScript llamada "intersección" junto con el tipo parcial ("Partial").
 
@@ -5778,6 +6254,8 @@ En este ejemplo, `Partial<MyInterface>` crea un nuevo tipo que tiene todas las p
 
 ### **Herencia en Typescript**
 
+[Volver al indice](#typ-base)
+
 ```typescript
 class Beer extends Drink {
  private alcohol: number;
@@ -5794,6 +6272,8 @@ const beer = new Beer('Imperial', 1000, 5);
 <a id="typ16"></a>
 
 ### **Interfaces en Typescript**
+
+[Volver al indice](#typ-base)
 
 Nos permite categorizar objetos, es decir, que un objeto tenga un comportamiento ya esperado. Es un contrato.
 
@@ -5828,6 +6308,8 @@ class Beer extends Drink implements Product {
 
 ### **Cuál es la diferencia entre div y span?**
 
+[Volver al indice](#sty-base)
+
 La etiqueta span trabaja como contenedor de línea, no se puede ampliar para ocupar un párrafo, debe usarse para edicion de frases en parrafos, y div trabaja como contenedor de bloque, y puede expandirse.
 
 ![image](https://github.com/denulemos/denobible/assets/32619895/e5463d4a-0cee-45ff-862b-f872e139ba9c)
@@ -5835,6 +6317,8 @@ La etiqueta span trabaja como contenedor de línea, no se puede ampliar para ocu
 <a id="sty2"></a>
 
 ### **Qué es la Especificidad (Specificity) de CSS?**
+
+[Volver al indice](#sty-base)
 
 Es como el navegador determina que propiedad de CSS se debe aplicar a un elemento si hay varios en juego o muchos selectores.
 
@@ -5865,6 +6349,8 @@ section p {
 
 ### **Que es BEM?**
 
+[Volver al indice](#sty-base)
+
 Block element modifier, consiste en escribir nombres de clases que dejen en claro que es lo que se esta representando en el HTML y en el CSS
 
 `bloque__elemento-modificador_elemento (header__title-warning)`
@@ -5886,6 +6372,8 @@ html, body {
 <a id="sty5"></a>
 
 ### **Pseudoclases**
+
+[Volver al indice](#sty-base)
 
 Si vemos los vínculos, tiene un color asignado que podemos cambiarlo por ejemplo si le pasamos el
 mouse por arriba al elemento , eso lo haremos con lo que se llaman pseudo clases pero es necesario
@@ -5916,6 +6404,8 @@ a:hover {text-decoration:underline; }
 
 ### **Qué es Sass?**
 
+[Volver al indice](#sty-base)
+
 Es un preprocesador que nos permite escribir codigo CSS de una forma mas dinamica, agregando sintaxis de un lenguaje de programacion, incluyendo variables, funciones, modulos y valores
 
 Ayuda a tener un codigo modular, simple y escalable.
@@ -5929,11 +6419,15 @@ Ayuda a tener un codigo modular, simple y escalable.
 
 ### **Cual es la diferencia entre .sass y scss?**
 
+[Volver al indice](#sty-base)
+
 La primera no utiliza llaves, solo tabulaciones, que se interpretan como bloques de codigo. La segunda es mas similar a CSS ya que utiliza llaves, y con funcionalidades extra
 
 <a id="sty8"></a>
 
 ### **Sass reemplaza a CSS?**
+
+[Volver al indice](#sty-base)
 
 No, es una herramienta para escribir CSS de forma mas rapida, esto se compila a CSS. Es CSS con "superpoderes".
 
@@ -5942,6 +6436,8 @@ En el HTML se hace el link al Stylesheet .css que es compilado desde sass.
 <a id="sty9"></a>
 
 ### **Comentarios en Sass**
+
+[Volver al indice](#sty-base)
 
 ```scss
 // Los comentarios de 2 barras no aparecen en el CSS compilado
@@ -5954,6 +6450,8 @@ En el HTML se hace el link al Stylesheet .css que es compilado desde sass.
 <a id="sty10"></a>
 
 ### **Variables en SASS**
+
+[Volver al indice](#sty-base)
 
 ```scss
 $color: red;
@@ -5970,6 +6468,8 @@ h1 {
 <a id="sty11"></a>
 
 ### **Partials en SASS**
+
+[Volver al indice](#sty-base)
 
 Si tengo dos archivos en mi directorio sass, y no quiero que los dos aparezcan convertidos a css, si no que ambos esten combinados en un solo css (esto para que no ocupe tanto espacio), simplemente le pongo guion bajo al nombre del archivo sass que deseo combinar
 
@@ -5990,6 +6490,8 @@ body {
 <a id="sty12"></a>
 
 ### **Imports en SASS**
+
+[Volver al indice](#sty-base)
 
 Puedo modificar los valores de las variables que importo al momento de referenciar al archivo
 
@@ -6012,6 +6514,8 @@ Cuando una variable es declarada en el mismo archivo sass donde es usada (genera
 <a id="sty13"></a>
 
 ### **Interpolacion en SASS**
+
+[Volver al indice](#sty-base)
 
 ```scss
 $selector: '.hero';
@@ -6064,6 +6568,8 @@ $propiedad: 'color';
 
 ### **Selectores en SASS**
 
+[Volver al indice](#sty-base)
+
 ```scss
 // Selector de hijo directo (.item es hijo directo de .card)
 
@@ -6079,6 +6585,8 @@ $propiedad: 'color';
 <a id="sty16"></a>
 
 ### **Mixins en SASS**
+
+[Volver al indice](#sty-base)
 
 Es un grupo de declaraciones de CSS que pueden reutilizarse. Por ejemplo, si uso box-shadow, tendria que escribir varios estilos para varios navegadores
 
@@ -6113,6 +6621,8 @@ div {
 <a id="sty17"></a>
 
 ### **Condicionales if-else en SASS**
+
+[Volver al indice](#sty-base)
 
 Se puede utilizar if-else dentro de los mixins en SASS
 
@@ -6149,11 +6659,15 @@ Se puede utilizar if-else dentro de los mixins en SASS
 
 ### **Que es el testing?**
 
+[Volver al indice](qa-base)
+
 Mide la calidad del producto, el producto debe cumplir con lo que debería. El testing es para hacer visible la calidad
 
 <a id="qa2"></a>
 
 ### **Que es un Test Limpio?**
+
+[Volver al indice](qa-base)
 
 * Camino feliz, caso positivo
 * **Flujo normal de un caso de uso sin errores, p**or ejemplo un Login con datos válidos
@@ -6164,11 +6678,15 @@ Mide la calidad del producto, el producto debe cumplir con lo que debería. El t
 
 ### **Cuando empezar a testear?**
 
+[Volver al indice](qa-base)
+
 **Cuando hay una primera versión estable de los requerimientos**, se debe ver si estos tienen sentido, etc.. Se deben encontrar errores en la etapa de definición para ahorrar tiempo y dinero en un futuro.
 
 <a id="qa4"></a>
 
 ### **Cuando terminar de testear?**
+
+[Volver al indice](qa-base)
 
 * Depende de diversos criterios que el tester y el desarrollador acordaron con anterioridad.
 * Cuando se testeo y no se encontró ningún error
@@ -6179,12 +6697,16 @@ Mide la calidad del producto, el producto debe cumplir con lo que debería. El t
 
 ### **Diferencia entre coverage y confianza**
 
+[Volver al indice](qa-base)
+
 * La confianza es que tan parecido son los test a un comportamiento que puede tener el usuario con nuestro sistema. Generalmente se refleja en el e2e.
 * Coverage son la cantidad de lineas de codigo cubiertas por tests
 
 <a id="qa6"></a>
 
 ### **Diferencia entre unit test e Integration Test**
+
+[Volver al indice](qa-base)
 
 Las pruebas unitarias (Unit testing) prueban los componentes individuales del software de forma aislada; son pruebas que generalmente realiza el mismo desarrollador. Es una prueba de caja blanca.
 
@@ -6203,6 +6725,8 @@ Son comparables a comprobar si una batería de un teléfono móvil está cargada
 
 ### **Que test de performance existen?**
 
+[Volver al indice](qa-base)
+
 * Load Test: Se simula el maximo uso del sistema, con maxima cantidad de usuarios.
 * Stess Test: Se incrementara la cantidad de llamados a los servicios del sistema hasta que rompa, indicara la mayor cantidad de usuarios que el sistema podra soportar y cuanto tiempo tarda en recuperarse
 * Resistance Test: Es test testear el sistema durante periodos de tiempo mas largos para revelar otros tipos de problemas.
@@ -6216,6 +6740,8 @@ Son comparables a comprobar si una batería de un teléfono móvil está cargada
 <a id="qa8"></a>
 
 ### **Que tipos de testing hay?**
+
+[Volver al indice](qa-base)
 
 * Integracion - Integration: Que un **código con otro se integre bien**, a veces lo hace el tester o el dev, Ejecutada por el **integrador**
 * Unit:
@@ -6235,11 +6761,15 @@ Son comparables a comprobar si una batería de un teléfono móvil está cargada
 
 ### **Que verifica el Unit Test?**
 
+[Volver al indice](qa-base)
+
 Una prueba unitaria verifica la funcionalidad de los elementos más pequeños testables de una aplicación―clases y funciones―lo que permite a los desarrolladores detectar fallos y aislarlos. Las pruebas unitarias demuestran que, dado un determinado input, la función devuelve el resultado esperado. Una colección de pruebas unitarias conforma un conjunto de pruebas (test suite).
 
 <a id="qa10"></a>
 
 ### **Principios FIRST de los Unit test**
+
+[Volver al indice](qa-base)
 
 **Rápido**
 
@@ -6265,19 +6795,29 @@ Las pruebas deben tener una salida booleana y pasar o fallar. La misma prueba qu
 
 <a id="rea40"></a>
 
-### **Cual es la diferencia entre h1, h2, etc?**
+## **¿Cuál es la diferencia entre h1, h2, etc.?**
+
+[Volver al indice](rea-base)
 
 Los elementos de encabezado h1 a h6 se utilizan para indicar la importancia del contenido que les sigue. Cuanto menor sea el número, mayor será la importancia, por lo que los elementos h2 tienen menos importancia que los elementos h1. Utiliza solo un elemento h1 por página y coloca los encabezados de menor importancia debajo de los de mayor importancia.
 
 <a id="rea54"></a>
 
-### **Para que es el Doctype?**
+### **¿Para qué es el Doctype?**
 
-El doctype es una declaración que se utiliza en un documento HTML para informar al navegador web sobre la versión de HTML en la que esá escrito el documento. El doctype debe ser la primera línea de un documento HTML y se utiliza para garantizar que el navegador web interprete el documento correctamente.
+[Volver al indice](rea-base)
+
+El doctype es una declaración que se utiliza en un documento HTML para informar al navegador web sobre la versión de HTML en la que está escrito el documento. El doctype debe ser la primera línea de un documento HTML y se utiliza para garantizar que el navegador web interprete el documento correctamente.
+
+```html
+<!DOCTYPE html>
+```
 
 <a id="rea55"></a>
 
 ### **Atributo placeholder para campos en HTML**
+
+[Volver al indice](rea-base)
 
 El atributo placeholder me permite , guiar al usuario con referencia lo que tiene que colocar dentro de nuestro campo. Por ejemplo:
 
@@ -6288,6 +6828,8 @@ El atributo placeholder me permite , guiar al usuario con referencia lo que tien
 <a id="rea56"></a>
 
 ### **Vínculos Relativos en HTML**
+
+[Volver al indice](rea-base)
 
 Los vínculos relativos son aquellos que permiten interconectar los archivos de nuestro sitio (internos, dentro de nuestro sitio o servidor).
 Si por ejemplo quiero ir de mi archivo index a mi contacto.html lo haré de la siguiente forma:
@@ -6313,6 +6855,8 @@ Si mi archivo contacto se encontrase dentro de una carpeta la ruta a marcar ser�
 
 ### **Vínculos Absolutos en HTML**
 
+[Volver al indice](rea-base)
+
 Los vínculos absolutos son aquellos que permiten interconectar los archivos de nuestro sitio (internos, dentro de nuestro sitio o servidor).
 
 ```html
@@ -6326,11 +6870,15 @@ Los vínculos absolutos son aquellos que permiten interconectar los archivos de 
 
 ### **Cual es la importancia del uso de todos los elementos HTML?**
 
+[Volver al indice](rea-base)
+
 HTML5 tiene algunos elementos que identifican diferentes áreas de contenido. Estos elementos hacen que tu HTML sea más fácil de leer y ayudan con la Optimización para Motores de Búsqueda (SEO) y la accesibilidad.
 
 <a id="rea42"></a>
 
 ### **Que son los atributos de los elementos HTML?**
+
+[Volver al indice](rea-base)
 
 Los atributos HTML son palabras especiales utilizadas dentro de la etiqueta de apertura de un elemento para controlar el comportamiento del elemento. El atributo src en un elemento img especifica la URL de la imagen (dónde se encuentra la imagen).
 
@@ -6339,6 +6887,8 @@ Los atributos HTML son palabras especiales utilizadas dentro de la etiqueta de a
 <a id="rea43"></a>
 
 ### **Cuáles son las partes de un documento HTML?**
+
+[Volver al indice](rea-base)
 
 Además de todo esto, un documento HTML ha de estar delimitado por la etiqueta HTML.
 Dentro de este documento, podemos asimismo distinguir dos partes principales:
@@ -6364,12 +6914,16 @@ El resultado de un documento básico tiene la siguiente estructura:
 
 ### **Puedo escribir las etiquetas en mayúscula y minúscula?**
 
+[Volver al indice](rea-base)
+
 En HTML las mayúsculas y minúsculas son indiferentes. Quiere decir que las etiquetas pueden ser escritas con cualquier tipo de combinación de mayúsculas y minúsculas. Resulta, sin embargo, aconsejable acostumbrarse a escribirlas en minúscula, ya que otras tecnologías que pueden c onvivir
 con nuestro HTML (XML por ejemplo) no son tan permisivas y nunca viene mal hacernos a las buenas costumbres desde el principio, para evitar fallos triviales en un futuro.
 
 <a id="rea45"></a>
 
 ### **Qué son los mapa de imagen?**
+
+[Volver al indice](rea-base)
 
 Aunque el uso de los mapas de imagen se ha reducido drásticamente en los últimos años, aún se utilizan en algunos sitios especializados. Muchas agencias de viaje y sitios relacionados utilizan mapas geográficos para
 seleccionar el destino del viaje.
@@ -6418,6 +6972,8 @@ Se usa para proveer con un autocomplete a algunos elementos
 
 ### **¿Qué es React?**
 
+[Volver al indice](rea-base)
+
 React fue creado por Facebook en el año 2013, y sigue siendo mantenida por él. (ahora Meta). Algunos ejemplos de proveedores que usan React son, además de Facebook, PayPal, Netflix, etc., páginas con un gran flujo de usuarios al día de hoy.
 
 Es rápido y escalable. Es declarativo y basado en componentes. Aclaramos que es lo que queremos renderizar, pero no el cómo. Al ser declarativo, hace que sea facil el seguir patrones de diseño.
@@ -6433,6 +6989,8 @@ Tambien se puede trabajar del lado del servidor con Node, aplicaciones mobile co
 <a id="rea48"></a>
 
 ### **¿De qué hablamos cuando hablamos de una SPA (Single Page App)?**
+
+[Volver al indice](rea-base)
 
 Una SPA (Single Page Application) son apps web que simulan ser una única página con contenido dinámico. La idea es darle la “ilusión” al usuario de que está navegando una aplicación de escritorio, que no recarga, no se satura, etc.
 
@@ -6450,6 +7008,8 @@ En resumen:
 
 ### **Para que es el comando React eject?**
 
+[Volver al indice](rea-base)
+
 `create-react-app` encapsula todos los modulos npm para usar internamente asi el package.json queda bastante limpio. Eject lo que hace es deshacer este encapsulamiento y pasar a mostrar todo lo que esta instalado. 
 
 Es para cuando necesitamos hacer cosas mas complejas o para instalar modulos que puedan interactuar con modulos ya instalados. 
@@ -6457,6 +7017,8 @@ Es para cuando necesitamos hacer cosas mas complejas o para instalar modulos que
 <a id="rea50"></a>
 
 ### **(Performance) Como evitar mandar muchos eventos inutiles, por ejemplo, ejecutar un search por letra?**
+
+[Volver al indice](rea-base)
 
 Debounce es un termino de electronica que ayuda a que, por ejemplo, si apretamos varias veces un boton, no se manden muchas veces las instrucciones
 
@@ -6488,11 +7050,15 @@ api.search(queryDebouncedValue).then(setProducts);
 
 ### **Que es async rendering?**
 
+[Volver al indice](rea-base)
+
 Permite que el renderizado pueda interrumpirse, permitiendo renderizar varios arboles de componentes a la vez sin necesidad de bloquear el hilo principal del navegador.
 
 <a id="rea52"></a>
 
 ### **Que son las Ref?**
+
+[Volver al indice](rea-base)
 
 Permite a react manipular directamente el DOM Sin necesidad de actualizar un componente, asumen cambios en los mismos que no se pueden resolver mediante el traspaso de props o cuyo impacto se limita al propio componente no siendo rentable renderizarlo de nuevo. 
 
@@ -6523,6 +7089,8 @@ class AnimatedSpinner extends Component {
 
 ### **Para que son los eventos sinteticos (SyntheticEvent)?**
 
+[Volver al indice](rea-base)
+
 Funcionan de la misma forma que los eventos normales de los exploradores. Los eventos sinteticos usan codigo que puede ser aplicado en multiples exploradores web mientras que los eventos normales se enfocan en un solo navegador
 
 Ayuda a que el dev no se preocupe tanto en como manejar un evento segun el navegador para el cual esta desarrollando, ya que estos eventos simulan muchos eventos y garantiza el mismo comportamiento.
@@ -6530,6 +7098,8 @@ Ayuda a que el dev no se preocupe tanto en como manejar un evento segun el naveg
 <a id="rea54"></a>
 
 ### **Que significa prop drilling y como evitarlo?**
+
+[Volver al indice](rea-base)
 
 Es cuando las props que se comparten acumulan demasiadas dependencias. Da lugar a flujos de datos profundos, dificiles de identificar y refactorizar. Dos formas de resolverlo son:
 
@@ -6539,6 +7109,8 @@ Es cuando las props que se comparten acumulan demasiadas dependencias. Da lugar 
 <a id="rea62"></a>
 
 ### **De que tratan los Ciclos de Vida Componentes?**
+
+[Volver al indice](rea-base)
 
 React provee de metodos especificos para los ciclos de vida de los componentes, en este caso, veremos en los de clase. Se llaman cuando el componente se monta, actualiza o desmonta, veamos las deficiones:
 
@@ -6550,6 +7122,8 @@ Varios de los estados que veremos a continuacion se encuentran deprecados, y deb
 <a id="rea55"></a>
 
 ### **componentWillReceiveProps()**
+
+[Volver al indice](rea-base)
 
 Se ejecuta cuando hay alguna actualizacion de alguna prop
 
@@ -6565,6 +7139,8 @@ componentWillReceiveProps(nextProps) {
 
 ### **componentDidMount()**
 
+[Volver al indice](rea-base)
+
 Se llama cuando el componente es renderizado en la pagina. Se puede usar para inicializar cosas, como para pedir la informacion inicial de los componentes.
 
 ```jsx
@@ -6576,6 +7152,8 @@ componentDidMount() {
 <a id="rea57"></a>
 
 ### **componentWillUnmount()**
+
+[Volver al indice](rea-base)
 
 Es llamado antes de que el componente sea desmontado del DOM. Se puede usar para liberar recursos. No existe un “DidUnmount” ya que, una vez que se desmonta, ya no se puede hacer nada por el mismo.
 
@@ -6590,6 +7168,8 @@ componentWillUnmount() {
 
 ### **componentWillMount()**
 
+[Volver al indice](rea-base)
+
 Corresponde a cuando el componente va a montarse, se ejecuta antes de su montaje, es como el constructor del mismo.
 
 ```jsx
@@ -6602,6 +7182,8 @@ componentWillMount() {
 
 ### **componentWillMount()**
 
+[Volver al indice](rea-base)
+
 Se llama cuando el componente se actualiza en el DOM. Podemos hacerlo para, por ejemplo, para avisar que el counter fue incrementado en uno.
 
 ```jsx
@@ -6613,6 +7195,8 @@ componentDidUpdate() {
 <a id="rea60"></a>
 
 ### **shouldComponentUpdate()**
+
+[Volver al indice](rea-base)
 
 Nos permite decidir si debemos ejecutar o no el render. Muestra con que valores, o bajo que condiciones, se realizará la actualizacion.
 
@@ -6627,6 +7211,8 @@ shouldComponentUpdate(nextProps, nextState) {
 
 ### **componentWillUpdate()**
 
+[Volver al indice](rea-base)
+
 Es cuando se esta por ejecutar el render. Nos ayuda a setear valores globales justo antes del mismo.
 
 ```jsx
@@ -6639,6 +7225,8 @@ componentWillUpdate() {
 <a id="rea1"></a>
 
 ### **useCallback**
+
+[Volver al indice](rea-base)
 
 Tiene dos casos de uso:
 
@@ -6685,6 +7273,8 @@ Si no tuviéramos el useCallback, el useEffect se dispararía ante cada cambio d
 
 ### **useDispatch**
 
+[Volver al indice](rea-base)
+
 Es para ejecutar las acciones que podamos tener en nuestro Redux
 
 ```jsx
@@ -6723,6 +7313,8 @@ const submitNewProduct = (e) => {
 <a id="rea3"></a>
 
 ### **useEffect**
+
+[Volver al indice](rea-base)
 
 Reemplaza las funciones del ciclo de vida para los componentes de función, los combina en uno solo, es un Hook.
 
@@ -6796,6 +7388,8 @@ useEffect(() => {console.log("Mount");}, [state]);
 
 ### **useState**
 
+[Volver al indice](rea-base)
+
 Hooks permiten usar los state dentro de los componentes funcionales. El más común es el useState que necesita ser importado de la siguiente manera para ser usado
 
 `import React, {useState} from 'react';`
@@ -6827,6 +7421,8 @@ Los Hooks solo pueden ser usados dentro de un componente funcional, en el caso d
 
 ### **useSelector**
 
+[Volver al indice](rea-base)
+
 Es para acceder a un state dentro del componente. Es decir, si tenemos un state de error, poder reflejar algo en la UI en funcion de su valor.
 
 ```jsx
@@ -6836,6 +7432,8 @@ const error = useSelector(state => state.error)
 <a id="rea6"></a>
 
 ### **useRef**
+
+[Volver al indice](rea-base)
 
 Es otro Hook que viene con React. Asi que debe ser importado en conjunto
 
@@ -6898,6 +7496,8 @@ Notar que nos referimos al valor del ref o para su cambio con current
 
 ### **useMemo**
 
+[Volver al indice](rea-base)
+
 Primero para entender este Hook, debemos entender el uso de Memo en React.
 
 Para prevenir que un componente vuelva a renderizarse si sus props son las mismas usamos Memo, lo memorizamos.
@@ -6945,6 +7545,8 @@ const twoRandomProducts = useMemo(() => [...products]
 
 ### **useReducer**
 
+[Volver al indice](rea-base)
+
 Es una alternativa a useState que se utiliza de la siguiente manera al momento de inicializar el componente:
 
 `const [state, dispatch] = useReducer(reducer, initialArg, init);`
@@ -6983,6 +7585,8 @@ function Counter() {
 <a id="rea9"></a>
 
 ### **useLayoutEffect**
+
+[Volver al indice](rea-base)
 
 No es un Hook muy común en si mismo. Se dispara de forma asíncrona después de que todas las manipulaciones del DOM se hayan hecho, se usa para tomar referencias, como por ejemplos, tamaños de cajas de textos, etc...
 
@@ -7030,6 +7634,8 @@ Ante cada cambio de quote que se haga, volverá a cero y volverá a tener otro v
 
 ### **Diferencia entre AngularJS y Angular**
 
+[Volver al indice](rea-base)
+
 AngularJS y Angular son dos frameworks de JavaScript desarrollados por Google, pero tienen diferencias significativas en cuanto a su arquitectura y características.
 
 1. **AngularJS (1.x)**:
@@ -7056,6 +7662,8 @@ En resumen, AngularJS es el primer framework desarrollado por Google, que utiliz
 
 ### **¿Qué son los modulos en Angular?**
 
+[Volver al indice](rea-base)
+
 Las aplicaciones de Angular son Modulares, en Angular existe NgModules. Sirve para mantener la lógica de un flujo de trabajo de la aplicación. Por ejemplo, se tiene un e-commerce, con sus módulos correspondientes, usuarios vendedores, compradores, productos, etc.. 
 
 Son diseños lógicos que se encargan de trabajar dentro de la aplicación, se usan para poder importar librerías u otros módulos dentro de los mismos. Cada módulo hasta puede tener su propio ruteo. 
@@ -7063,6 +7671,8 @@ Son diseños lógicos que se encargan de trabajar dentro de la aplicación, se u
 <a id="rea12"></a>
 
 ### **¿Qué es Property Binding?**
+
+[Volver al indice](rea-base)
 
 Es la forma que tiene Angular de controlar y cambiar las propiedades de los elementos HTML usando corchetes [] 
 
@@ -7092,6 +7702,8 @@ Se recomienda comprender los “Event binding” para entender el flujo de datos
 
 ### **¿Cuál es el flujo de datos una aplicación Angular?**
 
+[Volver al indice](rea-base)
+
 - Enlace unidireccional [] para enlazar desde la capa lógica (component.ts) a la vista (html).
 - Enlace unidireccional () para enlazar de la vista (html) a la capa lógica (component.ts).
 - Enlace bidireccional [()] para enlazar una secuencia de vista bidireccional a la capa lógica (component.ts).
@@ -7099,6 +7711,8 @@ Se recomienda comprender los “Event binding” para entender el flujo de datos
 <a id="rea14"></a>
 
 ### **¿Qué es un Decorador en Angular?**
+
+[Volver al indice](rea-base)
 
 Indica como debe comportarse el componente. Dentro de este decorador, puedes observar el selector del componente (un nombre para el mismo), el template HTML y la hoja de estilos que usará.
 
@@ -7113,6 +7727,8 @@ Indica como debe comportarse el componente. Dentro de este decorador, puedes obs
 <a id="rea15"></a>
 
 ### **Event Binding en Angular (Manejo de Eventos)**
+
+[Volver al indice](rea-base)
 
 ```tsx
 <button (click)="onSave()">Save</button>
@@ -7143,6 +7759,8 @@ handleClick($event: Event) {
 
 ### **Data Binding en Angular**
 
+[Volver al indice](rea-base)
+
 El atributo **ngModel** permite el **intercambio de datos de forma bidireccional** entre el componente y la vista. Lo que suceda en el componente, se verá reflejado en la vista. Lo que se suceda en la vista, inmediatamente impactará en el componente.
 
 ```tsx
@@ -7171,6 +7789,8 @@ export class AppModule { }
 <a id="rea17"></a>
 
 ### **Como puedo mejorar la performance de mi Frontend?**
+
+[Volver al indice](rea-base)
 
 **Paginacion**: No se puede renderizar mucha informacion al mismo tiempo, hace un payload gigante, y satura a la base de datos. Es preferible pedir de a pedazos de data para disminuir el peso en el Backend
 
@@ -7210,6 +7830,8 @@ Para testear el rendimiento de una web se puede utilizar Lighthouse de Google en
 
 ### **¿Que es Redux?**
 
+[Volver al indice](rea-base)
+
 Redux permitira manejar el state global de manera facil conforme van creciendo, tambien ayuda a manejar los datos dependiendo de las acciones del usuario. Fue creado por un dev del equipo de React. 
 
 - Solo hay 1 state principal
@@ -7221,6 +7843,8 @@ Redux permitira manejar el state global de manera facil conforme van creciendo, 
 
 ### **Cuando conviene usar Redux?**
 
+[Volver al indice](rea-base)
+
 Si la app es pequeña, se recomienda ContextAPI o hooks. Si es grande, y va a ser mantenido por varias personas, se recomeinda Redux
 
 - No hace la app mas rapida
@@ -7231,6 +7855,8 @@ Si la app es pequeña, se recomienda ContextAPI o hooks. Si es grande, y va a se
 
 ### **¿Cuales son los beneficios de usar Redux?**
 
+[Volver al indice](rea-base)
+
 - Como su estructura es muy estricta, es muy facil de mantener y de organizar, tambien es muy estable.
 - Da una fiable representacion del servidor, es muy util especialmente para presentaciones preliminares. Puede optimizar, por ejemplo, motores de busqueda.
 - Provee muchas herramientas para los devs
@@ -7239,6 +7865,8 @@ Si la app es pequeña, se recomienda ContextAPI o hooks. Si es grande, y va a se
 <a id="rea21"></a>
 
 ### **Redux vs ContextAPI**
+
+[Volver al indice](rea-base)
 
 **Context**
 
@@ -7259,6 +7887,8 @@ Si la app es pequeña, se recomienda ContextAPI o hooks. Si es grande, y va a se
 <a id="rea22"></a>
 
 ### **¿Cual es el flujo de Redux?**
+
+[Volver al indice](rea-base)
 
 Store
 
@@ -7288,6 +7918,8 @@ Reducer
 <a id="rea23"></a>
 
 ### **Que es ContextAPI?**
+
+[Volver al indice](rea-base)
 
 Es una manera de tener un estado global sin dependencias como Redux, ya que viene desde React 16.3.
 
@@ -7328,6 +7960,8 @@ const {} = useContext(QuoteContext);
 
 ### **Que es React Fiber?**
 
+[Volver al indice](rea-base)
+
 La arquitectura de React hizo que fuera muy facil para trabajar no solo en web si no tambien en mobile (React Native) y en hasta aplicaciones de Realidad Virtual. Asi los dev de React decidieron separar su algoritmo de reconciliacion (el que compara los cambios entre DOM y VDOM) y el lienzo donde esos cambios se muestran (Web, Mobile, etc..)
 
 Es una estructura de datos que representa un trabajo por hacer.
@@ -7335,6 +7969,8 @@ Es una estructura de datos que representa un trabajo por hacer.
 <a id="rea25"></a>
 
 ### **Para que sirven las claves o Keys en React?**
+
+[Volver al indice](rea-base)
 
 Se usan las claves para diferenciar entre simples elementos DOM virtuales con los que son unicos. Ayudan a React a reciclar elementos DOM existentes para que la libreria pueda ejecutarse y renderizarse mas rápidamente, ya que React recicla los elementos que no fueron modificados de los que si para no renderizarlos cuando no es necesario. Este elemento se usa mas que nada en iteraciones de listas. 
 
@@ -7353,11 +7989,15 @@ const listItems = numbers.map((number) =>
 
 ### **Que es ECMAScript?**
 
+[Volver al indice](rea-base)
+
 Es un estándar para JS para escribir funciones complejas, es popular ya que trajo nuevas convenciones y funciones orientadas a objetos a JS.
 
 <a id="rea27"></a>
 
 ### **Que es decodeURL y encodeURL?**
+
+[Volver al indice](rea-base)
 
 - EncodeURL es para convertir una URL a su codificacion hexadecimal
 
@@ -7375,6 +8015,8 @@ decodeURI(uri) // my test.asp?name=ståle&car=saab
 
 ### **Que es escape y unescape?**
 
+[Volver al indice](rea-base)
+
 - Escape es la responsable de codificar un string para hacer el pase de informacion de un ordenador a otro por una red
 
 ```jsx
@@ -7390,6 +8032,8 @@ unescape("Hola%3F%20Como%20estas%20tu%21") // Hola? Como estas tu?
 <a id="rea29"></a>
 
 ### **¿Que es async, preload y prefetch?**
+
+[Volver al indice](rea-base)
 
 En JavaScript, `async`, `preload` y `prefetch` son conceptos relacionados pero diferentes:
 
@@ -7414,6 +8058,8 @@ En resumen, `async` y `await` se utilizan en JavaScript para trabajar con códig
 <a id="rea30"></a>
 
 ### **Cual es la diferencia entre call, bind y apply?**
+
+[Volver al indice](rea-base)
 
 Por ejemplo tenemos dos objetos y una funcion
 
@@ -7449,6 +8095,8 @@ Basicamente los 3 asocian un objeto a `this`
 
 ### **Cual es la diferencia entre setTimeout() y setInterval()?**
 
+[Volver al indice](rea-base)
+
 - `SetTimeout` nos permite ejecutar una funcion una vez despues del intervalo de tiempo
 
 ```jsx
@@ -7468,17 +8116,23 @@ setTimeout(() => { clearInterval(timerId); alert('stop'); }, 5000);
 
 ### **Qué es "REPL" y para qué sirve?**
 
+[Volver al indice](rea-base)
+
 REPL, acrónimo en Ingles de "Leer, Evaluar, Imprimir, Bucle". Este shell es utilizado para realizar declaraciones específicas en JavaScript.
 
 <a id="rea33"></a>
 
 ### **Qué es el "demultiplexer"?**
 
+[Volver al indice](rea-base)
+
 El **demultiplexer,** *es una interfaz encargada de las notificaciones dentro de Node JS.* Es utilizado para recopilar información de eventos específicos y formar preguntas, brindando así lo que se conoce como un **Evento QUE**.
 
 <a id="rea34"></a>
 
 ### **Que hace Babel?**
+
+[Volver al indice](rea-base)
 
 Babel es un compilador para JavaScript. Permite transformar codigo escrito con las ultimas caracteristicas y traducirlo en codigo de JS bien vanilla que pueda ser entendido por navegadores antiguos.
 
