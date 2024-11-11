@@ -380,6 +380,8 @@
 | [Cual es la diferencia entre un event loop, microtask y macrotask?](#rea53)    |
 | [Variable Shadowing - Ocultamiento de Variables](#rea54)    |
 
+<a name="mob-base"></a>
+
 ## [Desarrollo Mobile](#mob)
 
 | Temas   |
@@ -415,6 +417,8 @@
 | [Algunos comandos de Git](#cam3)    |
 | [Git Flow](#cam4)    |
 | [trunk base dev. vs git flow](#cam5)    |
+
+<a name="cod-base"></a>
 
 ## [Conceptos Codigo Limpio, Objetos y Diseño](#cod)
 
@@ -6797,7 +6801,7 @@ Las pruebas deben tener una salida booleana y pasar o fallar. La misma prueba qu
 
 ## **¿Cuál es la diferencia entre h1, h2, etc.?**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 Los elementos de encabezado h1 a h6 se utilizan para indicar la importancia del contenido que les sigue. Cuanto menor sea el número, mayor será la importancia, por lo que los elementos h2 tienen menos importancia que los elementos h1. Utiliza solo un elemento h1 por página y coloca los encabezados de menor importancia debajo de los de mayor importancia.
 
@@ -6805,7 +6809,7 @@ Los elementos de encabezado h1 a h6 se utilizan para indicar la importancia del 
 
 ### **¿Para qué es el Doctype?**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 El doctype es una declaración que se utiliza en un documento HTML para informar al navegador web sobre la versión de HTML en la que está escrito el documento. El doctype debe ser la primera línea de un documento HTML y se utiliza para garantizar que el navegador web interprete el documento correctamente.
 
@@ -6817,7 +6821,7 @@ El doctype es una declaración que se utiliza en un documento HTML para informar
 
 ### **Atributo placeholder para campos en HTML**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 El atributo placeholder me permite , guiar al usuario con referencia lo que tiene que colocar dentro de nuestro campo. Por ejemplo:
 
@@ -6829,7 +6833,7 @@ El atributo placeholder me permite , guiar al usuario con referencia lo que tien
 
 ### **Vínculos Relativos en HTML**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 Los vínculos relativos son aquellos que permiten interconectar los archivos de nuestro sitio (internos, dentro de nuestro sitio o servidor).
 Si por ejemplo quiero ir de mi archivo index a mi contacto.html lo haré de la siguiente forma:
@@ -6855,7 +6859,7 @@ Si mi archivo contacto se encontrase dentro de una carpeta la ruta a marcar ser�
 
 ### **Vínculos Absolutos en HTML**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 Los vínculos absolutos son aquellos que permiten interconectar los archivos de nuestro sitio (internos, dentro de nuestro sitio o servidor).
 
@@ -6870,7 +6874,7 @@ Los vínculos absolutos son aquellos que permiten interconectar los archivos de 
 
 ### **Cual es la importancia del uso de todos los elementos HTML?**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 HTML5 tiene algunos elementos que identifican diferentes áreas de contenido. Estos elementos hacen que tu HTML sea más fácil de leer y ayudan con la Optimización para Motores de Búsqueda (SEO) y la accesibilidad.
 
@@ -6878,7 +6882,7 @@ HTML5 tiene algunos elementos que identifican diferentes áreas de contenido. Es
 
 ### **Que son los atributos de los elementos HTML?**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 Los atributos HTML son palabras especiales utilizadas dentro de la etiqueta de apertura de un elemento para controlar el comportamiento del elemento. El atributo src en un elemento img especifica la URL de la imagen (dónde se encuentra la imagen).
 
@@ -6888,7 +6892,7 @@ Los atributos HTML son palabras especiales utilizadas dentro de la etiqueta de a
 
 ### **Cuáles son las partes de un documento HTML?**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 Además de todo esto, un documento HTML ha de estar delimitado por la etiqueta HTML.
 Dentro de este documento, podemos asimismo distinguir dos partes principales:
@@ -6914,7 +6918,7 @@ El resultado de un documento básico tiene la siguiente estructura:
 
 ### **Puedo escribir las etiquetas en mayúscula y minúscula?**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 En HTML las mayúsculas y minúsculas son indiferentes. Quiere decir que las etiquetas pueden ser escritas con cualquier tipo de combinación de mayúsculas y minúsculas. Resulta, sin embargo, aconsejable acostumbrarse a escribirlas en minúscula, ya que otras tecnologías que pueden c onvivir
 con nuestro HTML (XML por ejemplo) no son tan permisivas y nunca viene mal hacernos a las buenas costumbres desde el principio, para evitar fallos triviales en un futuro.
@@ -6923,7 +6927,7 @@ con nuestro HTML (XML por ejemplo) no son tan permisivas y nunca viene mal hacer
 
 ### **Qué son los mapa de imagen?**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 Aunque el uso de los mapas de imagen se ha reducido drásticamente en los últimos años, aún se utilizan en algunos sitios especializados. Muchas agencias de viaje y sitios relacionados utilizan mapas geográficos para
 seleccionar el destino del viaje.
@@ -6972,7 +6976,7 @@ Se usa para proveer con un autocomplete a algunos elementos
 
 ### **¿Qué es React?**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 React fue creado por Facebook en el año 2013, y sigue siendo mantenida por él. (ahora Meta). Algunos ejemplos de proveedores que usan React son, además de Facebook, PayPal, Netflix, etc., páginas con un gran flujo de usuarios al día de hoy.
 
@@ -6990,7 +6994,7 @@ Tambien se puede trabajar del lado del servidor con Node, aplicaciones mobile co
 
 ### **¿De qué hablamos cuando hablamos de una SPA (Single Page App)?**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 Una SPA (Single Page Application) son apps web que simulan ser una única página con contenido dinámico. La idea es darle la “ilusión” al usuario de que está navegando una aplicación de escritorio, que no recarga, no se satura, etc.
 
@@ -7008,7 +7012,7 @@ En resumen:
 
 ### **Para que es el comando React eject?**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 `create-react-app` encapsula todos los modulos npm para usar internamente asi el package.json queda bastante limpio. Eject lo que hace es deshacer este encapsulamiento y pasar a mostrar todo lo que esta instalado. 
 
@@ -7018,7 +7022,7 @@ Es para cuando necesitamos hacer cosas mas complejas o para instalar modulos que
 
 ### **(Performance) Como evitar mandar muchos eventos inutiles, por ejemplo, ejecutar un search por letra?**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 Debounce es un termino de electronica que ayuda a que, por ejemplo, si apretamos varias veces un boton, no se manden muchas veces las instrucciones
 
@@ -7050,7 +7054,7 @@ api.search(queryDebouncedValue).then(setProducts);
 
 ### **Que es async rendering?**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 Permite que el renderizado pueda interrumpirse, permitiendo renderizar varios arboles de componentes a la vez sin necesidad de bloquear el hilo principal del navegador.
 
@@ -7058,7 +7062,7 @@ Permite que el renderizado pueda interrumpirse, permitiendo renderizar varios ar
 
 ### **Que son las Ref?**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 Permite a react manipular directamente el DOM Sin necesidad de actualizar un componente, asumen cambios en los mismos que no se pueden resolver mediante el traspaso de props o cuyo impacto se limita al propio componente no siendo rentable renderizarlo de nuevo. 
 
@@ -7089,7 +7093,7 @@ class AnimatedSpinner extends Component {
 
 ### **Para que son los eventos sinteticos (SyntheticEvent)?**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 Funcionan de la misma forma que los eventos normales de los exploradores. Los eventos sinteticos usan codigo que puede ser aplicado en multiples exploradores web mientras que los eventos normales se enfocan en un solo navegador
 
@@ -7099,7 +7103,7 @@ Ayuda a que el dev no se preocupe tanto en como manejar un evento segun el naveg
 
 ### **Que significa prop drilling y como evitarlo?**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 Es cuando las props que se comparten acumulan demasiadas dependencias. Da lugar a flujos de datos profundos, dificiles de identificar y refactorizar. Dos formas de resolverlo son:
 
@@ -7110,7 +7114,7 @@ Es cuando las props que se comparten acumulan demasiadas dependencias. Da lugar 
 
 ### **De que tratan los Ciclos de Vida Componentes?**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 React provee de metodos especificos para los ciclos de vida de los componentes, en este caso, veremos en los de clase. Se llaman cuando el componente se monta, actualiza o desmonta, veamos las deficiones:
 
@@ -7123,7 +7127,7 @@ Varios de los estados que veremos a continuacion se encuentran deprecados, y deb
 
 ### **componentWillReceiveProps()**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 Se ejecuta cuando hay alguna actualizacion de alguna prop
 
@@ -7139,7 +7143,7 @@ componentWillReceiveProps(nextProps) {
 
 ### **componentDidMount()**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 Se llama cuando el componente es renderizado en la pagina. Se puede usar para inicializar cosas, como para pedir la informacion inicial de los componentes.
 
@@ -7153,7 +7157,7 @@ componentDidMount() {
 
 ### **componentWillUnmount()**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 Es llamado antes de que el componente sea desmontado del DOM. Se puede usar para liberar recursos. No existe un “DidUnmount” ya que, una vez que se desmonta, ya no se puede hacer nada por el mismo.
 
@@ -7168,7 +7172,7 @@ componentWillUnmount() {
 
 ### **componentWillMount()**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 Corresponde a cuando el componente va a montarse, se ejecuta antes de su montaje, es como el constructor del mismo.
 
@@ -7182,7 +7186,7 @@ componentWillMount() {
 
 ### **componentWillMount()**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 Se llama cuando el componente se actualiza en el DOM. Podemos hacerlo para, por ejemplo, para avisar que el counter fue incrementado en uno.
 
@@ -7196,7 +7200,7 @@ componentDidUpdate() {
 
 ### **shouldComponentUpdate()**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 Nos permite decidir si debemos ejecutar o no el render. Muestra con que valores, o bajo que condiciones, se realizará la actualizacion.
 
@@ -7211,7 +7215,7 @@ shouldComponentUpdate(nextProps, nextState) {
 
 ### **componentWillUpdate()**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 Es cuando se esta por ejecutar el render. Nos ayuda a setear valores globales justo antes del mismo.
 
@@ -7226,7 +7230,7 @@ componentWillUpdate() {
 
 ### **useCallback**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 Tiene dos casos de uso:
 
@@ -7273,7 +7277,7 @@ Si no tuviéramos el useCallback, el useEffect se dispararía ante cada cambio d
 
 ### **useDispatch**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 Es para ejecutar las acciones que podamos tener en nuestro Redux
 
@@ -7314,7 +7318,7 @@ const submitNewProduct = (e) => {
 
 ### **useEffect**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 Reemplaza las funciones del ciclo de vida para los componentes de función, los combina en uno solo, es un Hook.
 
@@ -7388,7 +7392,7 @@ useEffect(() => {console.log("Mount");}, [state]);
 
 ### **useState**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 Hooks permiten usar los state dentro de los componentes funcionales. El más común es el useState que necesita ser importado de la siguiente manera para ser usado
 
@@ -7421,7 +7425,7 @@ Los Hooks solo pueden ser usados dentro de un componente funcional, en el caso d
 
 ### **useSelector**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 Es para acceder a un state dentro del componente. Es decir, si tenemos un state de error, poder reflejar algo en la UI en funcion de su valor.
 
@@ -7433,7 +7437,7 @@ const error = useSelector(state => state.error)
 
 ### **useRef**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 Es otro Hook que viene con React. Asi que debe ser importado en conjunto
 
@@ -7496,7 +7500,7 @@ Notar que nos referimos al valor del ref o para su cambio con current
 
 ### **useMemo**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 Primero para entender este Hook, debemos entender el uso de Memo en React.
 
@@ -7545,7 +7549,7 @@ const twoRandomProducts = useMemo(() => [...products]
 
 ### **useReducer**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 Es una alternativa a useState que se utiliza de la siguiente manera al momento de inicializar el componente:
 
@@ -7586,7 +7590,7 @@ function Counter() {
 
 ### **useLayoutEffect**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 No es un Hook muy común en si mismo. Se dispara de forma asíncrona después de que todas las manipulaciones del DOM se hayan hecho, se usa para tomar referencias, como por ejemplos, tamaños de cajas de textos, etc...
 
@@ -7634,7 +7638,7 @@ Ante cada cambio de quote que se haga, volverá a cero y volverá a tener otro v
 
 ### **Diferencia entre AngularJS y Angular**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 AngularJS y Angular son dos frameworks de JavaScript desarrollados por Google, pero tienen diferencias significativas en cuanto a su arquitectura y características.
 
@@ -7662,7 +7666,7 @@ En resumen, AngularJS es el primer framework desarrollado por Google, que utiliz
 
 ### **¿Qué son los modulos en Angular?**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 Las aplicaciones de Angular son Modulares, en Angular existe NgModules. Sirve para mantener la lógica de un flujo de trabajo de la aplicación. Por ejemplo, se tiene un e-commerce, con sus módulos correspondientes, usuarios vendedores, compradores, productos, etc.. 
 
@@ -7672,7 +7676,7 @@ Son diseños lógicos que se encargan de trabajar dentro de la aplicación, se u
 
 ### **¿Qué es Property Binding?**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 Es la forma que tiene Angular de controlar y cambiar las propiedades de los elementos HTML usando corchetes [] 
 
@@ -7702,7 +7706,7 @@ Se recomienda comprender los “Event binding” para entender el flujo de datos
 
 ### **¿Cuál es el flujo de datos una aplicación Angular?**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 - Enlace unidireccional [] para enlazar desde la capa lógica (component.ts) a la vista (html).
 - Enlace unidireccional () para enlazar de la vista (html) a la capa lógica (component.ts).
@@ -7712,7 +7716,7 @@ Se recomienda comprender los “Event binding” para entender el flujo de datos
 
 ### **¿Qué es un Decorador en Angular?**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 Indica como debe comportarse el componente. Dentro de este decorador, puedes observar el selector del componente (un nombre para el mismo), el template HTML y la hoja de estilos que usará.
 
@@ -7728,7 +7732,7 @@ Indica como debe comportarse el componente. Dentro de este decorador, puedes obs
 
 ### **Event Binding en Angular (Manejo de Eventos)**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 ```tsx
 <button (click)="onSave()">Save</button>
@@ -7759,7 +7763,7 @@ handleClick($event: Event) {
 
 ### **Data Binding en Angular**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 El atributo **ngModel** permite el **intercambio de datos de forma bidireccional** entre el componente y la vista. Lo que suceda en el componente, se verá reflejado en la vista. Lo que se suceda en la vista, inmediatamente impactará en el componente.
 
@@ -7790,7 +7794,7 @@ export class AppModule { }
 
 ### **Como puedo mejorar la performance de mi Frontend?**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 **Paginacion**: No se puede renderizar mucha informacion al mismo tiempo, hace un payload gigante, y satura a la base de datos. Es preferible pedir de a pedazos de data para disminuir el peso en el Backend
 
@@ -7830,7 +7834,7 @@ Para testear el rendimiento de una web se puede utilizar Lighthouse de Google en
 
 ### **¿Que es Redux?**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 Redux permitira manejar el state global de manera facil conforme van creciendo, tambien ayuda a manejar los datos dependiendo de las acciones del usuario. Fue creado por un dev del equipo de React. 
 
@@ -7843,7 +7847,7 @@ Redux permitira manejar el state global de manera facil conforme van creciendo, 
 
 ### **Cuando conviene usar Redux?**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 Si la app es pequeña, se recomienda ContextAPI o hooks. Si es grande, y va a ser mantenido por varias personas, se recomeinda Redux
 
@@ -7855,7 +7859,7 @@ Si la app es pequeña, se recomienda ContextAPI o hooks. Si es grande, y va a se
 
 ### **¿Cuales son los beneficios de usar Redux?**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 - Como su estructura es muy estricta, es muy facil de mantener y de organizar, tambien es muy estable.
 - Da una fiable representacion del servidor, es muy util especialmente para presentaciones preliminares. Puede optimizar, por ejemplo, motores de busqueda.
@@ -7866,7 +7870,7 @@ Si la app es pequeña, se recomienda ContextAPI o hooks. Si es grande, y va a se
 
 ### **Redux vs ContextAPI**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 **Context**
 
@@ -7888,7 +7892,7 @@ Si la app es pequeña, se recomienda ContextAPI o hooks. Si es grande, y va a se
 
 ### **¿Cual es el flujo de Redux?**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 Store
 
@@ -7919,7 +7923,7 @@ Reducer
 
 ### **Que es ContextAPI?**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 Es una manera de tener un estado global sin dependencias como Redux, ya que viene desde React 16.3.
 
@@ -7960,7 +7964,7 @@ const {} = useContext(QuoteContext);
 
 ### **Que es React Fiber?**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 La arquitectura de React hizo que fuera muy facil para trabajar no solo en web si no tambien en mobile (React Native) y en hasta aplicaciones de Realidad Virtual. Asi los dev de React decidieron separar su algoritmo de reconciliacion (el que compara los cambios entre DOM y VDOM) y el lienzo donde esos cambios se muestran (Web, Mobile, etc..)
 
@@ -7970,7 +7974,7 @@ Es una estructura de datos que representa un trabajo por hacer.
 
 ### **Para que sirven las claves o Keys en React?**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 Se usan las claves para diferenciar entre simples elementos DOM virtuales con los que son unicos. Ayudan a React a reciclar elementos DOM existentes para que la libreria pueda ejecutarse y renderizarse mas rápidamente, ya que React recicla los elementos que no fueron modificados de los que si para no renderizarlos cuando no es necesario. Este elemento se usa mas que nada en iteraciones de listas. 
 
@@ -7989,7 +7993,7 @@ const listItems = numbers.map((number) =>
 
 ### **Que es ECMAScript?**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 Es un estándar para JS para escribir funciones complejas, es popular ya que trajo nuevas convenciones y funciones orientadas a objetos a JS.
 
@@ -7997,7 +8001,7 @@ Es un estándar para JS para escribir funciones complejas, es popular ya que tra
 
 ### **Que es decodeURL y encodeURL?**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 - EncodeURL es para convertir una URL a su codificacion hexadecimal
 
@@ -8015,7 +8019,7 @@ decodeURI(uri) // my test.asp?name=ståle&car=saab
 
 ### **Que es escape y unescape?**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 - Escape es la responsable de codificar un string para hacer el pase de informacion de un ordenador a otro por una red
 
@@ -8033,7 +8037,7 @@ unescape("Hola%3F%20Como%20estas%20tu%21") // Hola? Como estas tu?
 
 ### **¿Que es async, preload y prefetch?**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 En JavaScript, `async`, `preload` y `prefetch` son conceptos relacionados pero diferentes:
 
@@ -8059,7 +8063,7 @@ En resumen, `async` y `await` se utilizan en JavaScript para trabajar con códig
 
 ### **Cual es la diferencia entre call, bind y apply?**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 Por ejemplo tenemos dos objetos y una funcion
 
@@ -8095,7 +8099,7 @@ Basicamente los 3 asocian un objeto a `this`
 
 ### **Cual es la diferencia entre setTimeout() y setInterval()?**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 - `SetTimeout` nos permite ejecutar una funcion una vez despues del intervalo de tiempo
 
@@ -8116,7 +8120,7 @@ setTimeout(() => { clearInterval(timerId); alert('stop'); }, 5000);
 
 ### **Qué es "REPL" y para qué sirve?**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 REPL, acrónimo en Ingles de "Leer, Evaluar, Imprimir, Bucle". Este shell es utilizado para realizar declaraciones específicas en JavaScript.
 
@@ -8124,7 +8128,7 @@ REPL, acrónimo en Ingles de "Leer, Evaluar, Imprimir, Bucle". Este shell es uti
 
 ### **Qué es el "demultiplexer"?**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 El **demultiplexer,** *es una interfaz encargada de las notificaciones dentro de Node JS.* Es utilizado para recopilar información de eventos específicos y formar preguntas, brindando así lo que se conoce como un **Evento QUE**.
 
@@ -8132,13 +8136,15 @@ El **demultiplexer,** *es una interfaz encargada de las notificaciones dentro de
 
 ### **Que hace Babel?**
 
-[Volver al indice](rea-base)
+[Volver al indice](#rea-base)
 
 Babel es un compilador para JavaScript. Permite transformar codigo escrito con las ultimas caracteristicas y traducirlo en codigo de JS bien vanilla que pueda ser entendido por navegadores antiguos.
 
 <a id="rea35"></a>
 
 ### **Que hace Webpack?**
+
+[Volver al indice](#rea-base)
 
 Es el responsable de producir los bundles a partir del codigo Front. Es un Module Bundler, hay otras opciones como Gulp, Rollup, etc.. 
 
@@ -8148,6 +8154,8 @@ Los bundles son paquetes de codigo necesarios para poder llevar a produccion un 
 
 ### **Que es el server side rendering?**
 
+[Volver al indice](#rea-base)
+
 Es crear paginas HTML renderizadas en servidor para que lleguen listas. Se crean usando NodeJS que generalmente se usa con Express (para utilizar verbos de HTTP). 
 
 NextJS es una opcion para usar esto. Favorecen mucho al SEO ya que renderizan la pagina antes de que pueda ser enviada al navegador. 
@@ -8156,11 +8164,15 @@ NextJS es una opcion para usar esto. Favorecen mucho al SEO ya que renderizan la
 
 ### **Que es Tree Shaking?**
 
+[Volver al indice](#rea-base)
+
 Es remover codigo no usado, como, por ejemplo, imports y exports que no fueron usados. Esto lo hace webpack y Rollup de manera automatica. 
 
 <a id="rea38"></a>
 
 ### **¿Que es el SEO?**
+
+[Volver al indice](#rea-base)
 
 Es Search Engine Optimization, es lo que hace que un sitio sea encontrado por Google, y HTML hace un aporte con su metadata para que esto suceda. Por ejemplo, no se recomienda usar muchos <h1> en un HTML para no afectar al SEO. 
 
@@ -8186,6 +8198,8 @@ Es Search Engine Optimization, es lo que hace que un sitio sea encontrado por Go
 
 ### **¿Qué es el Virtual DOM?**
 
+[Volver al indice](#rea-base)
+
 Para que React pueda efectuar esta suerte de “recarga parcial por pedazos” de una página, debe usar el Virtual DOM, que es una representación del DOM real.
 
 Cuando un elemento cambia, primero se actualiza el VDOM de forma muy rápida, luego, React compara este VDOM propio con el DOM real, y basándonos en sus diferencias, únicamente aplica los cambios necesarios para que ambos coincidan.
@@ -8204,17 +8218,23 @@ Más arriba la jerarquía, más refrescos habrá. Un componente hijo, idealmente
 
 ### **Qué es el namespacing de JS?**
 
+[Volver al indice](#rea-base)
+
 Namespacing se utiliza para agrupar funciones, variables, etc con un nombre único.  Esto mejora la modularidad en codificación y permite la reutilización del código.
 
 <a id="rea41"></a>
 
 ### **Que es la tipificacion de Variables?**
 
+[Volver al indice](#rea-base)
+
 La tipificación de variables, sirve para asignar un número a una variable y después asignar un string a la misma variable.
 
 <a id="rea42"></a>
 
 ### **Concepto Truthy and Falsy**
+
+[Volver al indice](#rea-base)
 
 En JavaScript, un valor se considera "falsy" si se convierte en `false` cuando se evalúa en un contexto booleano. 
 
@@ -8238,6 +8258,8 @@ Boolean(function(){}); //Cualquier función es verdadera también
 <a id="rea43"></a>
 
 ### **Funciones de alto nivel / Higher order Function**
+
+[Volver al indice](#rea-base)
 
 Habían muchas funcionalidades que se estaban repitiendo, entonces JS decidio hacerlas nativas, como iteraciones. Funciones de orden mayor es que reciben como parametro los iterables y un callback, que se ejecutaba en cada elemento iterado.
 
@@ -8306,6 +8328,8 @@ console.log(b);
 
 ### **Que es el Scope en Javascript?**
 
+[Volver al indice](#rea-base)
+
 Es el contexto actual de ejecución. 
 
 Cuando hacemos referencia a una variable, javascript busca su definicion en cada entorno, o Scope, esto depende de como (var, const, let) y donde la declaremos (fuera o dentro de una funcion).
@@ -8327,6 +8351,8 @@ Entre scopes hay jerarquia. Primero se busca la variable en el mismo scope local
 <a id="rea46"></a>
 
 ### **Fetch API**
+
+[Volver al indice](#rea-base)
 
 Es una interfaz moderna que permite hacer peticiones HTTP desde el navegador. Es una alternativa a XMLHttpRequest y es más fácil de usar y más potente.
 
@@ -8353,6 +8379,8 @@ async function fetchData() {
 
 ### **Cómo se pueden crear objetos genéricos?**
 
+[Volver al indice](#rea-base)
+
 ```jsx
 var myObjeto = new Object({
 'nombre': 'Diego',
@@ -8372,6 +8400,8 @@ var myObjeto = new Object({
 <a id="rea49"></a>
 
 ### **Que es la expresion de Funcion Inmediatamente Invocada - Immediately-invoked Function Expression (IIFE)?**
+
+[Volver al indice](#rea-base)
 
 Es una tecnica que se usaba para emular las variables privadas. 
 
@@ -8396,6 +8426,8 @@ x.valorPrivado //Error
 <a id="rea50"></a>
 
 ### **Qué es un Event listener?**
+
+[Volver al indice](#rea-base)
 
 Supongamos que estamos usando una libreria para renderizar items de una coleccion de datos, esta expone un componente llamado RenderItem que tiene una sola prop disponible onClick que no acepta ningun parametro. ¿Y si quiero mandarle un argumento? 
 
@@ -8429,6 +8461,8 @@ Creamos una funcion que recibe el titulo que se quiere mostrar y retorna otra fu
 
 ### **isNaN vs Math.isNaN**
 
+[Volver al indice](#rea-base)
+
 NaN son operaciones aritmeticas que no pueden ser representadas correctamente. Ambas funciones tienen como objetivo identificar si un valor es NaN. `isNaN` global aplica una coercion de tipos al argumento que le pasamos, `Math.isNan` no lo hace, lo que hace que sea mas seguro de usar para valores no numericos. 
 
 ```jsx
@@ -8457,6 +8491,8 @@ array[0] = array[0].replace("PM", '') // Quita el PM del string dentro de ese ar
 
 ### **Que es Symbol?**
 
+[Volver al indice](#rea-base)
+
 Son valores primitivos de JS (como String, boolean, etc..) agregados al ES6. Son valores unicos en JS, antes si queriamos tener un valor unico debiamos usar objetos (porque solo son iguales a ellos mismos), es util para crear constantes
 
 ```jsx
@@ -8483,10 +8519,10 @@ obj[sym2] = 'b'
 
 ### **Cual es la diferencia entre un event loop, microtask y macrotask?**
 
+[Volver al indice](#rea-base)
+
 Javascript ejecuta una linea de codigo por vez. **Event Loop** se encarga de gestionar las funciones asincronas.
-
 Funciona con una Call Stack y una Callback Queue. Cuando hay una linea en ejecucion, se agrega al Call Stack, y cuando finaliza, se elimina. La Queue tiene las funciones callback que deben ejecutarse, no debe haber ninguna funcion ejecutandose en la Call Stack ni debe haber otra funcion adelante suyo en la Queue.
-
 Cuando ejecutamos una funcion con setTimeout, la misma se entrega a Timers API, y aunque setTimeout sea cero, habrá un retraso en la ejecucion de esta funcion, haciendo que tenga que esperar en la Queue a que termine de ejecutarse el codigo asincrono. 
 
 ![js](src/js1.png)
@@ -8507,6 +8543,8 @@ En resumen, su funcionamiento en ingles seria:
 <a id="rea54"></a>
 
 ### **Variable Shadowing - Ocultamiento de Variables**
+
+[Volver al indice](#rea-base)
 
 Se produce cuando una variable que esta en un scope mas reducido tiene el mismo nombre que otra que esta en un scope superior siguiendo la cadena
 
@@ -8537,11 +8575,15 @@ test(); // hola
 
 ### **¿Qué es el Manifest.xml en Android y qué funciones cumple?**
 
+[Volver al indice](#mob-base)
+
 El Manifest.xml es un archivo de configuración en Android que describe la estructura y los requisitos de una aplicación. Contiene información como los componentes de la aplicación, permisos necesarios, hardware y software requerido, entre otros detalles, y es fundamental para el funcionamiento adecuado de la aplicación en el sistema Android.
 
 <a id="mob2"></a>
 
 ### **¿Cómo se ejecutan las aplicaciones en Android y qué son los archivos DEX?**
+
+[Volver al indice](#mob-base)
 
 Cada aplicación en Android se ejecuta en una instancia de la máquina virtual Dalvik, utilizando archivos DEX (Dalvik Executable). Estos archivos contienen bytecode optimizado para Dalvik, permitiendo la ejecución eficiente de múltiples instancias de la máquina virtual.
 
@@ -8549,11 +8591,15 @@ Cada aplicación en Android se ejecuta en una instancia de la máquina virtual D
 
 ### **¿Qué es el Android Runtime y cómo se ejecutan las aplicaciones en Android?**
 
+[Volver al indice](#mob-base)
+
 El Android Runtime es el entorno de ejecución de aplicaciones de Android. Las aplicaciones de Android se ejecutan en el Android Runtime, que utiliza el compilador de tiempo de ejecución ART para convertir el código de la aplicación en código nativo que se ejecuta en el dispositivo.
 
 <a id="mob4"></a>
 
 ### **¿Qué constituye la base de Android y qué funciones proporciona el kernel de Linux?**
+
+[Volver al indice](#mob-base)
 
 La base de Android es el núcleo de Linux, que proporciona un entorno seguro y estable para la ejecución de aplicaciones y protege al sistema de fallos y malware. El kernel de Linux proporciona funciones como la administración de memoria, la administración de energía, la administración de dispositivos, la administración de procesos y la seguridad.
 
@@ -8566,6 +8612,8 @@ La base de Android es el núcleo de Linux, que proporciona un entorno seguro y e
 <a id="diag1"></a>
 
 ### **Ejemplo de Pseudo-código**
+
+[Volver al indice](#cod-base)
 
 ```pseudocode
 1. pedir el primer numero
@@ -8590,6 +8638,8 @@ La base de Android es el núcleo de Linux, que proporciona un entorno seguro y e
 <a id="diag2"></a>
 
 ### **Diagramas de Nassi-Schneiderman**
+
+[Volver al indice](#cod-base)
 
 ![Diagrama de Nassi-Schneiderman](src/diag1.png)
 
@@ -8747,6 +8797,8 @@ Veamos el ejemplo de la carga del día de semana tal como se haría con este cic
 
 ### **¿De qué trata el código limpio?**
 
+[Volver al indice](#cod-base)
+
 - Es un codigo facil de leer, entender y modificar
 - Se recomienda leer el código de otras personas para aprender como son las distintas implementaciones para seguir limpiando nuestro código.
 - No es posible escribir codigo perfecto a la primera, se consigue mediante un proceso de iteracion continuo que lo va mejorando
@@ -8756,6 +8808,8 @@ Veamos el ejemplo de la carga del día de semana tal como se haría con este cic
 <a id="cod2"></a>
 
 ### **Nombres Significativos en Codigo Limpio**
+
+[Volver al indice](#cod-base)
 
 En el dia a dia nombramos muchas cosas (clases, paquetes, ficheros, etc..), se deben aclarar nombres claros.
 
@@ -8815,6 +8869,8 @@ public class Employee {
 
 ### **Dependency Inversion Principle**
 
+[Volver al indice](#cod-base)
+
 Los sistemas mas flexibles son los que dependen de abstracciones y no concreciones. En Java significa que se debe depender de interfaces y clases abstractas, no de implementaciones directas. Hace necesario un mecanismo que nos cree las instancias de las implementaciones que queremos.
 
 La clase `Switch` no depende directamente de la clase `LightBulb`, sino que depende de la abstracción `SwitchableDevice`. Esto permite que `Switch` sea más flexible y pueda controlar cualquier dispositivo que implemente la interfaz `SwitchableDevice`, no solo la bombilla. Además, la clase `LightBulb` sigue cumpliendo con el DIP al depender de una abstracción (`SwitchableDevice`) en lugar de depender directamente de `Switch`. Esto facilita la reutilización y el mantenimiento del código, ya que los componentes son más independientes y menos propensos a cambios.
@@ -8867,6 +8923,8 @@ switchButton.press(); // Output: Light bulb turned off
 
 ### **Concepto SOLID**
 
+[Volver al indice](#cod-base)
+
 Propuesto por Robert C. Martin
 
 S -> Single Responsibility Principle (Principio de responsabilidad unica)
@@ -8890,11 +8948,15 @@ Nos ayudaran a
 
 ### **Concepto DRY**
 
+[Volver al indice](#cod-base)
+
 Don’t Repeat Yourself, si hay una pieza de programación que se repite en mas de un lugar, se debe crear una función de la misma
 
 <a id="cod6"></a>
 
 ### **Concepto KISS**
+
+[Volver al indice](#cod-base)
 
 Keep it Simple Stupid, no escribir codigo que nadie pueda entender o leer, mantener todo simple
 
@@ -8902,17 +8964,23 @@ Keep it Simple Stupid, no escribir codigo que nadie pueda entender o leer, mante
 
 ### **Concepto YAGNI**
 
+[Volver al indice](#cod-base)
+
 You Aren’t Gonna Need it! No escribir codigo de mas solo porque puede que lo necesites mas adelante. Implementar algo solo si es necesario en el momento
 
 <a id="cod8"></a>
 
 ### **Concepto LOD**
 
+[Volver al indice](#cod-base)
+
 Law Of Demeter, quien puede hablar con quien, una unidad puede comunicarse solo con sus unidades cercanas
 
 <a id="cod9"></a>
 
 ### **Funciones Limpias**
+
+[Volver al indice](#cod-base)
 
 - Las funciones deben ser claras, concisas, faciles de leer y modificar
 - Deben ser pequeñas, deben hacer una unica cosa, un unico nivel de abstraccion. Debemos separar lo mas posible todas las funciones, haciendo que sean reutilizables.
@@ -8923,6 +8991,8 @@ Law Of Demeter, quien puede hablar con quien, una unidad puede comunicarse solo 
 <a id="cod10"></a>
 
 ### **Unico Nivel de abstraccion**
+
+[Volver al indice](#cod-base)
 
 Separar las responsabilidades en las entidades correspondientes.
 
@@ -8962,6 +9032,8 @@ public class Car {
 
 ### **Manejo limpio de Parametros**
 
+[Volver al indice](#cod-base)
+
 Se deben evitar las funciones que reciben mas de 3 argumentos, muchos argumentos es una mala encapsulación. La mejor funcion es la que menos argumentos recibe.
 
 DON´T
@@ -8980,6 +9052,8 @@ public Circle createCircle(Point center, double radius)
 <a id="cod12"></a>
 
 ### **Cuales son los beneficios de una Code Review?**
+
+[Volver al indice](#cod-base)
 
 Los objetivos clave de la revisión de código son identificar errores de desarrollo iniciales y facilitar una base de código mantenible. El proceso de revisión de código puede ayudar a su equipo a prever posibles problemas técnicos que son mucho más fáciles de abordar en una etapa temprana.
 
@@ -9039,6 +9113,8 @@ Sin revisión de código, tu equipo tiene una mayor probabilidad de introducir p
 
 ### **Que tipos de Code review existen?**
 
+[Volver al indice](#cod-base)
+
 **Peer Review**
 
 La revisión por pares permite que varios miembros del equipo revisen el código en diferentes momentos. Su conveniencia lo convierte en un tipo de revisión popular.
@@ -9065,6 +9141,8 @@ Este enfoque puede ser apropiado para dos desarrolladores de aproximadamente el 
 
 ### **Domain Driven Design**
 
+[Volver al indice](#cod-base)
+
 Este diseño se enfoca en el dominio del problema, es decir, en el problema que se está tratando de resolver. Se enfoca en el lenguaje que se usa para describir el problema y en cómo se resuelve. Se basa en la idea de que el diseño de software debe reflejar el dominio del problema, y no al revés.
 
 Por ejemplo, para desarrollar el software de un hospital, debo tener en cuenta las necesidades del usuario y sobre todo, si es necesario, un marco juridico, mas si se trata de informacion sensible sobre pacientes.
@@ -9079,17 +9157,23 @@ Se deben conocer las reglas, casos de uso, y las necesidades del usuario para po
 
 ### **¿Qué es un patrón de diseño?**
 
+[Volver al indice](#cod-base)
+
 Un patrón de diseño es una solución descubierta para un problema informático que se presenta recurrentemente y de una forma especifica, para que sea reutilizada en otros desarrollos en cualquier otro lenguaje.
 
 <a id="cod16"></a>
 
 ### **En qué se inspiran los patrones de diseño?**
 
+[Volver al indice](#cod-base)
+
 Se inspiran en los patrones de construcción en la arquitectura, en esa disciplina se usa el mismo concepto para la comunicación entre colegas y en otros procesos de la disciplina.
 
 <a id="cod17"></a>
 
 ### **¿Qué se obtiene con la implementación de patrones de diseño?**
+
+[Volver al indice](#cod-base)
 
 - **Reutilización de código**: Se puede reutilizar el código que ya ha sido probado y que se sabe que funciona.
 - **Facilita la comunicación**: Los patrones de diseño permiten que los desarrolladores se comuniquen de una manera más efectiva.
@@ -9100,17 +9184,23 @@ Se inspiran en los patrones de construcción en la arquitectura, en esa discipli
 
 ### **¿Para qué sirven los patrones de diseño?**
 
+[Volver al indice](#cod-base)
+
 Son soluciones basándonos en la experimentación de problemas comunes y recurrentes en varios proyectos de programación. Algunos pueden parecer abstractos en su explicación, le delegan al diseñador el esfuerzo de reconocer el problema y adaptar la solución. Son utilizados también como un facilitador de la comunicación, es decir, si todos los especialistas de IT conocen estos patrones de diseño, pueden ver cualquier proyecto y ya intuir como funciona, y cuál es la idea detrás de su tipo de organización. Son diseños orientados al cambio.
 
 <a id="cod19"></a>
 
 ### **¿Cuáles son los elementos de un patrón de diseño?**
 
+[Volver al indice](#cod-base)
+
 Los elementos de un patrón de diseño incluyen el nombre del patrón, que es el nombre por el cual el patrón es reconocido o conocido. Puede haber más de un nombre para un mismo patrón.
 
 <a id="cod20"></a>
 
 ### **¿Cuáles son los tipos de patrones de diseño?**
+
+[Volver al indice](#cod-base)
 
 - **Creacionales**: Se encargan de la creación de objetos, tratan de abstraer el proceso de creación de objetos. Resuelven problemas relacionados con la creación o instanciacion de objetos
 - **Estructurales**: Se encargan de la composición de clases o de objetos. Resuelven problemas relacionados a la estructura y composición interna de los objetos, como problemas de asociación y agregación. No son fáciles de entender a la primera, y la mayoría son muy abstractos.
@@ -9125,11 +9215,15 @@ Los elementos de un patrón de diseño incluyen el nombre del patrón, que es el
 
 ### **¿Qué es la intención y motivación de un patrón de diseño?**
 
+[Volver al indice](#cod-base)
+
 La intención y motivación de un patrón de diseño se refiere a un resumen del problema que resuelve este patrón. Es un párrafo breve que explica su necesidad.
 
 <a id="cod22"></a>
 
 ### **¿Qué es la aplicabilidad de un patrón de diseño?**
+
+[Volver al indice](#cod-base)
 
 La aplicabilidad de un patrón de diseño menciona los usos más comunes y los criterios para aplicar cierto patrón. Suelen cambiar mucho con el tiempo dependiendo de la evolución de algunos frameworks o lenguajes.
 
