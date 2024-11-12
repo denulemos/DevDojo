@@ -9231,17 +9231,23 @@ La aplicabilidad de un patrón de diseño menciona los usos más comunes y los c
 
 ### **¿Qué es la estructura de un patrón de diseño?**
 
+[Volver al indice](#cod-base)
+
 La estructura de un patrón de diseño es una enumeración y descripción de las entidades o clases concretas y abstractas, que explican los roles dentro del patrón. Pueden ser pequeños diagramas de clases que describan las clases e interfaces participantes o componentes del patrón.
 
 <a id="cod24"></a>
 
 ### **¿Quiénes son los participantes de un patrón de diseño?**
 
+[Volver al indice](#cod-base)
+
 Los participantes de un patrón de diseño son tanto las clases abstractas como concretas que participan en el patrón en las documentaciones.
 
 <a id="cod25"></a>
 
 ### **Patrones Estructurales**
+
+[Volver al indice](#cod-base)
 
 - **Adapter**: Se adapta a un determinado objeto para que pueda ser usado por otro, dado que de otro modo no se podría. Su nivel de uso es muy alto
 - **Bridge**: Nos permite separar a una abstracción de su implementación. Su uso es nivel medio a bajo
@@ -9254,6 +9260,8 @@ Los participantes de un patrón de diseño son tanto las clases abstractas como 
 
 ### **Patrones Creacionales**
 
+[Volver al indice](#cod-base)
+
 - **Singleton**: Se ocupa de que exista una unica instancia de un determinado objeto. Es muy usado
 - **Factory Method y/o Factory Simple**: Busca simplificar la creacion de objetos de una determinada familia definiendo una interfaz en comun. Su nivel de uso es alto.
 - **Abstract Factory:** Busca centralizar la fabricación de objetos de distintas familias en únicamente un lugar. Su empleo es bajo.
@@ -9264,6 +9272,8 @@ Los participantes de un patrón de diseño son tanto las clases abstractas como 
 <a id="cod27"></a>
 
 ### **Patrones Comportamiento**
+
+[Volver al indice](#cod-base)
 
 Como los objetos se van a comportar y a cambiar su comportamiento.
 
@@ -9282,6 +9292,8 @@ Como los objetos se van a comportar y a cambiar su comportamiento.
 <a id="cod28"></a>
 
 ### **Excepciones en lugar de codigos de error**
+
+[Volver al indice](#cod-base)
 
 Conviene encerrar todo nuestro codigo que puede fallar dentro de un try/catch y manejarlo mediante el mismo que logear los errores al momento en que suceden, el flujo normal queda mucho mas claro.
 
@@ -9342,6 +9354,8 @@ public void restoreDatabase(){
 
 ### **Manejo de Comentarios en el codigo**
 
+[Volver al indice](#cod-base)
+
 Se nos enseña mucho que debemos comentar mucho nuestro codigo. El buen codigo deberia poder leerse con casi ningun comentario.
 
 - Solo agregar comentarios cuando es estrictamente necesario
@@ -9389,6 +9403,8 @@ public void login (User user) {}
 
 ### **Acomplamiento artificial**
 
+[Volver al indice](#cod-base)
+
 Los elementos que no dependan entre si no deben estar acoplados. Por ejemplo, en el caso de PI dentro del ejemplo, nos conviene hacer una variable global del mismo, ya que es un valor que puede ser usado por cualquier otro elemento del codigo y no es algo exclusivo del Circulo.
 
 ```java
@@ -9407,6 +9423,8 @@ public class Circle {
 <a id="cod31"></a>
 
 ### **Unchecked Exceptions**
+
+[Volver al indice](#cod-base)
 
 - Son excepciones que heredan de `RuntimeException`, como `NullPointerException`, muy común en Java, y en lenguajes compilados
 - Se pueden tratar con try-catch pero no es necesario al 100%
@@ -9448,6 +9466,8 @@ public class Engine {
 
 ### **Excepciones en lugar de códigos de error**
 
+[Volver al indice](#cod-base)
+
 Usando excepciones no hay porque tratar el error en el momento. Nos conviene separar la gestion de errores del codigo con el flujo correcto.
 
 ```jsx
@@ -9471,6 +9491,8 @@ private void tryToShutDown() throws DeviceShutDownError {
 
 ### **Gestión de errores**
 
+[Volver al indice](#cod-base)
+
 - Se debe buscar un codigo limpio pero tambien robusto en si mismo
 - La gestion de errores puede ensuciar el codigo, hay que prestarle especial atención
 - Se deben devolver excepciones en lugar de códigos de error
@@ -9480,6 +9502,8 @@ private void tryToShutDown() throws DeviceShutDownError {
 <a id="cod34"></a>
 
 ### **Indentación**
+
+[Volver al indice](#cod-base)
 
 - Se recomiendan dos o cuatro espacios de indentacion
 - El maximo recomendado de caracteres por linea es de 100 caracteres, si no, se tendrá que partir la linea
@@ -9500,6 +9524,8 @@ return a+b+c;
 
 ### **Código en el nivel de abstracción incorrecto**
 
+[Volver al indice](#cod-base)
+
 El método `changeRadioChannel` esta mal, ya que no todos los vehículos tienen radio. El método no debería estar en esa clase tan general como lo es `Vehicle`
 
 ```java
@@ -9514,6 +9540,8 @@ public class Vehicle() {
 <a id="cod36"></a>
 
 ### **Acoplamiento (Evitar)**
+
+[Volver al indice](#cod-base)
 
 Grado en que dos modulo software estan relacionados entre si. Con un buen diseño, se crean modulos poco acoplados, haciendo que si se modifica un modulo, afecte lo menos posible al resto (Misma logica con las arquitecturas de microservicios o microfrontends)
 
@@ -9603,6 +9631,8 @@ IndependentModule.printArea('rectangle', 4, 6); // Output: The area of the recta
 
 ### **Cohesion (Fomentar)**
 
+[Volver al indice](#cod-base)
+
 Es el grado en que los elementos de un modulo estan relacionados entre si. Mientas mas alta la cohesion en el codigo, mejor
 
 En el ejemplo la cohesion es baja, las funciones se relacionan con distintas variables. Se podria separar en 2 clases, una que sea para el manejo de niveles y otra para el manejo del jugador.
@@ -9689,6 +9719,8 @@ console.log(LowCohesionModule.validateEmail("example@example.com")); // Output: 
 
 ### **Uso de numeros magicos en lugar de constantes**
 
+[Volver al indice](#cod-base)
+
 Se deben pasar numeros que no se sabe que son como en el primer caso a constantes, como sucede en su segunda refactorizacion.
 
 ```javascript
@@ -9705,17 +9737,23 @@ public Double getAnnualSalary() {
 
 ### **Qué es la Programación orientada a Objetos?**
 
+[Volver al indice](#cod-base)
+
 En ella las instrucciones tratan de modelar un sistema con base en la realidad, haciendo más cercanos los conceptos que vemos en ella. Es por eso que en la programación orientada a objetos aparecen conceptos de clase, objeto, atributo, método, etc., que en el fondo no dejan de ser bloques de código. Asimismo, cabe notar que también hacen uso de estructuras de control y repetición.
 
 <a id="cod40"></a>
 
 ### **Qué es la programación procedural?**
 
+[Volver al indice](#cod-base)
+
 En ella las imposiciones o instrucciones se pueden agrupar en “procedimientos”. Cada procedimiento es un bloque (la programación procedural es una forma de programación estructurada) que se dedica a un cambio de una parte específica del estado del sistema. Estos bloques son conocidos típicamente como “funciones” o “subrutinas”
 
 <a id="cod41"></a>
 
 ### **Qué es la programacion declarativa?**
+
+[Volver al indice](#cod-base)
 
 Los lenguajes declarativos, en el paradigma declarativo de programación, se utilizan para describir la estructura del sistema y describir qué hace el sistema. Una vez descrita “la misión” del programa, el cómo se llega al resultado depende de la implementación interna del propio lenguaje.
 Generalmente, se define a la programación declarativa como “no-imperativa”. Es decir, es todo lo que la imperativa no es. En este sentido, la programación declarativa dice qué debe hacer el sistema, en donde la ejecución no afecte otras partes del sistema y pueda representarse como una serie de premisas matemáticas (funciones/transformaciones). En un lenguaje imperativo, entonces, el sistema pasará de un estado a otro ejecutando una serie de pasos, un algoritmo. En un lenguaje declarativo se debe describir el estado inicial, el estado final y luego el propio motor del lenguaje hará todo lo necesario para ir de un estado al otro
@@ -9724,6 +9762,8 @@ El ejemplo más claro de un lenguaje declarativo es SQL. En SQL se describe qué
 <a id="cod42"></a>
 
 ### **Que es la Programacion Imperativa?**
+
+[Volver al indice](#cod-base)
 
 Los lenguajes imperativos definen al paradigma imperativo de programación. En este paradigma se usa el lenguaje para describir cómo cambia el estado del sistema.
 
@@ -9737,11 +9777,15 @@ Ejemplos de lenguajes imperativos hay muchos: C, C++, Java, Perl y un infinito e
 
 ### **Qué es la Programacion Estructurada?**
 
+[Volver al indice](#cod-base)
+
 En ella las imposiciones se ven divididas en estructuras. Pueden ser estructura de control de flujo (if/else), de repeticiones (for/while) o pueden ser estructuras de ordenamiento(bloques de código, generalmente delimitados por TABs o por llaves o corchetes)
 
 <a id="cod44"></a>
 
 ### **Que es un antipatron?**
+
+[Volver al indice](#cod-base)
 
 Un antipatrón de diseño es una implementación que invariablemente conduce a una mala solución. Al documentarse junto con los patrones de diseño, se dan argumentos para no escoger malos caminos en lugar de simplemente usar la intuición y el sentido común.
 El término se origina inspirado en el libro Design Patterns, el libro Anti-Patterns describe los antipatrones como la contrapartida natural al estudio de los patrones de diseño.
@@ -9752,6 +9796,8 @@ El concepto se puede aplicar a la ingeniería en general, e incluso a cualquier 
 <a id="cod45"></a>
 
 ### **Que tipos de antipatrones para el diseño de Software existen?**
+
+[Volver al indice](#cod-base)
 
 - **Base de datos como comunicador de procesos (Database as IPC)**: Es cuando usamos una base de datos para comunicar procesos para uno o varias máquinas, en lugar de hacer una comunicación entre procesos directa (que es más adecuada).
 - **Objeto todopoderoso (BLOB Object)**: Simple, cuando hacemos que toda la funcionalidad se haga en un solo objeto (aplicable también a cualquier tipo de componente).
@@ -9770,6 +9816,8 @@ El concepto se puede aplicar a la ingeniería en general, e incluso a cualquier 
 
 ### **Que tipos de Antipatrones para el Diseño Orientado a Objetos existen?**
 
+[Volver al indice](#cod-base)
+
 - **Acoplamiento secuencial (Sequential coupling)**: Construir una clase que necesita que sus métodos se invoquen en un orden determinado o secuencia.
 - **Base Bean**: Heredar funcionalidad de una clase utilidad en lugar de delegar lo que se necesite en ella.
 - **Fallo de clase vacía (Empty Subclass Failure)**: Crear una clase que no supera el test de la subclase vacía, es decir, que se comporta de manera diferente cuando se invoca desde una subclase que no añade modificación o funcionalidad alguna.
@@ -9785,6 +9833,8 @@ El concepto se puede aplicar a la ingeniería en general, e incluso a cualquier 
 <a id="cod47"></a>
 
 ### **Singleton**
+
+[Volver al indice](#cod-base)
 
 Obliga a que exista solo un objeto de un tipo. Se puede usar para crear un objeto que se encargue de la conexión a una base de datos, para que no se creen múltiples conexiones.
 
@@ -9808,6 +9858,8 @@ const singleton2 = new Singleton(); // Devuelve la misma instancia
 <a id="cod48"></a>
 
 ### **Que es el Polimorfismo?**
+
+[Volver al indice](#cod-base)
 
 Conocido también como ***ligadura dinámica***, ***ligadura tardía*** (***late binding***), el concepto fundamental del ***Polimorfismo*** es “mismo mensaje, distinta implementación” y consiste en implementar o reemplazar el método de una clase con otro método llamado exactamente igual pero escrito en otra clase (derivada de la primera).
 
@@ -9837,6 +9889,8 @@ En el ejemplo de los polígonos, creamos una clase abstracta Poligono con un mé
 
 ### **Que es el Upcasting?**
 
+[Volver al indice](#cod-base)
+
 Es la posibilidad de tratar a un objeto de una subclase como un objeto de la superclase.
 
 Esto se logra apuntando a un objeto de una subclase con un puntero de su superclase.
@@ -9853,6 +9907,8 @@ Tras la conexión polimorfa únicamente podemos acceder a los atributos y métod
 <a id="cod50"></a>
 
 ### **Que es el Downcasting?**
+
+[Volver al indice](#cod-base)
 
 Es la posibilidad de volver a tratar el objeto con un puntero a la clase a la que pertenece
 
@@ -9884,17 +9940,23 @@ if (a instanceof Perro)
 
 ### **¿Cómo se produce la ligadura tardía y dinámica que posibilita el polimorfismo?**
 
+[Volver al indice](#cod-base)
+
 Gracias a los punteros o referencias: cuando se crea una variable el lenguaje registra en una lista interna cada método declarado para esa clase y espera a que se “guarde” un objeto en la variable a través de una asignación. Cuando se produce la asignación del objeto, se recorre internamente la lista de métodos de la declarados en la variable que pueden ser sobreescritos y se compara con los métodos disponibles para el objeto (propios o heredados). Si la firma coincide, el método encontrado en el objeto asignado se asociará a la declaración existente y sobreescribirá la referencia y sustituirá el enlace al método original, si éste estaba implementado.
 
 <a id="cod52"></a>
 
 ### **El Principio de Sustitución de Liskov**
 
+[Volver al indice](#cod-base)
+
 El ***Principio de Sustitución de Liskov*** fue acuñado por **Barbara Liskov** en 1987 durante una conferencia sobre *Jerarquía y Abstracción de datos*. Este principio dice que al sobreescribir un método se debe asegurar que éste mantenga el espíritu original del método, sin alterar ni dejar de cumplir la premisa o responsabilidad declarada inicialmente para el mismo. Según este principio, **una clase derivada no únicamente *es*, sino que *debe comportarse* como la clase base**. Por ejemplo, si hay un método *abrirPuerta()*, una clase derivada no debería hacer que su *abrirPuerta()* abra las ventanas, o prenda la radio. A nivel declarativo y de programación puede estar perfecto, pero no sería correcto. Puede tener otra forma de abrir la puerta, pero no hacer otra cosa.
 
 <a id="cod53"></a>
 
 ### **¿Cómo ejemplificarías el uso de polimorfismo en Java usando una colección de objetos?**
+
+[Volver al indice](#cod-base)
 
 En Java, el polimorfismo se puede ver claramente al trabajar con una colección de objetos que comparten una clase base. En este ejemplo, creamos una lista ArrayList<Poligono> y agregamos instancias de Cuadrado, Triangulo y Circulo. Cuando recorremos esta colección, llamamos al método obtenerSuperficie() de cada polígono, y cada uno calcula su superficie utilizando su propia implementación del método. Así, aunque estamos llamando al mismo método, el comportamiento es diferente según el tipo específico de polígono:
 
@@ -9912,6 +9974,8 @@ for (Poligono poligono : poligonos) {
 <a id="cod54"></a>
 
 ### **Qué es la densidad de codigo?**
+
+[Volver al indice](#cod-base)
 
 La densidad de código es una métrica que mide la cantidad de código fuente en un programa en relación con la cantidad de comentarios y líneas en blanco. Se utiliza para evaluar la legibilidad y mantenibilidad del código, ya que un código con una alta densidad de código puede ser difícil de entender y modificar.
 
@@ -9945,6 +10009,8 @@ public Integer tripleSum(Integer a, Integer b, Integer c) {
 
 ### **La importancia del orden de las funciones**
 
+[Volver al indice](#cod-base)
+
 El orden de las funciones es para facilitar la lectura. En el ejemplo, primero ponemos la funcion `a()` que a su vez, consume a `b()` y `c()`, haciendo que la lectura sea ordenada.
 
 ```
@@ -9957,6 +10023,8 @@ public void a(){
 <a id="cod56"></a>
 
 ### **Porque se deberia evitar retornar null?**
+
+[Volver al indice](#cod-base)
 
 - No se debe devolver null en una funcion
 - Al devolver null, obligamos que se chequee ese null, es una gran fuente de bugs, por ejemplo, es recomendable devolver una lista vacia en vez de un null
@@ -9990,6 +10058,8 @@ public void processRequestBatch(){
 
 ### **Porque se deberia evitar el uso de variables globales?**
 
+[Volver al indice](#cod-base)
+
 - Las variables globales pueden ser modificadas por cualquier parte del código, lo que puede llevar a errores difíciles de rastrear.
 - Las variables globales pueden ser accedidas por cualquier parte del código, lo que puede llevar a dependencias no deseadas.
 - Las variables globales pueden ser difíciles de depurar y mantener, ya que su alcance es global y no está claro dónde se utilizan o modifican.
@@ -9999,6 +10069,8 @@ public void processRequestBatch(){
 <a id="cod58"></a>
 
 ### **¿Qué es un Code Smell?**
+
+[Volver al indice](#cod-base)
 
 Son sintomas de que el codigo no es todo lo limpio que deberia. Hay distintos tipos de code smells como:
 
@@ -10015,6 +10087,8 @@ Nadie se va a volver experto teniendo esta lista de memoria, nunca va a ser una 
 <a id="cod59"></a>
 
 ### **Code Smells en los Tests**
+
+[Volver al indice](#cod-base)
 
 **Tests insuficientes** Se deben probar todas las posibilidades de una funcion. Si no se prueban todas las condiciones, los tests son insuficientes.
 
@@ -10039,6 +10113,8 @@ Si hay dudas en los tests, hay dudas en los requisitos
 <a id="cod60"></a>
 
 ### **Code Smells en Codigo**
+
+[Volver al indice](#cod-base)
 
 **Mezclar muchos lenguajes en un solo fichero** En el ejemplo podemos ver que se mezclan Java y HTML en un mismo archivo. A veces puede ser razonable (CSS + JS), pero en casos como el ejemplo, solo ensucia el codigo.
 
@@ -10167,6 +10243,8 @@ Se evitan los condicionales por nivel de dificultad en el ejemplo.
 
 ### **Code Smells en Nombres**
 
+[Volver al indice](#cod-base)
+
 **Nombres en nivel de abstraccion incorrecto** Si tenemos una clase `FtpFileDownloader` que implementa la interfaz, ya no recibiria una web url.
 
 ```jsx
@@ -10227,6 +10305,8 @@ public Boolean login (User user) {
 
 ### **Code Smells en Comentarios**
 
+[Volver al indice](#cod-base)
+
 **Informacion Inapropiada** Todo comentario que contenga informacion que este mejor documentada en otro sistema debe ser movida.
 Por ejemplo en este caso, el autor del codigo ya esta siendo registrado por Git, no es necesario que haya un comentario que lo indique, lo mismo con los TODO
 
@@ -10249,6 +10329,8 @@ public class Comments {}
 
 ### **Code Smells en el entorno**
 
+[Volver al indice](#cod-base)
+
 **Que la compilacion requiera mas de un paso** Se debe ser capaz de hacer un checkout del codigo fuente con un solo comando y compilarlo con otro solo comando. Si el codigo es simple y no tiene dependencias, es facil de hacer, pero a medida que va creciendo en dependencia, puede ser que se necesite compilar las dependencias por separado para luego compilar el proyecto, para esto se crearon muchas herramientas para automatizar el build del codigo. En Java el mas usado es Maven o Apache, en JS es Grunt, entre otros…
 
 ```
@@ -10262,6 +10344,8 @@ Tambien hay herramientas de automatizacion para los tests, con comandos especifi
 <a id="cod64"></a>
 
 ### **Code Smells en Funciones**
+
+[Volver al indice](#cod-base)
 
 **Demasiados parametros / argumentos** Las funciones mas faciles de leer son las que no reciben parametros. Mientras mas parametros, mayor es la complejidad. No se recomiendan mas de 3 parametros, y si es el caso, se recomienda refactorizar, separando esta funcion en varias funciones mas pequeñas o encapsulando los argumentos en una clase
 
@@ -10497,6 +10581,8 @@ userManager.generateUserReport(); // Output: Generating user report...
 
 ### **Open/Closed Principle**
 
+[Volver al indice](#cod-base)
+
 **Un artefacto de software debe estar abierto para su extension, pero cerrado para su modificacion**. Se debe poder aumentar la funcionalidad sin modificar el funcionamiento ya existente.
 
 ¿Cómo se consigue?
@@ -10553,6 +10639,8 @@ console.log(circle.area()); // Output: 28.274333882308138
 <a id="cod67"></a>
 
 ### **Interface Segregation Principle**
+
+[Volver al indice](#cod-base)
 
 El Principio de Segregación de Interfaces (ISP) establece que una clase no debe depender de interfaces que no utiliza. En otras palabras, las interfaces deben ser lo suficientemente específicas para cada cliente, evitando que los clientes dependan de métodos que no necesitan.
 
@@ -10614,6 +10702,8 @@ En este ejemplo, la interfaz `Worker` se divide en interfaces más específicas 
 <a id="cod68"></a>
 
 ### **Liskov Substitution Principle**
+
+[Volver al indice](#cod-base)
 
 El Principio de Sustitución de Liskov (LSP) establece que los objetos de un programa deberían ser reemplazables por instancias de sus subtipos sin alterar la corrección del programa. En otras palabras, si tenemos una clase base y una subclase que la extiende, deberíamos poder usar un objeto de la subclase en lugar de un objeto de la clase base sin cambiar el comportamiento del programa.
 
