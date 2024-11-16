@@ -6,81 +6,158 @@
 
 </div>
 
+Preguntas sin link de referencia con preguntas que proximamente seran respondidas, pero que igualmente son sugeridas.
+
 <a name="seg-base"></a>
 
 ## [Seguridad](#seg)  
 
-| Temas   |
+|  Introducción y Conceptos Básicos  |
 |----------|
-| [¿Qué quiere decir "Ciberataque"?](#seg1)    |
-| [¿Que quiere decir "Ciberamenazas"?](#seg2)    |
-| [¿Qué quiere decir "Vulnerabilidad"?](#seg3)    |
 | [¿Qué es el ciberespacio?](#seg4)    |
 | [¿Cuáles son los componentes del Ciberespacio?](#seg5)    |
 | [¿Cuáles son los problemas del Ciberespacio?](#seg6)    |
-| [¿Cuáles son las ciberamenazas actuales?](#seg7)    |
 | [¿Qué es la Ciberseguridad?](#seg8)    |
+| [¿Qué quiere decir "Ciberataque"?](#seg1)    |
+| [¿Que quiere decir "Ciberamenazas"?](#seg2)    |
+| [¿Qué quiere decir "Vulnerabilidad"?](#seg3)    |
+| [¿Cuáles son las ciberamenazas actuales?](#seg7)    |
+|¿Por qué es importante entender las vulnerabilidades en ciberseguridad?|
+|¿Cómo se define una amenaza en ciberseguridad y cuál es su relación con una vulnerabilidad?|
+
+| Metodologías y Roles en Ciberseguridad   |
+|----------|
 | [¿Cuál es el perfil del Oficial de seguridad informática?](#seg9)    |
 | [¿De qué pasos consta la metodología de ciberseguridad?](#seg10)    |
 | [¿De qué pasos criterios de seguridad consta la metodología de ciberseguridad?](#seg11)    |
+|¿Qué habilidades técnicas y no técnicas debe tener un Oficial de seguridad informática?|
+|¿Cuáles son los diferentes enfoques en las metodologías de gestión de riesgos de ciberseguridad?|
+
+| Tipos de Ciberataques  |
+|----------|
+| [¿Cuáles son algunas modalidades comunes de ataques?](#seg13)    |
+| [¿Qué son los ataques internos?](#seg15)    |
+| [¿Qué tipos de Ingenierías sociales existen?](#seg16)    |
+| [¿Cuáles son las etapas en un proceso de hacking?](#seg14)    |
+|¿Cómo prevenir los ataques internos dentro de una organización?|
+|¿Qué papel juega el phishing en los ciberataques actuales?|
+
+| Medidas de prevencion  |
+|----------|
 | [¿Cuáles son algunas medidas comunes contra los ataques?](#seg12)    |
-| [Cuales son algunas modalidades comunes de ataques?](#seg13)    |
-| [Cuales son las etapas en un proceso de hacking?](#seg14)    |
-| [Que son los ataques internos?](#seg15)    |
-| [Que tipos de Ingenierias sociales existen?](#seg16)    |
-| [Que es la triada CIA?](#seg17)    |
-| [Que es la seguridad perimetral?](#seg18)    |
+| [¿Qué es la triada CIA?](#seg17)    |
+| [¿Qué es la seguridad perimetral?](#seg18)    |
+| [Es una amenaza.. Verdadero o Falso?](#seg23)    |
+|¿Qué otros modelos de seguridad, además de la triada CIA, se utilizan en la industria de la ciberseguridad?|
+|¿Qué son las políticas de seguridad de la información y cómo ayudan en la prevención de ciberataques?|
+
+| IDS (Intrusion Detection Systems)  |
+|----------|
 | [IDS (Intrusion Detection System)](#seg19)    |
 | [Tecnicas de detección de intrusiones](#seg20)    |
 | [Indicadores de una intrusión](#seg21)    |
 | [Tipos de IDS](#seg22)    |
-| [Es una amenaza.. Verdadero o Falso?](#seg23)    |
-| [Qué es un Firewall?](#seg24)    |
+|¿Cómo se diferencia un IDS de un IPS (Intrusion Prevention System)?|
+|¿Qué métodos utilizan los IDS para detectar intrusiones en tiempo real?|
+
+| Firewalls  |
+|----------|
+| [¿Qué es un Firewall?](#seg24)    |
 | [Tipos de Firewall](#seg25)    |
-| [Que es la Criptografia?](#seg26)    |
-| [Que es una funcion Hash?](#seg27)    |
-| [Cuáles son los requisitos de un Cripto sistema?](#seg28)    |
-| [Como funciona el Crifrado Simetrico?](#seg29)    |
-| [Como funciona el Crifrado Asimetrico?](#seg30)    |
-| [Adquisicion en Informatica Forense](#seg31)    |
-| [El informe pericial informatico](#seg32)    |
+|¿Cuál es la diferencia entre un firewall de filtrado de paquetes y un firewall de inspección profunda de paquetes?|
+|¿Cómo se puede configurar un firewall para proteger una red corporativa?|
+
+| Criptografía  |
+|----------|
+| [¿Qué es la criptografía?](#seg26)    |
+| [¿Qué es una función Hash?](#seg27)    |
+| [¿Cuáles son los requisitos de un Cripto sistema?](#seg28)    |
+| [¿Cómo funciona el Cifrado Simétrico?](#seg29)    |
+| [¿Cómo funciona el Cifrado Asimétrico?](#seg30)    |
+|¿Por qué es importante el uso de certificados digitales y cómo están relacionados con la criptografía?|
+|¿Qué es la criptografía cuántica y cómo afectará la ciberseguridad en el futuro?|
+
+| Informática Forense  |
+|----------|
+| [Adquisición en Informática Forense](#seg31)   |
+| [El informe pericial informático](#seg32)   |
+|¿Qué debe contener un informe pericial informático y por qué es crucial para una investigación legal?|
+|¿Qué herramientas se utilizan comúnmente para la adquisición forense de datos?|
 
 <a name="acc-base"></a>
 
 ## [Accesibilidad](#acc)  
 
-| Temas   |
+| Introducción a la Accesibilidad   |
 |----------|
 | [¿Qué es la accesibilidad web?](#acc1)    |
 | [¿Cuáles son sus beneficios?](#acc2)    |
 | [¿Qué significa A11y?](#acc3)    |
+|¿Qué leyes o normativas existen a nivel global relacionadas con la accesibilidad web?|
+|¿Por qué es importante la accesibilidad web para las personas con discapacidades?|
+
+| Fundamentos y Principios   |
+|----------|
+| [¿De qué trata el Web Content Accessibility Guidelines (WCAG)?](#acc9) |
+| [¿De qué tratan los principios POUR - Principios WCAG?](#acc10)    |
+|¿Cómo se aplica la regla de "suficiente tiempo para leer y usar el contenido" en el diseño web accesible?|
+|¿Qué significa que una página web sea "perceptible, operable, comprensible y robusta"?|
+
+| Herramientas   |
+|----------|
 | [¿Cuáles son las herramientas más usadas en accesibilidad?](#acc4)  |
 | [¿Qué es un screen reader?](#acc5)   |
+|¿Qué herramientas específicas se utilizan para realizar auditorías de accesibilidad en un sitio web?|
+|¿Cómo funciona un lector de pantalla y qué desafíos puede presentar a los diseñadores web?|
+
+| Elementos Clave   |
+|----------|
 | [¿Qué es el contraste de color?](#acc6)   |
 | [¿Qué es el texto alternativo?](#acc7)    |
 | [¿Qué es el teclado virtual?](#acc8)    |
-| [¿De qué trata el Web Content Accessibility Guidelines (WCAG)?](#acc9) |
-| [¿De qué tratan los principios POUR - Principios WCAG?](#acc10)    |
+|¿Cómo puede el contraste de color impactar en la legibilidad del contenido para personas con deficiencia visual?|
+|¿Qué buenas prácticas deben seguirse para escribir texto alternativo efectivo?|
+
+| ARIA y Contenido Dinámico   |
+|----------|
 | [¿Qué es ARIA - Accessible Rich Internet Applications?](#acc11)    |
 | [¿Cuándo es necesario utilizar ARIA?](#acc12)   |
 | [Contenido dinámico y accesibilidad](#acc13)    |
+| [Nombrar algunas ARIA existentes](#acc16)    |
+|¿Cuáles son las limitaciones de usar ARIA y por qué no siempre es la mejor solución para mejorar la accesibilidad?|
+|¿Cómo se utiliza ARIA para mejorar la accesibilidad de contenido dinámico como menús o formularios interactivos?|
+
+| Buenas Prácticas y Técnicas   |
+|----------|
 | [Manejo de focus](#acc14)    |
 | [CSS accesible](#acc15)    |
-| [Nombrar algunas ARIA existentes](#acc16)    |
 | [¿Qué prácticas conlleva tener un HTML accesible?](#acc17)    |
+| ¿Cómo influye el manejo adecuado del focus en la accesibilidad para usuarios de teclado?|
+|¿Qué reglas de CSS son esenciales para garantizar una experiencia accesible en un sitio web?|
 
 <a name="alg-base"></a>
 
-## [Algoritmos y complejidad](#alg)
+## [Algoritmos y manejo de datos](#alg)
 
-| Temas   |
+| Búsqueda   |
 |----------|
 | [Binary Search](#alg1)    |
 | [Podemos aplicar Binary Search a una Linked List ordenada?](#alg2)    |
+|¿Qué complejidad temporal tiene el algoritmo de Binary Search?|
+|¿Cuál es la diferencia entre Binary Search y Linear Search?|
+
+| Algoritmos de Ordenamiento   |
+|----------|
 | [Selection Sort (Ordenamiento)](#alg3)    |
 | [Insertion Sort (Ordenamiento)](#alg4)    |
 | [Bubble Sort (Ordenamiento)](#alg5)    |
 | [Merge Sort (Ordenamiento)](#alg6)    |
+|¿Cuál es la complejidad temporal de cada uno de los algoritmos de ordenamiento mencionados?|
+|¿Cuándo sería más adecuado usar Merge Sort en lugar de Quick Sort?|
+|¿Cómo varía la eficiencia de estos algoritmos con el tamaño de los datos?|
+
+| Complejidad Algorítmica   |
+|----------|
 | [Big O - ¿Qué es?](#alg7)    |
 | [Reglas para calcular Big O](#alg8)    |
 | [Calcular Big O](#alg9)    |
@@ -88,29 +165,49 @@
 | [¿Cómo analizamos el codigo?](#alg11)    |
 | [Multiplicacion de Runtimes](#alg12)    |
 | [Ejemplos de Ejercicios](#alg14)    |
+|¿Qué significa que un algoritmo tenga una complejidad de O(n²)?|
+|¿Cómo se calcula la complejidad temporal de un algoritmo recursivo?|
+|¿Qué es la complejidad espacial y cómo se relaciona con la complejidad temporal?|
 
-<a name="alg-base2"></a>
-
-## [Estructuras de Datos](#alg-2)
-
-| Arrays y Colecciones   |
+| Arrays y Estructuras Similares   |
 |----------|
 | [Estructuras de datos (Arrays)](#alg15)    |
+| [Qué es un "array-like" en Javascript?](#alg26) |
+| [Cuales son las funciones array de JavaScript?](#alg27) |
+| [Funcion .sort()](#alg28) |
+|¿Cómo funcionan los arrays en JavaScript internamente?|
+
+| ArrayList en Java   |
+|----------|
 | [Especificando la clase de contenido de un ArrayList](#alg16)    |
 | [Creación de un ArrayList](#alg17) |
+|¿Cuál es la diferencia entre un ArrayList y un array tradicional en Java?|
+|¿Cómo afecta la capacidad de crecimiento dinámico de un ArrayList a su rendimiento?|
+
+| Operaciones Comunes en Arrays   |
+|----------|
 | [Agregar un elemento a un ArrayList](#alg18) |
 | [Obtener el elemento n de un ArrayList](#alg19) |
 | [Extraer el elemento n de un ArrayList](#alg20) |
 | [Recorrer el ArrayList completo con for-each](#alg21) |
 | [Buscar un elemento en la colección](#alg22) |
 | [Remover algunos de los elementos del ArrayList](#alg23) |
+|¿Cómo se puede mejorar el rendimiento de la búsqueda en un ArrayList?|
+|¿Cuál es la diferencia entre el método remove() y clear() en un ArrayList?|
+
+| Uso Avanzado   |
+|----------|
 | [Creando colecciones como atributo de una clase](#alg24) |
 | [Devolver una colección secundaria](#alg25) |
-| [Qué es un "array-like" en Javascript?](#alg26) |
-| [Cuales son las funciones array de JavaScript?](#alg27) |
-| [Funcion .sort()](#alg28) |
+|¿Qué consideraciones de diseño debemos tener en cuenta al trabajar con colecciones como atributos de clases?|
+|¿Cómo evitar la mutabilidad no deseada al devolver colecciones de una clase?|
+
+| Otras Colecciones y Estructuras  |
+|----------|
 | [Set() en Javascript (HashSet)](#alg29) |
 | [HashTables (.Map)](#alg30) |
+|¿Cuál es la diferencia entre un Set y un Array en JavaScript?|
+|¿En qué situaciones es más eficiente usar un HashMap en lugar de un Array?|
 
 | Linked Lists   |
 |----------|
@@ -118,6 +215,8 @@
 | [¿Cuales son los beneficios de un Linked List sobre un Array?](#alg32) |
 |[¿Cual es el uso de una Doubly-Linked List cuando se lo compara con un Singly Linked List?](#alg33) |
 | [¿Cual es la diferencia entre un Linked List y un Doubly Linked List?](#alg34) |
+|¿Cómo funciona el algoritmo de eliminación de un nodo en una Linked List?|
+|¿Qué ventajas y desventajas tiene una Doubly Linked List sobre una Singly Linked List?|
 
 | Pilas, Colas y  Generics   |
 |----------|
@@ -593,25 +692,79 @@
 
 ## [Bases de Datos](#bd)  
 
-| Temas   |
+| Fundamentos de Bases de Datos   |
 |----------|
 | [Cuáles son los elementos de una base de datos?](#bd1)    |
 | [Cuales son los elementos de Data Control Language? (DCL)](#bd2)    |
 | [Lenguaje de manipulación de datos (DML)](#bd3)    |
 | [Lenguaje de definición de datos (DDL)](#bd4)    |
+| ¿Qué es un índice en una base de datos? |
+| ¿Cuál es la diferencia entre un índice único y un índice no único? |
+|¿Qué es una clave primaria y cómo se utiliza?|
+|¿Qué es una clave foránea y cómo se utiliza?|
+|¿Qué es un schema en una base de datos?|
+
+| Normalización y Diseño de Bases de Datos   |
+|----------|
 | [Qué es la normalizacion?](#bd5)    |
 | [Cuales son los objetivos de la Normalización?](#bd6)    |
 | [Cuales son los grados de Normalización?](#bd7)    |
+| ¿Cómo funciona la normalización en bases de datos relacionales?|
+|¿Qué es la desnormalización y cuándo es apropiada?|
+
+| Transacciones y Concurrencia   |
+|----------|
+|¿Qué es una transacción en bases de datos y cuáles son sus propiedades (ACID)?|
+|¿Qué es la atomicidad en las transacciones de bases de datos?|
+|¿Qué es la concurrencia en bases de datos y cómo se maneja?|
+
+| Consultas y Optimización   |
+|----------|
 | [Algunos tips de Performance SQL](#bd8)    |
+|¿Cómo optimizar una consulta SQL para mejorar el rendimiento?|
+|¿Qué es una vista (view) en SQL y cuándo se debe usar?|
+|¿Qué es la diferencia entre INNER JOIN, LEFT JOIN y RIGHT JOIN?|
+|¿Qué es un Self Join?|
+|¿Qué son las consultas complejas y cómo se pueden manejar con SQL?|
+
+| Procedimientos, Triggers y Funciones   |
+|----------|
 | [DDL Triggers](#bd9)    |
+| [Diferencia entre OPENROWSET y OPENQUERY](#bd17)    |
+| [DML Triggers](#bd14)    |
+|¿Qué son los procedimientos almacenados y cuál es su ventaja?|
+|¿Qué es un trigger y cómo se diferencia de un procedimiento almacenado?|
+
+| Bases de Datos Distribuidas y NoSQL   |
+|----------|
+|  ¿Qué es una base de datos NoSQL y cuáles son sus tipos?|
+|  ¿Qué es la consistencia en el contexto de bases de datos distribuidas?|
+| ¿Qué son las bases de datos distribuidas y qué desafíos presentan?|
+
+| Manejo de Datos y Seguridad   |
+|----------|
+|¿Cómo se realiza un backup y restauración en bases de datos?|
+|¿Cuáles son los elementos de Data Control Language? (DCL)|
+|¿Qué es la seguridad en las bases de datos?|
+
+|Modelos de Datos   |
+|----------|
+|¿Qué es un modelo de datos jerárquico en bases de datos?|
+
+|Bases de Datos Relacionales vs No Relacionales|
+|----------|
+|¿Cuál es la diferencia entre una base de datos transaccional y una base de datos analítica?|
+|¿Cuáles son las ventajas de utilizar bases de datos NoSQL frente a bases de datos SQL?|
+
+| Consultas y Operaciones   |
+|----------|
 | [Inner Join](#bd10)    |
 | [Outer Join (Con left y right join)](#bd11)    |
+| [Self Join](#bd12)    |
 | [UNIÓN](#bd15)    |
 | [TOP](#bd16)    |
-| [Self Join](#bd12)    |
 | [EXCEPT](#bd13)    |
-| [DML Triggers](#bd14)    |
-| [Diferencia entre OPENROWSET y OPENQUERY](#bd17)    |
+
 
 ---
 
@@ -780,7 +933,7 @@ El oficial de seguridad informática tiene la función de brindar los servicios 
 
 <a id="seg13"></a>
 
-### **Cuales son algunas modalidades comunes de ataques?**
+### **¿Cuáles son algunas modalidades comunes de ataques?**
 
 [Volver al indice](#seg-base)
 
@@ -792,7 +945,7 @@ El oficial de seguridad informática tiene la función de brindar los servicios 
 
 <a id="seg14"></a>
 
-### **Cuales son algunas modalidades comunes de ataques?**
+### **¿Cuáles son las etapas en un proceso de hacking?**
 
 [Volver al indice](#seg-base)
 
@@ -806,7 +959,7 @@ El oficial de seguridad informática tiene la función de brindar los servicios 
 
 <a id="seg15"></a>
 
-### **Que son los ataques internos?**
+### **¿Qué son los ataques internos?**
 
 [Volver al indice](#seg-base)
 
@@ -822,7 +975,7 @@ Pueden infiltrar un pendrive con una etiqueta engañosa para que sea usado por a
 
 <a id="seg16"></a>
 
-### **Que tipos de Ingenierias sociales existen?**
+### **¿Qué tipos de Ingenierías sociales existen?**
 
 [Volver al indice](#seg-base)
 
@@ -841,7 +994,7 @@ Pueden infiltrar un pendrive con una etiqueta engañosa para que sea usado por a
 
 <a id="seg17"></a>
 
-### **Que tipos de Ingenierias sociales existen?**
+### **¿Qué es la triada CIA?**
 
 [Volver al indice](#seg-base)
 
@@ -859,7 +1012,7 @@ Pueden infiltrar un pendrive con una etiqueta engañosa para que sea usado por a
 
 <a id="seg18"></a>
 
-### **Que es la seguridad perimetral?**
+### **¿Qué es la seguridad perimetral?**
 
 [Volver al indice](#seg-base)
 
@@ -940,7 +1093,7 @@ Si el IDS Detecta algún tipo de ataque toma las siguientes medidas:
 
 <a id="seg24"></a>
 
-### **Qué es un Firewall?**
+### **¿Qué es un Firewall?**
 
 [Volver al indice](#seg-base)
 
@@ -2502,12 +2655,6 @@ void printPairsTwoArrays(int[] arrayA, int[] arrayB) {
   }
 }
 ```
-
----
-
-<a id="alg-base2"></a>
-
-# Estructuras de Datos
 
 <a id="alg15"></a>
 
