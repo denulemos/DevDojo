@@ -45,7 +45,6 @@
 | [Adquisicion en Informatica Forense](#seg31)    |
 | [El informe pericial informatico](#seg32)    |
 
-
 <a name="acc-base"></a>
 
 ## [Accesibilidad](#acc)  
@@ -408,6 +407,8 @@
 | [Que verifica el Unit Test?](#qa9)    |
 | [Principios FIRST de los Unit test](#qa10)    |
 
+<a name="cam-base"></a>
+
 ## [Control de Versiones y Cambios](#cam)
 
 | Temas   |
@@ -495,6 +496,8 @@
 | [Interface Segregation Principle](#cod67)     |
 | [Liskov Substitution Principle](#cod68)     |
 
+<a name="har-base"></a>
+
 ## [Hardware, Sistemas, Infraestructura y Arquitectura](#har)
 
 | Temas   |
@@ -572,6 +575,8 @@
 | [FCFS (First come, first served)](#arc22)    |
 | [SPN/SJF (Shorted Process Next/Shorted Job First))](#arc23)    |
 | [SRT (Shortest Remaining Time)](#arc24)    |
+
+<a name="bd-base"></a>
 
 ## [Bases de Datos](#bd)  
 
@@ -10776,6 +10781,8 @@ En este ejemplo, la clase `Square` es una subclase de `Rectangle` y sobrescribe 
 
 ### **Para que nos sirve Git?**
 
+[Volver al indice](#cam-base)
+
 Son herramientas que nos permiten saber, entre otras cosas:
 
 - Quien
@@ -10788,6 +10795,8 @@ Nos permite separar nueva funcionalidad de la estable.
 
 ### **Conceptos base de Git**
 
+
+
 - **Repositorio remoto:** Es el lugar centralizado donde se guardan los archivos.
 - **Repositorio local**: Es el lugar dentro de la computadora donde se guardan los archivos.
 - **Working directory:** Copia del repositorio donde voy a empezar a trabajar.
@@ -10798,6 +10807,8 @@ Nos permite separar nueva funcionalidad de la estable.
 <a id="cam3"></a>
 
 ### **Algunos comandos de Git**
+
+[Volver al indice](#cam-base)
 
 **`git init`:** Iniciar repositorio GIT en ese directorio
 
@@ -10817,9 +10828,9 @@ Nos permite separar nueva funcionalidad de la estable.
 
 **`git pull origin master`:** Para ver los cambios en nuestro repositorio
 
-`git branch (nombre branch)`: Crear un branch
+**`git branch (nombre branch)`:** Crear un branch
 
-`git log --graph --all --oneline`: Ver todos los commits resumidos
+**`git log --graph --all --oneline`:** Ver todos los commits resumidos
 
 Sí agrego un **Git ignore** se ignoran los archivos cache propios del Programa
 
@@ -10833,6 +10844,8 @@ Sí agrego un **Git ignore** se ignoran los archivos cache propios del Programa
 
 ### **Git Flow**
 
+[Volver al indice](#cam-base)
+
 - **Master:** Es la rama principal, la que se va a subir a producción.
 - **Develop:** Es la rama de desarrollo, donde se van a hacer los cambios.
 - **Feature:** Es la rama donde se van a hacer los cambios de una nueva funcionalidad.
@@ -10842,6 +10855,8 @@ Sí agrego un **Git ignore** se ignoran los archivos cache propios del Programa
 <a id="cam5"></a>
 
 ### **trunk base dev. vs git flow**
+
+[Volver al indice](#cam-base)
 
 En el desarrollo basado en tronco, se trabaja principalmente en una sola rama (generalmente llamada "tronco" o "master"), y las características se desarrollan y se integran directamente en esta rama principal. En cambio, en Git flow, se utilizan múltiples ramas para gestionar diferentes tipos de cambios, como características, versiones de lanzamiento y correcciones de errores.
 
@@ -10857,6 +10872,8 @@ En resumen, mientras que el desarrollo basado en tronco enfatiza la simplicidad 
 
 ### **Gabinete**
 
+[Volver al indice](#har-base)
+
 Es el principal contenedor de todos los componentes de una computadora. Más allá del diseño, la búsqueda de un buen gabinete debe incluir una mirada atenta a estos aspectos técnicos:
 
 - **La chapa**: La misma debe ser de buena calidad para garantizar una adecuada protección de los componentes.
@@ -10867,6 +10884,8 @@ Es el principal contenedor de todos los componentes de una computadora. Más all
 <a id="har2"></a>
 
 ### **Motherboard**
+
+[Volver al indice](#har-base)
 
 Es el elemento principal de toda la PC, en el que se encuentran todos los demás aparatos y dispositivos. La principal funcion es generar a través de un circuito eléctrico la conexión entre los componentes. De ella depende tanto el rendimiento del sistema en índole general como así también el funcionamiento de los elementos que lo componen.
 
@@ -10887,17 +10906,23 @@ Se diseña básicamente para realizar tareas específicas vitales para el funcio
 
 ### **Microprocesador**
 
+[Volver al indice](#har-base)
+
 Es la parte de la pc diseñada para llevar a cabo la ejecucion de los programas. Es comparable a un cerebro, su funcion se basa en la ejecucion de instrucciones a muy bajo nivel haciendo operaciones logicas simples. Tiene millones de elementos microscopicos llamados transistores.
 
 <a id="har4"></a>
 
 ### **Memoria RAM**
 
+[Volver al indice](#har-base)
+
 Es donde la computadora guarda los datos que esta usando al momento de procesarlos o trabajar con ellos. El almacenamiento es considerado temporal porque los datos y programas permanecen en ella mientras la computadora esta encendida, desapareciendo cuando la misma se apaga.  Físicamente, estan constituidas por un conjunto de chips o módulos de chips normalmente conectados a la tarjeta madre. Son rectangulos negros soldados en grupos a unas placas con pines/contactos. La diferencia entre la RAM y otros tipos de memoria de almacenamiento, es que la RAM es mucho más rapida.
 
 <a id="har5"></a>
 
 ### **Disco Rigido**
+
+[Volver al indice](#har-base)
 
 Es el dispositivo encargado de almacenar informacion de forma persistente en la PC. Generalmente usan un sistema de grabacion magnetica analogica. En este disco encontramos dentro de la carcasa una serie de platos metalicos apilados girando a gran velocidad. Sobre estos se situan los cabezales encargados de leer o escribir los impulsos magneticos.  El disco rigido es el sistema de almacenamiento más importante de la pc, y en el se guarda, por ejemplo el SO.
 
@@ -10909,11 +10934,15 @@ Es el dispositivo encargado de almacenar informacion de forma persistente en la 
 
 ### **Lectograbadora CD/DVD**
 
+[Volver al indice](#har-base)
+
 Permiten la lectura de CDs y DVDs. La realizan a traves de la utilización de discos opticos los cuales son leidos y escritos mediante un laser. Permiten guardar grandes cantidades de datos en espacios reducidos.
 
 <a id="har7"></a>
 
 ### **Placas adicionales**
+
+[Volver al indice](#har-base)
 
 - **Placa de red**: permite conectar una pc a una red de computadoras. Esto nos deja compartir y acceder a varios recursos que esten disponibles en la red.
 - **MODEM**: Dispositivo que transforma las señas digitales de una computadora en analogicas y viceversa, para poder enviar/recibir paquetes de datos.
@@ -10923,6 +10952,8 @@ Permiten la lectura de CDs y DVDs. La realizan a traves de la utilización de di
 <a id="har8"></a>
 
 ### **Que es la virtualizacion?**
+
+[Volver al indice](#har-base)
 
 Virtualizar significa aparentar que algo con una forma tiene otra. Virtualizar una computadora representa simular que se trata de una o múltiples computadoras completamente diferentes.
 
@@ -10965,6 +10996,8 @@ Aunque las aplicaciones para crear máquinas virtuales son cada vez más eficien
 
 ### **Cómo se usa una máquina virtual?**
 
+[Volver al indice](#har-base)
+
 Para usar una máquina virtual lo primero que se necesita es instalar una aplicación en la PC, que pueda crearla o al menos reproducirla.
 
 Hay varias aplicaciones conocidas que hacen esto, como son VirtualBox, VMWare, QEMU, Parallels, etc.
@@ -10973,6 +11006,8 @@ Hay varias aplicaciones conocidas que hacen esto, como son VirtualBox, VMWare, Q
 
 ### **Cuales son los beneficios del uso de máquinas virtuales?**
 
+[Volver al indice](#har-base)
+
 El concepto de VM presenta grandes ventajas. Este tipo de entorno brinda una protección completa de los diversos recursos del sistema. Cada máquina virtual está completamente aislada de las demás. De esta forma, los procesos que ejecutan están limitados por los recursos y abstracciones proporcionados por la VM. Estos procesos no pueden escaparse de esta "computadora virtual".
 
 Un sistema de máquina virtual es un medio muy cómodo para la investigación y desarrollo de sistemas operativos. De esta forma se puede ejecutar el sistema operativo que se quiere probar, sin necesidad de instalarlo directamente en una computadora y sin peligro de des- configurar el sistema operativo primario.
@@ -10980,6 +11015,8 @@ Un sistema de máquina virtual es un medio muy cómodo para la investigación y 
 <a id="har12"></a>
 
 ### **Que es un hipervisor?**
+
+[Volver al indice](#har-base)
 
 El software de virtualización implementa lo que se denomina hipervisor o VMM *(Virtual Machine Monitor)* que consiste en una capa de abstracción entre el hardware de la máquina física (*host*, anfitrión) y la máquina virtual formada por hardware y software virtualizado, haciendo el papel de intermediario entre lo real y lo virtualizado.
 
@@ -10991,6 +11028,8 @@ La capa de software hipervisor o VMM, gestiona y arbitra los cuatro recursos pri
 
 ### **Que es un hipervisor de tipo 1?**
 
+[Volver al indice](#har-base)
+
 Denominado también como “virtualización en modo nativo”, se caracteriza porque este software se instala directamente sobre el equipo haciendo las funciones tanto de sistema operativo (SO) como de virtualización.
 
 Este método de virtualización se utiliza generalmente en las empresas que pueden disponer de uno o varios servidores dedicados en forma exclusiva a la virtualización de sistemas.
@@ -11000,6 +11039,8 @@ Este método de virtualización se utiliza generalmente en las empresas que pued
 <a id="har14"></a>
 
 ### **Que es un hipervisor de tipo 2?**
+
+[Volver al indice](#har-base)
 
 El software de virtualización de tipo 2, o alojado (*hosted*), se caracteriza porque debe ser instalado en un equipo que cuente con un SO previo anfitrión (como Linux, Microsoft Windows, Mac OS X, etc.).
 
@@ -11029,6 +11070,8 @@ Una máquina virtual no puede acceder al resto de datos de la máquina anfitrió
 
 ### **Que es una maquina virtual de procesos?**
 
+[Volver al indice](#har-base)
+
 Una máquina virtual de proceso tiene menor alcance que una de sistema. En vez de emular una PC por completo, como su nombre lo indica, una máquina virtual de proceso ejecuta un proceso concreto, como una aplicación, en su entorno de ejecución.
 
 Cada vez que se ejecuta una aplicación basada en Java o basada en .NET Framework, se está utilizando una máquina virtual de proceso.
@@ -11043,6 +11086,8 @@ Las máquinas virtuales de proceso permiten ejecutar aplicaciones que se comport
 
 ### **Como funciona internet?**
 
+[Volver al indice](#har-base)
+
 Muchos ven a Internet como una “nube” de tecnología o alguna suerte de repositorio de aplicaciones y datos a los que se puede acceder, trabajar o simplemente consultar.
 
 Internet se define como una gran “red de redes”, es decir, una red conectada a otra de manera continua y simultánea. 
@@ -11053,6 +11098,8 @@ Lo que define a estas redes como tales es que existe “interconexión” entre 
 
 ### **Como se comunican las redes de Internet?**
 
+[Volver al indice](#har-base)
+
 Para que una interconexión sea realmente global, todas las redes que se conectan a la gran red de redes deben hacerlo a través de un mismo protocolo o “lenguaje en común”.
 Es decir, el protocolo de comunicación de Internet debe ser una implementación estándar que garantice la conexión desde cualquier origen hasta cualquier destino.
 Durante la década del  ́70, un grupo de investigadores de Estados Unidos creó un protocolo de comunicación que denominaron TCP/IP, y conectaron entre sí a un conjunto de redes de computadoras a pedido del gobierno de ese país, sin saber que el proyecto resultaría tan exitoso y tendría alcance global. De esta forma, TCP/IP se convirtió en el modelo de comunicación de las redes que componen Internet.
@@ -11060,6 +11107,8 @@ Durante la década del  ́70, un grupo de investigadores de Estados Unidos creó
 <a id="har19"></a>
 
 ### **Que sucede cuando escribo una URL en el navegador y hago click en Enter?**
+
+[Volver al indice](#har-base)
 
 - El browser tiene que encontrar la manera de traducir esa URL a una IP. Para eso usa el DNS, que es como un libro telefonico.
   - Busca el IP adress en el DNS Cache
@@ -11070,6 +11119,8 @@ Durante la década del  ́70, un grupo de investigadores de Estados Unidos creó
 <a id="har20"></a>
 
 ### **Como se define la Interconexión?**
+
+[Volver al indice](#har-base)
 
 Probablemente la computadora que utilizamos a diario en la oficina esté conectada a una red de computadoras. En nuestra casa, la computadora portátil, tablet y celulares los vinculamos a un dispositivo inalámbrico que luego se conecta a la red de fibra óptica de la empresa que nos brinda servicio de Internet y de televisión por cable o telefonía. Éste se comunica a la red de otro Proveedor de Servicios de Internet o ISP (por sus siglas en inglés) más grande, que llega a un número mayor de hogares y empresas, y así sucesivamente. A su vez, estos proveedores de acceso internacional se interconectan con otros más grandes, denominados Carriers, a través de fibras ópticas transcontinentales y satélites, entre otros.
 
@@ -11083,6 +11134,8 @@ Es por esto que resulta fundamental comprender que la participación de diversos
 
 ### **Que es una red de computadoras?**
 
+[Volver al indice](#har-base)
+
 Una red de computadoras, también llamada red informática, es un conjunto de equipos informáticos conectados entre sí por medio de dispositivos físicos que envían y reciben impulsos eléctricos, ondas electromagnéticas o cualquier otro medio para el transporte de datos con la finalidad de compartir información y recursos.
 
 - Redes de datos o de información capaces de transportar muchos tipos diferentes de
@@ -11093,6 +11146,8 @@ comunicaciones.
 
 ### **Que elementos conforman una red?**
 
+[Volver al indice](#har-base)
+
 - **Dispositivos**:  Son usados para comunicarse entre sí
 - **Medio**:  La forma en que los dispositivos están conectados los unos a los otros
 - **Mensajes**:  Información que viaja a través del medio
@@ -11101,6 +11156,8 @@ comunicaciones.
 <a id="har23"></a>
 
 ### **Cual es la finalidad de una red?**
+
+[Volver al indice](#har-base)
 
 La finalidad principal para la creación de una red de computadoras es compartir los recursos y la información en la distancia, asegurar la confiabilidad y la disponibilidad de la misma, aumentar la velocidad de transmisión de los datos y reducir el costo general de estas acciones.
 
@@ -11121,6 +11178,8 @@ Los distintos criterios de clasificación de redes son:
 
 ### **Clasificación por alcance**
 
+[Volver al indice](#har-base)
+
 - **Red LAN (Local Area Network o Red de área local)** Están los tipos básicos de red. Su alcance es de tan solo unos metros, suficientes como para conectar el equipo de cómputo de un mismo edificio o de un mismo campus universitario. Estas son mantenidas y administradas por el propietario de la red.  La velocidad está entre los 1 y 100 Mbps. Son de propiedad privada y no están sujetas a regulaciones del gobierno.
 - **Red MAN (Metropolitan Área Network o Red de área metropolitana)** Cubren extensiones mayores como pueden ser una ciudad o un distrito. Mediante la interconexión de redes LAN distribuyen la informática a los diferentes puntos del distrito. Este tipo de redes son comúnmente utilizadas por bibliotecas, universidades u organismos oficiales. La extensión máxima de estas redes es de hasta 100 km.
 - **Red WAN (Wide Area Network o Red de área extensa)** Las redes de área amplia conectan equipos distantes entre sí, su alcance es muy extenso típicamente global. A diferencia de las redes LAN y MAN, este tipo de redes no tienen un administrador en particular, por lo general son mantenidas por los mismos usuarios quienes prestan sus recursos. Un ejemplo es el propio internet.
@@ -11130,6 +11189,8 @@ Los distintos criterios de clasificación de redes son:
 
 ### **Clasificación por tipo de conexión**
 
+[Volver al indice](#har-base)
+
 - **Cable Coaxial** Se usa para transportar señales eléctricas de alta frecuencia que posee dos conductores concéntricos, uno central llamado vivo, encargado de llevar la información y uno exterior, de aspecto tubular, llamado malla o blindaje, que sirve como referencia de tierra y retorno de las corrientes. Entre ambos se encuentra una capa aislante llamada dieléctrico, de cuyas características dependerá principalmente la calidad del cable. Todo el conjunto suele estar protegido por una cubierta aislante. Ya no se usa tanto.
 - **Cable de par trenzado** Es un medio de conexión utilizado en telecomunicaciones en la que dos conductores eléctricos aislados son entrelazados para tener menores interferencias de fuentes externas y aumentar la potencia y disminuir la diafonía de los cables adyacentes. Este cable está conformado por 4 pares trenzados, comúnmente identificado con colores normalizados. Se clasifica en categorías numeradas, las cuales están asociadas al ancho de banda que pueden soportar. La categoría más usada actualmente es la Categoría 5, soporta hasta 100 Mhz.
 - **Fibra Óptica** La fibra óptica es un medio de transmisión empleado habitualmente en redes de datos, un hilo muy fino de material transparente, vidrio o metales plásticos, por el que se envían pulsos de luz que representan los datos a transmitir. El haz de luz queda completamente confinado y se propaga por el interior de la fibra con un ángulo de reflexión por encima del ángulo límite de reflexión total. La fuente de luz puede ser láser o un LED. Las fibras se utilizan ampliamente en telecomunicaciones, ya que permiten enviar gran cantidad de datos a una gran distancia, con velocidades similares a las de radio o cable. Son el medio de transmisión por excelencia al ser inmune a las interferencias electromagnéticas, también se utilizan para redes locales, en donde se necesite aprovechar las ventajas de la fibra óptica sobre otros medios de transmisión.
@@ -11137,6 +11198,8 @@ Los distintos criterios de clasificación de redes son:
 <a id="har26"></a>
 
 ### **Clasificación de redes por tipología**
+
+[Volver al indice](#har-base)
 
 - **Anillo** La topología de anillo conecta a cualquier terminal únicamente con sus dos destinos más próximos mediante una línea dedicada, de tal forma que la última de las terminales se conecta con la primera de ellas por uno de los extremos, formando así un ciclo o un anillo a través del cual fluye la información cuando las terminales se comunican. La comunicación en un anillo es unidireccional o simple, y viaja de terminal a terminal hasta que encuentra su destino y regresa a su origen. Tiene la desventaja de que cualquier fallo entre alguna de las líneas dedicadas genera una falla letal en la red.
 - **Estrella** Esta topología conecta a todas las terminales entre sí, aunque no en forma directa. Para ello utiliza un elemento que organiza el flujo de la información en la red mediante switches que conectan a la terminal destino con la terminal origen. A este elemento se le conoce como concentrador y su tarea debe ser invisible a las terminales que se comunican. La ventaja de la topología estrella es que es más robusta que la anillo, ya que si falla una terminal, el resto sigue funcionando. La desventaja es que si falla el concentrador entonces fallará toda la red.
@@ -11148,6 +11211,8 @@ Los distintos criterios de clasificación de redes son:
 
 ### **Como se cuál es mi dirección TCP-IP?**
 
+[Volver al indice](#har-base)
+
 Cada dispositivo tiene su propia dirección TCP/IP. Por lo general, el dispositivo puede comunicarse automáticamente, pero a veces es necesario proporcionar su dirección TCP/IP de forma manual. El modo de encontrar su dirección IP depende del sistema operativo.
 
 Podés consultar tu IP pública desde una página web como https://www.cual-es-mi-ip.net/
@@ -11157,6 +11222,8 @@ Conceptualmente, el número obtenido se puede asemejar a la “dirección” de 
 <a id="har28"></a>
 
 ### **Cuáles son las 4 capas del modelo TCP-IP?**
+
+[Volver al indice](#har-base)
 
 TCP/IP es un protocolo de enlace de datos que se utiliza en Internet. Su modelo se divide en cuatro capas diferenciadas. Cuando se emplean juntas, es posible referirse a ellas como un paquete de protocolos.
 
@@ -11173,17 +11240,23 @@ La capa de aplicaciones es el grupo de aplicaciones que requiere comunicación d
 
 ### **Que significa TCP-IP?**
 
+[Volver al indice](#har-base)
+
 TCP/IP son las siglas de Transmission Control Protocol/Internet Protocol (Protocolo de control de transmisión/Protocolo de Internet). TCP/IP es un conjunto de reglas estandarizadas que permiten a los equipos comunicarse en una red como Internet.
 
 <a id="har30"></a>
 
 ### **Que es un protocolo TCP-IP y como funciona?**
 
+[Volver al indice](#har-base)
+
 Como sucede con las personas, es importante que los equipos tengan un modo común de comunicarse entre ellos. Para la mayoría de los equipos actuales, este modo es TCP/IP. TCP/IP suele venir integrado en los equipos y está automatizado en buena medida, aunque puede ser útil comprender el modelo TCP/IP, en especial si va a configurar un equipo para conectarlo a otro sistema. Este artículo explica cómo funciona TCP/IP.
 
 <a id="har31"></a>
 
 ### **En que se diferencian TCP e IP?**
+
+[Volver al indice](#har-base)
 
 TCP e IP son dos protocolos distintos para redes informáticas.
 IP es la parte que obtiene la dirección a la que se envían los datos. TCP se encarga de la entrega de los datos una vez hallada dicha dirección IP.
@@ -11194,6 +11267,8 @@ Mírelo de esta forma: La dirección IP es como el número de teléfono que se a
 <a id="har32"></a>
 
 ### **TCP-IP funciona con toda clase de direcciones IP?**
+
+[Volver al indice](#har-base)
 
 Hay varios tipos de direcciones IP. No obstante, todas ellas utilizan TCP/IP.
 Las diferencias entre los tipos de direcciones IP son transparentes para el usuario esporádico, y el hecho de que no necesite saber mucho al respecto es una de las ventajas de TCP/IP. Normalmente, estos asuntos los administra quien haya configurado el sistema operativo del equipo o el dispositivo móvil. En cualquier caso, a modo de aclaración:
@@ -11216,11 +11291,15 @@ En algunas circunstancias puede querer ocultar su dirección IP, normalmente por
 
 ### **¿Qué es un DNS Cache?**
 
+[Volver al indice](#har-base)
+
 Es una copia local de la base de datos de DNS, que contiene registros de consultas de DNS que se han realizado recientemente. Se utiliza para mejorar la velocidad de acceso a los sitios web, ya que evita la necesidad de realizar consultas de DNS a servidores remotos.
 
 <a id="har34"></a>
 
 ### **¿Que es SSL y TLS?**
+
+[Volver al indice](#har-base)
 
 - SSL => Secure Socket Layer, hecho por netscape, en 1995 cuando salió, se empezó a usar la capa segura en web. Su último lanzamiento fue en 1996, y dejó de existir cuando en 2014 fue atacado (POODLE). Sigue siendo usado.
 - TLS => Transport Layer Security, sucesor de SSL, y es el estándar para implementar HTTPS.
@@ -11229,17 +11308,23 @@ Es una copia local de la base de datos de DNS, que contiene registros de consult
 
 ### **¿Que son las Autoridades de Certificado? (CA)**
 
+[Volver al indice](#har-base)
+
 Son las entidades que emiten los certificados seguros para nuestra página. Se verifica el dominio, y el mismo es confiado por el SO, el cual actualiza constantemente la base de datos de CA confiables. También se eliminan CA confiables por distintas razones (como darle un certificado a quien NO es el dueño de la web).
 
 <a id="har36"></a>
 
 ### **¿Que es un TLS Handshake?**
 
+[Volver al indice](#har-base)
+
 Es como un “Client Hello” al servidor receptor. El servidor responderá a este saludo con un “Server Hello”, ahora el cliente puede verificar la key pública que el servidor devolvió en su respuesta en su lista de certificados confiables, es la fase de negociación, la cual no está encriptada aún, es una comunicación sin contenido aun.  Una vez que esto termine, ya se puede establecer una conexión segura.
 
 <a id="har37"></a>
 
 ### **Cuáles son los códigos de respuesta más comunes?**
+
+[Volver al indice](#har-base)
 
 - **404** Not Found
 - **403** Forbidden
@@ -11256,6 +11341,8 @@ Los códigos 400 hacen referencia a errores con la request, 500 hacen referencia
 
 ### **¿Qué es un DNS?**
 
+[Volver al indice](#har-base)
+
 Es un sistema de nomenclatura jerárquica para computadoras, servicios o cualquier recurso conectado a internet o a una red privada. Este sistema asocia información variada con nombres de dominio asignados a cada uno de los participantes. Su función principal es traducir (resolver) un nombre de dominio en una dirección IP.
 
 - **El usuario escribe la URL en el navegador**
@@ -11270,6 +11357,8 @@ Es un sistema de nomenclatura jerárquica para computadoras, servicios o cualqui
 
 ### **¿Qué es HTTPS?**
 
+[Volver al indice](#har-base)
+
 Mas de la mitad de las páginas poseen HTTPS en el 2016, hasta en paginas donde no necesariamente intercambiamos información (como páginas de noticias), teniendo paginas que directamente forman el HTTPS (cuando ingreso la URL con HTTP, se redirecciona al sitio seguro automáticamente).
 
 - **Optimiza los motores de búsqueda:** Tener el HTTPS funcionando hace que en una búsqueda en google tu sitio aparezca rápido
@@ -11280,12 +11369,16 @@ Mas de la mitad de las páginas poseen HTTPS en el 2016, hasta en paginas donde 
 
 ### **Clasificación de redes por relación funcional**
 
+[Volver al indice](#har-base)
+
 - **Redes Cliente-Servidor** La arquitectura cliente-servidor es un modelo de aplicación distribuida en el que las tareas se reparten entre los proveedores de recursos o servicios, llamados servidores, y los demandantes, llamados clientes. Un cliente realiza peticiones a otro programa, el servidor, que le da respuesta. Esta idea también se puede aplicar a programas que se ejecutan sobre una sola computadora, aunque es más ventajosa en un sistema operativo multiusuario distribuido a través de una red de computadoras. En esta arquitectura, la capacidad de proceso está repartía entre los clientes y los servidores, aunque son más importantes las ventajas de tipo organizativo debidas a la centralización de la gestión de la información y la separación de responsabilidades, lo que facilita y clarifica el diseño del sistema. La separación entre cliente y servidor es una separación de tipo lógico, donde el servidor no se ejecuta necesariamente sobre una sola máquina ni es necesariamente un solo programa. Los tipos específicos de servidores incluyen los servidores web, los servidores de archivo, de correo, etc.. Mientras que sus propósitos varían en unos servicios a otros, la arquitectura básica seguirá siendo la misma.
 - **Redes peer to peer** Una red peer-to-peer o un red de pares o red entre iguales o red punto a punto (P2P por sus siglas en inglés) es una red de computadoras en la que todos o algunos aspectos funcionan sin clientes ni servidores fijos, sino una serie de nodos que se comportan como iguales entre sí. Es decir, actúan simultáneamente como clientes y servidores respecto a los demás nodos de red. Las redes P2P permiten el intercambio directo de información, en cualquier formato, entre los ordenadores interconectados. Las redes peer-to-peer aprovechan, administran y optimizan el uso del ancho de banda de los demás usuarios de la red por medio de la conectividad entre los mismos y obtienen así más rendimiento en las conexiones y transferencias que con algunos métodos centralizados convencionales, donde una cantidad relativamente pequeña de servidores provee el total del año de banda y recursos compartidos para un servicio o aplicación.
 
 <a id="har41"></a>
 
 ### **Clasificación de redes por direccionalidad de datos**
+
+[Volver al indice](#har-base)
 
 - **Simplex** En este tipo de comunicación, la información fluye en una sola dirección, es decir, desde el emisor hacia el receptor. Un ejemplo de este tipo de comunicación es la televisión, donde la información fluye desde la estación de televisión hacia el televisor.
 - **Half Duplex** En este tipo de comunicación, la información fluye en ambas direcciones, pero no al mismo tiempo. Un ejemplo de este tipo de comunicación es un walkie-talkie, donde una persona habla y luego escucha la respuesta.
@@ -11295,6 +11388,8 @@ Mas de la mitad de las páginas poseen HTTPS en el 2016, hasta en paginas donde 
 
 ### **Clasificación de redes por grado de autentificación**
 
+[Volver al indice](#har-base)
+
 - **Redes públicas** Son aquellas que están abiertas al público en general, como por ejemplo Internet.
 - **Redes privadas** Son aquellas que están restringidas a un grupo de usuarios específicos, como por ejemplo una red de una empresa.
 
@@ -11302,12 +11397,16 @@ Mas de la mitad de las páginas poseen HTTPS en el 2016, hasta en paginas donde 
 
 ### **Clasificación de redes por grado de difusión**
 
+[Volver al indice](#har-base)
+
 - **Redes de difusión** Son aquellas en las que la información se envía a todos los nodos de la red.
 - **Redes de punto a punto** Son aquellas en las que la información se envía de un nodo a otro nodo específico.
 
 <a id="har44"></a>
 
 ### **¿Qué son las Redes Inalámbricas?**
+
+[Volver al indice](#har-base)
 
 El término red inalámbrica se utiliza en informática para designar la conexión de nodos sin necesidad de una conexión física , esta se da por medio de ondas electromagnéticas. La transmisión y la recepción se realizan a través de puertos.  En la actualidad este tipo de redes ha cobrado gran importancia, ya que entre sus principales ventajas se puede destacar su costo, ya que se elimina todo el cable Ethernet y conexiones físicas entre nodos, sin embargo también cuenta con una desventaja considerable ya que para este tipo de red se debe tener un nivel de seguridad mucho más exigente y robusto para evitar el uso no autorizado.
 
@@ -11323,11 +11422,15 @@ Algunos medios de conexión son:
 
 ### **¿Qué es un DNS Root?**
 
+[Volver al indice](#har-base)
+
 Es el servidor DNS de nivel superior en la jerarquía de DNS. Contiene la información de los servidores de nombres de dominio de nivel superior (TLD) y los servidores de nombres de dominio de nivel superior (SLD).
 
 <a id="har46"></a>
 
 ### **¿Qué es un TLD?**
+
+[Volver al indice](#har-base)
 
 Es la parte más a la derecha de un nombre de dominio, como .com, .org, .net, etc..
 
@@ -11335,11 +11438,15 @@ Es la parte más a la derecha de un nombre de dominio, como .com, .org, .net, et
 
 ### **¿Qué es un SLD?**
 
+[Volver al indice](#har-base)
+
 Es la parte del nombre de dominio que está inmediatamente a la izquierda del TLD, como google.com, facebook.com, etc..
 
 <a id="har48"></a>
 
 ### **¿Qué es un DNS Poisoning?**
+
+[Volver al indice](#har-base)
 
 Es un ataque informático en el que se introduce información falsa en la base de datos de DNS de un servidor, con el objetivo de redirigir a los usuarios a sitios web maliciosos o de phishing.
 
@@ -11347,25 +11454,27 @@ Es un ataque informático en el que se introduce información falsa en la base d
 
 ### **¿Qué es un DNS Spoofing?**
 
+[Volver al indice](#har-base)
+
 Es un ataque informático en el que se falsifica la información de DNS de un servidor, con el objetivo de redirigir a los usuarios a sitios web maliciosos o de phishing.
 
 <a id="arc1"></a>
 
 ### **¿Qué resuelve la arquitectura de Microfrontends?**
 
+[Volver al indice](#har-base)
+
 Tenemos la aplicacion monolitica que tiene tanto el BD, Backend y Frotend en un solo monolito, y generalmente con un solo equipo manejandolo. A medida que va creciendo, se va separando el backend del frontend. 
-
 Llega el punto en que el backend ya se maneja mediante microservicios con sus BD propias, separados por funciones del negocio (por ejemplo, un microservicio de pagos, otro de autenticacion, etc..)
-
 Luego, al seguir siendo un frontend monolico, hay conflictos entre equipos y en los cambios en un mismo repositorio, y la afectacion de otras areas. 
-
 La idea del microfrontend es separar el frontend en partes pequeñas por funciones del negocio al igual que los microservicios. 
-
 Los equipos pasan a ser dueños de toda la vertical de negocios (Back, front y DB)
 
 <a id="arc2"></a>
 
 ### **¿Cuales son las caracteristicas de un Microfrontend?**
+
+[Volver al indice](#har-base)
 
 - **Aplicación contenedora**
 
@@ -11406,6 +11515,8 @@ const Restaurant = ({history}) => {
 
 ### **¿Qué beneficios y desventajas ves en la introducción de la arquitectura de microfrontends en algunos de tus proyectos?**
 
+[Volver al indice](#har-base)
+
 Los Beneficios principales en la introducción de la arquitectura de microfrontends son:
 
 - Escalabilidad y mantenibilidad: Permite escalar y mantener diferentes partes de la aplicación de forma independiente, lo que facilita la gestión de equipos y la evolución de la aplicación a medida que crece.
@@ -11428,6 +11539,8 @@ En resumen, mientras que la arquitectura de microfrontends ofrece beneficios sig
 
 ### **¿Qué es la arquitectura de monolitos?**
 
+[Volver al indice](#har-base)
+
 Los monolitos representan una arquitectura tradicional en el desarrollo de aplicaciones web, caracterizada por consolidar todas las funcionalidades de un sistema en un único bloque de código. A diferencia de los microservicios, donde cada función se implementa de manera independiente, los monolitos son estructuras más compactas y centralizadas.
 En un monolito, todas las partes de una aplicación, como la interfaz de usuario, la lógica de negocio y la persistencia de datos, coexisten en la misma base de código. Esta simplicidad estructural puede facilitar el desarrollo inicial y la comprensión global del sistema, ya que todas las partes están directamente interconectadas. Además, los monolitos suelen ser más sencillos de implementar, desplegar y gestionar, ya que toda la aplicación se ejecuta como una entidad única.
 La arquitectura de monolitos ha sido históricamente la elección predeterminada para muchos proyectos debido a su simplicidad aparente. Sin embargo, a medida que las aplicaciones crecen en tamaño y complejidad, los monolitos pueden presentar desafíos significativos. La modificación de una parte del código puede afectar de forma inesperada otras partes del sistema, lo que puede dificultar la implementación de nuevas características, o la implementación de soluciones a problemas y bugs.
@@ -11437,6 +11550,8 @@ Si bien durante los últimos años, la arquitectura de monolitos ha sido sujeta 
 <a id="arc5"></a>
 
 ### **En que se comparan los microservicios con los monolitos?**
+
+[Volver al indice](#har-base)
 
 Si hablamos de frameworks del backend, encontramos una distinción clara entre aquellos que son más usados en monolitos, de los que son usados en microservicios, y tiene que ver con el tamaño del framework. Podemos distinguir dos principales categorías entre los frameworks web tradicionales, y los llamados micro frameworks. 
 Hablamos de frameworks web tradicionales a los que históricamente han integrado la vista, y la lógica del negocio en una misma base de código, hablamos sobre todo de frameworks MVC como Ruby on Rails, Django, Laravel, .NET, Spring, por mencionar algunos, pero también podemos incluir a algunos modernos que aplican este mismo principio de una misma base de código como Next.js.
@@ -11477,6 +11592,8 @@ En resumen, la elección entre monolitos y microservicios en la nube se centra e
 
 ### **Cómo hace Amazon route 53 para dar alta disponibilidad y baja latencia?**
 
+[Volver al indice](#har-base)
+
 - Servidores distribuidos globalmente. Hay DNS en todo el mundo, sí haces una query desde cualquier lugar del mundo, va a haber un servidor DNS cerca para cumplirlo
 - Dependencia: Route 53 proporciona un alto nivel de confiabilidad requerido por las aplicaciones críticas.
 - Ubicaciones óptimas: Route 53 atiende las solicitudes desde el centro de datos más cercano al cliente que envía la solicitud. AWS tiene centros de datos en todo el mundo. Los datos se pueden almacenar en caché en diferentes centros de datos ubicados en diferentes regiones del mundo según los requisitos y la configuración elegida. Route 53 permite que cualquier servidor en cualquier centro de datos que tenga los datos necesarios para responder. De esta manera, permite que el servidor más cercano atienda la solicitud del cliente, reduciendo así el tiempo de atención
@@ -11484,6 +11601,8 @@ En resumen, la elección entre monolitos y microservicios en la nube se centra e
 <a id="arc7"></a>
 
 ### **Cuál es la diferencia entre Availability Zone y Region?**
+
+[Volver al indice](#har-base)
 
 Availability Zone es una ubicación física donde Amazon tiene un data center. Una Region es una colección o grupo de AZ o Data Centers.
 
@@ -11493,11 +11612,15 @@ Esto ayuda a que los servicios tengan más disponibilidad mientras se colocan di
 
 ### **Qué es la alta disponibilidad?**
 
+[Volver al indice](#har-base)
+
 La alta disponibilidad es un término que se utiliza para describir la capacidad de un sistema o componente para estar operativo y accesible durante un período de tiempo determinado. La alta disponibilidad se logra mediante la implementación de redundancia y tolerancia a fallos en los sistemas y componentes críticos.
 
 <a id="arc9"></a>
 
 ### **Qué es la baja latencia?**
+
+[Volver al indice](#har-base)
 
 La baja latencia es el tiempo que tarda un sistema en responder a una solicitud. La baja latencia es importante en aplicaciones en tiempo real, como juegos en línea, transmisión de video y aplicaciones financieras, donde incluso pequeños retrasos pueden afectar la experiencia del usuario.
 
@@ -11511,11 +11634,15 @@ Un sistema tolerante a fallos es un sistema que puede continuar funcionando incl
 
 ### **Qué es un sistema distribuido?**
 
+[Volver al indice](#har-base)
+
 Un sistema distribuido es un sistema de software que se ejecuta en múltiples computadoras interconectadas y se comunica a través de una red de computadoras. Los sistemas distribuidos se utilizan para distribuir la carga de trabajo, mejorar la escalabilidad y la disponibilidad, y permitir la colaboración y la comunicación entre múltiples usuarios y sistemas.
 
 <a id="arc12"></a>
 
 ### **Qué es un sistema de alta disponibilidad?**
+
+[Volver al indice](#har-base)
 
 Un sistema de alta disponibilidad es un sistema que está diseñado para garantizar que esté operativo y accesible durante un período de tiempo determinado. Los sistemas de alta disponibilidad se implementan mediante la redundancia y la tolerancia a fallos en los sistemas y componentes críticos para garantizar que el sistema siga siendo operativo en caso de fallo de un componente.
 
@@ -11523,17 +11650,24 @@ Un sistema de alta disponibilidad es un sistema que está diseñado para garanti
 
 ### **Qué es un CDN?**
 
+[Volver al indice](#har-base)
+
 Un CDN (Content Delivery Network) es una red de servidores distribuidos geográficamente que se utilizan para entregar contenido web, como imágenes, videos, archivos y otros recursos estáticos, a los usuarios finales de manera rápida y eficiente. Los CDNs almacenan en caché el contenido en servidores distribuidos en todo el mundo y utilizan algoritmos de enrutamiento inteligentes para dirigir a los usuarios al servidor más cercano para una entrega rápida y eficiente del contenido.
 
 <a id="arc14"></a>
 
 ### **Qué es un balanceador de carga?**
 
-Un balanceador de carga es un dispositivo de red que distribuye el tráfico de red entre múltiples servidores o dispositivos de red para garantizar que el tráfico se distribuya de manera uniforme y eficiente entre los servidores. Los balanceadores de carga se utilizan para mejorar la escalabilidad, la disponibilidad y el rendimiento de las aplicaciones web y los servicios en línea al distribuir la carga de trabajo entre múltiples servidores y garantizar que los servidores no se sobrecarguen.
+[Volver al indice](#har-base)
+
+Un balanceador de carga es un dispositivo de red que distribuye el tráfico de red entre múltiples servidores o dispositivos de red para garantizar que el tráfico se distribuya 
+de manera uniforme y eficiente entre los servidores. Los balanceadores de carga se utilizan para mejorar la escalabilidad, la disponibilidad y el rendimiento de las aplicaciones web y los servicios en línea al distribuir la carga de trabajo entre múltiples servidores y garantizar que los servidores no se sobrecarguen.
 
 <a id="arc15"></a>
 
 ### **Que es una cookie?**
+
+[Volver al indice](#har-base)
 
 Las cookies son textos planos con poca dificultad para entender de que se tratan, guardados localmente en cada pc. Se puede saber para que sirve cada cookie con solo leerlo
 
@@ -11551,6 +11685,8 @@ Otras propiedades de las cookies son..
 <a id="arc16"></a>
 
 ### **Que es el cookie tracking?**
+
+[Volver al indice](#har-base)
 
 Las cookies cumplen un rol importante no solo en la autenticacion sí no también en el track de tu comportamiento online, esto con un **tracking cookie**. Usualmente, muchas paginas usan herramientas de trackeo de otros lugares y no propios, lo cual hace que se pueda trackear la actividad de distintas web al mismo tiempo.
 
@@ -11572,6 +11708,8 @@ El tracking puede servirle a muchas empresas para obtener informacion exacta ace
 <a id="arc17"></a>
 
 ### **Como creo una cookie con Javascript?**
+
+[Volver al indice](#har-base)
 
 1. Crear una funcion de Javascript
 
@@ -11620,6 +11758,8 @@ console.log(document.cookie);
 
 ### **¿Cual es la diferencia entre Cookies, SessionStorage y LocalStorage?**
 
+[Volver al indice](#har-base)
+
 |  | Cookies | Local Storage | Session Storage |
 | --- | --- | --- | --- |
 | Capacidad | 4kb | 10 mb | 5 mb |
@@ -11659,6 +11799,8 @@ document.cookie // No se puede obtener una sola cookie por vez,
 
 ### **¿Como puedo borrar una cookie?**
 
+[Volver al indice](#har-base)
+
 Para borrar una cookie, debemos setear la fecha de expiracion a una fecha pasada, de esta manera, el navegador la eliminara automaticamente.
 
 ```jsx
@@ -11671,6 +11813,8 @@ function deleteCookie(cname) {
 
 ### **¿Que es CORS?**
 
+[Volver al indice](#har-base)
+
 Es un mecanismo que usa cabeceras HTTP adicionales para permitir que un user-agent obtenga permiso para acceder a recursos seleccionados desde un servidor en un origen distinto (dominio) al que pertenece. Por ejemplo, si tengo mi dominio [`denisse.com`](http://denisse.com), uso XMLHttpRequest para cargar el recurso [`http://api.domain-b.com/data.json`](http://api.domain-b.com/data.json)
 
 Tambien sirve para obtener fuentes externas, texturas webGL, Imagenes, hojas de estilos y Scripts. 
@@ -11678,6 +11822,8 @@ Tambien sirve para obtener fuentes externas, texturas webGL, Imagenes, hojas de 
 <a id="arc21"></a>
 
 ### **¿Que es un Sistema Operativo?**
+
+[Volver al indice](#har-base)
 
 Un sistema operativo debe asignar los recursos de la computadora entre las necesidades potencialmente competitivas de múltiples procesos.En el caso del procesador, el recurso que se debe asignar es el tiempo de ejecución en el procesador. La forma de asignarlo es la planificación.La función de planificación debe estar diseñada para satisfacer varios objetivos que incluyen:
 
@@ -11701,6 +11847,8 @@ La idea es relativamente simple. Un proceso se ejecuta hasta que debe esperar, t
 
 ### **FCFS (First come, first served)**
 
+[Volver al indice](#har-base)
+
 El algoritmo de programación de CPU más sencillo es el algoritmo de programación de la primera llegada, primero servido (FCFS).
 
 Con este esquema, el proceso que primero solicita la CPU es el primero que se le asigna. La implementación de la directiva FCFS se administra fácilmente con una cola FIFO.
@@ -11711,6 +11859,8 @@ Cuando un proceso entra en la cola lista, su PCB está vinculado a la final de l
 
 ### **SPN/SJF (Shorted Process Next/Shorted Job First)**
 
+[Volver al indice](#har-base)
+
 Un enfoque diferente para la planificación de la CPU es el algoritmo de planificación de la tarea más corta (SJF). Este algoritmo asocia con cada proceso la longitud de la siguiente ráfaga de CPU del proceso. Cuando la CPU está disponible, se la asigna al proceso que tiene la ráfaga de CPU más pequeña. Si las siguientes ráfagas de CPU de dos procesos son las mismas, se puede utilizar la planificación FCFS para romper el empate.
 
 Aunque el algoritmo SJF es óptimo, no se puede implementar en el nivel de programación de CPU a corto plazo, debido a que no hay manera de saber la longitud de la próxima ráfaga de la CPU. Una aproximación a este problema es tratar de aproximar la programación SJF. Es posible que no se conozca la longitud de la siguiente ráfaga de CPU, pero se podría predecir su valor, asumiendo que la próxima ráfaga de uso de la CPU sea similar, en duración, a las anteriores. Mediante el cálculo de una aproximación de la duración de la siguiente ráfaga de la CPU, se puede seleccionar el proceso con la ráfaga de CPU más corta prevista
@@ -11718,6 +11868,8 @@ Aunque el algoritmo SJF es óptimo, no se puede implementar en el nivel de progr
 <a id="arc24"></a>
 
 ### **SRT (Shortest Remaining Time)**
+
+[Volver al indice](#har-base)
 
 Es un método de planificación con selección del proceso con tiempo restante más corto. (Versión expropiativa del proceso más corto -política SPN-).
 
@@ -11733,6 +11885,8 @@ El proceso en CPU es desalojado si llega a la cola un proceso con duración más
 
 ### **Cuáles son los elementos de una base de datos?**
 
+[Volver al indice](#bd-base)
+
 - **Tablas**: Contienen la información
 - **Vistas**: Parecidas a la tabla, son para consultas, más rápidas
 - **Índices**: Uno o más columnas de una tabla para encontrar la data más rápido, es como el índice de un libro
@@ -11745,12 +11899,16 @@ El proceso en CPU es desalojado si llega a la cola un proceso con duración más
 
 ### **Cuales son los elementos de Data Control Language? (DCL)**
 
+[Volver al indice](#bd-base)
+
 - GRANT - Dar permisos específicos a una tabla y/o objeto
 - REVOKE - Revocar permisos
 
 <a id="bd3"></a>
 
 ### **Lenguaje de manipulación de datos (DML)**
+
+[Volver al indice](#bd-base)
 
 Las sentencias de lenguaje de manipulación de datos (DML) son utilizadas para gestionar datos dentro de las bases de datos . Algunos ejemplos:
 
@@ -11763,6 +11921,8 @@ Las sentencias de lenguaje de manipulación de datos (DML) son utilizadas para g
 
 ### **Lenguaje de definición de datos (DDL)**
 
+[Volver al indice](#bd-base)
+
 Las sentencias DDL se utilizan para crear y modificar la estructura de las tablas así como otros objetos de la base de datos.
 
 - CREATE - para crear objetos en la base de datos.
@@ -11774,6 +11934,8 @@ Las sentencias DDL se utilizan para crear y modificar la estructura de las tabla
 
 ### **Qué es la normalizacion?**
 
+[Volver al indice](#bd-base)
+
 Definición formal: La normalización es el proceso mediante el cual se transforman datos complejos a un conjunto de estructuras de datos más pequeñas, que además de ser más simples y más estables, son más fáciles de mantener.
 
 También se puede entender la normalización como una serie de reglas que sirven para ayudar a los diseñadores de bases de datos a desarrollar un esquema que minimice los problemas de lógica.
@@ -11781,6 +11943,8 @@ También se puede entender la normalización como una serie de reglas que sirven
 <a id="bd6"></a>
 
 ### **Cuales son los objetivos de la Normalización?**
+
+[Volver al indice](#bd-base)
 
 - Evitar redundancia
 - Evitar problemas de actualización
@@ -11794,6 +11958,8 @@ deben ser del mismo tipo.
 
 ### **Cuales son los grados de Normalización?**
 
+[Volver al indice](#bd-base)
+
 - Primera forma normal
 - Segunda forma normal
 - Tercera formal normal
@@ -11805,6 +11971,8 @@ problemas complejos, no se requiera de algún dato en la 3era forma.
 <a id="bd8"></a>
 
 ### **Algunos tips de Performance SQL**
+
+[Volver al indice](#bd-base)
 
 - Cada índice creado en la tabla incrementa el tiempo en que se llevan a cabo los insert, updates o deletes, por lo que el número de índices en una tabla no deben de ser muchos. Use sólo los índices necesarios, para PK y para FK, y según el uso de los datos (WHERE, ORDER BY, GROUP BY). Si la tabla es de solo lectura entonces el número de índices se puede incrementar.
 - Manteen los índices lo más pequeño que puedas, reduciéndolo se reducen el número de IO para leerlo (esto depende de la complejidad de claves del índice).
@@ -11964,6 +12132,8 @@ CREATE TRIGGER TR_Seguridad
 
 ### **Inner Join**
 
+[Volver al indice](#bd-base)
+
 Solo muestra lo que tiene en comun A y B
 
 ```sql
@@ -11979,6 +12149,8 @@ FROM tabla1 AS e
 
 ### **Outer Join (Con left y right join)**
 
+[Volver al indice](#bd-base)
+
 El left Join, por ejemplo, con dos tablas A y B, devuelve todo lo de la tabla A y lo que este también en la tabla AB, sí no quiero esto último, agrego un WHERE tabla_b IS NULL . El right join es lo mismo pero con B. El full Join toma absolutamente todo de ambas tablas, agregando el NULL anterior con ambas tablas, ahi es donde se muestran ambas tablas menos lo que tienen en común.
 
 ```sql
@@ -11992,6 +12164,8 @@ ON p.productoid = pr.productoid
 <a id="bd15"></a>
 
 ### **UNIÓN**
+
+[Volver al indice](#bd-base)
 
 Con los set de datos finales se trata de unificar a un set único
 
@@ -12007,6 +12181,8 @@ Select * b
 
 ### **TOP**
 
+[Volver al indice](#bd-base)
+
 Top de los resultados de una query, es decir, las X primeras (En el ejemplo, 10) de un SELECT
 
 ```sql
@@ -12018,6 +12194,8 @@ FROM tabla1
 <a id="bd12"></a>
 
 ### **Self Join**
+
+[Volver al indice](#bd-base)
 
 Un Join que referencia a la misma tabla.
 
@@ -12032,6 +12210,8 @@ ORDER BY A.City;
 <a id="bd13"></a>
 
 ### **EXCEPT**
+
+[Volver al indice](#bd-base)
 
 De un set de datos se saca los que no estan en el 2do set de datos a relacionar, todo lo de a de tabla1, menos lo que este también en b tabla2
 
@@ -12048,6 +12228,8 @@ FROM tabla2
 <a id="bd14"></a>
 
 ### **DML Triggers**
+
+[Volver al indice](#bd-base)
 
 Son procedimientos almacenados que se ejecutan automáticamente ante un evento DML (Update – Delete – Insert) que afecta una **tabla o vista.**
 
@@ -12184,6 +12366,8 @@ END
 <a id="bd17"></a>
 
 ### **Diferencia entre OPENROWSET y OPENQUERY**
+
+[Volver al indice](#bd-base)
 
 - **OPENROWSET:** hay que indicar toda la información de conexión de los datos externos (String de conexión o ConnectionString).
 - **OPENQUERY:** se indica el nombre del servidor linkeado al motor desde donde ejecuto las consultas.
