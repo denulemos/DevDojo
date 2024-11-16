@@ -12,8 +12,8 @@
 
 | Temas   |
 |----------|
-| [Qué quiere decir "Ciberataque"?](#seg1)    |
-| [Que quiere decir "Ciberamenazas"?](#seg2)    |
+| [¿Qué quiere decir "Ciberataque"?](#seg1)    |
+| [¿Que quiere decir "Ciberamenazas"?](#seg2)    |
 | [¿Qué quiere decir "Vulnerabilidad"?](#seg3)    |
 | [¿Qué es el ciberespacio?](#seg4)    |
 | [¿Cuáles son los componentes del Ciberespacio?](#seg5)    |
@@ -71,7 +71,7 @@
 
 <a name="alg-base"></a>
 
-## [Algoritmos - Logica](#alg)
+## [Algoritmos y complejidad](#alg)
 
 | Temas   |
 |----------|
@@ -88,6 +88,13 @@
 | [¿Cómo analizamos el codigo?](#alg11)    |
 | [Multiplicacion de Runtimes](#alg12)    |
 | [Ejemplos de Ejercicios](#alg14)    |
+
+<a name="alg-base2"></a>
+
+## [Estructuras de Datos](#alg-2)
+
+| Arrays y Colecciones   |
+|----------|
 | [Estructuras de datos (Arrays)](#alg15)    |
 | [Especificando la clase de contenido de un ArrayList](#alg16)    |
 | [Creación de un ArrayList](#alg17) |
@@ -104,10 +111,16 @@
 | [Funcion .sort()](#alg28) |
 | [Set() en Javascript (HashSet)](#alg29) |
 | [HashTables (.Map)](#alg30) |
+
+| Linked Lists   |
+|----------|
 | [Linked Lists](#alg31) |
 | [¿Cuales son los beneficios de un Linked List sobre un Array?](#alg32) |
 |[¿Cual es el uso de una Doubly-Linked List cuando se lo compara con un Singly Linked List?](#alg33) |
 | [¿Cual es la diferencia entre un Linked List y un Doubly Linked List?](#alg34) |
+
+| Pilas, Colas y  Generics   |
+|----------|
 | [Generics](#alg35) |
 |[Estructuras de Datos](#alg36) |
 |[Qué son las Pilas y Colas?](#alg37) |
@@ -1830,7 +1843,7 @@ Hay varios tipos de problemas de visión con respecto a los colores, el más com
 ---
 <a id="alg"></a>
 
-# Algoritmos - Logica
+# Algoritmos y complejidad
 
 <a id="alg1"></a>
 
@@ -2489,6 +2502,12 @@ void printPairsTwoArrays(int[] arrayA, int[] arrayB) {
   }
 }
 ```
+
+---
+
+<a id="alg-base2"></a>
+
+# Estructuras de Datos
 
 <a id="alg15"></a>
 
