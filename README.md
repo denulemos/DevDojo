@@ -218,71 +218,97 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 |¿Cómo funciona el algoritmo de eliminación de un nodo en una Linked List?|
 |¿Qué ventajas y desventajas tiene una Doubly Linked List sobre una Singly Linked List?|
 
-| Pilas, Colas y  Generics   |
+| Variables   |
 |----------|
-| [Generics](#alg35) |
-|[Estructuras de Datos](#alg36) |
-|[Qué son las Pilas y Colas?](#alg37) |
-| [Colas](#alg38) |
-| [Pilas](#alg39) |
-| [Nodo versus dato](#alg40) |
-| [Uso de Pilas y Colas](#alg41) |
-| [Arboles](#alg42) |
-| [¿Qué es un Binary Tree?](#alg43) |
-| [¿Qué es un Binary Search Tree?](#alg44) |
-| [¿Por qué se dice que buscar un nodo en un BST es más eficiente que en un Simple Binary Tree?](#alg45) |
-| [Complete Binary Tree](#alg46) |
-| [Uso de Pilas y Colas](#alg41) |
-| [Arboles](#alg42) |
-| [Qué es un Binary Tree?](#alg43) |
-| [Qué es un Binary Search Tree?](#alg44) |
-| [¿Porque se dice que buscar un nodo en un BST es mas eficiente que en un Simple Binary Tree?](#alg45) |
-| [Complete Binary Tree](#alg46) |
-| [Maneras de recorrer un Arbol](#alg47) |
-| [Recorrido de un Binary Tree](#alg50) |
-| [In-Order Traversal](#alg48) |
-| [Pre-order traversal](#alg49) |
-| [Post-order traversal](#alg51) |
-| [Recursividad](#alg52) |
-| [Factorial](#alg53) |
-| [Heaps](#alg54) |
-| [Metodos de Strings en Javascript](#alg55) |
-| [Métodos de Objectos en Javascript](#alg56) |
 | [¿Qué es una Variable?](#var1)    |
 | [¿En qué se diferencia una variable común, nativa, de un objeto?](#var2)    |
 | [¿A qué nos referimos cuando hablamos de tipos de datos?](#var3)    |
 | [¿Cómo se declara una variable?](#var4)    |
 | [Nombres de Variables](#var5)    |
 | [Diferencia entre let, var y const](#var6)    |
-| [Para que sirve event.preventDefault()?](#var7)    |
-| [Función Object.freeze](#var8)    |
-| [Diferencia entre import y require](#var9)    |
-| [Como funciona setTimeout?](#var10)    |
-| [Event delegation](#var11)    |
-| [Callback Hell](#var12)    |
-| [Funciones de "bloqueo" y "no bloqueo"](#var13)    |
+| [¿Qué son las variables no declaradas y no definidas?](#var19)    |
+|¿Qué es la tipificación estática y dinámica?|
+
+| Pilas y Colas   |
+|----------|
+|[Qué son las Pilas y Colas?](#alg37) |
+| [Colas](#alg38) |
+| [Pilas](#alg39) |
+| [Nodo versus dato](#alg40) |
+| [Uso de Pilas y Colas](#alg41) |
+
+| Arboles   |
+|----------|
+| [Arboles](#alg42) |
+| [¿Qué es un Binary Tree?](#alg43) |
+| [¿Qué es un Binary Search Tree?](#alg44) |
+| [¿Por qué se dice que buscar un nodo en un BST es más eficiente que en un Simple Binary Tree?](#alg45) |
+| [Complete Binary Tree](#alg46) |
+| [Maneras de recorrer un Arbol](#alg47) |
+| [In-Order Traversal](#alg48) |
+| [Pre-order traversal](#alg49) |
+| [Post-order traversal](#alg51) |
+| [Recorrido de un Binary Tree](#alg50) |
+| [Heaps](#alg54) |
+|¿Qué es un árbol AVL y cuáles son sus ventajas?|
+|¿Qué es un árbol rojo-negro?|
+
+| Programación Funcional y Orientada a Objetos   |
+|----------|
+| [Funciones en Javascript](#var27)    |
+| [¿Qué es una funcion Declarativa y una Expresiva?](#var35)    |
+| [Prototypes y Herencia Prototype (Prototype Inheritance)](#var26)  |
+| [Creacion de Constructores](#var28)    |
 | [Diferencia entre primitivo y objeto](#var14)    |
-| [Bubble vs Capture](#var15)    |
-| [Rest Operator](#var16)    |
-| [Creando Strings con Template Literal - Template Strings](#var17)    |
-| [Export Fallback con export default](#var18)    |
-| [Que son las variables no declaradas y no definidas?](#var19)    |
-| [Que es el Function Factory?](#var20)    |
-| [Promises](#var21)    |
-| [Cuál es la diferencia entre Promises, Callbacks y Async/Await?](#var22)    |
-| [Que es el Currying?](#var23)    |
 | [Variable Hoisting](#var24)    |
 | [Diferencia entre class y function](#var25)    |
-| [Prototypes y Herencia Prototype (Prototype Inheritance)](#var26)    |
-| [Funciones en Javascript](#var27)    |
-| [Creacion de Constructores](#var28)    |
-| [Diferencia entre `for in` y `for of`](#var29)    |
+| [Que es el Function Factory?](#var20)    |
+| [Que es el Currying?](#var23)    |
+|¿Qué es el polimorfismo en programación orientada a objetos?|
+| ¿Qué son las funciones puras y cómo se relacionan con la programación funcional?|
+
+| Manejo de Eventos y Asincronía   |
+|----------|
+| [Para que sirve event.preventDefault()?](#var7)    |
+| [Event delegation](#var11)    |
+| [Bubble vs Capture](#var15)    |
+| [Callback Hell](#var12)    |
+| [Funciones de "bloqueo" y "no bloqueo"](#var13)    |
+| [Promises](#var21)    |
+| [Cuál es la diferencia entre Promises, Callbacks y Async/Await?](#var22)    |
+| [Como funciona setTimeout?](#var10)    |
+|¿Qué es un Promise.all y cuándo usarlo?|
+| ¿Cómo se maneja un error en una promesa?|
+
+| Métodos y Operadores en JavaScript   |
+|----------|
+| [Metodos de Strings en Javascript](#alg55) |
+| [Métodos de Objectos en Javascript](#alg56) |
 | [Diferencia entre Map y Weakmap](#var30)    |
-| [Qué es una variable global, como se declara y cuales problemas puede tener?](#var31)    |
+| [Diferencia entre `for in` y `for of`](#var29)    |
 | [Diferencia entre foreach, map y reduce](#var32)    |
+| [Rest Operator](#var16)    |
+| [Creando Strings con Template Literal - Template Strings](#var17)|
+| [Export Fallback con export default](#var18)    |
+| [Diferencia entre import y require](#var9)    |
+| [Función Object.freeze](#var8)    |
+|¿Qué es la destructuración y cómo se utiliza?|
+|¿Cómo se diferencia un Spread Operator de un Rest Operator?|
+
+| Estructuras Avanzadas y Generics   |
+|----------|
+| [Generics](#alg35) |
+|[Estructuras de Datos](#alg36) |
+| [Recursividad](#alg52) |
+| [Factorial](#alg53) |
+| ¿Qué son los generics y cómo se implementan en TypeScript?|
+
+| Buenas Prácticas y Casos Comunes   |
+|----------|
 | [Porque no se recomienda usar innerHTML?](#var33)    |
 | [Entre JS y un script ASP, ¿Cual es mas rápido?](#var34)    |
-| [¿Qué es una funcion Declarativa y una Expresiva?](#var35)    |
+| [Qué es una variable global, como se declara y cuales problemas puede tener?](#var31)    |
+
 
 <a name="cic-base"></a>
 
@@ -461,9 +487,6 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 | [Que es ContextAPI?](#rea23)    |
 | [Que es React Fiber?](#rea24)    |
 | [Para que sirven las claves o Keys en React?](#rea25)    |
-| [Que es ECMAScript?](#rea26)    |
-| [Que es decodeURL y encodeURL?](#rea27)    |
-| [Que es escape y unescape?](#rea28)    |
 | [¿Que es async, preload y prefetch?](#rea29)    |
 | [Cual es la diferencia entre call, bind y apply?](#rea30)    |
 | [Cual es la diferencia entre setTimeout() y setInterval()?](#rea31)    |
@@ -4461,7 +4484,7 @@ add(5,4); //Devuelve el resultado de acuerdo al metodo exportado anteriormente
 
 <a id="var19"></a>
 
-### **Que son las variables no declaradas y no definidas?**
+### **¿Qué son las variables no declaradas y no definidas?**
 
 [Volver al indice](#alg-base)
 
