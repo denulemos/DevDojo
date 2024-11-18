@@ -1,6 +1,6 @@
 <div align="center">
 
-# DevDojo - El machete del Dev
+# DevDojo 
 
 ![Dev GIF](https://i.pinimg.com/originals/a7/a8/d0/a7a8d06c754cfbbbc37e64cb118c513c.gif)
 
