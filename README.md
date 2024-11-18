@@ -406,6 +406,20 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 |Discute los desafíos durante la actividad de mentoría.|
 |¿Cómo documentas tus elecciones de diseño? ¿Por qué?|
 |Deuda técnica. Medición y gestión.|
+|Estás comenzando un proyecto desde cero (greenfield project). ¿Qué requisitos considerarías al elegir la pila tecnológica?|
+|Si tuvieras que desarrollar el frontend y hay un sistema de diseño existente en Angular, requisitos de SEO, métricas web (Web Vitals) y soporte para navegadores modernos, ¿cómo procederías?|
+|¿Qué proceso de desarrollo adoptarías en un proyecto greenfield con un plazo fijo de entrega?|
+|Si los requisitos cambian constantemente, ¿qué metodología sería más adecuada?|
+|Si necesitas dividir un proyecto en múltiples equipos, ¿cómo organizarías la base de código para evitar duplicación, mejorar la escalabilidad y prevenir conflictos?|
+|¿Cómo gestionarías cambios en los requisitos durante un sprint?|
+|¿Cómo equilibrarías el impacto en el alcance y la planificación?|
+|Tienes un proyecto con requisitos inestables que cambian constantemente y el cliente altera prioridades con frecuencia. ¿Qué metodología utilizarías para manejar estas condiciones?|
+|Cuando entrevistas a candidatos, ¿cómo identificas señales verdes o rojas?|
+|¿En qué aspectos pones mayor atención durante una entrevista?|
+|¿Tienes un plan estructurado para realizar entrevistas o prefieres adaptarte a las respuestas del candidato?|
+|¿Cómo equilibras seguir un plan con dejar espacio para conversaciones abiertas?|
+|En un equipo, ¿cómo promoverías una comunicación efectiva entre desarrolladores con diferentes niveles de experiencia?|
+|¿Qué harías si descubrieras que algunos miembros del equipo están luchando por adaptarse al ritmo del proyecto o a las tecnologías utilizadas?|
 |Imagina el caso, vas a desarrollar una gran característica, que requiere esfuerzos de ingenieros de FE y BE. ¿Cómo dividirías esta característica y cómo manejarías las dependencias entre los ingenieros de FE y BE?|
 
 <a name="typ-base"></a>
@@ -525,8 +539,10 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 | [useSelector](#rea5)    |
 | [useRef](#rea6)    |
 | [useMemo](#rea7)    |
+|¿Cuál es la diferencia entre useCallback y useMemo?|
 | [useReducer](#rea8)    |
 | [useLayoutEffect](#rea9)    |
+|¿Qué diferencia hay entre useEffect y useLayoutEffect? ¿Cuándo usarías cada uno?|
 | [¿Que es Redux?](#rea18)    |
 | [Cuando conviene usar Redux?](#rea19)    |
 | [¿Cuales son los beneficios de usar Redux?](#rea20)    |
@@ -537,6 +553,36 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 |Que tener en cuenta para tener una buena performance en React|
 | [¿Qué es el Virtual DOM?](#rea39)    |
 |Para que tipo de proyectos React es recomendable?|
+|¿Cuál es la diferencia entre React.createElement() y JSX?|
+|¿Qué es un Fragment en React y para qué se utiliza?|
+|¿Cómo funcionan las claves (keys) en las listas de React? ¿Por qué son importantes?|
+|¿Qué es un "error boundary" y cómo se implementa en React?|
+|¿Qué son los custom hooks? ¿Cómo los crearías y para qué sirven?|
+|¿Qué es el hook useImperativeHandle y en qué casos se utiliza?|
+|¿Qué es el hook useTransition y cómo mejora la experiencia de usuario en aplicaciones de React?|
+|¿Cómo manejarías el estado global sin usar Redux ni Context API?|
+|¿Qué son los Higher-Order Components (HOCs) y cómo se diferencian de los Render Props?|
+|¿Qué es el patrón "Compound Components" en React y cuándo sería útil implementarlo?|
+|¿Cómo manejarías la composición de componentes en lugar de la herencia en React?|
+|¿Qué es un "portal" en React y para qué se utiliza?|
+|¿Cómo implementarías un "Suspense" en React para manejar la carga de datos de forma asincrónica?|
+|¿Qué técnicas utilizarías para optimizar el rendimiento de una aplicación React?
+|¿Qué son las "re-renderizaciones innecesarias" y cómo las evitarías?|
+|¿Cómo usarías React.memo para mejorar la performance de un componente?|
+|¿Qué herramientas usarías para identificar problemas de rendimiento en una aplicación React?|
+|¿Cómo se gestiona el "debounce" o "throttle" en React para eventos como el scroll o input?|
+|¿Cómo integrarías una librería de terceros en un proyecto de React?|
+|¿Qué consideraciones tienes al usar React con TypeScript?|
+|¿Qué diferencia hay entre usar un API REST y GraphQL con React?|
+|¿Cómo manejarías la gestión de estados en aplicaciones grandes sin que se vuelva complicado?|
+|¿Cómo realizarías pruebas unitarias para un componente React?|
+|¿Qué es React Testing Library y en qué se diferencia de otras herramientas como Enzyme?|
+|¿Cómo probarías un hook personalizado?|
+|¿Qué es el modo estricto de React (React.StrictMode) y para qué sirve?|
+|¿Cómo manejarías la internacionalización (i18n) en una aplicación React?|
+|¿Qué diferencia hay entre SSR (Server-Side Rendering), CSR (Client-Side Rendering) y SSG (Static Site Generation)?|
+|¿Qué son los Concurrent Features de React y cómo afectan la experiencia del usuario?|
+|¿Qué problemas podrías encontrar al implementar un formulario grande en React y cómo los solucionarías?|
 
 | Angular   |
 |----------|
@@ -566,6 +612,8 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 | [Para que son los eventos sinteticos (SyntheticEvent)?](#rea53)    |
 | [Que significa prop drilling y como evitarlo?](#rea54)    |
 | [Como puedo mejorar la performance de mi Frontend?](#rea17)    |
+|Recibes un requisito no funcional para mejorar el SEO y acelerar la métrica de FCP (First Contentful Paint). Actualmente, tienes una aplicación SPA desarrollada en React o Angular que se renderiza completamente en el cliente. ¿Qué opciones considerarías para satisfacer este requisito?|
+|¿Cómo implementarías SSR (Server-Side Rendering) o SSG (Static Site Generation) en un SPA existente? |
 | [Para que sirven las claves o Keys en React?](#rea25)    |
 | [¿Que es async, preload y prefetch?](#rea29)    |
 | [Cual es la diferencia entre call, bind y apply?](#rea30)    |
@@ -703,6 +751,9 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 | [Algunos comandos de Git](#cam3)    |
 | [Git Flow](#cam4)    |
 | [trunk base dev. vs git flow](#cam5)    |
+|¿Qué estrategias de lanzamiento considerarías para minimizar riesgos en un proyecto grande?|
+|¿Cómo manejarías lanzamientos continuos o progresivos?|
+|¿Implementarías feature toggles o dark launches?|
 
 <a name="cod-base"></a>
 
@@ -714,9 +765,6 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 | [Diagramas de Nassi-Schneiderman](#diag2)    |
 | [¿De qué trata el código limpio?](#cod1)    |
 | [Nombres Significativos en Codigo Limpio](#cod2)    |
-| [Dependency Inversion Principle](#cod3)    |
-| [Concepto SOLID](#cod4)    |
-|Principios SOLID aplicados en Javascript|
 | [Concepto DRY](#cod5)    |
 | [Concepto KISS](#cod6)    |
 | [Concepto YAGNI](#cod7)    |
@@ -770,6 +818,12 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 | [La importancia del orden de las funciones](#cod55)   |
 | [Porque se deberia evitar retornar null?](#cod56)   |
 | [Porque se deberia evitar el uso de variables globales?](#cod57)   |
+|¿Cómo podrías mejorar la calidad del código en un proyecto en marcha?|
+|Si tienes plazos ajustados y te ves obligado a escribir "mal código", ¿cómo manejarías esa situación?  |
+|¿Iniciarías un proceso para mejorar la calidad del código? ¿Cómo lo harías sin afectar el desarrollo activo?|
+
+| Code Smells   |
+|----------|
 | [¿Qué es un Code Smell?](#cod58)   |
 | [Code Smells en los Tests](#cod59)   |
 | [Code Smells en Codigo](#cod60)   |
@@ -777,6 +831,12 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 | [Code Smells en Comentarios](#cod62)     |
 | [Code Smells en el entorno](#cod63)     |
 | [Code Smells en Funciones](#cod64)     |
+
+| SOLID   |
+|----------|
+| [Concepto SOLID](#cod4)    |
+|Principios SOLID aplicados en Javascript|
+| [Dependency Inversion Principle](#cod3)    |
 | [Single Responsibility Principle](#cod65)     |
 | [Open/Closed Principle](#cod66)     |
 | [Interface Segregation Principle](#cod67)     |
