@@ -24,6 +24,7 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 | [¿Cuáles son las ciberamenazas actuales?](#seg7)    |
 |¿Por qué es importante entender las vulnerabilidades en ciberseguridad?|
 |¿Cómo se define una amenaza en ciberseguridad y cuál es su relación con una vulnerabilidad?|
+|¿Qué es XSS, CSRF, CSP, CORS, DoS y cómo se manejan estos problemas de seguridad en la web?|
 
 | Metodologías y Roles en Ciberseguridad   |
 |----------|
@@ -309,7 +310,6 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 | [Entre JS y un script ASP, ¿Cual es mas rápido?](#var34)    |
 | [Qué es una variable global, como se declara y cuales problemas puede tener?](#var31)    |
 
-
 <a name="cic-base"></a>
 
 ## [Organizacion en Software - Derecho en IT](#cic)
@@ -382,6 +382,32 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 | [El problema del daño causado por un tercero por injurias realizadas en un sitio web](#cic64)|
 | [Beneficios para una organización de implementar ISO 27001](#cic65)|
 
+| Gestión de Proyectos  - Liderazgo |
+|----------|
+|¿Quién define los NFRs y cómo se priorizan?  |
+|Imagina que un cliente te dice que la aplicación es lenta y quiere que la aceleres, pero no te da más detalles. ¿Cómo manejarías esta situación?|
+|¿En qué requisitos deberíamos basarnos en esta situación?|
+|¿Cuáles son los posibles riesgos de adoptar una nueva tecnología en el proyecto? ¿Cómo mitigarlos?|
+|Algunos miembros de tu equipo no pueden ponerse de acuerdo sobre una solución. Discuten y no pueden tomar una decisión. ¿Cómo resolverías esta situación conflictiva?|
+|¿Cómo motivas a tu equipo y qué enfoques conoces? ¿Existe algún motivador universal para todos?|
+|¿Cómo delegas tareas en tu equipo y cómo varía tu enfoque dependiendo de la antigüedad del miembro del equipo?|
+|¿Cómo realizas las revisiones de código en tus proyectos? ¿Qué verificas y cómo sabes que el código está listo para ser fusionado?|
+|¿Podrías nombrar algunos "code smells" (indicadores de problemas en el código)?|
+|¿Cómo estimas las tareas en tus proyectos? ¿Cómo manejas los problemas de sobreestimación o subestimación? ¿Cómo estimas tareas desconocidas?|
+|Recomendaciones para realizar un onboarding a un desarrollador nuevo dependiendo de su nivel|
+|¿Cómo te comunicas con el cliente acerca de los puntos de historia? ¿Cómo explicas los puntos de historia para que sean más comprensibles?|
+|El cliente quiere agregar una característica super importante durante el sprint activo. No tienes capacidad y tu equipo está completamente ocupado. ¿Cómo manejarías este requerimiento?|
+|Durante la sesión de refinamiento, proporcionaste una solución técnica para la tarea y la mencionaste en la historia. Pero tu compañero de equipo la implementó de manera completamente diferente. ¿Cómo revisarías su código? ¿Le harías cancelar el PR e implementar la característica como tú propusiste?|
+|¿Cuál es el proceso de revisión de código en tus proyectos? ¿A qué prestas atención cuando revisas el código? Revisión de código con el cliente: ¿qué harías si no estás de acuerdo con los comentarios del cliente?|
+|Estás liderando el equipo y tienes ingenieros con diferentes opiniones sobre el estilo de código. Uno de ellos escribe, por ejemplo, funciones de flecha y otro escribe declaraciones de funciones regulares. Discuten constantemente entre sí. ¿Cómo resolverías esta situación conflictiva?|
+|Imagina el caso, usas SCRUM en el proyecto, pero constantemente fallas en los sprints. Parte de las historias no se completan, otra parte de las historias llega a QA el último día del sprint. Discutamos las posibles razones y busquemos soluciones.|
+|Imagina que tienes una velocidad estable. Tienes 2 meses, pero ves que no puedes entregar el alcance a tiempo. Retraso potencial ~ 2 semanas. El cliente no quiere mover el día de lanzamiento. ¿Podrías proponer algunas ideas de cómo hacer un lanzamiento?|
+|Imagina que tienes un miembro del equipo que no tiene suficiente experiencia y conocimientos para completar sus tareas correctamente y a tiempo. ¿Cómo organizarías el trabajo con esa persona? ¿Lo reemplazarías? ¿Lo mentorizarías?|
+|Discute los desafíos durante la actividad de mentoría.|
+|¿Cómo documentas tus elecciones de diseño? ¿Por qué?|
+|Deuda técnica. Medición y gestión.|
+|Imagina el caso, vas a desarrollar una gran característica, que requiere esfuerzos de ingenieros de FE y BE. ¿Cómo dividirías esta característica y cómo manejarías las dependencias entre los ingenieros de FE y BE?|
+
 <a name="typ-base"></a>
 
 ## [Typescript](#typ)
@@ -409,13 +435,42 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 
 ## [Styles - Estilos](#sty)
 
-| Temas   |
+| CSS   |
 |----------|
 | [Cuál es la diferencia entre div y span?](#sty1)    |
 | [Qué es la Especificidad (Specificity) de CSS?](#sty2)    |
 |[Que es BEM?](#sty3)    |
 | [Como declaro variables en CSS?](#sty4)    |
 | [Pseudoclases](#sty5)    |
+|¿Qué es el modelo de caja (Box Model) en CSS y cómo funciona?|
+|¿Cómo se pueden crear diseños de columnas en CSS?|
+|¿Qué son los selectores en CSS y cuáles son los diferentes tipos de selectores?|
+|¿Cómo se puede centrar un elemento en CSS?|
+|¿Qué es Flexbox y para qué se utiliza?|
+|¿Qué es CSS Grid y cómo se compara con Flexbox?|
+|¿Cómo se puede hacer que un sitio web sea responsive con CSS?|
+|¿Qué son las media queries en CSS y cómo se utilizan?|
+|¿Cómo se puede cambiar el orden de los elementos en CSS?|
+|¿Qué son las transiciones y animaciones en CSS y cómo se utilizan?|
+|¿Cómo se pueden aplicar estilos a un elemento cuando se pasa el mouse sobre él (hover)?|
+|¿Cómo se pueden aplicar estilos a un elemento cuando está enfocado (focus)?|
+|¿Cómo se pueden aplicar estilos a un elemento cuando está activo (active)?|
+|¿Cómo se pueden aplicar estilos a un enlace visitado (visited)?|
+|¿Cómo se pueden aplicar estilos a un elemento en base a su atributo?|
+|¿Cómo se pueden aplicar estilos a un elemento en base a su posición en el DOM?|
+|¿Cómo se pueden aplicar estilos a un elemento en base a su estado de hijo o hermano?|
+|¿Cómo se pueden aplicar estilos a un elemento en base a su estado de padre?|
+|¿Cómo se pueden aplicar estilos a un elemento en base a su estado de primer o último hijo?|
+|¿Cómo se pueden aplicar estilos a un elemento en base a su estado de único hijo?|
+|¿Cómo se pueden aplicar estilos a un elemento en base a su estado de hijo vacío?|
+|¿Cómo se pueden aplicar estilos a un elemento en base a su estado de hijo con contenido?|
+|¿Cómo se pueden aplicar estilos a un elemento en base a su estado de hijo de tipo específico?|
+|¿Cómo se pueden aplicar estilos a un elemento en base a su estado de hijo de tipo único?|
+|¿Cómo se pueden aplicar estilos a un elemento en base a su estado de hijo de tipo último de su tipo?|
+|¿Cómo se pueden aplicar estilos a un elemento en base a su estado de hijo de tipo primero de su tipo?|
+
+| SCSS   |
+|----------|
 |[Qué es Sass?](#sty6)    |
 | [Cual es la diferencia entre .sass y scss?](#sty7)    |
 | [Sass reemplaza a CSS?](#sty8)    |
@@ -433,28 +488,28 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 
 ## [Javascript Frameworks and Libraries](#rea)
 
-| Temas   |
+| HTML   |
 |----------|
 | [¿Cuál es la diferencia entre h1, h2, etc.?](#rea40)    |
-| [¿Para qué es el Doctype?](#rea54)    |
-| [Atributo placeholder para campos en HTML](#rea55)    |
 | [Vínculos Relativos en HTML](#rea56)    |
 | [Vínculos Absolutos en HTML](#rea57)    |
+| [¿Para qué es el Doctype?](#rea54)    |
+| [Atributo placeholder para campos en HTML](#rea55)    |
 | [Cual es la importancia del uso de todos los elementos HTML?](#rea41)    |
 | [Que son los atributos de los elementos HTML?](#rea42)    |
 | [Cuáles son las partes de un documento HTML?](#rea43)    |
 | [Puedo escribir las etiquetas en mayúscula y minúscula?](#rea44)    |
 | [Qué son los mapa de imagen?](#rea45)    |
 | [Que es el tag DataList?](#rea46)    |
+
+| React   |
+|----------|
 | [¿Qué es React?](#rea47)    |
-| [¿De qué hablamos cuando hablamos de una SPA (Single Page App)?](#rea48)    |
+|Libreria vs Framework|
 | [Para que es el comando React eject?](#rea49)    |
-| [(Performance) Como evitar mandar muchos eventos inutiles, por ejemplo, ejecutar un search por letra?](#rea50)    |
-| [Que es async rendering?](#rea51)    |
 | [Que son las Ref?](#rea52)    |
-| [Para que son los eventos sinteticos (SyntheticEvent)?](#rea53)    |
-| [Que significa prop drilling y como evitarlo?](#rea54)    |
 | [De que tratan los Ciclos de Vida Componentes?](#rea62)    |
+|Componentes de clase vs Componentes de Funcion|
 | [componentWillReceiveProps()](#rea55)    |
 | [componentDidMount()](#rea56)    |
 | [componentWillUnmount()](#rea57)    |
@@ -465,20 +520,13 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 | [useCallback](#rea1)    |
 | [useDispatch](#rea2)    |
 | [useEffect](#rea3)    |
+|Puede el useEffect ser asincrono? Porque?|
 | [useState](#rea4)    |
 | [useSelector](#rea5)    |
 | [useRef](#rea6)    |
 | [useMemo](#rea7)    |
 | [useReducer](#rea8)    |
 | [useLayoutEffect](#rea9)    |
-| [Diferencia entre AngularJS y Angular](#rea10)    |
-| [¿Qué son los modulos en Angular?](#rea11)    |
-| [¿Qué es Property Binding?](#rea12)    |
-| [¿Cuál es el flujo de datos una aplicación Angular?](#rea13)    |
-| [¿Qué es un Decorador en Angular?](#rea14)    |
-| [Event Binding en Angular (Manejo de Eventos)](#rea15)    |
-| [Data Binding en Angular](#rea16)    |
-| [Como puedo mejorar la performance de mi Frontend?](#rea17)    |
 | [¿Que es Redux?](#rea18)    |
 | [Cuando conviene usar Redux?](#rea19)    |
 | [¿Cuales son los beneficios de usar Redux?](#rea20)    |
@@ -486,6 +534,38 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 | [¿Cual es el flujo de Redux?](#rea22)    |
 | [Que es ContextAPI?](#rea23)    |
 | [Que es React Fiber?](#rea24)    |
+|Que tener en cuenta para tener una buena performance en React|
+| [¿Qué es el Virtual DOM?](#rea39)    |
+|Para que tipo de proyectos React es recomendable?|
+
+| Angular   |
+|----------|
+| [Diferencia entre AngularJS y Angular](#rea10)    |
+| [¿Qué son los modulos en Angular?](#rea11)    |
+| [¿Qué es Property Binding?](#rea12)    |
+| [¿Cuál es el flujo de datos una aplicación Angular?](#rea13)    |
+| [¿Qué es un Decorador en Angular?](#rea14)    |
+| [Event Binding en Angular (Manejo de Eventos)](#rea15)    |
+| [Data Binding en Angular](#rea16)    |
+|Que son los componentes standalone y cuando conviene utilizarlos?||
+|¿Podrías describir algunos problemas de rendimiento que hayas enfrentado en aplicaciones Angular y cómo los resolviste?|
+|¿Podrías nombrar algunas mejoras comunes de rendimiento en Angular (pipes, detección de cambios, etc.)?|
+|¿Qué problemas de rendimiento pueden existir en Angular y cómo se solucionan?|
+|¿Cómo funciona la detección de cambios en Angular?|
+|¿Cómo se maneja la inyección de dependencias y la inversión de control en las aplicaciones de Angular?|
+|¿Qué es la compilación JIT y AOT en Angular? Diferencias, pros y contras.|
+|¿Cómo se maneja la gestión del estado en las aplicaciones de Angular?|
+|¿Cómo se puede compartir el estado en las aplicaciones de Angular? Servicios vs Flux vs Redux. Pros y contras de cada enfoque.|
+
+| Conceptos Generales   |
+|----------|
+|Que es el Critical rendering path?|
+| [¿De qué hablamos cuando hablamos de una SPA (Single Page App)?](#rea48)    |
+| [Como evitar mandar muchos eventos inutiles, por ejemplo, ejecutar un search por letra?](#rea50)    |
+| [Que es async rendering?](#rea51)    |
+| [Para que son los eventos sinteticos (SyntheticEvent)?](#rea53)    |
+| [Que significa prop drilling y como evitarlo?](#rea54)    |
+| [Como puedo mejorar la performance de mi Frontend?](#rea17)    |
 | [Para que sirven las claves o Keys en React?](#rea25)    |
 | [¿Que es async, preload y prefetch?](#rea29)    |
 | [Cual es la diferencia entre call, bind y apply?](#rea30)    |
@@ -497,7 +577,6 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 | [Que es el server side rendering?](#rea36)    |
 | [Que es Tree Shaking?](#rea37)    |
 | [¿Que es el SEO?](#rea38)    |
-| [¿Qué es el Virtual DOM?](#rea39)    |
 | [Qué es el namespacing de JS?](#rea40)    |
 | [Que es la tipificacion de Variables?](#rea41)    |
 | [Concepto Truthy and Falsy](#rea42)    |
@@ -513,6 +592,52 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 | [Que es Symbol?](#rea52)    |
 | [Cual es la diferencia entre un event loop, microtask y macrotask?](#rea53)    |
 | [Variable Shadowing - Ocultamiento de Variables](#rea54)    |
+|¿Qué son los observables? Multicast vs Unicast, "hot" vs "cold".|
+
+| Server Side Rendering   |
+|----------|
+|¿Qué es la generación de sitios estáticos, SSR y SPA del lado del cliente? Pros y contras de ambos enfoques.|
+|¿Qué es el Server Side Rendering (SSR) y cómo funciona?  |
+|¿Cuáles son las ventajas y desventajas de usar SSR en lugar de Client Side Rendering (CSR)?|
+|¿En qué casos sería más beneficioso utilizar SSR en lugar de CSR?|
+|¿Cómo afecta el SSR al rendimiento de una aplicación web?|
+|¿Cómo maneja el SSR la carga inicial de la página y cómo afecta esto a la experiencia del usuario?|
+|¿Cómo afecta el SSR al SEO de una aplicación web?|
+|¿Cómo se manejan las solicitudes de datos asíncronos en SSR?|
+|¿Cómo se maneja el enrutamiento en una aplicación con SSR?|
+|¿Cómo se maneja el estado de la aplicación en un entorno SSR?|
+|¿Qué herramientas o frameworks son comúnmente utilizados para implementar SSR y por qué?|
+|¿Cómo se maneja la autenticación de usuarios en una aplicación con SSR?|
+|¿Cómo se maneja la caché en una aplicación con SSR?|
+|¿Cómo se manejan los errores y las excepciones en una aplicación con SSR?|
+|¿Cómo se maneja la compatibilidad entre navegadores en una aplicación con SSR?|
+|¿Cómo se manejan las pruebas en una aplicación con SSR?|
+|¿Cómo se maneja la implementación y el despliegue en una aplicación con SSR?|
+|¿Cómo se maneja la escalabilidad en una aplicación con SSR?|
+|¿Cómo se maneja la seguridad en una aplicación con SSR?|
+|¿Cómo se maneja la carga de recursos estáticos (imágenes, CSS, JavaScript) en SSR?|
+|¿Cómo se maneja la internacionalización y la localización en una aplicación con SSR?|
+
+| Comunicación de Red y Recuperación de Datos en JavaScript   |
+|----------|
+|¿Cómo se realiza la comunicación de red en JavaScript?|
+|¿Cómo se pueden obtener datos de un servidor en JavaScript?|
+|¿Qué es REST y cómo se utiliza en JavaScript?|
+|¿Cómo se maneja el problema de la Política del Mismo Origen en JavaScript?|
+|¿Qué es el Modelo de Madurez de Richardson y cómo se aplica en JavaScript?|
+|¿Qué es la consulta de sondeo (polling) y la consulta de sondeo prolongada (long polling) en JavaScript?|
+|¿Cómo se utiliza HTTP en JavaScript para la comunicación de red?|
+|¿Qué son los WebSockets y cómo se utilizan en JavaScript?|
+|¿Qué es GraphQL y cómo se utiliza en JavaScript?|
+
+| Rendimiento y Latencia en JavaScript   |
+|----------|
+|¿Cómo se puede lograr una baja latencia en JavaScript?|
+|¿Cuáles son algunos problemas comunes de rendimiento en JavaScript y cómo se pueden resolver?|
+|¿Cuáles son algunos problemas comunes de memoria en JavaScript y cómo se pueden resolver?|
+|¿Cómo investigarías problemas de rendimiento o memoria en JavaScript?|
+|¿Qué herramientas se pueden utilizar para optimizar el rendimiento en JavaScript?|
+|¿Cómo se pueden modelar el rendimiento en JavaScript?|
 
 <a name="mob-base"></a>
 
@@ -524,6 +649,29 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 | [¿Cómo se ejecutan las aplicaciones en Android y qué son los archivos DEX?](#mob2)    |
 | [¿Qué es el Android Runtime y cómo se ejecutan las aplicaciones en Android?](#mob3)    |
 | [¿Qué constituye la base de Android y qué funciones proporciona el kernel de Linux?](#mob4)    |
+
+| React Native   |
+|----------|
+|¿Qué es React Native y cómo se compara con otras soluciones de desarrollo móvil?|
+|¿Cómo se maneja el estado en una aplicación React Native?|
+|¿Cómo se maneja la navegación en una aplicación React Native?|
+|¿Cómo se maneja la persistencia de datos en una aplicación React Native?|
+|¿Cómo se maneja la autenticación de usuarios en una aplicación React Native?|
+|¿Cómo se maneja la internacionalización en una aplicación React Native?|
+|¿Cómo se maneja la compatibilidad entre diferentes versiones de sistemas operativos en una aplicación React Native?|
+|¿Cómo se maneja la compatibilidad entre diferentes tamaños de pantalla en una aplicación React Native?|
+|¿Cómo se maneja la optimización del rendimiento en una aplicación React Native?|
+|¿Cómo se maneja la depuración en una aplicación React Native?|
+|¿Cómo se maneja el manejo de errores y las excepciones en una aplicación React Native?|
+|¿Cómo se maneja la implementación y el despliegue en una aplicación React Native?|
+|¿Cómo se maneja la escalabilidad en una aplicación React Native?|
+|¿Cómo se maneja la seguridad en una aplicación React Native?|
+|¿Cómo se maneja la carga de recursos estáticos (imágenes, CSS, JavaScript) en React Native?|
+|¿Cómo se maneja la comunicación entre JavaScript y el código nativo en React Native?|
+|¿Cómo se maneja la animación en una aplicación React Native?|
+|¿Cómo se maneja el acceso a las funcionalidades del dispositivo (cámara, GPS, etc.) en una aplicación React Native?|
+|¿Cómo se manejan las pruebas en una aplicación React Native?|
+|¿Cómo se maneja la actualización de la aplicación en una aplicación React Native?|
 
 <a name="qa-base"></a>
 
@@ -541,6 +689,8 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 | [Que tipos de testing hay?](#qa8)    |
 | [Que verifica el Unit Test?](#qa9)    |
 | [Principios FIRST de los Unit test](#qa10)    |
+|¿Qué código debería estar cubierto con pruebas unitarias? Imagina que quieres refactorizar la aplicación y moverla de Angular a React, por ejemplo. La UX y la lógica se mantienen igual. ¿Qué tipo de pruebas serían útiles en este caso?|
+|¿Qué tipo de pruebas utilizas en el proyecto? Imagina que estás comenzando una refactorización completa de la aplicación. ¿Qué tipo de pruebas podrían ayudarte a tener más confianza durante el proceso de refactorización?|
 
 <a name="cam-base"></a>
 
@@ -566,6 +716,7 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 | [Nombres Significativos en Codigo Limpio](#cod2)    |
 | [Dependency Inversion Principle](#cod3)    |
 | [Concepto SOLID](#cod4)    |
+|Principios SOLID aplicados en Javascript|
 | [Concepto DRY](#cod5)    |
 | [Concepto KISS](#cod6)    |
 | [Concepto YAGNI](#cod7)    |
