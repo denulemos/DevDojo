@@ -1,4 +1,4 @@
-<div align="center">
+## <div align="center">
 
 # DevDojo 
 
@@ -10,7 +10,7 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 
 <a name="seg-base"></a>
 
-## [Seguridad](#seg)  
+## [Seguridad](#seg)
 
 |  Introducción y Conceptos Básicos  |
 |----------|
@@ -87,7 +87,7 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 
 <a name="acc-base"></a>
 
-## [Accesibilidad](#acc)  
+## [Accesibilidad](#acc)
 
 | Introducción a la Accesibilidad   |
 |----------|
@@ -924,7 +924,7 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 
 <a name="bd-base"></a>
 
-## [Bases de Datos](#bd)  
+## [Bases de Datos](#bd)
 
 | Fundamentos de Bases de Datos   |
 |----------|
@@ -1008,7 +1008,7 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 
 <a id="seg1"></a>
 
-### **Qué quiere decir "Ciberataque"?**
+## # **Qué quiere decir "Ciberataque"?**
 
 [Volver al indice](#seg-base)
 
@@ -1016,7 +1016,7 @@ Es cualquier maniobra ofensiva de explotación deliberada que tiene como objetiv
 
 <a id="seg2"></a>
 
-### **Que quiere decir "Ciberamenazas"?**
+## # **Que quiere decir "Ciberamenazas"?**
 
 [Volver al indice](#seg-base)
 
@@ -1024,7 +1024,7 @@ Representa un evento con potencial de daño que puede afectar negativamente a la
 
 <a id="seg3"></a>
 
-### **¿Qué quiere decir "Vulnerabilidad"?**
+## # **¿Qué quiere decir "Vulnerabilidad"?**
 
 [Volver al indice](#seg-base)
 
@@ -1032,7 +1032,7 @@ Representa una condición de debilidad en los sistemas informáticos que permite
 
 <a id="seg4"></a>
 
-### **¿Qué es el ciberespacio?**
+## # **¿Qué es el ciberespacio?**
 
 [Volver al indice](#seg-base)
 
@@ -1040,7 +1040,7 @@ El ciberespacio es un ambiente complejo en donde interactúan los seres humanos,
 
 <a id="seg5"></a>
 
-### **¿Cuáles son los componentes del Ciberespacio?**
+## # **¿Cuáles son los componentes del Ciberespacio?**
 
 [Volver al indice](#seg-base)
 
@@ -1052,7 +1052,7 @@ El ciberespacio es un ambiente complejo en donde interactúan los seres humanos,
 
 <a id="seg6"></a>
 
-### **Cuales son los problemas del Ciberespacio?**
+## # **Cuales son los problemas del Ciberespacio?**
 
 [Volver al indice](#seg-base)
 
@@ -1066,7 +1066,7 @@ El ciberespacio es un ambiente complejo en donde interactúan los seres humanos,
 
 <a id="seg7"></a>
 
-### **¿Cuáles son las ciberamenazas actuales?**
+## # **¿Cuáles son las ciberamenazas actuales?**
 
 [Volver al indice](#seg-base)
 
@@ -1100,7 +1100,7 @@ El ciberespacio es un ambiente complejo en donde interactúan los seres humanos,
 
 <a id="seg8"></a>
 
-### **¿Qué es la Ciberseguridad?**
+## # **¿Qué es la Ciberseguridad?**
 
 [Volver al indice](#seg-base)
 
@@ -1110,7 +1110,7 @@ La Ciberseguridad se centra únicamente en los activos digitales conectados a In
 
 <a id="seg9"></a>
 
-### **¿Cuál es el perfil del Oficial de seguridad informática?**
+## # **¿Cuál es el perfil del Oficial de seguridad informática?**
 
 [Volver al indice](#seg-base)
 
@@ -1128,7 +1128,7 @@ El oficial de seguridad informática tiene la función de brindar los servicios 
 
 <a id="seg10"></a>
 
-### **¿De qué pasos consta la metodología de ciberseguridad?**
+## # **¿De qué pasos consta la metodología de ciberseguridad?**
 
 [Volver al indice](#seg-base)
 
@@ -1140,7 +1140,7 @@ El oficial de seguridad informática tiene la función de brindar los servicios 
 
 <a id="seg11"></a>
 
-### **¿De qué pasos criterios de seguridad consta la metodología de ciberseguridad?**
+## # **¿De qué pasos criterios de seguridad consta la metodología de ciberseguridad?**
 
 [Volver al indice](#seg-base)
 
@@ -1153,7 +1153,7 @@ El oficial de seguridad informática tiene la función de brindar los servicios 
 
 <a id="seg12"></a>
 
-### **¿Cuáles son algunas medidas comunes contra los ataques?**
+## # **¿Cuáles son algunas medidas comunes contra los ataques?**
 
 [Volver al indice](#seg-base)
 
@@ -1167,7 +1167,7 @@ El oficial de seguridad informática tiene la función de brindar los servicios 
 
 <a id="seg13"></a>
 
-### **¿Cuáles son algunas modalidades comunes de ataques?**
+## # **¿Cuáles son algunas modalidades comunes de ataques?**
 
 [Volver al indice](#seg-base)
 
@@ -1179,7 +1179,7 @@ El oficial de seguridad informática tiene la función de brindar los servicios 
 
 <a id="seg14"></a>
 
-### **¿Cuáles son las etapas en un proceso de hacking?**
+## # **¿Cuáles son las etapas en un proceso de hacking?**
 
 [Volver al indice](#seg-base)
 
@@ -1193,7 +1193,7 @@ El oficial de seguridad informática tiene la función de brindar los servicios 
 
 <a id="seg15"></a>
 
-### **¿Qué son los ataques internos?**
+## # **¿Qué son los ataques internos?**
 
 [Volver al indice](#seg-base)
 
@@ -1209,7 +1209,7 @@ Pueden infiltrar un pendrive con una etiqueta engañosa para que sea usado por a
 
 <a id="seg16"></a>
 
-### **¿Qué tipos de Ingenierías sociales existen?**
+## # **¿Qué tipos de Ingenierías sociales existen?**
 
 [Volver al indice](#seg-base)
 
@@ -1228,7 +1228,7 @@ Pueden infiltrar un pendrive con una etiqueta engañosa para que sea usado por a
 
 <a id="seg17"></a>
 
-### **¿Qué es la triada CIA?**
+## # **¿Qué es la triada CIA?**
 
 [Volver al indice](#seg-base)
 
@@ -1246,7 +1246,7 @@ Pueden infiltrar un pendrive con una etiqueta engañosa para que sea usado por a
 
 <a id="seg18"></a>
 
-### **¿Qué es la seguridad perimetral?**
+## # **¿Qué es la seguridad perimetral?**
 
 [Volver al indice](#seg-base)
 
@@ -1256,7 +1256,7 @@ Pueden infiltrar un pendrive con una etiqueta engañosa para que sea usado por a
 
 <a id="seg19"></a>
 
-### **IDS (Intrusion Detection System)**
+## # **IDS (Intrusion Detection System)**
 
 [Volver al indice](#seg-base)
 
@@ -1268,7 +1268,7 @@ Pueden infiltrar un pendrive con una etiqueta engañosa para que sea usado por a
 
 <a id="seg20"></a>
 
-### **Tecnicas de detección de intrusiones**
+## # **Tecnicas de detección de intrusiones**
 
 [Volver al indice](#seg-base)
 
@@ -1278,7 +1278,7 @@ Pueden infiltrar un pendrive con una etiqueta engañosa para que sea usado por a
 
 <a id="seg21"></a>
 
-### **Indicadores de una intrusión**
+## # **Indicadores de una intrusión**
 
 [Volver al indice](#seg-base)
 
@@ -1305,7 +1305,7 @@ Si el IDS Detecta algún tipo de ataque toma las siguientes medidas:
 
 <a id="seg22"></a>
 
-### **Tipos de IDS**
+## # **Tipos de IDS**
 
 [Volver al indice](#seg-base)
 
@@ -1316,7 +1316,7 @@ Si el IDS Detecta algún tipo de ataque toma las siguientes medidas:
 
 <a id="seg23"></a>
 
-### **Es una amenaza.. Verdadero o Falso?**
+## # **Es una amenaza.. Verdadero o Falso?**
 
 [Volver al indice](#seg-base)
 
@@ -1327,7 +1327,7 @@ Si el IDS Detecta algún tipo de ataque toma las siguientes medidas:
 
 <a id="seg24"></a>
 
-### **¿Qué es un Firewall?**
+## # **¿Qué es un Firewall?**
 
 [Volver al indice](#seg-base)
 
@@ -1341,7 +1341,7 @@ El firewall **NO** protege conexiones que NO pasen por el Firewall, no protege c
 
 <a id="seg25"></a>
 
-### **Tipos de Firewall**
+## # **Tipos de Firewall**
 
 [Volver al indice](#seg-base)
 
@@ -1371,7 +1371,7 @@ El firewall **NO** protege conexiones que NO pasen por el Firewall, no protege c
 
 <a id="seg26"></a>
 
-### **Que es la Criptografia?**
+## # **Que es la Criptografia?**
 
 [Volver al indice](#seg-base)
 
@@ -1384,7 +1384,7 @@ El firewall **NO** protege conexiones que NO pasen por el Firewall, no protege c
 
 <a id="seg27"></a>
 
-### **Que es una funcion Hash?**
+## # **Que es una funcion Hash?**
 
 [Volver al indice](#seg-base)
 
@@ -1412,7 +1412,7 @@ Las firmas digitales se usan ampliamente para proporcionar pruebas de autenticid
 
 <a id="seg28"></a>
 
-### **Cuáles son los requisitos de un Cripto sistema?**
+## # **Cuáles son los requisitos de un Cripto sistema?**
 
 [Volver al indice](#seg-base)
 
@@ -1423,7 +1423,7 @@ Las firmas digitales se usan ampliamente para proporcionar pruebas de autenticid
 
 <a id="seg29"></a>
 
-### **Como funciona el Crifrado Simetrico?**
+## # **Como funciona el Crifrado Simetrico?**
 
 [Volver al indice](#seg-base)
 
@@ -1438,7 +1438,7 @@ Las debilidades del Cifrado simetrico son..
 
 <a id="seg30"></a>
 
-### **Como funciona el Crifrado Asimetrico?**
+## # **Como funciona el Crifrado Asimetrico?**
 
 [Volver al indice](#seg-base)
 
@@ -1451,7 +1451,7 @@ Las debilidades del Cifrado simetrico son..
 
 <a id="seg31"></a>
 
-### **Adquisicion en Informatica Forense**
+## # **Adquisicion en Informatica Forense**
 
 [Volver al indice](#seg-base)
 
@@ -1479,7 +1479,7 @@ Sin embargo, daremos un paseo por un listado de buenas prácticas que son recome
 
 <a id="seg32"></a>
 
-### **El informe pericial informatico**
+## # **El informe pericial informatico**
 
 [Volver al indice](#seg-base)
 
@@ -1500,7 +1500,7 @@ La pericia se dirige a quienes no son especialistas por eso debe mantener un len
 
 <a id="acc1"></a>
 
-### **¿Qué es la accesibilidad web?**
+## # **¿Qué es la accesibilidad web?**
 
 [Volver al indice](#acc-base)
 
@@ -1508,7 +1508,7 @@ Es la práctica continua de asegurarnos de que todo lo que desarrollamos para la
 
 <a id="acc2"></a>
 
-### **¿Cuáles son sus beneficios?**
+## # **¿Cuáles son sus beneficios?**
 
 [Volver al indice](#acc-base)
 
@@ -1521,7 +1521,7 @@ Es la práctica continua de asegurarnos de que todo lo que desarrollamos para la
 
 <a id="acc3"></a>
 
-### **¿Qué significa A11y?**
+## # **¿Qué significa A11y?**
 
 [Volver al indice](#acc-base)
 
@@ -1531,7 +1531,7 @@ a|ccessibilit|y = a11y
 
 <a id="acc4"></a>
 
-### **¿Cuáles son las herramientas más usadas en accesibilidad?**
+## # **¿Cuáles son las herramientas más usadas en accesibilidad?**
 
 [Volver al indice](#acc-base)
 
@@ -1542,7 +1542,7 @@ a|ccessibilit|y = a11y
 
 <a id="acc5"></a>
 
-### **¿Qué es un Screen Reader?**
+## # **¿Qué es un Screen Reader?**
 
 [Volver al indice](#acc-base)
 
@@ -1550,7 +1550,7 @@ Es un software que convierte el texto en voz o en braille. Es utilizado por pers
 
 <a id="acc6"></a>
 
-### **¿Qué es el contraste de color?**
+## # **¿Qué es el contraste de color?**
 
 [Volver al indice](#acc-base)
 
@@ -1558,7 +1558,7 @@ Es la diferencia entre el color del texto y el color del fondo. Un buen contrast
 
 <a id="acc7"></a>
 
-### **¿Qué es el texto alternativo?**
+## # **¿Qué es el texto alternativo?**
 
 [Volver al indice](#acc-base)
 
@@ -1566,7 +1566,7 @@ Es una descripción alternativa que se le da a una imagen, para que las personas
 
 <a id="acc8"></a>
 
-### **¿Qué es el teclado virtual?**
+## # **¿Qué es el teclado virtual?**
 
 [Volver al indice](#acc-base)
 
@@ -1574,7 +1574,7 @@ Es una herramienta que permite a las personas con discapacidad motriz o que no p
 
 <a id="acc9"></a>
 
-### **¿De qué trata el Web Content Accessibility Guidelines (WCAG)?**
+## # **¿De qué trata el Web Content Accessibility Guidelines (WCAG)?**
 
 [Volver al indice](#acc-base)
 
@@ -1594,7 +1594,7 @@ Generalmente, el nivel AAA, el cual es el más avanzado, es al que debemos apunt
 
 <a id="acc10"></a>
 
-### **¿De qué tratan los principios POUR - Principios WCAG?**
+## # **¿De qué tratan los principios POUR - Principios WCAG?**
 
 [Volver al indice](#acc-base)
 
@@ -1607,7 +1607,7 @@ POUR significa Perceivable, Operable, Understandable y Robust, la idea es aplica
 
 <a id="acc11"></a>
 
-### **¿Qué es ARIA - Accessible Rich Internet Applications?**
+## # **¿Qué es ARIA - Accessible Rich Internet Applications?**
 
 [Volver al indice](#acc-base)
 
@@ -1656,7 +1656,7 @@ Son usados para definir cada parte en particular de la página. Se recomienda qu
 
 <a id="acc12"></a>
 
-### **¿Cuándo es necesario utilizar ARIA?**
+## # **¿Cuándo es necesario utilizar ARIA?**
 
 [Volver al indice](#acc-base)
 
@@ -1736,7 +1736,7 @@ Se debe agregar el título de la página para que el Screen Reader le diga a los
 
 <a id="acc13"></a>
 
-### **Contenido Dinámico y Accesibilidad**
+## # **Contenido Dinámico y Accesibilidad**
 
 [Volver al indice](#acc-base)
 
@@ -1768,7 +1768,7 @@ Se debe usar JS simple y conciso.
 
 <a id="acc14"></a>
 
-### **Manejo de Focus**
+## # **Manejo de Focus**
 
 [Volver al indice](#acc-base)
 
@@ -1979,7 +1979,7 @@ Se debe también manejar el focus a nivel página, poniendo énfasis en las SPA 
 
 <a id="acc15"></a>
 
-### **CSS Accesible**
+## # **CSS Accesible**
 
 [Volver al indice](#acc-base)
 
@@ -2004,7 +2004,7 @@ Hay varios tipos de problemas de visión con respecto a los colores, el más com
 
 <a id="acc16"></a>
 
-### **Que practicas conlleva tener un HTML Accesible?**
+## # **Que practicas conlleva tener un HTML Accesible?**
 
 [Volver al indice](#acc-base)
 
@@ -2153,7 +2153,7 @@ Hay varios tipos de problemas de visión con respecto a los colores, el más com
 
 <a id="acc17"></a>
 
-### **Nombrar algunas ARIAS existentes**
+## # **Nombrar algunas ARIAS existentes**
 
 [Volver al indice](#acc-base)
 
@@ -2234,7 +2234,7 @@ Hay varios tipos de problemas de visión con respecto a los colores, el más com
 
 <a id="alg1"></a>
 
-### **Binary Search**
+## # **Binary Search**
 
 [Volver al indice](#alg-base)
 
@@ -2266,7 +2266,7 @@ console.log(binarySearch(arr, 5)); // 4
 
 <a id="alg2"></a>
 
-### **Podemos aplicar Binary Search a una Linked List ordenada?**
+## # **Podemos aplicar Binary Search a una Linked List ordenada?**
 
 [Volver al indice](#alg-base)
 
@@ -2274,7 +2274,7 @@ No, no se puede, ya que encontrar el index del elemento del medio es demasiado c
 
 <a id="alg3"></a>
 
-### **Selection Sort (Ordenamiento)**
+## # **Selection Sort (Ordenamiento)**
 
 [Volver al indice](#alg-base)
 
@@ -2309,7 +2309,7 @@ const selectionSort = (array) => {
 
 <a id="alg4"></a>
 
-### **Insertion Sort (Ordenamiento)**
+## # **Insertion Sort (Ordenamiento)**
 
 [Volver al indice](#alg-base)
 
@@ -2339,7 +2339,7 @@ const insertionSort = (array) => {
 
 <a id="alg5"></a>
 
-### **Bubble Sort (Ordenamiento)**
+## # **Bubble Sort (Ordenamiento)**
 
 [Volver al indice](#alg-base)
 
@@ -2378,7 +2378,7 @@ const bubbleSort = (array) => {
 
 <a id="alg6"></a>
 
-### **Merge Sort (Ordenamiento)**
+## # **Merge Sort (Ordenamiento)**
 
 [Volver al indice](#alg-base)
 
@@ -2439,7 +2439,7 @@ Es recursivo
 
 <a id="alg7"></a>
 
-### **Big O - ¿Qué es?**
+## # **Big O - ¿Qué es?**
 
 [Volver al indice](#alg-base)
 
@@ -2451,7 +2451,7 @@ La mejor opcion es la que crece menos ante el aumento de datos de entrada
 
 <a id="alg8"></a>
 
-### **Reglas para calcular Big O**
+## # **Reglas para calcular Big O**
 
 [Volver al indice](#alg-base)
 
@@ -2508,7 +2508,7 @@ O(n + 1) => O(n)
 
 <a id="alg9"></a>
 
-### **Calcular Big O**
+## # **Calcular Big O**
 
 [Volver al indice](#alg-base)
 
@@ -2520,7 +2520,7 @@ Si quiero llevar las valijas corriendo, supongamos que solo puedo llevar 2 valij
 
 <a id="alg10"></a>
 
-### **Notación Asintótica**
+## # **Notación Asintótica**
 
 [Volver al indice](#alg-base)
 
@@ -2623,7 +2623,7 @@ No importa si tenemos un algoritmo muy complejo dentro de un if al que probablem
 
 <a id="alg11"></a>
 
-### **¿Cómo analizamos el codigo?**
+## # **¿Cómo analizamos el codigo?**
 
 [Volver al indice](#alg-base)
 
@@ -2705,7 +2705,7 @@ Nos quedamos con el termino mas significativo, que seria n^2
 
 <a id="alg12"></a>
 
-### **Multiplicacion de Runtimes**
+## # **Multiplicacion de Runtimes**
 
 [Volver al indice](#alg-base)
 
@@ -2734,7 +2734,7 @@ for (int a: arrA) {
 
 <a id="alg14"></a>
 
-### **Ejemplos de Ejercicios**
+## # **Ejemplos de Ejercicios**
 
 [Volver al indice](#alg-base)
 
@@ -2892,7 +2892,7 @@ void printPairsTwoArrays(int[] arrayA, int[] arrayB) {
 
 <a id="alg15"></a>
 
-### **Estructuras de datos (Arrays)**
+## # **Estructuras de datos (Arrays)**
 
 [Volver al indice](#alg-base)
 
@@ -2913,7 +2913,7 @@ En Java, los `ArrayList` son una implementación de la interfaz `List`. También
 
 <a id="alg16"></a>
 
-### **Especificando la clase de contenido de un ArrayList**
+## # **Especificando la clase de contenido de un ArrayList**
 
 [Volver al indice](#alg-base)
 
@@ -2926,7 +2926,7 @@ ArrayList<Object> coleccion = new ArrayList<>();
 
 <a id="alg17"></a>
 
-### **Creación de un ArrayList**
+## # **Creación de un ArrayList**
 
 [Volver al indice](#alg-base)
 
@@ -2968,7 +2968,7 @@ ArrayList<String> palabras = new ArrayList<>();
 
 <a id="alg18"></a>
 
-### **Agregar un elemento a un ArrayList**
+## # **Agregar un elemento a un ArrayList**
 
 [Volver al indice](#alg-base)
 
@@ -2994,7 +2994,7 @@ numeros.add(19); // insertará el número 19 en la colección
 
 <a id="alg19"></a>
 
-### **Obtener el elemento n de un ArrayList**
+## # **Obtener el elemento n de un ArrayList**
 
 [Volver al indice](#alg-base)
 
@@ -3009,7 +3009,7 @@ Esto guardará la referencia al elemento sin quitarlo de la lista (no hace una c
 
 <a id="alg20"></a>
 
-### **Extraer el elemento n de un ArrayList**
+## # **Extraer el elemento n de un ArrayList**
 
 [Volver al indice](#alg-base)
 
@@ -3027,7 +3027,7 @@ Pero sacar un elemento de la colección, como vimos más arriba, tiene algunas c
 
 <a id="alg21"></a>
 
-### **Recorrer el ArrayList completo con for-each**
+## # **Recorrer el ArrayList completo con for-each**
 
 [Volver al indice](#alg-base)
 
@@ -3053,7 +3053,7 @@ Este ejemplo podría leerse como “para cada persona que esté en la colección
 
 <a id="alg22"></a>
 
-### **Buscar un elemento en la colección**
+## # **Buscar un elemento en la colección**
 
 [Volver al indice](#alg-base)
 
@@ -3090,7 +3090,7 @@ El ejemplo anterior utilizará el ciclo while para recorrer la estructura mientr
 
 <a id="alg23"></a>
 
-### **Remover algunos de los elementos del ArrayList**
+## # **Remover algunos de los elementos del ArrayList**
 
 [Volver al indice](#alg-base)
 
@@ -3120,7 +3120,7 @@ Nosotros seguiremos parados en la posición 2, donde ahora, en vez del 4 que ext
 
 <a id="alg24"></a>
 
-### **Creando colecciones como atributo de una clase**
+## # **Creando colecciones como atributo de una clase**
 
 [Volver al indice](#alg-base)
 
@@ -3164,7 +3164,7 @@ Así devolvemos null o el socio encontrado, que ya ha sido removido de la colecc
 
 <a id="alg25"></a>
 
-### **Devolver una colección secundaria**
+## # **Devolver una colección secundaria**
 
 [Volver al indice](#alg-base)
 
@@ -3187,7 +3187,7 @@ No pasará nada: todos los socios estarán en la lista principal, y aquellos que
 
 <a id="alg26"></a>
 
-### Qué es un "array-like" en Javascript?
+## # Qué es un "array-like" en Javascript?
 
 [Volver al indice](#alg-base)
 
@@ -3225,7 +3225,7 @@ console.log(array); // Imprime: ['a', 'b', 'c']
 
 <a id="alg27"></a>
 
-### **Cuales son las funciones array de JavaScript?**
+## # **Cuales son las funciones array de JavaScript?**
 
 [Volver al indice](#alg-base)
 
@@ -3308,7 +3308,7 @@ splice(indice, cantidad elementos a eliminar, agrego, agrego);
 
 <a id="alg28"></a>
 
-### Funcion .sort()
+## # Funcion .sort()
 
 [Volver al indice](#alg-base)
 
@@ -3334,7 +3334,7 @@ Esta funcion devuelve un numero. El mismo determina lo siguiente:
 
 <a id="alg29"></a>
 
-### **Set() en Javascript** (HashSet)
+## # **Set() en Javascript** (HashSet)
 
 [Volver al indice](#alg-base)
 
@@ -3379,7 +3379,7 @@ for (let item of mySet) {
 
 <a id="alg30"></a>
 
-### HashTables (.Map)
+## # HashTables (.Map)
 
 [Volver al indice](#alg-base)
 
@@ -3449,7 +3449,7 @@ for (let [key, value] of myMap) {
 
 <a id="alg31"></a>
 
-### Linked Lists
+## # Linked Lists
 
 [Volver al indice](#alg-base)
 
@@ -3542,7 +3542,19 @@ public class SingleLinkedList {
 
 <a id="alg32"></a>
 
-#### ¿Cuales son los beneficios de un Linked List sobre un Array?
+## General
+
+
+
+
+
+
+
+
+
+
+
+## ¿Cuales son los beneficios de un Linked List sobre un Array?
 
 [Volver al indice](#alg-base)
 
@@ -3554,7 +3566,7 @@ En un Linked List, como cada nodo esta conectado con un link, no es necesario qu
 
 <a id="alg33"></a>
 
-### ¿Cual es el uso de una Doubly-Linked List cuando se lo compara con un Singly Linked List?
+## # ¿Cual es el uso de una Doubly-Linked List cuando se lo compara con un Singly Linked List?
 
 [Volver al indice](#alg-base)
 
@@ -3564,7 +3576,7 @@ Se puede reconocer cuando un nodo es el primero ya que su link anterior es Nulo,
 
 <a id="alg34"></a>
 
-### ¿Cual es la diferencia entre un Linked List y un Doubly Linked List?
+## # ¿Cual es la diferencia entre un Linked List y un Doubly Linked List?
 
 [Volver al indice](#alg-base)
 
@@ -3572,7 +3584,7 @@ Un Linked List es una estructura de datos que almacena elementos de forma no con
 
 <a id="alg35"></a>
 
-### Generics
+## # Generics
 
 [Volver al indice](#alg-base)
 
@@ -3592,7 +3604,7 @@ Los ArrayList reconocen el tipo de dato que evaluan <String> / <Integer> por los
 
 <a id="alg36"></a>
 
-### Estructuras de Datos
+## # Estructuras de Datos
 
 [Volver al indice](#alg-base)
 
@@ -3607,7 +3619,7 @@ no se que tipo voy a recibir, lo voy a saber cuando me lo mandan. (public class 
 
 Definimos el tipo del sorteador cuando lo instanciamos para usarlo. Sorteador solo sabe como realiza sus metodos.
 
-#### Agregar muchos elementos a la vez
+## Agregar muchos elementos a la vez
 
 ```java
 public void agregar (T[] elementos){
@@ -3617,13 +3629,13 @@ public void agregar (T[] elementos){
 
 También puedo usar un foreach.
 
-#### Instancio mi Sorteador
+## Instancio mi Sorteador
 
 ```java
 Sorteador<String> nombres = new Sorteador<>();
 ```
 
-#### Hacer que mi sorteador sea iterable
+## Hacer que mi sorteador sea iterable
 
 ```java
 public class Sorteador<T> implements Iterable<T>
@@ -3652,7 +3664,7 @@ private class IteratorSorteador implements Iterator<T>{
 
 <a id="alg37"></a>
 
-### Qué son las Pilas y Colas?
+## # Qué son las Pilas y Colas?
 
 [Volver al indice](#alg-base)
 
@@ -3672,7 +3684,7 @@ Un detalle que tienen en común ambas estructuras es que **no permiten**
 
 <a id="alg38"></a>
 
-### Colas
+## # Colas
 
 [Volver al indice](#alg-base)
 
@@ -3686,7 +3698,7 @@ La segunda implementación, basada en nodos, puede parecer más complicada, pero
 
 <a id="alg39"></a>
 
-### Pilas
+## # Pilas
 
 [Volver al indice](#alg-base)
 
@@ -3698,13 +3710,13 @@ La implementación de **`Pila<*TipoElemento*>`** es extremadamente similar, aunq
 
 <a id="alg40"></a>
 
-### Nodo versus dato
+## # Nodo versus dato
 
 Un detalle a tener en cuenta en cuanto a la implementación con nodos es que no debemos confundir el ***nodo*** con el ***dato***: mientras que este último es el *elemento* que se agrega, mira o quita, el primero es su *contenedor* circunstancial y lo guarda en su interior. Por otra parte, los nodos nunca son accesibles a través de la interfaz del TDA y están encapsulados (**composición**). Por lo tanto, así como en la implementación con ArrayList no podemos acceder al mismo, tampoco podemos acceder a la cadena de nodos. Para quien usa el TDA, la implementación es completamente *transparente*.
 
 <a id="alg41"></a>
 
-### Uso de Pilas y Colas
+## # Uso de Pilas y Colas
 
 [Volver al indice](#alg-base)
 
@@ -3747,7 +3759,7 @@ Quitan el primer elemento disponible en cada estructura, dejando ambas estructur
 
 <a id="alg42"></a>
 
-### Arboles
+## # Arboles
 
 [Volver al indice](#alg-base)
 
@@ -3768,7 +3780,7 @@ public class Node {
 
 <a id="alg43"></a>
 
-### Qué es un Binary Tree?
+## # Qué es un Binary Tree?
 
 [Volver al indice](#alg-base)
 
@@ -3786,7 +3798,7 @@ class Node {
 
 <a id="alg44"></a>
 
-### Qué es un Binary Search Tree?
+## # Qué es un Binary Search Tree?
 
 [Volver al indice](#alg-base)
 
@@ -3810,7 +3822,7 @@ function TreeNode(val, left, right) {
 
 <a id="alg45"></a>
 
-#### ¿Porque se dice que buscar un nodo en un BST es mas eficiente que en un Simple Binary Tree?
+## ¿Porque se dice que buscar un nodo en un BST es mas eficiente que en un Simple Binary Tree?
 
 [Volver al indice](#alg-base)
 
@@ -3818,7 +3830,7 @@ Porque, por la particularidad que tienen los hijos de los nodos de un BST (que u
 
 <a id="alg46"></a>
 
-### Complete Binary Tree
+## # Complete Binary Tree
 
 [Volver al indice](#alg-base)
 
@@ -3846,7 +3858,7 @@ root.left.right = new TreeNode(5);
 
 <a id="alg47"></a>
 
-### Maneras de recorrer un Arbol
+## # Maneras de recorrer un Arbol
 
 [Volver al indice](#alg-base)
 
@@ -3854,7 +3866,7 @@ root.left.right = new TreeNode(5);
 
 <a id="alg48"></a>
 
-### In-Order Traversal
+## # In-Order Traversal
 
 [Volver al indice](#alg-base)
 
@@ -3862,7 +3874,7 @@ Rama izquierda del nodo, a continuación el propio nodo y después la rama derec
 
 <a id="alg49"></a>
 
-### Pre-order traversal
+## # Pre-order traversal
 
 [Volver al indice](#alg-base)
 
@@ -3870,7 +3882,7 @@ Primero el nodo padre, despues izquierda y luego derecha
 
 <a id="alg50"></a>
 
-### Recorrido de un Binary Tree
+## # Recorrido de un Binary Tree
 
 [Volver al indice](#alg-base)
 
@@ -3908,7 +3920,7 @@ inOrderTraversal(root);
 
 <a id="alg51"></a>
 
-### Post-order traversal
+## # Post-order traversal
 
 [Volver al indice](#alg-base)
 
@@ -3916,7 +3928,7 @@ Primero la rama izquierda, luego la derecha y luego el padre
 
 <a id="alg52"></a>
 
-### Recursividad
+## # Recursividad
 
 [Volver al indice](#alg-base)
 
@@ -3926,7 +3938,7 @@ TODOS los algoritmos recursivos tienen una alternativa iterativa. Su complejidad
 
 <a id="alg53"></a>
 
-### Factorial
+## # Factorial
 
 [Volver al indice](#alg-base)
 
@@ -3952,7 +3964,7 @@ console.log(factorial(5)); // Output: 120
 
 <a id="alg54"></a>
 
-### Heaps
+## # Heaps
 
 [Volver al indice](#alg-base)
 
@@ -4081,7 +4093,7 @@ console.log(minHeap.heap); // Output: [2, 4, 3, 5]
 
 <a id="alg55"></a>
 
-### Metodos de Strings en Javascript
+## # Metodos de Strings en Javascript
 
 [Volver al indice](#alg-base)
 
@@ -4112,7 +4124,7 @@ test.indexOf("hola", +infinito) // Por defecto empieza desde mas infinito
 
 <a id="alg56"></a>
 
-### Métodos de Objectos en Javascript
+## # Métodos de Objectos en Javascript
 
 [Volver al indice](#alg-base)
 
@@ -4162,7 +4174,7 @@ objectToMap({a: 1, b: 2}); // Map {'a' => 1, 'b' => 2}
 
 <a id="var1"></a>
 
-### **¿Qué es una Variable?**
+## # **¿Qué es una Variable?**
 
 [Volver al indice](#alg-base)
 
@@ -4172,7 +4184,7 @@ Todas las variables tienen características comunes (por ejemplo un nombre que l
 
 <a id="var2"></a>
 
-### **¿En qué se diferencia una variable común, nativa, de un objeto?**
+## # **¿En qué se diferencia una variable común, nativa, de un objeto?**
 
 [Volver al indice](#alg-base)
 
@@ -4184,7 +4196,7 @@ Es por eso que cuando a una variable de "tipo clase" no se le asigna ningún val
 
 <a id="var3"></a>
 
-### **¿A qué nos referimos cuando hablamos de tipos de datos?**
+## # **¿A qué nos referimos cuando hablamos de tipos de datos?**
 
 [Volver al indice](#alg-base)
 
@@ -4196,7 +4208,7 @@ En Java diferenciamos dos tipos de datos: por un lado, los tipos primitivos, que
 
 <a id="var4"></a>
 
-### **¿Cómo se declara una variable?**
+## # **¿Cómo se declara una variable?**
 
 [Volver al indice](#alg-base)
 
@@ -4230,7 +4242,7 @@ String profesor = "Catalina";
 
 <a id="var5"></a>
 
-### **Nombres de Variables**
+## # **Nombres de Variables**
 
 [Volver al indice](#alg-base)
 
@@ -4245,7 +4257,7 @@ Algunas reglas no escritas, pero que se han asumido *por convención* son:
 
 <a id="var6"></a>
 
-### **Diferencia entre let, var y const**
+## # **Diferencia entre let, var y const**
 
 [Volver al indice](#alg-base)
 
@@ -4333,7 +4345,7 @@ Los array sí pueden ser modificados en sí mismos, lo que no se puede es apunta
 
 <a id="var7"></a>
 
-### **Para que sirve event.preventDefault()?**
+## # **Para que sirve event.preventDefault()?**
 
 [Volver al indice](#alg-base)
 
@@ -4341,7 +4353,7 @@ Los botones de los form en HTML por defecto hacen un submit, lo que puede llevar
 
 <a id="var8"></a>
 
-### **Función Object.freeze**
+## # **Función Object.freeze**
 
 [Volver al indice](#alg-base)
 
@@ -4363,7 +4375,7 @@ Cuando intento modificar algo, no tira error, simplemente lo ignora.
 
 <a id="var9"></a>
 
-### **Diferencia entre import y require**
+## # **Diferencia entre import y require**
 
 [Volver al indice](#alg-base)
 
@@ -4374,7 +4386,7 @@ Cuando intento modificar algo, no tira error, simplemente lo ignora.
 import { countItems } from "math_array_functions"
 ```
 
-### **Uso de getters y setters**
+## # **Uso de getters y setters**
 
 ```jsx
 class Book {
@@ -4398,7 +4410,7 @@ console.log(lol.writer);  // wut
 
 <a id="var10"></a>
 
-### **Como funciona setTimeout?**
+## # **Como funciona setTimeout?**
 
 [Volver al indice](#alg-base)
 
@@ -4440,7 +4452,7 @@ clearTimeout(timeoutid)
 
 <a id="var11"></a>
 
-### **Event delegation**
+## # **Event delegation**
 
 [Volver al indice](#alg-base)
 
@@ -4450,7 +4462,7 @@ Agregamos el evento al container y dependiendo donde es el click (en cual boton)
 
 <a id="var12"></a>
 
-### **Callback Hell**
+## # **Callback Hell**
 
 [Volver al indice](#alg-base)
 
@@ -4505,7 +4517,7 @@ operation(1,3,(a,b) => a * b)
 
 <a id="var13"></a>
 
-### **Funciones de "bloqueo" y "no bloqueo"**
+## # **Funciones de "bloqueo" y "no bloqueo"**
 
 [Volver al indice](#alg-base)
 
@@ -4515,7 +4527,7 @@ A su vez, las funciones de no bloqueo le permiten al desarrollador realizar mú
 
 <a id="var14"></a>
 
-### **Diferencia entre primitivo y objeto**
+## # **Diferencia entre primitivo y objeto**
 
 [Volver al indice](#alg-base)
 
@@ -4562,7 +4574,7 @@ console.log(clone); // { a: 1, b: 2, foo: 'foo' }
 
 <a id="var15"></a>
 
-### **Bubble vs Capture**
+## # **Bubble vs Capture**
 
 [Volver al indice](#alg-base)
 
@@ -4574,7 +4586,7 @@ Cuando agregamos un elemento parece que solo lo agregamos a un elemento DOM pero
 
 <a id="var16"></a>
 
-### **Rest Operator**
+## # **Rest Operator**
 
 [Volver al indice](#alg-base)
 
@@ -4649,7 +4661,7 @@ console.log(startX, startY); // 5, 6
 
 <a id="var17"></a>
 
-### **Creando Strings con Template Literal - Template Strings**
+## # **Creando Strings con Template Literal - Template Strings**
 
 [Volver al indice](#alg-base)
 
@@ -4674,7 +4686,7 @@ Se usa otro tipo de “comilla” cuando se quiere invocar al String (`) y no es
 
 <a id="var18"></a>
 
-### **Export Fallback con export default**
+## # **Export Fallback con export default**
 
 [Volver al indice](#alg-base)
 
@@ -4695,7 +4707,7 @@ add(5,4); //Devuelve el resultado de acuerdo al metodo exportado anteriormente
 
 <a id="var19"></a>
 
-### **¿Qué son las variables no declaradas y no definidas?**
+## # **¿Qué son las variables no declaradas y no definidas?**
 
 [Volver al indice](#alg-base)
 
@@ -4705,7 +4717,7 @@ add(5,4); //Devuelve el resultado de acuerdo al metodo exportado anteriormente
 
 <a id="var20"></a>
 
-### **Que es el Function Factory?**
+## # **Que es el Function Factory?**
 
 [Volver al indice](#alg-base)
 
@@ -4743,7 +4755,7 @@ const crearUsuario = ({ userName, avatar }) => ({
 
 <a id="var21"></a>
 
-### **Promises**
+## # **Promises**
 
 [Volver al indice](#alg-base)
 
@@ -4781,7 +4793,7 @@ let promise = new Promise((resolve, reject) =>{
 
 <a id="var22"></a>
 
-### **Cuál es la diferencia entre Promises, Callbacks y Async/Await?**
+## # **Cuál es la diferencia entre Promises, Callbacks y Async/Await?**
 
 [Volver al indice](#alg-base)
 
@@ -4858,7 +4870,7 @@ const doAsyncStuff = (numero1, numero2, callback){
 
 <a id="var23"></a>
 
-### **Que es el Currying?**
+## # **Que es el Currying?**
 
 [Volver al indice](#alg-base)
 
@@ -4961,7 +4973,7 @@ logCritical(new Date())('Some message'); // Podemos usarla para loggear mensajes
 
 <a id="var24"></a>
 
-### **Variable Hoisting**
+## # **Variable Hoisting**
 
 [Volver al indice](#alg-base)
 
@@ -4982,7 +4994,7 @@ Es el usar las variables antes de que sean declaradas.
 
 <a id="var25"></a>
 
-### **Diferencia entre class y function**
+## # **Diferencia entre class y function**
 
 [Volver al indice](#alg-base)
 
@@ -5023,7 +5035,7 @@ console.assert( typeof  C === 'function' );
 
 <a id="var26"></a>
 
-### **Prototypes y Herencia Prototype (Prototype Inheritance)**
+## # **Prototypes y Herencia Prototype (Prototype Inheritance)**
 
 [Volver al indice](#alg-base)
 
@@ -5087,7 +5099,7 @@ Person.prototype.name = function() {
 
 <a id="var27"></a>
 
-### **Funciones en Javascript**
+## # **Funciones en Javascript**
 
 [Volver al indice](#alg-base)
 
@@ -5124,7 +5136,7 @@ console.log(greeting()); // Hello Anonymous Por defecto
 
 <a id="var28"></a>
 
-### **Creacion de Constructores**
+## # **Creacion de Constructores**
 
 [Volver al indice](#alg-base)
 
@@ -5148,7 +5160,7 @@ const zeus = new SpaceShuttle('Jupiter');
 
 <a id="var29"></a>
 
-### **Diferencia entre `for in` y `for of`**
+## # **Diferencia entre `for in` y `for of`**
 
 [Volver al indice](#alg-base)
 
@@ -5174,7 +5186,7 @@ for (const digit of digits) {
 
 <a id="var30"></a>
 
-### **Diferencia entre Map y Weakmap**
+## # **Diferencia entre Map y Weakmap**
 
 [Volver al indice](#alg-base)
 
@@ -5208,7 +5220,7 @@ Weakmap, ademas, solo admite objetos como clave, estos estan debilmente referenc
 
 <a id="var31"></a>
 
-### **Qué es una variable global, como se declara y cuales problemas puede tener?**
+## # **Qué es una variable global, como se declara y cuales problemas puede tener?**
 
 [Volver al indice](#alg-base)
 
@@ -5222,7 +5234,7 @@ Puede dar al choque entre variables locales y globales por nombre. Ademas es dif
 
 <a id="var32"></a>
 
-### **Diferencia entre foreach, map y reduce**
+## # **Diferencia entre foreach, map y reduce**
 
 - **Foreach** itera por cada uno. Ejecuta la función que se le pasa por parámetro para cada elemento del array. Este método no devuelve nada, por lo tanto, si intentamos guardar su ejecución en una variable lo que ocurrirá es que esa variable tomará el valor de undefined.
 
@@ -5264,7 +5276,7 @@ total;
 
 <a id="var33"></a>
 
-### **Porque no se recomienda usar innerHTML?**
+## # **Porque no se recomienda usar innerHTML?**
 
 [Volver al indice](#alg-base)
 
@@ -5272,7 +5284,7 @@ No se recomienda su uso porque es muy lento dado que refresca el contenido cada 
 
 <a id="var34"></a>
 
-### **Entre JS y un script ASP, ¿Cual es mas rápido?**
+## # **Entre JS y un script ASP, ¿Cual es mas rápido?**
 
 [Volver al indice](#alg-base)
 
@@ -5280,7 +5292,7 @@ JavaScript es más rápido porque es un lenguaje del lado del cliente y no neces
 
 <a id="var35"></a>
 
-### **¿Qué es una funcion Declarativa y una Expresiva?**
+## # **¿Qué es una funcion Declarativa y una Expresiva?**
 
 [Volver al indice](#alg-base)
 
@@ -5314,7 +5326,7 @@ A las funciones declarativas se les aplica hoisting, a la otra no, hoisting se a
 
 <a id="cic1"></a>
 
-### **¿Qué es el ciclo de vida de un software?**
+## # **¿Qué es el ciclo de vida de un software?**
 
 [Volver al indice](#cic-base)
 
@@ -5357,7 +5369,7 @@ Algunas de las ventajas que aporta el enfoque de ciclo de vida residen en lo sig
 
 <a id="cic2"></a>
 
-### **Iterativo e Incremental**
+## # **Iterativo e Incremental**
 
 [Volver al indice](#cic-base)
 
@@ -5369,7 +5381,7 @@ Es dividir el desarrollo en partes y cada parte es una **iteración**, que resul
 
 <a id="cic3"></a>
 
-### **De waterfall a Agile**
+## # **De waterfall a Agile**
 
 [Volver al indice](#cic-base)
 
@@ -5391,7 +5403,7 @@ Consta de una evolución secuencial, los problemas se dieron por el entorno cons
 
 <a id="cic4"></a>
 
-### **¿Cuál es el concepto de Organización?**
+## # **¿Cuál es el concepto de Organización?**
 
 [Volver al indice](#cic-base)
 
@@ -5409,7 +5421,7 @@ Toda organización está construida sobre valores, una misión y una visión.
 
 <a id="cic5"></a>
 
-### **El concepto de "Misión de una Organización"**
+## # **El concepto de "Misión de una Organización"**
 
 [Volver al indice](#cic-base)
 
@@ -5440,7 +5452,7 @@ El concepto de Misión de una Organización se refiere al motivo, propósito o r
 
 <a id="cic6"></a>
 
-### **El concepto de "Visión de una Organización"**
+## # **El concepto de "Visión de una Organización"**
 
 [Volver al indice](#cic-base)
 
@@ -5448,7 +5460,7 @@ A dónde va esa empresa a largo plazo, teniendo en cuenta a las nuevas tecnolog�
 
 <a id="cic7"></a>
 
-### **El concepto de "Valores de una Organización"**
+## # **El concepto de "Valores de una Organización"**
 
 [Volver al indice](#cic-base)
 
@@ -5456,7 +5468,7 @@ Creencias o convicciones del grupo que conforma a la organización, son los prin
 
 <a id="cic8"></a>
 
-### **El concepto de "Excelencia Empresarial"**
+## # **El concepto de "Excelencia Empresarial"**
 
 [Volver al indice](#cic-base)
 
@@ -5470,7 +5482,7 @@ Se impulsa a hacer equipos de alto rendimiento, con un líder, disminuyendo cada
 
 <a id="cic9"></a>
 
-### **El concepto de Interesados (Stakeholders)**
+## # **El concepto de Interesados (Stakeholders)**
 
 [Volver al indice](#cic-base)
 
@@ -5483,7 +5495,7 @@ Es toda persona y/o organización que tiene algún tipo de relación o interés 
 
 <a id="cic10"></a>
 
-### **El concepto de "Objetivos de una Organización"**
+## # **El concepto de "Objetivos de una Organización"**
 
 [Volver al indice](#cic-base)
 
@@ -5491,7 +5503,7 @@ Los fines a donde va la actividad de la organización. Pueden ser propios, para 
 
 <a id="cic11"></a>
 
-### **El concepto de "Entorno de una Organización"**
+## # **El concepto de "Entorno de una Organización"**
 
 [Volver al indice](#cic-base)
 
@@ -5503,7 +5515,7 @@ Elementos externos que afectan o influyen en la actividad de una organización. 
 
 <a id="cic12"></a>
 
-### **Recursos de una Organizacion**
+## # **Recursos de una Organizacion**
 
 [Volver al indice](#cic-base)
 
@@ -5527,7 +5539,7 @@ Otro tipo de clasificación puede ser...
 
 <a id="cic13"></a>
 
-### **Propiedad intelectual e informática - Derecho de Cita**
+## # **Propiedad intelectual e informática - Derecho de Cita**
 
 [Volver al indice](#cic-base)
 
@@ -5542,7 +5554,7 @@ La tecnología del Servicio Web es distinta, fue creada con el objetivo de desvi
 
 <a id="cic14"></a>
 
-### **Propiedad intelectual y derechos de traducción**
+## # **Propiedad intelectual y derechos de traducción**
 
 [Volver al indice](#cic-base)
 
@@ -5552,7 +5564,7 @@ La ley reconoce a los traductores derechos sobre su traducción, basada en las c
 
 <a id="cic15"></a>
 
-### **Propiedad intelectual y derechos de ejecución**
+## # **Propiedad intelectual y derechos de ejecución**
 
 [Volver al indice](#cic-base)
 
@@ -5562,7 +5574,7 @@ Los programas que sintetizan el habla o reproducen obras musicales se perfeccion
 
 <a id="cic16"></a>
 
-### **Fotografías, Filmaciones e Informática**
+## # **Fotografías, Filmaciones e Informática**
 
 [Volver al indice](#cic-base)
 
@@ -5570,7 +5582,7 @@ Algunas fotografías son obras intelectuales y otras no. Para que lo sea, debe p
 
 <a id="cic17"></a>
 
-### **Fraude a la propiedad intelectual**
+## # **Fraude a la propiedad intelectual**
 
 [Volver al indice](#cic-base)
 
@@ -5578,7 +5590,7 @@ Se establecen penas sobre la reproducción de obras intelectuales, la pena es de
 
 <a id="cic18"></a>
 
-### **El análisis de las obras intelectuales en la actividad informática**
+## # **El análisis de las obras intelectuales en la actividad informática**
 
 [Volver al indice](#cic-base)
 
@@ -5586,7 +5598,7 @@ Aunque una obra califique como obra intelectual y tenga toda la protección de l
 
 <a id="cic19"></a>
 
-### **Dignidad Humana y su protección, valores comprometidos**
+## # **Dignidad Humana y su protección, valores comprometidos**
 
 [Volver al indice](#cic-base)
 
@@ -5596,7 +5608,7 @@ Hay un tipo de derechos que son extrapatrimoniales, **derechos personalísimos**
 
 <a id="cic20"></a>
 
-### **Derechos sobre la imagen personal**
+## # **Derechos sobre la imagen personal**
 
 [Volver al indice](#cic-base)
 
@@ -5606,7 +5618,7 @@ Sí una persona presta su consentimiento para que se publique una imagen, puede 
 
 <a id="cic21"></a>
 
-### **Casos en los que no es necesario el consentimiento**
+## # **Casos en los que no es necesario el consentimiento**
 
 [Volver al indice](#cic-base)
 
@@ -5620,13 +5632,13 @@ Se chocan dos derechos. El de informar y el derecho a preservar la imagen. Se de
 
 <a id="cic22"></a>
 
-### **Imagen de personas públicas**
+## # **Imagen de personas públicas**
 
 Personas por propia voluntad se expusieron al conocimiento público, como famosos, políticos, etc.. La imagen de estas personas puede mostrarse sin su consentimiento porque hacerlo es de interés público, respetando ámbitos de intimidad, tampoco vulnerando su dignidad
 
 <a id="cic23"></a>
 
-### **Imagen de personas fallecidas**
+## # **Imagen de personas fallecidas**
 
 [Volver al indice](#cic-base)
 
@@ -5634,7 +5646,7 @@ Serán los herederos quienes deberán prestar el consentimiento en los mismos t�
 
 <a id="cic24"></a>
 
-### **Caso de la mujer en la tribuna**
+## # **Caso de la mujer en la tribuna**
 
 [Volver al indice](#cic-base)
 
@@ -5644,7 +5656,7 @@ Supongamos que la mujer vuelve a otro acto público, y se saca otra foto, y por 
 
 <a id="cic25"></a>
 
-### **El caso de los espías**
+## # **El caso de los espías**
 
 [Volver al indice](#cic-base)
 
@@ -5660,7 +5672,7 @@ El derecho de la imagen no se respeta en las redes sociales. Esto se debe a dos 
 
 <a id="cic26"></a>
 
-### **El software y los problemas de su encuadramiento legal**
+## # **El software y los problemas de su encuadramiento legal**
 
 [Volver al indice](#cic-base)
 
@@ -5670,7 +5682,7 @@ En 1967, la OMPI (Organización Mundial de la Propiedad Intelectual) estableció
 
 <a id="cic27"></a>
 
-### **El software como Obra Intelectual**
+## # **El software como Obra Intelectual**
 
 [Volver al indice](#cic-base)
 
@@ -5688,7 +5700,7 @@ El software puede ser una creación originaria, cuando se programa se lo puede h
 
 <a id="cic28"></a>
 
-### **El software como invención**
+## # **El software como invención**
 
 [Volver al indice](#cic-base)
 
@@ -5700,7 +5712,7 @@ El régimen de patentes generaba otro problema, un invento. Al igual que una obr
 
 <a id="cic29"></a>
 
-### **El software como un nuevo objeto jurídico**
+## # **El software como un nuevo objeto jurídico**
 
 [Volver al indice](#cic-base)
 
@@ -5708,7 +5720,7 @@ Esta era la polémica situación tanto en la doctrina como en las fluctuantes de
 
 <a id="cic30"></a>
 
-### **La prisión de los conceptos jurídicos**
+## # **La prisión de los conceptos jurídicos**
 
 [Volver al indice](#cic-base)
 
@@ -5718,7 +5730,7 @@ Al generarse un mundo conceptual nuevo se olvida el carácter de los problemas q
 
 <a id="cic31"></a>
 
-### **Distintas etapas de la tecnología y distintos problemas**
+## # **Distintas etapas de la tecnología y distintos problemas**
 
 [Volver al indice](#cic-base)
 
@@ -5726,7 +5738,7 @@ Antes, cuando las PC no eran tan comunes de tener, el problema era la copia de l
 
 <a id="cic32"></a>
 
-### **El software y la protección por el régimen de la propiedad intelectual**
+## # **El software y la protección por el régimen de la propiedad intelectual**
 
 [Volver al indice](#cic-base)
 
@@ -5744,7 +5756,7 @@ El derecho de propiedad intelectual protege contra las copias ilegales y las con
 
 <a id="cic33"></a>
 
-### **Software propietario, abierto y libre.**
+## # **Software propietario, abierto y libre.**
 
 [Volver al indice](#cic-base)
 
@@ -5755,7 +5767,7 @@ El derecho de propiedad intelectual protege contra las copias ilegales y las con
 
 <a id="cic34"></a>
 
-### **Consecuencias de la inclusión de los programas dentro del régimen de propiedad intelectual**
+## # **Consecuencias de la inclusión de los programas dentro del régimen de propiedad intelectual**
 
 [Volver al indice](#cic-base)
 
@@ -5768,7 +5780,7 @@ El régimen de propiedad intelectual fue creado dentro de un contexto tecnológi
 
 <a id="cic35"></a>
 
-### **Las ideas no pueden ser de nadie**
+## # **Las ideas no pueden ser de nadie**
 
 [Volver al indice](#cic-base)
 
@@ -5789,7 +5801,7 @@ Algunos conceptos quedaron encuadrados caracterizados, definidos, mientras que o
 
 <a id="cic36"></a>
 
-### **Obras intelectuales e inventos, marcas comerciales, diseños industriales**
+## # **Obras intelectuales e inventos, marcas comerciales, diseños industriales**
 
 [Volver al indice](#cic-base)
 
@@ -5803,7 +5815,7 @@ De forma parecida se protegieron las marcas comerciales, símbolos que identific
 
 <a id="cic37"></a>
 
-### **Obras Intelectuales**
+## # **Obras Intelectuales**
 
 [Volver al indice](#cic-base)
 
@@ -5816,7 +5828,7 @@ Son creaciones artísticas, literarias, científicas y pedagógicas. La protecci
 
 <a id="cic38"></a>
 
-### **El carácter temporal**
+## # **El carácter temporal**
 
 [Volver al indice](#cic-base)
 
@@ -5824,7 +5836,7 @@ Son creaciones artísticas, literarias, científicas y pedagógicas. La protecci
 
 <a id="cic39"></a>
 
-### **Características: Novedad, originalidad, creatividad**
+## # **Características: Novedad, originalidad, creatividad**
 
 [Volver al indice](#cic-base)
 
@@ -5836,7 +5848,7 @@ No cualquier creación producto del trabajo intelectual es una obra intelectual
 
 <a id="cic40"></a>
 
-### ***Derechos sobre la obra, personalísimos y de explotación económica**
+## # ***Derechos sobre la obra, personalísimos y de explotación económica**
 
 [Volver al indice](#cic-base)
 
@@ -5855,7 +5867,7 @@ El derecho de explotación económica permite al autor difundir su obra a travé
 
 <a id="cic41"></a>
 
-### **Origen de las firmas**
+## # **Origen de las firmas**
 
 [Volver al indice](#cic-base)
 
@@ -5867,7 +5879,7 @@ La firma es un acto personalísimo, no puede ser delegado. La firma es un acto d
 
 <a id="cic42"></a>
 
-### **Firma desde el derecho**
+## # **Firma desde el derecho**
 
 [Volver al indice](#cic-base)
 
@@ -5877,7 +5889,7 @@ La invención de la escritura y la proliferación de documentos permitieron desa
 
 <a id="cic43"></a>
 
-### **Firma electrónica y firma digital**
+## # **Firma electrónica y firma digital**
 
 [Volver al indice](#cic-base)
 
@@ -5938,7 +5950,7 @@ De estos principios podemos decir:
 
 <a id="cic44"></a>
 
-### **La firma digital y la criptografía**
+## # **La firma digital y la criptografía**
 
 [Volver al indice](#cic-base)
 
@@ -5952,7 +5964,7 @@ La criptografía se aplica para asegurar que solo quien cuente con la clave priv
 
 <a id="cic45"></a>
 
-### **Personas en el derecho**
+## # **Personas en el derecho**
 
 [Volver al indice](#cic-base)
 
@@ -5967,7 +5979,7 @@ Sí una persona humana hace un negocio de poco éxito que da deudas, las debe af
 
 <a id="cic46"></a>
 
-### **Elementos de un contrato**
+## # **Elementos de un contrato**
 
 [Volver al indice](#cic-base)
 
@@ -5986,7 +5998,7 @@ Para hacer un contrato hay que establecer estos elementos:
 
 <a id="cic47"></a>
 
-### **Contratos sobre Hardware**
+## # **Contratos sobre Hardware**
 
 [Volver al indice](#cic-base)
 
@@ -6001,7 +6013,7 @@ El hardware se compra, así que el contrato es de compraventa, una parte convien
 
 <a id="cic48"></a>
 
-### **Contratos sobre Software**
+## # **Contratos sobre Software**
 
 [Volver al indice](#cic-base)
 
@@ -6011,7 +6023,7 @@ En el caso de Licencias de Software estándar, se deben establecer los tiempos, 
 
 <a id="cic49"></a>
 
-### **Los contratos de obra y de servicios**
+## # **Los contratos de obra y de servicios**
 
 [Volver al indice](#cic-base)
 
@@ -6023,7 +6035,7 @@ Sí existe relación de dependencia con el prestador del servicio, entonces esta
 
 <a id="cic50"></a>
 
-### **El problema de la protección de la información**
+## # **El problema de la protección de la información**
 
 [Volver al indice](#cic-base)
 
@@ -6033,7 +6045,7 @@ En la realización de contratos que involucre entregar al contratante bases de d
 
 <a id="cic51"></a>
 
-### **Responsabilidad Civil - El daño y sus categorías**
+## # **Responsabilidad Civil - El daño y sus categorías**
 
 [Volver al indice](#cic-base)
 
@@ -6044,7 +6056,7 @@ En la realización de contratos que involucre entregar al contratante bases de d
 
 <a id="cic52"></a>
 
-### **Relación de causalidad con el hecho dañoso**
+## # **Relación de causalidad con el hecho dañoso**
 
 [Volver al indice](#cic-base)
 
@@ -6053,7 +6065,7 @@ A produce B cuando en el orden natural y corriente de las cosas A produce B. La 
 
 <a id="cic53"></a>
 
-### **Significado de los factores de atribución**
+## # **Significado de los factores de atribución**
 
 [Volver al indice](#cic-base)
 
@@ -6061,7 +6073,7 @@ Sí hay daño y un hecho ilegal en relación de causalidad, para que haya respon
 
 <a id="cic54"></a>
 
-### **Factores de atribución subjetivos**
+## # **Factores de atribución subjetivos**
 
 [Volver al indice](#cic-base)
 
@@ -6074,7 +6086,7 @@ La culpa puede medirse porque las conductas imprudentes tienen distinta gravedad
 
 <a id="cic55"></a>
 
-### **Factores de atribución objetivos**
+## # **Factores de atribución objetivos**
 
 [Volver al indice](#cic-base)
 
@@ -6093,7 +6105,7 @@ Sí aplicamos el sistema visto hasta ahora se puede dar un resultado muy injusto
 
 <a id="cic56"></a>
 
-### **Factores de distribución de la responsabilidad civil**
+## # **Factores de distribución de la responsabilidad civil**
 
 [Volver al indice](#cic-base)
 
@@ -6107,7 +6119,7 @@ En casos de distribución por culpa, la misma puede ser total o parcial. Esto de
 
 <a id="cic57"></a>
 
-### **Tipicidad penal informática - El problema de la tipicidad penal**
+## # **Tipicidad penal informática - El problema de la tipicidad penal**
 
 [Volver al indice](#cic-base)
 
@@ -6118,7 +6130,7 @@ Pero todos están de acuerdo en que sí no cae de una forma clara en el tipo pen
 
 <a id="cic58"></a>
 
-### **La aparición de la informática y lo que produjo**
+## # **La aparición de la informática y lo que produjo**
 
 [Volver al indice](#cic-base)
 
@@ -6133,7 +6145,7 @@ Esto dio a que varias situaciones quedarán fuera del sistema penal a pesar de m
 
 <a id="cic59"></a>
 
-### **Metodos de analisis de tipo penales**
+## # **Metodos de analisis de tipo penales**
 
 [Volver al indice](#cic-base)
 
@@ -6143,7 +6155,7 @@ El verbo es la expresión gramatical de una acción y el delito es una acción, 
 
 <a id="cic60"></a>
 
-### **El problema de la tipificación de los delitos informáticos**
+## # **El problema de la tipificación de los delitos informáticos**
 
 [Volver al indice](#cic-base)
 
@@ -6175,7 +6187,7 @@ Resistieron violentamente => el  restablecimiento  de  una  comunicación  inter
 
 <a id="cic61"></a>
 
-### **Normas de SGSI**
+## # **Normas de SGSI**
 
 [Volver al indice](#cic-base)
 
@@ -6187,7 +6199,7 @@ Un sistema de gestión de seguridad de la información (SGSI) consiste en el con
 
 <a id="cic62"></a>
 
-### **ISO/IEC 27001**
+## # **ISO/IEC 27001**
 
 [Volver al indice](#cic-base)
 
@@ -6262,7 +6274,7 @@ Es fundamental realizar revisiones periódicas del SGSI por parte de la alta dir
 
 <a id="cic63"></a>
 
-### **Responsabilidad de programadores, administradores de redes**
+## # **Responsabilidad de programadores, administradores de redes**
 
 [Volver al indice](#cic-base)
 
@@ -6276,7 +6288,7 @@ Los gerentes no son principales en el sentido de factor de atribución respecto 
 
 <a id="cic64"></a>
 
-### **El problema del daño causado por un tercero por injurias realizadas en un sitio web**
+## # **El problema del daño causado por un tercero por injurias realizadas en un sitio web**
 
 [Volver al indice](#cic-base)
 
@@ -6347,7 +6359,7 @@ Podríamos colocar un cartel que dijera “Usted ha diseñado su pizza y esta se
 
 <a id="cic65"></a>
 
-### **Beneficios para una organización de implementar ISO 27001**
+## # **Beneficios para una organización de implementar ISO 27001**
 
 [Volver al indice](#cic-base)
 
@@ -6374,7 +6386,7 @@ Los beneficios que trae a un organización la implementación de la norma ISO 27
 
 <a id="typ1"></a>
 
-### **Qué es TypeScript?**
+## # **Qué es TypeScript?**
 
 [Volver al indice](#typ-base)
 
@@ -6390,7 +6402,7 @@ Es mantenido por Microsoft
 
 <a id="typ2"></a>
 
-### **TSConfig.json**
+## # **TSConfig.json**
 
 [Volver al indice](#typ-base)
 
@@ -6414,7 +6426,7 @@ Mediante estas configuraciones se **deberia** buscar que Typescript sea lo mas e
 
 <a id="typ3"></a>
 
-### **Watch Mode**
+## # **Watch Mode**
 
 [Volver al indice](#typ-base)
 
@@ -6426,7 +6438,7 @@ tsc --watch
 
 <a id="typ4"></a>
 
-### **Cuáles son sus características superadoras?**
+## # **Cuáles son sus características superadoras?**
 
 [Volver al indice](#typ-base)
 
@@ -6468,7 +6480,7 @@ interface Producto {
 
 <a id="typ5"></a>
 
-### **Cómo declaro una variable?**
+## # **Cómo declaro una variable?**
 
 [Volver al indice](#typ-base)
 
@@ -6487,7 +6499,7 @@ let arrayVariable: (boolean | string | number)[] = ['Denu', 22, false]
 
 <a id="typ6"></a>
 
-### **Tuples - Tuplas**
+## # **Tuples - Tuplas**
 
 El primer dato del Array SIEMPRE sera un string y el segundo un number.
 
@@ -6503,7 +6515,7 @@ persona[1] = 24;
 
 <a id="typ7"></a>
 
-### **Tipo de dato Never**
+## # **Tipo de dato Never**
 
 [Volver al indice](#typ-base)
 
@@ -6525,7 +6537,7 @@ function loopInfinito(): never {
 
 <a id="typ8"></a>
 
-### **Tipo de dato Any**
+## # **Tipo de dato Any**
 
 [Volver al indice](#typ-base)
 
@@ -6547,7 +6559,7 @@ variable = true;
 
 <a id="typ9"></a>
 
-### **Cómo declaro un objeto?**
+## # **Cómo declaro un objeto?**
 
 [Volver al indice](#typ-base)
 
@@ -6570,7 +6582,7 @@ personaje.nacionalidad = 'Costa Rica';
 
 <a id="typ10"></a>
 
-### **Cómo declaro una función?**
+## # **Cómo declaro una función?**
 
 ```tsx
 function sumar (a: number, b:number) : number {
@@ -6584,7 +6596,7 @@ const sumar = (a?: number, b: number = 2) : number => {
 
 <a id="typ11"></a>
 
-### **Parametros REST**
+## # **Parametros REST**
 
 [Volver al indice](#typ-base)
 
@@ -6602,7 +6614,7 @@ sumar(1, 2, 3, 4, 5, 6, 7, 8, 9, 10); // 55
 
 <a id="typ12"></a>
 
-### **Cómo creo una clase?**
+## # **Cómo creo una clase?**
 
 [Volver al indice](#typ-base)
 
@@ -6628,7 +6640,7 @@ class Person {
 
 <a id="typ13"></a>
 
-### **Cómo se transpilan las interfaces de TypeScript?**
+## # **Cómo se transpilan las interfaces de TypeScript?**
 
 [Volver al indice](#typ-base)
 
@@ -6638,7 +6650,7 @@ En lugar de transpilarse, las interfaces de TypeScript son utilizadas por el com
 
 <a id="typ14"></a>
 
-### **Cómo hago que las props de una interface sean opcionales?**
+## # **Cómo hago que las props de una interface sean opcionales?**
 
 [Volver al indice](#typ-base)
 
@@ -6661,7 +6673,7 @@ En este ejemplo, `Partial<MyInterface>` crea un nuevo tipo que tiene todas las p
 
 <a id="typ15"></a>
 
-### **Herencia en Typescript**
+## # **Herencia en Typescript**
 
 [Volver al indice](#typ-base)
 
@@ -6680,7 +6692,7 @@ const beer = new Beer('Imperial', 1000, 5);
 
 <a id="typ16"></a>
 
-### **Interfaces en Typescript**
+## # **Interfaces en Typescript**
 
 [Volver al indice](#typ-base)
 
@@ -6715,7 +6727,7 @@ class Beer extends Drink implements Product {
 
 <a id="sty1"></a>
 
-### **Cuál es la diferencia entre div y span?**
+## # **Cuál es la diferencia entre div y span?**
 
 [Volver al indice](#sty-base)
 
@@ -6725,7 +6737,7 @@ La etiqueta span trabaja como contenedor de línea, no se puede ampliar para ocu
 
 <a id="sty2"></a>
 
-### **Qué es la Especificidad (Specificity) de CSS?**
+## # **Qué es la Especificidad (Specificity) de CSS?**
 
 [Volver al indice](#sty-base)
 
@@ -6756,7 +6768,7 @@ section p {
 
 <a id="sty3"></a>
 
-### **Que es BEM?**
+## # **Que es BEM?**
 
 [Volver al indice](#sty-base)
 
@@ -6766,7 +6778,7 @@ Block element modifier, consiste en escribir nombres de clases que dejen en clar
 
 <a id="sty4"></a>
 
-### **Como declaro variables en CSS?**
+## # **Como declaro variables en CSS?**
 
 ```jsx
 :root {
@@ -6780,7 +6792,7 @@ html, body {
 
 <a id="sty5"></a>
 
-### **Pseudoclases**
+## # **Pseudoclases**
 
 [Volver al indice](#sty-base)
 
@@ -6811,7 +6823,7 @@ a:hover {text-decoration:underline; }
 
 <a id="sty6"></a>
 
-### **Qué es Sass?**
+## # **Qué es Sass?**
 
 [Volver al indice](#sty-base)
 
@@ -6826,7 +6838,7 @@ Ayuda a tener un codigo modular, simple y escalable.
 
 <a id="sty7"></a>
 
-### **Cual es la diferencia entre .sass y scss?**
+## # **Cual es la diferencia entre .sass y scss?**
 
 [Volver al indice](#sty-base)
 
@@ -6834,7 +6846,7 @@ La primera no utiliza llaves, solo tabulaciones, que se interpretan como bloques
 
 <a id="sty8"></a>
 
-### **Sass reemplaza a CSS?**
+## # **Sass reemplaza a CSS?**
 
 [Volver al indice](#sty-base)
 
@@ -6844,7 +6856,7 @@ En el HTML se hace el link al Stylesheet .css que es compilado desde sass.
 
 <a id="sty9"></a>
 
-### **Comentarios en Sass**
+## # **Comentarios en Sass**
 
 [Volver al indice](#sty-base)
 
@@ -6858,7 +6870,7 @@ En el HTML se hace el link al Stylesheet .css que es compilado desde sass.
 
 <a id="sty10"></a>
 
-### **Variables en SASS**
+## # **Variables en SASS**
 
 [Volver al indice](#sty-base)
 
@@ -6876,7 +6888,7 @@ h1 {
 
 <a id="sty11"></a>
 
-### **Partials en SASS**
+## # **Partials en SASS**
 
 [Volver al indice](#sty-base)
 
@@ -6898,7 +6910,7 @@ body {
 
 <a id="sty12"></a>
 
-### **Imports en SASS**
+## # **Imports en SASS**
 
 [Volver al indice](#sty-base)
 
@@ -6922,7 +6934,7 @@ Cuando una variable es declarada en el mismo archivo sass donde es usada (genera
 
 <a id="sty13"></a>
 
-### **Interpolacion en SASS**
+## # **Interpolacion en SASS**
 
 [Volver al indice](#sty-base)
 
@@ -6943,7 +6955,7 @@ $propiedad: 'color';
 
 <a id="sty14"></a>
 
-### **Nesting en SASS**
+## # **Nesting en SASS**
 
 ```scss
 // ----- SASS -----
@@ -6975,7 +6987,7 @@ $propiedad: 'color';
 
 <a id="sty15"></a>
 
-### **Selectores en SASS**
+## # **Selectores en SASS**
 
 [Volver al indice](#sty-base)
 
@@ -6993,7 +7005,7 @@ $propiedad: 'color';
 
 <a id="sty16"></a>
 
-### **Mixins en SASS**
+## # **Mixins en SASS**
 
 [Volver al indice](#sty-base)
 
@@ -7029,7 +7041,7 @@ div {
 
 <a id="sty17"></a>
 
-### **Condicionales if-else en SASS**
+## # **Condicionales if-else en SASS**
 
 [Volver al indice](#sty-base)
 
@@ -7066,7 +7078,7 @@ Se puede utilizar if-else dentro de los mixins en SASS
 
 <a id="qa1"></a>
 
-### **Que es el testing?**
+## # **Que es el testing?**
 
 [Volver al indice](qa-base)
 
@@ -7074,7 +7086,7 @@ Mide la calidad del producto, el producto debe cumplir con lo que debería. El t
 
 <a id="qa2"></a>
 
-### **Que es un Test Limpio?**
+## # **Que es un Test Limpio?**
 
 [Volver al indice](qa-base)
 
@@ -7085,7 +7097,7 @@ Mide la calidad del producto, el producto debe cumplir con lo que debería. El t
 
 <a id="qa3"></a>
 
-### **Cuando empezar a testear?**
+## # **Cuando empezar a testear?**
 
 [Volver al indice](qa-base)
 
@@ -7093,7 +7105,7 @@ Mide la calidad del producto, el producto debe cumplir con lo que debería. El t
 
 <a id="qa4"></a>
 
-### **Cuando terminar de testear?**
+## # **Cuando terminar de testear?**
 
 [Volver al indice](qa-base)
 
@@ -7104,7 +7116,7 @@ Mide la calidad del producto, el producto debe cumplir con lo que debería. El t
 
 <a id="qa5"></a>
 
-### **Diferencia entre coverage y confianza**
+## # **Diferencia entre coverage y confianza**
 
 [Volver al indice](qa-base)
 
@@ -7113,7 +7125,7 @@ Mide la calidad del producto, el producto debe cumplir con lo que debería. El t
 
 <a id="qa6"></a>
 
-### **Diferencia entre unit test e Integration Test**
+## # **Diferencia entre unit test e Integration Test**
 
 [Volver al indice](qa-base)
 
@@ -7132,7 +7144,7 @@ Son comparables a comprobar si una batería de un teléfono móvil está cargada
 
 <a id="qa7"></a>
 
-### **Que test de performance existen?**
+## # **Que test de performance existen?**
 
 [Volver al indice](qa-base)
 
@@ -7148,7 +7160,7 @@ Son comparables a comprobar si una batería de un teléfono móvil está cargada
 
 <a id="qa8"></a>
 
-### **Que tipos de testing hay?**
+## # **Que tipos de testing hay?**
 
 [Volver al indice](qa-base)
 
@@ -7168,7 +7180,7 @@ Son comparables a comprobar si una batería de un teléfono móvil está cargada
 
 <a id="qa9"></a>
 
-### **Que verifica el Unit Test?**
+## # **Que verifica el Unit Test?**
 
 [Volver al indice](qa-base)
 
@@ -7176,7 +7188,7 @@ Una prueba unitaria verifica la funcionalidad de los elementos más pequeños te
 
 <a id="qa10"></a>
 
-### **Principios FIRST de los Unit test**
+## # **Principios FIRST de los Unit test**
 
 [Volver al indice](qa-base)
 
@@ -7212,7 +7224,7 @@ Los elementos de encabezado h1 a h6 se utilizan para indicar la importancia del 
 
 <a id="rea54"></a>
 
-### **¿Para qué es el Doctype?**
+## # **¿Para qué es el Doctype?**
 
 [Volver al indice](#rea-base)
 
@@ -7224,7 +7236,7 @@ El doctype es una declaración que se utiliza en un documento HTML para informar
 
 <a id="rea55"></a>
 
-### **Atributo placeholder para campos en HTML**
+## # **Atributo placeholder para campos en HTML**
 
 [Volver al indice](#rea-base)
 
@@ -7236,7 +7248,7 @@ El atributo placeholder me permite , guiar al usuario con referencia lo que tien
 
 <a id="rea56"></a>
 
-### **Vínculos Relativos en HTML**
+## # **Vínculos Relativos en HTML**
 
 [Volver al indice](#rea-base)
 
@@ -7262,7 +7274,7 @@ Si mi archivo contacto se encontrase dentro de una carpeta la ruta a marcar ser�
 
 <a id="rea57"></a>
 
-### **Vínculos Absolutos en HTML**
+## # **Vínculos Absolutos en HTML**
 
 [Volver al indice](#rea-base)
 
@@ -7277,7 +7289,7 @@ Los vínculos absolutos son aquellos que permiten interconectar los archivos de 
 
 <a id="rea41"></a>
 
-### **Cual es la importancia del uso de todos los elementos HTML?**
+## # **Cual es la importancia del uso de todos los elementos HTML?**
 
 [Volver al indice](#rea-base)
 
@@ -7285,7 +7297,7 @@ HTML5 tiene algunos elementos que identifican diferentes áreas de contenido. Es
 
 <a id="rea42"></a>
 
-### **Que son los atributos de los elementos HTML?**
+## # **Que son los atributos de los elementos HTML?**
 
 [Volver al indice](#rea-base)
 
@@ -7295,7 +7307,7 @@ Los atributos HTML son palabras especiales utilizadas dentro de la etiqueta de a
 
 <a id="rea43"></a>
 
-### **Cuáles son las partes de un documento HTML?**
+## # **Cuáles son las partes de un documento HTML?**
 
 [Volver al indice](#rea-base)
 
@@ -7321,7 +7333,7 @@ El resultado de un documento básico tiene la siguiente estructura:
 
 <a id="rea44"></a>
 
-### **Puedo escribir las etiquetas en mayúscula y minúscula?**
+## # **Puedo escribir las etiquetas en mayúscula y minúscula?**
 
 [Volver al indice](#rea-base)
 
@@ -7330,7 +7342,7 @@ con nuestro HTML (XML por ejemplo) no son tan permisivas y nunca viene mal hacer
 
 <a id="rea45"></a>
 
-### **Qué son los mapa de imagen?**
+## # **Qué son los mapa de imagen?**
 
 [Volver al indice](#rea-base)
 
@@ -7363,7 +7375,7 @@ https://www.image-maps.com/
 
 <a id="rea46"></a>
 
-### **Que es el tag DataList?**
+## # **Que es el tag DataList?**
 
 Se usa para proveer con un autocomplete a algunos elementos
 
@@ -7379,7 +7391,7 @@ Se usa para proveer con un autocomplete a algunos elementos
 
 <a id="rea47"></a>
 
-### **¿Qué es React?**
+## # **¿Qué es React?**
 
 [Volver al indice](#rea-base)
 
@@ -7397,7 +7409,7 @@ Tambien se puede trabajar del lado del servidor con Node, aplicaciones mobile co
 
 <a id="rea48"></a>
 
-### **¿De qué hablamos cuando hablamos de una SPA (Single Page App)?**
+## # **¿De qué hablamos cuando hablamos de una SPA (Single Page App)?**
 
 [Volver al indice](#rea-base)
 
@@ -7415,7 +7427,7 @@ En resumen:
 
 <a id="rea49"></a>
 
-### **Para que es el comando React eject?**
+## # **Para que es el comando React eject?**
 
 [Volver al indice](#rea-base)
 
@@ -7425,7 +7437,7 @@ Es para cuando necesitamos hacer cosas mas complejas o para instalar modulos que
 
 <a id="rea50"></a>
 
-### **(Performance) Como evitar mandar muchos eventos inutiles, por ejemplo, ejecutar un search por letra?**
+## # **(Performance) Como evitar mandar muchos eventos inutiles, por ejemplo, ejecutar un search por letra?**
 
 [Volver al indice](#rea-base)
 
@@ -7457,7 +7469,7 @@ api.search(queryDebouncedValue).then(setProducts);
 
 <a id="rea51"></a>
 
-### **Que es async rendering?**
+## # **Que es async rendering?**
 
 [Volver al indice](#rea-base)
 
@@ -7465,7 +7477,7 @@ Permite que el renderizado pueda interrumpirse, permitiendo renderizar varios ar
 
 <a id="rea52"></a>
 
-### **Que son las Ref?**
+## # **Que son las Ref?**
 
 [Volver al indice](#rea-base)
 
@@ -7496,7 +7508,7 @@ class AnimatedSpinner extends Component {
 
 <a id="rea53"></a>
 
-### **Para que son los eventos sinteticos (SyntheticEvent)?**
+## # **Para que son los eventos sinteticos (SyntheticEvent)?**
 
 [Volver al indice](#rea-base)
 
@@ -7506,7 +7518,7 @@ Ayuda a que el dev no se preocupe tanto en como manejar un evento segun el naveg
 
 <a id="rea54"></a>
 
-### **Que significa prop drilling y como evitarlo?**
+## # **Que significa prop drilling y como evitarlo?**
 
 [Volver al indice](#rea-base)
 
@@ -7517,7 +7529,7 @@ Es cuando las props que se comparten acumulan demasiadas dependencias. Da lugar 
 
 <a id="rea62"></a>
 
-### **De que tratan los Ciclos de Vida Componentes?**
+## # **De que tratan los Ciclos de Vida Componentes?**
 
 [Volver al indice](#rea-base)
 
@@ -7530,7 +7542,7 @@ Varios de los estados que veremos a continuacion se encuentran deprecados, y deb
 
 <a id="rea55"></a>
 
-### **componentWillReceiveProps()**
+## # **componentWillReceiveProps()**
 
 [Volver al indice](#rea-base)
 
@@ -7546,7 +7558,7 @@ componentWillReceiveProps(nextProps) {
 
 <a id="rea56"></a>
 
-### **componentDidMount()**
+## # **componentDidMount()**
 
 [Volver al indice](#rea-base)
 
@@ -7560,7 +7572,7 @@ componentDidMount() {
 
 <a id="rea57"></a>
 
-### **componentWillUnmount()**
+## # **componentWillUnmount()**
 
 [Volver al indice](#rea-base)
 
@@ -7575,7 +7587,7 @@ componentWillUnmount() {
 
 <a id="rea58"></a>
 
-### **componentWillMount()**
+## # **componentWillMount()**
 
 [Volver al indice](#rea-base)
 
@@ -7589,8 +7601,6 @@ componentWillMount() {
 
 <a id="rea59"></a>
 
-### **componentWillMount()**
-
 [Volver al indice](#rea-base)
 
 Se llama cuando el componente se actualiza en el DOM. Podemos hacerlo para, por ejemplo, para avisar que el counter fue incrementado en uno.
@@ -7603,7 +7613,7 @@ componentDidUpdate() {
 
 <a id="rea60"></a>
 
-### **shouldComponentUpdate()**
+## # **shouldComponentUpdate()**
 
 [Volver al indice](#rea-base)
 
@@ -7618,7 +7628,7 @@ shouldComponentUpdate(nextProps, nextState) {
 
 <a id="rea61"></a>
 
-### **componentWillUpdate()**
+## # **componentWillUpdate()**
 
 [Volver al indice](#rea-base)
 
@@ -7633,7 +7643,7 @@ componentWillUpdate() {
 
 <a id="rea1"></a>
 
-### **useCallback**
+## # **useCallback**
 
 [Volver al indice](#rea-base)
 
@@ -7680,7 +7690,7 @@ Si no tuviéramos el useCallback, el useEffect se dispararía ante cada cambio d
 
 <a id="rea2"></a>
 
-### **useDispatch**
+## # **useDispatch**
 
 [Volver al indice](#rea-base)
 
@@ -7721,7 +7731,7 @@ const submitNewProduct = (e) => {
 
 <a id="rea3"></a>
 
-### **useEffect**
+## # **useEffect**
 
 [Volver al indice](#rea-base)
 
@@ -7795,7 +7805,7 @@ useEffect(() => {console.log("Mount");}, [state]);
 
 <a id="rea4"></a>
 
-### **useState**
+## # **useState**
 
 [Volver al indice](#rea-base)
 
@@ -7828,7 +7838,7 @@ Los Hooks solo pueden ser usados dentro de un componente funcional, en el caso d
 
 <a id="rea5"></a>
 
-### **useSelector**
+## # **useSelector**
 
 [Volver al indice](#rea-base)
 
@@ -7840,7 +7850,7 @@ const error = useSelector(state => state.error)
 
 <a id="rea6"></a>
 
-### **useRef**
+## # **useRef**
 
 [Volver al indice](#rea-base)
 
@@ -7903,7 +7913,7 @@ Notar que nos referimos al valor del ref o para su cambio con current
 
 <a id="rea7"></a>
 
-### **useMemo**
+## # **useMemo**
 
 [Volver al indice](#rea-base)
 
@@ -7952,7 +7962,7 @@ const twoRandomProducts = useMemo(() => [...products]
 
 <a id="rea8"></a>
 
-### **useReducer**
+## # **useReducer**
 
 [Volver al indice](#rea-base)
 
@@ -7993,7 +8003,7 @@ function Counter() {
 
 <a id="rea9"></a>
 
-### **useLayoutEffect**
+## # **useLayoutEffect**
 
 [Volver al indice](#rea-base)
 
@@ -8041,7 +8051,7 @@ Ante cada cambio de quote que se haga, volverá a cero y volverá a tener otro v
 
 <a id="rea10"></a>
 
-### **Diferencia entre AngularJS y Angular**
+## # **Diferencia entre AngularJS y Angular**
 
 [Volver al indice](#rea-base)
 
@@ -8069,7 +8079,7 @@ En resumen, AngularJS es el primer framework desarrollado por Google, que utiliz
 
 <a id="rea11"></a>
 
-### **¿Qué son los modulos en Angular?**
+## # **¿Qué son los modulos en Angular?**
 
 [Volver al indice](#rea-base)
 
@@ -8079,7 +8089,7 @@ Son diseños lógicos que se encargan de trabajar dentro de la aplicación, se u
 
 <a id="rea12"></a>
 
-### **¿Qué es Property Binding?**
+## # **¿Qué es Property Binding?**
 
 [Volver al indice](#rea-base)
 
@@ -8109,7 +8119,7 @@ Se recomienda comprender los “Event binding” para entender el flujo de datos
 
 <a id="rea13"></a>
 
-### **¿Cuál es el flujo de datos una aplicación Angular?**
+## # **¿Cuál es el flujo de datos una aplicación Angular?**
 
 [Volver al indice](#rea-base)
 
@@ -8119,7 +8129,7 @@ Se recomienda comprender los “Event binding” para entender el flujo de datos
 
 <a id="rea14"></a>
 
-### **¿Qué es un Decorador en Angular?**
+## # **¿Qué es un Decorador en Angular?**
 
 [Volver al indice](#rea-base)
 
@@ -8135,7 +8145,7 @@ Indica como debe comportarse el componente. Dentro de este decorador, puedes obs
 
 <a id="rea15"></a>
 
-### **Event Binding en Angular (Manejo de Eventos)**
+## # **Event Binding en Angular (Manejo de Eventos)**
 
 [Volver al indice](#rea-base)
 
@@ -8166,7 +8176,7 @@ handleClick($event: Event) {
 
 <a id="rea16"></a>
 
-### **Data Binding en Angular**
+## # **Data Binding en Angular**
 
 [Volver al indice](#rea-base)
 
@@ -8197,7 +8207,7 @@ export class AppModule { }
 
 <a id="rea17"></a>
 
-### **Como puedo mejorar la performance de mi Frontend?**
+## # **Como puedo mejorar la performance de mi Frontend?**
 
 [Volver al indice](#rea-base)
 
@@ -8237,7 +8247,7 @@ Para testear el rendimiento de una web se puede utilizar Lighthouse de Google en
 
 <a id="rea18"></a>
 
-### **¿Que es Redux?**
+## # **¿Que es Redux?**
 
 [Volver al indice](#rea-base)
 
@@ -8250,7 +8260,7 @@ Redux permitira manejar el state global de manera facil conforme van creciendo, 
 
 <a id="rea19"></a>
 
-### **Cuando conviene usar Redux?**
+## # **Cuando conviene usar Redux?**
 
 [Volver al indice](#rea-base)
 
@@ -8262,7 +8272,7 @@ Si la app es pequeña, se recomienda ContextAPI o hooks. Si es grande, y va a se
 
 <a id="rea20"></a>
 
-### **¿Cuales son los beneficios de usar Redux?**
+## # **¿Cuales son los beneficios de usar Redux?**
 
 [Volver al indice](#rea-base)
 
@@ -8273,7 +8283,7 @@ Si la app es pequeña, se recomienda ContextAPI o hooks. Si es grande, y va a se
 
 <a id="rea21"></a>
 
-### **Redux vs ContextAPI**
+## # **Redux vs ContextAPI**
 
 [Volver al indice](#rea-base)
 
@@ -8295,7 +8305,7 @@ Si la app es pequeña, se recomienda ContextAPI o hooks. Si es grande, y va a se
 
 <a id="rea22"></a>
 
-### **¿Cual es el flujo de Redux?**
+## # **¿Cual es el flujo de Redux?**
 
 [Volver al indice](#rea-base)
 
@@ -8326,7 +8336,7 @@ Reducer
 
 <a id="rea23"></a>
 
-### **Que es ContextAPI?**
+## # **Que es ContextAPI?**
 
 [Volver al indice](#rea-base)
 
@@ -8367,7 +8377,7 @@ const {} = useContext(QuoteContext);
 
 <a id="rea24"></a>
 
-### **Que es React Fiber?**
+## # **Que es React Fiber?**
 
 [Volver al indice](#rea-base)
 
@@ -8377,7 +8387,7 @@ Es una estructura de datos que representa un trabajo por hacer.
 
 <a id="rea25"></a>
 
-### **Para que sirven las claves o Keys en React?**
+## # **Para que sirven las claves o Keys en React?**
 
 [Volver al indice](#rea-base)
 
@@ -8396,7 +8406,7 @@ const listItems = numbers.map((number) =>
 
 <a id="rea26"></a>
 
-### **Que es ECMAScript?**
+## # **Que es ECMAScript?**
 
 [Volver al indice](#rea-base)
 
@@ -8404,7 +8414,7 @@ Es un estándar para JS para escribir funciones complejas, es popular ya que tra
 
 <a id="rea27"></a>
 
-### **Que es decodeURL y encodeURL?**
+## # **Que es decodeURL y encodeURL?**
 
 [Volver al indice](#rea-base)
 
@@ -8422,7 +8432,7 @@ decodeURI(uri) // my test.asp?name=ståle&car=saab
 
 <a id="rea28"></a>
 
-### **Que es escape y unescape?**
+## # **Que es escape y unescape?**
 
 [Volver al indice](#rea-base)
 
@@ -8440,7 +8450,7 @@ unescape("Hola%3F%20Como%20estas%20tu%21") // Hola? Como estas tu?
 
 <a id="rea29"></a>
 
-### **¿Que es async, preload y prefetch?**
+## # **¿Que es async, preload y prefetch?**
 
 [Volver al indice](#rea-base)
 
@@ -8466,7 +8476,7 @@ En resumen, `async` y `await` se utilizan en JavaScript para trabajar con códig
 
 <a id="rea30"></a>
 
-### **Cual es la diferencia entre call, bind y apply?**
+## # **Cual es la diferencia entre call, bind y apply?**
 
 [Volver al indice](#rea-base)
 
@@ -8502,7 +8512,7 @@ Basicamente los 3 asocian un objeto a `this`
 
 <a id="rea31"></a>
 
-### **Cual es la diferencia entre setTimeout() y setInterval()?**
+## # **Cual es la diferencia entre setTimeout() y setInterval()?**
 
 [Volver al indice](#rea-base)
 
@@ -8523,7 +8533,7 @@ setTimeout(() => { clearInterval(timerId); alert('stop'); }, 5000);
 
 <a id="rea32"></a>
 
-### **Qué es "REPL" y para qué sirve?**
+## # **Qué es "REPL" y para qué sirve?**
 
 [Volver al indice](#rea-base)
 
@@ -8531,7 +8541,7 @@ REPL, acrónimo en Ingles de "Leer, Evaluar, Imprimir, Bucle". Este shell es uti
 
 <a id="rea33"></a>
 
-### **Qué es el "demultiplexer"?**
+## # **Qué es el "demultiplexer"?**
 
 [Volver al indice](#rea-base)
 
@@ -8539,7 +8549,7 @@ El **demultiplexer,** *es una interfaz encargada de las notificaciones dentro de
 
 <a id="rea34"></a>
 
-### **Que hace Babel?**
+## # **Que hace Babel?**
 
 [Volver al indice](#rea-base)
 
@@ -8547,7 +8557,7 @@ Babel es un compilador para JavaScript. Permite transformar codigo escrito con l
 
 <a id="rea35"></a>
 
-### **Que hace Webpack?**
+## # **Que hace Webpack?**
 
 [Volver al indice](#rea-base)
 
@@ -8557,7 +8567,7 @@ Los bundles son paquetes de codigo necesarios para poder llevar a produccion un 
 
 <a id="rea36"></a>
 
-### **Que es el server side rendering?**
+## # **Que es el server side rendering?**
 
 [Volver al indice](#rea-base)
 
@@ -8567,7 +8577,7 @@ NextJS es una opcion para usar esto. Favorecen mucho al SEO ya que renderizan la
 
 <a id="rea37"></a>
 
-### **Que es Tree Shaking?**
+## # **Que es Tree Shaking?**
 
 [Volver al indice](#rea-base)
 
@@ -8575,7 +8585,7 @@ Es remover codigo no usado, como, por ejemplo, imports y exports que no fueron u
 
 <a id="rea38"></a>
 
-### **¿Que es el SEO?**
+## # **¿Que es el SEO?**
 
 [Volver al indice](#rea-base)
 
@@ -8601,7 +8611,7 @@ Es Search Engine Optimization, es lo que hace que un sitio sea encontrado por Go
 
 <a id="rea39"></a>
 
-### **¿Qué es el Virtual DOM?**
+## # **¿Qué es el Virtual DOM?**
 
 [Volver al indice](#rea-base)
 
@@ -8621,7 +8631,7 @@ Más arriba la jerarquía, más refrescos habrá. Un componente hijo, idealmente
 
 <a id="rea40"></a>
 
-### **Qué es el namespacing de JS?**
+## # **Qué es el namespacing de JS?**
 
 [Volver al indice](#rea-base)
 
@@ -8629,7 +8639,7 @@ Namespacing se utiliza para agrupar funciones, variables, etc con un nombre úni
 
 <a id="rea41"></a>
 
-### **Que es la tipificacion de Variables?**
+## # **Que es la tipificacion de Variables?**
 
 [Volver al indice](#rea-base)
 
@@ -8637,7 +8647,7 @@ La tipificación de variables, sirve para asignar un número a una variable y de
 
 <a id="rea42"></a>
 
-### **Concepto Truthy and Falsy**
+## # **Concepto Truthy and Falsy**
 
 [Volver al indice](#rea-base)
 
@@ -8662,7 +8672,7 @@ Boolean(function(){}); //Cualquier función es verdadera también
 
 <a id="rea43"></a>
 
-### **Funciones de alto nivel / Higher order Function**
+## # **Funciones de alto nivel / Higher order Function**
 
 [Volver al indice](#rea-base)
 
@@ -8699,7 +8709,7 @@ console.log(operacionMatematica(6, 2, multiplicacion)); // Devuelve 12 (6 * 2)
 
 <a id="rea44"></a>
 
-### **Que es la Coercion explicita e Implicita?**
+## # **Que es la Coercion explicita e Implicita?**
 
 Coercion es la forma en la que podemos cambiar de un tipo de valor a otro
 
@@ -8731,7 +8741,7 @@ console.log(b);
 
 <a id="rea45"></a>
 
-### **Que es el Scope en Javascript?**
+## # **Que es el Scope en Javascript?**
 
 [Volver al indice](#rea-base)
 
@@ -8755,7 +8765,7 @@ Entre scopes hay jerarquia. Primero se busca la variable en el mismo scope local
 
 <a id="rea46"></a>
 
-### **Fetch API**
+## # **Fetch API**
 
 [Volver al indice](#rea-base)
 
@@ -8782,7 +8792,7 @@ async function fetchData() {
 
 <a id="rea47"></a>
 
-### **Cómo se pueden crear objetos genéricos?**
+## # **Cómo se pueden crear objetos genéricos?**
 
 [Volver al indice](#rea-base)
 
@@ -8798,13 +8808,13 @@ var myObjeto = new Object({
 
 <a id="rea48"></a>
 
-### **Document.ready vs Window.onload**
+## # **Document.ready vs Window.onload**
 
 `Document.ready` se ejecuta despues de cargar todo el HTML. `Window.onload` se ejecuta cuando ya cargo completamente todo el contenido, mas adelante.
 
 <a id="rea49"></a>
 
-### **Que es la expresion de Funcion Inmediatamente Invocada - Immediately-invoked Function Expression (IIFE)?**
+## # **Que es la expresion de Funcion Inmediatamente Invocada - Immediately-invoked Function Expression (IIFE)?**
 
 [Volver al indice](#rea-base)
 
@@ -8830,7 +8840,7 @@ x.valorPrivado //Error
 
 <a id="rea50"></a>
 
-### **Qué es un Event listener?**
+## # **Qué es un Event listener?**
 
 [Volver al indice](#rea-base)
 
@@ -8864,7 +8874,7 @@ Creamos una funcion que recibe el titulo que se quiere mostrar y retorna otra fu
 
 <a id="rea51"></a>
 
-### **isNaN vs Math.isNaN**
+## # **isNaN vs Math.isNaN**
 
 [Volver al indice](#rea-base)
 
@@ -8875,7 +8885,7 @@ isNaN('denu') // devolvera true porque primero intentará convertir la cadena a 
 Number.isNaN('denu') // false porque no convertirá la cadena a numero
 ```
 
-### **Metodos String**
+## # **Metodos String**
 
 ```javascript
 
@@ -8894,7 +8904,7 @@ array[0] = array[0].replace("PM", '') // Quita el PM del string dentro de ese ar
 
 <a id="rea52"></a>
 
-### **Que es Symbol?**
+## # **Que es Symbol?**
 
 [Volver al indice](#rea-base)
 
@@ -8922,7 +8932,7 @@ obj[sym2] = 'b'
 
 <a id="rea53"></a>
 
-### **Cual es la diferencia entre un event loop, microtask y macrotask?**
+## # **Cual es la diferencia entre un event loop, microtask y macrotask?**
 
 [Volver al indice](#rea-base)
 
@@ -8947,7 +8957,7 @@ En resumen, su funcionamiento en ingles seria:
 
 <a id="rea54"></a>
 
-### **Variable Shadowing - Ocultamiento de Variables**
+## # **Variable Shadowing - Ocultamiento de Variables**
 
 [Volver al indice](#rea-base)
 
@@ -8978,7 +8988,7 @@ test(); // hola
 
 <a id="mob1"></a>
 
-### **¿Qué es el Manifest.xml en Android y qué funciones cumple?**
+## # **¿Qué es el Manifest.xml en Android y qué funciones cumple?**
 
 [Volver al indice](#mob-base)
 
@@ -8986,7 +8996,7 @@ El Manifest.xml es un archivo de configuración en Android que describe la estru
 
 <a id="mob2"></a>
 
-### **¿Cómo se ejecutan las aplicaciones en Android y qué son los archivos DEX?**
+## # **¿Cómo se ejecutan las aplicaciones en Android y qué son los archivos DEX?**
 
 [Volver al indice](#mob-base)
 
@@ -8994,7 +9004,7 @@ Cada aplicación en Android se ejecuta en una instancia de la máquina virtual D
 
 <a id="mob3"></a>
 
-### **¿Qué es el Android Runtime y cómo se ejecutan las aplicaciones en Android?**
+## # **¿Qué es el Android Runtime y cómo se ejecutan las aplicaciones en Android?**
 
 [Volver al indice](#mob-base)
 
@@ -9002,7 +9012,7 @@ El Android Runtime es el entorno de ejecución de aplicaciones de Android. Las a
 
 <a id="mob4"></a>
 
-### **¿Qué constituye la base de Android y qué funciones proporciona el kernel de Linux?**
+## # **¿Qué constituye la base de Android y qué funciones proporciona el kernel de Linux?**
 
 [Volver al indice](#mob-base)
 
@@ -9016,7 +9026,7 @@ La base de Android es el núcleo de Linux, que proporciona un entorno seguro y e
 
 <a id="diag1"></a>
 
-### **Ejemplo de Pseudo-código**
+## # **Ejemplo de Pseudo-código**
 
 [Volver al indice](#cod-base)
 
@@ -9042,7 +9052,7 @@ La base de Android es el núcleo de Linux, que proporciona un entorno seguro y e
 
 <a id="diag2"></a>
 
-### **Diagramas de Nassi-Schneiderman**
+## # **Diagramas de Nassi-Schneiderman**
 
 [Volver al indice](#cod-base)
 
@@ -9200,7 +9210,7 @@ Veamos el ejemplo de la carga del día de semana tal como se haría con este cic
 
 <a id="cod1"></a>
 
-### **¿De qué trata el código limpio?**
+## # **¿De qué trata el código limpio?**
 
 [Volver al indice](#cod-base)
 
@@ -9212,7 +9222,7 @@ Veamos el ejemplo de la carga del día de semana tal como se haría con este cic
 
 <a id="cod2"></a>
 
-### **Nombres Significativos en Codigo Limpio**
+## # **Nombres Significativos en Codigo Limpio**
 
 [Volver al indice](#cod-base)
 
@@ -9272,7 +9282,7 @@ public class Employee {
 
 <a id="cod3"></a>
 
-### **Dependency Inversion Principle**
+## # **Dependency Inversion Principle**
 
 [Volver al indice](#cod-base)
 
@@ -9326,7 +9336,7 @@ switchButton.press(); // Output: Light bulb turned off
 
 <a id="cod4"></a>
 
-### **Concepto SOLID**
+## # **Concepto SOLID**
 
 [Volver al indice](#cod-base)
 
@@ -9351,7 +9361,7 @@ Nos ayudaran a
 
 <a id="cod5"></a>
 
-### **Concepto DRY**
+## # **Concepto DRY**
 
 [Volver al indice](#cod-base)
 
@@ -9359,7 +9369,7 @@ Don’t Repeat Yourself, si hay una pieza de programación que se repite en mas 
 
 <a id="cod6"></a>
 
-### **Concepto KISS**
+## # **Concepto KISS**
 
 [Volver al indice](#cod-base)
 
@@ -9367,7 +9377,7 @@ Keep it Simple Stupid, no escribir codigo que nadie pueda entender o leer, mante
 
 <a id="cod7"></a>
 
-### **Concepto YAGNI**
+## # **Concepto YAGNI**
 
 [Volver al indice](#cod-base)
 
@@ -9375,7 +9385,7 @@ You Aren’t Gonna Need it! No escribir codigo de mas solo porque puede que lo n
 
 <a id="cod8"></a>
 
-### **Concepto LOD**
+## # **Concepto LOD**
 
 [Volver al indice](#cod-base)
 
@@ -9383,7 +9393,7 @@ Law Of Demeter, quien puede hablar con quien, una unidad puede comunicarse solo 
 
 <a id="cod9"></a>
 
-### **Funciones Limpias**
+## # **Funciones Limpias**
 
 [Volver al indice](#cod-base)
 
@@ -9395,7 +9405,7 @@ Law Of Demeter, quien puede hablar con quien, una unidad puede comunicarse solo 
 
 <a id="cod10"></a>
 
-### **Unico Nivel de abstraccion**
+## # **Unico Nivel de abstraccion**
 
 [Volver al indice](#cod-base)
 
@@ -9435,7 +9445,7 @@ public class Car {
 
 <a id="cod11"></a>
 
-### **Manejo limpio de Parametros**
+## # **Manejo limpio de Parametros**
 
 [Volver al indice](#cod-base)
 
@@ -9456,7 +9466,7 @@ public Circle createCircle(Point center, double radius)
 
 <a id="cod12"></a>
 
-### **Cuales son los beneficios de una Code Review?**
+## # **Cuales son los beneficios de una Code Review?**
 
 [Volver al indice](#cod-base)
 
@@ -9516,7 +9526,7 @@ Sin revisión de código, tu equipo tiene una mayor probabilidad de introducir p
 
 <a id="cod13"></a>
 
-### **Que tipos de Code review existen?**
+## # **Que tipos de Code review existen?**
 
 [Volver al indice](#cod-base)
 
@@ -9544,7 +9554,7 @@ Este enfoque puede ser apropiado para dos desarrolladores de aproximadamente el 
 
 <a id="cod14"></a>
 
-### **Domain Driven Design**
+## # **Domain Driven Design**
 
 [Volver al indice](#cod-base)
 
@@ -9560,7 +9570,7 @@ Se deben conocer las reglas, casos de uso, y las necesidades del usuario para po
 
 <a id="cod15"></a>
 
-### **¿Qué es un patrón de diseño?**
+## # **¿Qué es un patrón de diseño?**
 
 [Volver al indice](#cod-base)
 
@@ -9568,7 +9578,7 @@ Un patrón de diseño es una solución descubierta para un problema informático
 
 <a id="cod16"></a>
 
-### **En qué se inspiran los patrones de diseño?**
+## # **En qué se inspiran los patrones de diseño?**
 
 [Volver al indice](#cod-base)
 
@@ -9576,7 +9586,7 @@ Se inspiran en los patrones de construcción en la arquitectura, en esa discipli
 
 <a id="cod17"></a>
 
-### **¿Qué se obtiene con la implementación de patrones de diseño?**
+## # **¿Qué se obtiene con la implementación de patrones de diseño?**
 
 [Volver al indice](#cod-base)
 
@@ -9587,7 +9597,7 @@ Se inspiran en los patrones de construcción en la arquitectura, en esa discipli
 
 <a id="cod18"></a>
 
-### **¿Para qué sirven los patrones de diseño?**
+## # **¿Para qué sirven los patrones de diseño?**
 
 [Volver al indice](#cod-base)
 
@@ -9595,7 +9605,7 @@ Son soluciones basándonos en la experimentación de problemas comunes y recurre
 
 <a id="cod19"></a>
 
-### **¿Cuáles son los elementos de un patrón de diseño?**
+## # **¿Cuáles son los elementos de un patrón de diseño?**
 
 [Volver al indice](#cod-base)
 
@@ -9603,7 +9613,7 @@ Los elementos de un patrón de diseño incluyen el nombre del patrón, que es el
 
 <a id="cod20"></a>
 
-### **¿Cuáles son los tipos de patrones de diseño?**
+## # **¿Cuáles son los tipos de patrones de diseño?**
 
 [Volver al indice](#cod-base)
 
@@ -9618,7 +9628,7 @@ Los elementos de un patrón de diseño incluyen el nombre del patrón, que es el
 
 <a id="cod21"></a>
 
-### **¿Qué es la intención y motivación de un patrón de diseño?**
+## # **¿Qué es la intención y motivación de un patrón de diseño?**
 
 [Volver al indice](#cod-base)
 
@@ -9626,7 +9636,7 @@ La intención y motivación de un patrón de diseño se refiere a un resumen del
 
 <a id="cod22"></a>
 
-### **¿Qué es la aplicabilidad de un patrón de diseño?**
+## # **¿Qué es la aplicabilidad de un patrón de diseño?**
 
 [Volver al indice](#cod-base)
 
@@ -9634,7 +9644,7 @@ La aplicabilidad de un patrón de diseño menciona los usos más comunes y los c
 
 <a id="cod23"></a>
 
-### **¿Qué es la estructura de un patrón de diseño?**
+## # **¿Qué es la estructura de un patrón de diseño?**
 
 [Volver al indice](#cod-base)
 
@@ -9642,7 +9652,7 @@ La estructura de un patrón de diseño es una enumeración y descripción de las
 
 <a id="cod24"></a>
 
-### **¿Quiénes son los participantes de un patrón de diseño?**
+## # **¿Quiénes son los participantes de un patrón de diseño?**
 
 [Volver al indice](#cod-base)
 
@@ -9650,7 +9660,7 @@ Los participantes de un patrón de diseño son tanto las clases abstractas como 
 
 <a id="cod25"></a>
 
-### **Patrones Estructurales**
+## # **Patrones Estructurales**
 
 [Volver al indice](#cod-base)
 
@@ -9663,7 +9673,7 @@ Los participantes de un patrón de diseño son tanto las clases abstractas como 
 
 <a id="cod26"></a>
 
-### **Patrones Creacionales**
+## # **Patrones Creacionales**
 
 [Volver al indice](#cod-base)
 
@@ -9676,7 +9686,7 @@ Los participantes de un patrón de diseño son tanto las clases abstractas como 
 
 <a id="cod27"></a>
 
-### **Patrones Comportamiento**
+## # **Patrones Comportamiento**
 
 [Volver al indice](#cod-base)
 
@@ -9696,7 +9706,7 @@ Como los objetos se van a comportar y a cambiar su comportamiento.
 
 <a id="cod28"></a>
 
-### **Excepciones en lugar de codigos de error**
+## # **Excepciones en lugar de codigos de error**
 
 [Volver al indice](#cod-base)
 
@@ -9757,7 +9767,7 @@ public void restoreDatabase(){
 
 <a id="cod29"></a>
 
-### **Manejo de Comentarios en el codigo**
+## # **Manejo de Comentarios en el codigo**
 
 [Volver al indice](#cod-base)
 
@@ -9806,7 +9816,7 @@ public void login (User user) {}
 
 <a id="cod30"></a>
 
-### **Acomplamiento artificial**
+## # **Acomplamiento artificial**
 
 [Volver al indice](#cod-base)
 
@@ -9827,7 +9837,7 @@ public class Circle {
 
 <a id="cod31"></a>
 
-### **Unchecked Exceptions**
+## # **Unchecked Exceptions**
 
 [Volver al indice](#cod-base)
 
@@ -9869,7 +9879,7 @@ public class Engine {
 
 <a id="cod32"></a>
 
-### **Excepciones en lugar de códigos de error**
+## # **Excepciones en lugar de códigos de error**
 
 [Volver al indice](#cod-base)
 
@@ -9894,7 +9904,7 @@ private void tryToShutDown() throws DeviceShutDownError {
 
 <a id="cod33"></a>
 
-### **Gestión de errores**
+## # **Gestión de errores**
 
 [Volver al indice](#cod-base)
 
@@ -9906,7 +9916,7 @@ private void tryToShutDown() throws DeviceShutDownError {
 
 <a id="cod34"></a>
 
-### **Indentación**
+## # **Indentación**
 
 [Volver al indice](#cod-base)
 
@@ -9927,7 +9937,7 @@ return a+b+c;
 
 <a id="cod35"></a>
 
-### **Código en el nivel de abstracción incorrecto**
+## # **Código en el nivel de abstracción incorrecto**
 
 [Volver al indice](#cod-base)
 
@@ -9944,7 +9954,7 @@ public class Vehicle() {
 
 <a id="cod36"></a>
 
-### **Acoplamiento (Evitar)**
+## # **Acoplamiento (Evitar)**
 
 [Volver al indice](#cod-base)
 
@@ -10034,7 +10044,7 @@ IndependentModule.printArea('rectangle', 4, 6); // Output: The area of the recta
 
 <a id="cod37"></a>
 
-### **Cohesion (Fomentar)**
+## # **Cohesion (Fomentar)**
 
 [Volver al indice](#cod-base)
 
@@ -10122,7 +10132,7 @@ console.log(LowCohesionModule.validateEmail("example@example.com")); // Output: 
 
 <a id="cod38"></a>
 
-### **Uso de numeros magicos en lugar de constantes**
+## # **Uso de numeros magicos en lugar de constantes**
 
 [Volver al indice](#cod-base)
 
@@ -10140,7 +10150,7 @@ public Double getAnnualSalary() {
 
 <a id="cod39"></a>
 
-### **Qué es la Programación orientada a Objetos?**
+## # **Qué es la Programación orientada a Objetos?**
 
 [Volver al indice](#cod-base)
 
@@ -10148,7 +10158,7 @@ En ella las instrucciones tratan de modelar un sistema con base en la realidad, 
 
 <a id="cod40"></a>
 
-### **Qué es la programación procedural?**
+## # **Qué es la programación procedural?**
 
 [Volver al indice](#cod-base)
 
@@ -10156,7 +10166,7 @@ En ella las imposiciones o instrucciones se pueden agrupar en “procedimientos�
 
 <a id="cod41"></a>
 
-### **Qué es la programacion declarativa?**
+## # **Qué es la programacion declarativa?**
 
 [Volver al indice](#cod-base)
 
@@ -10166,7 +10176,7 @@ El ejemplo más claro de un lenguaje declarativo es SQL. En SQL se describe qué
 
 <a id="cod42"></a>
 
-### **Que es la Programacion Imperativa?**
+## # **Que es la Programacion Imperativa?**
 
 [Volver al indice](#cod-base)
 
@@ -10180,7 +10190,7 @@ Ejemplos de lenguajes imperativos hay muchos: C, C++, Java, Perl y un infinito e
 
 <a id="cod43"></a>
 
-### **Qué es la Programacion Estructurada?**
+## # **Qué es la Programacion Estructurada?**
 
 [Volver al indice](#cod-base)
 
@@ -10188,7 +10198,7 @@ En ella las imposiciones se ven divididas en estructuras. Pueden ser estructura 
 
 <a id="cod44"></a>
 
-### **Que es un antipatron?**
+## # **Que es un antipatron?**
 
 [Volver al indice](#cod-base)
 
@@ -10200,7 +10210,7 @@ El concepto se puede aplicar a la ingeniería en general, e incluso a cualquier 
 
 <a id="cod45"></a>
 
-### **Que tipos de antipatrones para el diseño de Software existen?**
+## # **Que tipos de antipatrones para el diseño de Software existen?**
 
 [Volver al indice](#cod-base)
 
@@ -10219,7 +10229,7 @@ El concepto se puede aplicar a la ingeniería en general, e incluso a cualquier 
 
 <a id="cod46"></a>
 
-### **Que tipos de Antipatrones para el Diseño Orientado a Objetos existen?**
+## # **Que tipos de Antipatrones para el Diseño Orientado a Objetos existen?**
 
 [Volver al indice](#cod-base)
 
@@ -10237,7 +10247,7 @@ El concepto se puede aplicar a la ingeniería en general, e incluso a cualquier 
 
 <a id="cod47"></a>
 
-### **Singleton**
+## # **Singleton**
 
 [Volver al indice](#cod-base)
 
@@ -10262,7 +10272,7 @@ const singleton2 = new Singleton(); // Devuelve la misma instancia
 
 <a id="cod48"></a>
 
-### **Que es el Polimorfismo?**
+## # **Que es el Polimorfismo?**
 
 [Volver al indice](#cod-base)
 
@@ -10292,7 +10302,7 @@ En el ejemplo de los polígonos, creamos una clase abstracta Poligono con un mé
 
 <a id="cod49"></a>
 
-### **Que es el Upcasting?**
+## # **Que es el Upcasting?**
 
 [Volver al indice](#cod-base)
 
@@ -10311,7 +10321,7 @@ Tras la conexión polimorfa únicamente podemos acceder a los atributos y métod
 
 <a id="cod50"></a>
 
-### **Que es el Downcasting?**
+## # **Que es el Downcasting?**
 
 [Volver al indice](#cod-base)
 
@@ -10343,7 +10353,7 @@ if (a instanceof Perro)
 
 <a id="cod51"></a>
 
-### **¿Cómo se produce la ligadura tardía y dinámica que posibilita el polimorfismo?**
+## # **¿Cómo se produce la ligadura tardía y dinámica que posibilita el polimorfismo?**
 
 [Volver al indice](#cod-base)
 
@@ -10351,7 +10361,7 @@ Gracias a los punteros o referencias: cuando se crea una variable el lenguaje re
 
 <a id="cod52"></a>
 
-### **El Principio de Sustitución de Liskov**
+## # **El Principio de Sustitución de Liskov**
 
 [Volver al indice](#cod-base)
 
@@ -10359,7 +10369,7 @@ El ***Principio de Sustitución de Liskov*** fue acuñado por **Barbara Liskov**
 
 <a id="cod53"></a>
 
-### **¿Cómo ejemplificarías el uso de polimorfismo en Java usando una colección de objetos?**
+## # **¿Cómo ejemplificarías el uso de polimorfismo en Java usando una colección de objetos?**
 
 [Volver al indice](#cod-base)
 
@@ -10378,7 +10388,7 @@ for (Poligono poligono : poligonos) {
 
 <a id="cod54"></a>
 
-### **Qué es la densidad de codigo?**
+## # **Qué es la densidad de codigo?**
 
 [Volver al indice](#cod-base)
 
@@ -10412,7 +10422,7 @@ public Integer tripleSum(Integer a, Integer b, Integer c) {
 
 <a id="cod55"></a>
 
-### **La importancia del orden de las funciones**
+## # **La importancia del orden de las funciones**
 
 [Volver al indice](#cod-base)
 
@@ -10427,7 +10437,7 @@ public void a(){
 
 <a id="cod56"></a>
 
-### **Porque se deberia evitar retornar null?**
+## # **Porque se deberia evitar retornar null?**
 
 [Volver al indice](#cod-base)
 
@@ -10461,7 +10471,7 @@ public void processRequestBatch(){
 
 <a id="cod57"></a>
 
-### **Porque se deberia evitar el uso de variables globales?**
+## # **Porque se deberia evitar el uso de variables globales?**
 
 [Volver al indice](#cod-base)
 
@@ -10473,7 +10483,7 @@ public void processRequestBatch(){
 
 <a id="cod58"></a>
 
-### **¿Qué es un Code Smell?**
+## # **¿Qué es un Code Smell?**
 
 [Volver al indice](#cod-base)
 
@@ -10491,7 +10501,7 @@ Nadie se va a volver experto teniendo esta lista de memoria, nunca va a ser una 
 
 <a id="cod59"></a>
 
-### **Code Smells en los Tests**
+## # **Code Smells en los Tests**
 
 [Volver al indice](#cod-base)
 
@@ -10517,7 +10527,7 @@ Si hay dudas en los tests, hay dudas en los requisitos
 
 <a id="cod60"></a>
 
-### **Code Smells en Codigo**
+## # **Code Smells en Codigo**
 
 [Volver al indice](#cod-base)
 
@@ -10646,7 +10656,7 @@ Se evitan los condicionales por nivel de dificultad en el ejemplo.
 
 <a id="cod61"></a>
 
-### **Code Smells en Nombres**
+## # **Code Smells en Nombres**
 
 [Volver al indice](#cod-base)
 
@@ -10708,7 +10718,7 @@ public Boolean login (User user) {
 
 <a id="cod62"></a>
 
-### **Code Smells en Comentarios**
+## # **Code Smells en Comentarios**
 
 [Volver al indice](#cod-base)
 
@@ -10732,7 +10742,7 @@ public class Comments {}
 
 <a id="cod63"></a>
 
-### **Code Smells en el entorno**
+## # **Code Smells en el entorno**
 
 [Volver al indice](#cod-base)
 
@@ -10748,7 +10758,7 @@ Tambien hay herramientas de automatizacion para los tests, con comandos especifi
 
 <a id="cod64"></a>
 
-### **Code Smells en Funciones**
+## # **Code Smells en Funciones**
 
 [Volver al indice](#cod-base)
 
@@ -10934,7 +10944,7 @@ public Double calculateDiscount(Item item, boolean isPremium) {
 
 <a id="cod65"></a>
 
-### **Single Responsibility Principle**
+## # **Single Responsibility Principle**
 
 - Puede ser un nombre confuso. No quiere decir que un modulo debe hacer una sola cosa, si no que **un modulo debe tener una unica razon para cambiar**
 - Un modulo debe ser responsable de solo un usuario o interesado del sistema
@@ -10984,7 +10994,7 @@ userManager.generateUserReport(); // Output: Generating user report...
 
 <a id="cod66"></a>
 
-### **Open/Closed Principle**
+## # **Open/Closed Principle**
 
 [Volver al indice](#cod-base)
 
@@ -11043,7 +11053,7 @@ console.log(circle.area()); // Output: 28.274333882308138
 
 <a id="cod67"></a>
 
-### **Interface Segregation Principle**
+## # **Interface Segregation Principle**
 
 [Volver al indice](#cod-base)
 
@@ -11106,7 +11116,7 @@ En este ejemplo, la interfaz `Worker` se divide en interfaces más específicas 
 
 <a id="cod68"></a>
 
-### **Liskov Substitution Principle**
+## # **Liskov Substitution Principle**
 
 [Volver al indice](#cod-base)
 
@@ -11179,7 +11189,7 @@ En este ejemplo, la clase `Square` es una subclase de `Rectangle` y sobrescribe 
 
 <a id="cam1"></a>
 
-### **Para que nos sirve Git?**
+## # **Para que nos sirve Git?**
 
 [Volver al indice](#cam-base)
 
@@ -11193,9 +11203,7 @@ Nos permite separar nueva funcionalidad de la estable.
 
 <a id="cam2"></a>
 
-### **Conceptos base de Git**
-
-
+## # **Conceptos base de Git**
 
 - **Repositorio remoto:** Es el lugar centralizado donde se guardan los archivos.
 - **Repositorio local**: Es el lugar dentro de la computadora donde se guardan los archivos.
@@ -11206,7 +11214,7 @@ Nos permite separar nueva funcionalidad de la estable.
 
 <a id="cam3"></a>
 
-### **Algunos comandos de Git**
+## # **Algunos comandos de Git**
 
 [Volver al indice](#cam-base)
 
@@ -11234,7 +11242,7 @@ Nos permite separar nueva funcionalidad de la estable.
 
 Sí agrego un **Git ignore** se ignoran los archivos cache propios del Programa
 
-### **Niveles de configuración**
+## # **Niveles de configuración**
 
 - -local : Configurar un solo repositorio
 - -global: Una configuracion para mi usuario solamente
@@ -11242,7 +11250,7 @@ Sí agrego un **Git ignore** se ignoran los archivos cache propios del Programa
 
 <a id="cam4"></a>
 
-### **Git Flow**
+## # **Git Flow**
 
 [Volver al indice](#cam-base)
 
@@ -11254,7 +11262,7 @@ Sí agrego un **Git ignore** se ignoran los archivos cache propios del Programa
 
 <a id="cam5"></a>
 
-### **trunk base dev. vs git flow**
+## # **trunk base dev. vs git flow**
 
 [Volver al indice](#cam-base)
 
@@ -11270,7 +11278,7 @@ En resumen, mientras que el desarrollo basado en tronco enfatiza la simplicidad 
 
 <a id="har1"></a>
 
-### **Gabinete**
+## # **Gabinete**
 
 [Volver al indice](#har-base)
 
@@ -11283,7 +11291,7 @@ Es el principal contenedor de todos los componentes de una computadora. Más all
 
 <a id="har2"></a>
 
-### **Motherboard**
+## # **Motherboard**
 
 [Volver al indice](#har-base)
 
@@ -11304,7 +11312,7 @@ Se diseña básicamente para realizar tareas específicas vitales para el funcio
 
 <a id="har3"></a>
 
-### **Microprocesador**
+## # **Microprocesador**
 
 [Volver al indice](#har-base)
 
@@ -11312,7 +11320,7 @@ Es la parte de la pc diseñada para llevar a cabo la ejecucion de los programas.
 
 <a id="har4"></a>
 
-### **Memoria RAM**
+## # **Memoria RAM**
 
 [Volver al indice](#har-base)
 
@@ -11320,7 +11328,7 @@ Es donde la computadora guarda los datos que esta usando al momento de procesarl
 
 <a id="har5"></a>
 
-### **Disco Rigido**
+## # **Disco Rigido**
 
 [Volver al indice](#har-base)
 
@@ -11332,7 +11340,7 @@ Es el dispositivo encargado de almacenar informacion de forma persistente en la 
 
 <a id="har6"></a>
 
-### **Lectograbadora CD/DVD**
+## # **Lectograbadora CD/DVD**
 
 [Volver al indice](#har-base)
 
@@ -11340,7 +11348,7 @@ Permiten la lectura de CDs y DVDs. La realizan a traves de la utilización de di
 
 <a id="har7"></a>
 
-### **Placas adicionales**
+## # **Placas adicionales**
 
 [Volver al indice](#har-base)
 
@@ -11351,7 +11359,7 @@ Permiten la lectura de CDs y DVDs. La realizan a traves de la utilización de di
 
 <a id="har8"></a>
 
-### **Que es la virtualizacion?**
+## # **Que es la virtualizacion?**
 
 [Volver al indice](#har-base)
 
@@ -11373,7 +11381,7 @@ En otras palabras, una máquina virtual (MV o VM *Virtual Machine* por su sigla 
 
 <a id="har9"></a>
 
-### **Para qué se usan las máquinas virtuales?**
+## # **Para qué se usan las máquinas virtuales?**
 
 ¿Para qué querría alguien crear un PC virtual dentro de su PC?
 
@@ -11394,7 +11402,7 @@ Aunque las aplicaciones para crear máquinas virtuales son cada vez más eficien
 
 <a id="har10"></a>
 
-### **Cómo se usa una máquina virtual?**
+## # **Cómo se usa una máquina virtual?**
 
 [Volver al indice](#har-base)
 
@@ -11404,7 +11412,7 @@ Hay varias aplicaciones conocidas que hacen esto, como son VirtualBox, VMWare, Q
 
 <a id="har11"></a>
 
-### **Cuales son los beneficios del uso de máquinas virtuales?**
+## # **Cuales son los beneficios del uso de máquinas virtuales?**
 
 [Volver al indice](#har-base)
 
@@ -11414,7 +11422,7 @@ Un sistema de máquina virtual es un medio muy cómodo para la investigación y 
 
 <a id="har12"></a>
 
-### **Que es un hipervisor?**
+## # **Que es un hipervisor?**
 
 [Volver al indice](#har-base)
 
@@ -11426,7 +11434,7 @@ La capa de software hipervisor o VMM, gestiona y arbitra los cuatro recursos pri
 
 <a id="har13"></a>
 
-### **Que es un hipervisor de tipo 1?**
+## # **Que es un hipervisor de tipo 1?**
 
 [Volver al indice](#har-base)
 
@@ -11438,7 +11446,7 @@ Este método de virtualización se utiliza generalmente en las empresas que pued
 
 <a id="har14"></a>
 
-### **Que es un hipervisor de tipo 2?**
+## # **Que es un hipervisor de tipo 2?**
 
 [Volver al indice](#har-base)
 
@@ -11450,7 +11458,7 @@ Este es el método de virtualización apropiado e ideal para probar software (si
 
 <a id="har15"></a>
 
-### **Que es una maquina virtual de sistema?**
+## # **Que es una maquina virtual de sistema?**
 
 Una máquina virtual de sistema es aquella que emula a una computadora completa. El software se puede hacer pasar por otro dispositivo -como una PC- de tal modo que se ejecuta otro sistema operativo en su interior. Tiene su propio disco duro, memoria, tarjeta de video y demás componentes de hardware, aunque todos ellos son virtuales.
 
@@ -11468,7 +11476,7 @@ Una máquina virtual no puede acceder al resto de datos de la máquina anfitrió
 
 <a id="har16"></a>
 
-### **Que es una maquina virtual de procesos?**
+## # **Que es una maquina virtual de procesos?**
 
 [Volver al indice](#har-base)
 
@@ -11484,7 +11492,7 @@ Las máquinas virtuales de proceso permiten ejecutar aplicaciones que se comport
 
 <a id="har17"></a>
 
-### **Como funciona internet?**
+## # **Como funciona internet?**
 
 [Volver al indice](#har-base)
 
@@ -11496,7 +11504,7 @@ Lo que define a estas redes como tales es que existe “interconexión” entre 
 
 <a id="har18"></a>
 
-### **Como se comunican las redes de Internet?**
+## # **Como se comunican las redes de Internet?**
 
 [Volver al indice](#har-base)
 
@@ -11506,7 +11514,7 @@ Durante la década del  ́70, un grupo de investigadores de Estados Unidos creó
 
 <a id="har19"></a>
 
-### **Que sucede cuando escribo una URL en el navegador y hago click en Enter?**
+## # **Que sucede cuando escribo una URL en el navegador y hago click en Enter?**
 
 [Volver al indice](#har-base)
 
@@ -11518,7 +11526,7 @@ Durante la década del  ́70, un grupo de investigadores de Estados Unidos creó
 
 <a id="har20"></a>
 
-### **Como se define la Interconexión?**
+## # **Como se define la Interconexión?**
 
 [Volver al indice](#har-base)
 
@@ -11532,7 +11540,7 @@ Es por esto que resulta fundamental comprender que la participación de diversos
 
 <a id="har21"></a>
 
-### **Que es una red de computadoras?**
+## # **Que es una red de computadoras?**
 
 [Volver al indice](#har-base)
 
@@ -11544,7 +11552,7 @@ comunicaciones.
 
 <a id="har22"></a>
 
-### **Que elementos conforman una red?**
+## # **Que elementos conforman una red?**
 
 [Volver al indice](#har-base)
 
@@ -11555,7 +11563,7 @@ comunicaciones.
 
 <a id="har23"></a>
 
-### **Cual es la finalidad de una red?**
+## # **Cual es la finalidad de una red?**
 
 [Volver al indice](#har-base)
 
@@ -11576,7 +11584,7 @@ Los distintos criterios de clasificación de redes son:
 
 <a id="har24"></a>
 
-### **Clasificación por alcance**
+## # **Clasificación por alcance**
 
 [Volver al indice](#har-base)
 
@@ -11587,7 +11595,7 @@ Los distintos criterios de clasificación de redes son:
 
 <a id="har25"></a>
 
-### **Clasificación por tipo de conexión**
+## # **Clasificación por tipo de conexión**
 
 [Volver al indice](#har-base)
 
@@ -11597,7 +11605,7 @@ Los distintos criterios de clasificación de redes son:
 
 <a id="har26"></a>
 
-### **Clasificación de redes por tipología**
+## # **Clasificación de redes por tipología**
 
 [Volver al indice](#har-base)
 
@@ -11609,7 +11617,7 @@ Los distintos criterios de clasificación de redes son:
 
 <a id="har27"></a>
 
-### **Como se cuál es mi dirección TCP-IP?**
+## # **Como se cuál es mi dirección TCP-IP?**
 
 [Volver al indice](#har-base)
 
@@ -11621,7 +11629,7 @@ Conceptualmente, el número obtenido se puede asemejar a la “dirección” de 
 
 <a id="har28"></a>
 
-### **Cuáles son las 4 capas del modelo TCP-IP?**
+## # **Cuáles son las 4 capas del modelo TCP-IP?**
 
 [Volver al indice](#har-base)
 
@@ -11638,7 +11646,7 @@ La capa de aplicaciones es el grupo de aplicaciones que requiere comunicación d
 
 <a id="har29"></a>
 
-### **Que significa TCP-IP?**
+## # **Que significa TCP-IP?**
 
 [Volver al indice](#har-base)
 
@@ -11646,7 +11654,7 @@ TCP/IP son las siglas de Transmission Control Protocol/Internet Protocol (Protoc
 
 <a id="har30"></a>
 
-### **Que es un protocolo TCP-IP y como funciona?**
+## # **Que es un protocolo TCP-IP y como funciona?**
 
 [Volver al indice](#har-base)
 
@@ -11654,7 +11662,7 @@ Como sucede con las personas, es importante que los equipos tengan un modo comú
 
 <a id="har31"></a>
 
-### **En que se diferencian TCP e IP?**
+## # **En que se diferencian TCP e IP?**
 
 [Volver al indice](#har-base)
 
@@ -11666,7 +11674,7 @@ Mírelo de esta forma: La dirección IP es como el número de teléfono que se a
 
 <a id="har32"></a>
 
-### **TCP-IP funciona con toda clase de direcciones IP?**
+## # **TCP-IP funciona con toda clase de direcciones IP?**
 
 [Volver al indice](#har-base)
 
@@ -11689,7 +11697,7 @@ En algunas circunstancias puede querer ocultar su dirección IP, normalmente por
 
 <a id="har33"></a>
 
-### **¿Qué es un DNS Cache?**
+## # **¿Qué es un DNS Cache?**
 
 [Volver al indice](#har-base)
 
@@ -11697,7 +11705,7 @@ Es una copia local de la base de datos de DNS, que contiene registros de consult
 
 <a id="har34"></a>
 
-### **¿Que es SSL y TLS?**
+## # **¿Que es SSL y TLS?**
 
 [Volver al indice](#har-base)
 
@@ -11706,7 +11714,7 @@ Es una copia local de la base de datos de DNS, que contiene registros de consult
 
 <a id="har35"></a>
 
-### **¿Que son las Autoridades de Certificado? (CA)**
+## # **¿Que son las Autoridades de Certificado? (CA)**
 
 [Volver al indice](#har-base)
 
@@ -11714,7 +11722,7 @@ Son las entidades que emiten los certificados seguros para nuestra página. Se v
 
 <a id="har36"></a>
 
-### **¿Que es un TLS Handshake?**
+## # **¿Que es un TLS Handshake?**
 
 [Volver al indice](#har-base)
 
@@ -11722,7 +11730,7 @@ Es como un “Client Hello” al servidor receptor. El servidor responderá a es
 
 <a id="har37"></a>
 
-### **Cuáles son los códigos de respuesta más comunes?**
+## # **Cuáles son los códigos de respuesta más comunes?**
 
 [Volver al indice](#har-base)
 
@@ -11739,7 +11747,7 @@ Los códigos 400 hacen referencia a errores con la request, 500 hacen referencia
 
 <a id="har38"></a>
 
-### **¿Qué es un DNS?**
+## # **¿Qué es un DNS?**
 
 [Volver al indice](#har-base)
 
@@ -11755,7 +11763,7 @@ Es un sistema de nomenclatura jerárquica para computadoras, servicios o cualqui
 
 <a id="har39"></a>
 
-### **¿Qué es HTTPS?**
+## # **¿Qué es HTTPS?**
 
 [Volver al indice](#har-base)
 
@@ -11767,7 +11775,7 @@ Mas de la mitad de las páginas poseen HTTPS en el 2016, hasta en paginas donde 
 
 <a id="har40"></a>
 
-### **Clasificación de redes por relación funcional**
+## # **Clasificación de redes por relación funcional**
 
 [Volver al indice](#har-base)
 
@@ -11776,7 +11784,7 @@ Mas de la mitad de las páginas poseen HTTPS en el 2016, hasta en paginas donde 
 
 <a id="har41"></a>
 
-### **Clasificación de redes por direccionalidad de datos**
+## # **Clasificación de redes por direccionalidad de datos**
 
 [Volver al indice](#har-base)
 
@@ -11786,7 +11794,7 @@ Mas de la mitad de las páginas poseen HTTPS en el 2016, hasta en paginas donde 
 
 <a id="har42"></a>
 
-### **Clasificación de redes por grado de autentificación**
+## # **Clasificación de redes por grado de autentificación**
 
 [Volver al indice](#har-base)
 
@@ -11795,7 +11803,7 @@ Mas de la mitad de las páginas poseen HTTPS en el 2016, hasta en paginas donde 
 
 <a id="har43"></a>
 
-### **Clasificación de redes por grado de difusión**
+## # **Clasificación de redes por grado de difusión**
 
 [Volver al indice](#har-base)
 
@@ -11804,7 +11812,7 @@ Mas de la mitad de las páginas poseen HTTPS en el 2016, hasta en paginas donde 
 
 <a id="har44"></a>
 
-### **¿Qué son las Redes Inalámbricas?**
+## # **¿Qué son las Redes Inalámbricas?**
 
 [Volver al indice](#har-base)
 
@@ -11820,7 +11828,7 @@ Algunos medios de conexión son:
 
 <a id="har45"></a>
 
-### **¿Qué es un DNS Root?**
+## # **¿Qué es un DNS Root?**
 
 [Volver al indice](#har-base)
 
@@ -11828,7 +11836,7 @@ Es el servidor DNS de nivel superior en la jerarquía de DNS. Contiene la inform
 
 <a id="har46"></a>
 
-### **¿Qué es un TLD?**
+## # **¿Qué es un TLD?**
 
 [Volver al indice](#har-base)
 
@@ -11836,7 +11844,7 @@ Es la parte más a la derecha de un nombre de dominio, como .com, .org, .net, et
 
 <a id="har47"></a>
 
-### **¿Qué es un SLD?**
+## # **¿Qué es un SLD?**
 
 [Volver al indice](#har-base)
 
@@ -11844,7 +11852,7 @@ Es la parte del nombre de dominio que está inmediatamente a la izquierda del TL
 
 <a id="har48"></a>
 
-### **¿Qué es un DNS Poisoning?**
+## # **¿Qué es un DNS Poisoning?**
 
 [Volver al indice](#har-base)
 
@@ -11852,7 +11860,7 @@ Es un ataque informático en el que se introduce información falsa en la base d
 
 <a id="har49"></a>
 
-### **¿Qué es un DNS Spoofing?**
+## # **¿Qué es un DNS Spoofing?**
 
 [Volver al indice](#har-base)
 
@@ -11860,7 +11868,7 @@ Es un ataque informático en el que se falsifica la información de DNS de un se
 
 <a id="arc1"></a>
 
-### **¿Qué resuelve la arquitectura de Microfrontends?**
+## # **¿Qué resuelve la arquitectura de Microfrontends?**
 
 [Volver al indice](#har-base)
 
@@ -11872,7 +11880,7 @@ Los equipos pasan a ser dueños de toda la vertical de negocios (Back, front y D
 
 <a id="arc2"></a>
 
-### **¿Cuales son las caracteristicas de un Microfrontend?**
+## # **¿Cuales son las caracteristicas de un Microfrontend?**
 
 [Volver al indice](#har-base)
 
@@ -11913,7 +11921,7 @@ const Restaurant = ({history}) => {
 
 <a id="arc3"></a>
 
-### **¿Qué beneficios y desventajas ves en la introducción de la arquitectura de microfrontends en algunos de tus proyectos?**
+## # **¿Qué beneficios y desventajas ves en la introducción de la arquitectura de microfrontends en algunos de tus proyectos?**
 
 [Volver al indice](#har-base)
 
@@ -11937,7 +11945,7 @@ En resumen, mientras que la arquitectura de microfrontends ofrece beneficios sig
 
 <a id="arc4"></a>
 
-### **¿Qué es la arquitectura de monolitos?**
+## # **¿Qué es la arquitectura de monolitos?**
 
 [Volver al indice](#har-base)
 
@@ -11949,7 +11957,7 @@ Si bien durante los últimos años, la arquitectura de monolitos ha sido sujeta 
 
 <a id="arc5"></a>
 
-### **En que se comparan los microservicios con los monolitos?**
+## # **En que se comparan los microservicios con los monolitos?**
 
 [Volver al indice](#har-base)
 
@@ -11990,7 +11998,7 @@ En resumen, la elección entre monolitos y microservicios en la nube se centra e
 
 <a id="arc6"></a>
 
-### **Cómo hace Amazon route 53 para dar alta disponibilidad y baja latencia?**
+## # **Cómo hace Amazon route 53 para dar alta disponibilidad y baja latencia?**
 
 [Volver al indice](#har-base)
 
@@ -12000,7 +12008,7 @@ En resumen, la elección entre monolitos y microservicios en la nube se centra e
 
 <a id="arc7"></a>
 
-### **Cuál es la diferencia entre Availability Zone y Region?**
+## # **Cuál es la diferencia entre Availability Zone y Region?**
 
 [Volver al indice](#har-base)
 
@@ -12010,7 +12018,7 @@ Esto ayuda a que los servicios tengan más disponibilidad mientras se colocan di
 
 <a id="arc8"></a>
 
-### **Qué es la alta disponibilidad?**
+## # **Qué es la alta disponibilidad?**
 
 [Volver al indice](#har-base)
 
@@ -12018,7 +12026,7 @@ La alta disponibilidad es un término que se utiliza para describir la capacidad
 
 <a id="arc9"></a>
 
-### **Qué es la baja latencia?**
+## # **Qué es la baja latencia?**
 
 [Volver al indice](#har-base)
 
@@ -12026,13 +12034,13 @@ La baja latencia es el tiempo que tarda un sistema en responder a una solicitud.
 
 <a id="arc10"></a>
 
-### **Qué es un sistema tolerante a fallos?**
+## # **Qué es un sistema tolerante a fallos?**
 
 Un sistema tolerante a fallos es un sistema que puede continuar funcionando incluso si uno o más de sus componentes fallan. Los sistemas tolerantes a fallos se diseñan para minimizar el impacto de los fallos y garantizar que el sistema siga siendo operativo y accesible en caso de fallo de un componente.
 
 <a id="arc11"></a>
 
-### **Qué es un sistema distribuido?**
+## # **Qué es un sistema distribuido?**
 
 [Volver al indice](#har-base)
 
@@ -12040,7 +12048,7 @@ Un sistema distribuido es un sistema de software que se ejecuta en múltiples co
 
 <a id="arc12"></a>
 
-### **Qué es un sistema de alta disponibilidad?**
+## # **Qué es un sistema de alta disponibilidad?**
 
 [Volver al indice](#har-base)
 
@@ -12048,7 +12056,7 @@ Un sistema de alta disponibilidad es un sistema que está diseñado para garanti
 
 <a id="arc13"></a>
 
-### **Qué es un CDN?**
+## # **Qué es un CDN?**
 
 [Volver al indice](#har-base)
 
@@ -12056,7 +12064,7 @@ Un CDN (Content Delivery Network) es una red de servidores distribuidos geográf
 
 <a id="arc14"></a>
 
-### **Qué es un balanceador de carga?**
+## # **Qué es un balanceador de carga?**
 
 [Volver al indice](#har-base)
 
@@ -12065,7 +12073,7 @@ de manera uniforme y eficiente entre los servidores. Los balanceadores de carga 
 
 <a id="arc15"></a>
 
-### **Que es una cookie?**
+## # **Que es una cookie?**
 
 [Volver al indice](#har-base)
 
@@ -12084,7 +12092,7 @@ Otras propiedades de las cookies son..
 
 <a id="arc16"></a>
 
-### **Que es el cookie tracking?**
+## # **Que es el cookie tracking?**
 
 [Volver al indice](#har-base)
 
@@ -12107,7 +12115,7 @@ El tracking puede servirle a muchas empresas para obtener informacion exacta ace
 
 <a id="arc17"></a>
 
-### **Como creo una cookie con Javascript?**
+## # **Como creo una cookie con Javascript?**
 
 [Volver al indice](#har-base)
 
@@ -12156,7 +12164,7 @@ console.log(document.cookie);
 
 <a id="arc18"></a>
 
-### **¿Cual es la diferencia entre Cookies, SessionStorage y LocalStorage?**
+## # **¿Cual es la diferencia entre Cookies, SessionStorage y LocalStorage?**
 
 [Volver al indice](#har-base)
 
@@ -12197,7 +12205,7 @@ document.cookie // No se puede obtener una sola cookie por vez,
 
 <a id="arc19"></a>
 
-### **¿Como puedo borrar una cookie?**
+## # **¿Como puedo borrar una cookie?**
 
 [Volver al indice](#har-base)
 
@@ -12211,7 +12219,7 @@ function deleteCookie(cname) {
 
 <a id="arc20"></a>
 
-### **¿Que es CORS?**
+## # **¿Que es CORS?**
 
 [Volver al indice](#har-base)
 
@@ -12221,7 +12229,7 @@ Tambien sirve para obtener fuentes externas, texturas webGL, Imagenes, hojas de 
 
 <a id="arc21"></a>
 
-### **¿Que es un Sistema Operativo?**
+## # **¿Que es un Sistema Operativo?**
 
 [Volver al indice](#har-base)
 
@@ -12245,7 +12253,7 @@ La idea es relativamente simple. Un proceso se ejecuta hasta que debe esperar, t
 
 <a id="arc22"></a>
 
-### **FCFS (First come, first served)**
+## # **FCFS (First come, first served)**
 
 [Volver al indice](#har-base)
 
@@ -12257,7 +12265,7 @@ Cuando un proceso entra en la cola lista, su PCB está vinculado a la final de l
 
 <a id="arc23"></a>
 
-### **SPN/SJF (Shorted Process Next/Shorted Job First)**
+## # **SPN/SJF (Shorted Process Next/Shorted Job First)**
 
 [Volver al indice](#har-base)
 
@@ -12267,7 +12275,7 @@ Aunque el algoritmo SJF es óptimo, no se puede implementar en el nivel de progr
 
 <a id="arc24"></a>
 
-### **SRT (Shortest Remaining Time)**
+## # **SRT (Shortest Remaining Time)**
 
 [Volver al indice](#har-base)
 
@@ -12283,7 +12291,7 @@ El proceso en CPU es desalojado si llega a la cola un proceso con duración más
 
 <a id="bd1"></a>
 
-### **Cuáles son los elementos de una base de datos?**
+## # **Cuáles son los elementos de una base de datos?**
 
 [Volver al indice](#bd-base)
 
@@ -12297,7 +12305,7 @@ El proceso en CPU es desalojado si llega a la cola un proceso con duración más
 
 <a id="bd2"></a>
 
-### **Cuales son los elementos de Data Control Language? (DCL)**
+## # **Cuales son los elementos de Data Control Language? (DCL)**
 
 [Volver al indice](#bd-base)
 
@@ -12306,7 +12314,7 @@ El proceso en CPU es desalojado si llega a la cola un proceso con duración más
 
 <a id="bd3"></a>
 
-### **Lenguaje de manipulación de datos (DML)**
+## # **Lenguaje de manipulación de datos (DML)**
 
 [Volver al indice](#bd-base)
 
@@ -12319,7 +12327,7 @@ Las sentencias de lenguaje de manipulación de datos (DML) son utilizadas para g
 
 <a id="bd4"></a>
 
-### **Lenguaje de definición de datos (DDL)**
+## # **Lenguaje de definición de datos (DDL)**
 
 [Volver al indice](#bd-base)
 
@@ -12332,7 +12340,7 @@ Las sentencias DDL se utilizan para crear y modificar la estructura de las tabla
 
 <a id="bd5"></a>
 
-### **Qué es la normalizacion?**
+## # **Qué es la normalizacion?**
 
 [Volver al indice](#bd-base)
 
@@ -12342,7 +12350,7 @@ También se puede entender la normalización como una serie de reglas que sirven
 
 <a id="bd6"></a>
 
-### **Cuales son los objetivos de la Normalización?**
+## # **Cuales son los objetivos de la Normalización?**
 
 [Volver al indice](#bd-base)
 
@@ -12356,7 +12364,7 @@ deben ser del mismo tipo.
 
 <a id="bd7"></a>
 
-### **Cuales son los grados de Normalización?**
+## # **Cuales son los grados de Normalización?**
 
 [Volver al indice](#bd-base)
 
@@ -12370,7 +12378,7 @@ problemas complejos, no se requiera de algún dato en la 3era forma.
 
 <a id="bd8"></a>
 
-### **Algunos tips de Performance SQL**
+## # **Algunos tips de Performance SQL**
 
 [Volver al indice](#bd-base)
 
@@ -12500,7 +12508,7 @@ VALUES (1, 'England')
 
 <a id="bd9"></a>
 
-### **DDL Triggers**
+## # **DDL Triggers**
 
 Son triggers especiales que se crean **a nivel de base de datos** y que disparan en respuesta a eventos DML  (Update – Delete – Insert). Suelen ser utilizados para ejecutar tareas administrativas en una base de datos auditando y regulando cierta clase de eventos.
 
@@ -12530,7 +12538,7 @@ CREATE TRIGGER TR_Seguridad
 
 <a id="bd10"></a>
 
-### **Inner Join**
+## # **Inner Join**
 
 [Volver al indice](#bd-base)
 
@@ -12547,7 +12555,7 @@ FROM tabla1 AS e
 
 <a id="bd11"></a>
 
-### **Outer Join (Con left y right join)**
+## # **Outer Join (Con left y right join)**
 
 [Volver al indice](#bd-base)
 
@@ -12563,7 +12571,7 @@ ON p.productoid = pr.productoid
 
 <a id="bd15"></a>
 
-### **UNIÓN**
+## # **UNIÓN**
 
 [Volver al indice](#bd-base)
 
@@ -12579,7 +12587,7 @@ Select * b
 
 <a id="bd16"></a>
 
-### **TOP**
+## # **TOP**
 
 [Volver al indice](#bd-base)
 
@@ -12593,7 +12601,7 @@ FROM tabla1
 
 <a id="bd12"></a>
 
-### **Self Join**
+## # **Self Join**
 
 [Volver al indice](#bd-base)
 
@@ -12609,7 +12617,7 @@ ORDER BY A.City;
 
 <a id="bd13"></a>
 
-### **EXCEPT**
+## # **EXCEPT**
 
 [Volver al indice](#bd-base)
 
@@ -12627,7 +12635,7 @@ FROM tabla2
 
 <a id="bd14"></a>
 
-### **DML Triggers**
+## # **DML Triggers**
 
 [Volver al indice](#bd-base)
 
@@ -12765,9 +12773,10 @@ END
 
 <a id="bd17"></a>
 
-### **Diferencia entre OPENROWSET y OPENQUERY**
+## # **Diferencia entre OPENROWSET y OPENQUERY**
 
 [Volver al indice](#bd-base)
 
 - **OPENROWSET:** hay que indicar toda la información de conexión de los datos externos (String de conexión o ConnectionString).
 - **OPENQUERY:** se indica el nombre del servidor linkeado al motor desde donde ejecuto las consultas.
+
