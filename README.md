@@ -8,134 +8,6 @@
 
 Preguntas sin link de referencia con preguntas que proximamente seran respondidas, pero que igualmente son sugeridas.
 
-<a name="seg-base"></a>
-
-## [Seguridad](#seg)  
-
-|  Introducción y Conceptos Básicos  |
-|----------|
-| [¿Qué es el ciberespacio?](#seg4)    |
-| [¿Cuáles son los componentes del Ciberespacio?](#seg5)    |
-| [¿Cuáles son los problemas del Ciberespacio?](#seg6)    |
-| [¿Qué es la Ciberseguridad?](#seg8)    |
-| [¿Qué quiere decir "Ciberataque"?](#seg1)    |
-| [¿Que quiere decir "Ciberamenazas"?](#seg2)    |
-| [¿Qué quiere decir "Vulnerabilidad"?](#seg3)    |
-| [¿Cuáles son las ciberamenazas actuales?](#seg7)    |
-|¿Por qué es importante entender las vulnerabilidades en ciberseguridad?|
-|¿Cómo se define una amenaza en ciberseguridad y cuál es su relación con una vulnerabilidad?|
-|¿Qué es XSS, CSRF, CSP, CORS, DoS y cómo se manejan estos problemas de seguridad en la web?|
-
-| Metodologías y Roles en Ciberseguridad   |
-|----------|
-| [¿Cuál es el perfil del Oficial de seguridad informática?](#seg9)    |
-| [¿De qué pasos consta la metodología de ciberseguridad?](#seg10)    |
-| [¿De qué pasos criterios de seguridad consta la metodología de ciberseguridad?](#seg11)    |
-|¿Qué habilidades técnicas y no técnicas debe tener un Oficial de seguridad informática?|
-|¿Cuáles son los diferentes enfoques en las metodologías de gestión de riesgos de ciberseguridad?|
-
-| Tipos de Ciberataques  |
-|----------|
-| [¿Cuáles son algunas modalidades comunes de ataques?](#seg13)    |
-| [¿Qué son los ataques internos?](#seg15)    |
-| [¿Qué tipos de Ingenierías sociales existen?](#seg16)    |
-| [¿Cuáles son las etapas en un proceso de hacking?](#seg14)    |
-|¿Cómo prevenir los ataques internos dentro de una organización?|
-|¿Qué papel juega el phishing en los ciberataques actuales?|
-
-| Medidas de prevencion  |
-|----------|
-| [¿Cuáles son algunas medidas comunes contra los ataques?](#seg12)    |
-| [¿Qué es la triada CIA?](#seg17)    |
-| [¿Qué es la seguridad perimetral?](#seg18)    |
-| [Es una amenaza.. Verdadero o Falso?](#seg23)    |
-|¿Qué otros modelos de seguridad, además de la triada CIA, se utilizan en la industria de la ciberseguridad?|
-|¿Qué son las políticas de seguridad de la información y cómo ayudan en la prevención de ciberataques?|
-
-| IDS (Intrusion Detection Systems)  |
-|----------|
-| [IDS (Intrusion Detection System)](#seg19)    |
-| [Tecnicas de detección de intrusiones](#seg20)    |
-| [Indicadores de una intrusión](#seg21)    |
-| [Tipos de IDS](#seg22)    |
-|¿Cómo se diferencia un IDS de un IPS (Intrusion Prevention System)?|
-|¿Qué métodos utilizan los IDS para detectar intrusiones en tiempo real?|
-
-| Firewalls  |
-|----------|
-| [¿Qué es un Firewall?](#seg24)    |
-| [Tipos de Firewall](#seg25)    |
-|¿Cuál es la diferencia entre un firewall de filtrado de paquetes y un firewall de inspección profunda de paquetes?|
-|¿Cómo se puede configurar un firewall para proteger una red corporativa?|
-
-| Criptografía  |
-|----------|
-| [¿Qué es la criptografía?](#seg26)    |
-| [¿Qué es una función Hash?](#seg27)    |
-| [¿Cuáles son los requisitos de un Cripto sistema?](#seg28)    |
-| [¿Cómo funciona el Cifrado Simétrico?](#seg29)    |
-| [¿Cómo funciona el Cifrado Asimétrico?](#seg30)    |
-|¿Por qué es importante el uso de certificados digitales y cómo están relacionados con la criptografía?|
-|¿Qué es la criptografía cuántica y cómo afectará la ciberseguridad en el futuro?|
-
-| Informática Forense  |
-|----------|
-| [Adquisición en Informática Forense](#seg31)   |
-| [El informe pericial informático](#seg32)   |
-|¿Qué debe contener un informe pericial informático y por qué es crucial para una investigación legal?|
-|¿Qué herramientas se utilizan comúnmente para la adquisición forense de datos?|
-
-<a name="acc-base"></a>
-
-## [Accesibilidad](#acc)  
-
-| Introducción a la Accesibilidad   |
-|----------|
-| [¿Qué es la accesibilidad web?](#acc1)    |
-| [¿Cuáles son sus beneficios?](#acc2)    |
-| [¿Qué significa A11y?](#acc3)    |
-|¿Qué leyes o normativas existen a nivel global relacionadas con la accesibilidad web?|
-|¿Por qué es importante la accesibilidad web para las personas con discapacidades?|
-
-| Fundamentos y Principios   |
-|----------|
-| [¿De qué trata el Web Content Accessibility Guidelines (WCAG)?](#acc9) |
-| [¿De qué tratan los principios POUR - Principios WCAG?](#acc10)    |
-|¿Cómo se aplica la regla de "suficiente tiempo para leer y usar el contenido" en el diseño web accesible?|
-|¿Qué significa que una página web sea "perceptible, operable, comprensible y robusta"?|
-
-| Herramientas   |
-|----------|
-| [¿Cuáles son las herramientas más usadas en accesibilidad?](#acc4)  |
-| [¿Qué es un screen reader?](#acc5)   |
-|¿Qué herramientas específicas se utilizan para realizar auditorías de accesibilidad en un sitio web?|
-|¿Cómo funciona un lector de pantalla y qué desafíos puede presentar a los diseñadores web?|
-
-| Elementos Clave   |
-|----------|
-| [¿Qué es el contraste de color?](#acc6)   |
-| [¿Qué es el texto alternativo?](#acc7)    |
-| [¿Qué es el teclado virtual?](#acc8)    |
-|¿Cómo puede el contraste de color impactar en la legibilidad del contenido para personas con deficiencia visual?|
-|¿Qué buenas prácticas deben seguirse para escribir texto alternativo efectivo?|
-
-| ARIA y Contenido Dinámico   |
-|----------|
-| [¿Qué es ARIA - Accessible Rich Internet Applications?](#acc11)    |
-| [¿Cuándo es necesario utilizar ARIA?](#acc12)   |
-| [Contenido dinámico y accesibilidad](#acc13)    |
-| [Nombrar algunas ARIA existentes](#acc16)    |
-|¿Cuáles son las limitaciones de usar ARIA y por qué no siempre es la mejor solución para mejorar la accesibilidad?|
-|¿Cómo se utiliza ARIA para mejorar la accesibilidad de contenido dinámico como menús o formularios interactivos?|
-
-| Buenas Prácticas y Técnicas   |
-|----------|
-| [Manejo de focus](#acc14)    |
-| [CSS accesible](#acc15)    |
-| [¿Qué prácticas conlleva tener un HTML accesible?](#acc17)    |
-| ¿Cómo influye el manejo adecuado del focus en la accesibilidad para usuarios de teclado?|
-|¿Qué reglas de CSS son esenciales para garantizar una experiencia accesible en un sitio web?|
-
 <a name="alg-base"></a>
 
 ## [Algoritmos y manejo de datos](#alg)
@@ -276,10 +148,15 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 | [Callback Hell](#var12)    |
 | [Funciones de "bloqueo" y "no bloqueo"](#var13)    |
 | [Promises](#var21)    |
+| Async Await|
+|Callbacks|
 | [Cuál es la diferencia entre Promises, Callbacks y Async/Await?](#var22)    |
 | [Como funciona setTimeout?](#var10)    |
 |¿Qué es un Promise.all y cuándo usarlo?|
 | ¿Cómo se maneja un error en una promesa?|
+|¿Cómo funcionan Promise.allSettled, Promise.race y Promise.any?|
+| ¿Cómo manejarías errores en funciones con async/await de forma eficiente?|
+|¿Cómo implementarías un patrón pub/sub para manejar eventos entre diferentes partes de una aplicación?|
 
 | Métodos y Operadores en JavaScript   |
 |----------|
@@ -444,6 +321,27 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 | [Cómo hago que las props de una interface sean opcionales?](#typ14)    |
 | [Herencia en Typescript](#typ15)    |
 | [Interfaces en Typescript](#typ16)    |
+|¿Qué son los tipos Union e Intersection y cuándo se utilizan?|
+|¿Qué son los Utility Types como Partial, Pick, y Omit, y en qué casos son útiles?|
+|¿Cómo funcionan los Mapped Types y cómo se aplican en proyectos complejos?|
+|¿Qué son los Conditional Types y cómo permiten lógica avanzada en los tipos?|
+|¿Qué técnicas avanzadas de Type Narrowing puedes usar para trabajar con tipos complejos?|
+|¿Cómo funcionan los decoradores en TypeScript y en qué casos son útiles?|
+|¿Cómo crear y utilizar tipos genéricos con restricciones múltiples (T extends U)?|
+|¿Cómo funcionan keyof y los Lookup Types para trabajar dinámicamente con claves y valores?|
+|¿Cómo manejas tipos recursivos en TypeScript?|
+|¿Cómo configuras un TSConfig.json para proyectos complejos con monorepos o múltiples builds?|
+|¿Qué estrategias usarías para gestionar grandes bases de código utilizando tipos estrictos en TypeScript?|
+|¿Cómo manejarías el uso avanzado de this en métodos y funciones en TypeScript?|
+|¿Cómo implementarías patrones de diseño utilizando características avanzadas de TypeScript?|
+|¿Cómo evaluarías el impacto de strictNullChecks en un proyecto existente y cómo migrarías gradualmente?|
+|¿Cómo aprovecharías TypeScript para mejorar el rendimiento y la seguridad en aplicaciones críticas?|
+|¿Qué son los módulos de declaración (.d.ts) y cómo los usas para bibliotecas externas?|
+|¿Cómo extender interfaces o tipos definidos en bibliotecas de terceros?|
+|¿Cómo manejarías la interoperabilidad entre TypeScript y bibliotecas escritas en JavaScript puro?|
+|¿Qué patrones sigues para definir tipos o interfaces en aplicaciones orientadas a dominios complejos?|
+|¿Cómo aprovechar las herramientas de linting y análisis estático para mantener la calidad del código en TypeScript?|
+
 
 <a name="sty-base"></a>
 
@@ -698,12 +596,16 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 | [¿Qué es el Android Runtime y cómo se ejecutan las aplicaciones en Android?](#mob3)    |
 | [¿Qué constituye la base de Android y qué funciones proporciona el kernel de Linux?](#mob4)    |
 
+<a name="mob-base-rn"></a>
+
 | React Native   |
 |----------|
-|¿Qué es React Native y cómo se compara con otras soluciones de desarrollo móvil?|
-|¿Cómo se maneja el estado en una aplicación React Native?|
-|¿Cómo se maneja la navegación en una aplicación React Native?|
-|¿Cómo se maneja la persistencia de datos en una aplicación React Native?|
+|[¿Qué es React Native y cómo se compara con otras soluciones de desarrollo móvil?](#mob5)|
+|[¿Como se compara React Native al resto de soluciones?](#mob6)|
+|[¿Cómo se maneja el estado en una aplicación React Native?](#mob7)|
+|[¿Qué es Expo y cómo se compara con React Native?](#mob8)|
+|[¿Cómo se maneja la navegación en una aplicación React Native?](#mob9)|
+|[¿Cómo se maneja la persistencia de datos en una aplicación React Native?](#mob10)|
 |¿Cómo se maneja la autenticación de usuarios en una aplicación React Native?|
 |¿Cómo se maneja la internacionalización en una aplicación React Native?|
 |¿Cómo se maneja la compatibilidad entre diferentes versiones de sistemas operativos en una aplicación React Native?|
@@ -999,6 +901,133 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 | [TOP](#bd16)    |
 | [EXCEPT](#bd13)    |
 
+<a name="seg-base"></a>
+
+## [Seguridad](#seg)  
+
+|  Introducción y Conceptos Básicos  |
+|----------|
+| [¿Qué es el ciberespacio?](#seg4)    |
+| [¿Cuáles son los componentes del Ciberespacio?](#seg5)    |
+| [¿Cuáles son los problemas del Ciberespacio?](#seg6)    |
+| [¿Qué es la Ciberseguridad?](#seg8)    |
+| [¿Qué quiere decir "Ciberataque"?](#seg1)    |
+| [¿Que quiere decir "Ciberamenazas"?](#seg2)    |
+| [¿Qué quiere decir "Vulnerabilidad"?](#seg3)    |
+| [¿Cuáles son las ciberamenazas actuales?](#seg7)    |
+|¿Por qué es importante entender las vulnerabilidades en ciberseguridad?|
+|¿Cómo se define una amenaza en ciberseguridad y cuál es su relación con una vulnerabilidad?|
+|¿Qué es XSS, CSRF, CSP, CORS, DoS y cómo se manejan estos problemas de seguridad en la web?|
+
+| Metodologías y Roles en Ciberseguridad   |
+|----------|
+| [¿Cuál es el perfil del Oficial de seguridad informática?](#seg9)    |
+| [¿De qué pasos consta la metodología de ciberseguridad?](#seg10)    |
+| [¿De qué pasos criterios de seguridad consta la metodología de ciberseguridad?](#seg11)    |
+|¿Qué habilidades técnicas y no técnicas debe tener un Oficial de seguridad informática?|
+|¿Cuáles son los diferentes enfoques en las metodologías de gestión de riesgos de ciberseguridad?|
+
+| Tipos de Ciberataques  |
+|----------|
+| [¿Cuáles son algunas modalidades comunes de ataques?](#seg13)    |
+| [¿Qué son los ataques internos?](#seg15)    |
+| [¿Qué tipos de Ingenierías sociales existen?](#seg16)    |
+| [¿Cuáles son las etapas en un proceso de hacking?](#seg14)    |
+|¿Cómo prevenir los ataques internos dentro de una organización?|
+|¿Qué papel juega el phishing en los ciberataques actuales?|
+
+| Medidas de prevencion  |
+|----------|
+| [¿Cuáles son algunas medidas comunes contra los ataques?](#seg12)    |
+| [¿Qué es la triada CIA?](#seg17)    |
+| [¿Qué es la seguridad perimetral?](#seg18)    |
+| [Es una amenaza.. Verdadero o Falso?](#seg23)    |
+|¿Qué otros modelos de seguridad, además de la triada CIA, se utilizan en la industria de la ciberseguridad?|
+|¿Qué son las políticas de seguridad de la información y cómo ayudan en la prevención de ciberataques?|
+
+| IDS (Intrusion Detection Systems)  |
+|----------|
+| [IDS (Intrusion Detection System)](#seg19)    |
+| [Tecnicas de detección de intrusiones](#seg20)    |
+| [Indicadores de una intrusión](#seg21)    |
+| [Tipos de IDS](#seg22)    |
+|¿Cómo se diferencia un IDS de un IPS (Intrusion Prevention System)?|
+|¿Qué métodos utilizan los IDS para detectar intrusiones en tiempo real?|
+
+| Firewalls  |
+|----------|
+| [¿Qué es un Firewall?](#seg24)    |
+| [Tipos de Firewall](#seg25)    |
+|¿Cuál es la diferencia entre un firewall de filtrado de paquetes y un firewall de inspección profunda de paquetes?|
+|¿Cómo se puede configurar un firewall para proteger una red corporativa?|
+
+| Criptografía  |
+|----------|
+| [¿Qué es la criptografía?](#seg26)    |
+| [¿Qué es una función Hash?](#seg27)    |
+| [¿Cuáles son los requisitos de un Cripto sistema?](#seg28)    |
+| [¿Cómo funciona el Cifrado Simétrico?](#seg29)    |
+| [¿Cómo funciona el Cifrado Asimétrico?](#seg30)    |
+|¿Por qué es importante el uso de certificados digitales y cómo están relacionados con la criptografía?|
+|¿Qué es la criptografía cuántica y cómo afectará la ciberseguridad en el futuro?|
+
+| Informática Forense  |
+|----------|
+| [Adquisición en Informática Forense](#seg31)   |
+| [El informe pericial informático](#seg32)   |
+|¿Qué debe contener un informe pericial informático y por qué es crucial para una investigación legal?|
+|¿Qué herramientas se utilizan comúnmente para la adquisición forense de datos?|
+
+<a name="acc-base"></a>
+
+## [Accesibilidad](#acc)  
+
+| Introducción a la Accesibilidad   |
+|----------|
+| [¿Qué es la accesibilidad web?](#acc1)    |
+| [¿Cuáles son sus beneficios?](#acc2)    |
+| [¿Qué significa A11y?](#acc3)    |
+|¿Qué leyes o normativas existen a nivel global relacionadas con la accesibilidad web?|
+|¿Por qué es importante la accesibilidad web para las personas con discapacidades?|
+
+| Fundamentos y Principios   |
+|----------|
+| [¿De qué trata el Web Content Accessibility Guidelines (WCAG)?](#acc9) |
+| [¿De qué tratan los principios POUR - Principios WCAG?](#acc10)    |
+|¿Cómo se aplica la regla de "suficiente tiempo para leer y usar el contenido" en el diseño web accesible?|
+|¿Qué significa que una página web sea "perceptible, operable, comprensible y robusta"?|
+
+| Herramientas   |
+|----------|
+| [¿Cuáles son las herramientas más usadas en accesibilidad?](#acc4)  |
+| [¿Qué es un screen reader?](#acc5)   |
+|¿Qué herramientas específicas se utilizan para realizar auditorías de accesibilidad en un sitio web?|
+|¿Cómo funciona un lector de pantalla y qué desafíos puede presentar a los diseñadores web?|
+
+| Elementos Clave   |
+|----------|
+| [¿Qué es el contraste de color?](#acc6)   |
+| [¿Qué es el texto alternativo?](#acc7)    |
+| [¿Qué es el teclado virtual?](#acc8)    |
+|¿Cómo puede el contraste de color impactar en la legibilidad del contenido para personas con deficiencia visual?|
+|¿Qué buenas prácticas deben seguirse para escribir texto alternativo efectivo?|
+
+| ARIA y Contenido Dinámico   |
+|----------|
+| [¿Qué es ARIA - Accessible Rich Internet Applications?](#acc11)    |
+| [¿Cuándo es necesario utilizar ARIA?](#acc12)   |
+| [Contenido dinámico y accesibilidad](#acc13)    |
+| [Nombrar algunas ARIA existentes](#acc16)    |
+|¿Cuáles son las limitaciones de usar ARIA y por qué no siempre es la mejor solución para mejorar la accesibilidad?|
+|¿Cómo se utiliza ARIA para mejorar la accesibilidad de contenido dinámico como menús o formularios interactivos?|
+
+| Buenas Prácticas y Técnicas   |
+|----------|
+| [Manejo de focus](#acc14)    |
+| [CSS accesible](#acc15)    |
+| [¿Qué prácticas conlleva tener un HTML accesible?](#acc17)    |
+| ¿Cómo influye el manejo adecuado del focus en la accesibilidad para usuarios de teclado?|
+|¿Qué reglas de CSS son esenciales para garantizar una experiencia accesible en un sitio web?|
 
 ---
 
@@ -9007,6 +9036,447 @@ El Android Runtime es el entorno de ejecución de aplicaciones de Android. Las a
 [Volver al indice](#mob-base)
 
 La base de Android es el núcleo de Linux, que proporciona un entorno seguro y estable para la ejecución de aplicaciones y protege al sistema de fallos y malware. El kernel de Linux proporciona funciones como la administración de memoria, la administración de energía, la administración de dispositivos, la administración de procesos y la seguridad.
+
+<a id="mob5"></a>
+
+### **¿Qué es React Native y cómo se compara con otras soluciones de desarrollo móvil?**
+
+[Volver al indice](#mob-base-rn)
+
+React Native es un framework de desarrollo de aplicaciones móviles creado por Facebook. Permite construir aplicaciones híbridas, lo que significa que puedes escribir un único código en JavaScript (con React) y generar aplicaciones nativas para iOS y Android. React Native utiliza un enfoque bridge para interactuar con componentes nativos, lo que lo hace más eficiente que soluciones basadas únicamente en WebViews.
+
+-  Código Compartido: Puedes escribir una sola base de código y reutilizarla en ambas plataformas, reduciendo el esfuerzo de desarrollo y los costos.
+- Curva de Aprendizaje: Si ya conoces React, aprender React Native es mucho más fácil que aprender lenguajes nativos como Swift/Objective-C o Kotlin/Java.
+- Mantenimiento: Gracias a la base de código compartida, mantener y actualizar aplicaciones para ambas plataformas es más sencillo.
+- Ecosistema React: Puedes aprovechar herramientas, librerías, y técnicas de React para desarrollar interfaces de usuario declarativas y reutilizables.
+- Hot Reloading: Permite ver cambios en tiempo real durante el desarrollo, acelerando la iteración.
+
+Aunque React Native tiene muchas ventajas, puede no ser la mejor opción para aplicaciones que requieren acceso intensivo a hardware, como juegos de alta gama, donde el desarrollo nativo aún domina. Sin embargo, para la mayoría de aplicaciones comerciales y de consumo, es una excelente solución.
+
+<a id="mob6"></a>
+
+### **¿Como se compara React Native al resto de soluciones?**
+
+[Volver al indice](#mob-base-rn)
+
+**Frente a Soluciones Web (Ionic, Cordova):**
+
+- React Native utiliza componentes nativos reales, mientras que frameworks como Ionic o Cordova renderizan interfaces usando un WebView, lo que puede afectar el rendimiento.
+- Las aplicaciones de React Native tienen una experiencia de usuario más fluida y cercana a lo nativo.
+  
+**Frente a Desarrollo Nativo Puro (Swift/Objective-C y Kotlin/Java):**
+
+- React Native es más rápido de desarrollar gracias a la reutilización de código, pero puede no ofrecer acceso directo a todas las API nativas de cada plataforma.
+- El desarrollo nativo ofrece un control absoluto sobre el hardware y las características, lo que puede ser esencial para aplicaciones con alto rendimiento o personalización extrema.
+
+**Frente a Flutter:**
+
+- Flutter, desarrollado por Google, utiliza un enfoque diferente, renderizando toda la interfaz con su propio motor gráfico (Skia). Esto le da mayor consistencia visual entre plataformas pero puede requerir más recursos en tiempo de ejecución. Aunque se dice que en general Flutter gestiona mucho mejor la performance.
+- React Native tiene un ecosistema más maduro debido a su tiempo en el mercado y la adopción masiva por parte de la comunidad.
+
+<a id="mob7"></a>
+
+### **¿Cómo se maneja el estado en una aplicación React Native?**
+
+[Volver al indice](#mob-base-rn)
+
+El sistema de React Native y ReactJs es muy parecido ya que comparten el mismo core. Las formas de manejar el estado son:
+
+**Estado Local (useState y useReducer)**
+
+Se utiliza para manejar el estado dentro de un componente específico.
+
+* useState: Ideal para estados simples y locales.
+
+```jsx
+const [count, setCount] = useState(0);
+```
+
+* useReducer: Útil para manejar estados más complejos o con lógica de actualización específica.
+
+```jsx
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'increment':
+      return { count: state.count + 1 };
+    case 'decrement':
+      return { count: state.count - 1 };
+    default:
+      return state;
+  }
+};
+
+const Counter = () => {
+  const [state, dispatch] = useReducer(reducer, { count: 0 });
+
+  return (
+    <View>
+      <Text>Count: {state.count}</Text>
+      <Button title="Increment" onPress={() => dispatch({ type: 'increment' })} />
+      <Button title="Decrement" onPress={() => dispatch({ type: 'decrement' })} />
+    </View>
+  );
+};
+```
+
+**Context API**
+
+Permite compartir el estado entre componentes sin necesidad de pasar props manualmente por cada nivel del árbol. Es útil para aplicaciones con múltiples componentes que necesitan acceder al mismo estado.
+
+```jsx
+const CounterContext = createContext();
+
+const CounterProvider = ({ children }) => {
+  const [count, setCount] = useState(0);
+  return (
+    <CounterContext.Provider value={{ count, setCount }}>
+      {children}
+    </CounterContext.Provider>
+  );
+};
+
+const CounterDisplay = () => {
+  const { count } = useContext(CounterContext);
+  return <Text>Count: {count}</Text>;
+};
+
+const CounterControls = () => {
+  const { setCount } = useContext(CounterContext);
+  return (
+    <Button title="Increment" onPress={() => setCount((prev) => prev + 1)} />
+  );
+};
+
+const App = () => (
+  <CounterProvider>
+    <View>
+      <CounterDisplay />
+      <CounterControls />
+    </View>
+  </CounterProvider>
+);
+
+```
+
+**Estado Global (Librerias externas)**
+
+Para aplicaciones más grandes, donde el estado necesita ser compartido ampliamente, es común usar librerías dedicadas.
+
+* Redux: Se utiliza para manejar estados globales complejos y lógica de actualización avanzada.
+
+```jsx
+import { configureStore, createSlice } from '@reduxjs/toolkit';
+import { Provider, useDispatch, useSelector } from 'react-redux';
+import { Text, Button, View } from 'react-native';
+
+const counterSlice = createSlice({
+  name: 'counter',
+  initialState: { count: 0 },
+  reducers: {
+    increment: (state) => { state.count += 1; },
+    decrement: (state) => { state.count -= 1; },
+  },
+});
+
+const store = configureStore({ reducer: counterSlice.reducer });
+
+const Counter = () => {
+  const count = useSelector((state) => state.count);
+  const dispatch = useDispatch();
+
+  return (
+    <View>
+      <Text>Count: {count}</Text>
+      <Button title="Increment" onPress={() => dispatch(counterSlice.actions.increment())} />
+      <Button title="Decrement" onPress={() => dispatch(counterSlice.actions.decrement())} />
+    </View>
+  );
+};
+
+const App = () => (
+  <Provider store={store}>
+    <Counter />
+  </Provider>
+);
+
+```
+
+Otra libreria muy usada tambien es MobX, que es una libreria de manejo de estado simple y escalable.
+
+**Hooks y Librerías para Sincronización del Estado (SWR, React Query)**
+
+Son útiles para manejar estados que dependen de datos remotos o asincrónicos. Permiten manejar la carga de datos, caché y actualización del estado de forma sencilla.
+
+```jsx
+import React from 'react';
+import { Text, View } from 'react-native';
+import useSWR from 'swr';
+
+const fetcher = (url) => fetch(url).then((res) => res.json());
+
+const App = () => {
+  const { data, error } = useSWR('https://api.example.com/data', fetcher);
+
+  if (error) return <Text>Error loading data</Text>;
+  if (!data) return <Text>Loading...</Text>;
+
+  return (
+    <View>
+      <Text>Data: {JSON.stringify(data)}</Text>
+    </View>
+  );
+};
+
+```
+
+<a id="mob8"></a>
+
+### **¿Qué es Expo y cómo se compara con React Native?**
+
+[Volver al indice](#mob-base-rn)
+
+Expo es un conjunto de herramientas para facilitar el desarrollo en React Native, el mas usado es la facilidad de conectar un dispositivo fisico a la app en desarrollo sin tener que lidiar con Android Studio o XCode.
+
+- Entorno Preconfigurado: Incluye una serie de bibliotecas y herramientas que funcionan "out-of-the-box" sin necesidad de configurar proyectos nativos. Aunque esto puede aumentar el peso de la aplicacion.
+- Expo Go: Una aplicación que permite probar tu código en dispositivos reales sin necesidad de compilarlo. Simplemente escaneas un código QR y ves los cambios.
+- Expo SDK: Ofrece un conjunto de APIs listas para usar (cámara, localización, notificaciones, etc.), simplificando la integración de funcionalidades comunes.
+- Expo Dev Tools: Un panel interactivo para gestionar el desarrollo, depuración y compilación de tu proyecto.
+- Expo Build: Permite compilar aplicaciones listas para distribución (APK, AAB, IPA) sin necesidad de configurar entornos nativos.
+
+Es mucho mas facil de usar para principiantes, ya que no requiere la pre-configuracion previa de los entornos nativos. Sin embargo, puede tener limitaciones en cuanto a personalización y acceso a ciertas funcionalidades avanzadas.
+
+**Cuando deberia usar expo?**
+
+- Proyectos Simples o MVPs: Si necesitas prototipar rápidamente o crear aplicaciones sin mucha personalización nativa.
+- Desarrolladores Principiantes: Es ideal para quienes quieren enfocarse en React Native sin lidiar con la configuración nativa.
+- Casos Comunes: Si solo necesitas funcionalidades estándar (cámara, notificaciones, mapas, etc.) que ya soporta el SDK de Expo.
+
+Expo es una excelente herramienta para desarrollar aplicaciones rápidamente y sin complicaciones, especialmente para quienes priorizan la velocidad y simplicidad. La elección entre Expo y React Native depende de las necesidades y limitaciones del proyecto.
+
+<a id="mob9"></a>
+
+### **¿Cómo se maneja la navegación en una aplicación React Native?**
+
+[Volver al indice](#mob-base-rn)
+
+Para la navegacion de una aplicacion de React Native se utiliza generalmente la libreria `react-navigation`. Hay distintos tipos de navegaciones que pueden ser agregadas a la aplicacion.
+
+**Stack Navigation (Navegación en pila):**
+
+Es para navegaciones mas basicas, es decir, de pantalla hacia adelante y hacia atrás. Ejemplo: Un flujo de inicio donde pasas de una pantalla de inicio a detalles y puedes regresar.
+
+```jsx
+import { createStackNavigator } from '@react-navigation/stack';
+
+const Stack = createStackNavigator();
+
+<Stack.Navigator>
+  <Stack.Screen name="Home" component={HomeScreen} />
+  <Stack.Screen name="Details" component={DetailsScreen} />
+</Stack.Navigator>
+```
+
+**Bottom Tab Navigation (Navegación por pestañas):**
+
+Es el tipico menu estatico que aparece por debajo del contenido de la aplicacion con secciones estaticas. Ejemplo: Pestañas para "Inicio", "Buscar" y "Perfil".
+
+```jsx
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+const Tab = createBottomTabNavigator();
+
+<Tab.Navigator>
+  <Tab.Screen name="Home" component={HomeScreen} />
+  <Tab.Screen name="Search" component={SearchScreen} />
+</Tab.Navigator>
+```
+
+**Material Top Tabs Navigation (Pestañas superiores):**
+
+Mismo concepto que Bottom Tab Navigation pero con las pestañas en la parte superior de la pantalla. Ejemplo: Pestañas para "Inicio", "Buscar" y "Perfil".
+
+```jsx
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+
+const TopTab = createMaterialTopTabNavigator();
+
+<TopTab.Navigator>
+  <TopTab.Screen name="Chats" component={ChatsScreen} />
+  <TopTab.Screen name="Calls" component={CallsScreen} />
+</TopTab.Navigator>
+```
+
+**Drawer Navigation (Navegación con menú lateral):**
+
+Es el menu lateral de las aplicaciones mobile que es deslizable. Ejemplo: Un menú lateral para opciones como "Configuración" o "Cerrar sesión".
+
+```jsx
+import { createDrawerNavigator } from '@react-navigation/drawer';
+
+const Drawer = createDrawerNavigator();
+
+<Drawer.Navigator>
+  <Drawer.Screen name="Home" component={HomeScreen} />
+  <Drawer.Screen name="Settings" component={SettingsScreen} />
+</Drawer.Navigator>
+```
+
+<a id="mob10"></a>
+
+### **¿Cómo se maneja la persistencia de datos en una aplicación React Native?**
+
+[Volver al indice](#mob-base-rn)
+
+Las aplicaciones mobile pueden ser cerradas diversas veces y es clave tener algun tipo de almacenamiento para poder sobrevivir al cierre o reinicio de la aplicacion.
+
+**AsyncStorage**
+
+Sirve para almacenar datos de tipo clave-valor, muy parecido al concepto de session o local storage de web. Se recomienda para guardar datos simples, como configuraciones o tokens.
+
+```jsx
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+// Guardar un valor
+const storeData = async (key, value) => {
+  try {
+    await AsyncStorage.setItem(key, value);
+  } catch (e) {
+    console.error('Error saving data', e);
+  }
+};
+
+// Recuperar un valor
+const getData = async (key) => {
+  try {
+    const value = await AsyncStorage.getItem(key);
+    if (value !== null) {
+      return value;
+    }
+  } catch (e) {
+    console.error('Error reading data', e);
+  }
+};
+```
+
+**Secure Storage**
+
+A veces nos toca guardar datos sensibles de los usuarios, como datos de autenticacion, para eso se usan liberias como `react-native-keychain` o `react-native-secure-storage`, o si se esta usando expo, `expo-secure-store`.
+
+```jsx
+import * as SecureStore from 'expo-secure-store';
+
+// Guardar un valor
+const storeData = async (key, value) => {
+  try {
+    await SecureStore.setItemAsync(key, value);
+  } catch (e) {
+    console.error('Error saving data', e);
+  }
+};
+
+// Recuperar un valor
+
+const getData = async (key) => {
+  try {
+    const value = await SecureStore.getItemAsync(key);
+    if (value !== null) {
+      return value;
+    }
+  } catch (e) {
+    console.error('Error reading data', e);
+  }
+};
+```
+
+En el caso de `expo-secure-store` se puede usar de la misma forma que `AsyncStorage`, se guardan datos en formato clave-valor.
+
+**Base de Datos Local (SQLite)**
+
+Se utilizan para almacenar grandes volumenes de datos estructurados. Se puede usar bajo el soporte de librerias como `react-native-sqlite-storage` o `expo-sqlite`. se requiere un conocimiento sobre bases de datos para poder armar las queries.
+
+```jsx
+import * as SQLite from 'expo-sqlite';
+
+const db = SQLite.openDatabase('example.db');
+
+db.transaction(tx => {
+  tx.executeSql(
+    'CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY NOT NULL, name TEXT, age INTEGER);'
+  );
+});
+
+const insertUser = (name, age) => {
+  db.transaction(tx => {
+    tx.executeSql('INSERT INTO users (name, age) VALUES (?, ?);', [name, age]);
+  });
+};
+```
+
+**Bases de datos NoSQL (Realm, WatermelonDB)**
+
+Si el usuario posee mas experiencia con bases de datos noSQL, se pueden usar librerias como `realm` o `watermelonDB` para manejar la persistencia de datos.
+
+**Realm** es ideal para aplicaciones con sincronizacion en tiempo real. 
+
+```jsx
+import Realm from 'realm';
+
+const UserSchema = {
+  name: 'User',
+  properties: {
+    id: 'int',
+    name: 'string',
+    age: 'int',
+  },
+};
+
+const realm = await Realm.open({ schema: [UserSchema] });
+
+realm.write(() => {
+  realm.create('User', { id: 1, name: 'John', age: 30 });
+});
+```
+
+**WatermelonDB** es una base de datos local y reactiva para aplicaciones móviles, que se sincroniza con una base de datos remota. Es ideal para aplicaciones que precizan sincronizacion offline y rendimiento alto en dispositivos mobiles.
+
+```jsx
+import { Database } from '@nozbe/watermelondb';
+
+const adapter = new SQLiteAdapter({
+  dbName: 'myapp',
+  schema: mySchema,
+});
+
+const database = new Database({
+  adapter,
+  modelClasses: [Post, Comment],
+});
+```
+
+**Sincronización con Bases de Datos Remotas**
+
+Se pueden encontrar soluciones en la nube para persistir los datos por fuera del dispositivo en si. Algunas opciones son Firebase Realtime Database, Firestore, AWS Amplify, o GraphQL con Apollo Client.
+
+```jsx
+import firestore from '@react-native-firebase/firestore';
+
+const usersCollection = firestore().collection('Users');
+
+const addUser = async () => {
+  await usersCollection.add({ name: 'John Doe', age: 25 });
+};
+```
+
+En conclusion, si se tiene en cuenta el tamaño y Complejidad de los Datos:
+
+Datos simples -> AsyncStorage.
+Datos estructurados y grandes -> SQLite, Realm, WatermelonDB.
+Seguridad:
+Datos sensibles -> Secure Storage.
+Sincronización en Tiempo Real:
+Firebase, Firestore o bases de datos con sincronización nativa.
+Integración con el Estado Global:
+Redux Persist para persistir el estado en almacenamiento local.
 
 ---
 
