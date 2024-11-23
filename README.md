@@ -248,9 +248,11 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 | [El problema del daño causado por un tercero por injurias realizadas en un sitio web](#cic64)|
 | [Beneficios para una organización de implementar ISO 27001](#cic65)|
 
+<a name="cic-base-2"></a>
+
 | Gestión de Proyectos - Liderazgo |
 |----------|
-|¿Quién define los NFRs y cómo se priorizan? |
+|[¿Que son los NFRs, Quién los define y cómo se priorizan?](#cic66) |
 |Imagina que un cliente te dice que la aplicación es lenta y quiere que la aceleres, pero no te da más detalles. ¿Cómo manejarías esta situación?|
 |¿En qué requisitos deberíamos basarnos en esta situación?|
 |¿Cuáles son los posibles riesgos de adoptar una nueva tecnología en el proyecto? ¿Cómo mitigarlos?|
@@ -6493,6 +6495,59 @@ Los beneficios que trae a un organización la implementación de la norma ISO 27
 - **Reducción de costos**. Permite generar un ROI en la organización al minimizar el impacto ocasionado por la materialización de posibles amenazas.
 - **Correcto acceso a la información**. Permite asegurar el correcto funcionamiento de las plataformas de acceso a la información.
 - **Mejora de la competitividad**. Permite mejorar la competitividad de la organización y su imagen institucional a nivel nacional e internacional
+
+<a id="cic66"></a>
+
+### **¿Que son los NFRs, Quién los define y cómo se priorizan?**
+
+[Volver al indice](#cic-base-2)
+
+Los NFRs (Non-Functional Requirements), o requisitos no funcionales, son características o atributos de un sistema que no están relacionados con las funcionalidades específicas que ofrece, sino con cómo el sistema debe comportarse o funcionar. Mientras los requisitos funcionales describen lo que el sistema debe hacer, los NFRs describen las cualidades del sistema, como rendimiento, seguridad, escalabilidad, accesibilidad, entre otros.
+
+Ejemplos de NFRs:
+
+- Rendimiento: El sistema debe procesar 1.000 solicitudes por segundo.
+- Escalabilidad: Debe poder soportar un aumento del 50% en la cantidad de usuarios sin degradar el rendimiento.
+- Disponibilidad: El sistema debe estar disponible el 99,9% del tiempo.
+- Seguridad: Los datos de los usuarios deben cifrarse durante el almacenamiento y la transmisión.
+- Usabilidad: Debe ser accesible para personas con discapacidades según las pautas WCAG.
+- Compatibilidad: Debe funcionar en los navegadores más populares y dispositivos móviles.
+
+
+Los NFRs (Non-Functional Requirements), o requisitos no funcionales, son características o atributos de un sistema que no están relacionados con las funcionalidades específicas que ofrece, sino con cómo el sistema debe comportarse o funcionar. Mientras los requisitos funcionales describen lo que el sistema debe hacer, los NFRs describen las cualidades del sistema, como rendimiento, seguridad, escalabilidad, accesibilidad, entre otros.
+
+Ejemplos de NFRs:
+Rendimiento: El sistema debe procesar 1.000 solicitudes por segundo.
+Escalabilidad: Debe poder soportar un aumento del 50% en la cantidad de usuarios sin degradar el rendimiento.
+Disponibilidad: El sistema debe estar disponible el 99,9% del tiempo.
+Seguridad: Los datos de los usuarios deben cifrarse durante el almacenamiento y la transmisión.
+Usabilidad: Debe ser accesible para personas con discapacidades según las pautas WCAG.
+Compatibilidad: Debe funcionar en los navegadores más populares y dispositivos móviles.
+
+**¿Quién define los NFRs?**
+
+Los NFRs suelen ser definidos por una combinación de diferentes actores involucrados en el proyecto, ya que dependen de múltiples perspectivas:
+
+- Cliente o patrocinador del proyecto: Define las expectativas generales de calidad, disponibilidad y rendimiento.
+- Usuarios finales: Especifican necesidades relacionadas con usabilidad, accesibilidad y experiencia del usuario.
+- Arquitectos de software: Proporcionan requisitos relacionados con escalabilidad, rendimiento, y sostenibilidad del sistema.
+- Desarrolladores: Identifican necesidades técnicas para garantizar la implementación eficiente de los NFRs.
+- Ingenieros de seguridad: Proponen requisitos para proteger datos y prevenir vulnerabilidades.
+-Regulaciones externas o normativas: En algunos casos, los NFRs vienen definidos por estándares legales, como GDPR para protección de datos o PCI DSS para procesamiento de pagos.
+
+**¿Cómo se priorizan los NFRs?**
+
+La priorización de NFRs es clave para garantizar que los recursos disponibles se utilicen de manera efectiva y que el sistema cumpla con las expectativas más importantes. Algunos enfoques comunes incluyen:
+
+- Impacto en los objetivos del negocio: Se priorizan los NFRs que afectan directamente la satisfacción del cliente o el éxito del producto. Por ejemplo, si el sistema debe soportar ventas online, la disponibilidad y el rendimiento serán críticos.
+- Riesgos asociados: Los NFRs relacionados con seguridad o cumplimiento normativo suelen tener alta prioridad porque ignorarlos puede tener consecuencias legales o de reputación.
+- Coste y viabilidad técnica: Se analiza cuánto tiempo y esfuerzo requiere implementar un NFR. Por ejemplo, alcanzar un tiempo de respuesta de 1 segundo puede ser más costoso que aceptar un límite de 2 segundos.
+
+Metodologías de priorización:
+
+- MoSCoW: Clasificar los NFRs en Must Have (imprescindibles), Should Have (deseables), Could Have (opcionales) y Won’t Have (no necesarios ahora).
+- Kano Model: Identificar cuáles generan mayor satisfacción en los usuarios.
+- Colaboración y negociación: Los equipos deben trabajar junto con los stakeholders para balancear los NFRs con los requisitos funcionales, asegurando que no haya conflictos en las prioridades.
 
 ---
 
