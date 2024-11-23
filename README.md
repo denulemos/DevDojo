@@ -12,42 +12,42 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 
 ## [Algoritmos y manejo de datos](#alg)
 
-| Búsqueda   |
+| Búsqueda |
 |----------|
-| [Binary Search](#alg1)    |
-| [Podemos aplicar Binary Search a una Linked List ordenada?](#alg2)    |
+| [Binary Search](#alg1) |
+| [Podemos aplicar Binary Search a una Linked List ordenada?](#alg2) |
 |[¿Cuál es la diferencia entre Binary Search y Linear Search?](#alg22)|
 
-| Algoritmos de Ordenamiento   |
+| Algoritmos de Ordenamiento |
 |----------|
-| [Selection Sort](#alg3)    |
-| [Insertion Sort](#alg4)    |
-| [Bubble Sort](#alg5)    |
-| [Merge Sort](#alg6)    |
+| [Selection Sort](#alg3) |
+| [Insertion Sort](#alg4) |
+| [Bubble Sort](#alg5) |
+| [Merge Sort](#alg6) |
 |[¿Cuándo sería más adecuado usar Merge Sort en lugar de Quick Sort?](#alg66)|
 |[¿Cómo varía la eficiencia de estos algoritmos con el tamaño de los datos?](#alg77)|
 
-| Complejidad Algorítmica   |
+| Complejidad Algorítmica |
 |----------|
-| [Big O - ¿Qué es?](#alg7)    |
-| [Reglas para calcular Big O](#alg8)    |
-| [Calcular Big O](#alg9)    |
-|  [Notación Asintótica](#alg10)    |
-| [¿Cómo analizamos el codigo?](#alg11)    |
-| [Multiplicacion de Runtimes](#alg12)    |
-| [Ejemplos de Ejercicios](#alg14)    |
+| [Big O - ¿Qué es?](#alg7) |
+| [Reglas para calcular Big O](#alg8) |
+| [Calcular Big O](#alg9) |
+| [Notación Asintótica](#alg10) |
+| [¿Cómo analizamos el codigo?](#alg11) |
+| [Multiplicacion de Runtimes](#alg12) |
+| [Ejemplos de Ejercicios](#alg14) |
 |¿Qué significa que un algoritmo tenga una complejidad de O(n²)?|
 |¿Cómo se calcula la complejidad temporal de un algoritmo recursivo?|
 |¿Qué es la complejidad espacial y cómo se relaciona con la complejidad temporal?|
 
-| Arrays y Estructuras Similares   |
+| Arrays y Estructuras Similares |
 |----------|
-| [Estructuras de datos (Arrays)](#alg15)    |
+| [Estructuras de datos (Arrays)](#alg15) |
 | [Qué es un "array-like" en Javascript?](#alg26) :yellow_heart:|
 | [Cuales son las funciones array de JavaScript?](#alg27) :yellow_heart: |
 | [Funcion .sort()](#alg28) |
 |[¿Cómo funcionan los arrays en JavaScript internamente?](#alg282)|
-| [Especificando la clase de contenido de un ArrayList](#alg16)    |
+| [Especificando la clase de contenido de un ArrayList](#alg16) |
 | [Creación de un ArrayList](#alg17) |
 |¿Cuál es la diferencia entre un ArrayList y un array tradicional en Java?|
 |¿Cómo afecta la capacidad de crecimiento dinámico un ArrayList a su rendimiento?|
@@ -60,14 +60,14 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 |¿Cómo se puede mejorar el rendimiento de la búsqueda en un ArrayList?|
 |¿Cuál es la diferencia entre el método remove() y clear() en un ArrayList?|
 
-| Uso Avanzado   |
+| Uso Avanzado |
 |----------|
 | [Creando colecciones como atributo de una clase](#alg24) |
 | [Devolver una colección secundaria](#alg25) |
 |¿Qué consideraciones de diseño debemos tener en cuenta al trabajar con colecciones como atributos de clases?|
 |¿Cómo evitar la mutabilidad no deseada al devolver colecciones de una clase?|
 
-| Otras Colecciones y Estructuras  |
+| Otras Colecciones y Estructuras |
 |----------|
 | [Set() en Javascript (HashSet)](#alg29) :yellow_heart:|
 | [HashTables (.Map)](#alg30) :yellow_heart: |
@@ -80,18 +80,18 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 |¿Cómo funciona el algoritmo de eliminación de un nodo en una Linked List?|
 |¿Qué ventajas y desventajas tiene una Doubly Linked List sobre una Singly Linked List?|
 
-| Variables   |
+| Variables |
 |----------|
-| [¿Qué es una Variable?](#var1)    |
-| [¿En qué se diferencia una variable común, nativa, de un objeto?](#var2)    |
-| [¿A qué nos referimos cuando hablamos de tipos de datos?](#var3)    |
-| [¿Cómo se declara una variable?](#var4)    |
-| [Nombres de Variables](#var5)    |
-| [Diferencia entre let, var y const](#var6)    |
-| [¿Qué son las variables no declaradas y no definidas?](#var19)    |
+| [¿Qué es una Variable?](#var1) |
+| [¿En qué se diferencia una variable común, nativa, de un objeto?](#var2) |
+| [¿A qué nos referimos cuando hablamos de tipos de datos?](#var3) |
+| [¿Cómo se declara una variable?](#var4) |
+| [Nombres de Variables](#var5) |
+| [Diferencia entre let, var y const](#var6) |
+| [¿Qué son las variables no declaradas y no definidas?](#var19) |
 |¿Qué es la tipificación estática y dinámica?|
 
-| Pilas y Colas   |
+| Pilas y Colas |
 |----------|
 |[Qué son las Pilas y Colas?](#alg37) |
 | [Colas](#alg38) |
@@ -99,7 +99,7 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 | [Nodo versus dato](#alg40) |
 | [Uso de Pilas y Colas](#alg41) |
 
-| Arboles   |
+| Arboles |
 |----------|
 | [Arboles](#alg42) |
 | [¿Qué es un Binary Tree?](#alg43) |
@@ -115,54 +115,54 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 |¿Qué es un árbol AVL y cuáles son sus ventajas?|
 |¿Qué es un árbol rojo-negro?|
 
-| Programación Funcional y Orientada a Objetos   |
+| Programación Funcional y Orientada a Objetos |
 |----------|
-| [Funciones en Javascript](#var27)    |
-| [¿Qué es una funcion Declarativa y una Expresiva?](#var35)    |
-| [Prototypes y Herencia Prototype (Prototype Inheritance)](#var26)  |
-| [Creacion de Constructores](#var28)    |
-| [Diferencia entre primitivo y objeto](#var14)    |
-| [Variable Hoisting](#var24)    |
-| [Diferencia entre class y function](#var25)    |
-| [Que es el Function Factory?](#var20)    |
-| [Que es el Currying?](#var23)    |
+| [Funciones en Javascript](#var27) |
+| [¿Qué es una funcion Declarativa y una Expresiva?](#var35) |
+| [Prototypes y Herencia Prototype (Prototype Inheritance)](#var26) |
+| [Creacion de Constructores](#var28) |
+| [Diferencia entre primitivo y objeto](#var14) |
+| [Variable Hoisting](#var24) |
+| [Diferencia entre class y function](#var25) |
+| [Que es el Function Factory?](#var20) |
+| [Que es el Currying?](#var23) |
 |¿Qué es el polimorfismo en programación orientada a objetos?|
 | ¿Qué son las funciones puras y cómo se relacionan con la programación funcional?|
 
-| Manejo de Eventos y Asincronía   |
+| Manejo de Eventos y Asincronía |
 |----------|
-| [Para que sirve event.preventDefault()?](#var7)    |
-| [Event delegation](#var11)    |
-| [Bubble vs Capture](#var15)    |
-| [Callback Hell](#var12)    |
-| [Funciones de "bloqueo" y "no bloqueo"](#var13)    |
-| [Promises](#var21)    |
+| [Para que sirve event.preventDefault()?](#var7) |
+| [Event delegation](#var11) |
+| [Bubble vs Capture](#var15) |
+| [Callback Hell](#var12) |
+| [Funciones de "bloqueo" y "no bloqueo"](#var13) |
+| [Promises](#var21) |
 | Async Await|
 |Callbacks|
-| [Cuál es la diferencia entre Promises, Callbacks y Async/Await?](#var22)    |
-| [Como funciona setTimeout?](#var10)    |
+| [Cuál es la diferencia entre Promises, Callbacks y Async/Await?](#var22) |
+| [Como funciona setTimeout?](#var10) |
 |¿Qué es un Promise.all y cuándo usarlo?|
 | ¿Cómo se maneja un error en una promesa?|
 |¿Cómo funcionan Promise.allSettled, Promise.race y Promise.any?|
 | ¿Cómo manejarías errores en funciones con async/await de forma eficiente?|
 |¿Cómo implementarías un patrón pub/sub para manejar eventos entre diferentes partes de una aplicación?|
 
-| Métodos y Operadores en JavaScript   |
+| Métodos y Operadores en JavaScript |
 |----------|
 | [Metodos de Strings en Javascript](#alg55) |
 | [Métodos de Objectos en Javascript](#alg56) |
-| [Diferencia entre Map y Weakmap](#var30)    |
-| [Diferencia entre `for in` y `for of`](#var29)    |
-| [Diferencia entre foreach, map y reduce](#var32)    |
-| [Rest Operator](#var16)    |
+| [Diferencia entre Map y Weakmap](#var30) |
+| [Diferencia entre `for in` y `for of`](#var29) |
+| [Diferencia entre foreach, map y reduce](#var32) |
+| [Rest Operator](#var16) |
 | [Creando Strings con Template Literal - Template Strings](#var17)|
-| [Export Fallback con export default](#var18)    |
-| [Diferencia entre import y require](#var9)    |
-| [Función Object.freeze](#var8)    |
+| [Export Fallback con export default](#var18) |
+| [Diferencia entre import y require](#var9) |
+| [Función Object.freeze](#var8) |
 |¿Qué es la destructuración y cómo se utiliza?|
 |¿Cómo se diferencia un Spread Operator de un Rest Operator?|
 
-| Estructuras Avanzadas y Generics   |
+| Estructuras Avanzadas y Generics |
 |----------|
 | [Generics](#alg35) |
 |[Estructuras de Datos](#alg36) |
@@ -170,21 +170,21 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 | [Factorial](#alg53) |
 | ¿Qué son los generics y cómo se implementan en TypeScript?|
 
-| Buenas Prácticas y Casos Comunes   |
+| Buenas Prácticas y Casos Comunes |
 |----------|
-| [Porque no se recomienda usar innerHTML?](#var33)    |
-| [Entre JS y un script ASP, ¿Cual es mas rápido?](#var34)    |
-| [Qué es una variable global, como se declara y cuales problemas puede tener?](#var31)    |
+| [Porque no se recomienda usar innerHTML?](#var33) |
+| [Entre JS y un script ASP, ¿Cual es mas rápido?](#var34) |
+| [Qué es una variable global, como se declara y cuales problemas puede tener?](#var31) |
 
 <a name="cic-base"></a>
 
 ## [Organizacion en Software - Derecho en IT](#cic)
 
-| Temas   |
+| Temas |
 |----------|
-| [¿Qué es el ciclo de vida de un software?](#cic1)    |
-| [Iterativo e Incremental](#cic2)    |
-| [De waterfall a Agile](#cic3)    |
+| [¿Qué es el ciclo de vida de un software?](#cic1) |
+| [Iterativo e Incremental](#cic2) |
+| [De waterfall a Agile](#cic3) |
 | [¿Cuál es el concepto de Organización?](#cic4)|
 | [El concepto de "Misión de una Organización"](#cic5)|
 | [El concepto de "Visión de una Organización"](#cic6)|
@@ -248,9 +248,9 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 | [El problema del daño causado por un tercero por injurias realizadas en un sitio web](#cic64)|
 | [Beneficios para una organización de implementar ISO 27001](#cic65)|
 
-| Gestión de Proyectos  - Liderazgo |
+| Gestión de Proyectos - Liderazgo |
 |----------|
-|¿Quién define los NFRs y cómo se priorizan?  |
+|¿Quién define los NFRs y cómo se priorizan? |
 |Imagina que un cliente te dice que la aplicación es lenta y quiere que la aceleres, pero no te da más detalles. ¿Cómo manejarías esta situación?|
 |¿En qué requisitos deberíamos basarnos en esta situación?|
 |¿Cuáles son los posibles riesgos de adoptar una nueva tecnología en el proyecto? ¿Cómo mitigarlos?|
@@ -292,24 +292,24 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 
 ## [Typescript](#typ)
 
-| Temas   |
+| Temas |
 |----------|
-| [Qué es TypeScript?](#typ1)    |
-| [TSConfig.json](#typ2)    |
-| [Watch Mode](#typ3)    |
-| [Cuáles son sus características superadoras?](#typ4)    |
-| [Cómo declaro una variable?](#typ5)    |
-| [Tuples - Tuplas](#typ6)    |
-| [Tipo de dato Never](#typ7)    |
-| [Tipo de dato Any](#typ8)    |
-| [Cómo declaro un objeto?](#typ9)    |
-| [Cómo declaro una función?](#typ10)    |
-| [Parametros REST](#typ11)    |
-|[Cómo creo una clase?](#typ12)    |
-| [Cómo se transpilan las interfaces de TypeScript?](#typ13)    |
-| [Cómo hago que las props de una interface sean opcionales?](#typ14)    |
-| [Herencia en Typescript](#typ15)    |
-| [Interfaces en Typescript](#typ16)    |
+| [Qué es TypeScript?](#typ1) |
+| [TSConfig.json](#typ2) |
+| [Watch Mode](#typ3) |
+| [Cuáles son sus características superadoras?](#typ4) |
+| [Cómo declaro una variable?](#typ5) |
+| [Tuples - Tuplas](#typ6) |
+| [Tipo de dato Never](#typ7) |
+| [Tipo de dato Any](#typ8) |
+| [Cómo declaro un objeto?](#typ9) |
+| [Cómo declaro una función?](#typ10) |
+| [Parametros REST](#typ11) |
+|[Cómo creo una clase?](#typ12) |
+| [Cómo se transpilan las interfaces de TypeScript?](#typ13) |
+| [Cómo hago que las props de una interface sean opcionales?](#typ14) |
+| [Herencia en Typescript](#typ15) |
+| [Interfaces en Typescript](#typ16) |
 |¿Qué son los tipos Union e Intersection y cuándo se utilizan?|
 |¿Qué son los Utility Types como Partial, Pick, y Omit, y en qué casos son útiles?|
 |¿Cómo funcionan los Mapped Types y cómo se aplican en proyectos complejos?|
@@ -331,21 +331,21 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 |¿Qué patrones sigues para definir tipos o interfaces en aplicaciones orientadas a dominios complejos?|
 |¿Cómo aprovechar las herramientas de linting y análisis estático para mantener la calidad del código en TypeScript?|
 
-
 <a name="sty-base"></a>
 
 ## [Styles - Estilos](#sty)
 
-| CSS   |
+| CSS |
 |----------|
-| [Cuál es la diferencia entre div y span?](#sty1)    |
-| [Qué es la Especificidad (Specificity) de CSS?](#sty2)    |
-|[Que es BEM?](#sty3)    |
-| [Como declaro variables en CSS?](#sty4)    |
-| [Pseudoclases](#sty5)    |
+| [Cuál es la diferencia entre div y span?](#sty1) |
+| [Qué es la Especificidad (Specificity) de CSS?](#sty2) |
+|[Que es BEM?](#sty3) |
+| [Como declaro variables en CSS?](#sty4) |
+| [Pseudoclases](#sty5) |
 |¿Qué es el modelo de caja (Box Model) en CSS y cómo funciona?|
 |¿Cómo se pueden crear diseños de columnas en CSS?|
-|¿Qué son los selectores en CSS y cuáles son los diferentes tipos de selectores?|
+|¿Qué son los selectores en CSS y cuáles son los diferentes tipos de
+selectores?|
 |¿Cómo se puede centrar un elemento en CSS?|
 |¿Qué es Flexbox y para qué se utiliza?|
 |¿Qué es CSS Grid y cómo se compara con Flexbox?|
@@ -358,76 +358,80 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 |¿Cómo se pueden aplicar estilos a un elemento cuando está activo (active)?|
 |¿Cómo se pueden aplicar estilos a un enlace visitado (visited)?|
 
-
-| SCSS   |
+| SCSS |
 |----------|
-|[Qué es Sass?](#sty6)    |
-| [Cual es la diferencia entre .sass y scss?](#sty7)    |
-| [Sass reemplaza a CSS?](#sty8)    |
-| [Comentarios en Sass](#sty9)    |
-| [Variables en SASS](#sty10)    |
-| [Partials en SASS](#sty11)    |
-| [Imports en SASS](#sty12)    |
-| [Interpolacion en SASS](#sty13)    |
-| [Nesting en SASS](#sty14)    |
-| [Selectores en SASS](#sty15)    |
-| [Mixins en SASS](#sty16)    |
-| [Condicionales if-else en SASS](#sty17)    |
+|[Qué es Sass?](#sty6) |
+| [Cual es la diferencia entre .sass y scss?](#sty7) |
+| [Sass reemplaza a CSS?](#sty8) |
+| [Comentarios en Sass](#sty9) |
+| [Variables en SASS](#sty10) |
+| [Partials en SASS](#sty11) |
+| [Imports en SASS](#sty12) |
+| [Interpolacion en SASS](#sty13) |
+| [Nesting en SASS](#sty14) |
+| [Selectores en SASS](#sty15) |
+| [Mixins en SASS](#sty16) |
+| [Condicionales if-else en SASS](#sty17) |
+| [Ciclos en SASS](#sty18) |
+| [Funciones en SASS](#sty19) |
+| [Extend/Inheritance en SASS](#sty20) |
+| [Placeholder Selectors en SASS](#sty21) |
 
 <a name="rea-base"></a>
 
 ## [Javascript Frameworks and Libraries](#rea)
 
-| HTML   |
+| HTML |
 |----------|
-| [¿Cuál es la diferencia entre h1, h2, etc.?](#rea40)    |
-| [Vínculos Relativos en HTML](#rea56)    |
-| [Vínculos Absolutos en HTML](#rea57)    |
-| [¿Para qué es el Doctype?](#rea54)    |
-| [Atributo placeholder para campos en HTML](#rea55)    |
-| [Cual es la importancia del uso de todos los elementos HTML?](#rea41)    |
-| [Que son los atributos de los elementos HTML?](#rea42)    |
-| [Cuáles son las partes de un documento HTML?](#rea43)    |
-| [Puedo escribir las etiquetas en mayúscula y minúscula?](#rea44)    |
-| [Qué son los mapa de imagen?](#rea45)    |
-| [Que es el tag DataList?](#rea46)    |
+| [¿Cuál es la diferencia entre h1, h2, etc.?](#rea40) |
+| [Vínculos Relativos en HTML](#rea56) |
+| [Vínculos Absolutos en HTML](#rea57) |
+| [¿Para qué es el Doctype?](#rea54) |
+| [Atributo placeholder para campos en HTML](#rea55) |
+| [Cual es la importancia del uso de todos los elementos HTML?](#rea41) |
+| [Que son los atributos de los elementos HTML?](#rea42) |
+| [Cuáles son las partes de un documento HTML?](#rea43) |
+| [Puedo escribir las etiquetas en mayúscula y minúscula?](#rea44) |
+| [Qué son los mapa de imagen?](#rea45) |
+| [Que es el tag DataList?](#rea46) |
 
-| React   |
+| React |
 |----------|
-| [¿Qué es React?](#rea47)    |
+| [¿Qué es React?](#rea47) |
 |Libreria vs Framework|
-| [Para que es el comando React eject?](#rea49)    |
-| [Que son las Ref?](#rea52)    |
-| [De que tratan los Ciclos de Vida Componentes?](#rea62)    |
+| [Para que es el comando React eject?](#rea49) |
+| [Que son las Ref?](#rea52) |
+| [De que tratan los Ciclos de Vida Componentes?](#rea62) |
 |Componentes de clase vs Componentes de Funcion|
-| [componentWillReceiveProps()](#rea55)    |
-| [componentDidMount()](#rea56)    |
-| [componentWillUnmount()](#rea57)    |
-| [componentWillMount()](#rea58)    |
-| [componentDidUpdate()](#rea59)    |
-| [shouldComponentUpdate()](#rea60)    |
-| [componentWillUpdate()](#rea61)    |
-| [useCallback](#rea1)    |
-| [useDispatch](#rea2)    |
-| [useEffect](#rea3)    |
+| [componentWillReceiveProps()](#rea55) |
+| [componentDidMount()](#rea56) |
+| [componentWillUnmount()](#rea57) |
+| [componentWillMount()](#rea58) |
+| [componentDidUpdate()](#rea59) |
+| [shouldComponentUpdate()](#rea60) |
+| [componentWillUpdate()](#rea61) |
+| [useCallback](#rea1) |
+| [useDispatch](#rea2) |
+| [useEffect](#rea3) |
 |Puede el useEffect ser asincrono? Porque?|
-| [useState](#rea4)    |
-| [useSelector](#rea5)    |
-| [useRef](#rea6)    |
-| [useMemo](#rea7)    |
+| [useState](#rea4) |
+| [useSelector](#rea5) |
+| [useRef](#rea6) |
+| [useMemo](#rea7) |
 |¿Cuál es la diferencia entre useCallback y useMemo?|
-| [useReducer](#rea8)    |
-| [useLayoutEffect](#rea9)    |
-|¿Qué diferencia hay entre useEffect y useLayoutEffect? ¿Cuándo usarías cada uno?|
-| [¿Que es Redux?](#rea18)    |
-| [Cuando conviene usar Redux?](#rea19)    |
-| [¿Cuales son los beneficios de usar Redux?](#rea20)    |
-| [Redux vs ContextAPI](#rea21)    |
-| [¿Cual es el flujo de Redux?](#rea22)    |
-| [Que es ContextAPI?](#rea23)    |
-| [Que es React Fiber?](#rea24)    |
+| [useReducer](#rea8) |
+| [useLayoutEffect](#rea9) |
+|¿Qué diferencia hay entre useEffect y useLayoutEffect? ¿Cuándo usarías cada
+uno?|
+| [¿Que es Redux?](#rea18) |
+| [Cuando conviene usar Redux?](#rea19) |
+| [¿Cuales son los beneficios de usar Redux?](#rea20) |
+| [Redux vs ContextAPI](#rea21) |
+| [¿Cual es el flujo de Redux?](#rea22) |
+| [Que es ContextAPI?](#rea23) |
+| [Que es React Fiber?](#rea24) |
 |Que tener en cuenta para tener una buena performance en React|
-| [¿Qué es el Virtual DOM?](#rea39)    |
+| [¿Qué es el Virtual DOM?](#rea39) |
 |Para que tipo de proyectos React es recomendable?|
 |¿Cuál es la diferencia entre React.createElement() y JSX?|
 |¿Qué es un Fragment en React y para qué se utiliza?|
@@ -460,16 +464,16 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 |¿Qué son los Concurrent Features de React y cómo afectan la experiencia del usuario?|
 |¿Qué problemas podrías encontrar al implementar un formulario grande en React y cómo los solucionarías?|
 
-| Angular   |
+| Angular |
 |----------|
-| [Diferencia entre AngularJS y Angular](#rea10)    |
-| [¿Qué son los modulos en Angular?](#rea11)    |
-| [¿Qué es Property Binding?](#rea12)    |
-| [¿Cuál es el flujo de datos una aplicación Angular?](#rea13)    |
-| [¿Qué es un Decorador en Angular?](#rea14)    |
-| [Event Binding en Angular (Manejo de Eventos)](#rea15)    |
-| [Data Binding en Angular](#rea16)    |
-|Que son los componentes standalone y cuando conviene utilizarlos?||
+| [Diferencia entre AngularJS y Angular](#rea10) |
+| [¿Qué son los modulos en Angular?](#rea11) |
+| [¿Qué es Property Binding?](#rea12) |
+| [¿Cuál es el flujo de datos una aplicación Angular?](#rea13) |
+| [¿Qué es un Decorador en Angular?](#rea14) |
+| [Event Binding en Angular (Manejo de Eventos)](#rea15) |
+| [Data Binding en Angular](#rea16) |
+|Que son los componentes standalone y cuando conviene utilizarlos?|
 |¿Podrías describir algunos problemas de rendimiento que hayas enfrentado en aplicaciones Angular y cómo los resolviste?|
 |¿Podrías nombrar algunas mejoras comunes de rendimiento en Angular (pipes, detección de cambios, etc.)?|
 |¿Qué problemas de rendimiento pueden existir en Angular y cómo se solucionan?|
@@ -479,49 +483,49 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 |¿Cómo se maneja la gestión del estado en las aplicaciones de Angular?|
 |¿Cómo se puede compartir el estado en las aplicaciones de Angular? Servicios vs Flux vs Redux. Pros y contras de cada enfoque.|
 
-| Conceptos Generales   |
+| Conceptos Generales |
 |----------|
 |Que es el Critical rendering path?|
-| [¿De qué hablamos cuando hablamos de una SPA (Single Page App)?](#rea48)    |
-| [Como evitar mandar muchos eventos inutiles, por ejemplo, ejecutar un search por letra?](#rea50)    |
-| [Que es async rendering?](#rea51)    |
-| [Para que son los eventos sinteticos (SyntheticEvent)?](#rea53)    |
-| [Que significa prop drilling y como evitarlo?](#rea54)    |
-| [Como puedo mejorar la performance de mi Frontend?](#rea17)    |
+| [¿De qué hablamos cuando hablamos de una SPA (Single Page App)?](#rea48) |
+| [Como evitar mandar muchos eventos inutiles, por ejemplo, ejecutar un search por letra?](#rea50) |
+| [Que es async rendering?](#rea51) |
+| [Para que son los eventos sinteticos (SyntheticEvent)?](#rea53) |
+| [Que significa prop drilling y como evitarlo?](#rea54) |
+| [Como puedo mejorar la performance de mi Frontend?](#rea17) |
 |Recibes un requisito no funcional para mejorar el SEO y acelerar la métrica de FCP (First Contentful Paint). Actualmente, tienes una aplicación SPA desarrollada en React o Angular que se renderiza completamente en el cliente. ¿Qué opciones considerarías para satisfacer este requisito?|
 |¿Cómo implementarías SSR (Server-Side Rendering) o SSG (Static Site Generation) en un SPA existente? |
-| [Para que sirven las claves o Keys en React?](#rea25)    |
-| [¿Que es async, preload y prefetch?](#rea29)    |
-| [Cual es la diferencia entre call, bind y apply?](#rea30)    |
-| [Cual es la diferencia entre setTimeout() y setInterval()?](#rea31)    |
-| [Qué es "REPL" y para qué sirve?](#rea32)    |
-| [Qué es el "demultiplexer"?](#rea33)    |
-| [Que hace Babel?](#rea34)    |
-| [Que hace Webpack?](#rea35)    |
-| [Que es el server side rendering?](#rea36)    |
-| [Que es Tree Shaking?](#rea37)    |
-| [¿Que es el SEO?](#rea38)    |
-| [Qué es el namespacing de JS?](#rea40)    |
-| [Que es la tipificacion de Variables?](#rea41)    |
-| [Concepto Truthy and Falsy](#rea42)    |
-| [Funciones de alto nivel / Higher order Function](#rea43)    |
-| [Que es la Coercion explicita e Implicita?](#rea44)    |
-| [Que es el Scope en Javascript?](#rea45)    |
-| [Fetch API](#rea46)    |
-| [Cómo se pueden crear objetos genéricos?](#rea47)    |
-| [Document.ready vs Window.onload](#rea48)    |
-| [Que es la expresion de Funcion Inmediatamente Invocada - Immediately-invoked Function Expression (IIFE)?](#rea49)    |
-| [Qué es un Event listener?](#rea50)    |
-| [isNaN vs Math.isNaN](#rea51)    |
-| [Que es Symbol?](#rea52)    |
-| [Cual es la diferencia entre un event loop, microtask y macrotask?](#rea53)    |
-| [Variable Shadowing - Ocultamiento de Variables](#rea54)    |
+| [Para que sirven las claves o Keys en React?](#rea25) |
+| [¿Que es async, preload y prefetch?](#rea29) |
+| [Cual es la diferencia entre call, bind y apply?](#rea30) |
+| [Cual es la diferencia entre setTimeout() y setInterval()?](#rea31) |
+| [Qué es "REPL" y para qué sirve?](#rea32) |
+| [Qué es el "demultiplexer"?](#rea33) |
+| [Que hace Babel?](#rea34) |
+| [Que hace Webpack?](#rea35) |
+| [Que es el server side rendering?](#rea36) |
+| [Que es Tree Shaking?](#rea37) |
+| [¿Que es el SEO?](#rea38) |
+| [Qué es el namespacing de JS?](#rea40) |
+| [Que es la tipificacion de Variables?](#rea41) |
+| [Concepto Truthy and Falsy](#rea42) |
+| [Funciones de alto nivel / Higher order Function](#rea43) |
+| [Que es la Coercion explicita e Implicita?](#rea44) |
+| [Que es el Scope en Javascript?](#rea45) |
+| [Fetch API](#rea46) |
+| [Cómo se pueden crear objetos genéricos?](#rea47) |
+| [Document.ready vs Window.onload](#rea48) |
+| [Que es la expresion de Funcion Inmediatamente Invocada - Immediatelyinvoked Function Expression (IIFE)?](#rea49) |
+| [Qué es un Event listener?](#rea50) |
+| [isNaN vs Math.isNaN](#rea51) |
+| [Que es Symbol?](#rea52) |
+| [Cual es la diferencia entre un event loop, microtask y macrotask?](#rea53) |
+| [Variable Shadowing - Ocultamiento de Variables](#rea54) |
 |¿Qué son los observables? Multicast vs Unicast, "hot" vs "cold".|
 
-| Server Side Rendering   |
+| Server Side Rendering |
 |----------|
 |¿Qué es la generación de sitios estáticos, SSR y SPA del lado del cliente? Pros y contras de ambos enfoques.|
-|¿Qué es el Server Side Rendering (SSR) y cómo funciona?  |
+|¿Qué es el Server Side Rendering (SSR) y cómo funciona? |
 |¿Cuáles son las ventajas y desventajas de usar SSR en lugar de Client Side Rendering (CSR)?|
 |¿En qué casos sería más beneficioso utilizar SSR en lugar de CSR?|
 |¿Cómo afecta el SSR al rendimiento de una aplicación web?|
@@ -542,7 +546,7 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 |¿Cómo se maneja la carga de recursos estáticos (imágenes, CSS, JavaScript) en SSR?|
 |¿Cómo se maneja la internacionalización y la localización en una aplicación con SSR?|
 
-| Comunicación de Red y Recuperación de Datos en JavaScript   |
+| Comunicación de Red y Recuperación de Datos en JavaScript |
 |----------|
 |¿Cómo se realiza la comunicación de red en JavaScript?|
 |¿Cómo se pueden obtener datos de un servidor en JavaScript?|
@@ -554,7 +558,7 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 |¿Qué son los WebSockets y cómo se utilizan en JavaScript?|
 |¿Qué es GraphQL y cómo se utiliza en JavaScript?|
 
-| Rendimiento y Latencia en JavaScript   |
+| Rendimiento y Latencia en JavaScript |
 |----------|
 |¿Cómo se puede lograr una baja latencia en JavaScript?|
 |¿Cuáles son algunos problemas comunes de rendimiento en JavaScript y cómo se pueden resolver?|
@@ -567,16 +571,14 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 
 ## [Desarrollo Mobile](#mob)
 
-| Temas   |
+| Temas |
 |----------|
-| [¿Qué es el Manifest.xml en Android y qué funciones cumple?](#mob1)    |
-| [¿Cómo se ejecutan las aplicaciones en Android y qué son los archivos DEX?](#mob2)    |
-| [¿Qué es el Android Runtime y cómo se ejecutan las aplicaciones en Android?](#mob3)    |
-| [¿Qué constituye la base de Android y qué funciones proporciona el kernel de Linux?](#mob4)    |
+| [¿Qué es el Manifest.xml en Android y qué funciones cumple?](#mob1) |
+| [¿Qué es el Android Runtime y cómo se ejecutan las aplicaciones en Android?](#mob3) |
 
 <a name="mob-base-rn"></a>
 
-| React Native   |
+| React Native |
 |----------|
 |[¿Qué es React Native y cómo se compara con otras soluciones de desarrollo móvil?](#mob5)|
 |[¿Como se compara React Native al resto de soluciones?](#mob6)|
@@ -586,7 +588,7 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 |[¿Cómo se maneja la persistencia de datos en una aplicación React Native?](#mob10)|
 |[¿Cómo se maneja la autenticación de usuarios en una aplicación React Native?](#mob11)|
 |[¿Cómo se maneja la internacionalización en una aplicación React Native?](#mob12)|
-|¿Cómo se maneja la compatibilidad entre diferentes versiones de sistemas operativos en una aplicación React Native?|
+|¿Cómo se maneja la compatibilidad entre diferentes versiones de sistemas  operativos en una aplicación React Native?|
 |¿Cómo se maneja la compatibilidad entre diferentes tamaños de pantalla en una aplicación React Native?|
 |¿Cómo se maneja la optimización del rendimiento en una aplicación React Native?|
 |¿Cómo se maneja la depuración en una aplicación React Native?|
@@ -605,18 +607,18 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 
 ## [QA](#qa)
 
-| Temas   |
+| Temas |
 |----------|
-| [Que es el testing?](#qa1)    |
-| [Que es un Test Limpio?](#qa2)    |
-| [Cuando empezar a testear?](#qa3)    |
-| [Cuando terminar de testear?](#qa4)    |
-| [Diferencia entre coverage y confianza](#qa5)    |
-| [Diferencia entre unit test e Integration Test](#qa6)    |
-| [Que test de performance existen?](#qa7)    |
-| [Que tipos de testing hay?](#qa8)    |
-| [Que verifica el Unit Test?](#qa9)    |
-| [Principios FIRST de los Unit test](#qa10)    |
+| [Que es el testing?](#qa1) |
+| [Que es un Test Limpio?](#qa2) |
+| [Cuando empezar a testear?](#qa3) |
+| [Cuando terminar de testear?](#qa4) |
+| [Diferencia entre coverage y confianza](#qa5) |
+| [Diferencia entre unit test e Integration Test](#qa6) |
+| [Que test de performance existen?](#qa7) |
+| [Que tipos de testing hay?](#qa8) |
+| [Que verifica el Unit Test?](#qa9) |
+| [Principios FIRST de los Unit test](#qa10) |
 |¿Qué código debería estar cubierto con pruebas unitarias? Imagina que quieres refactorizar la aplicación y moverla de Angular a React, por ejemplo. La UX y la lógica se mantienen igual. ¿Qué tipo de pruebas serían útiles en este caso?|
 |¿Qué tipo de pruebas utilizas en el proyecto? Imagina que estás comenzando una refactorización completa de la aplicación. ¿Qué tipo de pruebas podrían ayudarte a tener más confianza durante el proceso de refactorización?|
 
@@ -624,13 +626,13 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 
 ## [Control de Versiones y Cambios](#cam)
 
-| Temas   |
+| Temas |
 |----------|
-| [Para que nos sirve Git?](#cam1)    |
-| [Conceptos base de Git](#cam2)    |
-| [Algunos comandos de Git](#cam3)    |
-| [Git Flow](#cam4)    |
-| [trunk base dev. vs git flow](#cam5)    |
+| [Para que nos sirve Git?](#cam1) |
+| [Conceptos base de Git](#cam2) |
+| [Algunos comandos de Git](#cam3) |
+| [Git Flow](#cam4) |
+| [trunk base dev. vs git flow](#cam5) |
 |¿Qué estrategias de lanzamiento considerarías para minimizar riesgos en un proyecto grande?|
 |¿Cómo manejarías lanzamientos continuos o progresivos?|
 |¿Implementarías feature toggles o dark launches?|
@@ -639,229 +641,229 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 
 ## [Conceptos Codigo Limpio, Objetos y Diseño](#cod)
 
-| Temas   |
+| Temas |
 |----------|
-| [Ejemplo de Pseudo-código](#diag1)    |
-| [Diagramas de Nassi-Schneiderman](#diag2)    |
-| [¿De qué trata el código limpio?](#cod1)    |
-| [Nombres Significativos en Codigo Limpio](#cod2)    |
-| [Concepto DRY](#cod5)    |
-| [Concepto KISS](#cod6)    |
-| [Concepto YAGNI](#cod7)    |
-| [Concepto LOD](#cod8)    |
-| [Funciones Limpias](#cod9)    |
-| [Unico Nivel de abstraccion](#cod10)    |
-| [Manejo limpio de Parametros](#cod11)    |
-| [Cuales son los beneficios de una Code Review?](#cod12)   |
-| [Que tipos de Code review existen?](#cod13)   |
-| [Domain Driven Design](#cod14)   |
-| [¿Qué es un patrón de diseño?](#cod15)   |
-| [En qué se inspiran los patrones de diseño?](#cod16)   |
-| [¿Qué se obtiene con la implementación de patrones de diseño?](#cod17)   |
-| [¿Para qué sirven los patrones de diseño?](#cod18)   |
-| [¿Cuáles son los elementos de un patrón de diseño?](#cod19)   |
-| [¿Cuáles son los tipos de patrones de diseño?](#cod20)   |
-| [¿Qué es la intención y motivación de un patrón de diseño?](#cod21)   |
-| [¿Qué es la aplicabilidad de un patrón de diseño?](#cod22)   |
-| [¿Qué es la estructura de un patrón de diseño?](#cod23)   |
-| [¿Quiénes son los participantes de un patrón de diseño?](#cod24)   |
-| [Patrones Estructurales](#cod25)   |
-| [Patrones Creacionales](#cod26)   |
-| [Patrones Comportamiento](#cod27)   |
-| [Excepciones en lugar de codigos de error](#cod28)   |
-| [Manejo de Comentarios en el codigo](#cod29)   |
-| [Acomplamiento artificial](#cod30)   |
-| [Unchecked Exceptions](#cod31)   |
-| [Excepciones en lugar de códigos de error](#cod32)   |
-| [Gestión de errores](#cod33)   |
-| [Indentación](#cod34)   |
-| [Código en el nivel de abstracción incorrecto](#cod35)   |
-| [Acoplamiento (Evitar)](#cod36)   |
-| [Cohesion (Fomentar)](#cod37)   |
-| [Uso de numeros magicos en lugar de constantes](#cod38)   |
-| [Qué es la Programación orientada a Objetos?](#cod39)   |
-| [Qué es la programación procedural?](#cod40)   |
-| [Qué es la programacion declarativa?](#cod41)   |
-| [Que es la Programacion Imperativa?](#cod42)   |
-| [Qué es la Programacion Estructurada?](#cod43)   |
-| [Que es un antipatron?](#cod44)   |
-| [Que tipos de antipatrones para el diseño de Software existen?](#cod45)   |
-| [Que tipos de Antipatrones para el Diseño Orientado a Objetos existen?](#cod46)   |
-| [Singleton](#cod47)   |
-| [Que es el Polimorfismo?](#cod48)   |
-| [Que es el Upcasting?](#cod49)   |
-| [Que es el Downcasting?](#cod50)   |
-| [¿Cómo se produce la ligadura tardía y dinámica que posibilita el polimorfismo?](#cod51)   |
-| [El Principio de Sustitución de Liskov](#cod52)   |
-| [¿Cómo ejemplificarías el uso de polimorfismo en Java usando una colección de objetos?](#cod53)   |
-| [Qué es la densidad de codigo?](#cod54)   |
-| [La importancia del orden de las funciones](#cod55)   |
-| [Porque se deberia evitar retornar null?](#cod56)   |
-| [Porque se deberia evitar el uso de variables globales?](#cod57)   |
+| [Ejemplo de Pseudo-código](#diag1) |
+| [Diagramas de Nassi-Schneiderman](#diag2) |
+| [¿De qué trata el código limpio?](#cod1) |
+| [Nombres Significativos en Codigo Limpio](#cod2) |
+| [Concepto DRY](#cod5) |
+| [Concepto KISS](#cod6) |
+| [Concepto YAGNI](#cod7) |
+| [Concepto LOD](#cod8) |
+| [Funciones Limpias](#cod9) |
+| [Unico Nivel de abstraccion](#cod10) |
+| [Manejo limpio de Parametros](#cod11) |
+| [Cuales son los beneficios de una Code Review?](#cod12) |
+| [Que tipos de Code review existen?](#cod13) |
+| [Domain Driven Design](#cod14) |
+| [¿Qué es un patrón de diseño?](#cod15) |
+| [En qué se inspiran los patrones de diseño?](#cod16) |
+| [¿Qué se obtiene con la implementación de patrones de diseño?](#cod17) |
+| [¿Para qué sirven los patrones de diseño?](#cod18) |
+| [¿Cuáles son los elementos de un patrón de diseño?](#cod19) |
+| [¿Cuáles son los tipos de patrones de diseño?](#cod20) |
+| [¿Qué es la intención y motivación de un patrón de diseño?](#cod21) |
+| [¿Qué es la aplicabilidad de un patrón de diseño?](#cod22) |
+| [¿Qué es la estructura de un patrón de diseño?](#cod23) |
+| [¿Quiénes son los participantes de un patrón de diseño?](#cod24) |
+| [Patrones Estructurales](#cod25) |
+| [Patrones Creacionales](#cod26) |
+| [Patrones Comportamiento](#cod27) |
+| [Excepciones en lugar de codigos de error](#cod28) |
+| [Manejo de Comentarios en el codigo](#cod29) |
+| [Acomplamiento artificial](#cod30) |
+| [Unchecked Exceptions](#cod31) |
+| [Excepciones en lugar de códigos de error](#cod32) |
+| [Gestión de errores](#cod33) |
+| [Indentación](#cod34) |
+| [Código en el nivel de abstracción incorrecto](#cod35) |
+| [Acoplamiento (Evitar)](#cod36) |
+| [Cohesion (Fomentar)](#cod37) |
+| [Uso de numeros magicos en lugar de constantes](#cod38) |
+| [Qué es la Programación orientada a Objetos?](#cod39) |
+| [Qué es la programación procedural?](#cod40) |
+| [Qué es la programacion declarativa?](#cod41) |
+| [Que es la Programacion Imperativa?](#cod42) |
+| [Qué es la Programacion Estructurada?](#cod43) |
+| [Que es un antipatron?](#cod44) |
+| [Que tipos de antipatrones para el diseño de Software existen?](#cod45) |
+| [Que tipos de Antipatrones para el Diseño Orientado a Objetos existen?](#cod46) |
+| [Singleton](#cod47) |
+| [Que es el Polimorfismo?](#cod48) |
+| [Que es el Upcasting?](#cod49) |
+| [Que es el Downcasting?](#cod50) |
+| [¿Cómo se produce la ligadura tardía y dinámica que posibilita el polimorfismo?](#cod51) |
+| [El Principio de Sustitución de Liskov](#cod52) |
+| [¿Cómo ejemplificarías el uso de polimorfismo en Java usando una colección de objetos?](#cod53) |
+| [Qué es la densidad de codigo?](#cod54) |
+| [La importancia del orden de las funciones](#cod55) |
+| [Porque se deberia evitar retornar null?](#cod56) |
+| [Porque se deberia evitar el uso de variables globales?](#cod57) |
 |¿Cómo podrías mejorar la calidad del código en un proyecto en marcha?|
-|Si tienes plazos ajustados y te ves obligado a escribir "mal código", ¿cómo manejarías esa situación?  |
+|Si tienes plazos ajustados y te ves obligado a escribir "mal código", ¿cómo manejarías esa situación? |
 |¿Iniciarías un proceso para mejorar la calidad del código? ¿Cómo lo harías sin afectar el desarrollo activo?|
 
-| Code Smells   |
+| Code Smells |
 |----------|
-| [¿Qué es un Code Smell?](#cod58)   |
-| [Code Smells en los Tests](#cod59)   |
-| [Code Smells en Codigo](#cod60)   |
-| [Code Smells en Nombres](#cod61)     |
-| [Code Smells en Comentarios](#cod62)     |
-| [Code Smells en el entorno](#cod63)     |
-| [Code Smells en Funciones](#cod64)     |
+| [¿Qué es un Code Smell?](#cod58) |
+| [Code Smells en los Tests](#cod59) |
+| [Code Smells en Codigo](#cod60) |
+| [Code Smells en Nombres](#cod61) |
+| [Code Smells en Comentarios](#cod62) |
+| [Code Smells en el entorno](#cod63) |
+| [Code Smells en Funciones](#cod64) |
 
-| SOLID   |
+| SOLID |
 |----------|
-| [Concepto SOLID](#cod4)    |
+| [Concepto SOLID](#cod4) |
 |Principios SOLID aplicados en Javascript|
-| [Dependency Inversion Principle](#cod3)    |
-| [Single Responsibility Principle](#cod65)     |
-| [Open/Closed Principle](#cod66)     |
-| [Interface Segregation Principle](#cod67)     |
-| [Liskov Substitution Principle](#cod68)     |
+| [Dependency Inversion Principle](#cod3) |
+| [Single Responsibility Principle](#cod65) |
+| [Open/Closed Principle](#cod66) |
+| [Interface Segregation Principle](#cod67) |
+| [Liskov Substitution Principle](#cod68) |
 
 <a name="har-base"></a>
 
 ## [Hardware, Sistemas, Infraestructura y Arquitectura](#har)
 
-| Temas   |
+| Temas |
 |----------|
-| [Gabinete](#har1)    |
-| [Motherboard](#har2)    |
-| [Microprocesador](#har3)    |
-| [Memoria RAM](#har4)    |
-| [Disco Rigido](#har5)    |
-| [Lectograbadora CD/DVD](#har6)    |
-| [Placas adicionales](#har7)    |
-| [Que es la virtualizacion?](#har8)    |
-| [Para qué se usan las máquinas virtuales?](#har9)    |
-| [Cómo se usa una máquina virtual?](#har10)    |
-| [Cuales son los beneficios del uso de máquinas virtuales?](#har11)    |
-| [Que es un hipervisor?](#har12)    |
-| [Que es un hipervisor de tipo 1?](#har13)    |
-| [Que es un hipervisor de tipo 2?](#har14)    |
-| [Que es una maquina virtual de sistema?](#har15)    |
-| [Que es una maquina virtual de procesos?](#har16)    |
-| [Como funciona internet?](#har17)    |
-| [Como se comunican las redes de Internet?](#har18)    |
-| [Que sucede cuando escribo una URL en el navegador y hago click en Enter?](#har19)    |
-| [Como se define la Interconexión?](#har20)    |
-| [Que es una red de computadoras?](#har21)    |
-| [Que elementos conforman una red?](#har22)    |
-| [Cual es la finalidad de una red?](#har23)    |
-| [Clasificación por alcance](#har24)    |
-| [Clasificación por tipo de conexión](#har25)    |
-| [Clasificación de redes por tipología](#har26)    |
-| [Clasificación de redes por relación funcional](#har40)    |
-| [Clasificación de redes por relación funcional](#har41)    |
-| [Clasificación de redes por grado de autentificación](#har42)    |
-| [Clasificación de redes por grado de difusión](#har43)    |
-| [Como se cuál es mi dirección TCP-IP?](#har27)    |
-| [Cuáles son las 4 capas del modelo TCP-IP?](#har28)    |
-| [Que significa TCP-IP?](#har29)    |
-| [Que es un protocolo TCP-IP y como funciona?](#har30)    |
-| [En que se diferencian TCP e IP?](#har31)    |
-| [TCP-IP funciona con toda clase de direcciones IP?](#har32)    |
-| [¿Qué es un DNS Cache?](#har33)    |
-| [¿Que es SSL y TLS?](#har34)    |
-| [¿Que son las Autoridades de Certificado? (CA)](#har35)    |
-| [¿Que es un TLS Handshake?](#har36)    |
-| [Cuáles son los códigos de respuesta más comunes?](#har37)    |
-| [¿Qué es un DNS?](#har38)    |
-| [¿Qué es HTTPS?](#har39)    |
-| [¿Qué son las Redes Inalámbricas?](#har44)    |
-| [¿Qué es un DNS Root?](#har45)    |
-| [¿Qué es un TLD?](#har46)    |
-| [¿Qué es un SLD?](#har47)    |
-| [¿Qué es un DNS Poisoning?](#har48)    |
-| [¿Qué es un DNS Spoofing?](#har49)    |
-| [¿Qué resuelve la arquitectura de Microfrontends?](#arc1)    |
-| [¿Cuales son las caracteristicas de un Microfrontend?](#arc2)    |
-| [¿Qué beneficios y desventajas ves en la introducción de la arquitectura de microfrontends en algunos de tus proyectos?](#arc3)    |
-| [¿Qué es la arquitectura de monolitos?](#arc4)    |
-| [En que se comparan los microservicios con los monolitos?](#arc5)    |
-| [Cómo hace Amazon route 53 para dar alta disponibilidad y baja latencia?](#arc6)    |
-| [Cuál es la diferencia entre Availability Zone y Region?](#arc7)    |
-| [Qué es la alta disponibilidad?](#arc8)    |
-| [Qué es la baja latencia?](#arc9)    |
-| [Qué es un sistema tolerante a fallos?](#arc10)    |
-| [Qué es un sistema distribuido?](#arc11)    |
-| [Qué es un sistema de alta disponibilidad?](#arc12)    |
-| [Qué es un CDN?](#arc13)    |
-| [Qué es un balanceador de carga?](#arc14)    |
-| [Que es una cookie?](#arc15)    |
-| [Que es el cookie tracking?](#arc16)    |
-| [Como creo una cookie con Javascript?](#arc17)    |
-| [¿Cual es la diferencia entre Cookies, SessionStorage y LocalStorage?](#arc18)    |
-| [¿Como puedo borrar una cookie?](#arc19)    |
-| [¿Que es CORS?](#arc20)    |
-| [¿Que es un Sistema Operativo?](#arc21)    |
-| [FCFS (First come, first served)](#arc22)    |
-| [SPN/SJF (Shorted Process Next/Shorted Job First))](#arc23)    |
-| [SRT (Shortest Remaining Time)](#arc24)    |
+| [Gabinete](#har1) |
+| [Motherboard](#har2) |
+| [Microprocesador](#har3) |
+| [Memoria RAM](#har4) |
+| [Disco Rigido](#har5) |
+| [Lectograbadora CD/DVD](#har6) |
+| [Placas adicionales](#har7) |
+| [Que es la virtualizacion?](#har8) |
+| [Para qué se usan las máquinas virtuales?](#har9) |
+| [Cómo se usa una máquina virtual?](#har10) |
+| [Cuales son los beneficios del uso de máquinas virtuales?](#har11) |
+| [Que es un hipervisor?](#har12) |
+| [Que es un hipervisor de tipo 1?](#har13) |
+| [Que es un hipervisor de tipo 2?](#har14) |
+| [Que es una maquina virtual de sistema?](#har15) |
+| [Que es una maquina virtual de procesos?](#har16) |
+| [Como funciona internet?](#har17) |
+| [Como se comunican las redes de Internet?](#har18) |
+| [Que sucede cuando escribo una URL en el navegador y hago click en Enter?](#har19) |
+| [Como se define la Interconexión?](#har20) |
+| [Que es una red de computadoras?](#har21) |
+| [Que elementos conforman una red?](#har22) |
+| [Cual es la finalidad de una red?](#har23) |
+| [Clasificación por alcance](#har24) |
+| [Clasificación por tipo de conexión](#har25) |
+| [Clasificación de redes por tipología](#har26) |
+| [Clasificación de redes por relación funcional](#har40) |
+| [Clasificación de redes por relación funcional](#har41) |
+| [Clasificación de redes por grado de autentificación](#har42) |
+| [Clasificación de redes por grado de difusión](#har43) |
+| [Como se cuál es mi dirección TCP-IP?](#har27) |
+| [Cuáles son las 4 capas del modelo TCP-IP?](#har28) |
+| [Que significa TCP-IP?](#har29) |
+| [Que es un protocolo TCP-IP y como funciona?](#har30) |
+| [En que se diferencian TCP e IP?](#har31) |
+| [TCP-IP funciona con toda clase de direcciones IP?](#har32) |
+| [¿Qué es un DNS Cache?](#har33) |
+| [¿Que es SSL y TLS?](#har34) |
+| [¿Que son las Autoridades de Certificado? (CA)](#har35) |
+| [¿Que es un TLS Handshake?](#har36) |
+| [Cuáles son los códigos de respuesta más comunes?](#har37) |
+| [¿Qué es un DNS?](#har38) |
+| [¿Qué es HTTPS?](#har39) |
+| [¿Qué son las Redes Inalámbricas?](#har44) |
+| [¿Qué es un DNS Root?](#har45) |
+| [¿Qué es un TLD?](#har46) |
+| [¿Qué es un SLD?](#har47) |
+| [¿Qué es un DNS Poisoning?](#har48) |
+| [¿Qué es un DNS Spoofing?](#har49) |
+| [¿Qué resuelve la arquitectura de Microfrontends?](#arc1) |
+| [¿Cuales son las caracteristicas de un Microfrontend?](#arc2) |
+| [¿Qué beneficios y desventajas ves en la introducción de la arquitectura de microfrontends en algunos de tus proyectos?](#arc3) |
+| [¿Qué es la arquitectura de monolitos?](#arc4) |
+| [En que se comparan los microservicios con los monolitos?](#arc5) |
+| [Cómo hace Amazon route 53 para dar alta disponibilidad y baja latencia?](#arc6) |
+| [Cuál es la diferencia entre Availability Zone y Region?](#arc7) |
+| [Qué es la alta disponibilidad?](#arc8) |
+| [Qué es la baja latencia?](#arc9) |
+| [Qué es un sistema tolerante a fallos?](#arc10) |
+| [Qué es un sistema distribuido?](#arc11) |
+| [Qué es un sistema de alta disponibilidad?](#arc12) |
+| [Qué es un CDN?](#arc13) |
+| [Qué es un balanceador de carga?](#arc14) |
+| [Que es una cookie?](#arc15) |
+| [Que es el cookie tracking?](#arc16) |
+| [Como creo una cookie con Javascript?](#arc17) |
+| [¿Cual es la diferencia entre Cookies, SessionStorage y LocalStorage?](#arc18) |
+| [¿Como puedo borrar una cookie?](#arc19) |
+| [¿Que es CORS?](#arc20) |
+| [¿Que es un Sistema Operativo?](#arc21) |
+| [FCFS (First come, first served)](#arc22) |
+| [SPN/SJF (Shorted Process Next/Shorted Job First)](#arc23) |
+| [SRT (Shortest Remaining Time)](#arc24) |
 
 <a name="bd-base"></a>
 
-## [Bases de Datos](#bd)  
+## [Bases de Datos](#bd)
 
-| Fundamentos de Bases de Datos   |
+| Fundamentos de Bases de Datos |
 |----------|
-| [Cuáles son los elementos de una base de datos?](#bd1)    |
-| [Cuales son los elementos de Data Control Language? (DCL)](#bd2)    |
-| [Lenguaje de manipulación de datos (DML)](#bd3)    |
-| [Lenguaje de definición de datos (DDL)](#bd4)    |
+| [Cuáles son los elementos de una base de datos?](#bd1) |
+| [Cuales son los elementos de Data Control Language? (DCL)](#bd2) |
+| [Lenguaje de manipulación de datos (DML)](#bd3) |
+| [Lenguaje de definición de datos (DDL)](#bd4) |
 | ¿Qué es un índice en una base de datos? |
 | ¿Cuál es la diferencia entre un índice único y un índice no único? |
 |¿Qué es una clave primaria y cómo se utiliza?|
 |¿Qué es una clave foránea y cómo se utiliza?|
 |¿Qué es un schema en una base de datos?|
 
-| Normalización y Diseño de Bases de Datos   |
+| Normalización y Diseño de Bases de Datos |
 |----------|
-| [Qué es la normalizacion?](#bd5)    |
-| [Cuales son los objetivos de la Normalización?](#bd6)    |
-| [Cuales son los grados de Normalización?](#bd7)    |
+| [Qué es la normalizacion?](#bd5) |
+| [Cuales son los objetivos de la Normalización?](#bd6) |
+| [Cuales son los grados de Normalización?](#bd7) |
 | ¿Cómo funciona la normalización en bases de datos relacionales?|
 |¿Qué es la desnormalización y cuándo es apropiada?|
 
-| Transacciones y Concurrencia   |
+| Transacciones y Concurrencia |
 |----------|
 |¿Qué es una transacción en bases de datos y cuáles son sus propiedades (ACID)?|
 |¿Qué es la atomicidad en las transacciones de bases de datos?|
 |¿Qué es la concurrencia en bases de datos y cómo se maneja?|
 
-| Consultas y Optimización   |
+| Consultas y Optimización |
 |----------|
-| [Algunos tips de Performance SQL](#bd8)    |
+| [Algunos tips de Performance SQL](#bd8) |
 |¿Cómo optimizar una consulta SQL para mejorar el rendimiento?|
 |¿Qué es una vista (view) en SQL y cuándo se debe usar?|
 |¿Qué es la diferencia entre INNER JOIN, LEFT JOIN y RIGHT JOIN?|
 |¿Qué es un Self Join?|
 |¿Qué son las consultas complejas y cómo se pueden manejar con SQL?|
 
-| Procedimientos, Triggers y Funciones   |
+| Procedimientos, Triggers y Funciones |
 |----------|
-| [DDL Triggers](#bd9)    |
-| [Diferencia entre OPENROWSET y OPENQUERY](#bd17)    |
-| [DML Triggers](#bd14)    |
+| [DDL Triggers](#bd9) |
+| [Diferencia entre OPENROWSET y OPENQUERY](#bd17) |
+| [DML Triggers](#bd14) |
 |¿Qué son los procedimientos almacenados y cuál es su ventaja?|
 |¿Qué es un trigger y cómo se diferencia de un procedimiento almacenado?|
 
-| Bases de Datos Distribuidas y NoSQL   |
+| Bases de Datos Distribuidas y NoSQL |
 |----------|
-|  ¿Qué es una base de datos NoSQL y cuáles son sus tipos?|
-|  ¿Qué es la consistencia en el contexto de bases de datos distribuidas?|
+| ¿Qué es una base de datos NoSQL y cuáles son sus tipos?|
+| ¿Qué es la consistencia en el contexto de bases de datos distribuidas?|
 | ¿Qué son las bases de datos distribuidas y qué desafíos presentan?|
 
-| Manejo de Datos y Seguridad   |
+| Manejo de Datos y Seguridad |
 |----------|
 |¿Cómo se realiza un backup y restauración en bases de datos?|
 |¿Cuáles son los elementos de Data Control Language? (DCL)|
 |¿Qué es la seguridad en las bases de datos?|
 
-|Modelos de Datos   |
+|Modelos de Datos |
 |----------|
 |¿Qué es un modelo de datos jerárquico en bases de datos?|
 
@@ -870,142 +872,144 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 |¿Cuál es la diferencia entre una base de datos transaccional y una base de datos analítica?|
 |¿Cuáles son las ventajas de utilizar bases de datos NoSQL frente a bases de datos SQL?|
 
-| Consultas y Operaciones   |
+| Consultas y Operaciones |
 |----------|
-| [Inner Join](#bd10)    |
-| [Outer Join (Con left y right join)](#bd11)    |
-| [Self Join](#bd12)    |
-| [UNIÓN](#bd15)    |
-| [TOP](#bd16)    |
-| [EXCEPT](#bd13)    |
+| [Inner Join](#bd10) |
+| [Outer Join (Con left y right join)](#bd11) |
+| [Self Join](#bd12) |
+| [UNIÓN](#bd15) |
+| [TOP](#bd16) |
+| [EXCEPT](#bd13) |
 
 <a name="seg-base"></a>
 
-## [Seguridad](#seg)  
+## [Seguridad](#seg)
 
-|  Introducción y Conceptos Básicos  |
+| Introducción y Conceptos Básicos |
 |----------|
-| [¿Qué es el ciberespacio?](#seg4)    |
-| [¿Cuáles son los componentes del Ciberespacio?](#seg5)    |
-| [¿Cuáles son los problemas del Ciberespacio?](#seg6)    |
-| [¿Qué es la Ciberseguridad?](#seg8)    |
-| [¿Qué quiere decir "Ciberataque"?](#seg1)    |
-| [¿Que quiere decir "Ciberamenazas"?](#seg2)    |
-| [¿Qué quiere decir "Vulnerabilidad"?](#seg3)    |
-| [¿Cuáles son las ciberamenazas actuales?](#seg7)    |
+| [¿Qué es el ciberespacio?](#seg4) |
+| [¿Cuáles son los componentes del Ciberespacio?](#seg5) |
+| [¿Cuáles son los problemas del Ciberespacio?](#seg6) |
+| [¿Qué es la Ciberseguridad?](#seg8) |
+| [¿Qué quiere decir "Ciberataque"?](#seg1) |
+| [¿Que quiere decir "Ciberamenazas"?](#seg2) |
+| [¿Qué quiere decir "Vulnerabilidad"?](#seg3) |
+| [¿Cuáles son las ciberamenazas actuales?](#seg7) |
 |¿Por qué es importante entender las vulnerabilidades en ciberseguridad?|
 |¿Cómo se define una amenaza en ciberseguridad y cuál es su relación con una vulnerabilidad?|
 |¿Qué es XSS, CSRF, CSP, CORS, DoS y cómo se manejan estos problemas de seguridad en la web?|
 
-| Metodologías y Roles en Ciberseguridad   |
+| Metodologías y Roles en Ciberseguridad |
 |----------|
-| [¿Cuál es el perfil del Oficial de seguridad informática?](#seg9)    |
-| [¿De qué pasos consta la metodología de ciberseguridad?](#seg10)    |
-| [¿De qué pasos criterios de seguridad consta la metodología de ciberseguridad?](#seg11)    |
+| [¿Cuál es el perfil del Oficial de seguridad informática?](#seg9) |
+| [¿De qué pasos consta la metodología de ciberseguridad?](#seg10) |
+| [¿De qué pasos criterios de seguridad consta la metodología de ciberseguridad?](#seg11) |
 |¿Qué habilidades técnicas y no técnicas debe tener un Oficial de seguridad informática?|
 |¿Cuáles son los diferentes enfoques en las metodologías de gestión de riesgos de ciberseguridad?|
 
-| Tipos de Ciberataques  |
+| Tipos de Ciberataques |
 |----------|
-| [¿Cuáles son algunas modalidades comunes de ataques?](#seg13)    |
-| [¿Qué son los ataques internos?](#seg15)    |
-| [¿Qué tipos de Ingenierías sociales existen?](#seg16)    |
-| [¿Cuáles son las etapas en un proceso de hacking?](#seg14)    |
+| [¿Cuáles son algunas modalidades comunes de ataques?](#seg13) |
+| [¿Qué son los ataques internos?](#seg15) |
+| [¿Qué tipos de Ingenierías sociales existen?](#seg16) |
+| [¿Cuáles son las etapas en un proceso de hacking?](#seg14) |
 |¿Cómo prevenir los ataques internos dentro de una organización?|
 |¿Qué papel juega el phishing en los ciberataques actuales?|
 
-| Medidas de prevencion  |
+| Medidas de prevencion |
 |----------|
-| [¿Cuáles son algunas medidas comunes contra los ataques?](#seg12)    |
-| [¿Qué es la triada CIA?](#seg17)    |
-| [¿Qué es la seguridad perimetral?](#seg18)    |
-| [Es una amenaza.. Verdadero o Falso?](#seg23)    |
+| [¿Cuáles son algunas medidas comunes contra los ataques?](#seg12) |
+| [¿Qué es la triada CIA?](#seg17) |
+| [¿Qué es la seguridad perimetral?](#seg18) |
+| [Es una amenaza.. Verdadero o Falso?](#seg23) |
 |¿Qué otros modelos de seguridad, además de la triada CIA, se utilizan en la industria de la ciberseguridad?|
 |¿Qué son las políticas de seguridad de la información y cómo ayudan en la prevención de ciberataques?|
 
-| IDS (Intrusion Detection Systems)  |
+| IDS (Intrusion Detection Systems) |
 |----------|
-| [IDS (Intrusion Detection System)](#seg19)    |
-| [Tecnicas de detección de intrusiones](#seg20)    |
-| [Indicadores de una intrusión](#seg21)    |
-| [Tipos de IDS](#seg22)    |
+| [IDS (Intrusion Detection System)](#seg19) |
+| [Tecnicas de detección de intrusiones](#seg20) |
+| [Indicadores de una intrusión](#seg21) |
+| [Tipos de IDS](#seg22) |
 |¿Cómo se diferencia un IDS de un IPS (Intrusion Prevention System)?|
 |¿Qué métodos utilizan los IDS para detectar intrusiones en tiempo real?|
 
-| Firewalls  |
+| Firewalls |
 |----------|
-| [¿Qué es un Firewall?](#seg24)    |
-| [Tipos de Firewall](#seg25)    |
-|¿Cuál es la diferencia entre un firewall de filtrado de paquetes y un firewall de inspección profunda de paquetes?|
+| [¿Qué es un Firewall?](#seg24) |
+| [Tipos de Firewall](#seg25) |
+|¿Cuál es la diferencia entre un firewall de filtrado de paquetes y un firewall de
+inspección profunda de paquetes?|
 |¿Cómo se puede configurar un firewall para proteger una red corporativa?|
 
-| Criptografía  |
+| Criptografía |
 |----------|
-| [¿Qué es la criptografía?](#seg26)    |
-| [¿Qué es una función Hash?](#seg27)    |
-| [¿Cuáles son los requisitos de un Cripto sistema?](#seg28)    |
-| [¿Cómo funciona el Cifrado Simétrico?](#seg29)    |
-| [¿Cómo funciona el Cifrado Asimétrico?](#seg30)    |
+| [¿Qué es la criptografía?](#seg26) |
+| [¿Qué es una función Hash?](#seg27) |
+| [¿Cuáles son los requisitos de un Cripto sistema?](#seg28) |
+| [¿Cómo funciona el Cifrado Simétrico?](#seg29) |
+| [¿Cómo funciona el Cifrado Asimétrico?](#seg30) |
 |¿Por qué es importante el uso de certificados digitales y cómo están relacionados con la criptografía?|
 |¿Qué es la criptografía cuántica y cómo afectará la ciberseguridad en el futuro?|
 
-| Informática Forense  |
+| Informática Forense |
 |----------|
-| [Adquisición en Informática Forense](#seg31)   |
-| [El informe pericial informático](#seg32)   |
+| [Adquisición en Informática Forense](#seg31) |
+| [El informe pericial informático](#seg32) |
 |¿Qué debe contener un informe pericial informático y por qué es crucial para una investigación legal?|
 |¿Qué herramientas se utilizan comúnmente para la adquisición forense de datos?|
 
 <a name="acc-base"></a>
 
-## [Accesibilidad](#acc)  
+## [Accesibilidad](#acc)
 
-| Introducción a la Accesibilidad   |
+| Introducción a la Accesibilidad |
 |----------|
-| [¿Qué es la accesibilidad web?](#acc1)    |
-| [¿Cuáles son sus beneficios?](#acc2)    |
-| [¿Qué significa A11y?](#acc3)    |
+| [¿Qué es la accesibilidad web?](#acc1) |
+| [¿Cuáles son sus beneficios?](#acc2) |
+| [¿Qué significa A11y?](#acc3) |
 |¿Qué leyes o normativas existen a nivel global relacionadas con la accesibilidad web?|
 |¿Por qué es importante la accesibilidad web para las personas con discapacidades?|
 
-| Fundamentos y Principios   |
+| Fundamentos y Principios |
 |----------|
 | [¿De qué trata el Web Content Accessibility Guidelines (WCAG)?](#acc9) |
-| [¿De qué tratan los principios POUR - Principios WCAG?](#acc10)    |
+| [¿De qué tratan los principios POUR - Principios WCAG?](#acc10) |
 |¿Cómo se aplica la regla de "suficiente tiempo para leer y usar el contenido" en el diseño web accesible?|
 |¿Qué significa que una página web sea "perceptible, operable, comprensible y robusta"?|
 
-| Herramientas   |
+| Herramientas |
 |----------|
-| [¿Cuáles son las herramientas más usadas en accesibilidad?](#acc4)  |
-| [¿Qué es un screen reader?](#acc5)   |
+| [¿Cuáles son las herramientas más usadas en accesibilidad?](#acc4) |
+| [¿Qué es un screen reader?](#acc5) |
 |¿Qué herramientas específicas se utilizan para realizar auditorías de accesibilidad en un sitio web?|
 |¿Cómo funciona un lector de pantalla y qué desafíos puede presentar a los diseñadores web?|
 
-| Elementos Clave   |
+| Elementos Clave |
 |----------|
-| [¿Qué es el contraste de color?](#acc6)   |
-| [¿Qué es el texto alternativo?](#acc7)    |
-| [¿Qué es el teclado virtual?](#acc8)    |
+| [¿Qué es el contraste de color?](#acc6) |
+| [¿Qué es el texto alternativo?](#acc7) |
+| [¿Qué es el teclado virtual?](#acc8) |
 |¿Cómo puede el contraste de color impactar en la legibilidad del contenido para personas con deficiencia visual?|
 |¿Qué buenas prácticas deben seguirse para escribir texto alternativo efectivo?|
 
-| ARIA y Contenido Dinámico   |
+| ARIA y Contenido Dinámico |
 |----------|
-| [¿Qué es ARIA - Accessible Rich Internet Applications?](#acc11)    |
-| [¿Cuándo es necesario utilizar ARIA?](#acc12)   |
-| [Contenido dinámico y accesibilidad](#acc13)    |
-| [Nombrar algunas ARIA existentes](#acc16)    |
+| [¿Qué es ARIA - Accessible Rich Internet Applications?](#acc11) |
+| [¿Cuándo es necesario utilizar ARIA?](#acc12) |
+| [Contenido dinámico y accesibilidad](#acc13) |
+| [Nombrar algunas ARIA existentes](#acc16) |
 |¿Cuáles son las limitaciones de usar ARIA y por qué no siempre es la mejor solución para mejorar la accesibilidad?|
 |¿Cómo se utiliza ARIA para mejorar la accesibilidad de contenido dinámico como menús o formularios interactivos?|
 
-| Buenas Prácticas y Técnicas   |
+| Buenas Prácticas y Técnicas |
 |----------|
-| [Manejo de focus](#acc14)    |
-| [CSS accesible](#acc15)    |
-| [¿Qué prácticas conlleva tener un HTML accesible?](#acc17)    |
-| ¿Cómo influye el manejo adecuado del focus en la accesibilidad para usuarios de teclado?|
-|¿Qué reglas de CSS son esenciales para garantizar una experiencia accesible en un sitio web?|
+| [Manejo de focus](#acc14) |
+| [CSS accesible](#acc15) |
+| [¿Qué prácticas conlleva tener un HTML accesible?](#acc17) |
+| ¿Cómo influye el manejo adecuado del focus en la accesibilidad para usuarios
+de teclado?|
+|¿Qué reglas de CSS son esenciales para garantizar una experiencia accesible  en un sitio web?|
 
 ---
 
@@ -9108,13 +9112,6 @@ test(); // hola
 
 El Manifest.xml es un archivo de configuración en Android que describe la estructura y los requisitos de una aplicación. Contiene información como los componentes de la aplicación, permisos necesarios, hardware y software requerido, entre otros detalles, y es fundamental para el funcionamiento adecuado de la aplicación en el sistema Android.
 
-<a id="mob2"></a>
-
-### **¿Cómo se ejecutan las aplicaciones en Android y qué son los archivos DEX?**
-
-[Volver al indice](#mob-base)
-
-Cada aplicación en Android se ejecuta en una instancia de la máquina virtual Dalvik, utilizando archivos DEX (Dalvik Executable). Estos archivos contienen bytecode optimizado para Dalvik, permitiendo la ejecución eficiente de múltiples instancias de la máquina virtual.
 
 <a id="mob3"></a>
 
@@ -9123,14 +9120,6 @@ Cada aplicación en Android se ejecuta en una instancia de la máquina virtual D
 [Volver al indice](#mob-base)
 
 El Android Runtime es el entorno de ejecución de aplicaciones de Android. Las aplicaciones de Android se ejecutan en el Android Runtime, que utiliza el compilador de tiempo de ejecución ART para convertir el código de la aplicación en código nativo que se ejecuta en el dispositivo.
-
-<a id="mob4"></a>
-
-### **¿Qué constituye la base de Android y qué funciones proporciona el kernel de Linux?**
-
-[Volver al indice](#mob-base)
-
-La base de Android es el núcleo de Linux, que proporciona un entorno seguro y estable para la ejecución de aplicaciones y protege al sistema de fallos y malware. El kernel de Linux proporciona funciones como la administración de memoria, la administración de energía, la administración de dispositivos, la administración de procesos y la seguridad.
 
 <a id="mob5"></a>
 
