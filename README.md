@@ -16,18 +16,16 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 |----------|
 | [Binary Search](#alg1)    |
 | [Podemos aplicar Binary Search a una Linked List ordenada?](#alg2)    |
-|¿Qué complejidad temporal tiene el algoritmo de Binary Search?|
-|¿Cuál es la diferencia entre Binary Search y Linear Search?|
+|[¿Cuál es la diferencia entre Binary Search y Linear Search?](#alg22)|
 
 | Algoritmos de Ordenamiento   |
 |----------|
-| [Selection Sort (Ordenamiento)](#alg3)    |
-| [Insertion Sort (Ordenamiento)](#alg4)    |
-| [Bubble Sort (Ordenamiento)](#alg5)    |
-| [Merge Sort (Ordenamiento)](#alg6)    |
-|¿Cuál es la complejidad temporal de cada uno de los algoritmos de ordenamiento mencionados?|
-|¿Cuándo sería más adecuado usar Merge Sort en lugar de Quick Sort?|
-|¿Cómo varía la eficiencia de estos algoritmos con el tamaño de los datos?|
+| [Selection Sort](#alg3)    |
+| [Insertion Sort](#alg4)    |
+| [Bubble Sort](#alg5)    |
+| [Merge Sort](#alg6)    |
+|[¿Cuándo sería más adecuado usar Merge Sort en lugar de Quick Sort?](#alg66)|
+|[¿Cómo varía la eficiencia de estos algoritmos con el tamaño de los datos?](#alg77)|
 
 | Complejidad Algorítmica   |
 |----------|
@@ -45,20 +43,14 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 | Arrays y Estructuras Similares   |
 |----------|
 | [Estructuras de datos (Arrays)](#alg15)    |
-| [Qué es un "array-like" en Javascript?](#alg26) |
-| [Cuales son las funciones array de JavaScript?](#alg27) |
+| [Qué es un "array-like" en Javascript?](#alg26) :yellow_heart:|
+| [Cuales son las funciones array de JavaScript?](#alg27) :yellow_heart: |
 | [Funcion .sort()](#alg28) |
-|¿Cómo funcionan los arrays en JavaScript internamente?|
-
-| ArrayList en Java   |
-|----------|
+|[¿Cómo funcionan los arrays en JavaScript internamente?](#alg282)|
 | [Especificando la clase de contenido de un ArrayList](#alg16)    |
 | [Creación de un ArrayList](#alg17) |
 |¿Cuál es la diferencia entre un ArrayList y un array tradicional en Java?|
-|¿Cómo afecta la capacidad de crecimiento dinámico de un ArrayList a su rendimiento?|
-
-| Operaciones Comunes en Arrays   |
-|----------|
+|¿Cómo afecta la capacidad de crecimiento dinámico un ArrayList a su rendimiento?|
 | [Agregar un elemento a un ArrayList](#alg18) |
 | [Obtener el elemento n de un ArrayList](#alg19) |
 | [Extraer el elemento n de un ArrayList](#alg20) |
@@ -77,14 +69,11 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 
 | Otras Colecciones y Estructuras  |
 |----------|
-| [Set() en Javascript (HashSet)](#alg29) |
-| [HashTables (.Map)](#alg30) |
-|¿Cuál es la diferencia entre un Set y un Array en JavaScript?|
-|¿En qué situaciones es más eficiente usar un HashMap en lugar de un Array?|
-
-| Linked Lists   |
-|----------|
-| [Linked Lists](#alg31) |
+| [Set() en Javascript (HashSet)](#alg29) :yellow_heart:|
+| [HashTables (.Map)](#alg30) :yellow_heart: |
+|[¿Cuál es la diferencia entre un Set y un Array en JavaScript?](#alg301)|
+|[¿En qué situaciones es más eficiente usar un HashMap en lugar de un Array?](#alg302)|
+| [Linked Lists](#alg31) :yellow_heart:|
 | [¿Cuales son los beneficios de un Linked List sobre un Array?](#alg32) |
 |[¿Cual es el uso de una Doubly-Linked List cuando se lo compara con un Singly Linked List?](#alg33) |
 | [¿Cual es la diferencia entre un Linked List y un Doubly Linked List?](#alg34) |
@@ -368,18 +357,7 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 |¿Cómo se pueden aplicar estilos a un elemento cuando está enfocado (focus)?|
 |¿Cómo se pueden aplicar estilos a un elemento cuando está activo (active)?|
 |¿Cómo se pueden aplicar estilos a un enlace visitado (visited)?|
-|¿Cómo se pueden aplicar estilos a un elemento en base a su atributo?|
-|¿Cómo se pueden aplicar estilos a un elemento en base a su posición en el DOM?|
-|¿Cómo se pueden aplicar estilos a un elemento en base a su estado de hijo o hermano?|
-|¿Cómo se pueden aplicar estilos a un elemento en base a su estado de padre?|
-|¿Cómo se pueden aplicar estilos a un elemento en base a su estado de primer o último hijo?|
-|¿Cómo se pueden aplicar estilos a un elemento en base a su estado de único hijo?|
-|¿Cómo se pueden aplicar estilos a un elemento en base a su estado de hijo vacío?|
-|¿Cómo se pueden aplicar estilos a un elemento en base a su estado de hijo con contenido?|
-|¿Cómo se pueden aplicar estilos a un elemento en base a su estado de hijo de tipo específico?|
-|¿Cómo se pueden aplicar estilos a un elemento en base a su estado de hijo de tipo único?|
-|¿Cómo se pueden aplicar estilos a un elemento en base a su estado de hijo de tipo último de su tipo?|
-|¿Cómo se pueden aplicar estilos a un elemento en base a su estado de hijo de tipo primero de su tipo?|
+
 
 | SCSS   |
 |----------|
@@ -606,8 +584,8 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 |[¿Qué es Expo y cómo se compara con React Native?](#mob8)|
 |[¿Cómo se maneja la navegación en una aplicación React Native?](#mob9)|
 |[¿Cómo se maneja la persistencia de datos en una aplicación React Native?](#mob10)|
-|¿Cómo se maneja la autenticación de usuarios en una aplicación React Native?|
-|¿Cómo se maneja la internacionalización en una aplicación React Native?|
+|[¿Cómo se maneja la autenticación de usuarios en una aplicación React Native?](#mob11)|
+|[¿Cómo se maneja la internacionalización en una aplicación React Native?](#mob12)|
 |¿Cómo se maneja la compatibilidad entre diferentes versiones de sistemas operativos en una aplicación React Native?|
 |¿Cómo se maneja la compatibilidad entre diferentes tamaños de pantalla en una aplicación React Native?|
 |¿Cómo se maneja la optimización del rendimiento en una aplicación React Native?|
@@ -2271,25 +2249,42 @@ Encontrar elementos en un vector ordenado de forma rápida sin recorrer todo el 
 
 ```jsx
 function binarySearch(arr, target) {
-  let left = 0;
-  let right = arr.length - 1;
+  // Inicializamos los extremos del rango de búsqueda.
+  let left = 0; // Índice del extremo izquierdo del rango.
+  let right = arr.length - 1; // Índice del extremo derecho del rango.
+  
+  // Calculamos el índice medio inicial.
   let middle = Math.floor((left + right) / 2);
 
+  // Iteramos mientras no hayamos encontrado el elemento
+  // y el rango de búsqueda sea válido (izquierda <= derecha).
   while (arr[middle] !== target && left <= right) {
     if (target < arr[middle]) {
+      // Si el elemento buscado es menor que el valor medio,
+      // descartamos la mitad derecha del rango ajustando el límite derecho.
       right = middle - 1;
     } else {
+      // Si el elemento buscado es mayor que el valor medio,
+      // descartamos la mitad izquierda del rango ajustando el límite izquierdo.
       left = middle + 1;
     }
+    // Recalculamos el índice medio con los nuevos límites.
     middle = Math.floor((left + right) / 2);
   }
 
+  // Al salir del bucle, verificamos si el elemento en el índice medio
+  // es igual al objetivo. Si lo es, devolvemos su índice.
+  // Si no lo es, significa que el elemento no está en el array, devolvemos -1.
   return arr[middle] === target ? middle : -1;
 }
 
-const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-console.log(binarySearch(arr, 5)); // 4
+// Ejemplo de uso:
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; // Array ordenado para búsqueda binaria.
+console.log(binarySearch(arr, 5)); // Devuelve 4 (el índice del número 5 en el array).
+
 ```
+
+Su complejidada temporal es de O(log n)
 
 ![Algoritmo de búsqueda binaria](src/log1.png)
 
@@ -2301,9 +2296,20 @@ console.log(binarySearch(arr, 5)); // 4
 
 No, no se puede, ya que encontrar el index del elemento del medio es demasiado complicado.
 
+<a id="alg22"></a>
+
+### **¿Cuál es la diferencia entre Binary Search y Linear Search?**
+
+[Volver al indice](#alg-base)
+
+La diferencia principal es que en Binary Search se divide el array en dos partes y se busca en la mitad, mientras que en Linear Search se recorre todo el array hasta encontrar el elemento, es la que hacemos tipicamente en codigo. 
+
+La complejidad de Binary Search es O(log n) y la de Linear Search es O(n).
+
+
 <a id="alg3"></a>
 
-### **Selection Sort (Ordenamiento)**
+### **Selection Sort**
 
 [Volver al indice](#alg-base)
 
@@ -2336,9 +2342,11 @@ const selectionSort = (array) => {
 }
 ```
 
+Su complejidad temporal es de O(n^2)
+
 <a id="alg4"></a>
 
-### **Insertion Sort (Ordenamiento)**
+### **Insertion Sort**
 
 [Volver al indice](#alg-base)
 
@@ -2366,9 +2374,11 @@ const insertionSort = (array) => {
 }
 ```
 
+Su complejidad temporal es de O(n^2)
+
 <a id="alg5"></a>
 
-### **Bubble Sort (Ordenamiento)**
+### **Bubble Sort**
 
 [Volver al indice](#alg-base)
 
@@ -2405,9 +2415,11 @@ const bubbleSort = (array) => {
 }
 ```
 
+Su complejidad temporal es de O(n^2)
+
 <a id="alg6"></a>
 
-### **Merge Sort (Ordenamiento)**
+### **Merge Sort**
 
 [Volver al indice](#alg-base)
 
@@ -2465,6 +2477,29 @@ Es recursivo
      // Después de salir del bucle, uno de los arrays puede tener elementos restantes
  
  ```
+
+Su complejidad temporal es de O(n log n)
+
+<a id="alg66"></a>
+
+### **¿Cuándo sería más adecuado usar Merge Sort en lugar de Quick Sort?**
+
+[Volver al indice](#alg-base)
+
+Merge Sort es más adecuado cuando se necesita una estabilidad en la ordenación, es decir, cuando se necesita mantener el orden relativo de los elementos iguales en el array original.
+
+Quick Sort es más adecuado cuando se necesita una ordenación en su lugar, es decir, cuando no se puede permitir el uso de memoria adicional para almacenar los elementos ordenados.
+
+<a id="alg77"></a>
+
+### **¿Cómo varía la eficiencia de estos algoritmos con el tamaño de los datos?**
+
+[Volver al indice](#alg-base)
+
+La eficiencia de los algoritmos de ordenación varía con el tamaño de los datos de entrada. En general, los algoritmos de ordenación más eficientes, como Merge Sort y Quick Sort, tienen una complejidad temporal de O(n log n), lo que significa que su tiempo de ejecución aumenta de forma logarítmica con el tamaño de los datos de entrada.
+
+Por otro lado, los algoritmos de ordenación menos eficientes, como Bubble Sort y Selection Sort, tienen una complejidad temporal de O(n^2), lo que significa que su tiempo de ejecución aumenta de forma cuadrática con el tamaño de los datos de entrada.
+
 
 <a id="alg7"></a>
 
@@ -3216,7 +3251,7 @@ No pasará nada: todos los socios estarán en la lista principal, y aquellos que
 
 <a id="alg26"></a>
 
-### Qué es un "array-like" en Javascript?
+### **Qué es un "array-like" en Javascript?** :yellow_heart:
 
 [Volver al indice](#alg-base)
 
@@ -3254,7 +3289,7 @@ console.log(array); // Imprime: ['a', 'b', 'c']
 
 <a id="alg27"></a>
 
-### **Cuales son las funciones array de JavaScript?**
+### **Cuales son las funciones array de JavaScript?** :yellow_heart:
 
 [Volver al indice](#alg-base)
 
@@ -3271,7 +3306,7 @@ console.log(array); // Imprime: ['a', 'b', 'c']
 // Agrega al principio
 [1,2,3].unshift(0) // [0,1,2,3]
 
-//  Combina dos o más arreglos y devuelve un nuevo arreglo.
+//  Combina dos o más arreglos y devuelve un nuevo arreglo - los CONCATENA
 const arr1 = [1, 2, 3];
 const arr2 = [4, 5, 6];
 arr1.concat(arr2); // [1, 2, 3, 4, 5, 6]
@@ -3305,6 +3340,7 @@ const array = [3,4,8,6].map((n) => n * 2) // [6,8,16,12]
 
 // Devuelve un solo valor, en este caso la suma de los elementos
 [2,4,3,7].reduce((accumulator, currentValue) => accumulator + currentValue) // 16
+
 // El accomulator puede ser inicializado de antemano, si no, se toma como valor inicial el primer elemento del array
 [2,4,3,7].reduce((accumulator, currentValue) => accumulator + currentValue, 0)
 
@@ -3333,11 +3369,12 @@ splice(indice, cantidad elementos a eliminar, agrego, agrego);
 "hola".split() => ['h','o','l','a'];
 //Se puede separar la palabra dependiendo de un regex
 "hola, denu".split(/,\s*/g) => ['hola', 'denu'];
+
 ```
 
 <a id="alg28"></a>
 
-### Funcion .sort()
+### **Funcion `.sort()`** :yellow_heart:
 
 [Volver al indice](#alg-base)
 
@@ -3357,13 +3394,45 @@ const sortedValues = inputValues.sort((a, b) => {
 ```
 
 Esta funcion devuelve un numero. El mismo determina lo siguiente:
+
 * Si el numero es negativo, acomoda a antes que b.
 * Si es positivo, b va antes que a
 * Si es cero, no cambia nada
 
+```javascript
+const inputValues = [2, 10, 3];
+
+const sortedValues = inputValues.sort((a, b) => {
+  return a + b;
+});
+
+console.log(sortedValues); // Output: [10, 3, 2]
+```
+
+<a id="alg282"></a>
+
+### **¿Cómo funcionan los arrays en JavaScript internamente?**
+
+[Volver al indice](#alg-base)
+
+Los arrays en JavaScript son objetos especiales que permiten almacenar múltiples elementos en una sola variable. A diferencia de otros lenguajes de programación, los arrays en JavaScript no tienen un tamaño fijo y pueden contener elementos de diferentes tipos.
+
+Internamente, los arrays en JavaScript se implementan como objetos con propiedades indexadas. Cada elemento del array se almacena en una propiedad con un índice numérico. Por ejemplo, el array [1, 2, 3] se representa internamente como un objeto con las siguientes propiedades:
+
+```javascript
+{
+  0: 1,
+  1: 2,
+  2: 3,
+  length: 3
+}
+```
+
+Por eso existe el `array-like` en Javascript
+
 <a id="alg29"></a>
 
-### **Set() en Javascript** (HashSet)
+### **Set() en Javascript** (HashSet) :yellow_heart:
 
 [Volver al indice](#alg-base)
 
@@ -3408,7 +3477,7 @@ for (let item of mySet) {
 
 <a id="alg30"></a>
 
-### HashTables (.Map)
+### **HashTables** (.Map) :yellow_heart:
 
 [Volver al indice](#alg-base)
 
@@ -3476,9 +3545,35 @@ for (let [key, value] of myMap) {
 
 ```
 
+<a id="alg301"></a>
+
+### **¿Cuál es la diferencia entre un Set y un Array en JavaScript?** 
+
+[Volver al indice](#alg-base)
+
+| Set | Array |
+| --- | ----- |
+| Almacena valores únicos | Almacena valores duplicados |
+| No tiene índices | Tiene índices |
+| No tiene métodos como push(), pop(), shift(), unshift() | Tiene métodos como push(), pop(), shift(), unshift() |
+| No tiene métodos como map(), filter(), reduce() | Tiene métodos como map(), filter(), reduce() |
+| No tiene métodos como sort(), reverse() | Tiene métodos como sort(), reverse() |
+| No tiene métodos como find(), findIndex(), every(), some() | Tiene métodos como find(), findIndex(), every(), some() |
+| No tiene métodos como splice(), slice() | Tiene métodos como splice(), slice() |
+| No tiene métodos como join(), concat() | Tiene métodos como join(), concat() |
+
+<a id="alg302"></a>
+
+### **¿En qué situaciones es más eficiente usar un HashMap en lugar de un Array?** 
+
+[Volver al indice](#alg-base)
+
+Un HashMap es más eficiente que un Array cuando necesitamos almacenar pares clave-valor y realizar búsquedas rápidas por clave. En un Array, las búsquedas por valor tienen una complejidad de O(n), mientras que en un HashMap, las búsquedas por clave tienen una complejidad de O(1) en promedio.
+
+
 <a id="alg31"></a>
 
-### Linked Lists
+### **Linked Lists** :yellow_heart:
 
 [Volver al indice](#alg-base)
 
@@ -9477,6 +9572,231 @@ Sincronización en Tiempo Real:
 Firebase, Firestore o bases de datos con sincronización nativa.
 Integración con el Estado Global:
 Redux Persist para persistir el estado en almacenamiento local.
+
+<a id="mob11"></a>
+
+### **¿Cómo se maneja la autenticación de usuarios en una aplicación React Native?**
+
+[Volver al indice](#mob-base-rn)
+
+Se puede manejar usando un servicio propio, es decir, una autenticacion contra una base de datos propia y un servicio propio, o contra un servicio
+de terceros como `Firebase`, `Auth0`, `AWS Cognito`, `Okta`, `OAuth`, `OpenID Connect`, entre otros.
+
+El flujo basico de autenticacion consta de los siguientes pasos:
+
+1. Autenticacion del usuario
+
+Se le pide al usuario que ingrese sus datos en un, casi siempre, formulario en la aplicacion. Tambien
+existe la posibilidad de implementar un servicio de autenticacion con Google, Facebook, Twitter, etc.
+
+2. Verificacion de credenciales
+
+Se verifica contra un backend propio o un servicio de terceros la informacion dada por el usuario. Se envian 
+a traves de una solicitud HTTPS a un servidor.
+En caso de que las credenciales sean validadas, se vuelve un token de acceso como JWT.
+
+3. Guardado del token
+
+Como se necesita persistir la sesion del usuario en el celular a pesar de que la aplicacion pueda ser reiniciada, la misma se almacena
+de manera segura usando librerias como `SecureStore` de iOS o `AsyncStorage` de React Native, que posee limitaciones de seguridad.
+En Android, se puede usar el `Encrypted Shared Preferences` o librerías como `react-native-keychain`
+
+4. Manutencion de la sesion
+
+Como se menciono antes, se necesita el token para validar que el usuario se encuentra loggeado en cada reinicio de la aplicacion, tambien para enviar este token en caso de que se hagan ciertas solicitudes a la API.
+
+Una vez que se cierra la sesion, el token es eliminado. 
+
+Otros extras a tener en cuenta son:
+
+- Refresh Tokens: Utiliza un flujo de actualización de tokens para evitar expiraciones frecuentes.
+- Time-out de sesión: Maneja expiraciones de sesión y redirige al usuario al flujo de inicio de sesión si el token es inválido.
+
+**Ejemplo practico con Firebase**
+
+Las librerias usadas son `@react-native-firebase/app @react-native-firebase/auth`
+
+```jsx
+import { View, TextInput, Button, Text, Alert } from 'react-native';
+import auth from '@react-native-firebase/auth';
+
+const LoginScreen = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLogin = async () => {
+    try {
+      const userCredential = await auth().signInWithEmailAndPassword(email, password);
+      Alert.alert('Inicio de sesión exitoso', `Bienvenido ${userCredential.user.email}`);
+    } catch (error) {
+      Alert.alert('Error de autenticación', error.message);
+    }
+  };
+
+  return (
+    <View>
+      <TextInput
+        placeholder="Correo electrónico"
+        value={email}
+        onChangeText={setEmail}
+        keyboardType="email-address"
+      />
+      <TextInput
+        placeholder="Contraseña"
+        value={password}
+        onChangeText={setPassword}
+        secureTextEntry
+      />
+      <Button title="Iniciar sesión" onPress={handleLogin} />
+    </View>
+  );
+};
+
+```
+
+Luego almacenamos el token
+
+```jsx
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+const storeToken = async (token) => {
+  try {
+    await AsyncStorage.setItem('@auth_token', token);
+  } catch (e) {
+    console.error('Error al guardar el token', e);
+  }
+};
+
+const getToken = async () => {
+  try {
+    const token = await AsyncStorage.getItem('@auth_token');
+    return token;
+  } catch (e) {
+    console.error('Error al obtener el token', e);
+    return null;
+  }
+};
+```
+
+<a id="mob12"></a>
+
+### **¿Cómo se maneja la internacionalización en una aplicación React Native?**
+
+[Volver al indice](#mob-base-rn)
+
+La internacionalización es el proceso de adaptar una aplicación para que pueda ser utilizada en diferentes idiomas y regiones. En React Native, se puede manejar la internacionalización de varias formas:
+
+**Librerías de Internacionalización**
+
+Existen librerías como `i18next`, `react-intl`, `react-native-localize`, `react-i18next`, `react-native-i18n`, entre otras, que facilitan la implementación de la internacionalización en una aplicación React Native.
+
+**Uso de Context API**
+
+Se puede utilizar el Context API de React para manejar el idioma de la aplicación y compartirlo entre los componentes.
+
+```jsx
+import React, { createContext, useContext, useState } from 'react';
+
+const LanguageContext = createContext();
+
+
+const LanguageProvider = ({ children }) => {
+  const [language, setLanguage] = useState('en');
+
+  return (
+    <LanguageContext.Provider value={{ language, setLanguage }}>
+      {children}
+    </LanguageContext.Provider>
+  );
+};
+
+const useLanguage = () => useContext(LanguageContext);
+
+export { LanguageProvider, useLanguage };
+```
+
+**Uso de Hooks Personalizados**
+
+Se pueden crear hooks personalizados para manejar la internacionalización en los componentes.
+
+```jsx
+import { useLanguage } from './LanguageContext';
+
+const useTranslation = () => {
+  const { language } = useLanguage();
+
+  const t = (key) => {
+    // Lógica para traducir la clave al idioma seleccionado
+    return translations[language][key] || key;
+  };
+
+  return { t };
+};
+```
+
+**Implementación en Componentes**
+
+```jsx
+import { Text, Button, View } from 'react-native';
+import { useTranslation } from './useTranslation';
+
+const HomeScreen = () => {
+  const { t } = useTranslation();
+
+  return (
+    <View>
+      <Text>{t('welcome')}</Text>
+      <Button title={t('login')} />
+    </View>
+  );
+};
+
+```
+
+**Manejo de Traducciones**
+
+Se pueden almacenar las traducciones en archivos JSON o en una base de datos, y cargarlas en la aplicación según el idioma seleccionado.
+
+```json
+{
+  "en": {
+    "welcome": "Welcome to the app",
+    "login": "Login"
+  },
+  "es": {
+    "welcome": "Bienvenido a la aplicación",
+    "login": "Iniciar sesión"
+  }
+}
+```
+
+**Selección de Idioma**
+
+Se puede permitir al usuario seleccionar el idioma de la aplicación y guardar esta preferencia en el almacenamiento local.
+
+```jsx
+import { Button, View } from 'react-native';
+import { useLanguage } from './LanguageContext';
+
+const LanguageSelector = () => {
+  const { setLanguage } = useLanguage();
+
+  const handleLanguageChange = (language) => {
+    setLanguage(language);
+  };
+
+  return (
+    <View>
+      <Button title="English" onPress={() => handleLanguageChange('en')} />
+      <Button title="Español" onPress={() => handleLanguageChange('es')} />
+    </View>
+  );
+};
+
+```
+
+
+
 
 ---
 
