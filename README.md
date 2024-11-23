@@ -414,8 +414,8 @@ selectores?|
 | [componentWillUpdate()](#rea61) |
 | [useCallback](#rea1) |
 | [useDispatch](#rea2) |
-| [useEffect](#rea3) |
-|Puede el useEffect ser asincrono? Porque?|
+| [useEffect](#rea3) :yellow-heart:|
+|[Puede el useEffect ser asincrono? Porque?](#rea3-2) :yellow-heart:|
 | [useState](#rea4) |
 | [useSelector](#rea5) |
 | [useRef](#rea6) |
@@ -423,8 +423,7 @@ selectores?|
 |¿Cuál es la diferencia entre useCallback y useMemo?|
 | [useReducer](#rea8) |
 | [useLayoutEffect](#rea9) |
-|¿Qué diferencia hay entre useEffect y useLayoutEffect? ¿Cuándo usarías cada
-uno?|
+|¿Qué diferencia hay entre useEffect y useLayoutEffect? ¿Cuándo usarías cada uno?|
 | [¿Que es Redux?](#rea18) |
 | [Cuando conviene usar Redux?](#rea19) |
 | [¿Cuales son los beneficios de usar Redux?](#rea20) |
@@ -7904,7 +7903,7 @@ const submitNewProduct = (e) => {
 
 <a id="rea3"></a>
 
-### **useEffect**
+### **useEffect** :yellow-heart:
 
 [Volver al indice](#rea-base)
 
@@ -7972,9 +7971,34 @@ useEffect(() => {console.log("Mount");}, []);
 Y si queremos que se ejecute ante el cambio de un state
 
 ```jsx
-
 useEffect(() => {console.log("Mount");}, [state]);
 ```
+
+<a id="rea3-2"></a>
+
+### **Puede el useEffect ser asincrono? Porque?** :yellow-heart:
+
+[Volver al indice](#rea-base)
+
+El useEffect **no** deberia ser asincrono en si mismo, ya que no se puede retornar una promesa. Pero si se puede llamar a una funcion asincrona dentro del useEffect
+
+```jsx
+useEffect(() => {
+    const fetchData = async () => {
+        const response = await fetch("https://api.com");
+        const data = await response.json();
+        console.log(data);
+    }
+
+    fetchData();
+}, []);
+```
+
+Esto es porque el useEffect esta hecho para devolver una funcion de clean up, y no una promesa.
+
+En el caso de que el useEffect en si mismo sea asincrono, el codigo funcionara, pero habra un error en la consola.
+
+![useeffect error](https://blog.logrocket.com/useeffect-react-hook-complete-guide/)
 
 <a id="rea4"></a>
 
