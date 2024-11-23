@@ -147,6 +147,8 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 | ¿Cómo manejarías errores en funciones con async/await de forma eficiente?|
 |¿Cómo implementarías un patrón pub/sub para manejar eventos entre diferentes partes de una aplicación?|
 
+<a name="alg-base-2"></a>
+
 | Métodos y Operadores en JavaScript |
 |----------|
 | [Metodos de Strings en Javascript](#alg55) |
@@ -159,8 +161,8 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 | [Export Fallback con export default](#var18) |
 | [Diferencia entre import y require](#var9) |
 | [Función Object.freeze](#var8) |
-|¿Qué es la destructuración y cómo se utiliza?|
-|¿Cómo se diferencia un Spread Operator de un Rest Operator?|
+|[¿Qué es la destructuración y cómo se utiliza? ](#var8-2) :yellow-heart:|
+|[¿Cómo se diferencia un Spread Operator de un Rest Operator?](#var8-3) :yellow-heart:|
 
 | Estructuras Avanzadas y Generics |
 |----------|
@@ -253,10 +255,9 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 | Gestión de Proyectos - Liderazgo |
 |----------|
 |[¿Que son los NFRs, Quién los define y cómo se priorizan?](#cic66) |
-|Imagina que un cliente te dice que la aplicación es lenta y quiere que la aceleres, pero no te da más detalles. ¿Cómo manejarías esta situación?|
-|¿En qué requisitos deberíamos basarnos en esta situación?|
-|¿Cuáles son los posibles riesgos de adoptar una nueva tecnología en el proyecto? ¿Cómo mitigarlos?|
-|Algunos miembros de tu equipo no pueden ponerse de acuerdo sobre una solución. Discuten y no pueden tomar una decisión. ¿Cómo resolverías esta situación conflictiva?|
+|[Imagina que un cliente te dice que la aplicación es lenta y quiere que la aceleres, pero no te da más detalles. ¿Cómo manejarías esta situación?](#cic67) :yellow-heart:|
+|[¿Cuáles son los posibles riesgos de adoptar una nueva tecnología en el proyecto? ¿Cómo mitigarlos?](#cic68)|
+|[Algunos miembros de tu equipo no pueden ponerse de acuerdo sobre una solución. Discuten y no pueden tomar una decisión. ¿Cómo resolverías esta situación conflictiva?](#cic69)|
 |¿Cómo motivas a tu equipo y qué enfoques conoces? ¿Existe algún motivador universal para todos?|
 |¿Cómo delegas tareas en tu equipo y cómo varía tu enfoque dependiendo de la antigüedad del miembro del equipo?|
 |¿Cómo realizas las revisiones de código en tus proyectos? ¿Qué verificas y cómo sabes que el código está listo para ser fusionado?|
@@ -400,7 +401,7 @@ selectores?|
 | React |
 |----------|
 | [¿Qué es React?](#rea47) |
-|Libreria vs Framework|
+|[Libreria vs Framework](#rea47-2)|
 | [Para que es el comando React eject?](#rea49) |
 | [Que son las Ref?](#rea52) |
 | [De que tratan los Ciclos de Vida Componentes?](#rea62) |
@@ -4468,11 +4469,35 @@ Los array sí pueden ser modificados en sí mismos, lo que no se puede es apunta
 
 Los botones de los form en HTML por defecto hacen un submit, lo que puede llevar a que se recargue la pagina. Para evitar esto, se usa `event.preventDefault()` para evitar que se ejecute el comportamiento por defecto del evento.
 
+Por ejemplo, si quiero que al hacer click en un boton no se recargue la pagina, puedo hacer lo siguiente:
+
+```jsx
+document.getElementById("myForm").addEventListener("submit", function(event){
+  event.preventDefault();
+});
+```
+
+U otro ejemplo es para evitar que el resto de eventos que se ejecutarian por defecto, no lo hagan
+
+
+<a id="var9"></a>
+
+### **Diferencia entre import y require**
+
+[Volver al indice](#alg-base)
+
+- Require: Se usa para importar las funciones y el codigo en un archivo externo. Esto posee un problema, el cual es que este codigo puede ser muy largo y solo necesito una parte del codigo.
+- Import: Herramienta de ES6 para importar solo los componentes que necesitamos de un archivo.
+
+```jsx
+import { countItems } from "math_array_functions"
+```
+
 <a id="var8"></a>
 
 ### **Función Object.freeze**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-2)
 
 Es una funcion que evita que puedas modificar propiedades de un objeto o una variable
 
@@ -4490,40 +4515,91 @@ console.log(obj);
 
 Cuando intento modificar algo, no tira error, simplemente lo ignora.
 
-<a id="var9"></a>
+<a id="var8-2"></a>
 
-### **Diferencia entre import y require**
+### **¿Qué es la destructuración y cómo se utiliza?** :yellow-heart:
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-2)
 
-- Require: Se usa para importar las funciones y el codigo en un archivo externo. Esto posee un problema, el cual es que este codigo puede ser muy largo y solo necesito una parte del codigo.
-- Import: Herramienta de ES6 para importar solo los componentes que necesitamos de un archivo.
+La destructuración es una expresión de JavaScript que permite desempaquetar valores de arreglos o propiedades de objetos en distintas variables.
 
 ```jsx
-import { countItems } from "math_array_functions"
+const person = {
+  name: "denu",
+  age: 25
+};
+
+const {name, age} = person;
+console.log(name, age); // denu 25
 ```
 
-### **Uso de getters y setters**
+Esto no ahorra tener que crear dos variables distintas en dos lineas distintas y asignarlas de manera independiente. 
+
+<a id="var8-3"></a>
+
+### **¿Cómo se diferencia un Spread Operator de un Rest Operator?** :yellow-heart:
+
+[Volver al indice](#alg-base-2)
+
+El Spread Operator (...) y el Rest Operator (...) tienen la misma sintaxis, pero se usan en contextos diferentes y tienen propósitos distintos. Aquí te explico sus diferencias y cómo se usan:
+
+**Spread Operator**
+
+- Propósito: Se utiliza para "expandir" o desempaquetar elementos de un objeto o arreglo en otro objeto o arreglo.
+- Contexto de uso: Generalmente se usa en situaciones donde necesitas copiar o combinar elementos de un arreglo o propiedades de un objeto.
 
 ```jsx
-class Book {
-  constructor(author) {
-    this._author = author;
-  }
-  // getter
-  get writer(){
-    return this._author;
-  }
-  // setter
-  set writer(updatedAuthor){
-    this._author = updatedAuthor;
-  }
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1, 4, 5];
+console.log(arr2); // [1, 2, 3, 4, 5]
+```
+
+Aquí, el Spread Operator se usa para desempaquetar todos los elementos de arr1 y luego agregar los nuevos elementos 4 y 5 en el arreglo arr2.
+
+```jsx
+const obj1 = { a: 1, b: 2 };
+const obj2 = { ...obj1, c: 3 };
+console.log(obj2); // { a: 1, b: 2, c: 3 }
+```
+
+El Spread Operator se usa para copiar todas las propiedades de obj1 y agregar una nueva propiedad c en obj2.
+
+**Rest Operator**
+
+- Propósito: Se usa para agrupar o recoger varios elementos (en un arreglo o un objeto) en una sola variable, generalmente en una función o al desestructurar un arreglo u objeto.
+- Contexto de uso: Se usa cuando quieres capturar múltiples elementos o propiedades y almacenarlos en un solo arreglo u objeto.
+
+Ejemplo, recibir indefinida cantidad de parametros en una funcion
+
+```jsx
+function sum(...numbers) {
+    return numbers.reduce((a, b) => a + b, 0);
 }
-const lol = new Book('anonymous');
-console.log(lol.writer);  // anonymous
-lol.writer = 'wut';
-console.log(lol.writer);  // wut
+console.log(sum(1, 2, 3, 4)); // 10
 ```
+
+Y para destructurar un array
+
+```jsx
+const arr = [1, 2, 3, 4];
+const [first, second, ...rest] = arr;
+console.log(first); // 1
+console.log(second); // 2
+console.log(rest); // [3, 4]
+```
+
+**Resumen de Diferencias:**
+
+| **Aspecto**            | **Spread Operator (`...`)**                                      | **Rest Operator (`...`)**                                             |
+|------------------------|------------------------------------------------------------------|-----------------------------------------------------------------------|
+| **Propósito**           | Expande un arreglo o un objeto en elementos individuales.        | Recoge elementos en un arreglo o un objeto.                           |
+| **Contexto de uso**     | Al crear nuevos arreglos u objetos, o al pasar elementos.       | Al desestructurar datos o en funciones para agrupar argumentos.       |
+| **Uso en arreglos**     | Copiar, combinar o expandir elementos de un arreglo.             | Recoger el resto de los elementos que no se han asignado.            |
+| **Uso en objetos**      | Copiar, combinar o expandir propiedades de un objeto.            | Recoger el resto de las propiedades no desestructuradas.             |
+| **Ejemplo en arreglos** | `const arr2 = [...arr1, 4, 5];`                                  | `const [first, ...rest] = arr;`                                       |
+| **Ejemplo en objetos**  | `const obj2 = {...obj1, c: 3};`                                  | `const { name, ...rest } = obj;`                                      |
+
+Ambos usan la misma sintaxis (`...`), pero el **contexto** es lo que determina si se trata de un **Spread** o un **Rest**.
 
 <a id="var10"></a>
 
@@ -6548,6 +6624,134 @@ Metodologías de priorización:
 - Kano Model: Identificar cuáles generan mayor satisfacción en los usuarios.
 - Colaboración y negociación: Los equipos deben trabajar junto con los stakeholders para balancear los NFRs con los requisitos funcionales, asegurando que no haya conflictos en las prioridades.
 
+<a id="cic67"></a>
+
+### **Imagina que un cliente te dice que la aplicación es lenta y quiere que la aceleres, pero no te da más detalles. ¿Cómo manejarías esta situación?** :yellow-heart:
+
+[Volver al indice](#cic-base-2)
+
+**Entender el Problema**
+
+Lo primero es obtener más información para comprender bien el contexto del problema. Preguntaría cosas como:
+
+- ¿Cuáles son las áreas específicas de la aplicación que están lentas (carga inicial, navegación, interacciones específicas)?
+- ¿Es lento en todas las plataformas (móvil, escritorio) o solo en una?
+- ¿En qué condiciones o momentos de uso notas la lentitud (por ejemplo, al iniciar sesión, al cargar ciertos datos, en ciertas operaciones)?
+- ¿Estás observando una disminución del rendimiento con el tiempo, o es algo que ocurre de manera constante?
+
+Con estos detalles, puedo comenzar a identificar patrones y áreas específicas que necesitan ser mejoradas.
+
+**Reproducir el Problema**
+
+Es importante intentar reproducir la lentitud en mi entorno de desarrollo para ver si se puede identificar el origen del problema. Para esto, podría usar herramientas de monitoreo y registro (logs) en tiempo real para detectar cualquier irregularidad. 
+
+**Diagnóstico**
+
+Realizar un análisis exhaustivo del rendimiento es clave. Usaría herramientas como:
+
+- Herramientas de desarrollo del navegador (Chrome DevTools, Firefox Developer Tools): Para analizar el tiempo de carga, uso de recursos (CPU, memoria), red (requests/responses), y detectar posibles cuellos de botella.
+- Lighthouse: Para realizar auditorías automáticas y obtener una visión general del rendimiento, accesibilidad, y mejores prácticas.
+- Monitoring Tools: Si es una aplicación ya en producción, usar herramientas como New Relic, Datadog, o Sentry puede proporcionar métricas de rendimiento a nivel de servidor, base de datos y frontend.
+
+**Identificar Posibles Causas Comunes**
+
+Algunas áreas que podrían estar contribuyendo a la lentitud incluyen:
+
+- Tiempo de carga inicial: Si el tiempo de carga es lento, podría ser por un exceso de archivos JavaScript o CSS pesados, imágenes no optimizadas, o mala gestión de cachés.
+- Problemas con la red o el backend: Consultar con el equipo de backend para verificar la velocidad de las API y la base de datos.
+- JavaScript ineficiente: Revisar si hay scripts largos, sincrónicos o mal estructurados que bloqueen el hilo principal.
+- Problemas de renderizado en el frontend: Si se trata de una aplicación de React, Angular, o similar, revisar la optimización de la renderización, evitar re-renderizados innecesarios, y utilizar técnicas como "memoization", lazy loading y virtualización.
+
+**Optimización**
+
+Una vez identificado el problema, podría proceder con soluciones como:
+
+- Optimización de imágenes y recursos estáticos: Comprimir imágenes, usar formatos modernos (como WebP), y asegurarse de que los archivos CSS y JS estén minimizados y combinados.
+- Lazy loading y code splitting: Cargar solo los módulos y componentes necesarios en cada página, para evitar que la aplicación cargue más de lo necesario al principio.
+- Optimización del backend: Si el problema está en la interacción con el backend, podría optimizar las consultas a la base de datos o implementar cachés.
+- Mejorar el rendimiento en la renderización de la UI: En aplicaciones React o Angular, revisar la lógica de renderizado y usar técnicas como memoización, debouncing, o use of virtual DOM optimizations.
+
+**Pruebas de Rendimiento**
+
+Después de realizar las optimizaciones, es importante medir de nuevo el rendimiento para asegurarse de que el problema haya sido resuelto y si la aplicación responde de manera más eficiente.
+
+En resumen, manejaría esta situación con un enfoque metódico: primero recolectando información, luego diagnosticando la causa, optimizando el sistema según sea necesario, y asegurando que la mejora sea efectiva antes de comunicar los resultados al cliente.
+
+<a id="cic68"></a>
+
+### **¿Cuáles son los posibles riesgos de adoptar una nueva tecnología en el proyecto? ¿Cómo mitigarlos?** 
+
+[Volver al indice](#cic-base-2)
+
+En mi experiencia tuve que enfrentar una migracion de una aplicacion muy antigua de AngularJS a Angular. Algunos de los desafios que enfrente fueron los siguientes:
+
+- Hacerle entender al cliente que el cambio era necesario: Se estaban planificando cambios a futuro que incluian el uso de librerias de componentes que no eran compatibles con AngularJS pero si con las nuevas versiones de Angular, por lo que era necesario migrar la aplicacion para no reinventar lo ya hecho.
+- Capacitacion del equipo: El equipo no tenia experiencia con Angular, por lo que fue necesario capacitarlos en la nueva tecnologia. Que todo el equipo entendiera la diferencia entre ambos, aunque su mismo nombre (o similar) pueda llevar a confusiones.
+- Riesgo de retrasos en el proyecto: La migracion de una aplicacion de AngularJS a Angular no es un proceso sencillo y puede llevar mas tiempo del esperado. Por lo que fue necesario planificar bien los tiempos y recursos necesarios para llevar a cabo la migracion.
+- Riesgo de errores y bugs: Al migrar una aplicacion a una nueva tecnologia es probable que aparezcan errores y bugs que no se habian detectado antes. Por lo que fue necesario realizar pruebas exhaustivas para asegurarse de que todo funcionaba correctamente.
+- Riesgo de Integración con Sistemas Existentes: La aplicacion tenia integraciones con otros sistemas que no habian sido probadas con AngularJS, por lo que fue necesario realizar pruebas de integracion para asegurarse de que todo funcionaba correctamente.
+
+En resumen, los riesgos de adoptar una nueva tecnología pueden gestionarse a través de una planificación cuidadosa, pruebas exhaustivas, capacitación continua, y una gestión adecuada de recursos y expectativas. La mitigación de estos riesgos no solo depende de un análisis exhaustivo antes de tomar la decisión, sino también de una gestión activa durante todo el ciclo de vida del proyecto.
+
+<a id="cic69"></a>
+
+### **Algunos miembros de tu equipo no pueden ponerse de acuerdo sobre una solución. Discuten y no pueden tomar una decisión. ¿Cómo resolverías esta situación conflictiva?** 
+
+[Volver al indice](#cic-base-2)
+
+Cuando los miembros del equipo no pueden ponerse de acuerdo sobre una solución y la discusión se estanca, es importante intervenir de manera constructiva para resolver el conflicto de manera efectiva. Aquí tienes algunos pasos que seguiría para manejar la situación:
+
+### 1. **Escuchar a Todas las Partes:**
+   - **Descripción:** Primero, es esencial dar a cada miembro del equipo la oportunidad de exponer su perspectiva y razones para apoyar su enfoque. Escuchar activamente, sin interrumpir, puede ayudar a comprender mejor las diferentes posiciones y los argumentos detrás de cada propuesta.
+   - **Acción:** Organiza una reunión donde cada miembro pueda explicar su propuesta, sin juicios previos. Esto también permite que las emociones y frustraciones se expresen, lo cual es importante para desactivar tensiones.
+
+### 2. **Identificar los Puntos en Común:**
+   - **Descripción:** Aunque el equipo no esté de acuerdo en la solución, probablemente haya puntos comunes o metas compartidas. Es crucial enfocarse en lo que une al equipo, no en lo que los separa.
+   - **Acción:** Facilita una discusión en la que se resalten los objetivos comunes del equipo (por ejemplo, la necesidad de una solución escalable, fácil de mantener o eficiente). Esto ayuda a encaminar el diálogo hacia un terreno más colaborativo.
+
+### 3. **Fomentar un Debate Constructivo:**
+   - **Descripción:** En lugar de centrarse en que cada miembro “gane” la discusión, enfócate en fomentar un debate productivo que permita al equipo evaluar las ventajas y desventajas de cada opción. Es importante que las críticas sean constructivas y no personales.
+   - **Acción:** Utiliza preguntas abiertas para guiar el debate: “¿Cuáles son las ventajas de esta propuesta frente a la otra?”, “¿Qué riesgos implica esta solución?”, “¿Cómo podemos combinar elementos de ambas propuestas para obtener lo mejor de cada una?”
+
+### 4. **Establecer Criterios Objetivos para la Decisión:**
+   - **Descripción:** A veces el conflicto surge porque no hay un marco claro para tomar decisiones. Establecer criterios objetivos puede ayudar a enfocar la discusión hacia una solución lógica, en lugar de emocional o subjetiva.
+   - **Acción:** Define criterios claros de evaluación para tomar la decisión, como el costo, el tiempo de implementación, la complejidad técnica, la escalabilidad, etc. Esto convierte la decisión en un análisis objetivo basado en las necesidades del proyecto.
+
+### 5. **Buscar un Compromiso o Solución Intermedia:**
+   - **Descripción:** Si las propuestas son mutuamente excluyentes, buscar un compromiso o una solución híbrida puede ser una forma de resolver el conflicto sin perder el valor de las ideas de cada miembro del equipo.
+   - **Acción:** Propón integrar los mejores aspectos de ambas soluciones. Por ejemplo, si una propuesta es más simple pero menos escalable, y la otra es más compleja pero más robusta, ¿pueden fusionarse elementos de ambas para obtener lo mejor de cada una?
+
+### 6. **Tomar una Decisión de Forma Democrática o por Consenso:**
+   - **Descripción:** Si después de la discusión el equipo sigue sin llegar a un acuerdo, una forma de avanzar es tomar una decisión de forma democrática, donde se vote sobre las opciones disponibles.
+   - **Acción:** Si es apropiado, organiza una votación con opciones claras. Si la opción ganadora no es la preferida por todos, se puede acordar un plan para monitorear su implementación y estar dispuestos a realizar ajustes si es necesario.
+
+### 7. **Asignar a un Decisor Final (si es necesario):**
+   - **Descripción:** Si el conflicto persiste y es necesario tomar una decisión rápida para avanzar, puede ser útil que un líder o un responsable del proyecto tome la decisión final. Sin embargo, esto debe hacerse con sensibilidad y considerando que el equipo pueda sentir que su opinión ha sido valorada, incluso si no se les da la última palabra.
+   - **Acción:** Como líder o facilitador, podrías tomar la decisión final después de haber escuchado a todos los miembros y evaluado los pros y contras. Asegúrate de comunicar de manera clara cómo se llegó a esa decisión y cómo se tomaron en cuenta las diferentes perspectivas.
+
+### 8. **Fomentar la Colaboración a Largo Plazo:**
+   - **Descripción:** Los conflictos en equipos no solo se resuelven con una sola decisión, sino con una cultura de trabajo colaborativa y de respeto mutuo. Asegurarte de que el equipo se enfoque en la cooperación y el trabajo en equipo evitará futuros conflictos.
+   - **Acción:** Después de resolver la situación, es importante reflexionar con el equipo sobre cómo pueden mejorar la comunicación y la colaboración a futuro. Pueden establecerse normas de trabajo en equipo que fomenten la escucha activa, el respeto y la búsqueda de consenso.
+
+### 9. **Revisar el Proceso Después de la Implementación:**
+   - **Descripción:** Después de tomar una decisión y ponerla en marcha, realiza un seguimiento para asegurarte de que la solución elegida está funcionando bien. Si surge algún problema, es importante estar dispuesto a ajustar el enfoque.
+   - **Acción:** Planifica reuniones periódicas de retroalimentación para evaluar cómo la solución está funcionando en la práctica y si se necesitan cambios o mejoras.
+
+---
+
+### Resumen del Enfoque:
+1. **Escuchar a todas las partes** para entender sus puntos de vista.
+2. **Buscar puntos en común** y centrar la discusión en los objetivos del proyecto.
+3. Fomentar un **debate constructivo** basado en datos y hechos.
+4. Establecer **criterios objetivos** para tomar decisiones.
+5. Buscar **compromisos** o soluciones híbridas si es posible.
+6. Si es necesario, tomar una decisión **democrática** o **por consenso**.
+7. **Asumir la responsabilidad** de tomar una decisión final si no hay acuerdo.
+8. Fomentar la **colaboración y el respeto** en el equipo a largo plazo.
+9. **Monitorear la implementación** para realizar ajustes si es necesario.
+
+Este enfoque puede ayudar a resolver el conflicto de manera justa y equilibrada, promoviendo la unidad del equipo y asegurando que se tomen decisiones informadas y orientadas al éxito del proyecto.
+
 ---
 
 <a id="typ"></a>
@@ -7577,6 +7781,31 @@ Al ser una libreria, se puede usar directamente en un HTML (aunque no es la mane
 
 Tambien se puede trabajar del lado del servidor con Node, aplicaciones mobile con React Native y de escritorio con Electron. Todo con el mismo tipo de codigo.
 
+<a id="rea47-2"></a>
+
+### **Libreria vs Framework**
+
+[Volver al indice](#rea-base)
+
+- **Libreria:** Es un conjunto de funciones que se pueden usar en un proyecto. El programador decide cuando y como usarla, es mucho mas flexible. Ejemplo: React, Redux, Lodash.
+- **Framework:** Es un conjunto de reglas y estructuras que se deben seguir para desarrollar un proyecto. El framework decide cuando y como usarlo. Ejemplo: Angular, Vue, Django.
+
+Es por eso que cuando vemos un proyecto hecho con React, y luego otro tambien hecho con React, su estructura puede ser completamente distinta. En cambio, cuando vemos proyectos Angular, podemos encontrar la misma estructura base en todos. 
+
+<a id="rea49"></a>
+
+### **Para que es el comando React eject?**
+
+[Volver al indice](#rea-base)
+
+El comando `eject` de React es una forma de sacar toda la configuración de Webpack y Babel que React trae por defecto, para poder modificarla a gusto. Es una forma de tener control total sobre la configuración de la aplicación.
+
+```jsx
+npx create-react-app my-app
+cd my-app
+npm run eject
+```
+
 <a id="rea48"></a>
 
 ### **¿De qué hablamos cuando hablamos de una SPA (Single Page App)?**
@@ -7587,23 +7816,10 @@ Una SPA (Single Page Application) son apps web que simulan ser una única págin
 
 Las únicas recargas, o pantallas de carga, son cuando se está trayendo información del servidor. No se recarga toda la página, aun así, solo ciertas partes, dando a una experiencia mucho más fluida.
 
-Este tipo de apps SPA interactúan con dos servicios, REST y Serverless (Firebase es un ejemplo, donde únicamente consumimos su servicio), los cuales descentralizan la lógica de la app de la interfaz gráfica.
-
 En resumen:
 
 - Se evita la constante recarga entera de la página
 - La página no se satura ni realiza peticiones constantes al servidor. Únicamente se pide lo necesario.
-- No nos interesa el backend, únicamente lo que recibimos de él.
-
-<a id="rea49"></a>
-
-### **Para que es el comando React eject?**
-
-[Volver al indice](#rea-base)
-
-`create-react-app` encapsula todos los modulos npm para usar internamente asi el package.json queda bastante limpio. Eject lo que hace es deshacer este encapsulamiento y pasar a mostrar todo lo que esta instalado. 
-
-Es para cuando necesitamos hacer cosas mas complejas o para instalar modulos que puedan interactuar con modulos ya instalados. 
 
 <a id="rea50"></a>
 
