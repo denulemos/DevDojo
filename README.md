@@ -50,9 +50,9 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [Funcion .sort()](#alg28) |
 |[¿Cómo funcionan los arrays en JavaScript internamente?](#alg282)|
 | [Especificando la clase de contenido de un ArrayList](#alg16) |
-| [Creación de un ArrayList](#alg17) |
-|¿Cuál es la diferencia entre un ArrayList y un array tradicional en Java?|
-|¿Cómo afecta la capacidad de crecimiento dinámico un ArrayList a su rendimiento?|
+| [Creación de un ArrayList en Java](#alg17) |
+|[¿Cuál es la diferencia entre un ArrayList y un array tradicional en Java?](#alg17-2)|
+|[¿Cómo afecta la capacidad de crecimiento dinámico un ArrayList a su rendimiento?](#alg17-3)|
 | [Agregar un elemento a un ArrayList](#alg18) |
 | [Obtener el elemento n de un ArrayList](#alg19) |
 | [Extraer el elemento n de un ArrayList](#alg20) |
@@ -89,9 +89,9 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [¿A qué nos referimos cuando hablamos de tipos de datos?](#var3) |
 | [¿Cómo se declara una variable?](#var4) |
 | [Nombres de Variables](#var5) |
-| [Diferencia entre let, var y const](#var6) |
+| [Diferencia entre let, var y const](#var6) :yellow-heart: |
 | [¿Qué son las variables no declaradas y no definidas?](#var19) |
-|¿Qué es la tipificación estática y dinámica?|
+|[¿Qué es la tipificación estática y dinámica?](#var19-2)|
 
 | Pilas y Colas |
 |----------|
@@ -127,13 +127,13 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [Variable Hoisting](#var24) |
 | [Diferencia entre class y function](#var25) |
 | [Que es el Function Factory?](#var20) |
-| [Que es el Currying?](#var23) |
+| [Que es el Currying?](#var23)  :yellow-heart: |
 |¿Qué es el polimorfismo en programación orientada a objetos?|
 | ¿Qué son las funciones puras y cómo se relacionan con la programación funcional?|
 
 | Manejo de Eventos y Asincronía |
 |----------|
-| [Para que sirve event.preventDefault()?](#var7) |
+| [Para que sirve event.preventDefault()?](#var7) :yellow-heart: |
 | [Event delegation](#var11) |
 | [Bubble vs Capture](#var15) |
 | [Callback Hell](#var12) |
@@ -2998,7 +2998,7 @@ ArrayList<Object> coleccion = new ArrayList<>();
 
 <a id="alg17"></a>
 
-### **Creación de un ArrayList**
+### **Creación de un ArrayList en Java**
 
 [Volver al indice](#alg-base)
 
@@ -3037,6 +3037,22 @@ Tampoco deberemos crear una nueva clase para generar colecciones de Strings, por
 ```java
 ArrayList<String> palabras = new ArrayList<>();
 ```
+
+<a id="alg17-2"></a>
+
+### **¿Cuál es la diferencia entre un ArrayList y un array tradicional en Java?**
+
+[Volver al indice](#alg-base)
+
+Un array tradicional en Java es una estructura de datos fija que almacena un conjunto de elementos del mismo tipo. Una vez que se crea un array, su tamaño no puede cambiar. Por otro lado, un ArrayList en Java es una implementación de la interfaz List que proporciona una colección dinámica de elementos. A diferencia de un array tradicional, un ArrayList puede cambiar de tamaño dinámicamente, lo que significa que puede crecer o reducirse según sea necesario.
+
+<a id="alg17-3"></a>
+
+### **¿Cómo afecta la capacidad de crecimiento dinámico un ArrayList a su rendimiento?**
+
+[Volver al indice](#alg-base)
+
+El crecimiento dinámico de un ArrayList en Java puede afectar su rendimiento en ciertas situaciones. Cuando un ArrayList crece más allá de su capacidad actual, necesita aumentar su tamaño interno para acomodar más elementos. Esto implica la creación de un nuevo array interno con una capacidad mayor y la copia de todos los elementos existentes al nuevo array. Este proceso de redimensionamiento puede ser costoso en términos de tiempo y recursos, especialmente si el ArrayList contiene una gran cantidad de elementos.
 
 <a id="alg18"></a>
 
@@ -4377,13 +4393,15 @@ Algunas reglas no escritas, pero que se han asumido *por convención* son:
 
 <a id="var6"></a>
 
-### **Diferencia entre let, var y const**
+### **Diferencia entre let, var y const** :yellow-heart:
 
 [Volver al indice](#alg-base)
 
 La diferencia es el alcance de cada uno.
 
-let es una constante. var es una variable normal.
+- **var:** Es la manera de declarar variables en ES5. Es global o local en una funcion.
+- **let:** Es la manera de declarar variables en ES6. Es local en un bloque.
+- **const:** Es la manera de declarar constantes en ES6. Es local en un bloque.
 
 ```jsx
 
@@ -4414,8 +4432,8 @@ Cuando declaras una variable con **var,** es declarada de manera global, o local
 
 En cambio con **let,** sí declaro la funcion dentro de un block, statement o expresion, se va a declarar solo dentro de estas y no globalmente.
 
-- No puede ser Re declarado pero si modificado.
-- Puede ser declarada sin ser inicializada, no se inicializa solo. 
+- No puede ser re-declarado pero si modificado.
+- Puede ser declarada sin ser inicializada, se inicializa con undefined por defecto.
 - Funciona a nivel bloque.
 
 ```jsx
@@ -4423,10 +4441,8 @@ var numArray = [];
 for (var i = 0; i < 3; i++) {
   numArray.push(i);
 }
-console.log(numArray);
-// returns [0, 1, 2]
-console.log(i);
-// returns 3
+console.log(numArray); // [0, 1, 2]
+console.log(i); // 3
 
 'use strict';
 let printNumTwo;
@@ -4437,10 +4453,8 @@ for (let i = 0; i < 3; i++) {
     };
   }
 }
-console.log(printNumTwo());
-// returns 2
-console.log(i);
-// returns "i is not defined"
+console.log(printNumTwo()); // 2
+console.log(i); // i no esta definido
 ```
 
 También se puede declarar usando la palabra **const**, que es una constante. Se declara y no puede ser cambiada en su valor, solo sirve de lectura.
@@ -4448,24 +4462,56 @@ También se puede declarar usando la palabra **const**, que es una constante. Se
 ```jsx
 "use strict"
 const FAV_PET = "Cats";
-FAV_PET = "Dogs"; // returns error
+FAV_PET = "Dogs"; // error: Assignment to constant variable.
 ```
 
-Se recomienda poner el nombre de las constantes en mayúscula, pose las mismas caracteristicas que el let
+Se recomienda poner el nombre de las constantes en mayúscula.
 
 ```jsx
 "use strict";
 const s = [5, 6, 7];
-s = [1, 2, 3]; // throws error, trying to assign a const
-s[2] = 45; // works just as it would with an array declared with var or let
-console.log(s); // returns [5, 6, 45]
+s = [1, 2, 3]; // error asignando a una constante
+s[2] = 45; // funciona
+console.log(s); //  [5, 6, 45]
 ```
 
 Los array sí pueden ser modificados en sí mismos, lo que no se puede es apuntar a otro array distinto.
 
+```jsx
+const s = [5, 7, 2];
+function editInPlace() {
+  "use strict";
+  // s = [2, 5, 7]; // error asignando a una constante
+  s[0] = 2;
+  s[1] = 5;
+  s[2] = 7;
+}
+editInPlace();
+```
+
+<a id="var19"></a>
+
+### **¿Qué son las variables no declaradas y no definidas?**
+
+[Volver al indice](#alg-base)
+
+**Variables no declaradas**: son las que no existen en un programa, y no se declaran. Si el programa trata de leer su valor entonces va a arrojar un error.
+
+**Variables no definidas**: son aquellas declaradas en el programa, pero no tienen asignado ningún valor. Si el programa quiere leer el valor de  variable no definida, se devuelve un valor no definido.
+
+<a id="var19-2"></a>
+
+### **¿Qué es la tipificación estática y dinámica?**
+
+[Volver al indice](#alg-base)
+
+**Tipificación estática**: es un tipo de sistema de tipado en el que las variables están asociadas a un tipo de dato en tiempo de compilación. Esto significa que el tipo de dato de una variable se conoce en tiempo de compilación y no puede cambiar durante la ejecución del programa.
+
+**Tipificación dinámica**: es un tipo de sistema de tipado en el que las variables están asociadas a un tipo de dato en tiempo de ejecución. Esto significa que el tipo de dato de una variable se conoce en tiempo de ejecución y puede cambiar durante la ejecución del programa.
+
 <a id="var7"></a>
 
-### **Para que sirve event.preventDefault()?**
+### **Para que sirve event.preventDefault()?** :yellow-heart:
 
 [Volver al indice](#alg-base)
 
@@ -4900,16 +4946,6 @@ import add from "math_functions";
 add(5,4); //Devuelve el resultado de acuerdo al metodo exportado anteriormente
 ```
 
-<a id="var19"></a>
-
-### **¿Qué son las variables no declaradas y no definidas?**
-
-[Volver al indice](#alg-base)
-
-**Variables no declaradas**: son las que no existen en un programa, y no se declaran. Si el programa trata de leer su valor entonces va a arrojar un error.
-
-**Variables no definidas**: son aquellas declaradas en el programa, pero no tienen asignado ningún valor. Si el programa quiere leer el valor de  variable no definida, se devuelve un valor no definido.
-
 <a id="var20"></a>
 
 ### **Que es el Function Factory?**
@@ -5065,105 +5101,21 @@ const doAsyncStuff = (numero1, numero2, callback){
 
 <a id="var23"></a>
 
-### **Que es el Currying?**
+### **Que es el Currying?** :yellow-heart:
 
 [Volver al indice](#alg-base)
 
-Es una tecnica que nos permite invocar una funcion con menos parametros de los que esperaria inciialmente, dejando para despues la especificacion de estos parametros que no llegaron. Permite ejecutar especializacion y composicion.
+Es una técnica de programación funcional que consiste en transformar una función que recibe múltiples argumentos en una secuencia de funciones que reciben un solo argumento.
 
 ```jsx
-function multiplicar(a) {
-
-    return function (b) {
-        return function (c)  {
-            return a * b * c
-        }
+function add(x) {
+  return function(y) {
+    return function(z) {
+      return x + y + z;
     }
-}
-let mc1 = multiplicar(1);
-let mc2 = mc1(2);
-let res = mc2(3);
-console.log(res);
-
-let res2 = multiplicar(1)(2)(3);
-console.log(res2);
-
----
-
-// Función de suma de dos números
-function sum(x, y) {
-    return x + y;
-}
-
-// Función curry para sumar dos números
-function currySum(x) {
-    // Devolvemos una función que espera el segundo argumento (y) y devuelve la suma de x e y
-    return function(y) {
-        return x + y;
-    };
-}
-
-// Uso de la función currySum para sumar dos números
-const curriedSum = currySum(5); // Creamos una nueva función que suma 5 a un número dado
-
-// Ahora podemos usar curriedSum para sumar 5 a diferentes números
-console.log(curriedSum(3)); // Output: 8
-console.log(curriedSum(7)); // Output: 12
-
-// Otra forma de implementar currying en JavaScript es utilizando funciones de flecha
-const arrowCurrySum = x => y => x + y;
-
-// Uso de la función arrowCurrySum para sumar dos números
-const arrowCurriedSum = arrowCurrySum(5); // Creamos una nueva función que suma 5 a un número dado
-
-// Ahora podemos usar arrowCurriedSum para sumar 5 a diferentes números
-console.log(arrowCurriedSum(3)); // Output: 8
-console.log(arrowCurriedSum(7)); // Output: 12
-
-```
-
-Por ejemplo, tenemos la siguiente funcion:
-
-```jsx
-const multiply = (a, b) => a * b;
-```
-
-Y si queremos reescribirla con este metodo, quedaria algo asi
-
-```jsx
-const curriedMultiply = a => b => a * b;
-
-// Seria algo asi por atrás
-
-const curriedMultiply = function(a) {
-  return function(b) {
-    return a * b;
   }
 }
-
-// Y asi podemos invocar a la funcion asi
-curriedMultiply(2)(3)
-```
-
-Podemos tambien ejemplificarlo con errores de consola, por ejemplo, tenemos esta función que escribe mensajes en logs
-
-```jsx
-function log(level, date, message) {
-  console.log(`[${level}]: ${date} - ${message}`);
-}
-log('critical', new Date(), 'Some message');
-```
-
-Si lo currificamos, se puede tener una mini aplicacion que logee los mensajes “criticos”
-
-```jsx
-function curriedLog = level => date => message => {
-  console.log(`[${level}]: ${date} - ${message}`);
-}
-
-const logCritical = curriedLog('critical');
-
-logCritical(new Date())('Some message'); // Podemos usarla para loggear mensajes criticos
+add(10)(20)(30); // 60
 ```
 
 <a id="var24"></a>
