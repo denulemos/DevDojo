@@ -8,6 +8,8 @@
 
 Preguntas sin link de referencia con preguntas que proximamente seran respondidas, pero que igualmente son sugeridas.
 
+Preguntas con :yellow-heart: son preguntas de entrevista (Rol Frontend)
+
 <a name="alg-base"></a>
 
 ## [Algoritmos y manejo de datos](#alg)
