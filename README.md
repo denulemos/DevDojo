@@ -121,10 +121,10 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 |----------|
 | [Funciones en Javascript](#var27) |
 | [¿Qué es una funcion Declarativa y una Expresiva?](#var35) |
-| [Prototypes y Herencia Prototype (Prototype Inheritance)](#var26) |
+| [Prototypes y Herencia Prototype (Prototype Inheritance)](#var26) :yellow-heart:|
 | [Creacion de Constructores](#var28) |
 | [Diferencia entre primitivo y objeto](#var14) |
-| [Variable Hoisting](#var24) |
+| [Variable Hoisting](#var24) :yellow-heart: |
 | [Diferencia entre class y function](#var25) |
 | [Que es el Function Factory?](#var20) |
 | [Que es el Currying?](#var23)  :yellow-heart: |
@@ -168,11 +168,11 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 
 | Estructuras Avanzadas y Generics |
 |----------|
-| [Generics](#alg35) |
+| [Generics en Java](#alg35) |
 |[Estructuras de Datos](#alg36) |
 | [Recursividad](#alg52) |
 | [Factorial](#alg53) |
-| ¿Qué son los generics y cómo se implementan en TypeScript?|
+| [¿Qué son los generics y cómo se implementan en TypeScript?](#alg53-2) :yellow-heart:|
 
 | Buenas Prácticas y Casos Comunes |
 |----------|
@@ -260,7 +260,7 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 |[Imagina que un cliente te dice que la aplicación es lenta y quiere que la aceleres, pero no te da más detalles. ¿Cómo manejarías esta situación?](#cic67) :yellow-heart:|
 |[¿Cuáles son los posibles riesgos de adoptar una nueva tecnología en el proyecto? ¿Cómo mitigarlos?](#cic68)|
 |[Algunos miembros de tu equipo no pueden ponerse de acuerdo sobre una solución. Discuten y no pueden tomar una decisión. ¿Cómo resolverías esta situación conflictiva?](#cic69)|
-|¿Cómo motivas a tu equipo y qué enfoques conoces? ¿Existe algún motivador universal para todos?|
+|[¿Cómo motivas a tu equipo y qué enfoques conoces? ¿Existe algún motivador universal para todos?](#cic70)|
 |¿Cómo delegas tareas en tu equipo y cómo varía tu enfoque dependiendo de la antigüedad del miembro del equipo?|
 |¿Cómo realizas las revisiones de código en tus proyectos? ¿Qué verificas y cómo sabes que el código está listo para ser fusionado?|
 |¿Podrías nombrar algunos "code smells" (indicadores de problemas en el código)?|
@@ -315,6 +315,7 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [Cómo hago que las props de una interface sean opcionales?](#typ14) |
 | [Herencia en Typescript](#typ15) |
 | [Interfaces en Typescript](#typ16) |
+|[Cual es la diferencia entre el uso de types e interfaces?](#typ17) :yellow-heart:|
 |¿Qué son los tipos Union e Intersection y cuándo se utilizan?|
 |¿Qué son los Utility Types como Partial, Pick, y Omit, y en qué casos son útiles?|
 |¿Cómo funcionan los Mapped Types y cómo se aplican en proyectos complejos?|
@@ -3712,7 +3713,7 @@ Se puede reconocer cuando un nodo es el primero ya que su link anterior es Nulo,
 
 <a id="alg34"></a>
 
-### ¿Cual es la diferencia entre un Linked List y un Doubly Linked List?
+### **¿Cual es la diferencia entre un Linked List y un Doubly Linked List?**
 
 [Volver al indice](#alg-base)
 
@@ -3720,7 +3721,7 @@ Un Linked List es una estructura de datos que almacena elementos de forma no con
 
 <a id="alg35"></a>
 
-### Generics
+### **Generics en Java**
 
 [Volver al indice](#alg-base)
 
@@ -3740,7 +3741,7 @@ Los ArrayList reconocen el tipo de dato que evaluan <String> / <Integer> por los
 
 <a id="alg36"></a>
 
-### Estructuras de Datos
+### **Estructuras de Datos**
 
 [Volver al indice](#alg-base)
 
@@ -4074,7 +4075,7 @@ TODOS los algoritmos recursivos tienen una alternativa iterativa. Su complejidad
 
 <a id="alg53"></a>
 
-### Factorial
+### **Factorial**
 
 [Volver al indice](#alg-base)
 
@@ -4095,8 +4096,28 @@ function factorial(n) {
 
 // Ejemplo de uso
 console.log(factorial(5)); // Output: 120
-
 ```
+
+<a id="alg53-2"></a>
+
+### **¿Qué son los generics y cómo se implementan en TypeScript?** :yellow-heart:
+
+[Volver al indice](#alg-base)
+
+Los generics son una característica de TypeScript que permite crear componentes, funciones y clases que pueden trabajar con una variedad de tipos de datos. Los generics permiten escribir código que es reutilizable y flexible, ya que no está limitado a un solo tipo de datos.
+
+Para definir un tipo genérico en TypeScript, se utiliza la sintaxis de ángulos (<>) para especificar un tipo de parámetro genérico. Por ejemplo, la siguiente función toma un argumento de tipo genérico T y devuelve un array de ese tipo:
+
+```typescript
+function makeArray<T>(value: T): T[] {
+    return [value];
+}
+
+const array1 = makeArray<number>(1); // array1 es de tipo number[]
+const array2 = makeArray<string>('hello'); // array2 es de tipo string[]
+```
+
+Es ideal para reemplazar el uso de any. Por ejemplo, si se usa any, se pierde la información del tipo de datos que se está utilizando, lo que puede llevar a errores en tiempo de ejecución. Con generics, se puede especificar el tipo de datos que se espera y TypeScript se encargará de verificar que se cumpla en tiempo de compilación.
 
 <a id="alg54"></a>
 
@@ -5120,7 +5141,7 @@ add(10)(20)(30); // 60
 
 <a id="var24"></a>
 
-### **Variable Hoisting**
+### **Variable Hoisting** :yellow-heart:
 
 [Volver al indice](#alg-base)
 
@@ -5137,7 +5158,7 @@ var saludar;
     saludar = "dice hola"
 ```
 
-Es el usar las variables antes de que sean declaradas.
+Es el usar las variables antes de que sean declaradas. 
 
 <a id="var25"></a>
 
@@ -5182,7 +5203,7 @@ console.assert( typeof  C === 'function' );
 
 <a id="var26"></a>
 
-### **Prototypes y Herencia Prototype (Prototype Inheritance)**
+### **Prototypes y Herencia Prototype (Prototype Inheritance)** :yellow-heart:
 
 [Volver al indice](#alg-base)
 
@@ -5251,6 +5272,7 @@ Person.prototype.name = function() {
 [Volver al indice](#alg-base)
 
 En javascript aveces no necesitamos nombrar nuestras funciones, especialmente cuando pasamos una funcion como argumento a otra funcion. Para eso las **funciones inline**, no les ponemos nombre a las funciones porque no vamos a necesitarlas en ningún otro lado.
+
 ```jsx
 const myFunc = function() {
   const myVar = "value";
@@ -6706,6 +6728,35 @@ Cuando los miembros del equipo no pueden ponerse de acuerdo sobre una solución 
 
 Este enfoque puede ayudar a resolver el conflicto de manera justa y equilibrada, promoviendo la unidad del equipo y asegurando que se tomen decisiones informadas y orientadas al éxito del proyecto.
 
+
+<a id="cic70"></a>
+
+### **¿Cómo motivas a tu equipo y qué enfoques conoces? ¿Existe algún motivador universal para todos?** 
+
+[Volver al indice](#cic-base-2)
+
+### 1. **Reconocimiento y Agradecimiento:**
+   - Reconocer y agradecer el esfuerzo y los logros del equipo es una forma poderosa de motivación. El reconocimiento público, premios, o simplemente un agradecimiento sincero pueden tener un impacto positivo en la moral y la motivación del equipo.
+
+### 2. **Desarrollo Profesional:**
+    - Ofrecer oportunidades de crecimiento y desarrollo profesional es un motivador clave para muchos empleados. Esto puede incluir capacitación, mentoría, asignación de proyectos desafiantes, y promoción interna. Aunque esto depende mas de los puestos de management y no tanto de un lider tecnico.
+
+### 3. **Feedback Constructivo:**
+    - Proporcionar feedback regular y constructivo es fundamental para la motivación. Los empleados valoran la retroalimentación honesta y específica sobre su desempeño, y la oportunidad de aprender y mejorar.
+
+### 4. **Ambiente de Trabajo Positivo:**
+    - Crear un ambiente de trabajo positivo y colaborativo es esencial para la motivación. Fomentar la comunicación abierta, el trabajo en equipo, y la diversión en el trabajo puede aumentar la satisfacción y el compromiso de los empleados.
+
+### 5. **Propósito y Sentido de Contribución:**
+    - Ayudar a los empleados a comprender cómo su trabajo contribuye al éxito de la organización y al logro de metas más amplias puede ser un motivador poderoso. Comunicar la visión y los objetivos de la empresa puede aumentar la motivación y el compromiso.
+
+### 6. **Flexibilidad y Equilibrio entre el Trabajo y la Vida Personal:**
+    - Ofrecer flexibilidad en los horarios de trabajo, la posibilidad de trabajar desde casa, y apoyar el equilibrio entre el trabajo y la vida personal puede ser un motivador importante para muchos.
+
+### 7. **Participación y Empoderamiento:**
+    - Involucrar a los empleados en la toma de decisiones, darles autonomía y responsabilidad sobre su trabajo, y permitirles contribuir con ideas y soluciones puede aumentar la motivación y el compromiso.
+
+
 ---
 
 <a id="typ"></a>
@@ -7046,6 +7097,75 @@ class Beer extends Drink implements Product {
  }
 }
 ```
+
+<a id="typ17"></a>
+
+### **Cual es la diferencia entre el uso de types e interfaces?**  :yellow-heart:
+
+[Volver al indice](#typ-base)
+
+Ambos se utilizan para definir tipos en TypeScript, pero tienen algunas diferencias clave en su comportamiento y uso:
+
+### Interfaces:
+
+- **Extensibilidad:** Las interfaces pueden extender otras interfaces, lo que permite la creación de jerarquías de interfaces y la reutilización de definiciones de tipo.
+
+```typescript
+interface Animal {
+ name: string;
+}
+
+interface Dog extends Animal {
+ breed: string;
+}
+```
+
+- **Declaración de Objetos:** Las interfaces son ideales para definir la forma de un objeto y sus propiedades, métodos y tipos de datos esperados.
+
+```typescript
+interface Person {
+ name: string;
+ age: number;
+}
+
+const person: Person = { name: 'Alice', age: 30 };
+```
+
+- **Compatibilidad:** Las interfaces son más adecuadas para definir contratos y acuerdos entre diferentes partes del código, ya que representan un contrato que una clase o un objeto debe cumplir.
+- **Merging:** Las interfaces se pueden fusionar si tienen el mismo nombre, lo que permite agregar propiedades y métodos a una interfaz existente en diferentes archivos.
+
+```typescript
+interface Person {
+ name: string;
+}
+
+interface Person {
+ age: number;
+}
+
+const person: Person = { name: 'Alice', age: 30 };
+```
+
+### Types:
+
+- **Unión y Intersección:** Los tipos permiten la creación de tipos de datos más complejos mediante la unión y la intersección de tipos.
+
+```typescript
+type Status = 'active' | 'inactive';
+type User = { name: string; age: number };
+
+type Admin = User & { role: 'admin' };
+```
+
+- **Tipos Primitivos:** Los tipos pueden definir tipos primitivos, literales y tipos de datos más simples que las interfaces.
+
+```typescript
+type ID = number;
+type Status = 'active' | 'inactive';
+```
+
+- **Alias:** Los tipos permiten la creación de alias de tipos, lo que facilita la reutilización de definiciones de tipo y la creación de tipos personalizados.
+- **Compatibilidad:** Los tipos son más adecuados para definir tipos de datos más simples y para realizar transformaciones y operaciones en tipos de datos existentes.
 
 ---
 
