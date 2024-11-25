@@ -305,7 +305,7 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [Cuáles son sus características superadoras?](#typ4) |
 | [Cómo declaro una variable?](#typ5) |
 | [Tuples - Tuplas](#typ6) |
-| [Tipo de dato Never](#typ7) |
+| [Tipo de dato Never](#typ7) :yellow-heart: |
 | [Tipo de dato Any](#typ8) |
 | [Cómo declaro un objeto?](#typ9) |
 | [Cómo declaro una función?](#typ10) |
@@ -316,8 +316,8 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [Herencia en Typescript](#typ15) |
 | [Interfaces en Typescript](#typ16) |
 |[Cual es la diferencia entre el uso de types e interfaces?](#typ17) :yellow-heart:|
-|¿Qué son los tipos Union e Intersection y cuándo se utilizan?|
-|¿Qué son los Utility Types como Partial, Pick, y Omit, y en qué casos son útiles?|
+|[¿Qué son los tipos Union e Intersection y cuándo se utilizan?](#typ18)|
+|[¿Qué son los Utility Types como Partial, Pick, y Omit, y en qué casos son útiles?](#typ19):yellow-heart: |
 |¿Cómo funcionan los Mapped Types y cómo se aplican en proyectos complejos?|
 |¿Qué son los Conditional Types y cómo permiten lógica avanzada en los tipos?|
 |¿Qué técnicas avanzadas de Type Narrowing puedes usar para trabajar con tipos complejos?|
@@ -344,14 +344,13 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | CSS |
 |----------|
 | [Cuál es la diferencia entre div y span?](#sty1) |
-| [Qué es la Especificidad (Specificity) de CSS?](#sty2) |
+| [Qué es la Especificidad (Specificity) de CSS?](#sty2) :yellow-heart: |
 |[Que es BEM?](#sty3) |
 | [Como declaro variables en CSS?](#sty4) |
 | [Pseudoclases](#sty5) |
-|¿Qué es el modelo de caja (Box Model) en CSS y cómo funciona?|
+|[¿Qué es el modelo de caja (Box Model) en CSS y cómo funciona?](#sty5-1):yellow-heart:|
 |¿Cómo se pueden crear diseños de columnas en CSS?|
-|¿Qué son los selectores en CSS y cuáles son los diferentes tipos de
-selectores?|
+|¿Qué son los selectores en CSS y cuáles son los diferentes tipos de selectores?|
 |¿Cómo se puede centrar un elemento en CSS?|
 |¿Qué es Flexbox y para qué se utiliza?|
 |¿Qué es CSS Grid y cómo se compara con Flexbox?|
@@ -376,7 +375,7 @@ selectores?|
 | [Interpolacion en SASS](#sty13) |
 | [Nesting en SASS](#sty14) |
 | [Selectores en SASS](#sty15) |
-| [Mixins en SASS](#sty16) |
+| [Mixins en SASS](#sty16)  :yellow-heart: |
 | [Condicionales if-else en SASS](#sty17) |
 | [Ciclos en SASS](#sty18) |
 | [Funciones en SASS](#sty19) |
@@ -6894,7 +6893,7 @@ persona[1] = 24;
 
 <a id="typ7"></a>
 
-### **Tipo de dato Never**
+### **Tipo de dato Never** :yellow-heart:
 
 [Volver al indice](#typ-base)
 
@@ -6912,6 +6911,13 @@ function loopInfinito(): never {
   console.log('Hola');
  }
 }
+```
+
+Suele aparecer bastante cuando declaro un Array pero nunca declaro su tipo, y luego intento insertar elementos dentro de la misma
+
+```tsx
+let arreglo = [];
+arreglo.push(1); // Error - Array no acepta number dentro de su tipo never[]
 ```
 
 <a id="typ8"></a>
@@ -7050,11 +7056,22 @@ const obj: PartialMyInterface = {}; // Todas las propiedades son opcionales
 
 En este ejemplo, `Partial<MyInterface>` crea un nuevo tipo que tiene todas las propiedades de `MyInterface`, pero las declara como opcionales. Esto permite que cada propiedad pueda ser `undefined` o simplemente omitida al crear un objeto que cumpla con este tipo.
 
+Otra opcion seria agregando un `?` al lado de la propiedad, de esta forma no sera obligatoria su existencia, aunque puede que se necesiten checks extras en el lado del codigo para verificar su no-nulidad
+
+```typescript
+interface MyInterface {
+  prop1?: string;
+  prop2?: number;
+}
+```
+
 <a id="typ15"></a>
 
 ### **Herencia en Typescript**
 
 [Volver al indice](#typ-base)
+
+La herencia en TypeScript se logra mediante la palabra clave `extends`. Una clase puede heredar propiedades y métodos de otra clase utilizando la herencia. Aquí tienes un ejemplo de cómo se ve la herencia en TypeScript:
 
 ```typescript
 class Beer extends Drink {
@@ -7167,6 +7184,91 @@ type Status = 'active' | 'inactive';
 - **Alias:** Los tipos permiten la creación de alias de tipos, lo que facilita la reutilización de definiciones de tipo y la creación de tipos personalizados.
 - **Compatibilidad:** Los tipos son más adecuados para definir tipos de datos más simples y para realizar transformaciones y operaciones en tipos de datos existentes.
 
+<a id="typ18"></a>
+
+### **¿Qué son los tipos Union e Intersection y cuándo se utilizan?**  
+
+[Volver al indice](#typ-base)
+
+**Union Types:**
+
+Los tipos de unión (`Union Types`) en TypeScript permiten definir un tipo que puede ser uno de varios tipos diferentes. Se utilizan para representar valores que pueden ser de diferentes tipos en un contexto determinado. Por ejemplo, un tipo de unión se define utilizando el operador de unión `|` entre los tipos que se permiten.
+
+```typescript
+type Status = 'active' | 'inactive';
+type ID = number | string;
+```
+
+**Intersection Types:**
+
+Los tipos de intersección (`Intersection Types`) en TypeScript permiten combinar varios tipos en uno solo. Se utilizan para crear un nuevo tipo que tiene todas las propiedades y métodos de los tipos combinados. Por ejemplo, un tipo de intersección se define utilizando el operador de intersección `&` entre los tipos que se desean combinar.
+
+```typescript
+type User = { name: string; age: number };
+type Admin = User & { role: 'admin' };
+```
+
+**Cuándo se utilizan:**
+
+- **Union Types:** Se utilizan cuando un valor puede ser de varios tipos diferentes en un contexto determinado. Por ejemplo, cuando un valor puede ser una cadena o un número, se puede utilizar un tipo de unión para representar esta posibilidad.
+
+- **Intersection Types:** Se utilizan cuando se desea combinar varios tipos en uno solo para crear un nuevo tipo que tenga todas las propiedades y métodos de los tipos combinados. Por ejemplo, cuando se desea crear un nuevo tipo que tenga todas las propiedades de dos tipos existentes, se puede utilizar un tipo de intersección para lograr esto.
+
+<a id="typ19"></a>
+
+### **¿Qué son los Utility Types como Partial, Pick, y Omit, y en qué casos son útiles?** :yellow-heart:
+
+[Volver al indice](#typ-base)
+
+Los Utility Types en TypeScript son tipos predefinidos que permiten realizar transformaciones y operaciones comunes en tipos de datos existentes. Estos tipos proporcionan funcionalidades útiles para trabajar con tipos de datos de una manera más flexible y reutilizable. Algunos de los Utility Types más comunes en TypeScript son `Partial`, `Pick`, y `Omit`.
+
+**Partial:**
+
+El tipo `Partial` en TypeScript se utiliza para hacer todas las propiedades de un tipo dado opcionales. Esto significa que cada propiedad del tipo se convierte en opcional, lo que permite crear objetos que no requieren todas las propiedades del tipo original.
+
+```typescript
+interface Person {
+ name: string;
+ age: number;
+}
+
+type PartialPerson = Partial<Person>;
+
+const partialPerson: PartialPerson = {}; // Todas las propiedades son opcionales
+```
+
+**Pick:**
+
+El tipo `Pick` en TypeScript se utiliza para seleccionar un subconjunto de propiedades de un tipo dado y crear un nuevo tipo que contenga solo esas propiedades seleccionadas. Esto permite crear tipos personalizados que contienen solo las propiedades necesarias de un tipo existente.
+
+```typescript
+interface Person {
+ name: string;
+ age: number;
+ address: string;
+}
+
+type PersonName = Pick<Person, 'name'>;
+
+const personName: PersonName = { name: 'Alice' }; // Solo contiene la propiedad 'name'
+```
+
+**Omit:**
+
+El tipo `Omit` en TypeScript se utiliza para crear un nuevo tipo que excluye una o más propiedades de un tipo dado. Esto permite crear tipos personalizados que contienen todas las propiedades de un tipo existente, excepto las propiedades especificadas.
+
+```typescript
+interface Person {
+ name: string;
+ age: number;
+ address: string;
+}
+
+type PersonWithoutAddress = Omit<Person, 'address'>;
+
+const personWithoutAddress: PersonWithoutAddress = { name: 'Alice', age: 30 }; // No contiene la propiedad 'address'
+```
+
 ---
 
 <a id="sty"></a>
@@ -7185,7 +7287,7 @@ La etiqueta span trabaja como contenedor de línea, no se puede ampliar para ocu
 
 <a id="sty2"></a>
 
-### **Qué es la Especificidad (Specificity) de CSS?**
+### **Qué es la Especificidad (Specificity) de CSS?** :yellow-heart:
 
 [Volver al indice](#sty-base)
 
@@ -7222,7 +7324,7 @@ section p {
 
 Block element modifier, consiste en escribir nombres de clases que dejen en claro que es lo que se esta representando en el HTML y en el CSS
 
-`bloque__elemento-modificador_elemento (header__title-warning)`
+`bloque__elemento--modificador_elemento (header__title--warning)`
 
 <a id="sty4"></a>
 
@@ -7268,6 +7370,21 @@ Tenemos varias pseudo clases:
 a {color: white; text-decoration:none;}
 a:hover {text-decoration:underline; }
 ```
+
+<a id="sty5-1"></a>
+
+### **¿Qué es el modelo de caja (Box Model) en CSS y cómo funciona?** :yellow-heart:
+
+[Volver al indice](#sty-base)
+
+El modelo de caja (Box Model) en CSS es la forma en que se representan y se calculan las dimensiones de los elementos HTML en una página web. Cada elemento HTML se representa como una caja rectangular que consta de cuatro áreas principales: el contenido, el relleno, el borde y el margen.
+
+- **Contenido (Content):** Es el área interior de la caja que contiene el contenido real del elemento, como texto, imágenes, etc.
+- **Relleno (Padding):** Es el espacio entre el contenido y el borde de la caja. Se puede agregar relleno para aumentar el espacio entre el contenido y el borde.
+- **Borde (Border):** Es el borde que rodea el contenido y el relleno de la caja. Se puede agregar un borde para darle un aspecto visual alrededor del contenido.
+- **Margen (Margin):** Es el espacio entre el borde de la caja y los elementos adyacentes. Se puede agregar un margen para controlar el espacio entre los elementos en la página.
+
+![box-model](https://www.washington.edu/accesscomputing/webd2/student/unit3/images/boxmodel.gif)
 
 <a id="sty6"></a>
 
@@ -7453,7 +7570,7 @@ $propiedad: 'color';
 
 <a id="sty16"></a>
 
-### **Mixins en SASS**
+### **Mixins en SASS** :yellow-heart:
 
 [Volver al indice](#sty-base)
 
@@ -7515,6 +7632,82 @@ Se puede utilizar if-else dentro de los mixins en SASS
   @else {
     color: black;
   }
+}
+```
+
+<a id="sty18"></a>
+
+### **Ciclos en SASS**
+
+[Volver al indice](#sty-base)
+
+Se pueden utilizar ciclos en SASS para repetir estilos
+
+```jsx
+@for $i from 1 through 3 {
+  .item-#{$i} {
+    width: 100px * $i;
+  }
+}
+```
+
+Esto nos sirve para crear clases de forma dinamica
+
+<a id="sty19"></a>
+
+### **Funciones en SASS**
+
+[Volver al indice](#sty-base)
+
+Se pueden crear funciones en SASS para reutilizar codigo
+
+```jsx
+@function suma($a, $b) {
+  @return $a + $b;
+}
+
+div {
+  width: suma(10px, 20px);
+}
+```
+
+<a id="sty20"></a>
+
+### **Extend/Inheritance en SASS**
+
+[Volver al indice](#sty-base)
+
+Se puede utilizar `@extend` para heredar estilos de un selector a otro
+
+```jsx
+.btn {
+  color: white;
+  background-color: blue;
+}
+
+.btn-primary {
+  @extend .btn;
+  border: 1px solid black;
+}
+```
+
+<a id="sty21"></a>
+
+### **Placeholder Selectors en SASS**
+
+[Volver al indice](#sty-base)
+
+Los placeholders son selectores que no se compilan a CSS, pero que pueden ser extendidos por otros selectores
+
+```jsx
+%btn {
+  color: white;
+  background-color: blue;
+}
+
+.btn-primary {
+  @extend %btn;
+  border: 1px solid black;
 }
 ```
 
