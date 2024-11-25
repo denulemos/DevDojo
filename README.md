@@ -89,7 +89,7 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [¿A qué nos referimos cuando hablamos de tipos de datos?](#var3) |
 | [¿Cómo se declara una variable?](#var4) |
 | [Nombres de Variables](#var5) |
-| [Diferencia entre let, var y const](#var6) :yellow-heart: |
+| [Diferencia entre let, var y const](#var6) 💛 |
 | [¿Qué son las variables no declaradas y no definidas?](#var19) |
 |[¿Qué es la tipificación estática y dinámica?](#var19-2)|
 
@@ -121,19 +121,19 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 |----------|
 | [Funciones en Javascript](#var27) |
 | [¿Qué es una funcion Declarativa y una Expresiva?](#var35) |
-| [Prototypes y Herencia Prototype (Prototype Inheritance)](#var26) :yellow-heart:|
+| [Prototypes y Herencia Prototype (Prototype Inheritance)](#var26) 💛|
 | [Creacion de Constructores](#var28) |
 | [Diferencia entre primitivo y objeto](#var14) |
-| [Variable Hoisting](#var24) :yellow-heart: |
+| [Variable Hoisting](#var24) 💛 |
 | [Diferencia entre class y function](#var25) |
 | [Que es el Function Factory?](#var20) |
-| [Que es el Currying?](#var23)  :yellow-heart: |
+| [Que es el Currying?](#var23)  💛 |
 |¿Qué es el polimorfismo en programación orientada a objetos?|
 | ¿Qué son las funciones puras y cómo se relacionan con la programación funcional?|
 
 | Manejo de Eventos y Asincronía |
 |----------|
-| [Para que sirve event.preventDefault()?](#var7) :yellow-heart: |
+| [Para que sirve event.preventDefault()?](#var7) 💛 |
 | [Event delegation](#var11) |
 | [Bubble vs Capture](#var15) |
 | [Callback Hell](#var12) |
@@ -163,8 +163,8 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [Export Fallback con export default](#var18) |
 | [Diferencia entre import y require](#var9) |
 | [Función Object.freeze](#var8) |
-|[¿Qué es la destructuración y cómo se utiliza? ](#var8-2) :yellow-heart:|
-|[¿Cómo se diferencia un Spread Operator de un Rest Operator?](#var8-3) :yellow-heart:|
+|[¿Qué es la destructuración y cómo se utiliza? ](#var8-2) 💛|
+|[¿Cómo se diferencia un Spread Operator de un Rest Operator?](#var8-3) 💛|
 
 | Estructuras Avanzadas y Generics |
 |----------|
@@ -172,7 +172,7 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 |[Estructuras de Datos](#alg36) |
 | [Recursividad](#alg52) |
 | [Factorial](#alg53) |
-| [¿Qué son los generics y cómo se implementan en TypeScript?](#alg53-2) :yellow-heart:|
+| [¿Qué son los generics y cómo se implementan en TypeScript?](#alg53-2) 💛|
 
 | Buenas Prácticas y Casos Comunes |
 |----------|
@@ -257,7 +257,7 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | Gestión de Proyectos - Liderazgo |
 |----------|
 |[¿Que son los NFRs, Quién los define y cómo se priorizan?](#cic66) |
-|[Imagina que un cliente te dice que la aplicación es lenta y quiere que la aceleres, pero no te da más detalles. ¿Cómo manejarías esta situación?](#cic67) :yellow-heart:|
+|[Imagina que un cliente te dice que la aplicación es lenta y quiere que la aceleres, pero no te da más detalles. ¿Cómo manejarías esta situación?](#cic67) 💛|
 |[¿Cuáles son los posibles riesgos de adoptar una nueva tecnología en el proyecto? ¿Cómo mitigarlos?](#cic68)|
 |[Algunos miembros de tu equipo no pueden ponerse de acuerdo sobre una solución. Discuten y no pueden tomar una decisión. ¿Cómo resolverías esta situación conflictiva?](#cic69)|
 |[¿Cómo motivas a tu equipo y qué enfoques conoces? ¿Existe algún motivador universal para todos?](#cic70)|
@@ -305,7 +305,7 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [Cuáles son sus características superadoras?](#typ4) |
 | [Cómo declaro una variable?](#typ5) |
 | [Tuples - Tuplas](#typ6) |
-| [Tipo de dato Never](#typ7) :yellow-heart: |
+| [Tipo de dato Never](#typ7) 💛 |
 | [Tipo de dato Any](#typ8) |
 | [Cómo declaro un objeto?](#typ9) |
 | [Cómo declaro una función?](#typ10) |
@@ -315,9 +315,9 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [Cómo hago que las props de una interface sean opcionales?](#typ14) |
 | [Herencia en Typescript](#typ15) |
 | [Interfaces en Typescript](#typ16) |
-|[Cual es la diferencia entre el uso de types e interfaces?](#typ17) :yellow-heart:|
+|[Cual es la diferencia entre el uso de types e interfaces?](#typ17) 💛|
 |[¿Qué son los tipos Union e Intersection y cuándo se utilizan?](#typ18)|
-|[¿Qué son los Utility Types como Partial, Pick, y Omit, y en qué casos son útiles?](#typ19):yellow-heart: |
+|[¿Qué son los Utility Types como Partial, Pick, y Omit, y en qué casos son útiles?](#typ19)💛 |
 |¿Cómo funcionan los Mapped Types y cómo se aplican en proyectos complejos?|
 |¿Qué son los Conditional Types y cómo permiten lógica avanzada en los tipos?|
 |¿Qué técnicas avanzadas de Type Narrowing puedes usar para trabajar con tipos complejos?|
@@ -344,11 +344,11 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | CSS |
 |----------|
 | [Cuál es la diferencia entre div y span?](#sty1) |
-| [Qué es la Especificidad (Specificity) de CSS?](#sty2) :yellow-heart: |
+| [Qué es la Especificidad (Specificity) de CSS?](#sty2) 💛 |
 |[Que es BEM?](#sty3) |
 | [Como declaro variables en CSS?](#sty4) |
 | [Pseudoclases](#sty5) |
-|[¿Qué es el modelo de caja (Box Model) en CSS y cómo funciona?](#sty5-1):yellow-heart:|
+|[¿Qué es el modelo de caja (Box Model) en CSS y cómo funciona?](#sty5-1)💛|
 |¿Cómo se pueden crear diseños de columnas en CSS?|
 |¿Qué son los selectores en CSS y cuáles son los diferentes tipos de selectores?|
 |¿Cómo se puede centrar un elemento en CSS?|
@@ -375,7 +375,7 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [Interpolacion en SASS](#sty13) |
 | [Nesting en SASS](#sty14) |
 | [Selectores en SASS](#sty15) |
-| [Mixins en SASS](#sty16)  :yellow-heart: |
+| [Mixins en SASS](#sty16)  💛 |
 | [Condicionales if-else en SASS](#sty17) |
 | [Ciclos en SASS](#sty18) |
 | [Funciones en SASS](#sty19) |
@@ -417,8 +417,8 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [componentWillUpdate()](#rea61) |
 | [useCallback](#rea1) |
 | [useDispatch](#rea2) |
-| [useEffect](#rea3) :yellow-heart:|
-|[Puede el useEffect ser asincrono? Porque?](#rea3-2) :yellow-heart:|
+| [useEffect](#rea3) 💛|
+|[Puede el useEffect ser asincrono? Porque?](#rea3-2) 💛|
 | [useState](#rea4) |
 | [useSelector](#rea5) |
 | [useRef](#rea6) |
@@ -4099,7 +4099,7 @@ console.log(factorial(5)); // Output: 120
 
 <a id="alg53-2"></a>
 
-### **¿Qué son los generics y cómo se implementan en TypeScript?** :yellow-heart:
+### **¿Qué son los generics y cómo se implementan en TypeScript?** 💛
 
 [Volver al indice](#alg-base)
 
@@ -4413,7 +4413,7 @@ Algunas reglas no escritas, pero que se han asumido *por convención* son:
 
 <a id="var6"></a>
 
-### **Diferencia entre let, var y const** :yellow-heart:
+### **Diferencia entre let, var y const** 💛
 
 [Volver al indice](#alg-base)
 
@@ -4531,7 +4531,7 @@ editInPlace();
 
 <a id="var7"></a>
 
-### **Para que sirve event.preventDefault()?** :yellow-heart:
+### **Para que sirve event.preventDefault()?** 💛
 
 [Volver al indice](#alg-base)
 
@@ -4585,7 +4585,7 @@ Cuando intento modificar algo, no tira error, simplemente lo ignora.
 
 <a id="var8-2"></a>
 
-### **¿Qué es la destructuración y cómo se utiliza?** :yellow-heart:
+### **¿Qué es la destructuración y cómo se utiliza?** 💛
 
 [Volver al indice](#alg-base-2)
 
@@ -4605,7 +4605,7 @@ Esto no ahorra tener que crear dos variables distintas en dos lineas distintas y
 
 <a id="var8-3"></a>
 
-### **¿Cómo se diferencia un Spread Operator de un Rest Operator?** :yellow-heart:
+### **¿Cómo se diferencia un Spread Operator de un Rest Operator?** 💛
 
 [Volver al indice](#alg-base-2)
 
@@ -5121,7 +5121,7 @@ const doAsyncStuff = (numero1, numero2, callback){
 
 <a id="var23"></a>
 
-### **Que es el Currying?** :yellow-heart:
+### **Que es el Currying?** 💛
 
 [Volver al indice](#alg-base)
 
@@ -5140,7 +5140,7 @@ add(10)(20)(30); // 60
 
 <a id="var24"></a>
 
-### **Variable Hoisting** :yellow-heart:
+### **Variable Hoisting** 💛
 
 [Volver al indice](#alg-base)
 
@@ -5202,7 +5202,7 @@ console.assert( typeof  C === 'function' );
 
 <a id="var26"></a>
 
-### **Prototypes y Herencia Prototype (Prototype Inheritance)** :yellow-heart:
+### **Prototypes y Herencia Prototype (Prototype Inheritance)** 💛
 
 [Volver al indice](#alg-base)
 
@@ -6601,7 +6601,7 @@ Metodologías de priorización:
 
 <a id="cic67"></a>
 
-### **Imagina que un cliente te dice que la aplicación es lenta y quiere que la aceleres, pero no te da más detalles. ¿Cómo manejarías esta situación?** :yellow-heart:
+### **Imagina que un cliente te dice que la aplicación es lenta y quiere que la aceleres, pero no te da más detalles. ¿Cómo manejarías esta situación?** 💛
 
 [Volver al indice](#cic-base-2)
 
@@ -6893,7 +6893,7 @@ persona[1] = 24;
 
 <a id="typ7"></a>
 
-### **Tipo de dato Never** :yellow-heart:
+### **Tipo de dato Never** 💛
 
 [Volver al indice](#typ-base)
 
@@ -7117,7 +7117,7 @@ class Beer extends Drink implements Product {
 
 <a id="typ17"></a>
 
-### **Cual es la diferencia entre el uso de types e interfaces?**  :yellow-heart:
+### **Cual es la diferencia entre el uso de types e interfaces?**  💛
 
 [Volver al indice](#typ-base)
 
@@ -7216,7 +7216,7 @@ type Admin = User & { role: 'admin' };
 
 <a id="typ19"></a>
 
-### **¿Qué son los Utility Types como Partial, Pick, y Omit, y en qué casos son útiles?** :yellow-heart:
+### **¿Qué son los Utility Types como Partial, Pick, y Omit, y en qué casos son útiles?** 💛
 
 [Volver al indice](#typ-base)
 
@@ -7287,7 +7287,7 @@ La etiqueta span trabaja como contenedor de línea, no se puede ampliar para ocu
 
 <a id="sty2"></a>
 
-### **Qué es la Especificidad (Specificity) de CSS?** :yellow-heart:
+### **Qué es la Especificidad (Specificity) de CSS?** 💛
 
 [Volver al indice](#sty-base)
 
@@ -7373,7 +7373,7 @@ a:hover {text-decoration:underline; }
 
 <a id="sty5-1"></a>
 
-### **¿Qué es el modelo de caja (Box Model) en CSS y cómo funciona?** :yellow-heart:
+### **¿Qué es el modelo de caja (Box Model) en CSS y cómo funciona?** 💛
 
 [Volver al indice](#sty-base)
 
@@ -7570,7 +7570,7 @@ $propiedad: 'color';
 
 <a id="sty16"></a>
 
-### **Mixins en SASS** :yellow-heart:
+### **Mixins en SASS** 💛
 
 [Volver al indice](#sty-base)
 
@@ -8386,7 +8386,7 @@ const submitNewProduct = (e) => {
 
 <a id="rea3"></a>
 
-### **useEffect** :yellow-heart:
+### **useEffect** 💛
 
 [Volver al indice](#rea-base)
 
@@ -8459,7 +8459,7 @@ useEffect(() => {console.log("Mount");}, [state]);
 
 <a id="rea3-2"></a>
 
-### **Puede el useEffect ser asincrono? Porque?** :yellow-heart:
+### **Puede el useEffect ser asincrono? Porque?** 💛
 
 [Volver al indice](#rea-base)
 
