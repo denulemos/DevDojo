@@ -45,8 +45,8 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | Arrays y Estructuras Similares |
 |----------|
 | [Estructuras de datos (Arrays)](#alg15) |
-| [Qué es un "array-like" en Javascript?](#alg26) :yellow_heart:|
-| [Cuales son las funciones array de JavaScript?](#alg27) :yellow_heart: |
+| [Qué es un "array-like" en Javascript?](#alg26) 💛|
+| [Cuales son las funciones array de JavaScript?](#alg27) 💛 |
 | [Funcion .sort()](#alg28) |
 |[¿Cómo funcionan los arrays en JavaScript internamente?](#alg282)|
 | [Especificando la clase de contenido de un ArrayList](#alg16) |
@@ -71,11 +71,11 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 
 | Otras Colecciones y Estructuras |
 |----------|
-| [Set() en Javascript (HashSet)](#alg29) :yellow_heart:|
-| [HashTables (.Map)](#alg30) :yellow_heart: |
+| [Set() en Javascript (HashSet)](#alg29) 💛|
+| [HashTables (.Map)](#alg30) 💛 |
 |[¿Cuál es la diferencia entre un Set y un Array en JavaScript?](#alg301)|
 |[¿En qué situaciones es más eficiente usar un HashMap en lugar de un Array?](#alg302)|
-| [Linked Lists](#alg31) :yellow_heart:|
+| [Linked Lists](#alg31) 💛|
 | [¿Cuales son los beneficios de un Linked List sobre un Array?](#alg32) |
 |[¿Cual es el uso de una Doubly-Linked List cuando se lo compara con un Singly Linked List?](#alg33) |
 | [¿Cual es la diferencia entre un Linked List y un Doubly Linked List?](#alg34) |
@@ -407,7 +407,7 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [Para que es el comando React eject?](#rea49) |
 | [Que son las Ref?](#rea52) |
 | [De que tratan los Ciclos de Vida Componentes?](#rea62) |
-|Componentes de clase vs Componentes de Funcion|
+|Componentes de clase vs Componentes de Funcion 💛|
 | [componentWillReceiveProps()](#rea55) |
 | [componentDidMount()](#rea56) |
 | [componentWillUnmount()](#rea57) |
@@ -415,45 +415,44 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [componentDidUpdate()](#rea59) |
 | [shouldComponentUpdate()](#rea60) |
 | [componentWillUpdate()](#rea61) |
-| [useCallback](#rea1) |
-| [useDispatch](#rea2) |
+| [useCallback](#rea1) 💛|
+| [useDispatch](#rea2) 💛|
 | [useEffect](#rea3) 💛|
 |[Puede el useEffect ser asincrono? Porque?](#rea3-2) 💛|
-| [useState](#rea4) |
+| [useState](#rea4) 💛|
 | [useSelector](#rea5) |
-| [useRef](#rea6) |
-| [useMemo](#rea7) |
-|¿Cuál es la diferencia entre useCallback y useMemo?|
-| [useReducer](#rea8) |
+| [useRef](#rea6) 💛|
+| [useMemo](#rea7) 💛|
+|¿Cuál es la diferencia entre useCallback y useMemo? 💛|
+| [useReducer](#rea8) 💛|
 | [useLayoutEffect](#rea9) |
 |¿Qué diferencia hay entre useEffect y useLayoutEffect? ¿Cuándo usarías cada uno?|
-| [¿Que es Redux?](#rea18) |
+| [¿Que es Redux?](#rea18) 💛|
 | [Cuando conviene usar Redux?](#rea19) |
 | [¿Cuales son los beneficios de usar Redux?](#rea20) |
-| [Redux vs ContextAPI](#rea21) |
+| [Redux vs ContextAPI](#rea21) 💛|
 | [¿Cual es el flujo de Redux?](#rea22) |
-| [Que es ContextAPI?](#rea23) |
+| [Que es ContextAPI?](#rea23) 💛|
 | [Que es React Fiber?](#rea24) |
-|Que tener en cuenta para tener una buena performance en React|
-| [¿Qué es el Virtual DOM?](#rea39) |
+|Que tener en cuenta para tener una buena performance en React 💛|
+| [¿Qué es el Virtual DOM?](#rea39) 💛|
 |Para que tipo de proyectos React es recomendable?|
 |¿Cuál es la diferencia entre React.createElement() y JSX?|
 |¿Qué es un Fragment en React y para qué se utiliza?|
 |¿Cómo funcionan las claves (keys) en las listas de React? ¿Por qué son importantes?|
 |¿Qué es un "error boundary" y cómo se implementa en React?|
-|¿Qué son los custom hooks? ¿Cómo los crearías y para qué sirven?|
+|¿Qué son los custom hooks? ¿Cómo los crearías y para qué sirven? 💛|
 |¿Qué es el hook useImperativeHandle y en qué casos se utiliza?|
 |¿Qué es el hook useTransition y cómo mejora la experiencia de usuario en aplicaciones de React?|
-|¿Cómo manejarías el estado global sin usar Redux ni Context API?|
-|¿Qué son los Higher-Order Components (HOCs) y cómo se diferencian de los Render Props?|
+|¿Cómo manejarías el estado global sin usar Redux ni Context API? 💛|
+|¿Qué son los Higher-Order Components (HOCs) y cómo se diferencian de los Render Props? 💛|
 |¿Qué es el patrón "Compound Components" en React y cuándo sería útil implementarlo?|
-|¿Cómo manejarías la composición de componentes en lugar de la herencia en React?|
+|¿Cómo manejarías la composición de componentes en lugar de la herencia en React? 💛|
 |¿Qué es un "portal" en React y para qué se utiliza?|
-|¿Cómo implementarías un "Suspense" en React para manejar la carga de datos de forma asincrónica?|
-|¿Qué técnicas utilizarías para optimizar el rendimiento de una aplicación React?
-|¿Qué son las "re-renderizaciones innecesarias" y cómo las evitarías?|
-|¿Cómo usarías React.memo para mejorar la performance de un componente?|
-|¿Qué herramientas usarías para identificar problemas de rendimiento en una aplicación React?|
+|¿Cómo implementarías un "Suspense" en React para manejar la carga de datos de forma asincrónica? 💛|
+|¿Qué son las "re-renderizaciones innecesarias" y cómo las evitarías? 💛|
+|¿Cómo usarías React.memo para mejorar la performance de un componente? 💛|
+|¿Qué herramientas usarías para identificar problemas de rendimiento en una aplicación React? 💛|
 |¿Cómo se gestiona el "debounce" o "throttle" en React para eventos como el scroll o input?|
 |¿Cómo integrarías una librería de terceros en un proyecto de React?|
 |¿Qué consideraciones tienes al usar React con TypeScript?|
@@ -467,41 +466,48 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 |¿Qué diferencia hay entre SSR (Server-Side Rendering), CSR (Client-Side Rendering) y SSG (Static Site Generation)?|
 |¿Qué son los Concurrent Features de React y cómo afectan la experiencia del usuario?|
 |¿Qué problemas podrías encontrar al implementar un formulario grande en React y cómo los solucionarías?|
+|¿Cómo manejarías la gestión de rutas en una aplicación React?|
+|¿Qué es el "code splitting" y cómo lo implementarías en una aplicación React?|
+|¿Cómo manejarías la autenticación y autorización en una aplicación React?|
 
 | Angular |
 |----------|
-| [Diferencia entre AngularJS y Angular](#rea10) |
+| [Diferencia entre AngularJS y Angular](#rea10) 💛|
 | [¿Qué son los modulos en Angular?](#rea11) |
 | [¿Qué es Property Binding?](#rea12) |
 | [¿Cuál es el flujo de datos una aplicación Angular?](#rea13) |
-| [¿Qué es un Decorador en Angular?](#rea14) |
+| [¿Qué es un Decorador en Angular?](#rea14) 💛|
 | [Event Binding en Angular (Manejo de Eventos)](#rea15) |
 | [Data Binding en Angular](#rea16) |
-|Que son los componentes standalone y cuando conviene utilizarlos?|
-|¿Podrías describir algunos problemas de rendimiento que hayas enfrentado en aplicaciones Angular y cómo los resolviste?|
-|¿Podrías nombrar algunas mejoras comunes de rendimiento en Angular (pipes, detección de cambios, etc.)?|
-|¿Qué problemas de rendimiento pueden existir en Angular y cómo se solucionan?|
+|Que son los componentes standalone y cuando conviene utilizarlos? 💛|
+|¿Qué problemas de rendimiento pueden existir en Angular y cómo se solucionan? 💛|
 |¿Cómo funciona la detección de cambios en Angular?|
-|¿Cómo se maneja la inyección de dependencias y la inversión de control en las aplicaciones de Angular?|
+|¿Cómo se maneja la inyección de dependencias y la inversión de control en las aplicaciones de Angular? 💛|
 |¿Qué es la compilación JIT y AOT en Angular? Diferencias, pros y contras.|
 |¿Cómo se maneja la gestión del estado en las aplicaciones de Angular?|
 |¿Cómo se puede compartir el estado en las aplicaciones de Angular? Servicios vs Flux vs Redux. Pros y contras de cada enfoque.|
+|¿Qué es el enrutamiento en Angular y cómo se configura?|
+|¿Cómo se manejan las rutas protegidas en Angular?|
+|¿Qué es el lazy loading y cómo se implementa en Angular?|
+|¿Cómo se manejan las peticiones HTTP en Angular?|
+|¿Qué es el patrón de diseño "Smart vs Dumb Components" y cómo se aplica en Angular?|
+|¿Qué son los pipes en Angular y cómo se utilizan?|
 
 | Conceptos Generales |
 |----------|
 |Que es el Critical rendering path?|
-| [¿De qué hablamos cuando hablamos de una SPA (Single Page App)?](#rea48) |
-| [Como evitar mandar muchos eventos inutiles, por ejemplo, ejecutar un search por letra?](#rea50) |
-| [Que es async rendering?](#rea51) |
+| [¿De qué hablamos cuando hablamos de una SPA (Single Page App)?](#rea48) 💛|
+| [Como evitar mandar muchos eventos inutiles, por ejemplo, ejecutar un search por letra?](#rea50) 💛|
+| [Que es async rendering?](#rea51) 💛|
 | [Para que son los eventos sinteticos (SyntheticEvent)?](#rea53) |
 | [Que significa prop drilling y como evitarlo?](#rea54) |
-| [Como puedo mejorar la performance de mi Frontend?](#rea17) |
+| [Como puedo mejorar la performance de mi Frontend?](#rea17) 💛|
 |Recibes un requisito no funcional para mejorar el SEO y acelerar la métrica de FCP (First Contentful Paint). Actualmente, tienes una aplicación SPA desarrollada en React o Angular que se renderiza completamente en el cliente. ¿Qué opciones considerarías para satisfacer este requisito?|
 |¿Cómo implementarías SSR (Server-Side Rendering) o SSG (Static Site Generation) en un SPA existente? |
 | [Para que sirven las claves o Keys en React?](#rea25) |
 | [¿Que es async, preload y prefetch?](#rea29) |
 | [Cual es la diferencia entre call, bind y apply?](#rea30) |
-| [Cual es la diferencia entre setTimeout() y setInterval()?](#rea31) |
+| [Cual es la diferencia entre setTimeout() y setInterval()?](#rea31) 💛|
 | [Qué es "REPL" y para qué sirve?](#rea32) |
 | [Qué es el "demultiplexer"?](#rea33) |
 | [Que hace Babel?](#rea34) |
@@ -529,7 +535,7 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | Server Side Rendering |
 |----------|
 |¿Qué es la generación de sitios estáticos, SSR y SPA del lado del cliente? Pros y contras de ambos enfoques.|
-|¿Qué es el Server Side Rendering (SSR) y cómo funciona? |
+|¿Qué es el Server Side Rendering (SSR) y cómo funciona? 💛|
 |¿Cuáles son las ventajas y desventajas de usar SSR en lugar de Client Side Rendering (CSR)?|
 |¿En qué casos sería más beneficioso utilizar SSR en lugar de CSR?|
 |¿Cómo afecta el SSR al rendimiento de una aplicación web?|
@@ -564,9 +570,9 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 
 | Rendimiento y Latencia en JavaScript |
 |----------|
-|¿Cómo se puede lograr una baja latencia en JavaScript?|
-|¿Cuáles son algunos problemas comunes de rendimiento en JavaScript y cómo se pueden resolver?|
-|¿Cuáles son algunos problemas comunes de memoria en JavaScript y cómo se pueden resolver?|
+|¿Cómo se puede lograr una baja latencia en JavaScript? 💛|
+|¿Cuáles son algunos problemas comunes de rendimiento en JavaScript y cómo se pueden resolver? 💛|
+|¿Cuáles son algunos problemas comunes de memoria en JavaScript y cómo se pueden resolver? 💛|
 |¿Cómo investigarías problemas de rendimiento o memoria en JavaScript?|
 |¿Qué herramientas se pueden utilizar para optimizar el rendimiento en JavaScript?|
 |¿Cómo se pueden modelar el rendimiento en JavaScript?|
@@ -3275,7 +3281,7 @@ No pasará nada: todos los socios estarán en la lista principal, y aquellos que
 
 <a id="alg26"></a>
 
-### **Qué es un "array-like" en Javascript?** :yellow_heart:
+### **Qué es un "array-like" en Javascript?** 💛
 
 [Volver al indice](#alg-base)
 
@@ -3313,7 +3319,7 @@ console.log(array); // Imprime: ['a', 'b', 'c']
 
 <a id="alg27"></a>
 
-### **Cuales son las funciones array de JavaScript?** :yellow_heart:
+### **Cuales son las funciones array de JavaScript?** 💛
 
 [Volver al indice](#alg-base)
 
@@ -3398,7 +3404,7 @@ splice(indice, cantidad elementos a eliminar, agrego, agrego);
 
 <a id="alg28"></a>
 
-### **Funcion `.sort()`** :yellow_heart:
+### **Funcion `.sort()`** 💛
 
 [Volver al indice](#alg-base)
 
@@ -3456,7 +3462,7 @@ Por eso existe el `array-like` en Javascript
 
 <a id="alg29"></a>
 
-### **Set() en Javascript** (HashSet) :yellow_heart:
+### **Set() en Javascript** (HashSet) 💛
 
 [Volver al indice](#alg-base)
 
@@ -3501,7 +3507,7 @@ for (let item of mySet) {
 
 <a id="alg30"></a>
 
-### **HashTables** (.Map) :yellow_heart:
+### **HashTables** (.Map) 💛
 
 [Volver al indice](#alg-base)
 
@@ -3597,7 +3603,7 @@ Un HashMap es más eficiente que un Array cuando necesitamos almacenar pares cla
 
 <a id="alg31"></a>
 
-### **Linked Lists** :yellow_heart:
+### **Linked Lists** 💛
 
 [Volver al indice](#alg-base)
 
