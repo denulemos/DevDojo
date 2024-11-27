@@ -711,7 +711,7 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [Porque se deberia evitar retornar null?](#cod56) |
 | [Porque se deberia evitar el uso de variables globales?](#cod57) |
 |[¿Cómo podrías mejorar la calidad del código en un proyecto en marcha?](#cod57-1)|
-|Si tienes plazos ajustados y te ves obligado a escribir "mal código", ¿cómo manejarías esa situación? |
+|[Si tienes plazos ajustados y te ves obligado a escribir "mal código", ¿cómo manejarías esa situación?](#cod57-2) |
 |¿Iniciarías un proceso para mejorar la calidad del código? ¿Cómo lo harías sin afectar el desarrollo activo?|
 
 | Code Smells |
@@ -11919,6 +11919,93 @@ function calculateTotal(items) {
 ### **8. Monitoreo continuo**
 - **Seguimiento de errores:** Usa herramientas como Sentry o LogRocket para detectar y solucionar problemas en producción.
 - **Métricas de calidad:** Monitorea métricas como el tiempo de respuesta, número de bugs reportados y cumplimiento de estándares.
+
+<a id="cod57-2"></a>
+
+### **Si tienes plazos ajustados y te ves obligado a escribir "mal código", ¿cómo manejarías esa situación?**
+
+[Volver al indice](#cod-base)
+
+Cuando te enfrentas a plazos ajustados y necesitas priorizar la entrega sobre la calidad del código, es importante abordar la situación de manera estratégica para minimizar el impacto a largo plazo. 
+
+
+### **1. Planificación y comunicación temprana**
+- **Habla con el equipo o stakeholders:**
+  - Informa que, para cumplir con el plazo, es posible que se comprometa la calidad del código.
+  - Explica los riesgos de acumular deuda técnica, como mayor dificultad de mantenimiento, bugs futuros, y tiempo extra para agregar nuevas funcionalidades.
+  - Propón un plan para abordar esa deuda técnica después del plazo.
+  
+  *Ejemplo:*  
+  "Podemos cumplir con la fecha límite, pero algunos aspectos del código serán soluciones temporales. Después de la entrega, necesitaremos tiempo para refactorizar y mejorar la calidad del código para evitar problemas futuros."
+
+
+### **2. Mantén un enfoque mínimo viable**
+- **Define el alcance exacto:** Limita las funcionalidades al núcleo imprescindible para cumplir con los objetivos. Recorta características secundarias que puedan ser agregadas más tarde.
+- **Prototipos rápidos:** En lugar de implementar una solución perfecta, crea una solución funcional que cumpla los requisitos mínimos.
+
+  *Ejemplo:* Si estás desarrollando una funcionalidad de búsqueda, inicialmente podrías implementar una búsqueda básica sin filtros avanzados ni ordenación sofisticada.
+
+
+### **3. Escribe "código malo" de manera controlada**
+Si escribir "código malo" es inevitable, sigue estas prácticas para minimizar el daño:
+
+- **Documenta las áreas débiles:**
+  - Añade comentarios en el código para señalar qué partes necesitan refactorización o tienen lógica temporal.
+  - Usa palabras clave como `// TODO` o `// FIXME` para que sean fácilmente identificables.
+
+  ```javascript
+  // FIXME: Optimizar esta función para manejar casos con grandes cantidades de datos.
+  function processData(data) {
+    return data.map(item => heavyComputation(item));
+  }
+  ```
+
+- **Evita la propagación del mal código:**
+  - Restringe las soluciones rápidas a un área específica del sistema.
+  - Encapsula la lógica temporal en módulos o funciones que puedas reemplazar fácilmente más adelante.
+
+  ```javascript
+  // Solución temporal para cálculo de descuentos
+  function calculateDiscount(price) {
+    return price * 0.9; // TODO: implementar lógica avanzada con reglas dinámicas
+  }
+  ```
+
+- **Pruebas básicas:** Aunque sea un código rápido, incluye al menos pruebas mínimas para asegurarte de que funciona correctamente.
+
+
+### **4. Prioriza la deuda técnica más crítica**
+- **Crea un backlog de deuda técnica:** Lleva un registro claro de todas las áreas donde el código requiere mejoras, priorizando según el impacto.
+- **Asigna tiempo post-entrega:** Programa un sprint técnico después de cumplir con el plazo para refactorizar el código.
+
+
+### **5. Evita problemas comunes del "código malo"**
+Incluso bajo presión, sigue estas prácticas para evitar errores desastrosos:
+- **No omitas validaciones:** Asegúrate de manejar errores, incluso con soluciones simples.
+- **Usa nombres significativos:** No sacrifiques claridad; el código mal estructurado no tiene que ser ilegible.
+- **Evita dependencias rígidas:** Asegúrate de que las soluciones rápidas no bloqueen la integración de futuras funcionalidades.
+
+  *Ejemplo de mala práctica:*  
+  ```javascript
+  // Hardcode que será difícil de mantener
+  const API_URL = "http://localhost:3000/api/v1/products";
+  ```
+
+  *Mejor alternativa:*  
+  ```javascript
+  // Define constantes para permitir configuraciones futuras
+  const API_URL = process.env.API_URL || "http://localhost:3000/api/v1/products";
+  ```
+
+
+### **6. Post-entrega: Paga tu deuda técnica**
+Después de cumplir el plazo:
+- **Revisa el código:** Evalúa las partes comprometidas y refactóralas.
+- **Incrementa la cobertura de pruebas:** Agrega pruebas unitarias y de integración para las áreas con código temporal.
+- **Aprende de la experiencia:** Analiza qué causó el plazo ajustado y ajusta los procesos (como planificación o estimaciones) para evitar futuras situaciones similares.
+
+Aunque no es ideal escribir "mal código," puedes minimizar el impacto con documentación, encapsulación, y planificación. Siempre prioriza una refactorización inmediata después de cumplir con los plazos. Esto garantizará que el proyecto siga siendo mantenible y escalable en el futuro. 
+
 
 
 <a id="cod58"></a>
