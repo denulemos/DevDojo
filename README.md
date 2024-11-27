@@ -710,7 +710,7 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [La importancia del orden de las funciones](#cod55) |
 | [Porque se deberia evitar retornar null?](#cod56) |
 | [Porque se deberia evitar el uso de variables globales?](#cod57) |
-|¿Cómo podrías mejorar la calidad del código en un proyecto en marcha?|
+|[¿Cómo podrías mejorar la calidad del código en un proyecto en marcha?](#cod57-1)|
 |Si tienes plazos ajustados y te ves obligado a escribir "mal código", ¿cómo manejarías esa situación? |
 |¿Iniciarías un proceso para mejorar la calidad del código? ¿Cómo lo harías sin afectar el desarrollo activo?|
 
@@ -11817,6 +11817,109 @@ public void processRequestBatch(){
 - Las variables globales pueden ser difíciles de depurar y mantener, ya que su alcance es global y no está claro dónde se utilizan o modifican.
 - Las variables globales pueden causar problemas de concurrencia si se acceden y modifican desde múltiples hilos de ejecución.
 - Las variables globales pueden dificultar la reutilización del código, ya que las dependencias globales pueden hacer que sea difícil separar las partes del código en módulos independientes.
+
+<a id="cod57-1"></a>
+
+### **¿Cómo podrías mejorar la calidad del código en un proyecto en marcha?**
+
+[Volver al indice](#cod-base)
+
+Mejorar la calidad del código en un proyecto en marcha requiere un enfoque estructurado y progresivo para no afectar la funcionalidad existente mientras se mejora la base del proyecto. Aquí hay varias estrategias que puedes seguir:
+
+
+### **1. Evaluación inicial y establecimiento de objetivos**
+- **Auditoría del código existente:** Revisa el código base para identificar problemas comunes como:
+  - Código duplicado.
+  - Nombres de variables poco descriptivos.
+  - Falta de pruebas unitarias.
+  - Ciclos de vida complejos o difíciles de seguir.
+- **Definir estándares:** Establece o actualiza las guías de estilo (por ejemplo, estándares para nombres, estructura de carpetas, o uso de patrones).
+- **Objetivos progresivos:** Define metas alcanzables, como mejorar la cobertura de pruebas al 80% o reducir el tiempo de carga en un 20%.
+
+---
+
+### **2. Limpieza y refactorización del código**
+- **Refactorización progresiva:**
+  - Identifica módulos o componentes críticos y refactorízalos uno a la vez.
+  - Aplica principios SOLID para mejorar la modularidad y legibilidad.
+  - Usa patrones de diseño (como Factory, Singleton o Strategy) si simplifican el código.
+- **Eliminar código muerto:** Identifica funciones, componentes o estilos que ya no se usan y elimínalos.
+- **Simplificación de funciones:** Divide funciones complejas en funciones más pequeñas y reutilizables.
+  
+*Ejemplo de refactorización:*
+
+Código inicial:
+```javascript
+function calculateTotal(items) {
+  let total = 0;
+  for (let i = 0; i < items.length; i++) {
+    if (items[i].type === 'discounted') {
+      total += items[i].price * 0.9;
+    } else {
+      total += items[i].price;
+    }
+  }
+  return total;
+}
+```
+
+Código refactorizado:
+```javascript
+function calculateItemPrice(item) {
+  return item.type === 'discounted' ? item.price * 0.9 : item.price;
+}
+
+function calculateTotal(items) {
+  return items.reduce((total, item) => total + calculateItemPrice(item), 0);
+}
+```
+
+---
+
+### **3. Implementación de pruebas**
+- **Pruebas unitarias y de integración:**
+  - Usa herramientas como Jest, Jasmine o Mocha para asegurar la calidad de cada módulo.
+  - Prioriza las áreas del código con mayor probabilidad de errores o que se usan frecuentemente.
+- **Pruebas automatizadas:**
+  - Usa herramientas como Selenium, Cypress o Playwright para automatizar pruebas funcionales y de interfaz.
+- **Cobertura de pruebas:** Implementa herramientas como Istanbul para monitorear la cobertura de pruebas y mantener estándares altos.
+
+---
+
+### **4. Optimización del rendimiento**
+- **Análisis de rendimiento:**
+  - Mide la velocidad del renderizado, el uso de memoria, y el tamaño de los bundles.
+  - Usa herramientas como Lighthouse, Webpack Bundle Analyzer o DevTools.
+- **Lazy loading y tree shaking:** Implementa carga diferida para recursos pesados y elimina código no utilizado en los bundles.
+- **Optimización de la red:** Reduce las peticiones HTTP, habilita compresión (gzip/brotli) y usa HTTP/2 o HTTP/3.
+
+---
+
+### **5. Automatización de tareas repetitivas**
+- **Linting y formateo:** Usa ESLint y Prettier para mantener la consistencia en el código.
+- **Integración continua (CI/CD):**
+  - Configura pipelines con herramientas como Jenkins, GitHub Actions, o GitLab CI para automatizar pruebas, linting y despliegues.
+- **Revisión automatizada de código:** Implementa bots como Dependabot para gestionar dependencias y Snyk para detectar vulnerabilidades.
+
+---
+
+### **6. Mejora de documentación**
+- **Comentarios efectivos:** Escribe comentarios para explicar el "por qué" de decisiones complejas, no el "cómo".
+- **Documentación del proyecto:** Usa herramientas como Storybook para documentar componentes UI o Swagger/OpenAPI para APIs.
+- **README claro:** Asegúrate de que el README tenga instrucciones claras sobre cómo ejecutar, probar y desplegar el proyecto.
+
+---
+
+### **7. Capacitación y revisión de código**
+- **Revisión por pares:** Implementa pull requests obligatorios para garantizar que cada cambio pase por al menos una revisión.
+- **Capacitación del equipo:** Organiza talleres para enseñar nuevas herramientas, patrones o buenas prácticas.
+
+---
+
+### **8. Monitoreo continuo**
+- **Seguimiento de errores:** Usa herramientas como Sentry o LogRocket para detectar y solucionar problemas en producción.
+- **Métricas de calidad:** Monitorea métricas como el tiempo de respuesta, número de bugs reportados y cumplimiento de estándares.
+
 
 <a id="cod58"></a>
 
