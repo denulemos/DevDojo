@@ -712,7 +712,6 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [Porque se deberia evitar el uso de variables globales?](#cod57) |
 |[¿Cómo podrías mejorar la calidad del código en un proyecto en marcha?](#cod57-1)|
 |[Si tienes plazos ajustados y te ves obligado a escribir "mal código", ¿cómo manejarías esa situación?](#cod57-2) |
-|¿Iniciarías un proceso para mejorar la calidad del código? ¿Cómo lo harías sin afectar el desarrollo activo?|
 
 | Code Smells |
 |----------|
@@ -12005,8 +12004,6 @@ Después de cumplir el plazo:
 - **Aprende de la experiencia:** Analiza qué causó el plazo ajustado y ajusta los procesos (como planificación o estimaciones) para evitar futuras situaciones similares.
 
 Aunque no es ideal escribir "mal código," puedes minimizar el impacto con documentación, encapsulación, y planificación. Siempre prioriza una refactorización inmediata después de cumplir con los plazos. Esto garantizará que el proyecto siga siendo mantenible y escalable en el futuro. 
-
-
 
 <a id="cod58"></a>
 
