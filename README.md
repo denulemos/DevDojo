@@ -593,8 +593,8 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 | [¿Qué es un Decorador en Angular?](#rea14)    |
 | [Event Binding en Angular (Manejo de Eventos)](#rea15)    |
 | [Data Binding en Angular](#rea16)    |
-|Que son los componentes standalone y cuando conviene utilizarlos?||
-|¿Podrías describir algunos problemas de rendimiento que hayas enfrentado en aplicaciones Angular y cómo los resolviste?|
+|[Que son los componentes standalone y cuando conviene utilizarlos?](#rea16-1)|
+|[¿Podrías describir algunos problemas de rendimiento que hayas enfrentado en aplicaciones Angular y cómo los resolviste?](#rea16-2)|
 |¿Podrías nombrar algunas mejoras comunes de rendimiento en Angular (pipes, detección de cambios, etc.)?|
 |¿Qué problemas de rendimiento pueden existir en Angular y cómo se solucionan?|
 |¿Cómo funciona la detección de cambios en Angular?|
@@ -8194,6 +8194,245 @@ import { FormsModule } from '@angular/forms';
 })
 export class AppModule { }
 ```
+
+<a id="rea16-1"></a>
+
+### **Que son los componentes standalone y cuando conviene utilizarlos?** 
+
+[Volver al indice](#rea-base)
+
+Son una característica introducida en Angular 14 que permite definir componentes sin necesidad de declararlos en un módulo (`NgModule`). En lugar de eso, los componentes standalone se definen utilizando la propiedad `standalone: true` en el decorador `@Component`, y ellos mismos pueden importar directamente otros componentes, directivas, pipes, o módulos necesarios.
+
+**¿Cómo se define un componente standalone?**
+
+Un ejemplo básico de un componente standalone es el siguiente:
+
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-standalone-example',
+  template: `<h1>Hola desde un componente standalone</h1>`,
+  standalone: true,
+  imports: [], // Aquí puedes importar otros componentes o módulos
+})
+export class StandaloneExampleComponent {}
+```
+
+**Ventajas**
+
+1. **Simplicidad**: Elimina la necesidad de crear o mantener módulos para cada grupo de componentes.
+2. **Modularidad**: Facilita la creación de componentes altamente independientes que pueden ser reutilizados en diferentes aplicaciones.
+3. **Carga más rápida**: Se pueden usar directamente en **lazy loading** (carga diferida) o **bootstrap** sin necesidad de un módulo adicional.
+4. **Menos boilerplate**: Reduce la sobrecarga de configuración al no requerir un módulo explícito para declarar o exportar un componente.
+5. **Facilidad de pruebas**: Son más fáciles de probar de manera aislada, ya que no dependen de módulos intermedios.
+
+**¿Cuándo conviene utilizarlos?**
+Conviene usar componentes standalone en las siguientes situaciones:
+
+1. **Aplicaciones nuevas**:
+   - Si comienzas un proyecto desde cero, puedes adoptar el enfoque standalone desde el inicio para simplificar la estructura del proyecto y aprovechar las ventajas de esta arquitectura.
+
+2. **Componentes independientes**:
+   - Para componentes reutilizables o librerías de UI (como botones, tarjetas, o modal dialogs), donde no necesitas integrarlos en un módulo completo.
+
+3. **Rutas (Lazy Loading)**:
+   - En módulos cargados de manera diferida, los componentes standalone pueden ser la opción ideal, ya que pueden ser cargados directamente en una ruta sin necesidad de un módulo asociado.
+   ```typescript
+   import { Route } from '@angular/router';
+   import { StandaloneExampleComponent } from './standalone-example.component';
+
+   const routes: Route[] = [
+     { path: 'example', component: StandaloneExampleComponent },
+   ];
+   ```
+
+4. **Migración progresiva**:
+   - Si tienes un proyecto con módulos existentes, puedes migrar poco a poco a componentes standalone en lugar de reestructurar completamente los módulos.
+
+5. **Proyectos pequeños o específicos**:
+   - En aplicaciones con pocos componentes, usar componentes standalone puede ser suficiente y evita el uso innecesario de módulos.
+
+**Limitaciones**
+
+1. **Compatibilidad con proyectos existentes**:
+   - En proyectos grandes con módulos muy establecidos, puede ser complicado combinar ambos enfoques. Sin embargo, Angular permite mezclar componentes standalone y no-standalone.
+
+2. **Agrupación lógica**:
+   - Si tienes muchos componentes que comparten servicios o configuraciones, un módulo podría ser más práctico para organizar estas dependencias.
+
+Los componentes standalone simplifican la arquitectura de Angular al reducir la dependencia de módulos y alinear el framework con tendencias modernas en diseño de componentes. Conviene adoptarlos cuando buscas simplicidad, modularidad y mayor flexibilidad en proyectos nuevos o en escenarios específicos como componentes reutilizables o lazy loading.
+
+<a id="rea16-2"></a>
+
+### **¿Podrías describir algunos problemas de rendimiento que hayas enfrentado en aplicaciones Angular y cómo los resolviste?** 
+
+[Volver al indice](#rea-base)
+
+Claro, aquí tienes una descripción de problemas de rendimiento comunes en aplicaciones Angular y las estrategias que he utilizado para resolverlos. 
+
+---
+
+**1. Renderizado excesivo (Change Detection Ineficiente)**
+
+**Problema:**
+- Angular utiliza un sistema de detección de cambios (`Change Detection`) que verifica cada componente en el árbol para detectar actualizaciones. Si no se optimiza, puede provocar renderizados innecesarios, afectando el rendimiento en aplicaciones grandes o con datos dinámicos.
+
+**Solución:**
+- **Uso de `OnPush` Change Detection:**
+  Configuré el componente con `changeDetection: ChangeDetectionStrategy.OnPush`, lo que indica a Angular que solo actualice el componente si cambian sus entradas (`@Input`) o eventos explícitos como observables.
+
+  ```typescript
+  import { ChangeDetectionStrategy, Component } from '@angular/core';
+
+  @Component({
+    selector: 'app-my-component',
+    template: `<p>{{ data }}</p>`,
+    changeDetection: ChangeDetectionStrategy.OnPush,
+  })
+  export class MyComponent {
+    @Input() data!: string;
+  }
+  ```
+
+- **Desuscripción de Observables:**  
+  Aseguré que todos los observables y suscripciones se manejaran adecuadamente utilizando operadores como `takeUntil` o librerías como `RxJS`.
+
+---
+
+**2. Carga innecesaria de datos (Lazy Loading ineficiente)**
+
+**Problema:**
+- Los módulos o componentes se cargaban todos al inicio (Eager Loading), incluso aquellos que no eran necesarios de inmediato, aumentando los tiempos de carga inicial.
+
+**Solución:**
+
+- **Lazy Loading con Rutas:**
+  Implementé la carga diferida (`Lazy Loading`) para módulos relacionados con rutas específicas, de forma que solo se cargaran cuando fueran necesarias.
+
+  ```typescript
+  const routes: Routes = [
+    {
+      path: 'feature',
+      loadChildren: () => import('./feature/feature.module').then(m => m.FeatureModule),
+    },
+  ];
+  ```
+
+- **Preloading Strategy personalizada:**
+  Para evitar demoras en la carga de módulos críticos, utilicé una estrategia de pre-carga personalizada para cargar solo ciertos módulos cuando el usuario está inactivo.
+
+---
+
+**3. Renderizado lento de listas grandes**
+
+**Problema:**
+- En componentes con listas grandes (por ejemplo, una tabla con miles de filas), el renderizado era muy lento debido a que Angular intentaba procesar todos los elementos del DOM.
+
+**Solución:**
+- **Uso de Virtual Scroll (Angular CDK):**
+  Reemplacé listas convencionales (`*ngFor`) con el `cdk-virtual-scroll`, que solo renderiza los elementos visibles en la pantalla.
+
+  ```html
+  <cdk-virtual-scroll-viewport itemSize="50" style="height: 300px;">
+    <div *cdkVirtualFor="let item of items">{{ item }}</div>
+  </cdk-virtual-scroll-viewport>
+  ```
+
+- **Paginación en el backend:**
+  Implementé paginación en el backend para limitar la cantidad de datos enviados al cliente, reduciendo el impacto en memoria y procesamiento.
+
+---
+
+**4. Problemas con imágenes grandes**
+
+**Problema:**
+- La carga de imágenes grandes o innecesarias causaba tiempos de carga lentos y un impacto significativo en el rendimiento, especialmente en dispositivos móviles.
+
+**Solución:**
+- **Lazy Loading de Imágenes:**
+  Configuré `loading="lazy"` en las etiquetas `<img>` para que las imágenes se cargaran solo cuando estuvieran cerca de entrar en el viewport.
+
+  ```html
+  <img src="path/to/image.jpg" alt="Example" loading="lazy" />
+  ```
+
+- **Optimización de imágenes:**
+  Implementé herramientas como **ImageMagick** o **Cloudinary** para comprimir y redimensionar imágenes antes de enviarlas al cliente.
+
+---
+
+**5. Demora en formularios complejos**
+
+**Problema:**
+- Formularios grandes con validaciones dinámicas ralentizaban la experiencia del usuario.
+
+**Solución:**
+- **Optimización de validaciones:**
+  - Utilicé validaciones asincrónicas solo cuando eran absolutamente necesarias.
+  - Reemplacé validadores complejos con funciones más simples.
+
+  ```typescript
+  myForm = this.fb.group({
+    email: ['', [Validators.required, Validators.email]],
+  });
+  ```
+
+- **División de formularios:**
+  Dividí formularios extensos en pasos con componentes separados (wizard), cargando solo la parte visible.
+
+---
+
+**6. API calls repetitivos**
+
+**Problema:**
+- Varias partes de la aplicación realizaban solicitudes redundantes al backend, lo que aumentaba el tiempo de respuesta y sobrecargaba el servidor.
+
+**Solución:**
+- **Cache en servicios:**
+  Implementé cache utilizando el patrón de memoización con RxJS y un `BehaviorSubject` para almacenar y reutilizar los datos en lugar de hacer múltiples solicitudes.
+
+  ```typescript
+  private cache = new Map<string, any>();
+
+  getData(url: string): Observable<any> {
+    if (this.cache.has(url)) {
+      return of(this.cache.get(url));
+    }
+    return this.http.get(url).pipe(
+      tap(data => this.cache.set(url, data))
+    );
+  }
+  ```
+
+- **Combinar solicitudes (ForkJoin):**
+  Agrupé múltiples llamadas a la API en una sola utilizando `forkJoin` o `combineLatest`.
+
+---
+
+**7. Scripts pesados y dependencias innecesarias**
+
+**Problema:**
+- La aplicación cargaba muchas librerías de terceros y scripts, aumentando el tamaño del bundle.
+
+**Solución:**
+- **Eliminación de dependencias no usadas:**
+  Revisé `package.json` y eliminé librerías no esenciales, reemplazándolas con implementaciones nativas o más ligeras.
+
+- **Uso de importaciones específicas:**
+  En lugar de importar módulos completos de Angular Material o librerías, importé solo los módulos necesarios.
+
+  ```typescript
+  import { MatButtonModule } from '@angular/material/button';
+  ```
+
+- **Habilitación de Tree Shaking:**
+  Configuré correctamente Webpack y Angular CLI para asegurarnos de que el código no usado se eliminara en el proceso de construcción.
+
+---
+
+Optimizar aplicaciones Angular requiere identificar los cuellos de botella específicos, ya sea en el DOM, la carga de datos o las dependencias. Las herramientas de Angular como `OnPush`, `Lazy Loading` y `Virtual Scroll`, junto con estrategias como el uso de cache y optimización de recursos, pueden mejorar significativamente el rendimiento.
+
 
 <a id="rea17"></a>
 
