@@ -13,6 +13,15 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 ## Tabla de Contenidos
 
 - [Algoritmos y manejo de datos](#alg-base)
+  - [Algoritmos de Ordenamiento](#alg-base-ord)
+  - [Complejidad Algorítmica](#alg-base-comp)
+  - [Arrays y ArrayLists](#alg-base-arr)
+  - [Colecciones y Estructuras](#alg-base-col)
+  - [Variables](#alg-base-var)
+  - [Pilas y Colas](#alg-base-pilcol)
+  - [Arboles](#alg-base-arb)
+  - [Programación Funcional y Orientada a Objetos](#alg-base-obj)
+  - [Manejo de Eventos y Asincronía](#alg-base-async)
 - [Metodos y Operadores en Javascript](#alg-base-2)
 - [Organizacion en Software - Derecho en IT](#cic-base)
 - [Gestion de proyectos - Liderazgo](#cic-base-2)
@@ -39,6 +48,8 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [Podemos aplicar Binary Search a una Linked List ordenada?](#alg2) |
 |[¿Cuál es la diferencia entre Binary Search y Linear Search?](#alg22)|
 
+<a name="alg-base-ord"></a>
+
 | Algoritmos de Ordenamiento |
 |----------|
 | [Selection Sort](#alg3) |
@@ -47,6 +58,8 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [Merge Sort](#alg6) |
 |[¿Cuándo sería más adecuado usar Merge Sort en lugar de Quick Sort?](#alg66)|
 |[¿Cómo varía la eficiencia de estos algoritmos con el tamaño de los datos?](#alg77)|
+
+<a name="alg-base-comp"></a>
 
 | Complejidad Algorítmica |
 |----------|
@@ -61,14 +74,16 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 |¿Cómo se calcula la complejidad temporal de un algoritmo recursivo?|
 |¿Qué es la complejidad espacial y cómo se relaciona con la complejidad temporal?|
 
-| Arrays y Estructuras Similares |
+<a name="alg-base-arr"></a>
+
+| Arrays y ArrayLists |
 |----------|
-| [Estructuras de datos (Arrays)](#alg15) |
+| [Estructuras de datos (Arrays en Java)](#alg15) |
 | [Qué es un "array-like" en Javascript?](#alg26) 💛|
 | [Cuales son las funciones array de JavaScript?](#alg27) 💛 |
-| [Funcion .sort()](#alg28) |
+| [Funcion .sort()](#alg28) 💛|
 |[¿Cómo funcionan los arrays en JavaScript internamente?](#alg282)|
-| [Especificando la clase de contenido de un ArrayList](#alg16) |
+| [Especificando la clase de contenido de un ArrayList en Java](#alg16) |
 | [Creación de un ArrayList en Java](#alg17) |
 |[¿Cuál es la diferencia entre un ArrayList y un array tradicional en Java?](#alg17-2)|
 |[¿Cómo afecta la capacidad de crecimiento dinámico un ArrayList a su rendimiento?](#alg17-3)|
@@ -81,15 +96,14 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 |¿Cómo se puede mejorar el rendimiento de la búsqueda en un ArrayList?|
 |¿Cuál es la diferencia entre el método remove() y clear() en un ArrayList?|
 
-| Uso Avanzado |
+<a name="alg-base-col"></a>
+
+| Colecciones y Estructuras |
 |----------|
-| [Creando colecciones como atributo de una clase](#alg24) |
-| [Devolver una colección secundaria](#alg25) |
+| [Creando colecciones como atributo de una clase en Java](#alg24) |
+| [Devolver una colección secundaria en Java](#alg25) |
 |¿Qué consideraciones de diseño debemos tener en cuenta al trabajar con colecciones como atributos de clases?|
 |¿Cómo evitar la mutabilidad no deseada al devolver colecciones de una clase?|
-
-| Otras Colecciones y Estructuras |
-|----------|
 | [Set() en Javascript (HashSet)](#alg29) 💛|
 | [HashTables (.Map)](#alg30) 💛 |
 |[¿Cuál es la diferencia entre un Set y un Array en JavaScript?](#alg301)|
@@ -100,6 +114,8 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [¿Cual es la diferencia entre un Linked List y un Doubly Linked List?](#alg34) |
 |¿Cómo funciona el algoritmo de eliminación de un nodo en una Linked List?|
 |¿Qué ventajas y desventajas tiene una Doubly Linked List sobre una Singly Linked List?|
+
+<a name="alg-base-var"></a>
 
 | Variables |
 |----------|
@@ -112,6 +128,8 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [¿Qué son las variables no declaradas y no definidas?](#var19) |
 |[¿Qué es la tipificación estática y dinámica?](#var19-2)|
 
+<a name="alg-base-pilcol"></a>
+
 | Pilas y Colas |
 |----------|
 |[Qué son las Pilas y Colas?](#alg37) |
@@ -119,6 +137,8 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [Pilas](#alg39) |
 | [Nodo versus dato](#alg40) |
 | [Uso de Pilas y Colas](#alg41) |
+
+<a name="alg-base-arb"></a>
 
 | Arboles |
 |----------|
@@ -136,10 +156,11 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 |¿Qué es un árbol AVL y cuáles son sus ventajas?|
 |¿Qué es un árbol rojo-negro?|
 
+<a name="alg-base-obj"></a>
+
 | Programación Funcional y Orientada a Objetos |
 |----------|
 | [Que es la programacion funcional?](#var27-1) 💛 |
-| [Funciones en Javascript](#var27) |
 | [¿Qué es una funcion Declarativa y una Expresiva?](#var35) |
 | [Prototypes y Herencia Prototype (Prototype Inheritance)](#var26) 💛|
 | [Creacion de Constructores](#var28) |
@@ -149,6 +170,8 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [Que es el Function Factory?](#var20) |
 | [Que es el Currying?](#var23)  💛 |
 | [¿Qué son las funciones puras y cómo se relacionan con la programación funcional?](#var23-1)|
+
+<a name="alg-base-async"></a>
 
 | Manejo de Eventos y Asincronía |
 |----------|
@@ -172,6 +195,7 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 
 | Métodos y Operadores en JavaScript |
 |----------|
+| [Funciones en Javascript](#var27) |
 | [Metodos de Strings en Javascript](#alg55) |
 | [Métodos de Objectos en Javascript](#alg56) |
 | [Diferencia entre Map y Weakmap](#var30) |
@@ -2338,12 +2362,13 @@ La diferencia principal es que en Binary Search se divide el array en dos partes
 
 La complejidad de Binary Search es O(log n) y la de Linear Search es O(n).
 
+---
 
 <a id="alg3"></a>
 
 ### **Selection Sort**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-ord)
 
 ![Selection Sort Tutorials & Notes | Algorithms | HackerEarth](https://he-s3.s3.amazonaws.com/media/uploads/2888f5b.png)
 
@@ -2380,7 +2405,7 @@ Su complejidad temporal es de O(n^2)
 
 ### **Insertion Sort**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-ord)
 
 Este algoritmo funciona construyendo una matriz ordenada al principio de la lista.
 
@@ -2412,7 +2437,7 @@ Su complejidad temporal es de O(n^2)
 
 ### **Bubble Sort**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-ord)
 
 Es el más simple de todos.
 
@@ -2453,7 +2478,7 @@ Su complejidad temporal es de O(n^2)
 
 ### **Merge Sort**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-ord)
 
 ![Understanding Merge Sort-Sorting Algorithm -4 | by Jaykishan Sewak | Medium](https://miro.medium.com/v2/resize:fit:672/1*WQ4YJMWRFrGHLK1KQDeDHQ.png)
 
@@ -2516,7 +2541,7 @@ Su complejidad temporal es de O(n log n)
 
 ### **¿Cuándo sería más adecuado usar Merge Sort en lugar de Quick Sort?**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-ord)
 
 Merge Sort es más adecuado cuando se necesita una estabilidad en la ordenación, es decir, cuando se necesita mantener el orden relativo de los elementos iguales en el array original.
 
@@ -2526,18 +2551,19 @@ Quick Sort es más adecuado cuando se necesita una ordenación en su lugar, es d
 
 ### **¿Cómo varía la eficiencia de estos algoritmos con el tamaño de los datos?**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-ord)
 
 La eficiencia de los algoritmos de ordenación varía con el tamaño de los datos de entrada. En general, los algoritmos de ordenación más eficientes, como Merge Sort y Quick Sort, tienen una complejidad temporal de O(n log n), lo que significa que su tiempo de ejecución aumenta de forma logarítmica con el tamaño de los datos de entrada.
 
 Por otro lado, los algoritmos de ordenación menos eficientes, como Bubble Sort y Selection Sort, tienen una complejidad temporal de O(n^2), lo que significa que su tiempo de ejecución aumenta de forma cuadrática con el tamaño de los datos de entrada.
 
+---
 
 <a id="alg7"></a>
 
 ### **Big O - ¿Qué es?**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-comp)
 
 O viene por la palabra Orden. La n representa un número o el tamaño de un conjunto
 
@@ -2549,7 +2575,7 @@ La mejor opcion es la que crece menos ante el aumento de datos de entrada
 
 ### **Reglas para calcular Big O**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-comp)
 
 * Se ignoran las constantes
 
@@ -2606,7 +2632,7 @@ O(n + 1) => O(n)
 
 ### **Calcular Big O**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-comp)
 
 Supongamos que necesitamos llevar unas valijas a la casa de un primo. No importan cuantas valijas llevemos, el tiempo siempre será el mismo, 5 minutos.
 
@@ -2618,7 +2644,7 @@ Si quiero llevar las valijas corriendo, supongamos que solo puedo llevar 2 valij
 
 ### **Notación Asintótica**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-comp)
 
 La notacion asintotica nos permite simplificar estos graficos, es como redondear decimales.
 
@@ -2721,7 +2747,7 @@ No importa si tenemos un algoritmo muy complejo dentro de un if al que probablem
 
 ### **¿Cómo analizamos el codigo?**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-comp)
 
 Cualquier función se considera O(1) (constante) siempre y cuando no sea un ciclo, no tenga recursion y no sea una llamada a una funcion que no sea de tiempo constante
 
@@ -2803,7 +2829,7 @@ Nos quedamos con el termino mas significativo, que seria n^2
 
 ### **Multiplicacion de Runtimes**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-comp)
 
 Si mi código es "Hace esto y luego hace esto otro", se agrega al Runtime
 
@@ -2832,7 +2858,7 @@ for (int a: arrA) {
 
 ### **Ejemplos de Ejercicios**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-comp)
 
 En este caso es O(N) (Muy bueno), el hecho de que iteremos dos veces el array no importa.
 
@@ -2986,11 +3012,13 @@ void printPairsTwoArrays(int[] arrayA, int[] arrayB) {
 }
 ```
 
+---
+
 <a id="alg15"></a>
 
-### **Estructuras de datos (Arrays)**
+### **Estructuras de datos (Arrays en Java)**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-arr)
 
 Las colecciones de objetos son comunes en la programación moderna, especialmente bajo el paradigma de la Programación Orientada a Objetos (POO). Como su nombre lo indica, las colecciones de objetos permiten reunir elementos de un mismo tipo y, si existen, de sus subtipos. Esto significa que, desde el punto de vista de la POO, dentro de una colección podemos almacenar en memoria objetos de una misma clase, así como de sus subclases.
 
@@ -3007,301 +3035,11 @@ A continuación, veremos cómo crear colecciones de objetos utilizando `ArrayLis
 
 En Java, los `ArrayList` son una implementación de la interfaz `List`. También se los conoce como listas, aunque este concepto es más amplio de lo que trataremos aquí, donde sólo los utilizaremos para crear colecciones dinámicas de datos.
 
-<a id="alg16"></a>
-
-### **Especificando la clase de contenido de un ArrayList**
-
-[Volver al indice](#alg-base)
-
-Esta clase tiene una particularidad: para instanciar un ArrayList debemos indicar la clase de elementos que contendrá. Crear el ArrayList sin especificar la clase de elementos que contendrá está permitido, pero indicará una alerta y asumirá que sus elementos son de la clase Object. Los ArrayLists soportan que en su definición se indique cuál será la clase que tomaremos como clase base para añadir elementos a la estructura.
-Si necesitamos crear una colección de objetos que pueda guardar cualquier clase de elemento, debemos asociarla a la clase Object, pero la clase Object no conocerá los métodos y atributos específicos de cada elemento que pongamos en la lista, y esto impedirá acceder a sus atributos y métodos particulares en forma automática.
-
-```java
-ArrayList<Object> coleccion = new ArrayList<>();
-```
-
-<a id="alg17"></a>
-
-### **Creación de un ArrayList en Java**
-
-[Volver al indice](#alg-base)
-
-Como primera medida importaremos el paquete correspondiente a partir de la adición de su namespace (Esto al momento de escritura de este apunte):
-
-```java
-import java.utils.ArrayList;
-```
-
-Una vez agregado el paquete nuestro programa permitirá crear colecciones de la siguiente manera (podemos hacerlo en dos partes, primero declarando la variable y luego creando el objeto; aquí está la “versión corta”):
-
-```java
-ArrayList<ClaseBase> coleccion = new ArrayList<>();
-```
-
-Así, para crear una colección de objetos de la clase Persona, haremos:
-
-```java
-ArrayList<Persona> personas = new ArrayList<>();
-```
-
-Tengamos en cuenta que al hacer esto estamos creando únicamente la colección vacía, sin ningún elemento. La clase ArrayList posee el método size() que nos indica cuál es la cantidad de elementos que se han guardado en el momento en la colección. Si ejecutásemos la siguiente instrucción inmediatamente después de crearla, obtendríamos como respuesta un 0:
-
-```java
-System.out.println(coleccion.size());
-```
-
-En caso de necesitar crear una colección de elementos de los tipos nativos del lenguaje (integer, double, etc.) debemos recurrir a sus contrapartes como clase:
-
-```java
-ArrayList<Integer> numeros = new ArrayList<>();
-```
-
-Tampoco deberemos crear una nueva clase para generar colecciones de Strings, porque de por sí String ya es una clase:
-
-```java
-ArrayList<String> palabras = new ArrayList<>();
-```
-
-<a id="alg17-2"></a>
-
-### **¿Cuál es la diferencia entre un ArrayList y un array tradicional en Java?**
-
-[Volver al indice](#alg-base)
-
-Un array tradicional en Java es una estructura de datos fija que almacena un conjunto de elementos del mismo tipo. Una vez que se crea un array, su tamaño no puede cambiar. Por otro lado, un ArrayList en Java es una implementación de la interfaz List que proporciona una colección dinámica de elementos. A diferencia de un array tradicional, un ArrayList puede cambiar de tamaño dinámicamente, lo que significa que puede crecer o reducirse según sea necesario.
-
-<a id="alg17-3"></a>
-
-### **¿Cómo afecta la capacidad de crecimiento dinámico un ArrayList a su rendimiento?**
-
-[Volver al indice](#alg-base)
-
-El crecimiento dinámico de un ArrayList en Java puede afectar su rendimiento en ciertas situaciones. Cuando un ArrayList crece más allá de su capacidad actual, necesita aumentar su tamaño interno para acomodar más elementos. Esto implica la creación de un nuevo array interno con una capacidad mayor y la copia de todos los elementos existentes al nuevo array. Este proceso de redimensionamiento puede ser costoso en términos de tiempo y recursos, especialmente si el ArrayList contiene una gran cantidad de elementos.
-
-<a id="alg18"></a>
-
-### **Agregar un elemento a un ArrayList**
-
-[Volver al indice](#alg-base)
-
-Para agregar un elemento a un ArrayList utilizaremos el método add(elemento), el cual permite agregar un nuevo elemento al final de la estructura (es decir, como último elemento). 
-
-Por ejemplo, para agregar un elemento, podemos hacer:
-
-```java
-// creamos el objeto
-Objeto elemento = new Objeto();
-...
-...
-...
-// lo agregamos a la colección
-coleccion.add(elemento);
-```
-
-Solamente en el caso de las clases relacionadas a los tipos nativos (integer, double, etc.) podremos agregar elementos sin necesidad de crear explícitamente el objeto (Java lo hará por nosotros):
-
-```java
-numeros.add(19); // insertará el número 19 en la colección
-```
-
-<a id="alg19"></a>
-
-### **Obtener el elemento n de un ArrayList**
-
-[Volver al indice](#alg-base)
-
-Para obtener el elemento n del ArrayList utilizaremos el método get(n), donde n es la posición en la cual está el elemento. El valor de n debe estar entre 0 y size()-1, caso contrario se producirá un error de ejecución.
-Para obtener el primer elemento de la colección haremos:
-
-```java
-Objeto elemento = coleccion.get(0);
-```
-
-Esto guardará la referencia al elemento sin quitarlo de la lista (no hace una copia). Entonces, si modificamos el elemento que tenemos en el auxiliar, obviamente estaremos modificando el elemento que está en la lista, pues es el mismo elemento referenciado desde dos lugares distintos.
-
-<a id="alg20"></a>
-
-### **Extraer el elemento n de un ArrayList**
-
-[Volver al indice](#alg-base)
-
-Para extraer el elemento n del ArrayList utilizaremos el método remove(n ), donde n es la posición en la cual está el elemento. El tratamiento es similar al caso del get(): el valor de n debe estar entre 0 y size()-1, caso contrario se producirá un error de ejecución. A diferencia del get(), remove() extrae el elemento de la posición, y si éste no era el último, su lugar será ocupado por el siguiente elemento (y así hasta el final), acortando el tamaño de la estructura en 1.
-Por ejemplo, para extraer el primer elemento de la colección haremos:
-
-```java
-Objeto elemento = coleccion.remove(0);
-
-coleccion.remove(0);
-```
-
-La diferencia entre estos dos casos es que mientras el primero guarda el elemento removido en una variable auxiliar para su uso posterior, el segundo lo descarta inmediatamente y ya no tendremos acceso al mismo.
-Pero sacar un elemento de la colección, como vimos más arriba, tiene algunas consecuencias impensadas, algunas de las cuales trataremos más adelante en esta misma guía.
-
-<a id="alg21"></a>
-
-### **Recorrer el ArrayList completo con for-each**
-
-[Volver al indice](#alg-base)
-
-El ciclo conocido como for-each es una variante del for tradicional que, en vez de utilizar un valor índice para iterar una determinada cantidad de veces, utiliza un iterador implícito para visitar en cada ciclo cada los elementos cargados en la lista, de a uno por vez, del primero al último elemento. Para eso necesita una variable local en la cual guardará temporalmente la referencia al elemento visitado.
-La estructura del for-each es la que sigue:
-
-```java
-for (Clase elementoAuxiliar : coleccion) {
- proceso(elementoAuxiliar);
-}
-```
-
-En el ejemplo, proceso() deberá reemplazarse por lo que querramos hacer con el elemento visitado. Por ejemplo, para mostrar el nombre y el número de DNI de cada persona guardada en la colección, haríamos:
-
-```java
-for (Persona persona : personas){
- System.out.println(persona.getNombre());
- System.out.println(persona.getDocumento());
-}
-```
-
-Este ejemplo podría leerse como “para cada persona que esté en la colección de personas, mostrar el nombre y el número de documento”. Esto hará que en cada iteración (en cada vuelta del ciclo) la variable persona guarde temporalmente, una a una, cada persona que esté en la estructura, comenzando con la primera de todas y hasta que no haya más. La variable persona tendrá asignada en cada ciclo, entonces, el objeto de la colección que se está visitando en ese momento.
-
-<a id="alg22"></a>
-
-### **Buscar un elemento en la colección**
-
-[Volver al indice](#alg-base)
-
-Utilizar el ciclo for-each es muy fácil y cómodo, pero no tiene una manera natural de abandonar el recorrido por la colección sin recorrerlo por completo. El inconveniente de esto es que si estamos buscando un elemento específico y ya lo encontramos, o si ya sabemos que no lo encontraremos, seguiríamos recorriendo la estructura hasta el final innecesariamente.
-Hay formas de recorrer la estructura parcialmente. Una de ellas es utilizando
-explícitamente un iterador, la cual probablemente sea la forma más conocida de
-hacerlo. Pero trabajar con iteradores requiere de cierto cuidado y tener en cuenta algunos conceptos que dejaremos para más adelante.
-Entonces nos queda una forma de recorrer la estructura parcialmente sin
-necesidad de hacerlo por completo: aprovechando la capacidad de acceder a un
-elemento determinado con get(). Por ejemplo, si necesitamos ubicar una persona determinada de la lista, podríamos hacer lo siguiente:
-
-```java
-// Búsqueda de la persona por nro de documento.
-// creamos una variable auxiliar donde dejaremos
-// el elemento buscado, si lo encontramos.
-Persona personaBuscada = null;
-int indice = 0;
-// buscamos mientras no hayamos llegado al final
-// de la estructura y no hayamos encontrado el
-// elemento que estamos buscando.
-while (indice < personas.size() && personaBuscada == null) {
- if (personas.get(indice).getDocumento() == docBuscado) {
- // si la encontramos, la asignamos al auxiliar
-  personaBuscada = personas.get(indice);
- } else {
-  // incrementamos el índice para
-  // pasar al siguiente elemento
-  indice++;
- }
-}
-```
-
-El ejemplo anterior utilizará el ciclo while para recorrer la estructura mientras haga falta. El if interno, como está expresado en los comentarios, cumple dos tareas. La primera es asignar el elemento al auxiliar cuando es el que buscamos. La segunda, es darnos la posibilidad de intentar con el siguiente, a ver si es el que queremos. El incremento de índice puede hacerse también fuera del if (no en el else), aunque en ese caso perdería la posición donde encontró el elemento. De esta forma, guarda también la posición y no incremente el índice sin necesidad.
-
-<a id="alg23"></a>
-
-### **Remover algunos de los elementos del ArrayList**
-
-[Volver al indice](#alg-base)
-
-Un tratamiento similar debemos aplicar cuando queremos extraer algunos elementos de la colección, pero no todos. El tema, en este caso, pasa porque al remover un elemento determinado, los posteriores se adelantan en una posición. Esto hace que al incrementar el valor del índice inmediatamente después de extraer el elemento, como todos los elementos posteriores se movieron para adelante una posición, en la posición que acabamos de abandonar ha quedado, si existe, un elemento que no hemos visitado. Para que esto no suceda, sólo debemos avanzar cuando el elemento recién visitado no haya sido extraído. Si lo hemos extraído, nos quedaremos en esa posición esperando a que los  elementos se reacomoden (que todos los posteriores ocupen su nuevo lugar) y, así, no perder el nuevo elemento que cayó en la posición donde estamos parados.
-Veamos el siguiente ejemplo: supongamos que tenemos una colección de números con los valores 1, 7, 4, 9, 17, 22. No es necesario que estén ordenados. Lo que intentaremos es dejar sólo los números impares, eliminando los pares:
-
-```java
-// Eliminando todos los números pares de la colección.
-int indice = 0;
-// buscamos mientras no hayamos llegado al final
-// de la estructura.
-while (indice < numeros.size()) {
- if (numeros.get(indice) % 2 == 0) {
- // si es par lo quitamos
-  numeros.remove(indice);
- } else {
-  // incrementamos el índice para
-  // pasar al siguiente elemento
-  indice++;
- }
-}
-```
-
-Así, recorreremos la colección de números hasta llegar al 4 (índice=2, recordemos que el primero tiene índice=0). Entonces, lo extraeremos, y todos los elementos posteriores se adelantarán un lugar. La colección, entonces, queda así: 1, 7, 9, 17, 22
-
-Nosotros seguiremos parados en la posición 2, donde ahora, en vez del 4 que extrajimos, está el 9. Gracias a que no avanzamos, en la nueva iteración del ciclo (donde podría haber encontrado un nuevo número par) trataremos el 9, luego el 17 y así hasta llegar al 22. Aquí también nos detendremos a extraer el número y no incrementaremos, pero la lista habrá perdido un nuevo elemento (el 22), quedando entonces sólo con 4 elementos (1, 7, 9, 17). Como el ciclo sólo itera mientras el índice sea menor a la cantidad de elementos de la colección, saldremos y la lista quedará solamente con los números impares.
-
-<a id="alg24"></a>
-
-### **Creando colecciones como atributo de una clase**
-
-[Volver al indice](#alg-base)
-
-Supongamos que tenemos la clase Club, y que el club mantiene una lista de sus socios.
-Para esto, crearemos el atributo privado socios, que será un ArrayList de elemento de clase Socio. Si bien podemos instanciar aquí la colección, sólo la declararemos y le asignaremos el valor null para que la colección sea creada explícitamente en el constructor de la clase Club, pues consideramos que es el mejor lugar para hacerlo:
-
-```java
-public class Club {
- private ArrayList<Socio> socios = null;
- public Club() {
-  this.socios = new ArrayList<Socio>();
- }
- public void agregarSocio(Socio socio) {
-  socios.add(socio);
- }
- public void agregarSocio(String nombre) {
-  socios.add(new Socio(nombre));
- }
-}
-```
-
-También podemos ver dos métodos distintos para agregar socios, el primero pasándole directamente un objeto de la clase Socio, y el segundo que sólo recibe el nombre del nuevo socio, que será instanciado y agregado en el momento.
-¿Y qué deberíamos hacer para dar de baja un socio? ¿Cómo hacemos para devolver la instancia de socio que queremos eliminar sin exponer la colección completa?
-
-```java
-public Socio darDeBaja(int numero) {
- Socio socio = null;
- int indice = 0;
- while (indice < socios.size() && socio == null) {
-  if (socios.get(indice).getNumero() == numero) {
-   socio = socios.get(indice);
-  } else {
-   indice++;
-  }
- }
- return socio;
-}
-```
-
-Así devolvemos null o el socio encontrado, que ya ha sido removido de la colección, para que desde donde han llamado a la rutina se procese la instancia de la manera que se desee (por ejemplo, para mostrar los datos del socio dado de baja).
-
-<a id="alg25"></a>
-
-### **Devolver una colección secundaria**
-
-[Volver al indice](#alg-base)
-
-Siguiendo con el ejemplo anterior, supongamos que queremos devolver una colección con todos los socios vitalicios del club. Para eso podríamos hacer algo como lo que sigue:
-
-```java
-public ArrayList<Socio> obtenerVitalicios() {
- ArrayList<Socio> vitalicios = new ArrayList<Socio>();
- for (Socio s: socios) {
-  if (s.esVitalicio()) {
-   vitalicios.add(s);
-  }
- }
- return vitalicios;
-}
-```
-
-En este caso agregará a la colección vitalicios (creada como variable local) todos aquellos socios que cumplan con la condición de ser vitalicios. Pero, ¿qué pasará, entonces, con la lista de socios principal, donde estaban los estos socios, ahora en la lista de socios vitalicios?
-No pasará nada: todos los socios estarán en la lista principal, y aquellos que cumplan con lo condición deseada, además, estarán en esta lista secundaria. Cada socio vitalicio estará tanto en la lista secundaria como en la principal, porque en ambas se guarda la referencia al objeto de clase Socio en cuestión. En caso de eliminar el elemento de una de las listas, seguirá vivo en la otra. Esto puede no ser algo deseable, pero es algo que se tratará en otra oportunidad.
-
 <a id="alg26"></a>
 
 ### **Qué es un "array-like" en Javascript?** 💛
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-arr)
 
 Un array-like es un objeto que tiene propiedades indexadas y una propiedad length. Aunque no es un array, se comporta como tal. Por ejemplo, el objeto arguments es un array-like.
 
@@ -3339,7 +3077,7 @@ console.log(array); // Imprime: ['a', 'b', 'c']
 
 ### **Cuales son las funciones array de JavaScript?** 💛
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-arr)
 
 ```jsx
 // Agrega al final
@@ -3424,7 +3162,7 @@ splice(indice, cantidad elementos a eliminar, agrego, agrego);
 
 ### **Funcion `.sort()`** 💛
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-arr)
 
 `.sort()` es una funcion que viene en Javascript. Funciona bien con numeros simples, pero no con numeros complejos como, por ejemplo, 10.
 
@@ -3433,7 +3171,7 @@ splice(indice, cantidad elementos a eliminar, agrego, agrego);
 [2,10,3].sort() => [10, 2, 3];
 ```
 
-Esto es porque esta funcion primero conviene los numeros a String y los ordena alfabeticamente. Es por eso que es necesario usar una funcion de callback.
+Esto es porque esta funcion primero convierte los numeros a String y los ordena alfabeticamente. Es por eso que es necesario usar una funcion de callback.
 
 ```javascript
 const sortedValues = inputValues.sort((a, b) => {
@@ -3461,7 +3199,7 @@ console.log(sortedValues); // Output: [10, 3, 2]
 
 ### **¿Cómo funcionan los arrays en JavaScript internamente?**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-arr)
 
 Los arrays en JavaScript son objetos especiales que permiten almacenar múltiples elementos en una sola variable. A diferencia de otros lenguajes de programación, los arrays en JavaScript no tienen un tamaño fijo y pueden contener elementos de diferentes tipos.
 
@@ -3478,11 +3216,303 @@ Internamente, los arrays en JavaScript se implementan como objetos con propiedad
 
 Por eso existe el `array-like` en Javascript
 
+<a id="alg16"></a>
+
+### **Especificando la clase de contenido de un ArrayList en Java**
+
+[Volver al indice](#alg-base-arr)
+
+Esta clase tiene una particularidad: para instanciar un ArrayList debemos indicar la clase de elementos que contendrá. Crear el ArrayList sin especificar la clase de elementos que contendrá está permitido, pero indicará una alerta y asumirá que sus elementos son de la clase Object. Los ArrayLists soportan que en su definición se indique cuál será la clase que tomaremos como clase base para añadir elementos a la estructura.
+Si necesitamos crear una colección de objetos que pueda guardar cualquier clase de elemento, debemos asociarla a la clase Object, pero la clase Object no conocerá los métodos y atributos específicos de cada elemento que pongamos en la lista, y esto impedirá acceder a sus atributos y métodos particulares en forma automática.
+
+```java
+ArrayList<Object> coleccion = new ArrayList<>();
+```
+
+<a id="alg17"></a>
+
+### **Creación de un ArrayList en Java**
+
+[Volver al indice](#alg-base-arr)
+
+Como primera medida importaremos el paquete correspondiente a partir de la adición de su namespace (Esto al momento de escritura de este apunte):
+
+```java
+import java.utils.ArrayList;
+```
+
+Una vez agregado el paquete nuestro programa permitirá crear colecciones de la siguiente manera (podemos hacerlo en dos partes, primero declarando la variable y luego creando el objeto; aquí está la “versión corta”):
+
+```java
+ArrayList<ClaseBase> coleccion = new ArrayList<>();
+```
+
+Así, para crear una colección de objetos de la clase Persona, haremos:
+
+```java
+ArrayList<Persona> personas = new ArrayList<>();
+```
+
+Tengamos en cuenta que al hacer esto estamos creando únicamente la colección vacía, sin ningún elemento. La clase ArrayList posee el método size() que nos indica cuál es la cantidad de elementos que se han guardado en el momento en la colección. Si ejecutásemos la siguiente instrucción inmediatamente después de crearla, obtendríamos como respuesta un 0:
+
+```java
+System.out.println(coleccion.size());
+```
+
+En caso de necesitar crear una colección de elementos de los tipos nativos del lenguaje (integer, double, etc.) debemos recurrir a sus contrapartes como clase:
+
+```java
+ArrayList<Integer> numeros = new ArrayList<>();
+```
+
+Tampoco deberemos crear una nueva clase para generar colecciones de Strings, porque de por sí String ya es una clase:
+
+```java
+ArrayList<String> palabras = new ArrayList<>();
+```
+
+<a id="alg17-2"></a>
+
+### **¿Cuál es la diferencia entre un ArrayList y un array tradicional en Java?**
+
+[Volver al indice](#alg-base-arr)
+
+Un array tradicional en Java es una estructura de datos fija que almacena un conjunto de elementos del mismo tipo. Una vez que se crea un array, su tamaño no puede cambiar. Por otro lado, un ArrayList en Java es una implementación de la interfaz List que proporciona una colección dinámica de elementos. A diferencia de un array tradicional, un ArrayList puede cambiar de tamaño dinámicamente, lo que significa que puede crecer o reducirse según sea necesario.
+
+<a id="alg17-3"></a>
+
+### **¿Cómo afecta la capacidad de crecimiento dinámico un ArrayList a su rendimiento?**
+
+[Volver al indice](#alg-base-arr)
+
+El crecimiento dinámico de un ArrayList en Java puede afectar su rendimiento en ciertas situaciones. Cuando un ArrayList crece más allá de su capacidad actual, necesita aumentar su tamaño interno para acomodar más elementos. Esto implica la creación de un nuevo array interno con una capacidad mayor y la copia de todos los elementos existentes al nuevo array. Este proceso de redimensionamiento puede ser costoso en términos de tiempo y recursos, especialmente si el ArrayList contiene una gran cantidad de elementos.
+
+<a id="alg18"></a>
+
+### **Agregar un elemento a un ArrayList**
+
+[Volver al indice](#alg-base-arr)
+
+Para agregar un elemento a un ArrayList utilizaremos el método add(elemento), el cual permite agregar un nuevo elemento al final de la estructura (es decir, como último elemento). 
+
+Por ejemplo, para agregar un elemento, podemos hacer:
+
+```java
+// creamos el objeto
+Objeto elemento = new Objeto();
+...
+...
+...
+// lo agregamos a la colección
+coleccion.add(elemento);
+```
+
+Solamente en el caso de las clases relacionadas a los tipos nativos (integer, double, etc.) podremos agregar elementos sin necesidad de crear explícitamente el objeto (Java lo hará por nosotros):
+
+```java
+numeros.add(19); // insertará el número 19 en la colección
+```
+
+<a id="alg19"></a>
+
+### **Obtener el elemento n de un ArrayList**
+
+[Volver al indice](#alg-base-arr)
+
+Para obtener el elemento n del ArrayList utilizaremos el método get(n), donde n es la posición en la cual está el elemento. El valor de n debe estar entre 0 y size()-1, caso contrario se producirá un error de ejecución.
+Para obtener el primer elemento de la colección haremos:
+
+```java
+Objeto elemento = coleccion.get(0);
+```
+
+Esto guardará la referencia al elemento sin quitarlo de la lista (no hace una copia). Entonces, si modificamos el elemento que tenemos en el auxiliar, obviamente estaremos modificando el elemento que está en la lista, pues es el mismo elemento referenciado desde dos lugares distintos.
+
+<a id="alg20"></a>
+
+### **Extraer el elemento n de un ArrayList**
+
+[Volver al indice](#alg-base-arr)
+
+Para extraer el elemento n del ArrayList utilizaremos el método remove(n ), donde n es la posición en la cual está el elemento. El tratamiento es similar al caso del get(): el valor de n debe estar entre 0 y size()-1, caso contrario se producirá un error de ejecución. A diferencia del get(), remove() extrae el elemento de la posición, y si éste no era el último, su lugar será ocupado por el siguiente elemento (y así hasta el final), acortando el tamaño de la estructura en 1.
+Por ejemplo, para extraer el primer elemento de la colección haremos:
+
+```java
+Objeto elemento = coleccion.remove(0);
+
+coleccion.remove(0);
+```
+
+La diferencia entre estos dos casos es que mientras el primero guarda el elemento removido en una variable auxiliar para su uso posterior, el segundo lo descarta inmediatamente y ya no tendremos acceso al mismo.
+Pero sacar un elemento de la colección, como vimos más arriba, tiene algunas consecuencias impensadas, algunas de las cuales trataremos más adelante en esta misma guía.
+
+<a id="alg21"></a>
+
+### **Recorrer el ArrayList completo con for-each**
+
+[Volver al indice](#alg-base-arr)
+
+El ciclo conocido como for-each es una variante del for tradicional que, en vez de utilizar un valor índice para iterar una determinada cantidad de veces, utiliza un iterador implícito para visitar en cada ciclo cada los elementos cargados en la lista, de a uno por vez, del primero al último elemento. Para eso necesita una variable local en la cual guardará temporalmente la referencia al elemento visitado.
+La estructura del for-each es la que sigue:
+
+```java
+for (Clase elementoAuxiliar : coleccion) {
+ proceso(elementoAuxiliar);
+}
+```
+
+En el ejemplo, proceso() deberá reemplazarse por lo que querramos hacer con el elemento visitado. Por ejemplo, para mostrar el nombre y el número de DNI de cada persona guardada en la colección, haríamos:
+
+```java
+for (Persona persona : personas){
+ System.out.println(persona.getNombre());
+ System.out.println(persona.getDocumento());
+}
+```
+
+Este ejemplo podría leerse como “para cada persona que esté en la colección de personas, mostrar el nombre y el número de documento”. Esto hará que en cada iteración (en cada vuelta del ciclo) la variable persona guarde temporalmente, una a una, cada persona que esté en la estructura, comenzando con la primera de todas y hasta que no haya más. La variable persona tendrá asignada en cada ciclo, entonces, el objeto de la colección que se está visitando en ese momento.
+
+<a id="alg22"></a>
+
+### **Buscar un elemento en la colección**
+
+[Volver al indice](#alg-bas-arr)
+
+Utilizar el ciclo for-each es muy fácil y cómodo, pero no tiene una manera natural de abandonar el recorrido por la colección sin recorrerlo por completo. El inconveniente de esto es que si estamos buscando un elemento específico y ya lo encontramos, o si ya sabemos que no lo encontraremos, seguiríamos recorriendo la estructura hasta el final innecesariamente.
+Hay formas de recorrer la estructura parcialmente. Una de ellas es utilizando
+explícitamente un iterador, la cual probablemente sea la forma más conocida de
+hacerlo. Pero trabajar con iteradores requiere de cierto cuidado y tener en cuenta algunos conceptos que dejaremos para más adelante.
+Entonces nos queda una forma de recorrer la estructura parcialmente sin
+necesidad de hacerlo por completo: aprovechando la capacidad de acceder a un
+elemento determinado con get(). Por ejemplo, si necesitamos ubicar una persona determinada de la lista, podríamos hacer lo siguiente:
+
+```java
+// Búsqueda de la persona por nro de documento.
+// creamos una variable auxiliar donde dejaremos
+// el elemento buscado, si lo encontramos.
+Persona personaBuscada = null;
+int indice = 0;
+// buscamos mientras no hayamos llegado al final
+// de la estructura y no hayamos encontrado el
+// elemento que estamos buscando.
+while (indice < personas.size() && personaBuscada == null) {
+ if (personas.get(indice).getDocumento() == docBuscado) {
+ // si la encontramos, la asignamos al auxiliar
+  personaBuscada = personas.get(indice);
+ } else {
+  // incrementamos el índice para
+  // pasar al siguiente elemento
+  indice++;
+ }
+}
+```
+
+El ejemplo anterior utilizará el ciclo while para recorrer la estructura mientras haga falta. El if interno, como está expresado en los comentarios, cumple dos tareas. La primera es asignar el elemento al auxiliar cuando es el que buscamos. La segunda, es darnos la posibilidad de intentar con el siguiente, a ver si es el que queremos. El incremento de índice puede hacerse también fuera del if (no en el else), aunque en ese caso perdería la posición donde encontró el elemento. De esta forma, guarda también la posición y no incremente el índice sin necesidad.
+
+<a id="alg23"></a>
+
+### **Remover algunos de los elementos del ArrayList**
+
+[Volver al indice](#alg-base-arr)
+
+Un tratamiento similar debemos aplicar cuando queremos extraer algunos elementos de la colección, pero no todos. El tema, en este caso, pasa porque al remover un elemento determinado, los posteriores se adelantan en una posición. Esto hace que al incrementar el valor del índice inmediatamente después de extraer el elemento, como todos los elementos posteriores se movieron para adelante una posición, en la posición que acabamos de abandonar ha quedado, si existe, un elemento que no hemos visitado. Para que esto no suceda, sólo debemos avanzar cuando el elemento recién visitado no haya sido extraído. Si lo hemos extraído, nos quedaremos en esa posición esperando a que los  elementos se reacomoden (que todos los posteriores ocupen su nuevo lugar) y, así, no perder el nuevo elemento que cayó en la posición donde estamos parados.
+Veamos el siguiente ejemplo: supongamos que tenemos una colección de números con los valores 1, 7, 4, 9, 17, 22. No es necesario que estén ordenados. Lo que intentaremos es dejar sólo los números impares, eliminando los pares:
+
+```java
+// Eliminando todos los números pares de la colección.
+int indice = 0;
+// buscamos mientras no hayamos llegado al final
+// de la estructura.
+while (indice < numeros.size()) {
+ if (numeros.get(indice) % 2 == 0) {
+ // si es par lo quitamos
+  numeros.remove(indice);
+ } else {
+  // incrementamos el índice para
+  // pasar al siguiente elemento
+  indice++;
+ }
+}
+```
+
+Así, recorreremos la colección de números hasta llegar al 4 (índice=2, recordemos que el primero tiene índice=0). Entonces, lo extraeremos, y todos los elementos posteriores se adelantarán un lugar. La colección, entonces, queda así: 1, 7, 9, 17, 22
+
+Nosotros seguiremos parados en la posición 2, donde ahora, en vez del 4 que extrajimos, está el 9. Gracias a que no avanzamos, en la nueva iteración del ciclo (donde podría haber encontrado un nuevo número par) trataremos el 9, luego el 17 y así hasta llegar al 22. Aquí también nos detendremos a extraer el número y no incrementaremos, pero la lista habrá perdido un nuevo elemento (el 22), quedando entonces sólo con 4 elementos (1, 7, 9, 17). Como el ciclo sólo itera mientras el índice sea menor a la cantidad de elementos de la colección, saldremos y la lista quedará solamente con los números impares.
+
+---
+
+<a id="alg24"></a>
+
+### **Creando colecciones como atributo de una clase en Java**
+
+[Volver al indice](#alg-base-col)
+
+Supongamos que tenemos la clase Club, y que el club mantiene una lista de sus socios.
+Para esto, crearemos el atributo privado socios, que será un ArrayList de elemento de clase Socio. Si bien podemos instanciar aquí la colección, sólo la declararemos y le asignaremos el valor null para que la colección sea creada explícitamente en el constructor de la clase Club, pues consideramos que es el mejor lugar para hacerlo:
+
+```java
+public class Club {
+ private ArrayList<Socio> socios = null;
+ public Club() {
+  this.socios = new ArrayList<Socio>();
+ }
+ public void agregarSocio(Socio socio) {
+  socios.add(socio);
+ }
+ public void agregarSocio(String nombre) {
+  socios.add(new Socio(nombre));
+ }
+}
+```
+
+También podemos ver dos métodos distintos para agregar socios, el primero pasándole directamente un objeto de la clase Socio, y el segundo que sólo recibe el nombre del nuevo socio, que será instanciado y agregado en el momento.
+¿Y qué deberíamos hacer para dar de baja un socio? ¿Cómo hacemos para devolver la instancia de socio que queremos eliminar sin exponer la colección completa?
+
+```java
+public Socio darDeBaja(int numero) {
+ Socio socio = null;
+ int indice = 0;
+ while (indice < socios.size() && socio == null) {
+  if (socios.get(indice).getNumero() == numero) {
+   socio = socios.get(indice);
+  } else {
+   indice++;
+  }
+ }
+ return socio;
+}
+```
+
+Así devolvemos null o el socio encontrado, que ya ha sido removido de la colección, para que desde donde han llamado a la rutina se procese la instancia de la manera que se desee (por ejemplo, para mostrar los datos del socio dado de baja).
+
+<a id="alg25"></a>
+
+### **Devolver una colección secundaria en Java**
+
+[Volver al indice](#alg-base-col)
+
+Siguiendo con el ejemplo anterior, supongamos que queremos devolver una colección con todos los socios vitalicios del club. Para eso podríamos hacer algo como lo que sigue:
+
+```java
+public ArrayList<Socio> obtenerVitalicios() {
+ ArrayList<Socio> vitalicios = new ArrayList<Socio>();
+ for (Socio s: socios) {
+  if (s.esVitalicio()) {
+   vitalicios.add(s);
+  }
+ }
+ return vitalicios;
+}
+```
+
+En este caso agregará a la colección vitalicios (creada como variable local) todos aquellos socios que cumplan con la condición de ser vitalicios. Pero, ¿qué pasará, entonces, con la lista de socios principal, donde estaban los estos socios, ahora en la lista de socios vitalicios?
+No pasará nada: todos los socios estarán en la lista principal, y aquellos que cumplan con lo condición deseada, además, estarán en esta lista secundaria. Cada socio vitalicio estará tanto en la lista secundaria como en la principal, porque en ambas se guarda la referencia al objeto de clase Socio en cuestión. En caso de eliminar el elemento de una de las listas, seguirá vivo en la otra. Esto puede no ser algo deseable, pero es algo que se tratará en otra oportunidad.
+
 <a id="alg29"></a>
 
 ### **Set() en Javascript** (HashSet) 💛
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-col)
 
 Es una estructura de datos que solo permite valores unicos. Si paso un array a un set, va a eliminar todos los valores duplicados.
 
@@ -3527,7 +3557,7 @@ for (let item of mySet) {
 
 ### **HashTables** (.Map) 💛
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-col)
 
 Es una estructura de datos que almacena valores dado su Hash (int o long). Son muy eficientes para una busqueda dada por clave.
 
@@ -3597,7 +3627,7 @@ for (let [key, value] of myMap) {
 
 ### **¿Cuál es la diferencia entre un Set y un Array en JavaScript?** 
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-col)
 
 | Set | Array |
 | --- | ----- |
@@ -3614,7 +3644,7 @@ for (let [key, value] of myMap) {
 
 ### **¿En qué situaciones es más eficiente usar un HashMap en lugar de un Array?** 
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-col)
 
 Un HashMap es más eficiente que un Array cuando necesitamos almacenar pares clave-valor y realizar búsquedas rápidas por clave. En un Array, las búsquedas por valor tienen una complejidad de O(n), mientras que en un HashMap, las búsquedas por clave tienen una complejidad de O(1) en promedio.
 
@@ -3623,7 +3653,7 @@ Un HashMap es más eficiente que un Array cuando necesitamos almacenar pares cla
 
 ### **Linked Lists** 💛
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-col)
 
 Es una estructura de datos que representa una secuencia de nodos.
 
@@ -3714,9 +3744,9 @@ public class SingleLinkedList {
 
 <a id="alg32"></a>
 
-#### ¿Cuales son los beneficios de un Linked List sobre un Array?
+#### **¿Cuales son los beneficios de un Linked List sobre un Array?**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-col)
 
 Un Array es una estructura de datos que almacena elementos de forma contigua en la memoria. Un Linked List es una estructura de datos que almacena elementos de forma no contigua en la memoria.
 
@@ -3728,7 +3758,7 @@ En un Linked List, como cada nodo esta conectado con un link, no es necesario qu
 
 ### ¿Cual es el uso de una Doubly-Linked List cuando se lo compara con un Singly Linked List?
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-col)
 
 Un Singly Linked List se tienen links derechos, pero no podemos ir para atrás ya que siempre apuntan al siguiente. El DLL posee en cada nodo 3 campos, uno que apunta al nodo anterior, otro al siguiente.
 
@@ -3738,95 +3768,220 @@ Se puede reconocer cuando un nodo es el primero ya que su link anterior es Nulo,
 
 ### **¿Cual es la diferencia entre un Linked List y un Doubly Linked List?**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-col)
 
 Un Linked List es una estructura de datos que almacena elementos de forma no contigua en la memoria. Un Doubly Linked List es una estructura de datos que almacena elementos de forma no contigua en la memoria, pero cada nodo tiene un link al nodo anterior y al siguiente.
 
-<a id="alg35"></a>
+---
 
-### **Generics en Java**
+<a id="var1"></a>
 
-[Volver al indice](#alg-base)
+### **¿Qué es una Variable?**
 
-Cada tipo primitivo (int, boolean, float..) tiene su clase hermana. Las clases siempre empiezan en mayus, los minuscula son llamados clases envoltorio.
+[Volver al indice](#alg-base-var)
 
-```html
+Una *variable* es un *contenedor* que tiene un valor o dato. Desde el punto de vista técnico, es un espacio de la memoria en el que guardamos ese determinado valor (o dato).
 
-Integer --> int
-Boolean --> boolean
-Float --> float
-Character --> char
+Todas las variables tienen características comunes (por ejemplo un nombre que las identifica) y otras que difieren según el tipo de dato que contengan. Si pudiéramos ver qué contiene internamente una variable, veríamos que en algunos casos contiene directamente el valor y en otros (como en el caso de los objetos) otra cosa.
 
-edades.add(45) == edades.add(new Integer(45));
+<a id="var2"></a>
+
+### **¿En qué se diferencia una variable común, nativa, de un objeto?**
+
+[Volver al indice](#alg-base-var)
+
+Consideraremos que las variables nativas son entidades elementales: un número, un carácter, un valor verdadero o falso, que son entendidas por el lenguaje y asociadas a un tipo de dato *reconocible* por el entorno donde el programa corre, mientras que los objetos son entidades complejas que pueden estar formadas por la agrupación de más de un elemento, incluyendo *campos* y *métodos*. Pero todas ocupan un espacio de memoria (que puede ser mayor o menor).
+
+Ahora bien, las variables nativas guardan en sí mismas sus valores, y su tamaño está determinado por el tamaño definido del tipo de dato. En el caso de los objetos, como cada clase tiene su propia definición y el tamaño de sus *instancias solamente puede ser resuelto en tiempo de ejecución*, solamente guardarán la *dirección de memoria* de la *instancia*. Es lo que comúnmente se conoce como puntero.
+
+Es por eso que cuando a una variable de "tipo clase" no se le asigna ningún valor posee *null* como valor *por defecto*. Este *null* implica que la variable no guarda ningún objeto, y es por eso que produce un error de ejecución cuando se intenta acceder a un método de la instancia cuando ésta aún no se ha creado.
+
+<a id="var3"></a>
+
+### **¿A qué nos referimos cuando hablamos de tipos de datos?**
+
+[Volver al indice](#alg-base-var)
+
+En los programas en Java puede ser necesario tanto el uso de datos elementales como de datos complejos. Por eso se usa el término “Tipos de datos” para englobar a cualquier cosa que ocupe un espacio de memoria y que pueda ir tomando distintos valores o características durante la ejecución del programa. Es decir, en vez de hablar de tipos de variables o de tipos de objetos, hablaremos simplemente de tipos de datos.
+
+En Java diferenciamos dos tipos de datos: por un lado, los tipos primitivos, que se corresponden con los tipos de variables en lenguajes como C y que son los datos elementales que hemos citado. Por otro lado, los tipos objeto (que normalmente incluyen métodos)
+
+![Cola](src/variables1.png)
+
+<a id="var4"></a>
+
+### **¿Cómo se declara una variable?**
+
+[Volver al indice](#alg-base-var)
+
+Para definir una variable seguiremos la estructura:
+
+```jsx
+tipoDato nombreVariable;
+
+String profesor;
+
+int capacidad;
+
+boolean funciona;
 ```
 
-Los ArrayList reconocen el tipo de dato que evaluan <String> / <Integer> por los **Generics** que ya vienen con java.
+Una vez declaradas, podemos asignarles valor de la siguiente manera:
 
-<a id="alg36"></a>
+```jsx
+profesor = "Catalina";
 
-### **Estructuras de Datos**
+capacidad = 10;
 
-[Volver al indice](#alg-base)
-
-Manera de estructurar datos, Array, ArrayList, Pila, Cola..
-
-Por ejemplo, un sorteador posee las sig operaciones:
-
-* Sortear elemento
-* Agregar un elemento --> En un ArrayList. Con **programacion generica**
-no se que tipo voy a recibir, lo voy a saber cuando me lo mandan. (public class Sorteador<T>, private ArrayList<T> elementos , public void agregarElemento(T elemento){}), se trabaja todo con T (puede tener cualquier otro nombre).
-* Esta vacio?
-
-Definimos el tipo del sorteador cuando lo instanciamos para usarlo. Sorteador solo sabe como realiza sus metodos.
-
-#### Agregar muchos elementos a la vez
-
-```java
-public void agregar (T[] elementos){
-  this.elementos.addAll(Arrays.asList(elementos));
-       }
+funciona = true;
 ```
 
-También puedo usar un foreach.
+Si cuando declaramos una variable ya sabemos el valor inicial que queremos que tome, podemos asignarlo en el mismo momento. Por ejemplo:
 
-#### Instancio mi Sorteador
-
-```java
-Sorteador<String> nombres = new Sorteador<>();
+```jsx
+String profesor = "Catalina";
 ```
 
-#### Hacer que mi sorteador sea iterable
+<a id="var5"></a>
 
-```java
-public class Sorteador<T> implements Iterable<T>
+### **Nombres de Variables**
+
+[Volver al indice](#alg-base-var)
+
+Cuando vayamos a dar un nombre a una variable deberemos tener en cuenta una serie de normas. Es decir, no podemos poner el nombre que nos dé la gana a una variable.
+
+Es recomendable que los nombres de los identificadores sean legibles y no acrónimos que no podamos leer. De tal manera que a la hora de verlos se auto-documenten por sí mismos. Además estos identificadores nunca podrán coincidir con las palabras reservadas ni comenzar con un número.
+
+Algunas reglas no escritas, pero que se han asumido *por convención* son:
+
+* Los identificadores siempre se escriben en minúsculas. (pe. nombre). Y si son dos o más palabras, el inicio de cada siguiente palabra se escriba en mayúsculas (pe. nombrePersona)
+* Si el identificador implica que sea una constante (es decir que hayamos utilizado los modificadores *final static*), dicho nombre se suele escribir en mayúsculas (pe. LETRA). Y si la constante está compuesta de dos palabras, estas se separan con un subrayado (pe. LETRA_PI).
+
+<a id="var6"></a>
+
+### **Diferencia entre let, var y const** 💛
+
+[Volver al indice](#alg-base-var)
+
+La diferencia es el alcance de cada uno.
+
+- **var:** Es la manera de declarar variables en ES5. Es global o local en una funcion.
+- **let:** Es la manera de declarar variables en ES6. Es local en un bloque.
+- **const:** Es la manera de declarar constantes en ES6. Es local en un bloque.
+
+```jsx
+
+var saludar = "hey, hola";
+var saludar = "dice Hola tambien";
+    saludar = "dice Hola tambien";
+
+
+let camper = 'James';
+let camper = 'David'; // throws an error
+let saludar = "dice Hola";
+    saludar = "dice Hola tambien";
+let saludar = "dice Hola tambien"; // error: Identifier 'saludar' has already been declared
 ```
 
-Implementando así el metodo propio de iterable que es iterator(), ya que es una interfaz
+Sí pongo un “use Strict” en la parte alta del codigo, la consola me va a tirar error cuando trate de codear algo de manera “insegura” o poco practica.
 
-```java
-@Override
-public Iterator<T> iterator(){
-return new IteratorSorteador();
+```jsx
+"use strict";
+x = 3.14; // throws an error because x is not declared
+```
+
+Cuando declaras una variable con **var,** es declarada de manera global, o local sí esta adentro de una funcion.
+
+- Pueden ser modificadas y re-declaradas dentro de su ambito.
+- Puede ser declarada sin ser inicializada, se inicializa con undefined por defecto.
+- Puede ser declarada global o dentro de una funcion.
+
+En cambio con **let,** sí declaro la funcion dentro de un block, statement o expresion, se va a declarar solo dentro de estas y no globalmente.
+
+- No puede ser re-declarado pero si modificado.
+- Puede ser declarada sin ser inicializada, se inicializa con undefined por defecto.
+- Funciona a nivel bloque.
+
+```jsx
+var numArray = [];
+for (var i = 0; i < 3; i++) {
+  numArray.push(i);
 }
+console.log(numArray); // [0, 1, 2]
+console.log(i); // 3
 
-private class IteratorSorteador implements Iterator<T>{
-    @Override
-    public boolean hasNext(){
-        return !estaVacio();
-    }
-
-    @Override
-    public T next(){
-        return proximoSorteado();
-    }
+'use strict';
+let printNumTwo;
+for (let i = 0; i < 3; i++) {
+  if (i === 2) {
+    printNumTwo = function() {
+      return i;
+    };
+  }
 }
+console.log(printNumTwo()); // 2
+console.log(i); // i no esta definido
 ```
+
+También se puede declarar usando la palabra **const**, que es una constante. Se declara y no puede ser cambiada en su valor, solo sirve de lectura.
+
+```jsx
+"use strict"
+const FAV_PET = "Cats";
+FAV_PET = "Dogs"; // error: Assignment to constant variable.
+```
+
+Se recomienda poner el nombre de las constantes en mayúscula.
+
+```jsx
+"use strict";
+const s = [5, 6, 7];
+s = [1, 2, 3]; // error asignando a una constante
+s[2] = 45; // funciona
+console.log(s); //  [5, 6, 45]
+```
+
+Los array sí pueden ser modificados en sí mismos, lo que no se puede es apuntar a otro array distinto.
+
+```jsx
+const s = [5, 7, 2];
+function editInPlace() {
+  "use strict";
+  // s = [2, 5, 7]; // error asignando a una constante
+  s[0] = 2;
+  s[1] = 5;
+  s[2] = 7;
+}
+editInPlace();
+```
+
+<a id="var19"></a>
+
+### **¿Qué son las variables no declaradas y no definidas?**
+
+[Volver al indice](#alg-base-var)
+
+**Variables no declaradas**: son las que no existen en un programa, y no se declaran. Si el programa trata de leer su valor entonces va a arrojar un error.
+
+**Variables no definidas**: son aquellas declaradas en el programa, pero no tienen asignado ningún valor. Si el programa quiere leer el valor de  variable no definida, se devuelve un valor no definido.
+
+<a id="var19-2"></a>
+
+### **¿Qué es la tipificación estática y dinámica?**
+
+[Volver al indice](#alg-base-var)
+
+**Tipificación estática**: es un tipo de sistema de tipado en el que las variables están asociadas a un tipo de dato en tiempo de compilación. Esto significa que el tipo de dato de una variable se conoce en tiempo de compilación y no puede cambiar durante la ejecución del programa.
+
+**Tipificación dinámica**: es un tipo de sistema de tipado en el que las variables están asociadas a un tipo de dato en tiempo de ejecución. Esto significa que el tipo de dato de una variable se conoce en tiempo de ejecución y puede cambiar durante la ejecución del programa.
+
+---
 
 <a id="alg37"></a>
 
-### Qué son las Pilas y Colas?
+### **Qué son las Pilas y Colas?**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-pilcol)
 
 Un Tipo de dato abstracto (TDA) es una estructura que integra un conjunto de datos (elementos) con un grupo de operaciones permitidas específicas que determinan la forma en la cual esos elementos son manipulados.
 
@@ -3844,9 +3999,9 @@ Un detalle que tienen en común ambas estructuras es que **no permiten**
 
 <a id="alg38"></a>
 
-### Colas
+### **Colas**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-pilcol)
 
 El primer par de implementaciones que mostramos son las pertenecientes al TDA **`Cola<*TipoElemento*>`** donde, al igual que se hace con ArrayList, *TipoElemento* indica qué clase de elemento podrá contener (puede ser tanto una *clase* como una *interfaz*).
 
@@ -3858,9 +4013,9 @@ La segunda implementación, basada en nodos, puede parecer más complicada, pero
 
 <a id="alg39"></a>
 
-### Pilas
+### **Pilas**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-pilcol)
 
 Veamos ahora las implementaciones de **`Pila<*TipoElemento*>`**
 
@@ -3870,15 +4025,17 @@ La implementación de **`Pila<*TipoElemento*>`** es extremadamente similar, aunq
 
 <a id="alg40"></a>
 
-### Nodo versus dato
+### **Nodo versus dato**
+
+[Volver al indice](#alg-base-pilcol)
 
 Un detalle a tener en cuenta en cuanto a la implementación con nodos es que no debemos confundir el ***nodo*** con el ***dato***: mientras que este último es el *elemento* que se agrega, mira o quita, el primero es su *contenedor* circunstancial y lo guarda en su interior. Por otra parte, los nodos nunca son accesibles a través de la interfaz del TDA y están encapsulados (**composición**). Por lo tanto, así como en la implementación con ArrayList no podemos acceder al mismo, tampoco podemos acceder a la cadena de nodos. Para quien usa el TDA, la implementación es completamente *transparente*.
 
 <a id="alg41"></a>
 
-### Uso de Pilas y Colas
+### **Uso de Pilas y Colas**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-pilcol)
 
 Para utilizar las estructuras haremos algo muy parecido a lo que hacemos con ArrayList: las declararemos indicando el tipo de elemento contenido dentro de los paréntesis agudos. Pero a diferencia de cuando usamos ArrayList, aquí estamos declarando las estructuras usando interfaces, y con éstas no se pueden crear instancias pues no están implementadas. Por eso, para poder crear alguna instancia de cualquier TDA deberemos elegir alguna de sus implementaciones
 
@@ -3917,11 +4074,13 @@ System.out.println(“Primera persona en la fila: “ + filaDePasajeros.remove()
 
 Quitan el primer elemento disponible en cada estructura, dejando ambas estructuras vacías pues las dos tenían un único elemento cada una. Ahora el método *isEmpty()* de ambas devolverá *true*
 
+---
+
 <a id="alg42"></a>
 
-### Arboles
+### **Arboles**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-arb)
 
 Es una estructura donde un nodo tiene un solo padre y muchos hijos. Siempre hay una raiz.
 Es excelente para cuando queremos insertar conjuntos de datos ordenados o para las búsquedas.
@@ -3940,9 +4099,9 @@ public class Node {
 
 <a id="alg43"></a>
 
-### Qué es un Binary Tree?
+### **Qué es un Binary Tree?**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-arb)
 
 Un arbol en donde cada nodo debe tener como MAXIMO 2 hijos.
 
@@ -3958,9 +4117,9 @@ class Node {
 
 <a id="alg44"></a>
 
-### Qué es un Binary Search Tree?
+### **Qué es un Binary Search Tree?**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-arb)
 
 Cada nodo puede tener MAXIMO 2 hijos, y cada descendiente del lado izquierdo debe tener un valor menor o igual al padre y los de la derecha deben tener un valor mayor o igual al padre.
 
@@ -3982,17 +4141,17 @@ function TreeNode(val, left, right) {
 
 <a id="alg45"></a>
 
-#### ¿Porque se dice que buscar un nodo en un BST es mas eficiente que en un Simple Binary Tree?
+#### **Porque se dice que buscar un nodo en un BST es mas eficiente que en un Simple Binary Tree?**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-arb)
 
 Porque, por la particularidad que tienen los hijos de los nodos de un BST (que uno es mas chico que el otro), se puede seguir el recorrido mas facilmente. Hace que la busqueda sea mucha mas eficiente.
 
 <a id="alg46"></a>
 
-### Complete Binary Tree
+### **Complete Binary Tree**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-arb)
 
 En este arbol todos los niveles estan completos excepto por el ultimo. Si el ultimo nivel no esta completo, debe estar ocupado de izquierda a derecha. Por ejemplo, todos los nodos tienen 2 hijos excepto el ultimo que tiene uno solo.
 
@@ -4018,33 +4177,41 @@ root.left.right = new TreeNode(5);
 
 <a id="alg47"></a>
 
-### Maneras de recorrer un Arbol
+### **Maneras de recorrer un Arbol**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-arb)
 
 ![Tree Traversal: Inorder, Preorder, Postorder, and Level-order](https://assets-global.website-files.com/5d0dc87aac109e1ffdbe379c/60e18e09daeb6db6f4995305_-Vsv_RLYEukjbDMgKxKJpxTnA246o-X1OjUPkl5HvnSiR-dFU4w5qKNaUtw-rq8wD4vMTGxFKtjvKCt7Uthmidpl_ajqRpVqgAH57N1HTpQ5MGBE4HCvE0dq7gTeM4-JtFLkQShX.png)
 
 <a id="alg48"></a>
 
-### In-Order Traversal
+### **In-Order Traversal**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-arb)
 
 Rama izquierda del nodo, a continuación el propio nodo y después la rama derecha. Se empieza por la raiz
 
 <a id="alg49"></a>
 
-### Pre-order traversal
+### **Pre-order traversal**
 
 [Volver al indice](#alg-base)
 
 Primero el nodo padre, despues izquierda y luego derecha
 
+<a id="alg51"></a>
+
+### **Post-order traversal**
+
+[Volver al indice](#alg-base-arb)
+
+Primero la rama izquierda, luego la derecha y luego el padre
+
 <a id="alg50"></a>
 
-### Recorrido de un Binary Tree
+### **Recorrido de un Binary Tree**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-arb)
 
 ```javascript
 // Definición de la clase TreeNode para un árbol binario
@@ -4078,75 +4245,11 @@ inOrderTraversal(root);
 
 ```
 
-<a id="alg51"></a>
-
-### Post-order traversal
-
-[Volver al indice](#alg-base)
-
-Primero la rama izquierda, luego la derecha y luego el padre
-
-<a id="alg52"></a>
-
-### Recursividad
-
-[Volver al indice](#alg-base)
-
-Son problemas que se pueden dividir en subproblemas. Por ejemplo: Calcula el elemento, obten los primero n elementos o un metodo que compute todos..
-
-TODOS los algoritmos recursivos tienen una alternativa iterativa. Su complejidad espacial es `O(cantidad de llamadas)`.
-
-<a id="alg53"></a>
-
-### **Factorial**
-
-[Volver al indice](#alg-base)
-
-El factorial de un número entero positivo n, denotado como n!, es el producto de todos los enteros positivos menores o iguales a n. Por ejemplo, el factorial de 5 se denota como 5! y se calcula como 5! = 5 * 4 * 3 * 2 * 1 = 120.
-
-```javascript
-// Función recursiva para calcular el factorial de un número
-function factorial(n) {
-    // Caso base: factorial de 0 es 1
-    if (n === 0) {
-        return 1;
-    }
-    // Caso recursivo: n * factorial(n-1)
-    else {
-        return n * factorial(n - 1);
-    }
-}
-
-// Ejemplo de uso
-console.log(factorial(5)); // Output: 120
-```
-
-<a id="alg53-2"></a>
-
-### **¿Qué son los generics y cómo se implementan en TypeScript?** 💛
-
-[Volver al indice](#alg-base)
-
-Los generics son una característica de TypeScript que permite crear componentes, funciones y clases que pueden trabajar con una variedad de tipos de datos. Los generics permiten escribir código que es reutilizable y flexible, ya que no está limitado a un solo tipo de datos.
-
-Para definir un tipo genérico en TypeScript, se utiliza la sintaxis de ángulos (<>) para especificar un tipo de parámetro genérico. Por ejemplo, la siguiente función toma un argumento de tipo genérico T y devuelve un array de ese tipo:
-
-```typescript
-function makeArray<T>(value: T): T[] {
-    return [value];
-}
-
-const array1 = makeArray<number>(1); // array1 es de tipo number[]
-const array2 = makeArray<string>('hello'); // array2 es de tipo string[]
-```
-
-Es ideal para reemplazar el uso de any. Por ejemplo, si se usa any, se pierde la información del tipo de datos que se está utilizando, lo que puede llevar a errores en tiempo de ejecución. Con generics, se puede especificar el tipo de datos que se espera y TypeScript se encargará de verificar que se cumpla en tiempo de compilación.
-
 <a id="alg54"></a>
 
-### Heaps
+### **Heaps**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-arb)
 
 Un heap, también conocido como montículo, es una estructura de datos que se utiliza para mantener un conjunto de elementos donde cada elemento tiene una relación de orden con respecto a los demás elementos. La propiedad fundamental de un heap es que el elemento en la raíz (ya sea el más grande o el más pequeño, dependiendo del tipo de heap) siempre cumple con esta relación de orden con respecto a sus hijos.
 
@@ -4271,6 +4374,881 @@ console.log(minHeap.extractMin()); // Output: 1
 console.log(minHeap.heap); // Output: [2, 4, 3, 5]
 ```
 
+---
+
+<a id="var27-1"></a>
+
+### **Que es la programacion funcional?** 💛
+
+[Volver al indice](#alg-base-obj)
+
+Es un paradigma de programación que trata de minimizar los cambios de estado y los datos mutables. Se basa en funciones puras, que son funciones que no tienen efectos secundarios y siempre devuelven el mismo resultado para los mismos argumentos.
+
+```jsx
+const sum = (a, b) => a + b;
+```
+
+La programación funcional se basa en los siguientes principios:
+
+- **Inmutabilidad**: Los datos no cambian una vez que se han creado.
+- **Funciones puras**: Las funciones no tienen efectos secundarios y siempre devuelven el mismo resultado para los mismos argumentos.
+- **Composición de funciones**: Las funciones se pueden combinar para crear funciones más complejas.
+- **Declaratividad**: Se centra en qué se quiere hacer, no en cómo hacerlo.
+- **Transparencia referencial**: Dado un valor de entrada, la función siempre devolverá el mismo valor de salida.
+- **Recursión**: Se pueden definir funciones que se llaman a sí mismas para resolver problemas de manera iterativa.
+- **Funciones de orden superior**: Las funciones pueden tomar otras funciones como argumentos o devolver funciones como resultado.
+- **Evaluación perezosa**: Los valores se calculan solo cuando se necesitan.
+- **Currying**: Transformar una función que toma varios argumentos en una secuencia de funciones que toman un solo argumento.
+
+<a id="var35"></a>
+
+### **¿Qué es una funcion Declarativa y una Expresiva?**
+
+[Volver al indice](#alg-base-obj)
+
+En las **Funciones Declarativas** usamos la palabra reservada `Function` para poder declararla
+
+```jsx
+ function saludar(nombre) {
+	console.log(`Hola ${nombre}`);
+}
+
+saludar('Diego');
+```
+
+La **Expresiva (Expresion de Funcion)** es cuando la declaramos tipo variable como funcion anonima
+
+```jsx
+var nombre = function(nombre){
+    console.log(`Hola ${nombre}`)
+}
+
+nombre(‘Diego’);
+```
+
+A las funciones declarativas se les aplica hoisting, a la otra no, hoisting se aplica solo a las palabra sreservadas `var` y `function`, es decir, a la expresion de funcion podriamos llamarla recien despues de declararla.
+
+<a id="var26"></a>
+
+### **Prototypes y Herencia Prototype (Prototype Inheritance)** 💛
+
+[Volver al indice](#alg-base-obj)
+
+Las funciones y clases tienen una propiedad llamada `Prototype` donde reside la información que es usada para crear los objetos. Todos los miembros del objeto Prototype del constructor seran miembros del objeto una vez instanciado con new.
+
+Los prototypes son un mecanismo por el cual los objetos en JS heredan caracteristicas entre si.
+
+```jsx
+class C {
+  m1() {}
+  m2() {}
+}
+ 
+const obj = new C();
+console.assert( typeof obj.m1 === 'function' );
+console.assert( typeof obj.m2 === 'function' );
+```
+
+![js2](src/js2.png)
+
+Otro ejemplo es si creamos un objeto persona:
+
+```jsx
+// definimos el objeto persona
+function Persona(nombre, apellido, edad, genero, intereses) {
+
+  // definiendo de propiedades y métodos
+  this.first = first;
+  this.last = last;
+//...
+}
+
+// lo instanciamos
+var person1 = new Persona('Bob', 'Smith', 32, 'hombre', ['music', 'skiing']);
+```
+
+Y si queremos ver lo que contiene el objeto, no solo contiene sus atributos si no, otros miembros como valueOf o Watch que estan definidos en el objeto.
+
+![js3](src/js3.png)
+
+Todos los objetos de JS heredan metodos de un Prototype, `Object.prototype` es el eslabon mas alto de la cadena de herencia.
+
+Con prototype podemos agregar nuevos atributos y metodos a un objeto que no se encuentran en su constructor
+
+```jsx
+function Person(first, last, age, eyecolor) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eyecolor;
+}
+
+// Atributos
+Person.prototype.nationality = "English";
+
+// Metodos
+Person.prototype.name = function() {
+  return this.firstName + " " + this.lastName;
+};
+```
+
+<a id="var28"></a>
+
+### **Creacion de Constructores**
+
+[Volver al indice](#alg-base-obj)
+
+```jsx
+var SpaceShuttle = function(targetPlanet){
+  this.targetPlanet = targetPlanet;
+}
+var zeus = new SpaceShuttle('Jupiter');
+```
+
+Esto se puede reemplazar por..
+
+```jsx
+class SpaceShuttle {
+  constructor(targetPlanet){
+    this.targetPlanet = targetPlanet;
+  }
+}
+const zeus = new SpaceShuttle('Jupiter');
+```
+
+<a id="var14"></a>
+
+### **Diferencia entre primitivo y objeto**
+
+[Volver al indice](#alg-base-obj)
+
+- Los primitivos se pasan por valor, los objetos se pasan por referencia
+- Los primitivos se copian por valor y los objetos se copian por referencia
+- Los primitivos se comparan por valor y los objetos por referencia
+- Los primitivos son inmutables, el unico elemento inmutable del objeto es su referencia, el valor puede ser modificado.
+
+Casos **primitivos**
+
+```jsx
+let animal = ‘perro’
+let mascota = animal
+animal = 'gato'
+console.log(mascota) // perro, se copio por valor y no referencia
+```
+
+Caso **objetos** ( Como puedo clonar un objeto ?)
+
+```jsx
+let animal = {
+  nombre: 'perro'
+}
+
+let mascota = animal
+animal.especie = 'gato'
+console.log(mascota.nombre) // gato, se copio referencia no valor 
+
+---
+    
+let object = {a: 1, b:2};
+let referencia = object; // Esto es solo una referencia
+
+let clone = {...object}; // Esto si es un clon
+let clone2 = Object.assign({}, object);// Esto si es un clon
+
+clone.foo = "foo";
+clone2.foo = "denu";
+
+console.log(object);// { a: 1, b: 2 }
+console.log(referencia); // { a: 1, b: 2 }
+console.log(clone); // { a: 1, b: 2, foo: 'foo' }
+```
+
+<a id="var24"></a>
+
+### **Variable Hoisting** 💛
+
+[Volver al indice](#alg-base-obj)
+
+Es un mecanismo de JS en el que las variables y declaraciones de funciones se mueven a la parte superior de su ambito antes de la ejecucion del codigo.
+
+```jsx
+console.log (saludar);
+    var saludar = "dice hola"
+
+// es decir
+
+var saludar;
+    console.log(saludar); // saludar is undefined
+    saludar = "dice hola"
+```
+
+Es el usar las variables antes de que sean declaradas. 
+
+<a id="var25"></a>
+
+### **Diferencia entre class y function**
+
+[Volver al indice](#alg-base-obj)
+
+class tiene un alcance comprendido por llaves, al igual que las variables let. function es local a la funcion donde fue definida, no podemos usar una clase o funcion constructora por fuera del alcance en donde se encuentra.
+
+```jsx
+// Class
+{
+  class C {
+  }
+}
+
+// Function
+function x () {
+  function C () {
+  }
+}
+ 
+// uso de ambas
+try {
+  const obj = new C();
+  console.assert( false );
+} catch (err) {
+  console.assert( 
+    err.message === 'C is not defined'
+  );
+}
+```
+
+Ambas pueden ser definidas de forma anonima. Sus referencias funcionan igual que con object, no se envia una copia, si no una referencia de la misma.
+
+```jsx
+const C = class {}; 
+const C = function () {};
+
+console.assert( typeof  C === 'function' );
+```
+
+<a id="var20"></a>
+
+### **Que es el Function Factory?**
+
+[Volver al indice](#alg-base-obj)
+
+Son funciones que crean funciones u objetos. Con este patron se puede implementar Currying
+
+```jsx
+const crearUsuario = ({ userName, avatar }) => ({
+      id: crearUnID(),
+      userName,
+      avatar,
+      cambiarUserName (userName) {
+        this.userName = userName;
+        return this;
+      },
+      cambiarAvatar (url) {
+        // ejecuta logica para obtener el avatar desde la url
+        const nuevoAvatar = obtenerAvtarDesdeUrl(url)
+        this.avatar = nuevoAvatar
+        return this
+      }
+    });
+    
+        console.log(crearUsuario({ userName: 'Bender', avatar: 'bender.png' }));
+    
+    {
+      "id":"17hakg9a7jas",
+      "avatar": "bender.png",
+      "userName": "Bender",
+      "cambiarUsername": [Function cambiarUsername]
+      "cambiarAvatar": [Function cambiarAvatar]
+    
+    }
+    */
+```
+
+<a id="var23"></a>
+
+### **Que es el Currying?** 💛
+
+[Volver al indice](#alg-base-obj)
+
+Es una técnica de programación funcional que consiste en transformar una función que recibe múltiples argumentos en una secuencia de funciones que reciben un solo argumento.
+
+```jsx
+function add(x) {
+  return function(y) {
+    return function(z) {
+      return x + y + z;
+    }
+  }
+}
+add(10)(20)(30); // 60
+```
+
+<a id="var23-1"></a>
+
+### **¿Qué son las funciones puras y cómo se relacionan con la programación funcional?** 
+
+[Volver al indice](#alg-base-obj)
+
+Las funciones puras son funciones que siempre devuelven el mismo resultado dadas los mismos parametros, no dependen de factores externos como states o variables. 
+
+```jsx
+function suma (a, b) {
+  return a + b;
+}
+
+function agregarElemento(array, elemento) {
+  return [...array, elemento]; // Crea un nuevo array sin modificar el original
+}
+
+const miArray = [1, 2, 3];
+const nuevoArray = agregarElemento(miArray, 4);
+
+console.log(miArray);      // [1, 2, 3] (el array original no se modifica)
+console.log(nuevoArray);   // [1, 2, 3, 4]
+
+```
+
+Una funcion que no es pura se puede ver asi:
+
+```jsx
+let contador = 0;
+
+function incrementar(a) {
+  contador++; // Modifica el estado externo
+  return a + contador;
+}
+```
+
+Si utilizas funciones puras, puedes:
+
+- Evitar errores al no modificar datos globales ni estados externos.
+- Hacer pruebas unitarias fácilmente, porque su comportamiento es predecible.
+- Aprovechar características como la memoización, donde puedes guardar los resultados de funciones puras y reutilizarlos para optimización.
+
+---
+
+<a id="var7"></a>
+
+### **Para que sirve event.preventDefault()?** 💛
+
+[Volver al indice](#alg-base-async)
+
+Los botones de los form en HTML por defecto hacen un submit, lo que puede llevar a que se recargue la pagina. Para evitar esto, se usa `event.preventDefault()` para evitar que se ejecute el comportamiento por defecto del evento.
+
+Por ejemplo, si quiero que al hacer click en un boton no se recargue la pagina, puedo hacer lo siguiente:
+
+```jsx
+document.getElementById("myForm").addEventListener("submit", function(event){
+  event.preventDefault();
+});
+```
+
+U otro ejemplo es para evitar que el resto de eventos que se ejecutarian por defecto, no lo hagan
+
+<a id="var11"></a>
+
+### **Event delegation**
+
+[Volver al indice](#alg-base-async)
+
+Por ejemplo, si tenemos botones y queremos hacer eventos para todos los botones, no es viable hacer un evento por boton ya que no es escalable.
+
+Agregamos el evento al container y dependiendo donde es el click (en cual boton), se detecta una cierta clase o propiedad, y se ejecuta el evento correspondiente utilizando [`e.target`](http://e.target) para identificar el elemento, por ejemplo.
+
+<a id="var15"></a>
+
+### **Bubble vs Capture**
+
+[Volver al indice](#alg-base-async)
+
+Cuando agregamos un elemento parece que solo lo agregamos a un elemento DOM pero en realidad este se propaga en una direccion. Podemos elegir cual direccion escuchan nuestros eventos. 
+
+- Fase Capture: Llega al evento que dispara el evento
+- Fase Target
+- Fase Bubbling
+
+<a id="var13"></a>
+
+### **Funciones de "bloqueo" y "no bloqueo"**
+
+[Volver al indice](#alg-base-async)
+
+Cuando emites una función de bloqueo, las demás piezas de código detienen su ejecución hasta que haya sido completado un evento designado de Entrada/Salida.
+
+A su vez, las funciones de no bloqueo le permiten al desarrollador realizar múltiples tareas (Manteniendo múltiples códigos en ejecución) mientras que simultáneamente se realizan múltiples eventos de Entrada/Salida.
+
+<a id="var21"></a>
+
+### **Promises** 💛
+
+[Volver al indice](#alg-base-async)
+
+Las promises son una buena forma de manejar operaciones asincronicas. Puede tener 3 estados, `Pending`, `Fulfilled` y `Rejected`. Son utiles cuando hay que manejar mas de una operacion asincronica una despues de la otra, para eso se puede usar **Promise Chaining** usando then() y catch() para el manejo de cada una.
+
+Se pueden implementar por ejemplo, en un Lazy loading.
+
+```jsx
+const myPromise = new Promise((resolve, reject) => {
+  if (Math.random() * 100 < 90) {
+    resolve('Hello, Promises!');
+  }
+  reject(new Error('In 10% of the cases, I fail. Miserably.'));
+});
+```
+
+<a id="var21-1"></a>
+
+### **Async Await** 💛
+
+[Volver al indice](#alg-base-async)
+
+Es una forma de escribir promises de manera mas limpia. Se usa para escribir codigo asincronico de manera sincronica. Se usa con la palabra `async` antes de la funcion y `await` antes de la promesa.
+
+```jsx
+async function myAsyncFunction() {
+  try {
+    const value = await promise;
+    console.log(value);
+  } catch (error) {
+    console.error(error);
+  }
+}
+```
+
+Tambien se puede usar con `fetch` para hacer peticiones a una API
+
+```jsx
+async function getPost() {
+  try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+    const post = await response.json();
+    console.log(post);
+  } catch (error) {
+    console.error(error);
+  }
+}
+```
+
+<a id="var21-2"></a>
+
+### **Callbacks** 💛
+
+[Volver al indice](#alg-base-async)
+
+Es una funcion que se pasa como argumento a otra funcion y se invoca dentro de la funcion externa para completar alguna accion. Se usa para manejar operaciones asincronicas. 
+
+```jsx
+function doSomethingAsync(callback) {
+  setTimeout(function() {
+    callback('First data');
+  }, 1000);
+}
+
+function doOtherThingAsync(callback) {
+  setTimeout(function() {
+    callback('Second data');
+  }, 1000);
+}
+
+function doAll() {
+  try {
+    doSomethingAsync(function(data) {
+      var processedData = data.split('');
+      try {
+        doOtherThingAsync(function(data2) {
+          var processedData2 = data2.split('');
+          try {
+            setTimeout(function() {
+              console.log(processedData, processedData2);
+            }, 1000);
+          } catch (err) {
+            // handle error
+          }
+        });
+      } catch (err) {
+        // handle error
+      }
+    });
+  } catch (err) {
+    // handle error
+  }
+}
+
+doAll();
+```
+
+<a id="var12"></a>
+
+### **Callback Hell** 💛
+
+[Volver al indice](#alg-base-async)
+
+Es un termino que se usa para describir un codigo que se vuelve dificil de leer y mantener por el anidamiento excesivo de callbacks. Se puede evitar con Promises, Async Await o Modularizando el codigo.
+
+```jsx
+doSomething(function(result) {
+  doSomething(result, function(newResult) {
+    doSomething(newResult, function(finalResult) {
+      console.log(finalResult);
+    }, failureCallback);
+  }, failureCallback);
+}, failureCallback);
+```
+
+<a id="var22"></a>
+
+### **Comparacion entre Promises, Callbacks y Async-await** 💛
+
+[Volver al indice](#alg-base-async)
+
+- **Callbacks:** Es una funcion que se pasa como argumento a otra funcion y se invoca dentro de la funcion externa para completar alguna accion. Se usa para manejar operaciones asincronicas.
+- **Promises:** Son una buena forma de manejar operaciones asincronicas. Puede tener 3 estados, `Pending`, `Fulfilled` y `Rejected`. Son utiles cuando hay que manejar mas de una operacion asincronica una despues de la otra, para eso se puede usar **Promise Chaining** usando then() y catch() para el manejo de cada una.
+- **Async Await:** Es una forma de escribir promises de manera mas limpia. Se usa para escribir codigo asincronico de manera sincronica. Se usa con la palabra `async` antes de la funcion y `await` antes de la promesa.
+
+Sus ventajas son:
+
+- **Callbacks:** Son simples y faciles de entender.
+- **Promises:** Son mas faciles de leer y entender que los callbacks.
+- **Async Await:** Es la forma mas limpia de escribir codigo asincronico.
+
+Y sus desventajas son:
+
+- **Callbacks:** Puede llevar a un Callback Hell.
+- **Promises:** Puede ser complicado de entender.
+- **Async Await:** No maneja errores de manera eficiente.
+  
+El mas usado es **Promises** por su facilidad de lectura y manejo de errores. 
+
+<a id="var10"></a>
+
+### **Como funciona setTimeout?** 
+
+[Volver al indice](#alg-base-async)
+
+Permite ejecutar un fragmento de código una vez pasa un tiempo determinado.
+
+Por ejemplo, el codigo imprimirá “Hola Mundo” despues de 2 segundos
+
+```jsx
+setTimeout(function(){
+	console.log('hola mundo');
+}, 2000);
+```
+
+El primer parámetro es la función a ejecutar, puede ser hecha ahi mismo como en el ejemplo anterior, o ya estar hecha como en este ejemplo: 
+
+```jsx
+function saludos(nombre, rol) {
+	console.log(`hola mi nombre es ${nombre} y mi rol es ${rol}`);
+}
+
+setTimeout(saludos, 3000, "denu", "administrador");
+```
+
+¿Porque no pasar los parametros directamente a la funcion y recien despues del tiempo? Porque JS ejecutará la funcion sin esperar al timeout, ya que estarias pasando una llamada a la funcion, no la referencia a la funcion. 
+
+```jsx
+setTimeout(saludos('denu', 'admin'), 3000); // NO 
+```
+
+Si quiero cancelar un setTimeout debo utilizar `clearTimeout()`
+
+```jsx
+const timeoutid = setTimeout (function() {
+	console.log('hola');
+}, 2000);
+
+clearTimeout(timeoutid)
+```
+
+<a id="var10-1"></a>
+
+### **¿Qué es un Promise.all y cuándo usarlo?** 💛
+
+[Volver al indice](#alg-base-async)
+
+Promise.all es una funcion que recibe un array de promesas y devuelve una nueva promesa que se resuelve cuando todas las promesas del array se han resuelto o cuando el array de promesas esta vacio.
+
+```jsx
+const promise1 = Promise.resolve(3);
+const promise2 = 42;
+const promise3 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 100, 'foo');
+});
+
+Promise.all([promise1, promise2, promise3]).then((values) => {
+  console.log(values); // [3, 42, "foo"]
+});
+```
+
+Se utiliza cuando se necesita esperar a que todas las promesas se resuelvan para continuar con el codigo.
+
+<a id="var10-2"></a>
+
+### **¿Cómo se maneja un error en una promesa?** 💛
+
+[Volver al indice](#alg-base-async)
+
+Para manejar un error en una promesa se usa el metodo `catch()`
+
+```jsx
+const myPromise = new Promise((resolve, reject) => {
+  if (Math.random() * 100 < 90) {
+    resolve('Hello, Promises!');
+  }
+  reject(new Error('In 10% of the cases, I fail. Miserably.'));
+});
+
+myPromise.then((resolvedValue) => {
+  console.log(resolvedValue);
+}).catch((error) => {
+  console.log(error);
+});
+```
+
+<a id="var10-3"></a>
+
+### **¿Cómo funcionan Promise.allSettled, Promise.race y Promise.any?** 💛
+
+[Volver al indice](#alg-base-async)
+
+- **Promise.allSettled:** Devuelve una promesa que se resuelve después de que todas las promesas del iterable se hayan resuelto o rechazado, con un array de objetos que describen el resultado de cada promesa.
+
+```jsx
+const promise1 = Promise.resolve(3);
+const promise2 = new Promise((resolve, reject) => setTimeout(reject, 100, 'foo'));
+const promises = [promise1, promise2];
+
+Promise.allSettled(promises).
+  then((results) => results.forEach((result) => console.log(result.status))); // "fulfilled", "rejected"
+```
+
+- **Promise.race**: Devuelve una promesa que se resuelve o rechaza tan pronto como una de las promesas del iterable se resuelve o se rechaza, con el valor o la razón de esa promesa.
+
+```jsx
+const promise1 = new Promise((resolve, reject) => setTimeout(resolve, 500, 'one'));
+const promise2 = new Promise((resolve, reject) => setTimeout(resolve, 100, 'two'));
+
+Promise.race([promise1, promise2]).then((value) => {
+  console.log(value); // "two"
+});
+```
+
+-**Promise.any**: Devuelve una promesa que se resuelve tan pronto como una de las promesas del iterable se resuelve, con el valor de esa promesa.
+
+```jsx
+const promise1 = new Promise((resolve, reject) => setTimeout(reject, 500, 'one'));
+const promise2 = new Promise((resolve, reject) => setTimeout(resolve, 100, 'two'));
+
+Promise.any([promise1, promise2]).then((value) => {
+  console.log(value); // "two"
+});
+```
+
+La diferencia entre `any` y `race` es que `any` se resuelve con el primer valor resuelto, mientras que `race` se resuelve con el primer valor resuelto o rechazado, `any` ignora cualquier valor rechazado, a menos que todas las promises hayan tenido el mismo resultado de rechazo.
+
+<a id="var10-4"></a>
+
+### **¿Cómo manejarías errores en funciones con async/await de forma eficiente?**
+
+[Volver al indice](#alg-base-async)
+
+Para manejar errores en funciones con async/await de forma eficiente, se puede usar un bloque `try/catch` para manejar errores de manera sincrona.
+
+```jsx
+async function myAsyncFunction() {
+  try {
+    const value = await promise;
+    console.log(value);
+  } catch (error) {
+    console.error(error);
+  }
+}
+```
+
+<a id="var10-5"></a>
+
+### **¿Cómo implementarías un patrón pub/sub para manejar eventos entre diferentes partes de una aplicación?**
+
+[Volver al indice](#alg-base-async)
+
+El patrón pub/sub (publicación/suscripción) es un patrón de diseño de software que permite la comunicación entre diferentes partes de una aplicación.
+
+```jsx
+// Implementación de un patrón pub/sub
+const pubsub = (function() {
+  const events = {};
+  
+  // Suscribirse a un evento
+  function subscribe(eventName, fn) {
+    events[eventName] = events[eventName] || [];
+    events[eventName].push(fn);
+  }
+  
+  // Publicar un evento
+  function publish(eventName, data) {
+    if (events[eventName]) {
+      events[eventName].forEach((fn) => {
+        fn(data);
+      });
+    }
+  }
+  
+  return {
+    subscribe,
+    publish
+  };
+})();
+
+// Uso del patrón pub/sub
+function mySubscriber(data) {
+  console.log(data);
+}
+
+// Suscribirse a un evento
+pubsub.subscribe('event1', mySubscriber); // Suscribirse a 'event1'
+pubsub.publish('event1', 'hello, world!'); // Publicar 'event1'
+
+// Salida: 'hello, world!'
+```
+
+---
+
+<a id="alg35"></a>
+
+### **Generics en Java**
+
+[Volver al indice](#alg-base)
+
+Cada tipo primitivo (int, boolean, float..) tiene su clase hermana. Las clases siempre empiezan en mayus, los minuscula son llamados clases envoltorio.
+
+```html
+
+Integer --> int
+Boolean --> boolean
+Float --> float
+Character --> char
+
+edades.add(45) == edades.add(new Integer(45));
+```
+
+Los ArrayList reconocen el tipo de dato que evaluan <String> / <Integer> por los **Generics** que ya vienen con java.
+
+<a id="alg36"></a>
+
+### **Estructuras de Datos**
+
+[Volver al indice](#alg-base)
+
+Manera de estructurar datos, Array, ArrayList, Pila, Cola..
+
+Por ejemplo, un sorteador posee las sig operaciones:
+
+* Sortear elemento
+* Agregar un elemento --> En un ArrayList. Con **programacion generica**
+no se que tipo voy a recibir, lo voy a saber cuando me lo mandan. (public class Sorteador<T>, private ArrayList<T> elementos , public void agregarElemento(T elemento){}), se trabaja todo con T (puede tener cualquier otro nombre).
+* Esta vacio?
+
+Definimos el tipo del sorteador cuando lo instanciamos para usarlo. Sorteador solo sabe como realiza sus metodos.
+
+#### Agregar muchos elementos a la vez
+
+```java
+public void agregar (T[] elementos){
+  this.elementos.addAll(Arrays.asList(elementos));
+       }
+```
+
+También puedo usar un foreach.
+
+#### Instancio mi Sorteador
+
+```java
+Sorteador<String> nombres = new Sorteador<>();
+```
+
+#### Hacer que mi sorteador sea iterable
+
+```java
+public class Sorteador<T> implements Iterable<T>
+```
+
+Implementando así el metodo propio de iterable que es iterator(), ya que es una interfaz
+
+```java
+@Override
+public Iterator<T> iterator(){
+return new IteratorSorteador();
+}
+
+private class IteratorSorteador implements Iterator<T>{
+    @Override
+    public boolean hasNext(){
+        return !estaVacio();
+    }
+
+    @Override
+    public T next(){
+        return proximoSorteado();
+    }
+}
+```
+
+<a id="alg52"></a>
+
+### Recursividad
+
+[Volver al indice](#alg-base)
+
+Son problemas que se pueden dividir en subproblemas. Por ejemplo: Calcula el elemento, obten los primero n elementos o un metodo que compute todos..
+
+TODOS los algoritmos recursivos tienen una alternativa iterativa. Su complejidad espacial es `O(cantidad de llamadas)`.
+
+<a id="alg53"></a>
+
+### **Factorial**
+
+[Volver al indice](#alg-base)
+
+El factorial de un número entero positivo n, denotado como n!, es el producto de todos los enteros positivos menores o iguales a n. Por ejemplo, el factorial de 5 se denota como 5! y se calcula como 5! = 5 * 4 * 3 * 2 * 1 = 120.
+
+```javascript
+// Función recursiva para calcular el factorial de un número
+function factorial(n) {
+    // Caso base: factorial de 0 es 1
+    if (n === 0) {
+        return 1;
+    }
+    // Caso recursivo: n * factorial(n-1)
+    else {
+        return n * factorial(n - 1);
+    }
+}
+
+// Ejemplo de uso
+console.log(factorial(5)); // Output: 120
+```
+
+<a id="alg53-2"></a>
+
+### **¿Qué son los generics y cómo se implementan en TypeScript?** 💛
+
+[Volver al indice](#alg-base)
+
+Los generics son una característica de TypeScript que permite crear componentes, funciones y clases que pueden trabajar con una variedad de tipos de datos. Los generics permiten escribir código que es reutilizable y flexible, ya que no está limitado a un solo tipo de datos.
+
+Para definir un tipo genérico en TypeScript, se utiliza la sintaxis de ángulos (<>) para especificar un tipo de parámetro genérico. Por ejemplo, la siguiente función toma un argumento de tipo genérico T y devuelve un array de ese tipo:
+
+```typescript
+function makeArray<T>(value: T): T[] {
+    return [value];
+}
+
+const array1 = makeArray<number>(1); // array1 es de tipo number[]
+const array2 = makeArray<string>('hello'); // array2 es de tipo string[]
+```
+
+Es ideal para reemplazar el uso de any. Por ejemplo, si se usa any, se pierde la información del tipo de datos que se está utilizando, lo que puede llevar a errores en tiempo de ejecución. Con generics, se puede especificar el tipo de datos que se espera y TypeScript se encargará de verificar que se cumpla en tiempo de compilación.
+
 <a id="alg55"></a>
 
 ### Metodos de Strings en Javascript
@@ -4352,224 +5330,7 @@ objectToMap({a: 1, b: 2}); // Map {'a' => 1, 'b' => 2}
 
 ```
 
-<a id="var1"></a>
 
-### **¿Qué es una Variable?**
-
-[Volver al indice](#alg-base)
-
-Una *variable* es un *contenedor* que tiene un valor o dato. Desde el punto de vista técnico, es un espacio de la memoria en el que guardamos ese determinado valor (o dato).
-
-Todas las variables tienen características comunes (por ejemplo un nombre que las identifica) y otras que difieren según el tipo de dato que contengan. Si pudiéramos ver qué contiene internamente una variable, veríamos que en algunos casos contiene directamente el valor y en otros (como en el caso de los objetos) otra cosa.
-
-<a id="var2"></a>
-
-### **¿En qué se diferencia una variable común, nativa, de un objeto?**
-
-[Volver al indice](#alg-base)
-
-Consideraremos que las variables nativas son entidades elementales: un número, un carácter, un valor verdadero o falso, que son entendidas por el lenguaje y asociadas a un tipo de dato *reconocible* por el entorno donde el programa corre, mientras que los objetos son entidades complejas que pueden estar formadas por la agrupación de más de un elemento, incluyendo *campos* y *métodos*. Pero todas ocupan un espacio de memoria (que puede ser mayor o menor).
-
-Ahora bien, las variables nativas guardan en sí mismas sus valores, y su tamaño está determinado por el tamaño definido del tipo de dato. En el caso de los objetos, como cada clase tiene su propia definición y el tamaño de sus *instancias solamente puede ser resuelto en tiempo de ejecución*, solamente guardarán la *dirección de memoria* de la *instancia*. Es lo que comúnmente se conoce como puntero.
-
-Es por eso que cuando a una variable de "tipo clase" no se le asigna ningún valor posee *null* como valor *por defecto*. Este *null* implica que la variable no guarda ningún objeto, y es por eso que produce un error de ejecución cuando se intenta acceder a un método de la instancia cuando ésta aún no se ha creado.
-
-<a id="var3"></a>
-
-### **¿A qué nos referimos cuando hablamos de tipos de datos?**
-
-[Volver al indice](#alg-base)
-
-En los programas en Java puede ser necesario tanto el uso de datos elementales como de datos complejos. Por eso se usa el término “Tipos de datos” para englobar a cualquier cosa que ocupe un espacio de memoria y que pueda ir tomando distintos valores o características durante la ejecución del programa. Es decir, en vez de hablar de tipos de variables o de tipos de objetos, hablaremos simplemente de tipos de datos.
-
-En Java diferenciamos dos tipos de datos: por un lado, los tipos primitivos, que se corresponden con los tipos de variables en lenguajes como C y que son los datos elementales que hemos citado. Por otro lado, los tipos objeto (que normalmente incluyen métodos)
-
-![Cola](src/variables1.png)
-
-<a id="var4"></a>
-
-### **¿Cómo se declara una variable?**
-
-[Volver al indice](#alg-base)
-
-Para definir una variable seguiremos la estructura:
-
-```jsx
-tipoDato nombreVariable;
-
-String profesor;
-
-int capacidad;
-
-boolean funciona;
-```
-
-Una vez declaradas, podemos asignarles valor de la siguiente manera:
-
-```jsx
-profesor = "Catalina";
-
-capacidad = 10;
-
-funciona = true;
-```
-
-Si cuando declaramos una variable ya sabemos el valor inicial que queremos que tome, podemos asignarlo en el mismo momento. Por ejemplo:
-
-```jsx
-String profesor = "Catalina";
-```
-
-<a id="var5"></a>
-
-### **Nombres de Variables**
-
-[Volver al indice](#alg-base)
-
-Cuando vayamos a dar un nombre a una variable deberemos tener en cuenta una serie de normas. Es decir, no podemos poner el nombre que nos dé la gana a una variable.
-
-Es recomendable que los nombres de los identificadores sean legibles y no acrónimos que no podamos leer. De tal manera que a la hora de verlos se auto-documenten por sí mismos. Además estos identificadores nunca podrán coincidir con las palabras reservadas ni comenzar con un número.
-
-Algunas reglas no escritas, pero que se han asumido *por convención* son:
-
-* Los identificadores siempre se escriben en minúsculas. (pe. nombre). Y si son dos o más palabras, el inicio de cada siguiente palabra se escriba en mayúsculas (pe. nombrePersona)
-* Si el identificador implica que sea una constante (es decir que hayamos utilizado los modificadores *final static*), dicho nombre se suele escribir en mayúsculas (pe. LETRA). Y si la constante está compuesta de dos palabras, estas se separan con un subrayado (pe. LETRA_PI).
-
-<a id="var6"></a>
-
-### **Diferencia entre let, var y const** 💛
-
-[Volver al indice](#alg-base)
-
-La diferencia es el alcance de cada uno.
-
-- **var:** Es la manera de declarar variables en ES5. Es global o local en una funcion.
-- **let:** Es la manera de declarar variables en ES6. Es local en un bloque.
-- **const:** Es la manera de declarar constantes en ES6. Es local en un bloque.
-
-```jsx
-
-var saludar = "hey, hola";
-var saludar = "dice Hola tambien";
-    saludar = "dice Hola tambien";
-
-
-let camper = 'James';
-let camper = 'David'; // throws an error
-let saludar = "dice Hola";
-    saludar = "dice Hola tambien";
-let saludar = "dice Hola tambien"; // error: Identifier 'saludar' has already been declared
-```
-
-Sí pongo un “use Strict” en la parte alta del codigo, la consola me va a tirar error cuando trate de codear algo de manera “insegura” o poco practica.
-
-```jsx
-"use strict";
-x = 3.14; // throws an error because x is not declared
-```
-
-Cuando declaras una variable con **var,** es declarada de manera global, o local sí esta adentro de una funcion.
-
-- Pueden ser modificadas y re-declaradas dentro de su ambito.
-- Puede ser declarada sin ser inicializada, se inicializa con undefined por defecto.
-- Puede ser declarada global o dentro de una funcion.
-
-En cambio con **let,** sí declaro la funcion dentro de un block, statement o expresion, se va a declarar solo dentro de estas y no globalmente.
-
-- No puede ser re-declarado pero si modificado.
-- Puede ser declarada sin ser inicializada, se inicializa con undefined por defecto.
-- Funciona a nivel bloque.
-
-```jsx
-var numArray = [];
-for (var i = 0; i < 3; i++) {
-  numArray.push(i);
-}
-console.log(numArray); // [0, 1, 2]
-console.log(i); // 3
-
-'use strict';
-let printNumTwo;
-for (let i = 0; i < 3; i++) {
-  if (i === 2) {
-    printNumTwo = function() {
-      return i;
-    };
-  }
-}
-console.log(printNumTwo()); // 2
-console.log(i); // i no esta definido
-```
-
-También se puede declarar usando la palabra **const**, que es una constante. Se declara y no puede ser cambiada en su valor, solo sirve de lectura.
-
-```jsx
-"use strict"
-const FAV_PET = "Cats";
-FAV_PET = "Dogs"; // error: Assignment to constant variable.
-```
-
-Se recomienda poner el nombre de las constantes en mayúscula.
-
-```jsx
-"use strict";
-const s = [5, 6, 7];
-s = [1, 2, 3]; // error asignando a una constante
-s[2] = 45; // funciona
-console.log(s); //  [5, 6, 45]
-```
-
-Los array sí pueden ser modificados en sí mismos, lo que no se puede es apuntar a otro array distinto.
-
-```jsx
-const s = [5, 7, 2];
-function editInPlace() {
-  "use strict";
-  // s = [2, 5, 7]; // error asignando a una constante
-  s[0] = 2;
-  s[1] = 5;
-  s[2] = 7;
-}
-editInPlace();
-```
-
-<a id="var19"></a>
-
-### **¿Qué son las variables no declaradas y no definidas?**
-
-[Volver al indice](#alg-base)
-
-**Variables no declaradas**: son las que no existen en un programa, y no se declaran. Si el programa trata de leer su valor entonces va a arrojar un error.
-
-**Variables no definidas**: son aquellas declaradas en el programa, pero no tienen asignado ningún valor. Si el programa quiere leer el valor de  variable no definida, se devuelve un valor no definido.
-
-<a id="var19-2"></a>
-
-### **¿Qué es la tipificación estática y dinámica?**
-
-[Volver al indice](#alg-base)
-
-**Tipificación estática**: es un tipo de sistema de tipado en el que las variables están asociadas a un tipo de dato en tiempo de compilación. Esto significa que el tipo de dato de una variable se conoce en tiempo de compilación y no puede cambiar durante la ejecución del programa.
-
-**Tipificación dinámica**: es un tipo de sistema de tipado en el que las variables están asociadas a un tipo de dato en tiempo de ejecución. Esto significa que el tipo de dato de una variable se conoce en tiempo de ejecución y puede cambiar durante la ejecución del programa.
-
-<a id="var7"></a>
-
-### **Para que sirve event.preventDefault()?** 💛
-
-[Volver al indice](#alg-base)
-
-Los botones de los form en HTML por defecto hacen un submit, lo que puede llevar a que se recargue la pagina. Para evitar esto, se usa `event.preventDefault()` para evitar que se ejecute el comportamiento por defecto del evento.
-
-Por ejemplo, si quiero que al hacer click en un boton no se recargue la pagina, puedo hacer lo siguiente:
-
-```jsx
-document.getElementById("myForm").addEventListener("submit", function(event){
-  event.preventDefault();
-});
-```
-
-U otro ejemplo es para evitar que el resto de eventos que se ejecutarian por defecto, no lo hagan
 
 
 <a id="var9"></a>
@@ -4693,84 +5454,6 @@ console.log(rest); // [3, 4]
 
 Ambos usan la misma sintaxis (`...`), pero el **contexto** es lo que determina si se trata de un **Spread** o un **Rest**.
 
-<a id="var11"></a>
-
-### **Event delegation**
-
-[Volver al indice](#alg-base)
-
-Por ejemplo, si tenemos botones y queremos hacer eventos para todos los botones, no es viable hacer un evento por boton ya que no es escalable.
-
-Agregamos el evento al container y dependiendo donde es el click (en cual boton), se detecta una cierta clase o propiedad, y se ejecuta el evento correspondiente utilizando [`e.target`](http://e.target) para identificar el elemento, por ejemplo.
-
-<a id="var13"></a>
-
-### **Funciones de "bloqueo" y "no bloqueo"**
-
-[Volver al indice](#alg-base)
-
-Cuando emites una función de bloqueo, las demás piezas de código detienen su ejecución hasta que haya sido completado un evento designado de Entrada/Salida.
-
-A su vez, las funciones de no bloqueo le permiten al desarrollador realizar múltiples tareas (Manteniendo múltiples códigos en ejecución) mientras que simultáneamente se realizan múltiples eventos de Entrada/Salida.
-
-<a id="var14"></a>
-
-### **Diferencia entre primitivo y objeto**
-
-[Volver al indice](#alg-base)
-
-- Los primitivos se pasan por valor, los objetos se pasan por referencia
-- Los primitivos se copian por valor y los objetos se copian por referencia
-- Los primitivos se comparan por valor y los objetos por referencia
-- Los primitivos son inmutables, el unico elemento inmutable del objeto es su referencia, el valor puede ser modificado.
-
-Casos **primitivos**
-
-```jsx
-let animal = ‘perro’
-let mascota = animal
-animal = 'gato'
-console.log(mascota) // perro, se copio por valor y no referencia
-```
-
-Caso **objetos** ( Como puedo clonar un objeto ?)
-
-```jsx
-let animal = {
-  nombre: 'perro'
-}
-
-let mascota = animal
-animal.especie = 'gato'
-console.log(mascota.nombre) // gato, se copio referencia no valor 
-
----
-    
-let object = {a: 1, b:2};
-let referencia = object; // Esto es solo una referencia
-
-let clone = {...object}; // Esto si es un clon
-let clone2 = Object.assign({}, object);// Esto si es un clon
-
-clone.foo = "foo";
-clone2.foo = "denu";
-
-console.log(object);// { a: 1, b: 2 }
-console.log(referencia); // { a: 1, b: 2 }
-console.log(clone); // { a: 1, b: 2, foo: 'foo' }
-```
-
-<a id="var15"></a>
-
-### **Bubble vs Capture**
-
-[Volver al indice](#alg-base)
-
-Cuando agregamos un elemento parece que solo lo agregamos a un elemento DOM pero en realidad este se propaga en una direccion. Podemos elegir cual direccion escuchan nuestros eventos. 
-
-- Fase Capture: Llega al evento que dispara el evento
-- Fase Target
-- Fase Bubbling
 
 <a id="var16"></a>
 
@@ -4893,592 +5576,6 @@ import add from "math_functions";
 add(5,4); //Devuelve el resultado de acuerdo al metodo exportado anteriormente
 ```
 
-<a id="var20"></a>
-
-### **Que es el Function Factory?**
-
-[Volver al indice](#alg-base)
-
-Son funciones que crean funciones u objetos. Con este patron se puede implementar Currying
-
-```jsx
-const crearUsuario = ({ userName, avatar }) => ({
-      id: crearUnID(),
-      userName,
-      avatar,
-      cambiarUserName (userName) {
-        this.userName = userName;
-        return this;
-      },
-      cambiarAvatar (url) {
-        // ejecuta logica para obtener el avatar desde la url
-        const nuevoAvatar = obtenerAvtarDesdeUrl(url)
-        this.avatar = nuevoAvatar
-        return this
-      }
-    });
-    
-        console.log(crearUsuario({ userName: 'Bender', avatar: 'bender.png' }));
-    
-    {
-      "id":"17hakg9a7jas",
-      "avatar": "bender.png",
-      "userName": "Bender",
-      "cambiarUsername": [Function cambiarUsername]
-      "cambiarAvatar": [Function cambiarAvatar]
-    
-    }
-    */
-```
-
-<a id="var21"></a>
-
-### **Promises** 💛
-
-[Volver al indice](#alg-base)
-
-Las promises son una buena forma de manejar operaciones asincronicas. Puede tener 3 estados, `Pending`, `Fulfilled` y `Rejected`. Son utiles cuando hay que manejar mas de una operacion asincronica una despues de la otra, para eso se puede usar **Promise Chaining** usando then() y catch() para el manejo de cada una.
-
-Se pueden implementar por ejemplo, en un Lazy loading.
-
-```jsx
-const myPromise = new Promise((resolve, reject) => {
-  if (Math.random() * 100 < 90) {
-    resolve('Hello, Promises!');
-  }
-  reject(new Error('In 10% of the cases, I fail. Miserably.'));
-});
-```
-
-<a id="var21-1"></a>
-
-### **Async Await** 💛
-
-[Volver al indice](#alg-base)
-
-Es una forma de escribir promises de manera mas limpia. Se usa para escribir codigo asincronico de manera sincronica. Se usa con la palabra `async` antes de la funcion y `await` antes de la promesa.
-
-```jsx
-async function myAsyncFunction() {
-  try {
-    const value = await promise;
-    console.log(value);
-  } catch (error) {
-    console.error(error);
-  }
-}
-```
-
-Tambien se puede usar con `fetch` para hacer peticiones a una API
-
-```jsx
-async function getPost() {
-  try {
-    const response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
-    const post = await response.json();
-    console.log(post);
-  } catch (error) {
-    console.error(error);
-  }
-}
-```
-
-<a id="var21-2"></a>
-
-### **Callbacks** 💛
-
-[Volver al indice](#alg-base)
-
-Es una funcion que se pasa como argumento a otra funcion y se invoca dentro de la funcion externa para completar alguna accion. Se usa para manejar operaciones asincronicas. 
-
-```jsx
-function doSomethingAsync(callback) {
-  setTimeout(function() {
-    callback('First data');
-  }, 1000);
-}
-
-function doOtherThingAsync(callback) {
-  setTimeout(function() {
-    callback('Second data');
-  }, 1000);
-}
-
-function doAll() {
-  try {
-    doSomethingAsync(function(data) {
-      var processedData = data.split('');
-      try {
-        doOtherThingAsync(function(data2) {
-          var processedData2 = data2.split('');
-          try {
-            setTimeout(function() {
-              console.log(processedData, processedData2);
-            }, 1000);
-          } catch (err) {
-            // handle error
-          }
-        });
-      } catch (err) {
-        // handle error
-      }
-    });
-  } catch (err) {
-    // handle error
-  }
-}
-
-doAll();
-```
-
-<a id="var12"></a>
-
-### **Callback Hell** 💛
-
-[Volver al indice](#alg-base)
-
-Es un termino que se usa para describir un codigo que se vuelve dificil de leer y mantener por el anidamiento excesivo de callbacks. Se puede evitar con Promises, Async Await o Modularizando el codigo.
-
-```jsx
-doSomething(function(result) {
-  doSomething(result, function(newResult) {
-    doSomething(newResult, function(finalResult) {
-      console.log(finalResult);
-    }, failureCallback);
-  }, failureCallback);
-}, failureCallback);
-```
-
-<a id="var22"></a>
-
-### **Comparacion entre Promises, Callbacks y Async-await** 💛
-
-[Volver al indice](#alg-base)
-
-- **Callbacks:** Es una funcion que se pasa como argumento a otra funcion y se invoca dentro de la funcion externa para completar alguna accion. Se usa para manejar operaciones asincronicas.
-- **Promises:** Son una buena forma de manejar operaciones asincronicas. Puede tener 3 estados, `Pending`, `Fulfilled` y `Rejected`. Son utiles cuando hay que manejar mas de una operacion asincronica una despues de la otra, para eso se puede usar **Promise Chaining** usando then() y catch() para el manejo de cada una.
-- **Async Await:** Es una forma de escribir promises de manera mas limpia. Se usa para escribir codigo asincronico de manera sincronica. Se usa con la palabra `async` antes de la funcion y `await` antes de la promesa.
-
-Sus ventajas son:
-
-- **Callbacks:** Son simples y faciles de entender.
-- **Promises:** Son mas faciles de leer y entender que los callbacks.
-- **Async Await:** Es la forma mas limpia de escribir codigo asincronico.
-
-Y sus desventajas son:
-
-- **Callbacks:** Puede llevar a un Callback Hell.
-- **Promises:** Puede ser complicado de entender.
-- **Async Await:** No maneja errores de manera eficiente.
-  
-El mas usado es **Promises** por su facilidad de lectura y manejo de errores. 
-
-<a id="var10"></a>
-
-### **Como funciona setTimeout?** 
-
-[Volver al indice](#alg-base)
-
-Permite ejecutar un fragmento de código una vez pasa un tiempo determinado.
-
-Por ejemplo, el codigo imprimirá “Hola Mundo” despues de 2 segundos
-
-```jsx
-setTimeout(function(){
-	console.log('hola mundo');
-}, 2000);
-```
-
-El primer parámetro es la función a ejecutar, puede ser hecha ahi mismo como en el ejemplo anterior, o ya estar hecha como en este ejemplo: 
-
-```jsx
-function saludos(nombre, rol) {
-	console.log(`hola mi nombre es ${nombre} y mi rol es ${rol}`);
-}
-
-setTimeout(saludos, 3000, "denu", "administrador");
-```
-
-¿Porque no pasar los parametros directamente a la funcion y recien despues del tiempo? Porque JS ejecutará la funcion sin esperar al timeout, ya que estarias pasando una llamada a la funcion, no la referencia a la funcion. 
-
-```jsx
-setTimeout(saludos('denu', 'admin'), 3000); // NO 
-```
-
-Si quiero cancelar un setTimeout debo utilizar `clearTimeout()`
-
-```jsx
-const timeoutid = setTimeout (function() {
-	console.log('hola');
-}, 2000);
-
-clearTimeout(timeoutid)
-```
-
-<a id="var10-1"></a>
-
-### **¿Qué es un Promise.all y cuándo usarlo?** 💛
-
-[Volver al indice](#alg-base)
-
-Promise.all es una funcion que recibe un array de promesas y devuelve una nueva promesa que se resuelve cuando todas las promesas del array se han resuelto o cuando el array de promesas esta vacio.
-
-```jsx
-const promise1 = Promise.resolve(3);
-const promise2 = 42;
-const promise3 = new Promise((resolve, reject) => {
-  setTimeout(resolve, 100, 'foo');
-});
-
-Promise.all([promise1, promise2, promise3]).then((values) => {
-  console.log(values); // [3, 42, "foo"]
-});
-```
-
-Se utiliza cuando se necesita esperar a que todas las promesas se resuelvan para continuar con el codigo.
-
-<a id="var10-2"></a>
-
-### **¿Cómo se maneja un error en una promesa?** 💛
-
-[Volver al indice](#alg-base)
-
-Para manejar un error en una promesa se usa el metodo `catch()`
-
-```jsx
-const myPromise = new Promise((resolve, reject) => {
-  if (Math.random() * 100 < 90) {
-    resolve('Hello, Promises!');
-  }
-  reject(new Error('In 10% of the cases, I fail. Miserably.'));
-});
-
-myPromise.then((resolvedValue) => {
-  console.log(resolvedValue);
-}).catch((error) => {
-  console.log(error);
-});
-```
-
-<a id="var10-3"></a>
-
-### **¿Cómo funcionan Promise.allSettled, Promise.race y Promise.any?** 💛
-
-[Volver al indice](#alg-base)
-
-- **Promise.allSettled:** Devuelve una promesa que se resuelve después de que todas las promesas del iterable se hayan resuelto o rechazado, con un array de objetos que describen el resultado de cada promesa.
-
-```jsx
-const promise1 = Promise.resolve(3);
-const promise2 = new Promise((resolve, reject) => setTimeout(reject, 100, 'foo'));
-const promises = [promise1, promise2];
-
-Promise.allSettled(promises).
-  then((results) => results.forEach((result) => console.log(result.status))); // "fulfilled", "rejected"
-```
-
-- **Promise.race**: Devuelve una promesa que se resuelve o rechaza tan pronto como una de las promesas del iterable se resuelve o se rechaza, con el valor o la razón de esa promesa.
-
-```jsx
-const promise1 = new Promise((resolve, reject) => setTimeout(resolve, 500, 'one'));
-const promise2 = new Promise((resolve, reject) => setTimeout(resolve, 100, 'two'));
-
-Promise.race([promise1, promise2]).then((value) => {
-  console.log(value); // "two"
-});
-```
-
--**Promise.any**: Devuelve una promesa que se resuelve tan pronto como una de las promesas del iterable se resuelve, con el valor de esa promesa.
-
-```jsx
-const promise1 = new Promise((resolve, reject) => setTimeout(reject, 500, 'one'));
-const promise2 = new Promise((resolve, reject) => setTimeout(resolve, 100, 'two'));
-
-Promise.any([promise1, promise2]).then((value) => {
-  console.log(value); // "two"
-});
-```
-
-La diferencia entre `any` y `race` es que `any` se resuelve con el primer valor resuelto, mientras que `race` se resuelve con el primer valor resuelto o rechazado, `any` ignora cualquier valor rechazado, a menos que todas las promises hayan tenido el mismo resultado de rechazo.
-
-<a id="var10-4"></a>
-
-### **¿Cómo manejarías errores en funciones con async/await de forma eficiente?**
-
-[Volver al indice](#alg-base)
-
-Para manejar errores en funciones con async/await de forma eficiente, se puede usar un bloque `try/catch` para manejar errores de manera sincrona.
-
-```jsx
-async function myAsyncFunction() {
-  try {
-    const value = await promise;
-    console.log(value);
-  } catch (error) {
-    console.error(error);
-  }
-}
-```
-
-<a id="var10-5"></a>
-
-### **¿Cómo implementarías un patrón pub/sub para manejar eventos entre diferentes partes de una aplicación?**
-
-[Volver al indice](#alg-base)
-
-El patrón pub/sub (publicación/suscripción) es un patrón de diseño de software que permite la comunicación entre diferentes partes de una aplicación.
-
-```jsx
-// Implementación de un patrón pub/sub
-const pubsub = (function() {
-  const events = {};
-  
-  // Suscribirse a un evento
-  function subscribe(eventName, fn) {
-    events[eventName] = events[eventName] || [];
-    events[eventName].push(fn);
-  }
-  
-  // Publicar un evento
-  function publish(eventName, data) {
-    if (events[eventName]) {
-      events[eventName].forEach((fn) => {
-        fn(data);
-      });
-    }
-  }
-  
-  return {
-    subscribe,
-    publish
-  };
-})();
-
-// Uso del patrón pub/sub
-function mySubscriber(data) {
-  console.log(data);
-}
-
-// Suscribirse a un evento
-pubsub.subscribe('event1', mySubscriber); // Suscribirse a 'event1'
-pubsub.publish('event1', 'hello, world!'); // Publicar 'event1'
-
-// Salida: 'hello, world!'
-```
-
-
-<a id="var23"></a>
-
-### **Que es el Currying?** 💛
-
-[Volver al indice](#alg-base)
-
-Es una técnica de programación funcional que consiste en transformar una función que recibe múltiples argumentos en una secuencia de funciones que reciben un solo argumento.
-
-```jsx
-function add(x) {
-  return function(y) {
-    return function(z) {
-      return x + y + z;
-    }
-  }
-}
-add(10)(20)(30); // 60
-```
-
-<a id="var23-1"></a>
-
-### **¿Qué son las funciones puras y cómo se relacionan con la programación funcional?** 
-
-[Volver al indice](#alg-base)
-
-Las funciones puras son funciones que siempre devuelven el mismo resultado dadas los mismos parametros, no dependen de factores externos como states o variables. 
-
-```jsx
-function suma (a, b) {
-  return a + b;
-}
-
-function agregarElemento(array, elemento) {
-  return [...array, elemento]; // Crea un nuevo array sin modificar el original
-}
-
-const miArray = [1, 2, 3];
-const nuevoArray = agregarElemento(miArray, 4);
-
-console.log(miArray);      // [1, 2, 3] (el array original no se modifica)
-console.log(nuevoArray);   // [1, 2, 3, 4]
-
-```
-
-Una funcion que no es pura se puede ver asi:
-
-```jsx
-let contador = 0;
-
-function incrementar(a) {
-  contador++; // Modifica el estado externo
-  return a + contador;
-}
-```
-
-Si utilizas funciones puras, puedes:
-
-- Evitar errores al no modificar datos globales ni estados externos.
-- Hacer pruebas unitarias fácilmente, porque su comportamiento es predecible.
-- Aprovechar características como la memoización, donde puedes guardar los resultados de funciones puras y reutilizarlos para optimización.
-
-<a id="var24"></a>
-
-### **Variable Hoisting** 💛
-
-[Volver al indice](#alg-base)
-
-Es un mecanismo de JS en el que las variables y declaraciones de funciones se mueven a la parte superior de su ambito antes de la ejecucion del codigo.
-
-```jsx
-console.log (saludar);
-    var saludar = "dice hola"
-
-// es decir
-
-var saludar;
-    console.log(saludar); // saludar is undefined
-    saludar = "dice hola"
-```
-
-Es el usar las variables antes de que sean declaradas. 
-
-<a id="var25"></a>
-
-### **Diferencia entre class y function**
-
-[Volver al indice](#alg-base)
-
-class tiene un alcance comprendido por llaves, al igual que las variables let. function es local a la funcion donde fue definida, no podemos usar una clase o funcion constructora por fuera del alcance en donde se encuentra.
-
-```jsx
-// Class
-{
-  class C {
-  }
-}
-
-// Function
-function x () {
-  function C () {
-  }
-}
- 
-// uso de ambas
-try {
-  const obj = new C();
-  console.assert( false );
-} catch (err) {
-  console.assert( 
-    err.message === 'C is not defined'
-  );
-}
-```
-
-Ambas pueden ser definidas de forma anonima. Sus referencias funcionan igual que con object, no se envia una copia, si no una referencia de la misma.
-
-```jsx
-const C = class {}; 
-const C = function () {};
-
-console.assert( typeof  C === 'function' );
-```
-
-<a id="var26"></a>
-
-### **Prototypes y Herencia Prototype (Prototype Inheritance)** 💛
-
-[Volver al indice](#alg-base)
-
-Las funciones y clases tienen una propiedad llamada `Prototype` donde reside la información que es usada para crear los objetos. Todos los miembros del objeto Prototype del constructor seran miembros del objeto una vez instanciado con new.
-
-Los prototypes son un mecanismo por el cual los objetos en JS heredan caracteristicas entre si.
-
-```jsx
-class C {
-  m1() {}
-  m2() {}
-}
- 
-const obj = new C();
-console.assert( typeof obj.m1 === 'function' );
-console.assert( typeof obj.m2 === 'function' );
-```
-
-![js2](src/js2.png)
-
-Otro ejemplo es si creamos un objeto persona:
-
-```jsx
-// definimos el objeto persona
-function Persona(nombre, apellido, edad, genero, intereses) {
-
-  // definiendo de propiedades y métodos
-  this.first = first;
-  this.last = last;
-//...
-}
-
-// lo instanciamos
-var person1 = new Persona('Bob', 'Smith', 32, 'hombre', ['music', 'skiing']);
-```
-
-Y si queremos ver lo que contiene el objeto, no solo contiene sus atributos si no, otros miembros como valueOf o Watch que estan definidos en el objeto.
-
-![js3](src/js3.png)
-
-Todos los objetos de JS heredan metodos de un Prototype, `Object.prototype` es el eslabon mas alto de la cadena de herencia.
-
-Con prototype podemos agregar nuevos atributos y metodos a un objeto que no se encuentran en su constructor
-
-```jsx
-function Person(first, last, age, eyecolor) {
-  this.firstName = first;
-  this.lastName = last;
-  this.age = age;
-  this.eyeColor = eyecolor;
-}
-
-// Atributos
-Person.prototype.nationality = "English";
-
-// Metodos
-Person.prototype.name = function() {
-  return this.firstName + " " + this.lastName;
-};
-```
-
-<a id="var27-1"></a>
-
-### **Que es la programacion funcional?** 💛
-
-[Volver al indice](#alg-base)
-
-Es un paradigma de programación que trata de minimizar los cambios de estado y los datos mutables. Se basa en funciones puras, que son funciones que no tienen efectos secundarios y siempre devuelven el mismo resultado para los mismos argumentos.
-
-```jsx
-const sum = (a, b) => a + b;
-```
-
-La programación funcional se basa en los siguientes principios:
-
-- **Inmutabilidad**: Los datos no cambian una vez que se han creado.
-- **Funciones puras**: Las funciones no tienen efectos secundarios y siempre devuelven el mismo resultado para los mismos argumentos.
-- **Composición de funciones**: Las funciones se pueden combinar para crear funciones más complejas.
-- **Declaratividad**: Se centra en qué se quiere hacer, no en cómo hacerlo.
-- **Transparencia referencial**: Dado un valor de entrada, la función siempre devolverá el mismo valor de salida.
-- **Recursión**: Se pueden definir funciones que se llaman a sí mismas para resolver problemas de manera iterativa.
-- **Funciones de orden superior**: Las funciones pueden tomar otras funciones como argumentos o devolver funciones como resultado.
-- **Evaluación perezosa**: Los valores se calculan solo cuando se necesitan.
-- **Currying**: Transformar una función que toma varios argumentos en una secuencia de funciones que toman un solo argumento.
-
-
 <a id="var27"></a>
 
 ### **Funciones en Javascript**
@@ -5517,29 +5614,7 @@ console.log(greeting("John")); // Hello John
 console.log(greeting()); // Hello Anonymous Por defecto
 ```
 
-<a id="var28"></a>
 
-### **Creacion de Constructores**
-
-[Volver al indice](#alg-base)
-
-```jsx
-var SpaceShuttle = function(targetPlanet){
-  this.targetPlanet = targetPlanet;
-}
-var zeus = new SpaceShuttle('Jupiter');
-```
-
-Esto se puede reemplazar por..
-
-```jsx
-class SpaceShuttle {
-  constructor(targetPlanet){
-    this.targetPlanet = targetPlanet;
-  }
-}
-const zeus = new SpaceShuttle('Jupiter');
-```
 
 <a id="var29"></a>
 
@@ -5672,34 +5747,6 @@ No se recomienda su uso porque es muy lento dado que refresca el contenido cada 
 [Volver al indice](#alg-base)
 
 JavaScript es más rápido porque es un lenguaje del lado del cliente y no necesita la ayuda del servidor web para ejecutarse. Por otra parte el ASP es un lenguaje del lado del servidor. Motivo por el que siempre es más lento que JavaScript. Sin embargo, Javascript ahora, también puede ser usado como un lenguaje de lado del servidor (server side) (nodejs).
-
-<a id="var35"></a>
-
-### **¿Qué es una funcion Declarativa y una Expresiva?**
-
-[Volver al indice](#alg-base)
-
-En las **Funciones Declarativas** usamos la palabra reservada `Function` para poder declararla
-
-```jsx
- function saludar(nombre) {
-	console.log(`Hola ${nombre}`);
-}
-
-saludar('Diego');
-```
-
-La **Expresiva (Expresion de Funcion)** es cuando la declaramos tipo variable como funcion anonima
-
-```jsx
-var nombre = function(nombre){
-    console.log(`Hola ${nombre}`)
-}
-
-nombre(‘Diego’);
-```
-
-A las funciones declarativas se les aplica hoisting, a la otra no, hoisting se aplica solo a las palabra sreservadas `var` y `function`, es decir, a la expresion de funcion podriamos llamarla recien despues de declararla.
 
 ---
 
