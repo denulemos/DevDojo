@@ -138,7 +138,7 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 
 | Programación Funcional y Orientada a Objetos |
 |----------|
-| [Que es la programacion funcional?](#var27-1) |
+| [Que es la programacion funcional?](#var27-1) 💛 |
 | [Funciones en Javascript](#var27) |
 | [¿Qué es una funcion Declarativa y una Expresiva?](#var35) |
 | [Prototypes y Herencia Prototype (Prototype Inheritance)](#var26) 💛|
@@ -156,16 +156,16 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [Event delegation](#var11) |
 | [Bubble vs Capture](#var15) |
 | [Funciones de "bloqueo" y "no bloqueo"](#var13) |
-| [Promises](#var21) |
-| [Async Await](#var21-1)|
-|[Callbacks](#var21-2)|
-| [Callback Hell](#var12) |
-| [Comparacion entre Promises, Callbacks y Async-await](#var22) |
+| [Promises](#var21) 💛|
+| [Async Await](#var21-1) 💛|
+|[Callbacks](#var21-2) 💛|
+| [Callback Hell](#var12) 💛|
+| [Comparacion entre Promises, Callbacks y Async-await](#var22) 💛 |
 | [Como funciona setTimeout?](#var10) |
-|[¿Qué es un Promise.all y cuándo usarlo?](#var10-1)|
-| [¿Cómo se maneja un error en una promesa?](#var10-2)|
-|[¿Cómo funcionan Promise.allSettled, Promise.race y Promise.any?](#var10-3)|
-| [¿Cómo manejarías errores en funciones con async/await de forma eficiente?](#var10-4)|
+|[¿Qué es un Promise.all y cuándo usarlo?](#var10-1) 💛|
+| [¿Cómo se maneja un error en una promesa?](#var10-2) 💛|
+|[¿Cómo funcionan Promise.allSettled, Promise.race y Promise.any?](#var10-3) 💛|
+| [¿Cómo manejarías errores en funciones con async/await de forma eficiente?](#var10-4) 💛|
 |[¿Cómo implementarías un patrón pub/sub para manejar eventos entre diferentes partes de una aplicación?](#var10-5)|
 
 <a name="alg-base-2"></a>
@@ -445,7 +445,7 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 |¿Cuál es la diferencia entre useCallback y useMemo? 💛|
 | [useReducer](#rea8) 💛|
 | [useLayoutEffect](#rea9) |
-|¿Qué diferencia hay entre useEffect y useLayoutEffect? ¿Cuándo usarías cada uno?|
+|[¿Qué diferencia hay entre useEffect y useLayoutEffect? ¿Cuándo usarías cada uno?](#rea9-1)|
 | [¿Que es Redux?](#rea18) 💛|
 | [Cuando conviene usar Redux?](#rea19) |
 | [¿Cuales son los beneficios de usar Redux?](#rea20) |
@@ -4933,7 +4933,7 @@ const crearUsuario = ({ userName, avatar }) => ({
 
 <a id="var21"></a>
 
-### **Promises**
+### **Promises** 💛
 
 [Volver al indice](#alg-base)
 
@@ -4952,7 +4952,7 @@ const myPromise = new Promise((resolve, reject) => {
 
 <a id="var21-1"></a>
 
-### **Async Await**
+### **Async Await** 💛
 
 [Volver al indice](#alg-base)
 
@@ -4985,7 +4985,7 @@ async function getPost() {
 
 <a id="var21-2"></a>
 
-### **Callbacks**
+### **Callbacks** 💛
 
 [Volver al indice](#alg-base)
 
@@ -5033,7 +5033,7 @@ doAll();
 
 <a id="var12"></a>
 
-### **Callback Hell**
+### **Callback Hell** 💛
 
 [Volver al indice](#alg-base)
 
@@ -5051,7 +5051,7 @@ doSomething(function(result) {
 
 <a id="var22"></a>
 
-### **Comparacion entre Promises, Callbacks y Async-await**
+### **Comparacion entre Promises, Callbacks y Async-await** 💛
 
 [Volver al indice](#alg-base)
 
@@ -5075,7 +5075,7 @@ El mas usado es **Promises** por su facilidad de lectura y manejo de errores.
 
 <a id="var10"></a>
 
-### **Como funciona setTimeout?**
+### **Como funciona setTimeout?** 
 
 [Volver al indice](#alg-base)
 
@@ -5117,7 +5117,7 @@ clearTimeout(timeoutid)
 
 <a id="var10-1"></a>
 
-### **¿Qué es un Promise.all y cuándo usarlo?**
+### **¿Qué es un Promise.all y cuándo usarlo?** 💛
 
 [Volver al indice](#alg-base)
 
@@ -5139,7 +5139,7 @@ Se utiliza cuando se necesita esperar a que todas las promesas se resuelvan para
 
 <a id="var10-2"></a>
 
-### **¿Cómo se maneja un error en una promesa?**
+### **¿Cómo se maneja un error en una promesa?** 💛
 
 [Volver al indice](#alg-base)
 
@@ -5162,7 +5162,7 @@ myPromise.then((resolvedValue) => {
 
 <a id="var10-3"></a>
 
-### **¿Cómo funcionan Promise.allSettled, Promise.race y Promise.any?**
+### **¿Cómo funcionan Promise.allSettled, Promise.race y Promise.any?** 💛
 
 [Volver al indice](#alg-base)
 
@@ -5456,7 +5456,7 @@ Person.prototype.name = function() {
 
 <a id="var27-1"></a>
 
-### **Que es la programacion funcional?**
+### **Que es la programacion funcional?** 💛
 
 [Volver al indice](#alg-base)
 
@@ -8943,6 +8943,30 @@ Una vez hecho esto, nos aparecerá esto en la consola del navegador ⇒
 El primero es cuando el DOM todavía no renderizo el elemento, por eso es todo valor cero. El segundo es cuando ya está renderizado.
 
 Ante cada cambio de quote que se haga, volverá a cero y volverá a tener otro valor, ya que este elemento es el que contiene el valor de quote, de longitud variable (es una frase random)
+
+<a id="rea9-1"></a>
+
+### **¿Qué diferencia hay entre useEffect y useLayoutEffect? ¿Cuándo usarías cada uno?**
+
+[Volver al indice](#rea-base)
+
+Ambos son Hooks de React que se utilizan para ejecutar efectos secundarios en componentes funcionales. La diferencia principal entre useEffect y useLayoutEffect es cuándo se ejecutan.
+
+1. **useEffect**:
+   - Se ejecuta después de que el navegador haya renderizado el componente y actualizado el DOM.
+   - Es asincrónico y no bloquea la actualización visual del navegador.
+   - Se utiliza para tareas que no requieren acceso inmediato al DOM, como llamadas a API, suscripciones a eventos y actualizaciones de estado.
+   - Se ejecuta después de que el navegador haya pintado el componente en la pantalla, lo que puede causar un parpadeo o retraso en la actualización visual.
+   - Se recomienda usar useEffect para la mayoría de los efectos secundarios, ya que es más eficiente y no bloquea la actualización visual.
+
+2. **useLayoutEffect**:
+    - Se ejecuta de forma síncrona después de que el navegador haya renderizado el componente pero antes de que se actualice el DOM.
+    - Es síncrono y bloquea la actualización visual del navegador.
+    - Se utiliza para tareas que requieren acceso inmediato al DOM, como medir elementos, calcular geometría y realizar animaciones.
+    - Se ejecuta antes de que el navegador pinte el componente en la pantalla, lo que garantiza que los cambios en el DOM se reflejen de inmediato.
+    - Se recomienda usar useLayoutEffect solo cuando sea necesario acceder al DOM de forma síncrona y realizar cambios que afecten la geometría de los elementos.
+
+En resumen, useEffect se utiliza para efectos secundarios asincrónicos que no requieren acceso inmediato al DOM, mientras que useLayoutEffect se utiliza para efectos secundarios síncronos que requieren acceso inmediato al DOM y afectan la geometría de los elementos.
 
 <a id="rea10"></a>
 
