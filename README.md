@@ -29,8 +29,6 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 - [Seguridad](#seg-base)
 - [Accesibilidad](#acc-base)
 
-
-
 <a name="alg-base"></a>
 
 ## [Algoritmos y manejo de datos](#alg)
@@ -157,18 +155,18 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [Para que sirve event.preventDefault()?](#var7) 💛 |
 | [Event delegation](#var11) |
 | [Bubble vs Capture](#var15) |
-| [Callback Hell](#var12) |
 | [Funciones de "bloqueo" y "no bloqueo"](#var13) |
 | [Promises](#var21) |
-| Async Await|
-|Callbacks|
-| [Cuál es la diferencia entre Promises, Callbacks y Async/Await?](#var22) |
+| [Async Await](#var21-1)|
+|[Callbacks](#var21-2)|
+| [Callback Hell](#var12) |
+| [Comparacion entre Promises, Callbacks y Async-await](#var22) |
 | [Como funciona setTimeout?](#var10) |
-|¿Qué es un Promise.all y cuándo usarlo?|
-| ¿Cómo se maneja un error en una promesa?|
-|¿Cómo funcionan Promise.allSettled, Promise.race y Promise.any?|
-| ¿Cómo manejarías errores en funciones con async/await de forma eficiente?|
-|¿Cómo implementarías un patrón pub/sub para manejar eventos entre diferentes partes de una aplicación?|
+|[¿Qué es un Promise.all y cuándo usarlo?](#var10-1)|
+| [¿Cómo se maneja un error en una promesa?](#var10-2)|
+|[¿Cómo funcionan Promise.allSettled, Promise.race y Promise.any?](#var10-3)|
+| [¿Cómo manejarías errores en funciones con async/await de forma eficiente?](#var10-4)|
+|[¿Cómo implementarías un patrón pub/sub para manejar eventos entre diferentes partes de una aplicación?](#var10-5)|
 
 <a name="alg-base-2"></a>
 
@@ -4695,48 +4693,6 @@ console.log(rest); // [3, 4]
 
 Ambos usan la misma sintaxis (`...`), pero el **contexto** es lo que determina si se trata de un **Spread** o un **Rest**.
 
-<a id="var10"></a>
-
-### **Como funciona setTimeout?**
-
-[Volver al indice](#alg-base)
-
-Permite ejecutar un fragmento de código una vez pasa un tiempo determinado.
-
-Por ejemplo, el codigo imprimirá “Hola Mundo” despues de 2 segundos
-
-```jsx
-setTimeout(function(){
-	console.log('hola mundo');
-}, 2000);
-```
-
-El primer parámetro es la función a ejecutar, puede ser hecha ahi mismo como en el ejemplo anterior, o ya estar hecha como en este ejemplo: 
-
-```jsx
-function saludos(nombre, rol) {
-	console.log(`hola mi nombre es ${nombre} y mi rol es ${rol}`);
-}
-
-setTimeout(saludos, 3000, "denu", "administrador");
-```
-
-¿Porque no pasar los parametros directamente a la funcion y recien despues del tiempo? Porque JS ejecutará la funcion sin esperar al timeout, ya que estarias pasando una llamada a la funcion, no la referencia a la funcion. 
-
-```jsx
-setTimeout(saludos('denu', 'admin'), 3000); // NO 
-```
-
-Si quiero cancelar un setTimeout debo utilizar `clearTimeout()`
-
-```jsx
-const timeoutid = setTimeout (function() {
-	console.log('hola');
-}, 2000);
-
-clearTimeout(timeoutid)
-```
-
 <a id="var11"></a>
 
 ### **Event delegation**
@@ -4746,61 +4702,6 @@ clearTimeout(timeoutid)
 Por ejemplo, si tenemos botones y queremos hacer eventos para todos los botones, no es viable hacer un evento por boton ya que no es escalable.
 
 Agregamos el evento al container y dependiendo donde es el click (en cual boton), se detecta una cierta clase o propiedad, y se ejecuta el evento correspondiente utilizando [`e.target`](http://e.target) para identificar el elemento, por ejemplo.
-
-<a id="var12"></a>
-
-### **Callback Hell**
-
-[Volver al indice](#alg-base)
-
-Ocurren cuando una gran cantidad de callbacks anidan (Conjuntos) en un lugar específico, resultando imposibles de leer o en general trabajar con ellos.
-
-Pueden ser resueltos. Esto se realiza con la ayuda de lo que conocemos como un **proceso de modularización**. La manera, en la que funciona este proceso es simplemente dividiendo los callback en funciones completamente independientes una de la otra.
-
-```jsx
-checkWeather('buenos aires', (error, weather) => {
- if (error) throw error;
-
- if (weather === 'well') {
-  return checkFlights('buenos aires', (err, flights) => {
-  if (err) throw err;
-
-   buyTicket(flights[0], (e, ticket) => {
-    if (e) throw e;
-    console.log('ticket nº %d', ticket.number);
-   });
-  });
- }
-
-	console.log('el clima es malo');
-});
-```
-
-Tambien se puede solucionar usando Promises
-
-```jsx
-checkWatcher('buenos aires')
-	.then(weather => {
-		if (weather === 'well') {
-			return checkFlights('buenos aires');
-		}
-		throw new Error('el clima es malo');
-	})
-	.then(flights => buyTicket(flights[0]))
-	.then(ticket => {
-		console.log('ticket nº %d', ticket.number);
-	})
-	.catch(error => console.error(error));
-```
-
-```jsx
-const operation = (num1, num2, callback) => {
-	return callback(num1, num2)
-}
-
-operation(1,3,(a,b) => a + b)
-operation(1,3,(a,b) => a * b)
-```
 
 <a id="var13"></a>
 
@@ -5036,114 +4937,335 @@ const crearUsuario = ({ userName, avatar }) => ({
 
 [Volver al indice](#alg-base)
 
-Las promises son una buena forma de manejar operaciones asincronicas. Puede tener 3 estados, `Pending`, `Fulfilled` y `Rejected`. Son utiles cuando hay que manejar mas de una operacion asincronica una despues de la otra, para eso se puede usar **Promise Chaining** usando then() y catch() para el manejo de cada una. 
+Las promises son una buena forma de manejar operaciones asincronicas. Puede tener 3 estados, `Pending`, `Fulfilled` y `Rejected`. Son utiles cuando hay que manejar mas de una operacion asincronica una despues de la otra, para eso se puede usar **Promise Chaining** usando then() y catch() para el manejo de cada una.
 
 Se pueden implementar por ejemplo, en un Lazy loading.
 
 ```jsx
-sum = (a, b) => {
-return Promise((resolve, reject) => { 
- setTimeout(function () {  // mandar respuesta despues de 1 seg
-   if (typeof a !== "number" || typeof b !== "number") {   // testeamos inputs
-		 return reject(new TypeError("Inputs must be numbers"));
-   }
-	   resolve(a + b);
-	 }, 1000);
-	});
+const myPromise = new Promise((resolve, reject) => {
+  if (Math.random() * 100 < 90) {
+    resolve('Hello, Promises!');
+  }
+  reject(new Error('In 10% of the cases, I fail. Miserably.'));
+});
+```
+
+<a id="var21-1"></a>
+
+### **Async Await**
+
+[Volver al indice](#alg-base)
+
+Es una forma de escribir promises de manera mas limpia. Se usa para escribir codigo asincronico de manera sincronica. Se usa con la palabra `async` antes de la funcion y `await` antes de la promesa.
+
+```jsx
+async function myAsyncFunction() {
+  try {
+    const value = await promise;
+    console.log(value);
+  } catch (error) {
+    console.error(error);
+  }
+}
+```
+
+Tambien se puede usar con `fetch` para hacer peticiones a una API
+
+```jsx
+async function getPost() {
+  try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+    const post = await response.json();
+    console.log(post);
+  } catch (error) {
+    console.error(error);
+  }
+}
+```
+
+<a id="var21-2"></a>
+
+### **Callbacks**
+
+[Volver al indice](#alg-base)
+
+Es una funcion que se pasa como argumento a otra funcion y se invoca dentro de la funcion externa para completar alguna accion. Se usa para manejar operaciones asincronicas. 
+
+```jsx
+function doSomethingAsync(callback) {
+  setTimeout(function() {
+    callback('First data');
+  }, 1000);
 }
 
-var myPromise = sum(10, 5);
-myPromsise.then( (result) => {
-	document.write(" 10 + 5: ", result);
-	return sum(null, "foo"); // Invalid data and return another promise
-	}).then(() => {  // Won't be called because of the error
-  }).catch((err) => { // The catch handler is called instead, after another second
-		console.error(err);  // => Please provide two numbers to sum.
-	});
+function doOtherThingAsync(callback) {
+  setTimeout(function() {
+    callback('Second data');
+  }, 1000);
+}
 
-// Otra manera de crear una Promise
+function doAll() {
+  try {
+    doSomethingAsync(function(data) {
+      var processedData = data.split('');
+      try {
+        doOtherThingAsync(function(data2) {
+          var processedData2 = data2.split('');
+          try {
+            setTimeout(function() {
+              console.log(processedData, processedData2);
+            }, 1000);
+          } catch (err) {
+            // handle error
+          }
+        });
+      } catch (err) {
+        // handle error
+      }
+    });
+  } catch (err) {
+    // handle error
+  }
+}
 
-let promise = new Promise((resolve, reject) =>{
-	// hacer algo
-});
+doAll();
+```
+
+<a id="var12"></a>
+
+### **Callback Hell**
+
+[Volver al indice](#alg-base)
+
+Es un termino que se usa para describir un codigo que se vuelve dificil de leer y mantener por el anidamiento excesivo de callbacks. Se puede evitar con Promises, Async Await o Modularizando el codigo.
+
+```jsx
+doSomething(function(result) {
+  doSomething(result, function(newResult) {
+    doSomething(newResult, function(finalResult) {
+      console.log(finalResult);
+    }, failureCallback);
+  }, failureCallback);
+}, failureCallback);
 ```
 
 <a id="var22"></a>
 
-### **Cuál es la diferencia entre Promises, Callbacks y Async/Await?**
+### **Comparacion entre Promises, Callbacks y Async-await**
 
 [Volver al indice](#alg-base)
 
-Con las promesas no sabemos cuando se resolverá, pero se puede seguir utilizando la app mientras tanto. Async Await fuerza una espera en la función. 
+- **Callbacks:** Es una funcion que se pasa como argumento a otra funcion y se invoca dentro de la funcion externa para completar alguna accion. Se usa para manejar operaciones asincronicas.
+- **Promises:** Son una buena forma de manejar operaciones asincronicas. Puede tener 3 estados, `Pending`, `Fulfilled` y `Rejected`. Son utiles cuando hay que manejar mas de una operacion asincronica una despues de la otra, para eso se puede usar **Promise Chaining** usando then() y catch() para el manejo de cada una.
+- **Async Await:** Es una forma de escribir promises de manera mas limpia. Se usa para escribir codigo asincronico de manera sincronica. Se usa con la palabra `async` antes de la funcion y `await` antes de la promesa.
 
-Ejemplo **Async/await** ⇒ 
+Sus ventajas son:
 
-Hay un stop en la ejecucion. No se puede continuar.
+- **Callbacks:** Son simples y faciles de entender.
+- **Promises:** Son mas faciles de leer y entender que los callbacks.
+- **Async Await:** Es la forma mas limpia de escribir codigo asincronico.
 
-```javascript
-async function secondFunction() {
-  await fetch('url servicio', {
-    method: 'get',
-    headers: {
-      'Authorization': 'data',
-      'Content-Type': 'data'
-    },
-    body: JSON.stringify(data),
-    mode: 'cors',
-    cache: 'default'
-  })
-    .then(response => ....)
-}
-```
+Y sus desventajas son:
 
-Ejemplo de **Promise ⇒**
+- **Callbacks:** Puede llevar a un Callback Hell.
+- **Promises:** Puede ser complicado de entender.
+- **Async Await:** No maneja errores de manera eficiente.
+  
+El mas usado es **Promises** por su facilidad de lectura y manejo de errores. 
 
-Fetch ya funciona con Promises. Posee una sintaxis amigable y los errores son faciles de manejar. 
+<a id="var10"></a>
 
-`resolve` se utiliza cuando se resuelve todo ok, `reject` cuando sucede un error. Promise en si mismo es un callback.
+### **Como funciona setTimeout?**
+
+[Volver al indice](#alg-base)
+
+Permite ejecutar un fragmento de código una vez pasa un tiempo determinado.
+
+Por ejemplo, el codigo imprimirá “Hola Mundo” despues de 2 segundos
 
 ```jsx
-const promise = new Promise((resolve, reject) => {
-	// cosas que pueden suceder
-	);
+setTimeout(function(){
+	console.log('hola mundo');
+}, 2000);
+```
+
+El primer parámetro es la función a ejecutar, puede ser hecha ahi mismo como en el ejemplo anterior, o ya estar hecha como en este ejemplo: 
+
+```jsx
+function saludos(nombre, rol) {
+	console.log(`hola mi nombre es ${nombre} y mi rol es ${rol}`);
+}
+
+setTimeout(saludos, 3000, "denu", "administrador");
+```
+
+¿Porque no pasar los parametros directamente a la funcion y recien despues del tiempo? Porque JS ejecutará la funcion sin esperar al timeout, ya que estarias pasando una llamada a la funcion, no la referencia a la funcion. 
+
+```jsx
+setTimeout(saludos('denu', 'admin'), 3000); // NO 
+```
+
+Si quiero cancelar un setTimeout debo utilizar `clearTimeout()`
+
+```jsx
+const timeoutid = setTimeout (function() {
+	console.log('hola');
+}, 2000);
+
+clearTimeout(timeoutid)
+```
+
+<a id="var10-1"></a>
+
+### **¿Qué es un Promise.all y cuándo usarlo?**
+
+[Volver al indice](#alg-base)
+
+Promise.all es una funcion que recibe un array de promesas y devuelve una nueva promesa que se resuelve cuando todas las promesas del array se han resuelto o cuando el array de promesas esta vacio.
+
+```jsx
+const promise1 = Promise.resolve(3);
+const promise2 = 42;
+const promise3 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 100, 'foo');
 });
 
-promise
-	.then(number => console.log(number))
-	.catch(error => console.error(error));
-
-
-const doAsyncStuffWithPromises = (numero1, numero2) => {
-	const resultado = numero1 + numero2;
-	return new Promise(resolve => {
-		setTimeout(()=> {
-			resolve(resultado)
-		}, 500)
-	})
-}
-
-doAsyncStuffWithPromises(1,3).then(result => console.log(result));
-}
+Promise.all([promise1, promise2, promise3]).then((values) => {
+  console.log(values); // [3, 42, "foo"]
+});
 ```
 
-Ejemplo **Callback** ⇒
+Se utiliza cuando se necesita esperar a que todas las promesas se resuelvan para continuar con el codigo.
 
-Es como una “llamada de vuelta”. Es muy raro su uso hoy en día. Generalmente es el ultimo parámetro. Se usa con proyectos de NodeJS. 
+<a id="var10-2"></a>
 
-Es complicado de entender y su manejo puede ser dificil
+### **¿Cómo se maneja un error en una promesa?**
+
+[Volver al indice](#alg-base)
+
+Para manejar un error en una promesa se usa el metodo `catch()`
 
 ```jsx
-const doAsyncStuff = (numero1, numero2, callback){
-  const resultado = numero1 + numero2;
-  return setTimeout(()=> {
-    callback(resultado);
-  }, 500)
+const myPromise = new Promise((resolve, reject) => {
+  if (Math.random() * 100 < 90) {
+    resolve('Hello, Promises!');
+  }
+  reject(new Error('In 10% of the cases, I fail. Miserably.'));
+});
 
-  doAsyncStuff(1,3,(result) => {
-    console.log(result)
-  })
+myPromise.then((resolvedValue) => {
+  console.log(resolvedValue);
+}).catch((error) => {
+  console.log(error);
+});
+```
+
+<a id="var10-3"></a>
+
+### **¿Cómo funcionan Promise.allSettled, Promise.race y Promise.any?**
+
+[Volver al indice](#alg-base)
+
+- **Promise.allSettled:** Devuelve una promesa que se resuelve después de que todas las promesas del iterable se hayan resuelto o rechazado, con un array de objetos que describen el resultado de cada promesa.
+
+```jsx
+const promise1 = Promise.resolve(3);
+const promise2 = new Promise((resolve, reject) => setTimeout(reject, 100, 'foo'));
+const promises = [promise1, promise2];
+
+Promise.allSettled(promises).
+  then((results) => results.forEach((result) => console.log(result.status))); // "fulfilled", "rejected"
+```
+
+- **Promise.race**: Devuelve una promesa que se resuelve o rechaza tan pronto como una de las promesas del iterable se resuelve o se rechaza, con el valor o la razón de esa promesa.
+
+```jsx
+const promise1 = new Promise((resolve, reject) => setTimeout(resolve, 500, 'one'));
+const promise2 = new Promise((resolve, reject) => setTimeout(resolve, 100, 'two'));
+
+Promise.race([promise1, promise2]).then((value) => {
+  console.log(value); // "two"
+});
+```
+
+-**Promise.any**: Devuelve una promesa que se resuelve tan pronto como una de las promesas del iterable se resuelve, con el valor de esa promesa.
+
+```jsx
+const promise1 = new Promise((resolve, reject) => setTimeout(reject, 500, 'one'));
+const promise2 = new Promise((resolve, reject) => setTimeout(resolve, 100, 'two'));
+
+Promise.any([promise1, promise2]).then((value) => {
+  console.log(value); // "two"
+});
+```
+
+La diferencia entre `any` y `race` es que `any` se resuelve con el primer valor resuelto, mientras que `race` se resuelve con el primer valor resuelto o rechazado, `any` ignora cualquier valor rechazado, a menos que todas las promises hayan tenido el mismo resultado de rechazo.
+
+<a id="var10-4"></a>
+
+### **¿Cómo manejarías errores en funciones con async/await de forma eficiente?**
+
+[Volver al indice](#alg-base)
+
+Para manejar errores en funciones con async/await de forma eficiente, se puede usar un bloque `try/catch` para manejar errores de manera sincrona.
+
+```jsx
+async function myAsyncFunction() {
+  try {
+    const value = await promise;
+    console.log(value);
+  } catch (error) {
+    console.error(error);
+  }
 }
 ```
+
+<a id="var10-5"></a>
+
+### **¿Cómo implementarías un patrón pub/sub para manejar eventos entre diferentes partes de una aplicación?**
+
+[Volver al indice](#alg-base)
+
+El patrón pub/sub (publicación/suscripción) es un patrón de diseño de software que permite la comunicación entre diferentes partes de una aplicación.
+
+```jsx
+// Implementación de un patrón pub/sub
+const pubsub = (function() {
+  const events = {};
+  
+  // Suscribirse a un evento
+  function subscribe(eventName, fn) {
+    events[eventName] = events[eventName] || [];
+    events[eventName].push(fn);
+  }
+  
+  // Publicar un evento
+  function publish(eventName, data) {
+    if (events[eventName]) {
+      events[eventName].forEach((fn) => {
+        fn(data);
+      });
+    }
+  }
+  
+  return {
+    subscribe,
+    publish
+  };
+})();
+
+// Uso del patrón pub/sub
+function mySubscriber(data) {
+  console.log(data);
+}
+
+// Suscribirse a un evento
+pubsub.subscribe('event1', mySubscriber); // Suscribirse a 'event1'
+pubsub.publish('event1', 'hello, world!'); // Publicar 'event1'
+
+// Salida: 'hello, world!'
+```
+
 
 <a id="var23"></a>
 
