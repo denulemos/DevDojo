@@ -10,6 +10,27 @@ Preguntas sin link de referencia con preguntas que proximamente seran respondida
 
 Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 
+## Tabla de Contenidos
+
+- [Algoritmos y manejo de datos](#alg-base)
+- [Metodos y Operadores en Javascript](#alg-base-2)
+- [Organizacion en Software - Derecho en IT](#cic-base)
+- [Gestion de proyectos - Liderazgo](#cic-base-2)
+- [Typescript](#typ-base)
+- [Javascript Frameworks and Libraries](#rea-base)
+- [Styles - Estilos](#sty-base)
+- [Desarrollo Mobile](#mob-base)
+- [React Native](#mob-base-rn)
+- [QA](#qa-base)
+- [Control de Versiones y Cambios](#cam-base)
+- [Conceptos Codigo Limpio, Objetos y Diseño](#cod-base)
+- [Hardware, Sistemas, Infraestructura y Arquitectura](#har-base)
+- [Bases de Datos](#bd-base)
+- [Seguridad](#seg-base)
+- [Accesibilidad](#acc-base)
+
+
+
 <a name="alg-base"></a>
 
 ## [Algoritmos y manejo de datos](#alg)
@@ -119,6 +140,7 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 
 | Programación Funcional y Orientada a Objetos |
 |----------|
+| [Que es la programacion funcional?](#var27-1) |
 | [Funciones en Javascript](#var27) |
 | [¿Qué es una funcion Declarativa y una Expresiva?](#var35) |
 | [Prototypes y Herencia Prototype (Prototype Inheritance)](#var26) 💛|
@@ -128,8 +150,7 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [Diferencia entre class y function](#var25) |
 | [Que es el Function Factory?](#var20) |
 | [Que es el Currying?](#var23)  💛 |
-|¿Qué es el polimorfismo en programación orientada a objetos?|
-| ¿Qué son las funciones puras y cómo se relacionan con la programación funcional?|
+| [¿Qué son las funciones puras y cómo se relacionan con la programación funcional?](#var23-1)|
 
 | Manejo de Eventos y Asincronía |
 |----------|
@@ -5143,6 +5164,48 @@ function add(x) {
 add(10)(20)(30); // 60
 ```
 
+<a id="var23-1"></a>
+
+### **¿Qué son las funciones puras y cómo se relacionan con la programación funcional?** 
+
+[Volver al indice](#alg-base)
+
+Las funciones puras son funciones que siempre devuelven el mismo resultado dadas los mismos parametros, no dependen de factores externos como states o variables. 
+
+```jsx
+function suma (a, b) {
+  return a + b;
+}
+
+function agregarElemento(array, elemento) {
+  return [...array, elemento]; // Crea un nuevo array sin modificar el original
+}
+
+const miArray = [1, 2, 3];
+const nuevoArray = agregarElemento(miArray, 4);
+
+console.log(miArray);      // [1, 2, 3] (el array original no se modifica)
+console.log(nuevoArray);   // [1, 2, 3, 4]
+
+```
+
+Una funcion que no es pura se puede ver asi:
+
+```jsx
+let contador = 0;
+
+function incrementar(a) {
+  contador++; // Modifica el estado externo
+  return a + contador;
+}
+```
+
+Si utilizas funciones puras, puedes:
+
+- Evitar errores al no modificar datos globales ni estados externos.
+- Hacer pruebas unitarias fácilmente, porque su comportamiento es predecible.
+- Aprovechar características como la memoización, donde puedes guardar los resultados de funciones puras y reutilizarlos para optimización.
+
 <a id="var24"></a>
 
 ### **Variable Hoisting** 💛
@@ -5268,6 +5331,31 @@ Person.prototype.name = function() {
   return this.firstName + " " + this.lastName;
 };
 ```
+
+<a id="var27-1"></a>
+
+### **Que es la programacion funcional?**
+
+[Volver al indice](#alg-base)
+
+Es un paradigma de programación que trata de minimizar los cambios de estado y los datos mutables. Se basa en funciones puras, que son funciones que no tienen efectos secundarios y siempre devuelven el mismo resultado para los mismos argumentos.
+
+```jsx
+const sum = (a, b) => a + b;
+```
+
+La programación funcional se basa en los siguientes principios:
+
+- **Inmutabilidad**: Los datos no cambian una vez que se han creado.
+- **Funciones puras**: Las funciones no tienen efectos secundarios y siempre devuelven el mismo resultado para los mismos argumentos.
+- **Composición de funciones**: Las funciones se pueden combinar para crear funciones más complejas.
+- **Declaratividad**: Se centra en qué se quiere hacer, no en cómo hacerlo.
+- **Transparencia referencial**: Dado un valor de entrada, la función siempre devolverá el mismo valor de salida.
+- **Recursión**: Se pueden definir funciones que se llaman a sí mismas para resolver problemas de manera iterativa.
+- **Funciones de orden superior**: Las funciones pueden tomar otras funciones como argumentos o devolver funciones como resultado.
+- **Evaluación perezosa**: Los valores se calculan solo cuando se necesitan.
+- **Currying**: Transformar una función que toma varios argumentos en una secuencia de funciones que toman un solo argumento.
+
 
 <a id="var27"></a>
 
