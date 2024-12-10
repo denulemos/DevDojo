@@ -131,6 +131,8 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 |¿Qué es el polimorfismo en programación orientada a objetos?|
 | ¿Qué son las funciones puras y cómo se relacionan con la programación funcional?|
 
+<a name="alg-async-2"></a>
+
 | Manejo de Eventos y Asincronía |
 |----------|
 | [Para que sirve event.preventDefault()?](#var7) 💛 |
@@ -139,7 +141,7 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [Callback Hell](#var12) |
 | [Funciones de "bloqueo" y "no bloqueo"](#var13) |
 | [Promises](#var21) |
-| Async Await|
+| [Async Await](#var21-1)|
 |Callbacks|
 | [Cuál es la diferencia entre Promises, Callbacks y Async/Await?](#var22) |
 | [Como funciona setTimeout?](#var10) |
@@ -5013,45 +5015,137 @@ const crearUsuario = ({ userName, avatar }) => ({
 
 ### **Promises**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-async-2)
 
-Las promises son una buena forma de manejar operaciones asincronicas. Puede tener 3 estados, `Pending`, `Fulfilled` y `Rejected`. Son utiles cuando hay que manejar mas de una operacion asincronica una despues de la otra, para eso se puede usar **Promise Chaining** usando then() y catch() para el manejo de cada una. 
+Las promises son una buena forma de manejar operaciones asincronicas. Puede tener 3 estados, `Pending`, `Fulfilled` y `Rejected`. Son utiles cuando hay que manejar mas de una operacion asincronica una despues de la otra, para eso se puede usar **Promise Chaining** usando then() y catch() para el manejo de cada una.
 
 Se pueden implementar por ejemplo, en un Lazy loading.
 
 ```jsx
-sum = (a, b) => {
-return Promise((resolve, reject) => { 
- setTimeout(function () {  // mandar respuesta despues de 1 seg
-   if (typeof a !== "number" || typeof b !== "number") {   // testeamos inputs
-		 return reject(new TypeError("Inputs must be numbers"));
-   }
-	   resolve(a + b);
-	 }, 1000);
-	});
-}
+// Crear una promesa
+const fetchData = () => {
+  return new Promise((resolve, reject) => {
+    console.log("Iniciando la operación...");
 
-var myPromise = sum(10, 5);
-myPromsise.then( (result) => {
-	document.write(" 10 + 5: ", result);
-	return sum(null, "foo"); // Invalid data and return another promise
-	}).then(() => {  // Won't be called because of the error
-  }).catch((err) => { // The catch handler is called instead, after another second
-		console.error(err);  // => Please provide two numbers to sum.
-	});
+    // Simulamos una operación asincrónica con setTimeout
+    setTimeout(() => {
+      const success = true; 
 
-// Otra manera de crear una Promise
+      if (success) {
+        resolve("Datos obtenidos correctamente");
+      } else {
+        reject("Error al obtener los datos");
+      }
+    }, 2000); // 2 segundos de demora
+  });
+};
 
-let promise = new Promise((resolve, reject) =>{
-	// hacer algo
-});
+// Usar la promesa
+fetchData()
+  .then((data) => {
+    console.log("Éxito:", data);
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+  })
+  .finally(() => {
+    console.log("Operación finalizada.");
+  });
+
 ```
+
+Ejemplo de Promise Chaining
+
+```jsx
+// Función simulada para obtener datos
+const fetchData = () => {
+  return new Promise((resolve, reject) => {
+    console.log("Obteniendo datos...");
+    setTimeout(() => resolve("Datos iniciales"), 2000);
+  });
+};
+
+// Función simulada para procesar los datos
+const processData = (data) => {
+  return new Promise((resolve, reject) => {
+    console.log("Procesando datos...");
+    setTimeout(() => resolve(`${data} procesados`), 2000);
+  });
+};
+
+// Función simulada para guardar los datos
+const saveData = (data) => {
+  return new Promise((resolve, reject) => {
+    console.log("Guardando datos...");
+    setTimeout(() => resolve(`${data} guardados`), 2000);
+  });
+};
+
+// Encadenar las promesas
+fetchData()
+  .then((data) => {
+    console.log("Paso 1:", data);
+    return processData(data);
+  })
+  .then((processedData) => {
+    console.log("Paso 2:", processedData);
+    return saveData(processedData);
+  })
+  .then((savedData) => {
+    console.log("Paso 3:", savedData);
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+  })
+  .finally(() => {
+    console.log("Proceso completado.");
+  });
+```
+
+<a id="var21-1"></a>
+
+### **Async Await**
+
+[Volver al indice](#alg-async-2)
+
+Es una forma de escribir codigo asincronico de manera mas limpia y facil de leer. Se usa con la palabra clave `async` antes de la funcion y `await` antes de la promesa. 
+
+```jsx
+// Crear una promesa
+
+const fetchData = () => {
+  return new Promise((resolve, reject) => {
+    console.log("Obteniendo datos...");
+    setTimeout(() => resolve("Datos obtenidos"), 2000);
+  });
+};
+
+// Usar async/await
+
+const getData = async () => {
+  try {
+    const data = await fetchData();
+    console.log("Datos:", data);
+  } catch (error) {
+    console.error("Error:", error);
+  } finally {
+    console.log("Operación finalizada.");
+  }
+};
+```
+
+<a id="var21-1"></a>
+
+### **Async Await**
+
+[Volver al indice](#alg-async-2)
+
 
 <a id="var22"></a>
 
 ### **Cuál es la diferencia entre Promises, Callbacks y Async/Await?**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-async-2)
 
 Con las promesas no sabemos cuando se resolverá, pero se puede seguir utilizando la app mientras tanto. Async Await fuerza una espera en la función. 
 
