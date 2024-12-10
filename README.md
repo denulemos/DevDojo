@@ -363,8 +363,8 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 |[¿Qué son los Utility Types como Partial, Pick, y Omit, y en qué casos son útiles?](#typ19)💛 |
 |[¿Cómo funcionan los Mapped Types y cómo se aplican en proyectos complejos?](#typ20)|
 |[¿Qué son los Conditional Types y cómo permiten lógica avanzada en los tipos?](#typ21)|
+|[¿Cómo funcionan los decoradores en TypeScript y en qué casos son útiles?](#typ22)|
 |¿Qué técnicas avanzadas de Type Narrowing puedes usar para trabajar con tipos complejos?|
-|¿Cómo funcionan los decoradores en TypeScript y en qué casos son útiles?|
 |¿Cómo crear y utilizar tipos genéricos con restricciones múltiples (T extends U)?|
 |¿Cómo funcionan keyof y los Lookup Types para trabajar dinámicamente con claves y valores?|
 |¿Cómo manejas tipos recursivos en TypeScript?|
@@ -450,7 +450,7 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [Para que es el comando React eject?](#rea49) |
 | [Que son las Ref?](#rea52) |
 | [De que tratan los Ciclos de Vida Componentes?](#rea62) |
-|Componentes de clase vs Componentes de Funcion 💛|
+|[Componentes de clase vs Componentes de Funcion 💛](#rea62-1)|
 | [componentWillReceiveProps()](#rea55) |
 | [componentDidMount()](#rea56) |
 | [componentWillUnmount()](#rea57) |
@@ -7572,6 +7572,145 @@ type Test1 = IsString<string>; // 'yes'
 type Test2 = IsString<number>; // 'no'
 ```
 
+<a id="typ22"></a>
+
+### **¿Cómo funcionan los decoradores en TypeScript y en qué casos son útiles?** 
+
+[Volver al indice](#typ-base)
+
+Para usar decoradores, debes habilitar la opción experimentalDecorators en el archivo tsconfig.json:
+
+```json
+{
+ "compilerOptions": {
+  "experimentalDecorators": true
+ }
+}
+```
+
+Tipos de decoradores en TypeScript:
+
+- Decoradores de Clase
+
+Se aplican a la definición de una clase. Reciben como argumento el constructor de la clase y pueden modificar la clase misma.
+
+```typescript
+function Logger(target: Function) {
+  console.log(`Clase registrada: ${target.name}`);
+}
+
+@Logger
+class User {
+  constructor(public name: string) {}
+}
+
+// Output: "Clase registrada: User"
+```
+
+- Decoradores de Método
+
+Se aplican a los métodos de una clase y reciben metadatos sobre el método. Son útiles para extender o modificar el comportamiento de los métodos.
+
+```typescript
+function LogMethod(target: any, methodName: string, descriptor: PropertyDescriptor) {
+  const originalMethod = descriptor.value;
+  descriptor.value = function (...args: any[]) {
+    console.log(`Método ${methodName} ejecutado con argumentos: ${args}`);
+    return originalMethod.apply(this, args);
+  };
+}
+
+class Calculator {
+  @LogMethod
+  add(a: number, b: number): number {
+    return a + b;
+  }
+}
+
+const calc = new Calculator();
+calc.add(2, 3);
+// Output:
+// "Método add ejecutado con argumentos: 2,3"
+// 5
+```
+
+- Decoradores de Propiedad
+
+Se aplican a las propiedades de una clase. Reciben el prototipo del objeto y el nombre de la propiedad. Los decoradores de propiedad no tienen acceso al valor de la propiedad directamente (ya que el valor no está inicializado en tiempo de compilación).
+
+```typescript
+function PropertyMetadata(target: any, propertyName: string) {
+  console.log(`Propiedad decorada: ${propertyName}`);
+}
+
+class Product {
+  @PropertyMetadata
+  price: number;
+}
+
+// Output: "Propiedad decorada: price"
+```
+
+- Decoradores de Parámetro
+
+Se aplican a los parámetros de un método y reciben información sobre el parámetro decorado. Son útiles para implementar patrones como inyección de dependencias.
+
+```typescript
+function LogParameter(target: any, methodName: string, parameterIndex: number) {
+  console.log(`Parámetro decorado en el método ${methodName}, índice: ${parameterIndex}`);
+}
+
+class UserService {
+  greet(@LogParameter name: string) {
+    console.log(`Hola, ${name}!`);
+  }
+}
+
+const userService = new UserService();
+userService.greet("Ana");
+// Output:
+// "Parámetro decorado en el método greet, índice: 0"
+// "Hola, Ana!"
+```
+
+- Decoradores de Getter/Setter
+
+Se aplican a los accesores (get y set) y funcionan como los decoradores de método, pero se usan para modificar el comportamiento de getters y setters.
+
+```typescript
+function LogAccessor(target: any, propertyName: string, descriptor: PropertyDescriptor) {
+  const originalMethod = descriptor.get;
+  descriptor.get = function () {
+    console.log(`Accediendo a la propiedad ${propertyName}`);
+    return originalMethod?.apply(this);
+  };
+}
+
+class User {
+  private _age: number = 30;
+
+  @LogAccessor
+  get age() {
+    return this._age;
+  }
+}
+
+const user = new User();
+console.log(user.age);
+// Output:
+// "Accediendo a la propiedad age"
+// 30
+```
+
+Los decoradores son muy usados en, por ejemplo, Angular, para configurar clases de cierta forma predeterminada
+
+```typescript
+@Injectable()
+class UserService {
+  // Servicio disponible para otros
+}
+```
+
 ---
 
 <a id="sty"></a>
@@ -8493,8 +8632,28 @@ React provee de metodos especificos para los ciclos de vida de los componentes, 
 
 - Monta: El componente se renderiza en la pagina
 - Desmonta: El componente es removido de la pagina
+- Actualiza: El componente se actualiza en la pagina
 
-Varios de los estados que veremos a continuacion se encuentran deprecados, y deben usarse con un tag UNSAFE para su uso
+Varios de los estados que veremos que se utilizaban tipicamente en componentes de clase se encuentran deprecados, y deben usarse con un tag UNSAFE para su uso. 
+
+<a id="rea62-1"></a>
+
+### **Componentes de clase vs Componentes de Funcion 💛**
+
+[Volver al indice](#rea-base)
+
+Antes se utilizaban los componentes de clase para componentes complejos, y los componentes de funcion para componentes con poca logica en si mismos, hoy en dia se puede decir que los componentes de funcion reemplazaron completamente a los componentes de clase.
+
+Los componentes de funcion son mas faciles de leer, escribir y testear, y son mas faciles de optimizar. Los componentes de clase son mas dificiles de leer, escribir y testear, y son mas dificiles de optimizar.
+
+| Componentes de Clase | Componentes de Funcion |
+| --- | --- | 
+| Manejaba los props con `this.props` | Maneja los props como argumentos de la funcion |
+| Manejaba los ciclos de vida con funciones como `componentDidMount()` | Maneja los ciclos de vida con hooks como `useEffect()` |
+| Manejaba los eventos con funciones como `this.handleClick` | Maneja los eventos con funciones como `handleClick` |
+| Manejaba el estado con `this.state` | Maneja el estado con `useState` |
+| Manejaba el contexto con `this.context` | Maneja el contexto con `useContext` |
+
 
 <a id="rea55"></a>
 
