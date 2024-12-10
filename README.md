@@ -361,8 +361,8 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 |[Cual es la diferencia entre el uso de types e interfaces?](#typ17) 💛|
 |[¿Qué son los tipos Union e Intersection y cuándo se utilizan?](#typ18)|
 |[¿Qué son los Utility Types como Partial, Pick, y Omit, y en qué casos son útiles?](#typ19)💛 |
-|¿Cómo funcionan los Mapped Types y cómo se aplican en proyectos complejos?|
-|¿Qué son los Conditional Types y cómo permiten lógica avanzada en los tipos?|
+|[¿Cómo funcionan los Mapped Types y cómo se aplican en proyectos complejos?](#typ20)|
+|[¿Qué son los Conditional Types y cómo permiten lógica avanzada en los tipos?](#typ21)|
 |¿Qué técnicas avanzadas de Type Narrowing puedes usar para trabajar con tipos complejos?|
 |¿Cómo funcionan los decoradores en TypeScript y en qué casos son útiles?|
 |¿Cómo crear y utilizar tipos genéricos con restricciones múltiples (T extends U)?|
@@ -7529,6 +7529,47 @@ interface Person {
 type PersonWithoutAddress = Omit<Person, 'address'>;
 
 const personWithoutAddress: PersonWithoutAddress = { name: 'Alice', age: 30 }; // No contiene la propiedad 'address'
+```
+
+<a id="typ20"></a>
+
+### **¿Cómo funcionan los Mapped Types y cómo se aplican en proyectos complejos?** 
+
+[Volver al indice](#typ-base)
+
+Mapped Types en TypeScript son una forma de transformar tipos existentes en nuevos tipos utilizando un mecanismo de mapeo. Este es un concepto muy poderoso que te permite crear tipos dinámicamente basados en otros. Los Mapped Types se definen utilizando la sintaxis de los tipos indexados y la palabra clave `in`.
+
+Un ejemplo común de Mapped Types es la creación de un tipo que convierte todas las propiedades de un tipo dado en propiedades opcionales. Esto se puede lograr utilizando un Mapped Type con la palabra clave `Partial`.
+
+```typescript
+interface Person {
+ name: string;
+ age: number;
+}
+
+// Mapped Type que convierte todas las propiedades de Person en opcionales
+type PartialPerson = {
+ [K in keyof Person]?: Person[K];
+};
+
+const partialPerson: PartialPerson = {}; // Todas las propiedades son opcionales
+```
+
+En proyectos complejos, los Mapped Types pueden ser muy útiles para crear tipos dinámicamente basados en otros tipos existentes. Por ejemplo, puedes utilizar Mapped Types para crear tipos que transforman propiedades
+
+<a id="typ21"></a>
+
+### **¿Qué son los Conditional Types y cómo permiten lógica avanzada en los tipos?** 
+
+[Volver al indice](#typ-base)
+
+Los Conditional Types en TypeScript son una característica avanzada que permite definir tipos condicionales basados en una condición booleana. Esto permite crear tipos que se comportan de manera diferente según una condición dada. Los Conditional Types se definen utilizando la palabra clave `extends` y la sintaxis de los tipos condicionales.
+
+```typescript
+type IsString<T> = T extends string ? 'yes' : 'no';
+
+type Test1 = IsString<string>; // 'yes'
+type Test2 = IsString<number>; // 'no'
 ```
 
 ---
