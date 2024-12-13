@@ -1,6 +1,6 @@
 <div align="center">
 
-# DevDojo 
+# DevDojo
 
 ![Dev GIF](https://i.pinimg.com/originals/a7/a8/d0/a7a8d06c754cfbbbc37e64cb118c513c.gif)
 
@@ -466,7 +466,7 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [useSelector](#rea5) |
 | [useRef](#rea6) 💛|
 | [useMemo](#rea7) 💛|
-|¿Cuál es la diferencia entre useCallback y useMemo? 💛|
+|[¿Cuál es la diferencia entre useCallback y useMemo?](#rea7-1) 💛|
 | [useReducer](#rea8) 💛|
 | [useLayoutEffect](#rea9) |
 |[¿Qué diferencia hay entre useEffect y useLayoutEffect? ¿Cuándo usarías cada uno?](#rea9-1)|
@@ -477,7 +477,7 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [¿Cual es el flujo de Redux?](#rea22) |
 | [Que es ContextAPI?](#rea23) 💛|
 | [Que es React Fiber?](#rea24) |
-|Que tener en cuenta para tener una buena performance en React 💛|
+|[Que tener en cuenta para tener una buena performance en React](#rea24-1) 💛|
 | [¿Qué es el Virtual DOM?](#rea39) 💛|
 |Para que tipo de proyectos React es recomendable?|
 |¿Cuál es la diferencia entre React.createElement() y JSX?|
@@ -1125,7 +1125,7 @@ El ciberespacio es un ambiente complejo en donde interactúan los seres humanos,
 - Ciberterrorismo
 - Hacktivismo
 - Daños informáticos
-- Ciberataques 
+- Ciberataques
 
 <a id="seg7"></a>
 
@@ -1771,7 +1771,7 @@ html
 
 No usar roles redundantes, por ejemplo:
 
-```jsx 
+```jsx
 ✅ <ul>...</ul>
 😡 <ul role="list">...</ul>
 ```
@@ -2131,7 +2131,7 @@ Hay varios tipos de problemas de visión con respecto a los colores, el más com
   <h2>¿Cómo empiezo una colección de sellos?</h2>
     <h3>Equipo necesario</h3>
     <p>...</p>
-    
+
     <h3>Cómo adquirir sellos</h3>
     <p>...</p>
 
@@ -2308,7 +2308,7 @@ function binarySearch(arr, target) {
   // Inicializamos los extremos del rango de búsqueda.
   let left = 0; // Índice del extremo izquierdo del rango.
   let right = arr.length - 1; // Índice del extremo derecho del rango.
-  
+
   // Calculamos el índice medio inicial.
   let middle = Math.floor((left + right) / 2);
 
@@ -2358,7 +2358,7 @@ No, no se puede, ya que encontrar el index del elemento del medio es demasiado c
 
 [Volver al indice](#alg-base)
 
-La diferencia principal es que en Binary Search se divide el array en dos partes y se busca en la mitad, mientras que en Linear Search se recorre todo el array hasta encontrar el elemento, es la que hacemos tipicamente en codigo. 
+La diferencia principal es que en Binary Search se divide el array en dos partes y se busca en la mitad, mientras que en Linear Search se recorre todo el array hasta encontrar el elemento, es la que hacemos tipicamente en codigo.
 
 La complejidad de Binary Search es O(log n) y la de Linear Search es O(n).
 
@@ -2391,7 +2391,7 @@ const selectionSort = (array) => {
       }
     }
 
-// Luego de que nuestro for interno finalizo, hago el swap de valores 
+// Luego de que nuestro for interno finalizo, hago el swap de valores
     const temp = array[i];
     array[i] = array[minIndex];
     array[minIndex] = temp;
@@ -2418,7 +2418,7 @@ const insertionSort = (array) => {
     // Un algoritmo de ordenación por inserción comienza la ordenación al principio de la lista, lo que significa que el primer elemento ya está ordenado.
   for (let i = 1; i < array.length; i++){
     const currValue = array[i];
-    let j = i - 1; 
+    let j = i - 1;
     // Mientras no vaya mas alla del inicio del array, y mientras no se encuentre un valor mas pequenio del guardado en currValue
       while(j >= 0 && array[j] > currValue) {
         array[j + 1] = array[j];
@@ -2497,18 +2497,18 @@ Es recursivo
      if (arr.length <= 1) {
          return arr;
      }
-     
+
      // Encuentra el punto medio del array
      const mid = Math.floor(arr.length / 2);
-     
+
      // Divide el array en mitades
      const left = arr.slice(0, mid);
      const right = arr.slice(mid);
-     
+
      // Ordena recursivamente las mitades izquierda y derecha
      return merge(mergeSort(left), mergeSort(right));
  }
- 
+
  // Función para combinar y ordenar dos arrays ordenados
  function merge(left, right) {
      // Array para almacenar el resultado fusionado
@@ -2516,7 +2516,7 @@ Es recursivo
      // Índices para recorrer los arrays izquierdo y derecho
      let leftIndex = 0;
      let rightIndex = 0;
- 
+
      // Mientras haya elementos en ambos arrays
      while (leftIndex < left.length && rightIndex < right.length) {
          // Compara los elementos actuales de ambos arrays
@@ -2530,9 +2530,9 @@ Es recursivo
              rightIndex++;
          }
      }
- 
+
      // Después de salir del bucle, uno de los arrays puede tener elementos restantes
- 
+
  ```
 
 Su complejidad temporal es de O(n log n)
@@ -2679,7 +2679,7 @@ int fibonacci (int n) {
 
 * **O (N log N) =>** Aplica a Merge Sort, Heap Sort y Quick Sort, que son los mas eficientes.
 
-* **O(log n)** => Es muy comun verlo en la busqueda binaria, ya que se situa a la mitad de un array ordenado y de ahi, mediante comparacion, encuentra el elemento.  
+* **O(log n)** => Es muy comun verlo en la busqueda binaria, ya que se situa a la mitad de un array ordenado y de ahi, mediante comparacion, encuentra el elemento.
 
 * **O(1)** => Tiempo constante, el algoritmo no variará su rendimiento con la entrada. Por ejemplo, asignaciones de variables.
 
@@ -2698,7 +2698,7 @@ int max(int a, int b) {
 * **O(n)** => Crecimiento Lineal, indica que el crecimiento de complejidad del algoritmo es proporcional al input. Mas datos, mas complejidad. Aparece en iteraciones.
 
 ```jsx
-for (int i = 0; i<n; i++) 
+for (int i = 0; i<n; i++)
  print(arr[1]);
 
 // En el peor de los casos se recorre el array entero para encontrar a un solo empleado.
@@ -2804,16 +2804,16 @@ Las lineas dentro de un bucle tendrán el mismo tipo de complejidad que su ciclo
 ```javascript
 public static void main(String[] args){
     int []arr = {5,3,4,8,7,5,4,2,4}; // 1
-    
+
     for (int j = 1; j < arr.length; j++) { // n
         int actual = arr[j]; // n
-        
+
         int i = j - 1; // n
         while (i >= 0 && arr[i] > actual) { // n^2
             arr[i+1] = arr[i]; // n^2
             i --; // n^2 - Ya que su padre es // n^2
         }
-        
+
         arr[i + 1] = actual;
     }
 }
@@ -2872,7 +2872,7 @@ void foo(int[] array) {
     for (int i = 0; i < array.length; i++) { // O(N)
         product *= array[i];
     }
-    
+
     System.out.println(sum + product);
 }
 ```
@@ -2932,7 +2932,7 @@ void reverseArray(int [] array) {
     int reversePosition = array.length - 1 - i;
     // Posicion actual
     int tmpVal = array[i];
-    
+
     // Cambiamos de lugar
     array[i] = array[reversePosition];
     array[reversePosition] = tmpVal;
@@ -2992,7 +2992,7 @@ int[] appendToNew(int[] array, int val) {
   for (int i = 0; i < array.length; i++){
     bigger[i] = array[i];
   }
-  
+
   bigger[bigger.length - 1] = val;
   return bigger;
 }
@@ -3293,7 +3293,7 @@ El crecimiento dinámico de un ArrayList en Java puede afectar su rendimiento en
 
 [Volver al indice](#alg-base-arr)
 
-Para agregar un elemento a un ArrayList utilizaremos el método add(elemento), el cual permite agregar un nuevo elemento al final de la estructura (es decir, como último elemento). 
+Para agregar un elemento a un ArrayList utilizaremos el método add(elemento), el cual permite agregar un nuevo elemento al final de la estructura (es decir, como último elemento).
 
 Por ejemplo, para agregar un elemento, podemos hacer:
 
@@ -3625,7 +3625,7 @@ for (let [key, value] of myMap) {
 
 <a id="alg301"></a>
 
-### **¿Cuál es la diferencia entre un Set y un Array en JavaScript?** 
+### **¿Cuál es la diferencia entre un Set y un Array en JavaScript?**
 
 [Volver al indice](#alg-base-col)
 
@@ -3642,7 +3642,7 @@ for (let [key, value] of myMap) {
 
 <a id="alg302"></a>
 
-### **¿En qué situaciones es más eficiente usar un HashMap en lugar de un Array?** 
+### **¿En qué situaciones es más eficiente usar un HashMap en lugar de un Array?**
 
 [Volver al indice](#alg-base-col)
 
@@ -3692,47 +3692,47 @@ Sus inconvenientes son:
 ```java
 public class SingleLinkedList {
   public Node head; // El primer nodo de todos
-  
+
   public void agregarAlFinal(int value) {
     // Si es el primer elemento de todos
     if (head == null) {
       head = new Node(value);
       return;
     }
-    
+
     Node current = head;
     // Mientras no encuentre un nodo sin referencia next (el ultimo)
     while (current.next != null) {
       current = current.next;
     }
-    
+
     current.next = new Node(value);
   }
-  
+
   public void eliminarNodo(int value) {
     // No hay elementos a eliminar porque no hay lista
     if (head == null) return;
-    
+
     if (head.value == value) {
       // Si el elemento a borrar es el head, paso el head al segundo elemento de la lista
       head = head.next;
       return;
     }
-    
+
     Node current = head;
     while(current.next != null) {
       if (current.next.value == value) {
         current.next = current.next.next;
         return
       }
-      
+
       current = current.next;
     }
   }
-  
+
   public void print() {
     if (head == null) return;
-    
+
     Node current = head;
     while (current.next != null) {
       System.out.println(current.value);
@@ -4089,7 +4089,7 @@ Es excelente para cuando queremos insertar conjuntos de datos ordenados o para l
 public class Node {
   public int value;
   public Node[] hijos;
-  
+
   // Puede ser cualquier tipo de dato, no solo int
   public Node(int value) {
     this.value = value;
@@ -4157,7 +4157,7 @@ En este arbol todos los niveles estan completos excepto por el ultimo. Si el ult
 
 Es un arbol 100% balanceado.
 
-```javascript 
+```javascript
 // Definición de la clase TreeNode para un árbol binario
 class TreeNode {
     constructor(value) {
@@ -4410,7 +4410,7 @@ En las **Funciones Declarativas** usamos la palabra reservada `Function` para po
 
 ```jsx
  function saludar(nombre) {
-	console.log(`Hola ${nombre}`);
+  console.log(`Hola ${nombre}`);
 }
 
 saludar('Diego');
@@ -4443,7 +4443,7 @@ class C {
   m1() {}
   m2() {}
 }
- 
+
 const obj = new C();
 console.assert( typeof obj.m1 === 'function' );
 console.assert( typeof obj.m2 === 'function' );
@@ -4545,10 +4545,10 @@ let animal = {
 
 let mascota = animal
 animal.especie = 'gato'
-console.log(mascota.nombre) // gato, se copio referencia no valor 
+console.log(mascota.nombre) // gato, se copio referencia no valor
 
 ---
-    
+
 let object = {a: 1, b:2};
 let referencia = object; // Esto es solo una referencia
 
@@ -4582,7 +4582,7 @@ var saludar;
     saludar = "dice hola"
 ```
 
-Es el usar las variables antes de que sean declaradas. 
+Es el usar las variables antes de que sean declaradas.
 
 <a id="var25"></a>
 
@@ -4604,13 +4604,13 @@ function x () {
   function C () {
   }
 }
- 
+
 // uso de ambas
 try {
   const obj = new C();
   console.assert( false );
 } catch (err) {
-  console.assert( 
+  console.assert(
     err.message === 'C is not defined'
   );
 }
@@ -4619,7 +4619,7 @@ try {
 Ambas pueden ser definidas de forma anonima. Sus referencias funcionan igual que con object, no se envia una copia, si no una referencia de la misma.
 
 ```jsx
-const C = class {}; 
+const C = class {};
 const C = function () {};
 
 console.assert( typeof  C === 'function' );
@@ -4649,16 +4649,16 @@ const crearUsuario = ({ userName, avatar }) => ({
         return this
       }
     });
-    
+
         console.log(crearUsuario({ userName: 'Bender', avatar: 'bender.png' }));
-    
+
     {
       "id":"17hakg9a7jas",
       "avatar": "bender.png",
       "userName": "Bender",
       "cambiarUsername": [Function cambiarUsername]
       "cambiarAvatar": [Function cambiarAvatar]
-    
+
     }
     */
 ```
@@ -4684,11 +4684,11 @@ add(10)(20)(30); // 60
 
 <a id="var23-1"></a>
 
-### **¿Qué son las funciones puras y cómo se relacionan con la programación funcional?** 
+### **¿Qué son las funciones puras y cómo se relacionan con la programación funcional?**
 
 [Volver al indice](#alg-base-obj)
 
-Las funciones puras son funciones que siempre devuelven el mismo resultado dadas los mismos parametros, no dependen de factores externos como states o variables. 
+Las funciones puras son funciones que siempre devuelven el mismo resultado dadas los mismos parametros, no dependen de factores externos como states o variables.
 
 ```jsx
 function suma (a, b) {
@@ -4760,7 +4760,7 @@ Agregamos el evento al container y dependiendo donde es el click (en cual boton)
 
 [Volver al indice](#alg-base-async)
 
-Cuando agregamos un elemento parece que solo lo agregamos a un elemento DOM pero en realidad este se propaga en una direccion. Podemos elegir cual direccion escuchan nuestros eventos. 
+Cuando agregamos un elemento parece que solo lo agregamos a un elemento DOM pero en realidad este se propaga en una direccion. Podemos elegir cual direccion escuchan nuestros eventos.
 
 - Fase Capture: Llega al evento que dispara el evento
 - Fase Target
@@ -4834,7 +4834,7 @@ async function getPost() {
 
 [Volver al indice](#alg-base-async)
 
-Es una funcion que se pasa como argumento a otra funcion y se invoca dentro de la funcion externa para completar alguna accion. Se usa para manejar operaciones asincronicas. 
+Es una funcion que se pasa como argumento a otra funcion y se invoca dentro de la funcion externa para completar alguna accion. Se usa para manejar operaciones asincronicas.
 
 ```jsx
 function doSomethingAsync(callback) {
@@ -4915,12 +4915,12 @@ Y sus desventajas son:
 - **Callbacks:** Puede llevar a un Callback Hell.
 - **Promises:** Puede ser complicado de entender.
 - **Async Await:** No maneja errores de manera eficiente.
-  
-El mas usado es **Promises** por su facilidad de lectura y manejo de errores. 
+
+El mas usado es **Promises** por su facilidad de lectura y manejo de errores.
 
 <a id="var10"></a>
 
-### **Como funciona setTimeout?** 
+### **Como funciona setTimeout?**
 
 [Volver al indice](#alg-base-async)
 
@@ -4930,31 +4930,31 @@ Por ejemplo, el codigo imprimirá “Hola Mundo” despues de 2 segundos
 
 ```jsx
 setTimeout(function(){
-	console.log('hola mundo');
+  console.log('hola mundo');
 }, 2000);
 ```
 
-El primer parámetro es la función a ejecutar, puede ser hecha ahi mismo como en el ejemplo anterior, o ya estar hecha como en este ejemplo: 
+El primer parámetro es la función a ejecutar, puede ser hecha ahi mismo como en el ejemplo anterior, o ya estar hecha como en este ejemplo:
 
 ```jsx
 function saludos(nombre, rol) {
-	console.log(`hola mi nombre es ${nombre} y mi rol es ${rol}`);
+  console.log(`hola mi nombre es ${nombre} y mi rol es ${rol}`);
 }
 
 setTimeout(saludos, 3000, "denu", "administrador");
 ```
 
-¿Porque no pasar los parametros directamente a la funcion y recien despues del tiempo? Porque JS ejecutará la funcion sin esperar al timeout, ya que estarias pasando una llamada a la funcion, no la referencia a la funcion. 
+¿Porque no pasar los parametros directamente a la funcion y recien despues del tiempo? Porque JS ejecutará la funcion sin esperar al timeout, ya que estarias pasando una llamada a la funcion, no la referencia a la funcion.
 
 ```jsx
-setTimeout(saludos('denu', 'admin'), 3000); // NO 
+setTimeout(saludos('denu', 'admin'), 3000); // NO
 ```
 
 Si quiero cancelar un setTimeout debo utilizar `clearTimeout()`
 
 ```jsx
 const timeoutid = setTimeout (function() {
-	console.log('hola');
+  console.log('hola');
 }, 2000);
 
 clearTimeout(timeoutid)
@@ -5077,13 +5077,13 @@ El patrón pub/sub (publicación/suscripción) es un patrón de diseño de softw
 // Implementación de un patrón pub/sub
 const pubsub = (function() {
   const events = {};
-  
+
   // Suscribirse a un evento
   function subscribe(eventName, fn) {
     events[eventName] = events[eventName] || [];
     events[eventName].push(fn);
   }
-  
+
   // Publicar un evento
   function publish(eventName, data) {
     if (events[eventName]) {
@@ -5092,7 +5092,7 @@ const pubsub = (function() {
       });
     }
   }
-  
+
   return {
     subscribe,
     publish
@@ -5271,7 +5271,7 @@ test[test.length - 1] // a
 test.charAt(0) // h
 
 // Obtener el index de una letra - Case sensitive
-const test = "hola denu hola"; 
+const test = "hola denu hola";
 test.indexOf("hola"); // 0 -- primera ocurrencia de la palabra
 test.indexOf("holax"); // -1
 test.lastIndexOf("hola"); // 10 -- ultima ocurrencia de la palabra
@@ -5295,7 +5295,7 @@ console.log(persona.nombre); // denu
 const persona = {
     init: function (nombre) {
         this.nombre = nombre;
-        return this; 
+        return this;
     },
     saludar: function() {
         console.log("hola, soy " + this.nombre);
@@ -5362,7 +5362,7 @@ let obj = {
 Object.freeze(obj);
 obj.review = "bad"; //will be ignored. Mutation not allowed
 obj.newProp = "Test"; // will be ignored. Mutation not allowed
-console.log(obj); 
+console.log(obj);
 // { name: "FreeCodeCamp", review:"Awesome"}
 ```
 
@@ -5386,7 +5386,7 @@ const {name, age} = person;
 console.log(name, age); // denu 25
 ```
 
-Esto no ahorra tener que crear dos variables distintas en dos lineas distintas y asignarlas de manera independiente. 
+Esto no ahorra tener que crear dos variables distintas en dos lineas distintas y asignarlas de manera independiente.
 
 <a id="var8-3"></a>
 
@@ -5475,11 +5475,11 @@ Es decir, esta funcion..
 
 ```jsx
 const product = (function() {
-	"use strict";
-	return function product(n1, n2, n3) {
-		const args = [n1, n2, n3];
-		return args.reduce((a, b) => a * b, 1);
-	};
+  "use strict";
+  return function product(n1, n2, n3) {
+    const args = [n1, n2, n3];
+    return args.reduce((a, b) => a * b, 1);
+  };
 })();
 console.log(product(2, 4, 6));//48
 ```
@@ -5488,10 +5488,10 @@ Es lo mismo que esta
 
 ```jsx
 const product = (function() {
-	"use strict";
-	return function product(...n) {		
-		return n.reduce((a, b) => a * b, 1);
-	};
+  "use strict";
+  return function product(...n) {
+    return n.reduce((a, b) => a * b, 1);
+  };
 })();
 console.log(product(2, 4, 6));//48
 ```
@@ -5503,7 +5503,7 @@ const arr = [6, 89, 3, 45];
 const maximus = Math.max(...arr); // returns 89
 ```
 
-Esto también se puede usar con **objetos,** 
+Esto también se puede usar con **objetos,**
 escribir este codigo
 
 ```jsx
@@ -5603,7 +5603,7 @@ También podemos realizar operaciones en una sola linea
 const doubler = (item) => item * 2;
 ```
 
-También podemos setear **parametros por defecto** 
+También podemos setear **parametros por defecto**
  en nuestras funciones, sí llamamos a la funcion sin pasarle parametro, tomara el ya seteado por defecto.
 
 ```jsx
@@ -5655,7 +5655,7 @@ const map = new Map()
 const weakMap = new weakMap()
 
 const obj = {
-	hola: 'mundo',
+  hola: 'mundo',
 }
 
 map.set('denu', 'lemon')
@@ -5672,7 +5672,7 @@ weakMap.keys() // ERROR
 weakMap.values() // ERROR
 ```
 
-Weakmap es una caja negra en donde solo se puede acceder a los valores si se tiene la Key. 
+Weakmap es una caja negra en donde solo se puede acceder a los valores si se tiene la Key.
 
 Weakmap, ademas, solo admite objetos como clave, estos estan debilmente referenciados por lo que puede ser recolectados por el garbage collector de JS si asi lo considera, destruyendo esa entrada en el Weakmap y liberando memoria.
 
@@ -5697,8 +5697,8 @@ Puede dar al choque entre variables locales y globales por nombre. Ademas es dif
 - **Foreach** itera por cada uno. Ejecuta la función que se le pasa por parámetro para cada elemento del array. Este método no devuelve nada, por lo tanto, si intentamos guardar su ejecución en una variable lo que ocurrirá es que esa variable tomará el valor de undefined.
 
 ```jsx
-[1, 2, 3, 4].forEach(function (item) {   
-   console.log(item); 
+[1, 2, 3, 4].forEach(function (item) {
+   console.log(item);
 });
 // Imprimirá por consola
 1
@@ -5706,8 +5706,8 @@ Puede dar al choque entre variables locales y globales por nombre. Ademas es dif
 3
 4
 
-let numbers = [1, 2, 3, 4].forEach(function (item) {   
-     console.log(item); 
+let numbers = [1, 2, 3, 4].forEach(function (item) {
+     console.log(item);
 });
 console.log(numbers); // undefined
 ```
@@ -6289,9 +6289,9 @@ Los derechos personalísimos son derechos inalienables, no pueden ser enajenados
 - **Derechos de autoría:** Sí el autor de una novela hace un contrato con una editorial para publicar y editar la obra, sí hay una cláusula que autoriza publicar la obra con el nombre de otra persona como autor, esta no tendría validez.
 - **Derecho de integridad:** es el derecho inalienable a que la obra se mantenga intacta, sin agregados, según el autor la hizo. Cualquier cláusula contraria será nula
 - **Derecho de arrepentimiento:** Sí el autor se arrepiente una vez que sus libros están a la venta, el editor no puede seguir vendiendo. El autor debe pagar los daños que produce su decisión. Por el motivo que sea.
-    
+
     https://lh7-us.googleusercontent.com/DkRMPgn0J8E2o8YK-jpsJNTl_MJ5ybdJBYQyBl6OvBKELvIFeq5_yzPZWcJWtiiwqDwxLQCoApPbtiPEjEPfuoZDpz122odphA4z5PAOmB5V27CVKPkGGhG4EDHxAXvocdCzCo1WjhLincN4mo2VDw
-    
+
 
 El derecho de explotación económica permite al autor difundir su obra a través de autorizaciones de reproducción, pagas o gratuitas. El autor realiza convenios que establecen dentro de la totalidad de lo posible, los límites de lo autorizado. El autor diseña lo que va a entregar a través de convenios.
 
@@ -6596,23 +6596,23 @@ El **Error-A** es dejar afuera del tipo acciones que son parecidas a las que que
 El **Error-B** es cuando hay una redacción incorrecta del tipo, y quedaron incluidas cosas que no era la idea que estuvieran ahí, esto es más grave y tiene otro costo
 
 | Violación de correo electrónico
- (art. 153 del C.P. prisión de 15 días a 6 meses) | Abriere o accediera => comunicación electrónica.  
-Apoderare => comunicación electrónica.  
-Suprimiere o desviare => comunicación electrónica.  
+ (art. 153 del C.P. prisión de 15 días a 6 meses) | Abriere o accediera => comunicación electrónica.
+Apoderare => comunicación electrónica.
+Suprimiere o desviare => comunicación electrónica.
 Interceptare o captare => comunicación electrónica o telecomunicaciones. |
 | --- | --- |
-| Acceso  indebido  a  un  sistema  informático  (art.  153  bis CP,  prisión  de  15  días  a  6  
+| Acceso  indebido  a  un  sistema  informático  (art.  153  bis CP,  prisión  de  15  días  a  6
 meses) | Accediera => sistema informático de acceso restringido. |
 | Publicación de comunicación electrónica (art. 155 CP, multa) | Hiciere publicar => comunicación electrónica no destinada a la publicidad. |
-| Acceso a bancos de datos personales (art. 157 bis, prisión de 1 mes a 2 años) | Accediera => banco de datos personales.  
-Proporcionare  o  revelare => información  registrada  en  un  registro  o  banco  de  
-datos personales sobre los que debiera guardar secreto.  
+| Acceso a bancos de datos personales (art. 157 bis, prisión de 1 mes a 2 años) | Accediera => banco de datos personales.
+Proporcionare  o  revelare => información  registrada  en  un  registro  o  banco  de
+datos personales sobre los que debiera guardar secreto.
 Insertar o hiciere insertar => datos en un archivo de datos personales. |
 | Fraude (art. 172/3 del CP, prisión de 1 mes a 6 años) | Defraudare=> mediante cualquier técnica de manipulación informática. |
-| Daños Informáticos (art. 183/4 del CP prisión de 15 días a 1 año) | Alterare,  destruyere,  inutilizar  => datos,  documentos,  programas  o  sistemas  
+| Daños Informáticos (art. 183/4 del CP prisión de 15 días a 1 año) | Alterare,  destruyere,  inutilizar  => datos,  documentos,  programas  o  sistemas
 informáticos.  Vendiere, distribuyere, hiciere circular o introdujera en un sistema informático programas destinados a causar daños. |
 | Interrupción de comunicaciones
- (art. 197 CP prisión de 6 meses a 2 años) | Interrumpiera o entorpecer la comunicación telegráfica, telefónica o de otra naturaleza (ello incluye todas las comunicaciones informáticas).  
+ (art. 197 CP prisión de 6 meses a 2 años) | Interrumpiera o entorpecer la comunicación telegráfica, telefónica o de otra naturaleza (ello incluye todas las comunicaciones informáticas).
 Resistieron violentamente => el  restablecimiento  de  una  comunicación  interrumpida. |
 
 <a id="cic61"></a>
@@ -6880,7 +6880,7 @@ Con estos detalles, puedo comenzar a identificar patrones y áreas específicas 
 
 **Reproducir el Problema**
 
-Es importante intentar reproducir la lentitud en mi entorno de desarrollo para ver si se puede identificar el origen del problema. Para esto, podría usar herramientas de monitoreo y registro (logs) en tiempo real para detectar cualquier irregularidad. 
+Es importante intentar reproducir la lentitud en mi entorno de desarrollo para ver si se puede identificar el origen del problema. Para esto, podría usar herramientas de monitoreo y registro (logs) en tiempo real para detectar cualquier irregularidad.
 
 **Diagnóstico**
 
@@ -6916,7 +6916,7 @@ En resumen, manejaría esta situación con un enfoque metódico: primero recolec
 
 <a id="cic68"></a>
 
-### **¿Cuáles son los posibles riesgos de adoptar una nueva tecnología en el proyecto? ¿Cómo mitigarlos?** 
+### **¿Cuáles son los posibles riesgos de adoptar una nueva tecnología en el proyecto? ¿Cómo mitigarlos?**
 
 [Volver al indice](#cic-base-2)
 
@@ -6932,7 +6932,7 @@ En resumen, los riesgos de adoptar una nueva tecnología pueden gestionarse a tr
 
 <a id="cic69"></a>
 
-### **Algunos miembros de tu equipo no pueden ponerse de acuerdo sobre una solución. Discuten y no pueden tomar una decisión. ¿Cómo resolverías esta situación conflictiva?** 
+### **Algunos miembros de tu equipo no pueden ponerse de acuerdo sobre una solución. Discuten y no pueden tomar una decisión. ¿Cómo resolverías esta situación conflictiva?**
 
 [Volver al indice](#cic-base-2)
 
@@ -6992,7 +6992,7 @@ Este enfoque puede ayudar a resolver el conflicto de manera justa y equilibrada,
 
 <a id="cic70"></a>
 
-### **¿Cómo motivas a tu equipo y qué enfoques conoces? ¿Existe algún motivador universal para todos?** 
+### **¿Cómo motivas a tu equipo y qué enfoques conoces? ¿Existe algún motivador universal para todos?**
 
 [Volver al indice](#cic-base-2)
 
@@ -7087,7 +7087,7 @@ Su tipado estricto ayuda a saber como funcionan las cosas, por ejemplo, en este 
 ```jsx
 function calcularISV (productos) {
  let total = 0;
- 
+
  productos.forEach( ({precio}) => {
   total += precio;
  }
@@ -7356,7 +7356,7 @@ const beer = new Beer('Imperial', 1000, 5);
 
 Nos permite categorizar objetos, es decir, que un objeto tenga un comportamiento ya esperado. Es un contrato.
 
-```typescript 
+```typescript
 interface Product {
  name: string;
  price: number;
@@ -7448,7 +7448,7 @@ type Status = 'active' | 'inactive';
 
 <a id="typ18"></a>
 
-### **¿Qué son los tipos Union e Intersection y cuándo se utilizan?**  
+### **¿Qué son los tipos Union e Intersection y cuándo se utilizan?**
 
 [Volver al indice](#typ-base)
 
@@ -7533,7 +7533,7 @@ const personWithoutAddress: PersonWithoutAddress = { name: 'Alice', age: 30 }; /
 
 <a id="typ20"></a>
 
-### **¿Cómo funcionan los Mapped Types y cómo se aplican en proyectos complejos?** 
+### **¿Cómo funcionan los Mapped Types y cómo se aplican en proyectos complejos?**
 
 [Volver al indice](#typ-base)
 
@@ -7559,7 +7559,7 @@ En proyectos complejos, los Mapped Types pueden ser muy útiles para crear tipos
 
 <a id="typ21"></a>
 
-### **¿Qué son los Conditional Types y cómo permiten lógica avanzada en los tipos?** 
+### **¿Qué son los Conditional Types y cómo permiten lógica avanzada en los tipos?**
 
 [Volver al indice](#typ-base)
 
@@ -7574,7 +7574,7 @@ type Test2 = IsString<number>; // 'no'
 
 <a id="typ22"></a>
 
-### **¿Cómo funcionan los decoradores en TypeScript y en qué casos son útiles?** 
+### **¿Cómo funcionan los decoradores en TypeScript y en qué casos son útiles?**
 
 [Volver al indice](#typ-base)
 
@@ -7775,7 +7775,7 @@ Block element modifier, consiste en escribir nombres de clases que dejen en clar
 ```jsx
 :root {
     --color-3: #000000;
-} 
+}
 
 html, body {
     background-color: var(--color-3);
@@ -7870,7 +7870,7 @@ En el HTML se hace el link al Stylesheet .css que es compilado desde sass.
 ```scss
 // Los comentarios de 2 barras no aparecen en el CSS compilado
 
-/* 
+/*
  Este tipo de comentarios si aparecen en el codigo CSS compilado
 */
 ```
@@ -7906,7 +7906,7 @@ Si tengo dos archivos en mi directorio sass, y no quiero que los dos aparezcan c
 El archivo con el guion bajo en su nombre no sera compilado, sera llamado en otro elemento que lo utilizara.
 
 ```scss
-// No es necesario ni la extension ni el guion 
+// No es necesario ni la extension ni el guion
 // bajo en el nombre del archivo a importar
 @use 'variables';
 
@@ -8030,7 +8030,7 @@ div {
 Entonces en SASS podemos usar mixins, que son como funciones que podemos invocar para reutilizar el codigo. Hasta tiene parametros y todo para cambiar los valores
 
 ```jsx
-@mixin box-shadow($x, $y, $blur, $c){ 
+@mixin box-shadow($x, $y, $blur, $c){
   -webkit-box-shadow: $x $y $blur $c;
   -moz-box-shadow: $x $y $blur $c;
   -ms-box-shadow: $x $y $blur $c;
@@ -8404,12 +8404,12 @@ El resultado de un documento básico tiene la siguiente estructura:
 
 ```html
 <html>
-	<head>
-		<title>Mi documento básico</title>
-	</head>
+  <head>
+    <title>Mi documento básico</title>
+  </head>
 <body>
-	<p>Este es el cuerpo de mi primera página HTML</p>
-	<p>Este segundo párrafo también forma parte del cuerpo</p>
+  <p>Este es el cuerpo de mi primera página HTML</p>
+  <p>Este segundo párrafo también forma parte del cuerpo</p>
 </body>
 </html>
 ```
@@ -8466,8 +8466,8 @@ Se usa para proveer con un autocomplete a algunos elementos
 <form action="action_page.php" method="get">
 <input list="browsers" name="browser" id="browser">
 <datalist id="browsers">
-	<option value="Edge"
-	<option value="Firefox">
+  <option value="Edge"
+  <option value="Firefox">
 </datalist>
 </form>
 ```
@@ -8499,7 +8499,7 @@ Tambien se puede trabajar del lado del servidor con Node, aplicaciones mobile co
 - **Libreria:** Es un conjunto de funciones que se pueden usar en un proyecto. El programador decide cuando y como usarla, es mucho mas flexible. Ejemplo: React, Redux, Lodash.
 - **Framework:** Es un conjunto de reglas y estructuras que se deben seguir para desarrollar un proyecto. El framework decide cuando y como usarlo. Ejemplo: Angular, Vue, Django.
 
-Es por eso que cuando vemos un proyecto hecho con React, y luego otro tambien hecho con React, su estructura puede ser completamente distinta. En cambio, cuando vemos proyectos Angular, podemos encontrar la misma estructura base en todos. 
+Es por eso que cuando vemos un proyecto hecho con React, y luego otro tambien hecho con React, su estructura puede ser completamente distinta. En cambio, cuando vemos proyectos Angular, podemos encontrar la misma estructura base en todos.
 
 <a id="rea49"></a>
 
@@ -8540,14 +8540,14 @@ Debounce es un termino de electronica que ayuda a que, por ejemplo, si apretamos
 
 ```jsx
 function useDebounce(value: string, delay: number) {
-	const [debouncedValue, setDebouncedValue] = useState(value);
+  const [debouncedValue, setDebouncedValue] = useState(value);
 
-	useEffect(() => {
-			const timeoutId = setTimeout(() => {
-				setDebouncedValue(value)
-		}, delay)
+  useEffect(() => {
+      const timeoutId = setTimeout(() => {
+        setDebouncedValue(value)
+    }, delay)
 
-		return () => clearTimeout(timeoutId)
+    return () => clearTimeout(timeoutId)
 }, [value])
 
 return debouncedValue;
@@ -8576,7 +8576,7 @@ Permite que el renderizado pueda interrumpirse, permitiendo renderizar varios ar
 
 [Volver al indice](#rea-base)
 
-Permite a react manipular directamente el DOM Sin necesidad de actualizar un componente, asumen cambios en los mismos que no se pueden resolver mediante el traspaso de props o cuyo impacto se limita al propio componente no siendo rentable renderizarlo de nuevo. 
+Permite a react manipular directamente el DOM Sin necesidad de actualizar un componente, asumen cambios en los mismos que no se pueden resolver mediante el traspaso de props o cuyo impacto se limita al propio componente no siendo rentable renderizarlo de nuevo.
 
 ```jsx
 class AnimatedSpinner extends Component {
@@ -8634,7 +8634,7 @@ React provee de metodos especificos para los ciclos de vida de los componentes, 
 - Desmonta: El componente es removido de la pagina
 - Actualiza: El componente se actualiza en la pagina
 
-Varios de los estados que veremos que se utilizaban tipicamente en componentes de clase se encuentran deprecados, y deben usarse con un tag UNSAFE para su uso. 
+Varios de los estados que veremos que se utilizaban tipicamente en componentes de clase se encuentran deprecados, y deben usarse con un tag UNSAFE para su uso.
 
 <a id="rea62-1"></a>
 
@@ -8647,7 +8647,7 @@ Antes se utilizaban los componentes de clase para componentes complejos, y los c
 Los componentes de funcion son mas faciles de leer, escribir y testear, y son mas faciles de optimizar. Los componentes de clase son mas dificiles de leer, escribir y testear, y son mas dificiles de optimizar.
 
 | Componentes de Clase | Componentes de Funcion |
-| --- | --- | 
+| --- | --- |
 | Manejaba los props con `this.props` | Maneja los props como argumentos de la funcion |
 | Manejaba los ciclos de vida con funciones como `componentDidMount()` | Maneja los ciclos de vida con hooks como `useEffect()` |
 | Manejaba los eventos con funciones como `this.handleClick` | Maneja los eventos con funciones como `handleClick` |
@@ -9071,7 +9071,7 @@ import React, {memo} from 'react';
 export const Small = memo(({value}) => {
     console.log("Me volvi a llamar");
     // http?
-    
+
     return (
         <small>{value}</small>
     )
@@ -9101,6 +9101,45 @@ const twoRandomProducts = useMemo(() => [...products]
 .sort(() => (Math.random() > ...))
 .slice(0,2), [products]); // dependencia de products, si products no cambia, memo no cambia
 ```
+
+<a id="rea7-1"></a>
+
+### **¿Cuál es la diferencia entre useCallback y useMemo?**
+
+[Volver al indice](#rea-base)
+
+Tanto useCallback como useMemo son hooks de React diseñados para optimizar el rendimiento al evitar cálculos innecesarios o recreaciones de funciones/valores. La diferencia principal radica en qué optimizan y cómo se usan:
+
+- `useCallback` memoriza funciones, evitando que se creen nuevas instancias de la función en cada renderizado. Se usa para evitar que las funciones se pasen como propiedades a componentes hijos se vuelvan a renderizar innecesariamente.
+
+```jsx
+const memoizedCallback = useCallback(() => {
+  // lógica de la función
+}, [dependencias]);
+
+const handleClick = useCallback(() => {
+  console.log('Button clicked');
+}, []);
+
+return <Button onClick={handleClick} />;
+```
+
+- `useMemo` memoriza valores, evitando que se recalculen en cada renderizado. Se usa para evitar cálculos costosos en componentes funcionales.
+
+```jsx
+const memoizedValue = useMemo(() => {
+  // lógica de cálculo
+  return resultado;
+}, [dependencias]);
+
+const filteredItems = useMemo(() => {
+  return items.filter(item => item.isActive);
+}, [items]);
+
+return <ItemList items={filteredItems} />;
+```
+
+Ambos dependen de un array de dependencias para saber cuándo deben actualizarse. 
 
 <a id="rea8"></a>
 
@@ -9249,9 +9288,9 @@ En resumen, AngularJS es el primer framework desarrollado por Google, que utiliz
 
 [Volver al indice](#rea-base)
 
-Las aplicaciones de Angular son Modulares, en Angular existe NgModules. Sirve para mantener la lógica de un flujo de trabajo de la aplicación. Por ejemplo, se tiene un e-commerce, con sus módulos correspondientes, usuarios vendedores, compradores, productos, etc.. 
+Las aplicaciones de Angular son Modulares, en Angular existe NgModules. Sirve para mantener la lógica de un flujo de trabajo de la aplicación. Por ejemplo, se tiene un e-commerce, con sus módulos correspondientes, usuarios vendedores, compradores, productos, etc..
 
-Son diseños lógicos que se encargan de trabajar dentro de la aplicación, se usan para poder importar librerías u otros módulos dentro de los mismos. Cada módulo hasta puede tener su propio ruteo. 
+Son diseños lógicos que se encargan de trabajar dentro de la aplicación, se usan para poder importar librerías u otros módulos dentro de los mismos. Cada módulo hasta puede tener su propio ruteo.
 
 <a id="rea12"></a>
 
@@ -9259,7 +9298,7 @@ Son diseños lógicos que se encargan de trabajar dentro de la aplicación, se u
 
 [Volver al indice](#rea-base)
 
-Es la forma que tiene Angular de controlar y cambiar las propiedades de los elementos HTML usando corchetes [] 
+Es la forma que tiene Angular de controlar y cambiar las propiedades de los elementos HTML usando corchetes []
 
 ```tsx
 <input [value]="empresa" [disabled]="habilitado"  />
@@ -9279,7 +9318,7 @@ A menudo, “interpolation” y “Property Binding” pueden lograr los mismos 
 <p><img [src]="itemImageUrl"> is the <i>property bound</i> image.</p>
 ```
 
-Al establecer una propiedad de elemento en un valor de datos que no sea un String a secas (por ejemplo, objetos), debe usar “Property Binding”. 
+Al establecer una propiedad de elemento en un valor de datos que no sea un String a secas (por ejemplo, objetos), debe usar “Property Binding”.
 
 Se recomienda comprender los “Event binding” para entender el flujo de datos de la aplicacion y como este interactua con “interpolation” y “Property Binding”.
 
@@ -9330,7 +9369,7 @@ Indica como debe comportarse el componente. Dentro de este decorador, puedes obs
 btnDisabled = true;
 
 onSave() {
-	this.btnDisabled = false; // Se usa this para hacer referencia al contexto actual
+  this.btnDisabled = false; // Se usa this para hacer referencia al contexto actual
 }
 
 handleClick($event: Event) {
@@ -9373,7 +9412,7 @@ export class AppModule { }
 
 <a id="rea16-1"></a>
 
-### **Que son los componentes standalone y cuando conviene utilizarlos?** 
+### **Que son los componentes standalone y cuando conviene utilizarlos?**
 
 [Volver al indice](#rea-base)
 
@@ -9441,11 +9480,11 @@ Los componentes standalone simplifican la arquitectura de Angular al reducir la 
 
 <a id="rea16-2"></a>
 
-### **¿Podrías describir algunos problemas de rendimiento que hayas enfrentado en aplicaciones Angular y cómo los resolviste?** 
+### **¿Podrías describir algunos problemas de rendimiento que hayas enfrentado en aplicaciones Angular y cómo los resolviste?**
 
 [Volver al indice](#rea-base)
 
-Claro, aquí tienes una descripción de problemas de rendimiento comunes en aplicaciones Angular y las estrategias que he utilizado para resolverlos. 
+Claro, aquí tienes una descripción de problemas de rendimiento comunes en aplicaciones Angular y las estrategias que he utilizado para resolverlos.
 
 ---
 
@@ -9471,7 +9510,7 @@ Claro, aquí tienes una descripción de problemas de rendimiento comunes en apli
   }
   ```
 
-- **Desuscripción de Observables:**  
+- **Desuscripción de Observables:**
   Aseguré que todos los observables y suscripciones se manejaran adecuadamente utilizando operadores como `takeUntil` o librerías como `RxJS`.
 
 ---
@@ -9620,9 +9659,9 @@ Optimizar aplicaciones Angular requiere identificar los cuellos de botella espec
 
 **Queries Optimistics**: Mostrar el cambio en la UI independientemente del resultado del servidor, como el like de Instagram, primero se anima, luego se ejecuta la peticion de forma asincrona, y luego se tiene en cuenta el resultado
 
-**Pedir solo lo necesario**: Solo pedir los datos necesarios, no traer cosas de más. Hay muchas aplicaciones hechas front-first, donde el back adapta sus servicios a lo que el front necesita. 
+**Pedir solo lo necesario**: Solo pedir los datos necesarios, no traer cosas de más. Hay muchas aplicaciones hechas front-first, donde el back adapta sus servicios a lo que el front necesita.
 
-**Tener un connection state**: Si no hay internet, no realizar peticiones. Como Youtube, cualquier cosa que quiera hacer el cliente sin internet, no se va a realizar para nada. 
+**Tener un connection state**: Si no hay internet, no realizar peticiones. Como Youtube, cualquier cosa que quiera hacer el cliente sin internet, no se va a realizar para nada.
 
 **Group Notifications**: Si la aplicacion utiliza notificaciones, hacerlo de a grupos para no hacer jobs grandes
 
@@ -9634,17 +9673,17 @@ En caso de componentes lentos en React, podemos usar esta herramienta y ver cual
 - Flame Chart: Representa el estado de la aplicacion para un commit en particular
 - Component chart: Ver cuantas veces se proceso un componente en particular
 
-Para testear el rendimiento de una web se puede utilizar Lighthouse de Google en DevTools  
+Para testear el rendimiento de una web se puede utilizar Lighthouse de Google en DevTools
 
-**Lazy Loading**: No cargar todas las imagenes de una, ir cargando a medida que el usuario lo va necesitando. 
+**Lazy Loading**: No cargar todas las imagenes de una, ir cargando a medida que el usuario lo va necesitando.
 
 **Usar Cache**: Si manejamos payloads muy grandes, no conviene cargar todo esto en memoria, se recomienda usar un cache, ir guardando estos payloads y volver a consultarlos a medida que sea necesario
 
 **Usar HTTP 2**: Si necesito hacer demasiados request en paralelo (cosa que no es recomendable), HTTP 2 tiene una coneexion TCP muy buena, para el multiplexing (no siempre es aplicable)
 
-**Hacer UI que llamen lo menos posible al backend**: Que sean UI que dependan de pocos llamados para funcionar (si se puede, ya que hay dependencias entre payloads) 
+**Hacer UI que llamen lo menos posible al backend**: Que sean UI que dependan de pocos llamados para funcionar (si se puede, ya que hay dependencias entre payloads)
 
-⚛️ **No pasar props que no son necesarios**: El propering afecta al rendimiento en React. El estado debe estar tan cerca como pueda de donde se esté usando. Mientras mas props recibimos, mayor es la dependencia con el componente padre. 
+⚛️ **No pasar props que no son necesarios**: El propering afecta al rendimiento en React. El estado debe estar tan cerca como pueda de donde se esté usando. Mientras mas props recibimos, mayor es la dependencia con el componente padre.
 
 ⚛️ **Evitar renderizados de mas**: Usar useMemo (memorizacion en React) para evitar renderizados o componentes puros
 
@@ -9656,7 +9695,7 @@ Para testear el rendimiento de una web se puede utilizar Lighthouse de Google en
 
 [Volver al indice](#rea-base)
 
-Redux permitira manejar el state global de manera facil conforme van creciendo, tambien ayuda a manejar los datos dependiendo de las acciones del usuario. Fue creado por un dev del equipo de React. 
+Redux permitira manejar el state global de manera facil conforme van creciendo, tambien ayuda a manejar los datos dependiendo de las acciones del usuario. Fue creado por un dev del equipo de React.
 
 - Solo hay 1 state principal
 - El state cambia depende lo que pase en la interfaz de usuario
@@ -9786,9 +9825,36 @@ const {} = useContext(QuoteContext);
 
 [Volver al indice](#rea-base)
 
-La arquitectura de React hizo que fuera muy facil para trabajar no solo en web si no tambien en mobile (React Native) y en hasta aplicaciones de Realidad Virtual. Asi los dev de React decidieron separar su algoritmo de reconciliacion (el que compara los cambios entre DOM y VDOM) y el lienzo donde esos cambios se muestran (Web, Mobile, etc..)
+La arquitectura de React hizo que fuera muy facil trabajar no solo en web si no tambien en mobile (React Native) y en hasta aplicaciones de Realidad Virtual. Asi los dev de React decidieron separar su algoritmo de reconciliacion (el que compara los cambios entre DOM y VDOM) y el lienzo donde esos cambios se muestran (Web, Mobile, etc..)
 
-Es una estructura de datos que representa un trabajo por hacer.
+Fiber fue diseñado para mejorar el rendimiento, particularmente en aplicaciones que requieren animaciones, interacciones complejas y actualizaciones de gran volumen.
+
+React Fiber organiza la renderización en dos fases principales:
+
+- **Fase de Render (Reconciliación)**: Se construye o actualiza un árbol de componentes de manera asíncrona. React decide qué cambios deben aplicarse al DOM basándose en las prioridades.
+- **Fase de Commit**: Es sincrónica y rápida. Los cambios calculados en la fase de render se aplican al DOM real.
+
+React Fiber no cambia cómo los desarrolladores escriben código React, pero mejora significativamente el rendimiento y la flexibilidad de las aplicaciones React modernas. Es la base que permite que React maneje de manera eficiente aplicaciones cada vez más interactivas y complejas.
+
+<a id="rea24-1"></a>
+
+### **Que tener en cuenta para tener una buena performance en React** 💛
+
+[Volver al indice](#rea-base)
+
+- Usar memorizacion para evitar renderizados innecesarios. Usar `useMemo` para valores y `useCallback` para funciones.
+- Usa contextos (React Context) de manera adecuada para evitar actualizaciones globales innecesarias.
+- Evita la mutacion directa de objetos y arrays. Usa `useState` y `useReducer` para actualizar el estado de manera inmutable.
+- Divide la logica en componentes mas pequeños y reutilizables.
+- Usar la propiedad `key` cuando se renderizan listas para mejorar el rendimiento, ya que ayuda a React a identificar elementos únicos y realizar actualizaciones más eficientes.
+- Usar React Window o React Virtualized para renderizar grandes listas de elementos de manera eficiente.
+- Usa React.lazy y Suspense para cargar componentes bajo demanda y mejorar los tiempos de carga.
+- Usa herramientas como Webpack para dividir el código en partes más pequeñas y cargar solo lo necesario.
+- Limita el uso de operaciones manuales con el DOM que pueden interferir con la reconciliación de React.
+- Usa herramientas como className o bibliotecas como styled-components en lugar de pasar estilos inline directamente en los elementos. Evita renders excesivos de estilos dinámicos.
+- Usa Server-Side Rendering (SSR) con herramientas como Next.js para mejorar tiempos de carga inicial
+- Usa las herramientas de React para identificar problemas de rendimiento como React DevTools y React Profiler.
+- Optimización de imágenes, carga diferida y compresión de recursos para mejorar los tiempos de carga y la experiencia del usuario. Usa formatos modernos como WebP.
 
 <a id="rea25"></a>
 
@@ -9796,9 +9862,9 @@ Es una estructura de datos que representa un trabajo por hacer.
 
 [Volver al indice](#rea-base)
 
-Se usan las claves para diferenciar entre simples elementos DOM virtuales con los que son unicos. Ayudan a React a reciclar elementos DOM existentes para que la libreria pueda ejecutarse y renderizarse mas rápidamente, ya que React recicla los elementos que no fueron modificados de los que si para no renderizarlos cuando no es necesario. Este elemento se usa mas que nada en iteraciones de listas. 
+Se usan las claves para diferenciar entre simples elementos DOM virtuales con los que son unicos. Ayudan a React a reciclar elementos DOM existentes para que la libreria pueda ejecutarse y renderizarse mas rápidamente, ya que React recicla los elementos que no fueron modificados de los que si para no renderizarlos cuando no es necesario. Este elemento se usa mas que nada en iteraciones de listas.
 
-El key no afecta el renderizado en si, es por eso que igualmente funciona el render, solo se muestra un warning. 
+El key no afecta el renderizado en si, es por eso que igualmente funciona el render, solo se muestra un warning.
 
 ```jsx
 const numbers = [1, 2, 3, 4, 5];
@@ -9889,15 +9955,15 @@ Por ejemplo tenemos dos objetos y una funcion
 
 ```jsx
 const user = {
-	name: 'Marcos'
+  name: 'Marcos'
 };
 
 const business = {
-	name: 'Headbook'
+  name: 'Headbook'
 }
 
 function showInfo(likes, friends){
-	return `${this.name} tiene ${likes} likes y ${friends}`
+  return `${this.name} tiene ${likes} likes y ${friends}`
 }
 ```
 
@@ -9909,7 +9975,7 @@ showInfo.call(user, 4, 5); // le pasamos la referencia que deseamos y las props
 
 showInfo.apply(user, [4,5]); // lo mismo pero los params deben ir en un array
 
-const newFunction = showInfo.bind(user); 
+const newFunction = showInfo.bind(user);
 newFunction(10,15); // hacemos otra funcion que toma otro contexto
 ```
 
@@ -9966,7 +10032,7 @@ Babel es un compilador para JavaScript. Permite transformar codigo escrito con l
 
 [Volver al indice](#rea-base)
 
-Es el responsable de producir los bundles a partir del codigo Front. Es un Module Bundler, hay otras opciones como Gulp, Rollup, etc.. 
+Es el responsable de producir los bundles a partir del codigo Front. Es un Module Bundler, hay otras opciones como Gulp, Rollup, etc..
 
 Los bundles son paquetes de codigo necesarios para poder llevar a produccion un proyecto, traspilando el codigo y el empaquetado de los modulos en uno o varios archivos compactados, minimizados y optimizados. Es lo que se hace cuando se hace `build`.
 
@@ -9976,9 +10042,9 @@ Los bundles son paquetes de codigo necesarios para poder llevar a produccion un 
 
 [Volver al indice](#rea-base)
 
-Es crear paginas HTML renderizadas en servidor para que lleguen listas. Se crean usando NodeJS que generalmente se usa con Express (para utilizar verbos de HTTP). 
+Es crear paginas HTML renderizadas en servidor para que lleguen listas. Se crean usando NodeJS que generalmente se usa con Express (para utilizar verbos de HTTP).
 
-NextJS es una opcion para usar esto. Favorecen mucho al SEO ya que renderizan la pagina antes de que pueda ser enviada al navegador. 
+NextJS es una opcion para usar esto. Favorecen mucho al SEO ya que renderizan la pagina antes de que pueda ser enviada al navegador.
 
 <a id="rea37"></a>
 
@@ -9986,7 +10052,7 @@ NextJS es una opcion para usar esto. Favorecen mucho al SEO ya que renderizan la
 
 [Volver al indice](#rea-base)
 
-Es remover codigo no usado, como, por ejemplo, imports y exports que no fueron usados. Esto lo hace webpack y Rollup de manera automatica. 
+Es remover codigo no usado, como, por ejemplo, imports y exports que no fueron usados. Esto lo hace webpack y Rollup de manera automatica.
 
 <a id="rea38"></a>
 
@@ -9994,14 +10060,14 @@ Es remover codigo no usado, como, por ejemplo, imports y exports que no fueron u
 
 [Volver al indice](#rea-base)
 
-Es Search Engine Optimization, es lo que hace que un sitio sea encontrado por Google, y HTML hace un aporte con su metadata para que esto suceda. Por ejemplo, no se recomienda usar muchos <h1> en un HTML para no afectar al SEO. 
+Es Search Engine Optimization, es lo que hace que un sitio sea encontrado por Google, y HTML hace un aporte con su metadata para que esto suceda. Por ejemplo, no se recomienda usar muchos <h1> en un HTML para no afectar al SEO.
 
 - Describir la pagina con titulos y fragmentos unicos. Uso de <title> y utilizar terminos claros. Todas las paginas del sitio deben tener una meta descripcion para que aparezca la misma en los resultados del buscador
 
 ```html
 <head>
-	<title>Bienvenidos</title>
-	<meta name="description" content="Sitio web">
+  <title>Bienvenidos</title>
+  <meta name="description" content="Sitio web">
 </head>
 ```
 
@@ -10056,7 +10122,7 @@ La tipificación de variables, sirve para asignar un número a una variable y de
 
 [Volver al indice](#rea-base)
 
-En JavaScript, un valor se considera "falsy" si se convierte en `false` cuando se evalúa en un contexto booleano. 
+En JavaScript, un valor se considera "falsy" si se convierte en `false` cuando se evalúa en un contexto booleano.
 
 ```jsx
 // Falso
@@ -10122,11 +10188,11 @@ Coercion es la forma en la que podemos cambiar de un tipo de valor a otro
 
 ```jsx
 //Aquí obligamos a la variable a convertirse en string (coerción explícita)
-var c = String(a); 
+var c = String(a);
 console.log(c);
 
 //Aquí obligamos a la variable a convertirse en número (coerción explícita)
-var d = Number(c); 
+var d = Number(c);
 console.log(d);
 ```
 
@@ -10134,14 +10200,14 @@ console.log(d);
 
 ```jsx
 //Convierte a 4 en un string y lo concatena con el "7", por esto regresa un string de valor "47"
-var a = 4 + "7"; 
+var a = 4 + "7";
 
 //Convierte al "7" en un número y realiza la operación, por esto devuelve 28
-4 * "7"; 
+4 * "7";
 
 var a = 20;
 var b = a + ""; //Aquí concatenamos para convertir la variable a string (coerción implícita)
-console.log(b); 
+console.log(b);
 ```
 
 <a id="rea45"></a>
@@ -10150,7 +10216,7 @@ console.log(b);
 
 [Volver al indice](#rea-base)
 
-Es el contexto actual de ejecución. 
+Es el contexto actual de ejecución.
 
 Cuando hacemos referencia a una variable, javascript busca su definicion en cada entorno, o Scope, esto depende de como (var, const, let) y donde la declaremos (fuera o dentro de una funcion).
 
@@ -10223,17 +10289,17 @@ var myObjeto = new Object({
 
 [Volver al indice](#rea-base)
 
-Es una tecnica que se usaba para emular las variables privadas. 
+Es una tecnica que se usaba para emular las variables privadas.
 
 ```jsx
 const modulo = (function(){
-	function metodoPrivado () {
-	}
-	const valorPrivado = "algo"
-	return {
-	  get: valorPrivado,
-	  set: function(v) { valorPrivador = v }
-	}
+  function metodoPrivado () {
+  }
+  const valorPrivado = "algo"
+  return {
+    get: valorPrivado,
+    set: function(v) { valorPrivador = v }
+  }
 })()
 
 var x = modulo()
@@ -10249,7 +10315,7 @@ x.valorPrivado //Error
 
 [Volver al indice](#rea-base)
 
-Supongamos que estamos usando una libreria para renderizar items de una coleccion de datos, esta expone un componente llamado RenderItem que tiene una sola prop disponible onClick que no acepta ningun parametro. ¿Y si quiero mandarle un argumento? 
+Supongamos que estamos usando una libreria para renderizar items de una coleccion de datos, esta expone un componente llamado RenderItem que tiene una sola prop disponible onClick que no acepta ningun parametro. ¿Y si quiero mandarle un argumento?
 
 ```jsx
 // Esta es el closure
@@ -10283,7 +10349,7 @@ Creamos una funcion que recibe el titulo que se quiere mostrar y retorna otra fu
 
 [Volver al indice](#rea-base)
 
-NaN son operaciones aritmeticas que no pueden ser representadas correctamente. Ambas funciones tienen como objetivo identificar si un valor es NaN. `isNaN` global aplica una coercion de tipos al argumento que le pasamos, `Math.isNan` no lo hace, lo que hace que sea mas seguro de usar para valores no numericos. 
+NaN son operaciones aritmeticas que no pueden ser representadas correctamente. Ambas funciones tienen como objetivo identificar si un valor es NaN. `isNaN` global aplica una coercion de tipos al argumento que le pasamos, `Math.isNan` no lo hace, lo que hace que sea mas seguro de usar para valores no numericos.
 
 ```jsx
 isNaN('denu') // devolvera true porque primero intentará convertir la cadena a un numero
@@ -10294,7 +10360,7 @@ Number.isNaN('denu') // false porque no convertirá la cadena a numero
 
 ```javascript
 
-// .includes() Detecta y devuelve true o false si el String posee un substring en el 
+// .includes() Detecta y devuelve true o false si el String posee un substring en el
 const str = 'This is my example string!';
 const substr = 'my';
 
@@ -10304,7 +10370,7 @@ console.log(str.includes(substr)); // true
 stringObj.indexOf("string to check for") // -1 Si no se encuentra
 
 //.replace Reemplaza de un String o un regex un valor por otro, no muta al objeto en si, devuelve lo nuevo
-array[0] = array[0].replace("PM", '') // Quita el PM del string dentro de ese array 
+array[0] = array[0].replace("PM", '') // Quita el PM del string dentro de ese array
 ```
 
 <a id="rea52"></a>
@@ -10323,7 +10389,7 @@ let sym3 = Symbol()
 sym1 === sym3 // false
 ```
 
-Tambien sirve para crear claves unicas en los objetos, donde los autores de librerias, navegadores web o cualquier runtime de ES podra evitar que hubieran colisiones al momento de agregar una prop u objeto global 
+Tambien sirve para crear claves unicas en los objetos, donde los autores de librerias, navegadores web o cualquier runtime de ES podra evitar que hubieran colisiones al momento de agregar una prop u objeto global
 
 ```jsx
 const sym1 = Symbol()
@@ -10343,7 +10409,7 @@ obj[sym2] = 'b'
 
 Javascript ejecuta una linea de codigo por vez. **Event Loop** se encarga de gestionar las funciones asincronas.
 Funciona con una Call Stack y una Callback Queue. Cuando hay una linea en ejecucion, se agrega al Call Stack, y cuando finaliza, se elimina. La Queue tiene las funciones callback que deben ejecutarse, no debe haber ninguna funcion ejecutandose en la Call Stack ni debe haber otra funcion adelante suyo en la Queue.
-Cuando ejecutamos una funcion con setTimeout, la misma se entrega a Timers API, y aunque setTimeout sea cero, habrá un retraso en la ejecucion de esta funcion, haciendo que tenga que esperar en la Queue a que termine de ejecutarse el codigo asincrono. 
+Cuando ejecutamos una funcion con setTimeout, la misma se entrega a Timers API, y aunque setTimeout sea cero, habrá un retraso en la ejecucion de esta funcion, haciendo que tenga que esperar en la Queue a que termine de ejecutarse el codigo asincrono.
 
 ![js](src/js1.png)
 
@@ -10372,12 +10438,12 @@ Se produce cuando una variable que esta en un scope mas reducido tiene el mismo 
 function test() {
 
 var variable = "hola";
-console.log(variable); 
+console.log(variable);
 
-	function test1() {
-		var variable = "denu";
-    	console.log(variable); 
-	}
+  function test1() {
+    var variable = "denu";
+      console.log(variable);
+  }
 
   test1(); // denu
 }
@@ -10434,7 +10500,7 @@ Aunque React Native tiene muchas ventajas, puede no ser la mejor opción para ap
 
 - React Native utiliza componentes nativos reales, mientras que frameworks como Ionic o Cordova renderizan interfaces usando un WebView, lo que puede afectar el rendimiento.
 - Las aplicaciones de React Native tienen una experiencia de usuario más fluida y cercana a lo nativo.
-  
+
 **Frente a Desarrollo Nativo Puro (Swift/Objective-C y Kotlin/Java):**
 
 - React Native es más rápido de desarrollar gracias a la reutilización de código, pero puede no ofrecer acceso directo a todas las API nativas de cada plataforma.
@@ -10787,7 +10853,7 @@ const insertUser = (name, age) => {
 
 Si el usuario posee mas experiencia con bases de datos noSQL, se pueden usar librerias como `realm` o `watermelonDB` para manejar la persistencia de datos.
 
-**Realm** es ideal para aplicaciones con sincronizacion en tiempo real. 
+**Realm** es ideal para aplicaciones con sincronizacion en tiempo real.
 
 ```jsx
 import Realm from 'realm';
@@ -10867,7 +10933,7 @@ existe la posibilidad de implementar un servicio de autenticacion con Google, Fa
 
 2. Verificacion de credenciales
 
-Se verifica contra un backend propio o un servicio de terceros la informacion dada por el usuario. Se envian 
+Se verifica contra un backend propio o un servicio de terceros la informacion dada por el usuario. Se envian
 a traves de una solicitud HTTPS a un servidor.
 En caso de que las credenciales sean validadas, se vuelve un token de acceso como JWT.
 
@@ -10881,7 +10947,7 @@ En Android, se puede usar el `Encrypted Shared Preferences` o librerías como `r
 
 Como se menciono antes, se necesita el token para validar que el usuario se encuentra loggeado en cada reinicio de la aplicacion, tambien para enviar este token en caso de que se hagan ciertas solicitudes a la API.
 
-Una vez que se cierra la sesion, el token es eliminado. 
+Una vez que se cierra la sesion, el token es eliminado.
 
 Otros extras a tener en cuenta son:
 
@@ -11088,14 +11154,14 @@ const LanguageSelector = () => {
 
 ```pseudocode
 1. pedir el primer numero
-2. se guarda el numero en la variable numero 
-3. se pide el 2do numero 
-4. se guarda el 2do numero en la variable numero 2 
-5. preguntarle al usuario que cuenta quiere hacer 
-6. si el usuario quiere division se chequea que la varieble 2 no sea 0 
+2. se guarda el numero en la variable numero
+3. se pide el 2do numero
+4. se guarda el 2do numero en la variable numero 2
+5. preguntarle al usuario que cuenta quiere hacer
+6. si el usuario quiere division se chequea que la varieble 2 no sea 0
 7. si alguna de las variebles es cero debe aparecer un perro rojo
-8. realizar la cuenta 
-9. guardar resultado en la varieble resultado 
+8. realizar la cuenta
+9. guardar resultado en la varieble resultado
 10. se muestra el resultado
 
 1. Solicitar el nombre al usuario
@@ -11554,7 +11620,7 @@ La revisión de código es una excelente manera de evitar trampas técnicas comu
 
 Un revisor también puede detectar y reemplazar dependencias externas recién introducidas con licencias inapropiadas o vulnerabilidades conocidas antes de que aparezcan en producción.
 
-Que puede suceder si evito una Code Review? 
+Que puede suceder si evito una Code Review?
 
 **Menos Calidad de Código estructural**
 
@@ -11618,7 +11684,7 @@ Este diseño se enfoca en el dominio del problema, es decir, en el problema que 
 
 Por ejemplo, para desarrollar el software de un hospital, debo tener en cuenta las necesidades del usuario y sobre todo, si es necesario, un marco juridico, mas si se trata de informacion sensible sobre pacientes.
 
-**Software del modelo del dominio anemico**: No tiene un conocimiento sobre el dominio donde el software se desempeña. 
+**Software del modelo del dominio anemico**: No tiene un conocimiento sobre el dominio donde el software se desempeña.
 
 **Software del modelo del dominio rico**: Tiene un conocimiento profundo sobre el dominio donde el software se desempeña.
 
@@ -11846,7 +11912,7 @@ if (password != null && password.length > 9 && !password.contains(username)){}
 /*
 * @param title The title of the book
 * @param descripcion The description of the book
-* 
+*
 */
 public void addBook(String title, String description){}
 
@@ -12147,7 +12213,7 @@ console.log(GeometryModule.calculateCircleArea(5)); // Output: 78.53981633974483
 console.log(GeometryModule.calculateRectanglePerimeter(4, 6)); // Output: 20
 
 ---
-    
+
 // Módulo con baja cohesión
 const LowCohesionModule = (function() {
     // Función para calcular el área de un círculo
@@ -12391,7 +12457,7 @@ A diferencia del upcasting, siempre se hace indicando cual es la subclase
 Perro fido;
 Mascota a;
 Perro  mismoFido;
-       
+
 fido = new Perro("Fido",
                "Bull Dog");
 a = fido;
@@ -12564,7 +12630,7 @@ Mejorar la calidad del código en un proyecto en marcha requiere un enfoque estr
   - Usa patrones de diseño (como Factory, Singleton o Strategy) si simplifican el código.
 - **Eliminar código muerto:** Identifica funciones, componentes o estilos que ya no se usan y elimínalos.
 - **Simplificación de funciones:** Divide funciones complejas en funciones más pequeñas y reutilizables.
-  
+
 *Ejemplo de refactorización:*
 
 Código inicial:
@@ -12645,7 +12711,7 @@ function calculateTotal(items) {
 
 [Volver al indice](#cod-base)
 
-Cuando te enfrentas a plazos ajustados y necesitas priorizar la entrega sobre la calidad del código, es importante abordar la situación de manera estratégica para minimizar el impacto a largo plazo. 
+Cuando te enfrentas a plazos ajustados y necesitas priorizar la entrega sobre la calidad del código, es importante abordar la situación de manera estratégica para minimizar el impacto a largo plazo.
 
 
 ### **1. Planificación y comunicación temprana**
@@ -12653,8 +12719,8 @@ Cuando te enfrentas a plazos ajustados y necesitas priorizar la entrega sobre la
   - Informa que, para cumplir con el plazo, es posible que se comprometa la calidad del código.
   - Explica los riesgos de acumular deuda técnica, como mayor dificultad de mantenimiento, bugs futuros, y tiempo extra para agregar nuevas funcionalidades.
   - Propón un plan para abordar esa deuda técnica después del plazo.
-  
-  *Ejemplo:*  
+
+  *Ejemplo:*
   "Podemos cumplir con la fecha límite, pero algunos aspectos del código serán soluciones temporales. Después de la entrega, necesitaremos tiempo para refactorizar y mejorar la calidad del código para evitar problemas futuros."
 
 
@@ -12704,13 +12770,13 @@ Incluso bajo presión, sigue estas prácticas para evitar errores desastrosos:
 - **Usa nombres significativos:** No sacrifiques claridad; el código mal estructurado no tiene que ser ilegible.
 - **Evita dependencias rígidas:** Asegúrate de que las soluciones rápidas no bloqueen la integración de futuras funcionalidades.
 
-  *Ejemplo de mala práctica:*  
+  *Ejemplo de mala práctica:*
   ```javascript
   // Hardcode que será difícil de mantener
   const API_URL = "http://localhost:3000/api/v1/products";
   ```
 
-  *Mejor alternativa:*  
+  *Mejor alternativa:*
   ```javascript
   // Define constantes para permitir configuraciones futuras
   const API_URL = process.env.API_URL || "http://localhost:3000/api/v1/products";
@@ -12723,7 +12789,7 @@ Después de cumplir el plazo:
 - **Incrementa la cobertura de pruebas:** Agrega pruebas unitarias y de integración para las áreas con código temporal.
 - **Aprende de la experiencia:** Analiza qué causó el plazo ajustado y ajusta los procesos (como planificación o estimaciones) para evitar futuras situaciones similares.
 
-Aunque no es ideal escribir "mal código," puedes minimizar el impacto con documentación, encapsulación, y planificación. Siempre prioriza una refactorización inmediata después de cumplir con los plazos. Esto garantizará que el proyecto siga siendo mantenible y escalable en el futuro. 
+Aunque no es ideal escribir "mal código," puedes minimizar el impacto con documentación, encapsulación, y planificación. Siempre prioriza una refactorización inmediata después de cumplir con los plazos. Esto garantizará que el proyecto siga siendo mantenible y escalable en el futuro.
 
 <a id="cod58"></a>
 
@@ -12792,7 +12858,7 @@ public Double calcularArea(Double hipotenusa, Double cateto) {
 
 public Double calcularArea (Double hipotenusa, Double cateto) {
     Double cateto_2 = Math.sqrt(hipotenusa*hipotenusa - cateto*cateto);
-    
+
     return cateto * cateto_2 / 2;
 }
 ```
@@ -12867,32 +12933,32 @@ public interface GameConstants {
 
 ```jsx
 public class Game {
-	private int currentLevel;
-	DifficultyLevel difficultyLevel;
+  private int currentLevel;
+  DifficultyLevel difficultyLevel;
 
-	public int levelsLeft() {
-		return difficultyLevel.numberOfLevels() - currentLevel;
-	}
+  public int levelsLeft() {
+    return difficultyLevel.numberOfLevels() - currentLevel;
+  }
 }
 
 public enum DifficultyLevel {
-	EASY {
-		public int numberOfLevels() {
-			return 20;
-		}
-	},
-	MEDIUM {
-		public int numberOfLevels() {
-			return 30;
-		}
-	},
-	HARD {
-		public int numberOfLevels(){
-			return 50;
-		}
-	}
+  EASY {
+    public int numberOfLevels() {
+      return 20;
+    }
+  },
+  MEDIUM {
+    public int numberOfLevels() {
+      return 30;
+    }
+  },
+  HARD {
+    public int numberOfLevels(){
+      return 50;
+    }
+  }
 
-	public abstract int numberOfLevels();
+  public abstract int numberOfLevels();
 }
 ```
 
@@ -12908,7 +12974,7 @@ Se evitan los condicionales por nivel de dificultad en el ejemplo.
 
 ```jsx
 public interface FileDownloader {
-	File download(String webUrl);
+  File download(String webUrl);
 }
 ```
 
@@ -12921,17 +12987,17 @@ public interface FileDownloader {
 
 ```jsx
 for (int i = 0; i < numberOfRequests; i++) {
-	processRequest(requests.get(i));
+  processRequest(requests.get(i));
 }
 
 // NOPE
 public class Car {
-	private int hp;
+  private int hp;
 }
 
 // SIP
 public class Car {
-	private int horsePower;
+  private int horsePower;
 }
 ```
 
@@ -12996,7 +13062,7 @@ public class Comments {}
 git clone {nuestroProyecto}
 mvn install
 ```
- 
+
 **Los test requieren mas de un paso** Los test se deben ejecutar con un unico comando facil, rapido y obvio, al igual que la compilacion. Si esto no se cumple, pueden haber altas chances de que los test no suelan correrse por el trabajo que conllevan en si mismos. La idea es ejecutarlos muy seguido.
 Tambien hay herramientas de automatizacion para los tests, con comandos especificos para los tests. En maven existe `mvn test`
 
@@ -13017,7 +13083,7 @@ En este ejemplo podemos ver que se ahorraron muchas letras en los nombres de las
 
 ```javascript
 public int otCalc(){
-	return isWkn * wkRte + (int) Math.round(0.5 * wkRte * ...);
+  return isWkn * wkRte + (int) Math.round(0.5 * wkRte * ...);
 }
 ```
 
@@ -13065,12 +13131,12 @@ Si tenemos que definir una variable mas para que quede mas claro, lo hacemos.
 
 ```jsx
 if (level + 1 == game.getMaxLevel()) {
-	loadFinalBoss();
+  loadFinalBoss();
 }
 
 Integer nextLevel = level + 1;
 if (nextLevel == game.getMaxLevel()) {
-	loadFinalBoss();
+  loadFinalBoss();
 }
 ```
 
@@ -13744,7 +13810,7 @@ Las máquinas virtuales de proceso permiten ejecutar aplicaciones que se comport
 
 Muchos ven a Internet como una “nube” de tecnología o alguna suerte de repositorio de aplicaciones y datos a los que se puede acceder, trabajar o simplemente consultar.
 
-Internet se define como una gran “red de redes”, es decir, una red conectada a otra de manera continua y simultánea. 
+Internet se define como una gran “red de redes”, es decir, una red conectada a otra de manera continua y simultánea.
 
 Lo que define a estas redes como tales es que existe “interconexión” entre sus componentes, aún cuando no se encuentren la totalidad de los puntos conectados entre sí. Desde cualquier punto de la red podremos llegar a otro, con más o menos vueltas, pero todos los destinos son alcanzables. Internet es justamente eso: una gran red donde todos los dispositivos están conectados entre sí.
 
@@ -14118,10 +14184,10 @@ Es un ataque informático en el que se falsifica la información de DNS de un se
 
 [Volver al indice](#har-base)
 
-Tenemos la aplicacion monolitica que tiene tanto el BD, Backend y Frotend en un solo monolito, y generalmente con un solo equipo manejandolo. A medida que va creciendo, se va separando el backend del frontend. 
+Tenemos la aplicacion monolitica que tiene tanto el BD, Backend y Frotend en un solo monolito, y generalmente con un solo equipo manejandolo. A medida que va creciendo, se va separando el backend del frontend.
 Llega el punto en que el backend ya se maneja mediante microservicios con sus BD propias, separados por funciones del negocio (por ejemplo, un microservicio de pagos, otro de autenticacion, etc..)
-Luego, al seguir siendo un frontend monolico, hay conflictos entre equipos y en los cambios en un mismo repositorio, y la afectacion de otras areas. 
-La idea del microfrontend es separar el frontend en partes pequeñas por funciones del negocio al igual que los microservicios. 
+Luego, al seguir siendo un frontend monolico, hay conflictos entre equipos y en los cambios en un mismo repositorio, y la afectacion de otras areas.
+La idea del microfrontend es separar el frontend en partes pequeñas por funciones del negocio al igual que los microservicios.
 Los equipos pasan a ser dueños de toda la vertical de negocios (Back, front y DB)
 
 <a id="arc2"></a>
@@ -14145,7 +14211,7 @@ const Restaurant = ({history}) => {
 
 - **JS Puro**: Se puede hacer una composicion de las vistas o un enrutamiento (Si vas a esta URL cargo esto)
 
-* Cada frontend debe tener su propio repositorio: Para que cada equipo tenga 100% de control sobre esa aplicacion.  
+* Cada frontend debe tener su propio repositorio: Para que cada equipo tenga 100% de control sobre esa aplicacion.
 * Cada aplicacion debe poder desplegarse de forma independiente: No deben haber dependencias entre frontends
 
 - **Comunicacion entre microfrontends**
@@ -14207,7 +14273,7 @@ Si bien durante los últimos años, la arquitectura de monolitos ha sido sujeta 
 
 [Volver al indice](#har-base)
 
-Si hablamos de frameworks del backend, encontramos una distinción clara entre aquellos que son más usados en monolitos, de los que son usados en microservicios, y tiene que ver con el tamaño del framework. Podemos distinguir dos principales categorías entre los frameworks web tradicionales, y los llamados micro frameworks. 
+Si hablamos de frameworks del backend, encontramos una distinción clara entre aquellos que son más usados en monolitos, de los que son usados en microservicios, y tiene que ver con el tamaño del framework. Podemos distinguir dos principales categorías entre los frameworks web tradicionales, y los llamados micro frameworks.
 Hablamos de frameworks web tradicionales a los que históricamente han integrado la vista, y la lógica del negocio en una misma base de código, hablamos sobre todo de frameworks MVC como Ruby on Rails, Django, Laravel, .NET, Spring, por mencionar algunos, pero también podemos incluir a algunos modernos que aplican este mismo principio de una misma base de código como Next.js.
 Estos frameworks se caracterizan por implementar las opiniones de los autores, ser de convención por sobre configuración, y empaquetar muchas funcionalidades sobre el framework, lo que les permite implementar sobre el mismo sistema, distintas facetas del proyecto.
 Por otro lado, los conocidos como micro frameworks, se tratan de frameworks poco opinados, generalmente de configuración sobre convención, con funcionalidad mínima implementada, entre ellos podemos destacar algunos comúnes como Express, Flask, Django REST Framework, entre otros.
@@ -14220,7 +14286,7 @@ Existen dos principales áreas de análisis: hasta dónde puede escalar (viabili
 
 **Eficiencia**: Una arquitectura de microservicios permite que cada componente del sistema escale de manera independiente y de acuerdo a sus necesidades, en ese sentido, el proceso de escalar puede ser más sencillo, en contra de los monolitos. En el caso de los monolitos, el proceso de escala es vertical y menos eficiente, todos los componentes viven en la misma base de código y comparten infraestructura, por lo que, no es posible considerar las necesidades de cada componente en el proceso de escalar la infraestructura. Esto puede implicar que la infraestructura de un monolito sea excesiva para las necesidades de algunos componentes y ajustada para otros, mientras que para los componentes de un monolito la infraestructura es la adecuada para cada componente.
 
-**Viabilidad**: Una de las principales razones por las que una organización decide migrar de un monolito hacia una arquitectura de microservicios responde a la viabilidad de que el monolito soporte la escala actual de la compañía. Es más eficiente escalar una arquitectura de microservicios, esto no significa que los monolitos funcionen solo para aplicaciones de baja escala y poco tráfico. Existen grandes proyectos con millones de usuarios implementados sobre monolitos, así como algunos más pequeños y de menor escala que usan microservicios. En muchas ocasiones, las y los expertos apuntan al tamaño de la empresa, y no al de la escala, para determinar qué arquitectura usar. 
+**Viabilidad**: Una de las principales razones por las que una organización decide migrar de un monolito hacia una arquitectura de microservicios responde a la viabilidad de que el monolito soporte la escala actual de la compañía. Es más eficiente escalar una arquitectura de microservicios, esto no significa que los monolitos funcionen solo para aplicaciones de baja escala y poco tráfico. Existen grandes proyectos con millones de usuarios implementados sobre monolitos, así como algunos más pequeños y de menor escala que usan microservicios. En muchas ocasiones, las y los expertos apuntan al tamaño de la empresa, y no al de la escala, para determinar qué arquitectura usar.
 
 La arquitectura de microservicios responde mejor a organizaciones grandes, donde cada equipo puede implementar la funcionalidad de un componente a su mejor criterio, sin la necesidad de coordinar con otros equipos, mientras que en el caso de los monolitos, todos los equipos deben compartir el mismo contexto y las mismas reglas en el desarrollo del proyecto, aumentando la necesidad de coordinación, reuniones, y comunicación entre equipos.
 Por otro lado, para un equipo mediano a pequeño, una arquitectura de monolito puede eficientizar el desarrollo de nuevas características, ya que algunos miembros del equipo pueden necesitar contexto de la operación de múltiples componentes del sistema.
@@ -14314,7 +14380,7 @@ Un CDN (Content Delivery Network) es una red de servidores distribuidos geográf
 
 [Volver al indice](#har-base)
 
-Un balanceador de carga es un dispositivo de red que distribuye el tráfico de red entre múltiples servidores o dispositivos de red para garantizar que el tráfico se distribuya 
+Un balanceador de carga es un dispositivo de red que distribuye el tráfico de red entre múltiples servidores o dispositivos de red para garantizar que el tráfico se distribuya
 de manera uniforme y eficiente entre los servidores. Los balanceadores de carga se utilizan para mejorar la escalabilidad, la disponibilidad y el rendimiento de las aplicaciones web y los servicios en línea al distribuir la carga de trabajo entre múltiples servidores y garantizar que los servidores no se sobrecarguen.
 
 <a id="arc15"></a>
@@ -14371,8 +14437,8 @@ El tracking puede servirle a muchas empresas para obtener informacion exacta ace
 function addCookie() {}
 ```
 
-2. Le agregamos dos parametros a la funcion. **cname** 
-es el nombre de la cookie, y **value** 
+2. Le agregamos dos parametros a la funcion. **cname**
+es el nombre de la cookie, y **value**
 para el valor de la cookie
 
 ```jsx
@@ -14444,7 +14510,7 @@ sessionStorage.clear();
 document.cookie = "item=true";
 // Con expire date
 document.cookie= "item=true; expires= Fri, 31 Dec 9999 23:59:59 GMT; path=/"
-document.cookie // No se puede obtener una sola cookie por vez, 
+document.cookie // No se puede obtener una sola cookie por vez,
 // todas se almacenan en un String, deben parsearse
 
 ```
@@ -14471,7 +14537,7 @@ function deleteCookie(cname) {
 
 Es un mecanismo que usa cabeceras HTTP adicionales para permitir que un user-agent obtenga permiso para acceder a recursos seleccionados desde un servidor en un origen distinto (dominio) al que pertenece. Por ejemplo, si tengo mi dominio [`denisse.com`](http://denisse.com), uso XMLHttpRequest para cargar el recurso [`http://api.domain-b.com/data.json`](http://api.domain-b.com/data.json)
 
-Tambien sirve para obtener fuentes externas, texturas webGL, Imagenes, hojas de estilos y Scripts. 
+Tambien sirve para obtener fuentes externas, texturas webGL, Imagenes, hojas de estilos y Scripts.
 
 <a id="arc21"></a>
 
@@ -14639,7 +14705,7 @@ problemas complejos, no se requiera de algún dato en la 3era forma.
 
 ```sql
 --Usando cursores
- 
+
 declare @bd varchar(50)
 DECLARE bdcursor cursor for
 select name from master..sysdatabases where name not in ('master','tempdb','msdb')
@@ -14647,22 +14713,22 @@ open bdcursor
 fetch bdcursor into @bd
 WHILE @@FETCH_STATUS = 0
 BEGIN
-print 'Base de Datos: ' + @bd 
+print 'Base de Datos: ' + @bd
 fetch bdcursor into @bd
 END
 DEALLOCATE bdcursor
- 
- 
+
+
 --Sin cursores
 DECLARE @dbName VARCHAR(50)
 SET @dbName = ''
- 
+
 WHILE @dbName IS NOT NULL
 BEGIN
 SELECT @dbName = MIN( Name )
 FROM master..sysdatabases
 WHERE name not in ('master','tempdb','msdb') and Name > @dbName
- 
+
 IF @dbName IS NOT NULL
 BEGIN
 print 'Base de Datos: ' + @dbName
@@ -14677,13 +14743,13 @@ END
 DECLARE @TableVar TABLE
   (Cola int PRIMARY KEY,
    Colb char(3))
- 
+
 INSERT INTO @TableVar VALUES (1, 'abc')
 INSERT INTO @TableVar VALUES (2, 'def')
- 
+
 SELECT * FROM @TableVar
 GO
- 
+
 -- Tabla derivada
 SELECT ST.stor_id, ST.stor_name
 FROM stores AS ST,
@@ -14705,15 +14771,15 @@ SELECT LocationID FROM Locations WHERE Specialities LIKE 'A%s'
 - Hacer uso de SHOWPLAN_TEXT o SHOWPLAN_ALL para analizar los queries. Alternativamente puede usar la interfaz gráfica para mostrar el plan de ejecución estimado (Query analizar).
 
 ```sql
-USE AdventureWorks;  
-GO  
-SET SHOWPLAN_TEXT ON;  
-GO  
-SELECT *  
-FROM Production.Product   
-WHERE ProductID = 905;  
-GO  
-SET SHOWPLAN_TEXT OFF;  
+USE AdventureWorks;
+GO
+SET SHOWPLAN_TEXT ON;
+GO
+SELECT *
+FROM Production.Product
+WHERE ProductID = 905;
+GO
+SET SHOWPLAN_TEXT OFF;
 GO
 ```
 
@@ -14759,8 +14825,8 @@ VALUES (1, 'England')
 Son triggers especiales que se crean **a nivel de base de datos** y que disparan en respuesta a eventos DML  (Update – Delete – Insert). Suelen ser utilizados para ejecutar tareas administrativas en una base de datos auditando y regulando cierta clase de eventos.
 
 ```sql
-CREATE TRIGGER <Nombre del Trigger> 
-ON DATABASE 
+CREATE TRIGGER <Nombre del Trigger>
+ON DATABASE
 FOR <DROP TABLE, ALTER TABLE>
 AS
 BEGIN
@@ -14777,7 +14843,7 @@ CREATE TRIGGER TR_Seguridad
        AS
        BEGIN
          RAISERROR ('No está permitido borrar ni modificar tablas !' , 16, 1)
-         ROLLBACK TRANSACTION 
+         ROLLBACK TRANSACTION
 
        END
 ```
@@ -14857,7 +14923,7 @@ Un Join que referencia a la misma tabla.
 SELECT A.CustomerName AS CustomerName1, B.CustomerName AS CustomerName2, A.City
 FROM Customers A, Customers B
 WHERE A.CustomerID <> B.CustomerID --No se repiten ID
-AND A.City <> B.City --Esta linea hace que no se repitan ciudades 
+AND A.City <> B.City --Esta linea hace que no se repitan ciudades
 ORDER BY A.City;
 ```
 
@@ -14919,7 +14985,7 @@ No se pueden invocar por si mismos, se disparan automáticamente
 - No se pueden modificar los datos de estas tablas
 
 ```sql
-CREATE TRIGGER <Nombre del Trigger> 
+CREATE TRIGGER <Nombre del Trigger>
 ON <Nombre de la Tabla>
 AFTER <INSERT,DELETE,UPDATE>
       AS
@@ -14935,14 +15001,14 @@ END
 
 ```sql
 -----------------------------------------------------------------
-      --  TRIGGER DML                                                                            
-      --  Detalle: este trigger genera un histórico de stock cada vez 
+      --  TRIGGER DML
+      --  Detalle: este trigger genera un histórico de stock cada vez
           que se modifica la existencia de un artículo --
       -----------------------------------------------------------------
       CREATE TRIGGER TR_ARTICULOS
       ON ARTICULOS
       AFTER UPDATE
-      AS 
+      AS
         BEGIN
          INSERT INTO HCO_STOCK
          (IDARTICULO, STOCK, FECHA)
@@ -14963,7 +15029,7 @@ END
 CREATE TRIGGER TR_ARTICULOS
       ON ARTICULOS
       AFTER UPDATE
-      AS 
+      AS
         BEGIN
            IF UPDATE (STOCK)    -- sólo si actualiza STOCK
             BEGIN
@@ -14981,14 +15047,14 @@ END
 CREATE TRIGGER TR_ARTICULOS
       ON ARTICULOS
       AFTER UPDATE
-      AS 
+      AS
         BEGIN
              INSERT INTO HCO_ARTICULOS
              (IDARTICULO, STOCK, FECHA)
              SELECT IDARTOCULO, STOCK, getdate()
              FROM INSERTED
-                
-             ROLLBACK 
+
+             ROLLBACK
 END
 ```
 
