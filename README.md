@@ -26,7 +26,11 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 - [Organizacion en Software - Derecho en IT](#cic-base)
 - [Gestion de proyectos - Liderazgo](#cic-base-2)
 - [Typescript](#typ-base)
-- [Javascript Frameworks and Libraries](#rea-base)
+- [Javascript Frameworks y Librerias](#rea-base)
+  - [HTML](#html-base)
+  - [React](#react-base)
+  - [Angular](#angular-base)
+  - [Conceptos Generales](#fe-base)
 - [Styles - Estilos](#sty-base)
 - [Desarrollo Mobile](#mob-base)
 - [React Native](#mob-base-rn)
@@ -427,29 +431,33 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 
 <a name="rea-base"></a>
 
-## [Javascript Frameworks and Libraries](#rea)
+## [Javascript Frameworks y Librerias](#rea)
+
+<a name="html-base"></a>
 
 | HTML |
 |----------|
-| [¿Cuál es la diferencia entre h1, h2, etc.?](#rea40) |
-| [Vínculos Relativos en HTML](#rea56) |
-| [Vínculos Absolutos en HTML](#rea57) |
-| [¿Para qué es el Doctype?](#rea54) |
-| [Atributo placeholder para campos en HTML](#rea55) |
-| [Cual es la importancia del uso de todos los elementos HTML?](#rea41) |
-| [Que son los atributos de los elementos HTML?](#rea42) |
-| [Cuáles son las partes de un documento HTML?](#rea43) |
-| [Puedo escribir las etiquetas en mayúscula y minúscula?](#rea44) |
-| [Qué son los mapa de imagen?](#rea45) |
-| [Que es el tag DataList?](#rea46) |
+| [¿Cuál es la diferencia entre h1, h2, etc.?](#html1) |
+| [Vínculos Relativos en HTML](#html2) |
+| [Vínculos Absolutos en HTML](#html3) |
+| [¿Para qué es el Doctype?](#html4) |
+| [Atributo placeholder para campos en HTML](#html5) |
+| [Que es HTML Semantico? 💛](#html6) |
+| [Que son los atributos de los elementos HTML?](#html7) |
+| [Cuáles son las partes de un documento HTML?](#html8) |
+| [Puedo escribir las etiquetas en mayúscula y minúscula?](#html9) |
+| [Qué son los mapa de imagen?](#html10) |
+| [Que es el tag DataList?](#html11) |
+
+<a name="react-base"></a>
 
 | React |
 |----------|
 | [¿Qué es React?](#rea47) |
-|[Libreria vs Framework](#rea47-2)|
+|[Libreria vs Framework 💛](#rea47-2)|
 | [Para que es el comando React eject?](#rea49) |
-| [Que son las Ref?](#rea52) |
-| [De que tratan los Ciclos de Vida Componentes?](#rea62) |
+| [Que son las Ref?](#rea52-5) |
+| [De que tratan los Ciclos de Vida Componentes?](#react62) |
 |[Componentes de clase vs Componentes de Funcion 💛](#rea62-1)|
 | [componentWillReceiveProps()](#rea55) |
 | [componentDidMount()](#rea56) |
@@ -459,11 +467,11 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [shouldComponentUpdate()](#rea60) |
 | [componentWillUpdate()](#rea61) |
 | [useCallback](#rea1) 💛|
-| [useDispatch](#rea2) 💛|
+| [useDispatch - Hook Redux](#rea2)|
 | [useEffect](#rea3) 💛|
 |[Puede el useEffect ser asincrono? Porque?](#rea3-2) 💛|
 | [useState](#rea4) 💛|
-| [useSelector](#rea5) |
+| [useSelector - Hook Redux](#rea5) |
 | [useRef](#rea6) 💛|
 | [useMemo](#rea7) 💛|
 |[¿Cuál es la diferencia entre useCallback y useMemo?](#rea7-1) 💛|
@@ -513,6 +521,8 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 |¿Qué es el "code splitting" y cómo lo implementarías en una aplicación React?|
 |¿Cómo manejarías la autenticación y autorización en una aplicación React?|
 
+<a name="angular-base"></a>
+
 | Angular |
 |----------|
 | [Diferencia entre AngularJS y Angular](#rea10) 💛|
@@ -522,8 +532,8 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [¿Qué es un Decorador en Angular?](#rea14) 💛|
 | [Event Binding en Angular (Manejo de Eventos)](#rea15) |
 | [Data Binding en Angular](#rea16) |
-|Que son los componentes standalone y cuando conviene utilizarlos? 💛|
-|¿Qué problemas de rendimiento pueden existir en Angular y cómo se solucionan? 💛|
+|[Que son los componentes standalone y cuando conviene utilizarlos?](#angular-1) 💛|
+|[¿Qué problemas de rendimiento pueden existir en Angular y cómo se solucionan?](#angular-2) 💛|
 |¿Cómo funciona la detección de cambios en Angular?|
 |¿Cómo se maneja la inyección de dependencias y la inversión de control en las aplicaciones de Angular? 💛|
 |¿Qué es la compilación JIT y AOT en Angular? Diferencias, pros y contras.|
@@ -535,6 +545,8 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 |¿Cómo se manejan las peticiones HTTP en Angular?|
 |¿Qué es el patrón de diseño "Smart vs Dumb Components" y cómo se aplica en Angular?|
 |¿Qué son los pipes en Angular y cómo se utilizan?|
+
+<a name="fe-base"></a>
 
 | Conceptos Generales |
 |----------|
@@ -566,7 +578,7 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [Que es el Scope en Javascript?](#rea45) |
 | [Fetch API](#rea46) |
 | [Cómo se pueden crear objetos genéricos?](#rea47) |
-| [Document.ready vs Window.onload](#rea48) |
+| [Document.ready vs Window.onload](#js1) |
 | [Que es la expresion de Funcion Inmediatamente Invocada - Immediatelyinvoked Function Expression (IIFE)?](#rea49) |
 | [Qué es un Event listener?](#rea50) |
 | [isNaN vs Math.isNaN](#rea51) |
@@ -8297,43 +8309,19 @@ Las pruebas deben tener una salida booleana y pasar o fallar. La misma prueba qu
 
 # Frontend Frameworks and Libraries
 
-<a id="rea40"></a>
+<a id="html1"></a>
 
 ## **¿Cuál es la diferencia entre h1, h2, etc.?**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#html-base)
 
 Los elementos de encabezado h1 a h6 se utilizan para indicar la importancia del contenido que les sigue. Cuanto menor sea el número, mayor será la importancia, por lo que los elementos h2 tienen menos importancia que los elementos h1. Utiliza solo un elemento h1 por página y coloca los encabezados de menor importancia debajo de los de mayor importancia.
 
-<a id="rea54"></a>
-
-### **¿Para qué es el Doctype?**
-
-[Volver al indice](#rea-base)
-
-El doctype es una declaración que se utiliza en un documento HTML para informar al navegador web sobre la versión de HTML en la que está escrito el documento. El doctype debe ser la primera línea de un documento HTML y se utiliza para garantizar que el navegador web interprete el documento correctamente.
-
-```html
-<!DOCTYPE html>
-```
-
-<a id="rea55"></a>
-
-### **Atributo placeholder para campos en HTML**
-
-[Volver al indice](#rea-base)
-
-El atributo placeholder me permite , guiar al usuario con referencia lo que tiene que colocar dentro de nuestro campo. Por ejemplo:
-
-```html
-<label> Nombre <br> <input type=”text” placeholder=”Nombre Completo”> </label>
-```
-
-<a id="rea56"></a>
+<a id="html2"></a>
 
 ### **Vínculos Relativos en HTML**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#html-base)
 
 Los vínculos relativos son aquellos que permiten interconectar los archivos de nuestro sitio (internos, dentro de nuestro sitio o servidor).
 Si por ejemplo quiero ir de mi archivo index a mi contacto.html lo haré de la siguiente forma:
@@ -8355,13 +8343,13 @@ Si mi archivo contacto se encontrase dentro de una carpeta la ruta a marcar ser�
 <a href="en/contacto.html" title="Contacto"> Contacto </a>
 ```
 
-<a id="rea57"></a>
+<a id="html3"></a>
 
 ### **Vínculos Absolutos en HTML**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#html-base)
 
-Los vínculos absolutos son aquellos que permiten interconectar los archivos de nuestro sitio (internos, dentro de nuestro sitio o servidor).
+Es la URL que dirige a un recurso en la web, por ejemplo, si quiero ir a google.com desde mi archivo index.html, lo haré de la siguiente forma:
 
 ```html
 <!doctype html>
@@ -8370,25 +8358,64 @@ Los vínculos absolutos son aquellos que permiten interconectar los archivos de 
 <a href="https://www.google.com" title="Contacto"> Contacto </a>
 ```
 
-<a id="rea41"></a>
+<a id="html4"></a>
 
-### **Cual es la importancia del uso de todos los elementos HTML?**
+### **¿Para qué es el Doctype?**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#html-base)
 
-HTML5 tiene algunos elementos que identifican diferentes áreas de contenido. Estos elementos hacen que tu HTML sea más fácil de leer y ayudan con la Optimización para Motores de Búsqueda (SEO) y la accesibilidad.
+El doctype es una declaración que se utiliza en un documento HTML para informar al navegador web sobre la versión de HTML en la que está escrito el documento. El doctype debe ser la primera línea de un documento HTML y se utiliza para garantizar que el navegador web interprete el documento correctamente.
 
-<a id="rea42"></a>
+```html
+<!DOCTYPE html>
+```
+
+<a id="html5"></a>
+
+### **Atributo placeholder para campos en HTML**
+
+[Volver al indice](#html-base)
+
+El atributo placeholder me permite guiar al usuario con referencia lo que tiene que colocar dentro de nuestro campo. Por ejemplo:
+
+```html
+<label> Nombre <br> <input type=”text” placeholder=”Nombre Completo”> </label>
+```
+
+Esto indica al usuario que en ese campo va el nombre completo, o tambien se podria poner un ejemplo.
+
+<a id="html6"></a>
+
+### **Que es HTML Semantico?** 💛
+
+[Volver al indice](#html-base)
+
+Es el uso de etiquetas introducidas en HTML5 en vez de divs y span para la division de secciones en mi HTML.
+
+```html
+<header> </header>
+<nav> </nav>
+<main> </main>
+<section> </section>
+<article> </article>
+<aside> </aside>
+<footer> </footer>
+```
+
+Esto a nivel de renderizado no cambia nada, pero si hace que mi codigo sea mucho mas accesible. Los motores de busqueda pueden entender mejor el contenido de mi pagina, y los lectores de pantalla tambien.
+
+
+<a id="html7"></a>
 
 ### **Que son los atributos de los elementos HTML?**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#html-base)
 
 Los atributos HTML son palabras especiales utilizadas dentro de la etiqueta de apertura de un elemento para controlar el comportamiento del elemento. El atributo src en un elemento img especifica la URL de la imagen (dónde se encuentra la imagen).
 
 `<img src="linkaimagen.com/fcc_secondary.svg">`
 
-<a id="rea43"></a>
+<a id="html8"></a>
 
 ### **Cuáles son las partes de un documento HTML?**
 
@@ -8414,16 +8441,16 @@ El resultado de un documento básico tiene la siguiente estructura:
 </html>
 ```
 
-<a id="rea44"></a>
+<a id="html9"></a>
 
 ### **Puedo escribir las etiquetas en mayúscula y minúscula?**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#html-base)
 
 En HTML las mayúsculas y minúsculas son indiferentes. Quiere decir que las etiquetas pueden ser escritas con cualquier tipo de combinación de mayúsculas y minúsculas. Resulta, sin embargo, aconsejable acostumbrarse a escribirlas en minúscula, ya que otras tecnologías que pueden c onvivir
 con nuestro HTML (XML por ejemplo) no son tan permisivas y nunca viene mal hacernos a las buenas costumbres desde el principio, para evitar fallos triviales en un futuro.
 
-<a id="rea45"></a>
+<a id="html10"></a>
 
 ### **Qué son los mapa de imagen?**
 
@@ -8456,7 +8483,7 @@ area shape="rect" coords="19,156,170,211" [href="mailto:rectangulo@direccion.com
 La verdad es que los mapas de imágenes son tediosos a veces de crear, y para eso contamos con generadores online por ejemplo:
 https://www.image-maps.com/
 
-<a id="rea46"></a>
+<a id="html11"></a>
 
 ### **Que es el tag DataList?**
 
@@ -8472,11 +8499,13 @@ Se usa para proveer con un autocomplete a algunos elementos
 </form>
 ```
 
+---
+
 <a id="rea47"></a>
 
 ### **¿Qué es React?**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 React fue creado por Facebook en el año 2013, y sigue siendo mantenida por él. (ahora Meta). Algunos ejemplos de proveedores que usan React son, además de Facebook, PayPal, Netflix, etc., páginas con un gran flujo de usuarios al día de hoy.
 
@@ -8492,9 +8521,9 @@ Tambien se puede trabajar del lado del servidor con Node, aplicaciones mobile co
 
 <a id="rea47-2"></a>
 
-### **Libreria vs Framework**
+### **Libreria vs Framework** 💛
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 - **Libreria:** Es un conjunto de funciones que se pueden usar en un proyecto. El programador decide cuando y como usarla, es mucho mas flexible. Ejemplo: React, Redux, Lodash.
 - **Framework:** Es un conjunto de reglas y estructuras que se deben seguir para desarrollar un proyecto. El framework decide cuando y como usarlo. Ejemplo: Angular, Vue, Django.
@@ -8505,7 +8534,7 @@ Es por eso que cuando vemos un proyecto hecho con React, y luego otro tambien he
 
 ### **Para que es el comando React eject?**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 El comando `eject` de React es una forma de sacar toda la configuración de Webpack y Babel que React trae por defecto, para poder modificarla a gusto. Es una forma de tener control total sobre la configuración de la aplicación.
 
@@ -8515,66 +8544,11 @@ cd my-app
 npm run eject
 ```
 
-<a id="rea48"></a>
-
-### **¿De qué hablamos cuando hablamos de una SPA (Single Page App)?**
-
-[Volver al indice](#rea-base)
-
-Una SPA (Single Page Application) son apps web que simulan ser una única página con contenido dinámico. La idea es darle la “ilusión” al usuario de que está navegando una aplicación de escritorio, que no recarga, no se satura, etc.
-
-Las únicas recargas, o pantallas de carga, son cuando se está trayendo información del servidor. No se recarga toda la página, aun así, solo ciertas partes, dando a una experiencia mucho más fluida.
-
-En resumen:
-
-- Se evita la constante recarga entera de la página
-- La página no se satura ni realiza peticiones constantes al servidor. Únicamente se pide lo necesario.
-
-<a id="rea50"></a>
-
-### **(Performance) Como evitar mandar muchos eventos inutiles, por ejemplo, ejecutar un search por letra?**
-
-[Volver al indice](#rea-base)
-
-Debounce es un termino de electronica que ayuda a que, por ejemplo, si apretamos varias veces un boton, no se manden muchas veces las instrucciones
-
-```jsx
-function useDebounce(value: string, delay: number) {
-  const [debouncedValue, setDebouncedValue] = useState(value);
-
-  useEffect(() => {
-      const timeoutId = setTimeout(() => {
-        setDebouncedValue(value)
-    }, delay)
-
-    return () => clearTimeout(timeoutId)
-}, [value])
-
-return debouncedValue;
-}
-
-// Luego en el component que tiene el search
-
-const queryDebouncedValue = useDebounce(query, 300)
-
-useEffect(() => {
-api.search(queryDebouncedValue).then(setProducts);
-}, [queryDebouncedValue]);
-```
-
-<a id="rea51"></a>
-
-### **Que es async rendering?**
-
-[Volver al indice](#rea-base)
-
-Permite que el renderizado pueda interrumpirse, permitiendo renderizar varios arboles de componentes a la vez sin necesidad de bloquear el hilo principal del navegador.
-
-<a id="rea52"></a>
+<a id="rea52-5"></a>
 
 ### **Que son las Ref?**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 Permite a react manipular directamente el DOM Sin necesidad de actualizar un componente, asumen cambios en los mismos que no se pueden resolver mediante el traspaso de props o cuyo impacto se limita al propio componente no siendo rentable renderizarlo de nuevo.
 
@@ -8593,7 +8567,7 @@ class AnimatedSpinner extends Component {
   render() {
     return (
       <>
-        <div ref={this.animationRef} className="spinner"> </div>     // 2. asociación
+        <div ref={this.animationRef} className="spinner"> </div>  // asociación
         <button onClick={this.triggerAnimation}> Animar </button>
 
     )
@@ -8601,32 +8575,11 @@ class AnimatedSpinner extends Component {
 }
 ```
 
-<a id="rea53"></a>
-
-### **Para que son los eventos sinteticos (SyntheticEvent)?**
-
-[Volver al indice](#rea-base)
-
-Funcionan de la misma forma que los eventos normales de los exploradores. Los eventos sinteticos usan codigo que puede ser aplicado en multiples exploradores web mientras que los eventos normales se enfocan en un solo navegador
-
-Ayuda a que el dev no se preocupe tanto en como manejar un evento segun el navegador para el cual esta desarrollando, ya que estos eventos simulan muchos eventos y garantiza el mismo comportamiento.
-
-<a id="rea54"></a>
-
-### **Que significa prop drilling y como evitarlo?**
-
-[Volver al indice](#rea-base)
-
-Es cuando las props que se comparten acumulan demasiadas dependencias. Da lugar a flujos de datos profundos, dificiles de identificar y refactorizar. Dos formas de resolverlo son:
-
-- Composicion de componentes frente a un mismo juego de datos compartido por varios componentes
-- Redux o API Context, aptas para escenarios mas complejos donde conviene manejar un estado global.
-
-<a id="rea62"></a>
+<a id="react62"></a>
 
 ### **De que tratan los Ciclos de Vida Componentes?**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 React provee de metodos especificos para los ciclos de vida de los componentes, en este caso, veremos en los de clase. Se llaman cuando el componente se monta, actualiza o desmonta, veamos las deficiones:
 
@@ -8640,7 +8593,7 @@ Varios de los estados que veremos que se utilizaban tipicamente en componentes d
 
 ### **Componentes de clase vs Componentes de Funcion 💛**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 Antes se utilizaban los componentes de clase para componentes complejos, y los componentes de funcion para componentes con poca logica en si mismos, hoy en dia se puede decir que los componentes de funcion reemplazaron completamente a los componentes de clase.
 
@@ -8654,12 +8607,11 @@ Los componentes de funcion son mas faciles de leer, escribir y testear, y son ma
 | Manejaba el estado con `this.state` | Maneja el estado con `useState` |
 | Manejaba el contexto con `this.context` | Maneja el contexto con `useContext` |
 
-
 <a id="rea55"></a>
 
 ### **componentWillReceiveProps()**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 Se ejecuta cuando hay alguna actualizacion de alguna prop
 
@@ -8675,7 +8627,7 @@ componentWillReceiveProps(nextProps) {
 
 ### **componentDidMount()**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 Se llama cuando el componente es renderizado en la pagina. Se puede usar para inicializar cosas, como para pedir la informacion inicial de los componentes.
 
@@ -8689,7 +8641,7 @@ componentDidMount() {
 
 ### **componentWillUnmount()**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 Es llamado antes de que el componente sea desmontado del DOM. Se puede usar para liberar recursos. No existe un “DidUnmount” ya que, una vez que se desmonta, ya no se puede hacer nada por el mismo.
 
@@ -8704,7 +8656,7 @@ componentWillUnmount() {
 
 ### **componentWillMount()**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 Corresponde a cuando el componente va a montarse, se ejecuta antes de su montaje, es como el constructor del mismo.
 
@@ -8718,7 +8670,7 @@ componentWillMount() {
 
 ### **componentWillMount()**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 Se llama cuando el componente se actualiza en el DOM. Podemos hacerlo para, por ejemplo, para avisar que el counter fue incrementado en uno.
 
@@ -8732,7 +8684,7 @@ componentDidUpdate() {
 
 ### **shouldComponentUpdate()**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 Nos permite decidir si debemos ejecutar o no el render. Muestra con que valores, o bajo que condiciones, se realizará la actualizacion.
 
@@ -8747,7 +8699,7 @@ shouldComponentUpdate(nextProps, nextState) {
 
 ### **componentWillUpdate()**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 Es cuando se esta por ejecutar el render. Nos ayuda a setear valores globales justo antes del mismo.
 
@@ -8760,9 +8712,9 @@ componentWillUpdate() {
 
 <a id="rea1"></a>
 
-### **useCallback**
+### **useCallback** 💛
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 Tiene dos casos de uso:
 
@@ -8807,9 +8759,9 @@ Si no tuviéramos el useCallback, el useEffect se dispararía ante cada cambio d
 
 <a id="rea2"></a>
 
-### **useDispatch**
+### **useDispatch - Hook Redux** 
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 Es para ejecutar las acciones que podamos tener en nuestro Redux
 
@@ -8850,7 +8802,7 @@ const submitNewProduct = (e) => {
 
 ### **useEffect** 💛
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 Reemplaza las funciones del ciclo de vida para los componentes de función, los combina en uno solo, es un Hook.
 
@@ -8923,7 +8875,7 @@ useEffect(() => {console.log("Mount");}, [state]);
 
 ### **Puede el useEffect ser asincrono? Porque?** 💛
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 El useEffect **no** deberia ser asincrono en si mismo, ya que no se puede retornar una promesa. Pero si se puede llamar a una funcion asincrona dentro del useEffect
 
@@ -8949,7 +8901,7 @@ En el caso de que el useEffect en si mismo sea asincrono, el codigo funcionara, 
 
 ### **useState**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 Hooks permiten usar los state dentro de los componentes funcionales. El más común es el useState que necesita ser importado de la siguiente manera para ser usado
 
@@ -8980,9 +8932,11 @@ Los Hooks solo pueden ser usados dentro de un componente funcional, en el caso d
 
 <a id="rea5"></a>
 
-### **useSelector**
+### **useSelector - Hook Redux**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
+
+Es un hook dado por Redux. 
 
 Es para acceder a un state dentro del componente. Es decir, si tenemos un state de error, poder reflejar algo en la UI en funcion de su valor.
 
@@ -8994,7 +8948,7 @@ const error = useSelector(state => state.error)
 
 ### **useRef**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 Es otro Hook que viene con React. Asi que debe ser importado en conjunto
 
@@ -9057,7 +9011,7 @@ Notar que nos referimos al valor del ref o para su cambio con current
 
 ### **useMemo**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 Primero para entender este Hook, debemos entender el uso de Memo en React.
 
@@ -9106,7 +9060,7 @@ const twoRandomProducts = useMemo(() => [...products]
 
 ### **¿Cuál es la diferencia entre useCallback y useMemo?**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 Tanto useCallback como useMemo son hooks de React diseñados para optimizar el rendimiento al evitar cálculos innecesarios o recreaciones de funciones/valores. La diferencia principal radica en qué optimizan y cómo se usan:
 
@@ -9139,13 +9093,13 @@ const filteredItems = useMemo(() => {
 return <ItemList items={filteredItems} />;
 ```
 
-Ambos dependen de un array de dependencias para saber cuándo deben actualizarse. 
+Ambos dependen de un array de dependencias para saber cuándo deben actualizarse. Si las dependencias no cambian, el hook devuelve el valor o la función memorizada.
 
 <a id="rea8"></a>
 
 ### **useReducer**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 Es una alternativa a useState que se utiliza de la siguiente manera al momento de inicializar el componente:
 
@@ -9175,8 +9129,8 @@ function Counter() {
   return (
     <>
       Count: {state.count}
-      <button onCLick={() => dispatch({type: 'decrement'}))> - </button>
-      <button onCLick={() => dispatch({type: 'increment'}))> + </button>
+      <button onCLick={() => dispatch({type: 'decrement'})}> - </button>
+      <button onCLick={() => dispatch({type: 'increment'})}> + </button>
     </>
   );
 }
@@ -9186,7 +9140,7 @@ function Counter() {
 
 ### **useLayoutEffect**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 No es un Hook muy común en si mismo. Se dispara de forma asíncrona después de que todas las manipulaciones del DOM se hayan hecho, se usa para tomar referencias, como por ejemplos, tamaños de cajas de textos, etc...
 
@@ -9234,7 +9188,7 @@ Ante cada cambio de quote que se haga, volverá a cero y volverá a tener otro v
 
 ### **¿Qué diferencia hay entre useEffect y useLayoutEffect? ¿Cuándo usarías cada uno?**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 Ambos son Hooks de React que se utilizan para ejecutar efectos secundarios en componentes funcionales. La diferencia principal entre useEffect y useLayoutEffect es cuándo se ejecutan.
 
@@ -9254,11 +9208,226 @@ Ambos son Hooks de React que se utilizan para ejecutar efectos secundarios en co
 
 En resumen, useEffect se utiliza para efectos secundarios asincrónicos que no requieren acceso inmediato al DOM, mientras que useLayoutEffect se utiliza para efectos secundarios síncronos que requieren acceso inmediato al DOM y afectan la geometría de los elementos.
 
+<a id="rea18"></a>
+
+### **¿Que es Redux?**
+
+[Volver al indice](#react-base)
+
+Redux permitira manejar el state global de manera facil conforme van creciendo, tambien ayuda a manejar los datos dependiendo de las acciones del usuario. Fue creado por un dev del equipo de React.
+
+- Solo hay 1 state principal
+- El state cambia depende lo que pase en la interfaz de usuario
+- Solo ciertas funciones cambiarán el State
+- Solo se hace un cambio a la vez
+
+<a id="rea19"></a>
+
+### **Cuando conviene usar Redux?**
+
+[Volver al indice](#rea-base)
+
+Si la app es pequeña, se recomienda ContextAPI o hooks. Si es grande, y va a ser mantenido por varias personas, se recomeinda Redux
+
+- No hace la app mas rapida
+- Existe Redux para muchos frameworks, no solo React
+- No es necesario usarlo en cada proyecto
+
+<a id="rea20"></a>
+
+### **¿Cuales son los beneficios de usar Redux?**
+
+[Volver al indice](#react-base)
+
+- Como su estructura es muy estricta, es muy facil de mantener y de organizar, tambien es muy estable.
+- Da una fiable representacion del servidor, es muy util especialmente para presentaciones preliminares. Puede optimizar, por ejemplo, motores de busqueda.
+- Provee muchas herramientas para los devs
+- Es facil de probar, las funciones de redux y el codigo en si son pequeñas y atomicas.
+
+<a id="rea21"></a>
+
+### **Redux vs ContextAPI**
+
+[Volver al indice](#react-base)
+
+**Context**
+
+- Context es una herramienta de React que permite pasar datos a traves del arbol de componentes sin tener que pasar props manualmente en cada nivel
+- Context es una buena opcion para datos que son necesarios en muchos componentes de la aplicacion
+- Context es una buena opcion para datos que no cambian frecuentemente
+- Context viene integrado a React
+- Es facil de entender para principiantes
+- No requiere mucho codigo boilerplate
+
+**Redux**
+
+- Redux es una libreria de manejo de estado que permite manejar el estado de la aplicacion de manera predecible
+- Redux es una buena opcion para datos que cambian frecuentemente
+- Redux es una buena opcion para aplicaciones grandes con muchos componentes
+- Redux no viene integrado a React, se debe instalar por separado
+
+<a id="rea22"></a>
+
+### **¿Cual es el flujo de Redux?**
+
+[Volver al indice](#react-base)
+
+Store
+
+- Contiene el state y solo hay un Store por app
+
+Dispatch
+
+- Ejecuta una accion, es una funcion que maneja un state
+
+```jsx
+dispatch(addProductOk(product))
+```
+
+Actions
+
+- Objetos en JS con tipo y payload (datos que modificaran el state)
+- Los componentes no deben modificar el state directamente, se modifica por medio de funciones llamadas Actions
+
+Subscribe
+
+- Similar al event listener para el state
+
+Reducer
+
+- Funciones que saben que hacer con las acciones y el payload
+
+<a id="rea23"></a>
+
+### **Que es ContextAPI?**
+
+[Volver al indice](#react-base)
+
+Es una manera de tener un estado global sin dependencias como Redux, ya que viene desde React 16.3.
+
+Se pueden pasar state o funciones desde el componente principal hacia los hijos, nos evitamos pasarlo por cada uno de los componentes, es algo global.
+
+Cuenta con el hook `useContext` que facilita el acceso a los datos del Context.
+
+Children refiere a los componentes dentro del Provider que recibirán estos datos.
+
+Provider: De donde vienen los datos
+
+```jsx
+import {createContext} from 'react';
+
+const QuoteContext = createContext();
+
+const QuoteProvider = ({children}) => {
+  return (
+    <QuoteContext.Provider
+    value=({})>
+      {children}
+    </QuoteContext.Provider>
+  )
+}
+
+export { QuoteProvider }
+export default QuoteContext;
+```
+
+Dentro de value ponemos lo que queremos exportar para el resto de componentes, y luego, lo consumimos de la siguiente manera:
+
+```jsx
+// Donde entre llaves ponemos lo que queremos consumir de ese Context.
+const {} = useContext(QuoteContext);
+```
+
+<a id="rea24"></a>
+
+### **Que es React Fiber?**
+
+[Volver al indice](#rea-base)
+
+La arquitectura de React hizo que fuera muy facil trabajar no solo en web si no tambien en mobile (React Native) y en hasta aplicaciones de Realidad Virtual. Asi los dev de React decidieron separar su algoritmo de reconciliacion (el que compara los cambios entre DOM y VDOM) y el lienzo donde esos cambios se muestran (Web, Mobile, etc..)
+
+Fiber fue diseñado para mejorar el rendimiento, particularmente en aplicaciones que requieren animaciones, interacciones complejas y actualizaciones de gran volumen.
+
+React Fiber organiza la renderización en dos fases principales:
+
+- **Fase de Render (Reconciliación)**: Se construye o actualiza un árbol de componentes de manera asíncrona. React decide qué cambios deben aplicarse al DOM basándose en las prioridades.
+- **Fase de Commit**: Es sincrónica y rápida. Los cambios calculados en la fase de render se aplican al DOM real.
+
+React Fiber no cambia cómo los desarrolladores escriben código React, pero mejora significativamente el rendimiento y la flexibilidad de las aplicaciones React modernas. Es la base que permite que React maneje de manera eficiente aplicaciones cada vez más interactivas y complejas.
+
+<a id="rea24-1"></a>
+
+### **Que tener en cuenta para tener una buena performance en React** 💛
+
+[Volver al indice](#react-base)
+
+- Usar memorizacion para evitar renderizados innecesarios. Usar `useMemo` para valores y `useCallback` para funciones.
+
+```jsx
+import React, { useMemo, useCallback } from 'react';
+
+const Componente = ({ lista }) => {
+  const listaOrdenada = useMemo(() => lista.sort(), [lista]);
+  const manejarClick = useCallback(() => console.log('Clicked'), []);
+  return <button onClick={manejarClick}>Ordenar</button>;
+};
+```
+
+- Usa contextos (React Context) de manera adecuada para evitar actualizaciones globales innecesarias.
+- Evita la mutacion directa de objetos y arrays. Usa `useState` y `useReducer` para actualizar el estado de manera inmutable.
+- Divide la logica en componentes mas pequeños y reutilizables.
+- Usar la propiedad `key` cuando se renderizan listas para mejorar el rendimiento, ya que ayuda a React a identificar elementos únicos y realizar actualizaciones más eficientes.
+- Usar React Window o React Virtualized para renderizar grandes listas de elementos de manera eficiente.
+
+```jsx
+import { FixedSizeList as List } from 'react-window';
+
+const Row = ({ index, style }) => (
+  <div style={style}>Row {index}</div>
+);
+
+const App = () => (
+  <List height={150} itemCount={1000} itemSize={35} width={300}>
+    {Row}
+  </List>
+);
+```
+
+- Usa React.lazy y Suspense para cargar componentes bajo demanda y mejorar los tiempos de carga.
+- Usa herramientas como Webpack para dividir el código en partes más pequeñas y cargar solo lo necesario.
+- Limita el uso de operaciones manuales con el DOM que pueden interferir con la reconciliación de React.
+- Usa herramientas como className o bibliotecas como styled-components en lugar de pasar estilos inline directamente en los elementos. Evita renders excesivos de estilos dinámicos.
+- Usa Server-Side Rendering (SSR) con herramientas como Next.js para mejorar tiempos de carga inicial
+- Usa las herramientas de React para identificar problemas de rendimiento como React DevTools y React Profiler.
+- Optimización de imágenes, carga diferida y compresión de recursos para mejorar los tiempos de carga y la experiencia del usuario. Usa formatos modernos como WebP.
+
+<a id="rea39"></a>
+
+### **¿Qué es el Virtual DOM?** 💛
+
+[Volver al indice](#react-base)
+
+Para que React pueda efectuar esta suerte de “recarga parcial por pedazos” de una página, debe usar el Virtual DOM, que es una representación del DOM real.
+
+Cuando un elemento cambia, primero se actualiza el VDOM de forma muy rápida, luego, React compara este VDOM propio con el DOM real, y basándonos en sus diferencias, únicamente aplica los cambios necesarios para que ambos coincidan.
+
+Todo sale de app.js, que contiene X cantidad de componentes, y estos poseen Z cantidad de componentes en sí mismos. Si actualizamos a `app.js`, se actualiza la página entera, pero si actualizamos algo dentro de estos componentes, únicamente se actualizará de este componente “para arriba” en la jerarquía de componentes.
+
+Más arriba la jerarquía, más refrescos habrá. Un componente hijo, idealmente, no deberia necesitar modificar el estado del componente padre.
+
+- Aumenta la velocidad de la aplicacion
+- No acapara mucha memoria, hace que el uso de la misma sea mucho mas eficiente
+- Provee una capa adicional de Scripting, dandole un peso mas a la CPU
+
+![Virtual Dom](src/vdom.png)
+
+---
+
 <a id="rea10"></a>
 
 ### **Diferencia entre AngularJS y Angular**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#angular-base)
 
 AngularJS y Angular son dos frameworks de JavaScript desarrollados por Google, pero tienen diferencias significativas en cuanto a su arquitectura y características.
 
@@ -9286,21 +9455,25 @@ En resumen, AngularJS es el primer framework desarrollado por Google, que utiliz
 
 ### **¿Qué son los modulos en Angular?**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#angular-base)
 
 Las aplicaciones de Angular son Modulares, en Angular existe NgModules. Sirve para mantener la lógica de un flujo de trabajo de la aplicación. Por ejemplo, se tiene un e-commerce, con sus módulos correspondientes, usuarios vendedores, compradores, productos, etc..
 
 Son diseños lógicos que se encargan de trabajar dentro de la aplicación, se usan para poder importar librerías u otros módulos dentro de los mismos. Cada módulo hasta puede tener su propio ruteo.
 
+Se identifican por su nombre que tipicamente es `app.module.ts` o similares. Hoy en dia en las ultimas versiones de Angular se usan cada vez mas los componentes standalone, donde no es necesario el uso de modulos.
+
+---
+
 <a id="rea12"></a>
 
 ### **¿Qué es Property Binding?**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#angular-base)
 
 Es la forma que tiene Angular de controlar y cambiar las propiedades de los elementos HTML usando corchetes []
 
-```tsx
+```html
 <input [value]="empresa" [disabled]="habilitado"  />
 
 // Empresa y habilitado son datos dinamicos
@@ -9310,7 +9483,7 @@ Los corchetes (square brakets) hacen que Angular evalúe el lado derecho de la a
 
 A menudo, “interpolation” y “Property Binding” pueden lograr los mismos resultados. Los siguientes pares de enlaces hacen lo mismo.
 
-```tsx
+```html
 // Interpolacion
 <p><img src="{{itemImageUrl}}"> is the <i>interpolated</i> image.</p>
 
@@ -9326,7 +9499,7 @@ Se recomienda comprender los “Event binding” para entender el flujo de datos
 
 ### **¿Cuál es el flujo de datos una aplicación Angular?**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#angular-base)
 
 - Enlace unidireccional [] para enlazar desde la capa lógica (component.ts) a la vista (html).
 - Enlace unidireccional () para enlazar de la vista (html) a la capa lógica (component.ts).
@@ -9336,7 +9509,7 @@ Se recomienda comprender los “Event binding” para entender el flujo de datos
 
 ### **¿Qué es un Decorador en Angular?**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#angular-base)
 
 Indica como debe comportarse el componente. Dentro de este decorador, puedes observar el selector del componente (un nombre para el mismo), el template HTML y la hoja de estilos que usará.
 
@@ -9352,7 +9525,7 @@ Indica como debe comportarse el componente. Dentro de este decorador, puedes obs
 
 ### **Event Binding en Angular (Manejo de Eventos)**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#angular-base)
 
 ```tsx
 <button (click)="onSave()">Save</button>
@@ -9383,7 +9556,7 @@ handleClick($event: Event) {
 
 ### **Data Binding en Angular**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#angular-base)
 
 El atributo **ngModel** permite el **intercambio de datos de forma bidireccional** entre el componente y la vista. Lo que suceda en el componente, se verá reflejado en la vista. Lo que se suceda en la vista, inmediatamente impactará en el componente.
 
@@ -9410,11 +9583,11 @@ import { FormsModule } from '@angular/forms';
 export class AppModule { }
 ```
 
-<a id="rea16-1"></a>
+<a id="angular-1"></a>
 
 ### **Que son los componentes standalone y cuando conviene utilizarlos?**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#angular-base)
 
 Son una característica introducida en Angular 14 que permite definir componentes sin necesidad de declararlos en un módulo (`NgModule`). En lugar de eso, los componentes standalone se definen utilizando la propiedad `standalone: true` en el decorador `@Component`, y ellos mismos pueden importar directamente otros componentes, directivas, pipes, o módulos necesarios.
 
@@ -9478,11 +9651,11 @@ Conviene usar componentes standalone en las siguientes situaciones:
 
 Los componentes standalone simplifican la arquitectura de Angular al reducir la dependencia de módulos y alinear el framework con tendencias modernas en diseño de componentes. Conviene adoptarlos cuando buscas simplicidad, modularidad y mayor flexibilidad en proyectos nuevos o en escenarios específicos como componentes reutilizables o lazy loading.
 
-<a id="rea16-2"></a>
+<a id="angular-2"></a>
 
-### **¿Podrías describir algunos problemas de rendimiento que hayas enfrentado en aplicaciones Angular y cómo los resolviste?**
+### **¿Podrías describir algunos problemas de rendimiento que hayas enfrentado en aplicaciones Angular y cómo los resolviste?** 💛
 
-[Volver al indice](#rea-base)
+[Volver al indice](#angular-base)
 
 Claro, aquí tienes una descripción de problemas de rendimiento comunes en aplicaciones Angular y las estrategias que he utilizado para resolverlos.
 
@@ -9648,6 +9821,84 @@ Claro, aquí tienes una descripción de problemas de rendimiento comunes en apli
 
 Optimizar aplicaciones Angular requiere identificar los cuellos de botella específicos, ya sea en el DOM, la carga de datos o las dependencias. Las herramientas de Angular como `OnPush`, `Lazy Loading` y `Virtual Scroll`, junto con estrategias como el uso de cache y optimización de recursos, pueden mejorar significativamente el rendimiento.
 
+---
+
+<a id="rea48"></a>
+
+### **¿De qué hablamos cuando hablamos de una SPA (Single Page App)?**
+
+[Volver al indice](#fe-base)
+
+Una SPA (Single Page Application) son apps web que simulan ser una única página con contenido dinámico. La idea es darle la “ilusión” al usuario de que está navegando una aplicación de escritorio, que no recarga, no se satura, etc.
+
+Las únicas recargas, o pantallas de carga, son cuando se está trayendo información del servidor. No se recarga toda la página, aun así, solo ciertas partes, dando a una experiencia mucho más fluida.
+
+En resumen:
+
+- Se evita la constante recarga entera de la página
+- La página no se satura ni realiza peticiones constantes al servidor. Únicamente se pide lo necesario.
+
+<a id="rea50"></a>
+
+### **(Performance) Como evitar mandar muchos eventos inutiles, por ejemplo, ejecutar un search por letra?**
+
+[Volver al indice](#rea-base)
+
+Debounce es un termino de electronica que ayuda a que, por ejemplo, si apretamos varias veces un boton, no se manden muchas veces las instrucciones
+
+```jsx
+function useDebounce(value: string, delay: number) {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+
+  useEffect(() => {
+      const timeoutId = setTimeout(() => {
+        setDebouncedValue(value)
+    }, delay)
+
+    return () => clearTimeout(timeoutId)
+}, [value])
+
+return debouncedValue;
+}
+
+// Luego en el component que tiene el search
+
+const queryDebouncedValue = useDebounce(query, 300)
+
+useEffect(() => {
+api.search(queryDebouncedValue).then(setProducts);
+}, [queryDebouncedValue]);
+```
+
+<a id="rea51"></a>
+
+### **Que es async rendering?**
+
+[Volver al indice](#rea-base)
+
+Permite que el renderizado pueda interrumpirse, permitiendo renderizar varios arboles de componentes a la vez sin necesidad de bloquear el hilo principal del navegador.
+
+<a id="rea53"></a>
+
+### **Para que son los eventos sinteticos (SyntheticEvent)?**
+
+[Volver al indice](#rea-base)
+
+Funcionan de la misma forma que los eventos normales de los exploradores. Los eventos sinteticos usan codigo que puede ser aplicado en multiples exploradores web mientras que los eventos normales se enfocan en un solo navegador
+
+Ayuda a que el dev no se preocupe tanto en como manejar un evento segun el navegador para el cual esta desarrollando, ya que estos eventos simulan muchos eventos y garantiza el mismo comportamiento.
+
+<a id="rea54"></a>
+
+### **Que significa prop drilling y como evitarlo?**
+
+[Volver al indice](#rea-base)
+
+Es cuando las props que se comparten acumulan demasiadas dependencias. Da lugar a flujos de datos profundos, dificiles de identificar y refactorizar. Dos formas de resolverlo son:
+
+- Composicion de componentes frente a un mismo juego de datos compartido por varios componentes
+- Redux o API Context, aptas para escenarios mas complejos donde conviene manejar un estado global. 
+
 
 <a id="rea17"></a>
 
@@ -9689,173 +9940,6 @@ Para testear el rendimiento de una web se puede utilizar Lighthouse de Google en
 
 **Tener varias zonas de disponibilidad**: Esto para evitar la latencia en la obtencion de recursos.
 
-<a id="rea18"></a>
-
-### **¿Que es Redux?**
-
-[Volver al indice](#rea-base)
-
-Redux permitira manejar el state global de manera facil conforme van creciendo, tambien ayuda a manejar los datos dependiendo de las acciones del usuario. Fue creado por un dev del equipo de React.
-
-- Solo hay 1 state principal
-- El state cambia depende lo que pase en la interfaz de usuario
-- Solo ciertas funciones cambiarán el State
-- Solo se hace un cambio a la vez
-
-<a id="rea19"></a>
-
-### **Cuando conviene usar Redux?**
-
-[Volver al indice](#rea-base)
-
-Si la app es pequeña, se recomienda ContextAPI o hooks. Si es grande, y va a ser mantenido por varias personas, se recomeinda Redux
-
-- No hace la app mas rapida
-- Existe Redux para muchos frameworks, no solo React
-- No es necesario usarlo en cada proyecto
-
-<a id="rea20"></a>
-
-### **¿Cuales son los beneficios de usar Redux?**
-
-[Volver al indice](#rea-base)
-
-- Como su estructura es muy estricta, es muy facil de mantener y de organizar, tambien es muy estable.
-- Da una fiable representacion del servidor, es muy util especialmente para presentaciones preliminares. Puede optimizar, por ejemplo, motores de busqueda.
-- Provee muchas herramientas para los devs
-- Es facil de probar, las funciones de redux y el codigo en si son pequeñas y atomicas.
-
-<a id="rea21"></a>
-
-### **Redux vs ContextAPI**
-
-[Volver al indice](#rea-base)
-
-**Context**
-
-- Context es una herramienta de React que permite pasar datos a traves del arbol de componentes sin tener que pasar props manualmente en cada nivel
-- Context es una buena opcion para datos que son necesarios en muchos componentes de la aplicacion
-- Context es una buena opcion para datos que no cambian frecuentemente
-- Context viene integrado a React
-- Es facil de entender para principiantes
-- No requiere mucho codigo boilerplate
-
-**Redux**
-
-- Redux es una libreria de manejo de estado que permite manejar el estado de la aplicacion de manera predecible
-- Redux es una buena opcion para datos que cambian frecuentemente
-- Redux es una buena opcion para aplicaciones grandes con muchos componentes
-- Redux no viene integrado a React, se debe instalar por separado
-
-<a id="rea22"></a>
-
-### **¿Cual es el flujo de Redux?**
-
-[Volver al indice](#rea-base)
-
-Store
-
-- Contiene el state y solo hay un Store por app
-
-Dispatch
-
-- Ejecuta una accion, es una funcion que maneja un state
-
-```jsx
-dispatch(addProductOk(product))
-```
-
-Actions
-
-- Objetos en JS con tipo y payload (datos que modificaran el state)
-- Los componentes no deben modificar el state directamente, se modifica por medio de funciones llamadas Actions
-
-Subscribe
-
-- Similar al event listener para el state
-
-Reducer
-
-- Funciones que saben que hacer con las acciones y el payload
-
-<a id="rea23"></a>
-
-### **Que es ContextAPI?**
-
-[Volver al indice](#rea-base)
-
-Es una manera de tener un estado global sin dependencias como Redux, ya que viene desde React 16.3.
-
-Se pueden pasar state o funciones desde el componente principal hacia los hijos, nos evitamos pasarlo por cada uno de los componentes, es algo global.
-
-Cuenta con el hook `useContext` que facilita el acceso a los datos del Context.
-
-Children refiere a los componentes dentro del Provider que recibirán estos datos.
-
-Provider: De donde vienen los datos
-
-```jsx
-import {createContext} from 'react';
-
-const QuoteContext = createContext();
-
-const QuoteProvider = ({children}) => {
-  return (
-    <QuoteContext.Provider
-    value=({})>
-      {children}
-    </QuoteContext.Provider>
-  )
-}
-
-export { QuoteProvider }
-export default QuoteContext;
-```
-
-Dentro de value ponemos lo que queremos exportar para el resto de componentes, y luego, lo consumimos de la siguiente manera:
-
-```jsx
-// Donde entre llaves ponemos lo que queremos consumir de ese Context.
-const {} = useContext(QuoteContext);
-```
-
-<a id="rea24"></a>
-
-### **Que es React Fiber?**
-
-[Volver al indice](#rea-base)
-
-La arquitectura de React hizo que fuera muy facil trabajar no solo en web si no tambien en mobile (React Native) y en hasta aplicaciones de Realidad Virtual. Asi los dev de React decidieron separar su algoritmo de reconciliacion (el que compara los cambios entre DOM y VDOM) y el lienzo donde esos cambios se muestran (Web, Mobile, etc..)
-
-Fiber fue diseñado para mejorar el rendimiento, particularmente en aplicaciones que requieren animaciones, interacciones complejas y actualizaciones de gran volumen.
-
-React Fiber organiza la renderización en dos fases principales:
-
-- **Fase de Render (Reconciliación)**: Se construye o actualiza un árbol de componentes de manera asíncrona. React decide qué cambios deben aplicarse al DOM basándose en las prioridades.
-- **Fase de Commit**: Es sincrónica y rápida. Los cambios calculados en la fase de render se aplican al DOM real.
-
-React Fiber no cambia cómo los desarrolladores escriben código React, pero mejora significativamente el rendimiento y la flexibilidad de las aplicaciones React modernas. Es la base que permite que React maneje de manera eficiente aplicaciones cada vez más interactivas y complejas.
-
-<a id="rea24-1"></a>
-
-### **Que tener en cuenta para tener una buena performance en React** 💛
-
-[Volver al indice](#rea-base)
-
-- Usar memorizacion para evitar renderizados innecesarios. Usar `useMemo` para valores y `useCallback` para funciones.
-- Usa contextos (React Context) de manera adecuada para evitar actualizaciones globales innecesarias.
-- Evita la mutacion directa de objetos y arrays. Usa `useState` y `useReducer` para actualizar el estado de manera inmutable.
-- Divide la logica en componentes mas pequeños y reutilizables.
-- Usar la propiedad `key` cuando se renderizan listas para mejorar el rendimiento, ya que ayuda a React a identificar elementos únicos y realizar actualizaciones más eficientes.
-- Usar React Window o React Virtualized para renderizar grandes listas de elementos de manera eficiente.
-- Usa React.lazy y Suspense para cargar componentes bajo demanda y mejorar los tiempos de carga.
-- Usa herramientas como Webpack para dividir el código en partes más pequeñas y cargar solo lo necesario.
-- Limita el uso de operaciones manuales con el DOM que pueden interferir con la reconciliación de React.
-- Usa herramientas como className o bibliotecas como styled-components en lugar de pasar estilos inline directamente en los elementos. Evita renders excesivos de estilos dinámicos.
-- Usa Server-Side Rendering (SSR) con herramientas como Next.js para mejorar tiempos de carga inicial
-- Usa las herramientas de React para identificar problemas de rendimiento como React DevTools y React Profiler.
-- Optimización de imágenes, carga diferida y compresión de recursos para mejorar los tiempos de carga y la experiencia del usuario. Usa formatos modernos como WebP.
-
 <a id="rea25"></a>
 
 ### **Para que sirven las claves o Keys en React?**
@@ -9863,6 +9947,8 @@ React Fiber no cambia cómo los desarrolladores escriben código React, pero mej
 [Volver al indice](#rea-base)
 
 Se usan las claves para diferenciar entre simples elementos DOM virtuales con los que son unicos. Ayudan a React a reciclar elementos DOM existentes para que la libreria pueda ejecutarse y renderizarse mas rápidamente, ya que React recicla los elementos que no fueron modificados de los que si para no renderizarlos cuando no es necesario. Este elemento se usa mas que nada en iteraciones de listas.
+
+Esto optimiza el proceso de **reconciliacion**
 
 El key no afecta el renderizado en si, es por eso que igualmente funciona el render, solo se muestra un warning.
 
@@ -9874,6 +9960,11 @@ const listItems = numbers.map((number) =>
   </li>
 );
 ```
+
+Su no uso ocasiona
+
+- Renderizados innecesarios, ya que no se pueden identificar que elementos especificos cambiaron
+- Pérdida de estado en los componentes (por ejemplo, un input pierde su texto cuando cambia el orden de la lista).
 
 <a id="rea26"></a>
 
@@ -10080,26 +10171,6 @@ Es Search Engine Optimization, es lo que hace que un sitio sea encontrado por Go
 
 - Crear diseños accesibles, crear paginas para los usuarios, no solo para los motores de busqueda. Un ejemplo para testear la accesibilidad, es cargar la pagina sin JS habilitado.
 
-<a id="rea39"></a>
-
-### **¿Qué es el Virtual DOM?**
-
-[Volver al indice](#rea-base)
-
-Para que React pueda efectuar esta suerte de “recarga parcial por pedazos” de una página, debe usar el Virtual DOM, que es una representación del DOM real.
-
-Cuando un elemento cambia, primero se actualiza el VDOM de forma muy rápida, luego, React compara este VDOM propio con el DOM real, y basándonos en sus diferencias, únicamente aplica los cambios necesarios para que ambos coincidan.
-
-Todo sale de app.js, que contiene X cantidad de componentes, y estos poseen Z cantidad de componentes en sí mismos. Si actualizamos a `app.js`, se actualiza la página entera, pero si actualizamos algo dentro de estos componentes, únicamente se actualizará de este componente “para arriba” en la jerarquía de componentes.
-
-Más arriba la jerarquía, más refrescos habrá. Un componente hijo, idealmente, no deberia necesitar modificar el estado del componente padre.
-
-- Aumenta la velocidad de la aplicacion
-- No acapara mucha memoria, hace que el uso de la misma sea mucho mas eficiente
-- Provee una capa adicional de Scripting, dandole un peso mas a la CPU
-
-![Virtual Dom](src/vdom.png)
-
 <a id="rea40"></a>
 
 ### **Qué es el namespacing de JS?**
@@ -10277,7 +10348,7 @@ var myObjeto = new Object({
 {nombre: "Diego", apeliido: "Querales", edad: 25}
 ```
 
-<a id="rea48"></a>
+<a id="js1"></a>
 
 ### **Document.ready vs Window.onload**
 
