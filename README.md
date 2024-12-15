@@ -62,6 +62,7 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 | [.map() en JavaScript](#ent2) |
 | [.filter() en JavaScript](#ent3) |
 | [.reduce() en JavaScript](#ent4) |
+|[Set vs Map vs WeakMap vs WeakSet en Javascript](#ent4-1)|
 | [Diferencia entre let, var y const](#var6) |
 | [Que es la complejidad algoritmica?](#ent5) |
 | [¿Qué diferencias fundamentales existen entre un stack y una queue? ¿Cuándo usarías cada uno?](#ent6) |
@@ -140,6 +141,8 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 | [Posibles mejoras al proceso CI-CD](#ent64) |
 | [Que sucede cuando escribo una URL en el navegador y hago click en Enter?](#har19) |
 | [Explicar que es CORS](#ent67) |
+| [Como escalar una aplicacion NodeJS](#ent73) |
+| [Como escalar una aplicacion Frontend de la mejor forma](#ent74)|
 
 
 <a name="alg-base"></a>
@@ -1518,6 +1521,107 @@ console.log(resultado); // [2, 4, 6]
 
 Lo que se debe tener en cuenta en la funcion callback dentro del `filter` es que debe devolver un valor booleano, que si es `true` incluye al elemento en el nuevo array, y viceversa, de lo contrario obtendremos un array vacio como resultado.
 
+<a id="ent4"></a>
+
+### **.reduce() en JavaScript**
+
+[Volver al indice](#entrevista-base)
+
+Generalmente se utiliza para sumarizar de alguna forma los elementos de un array, ya sea sumandolos, concatenandolos, etc.
+
+```javascript
+array.reduce(reducerFunction(accumulator, currentValue, currentIndex, originalArray), initialValue)
+```
+
+`initialValue` en el caso de las funciones de sumatoria en general es 0, pero puede ser cualquier valor que se desee.
+
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+const sum = numbers.reduce((accumulator, currentValue) => {
+  return accumulator + currentValue;
+}, 0); // Initial value is 0
+
+console.log(sum); // Output: 15
+```
+
+<a id="ent4-1"></a>
+
+### **Set vs Map en Javascript**
+
+[Volver al indice](#entrevista-base)
+
+Los 3 son colecciones pero tienen caracteristicas distintas entre si.
+
+`Set` no permite valores repetidos, y no es de tipo clave-valor. Sus metodos son:
+
+```javascript
+const set = new Set();
+```
+
+- `add(value)`: Agrega un valor al set
+- `delete(value)`: Elimina un valor del set
+- `has(value)`: Devuelve `true` si el valor existe en el set, `false` en caso contrario
+- `clear()`: Elimina todos los valores del set
+- `size`: Devuelve la cantidad de valores en el set
+
+En cambio `Map` es un mapa de clave-valor que permite valores repetidos pero no kjey repetidos. Sus metodos son:
+
+```javascript
+const map = new Map();
+```
+
+- `set(key, value)`: Agrega un par clave-valor al mapa
+- `get(key)`: Devuelve el valor asociado a la clave
+- `delete(key)`: Elimina un par clave-valor del mapa
+- `has(key)`: Devuelve `true` si la clave existe en el mapa, `false` en caso contrario
+- `clear()`: Elimina todos los pares clave-valor del mapa
+- `size`: Devuelve la cantidad de pares clave-valor en el mapa
+
+`WeakMap` es un tipo de `Map` que no permite claves de tipo primitivo, solo objetos. No tiene metodos para iterar sobre sus elementos, ni tampoco tiene el metodo `size`. Es útil en situaciones donde se necesita asociar datos adicionales a un objeto sin interferir con la recolección de basura del objeto. Por ejemplo, en la gestión de metadatos de objetos que son creados y destruidos dinámicamente, o para mantener información privada de instancias en bibliotecas y frameworks sin exponer esos datos en las propias instancias.
+
+```javascript
+let weakMap = new WeakMap();
+let obj = {};
+
+// Añadir datos al WeakMap
+weakMap.set(obj, { key: "value" });
+
+console.log(weakMap.get(obj)); // Output: { key: "value" }
+
+// Verificar si una clave existe
+console.log(weakMap.has(obj)); // Output: true
+
+// Eliminar una entrada
+weakMap.delete(obj);
+console.log(weakMap.has(obj)); // Output: false
+
+// El objeto obj ya no tiene otras referencias, puede ser recolectado por el recolector de basura
+obj = null; // Ahora weakMap está vacío
+```
+
+En resumen, WeakMap proporciona una forma segura de memoria para asociar datos a objetos mientras permite que esos objetos sean recolectados por el recolector de basura cuando ya no son necesarios, ayudando a prevenir problemas de memoria en aplicaciones grandes y complejas.
+
+Tambien existe el `WeakSet` que es similar al `WeakMap` pero solo acepta objetos y no tiene metodos para iterar sobre sus elementos. Mismo caso que este, es util para asociar datos a objetos sin interferir con la recoleccion de basura.
+
+```javascript
+let weakSet = new WeakSet();
+
+let obj = {};
+let obj2 = {};
+
+// Añadir objetos al WeakSet
+weakSet.add(obj);
+weakSet.add(obj2);
+
+console.log(weakSet.has(obj)); // Output: true
+console.log(weakSet.has(obj2)); // Output: true
+
+// Eliminar un objeto
+weakSet.delete(obj);
+console.log(weakSet.has(obj)); // Output: false
+```
+
+Ninguno de los `weak` es enumerable, es decir, no se pueden iterar sobre ellos.
 
 ---
 
