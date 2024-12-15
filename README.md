@@ -12,6 +12,7 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 
 ## Tabla de Contenidos
 
+- [Preguntas mas comunes en entrevistas de trabajo para un FE Engineer](#entrevista)
 - [Algoritmos y manejo de datos](#alg-base)
   - [Algoritmos de Ordenamiento](#alg-base-ord)
   - [Complejidad Algorítmica](#alg-base-comp)
@@ -23,6 +24,8 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
   - [Programación Funcional y Orientada a Objetos](#alg-base-obj)
   - [Manejo de Eventos y Asincronía](#alg-base-async)
 - [Metodos y Operadores en Javascript](#alg-base-2)
+  - [Estructuras Avanzadas y Generics](#alg-base-3)
+  - [Buenas Prácticas y Casos Comunes](#alg-base-4)
 - [Organizacion en Software - Derecho en IT](#cic-base)
 - [Gestion de proyectos - Liderazgo](#cic-base-2)
 - [Typescript](#typ-base)
@@ -41,6 +44,103 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 - [Bases de Datos](#bd-base)
 - [Seguridad](#seg-base)
 - [Accesibilidad](#acc-base)
+
+<a name="entrevista"></a>
+
+## [Preguntas mas comunes en entrevistas de trabajo para un FE Engineer](#entrevista-base)
+
+Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de trabajo para un Frontend Engineer. Engloba conceptos comunmente preguntados sobre Javascript, patrones de disenio, mejora de performance, etc. Tambien se agregan preguntas sobre React, Redux y Angular en esta ocasion.
+
+| Preguntas JavaScript |
+|----------|
+| [Parametros por valor y por referencia en Javascript](#ent0) |
+| [Prototype en Javascript](#ent0-1) |
+| [Spread Operator](#ent0-3) |
+|[Spread vs Rest Operator](#ent0-4)|
+| [Null vs undefined vs never](#ent0-2) |
+| [.sort() en JavaScript](#ent1) |
+| [.map() en JavaScript](#ent2) |
+| [.filter() en JavaScript](#ent3) |
+| [.reduce() en JavaScript](#ent4) |
+| [Diferencia entre let, var y const](#var6) |
+| [Que es la complejidad algoritmica?](#ent5) |
+| [¿Qué diferencias fundamentales existen entre un stack y una queue? ¿Cuándo usarías cada uno?](#ent6) |
+| [Paradigma OOP](#ent7) |
+| [Paradigma Funcional](#ent8) |
+| [Que es una funcion lambda?](#ent8-1) |
+| [Paradigma Reactiva Funcional (FRP)](#ent9) |
+|[¿Qué es el principio de Encapsulación y por qué es importante en OOP?](#ent10)|
+| [Principios SOLID](#ent11) |
+| [Que es la inyeccion de dependencias?](#ent12) |
+| [Explica el concepto de "pure function" y por qué es fundamental en la programación funcional.](#ent13) |
+| [¿Qué ventajas ofrece la inmutabilidad al manejar estructuras de datos? Proporciona un ejemplo práctico.](#ent14) |
+| [Currying](#ent15) |
+| [Memoization](#ent16) |
+| [¿Cuáles son las diferencias clave entre HTTP/1.1, HTTP/2 y HTTP/3? ¿Por qué se considera HTTP/2 más eficiente que HTTP/1.1?](#ent17) |
+| [Explica las diferencias entre REST y GraphQL. ¿Cuándo usarías uno sobre el otro?](#ent18) |
+| [Cuales son los ataques mas comunes en la web? Nombrar tambien sus protecciones](#ent19) |
+| [¿Qué es el concepto de "lazy loading" y cómo se implementa en una aplicación web?](#ent20) |
+| [Mejorar performance en Javascript](#ent21) |
+| [Qué es un "array-like" en Javascript?](#alg26) |
+| [Cuales son las funciones array de JavaScript?](#alg27)  |
+| [Mejorar performance en una aplicacion React](#ent24) |
+| [Mejorar performance en una aplicacion Angular](#ent25) |
+| [Critical Rendering Path](#ent22) |
+| [¿Cuáles son las diferencias entre localStorage, sessionStorage y las cookies?](#ent23) |
+| [Web y Service Workers](#ent26) |
+| [Event Loop](#ent27) |
+| [Obfuscation and Minification](#ent55) |
+| [Micro y Macro Tasks](#ent28) |
+| [Promises](#ent29) |
+| [Async Await](#ent30) |
+| [Callbacks](#ent31) |
+| [Beneficios de usar Webpack o Rollup](#ent32) |
+| [¿Qué es el concepto de "tree shaking" y cómo se aplica en una aplicación JavaScript?](#ent33) |
+| [Ciclos de vida de un componente en React](#ent34) |
+| [Mejoras en el ciclo de vida](#ent68) |
+| [Redux](#ent34) |
+| [Redux Async Flow](#ent53) |
+| [Context API](#ent35) |
+| [Hooks en React](#ent36) |
+| [useEffect en React](#ent37) |
+| [useActionState en React](#ent69) |
+| [useMemo en React](#ent38) |
+| [startTransition en React](#ent70) |
+| [useFormStatus en React](#ent71) |
+| [useOptimistic en React](#ent72) |
+| [useCallback en React](#ent39) |
+| [useRef en React](#ent49) |
+| [useReducer en React](#ent50) |
+| [Virtual DOM](#ent51) |
+| [Que mejoras hay en la migracion de AngularJS a Angular?](#ent37) |
+| [Decorators en Angular](#ent65) |
+| [¿Qué es RxJS y qué problemas resuelve en el desarrollo de aplicaciones?](#ent38) |
+| [¿Qué es un Observable en RxJS y cómo difiere de una Promesa en JavaScript?](#ent39) |
+| [Explica la diferencia entre un Observable "cold" y "hot". Proporciona un ejemplo práctico de cada uno.](#ent40) |
+| [Beneficios de usar un CDN](#ent41) |
+| [Como organizarias el code reuse en una aplicacion?](#ent42) |
+| [Que es un higher order component?](#ent43) |
+| [Patrones de disenio en React](#ent44) |
+| [Patrones de disenio en Angular](#ent45) |
+| [Metodos de migracion de AngularJs a Angular](#ent59) |
+| [Patrones de disenio en Frontend](#ent46) |
+| [Antipatrones en Frontend](#ent47) |
+| [Que es el Server Side Rendering?](#ent48) |
+| [Static site rendering](#ent52) |
+| [Arquitectura de microfrontends](#ent54) |
+| [¿Qué es el concepto de "code splitting" y cómo se implementa en una aplicación web?](#ent56) |
+| [¿Qué es el concepto de "serverless" y cómo se implementa en una aplicación web?](#ent57) |
+| [¿Qué es el concepto de "progressive web app" y cómo se implementa en una aplicación web?](#ent58) |
+| [Es la metodologia Agile recomendable para todos los proyectos?](#ent60) |
+| [Que es un MVP?](#ent61) |
+| [Metodologias de estimacion de tareas](#ent66) |
+| [Distintos tipos de testing en Frontend](#ent62) |
+| [Git vs Mercurial](#ent63) |
+| [Continuous Integration, Continuous Delivery, Continuous Deployment](#ent65) |
+| [Posibles mejoras al proceso CI-CD](#ent64) |
+| [Que sucede cuando escribo una URL en el navegador y hago click en Enter?](#har19) |
+| [Explicar que es CORS](#ent67) |
+
 
 <a name="alg-base"></a>
 
@@ -210,8 +310,10 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [Export Fallback con export default](#var18) |
 | [Diferencia entre import y require](#var9) |
 | [Función Object.freeze](#var8) |
-|[¿Qué es la destructuración y cómo se utiliza? ](#var8-2) 💛|
+|[¿Qué es la destructuración y cómo se utiliza?](#var8-2) 💛|
 |[¿Cómo se diferencia un Spread Operator de un Rest Operator?](#var8-3) 💛|
+
+<a name="alg-base-3"></a>
 
 | Estructuras Avanzadas y Generics |
 |----------|
@@ -220,6 +322,8 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [Recursividad](#alg52) |
 | [Factorial](#alg53) |
 | [¿Qué son los generics y cómo se implementan en TypeScript?](#alg53-2) 💛|
+
+<a name="alg-base-4"></a>
 
 | Buenas Prácticas y Casos Comunes |
 |----------|
@@ -1074,6 +1178,346 @@ inspección profunda de paquetes?|
 | ¿Cómo influye el manejo adecuado del focus en la accesibilidad para usuarios
 de teclado?|
 |¿Qué reglas de CSS son esenciales para garantizar una experiencia accesible  en un sitio web?|
+
+---
+
+ <a id="entrevista-base"></a>
+
+# Preguntas mas comunes en entrevistas de trabajo para un FE Engineer
+
+<a id="ent0"></a>
+
+### **Parametros por valor y por referencia en Javascript**
+
+[Volver al indice](#entrevista-base)
+
+En Javascript podemos pasar como parametro valores que pueden ser por valor en si mismo o por referencia, es decir, pasamos el puntero de memoria que apunta a la direccion de memoria donde se encuentra el valor.
+
+**Parametros por valor**
+
+Esto se hace usualmente con elementos tipo `number`, `string`, `boolean`, `null`, `undefined`, `symbol`, `bigint`.
+Si tenemos el valor en una variable, debemos realizar la re-asignacion para cambiar el valor del mismo.
+
+```javascript
+let a = 1;
+
+// Aca estamos modificando el valor de a
+function modificarValor(a) {
+  a = 2;
+}
+
+// Si bien estamos modificando el 1 por 2, el valor de a sigue siendo 1
+function noModificarValor(a) {
+  a++;
+}
+```
+
+En cambio en el caso de variables del tipo objeto, arrays, entre otros, estos son pasados por referencia, por lo que si modificamos el valor de un objeto o array, este se vera reflejado en la variable original.
+
+```javascript
+let obj = { a: 1 };
+
+// Aca estamos modificando el valor de a, ya que no llega el valor de objeto, si no el puntero de memoria
+function modificarValor(obj) {
+  obj.a = 2;
+}
+
+let array = [1, 2, 3];
+
+// Aca estamos modificando el valor de la posicion 0
+function modificarArray(array) {
+  array[0] = 2;
+}
+```
+
+<a id="ent0-1"></a>
+
+### **Prototype en Javascript**
+
+[Volver al indice](#entrevista-base)
+
+`Prototype` permite que objetos y funciones en Javascript compartan propiedades y metodos entre si. 
+
+Todos los objetos en JS tienen una propiedad interna llamada `[[Prototype]]` al que se accede con `__proto__` o configurarla con `Object.create()`.
+Las funciones al ser tambien objetos en JS tienen una propiedad tambien llamada `prototype`
+
+```javascript
+const animal = {
+  hacerSonido: function () {
+    console.log("El animal hace un sonido");
+  },
+};
+
+const perro = {
+  nombre: "Firulais",
+};
+
+// Vinculamos el prototipo de "perro" al objeto "animal"
+Object.setPrototypeOf(perro, animal);
+
+// Ahora "perro" puede usar el método de "animal"
+perro.hacerSonido(); // El animal hace un sonido
+```
+
+`hacerSonido` no esta definido en `perro`, pero lo JS lo busco en su prototipo `animal`
+
+```javascript
+function Persona(nombre) {
+  this.nombre = nombre;
+}
+
+// Agregamos un método al prototipo de Persona
+Persona.prototype.saludar = function () {
+  console.log(`Hola, me llamo ${this.nombre}`);
+};
+
+// Creamos una nueva instancia de Persona
+const juan = new Persona("Juan");
+
+// Llamamos al método saludar
+juan.saludar(); // Hola, me llamo Juan
+```
+
+Hay algo llamado `prototype chain`, que es una cadena de prototipos que se va formando cuando se busca una propiedad o metodo en un objeto. Si no se encuentra en el objeto, JS busca en el prototipo, y si no se encuentra ahi, busca en el prototipo del prototipo, y asi sucesivamente. Al final, si no hay resultados, se devuelve `undefined`.
+
+Todos los objetos de JS heredan metodos de un Prototype, `Object.prototype` es el eslabon mas alto de la cadena de herencia.
+
+```javascript
+const arr = [1, 2, 3];
+
+// Los métodos como `push` están en el prototipo de Array
+console.log(arr.__proto__ === Array.prototype); // true
+
+// El prototipo de Array.prototype es Object.prototype
+console.log(Array.prototype.__proto__ === Object.prototype); // true
+
+// El final de la cadena de prototipos es null
+console.log(Object.prototype.__proto__); // null
+```
+
+En resumen, prototype es la base del funcionamiento de objetos y de la herencia en JS.
+
+<a id="ent0-3"></a>
+
+### **Spread Operator**
+
+[Volver al indice](#entrevista-base)
+
+Es un operador introducido en ES6 donde se nos permite expandir elementos de un array o propiedades de un objeto en lugares donde se esperan argumentos o elementos.
+
+Basicamente descompone los elementos de objetos o arrays. 
+
+```javascript
+const numeros = [1, 2, 3];
+const masNumeros = [...numeros, 4, 5];
+
+console.log(masNumeros); // [1, 2, 3, 4, 5]
+
+
+// Clonar un array (Ya que recordemos, los arrays son pasados por referencia)
+const original = [1, 2, 3];
+const copia = [...original];
+
+copia.push(4);
+
+
+// La copia es superficial. Si los elementos del array son objetos, solo se copia la referencia.
+console.log(original); // [1, 2, 3]
+console.log(copia);    // [1, 2, 3, 4]
+
+// Clonar objetos
+
+const usuario = { nombre: "Juan", edad: 30 };
+const copiaUsuario = { ...usuario };
+
+copiaUsuario.edad = 31;
+
+console.log(usuario);       // { nombre: "Juan", edad: 30 }
+console.log(copiaUsuario);  // { nombre: "Juan", edad: 31 }
+
+
+// Combinar objetos
+
+const direccion = { ciudad: "Madrid", pais: "España" };
+const usuario = { nombre: "Juan", ...direccion };
+
+console.log(usuario);
+// { nombre: "Juan", ciudad: "Madrid", pais: "España" }
+
+// Descomponer el String en un array de char
+
+const texto = "Hola";
+const caracteres = [...texto];
+
+console.log(caracteres); // ['H', 'o', 'l', 'a']
+```
+
+<a id="ent0-4"></a>
+
+### **Spread vs Rest Operator**
+
+[Volver al indice](#entrevista-base)
+
+Spread se utiliza para descomponer elementos complejos como array u objetos. Rest se le dice cuando al mismo operador se lo usa para agrupar elementos, por ejemplo, cuando tengo una funcion que recibe X cantidad de parametros no definido en cantidad.
+
+```javascript
+
+function ejemplo(...parametros) {
+  console.log(parametros);
+}
+
+ejemplo(1, 2, 3, 4, 5); // [1, 2, 3, 4, 5]
+
+```
+
+El operador es el mismo pero su nombre depende del contexto en donde esten siendo usados. 
+
+<a id="ent0-2"></a>
+
+### **Null vs undefined vs never**
+
+[Volver al indice](#entrevista-base)
+
+`null` y `undefined` son valores que existen tanto en JS como en TS, pero `never` es propio de TS.
+
+`null` es ningun valor en particular, califica como inicializacion en si mismo. 
+`undefined` es el valor por defecto de una variable que no ha sido inicializada.
+`never` es un tipo que representa un valor que nunca sucedera. Aparece seguido en errores de compilacion cuando se declara un array pero, o no se inicializa o no se declara de que tipo es, y se intenta hacer alguna operacion con la misma.
+
+```typescript
+let a: null = null;
+let b: undefined = undefined;
+
+let c: never = (() => {
+  throw new Error("Error");
+})();
+```
+
+<a id="ent1"></a>
+
+### **.sort() en JavaScript**
+
+[Volver al indice](#entrevista-base)
+
+Esta funcion modifica al array original.
+
+```javascript
+array.sort*([compareFunction])
+```
+
+Es la funcion que se utiliza para ordenar elementos de un array. En casos de numeros no compuestos (es decir de un solo digito) funciona bien en su forma sin parametros extra:
+
+```javascript
+
+const numeros = [3, 1, 2];
+
+// Ordena los elementos de menor a mayor
+numeros.sort();
+```
+
+Pero en caso de numeros o palabras compuestas, la funcion en si misma realiza un Orden lexicográfico, no numérico, entonces el funcionamiento debe ser llevado a cabo de otra forma:
+
+```javascript
+const numeros = [10, 20, 1, 2];
+
+// Ordena los elementos de menor a mayor
+numeros.sort((a, b) => a - b);
+
+// Cuando esa resta sea negativa, a va antes que b, si es positiva, b va antes que a
+
+// En el caso de palabras
+const palabras = ["manzana", "banana", "cereza"];
+
+// Ordena los elementos alfabéticamente
+palabras.sort((a, b) => a.localeCompare(b));
+```
+
+a - b devuelve:
+
+- Un número negativo si a < b (debe aparecer antes).
+- Un número positivo si a > b (debe aparecer después).
+- 0 si son iguales.
+
+En caso de una ordenacion de arrays donde pueden encontrarse elementos `null` o `undefined`, se puede utilizar la siguiente funcion:
+
+```javascript
+const numeros = [10, 20, 1, 2, null, undefined];
+
+numeros.sort((a, b) => {
+  if (a == null) {
+    return 1;
+  }
+  if (b == undefined) {
+    return -1;
+  }
+  return a - b;
+});
+```
+
+Esto lo que hace es enviar a los elementos `null` al final del array, y a los `undefined` al principio. Si este caso de uso no se tiene en cuenta, la funcion `sort` devolvera `undefined` en caso de encontrar un elemento `null` o `undefined`.
+
+<a id="ent2"></a>
+
+### **.map() en JavaScript**
+
+[Volver al indice](#entrevista-base)
+
+Es una funcion que no modifica el array original, sino que devuelve un nuevo array con los elementos modificados.
+
+```javascript
+array.map(callback(element, index, array), thisArg)
+```
+
+Esta funcion ejecuta la funcion callback que se le envia como parametro en cada elemento del array
+
+```javascript
+const numeros = [1, 2, 3, 4];
+const duplicados = numeros.map(num => num * 2);
+
+console.log(duplicados); // [2, 4, 6, 8]
+console.log(numeros);    // [1, 2, 3, 4] (el array original no se modifica)
+```
+
+Hay que estar atento a que la funcion de callback devuelva algo, de lo contrario, el array resultante tendra elementos `undefined`.
+
+`map()` puede ser encadenado con otros metodos como `filter()` o `reduce()`
+
+```javascript
+const numeros = [1, 2, 3, 4, 5, 6];
+
+const paresDuplicados = numeros
+  .filter(num => num % 2 === 0) // Filtrar números pares
+  .map(num => num * 2);         // Multiplicarlos por 2
+
+console.log(paresDuplicados); // [4, 8, 12]
+```
+
+La diferencia entre el uso de `map()` y un recorrido `forEach` es que `map` devuelve un array nuevo, mientras que `forEach` no devuelve nada, solo itera.
+
+<a id="ent3"></a>
+
+### **.filter() en JavaScript**
+
+[Volver al indice](#entrevista-base)
+
+Es un metodo que tambien devuelve un nuevo array, pero con los elementos que cumplan con la condicion que se le pasa como parametro.
+
+```javascript
+array.filter(callback(element, index, array), thisArg)
+```
+
+Por ejemplo, si quiero filtrar los elementos pares de un array:
+
+```javascript
+const numeros = [1, 2, 3, 4, 5, 6];
+
+const resultado = numeros.filter(numero => numero % 2 === 0);
+
+console.log(resultado); // [2, 4, 6]
+```
+
+Lo que se debe tener en cuenta en la funcion callback dentro del `filter` es que debe devolver un valor booleano, que si es `true` incluye al elemento en el nuevo array, y viceversa, de lo contrario obtendremos un array vacio como resultado.
+
 
 ---
 
@@ -5129,7 +5573,7 @@ pubsub.publish('event1', 'hello, world!'); // Publicar 'event1'
 
 ### **Generics en Java**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-3)
 
 Cada tipo primitivo (int, boolean, float..) tiene su clase hermana. Las clases siempre empiezan en mayus, los minuscula son llamados clases envoltorio.
 
@@ -5149,7 +5593,7 @@ Los ArrayList reconocen el tipo de dato que evaluan <String> / <Integer> por los
 
 ### **Estructuras de Datos**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-3)
 
 Manera de estructurar datos, Array, ArrayList, Pila, Cola..
 
@@ -5207,9 +5651,9 @@ private class IteratorSorteador implements Iterator<T>{
 
 <a id="alg52"></a>
 
-### Recursividad
+### **Recursividad**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-3)
 
 Son problemas que se pueden dividir en subproblemas. Por ejemplo: Calcula el elemento, obten los primero n elementos o un metodo que compute todos..
 
@@ -5219,7 +5663,7 @@ TODOS los algoritmos recursivos tienen una alternativa iterativa. Su complejidad
 
 ### **Factorial**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-3)
 
 El factorial de un número entero positivo n, denotado como n!, es el producto de todos los enteros positivos menores o iguales a n. Por ejemplo, el factorial de 5 se denota como 5! y se calcula como 5! = 5 * 4 * 3 * 2 * 1 = 120.
 
@@ -5244,7 +5688,7 @@ console.log(factorial(5)); // Output: 120
 
 ### **¿Qué son los generics y cómo se implementan en TypeScript?** 💛
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-3)
 
 Los generics son una característica de TypeScript que permite crear componentes, funciones y clases que pueden trabajar con una variedad de tipos de datos. Los generics permiten escribir código que es reutilizable y flexible, ya que no está limitado a un solo tipo de datos.
 
@@ -5261,11 +5705,52 @@ const array2 = makeArray<string>('hello'); // array2 es de tipo string[]
 
 Es ideal para reemplazar el uso de any. Por ejemplo, si se usa any, se pierde la información del tipo de datos que se está utilizando, lo que puede llevar a errores en tiempo de ejecución. Con generics, se puede especificar el tipo de datos que se espera y TypeScript se encargará de verificar que se cumpla en tiempo de compilación.
 
+---
+
+<a id="var27"></a>
+
+### **Funciones en Javascript**
+
+[Volver al indice](#alg-base-2)
+
+En javascript aveces no necesitamos nombrar nuestras funciones, especialmente cuando pasamos una funcion como argumento a otra funcion. Para eso las **funciones inline**, no les ponemos nombre a las funciones porque no vamos a necesitarlas en ningún otro lado.
+
+```jsx
+const myFunc = function() {
+  const myVar = "value";
+  return myVar; 
+  }
+```
+
+Otra cosa que ofrece ES6 es reemplazar el cuerpo de la funcion por una flecha, en el caso de que el cuerpo no sea necesario y la funcion solo conste de un return, es decir
+
+```jsx
+const myFunc = () => "value" //Igual a return “value”;
+```
+
+También podemos realizar operaciones en una sola linea
+
+```jsx
+// doubles input value and returns it
+const doubler = (item) => item * 2;
+```
+
+También podemos setear **parametros por defecto**
+ en nuestras funciones, sí llamamos a la funcion sin pasarle parametro, tomara el ya seteado por defecto.
+
+```jsx
+function greeting(name = "Anonymous") {
+  return "Hello " + name;
+}
+console.log(greeting("John")); // Hello John
+console.log(greeting()); // Hello Anonymous Por defecto
+```
+
 <a id="alg55"></a>
 
-### Metodos de Strings en Javascript
+### **Metodos de Strings en Javascript**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-2)
 
 ```javascript
 // Creacion de Strings
@@ -5294,9 +5779,9 @@ test.indexOf("hola", +infinito) // Por defecto empieza desde mas infinito
 
 <a id="alg56"></a>
 
-### Métodos de Objectos en Javascript
+### **Métodos de Objectos en Javascript**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-2)
 
 ```javascript
 // Object.create() -- Crea un nuevo objeto con el prototipo de pasamos por parametro
@@ -5342,14 +5827,236 @@ objectToMap({a: 1, b: 2}); // Map {'a' => 1, 'b' => 2}
 
 ```
 
+<a id="var30"></a>
 
+### **Diferencia entre Map y Weakmap**
 
+[Volver al indice](#alg-base-2)
+
+Son casi iguales, son la clasica estructura de datos de diccionario, su diferencia es que se puede acceder a los clave-valores de un Map usando .values o .keys, en un Weakmap no se puede hacer eso.
+
+```jsx
+const map = new Map()
+const weakMap = new weakMap()
+
+const obj = {
+  hola: 'mundo',
+}
+
+map.set('denu', 'lemon')
+weakMap.set(myObjKey, 'lemon weakmap')
+
+// Map
+map.get('denu') // lemon
+map.keys() // {'denu'}
+map.values() // {'lemon'}
+
+// Weakmap
+weakMap.get(obj) // lemon weakmap
+weakMap.keys() // ERROR
+weakMap.values() // ERROR
+```
+
+Weakmap es una caja negra en donde solo se puede acceder a los valores si se tiene la Key.
+
+Weakmap, ademas, solo admite objetos como clave, estos estan debilmente referenciados por lo que puede ser recolectados por el garbage collector de JS si asi lo considera, destruyendo esa entrada en el Weakmap y liberando memoria.
+
+<a id="var29"></a>
+
+### **Diferencia entre `for in` y `for of`**
+
+[Volver al indice](#alg-base-2)
+
+- For in toma los indices de los elementos que estan siendo recorridos
+
+```javascript
+const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+for (const index in digits) {
+  console.log(digits[index]);
+}
+```
+
+- For of toma los valores en si
+
+```javascript
+const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+for (const digit of digits) {
+  console.log(digit);
+}
+```
+
+<a id="var32"></a>
+
+### **Diferencia entre foreach, map y reduce**
+
+[Volver al indice](#alg-base-2)
+
+- **Foreach** itera por cada uno. Ejecuta la función que se le pasa por parámetro para cada elemento del array. Este método no devuelve nada, por lo tanto, si intentamos guardar su ejecución en una variable lo que ocurrirá es que esa variable tomará el valor de undefined.
+
+```jsx
+[1, 2, 3, 4].forEach(function (item) {
+   console.log(item);
+});
+// Imprimirá por consola
+1
+2
+3
+4
+
+let numbers = [1, 2, 3, 4].forEach(function (item) {
+     console.log(item);
+});
+console.log(numbers); // undefined
+```
+
+- **Map**: Devuelve una nueva matriz aplicando la funcion de devolucion de llamada en cada elemento de la matriz.
+
+```jsx
+var result = [1,2,3,4].map((item) => { return item * 2; });
+console.log(result);
+// Resultado
+[2,4,6,8]
+```
+
+- **Reduce** tiene un acumulador y todo. Nos permite, dada una función, “reducirlo” o “transformar” los elementos de un arreglo en un nuevo y único valor.
+
+```jsx
+var myArray = [10, 20, 30];
+var total = myArray.reduce((accumulator, number) => {
+ return accumulator + number;
+});
+total;
+// Prints 60
+```
+
+<a id="var16"></a>
+
+### **Rest Operator**
+
+[Volver al indice](#alg-base-2)
+
+Con esto, se pueden crear funciones que pueden tomar una variable cantidad de argumentos, y estos pueden ser accedidos luego por estar guardados en un Array de dentro de la misma funcion
+
+```jsx
+function howMany(...args) {
+  return "You have passed " + args.length + " arguments.";
+}
+console.log(howMany(0, 1, 2)); // You have passed 3 arguments
+console.log(howMany("string", null, [1, 2, 3], { })); // You have passed 4 argume
+```
+
+Es decir, esta funcion..
+
+```jsx
+const product = (function() {
+  "use strict";
+  return function product(n1, n2, n3) {
+    const args = [n1, n2, n3];
+    return args.reduce((a, b) => a * b, 1);
+  };
+})();
+console.log(product(2, 4, 6));//48
+```
+
+Es lo mismo que esta
+
+```jsx
+const product = (function() {
+  "use strict";
+  return function product(...n) {
+    return n.reduce((a, b) => a * b, 1);
+  };
+})();
+console.log(product(2, 4, 6));//48
+```
+
+Otra funcion puede ser sacar el valor maximo de un Array de la siguiente manera
+
+```jsx
+const arr = [6, 89, 3, 45];
+const maximus = Math.max(...arr); // returns 89
+```
+
+Esto también se puede usar con **objetos,**
+escribir este codigo
+
+```jsx
+var voxel = {x: 3.6, y: 7.4, z: 6.54 };
+var x = voxel.x; // x = 3.6
+var y = voxel.y; // y = 7.4
+var z = voxel.z; // z = 6.54
+```
+
+Es lo mismo que hacer esto
+
+```jsx
+const { x, y, z } = voxel; // x = 3.6, y = 7.4, z = 6.54
+```
+
+También podemos transformar los objetos nested en variables
+
+```jsx
+const a = {
+  start: { x: 5, y: 6},
+  end: { x: 6, y: -9 }
+};
+const { start : { x: startX, y: startY }} = a;
+console.log(startX, startY); // 5, 6
+```
+
+<a id="var17"></a>
+
+### **Creando Strings con Template Literal - Template Strings**
+
+[Volver al indice](#alg-base-2)
+
+Es un tipo especial de String que hace que el manejo de String complejos sea más facil, pudiendo crear Strings multilinea para invocarlos luego, por ejemplo:
+
+```jsx
+const person = {
+  name: "Zodiac Hasbro",
+  age: 56
+};
+
+// Template literal with multi-line and string interpolation
+const greeting = `Hello, my name is ${person.name}!
+I am ${person.age} years old.`;
+
+console.log(greeting); // prints
+// Hello, my name is Zodiac Hasbro!
+// I am 56 years old.
+```
+
+Se usa otro tipo de “comilla” cuando se quiere invocar al String (`) y no es necesario poner /n para que se haga un salto de línea en el texto de salida
+
+<a id="var18"></a>
+
+### **Export Fallback con export default**
+
+[Volver al indice](#alg-base-2)
+
+Lo mismo que el anterior, sí queremos exportar una funcion, cuando la declaramos, la exportamos. Se usa cuando quiero exportar solo un valor o funcion, solo puedo elegir un valor que tenga esta propiedad de exportacion, tampoco se puede usar con const, var o let.
+
+```jsx
+export default function add(x,y) {
+  return x + y;
+}
+```
+
+Despues lo importo agregandole un nombre de variable cualquiera e invocandolo normalmente.
+
+```jsx
+import add from "math_functions";
+add(5,4); //Devuelve el resultado de acuerdo al metodo exportado anteriormente
+```
 
 <a id="var9"></a>
 
 ### **Diferencia entre import y require**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-2)
 
 - Require: Se usa para importar las funciones y el codigo en un archivo externo. Esto posee un problema, el cual es que este codigo puede ser muy largo y solo necesito una parte del codigo.
 - Import: Herramienta de ES6 para importar solo los componentes que necesitamos de un archivo.
@@ -5466,227 +6173,7 @@ console.log(rest); // [3, 4]
 
 Ambos usan la misma sintaxis (`...`), pero el **contexto** es lo que determina si se trata de un **Spread** o un **Rest**.
 
-
-<a id="var16"></a>
-
-### **Rest Operator**
-
-[Volver al indice](#alg-base)
-
-Con esto, se pueden crear funciones que pueden tomar una variable cantidad de argumentos, y estos pueden ser accedidos luego por estar guardados en un Array de dentro de la misma funcion
-
-```jsx
-function howMany(...args) {
-  return "You have passed " + args.length + " arguments.";
-}
-console.log(howMany(0, 1, 2)); // You have passed 3 arguments
-console.log(howMany("string", null, [1, 2, 3], { })); // You have passed 4 argume
-```
-
-Es decir, esta funcion..
-
-```jsx
-const product = (function() {
-  "use strict";
-  return function product(n1, n2, n3) {
-    const args = [n1, n2, n3];
-    return args.reduce((a, b) => a * b, 1);
-  };
-})();
-console.log(product(2, 4, 6));//48
-```
-
-Es lo mismo que esta
-
-```jsx
-const product = (function() {
-  "use strict";
-  return function product(...n) {
-    return n.reduce((a, b) => a * b, 1);
-  };
-})();
-console.log(product(2, 4, 6));//48
-```
-
-Otra funcion puede ser sacar el valor maximo de un Array de la siguiente manera
-
-```jsx
-const arr = [6, 89, 3, 45];
-const maximus = Math.max(...arr); // returns 89
-```
-
-Esto también se puede usar con **objetos,**
-escribir este codigo
-
-```jsx
-var voxel = {x: 3.6, y: 7.4, z: 6.54 };
-var x = voxel.x; // x = 3.6
-var y = voxel.y; // y = 7.4
-var z = voxel.z; // z = 6.54
-```
-
-Es lo mismo que hacer esto
-
-```jsx
-const { x, y, z } = voxel; // x = 3.6, y = 7.4, z = 6.54
-```
-
-También podemos transformar los objetos nested en variables
-
-```jsx
-const a = {
-  start: { x: 5, y: 6},
-  end: { x: 6, y: -9 }
-};
-const { start : { x: startX, y: startY }} = a;
-console.log(startX, startY); // 5, 6
-```
-
-<a id="var17"></a>
-
-### **Creando Strings con Template Literal - Template Strings**
-
-[Volver al indice](#alg-base)
-
-Es un tipo especial de String que hace que el manejo de String complejos sea más facil, pudiendo crear Strings multilinea para invocarlos luego, por ejemplo:
-
-```jsx
-const person = {
-  name: "Zodiac Hasbro",
-  age: 56
-};
-
-// Template literal with multi-line and string interpolation
-const greeting = `Hello, my name is ${person.name}!
-I am ${person.age} years old.`;
-
-console.log(greeting); // prints
-// Hello, my name is Zodiac Hasbro!
-// I am 56 years old.
-```
-
-Se usa otro tipo de “comilla” cuando se quiere invocar al String (`) y no es necesario poner /n para que se haga un salto de línea en el texto de salida
-
-<a id="var18"></a>
-
-### **Export Fallback con export default**
-
-[Volver al indice](#alg-base)
-
-Lo mismo que el anterior, sí queremos exportar una funcion, cuando la declaramos, la exportamos. Se usa cuando quiero exportar solo un valor o funcion, solo puedo elegir un valor que tenga esta propiedad de exportacion, tampoco se puede usar con const, var o let.
-
-```jsx
-export default function add(x,y) {
-  return x + y;
-}
-```
-
-Despues lo importo agregandole un nombre de variable cualquiera e invocandolo normalmente.
-
-```jsx
-import add from "math_functions";
-add(5,4); //Devuelve el resultado de acuerdo al metodo exportado anteriormente
-```
-
-<a id="var27"></a>
-
-### **Funciones en Javascript**
-
-[Volver al indice](#alg-base)
-
-En javascript aveces no necesitamos nombrar nuestras funciones, especialmente cuando pasamos una funcion como argumento a otra funcion. Para eso las **funciones inline**, no les ponemos nombre a las funciones porque no vamos a necesitarlas en ningún otro lado.
-
-```jsx
-const myFunc = function() {
-  const myVar = "value";
-  return myVar; }
-```
-
-Otra cosa que ofrece ES6 es reemplazar el cuerpo de la funcion por una flecha, en el caso de que el cuerpo no sea necesario y la funcion solo conste de un return, es decir
-
-```jsx
-const myFunc = () => "value" //Igual a return “value”;
-```
-
-También podemos realizar operaciones en una sola linea
-
-```jsx
-// doubles input value and returns it
-const doubler = (item) => item * 2;
-```
-
-También podemos setear **parametros por defecto**
- en nuestras funciones, sí llamamos a la funcion sin pasarle parametro, tomara el ya seteado por defecto.
-
-```jsx
-function greeting(name = "Anonymous") {
-  return "Hello " + name;
-}
-console.log(greeting("John")); // Hello John
-console.log(greeting()); // Hello Anonymous Por defecto
-```
-
-
-
-<a id="var29"></a>
-
-### **Diferencia entre `for in` y `for of`**
-
-[Volver al indice](#alg-base)
-
-- For in toma los indices de los elementos que estan siendo recorridos
-
-```javascript
-const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-for (const index in digits) {
-  console.log(digits[index]);
-}
-```
-
-- For of toma los valores en si
-
-```javascript
-const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-for (const digit of digits) {
-  console.log(digit);
-}
-```
-
-<a id="var30"></a>
-
-### **Diferencia entre Map y Weakmap**
-
-[Volver al indice](#alg-base)
-
-Son casi iguales, son la clasica estructura de datos de diccionario, su diferencia es que se puede acceder a los clave-valores de un Map usando .values o .keys
-
-```jsx
-const map = new Map()
-const weakMap = new weakMap()
-
-const obj = {
-  hola: 'mundo',
-}
-
-map.set('denu', 'lemon')
-weakMap.set(myObjKey, 'lemon weakmap')
-
-// Map
-map.get('denu') // lemon
-map.keys() // {'denu'}
-map.values() // {'lemon'}
-
-// Weakmap
-weakMap.get(obj) // lemon weakmap
-weakMap.keys() // ERROR
-weakMap.values() // ERROR
-```
-
-Weakmap es una caja negra en donde solo se puede acceder a los valores si se tiene la Key.
-
-Weakmap, ademas, solo admite objetos como clave, estos estan debilmente referenciados por lo que puede ser recolectados por el garbage collector de JS si asi lo considera, destruyendo esa entrada en el Weakmap y liberando memoria.
+---
 
 <a id="var31"></a>
 
@@ -5701,48 +6188,6 @@ miVariableGlobal = 'Hola mundo'
 ```
 
 Puede dar al choque entre variables locales y globales por nombre. Ademas es dificil limpiar el codigo basado en variables globales
-
-<a id="var32"></a>
-
-### **Diferencia entre foreach, map y reduce**
-
-- **Foreach** itera por cada uno. Ejecuta la función que se le pasa por parámetro para cada elemento del array. Este método no devuelve nada, por lo tanto, si intentamos guardar su ejecución en una variable lo que ocurrirá es que esa variable tomará el valor de undefined.
-
-```jsx
-[1, 2, 3, 4].forEach(function (item) {
-   console.log(item);
-});
-// Imprimirá por consola
-1
-2
-3
-4
-
-let numbers = [1, 2, 3, 4].forEach(function (item) {
-     console.log(item);
-});
-console.log(numbers); // undefined
-```
-
-- **Map**: Devuelve una nueva matriz aplicando la funcion de devolucion de llamada en cada elemento de la matriz.
-
-```jsx
-var result = [1,2,3,4].map((item) => { return item * 2; });
-console.log(result);
-// Resultado
-[2,4,6,8]
-```
-
-- **Reduce** tiene un acumulador y todo. Nos permite, dada una función, “reducirlo” o “transformar” los elementos de un arreglo en un nuevo y único valor.
-
-```jsx
-var myArray = [10, 20, 30];
-var total = myArray.reduce((accumulator, number) => {
- return accumulator + number;
-});
-total;
-// Prints 60
-```
 
 <a id="var33"></a>
 
