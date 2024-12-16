@@ -64,12 +64,11 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 | [.reduce() en JavaScript](#ent4) |
 |[Set vs Map vs WeakMap vs WeakSet en Javascript](#ent4-1)|
 | [Diferencia entre let, var y const](#var6) |
-| [Que es la complejidad algoritmica?](#ent5) |
-| [¿Qué diferencias fundamentales existen entre un stack y una queue? ¿Cuándo usarías cada uno?](#ent6) |
-| [Paradigma OOP](#ent7) |
-| [Paradigma Funcional](#ent8) |
+| [Programacion Funcional, De que trata?](#ent8) |
 | [Que es una funcion lambda?](#ent8-1) |
-| [Paradigma Reactiva Funcional (FRP)](#ent9) |
+| [Que es la programacion reactiva?](#ent8-2) |
+| [Que es la programacion declarativa?](#ent8-3) |
+| [Que es la Paradigma Reactiva Funcional (FRP)?](#ent9) |
 |[¿Qué es el principio de Encapsulación y por qué es importante en OOP?](#ent10)|
 | [Principios SOLID](#ent11) |
 | [Que es la inyeccion de dependencias?](#ent12) |
@@ -143,6 +142,7 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 | [Explicar que es CORS](#ent67) |
 | [Como escalar una aplicacion NodeJS](#ent73) |
 | [Como escalar una aplicacion Frontend de la mejor forma](#ent74)|
+|[Principios de Disponibilidad, Escalamiento en Frontend](#ent75)|
 
 
 <a name="alg-base"></a>
@@ -1622,6 +1622,113 @@ console.log(weakSet.has(obj)); // Output: false
 ```
 
 Ninguno de los `weak` es enumerable, es decir, no se pueden iterar sobre ellos.
+
+<a id="ent8"></a>
+
+### **Programacion Funcional, De que trata?**
+
+[Volver al indice](#entrevista-base)
+
+Es un paradigma de programacion donde una regla principal es que los datos son inmutables, por eso a las funciones tipo `filter` o `map` se dicen que son funciones puras, ya que no modifican el array original, sino que devuelven un nuevo array con los elementos modificados. Entre otras cosas. 
+
+Las caracteristicas de la programacion funcional son:
+
+- Datos inmutables, la principal razon de esto es para evitar errores de estado compartido
+- Las funciones se consideran de primera clase, esto quiere decir que pueden ser asignados a variables, ser pasados a funciones como parametros igual que cualquier otra estructura de datos, incluso ser devueltos por una funcion.
+- Se introducen las **Funciones Puras** las cuales son funciones que ante los mismos argumentos siempre devuelven lo mismo, y no tienen efectos secundarios, facilitando la depuracion.
+- Se introduce el **Lazy Evaluation** que es basicamente no evaluar una expresion a menos que sea necesario, permitiendo mejor rendimiento y estructuras de datos infinitas.
+- En la programacion funcional se acostumbra a usar recursion en lugar de bucles `for` o `while`, ya que es mas facil de leer y de mantener.
+
+Javascript no es un lenguaje puramente funcional, aunque tiene algunos conceptos soportados por el mismo. 
+
+```javascript
+// Función pura
+const sumar = (x, y) => x + y;
+
+// Uso de funciones de primera clase
+const aplicarOperacion = (a, b, operacion) => operacion(a, b);
+
+console.log(aplicarOperacion(3, 4, sumar)); // Output: 7
+
+// Inmutabilidad
+const agregarElemento = (array, elemento) => [...array, elemento];
+
+const original = [1, 2, 3];
+const nuevo = agregarElemento(original, 4);
+
+console.log(original); // Output: [1, 2, 3]
+console.log(nuevo);    // Output: [1, 2, 3, 4]
+```
+
+Los lenguajes de programacion hechos para la programacion funcional son Scala, Erlang, Haskell entre otros, son lenguajes usados en sistemas funcancieros, telecomunicaciones, analisis de datos entre otras areas.
+
+<a id="ent8-1"></a>
+
+### **Que es una funcion lambda?**
+
+[Volver al indice](#entrevista-base)
+
+Las funciones Lambda son basicamente funciones cortas y anonimas. En Javascript se podria decir que son funciones flecha, ya que no tienen nombre y se definen con `=>`.
+
+```javascript
+const sumar = (a, b) => a + b;
+```
+
+<a id="ent8-2"></a>
+
+### **Que es la programacion reactiva?**
+
+[Volver al indice](#entrevista-base)
+
+Es el tipo de programacion que se maneja cuando se usa RxJS en Angular. Basicamente es un paradigma de programacion orientado a manejar datos asincronos, algo muy propio de las paginas web, donde mientras estamos obteniendo informacion de un servicio, es muy importante que sigamos pudiendo interactuar con la pagina.
+
+- Orientada a datos: Se basa en la propagacion de cambios en los datos a lo largo de la aplicacion.
+- Asincrona y no bloqueante: Es importante que mientras se realiza una operacion, no se bloquee la responsividad de nuestra aplicacion.
+- Propagacion de cambios: Si tengo muchos componentes que consumen informacion, los mismos deberian mutar si esta informacion cambia.
+- Programacion declarativa: A menudo utiliza un estilo declarativo, donde se especifica la lógica de control sin describir su flujo de control, lo que facilita el razonamiento sobre el código y reduce los errores.
+
+Los elementos comunes de la programacion reactiva son:
+
+- Observables: Representas flujos de datos que pueden ser observados y reaccionar a los cambios.
+- Observadores: Son funciones que reaccionan a los cambios en los observables. Tambien se le dicen Subscriptores.
+- Operadores: Son funciones que permiten manipular los datos emitidos por los observables.
+
+```jsx
+import { fromEvent } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+// Crear un observable que emite eventos de clic en un botón
+const button = document.querySelector('button');
+const clicks = fromEvent(button, 'click');
+
+// Transformar el flujo de datos para contar los clics
+const clickPositions = clicks.pipe(
+  map(event => ({ x: event.clientX, y: event.clientY }))
+);
+
+// Suscribirse al observable para hacer algo con los datos
+clickPositions.subscribe(pos => {
+  console.log(`Clic en posición: x=${pos.x}, y=${pos.y}`);
+});
+```
+
+Se podria decir que los **WebSockets** tienen mucho que ver con la programacion reactiva en si misma, ya que se basa en la propagacion de datos en tiempo real.
+
+<a id="ent8-3"></a>
+
+### **Que es la programacion declarativa?**
+
+[Volver al indice](#entrevista-base)
+
+La programacion declarativa se concentra en que cosas hay que hacer y no necesariamente en como hacerlas. Un ejemplo es SQL, donde se le dice a la base de datos que datos queremos, pero no como obtenerlos.
+
+<a id="ent9"></a>
+
+### **Que es la Paradigma Reactiva Funcional (FRP)?**
+
+[Volver al indice](#entrevista-base)
+
+Combina las ideas de la Programacion Funcional (funciones anonimas) con la Programacion Reactiva (observables).
 
 ---
 
