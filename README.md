@@ -82,9 +82,9 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 | [¿Qué es el concepto de "lazy loading" y cómo se implementa en una aplicación web?](#ent20) |
 | [Mejorar performance en Javascript](#ent21) |
 | [Qué es un "array-like" en Javascript?](#alg26) |
-| [Cuales son las funciones array de JavaScript?](#alg27)  |
 | [Mejorar performance en una aplicacion React](#ent24) |
 | [Mejorar performance en una aplicacion Angular](#ent25) |
+| [Que es una PWA?](#ent25-1) |
 | [Critical Rendering Path](#ent22) |
 | [¿Cuáles son las diferencias entre localStorage, sessionStorage y las cookies?](#ent23) |
 | [Web y Service Workers](#ent26) |
@@ -143,6 +143,7 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 | [Como escalar una aplicacion NodeJS](#ent73) |
 | [Como escalar una aplicacion Frontend de la mejor forma](#ent74)|
 |[Principios de Disponibilidad, Escalamiento en Frontend](#ent75)|
+| [Mencionar como manejarias la delegacion de tareas dentro de tu equipo](#ent76) |
 
 
 <a name="alg-base"></a>
@@ -2125,6 +2126,494 @@ Cuando por ejemplo estoy en la pagina de mi banco, y al mismo tiempo ingreso a u
 - Usar metodos POST cuando son metodos importantes ya que la mayoria de las CSRF tratan de ser realizadas con metodos GET ya que son mas faciles de disimular
 - Politica SAmeSite en las cookies. La política de SameSite es una configuración que puedes añadir a las cookies para controlar si se deben enviar con solicitudes de origen cruzado. Si configuras `SameSite=Strict`, la cookie solo se enviará si la solicitud proviene del mismo sitio que originalmente estableció la cookie. Esto ayuda a prevenir ataques CSRF porque impide que las cookies se envíen junto con solicitudes iniciadas por sitios maliciosos. Es decir, las cookies no pueden ser compartidas con otros dominios. 
 
+<a id="ent20"></a>
+
+### **¿Qué es el concepto de "lazy loading" y cómo se implementa en una aplicación web?**
+
+[Volver al indice](#entrevista-base)
+
+Tambien llamado carga diferida es un metodo en desarrollo web y mobile en donde los recursos necesarios con cargados solo cuando se necesitan, reduciendo el tiempo de carga inicial y ahorrando ancho de banda.
+
+Se realiza con:
+
+- Imagenes, se cargan cuando ya son visibles
+
+```html
+<img src="imagen.jpg" alt="Ejemplo" loading="lazy" />
+```
+
+- Componentes, se cargan cuando se necesitan
+
+```jsx
+import React, { Suspense, lazy } from 'react';
+
+const LazyComponent = lazy(() => import('./MiComponente'));
+
+function App() {
+    return (
+        <div>
+            <Suspense fallback={<div>Cargando...</div>}>
+                <LazyComponent />
+            </Suspense>
+        </div>
+    );
+}
+```
+
+
+- Modulos, no se incluyen en el bundle principal de una si no que solo se incluye si es necesario
+
+```javascript
+document.getElementById("boton").addEventListener("click", () => {
+    import('./miModulo.js').then(module => {
+        module.miFuncion();
+    });
+});
+```
+
+El modulo miModulo.js es solo cargado cuando se apreta el boton.
+
+<a id="ent21"></a>
+
+### **Mejorar performance en Javascript**
+
+[Volver al indice](#entrevista-base)
+
+- Utilizar `for` en lugar de `forEach` ya que aparentemente es mucho mas eficiente
+- Reducir la cantidad de llamadas a funciones dentro de un bucle.
+- Cachear valores para no re-calcularlos todo el tiempo
+
+```javascript
+const length = array.length; // Cachea la longitud del array
+for (let i = 0; i < length; i++) {
+    console.log(array[i]);
+}
+```
+
+- Cuando trabajes con eventos frecuentes (como scroll o input), usa debouncing o throttling para limitar la cantidad de ejecuciones.
+
+  - Debouncing: Retrasa la ejecución hasta que la acción se detenga.
+
+```javascript
+function debounce(func, delay) {
+    let timer;
+    return (...args) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => func(...args), delay);
+    };
+}
+
+const onResize = debounce(() => console.log("Resize terminado"), 300);
+window.addEventListener('resize', onResize);
+```
+
+  - Throttling: Limita la frecuencia de ejecución a un cierto intervalo.
+
+```javascript
+function throttle(func, limit) {
+    let lastFunc, lastTime;
+    return (...args) => {
+        const now = Date.now();
+        if (!lastTime || now - lastTime >= limit) {
+            func(...args);
+            lastTime = now;
+        } else {
+            clearTimeout(lastFunc);
+            lastFunc = setTimeout(() => {
+                func(...args);
+                lastTime = now;
+            }, limit - (now - lastTime));
+        }
+    };
+}
+
+const onScroll = throttle(() => console.log("Scrolling"), 200);
+window.addEventListener('scroll', onScroll);
+```
+
+- Evitar declarar cosas que no se usan para evitar Memory Leaks
+- Usar `let` y `const` en lugar de `var` para evitar problemas de scope
+- Javascript es **Single Thread** por lo cual debemos evitar operaciones asincronas que sean muy largas, y si debo implementarlo, hacer uso de `Web Workers`.
+
+```javascript
+// worker.js
+self.onmessage = function (e) {
+    const result = e.data * 2;
+    self.postMessage(result);
+};
+
+---
+
+const worker = new Worker("worker.js");
+worker.postMessage(5);
+
+worker.onmessage = function (e) {
+    console.log("Resultado del worker:", e.data);
+};
+
+- Realizar un profiling de la aplicacion para ver que partes del codigo estan consumiendo mas recursos y optimizarlas. Esto se puede hacer con el `Performance API` de Javascript
+
+```javascript
+console.time("Tiempo de ejecución");
+// Código a medir
+console.timeEnd("Tiempo de ejecución");
+```
+
+- Si se pueden combinar las operaciones `map`, `filter` y `reduce` en una sola, hacerlo, ya que es mucho mas eficiente y se evitan recorridos multiples al mismo set de datos. 
+- Evitar mutar los datos si no es necesario.
+- Usar `Maps` y `Sets` en lugar de arrays si necesito hacer busquedas frecuentes, ya que son mucho mas eficientes. Si tengo que usar un Array, usar `push` y `pop` en lugar de un ejemplo un `shift` ya que es mucho mas eficiente.
+- Si se puede utilizar `async/await` en lugar de promises chaining hacerlo, ya que es mucho mas facil de leer y de mantener.
+
+```javascript
+async function fetchData() {
+   const response = await fetch("https://api.example.com/data");
+   const data = await response.json();
+   console.log(data);
+}
+```
+
+- Minificar el codigo con herramientas como Rollup, asi se reduce el peso del archivo y se mejora la velocidad de carga.
+- Minimizar las manipulaciones directas al DOM, usar `documentFragment` para manipulaciones masivas.
+- Y como fue mencionado anteriormente, la Memoization es una tecnica muy util para mejorar la performance de la aplicacion, guardando operaciones constosas para no tener que volver a realizarlas.
+
+<a id="ent24"></a>
+
+### **Mejorar performance en una aplicacion React**
+
+[Volver al indice](#entrevista-base)
+
+- Hacer uso de la memoizacion en los componentes que lo necesiten mediante el uso de `useMemo` para valores y `useCallback` para funciones, y asi evitar re-renderizados innecesarios si es que se recibe la misma informacion.
+
+```jsx
+import React, { useMemo, useCallback } from "react";
+
+const ExpensiveComponent = ({ num }) => {
+    const computedValue = useMemo(() => num * 10, [num]);
+
+    const handleClick = useCallback(() => {
+        console.log("Clicked");
+    }, []);
+
+    return <div onClick={handleClick}>{computedValue}</div>;
+};
+```
+
+- Evitar el re-rendering de los elementos de una lista mediante el uso de sus `keys` unicas, esto ayuda a identificar a React que elementos precisan se re-renderizados y cuales no.
+
+```jsx
+items.map(item => <Item key={item.id} data={item} />);
+```
+
+- Utilizar Code Splitting para guardar las partes mas pesadas de la aplicacion para cuando son realmente necesarias
+
+```jsx
+import React, { Suspense, lazy } from "react";
+
+const HeavyComponent = lazy(() => import("./HeavyComponent"));
+
+function App() {
+   return (
+       <Suspense fallback={<div>Cargando...</div>}>
+           <HeavyComponent />
+       </Suspense>
+   );
+}
+```
+
+- Cargar modulos cuando solo son necesarios
+
+```jsx
+if (condition) {
+   import("./module").then(mod => mod.function());
+}
+```
+
+- **Lifting State Up** es una tecnica en React donde se sube el estado de un componente hijo a un componente padre, esto ayuda a evitar re-renderizados innecesarios.
+
+```jsx
+function Parent() {
+    const [count, setCount] = useState(0);
+
+    return (
+        <div>
+            <Child count={count} setCount={setCount} />
+        </div>
+    );
+}
+
+function Child({ count, setCount }) {
+    return (
+        <div>
+            <button onClick={() => setCount(count + 1)}>Incrementar</button>
+        </div>
+    );
+}
+```
+
+- Si voy a hacer uso de un estado global, usar librerias como Redux Toolkit para manejarlo de manera eficiente, ya que Redux Toolkit maneja el estado de manera inmutable, lo cual es muy importante para React.
+- No importar librerias cuando no son necesarias, y de esas librerias, solo importar los elementos que voy a precisar y no toda la libreria en si misma. Tambien evitar librerias pesadas como Moment o lodash que tienen reemplazos mas pequenios o incluso nativos en Javascript. 
+
+```jsx
+import { isEmpty } from "lodash"; // Solo importa una función
+```
+
+- Configura herramientas como Terser y habilita la compresión Gzip o Brotli en el servidor.
+- Usar imagenes que esten optimizadas en formatos nuevos como WEBP o AVIF, y si es posible, usar SVG en lugar de imagenes.
+- Si debo renderizar una lista muy extensa, usar `react-window` o `react-virtualized` para solo renderizar los elementos que estan en pantalla, y no todos los elementos de la lista. Es como un lazy loading pero para listas.
+
+```jsx
+import { FixedSizeList } from "react-window";
+
+const Row = ({ index, style }) => <div style={style}>Fila {index}</div>;
+
+function App() {
+   return (
+       <FixedSizeList height={400} itemCount={1000} itemSize={35} width={300}>
+           {Row}
+       </FixedSizeList>
+   );
+}
+```
+
+- React cuenta con React DevTools, y entre las herramientas se encuentra el Profiler que nos puede ayudar a identificar componentes lentos.
+- Evitar los estilos inline, y si puedo usar librerias como Tailwind para disminuir el tamanio de mis hojas de estilo, hacerlo (aunque no coincido mucho con esto ya que de por si el Stylesheet de Tailwind que estoy importando tambien es bastante grande)
+- Evitar funciones pesadas en el JSX
+
+```jsx
+// Malo:
+const sum = array.reduce((acc, val) => acc + val, 0);
+
+return <div>{sum}</div>;
+
+// Optimizado:
+const sum = useMemo(() => array.reduce((acc, val) => acc + val, 0), [array]);
+return <div>{sum}</div>;
+```
+
+- Como se menciono anteriormente el uso de Web Workers para operaciones pesadas o para operaciones que se deben realizar en otro thread es muy util.
+
+<a id="ent25"></a>
+
+### **Mejorar performance en una aplicacion Angular**
+
+[Volver al indice](#entrevista-base)
+
+- Angular tiene un metodo de detectar cambios que puede llevar a re-renderizados innecesarios, para evitar esto, se puede usar `ChangeDetectionStrategy.OnPush` en los componentes que no necesitan ser re-renderizados todo el tiempo.
+
+```typescript
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+
+@Component({
+  selector: 'app-my-component',
+  template: `<div>{{ data }}</div>`,
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class MyComponent {
+  @Input() data: string;
+}
+```
+
+- Usar `trackBy` en las listas para evitar re-renderizados innecesarios
+
+```typescript
+@Component({
+  selector: 'app-my-list',
+  template: `
+    <ul>
+      <li *ngFor="let item of items; trackBy: trackByFn">{{ item }}</li>
+    </ul>
+  `
+})
+export class MyListComponent {
+  items = [1, 2, 3, 4, 5];
+
+  trackByFn(index: number, item: number): number {
+    return index;
+  }
+}
+```
+
+- Usar `async` pipe en lugar de subscribirse a un observable manualmente
+
+```typescript
+@Component({
+  selector: 'app-my-component',
+  template: `<div>{{ data$ | async }}</div>`
+})
+
+export class MyComponent {
+  data$ = this.myService.getData();
+
+  constructor(private myService: MyService) {}
+}
+```
+
+- Usar `ng-container` para evitar elementos HTML innecesarios
+
+```typescript
+@Component({
+  selector: 'app-my-component',
+  template: `
+    <ng-container *ngIf="condition">
+      <div>Contenido</div>
+    </ng-container>
+  `
+})
+```
+
+- Usar `ChangeDetectorRef` para marcar los componentes como dirty o checkearlos manualmente. Que sea dirty significa que se debe re-renderizar.
+
+```typescript
+import { ChangeDetectorRef, Component } from '@angular/core';
+
+@Component({
+  selector: 'app-my-component',
+  template: `<div>{{ data }}</div>`
+})
+
+export class MyComponent {
+  data: string;
+
+  constructor(private cdr: ChangeDetectorRef) {}
+
+  fetchData() {
+    this.data = 'Datos cargados';
+    this.cdr.detectChanges();
+  }
+}
+```
+
+- Usar `@ViewChild` en lugar de `document.getElementById` para acceder a elementos del DOM
+
+```typescript
+@Component({
+  selector: 'app-my-component',
+  template: `<div #myElement>Elemento</div>`
+})
+
+export class MyComponent {
+  @ViewChild('myElement') myElement: ElementRef;
+
+  ngAfterViewInit() {
+    this.myElement.nativeElement.style.color = 'red';
+  }
+}
+```
+
+- Evitar llamadas a funciones en el `ng.html` ya que se ejecutan en cada ciclo de deteccion de cambios
+
+```html
+<!-- Evita esto -->
+<p>{{ calculateValue() }}</p>
+
+<!-- Mejor esto -->
+<p>{{ value }}</p>
+```
+
+- Implementar Lazy Loading para cargar modulos solo cuando son necesarios
+
+```typescript
+const routes: Routes = [
+  {
+    path: 'feature',
+    loadChildren: () => import('./feature/feature.module').then(m => m.FeatureModule)
+  }
+];
+```
+
+- Habilitar el Preloading strategy para cargar modulos en segundo plano
+
+```typescript
+import { PreloadAllModules } from '@angular/router';
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
+  exports: [RouterModule]
+})
+export class AppRoutingModule {}
+```
+
+- Virtualizar (que es como el lazy loading pero para listas) las listas que tengan muchos elementos
+
+```html
+<cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+  <div *cdkVirtualFor="let item of items">{{ item }}</div>
+</cdk-virtual-scroll-viewport>
+```
+
+- Convierte tu aplicación en una Progressive Web App para mejorar el rendimiento y el almacenamiento en caché de recursos. 
+- Usa HttpClient con RxJS operadores para manejar las solicitudes HTTP de manera eficiente. Usa shareReplay para compartir respuestas en lugar de ejecutar solicitudes repetidas.
+
+```typescript
+import { shareReplay } from 'rxjs/operators';
+
+this.data$ = this.http.get('api/data').pipe(shareReplay(1));
+```
+
+- Implementar Catching
+
+```typescript
+private cache = new Map();
+
+getData() {
+  if (this.cache.has('data')) {
+    return of(this.cache.get('data'));
+  }
+
+  return this.http.get('api/data').pipe(
+    tap(data => this.cache.set('data', data))
+  );
+}
+```
+
+- Habilitar AOT (Ahead-of-Time Compilation) para compilar tu aplicación Angular en tiempo de compilación en lugar de tiempo de ejecución.
+
+```bash
+ng build --aot
+```
+
+<a id="ent25-1"></a>
+
+### **Que es una PWA?**
+
+[Volver al indice](#entrevista-base)
+
+Una Progressive Web App (PWA) es una aplicación web que utiliza tecnologías web modernas para proporcionar una experiencia de usuario similar a la de una aplicación nativa. Funciona tanto en Web como Mobile ya que se adapta. 
+
+Es la tipica aplicacion que podemos instalar en nuestros telefonos sin pasar por la Web Store, haciendo tambien mucho mas facil su actualizacion en caso de ser necesaria. 
+
+Hace uso de **Service Workers** para manejar los datos en segundo plano, y en el caso de haber notificaciones push, tambien manejarlas, ademas permite su funcionamiento offline. 
+
+El framework mas famoso para hacer PWA es Angular, ya que tiene un modulo especifico para ello, pero tambien se puede hacer con React y Vue. Ionic tambien es un framework que se especializa en PWA.
+
+<a id="ent22"></a>
+
+### **Critical Rendering Path**
+
+[Volver al indice](#entrevista-base)
+
+Es el paso a paso que se lleva a cabo para mostrarle al usuario la aplicacion en pantalla. Consta de los siguientes pasos:
+
+- **HTML**: El navegador recibe el HTML y lo convierte en el DOM
+- **CSS**: El navegador recibe el CSS y lo convierte en el CSSOM
+- **Render Tree**: Se combinan el DOM y el CSSOM para crear el Render Tree (Si un elemento tiene `display: none` no es incluido en el mismo)
+- **Layout**: Se calcula el layout de la pagina, tambien se le dice reflow.
+- **Paint**: Se pinta la pagina en pantalla
+- **Composite**: Se combinan las capas para mostrar la pagina en pantalla
+
+Si yo optimizo este proceso, la carga de mi pagina sera mucho mas veloz. 
+
+- Minimizar el tamanio de los archivos mediante la minificacion y compresion de los mismos
+- Eliminar el CSS no utilizado para disminuir el peso
+- Servir recursos estáticos desde un CDN reduce los tiempos de descarga.
+- Optimizar imagenes usando formatos modernos como WEBP o AVIF
+- Cuando JS se esta ejecutando, el renderizado es bloqueado. Usar `async` o `defer` en los scripts para evitar esto. `async` descarga el script de manera asincrona y lo ejecuta cuando esta listo, `defer` descarga el script de manera asincrona pero lo ejecuta cuando el DOM esta listo.
+
+<a id="ent23"></a>
+
+### **¿Cuáles son las diferencias entre localStorage, sessionStorage y las cookies?**
+
+[Volver al indice](#entrevista-base)
 ---
 
 <a id="seg"></a>
@@ -4102,6 +4591,8 @@ En Java, los `ArrayList` son una implementación de la interfaz `List`. También
 ### **Qué es un "array-like" en Javascript?** 💛
 
 [Volver al indice](#alg-base-arr)
+
+Es un tipo de dato similar a un Array pero que no posee todas las funciones heredadas de Prototype de un Array.
 
 Un array-like es un objeto que tiene propiedades indexadas y una propiedad length. Aunque no es un array, se comporta como tal. Por ejemplo, el objeto arguments es un array-like.
 
