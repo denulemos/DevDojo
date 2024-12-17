@@ -88,9 +88,8 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 | [Critical Rendering Path](#ent22) |
 | [¿Cuáles son las diferencias entre localStorage, sessionStorage y las cookies?](#ent23) |
 | [Web y Service Workers](#ent26) |
-| [Event Loop](#ent27) |
+| [Event Loop (Macro, Micro tasks, Callback Queue)](#ent27) |
 | [Obfuscation and Minification](#ent55) |
-| [Micro y Macro Tasks](#ent28) |
 | [Promises](#ent29) |
 | [Async Await](#ent30) |
 | [Callbacks](#ent31) |
@@ -2614,6 +2613,106 @@ Si yo optimizo este proceso, la carga de mi pagina sera mucho mas veloz.
 ### **¿Cuáles son las diferencias entre localStorage, sessionStorage y las cookies?**
 
 [Volver al indice](#entrevista-base)
+
+| SessionStorage | LocalStorage | Cookies |
+| --- | --- | --- |
+| Los datos se guardan por pestania y no son compartidos entre pestanias | Los datos se guardan en el navegador y son persistentes una vez que el usuario cierra la pestania | Los datos se guardan en el navegador y son persistentes una vez que el usuario cierra la pestania |
+| El tamaño maximo es de 5MB | El tamaño maximo es de 5MB | El tamaño maximo es de 4KB |
+| Se puede acceder a los datos a traves de `window.sessionStorage` | Se puede acceder a los datos a traves de `window.localStorage` | Se puede acceder a los datos a traves de `document.cookie` |
+| Los datos se guardan en forma de pares clave-valor | Los datos se guardan en forma de pares clave-valor | Los datos se guardan en forma de pares clave-valor |
+| Los datos se almacenan en el lado del cliente | Los datos se almacenan en el lado del cliente | Los datos se almacenan en el lado del cliente |
+| Los datos no se envian al servidor con cada solicitud HTTP | Los datos no se envian al servidor con cada solicitud HTTP | Los datos se envian al servidor con cada solicitud HTTP, es por eso que es importante resguardarlas ya que pueden tener session keys para la identificacion ante el llamado a un servicio |
+
+<a id="ent26"></a>
+
+### **Web y Service Workers**
+
+[Volver al indice](#entrevista-base)
+
+Como se menciono anteriormente, Javascript es single-thread, y esto puede ser un problema cuando se trata de operaciones pesadas o que se deben realizar en segundo plano. Para esto se crearon los Service Workers, que son scripts que se ejecutan en segundo plano y que permiten realizar operaciones como notificaciones push, actualizaciones de contenido, y manejo de cache. Es especialmente util tambien cuando quiero que mi app tenga cierta funcionalidad offline.
+
+Los Service Workers son eventos que se ejecutan en segundo plano y que no tienen acceso al DOM, pero si pueden comunicarse con la pagina principal mediante mensajes.
+
+```javascript
+// service-worker.js
+self.addEventListener('fetch', event => {
+    event.respondWith(
+        caches.match(event.request).then(response => {
+            return response || fetch(event.request);
+        })
+    );
+});
+```
+
+```javascript
+// main.js
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js')
+        .then(registration => console.log('Service Worker registrado'))
+        .catch(error => console.error('Error al registrar el Service Worker', error));
+}
+```
+
+<a id="ent27"></a>
+
+### **Event Loop (Macro, Micro tasks, Callback Queue)**
+
+[Volver al indice](#entrevista-base)
+
+El Event Loop es un bucle que se encarga de manejar los eventos y las operaciones asincronas en Javascript.
+
+- **Call Stack**: Es donde se guardan las operaciones sincronas, y se ejecutan en orden de llegada.
+- **Web API**: Es donde se guardan las operaciones asincronas, como `setTimeout`, `fetch`, `addEventListener`, etc.
+- **Callback Queue**: Es donde se guardan las operaciones que se deben ejecutar una vez que el Call Stack este vacio, como los Callbacks.
+- **Event Loop**: Es el encargado de chequear el Call Stack y el Callback Queue, y si el Call Stack esta vacio, toma la primera operacion de la Callback Queue y la pone en el Call Stack.
+- **Microtask Queue**: Es donde se guardan las Promises, y tiene prioridad sobre el Callback Queue.
+
+```javascript
+console.log('Inicio');
+
+setTimeout(() => console.log('Timeout'), 0);
+
+console.log('Fin');
+```
+
+En este caso, el `setTimeout` se va a ejecutar una vez que el Call Stack este vacio, por lo que el orden de ejecucion va a ser `Inicio`, `Fin`, `Timeout`.
+En el caso de las Promises, estas se ejecutan en el Microtask Queue, que tiene prioridad sobre el Callback Queue.
+
+```javascript
+console.log('Inicio');
+
+Promise.resolve().then(() => console.log('Promise'));
+
+console.log('Fin');
+```
+
+En este caso, el orden de ejecucion va a ser `Inicio`, `Fin`, `Promise`, ya que las Promises se ejecutan en el Microtask Queue.
+
+En el caso de los Callbacks, estos se ejecutan en el Callback Queue, y se ejecutan una vez que el Call Stack este vacio.
+
+```javascript
+console.log('Inicio');
+
+setTimeout(() => console.log('Timeout'), 0);
+
+Promise.resolve().then(() => console.log('Promise'));
+
+console.log('Fin');
+```
+
+Y en el caso de async-await se ejecutan en el Microtask Queue, por lo que tienen prioridad sobre los Callbacks.
+
+```javascript
+console.log('Inicio');
+
+(async () => {
+    await Promise.resolve();
+    console.log('Async');
+})();
+
+console.log('Fin');
+```
+
 ---
 
 <a id="seg"></a>
