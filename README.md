@@ -78,7 +78,7 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 | [Memoization](#ent16) |
 | [¿Cuáles son las diferencias clave entre HTTP/1.1, HTTP/2 y HTTP/3? ¿Por qué se considera HTTP/2 más eficiente que HTTP/1.1?](#ent17) |
 | [Explica las diferencias entre REST y GraphQL. ¿Cuándo usarías uno sobre el otro?](#ent18) |
-| [Cuales son los ataques mas comunes en la web? Nombrar tambien sus protecciones](#ent19) |
+| [Cuales son los ataques mas comunes en la web? Nombrar tambien sus protecciones del lado del cliente](#ent19) |
 | [¿Qué es el concepto de "lazy loading" y cómo se implementa en una aplicación web?](#ent20) |
 | [Mejorar performance en Javascript](#ent21) |
 | [Qué es un "array-like" en Javascript?](#alg26) |
@@ -446,6 +446,8 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 |En un equipo, ¿cómo promoverías una comunicación efectiva entre desarrolladores con diferentes niveles de experiencia?|
 |¿Qué harías si descubrieras que algunos miembros del equipo están luchando por adaptarse al ritmo del proyecto o a las tecnologías utilizadas?|
 |Imagina el caso, vas a desarrollar una gran característica, que requiere esfuerzos de ingenieros de FE y BE. ¿Cómo dividirías esta característica y cómo manejarías las dependencias entre los ingenieros de FE y BE?|
+| En que se diferencia un rol de desarrollador a uno de Tech Lead |
+| Como se daria un feedback dificil? |
 
 <a name="typ-base"></a>
 
@@ -1728,7 +1730,400 @@ La programacion declarativa se concentra en que cosas hay que hacer y no necesar
 
 [Volver al indice](#entrevista-base)
 
-Combina las ideas de la Programacion Funcional (funciones anonimas) con la Programacion Reactiva (observables).
+Combina las ideas de la Programacion Funcional (funciones anonimas) con la Programacion Reactiva (observables). Podria ponerse de ejemplo tambien los framework de Frontend como Angular junto a RxJS.
+
+<a id="ent10"></a>
+
+### **¿Qué es el principio de Encapsulación y por qué es importante en OOP?**
+
+[Volver al indice](#entrevista-base)
+
+Es la capacidad de ocultar la informacion interna de una funcion ya que solo deberia importarnos el resultado de la misma, no como se llego a ese resultado.
+
+En JS se puede manejar el concepto mediante distintos medios
+
+- Usando `private` o `public` para las funciones que quiero que tengan una cierta privacidad
+- Usando `let`, `var` o `const` para declarar ciertas cosas dentro de un scope limitado
+
+<a id="ent11"></a>
+
+### **Principios SOLID**
+
+[Volver al indice](#entrevista-base)
+
+SOLID es un acronimo que representa 5 reglas del codigo limpio, introducidas por Robert C. Martin en su libro Clean Code.
+
+1. Single Responsibility Principle (SRP): Una clase deberia tener una sola razon para cambiar, es decir, una sola responsabilidad.
+
+```typescript
+// Mal: Esta clase maneja tanto los detalles del usuario como la persistencia de datos.
+class User {
+    constructor(public username: string) {}
+
+    saveUser(user: User) {
+        // código para guardar el usuario en una base de datos
+    }
+}
+
+// Bien: Separación de responsabilidades
+class User {
+    constructor(public username: string) {}
+}
+
+class UserRepository {
+    saveUser(user: User) {
+        // código para guardar el usuario en una base de datos
+    }
+}
+```
+
+2. Open Closed Principle (OCP): Las clases deberian estar abiertas para extension pero cerradas para modificacion.
+
+```typescript
+// Bien: Usando la abstracción para permitir la extensión sin modificar la clase existente
+abstract class Shape {
+    abstract area(): number;
+}
+
+class Rectangle extends Shape {
+    constructor(public width: number, public height: number) {
+        super();
+    }
+
+    area(): number {
+        return this.width * this.height;
+    }
+}
+
+class Circle extends Shape {
+    constructor(public radius: number) {
+        super();
+    }
+
+    area(): number {
+        return Math.PI * this.radius * this.radius;
+    }
+}
+
+function calculateArea(shapes: Shape[]): number {
+    return shapes.reduce((area, shape) => area + shape.area(), 0);
+}
+```
+
+3. Liskov Substitution Principle (LSP): Los objetos de una superclase deberian ser reemplazables por objetos de sus subclases sin afectar la funcionalidad del programa.
+
+```typescript
+class Bird {
+    fly() {
+        console.log("Puedo volar!");
+    }
+}
+
+class Duck extends Bird {}
+
+class Ostrich extends Bird {
+    fly() {
+        throw new Error("No puedo volar!");
+    }
+}
+
+function makeBirdFly(bird: Bird) {
+    bird.fly();
+}
+
+const duck = new Duck();
+const ostrich = new Ostrich();
+
+makeBirdFly(duck);      // Funciona bien
+makeBirdFly(ostrich);   // Error en tiempo de ejecución
+```
+
+4. Principio de Segregación de Interfaces (Interface Segregation Principle, ISP): Un cliente no deberia verse forzado a depender de interfaces que no usa.
+
+```typescript
+interface Bird {
+    eat(): void;
+}
+
+interface FlyingBird extends Bird {
+    fly(): void;
+}
+
+class Duck implements FlyingBird {
+    eat() {
+        console.log("El pato está comiendo.");
+    }
+
+    fly() {
+        console.log("El pato está volando.");
+    }
+}
+
+class Ostrich implements Bird {
+    eat() {
+        console.log("El avestruz está comiendo.");
+    }
+}
+```
+
+
+5. Dependency Inversion Principle (DIP): Las clases de alto nivel no deberian depender de las clases de bajo nivel. Ambas deberian depender de abstracciones.
+
+```typescript
+interface Database {
+    save(data: string): void;
+}
+
+class MongoDB implements Database {
+    save(data: string) {
+        console.log(`Guardando datos en MongoDB: ${data}`);
+    }
+}
+
+class UserService {
+    constructor(private db: Database) {}
+
+    saveUserData(data: string) {
+        this.db.save(data);
+    }
+}
+
+const db = new MongoDB();
+const userService = new UserService(db);
+userService.saveUserData("datos de usuario");
+```
+
+<a id="ent12"></a>
+
+### **Que es la inyeccion de dependencias?**
+
+[Volver al indice](#entrevista-base)
+
+Es un patron de disenio (DI) en donde si necesito un servicio o componentes, no los creo en el componente padre mismo, si no que lo creo en otro archivo y simplemente lo inyecto en donde lo necesito.
+
+Esto facilita el testing ya que lo vuelve mas modular en si mismo, y me facilita el uso de `stub` o `mocks` para simular el funcionamiento de algo inyectado.
+
+```typescript
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+class EngineService {
+  start() {
+    console.log('Engine started');
+  }
+}
+
+import { Component } from '@angular/core';
+import { EngineService } from './engine.service';
+
+@Component({
+  selector: 'app-car',
+  template: `<h1>Car Component</h1>`
+})
+export class CarComponent {
+
+  // Aca angular utiliza el constructor para inyectar el servicio EngineService
+  constructor(private engineService: EngineService) {}
+
+  // En Angular mas moderno se recomienda usar el injects en vez de agregarlo en el constructor como se ve aca abajo
+  private readonly engineService = inject(EngineService);
+
+  startCar() {
+    this.engineService.start();
+  }
+}
+```
+
+<a id="ent13"></a>
+
+### **Explica el concepto de "pure function" y por qué es fundamental en la programación funcional.**
+
+[Volver al indice](#entrevista-base)
+
+Como se explico anteriormente, las Pure functions son funciones que, al recibir los mismos parametros, siempre devuelven el mismo resultado.
+
+```typescript
+// Función pura
+function sumar(a: number, b: number): number {
+    return a + b;
+}
+
+// Función impura
+let resultado = 0;
+function sumar(a: number, b: number): number {
+    resultado += a + b;
+    return resultado;
+}
+```
+
+La diferencia entre ambas funciones es que la impura esta mutando a la variable resultado, en cambio, la funcion pura, simplemente devuelve el resultado de la operacion, sin mutar la informacion, algo principal cuando se trata de programacion funcional.
+
+<a id="ent14"></a>
+
+### **¿Qué ventajas ofrece la inmutabilidad al manejar estructuras de datos? Proporciona un ejemplo práctico.**
+
+[Volver al indice](#entrevista-base)
+
+Solo a modo de repaso, la inmutabilidad es algo muy propio de la programacion funcional. Algunas de sus ventajas son:
+
+- Al no estar modificando directamente mis datos, evito errores de estado compartido
+- Eliminamos los errores de concurrencia, ya que los datos no estan siendo modificados, entonces no tengo necesidad de tener si o si la ultima version de los mismos para poder continuar
+- Se pueden implementar facilmente funciones de `undo`, ya que se puede volver a la version anterior muy facilmente
+- Integridad de datos, ya que al no estar modificando los datos, no se pueden corromper los mismos
+
+```typescript
+const tareasOriginales = [
+    { id: 1, texto: 'Hacer la compra', completada: false },
+    { id: 2, texto: 'Llamar al médico', completada: true }
+];
+
+function agregarTarea(tareas, nuevaTarea) {
+    return [...tareas, nuevaTarea];
+}
+
+const nuevaTarea = { id: 3, texto: 'Pagar el alquiler', completada: false };
+const tareasActualizadas = agregarTarea(tareasOriginales, nuevaTarea);
+
+console.log(tareasOriginales); // La lista original permanece sin cambios
+console.log(tareasActualizadas); // Nueva lista con la tarea agregada
+```
+
+Un ejemplo de la IA que me gusto mucho para explicar esto: 
+
+Imagina que estás escribiendo un documento en un procesador de textos. Cada vez que haces un cambio, como añadir una palabra, el programa no borra todo el documento y lo reescribe desde cero con la palabra añadida. En lugar de eso, crea una nueva versión del documento con la palabra incluida. Si algo sale mal mientras escribes, siempre puedes volver a la versión anterior sin problemas. Esto es similar a cómo funciona la inmutabilidad en las aplicaciones de software.
+
+<a id="ent15"></a>
+
+### **Currying**
+
+[Volver al indice](#entrevista-base)
+
+Es una tecnica de programacion funcional donde meto una funcion dentro de otra, y todas estas reciben solo un parametro a la vez. 
+
+```typescript
+function multiply(a: number): (b: number) => number {
+    return function(b: number): number {
+        return a * b;
+    };
+}
+
+// Uso de la función curried
+const multiplyByTwo = multiply(2);
+const result = multiplyByTwo(3);  // result será 6
+console.log(result);
+```
+
+En este ejemplo, multiply es una función que toma el primer número, a, y devuelve otra función que toma el segundo número, b. La función devuelta realiza la multiplicación de a y b.
+
+Al dividir todo en pequenias funciones, hace que la reutilizacion de codigo sea mucho mejor. 
+
+<a id="ent16"></a>
+
+### **Memoization**
+
+[Volver al indice](#entrevista-base)
+
+Es una tecnica donde se guarda el resultado de una operacion costosa para poder devolverla si se realizan llamadas consecutivas a la misma operacion. Es muy util en funciones puras donde el resultado depende exclusivamente de los valores de entrada.
+
+Cuando una función memoizada se llama por primera vez con un conjunto particular de argumentos, calcula el resultado como lo haría normalmente. Luego, antes de devolver el resultado, lo almacena en una especie de caché (generalmente un objeto o un mapa) junto con los argumentos utilizados para generar ese resultado. Si la función se llama nuevamente con los mismos argumentos, la función puede simplemente buscar en la caché y devolver el resultado almacenado en lugar de recalcularlo.
+
+```typescript
+function memoize<T extends (...args: any[]) => any>(fn: T): T {
+    const cache = new Map<string, ReturnType<T>>();
+
+    return function(...args: Parameters<T>): ReturnType<T> {
+        const key = JSON.stringify(args);
+        if (cache.has(key)) {
+            return cache.get(key) as ReturnType<T>;
+        }
+
+        const result = fn(...args);
+        cache.set(key, result);
+        return result;
+    } as T;
+}
+
+function fibonacci(n: number): number {
+    if (n <= 1) return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+const memoizedFibonacci = memoize(fibonacci);
+
+console.log(memoizedFibonacci(40));  // Calcula y almacena en caché
+console.log(memoizedFibonacci(40));  // Recupera de la caché, mucho más rápido
+```
+
+Lo negativo que posee es que estas memorizaciones son guardadas en memoria, asi que seria necesario tener no solo un buen sistema de limpieza de cache si no tambien de manejo de memoria. 
+
+En React tenemos el hook `useMemo` que hace uso de esto mismo guardando resultados, tambien tenemos `useCallback` que es similar pero para funciones.
+
+<a id="ent17"></a>
+
+### **¿Cuáles son las diferencias clave entre HTTP/1.1, HTTP/2 y HTTP/3? ¿Por qué se considera HTTP/2 más eficiente que HTTP/1.1?**
+
+[Volver al indice](#entrevista-base)
+
+Todas estas versiones de HTTP introdujeron mejoras enormes en cada una de ellas. La primera version introdujo el protocolo de comunicacion en la web, la segunda version introdujo cosas que incluso al dia de hoy usamos como la multiplicidad de solicitudes sin esperar un desbloqueo e incluso la posibilidad de manejar un Servidor Push, donde se podia obtener data de antemano sin que el usuario vaya a solicitarla, dando como resultado la aparicion de las notificaciones push que hoy usamos.
+En el caso de HTTP/3, se introdujo el protocolo QUIC, que es un protocolo de transporte que se ejecuta sobre UDP en lugar de TCP, lo que permite una comunicacion mas rapida y segura, pero el mayor salto fue desde HTTP1 a HTTP2.
+
+<a id="ent18"></a>
+
+### **Explica las diferencias entre REST y GraphQL. ¿Cuándo usarías uno sobre el otro?**
+
+[Volver al indice](#entrevista-base)
+
+| REST | GraphQL |
+| --- | --- |
+| Es un link para cada recurso | Es un solo link para varios recursos, endpoint unico |
+| Puede tener problemas de sobre-recuperacion (mas informacion de la necesaria) o sub-recuperacion (Menos informacion de la necesaria), lo cual causa que necesitemos varias consultas para tener lo que precisamos, o tengamos payloads muy pesados | El cliente puede especificar que campos quiere en la consulta |
+| Es mas facil de desarrollar desde cero pero complicado de escalar | Su inicializacion es compleja, pero si se tienen los datos necesarios, los cambios que se tendrian que hacer serian minimos |
+| Como las consultas son con su propio endpoint y pueden ser dentro de todo predecibles, el catching es mucho mas facil de implementar | Como las consultas son variadas, el catching es complicado de implementar, aunque hay tecnicas especificas | 
+| Se recomienda usar REST cuando la seguridad y el catching son una prioridad, ademas si tengo clientes que buscan servicios predecibles | Se recomienda cuando es importante el minimizar la cantidad de solicitudes hechas en el servidor |
+
+<a id="ent19"></a>
+
+### **Cuales son los ataques mas comunes en la web? Nombrar tambien sus protecciones del lado del cliente**
+
+[Volver al indice](#entrevista-base)
+
+**Cross Site Scripting XSS**
+
+Es injectar scripts en las paginas web para obtener datos como cookies, sesiones, etc.
+
+- Usar `Content Security Policy` para limitar los recursos que se pueden cargar en una página web
+- Asegurar los inputs de los usuarios para que no se pueda inyectar codigo malicioso
+- Usar funciones para escapar caracteres especiales que pueden identificar cuando se trata de un script
+
+**Inyeccion SQL**
+
+Es muy parecido al anterior pero en este caso el usuario trata de correr consultar SQL en los inputs o en las requests al servidor para obtener cierto acceso o informacion. 
+
+- Sanitizar los inputs de los usuarios
+
+**Man in the middle**
+
+Es cuando un tercer interlocutor esta espiando de alguna manera la comunicacion entre dos puntos. 
+
+- Usar HTTPS para asegurar la comunicacion
+- Implementar HSTP Strict Transport Security para forzar conexiones seguras
+- Verificar los certificados SSL/TLS
+
+**Clickjacking**
+
+Engaña al usuario para que haga clic en algo diferente a lo que percibe, potencialmente revelando información confidencial o tomando control de su cuenta.
+
+- Utilizar la cabecera HTTP X-Frame-Options para evitar que la página sea incrustada en iframes de otros dominios.
+
+**CSRF (Cross-Site Request Forgery)**
+
+Cuando por ejemplo estoy en la pagina de mi banco, y al mismo tiempo ingreso a una pagina maliciosa, podria suceder que se realicen trasferencias en mi banco sin mi autorizacion. 
+
+- Uso de tokens CSRF que es una especie de identificacion unica que se envia por solicitud y que es validada antes de realizar la accion
+- Usar metodos POST cuando son metodos importantes ya que la mayoria de las CSRF tratan de ser realizadas con metodos GET ya que son mas faciles de disimular
+- Politica SAmeSite en las cookies. La política de SameSite es una configuración que puedes añadir a las cookies para controlar si se deben enviar con solicitudes de origen cruzado. Si configuras `SameSite=Strict`, la cookie solo se enviará si la solicitud proviene del mismo sitio que originalmente estableció la cookie. Esto ayuda a prevenir ataques CSRF porque impide que las cookies se envíen junto con solicitudes iniciadas por sitios maliciosos. Es decir, las cookies no pueden ser compartidas con otros dominios. 
 
 ---
 
