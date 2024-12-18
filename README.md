@@ -90,19 +90,16 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 | [Web y Service Workers](#ent26) |
 | [Event Loop (Macro, Micro tasks, Callback Queue)](#ent27) |
 | [Obfuscation and Minification](#ent55) |
-| [Promises](#ent29) |
-| [Async Await](#ent30) |
-| [Callbacks](#ent31) |
+| [Promises - Async Await - Callbacks](#ent29) |
 | [Beneficios de usar Webpack o Rollup](#ent32) |
 | [¿Qué es el concepto de "tree shaking" y cómo se aplica en una aplicación JavaScript?](#ent33) |
-| [Ciclos de vida de un componente en React](#ent34) |
 | [Mejoras en el ciclo de vida](#ent68) |
-| [Redux](#ent34) |
+| [Redux, sus caracteristicas](#ent34) |
 | [Redux Async Flow](#ent53) |
 | [Context API](#ent35) |
-| [Hooks en React](#ent36) |
 | [useEffect en React](#ent37) |
 | [useActionState en React](#ent69) |
+| [React Server Components](#ent69-1) |
 | [useMemo en React](#ent38) |
 | [startTransition en React](#ent70) |
 | [useFormStatus en React](#ent71) |
@@ -111,7 +108,7 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 | [useRef en React](#ent49) |
 | [useReducer en React](#ent50) |
 | [Virtual DOM](#ent51) |
-| [Que mejoras hay en la migracion de AngularJS a Angular?](#ent37) |
+| [Que mejoras hay en la migracion de AngularJS a Angular?](#ent51-1) |
 | [Decorators en Angular](#ent65) |
 | [¿Qué es RxJS y qué problemas resuelve en el desarrollo de aplicaciones?](#ent38) |
 | [¿Qué es un Observable en RxJS y cómo difiere de una Promesa en JavaScript?](#ent39) |
@@ -2712,6 +2709,701 @@ console.log('Inicio');
 
 console.log('Fin');
 ```
+
+<a id="ent55"></a>
+
+### **Obfuscation and Minification**
+
+[Volver al indice](#entrevista-base)
+
+La **Minificacion** es eliminar espacios innecesarios para reducir el tamaño del archivo, y asi mejorar la velocidad de carga de la pagina, siempre y cuando su funcionalidad no se vea comprometida. Es reversible, es decir que el codigo original puede ser reconstruido.
+
+La **Obfuscacion** transforma el codigo en algo que los humanos no van a poder entender pero la computadora aun si. Se usa para proteger al codigo de ingenieria inversa, y es irreversible (solo en algunos casos). Debe combinarse con la minificacion, si no el tamanio del archivo podria ser aun mayor. 
+
+La Minificacion se usa en produccion para reducir el tamanio del bundle. La ofsucacion se usa cuando se precisa proteger al codigo fuente por haber manejo de informacion sensible.
+
+<a id="ent29"></a>
+
+### **Promises - Async Await - Callbacks**
+
+[Volver al indice](#entrevista-base)
+
+**Callbacks** es la forma mas antigua de manejar procesos asincronicos en Javascript. En frontend podria ser reemplazado por Promises o Async Await, pero en backend (NodeJs) sigue siendo muy utilizado.
+
+```javascript
+function fetchData(callback) {
+    setTimeout(() => {
+        callback('Datos');
+    }, 1000);
+}
+
+fetchData(data => {
+    console.log(data);
+});
+```
+
+La desventaja de su uso es el famoso **Callback hell** donde al anidar un callback dentro de otro callback puede surgir un codigo bastante ilegible. 
+
+```javascript
+// Ejemplo callback hell
+
+function fetchData(callback) {
+    setTimeout(() => {
+        callback('Datos');
+    }, 1000);
+}
+
+// Anidamiento de callbacks
+fetchData(data => {
+    console.log(data);
+    fetchData(data => {
+        console.log(data);
+        fetchData(data => {
+            console.log(data);
+        });
+    });
+});
+```
+
+Otra cosa a tener cuenta es que los Callbacks se guardan en el **Callback Stack** que tiene menos prioridad de ejecucion que el **Microtask Queue**, donde se guardan las Promises.
+
+Las **Promises** son una forma mas moderna de manejar los procesos asincronicos en Javascript. Poseen diversos estados:
+
+- Rejected: Algo salio mal en la ejecucion, entonces se buscara el codigo catch
+- Solved: La promise se soluciono de forma exitosa
+- Pending: La promise aun esta pendiente de finalizacion
+
+```javascript
+function fetchData() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('Datos');
+        }, 1000);
+    });
+}
+
+fetchData().then(data => {
+    console.log(data);
+});
+```
+
+Las Promises son mucho mas faciles de leer y de mantener que los Callbacks, y ademas se pueden encadenar.
+
+```javascript
+fetchData()
+    .then(data => {
+        console.log(data);
+        return fetchData();
+    })
+    .then(data => {
+        console.log(data);
+        return fetchData();
+    })
+    .then(data => {
+        console.log(data);
+    });
+```
+
+Otra ventaja de las promises es que se pueden, por ejemplo, llamar a varios servicios y finalizar la promise una vez que tenemos todos los resultados
+
+```javascript
+Promise.all([fetchData(), fetchData(), fetchData()])
+    .then(data => {
+        console.log(data);
+    });
+```
+
+**Async Await** es una forma de manejar las Promises de una forma mas sincronica, y es mucho mas facil de leer y de mantener que las Promises.
+
+```javascript
+async function fetchData() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('Datos');
+        }, 1000);
+    });
+}
+
+(async () => {
+    const data = await fetchData();
+    console.log(data);
+})();
+```
+
+El uso de Async Await es muy recomendado en el desarrollo de aplicaciones modernas, ya que es mucho mas facil de leer y de mantener que las Promises.
+
+Promises y Callbacks pueden ser combinados con Async Await, pero no es recomendado ya que se pierde la ventaja de Async Await.
+
+En RxJS se pueden manejar las Promises de una forma mas avanzada, y se pueden hacer operaciones mas complejas con ellas.
+
+<a id="ent32"></a>
+
+### **Beneficios de usar Webpack o Rollup**
+
+[Volver al indice](#entrevista-base)
+
+Son herramientas para realizar el bundle de las aplicaciones.
+
+- Combinan multiples archivos para disminuir la cantidad de solicitudes HTTP
+- Mejoran la velocidad de la carga de recursos en produccion
+- Se realiza Tree Shaking para eliminar el codigo no utilizado
+- Se permite la minificacion
+- Cambian parte del codigo para hacerlo compatible con navegadores que no soporten Javascript
+- Proveen herramientas como HMR (Hot Module Replacement) que permiten actualizaciones rápidas sin recargar toda la aplicación.
+
+Rollup es recomendado para librerias mas pequenias que Webpack en si mismo, ya que ofrece una optimizacion avanzada.
+
+<a id="ent33"></a>
+
+### **¿Qué es el concepto de "tree shaking" y cómo se aplica en una aplicación JavaScript?**
+
+[Volver al indice](#entrevista-base)
+
+El **Tree Shaking** es una tecnica de optimizacion que se utiliza para eliminar el codigo no utilizado de un bundle. Se realiza mediante el uso de modulos ES6, y se realiza en el proceso de minificacion.
+
+```javascript
+// modulo.js
+export const a = 1;
+
+// main.js
+import { a } from './modulo';
+
+console.log(a);
+```
+
+En este caso, si no se utiliza la variable `a` en el archivo `main.js`, el Tree Shaking se encargara de eliminarla del bundle final, mismo con las dependencias. 
+
+<a id="ent68"></a>
+
+### **Mejoras en el ciclo de vida**
+
+[Volver al indice](#entrevista-base)
+
+**React**
+
+En React los componentes se montan, actualizan y desmontan. Para mejorar el ciclo de vida podriamos hacer lo siguiente:
+
+- Optimizar el montaje utilizando `React.memo` para evitar re-renderizados innecesarios, especialmente si se tratan de componentes que no dependen de props y state.
+
+```jsx
+const MyComponent = React.memo(function MyComponent(props) {
+    return <div>{props.value}</div>;
+});
+```
+
+- Cargar componentes de manera diferida y cuando se los precisa para mejorar el rendimiento inicial de la aplicacion
+
+```jsx
+const LazyComponent = React.lazy(() => import('./LazyComponent'));
+
+function App() {
+    return (
+        <React.Suspense fallback={<div>Cargando...</div>}>
+            <LazyComponent />
+        </React.Suspense>
+    );
+}
+```
+
+- Usar el `useEffect` de manera eficiente evitando tareas costosas o innecesarias durante el montaje. Una forma seria usando la funcion de cleanUp para evitar fugas de memoria.
+
+```jsx
+useEffect(() => {
+    const timer = setInterval(() => console.log('Hola'), 1000);
+    return () => clearInterval(timer); // Limpieza en desmontaje
+}, []);
+```
+
+- Desglosar componentes grandes en mas pequenios para manejar su montaje de forma mas especifica.
+- Cancela timers, fetch requests y eventos al desmontar el componente.
+
+**Angular**
+
+En Angular existes hooks como `ngOnInit`, `ngOnChanges`, `ngAfterViewInit`, `ngOnDestroy` que se pueden utilizar para mejorar el ciclo de vida de los componentes.
+
+- Usar `ngOnInit` para inicializaciones
+
+```typescript
+ngOnInit() {
+    this.loadData();
+}
+```
+
+- Usar `ngOnChanges` de manera eficiente evitando logica innecesaria, podriamos realizar logica pesada solo cuando los inputs cambien.
+
+```typescript
+ngOnChanges(changes: SimpleChanges) {
+    if (changes['data'] && changes['data'].currentValue) {
+        this.processData(changes['data'].currentValue);
+    }
+}
+```
+
+- Usar `ChangeDetectionStrategy.OnPush` en los componentes para evitar re-renderizados innecesarios.
+
+```typescript
+@Component({
+    selector: 'app-my-component',
+    templateUrl: './my-component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class MyComponent { }
+```
+
+- Usar el `ngOnDestroy` para realizar limpieza. Cancelar subscripciones, detener timers o event listeners.
+
+```typescript
+ngOnDestroy() {
+    this.subscription.unsubscribe();
+}
+```
+
+Tambien se puede controlar el ciclo de vida de las subscripciones mediante herramientas dadas por RxJs como `takeUntil` o `takeWhile`.
+
+```typescript
+private destroy$ = new Subject<void>();
+
+this.service.getData()
+  .pipe(takeUntil(this.destroy$))
+  .subscribe(data => this.data = data);
+
+ngOnDestroy() {
+    this.destroy$.next();
+    this.destroy$.complete();
+}
+```
+
+<a id="ent34"></a>
+
+### **Redux, sus caracteristicas**
+
+[Volver al indice](#entrevista-base)
+
+Redux es un contenedor de estado que se usa generalmente con React. 
+
+En el **Redux Store** se guarda el estado de la aplicacion al cual podemos acceder mediante **Actions**. 
+
+```javascript
+{
+  type: 'PEDIR_PIZZA',
+  payload: { item: 'pizza' }
+}
+```
+
+El `type` es el tipo de accion que se desea realizar de una cantidad pre-definida, el `payload` es la informacion necesaria para realizar este cambio. Este pedido es manejado por el **Reducer**
+
+```javascript
+function pedidosReducer(state = [], action) {
+  switch (action.type) {
+    case 'PEDIR_PIZZA':
+      return [...state, action.payload.item]; // Añade 'pizza' al pedido
+    default:
+      return state; // Devuelve el estado tal cual si no reconoce la acción
+  }
+}
+```
+
+Una vez que el cambio esta hecho, todos los componentes que la consumen estan al tanto de este cambio y cambian en consecuencia.
+
+Redux guarda la informacion en un solo lugar de la aplicacion y la distribuye a todos los componentes que la necesitan, y es facil de depurar. Es especialmete util en aplicaciones grandes.
+
+<a id="ent53"></a>
+
+### **Redux Async Flow**
+
+[Volver al indice](#entrevista-base)
+
+Redux Async Flow es el flujo asincrono de Redux. Si bien Redux maneja los estados de manera asincrona, a veces necesitamos llevar a cabo tareas asincronas en si mismos, como llamar a una API, y Redux no entiende funciones asincronas, no sabe esperar a que la API termine su procesamiento. 
+
+Para solucionar esto se usa un middleware llamado `Redux Thunk` o `Redux Saga` que funciona como intermediario entre los actions y los reducers, los mismos permiten ejeuctan funciones asincronas en las acciones y despachar nuevas acciones una vez que la primera tarea asincrona termino.
+
+```javascript
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+
+const store = createStore(reducer, applyMiddleware(thunk));
+```
+
+Se suele manejar la informacion en un objeto con 3 elementos:
+
+```javascript
+{
+  loading: false,
+  data: [...], // Datos obtenidos
+  error: null
+}
+```
+
+<a id="ent35"></a>
+
+### **Context API**
+
+[Volver al indice](#entrevista-base)
+
+ContextAPI es una herramienta que viene con React de manera nativa que cumple la misma funcion que Redux pero de una manera mucho mas pequenia. 
+A veces nos puede suceder que si queremos que cierta informacion sea usada por varios componentes caemos en un **prop drilling** donde terminamos pasando esas mismas props de un componente a otro, incluso si ese componente no lo necesita en su totalidad. 
+
+```jsx
+const App = () => {
+  const user = { name: 'John Doe' }; // Datos globales
+
+  return (
+    <Parent user={user} />
+  );
+};
+
+const Parent = ({ user }) => {
+  return (
+    <Child user={user} />
+  );
+};
+
+const Child = ({ user }) => {
+  return <h1>{user.name}</h1>;
+};
+```
+
+En este caso, ContextApi soluciona este problema disponibilizando un sistema de estado global, haciendo que solo el que lo necesita acceda a la informacion. 
+
+ContextApi funciona bajo 3 conceptos:
+
+- Context: Es un contenedor para datos que pueden ser compartidos entre componentes
+
+```jsx
+const UserContext = React.createContext();
+```
+
+- Provider: Es un componente que provee la infomacion a los componentes que lo precisan, solo se deben poner dentro de este los componentes que necesitan la informacion.
+
+```jsx
+<UserContext.Provider value={{ name: 'John Doe' }}>
+  <Parent />
+</UserContext.Provider>
+```
+
+- Consumer: Es el componente que precisa acceder a esta informacion.
+
+```jsx  
+import React from 'react';
+import { UserContext } from './UserContext';
+
+const Child = () => {
+  return (
+    <UserContext.Consumer>
+      {(user) => <h1>Hola, {user.name}!</h1>}
+    </UserContext.Consumer>
+  );
+};
+```
+
+Tambien se puede utilizar el hook `useContext` que facilita la consumicion de esta informacion.
+
+```jsx
+import React, { useContext } from 'react';
+import { UserContext } from './UserContext';
+
+const Child = () => {
+  const user = useContext(UserContext); // Consumir el contexto directamente
+  return <h1>Hola, {user.name}!</h1>;
+};
+```
+
+Las limitaciones que posee ContextApi son
+
+- Cuando el valor del contexto cambia, los elementos que la consumen se van a re-renderizar de manera innecesaria en algunos casos, es por eso que es recomendable dividir los componentes en unidades mas pequenias para poder manejar esto de mejor manera
+- Si preciso manejar estados mas complejos, Redux sigue siendo la mejor opcion
+
+<a id="ent37"></a>
+
+### **useEffect en React**
+
+[Volver al indice](#entrevista-base)
+
+El hook `useEffect` es un hook que aparecio como reemplazo de las funciones de manejo de ciclo de vida de los componentes de clase.
+
+Podemos hacer que se ejecute ante cada renderizado, solo al montar el componente, solo al desmontar el componente, o solo cuando ciertos valores cambian.
+
+```jsx
+// Se ejecuta ante cada renderizado
+useEffect(() => {
+    console.log('Hola');
+});
+
+// Se ejecuta solo al montar el componente
+useEffect(() => {
+    console.log('Hola');
+}, []);
+
+// Se ejecuta solo al desmontar el componente
+useEffect(() => {
+    return () => console.log('Adios');
+}, []);
+
+// Se ejecuta solo cuando el valor de `value` cambia
+useEffect(() => {
+    console.log('Hola');
+}, [value]);
+```
+
+Se pueden realizar diversas cosas dentro del useEffect, como llamadas a las APIs, para las cuales se recomienda que esten en otra funcion aparte y no dentro del useEffect, convirtiendolo en asincrono, ya que React espera que useEffect devuelva `undefined` o una funcion de limpieza, no una Promise. Probablemente funcione, pero tendremos un error en la consola.
+
+<a id="ent69"></a>
+
+### **useActionState en React**
+
+[Volver al indice](#entrevista-base)
+
+Es un hook que en React 18 fue considerado experimental, utilizado para simpliificr la gestion de acciones asincronas en los componentes, como el estado de `loading`, `error` y `data`.
+
+```jsx
+const [state, action, isPending] = useActionState(actionFunction, initialState);
+```
+
+- `actionFunction` es la funcion asincrona
+- `initialState` es el valor inicial del estado
+
+Este hook nos ahorra usar multiples `useState` para el manejo de estos estados
+
+<a id="ent69-1"></a>
+
+### **React Server Components**
+
+[Volver al indice](#entrevista-base)
+
+Es una caracteristica de React que nos permite renderizar algunos componentes en el lado del servidor, y que el cliente solo reciba el HTML necesario para renderizar la pagina, y que lo hidrate (que significa que los hace interactivos sin tener que re-renderizarlos completamente) de ser necesario, esto es muy util para componentes que son estaticos y no son interactivos, todo esto para evitar la carga de JS inutil.
+
+- Disminuye el peso del bundle 
+- Mejora el tiempo de carga ya que el browser no debe hacer tanto trabajo para cargar la pagina
+- Se pueden realizar acciones como acceder a una base de datos desde el lado del servidor sin necesitar de involucrar al cliente
+- En estos componentes marcados como `Server Component` no se puede usar `useState` o `useEffect`, ya que estos son manejados por el cliente
+
+```jsx
+// Componente del Servidor (Rendimiento en el servidor)
+export default function ServerComponent() {
+  // Este código se ejecuta en el servidor
+  const data = fetchDataFromDatabase();  // Llamada al servidor o base de datos
+  return <div>Datos del servidor: {data}</div>;
+}
+
+// Componente del Cliente (Rendimiento en el cliente)
+export default function ClientComponent() {
+  // Este componente puede ser interactivo
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <button onClick={() => setCount(count + 1)}>Haz clic</button>
+      <p>Has hecho clic {count} veces</p>
+    </div>
+  );
+}
+```
+
+Es muy util combinar esta funcionalidad con NextJs para mejorar el rendimiento de la aplicacion.
+
+<a id="ent51-1"></a>
+
+### **Que mejoras hay en la migracion de AngularJS a Angular?**
+
+[Volver al indice](#entrevista-base)
+
+
+| AngularJS | Angular |
+| --- | --- |
+| Arquitectura MVC (no estrictamente aplicado pero que usaba varios conceptos del mismo donde se separa la logica de negocio de la vista y el controlador) donde los controllers eran el nucleo de la logica de los componentes, y las directivas permitian la reutilizacion de partes de la interfaz | Arquitectura basada en componentes, cada componente tiene su vista y logica, mejorando la modularidad y reutilizacion de codigo |
+| Poseia inyeccion de dependencias aunque era mucho mas complejo de entender, y no era facil de testear | Inyeccion de dependencias mucho mas facil de entender y de testear |
+| El lenguaje principal de AngularJs es Javascript | Angular por defecto usa Typescript |
+| Funcionaba con two-way data binding, que era bueno pero en aplicaciones grandes podia significar un gran problema de rendimiento ya que para mantener los datos actualizados en la vista se debian hacer muchas operaciones | Usa one-way data binding, que es mucho mas eficiente y facil de mantener, ademas de introducir Change Detection y compilacion AOT (ahead of time) precompilando el codigo antes de la ejecucion mejorando tiempos de carga |
+| El sistema de routing de AngularJs era bueno y basico | El sistema de routing de Angular es mas avanzado y ofrece muchas mas herramientas como lazy loading, guards, resolvers, etc |
+| Soportaba enlaces bidireccionales de datos, pero no estaba enfocado en una programacion reactiva | Se puede usar RxJS para manejar los datos de manera reactiva |
+| Todo nuevo archivo y agregado debia hacerse a mano | Se cuenta con Angular CLI que automatiza muchas cosas |
+| En AngularJS tenemos modulos, pero no se soporta el Lazy Loading | Se soporta el Lazy Loading |
+
+
+<a id="ent65"></a>
+
+### **Decorators en Angular**
+
+[Volver al indice](#entrevista-base)
+
+El concepto de decorators en si no es propio de Angular si no que viene de Typescript. Los decoradores son funciones que se utilizan para modificar clases, metodos, propiedades, parametros, etc.
+
+- `@Component`: Se utiliza para decorar una clase que define un componente de Angular
+
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root', // Nombre de la etiqueta HTML
+  templateUrl: './app.component.html', // Archivo HTML
+  styleUrls: ['./app.component.css'] // Estilos CSS
+})
+export class AppComponent {
+  title = 'Mi aplicación Angular';
+}
+```
+
+- `@Injectable`: marca una clase como inyección de dependencias en Angular. Se usa para declarar que una clase puede ser inyectada en otros componentes o servicios
+
+```typescript
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root' // Este servicio estará disponible en toda la aplicación
+})
+export class DataService {
+  constructor() {}
+
+  getData() {
+    return ['Elemento1', 'Elemento2', 'Elemento3'];
+  }
+}
+```
+
+- ` @NgModule`: Se usa para definir que este componente es un modulo en si mismo. Con la aparicion de los componentes standalone ya no es tan comunmente usado.
+
+```typescript
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [AppComponent], // Componentes que pertenecen al módulo
+  imports: [BrowserModule], // Otros módulos que necesita
+  providers: [], // Servicios a inyectar
+  bootstrap: [AppComponent] // Componente inicial
+})
+export class AppModule {}
+```
+
+- `@Input`: se utiliza para marcar una propiedad de un componente que va a recibir datos desde su componente padre.
+
+```typescript
+import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-child',
+  template: '<h2>{{ name }}</h2>'
+})
+export class ChildComponent {
+  @Input() name: string; // Recibe un valor desde el componente padre
+}
+```
+
+- `@Output`: El decorador @Output se usa para crear un evento personalizado en un componente que puede ser escuchado por su componente padre.
+
+```typescript
+import { Component, Output, EventEmitter } from '@angular/core';
+
+@Component({
+  selector: 'app-child',
+  template: '<button (click)="sendMessage()">Enviar Mensaje</button>'
+})
+export class ChildComponent {
+  @Output() messageEvent = new EventEmitter<string>();
+
+  sendMessage() {
+    this.messageEvent.emit('Hola desde el componente hijo');
+  }
+}
+```
+
+- `@HostListener`: Cuando preciso escuchar cualquier accion en el navegador, como clicks o cambios en el tamanio de la pantalla.
+
+```typescript
+import { Component, HostListener } from '@angular/core';
+
+@Component({
+  selector: 'app-resize-listener',
+  template: '<p>El tamaño de la ventana es: {{ width }}px</p>'
+})
+export class ResizeListenerComponent {
+  width: number = window.innerWidth;
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.width = window.innerWidth;
+  }
+}
+```
+
+- `@ViewChild`: Se utiliza para acceder a un componente hijo desde su componente padre.
+
+```typescript
+import { Component, ViewChild, AfterViewInit } from '@angular/core';
+
+@Component({
+  selector: 'app-parent',
+  template: '<app-child #childComponent></app-child>'
+})
+export class ParentComponent implements AfterViewInit {
+  @ViewChild('childComponent') child: any;
+
+  ngAfterViewInit() {
+    console.log(this.child); // Accede al componente hijo
+  }
+}
+```
+
+<a id="ent39"></a>
+
+### **¿Qué es un Observable en RxJS y cómo difiere de una Promesa en JavaScript?**
+
+[Volver al indice](#entrevista-base)
+
+RxJS (Reactive Extensions for JS) es una libreria que nos permite trabajar con programacion reactiva en Javascript, y la misma posee `Observables` que es un objeto que reprssenta una coleccion de valores o eventos que se emiten a lo largo del tiempo. 
+
+Las Promises solo pueden manejar un valor o evento, los Observables pueden manejar varias de manera sincronica e asincronica, por eso es ideal para el manejo de solicitudes HTTP. 
+
+Los observables pueden ser modificados mediante el uso de otras tools de RxJS como `map` (transforma los valores), `filter` (filtra los valores), `reduce` (reduce los valores), `merge` (combina los valores de varios observables), `concat` (combina los valores de varios observables en orden), `forkJoin` (combina los valores de varios observables y devuelve un solo valor), `switchMap` (cancela la subscripcion anterior y se suscribe a la nueva), `debounceTime` (espera un tiempo antes de emitir un valor), `distinctUntilChanged` (emite un valor solo si es diferente al anterior), `catchError` (captura un error y lo maneja), `retry` (reintenta la operacion si falla), entre otros.
+
+Sin embargo los observables por si mismos no hacen nada, precisan que algo este **subscripto** a ellos para que hagan algo, es por eso que es importante desubscribirse de ellos en el estado unmounted de la aplicacion. 
+
+```javascript
+import { Observable } from 'rxjs';
+
+const observable = new Observable(subscriber => {
+  subscriber.next('Hello');
+  subscriber.next('World');
+  subscriber.complete();
+});
+
+observable.subscribe({
+  next(value) {
+    console.log(value); // 'Hello', 'World'
+  },
+  complete() {
+    console.log('Done!');
+  }
+});
+```
+
+| Promises | Observables |
+| --- | --- |
+| Solo pueden emitir un valor o un error | Pueden emitir multiples valores a lo largo del tiempo siempre y cuando la subscripcion este activa |
+| Apenas se crea la Promise, la misma es ejecutad, se le dice `Eager` | No hace nada hasta que alguien este observandolo, es por eso que se le dice `lazy`, porque por si mismo no hace nada |
+| La promesa no se puede cancelar | Se puede cancelar la subscripcion a un observable |
+
+<a id="ent41"></a>
+
+### **Beneficios de usar un CDN**
+
+[Volver al indice](#entrevista-base)
+
+El uso de CDN consta de poner todos mis archivos estaticos en un servidor (preferentemente de alta disponibilidad) para poder obtener mis archivos desde ahi, y no desde mi propio bundle, aumentando asi el peso del mismo.
+
+Como la idea del servidor CDN (Content Delivery Network) es que sea de alta disponibilidad, es muy comun tener servidores en distintas regiones, permitiendo que el usuario acceda al servidor mas cercano a su ubicacion actual para poder obtener la informacion de manera mucho mas rapida. 
+
+Tambien el contenido obtenido de estos CDN es guardado por el servidor a modo de catching, haciendo que su segunda obtencion sea mucho mas veloz. 
+
+Generalmente se usan para:
+
+- Archivos estaticos como fue anteriormente mencionado
+- Distribucion de librerias de terceros como por ejemplo Bootstrap
+- Entrega de contenido multimedia que puede ser un poco pesado
+- Paginas web globales
+
+Cloudflare, Akamai, AWS CloudFront, Google Cloud CDN, son algunos servicios disponibles para CDN cuyo precio varia segun el servicio de catching, seguridad y latencia. 
 
 ---
 
