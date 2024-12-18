@@ -132,7 +132,7 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 | [Metodologias de estimacion de tareas](#ent66) |
 | [Distintos tipos de testing en Frontend](#ent62) |
 | [Git vs Mercurial](#ent63) |
-| [Continuous Integration, Continuous Delivery, Continuous Deployment](#ent65) |
+| [Continuous Integration, Continuous Delivery, Continuous Deployment](#ent65-4) |
 | [Posibles mejoras al proceso CI-CD](#ent64) |
 | [Que sucede cuando escribo una URL en el navegador y hago click en Enter?](#har19) |
 | [Explicar que es CORS](#ent67) |
@@ -3403,7 +3403,19 @@ Generalmente se usan para:
 - Entrega de contenido multimedia que puede ser un poco pesado
 - Paginas web globales
 
-Cloudflare, Akamai, AWS CloudFront, Google Cloud CDN, son algunos servicios disponibles para CDN cuyo precio varia segun el servicio de catching, seguridad y latencia. 
+Cloudflare, Akamai, AWS CloudFront, Google Cloud CDN, son algunos servicios disponibles para CDN cuyo precio varia segun el servicio de catching, seguridad y latencia.
+
+<a id="ent76"></a>
+
+### **Mencionar como manejarias la delegacion de tareas dentro de tu equipo**
+
+[Volver al indice](#entrevista-base)
+
+La idea es que cada miembro del equipo tenga sus fortalezas, y es deber de los lideres identificar cuales son estos, al igual que sus areas a mejorar, y asignar tareas acorde a esto. Esto nos sirve para fomentar la colaboracion, independencia y autonomia de los miembros del equipo, al igual que su confianza.
+
+Lo ideal es que cada miembro del equipo trabaje en tareas que esten acordes a sus habilidades y debilidades de manera independiente, pero no sacando el trabajo en equipo, que debe seguir teniendo una comunicacion fluida para pedir recursos o colaboracion con algunas cosas. Para lograr esto no solo depende del desarollador si no de quien arma las tasks que las mismas sean claras, y que las prioridades ante todo tambien lo sean.
+
+Ademas, otra cosa importante que se mejora al delegar tareas es que hay una distribucion del conocimiento bastante pareja, para que no quede el conocimiento concentrado en un solo miembro, y que luego el mismo sufra un exceso de trabajo debido a esto.
 
 ---
 
