@@ -128,7 +128,6 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 | [Es la metodologia Agile recomendable para todos los proyectos?](#ent60) |
 | [Que es un MVP?](#ent61) |
 | [Metodologias de estimacion de tareas](#ent66) |
-
 | [Distintos tipos de testing en Frontend](#ent62) |
 | [Git vs Mercurial](#ent63) |
 | [Continuous Integration, Continuous Delivery, Continuous Deployment](#ent65-4) |
