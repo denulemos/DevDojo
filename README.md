@@ -110,6 +110,7 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 | [Virtual DOM](#ent51) |
 | [Que mejoras hay en la migracion de AngularJS a Angular?](#ent51-1) |
 | [Decorators en Angular](#ent65) |
+| [Angular Signals](#ent65-1) |
 | [¿Qué es RxJS y qué problemas resuelve en el desarrollo de aplicaciones?](#ent38) |
 | [¿Qué es un Observable en RxJS y cómo difiere de una Promesa en JavaScript?](#ent39) |
 | [Explica la diferencia entre un Observable "cold" y "hot". Proporciona un ejemplo práctico de cada uno.](#ent40) |
@@ -140,7 +141,8 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 | [Como escalar una aplicacion Frontend de la mejor forma](#ent74)|
 |[Principios de Disponibilidad, Escalamiento en Frontend](#ent75)|
 | [Mencionar como manejarias la delegacion de tareas dentro de tu equipo](#ent76) |
-
+| [Se te da la tarea de empezar un nuevo proyecto, que preguntas realizarias para tomar que decisiones como un Tech Lead?](#ent76-1) |
+| [Comparar Agile con Kanban u otras metodologias, para que casos usarias una u otra?](#ent77) |
 
 <a name="alg-base"></a>
 
@@ -3219,7 +3221,6 @@ Es muy util combinar esta funcionalidad con NextJs para mejorar el rendimiento d
 | Todo nuevo archivo y agregado debia hacerse a mano | Se cuenta con Angular CLI que automatiza muchas cosas |
 | En AngularJS tenemos modulos, pero no se soporta el Lazy Loading | Se soporta el Lazy Loading |
 
-
 <a id="ent65"></a>
 
 ### **Decorators en Angular**
@@ -3345,13 +3346,83 @@ export class ParentComponent implements AfterViewInit {
 }
 ```
 
+<a id="ent65-1"></a>
+
+### **Angular Signals**
+
+[Volver al indice](#entrevista-base)
+
+Angular signals es una caracteristica que aparecio con Angular 16 en donde se introducen herramientas de reacividad para mejorar la gestion de estados y deteccion de cambios. Reemplaza a algunos elementos nativos y a algunos usos de RxJs
+
+Se inspira en **Patrones declarativos** como en el caso de SolidJS o Svelte. 
+
+Un **Signal** es un contenedor que mantiene un valor reactivo (es decir, un valor que cambia con el tiempo) y que puede ser observado por otros componentes, entonces cuando este valor cambia, los componentes cambian en consecuencia. 
+
+```typescript
+import { signal } from '@angular/core';
+
+const counter = signal(0); // Signal inicializado con un valor
+console.log(counter()); // Acceder al valor del signal: 0
+
+counter.set(1); // Actualizar el valor del signal
+console.log(counter()); // Acceder al nuevo valor: 1
+```
+
+No es necesario el manejo de subscripciones como en el caso de RxJS ya que la reactividad esta integrada en el mismo Angular. 
+Al cambiar este Signal, Angular actualiza solo lo necesario sin tener que recorrer todo el arbol de componentes. 
+
+Se pueden crear Signals compuestos, es decir, de mas de un elemento en ellos
+
+```typescript
+import { signal, computed } from '@angular/core';
+
+const firstName = signal('John');
+const lastName = signal('Doe');
+const fullName = computed(() => `${firstName()} ${lastName()}`);
+
+console.log(fullName()); // "John Doe"
+
+firstName.set('Jane');
+console.log(fullName()); // "Jane Doe"
+```
+
+Y si quiero ejecutar una logica cuando un Signal cambia, puedo usar los `Effects`, algo muy similar al `useEffect` de React
+
+```typescript
+import { signal, effect } from '@angular/core';
+
+const counter = signal(0);
+
+effect(() => {
+    console.log(`Counter value is: ${counter()}`);
+});
+
+counter.set(1); // Consola: "Counter value is: 1"
+```
+
+<a id="ent38"></a>
+
+### **¿Qué es RxJS y qué problemas resuelve en el desarrollo de aplicaciones?**
+
+[Volver al indice](#entrevista-base)
+
+Reactive Extensions for Javascript (RxJS) es una libreria que nos permite trabajar con programacion reactiva en Javascript permitiendo el manejo de flujos asincronos de una forma mas declarativa, reactiva y consistente.
+
+- Manejo de peticiones asincronas, en vez de utilizar Callbacks o Promises anidados, se pueden utilizar Observables para manejar flujos de datos asincronos
+- Cuando tengo varias fuentes de datos que manejar que interactuan entre si, en RxJS puedo utilizar operadores como `map`, `combineLatest`, `map`, `filter` y `switchMap` para manejar estos flujos.
+- RxJS ofrece herramientas como `takeUntil` o `takeWhile` para manejar las subscripciones de una forma eficiente y asi evitar memory leaks
+- Con RxJs puedo manejar tanto flujos de datos sincronicos como asincronicos, y puedo combinarlos de una forma muy sencilla
+- Si necesito coordinar multiples tareas asincronicas o flujos, RxJS me permite hacerlo de una forma muy sencilla con `forkJoin`, `merge`, `concat`, `combineLatest`, `zip`, etc, mejorando la concurrencia (la cual significa que puedo manejar multiples tareas al mismo tiempo)
+
+En parte su uso podria ser reemplazado con Angular Signals en Angular 16, pero RxJS sigue siendo una herramienta muy poderosa para manejar flujos de datos asincronos.
+
 <a id="ent39"></a>
 
 ### **¿Qué es un Observable en RxJS y cómo difiere de una Promesa en JavaScript?**
 
 [Volver al indice](#entrevista-base)
 
-RxJS (Reactive Extensions for JS) es una libreria que nos permite trabajar con programacion reactiva en Javascript, y la misma posee `Observables` que es un objeto que reprssenta una coleccion de valores o eventos que se emiten a lo largo del tiempo. 
+RxJS (Reactive Extensions for JS) es una libreria que nos permite trabajar con programacion reactiva en Javascript, y la misma posee `Observables` que es un objeto que reprssenta una coleccion de valores o eventos que se emiten a lo largo del tiempo.
 
 Las Promises solo pueden manejar un valor o evento, los Observables pueden manejar varias de manera sincronica e asincronica, por eso es ideal para el manejo de solicitudes HTTP. 
 
@@ -3384,6 +3455,38 @@ observable.subscribe({
 | Apenas se crea la Promise, la misma es ejecutad, se le dice `Eager` | No hace nada hasta que alguien este observandolo, es por eso que se le dice `lazy`, porque por si mismo no hace nada |
 | La promesa no se puede cancelar | Se puede cancelar la subscripcion a un observable |
 
+<a id="ent40"></a>
+
+### **Explica la diferencia entre un Observable "cold" y "hot". Proporciona un ejemplo práctico de cada uno.**
+
+[Volver al indice](#entrevista-base)
+
+Los **Cold Observables** son Observables que crean un flujo de datos por cada subscriptor, produciendo datos on-demand, es decir, solo cuando alguien se subscribe. El ejemplo mas comun es el llamado a un servicio con HTTP.
+
+```typescript
+import { Observable } from 'rxjs';
+import { ajax } from 'rxjs/ajax';
+
+const httpObservable = ajax.getJSON('https://jsonplaceholder.typicode.com/posts/1');
+
+// Ambas ejecutaran una llamada HTTP
+httpObservable.subscribe(data => console.log('Subscriber 1:', data));
+httpObservable.subscribe(data => console.log('Subscriber 2:', data));
+``` 
+
+Los **Hot Observables** tienen su propio flujo independiente de las subscripciones, un ejemplo puede ser un WebSocket, donde los datos se emiten independientemente de las subscripciones. Tambien puede suceder que si una parte de subscribe de forma muy tardia, se pierda de alguna informacion, no vera ningun historial al respecto.
+
+```typescript
+import { fromEvent } from 'rxjs';
+
+const clicks$ = fromEvent(document, 'click');
+
+clicks$.subscribe(() => console.log('Subscriber 1: Click detected'));
+setTimeout(() => {
+  clicks$.subscribe(() => console.log('Subscriber 2: Click detected (late subscriber)'));
+}, 5000);
+```
+
 <a id="ent41"></a>
 
 ### **Beneficios de usar un CDN**
@@ -3404,6 +3507,356 @@ Generalmente se usan para:
 - Paginas web globales
 
 Cloudflare, Akamai, AWS CloudFront, Google Cloud CDN, son algunos servicios disponibles para CDN cuyo precio varia segun el servicio de catching, seguridad y latencia.
+
+<a id="ent42"></a>
+
+### **Como organizarias el code reuse en una aplicacion?**
+
+[Volver al indice](#entrevista-base)
+
+- Una forma seria fomentando la **Modularizacion**, haciendo modulos reutilizables y separados por responsabilidades. Usa patrones como Separation of Concerns (SoC) y Single Responsibility Principle (SRP)
+- Algo muy parecido pero cuando se utilizan frameworks de Frontend pero con los componentes visuales. 
+- Hacer uso del tipico archivo `utils` con funciones que pueden ser utilizadas en toda la aplicacion.
+- Mismo con los servicios. Apuntar a un patron `Singleton` para garantizar que solo haya una instancia de un servicio en toda la aplicacion.
+- Si hay alguna funcion que incluso podria ser usada en otras aplicaciones, considerar la creacion de una libreria.
+- Apoyarse mucho en patrones de disenio:
+  - Factory Pattern: Crear objetos de forma centralizada
+  - Singleton Pattern: Resguardar una sola instancia de un objeto
+  - Observer Pattern: Manejar eventos y notificaciones de manera centralizada
+  - Strategy Pattern: Cambiar el comportamiento de un objeto en tiempo de ejecucion, para encapsular diferentes algoritmos reutilizables. Esto podria relacionarse mucho con la herencia.
+
+```typescript
+interface PaymentStrategy {
+  pay(amount: number): void;
+}
+
+class CreditCardPayment implements PaymentStrategy {
+  pay(amount: number) {
+    console.log(`Paid ${amount} using credit card`);
+  }
+}
+
+class PaypalPayment implements PaymentStrategy {
+  pay(amount: number) {
+    console.log(`Paid ${amount} using PayPal`);
+  }
+}
+
+const paymentMethod: PaymentStrategy = new CreditCardPayment();
+paymentMethod.pay(100); // "Paid 100 using credit card"
+```
+
+- En React el uso de custom Hooks es ideal para el manejo de logica repetida
+- Hacer uso del tipico archivo de constantes para manejar la misma informacion a lo largo de toda la aplicacion desde una misma fuente.
+
+<a id="ent43"></a>
+
+### **Que es un higher order component?**
+
+[Volver al indice](#entrevista-base)
+
+Es un patron de disenio muy comunmente usado en React en donde una funcion recibe como parametro un componente y devuelve un componente nuevo con una funcioanlidad extendida.
+
+```jsx
+const withExtraProps = (WrappedComponent) => {
+  return (props) => {
+    const extraProps = { extra: 'some extra prop' };
+    return <WrappedComponent {...props} {...extraProps} />;
+  };
+};
+```
+
+Es muy comun cuando debo chequear varias veces si el usuario se encuentra autenticado en la aplicacion
+
+```jsx
+const withAuth = (WrappedComponent) => {
+  return (props) => {
+    const isAuthenticated = true; // Lógica de autenticación
+    if (!isAuthenticated) {
+      return <div>No estás autenticado</div>;
+    }
+    return <WrappedComponent {...props} />;
+  };
+};
+
+const Dashboard = () => {
+  return <h1>Bienvenido al Dashboard</h1>;
+};
+
+const ProtectedDashboard = withAuth(Dashboard);
+
+// Ahora ProtectedDashboard verifica autenticación antes de renderizar Dashboard
+export default function App() {
+  return <ProtectedDashboard />;
+}
+
+```
+
+Existe el concepto de **wrapper hell** en donde tengo demasiados niveles anidados en los componentes, este fue el motivo por el cual React introdujo a los Custom Hook 
+
+```jsx
+const useAuth = () => {
+  const isAuthenticated = true; // Lógica de autenticación
+  return isAuthenticated;
+};
+
+const Dashboard = () => {
+  const isAuthenticated = useAuth();
+  if (!isAuthenticated) {
+    return <div>No estás autenticado</div>;
+  }
+  return <h1>Bienvenido al Dashboard</h1>;
+};
+```
+
+Hoy en dia los HOC son utiles cuando se utilizan patrones de clases, o cuando se necesita un mayor control sobre el ciclo de vida del componente.
+
+<a id="ent44"></a>
+
+### **Patrones de disenio en React**
+
+[Volver al indice](#entrevista-base)
+
+**Componentizacion**
+
+Es el separar la interfaz de usuario en componentes reutilizables, es la base de React en si mismo.
+
+**Contenedor y Presentación (Container-Presenter Pattern)**
+
+Separar los componentes que se encargan de la UI de los componentes de logica. Se le dice componente presentacion y componente contenedor
+
+```jsx
+// Componente Presentación
+const UserList = ({ users }) => (
+  <ul>
+    {users.map((user) => (
+      <li key={user.id}>{user.name}</li>
+    ))}
+  </ul>
+);
+
+// Componente Contenedor
+const UserContainer = () => {
+  const [users, setUsers] = React.useState([]);
+
+  React.useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then((res) => res.json())
+      .then((data) => setUsers(data));
+  }, []);
+
+  return <UserList users={users} />;
+};
+
+export default UserContainer;
+```
+
+**Higher-Order Components (HOCs)**
+
+Como se explico anteriormente, es un patron de disenio muy comunmente usado en React en donde una funcion recibe como parametro un componente y devuelve un componente nuevo con una funcionalidad extendida.
+
+```jsx
+const withLogging = (WrappedComponent) => {
+  return (props) => {
+    console.log('Componente renderizado con props:', props);
+    return <WrappedComponent {...props} />;
+  };
+};
+
+// Uso
+const MyComponent = ({ message }) => <div>{message}</div>;
+const MyComponentWithLogging = withLogging(MyComponent);
+
+// Render
+<MyComponentWithLogging message="Hola, mundo!" />;
+```
+
+**Render Props**
+
+Es un patron de disenio que permite a los componentes compartir logica de renderizado con otros componentes.
+
+```jsx
+const Mouse = ({ render }) => {
+  const [position, setPosition] = React.useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (event) => {
+    setPosition({
+      x: event.clientX,
+      y: event.clientY
+    });
+  };
+
+  React.useEffect(() => {
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
+  return render(position);
+};
+
+// Uso
+const App = () => (
+  <Mouse
+    render={({ x, y }) => (
+      <div>
+        <h1>El mouse está en la posición ({x}, {y})</h1>
+      </div>
+    )}
+  />
+);
+```
+
+**Custom Hooks**
+
+Es un patron de disenio que permite extraer logica de un componente en una funcion reutilizable. reemplaza en parte a los HOC
+
+```jsx
+const useMouse = () => {
+  const [position, setPosition] = React.useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (event) => {
+    setPosition({
+      x: event.clientX,
+      y: event.clientY
+    });
+  };
+
+  React.useEffect(() => {
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
+  return position;
+};
+
+// Uso
+const App = () => {
+  const { x, y } = useMouse();
+
+  return (
+    <div>
+      <h1>El mouse está en la posición ({x}, {y})</h1>
+    </div>
+  );
+};
+```
+
+**Context API - Context pattern**
+
+Es un patron de disenio que permite pasar datos a traves del arbol de componentes sin tener que pasar props manualmente en cada nivel. Elimina el Prop Drilling.
+
+```jsx
+const ThemeContext = React.createContext();
+
+const ThemeProvider = ({ children }) => {
+  const [theme, setTheme] = React.useState('light');
+  return (
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+};
+
+const ThemeSwitcher = () => {
+  const { theme, setTheme } = React.useContext(ThemeContext);
+  return (
+    <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
+      Cambiar a {theme === 'light' ? 'oscuro' : 'claro'}
+    </button>
+  );
+};
+
+const App = () => (
+  <ThemeProvider>
+    <ThemeSwitcher />
+  </ThemeProvider>
+);
+```
+
+**Compound Components**
+
+Es un patron de disenio que permite a los componentes trabajar juntos de manera mas eficiente, como por ejemplo un `select` y `option`
+
+```jsx
+const Select = ({ children }) => {
+  const [selected, setSelected] = React.useState(null);
+
+  const onSelect = (value) => {
+    setSelected(value);
+  };
+
+  return (
+    <div>
+      {React.Children.map(children, (child) => {
+        if (child.type === Option) {
+          return React.cloneElement(child, {
+            onSelect,
+            selected: child.props.value === selected
+          });
+        }
+        return child;
+      })}
+    </div>
+  );
+};
+
+const Option = ({ value, onSelect, selected, children }) => (
+  <div
+    onClick={() => onSelect(value)}
+    style={{ background: selected ? 'lightblue' : 'white' }}
+  >
+    {children}
+  </div>
+);
+
+// Uso
+
+const App = () => (
+  <Select>
+    <Option value="1">Opción 1</Option>
+    <Option value="2">Opción 2</Option>
+    <Option value="3">Opción 3</Option>
+  </Select>
+);
+```
+
+**Controlled y Uncontrolled Components**
+
+Es un patron de disenio que permite manejar los componentes de una forma mas eficiente, en los **Controlled Components** el estado del componente es manejado por React, mientras que en los **Uncontrolled Components** el estado es manejado por el propio componente.
+
+```jsx
+// Controlled Component
+const ControlledInput = () => {
+  const [value, setValue] = React.useState('');
+
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
+
+  return <input value={value} onChange={handleChange} />;
+};
+
+// Uncontrolled Component
+const UncontrolledInput = () => {
+  const inputRef = React.useRef();
+
+  const handleClick = () => {
+    console.log(inputRef.current.value);
+  };
+
+  return (
+    <div>
+    // El estado es manejado por el DOM
+      <input ref={inputRef} />
+      <button onClick={handleClick}>Obtener valor</button>
+    </div>
+  );
+};
+```
 
 <a id="ent76"></a>
 
