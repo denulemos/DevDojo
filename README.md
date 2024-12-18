@@ -100,14 +100,12 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 | [useEffect en React](#ent37) |
 | [useActionState en React](#ent69) |
 | [React Server Components](#ent69-1) |
-| [useMemo en React](#ent38) |
 | [startTransition en React](#ent70) |
 | [useFormStatus en React](#ent71) |
 | [useOptimistic en React](#ent72) |
 | [useCallback en React](#ent39) |
 | [useRef en React](#ent49) |
 | [useReducer en React](#ent50) |
-| [Virtual DOM](#ent51) |
 | [Que mejoras hay en la migracion de AngularJS a Angular?](#ent51-1) |
 | [Decorators en Angular](#ent65) |
 | [Angular Signals](#ent65-1) |
@@ -119,18 +117,18 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 | [Que es un higher order component?](#ent43) |
 | [Patrones de disenio en React](#ent44) |
 | [Patrones de disenio en Angular](#ent45) |
-| [Metodos de migracion de AngularJs a Angular](#ent59) |
 | [Patrones de disenio en Frontend](#ent46) |
 | [Antipatrones en Frontend](#ent47) |
 | [Que es el Server Side Rendering?](#ent48) |
-| [Static site rendering](#ent52) |
+| [Que es el Static site rendering?](#ent52) |
 | [Arquitectura de microfrontends](#ent54) |
 | [¿Qué es el concepto de "code splitting" y cómo se implementa en una aplicación web?](#ent56) |
 | [¿Qué es el concepto de "serverless" y cómo se implementa en una aplicación web?](#ent57) |
-| [¿Qué es el concepto de "progressive web app" y cómo se implementa en una aplicación web?](#ent58) |
+| [¿Qué es el concepto de "progressive web app" (Aplicaciones que se pueden instalar en cualquier dispositivo facilmente) y cómo se implementa en una aplicación web?](#ent58) |
 | [Es la metodologia Agile recomendable para todos los proyectos?](#ent60) |
 | [Que es un MVP?](#ent61) |
 | [Metodologias de estimacion de tareas](#ent66) |
+
 | [Distintos tipos de testing en Frontend](#ent62) |
 | [Git vs Mercurial](#ent63) |
 | [Continuous Integration, Continuous Delivery, Continuous Deployment](#ent65-4) |
@@ -142,7 +140,6 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 |[Principios de Disponibilidad, Escalamiento en Frontend](#ent75)|
 | [Mencionar como manejarias la delegacion de tareas dentro de tu equipo](#ent76) |
 | [Se te da la tarea de empezar un nuevo proyecto, que preguntas realizarias para tomar que decisiones como un Tech Lead?](#ent76-1) |
-| [Comparar Agile con Kanban u otras metodologias, para que casos usarias una u otra?](#ent77) |
 
 <a name="alg-base"></a>
 
@@ -3203,12 +3200,12 @@ export default function ClientComponent() {
 
 Es muy util combinar esta funcionalidad con NextJs para mejorar el rendimiento de la aplicacion.
 
+
 <a id="ent51-1"></a>
 
 ### **Que mejoras hay en la migracion de AngularJS a Angular?**
 
 [Volver al indice](#entrevista-base)
-
 
 | AngularJS | Angular |
 | --- | --- |
@@ -3857,6 +3854,697 @@ const UncontrolledInput = () => {
   );
 };
 ```
+
+<a id="ent45"></a>
+
+### **Patrones de disenio en Angular**
+
+[Volver al indice](#entrevista-base)
+
+**Arquitectura modular**
+
+Trata de separar toda la aplicacion en modulos logicos y funcionales que agrupan componentes, servivios y directivas relacionadas.
+
+```typescript
+// Módulo de usuario (user.module.ts)
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { UserComponent } from './user.component';
+
+@NgModule({
+  declarations: [UserComponent],
+  imports: [CommonModule],
+})
+export class UserModule {}
+
+// Módulo principal (app.module.ts)
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
+import { UserModule } from './user/user.module';
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [BrowserModule, UserModule],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}
+```
+
+**Inyeccion de Dependencias**
+
+Angular gestiona los servicios compartidos mediante la inyeccion de dependencias. Se inyecta mediante el constructor o con `injector`
+
+```typescript
+// Servicio (logger.service.ts)
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root', // Disponible en toda la app
+})
+export class LoggerService {
+  log(message: string): void {
+    console.log('Log:', message);
+  }
+}
+
+// Componente que usa el servicio (app.component.ts)
+import { Component } from '@angular/core';
+import { LoggerService } from './logger.service';
+
+@Component({
+  selector: 'app-root',
+  template: `<button (click)="logMessage()">Log</button>`,
+})
+export class AppComponent {
+  constructor(private logger: LoggerService) {}
+
+  logMessage(): void {
+    this.logger.log('Mensaje desde el componente');
+  }
+}
+```
+
+**Component Communication**
+
+Es el uso de `@Input` y `@Output` para la comunicacion entre componentes, en conjunto con `EventEmitter` para emision de eventos desde componentes hijos y `ViewChild` para acceder a componentes hijos desde componentes padres.
+
+```typescript
+// Componente hijo (child.component.ts)
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+
+@Component({
+  selector: 'app-child',
+  template: `<button (click)="notify()">Notificar al padre</button>`,
+})
+export class ChildComponent {
+  @Input() childMessage: string = ''; // Recibe datos del padre
+  @Output() notifyParent = new EventEmitter<string>();
+
+  notify(): void {
+    this.notifyParent.emit('Mensaje del hijo');
+  }
+}
+
+// Componente padre (parent.component.ts)
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-parent',
+  template: `
+    <app-child
+      [childMessage]="'Hola desde el padre'"
+      (notifyParent)="handleNotification($event)"
+    ></app-child>
+  `,
+})
+export class ParentComponent {
+  handleNotification(message: string): void {
+    console.log('Mensaje recibido:', message);
+  }
+}
+```
+
+**Singleton Services**
+
+Si un servicio que luego sera inyectado posee el `injectable` con el valor `root` eso significa que habra una sola instancia de la misma en toda la aplicacion.
+
+```typescript
+// Servicio global (state.service.ts)
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class StateService {
+  private state = { counter: 0 };
+
+  getCounter(): number {
+    return this.state.counter;
+  }
+
+  incrementCounter(): void {
+    this.state.counter++;
+  }
+}
+
+// Componentes que comparten el estado
+@Component({ /* ... */ })
+export class ComponentA {
+  constructor(private stateService: StateService) {}
+
+  increment(): void {
+    this.stateService.incrementCounter();
+  }
+}
+
+@Component({ /* ... */ })
+export class ComponentB {
+  constructor(private stateService: StateService) {}
+
+  getCounter(): number {
+    return this.stateService.getCounter();
+  }
+}
+```
+
+**Redux Pattern**
+
+Es el uso de Redux o NgRx para el manejo de estados complejos en aplicaciones grandes. 
+
+```typescript
+
+// Defino estado y accioned
+
+export interface AppState {
+  count: number;
+}
+
+export const increment = createAction('[Counter] Increment');
+export const decrement = createAction('[Counter] Decrement');
+
+// Reducer
+
+export const counterReducer = createReducer(
+  initialState,
+  on(increment, (state) => ({ ...state, count: state.count + 1 })),
+  on(decrement, (state) => ({ ...state, count: state.count - 1 }))
+);
+
+// Uso
+
+export class CounterComponent {
+  count$ = this.store.select('count');
+
+  constructor(private store: Store<{ count: number }>) {}
+
+  increment() {
+    this.store.dispatch(increment());
+  }
+
+  decrement() {
+    this.store.dispatch(decrement());
+  }
+}
+```
+
+**Reactive Forms**
+
+Mediante el uso de `ReactiveFormsModule` puedo manejar estados complejos de formularios.
+
+```typescript
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+@Component({
+  selector: 'app-reactive-form',
+  template: `
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <input formControlName="name" placeholder="Nombre" />
+      <button type="submit" [disabled]="form.invalid">Enviar</button>
+    </form>
+  `,
+})
+export class ReactiveFormComponent {
+  form: FormGroup;
+
+  constructor(private fb: FormBuilder) {
+    this.form = this.fb.group({
+      name: ['', Validators.required],
+    });
+  }
+
+  onSubmit(): void {
+    console.log(this.form.value);
+  }
+}
+```
+
+**Lazy Loading**
+
+Es el uso de `loadChildren` en el archivo de rutas para cargar modulos de manera asincrona.
+
+```typescript
+// Ruta con Lazy Loading (app-routing.module.ts)
+const routes: Routes = [
+  { path: '', component: HomeComponent },
+  {
+    path: 'users',
+    loadChildren: () =>
+      import('./user/user.module').then((m) => m.UserModule),
+  },
+];
+```
+
+**Facade Pattern**
+
+Abstrae la logica compleja de varios servicios en una sola clase para proporcionar una API simplificada para el resto de la aplicacion.
+
+Por ejemplo en este caso, `UserFacade` combina el uso de `userService` y `authService` en uno solo.
+
+```typescript
+// Servicios individuales
+@Injectable({ providedIn: 'root' })
+export class UserService {
+  getUser() {
+    return { name: 'John Doe' };
+  }
+}
+
+@Injectable({ providedIn: 'root' })
+export class AuthService {
+  isAuthenticated() {
+    return true;
+  }
+}
+
+// Fachada (user.facade.ts)
+@Injectable({ providedIn: 'root' })
+export class UserFacade {
+  constructor(
+    private userService: UserService,
+    private authService: AuthService
+  ) {}
+
+  getUserData() {
+    if (this.authService.isAuthenticated()) {
+      return this.userService.getUser();
+    }
+    return null;
+  }
+}
+
+// Componente que usa la fachada
+@Component({ /* ... */ })
+export class ProfileComponent {
+  constructor(private userFacade: UserFacade) {}
+
+  getUser() {
+    console.log(this.userFacade.getUserData());
+  }
+}
+```
+
+<a id="ent46"></a>
+
+### **Patrones de disenio en Frontend**
+
+[Volver al indice](#entrevista-base)
+
+**Patrones de estructura**
+
+- **Atomic Design**: Basado en dividir la interfaz en componentes más pequeños y reutilizables. Los átomos son los elementos básicos (como botones e inputs), las moléculas combinaciones de átomos (como un formulario), y los organismos son bloques completos de la interfaz (como una barra de navegación).
+- **Layout Responsivos**: Usar técnicas como CSS Grid o Flexbox junto con media queries para crear interfaces adaptativas que se ajusten a diferentes resoluciones y dispositivos.
+- **Componentizacion**: Dividir la UI en componentes reutilizables mejora la mantenibilidad, legibilidad y escalabilidad del código.
+
+**Patrones de comportamiento**
+
+- **Singleton**: Manejar un unico estado compartido across toda la aplicacion como una sesion de usuario o un carrito de compras. 
+- **Observer**: Manejar eventos y notificaciones de manera centralizada mediante subscripciones y emisiones de eventos. Por ejemplo, es útil para manejar eventos en tiempo real, como actualizaciones de datos en un chat o en una notificación global.
+- **Strategy**: Cambiar el comportamiento de un objeto en tiempo de ejecucion, para encapsular diferentes algoritmos reutilizables. Esto podria relacionarse mucho con la herencia. Por ejemplo, en una tienda online, podrías encapsular diferentes estrategias de cálculo de descuento para aplicarlas en diferentes contextos.
+- **Factory**: Crear objetos de forma centralizada. Por ejemplo, se puede usar una Factory para generar diferentes instancias de botones o componentes dinámicamente, dependiendo de los parámetros recibidos.
+- **Decorator**: Agregar funcionalidades a un objeto sin modificar su estructura. Por ejemplo, añadir un log a una función sin modificar su lógica original.
+- **Facade**: Abstrae la logica compleja de varios servicios en una sola clase para proporcionar una API simplificada para el resto de la aplicacion. Por ejemplo, un servicio que combine múltiples API y exponga una interfaz simplificada a los consumidores.
+- **Adapter**: Permite que dos interfaces incompatibles trabajen juntas
+- **Chain of Responsibility**: Permite que multiples objetos manejen una peticion sin que el cliente sepa cual objeto la maneja
+- **Command**: Encapsula una peticion como un objeto, permitiendo parametrizar clientes con diferentes peticiones, colas y logs
+- **State**: Permite que un objeto cambie su comportamiento cuando su estado cambia
+- **Memento**: Permite que un objeto capture su estado interno y lo restaure mas tarde
+- **Proxy**: Proporciona un objeto de sustitucion o marcador de posicion para otro objeto
+- **Template Method**: Define el esqueleto de un algoritmo en una operacion, permitiendo que las subclases redefinan ciertos pasos del algoritmo sin cambiar su estructura
+
+**Patrones de renderizado**
+
+- **Lazy Loading**: Retrasa la carga de recursos hasta que los mismos sean necesarios
+- **Skeleton Screens**: Muestra un esqueleto, es decir, un elemento basico o placeholder mientras los datos reales son cargados
+- **Infinite Scroll y Paginacion**: Carga de contenido mediante el scroll o mediante la paginacion
+
+**Patrones de gestion de estado**
+
+- **Flux**: Patron unidireccional de flujo de datos como Redux. (acciones -> reducers -> estado -> vista).
+- **MVC** Se divide la logica en 3 capas, el modelo donde se gestionan datos, view donde se muestran los datos y controller, donde se conectan ambos
+- **MVVM**: Modelo Vista VistaModelo, donde el ViewModel se encarga de la logica de negocio y la vista de la presentacion, en esto se basa Angular
+
+**Patrones de comunicacion**
+
+- **Mediator**: Un intermediario que gestiona la comunicación entre módulos o componentes. Un ejemplo es Redux o ContextApi, mejora la desacopladura entre módulos, lo que simplifica el mantenimiento.
+- **Pub-Sub**: Componentes se encargan de publicar eventos y otros se subcriben a los mismos, como un sistema de notificaciones. `EventEmitter` en Angular o `EventTarget` en Javascript
+
+**Patrones de optimizacion**
+
+- **Virtual DOM**: Usado en React para comparar en todo momento las diferencias entre el DOM y el DOM Virtual, y asi actualizar solo lo necesario.
+- **Code Splitting**: Dividir el codigo en distintos bundles para cargar solo lo necesario, usar `React.lazy` o `import()`
+- **Memoizacion**: Guardar el resultado de una funcion para evitar recalcularlo en el futuro
+
+<a id="ent47"></a>
+
+### **Antipatrones en Frontend**
+
+[Volver al indice](#entrevista-base)
+
+Un antipatron es una solucion comun pero ineficiente a un problema comun.
+
+- Spaghetti Code: Codigo desorganizado y dificil de mantener
+- Over-Engineering: Hacer una solucion mas compleja de lo necesario
+- HArdcoding: Codificar valores que deberian ser dinamicos
+- Global Scope Pollution: Crear variables globales que pueden ser accedidas desde cualquier parte de la aplicacion pero en demasiada cantidad, causando conflictos
+- Lack of State Management: No manejar el estado de la aplicacion de manera eficiente, como usar `useState` en muchos componentes sin ningun tipo de sincronizacion clara
+- No seguir el principio DRY (Do not repeat youself) copiando y pegando codigo en lugar de hacerlo reutilizable
+- Overfetching, es traer demasiada informacion desde un servicio cuando solo preciso una parte
+- Underfetching es lo contrario al anterior, traer menos datos de los que necesito, obligandome a hacer demasiadas llamadas
+- CSS Specificity Hell, es cuando se tiene un archivo de estilos muy grande y no se puede sobreescribir facilmente
+- No manejar errores de manera correcta, por ejemplo, no usar el bloque catch en un llamado asincronico.
+
+<a id="ent48"></a>
+
+### **Que es el Server Side Rendering?**
+
+[Volver al indice](#entrevista-base)
+
+Consta de renderizar los componentes del lado del servidor en lugar del HTMl minimo y necesario. 
+
+- Se hace una solicitud al servidor
+- El servidor procesa los componentes y genera un HTML completamente renderizado basado en datos necesarios
+- Se entrega el HTML al cliente
+- El codigo cliente hidrata este codigo, haciendolo interactivo
+
+Sus **beneficios** son:
+
+- Mejor rendimiento inicial ya que se recibe un HTML ya completo
+- SEO optimizado ya que los motores de busqueda pueden leer el contenido de la pagina de antemano e indexarlo, mismo para las redes sociales
+- Mayor accesibilidad, todo lo estatico ya se encuentra en pantalla para ser consumido
+
+Sus **desventajas** son:
+
+- Mayor carga en el servidor ya que debe procesar cada solicitud y si es una aplicacion muy grande se vuelve mas complicado
+- Latencia inicial, debe cargarse todo y en el mientras tanto puede que no veamos nada
+- Es complejo de aplicar
+- La hidratacion puede ser costosa de implementar
+
+Generalmente se usa NextJs que es un framework de React que facilita la implementacion de SSR
+
+```javascript
+import React from 'react';
+
+export async function getServerSideProps() {
+  // Código que se ejecuta en el servidor
+  const data = await fetch('https://api.example.com/posts').then((res) => res.json());
+  return { props: { posts: data } };
+}
+
+export default function Home({ posts }) {
+  return (
+    <div>
+      <h1>Posts</h1>
+      <ul>
+        {posts.map((post) => (
+          <li key={post.id}>{post.title}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+```
+
+En el caso de Angular existe Angular Universal. 
+
+Se recomienda usar SSR cuando:
+
+- Nuestra pagina depende del SEO
+- Se quiere mejorar el tiempo de primera carga para usuarios con conexiones lentas
+- Es importante tener contenido 100% accesible
+
+<a id="ent52"></a>
+
+### **Que es el Static site rendering?**
+
+[Volver al indice](#entrevista-base)
+
+Es basicamente cuando las paginas de una web se generan como archivos HTML estaticos en el momento de la compilacion. El contenido es estatico y esta listo para ser servido por un CDN o un servidor, no es generado de manera dinamica. No se depende del backend para la carga.
+
+En React se puede implementar usando `getStaticProps`
+
+```javascript
+import React from "react";
+
+export async function getStaticProps() {
+  // Llamada a una API o fuente de datos durante el tiempo de compilación
+  const data = await fetch("https://api.example.com/posts").then((res) =>
+    res.json()
+  );
+
+  return {
+    props: {
+      posts: data,
+    },
+  };
+}
+
+export default function Home({ posts }) {
+  return (
+    <div>
+      <h1>Posts</h1>
+      <ul>
+        {posts.map((post) => (
+          <li key={post.id}>{post.title}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+```
+
+Tambien se utiliza `Gatsby` para esto. Toda la generacion de contenido ocurre durante la compilacion
+
+```jsx
+import React from "react";
+import { graphql } from "gatsby";
+
+export const query = graphql`
+  query {
+    allMarkdownRemark {
+      edges {
+        node {
+          frontmatter {
+            title
+          }
+          html
+        }
+      }
+    }
+  }
+`;
+
+export default function Blog({ data }) {
+  return (
+    <div>
+      {data.allMarkdownRemark.edges.map(({ node }, index) => (
+        <article key={index}>
+          <h2>{node.frontmatter.title}</h2>
+          <div dangerouslySetInnerHTML={{ __html: node.html }} />
+        </article>
+      ))}
+    </div>
+  );
+}
+```
+
+Se recomienda su uso para portfolios, documentaciones, landing pages, todo lo que sea estatico y no posea mucha posibilidad de interaccion.
+
+<a id="ent54"></a>
+
+### **Arquitectura de microfrontends**
+
+[Volver al indice](#entrevista-base)
+
+Es una arquitectura que se basa en dividir partes de una pagina en distintos repositorios independientes a cargo de distintos equipos. Todo los microfrontend se juntan para formar la aplicacion en si misma. 
+
+Para cada repositorio se puede usar la tecnologia deseada, despliegues independientes, escalabilidad y mantenibilidad. Tambien el mismo microfrontend puede ser utilizado varias veces. 
+
+Sus desventajas son que se requiere una infraestructura mucho mas poderosa para poder gestionar los mismos. 
+
+Dentro de la arquitectura de microfrontend tenemos distintos **Patrones de integracion**
+
+**Integracion del lado del servidor**
+
+El servidor ensambla todos los componentes antes de enviarla al cliente.
+
+**Integracion del lado del cliente**
+
+Cada microfrontend es cargado de manera independiente en el cliente y se ensambla en el navegador.
+
+**Integracion basada en iframes**
+
+Cada microfrontend es renderizado en su propio iframe independiente
+
+**Integracion basada en Web Components**
+
+Cada microfrontend es un Web Component independiente que se puede cargar en cualquier aplicacion
+
+Entre microfrontends la comunicacion se manera de la siguiente manera:
+
+- Eventos globales, crear un `bus de eventos` para que los microfrontends se comuniquen entre si
+- Estado compartido, usar herramientas como Redux, RxJs o un almacenamiento global que este compartido
+- Pasar datos mediante props, como si fueran componentes de React
+- API-REST o GraphQL si quiero que los componentes se comuniquen mediante una API
+
+<a id="ent56"></a>
+
+### **¿Qué es el concepto de "code splitting" y cómo se implementa en una aplicación web?**
+
+[Volver al indice](#entrevista-base)
+
+El Code Splitting es una tecnica en frontend para mejorar la performance, basicamente trata de no cargar todos los archivos o modulos de la aplicacion al mismo tiempo, sino que se carguen solo cuando sean necesarios.
+
+Se puede implementar mediante el uso de Webpack y su funcion `import()`
+
+```javascript
+// Antes: importar todo de forma estática
+import { heavyFunction } from './heavyModule';
+heavyFunction();
+
+// Con code splitting: importar de forma dinámica
+const loadHeavyModule = async () => {
+  // Heavy module sera cargado solo cuando se llame a la funcion, guardado en un archivo aparte
+    const { heavyFunction } = await import('./heavyModule');
+    heavyFunction();
+};
+
+loadHeavyModule();
+```
+
+Tambien ofrece la posibilidad de dividir varias partes del codigo en bundles distintos
+
+```javascript
+entry: {
+    app: './src/index.js',
+    admin: './src/admin.js'
+},
+output: {
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist')
+}
+```
+
+En React se utiliza `React.lazy` y `Suspense` para cargar componentes de manera dinamica
+
+```javascript
+import React, { Suspense } from 'react';
+
+// Importar un componente de forma dinámica
+const LazyComponent = React.lazy(() => import('./LazyComponent'));
+
+const App = () => (
+    <Suspense fallback={<div>Cargando...</div>}>
+    // Solo se cargara mientras sea necesario, mientras tanto se muestra el loading
+        <LazyComponent />
+    </Suspense>
+);
+
+export default App;
+```
+
+En Angular se puede implementar en las rutas, las cuales pueden cargar solo cuando sean necesarias
+
+```typescript
+const routes: Routes = [
+    { path: '', component: HomeComponent },
+    {
+        path: 'admin',
+        loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
+    }
+];
+```
+
+El modulo `admin` solo se cargara cuando se acceda a la ruta `/admin`
+
+En JS vainilla se puede implementar mediante imports dinamicos
+
+```javascript
+document.getElementById('loadFeature').addEventListener('click', () => {
+    import('./feature.js')
+        .then((module) => {
+            module.runFeature();
+        })
+        .catch((err) => {
+            console.error('Error cargando el módulo:', err);
+        });
+});
+```
+
+<a id="ent57"></a>
+
+### **¿Qué es el concepto de "serverless" y cómo se implementa en una aplicación web?**
+
+[Volver al indice](#entrevista-base)
+
+Serverless es una arquitectura donde no se tienen servidores on-premise (es decir, fisicos en un datacenter propio)  si no que se dependen de servicios en la nube como AWS, Azure o Google Cloud para proveer estos servicios. 
+
+En el caso de la web se podria manejar de la siguiente manera:
+
+- **Frontend**: Se puede usar servicios como AWS S3 para almacenar los archivos estaticos, CloudFront para la CDN, y servicios como AWS Amplify para el despliegue de la aplicacion
+- **Backend**: Se puede usar AWS Lambda para funciones serverless, API Gateway para manejar las peticiones, DynamoDB para la base de datos, S3 para almacenar archivos, etc
+- **Base de datos**: Se puede usar servicios como DynamoDB, Firestore, o Aurora Serverless para manejar la base de datos
+- **Autenticacion**: Se puede usar Cognito, Auth0 o Firebase para manejar la autenticacion
+- **Almacenamiento**: Se puede usar S3, Cloud Storage o Azure Blob Storage para almacenar archivos
+- **Notificaciones**: Se puede usar SNS, Firebase Cloud Messaging o Twilio para enviar notificaciones
+- **Analiticas**: Se puede usar Google Analytics, AWS Pinpoint o Firebase Analytics para analiticas
+
+<a id="ent58"></a>
+
+### **¿Qué es el concepto de "progressive web app" y cómo se implementa en una aplicación web?**
+
+[Volver al indice](#entrevista-base)
+
+Es esa aplicacion mobile que si accedemos a la misma desde el navegador nos da la opcion de descargarla sin usar a ninguna Store como intermediario, es una pagina que puede funcionar en varios dispositivos de la misma manera. 
+
+Hace uso de `Service Workers` para manejar la cache y la disponibilidad offline, `Web App Manifest` para definir la apariencia de la aplicacion, y `HTTPS` para garantizar la seguridad de la aplicacion.
+
+Una desventaja que poseen es que no se tienen algunas ventajas como con las aplicaciones nativas, pero igualmente se pueden instalar en el dispositivo y actualizarse por si solas. 
+
+<a id="ent60"></a>
+
+### **Es la metodologia Agile recomendable para todos los proyectos?**
+
+[Volver al indice](#entrevista-base)
+
+No es adecuada para todo tipo de proyectos, es muy util cuando los requisitos no estan al 100% definidos desde el principio y se sabe que va a tener que cambiar en el tiempo, y ajustarse a diversos requerimientos. 
+Si los requisitos son definidos, rigidos y no van a cambiar, no es recomendable usar Agile, ya que se pierde tiempo en la planificacion y en la adaptacion a los cambios.
+
+Tampoco se recomienda que se aplique en equipos muy distribuidos y grandes, ya que en esos casos la comunicacion se puede ver sumamente afectada.
+
+En el caso de que hayan proyectos en donde se tiene un deadline demasiado estricto, un presuesto ajustado, puede que sea mejor usar un approach mas apuntado a **Waterfall**.
+
+En los casos donde Agile no sea adecuado, las siguientes metodologías podrían ser más apropiadas:
+
+- Waterfall (Cascada): Bueno para proyectos con un alcance claro y requisitos definidos de principio a fin, como en el desarrollo de software empresarial con pocos cambios en el camino.
+- Lean: Enfocada en la eficiencia de los procesos y la reducción de desperdicios. Es ideal para proyectos donde se busca minimizar costos y tiempo, y priorizar el valor del cliente.
+- PRINCE2: Una metodología estructurada para la gestión de proyectos, útil en proyectos más grandes y complejos que requieren un enfoque detallado de planificación y control.
+
+Agile es excelente para proyectos con alta incertidumbre, cambios frecuentes y que necesitan entregas incrementales. Sin embargo, no es adecuado para todos los tipos de proyectos. Si el alcance es fijo, el presupuesto es limitado, o el proyecto necesita cumplir con regulaciones estrictas, otras metodologías como Waterfall o Lean pueden ser más efectivas. La clave está en evaluar las características del proyecto y las necesidades del equipo antes de elegir una metodología.
+
+<a id="ent61"></a>
+
+### **Que es un MVP?**
+
+[Volver al indice](#entrevista-base)
+
+MVP (Minimum Viable Product) es una version de un producto con un conjunto minimo de caracteristicas que es suficiente para lanzar el producto y que sea funcional, para poder obtener un feedback rapido y poder iterar sobre el mismo. 
+Generalmente se lanza a un grupo disminuido de usuarios para que puedan dar feedback sobre el mismo. 
+
+Para poder construir y planificar un MVP se deben dejar de lado los detalles innecesarios y es importante enfocarse en la funcionalidad principal y mas importante. 
+
+<a id="ent66"></a>
+
+### **Metodologias de estimacion de tareas**
+
+[Volver al indice](#entrevista-base)
+
+- **Story Points**: Es una tecnica de estimacion de tareas que se basa en la complejidad de la tarea, no en el tiempo que se tarda en realizarla. Se asigna un valor numerico a cada tarea, y se compara con otras tareas para saber cual es mas compleja. Se usa en Scrum.
+- **Horas-Dias Directo**: Es una tecnica de estimacion de tareas que se basa en el tiempo que se tarda en realizar una tarea. Se asigna un tiempo estimado a cada tarea, y se compara con otras tareas para saber cual es mas compleja. Se usa en metodologias mas tradicionales.
+- **Técnica de PERT**: Es una tecnica de estimacion de tareas que se basa en la probabilidad de que una tarea se complete en un tiempo determinado. Se asigna un tiempo optimista, pesimista y mas probable a cada tarea, y se calcula el tiempo esperado. Se usa en proyectos donde se necesita una estimacion mas precisa.
+- **Estimación por analogía**: Es una tecnica de estimacion de tareas que se basa en la comparacion de tareas similares realizadas anteriormente. Se asigna un tiempo estimado a cada tarea, y se compara con otras tareas para saber cual es mas compleja. Se usa en proyectos donde se tiene un historial de tareas realizadas.
+- **Estimación Delphi**: Es una tecnica de estimacion de tareas que se basa en la opinion de expertos. Se asigna un tiempo estimado a cada tarea, y se compara con otras tareas para saber cual es mas compleja. Se usa en proyectos donde se necesita una estimacion mas precisa.
 
 <a id="ent76"></a>
 
