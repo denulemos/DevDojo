@@ -72,14 +72,14 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 |[¿Qué es el principio de Encapsulación y por qué es importante en OOP?](#ent10)|
 | [Principios SOLID](#ent11) |
 | [Que es la inyeccion de dependencias?](#ent12) |
-| [Explica el concepto de "pure function" y por qué es fundamental en la programación funcional.](#ent13) |
+| [Pure function en Programacion Funcional](#ent13) |
 | [¿Qué ventajas ofrece la inmutabilidad al manejar estructuras de datos? Proporciona un ejemplo práctico.](#ent14) |
 | [Currying](#ent15) |
 | [Memoization](#ent16) |
 | [¿Cuáles son las diferencias clave entre HTTP/1.1, HTTP/2 y HTTP/3? ¿Por qué se considera HTTP/2 más eficiente que HTTP/1.1?](#ent17) |
-| [Explica las diferencias entre REST y GraphQL. ¿Cuándo usarías uno sobre el otro?](#ent18) |
+| [Diferencias entre REST y GraphQL](#ent18) |
 | [Cuales son los ataques mas comunes en la web? Nombrar tambien sus protecciones del lado del cliente](#ent19) |
-| [¿Qué es el concepto de "lazy loading" y cómo se implementa en una aplicación web?](#ent20) |
+| [Lazy loading](#ent20) |
 | [Performance Javascript](#ent21) |
 | [Array-like](#alg26) |
 | [Performance React](#ent24) |
@@ -104,14 +104,12 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 | [useFormStatus() React](#ent71) |
 | [useOptimistic() React](#ent72) |
 | [useCallback() React](#ent39) |
-| [useRef() React](#ent49) |
-| [useReducer() React](#ent50) |
 | [Que mejoras hay en la migracion de AngularJS a Angular?](#ent51-1) |
 | [Decorators en Angular](#ent65) |
 | [Angular Signals](#ent65-1) |
-| [¿Qué es RxJS y qué problemas resuelve en el desarrollo de aplicaciones?](#ent38) |
-| [¿Qué es un Observable en RxJS y cómo difiere de una Promesa en JavaScript?](#ent39) |
-| [Explica la diferencia entre un Observable "cold" y "hot". Proporciona un ejemplo práctico de cada uno.](#ent40) |
+| [RxJS](#ent38) |
+| [Observable en RxJS](#ent39) |
+| [Observable "cold" y "hot"](#ent40) |
 | [CDN (Content Delivery Network)](#ent41) |
 | [Como organizarias el code reuse en una aplicacion?](#ent42) |
 | [Higher order component (HoC)](#ent43) |
@@ -125,7 +123,7 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 | [Code splitting](#ent56) |
 | [Serverless](#ent57) |
 | [Es la metodologia Agile recomendable para todos los proyectos?](#ent60) |
-| [Que es un MVP?](#ent61) |
+| [MVP (Minimum Viable Product)](#ent61) |
 | [Metodologias de estimacion de tareas](#ent66) |
 | [Distintos tipos de testing en Frontend](#ent62) |
 | [Git vs Mercurial](#ent63) |
@@ -139,9 +137,9 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 | [Se te da la tarea de empezar un nuevo proyecto, que preguntas realizarias para tomar que decisiones como un Tech Lead?](#ent76-1) |
 |[¿Que son los NFRs, Quién los define y cómo se priorizan?](#cic66) |
 |[Imagina que un cliente te dice que la aplicación es lenta y quiere que la aceleres, pero no te da más detalles. ¿Cómo manejarías esta situación?](#cic67) 💛|
-|[¿Cuáles son los posibles riesgos de adoptar una nueva tecnología en el proyecto? ¿Cómo mitigarlos?](#cic68)|
+|[Riesgos de adoptar una nueva tecnología en el proyecto](#cic68)|
 |[Algunos miembros de tu equipo no pueden ponerse de acuerdo sobre una solución. Discuten y no pueden tomar una decisión. ¿Cómo resolverías esta situación conflictiva?](#cic69)|
-|[¿Cómo motivas a tu equipo y qué enfoques conoces? ¿Existe algún motivador universal para todos?](#cic70)|
+|[Motivacion](#cic70)|
 |[¿Cómo delegas tareas en tu equipo y cómo varía tu enfoque dependiendo de la antigüedad del miembro del equipo?](#cic70-1)|
 
 <a name="alg-base"></a>
@@ -210,7 +208,7 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 | [Devolver una colección secundaria en Java](#alg25) |
 |¿Qué consideraciones de diseño debemos tener en cuenta al trabajar con colecciones como atributos de clases?|
 |¿Cómo evitar la mutabilidad no deseada al devolver colecciones de una clase?|
-| [Set() en Javascript (HashSet)](#alg29) 💛|
+| [Set() (HashSet)](#alg29) 💛|
 | [HashTables (.Map)](#alg30) 💛 |
 |[¿Cuál es la diferencia entre un Set y un Array en JavaScript?](#alg301)|
 |[¿En qué situaciones es más eficiente usar un HashMap en lugar de un Array?](#alg302)|
