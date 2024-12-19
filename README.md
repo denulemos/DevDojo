@@ -55,8 +55,7 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 |----------|
 | [Parametros por valor y por referencia](#ent0) |
 | [Prototype Javascript](#ent0-1) |
-| [Spread Operator](#ent0-3) |
-|[Spread vs Rest Operator](#ent0-4)|
+|[Spread y Rest Operator](#ent0-4)|
 | [Null vs undefined vs never](#ent0-2) |
 | [`.sort()`](#ent1) |
 | [`.map()`](#ent2) |
@@ -65,16 +64,16 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 |[Set vs Map vs WeakMap vs WeakSet](#ent4-1)|
 | [Diferencia entre let, var y const](#var6) |
 | [Programacion Funcional](#ent8) |
-| [Funciones lambda](#ent8-1) |
-| [Programacion reactiva](#ent8-2) |
-| [Programacion declarativa](#ent8-3) |
-| [Paradigma Reactiva Funcional (FRP)?](#ent9) |
-|[¿Qué es el principio de Encapsulación y por qué es importante en OOP?](#ent10)|
+| [Pure function en Programacion Funcional](#ent13) |
+| [Currying (funcion dentro de funcion)](#ent15) |
+| [¿Qué ventajas ofrece la inmutabilidad al manejar estructuras de datos? Proporciona un ejemplo práctico.](#ent14) |
+| [Programacion reactiva (Observables, RxJs, Subscribers)](#ent8-2) |
+| [Programacion declarativa (SQL)](#ent8-3) |
+| [Paradigma Reactiva Funcional (FRP)? (Funcional + Reactiva)](#ent9) |
+| [Funciones lambda (Funciones Anonimas)](#ent8-1) |
+|[Encapsulación (Private, public)](#ent10)|
 | [Principios SOLID](#ent11) |
 | [Que es la inyeccion de dependencias?](#ent12) |
-| [Pure function en Programacion Funcional](#ent13) |
-| [¿Qué ventajas ofrece la inmutabilidad al manejar estructuras de datos? Proporciona un ejemplo práctico.](#ent14) |
-| [Currying](#ent15) |
 | [Memoization](#ent16) |
 | [¿Cuáles son las diferencias clave entre HTTP/1.1, HTTP/2 y HTTP/3? ¿Por qué se considera HTTP/2 más eficiente que HTTP/1.1?](#ent17) |
 | [Diferencias entre REST y GraphQL](#ent18) |
@@ -1289,60 +1288,7 @@ console.log(Object.prototype.__proto__); // null
 
 En resumen, prototype es la base del funcionamiento de objetos y de la herencia en JS.
 
-<a id="ent0-3"></a>
 
-### **Spread Operator**
-
-[Volver al indice](#entrevista-base)
-
-Es un operador introducido en ES6 donde se nos permite expandir elementos de un array o propiedades de un objeto en lugares donde se esperan argumentos o elementos.
-
-Basicamente descompone los elementos de objetos o arrays. 
-
-```javascript
-const numeros = [1, 2, 3];
-const masNumeros = [...numeros, 4, 5];
-
-console.log(masNumeros); // [1, 2, 3, 4, 5]
-
-
-// Clonar un array (Ya que recordemos, los arrays son pasados por referencia)
-const original = [1, 2, 3];
-const copia = [...original];
-
-copia.push(4);
-
-
-// La copia es superficial. Si los elementos del array son objetos, solo se copia la referencia.
-console.log(original); // [1, 2, 3]
-console.log(copia);    // [1, 2, 3, 4]
-
-// Clonar objetos
-
-const usuario = { nombre: "Juan", edad: 30 };
-const copiaUsuario = { ...usuario };
-
-copiaUsuario.edad = 31;
-
-console.log(usuario);       // { nombre: "Juan", edad: 30 }
-console.log(copiaUsuario);  // { nombre: "Juan", edad: 31 }
-
-
-// Combinar objetos
-
-const direccion = { ciudad: "Madrid", pais: "España" };
-const usuario = { nombre: "Juan", ...direccion };
-
-console.log(usuario);
-// { nombre: "Juan", ciudad: "Madrid", pais: "España" }
-
-// Descomponer el String en un array de char
-
-const texto = "Hola";
-const caracteres = [...texto];
-
-console.log(caracteres); // ['H', 'o', 'l', 'a']
-```
 
 <a id="ent0-4"></a>
 
@@ -1350,16 +1296,26 @@ console.log(caracteres); // ['H', 'o', 'l', 'a']
 
 [Volver al indice](#entrevista-base)
 
-Spread se utiliza para descomponer elementos complejos como array u objetos. Rest se le dice cuando al mismo operador se lo usa para agrupar elementos, por ejemplo, cuando tengo una funcion que recibe X cantidad de parametros no definido en cantidad.
+Spread es cuando los 3 puntos se encuentran al principio, de ese modo por ejemplo, puedo pasar un array como parametro pero en vez de tomar su referencia tomo su valor. Convierte un array en una lista de argumentos.
 
 ```javascript
+const arr = [1, 2, 3];
 
-function ejemplo(...parametros) {
-  console.log(parametros);
+function sumar(a, b, c) {
+  return a + b + c;
 }
 
-ejemplo(1, 2, 3, 4, 5); // [1, 2, 3, 4, 5]
+console.log(sumar(...arr)); // 6
+```
 
+En el caso del Rest Operator, es cuando los 3 puntos se encuentran en el parametro de una funcion, y se utiliza para agrupar elementos en un array. Convierte los argumentos de una funcion en un array.
+
+```javascript
+function sumar(...numeros) {
+  return numeros.reduce((acc, num) => acc + num, 0);
+}
+
+console.log(sumar(1, 2, 3, 4, 5)); // 15
 ```
 
 El operador es el mismo pero su nombre depende del contexto en donde esten siendo usados. 
@@ -1651,6 +1607,89 @@ console.log(nuevo);    // Output: [1, 2, 3, 4]
 
 Los lenguajes de programacion hechos para la programacion funcional son Scala, Erlang, Haskell entre otros, son lenguajes usados en sistemas funcancieros, telecomunicaciones, analisis de datos entre otras areas.
 
+<a id="ent13"></a>
+
+### **Explica el concepto de "pure function" y por qué es fundamental en la programación funcional.**
+
+[Volver al indice](#entrevista-base)
+
+Como se explico anteriormente, las Pure functions son funciones que, al recibir los mismos parametros, siempre devuelven el mismo resultado.
+
+```typescript
+// Función pura
+function sumar(a: number, b: number): number {
+    return a + b;
+}
+
+// Función impura
+let resultado = 0;
+function sumar(a: number, b: number): number {
+    resultado += a + b;
+    return resultado;
+}
+```
+
+La diferencia entre ambas funciones es que la impura esta mutando a la variable resultado, en cambio, la funcion pura, simplemente devuelve el resultado de la operacion, sin mutar la informacion, algo principal cuando se trata de programacion funcional.
+
+<a id="ent14"></a>
+
+### **¿Qué ventajas ofrece la inmutabilidad al manejar estructuras de datos? Proporciona un ejemplo práctico.**
+
+[Volver al indice](#entrevista-base)
+
+Solo a modo de repaso, la inmutabilidad es algo muy propio de la programacion funcional. Algunas de sus ventajas son:
+
+- Al no estar modificando directamente mis datos, evito errores de estado compartido
+- Eliminamos los errores de concurrencia, ya que los datos no estan siendo modificados, entonces no tengo necesidad de tener si o si la ultima version de los mismos para poder continuar
+- Se pueden implementar facilmente funciones de `undo`, ya que se puede volver a la version anterior muy facilmente
+- Integridad de datos, ya que al no estar modificando los datos, no se pueden corromper los mismos
+
+```typescript
+const tareasOriginales = [
+    { id: 1, texto: 'Hacer la compra', completada: false },
+    { id: 2, texto: 'Llamar al médico', completada: true }
+];
+
+function agregarTarea(tareas, nuevaTarea) {
+    return [...tareas, nuevaTarea];
+}
+
+const nuevaTarea = { id: 3, texto: 'Pagar el alquiler', completada: false };
+const tareasActualizadas = agregarTarea(tareasOriginales, nuevaTarea);
+
+console.log(tareasOriginales); // La lista original permanece sin cambios
+console.log(tareasActualizadas); // Nueva lista con la tarea agregada
+```
+
+Un ejemplo de la IA que me gusto mucho para explicar esto: 
+
+Imagina que estás escribiendo un documento en un procesador de textos. Cada vez que haces un cambio, como añadir una palabra, el programa no borra todo el documento y lo reescribe desde cero con la palabra añadida. En lugar de eso, crea una nueva versión del documento con la palabra incluida. Si algo sale mal mientras escribes, siempre puedes volver a la versión anterior sin problemas. Esto es similar a cómo funciona la inmutabilidad en las aplicaciones de software.
+
+<a id="ent15"></a>
+
+### **Currying**
+
+[Volver al indice](#entrevista-base)
+
+Es una tecnica de programacion funcional donde meto una funcion dentro de otra, y todas estas reciben solo un parametro a la vez. 
+
+```typescript
+function multiply(a: number): (b: number) => number {
+    return function(b: number): number {
+        return a * b;
+    };
+}
+
+// Uso de la función curried
+const multiplyByTwo = multiply(2);
+const result = multiplyByTwo(3);  // result será 6
+console.log(result);
+```
+
+En este ejemplo, multiply es una función que toma el primer número, a, y devuelve otra función que toma el segundo número, b. La función devuelta realiza la multiplicación de a y b.
+
+Al dividir todo en pequenias funciones, hace que la reutilizacion de codigo sea mucho mejor. 
+
 <a id="ent8-1"></a>
 
 ### **Funciones lambda**
@@ -1923,88 +1962,7 @@ export class CarComponent {
 }
 ```
 
-<a id="ent13"></a>
 
-### **Explica el concepto de "pure function" y por qué es fundamental en la programación funcional.**
-
-[Volver al indice](#entrevista-base)
-
-Como se explico anteriormente, las Pure functions son funciones que, al recibir los mismos parametros, siempre devuelven el mismo resultado.
-
-```typescript
-// Función pura
-function sumar(a: number, b: number): number {
-    return a + b;
-}
-
-// Función impura
-let resultado = 0;
-function sumar(a: number, b: number): number {
-    resultado += a + b;
-    return resultado;
-}
-```
-
-La diferencia entre ambas funciones es que la impura esta mutando a la variable resultado, en cambio, la funcion pura, simplemente devuelve el resultado de la operacion, sin mutar la informacion, algo principal cuando se trata de programacion funcional.
-
-<a id="ent14"></a>
-
-### **¿Qué ventajas ofrece la inmutabilidad al manejar estructuras de datos? Proporciona un ejemplo práctico.**
-
-[Volver al indice](#entrevista-base)
-
-Solo a modo de repaso, la inmutabilidad es algo muy propio de la programacion funcional. Algunas de sus ventajas son:
-
-- Al no estar modificando directamente mis datos, evito errores de estado compartido
-- Eliminamos los errores de concurrencia, ya que los datos no estan siendo modificados, entonces no tengo necesidad de tener si o si la ultima version de los mismos para poder continuar
-- Se pueden implementar facilmente funciones de `undo`, ya que se puede volver a la version anterior muy facilmente
-- Integridad de datos, ya que al no estar modificando los datos, no se pueden corromper los mismos
-
-```typescript
-const tareasOriginales = [
-    { id: 1, texto: 'Hacer la compra', completada: false },
-    { id: 2, texto: 'Llamar al médico', completada: true }
-];
-
-function agregarTarea(tareas, nuevaTarea) {
-    return [...tareas, nuevaTarea];
-}
-
-const nuevaTarea = { id: 3, texto: 'Pagar el alquiler', completada: false };
-const tareasActualizadas = agregarTarea(tareasOriginales, nuevaTarea);
-
-console.log(tareasOriginales); // La lista original permanece sin cambios
-console.log(tareasActualizadas); // Nueva lista con la tarea agregada
-```
-
-Un ejemplo de la IA que me gusto mucho para explicar esto: 
-
-Imagina que estás escribiendo un documento en un procesador de textos. Cada vez que haces un cambio, como añadir una palabra, el programa no borra todo el documento y lo reescribe desde cero con la palabra añadida. En lugar de eso, crea una nueva versión del documento con la palabra incluida. Si algo sale mal mientras escribes, siempre puedes volver a la versión anterior sin problemas. Esto es similar a cómo funciona la inmutabilidad en las aplicaciones de software.
-
-<a id="ent15"></a>
-
-### **Currying**
-
-[Volver al indice](#entrevista-base)
-
-Es una tecnica de programacion funcional donde meto una funcion dentro de otra, y todas estas reciben solo un parametro a la vez. 
-
-```typescript
-function multiply(a: number): (b: number) => number {
-    return function(b: number): number {
-        return a * b;
-    };
-}
-
-// Uso de la función curried
-const multiplyByTwo = multiply(2);
-const result = multiplyByTwo(3);  // result será 6
-console.log(result);
-```
-
-En este ejemplo, multiply es una función que toma el primer número, a, y devuelve otra función que toma el segundo número, b. La función devuelta realiza la multiplicación de a y b.
-
-Al dividir todo en pequenias funciones, hace que la reutilizacion de codigo sea mucho mejor. 
 
 <a id="ent16"></a>
 
