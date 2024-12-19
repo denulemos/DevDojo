@@ -53,16 +53,16 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 
 | Preguntas JavaScript |
 |----------|
-| [Parametros por valor y por referencia en Javascript](#ent0) |
+| [Parametros por valor y por referencia](#ent0) |
 | [Prototype Javascript](#ent0-1) |
 | [Spread Operator](#ent0-3) |
 |[Spread vs Rest Operator](#ent0-4)|
 | [Null vs undefined vs never](#ent0-2) |
-| [.sort() en JavaScript](#ent1) |
-| [.map() en JavaScript](#ent2) |
-| [.filter() en JavaScript](#ent3) |
-| [.reduce() en JavaScript](#ent4) |
-|[Set vs Map vs WeakMap vs WeakSet en Javascript](#ent4-1)|
+| [`.sort()`](#ent1) |
+| [`.map()`](#ent2) |
+| [`.filter()`](#ent3) |
+| [`.reduce()`](#ent4) |
+|[Set vs Map vs WeakMap vs WeakSet](#ent4-1)|
 | [Diferencia entre let, var y const](#var6) |
 | [Programacion Funcional](#ent8) |
 | [Funciones lambda](#ent8-1) |
@@ -80,11 +80,11 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 | [Explica las diferencias entre REST y GraphQL. ¿Cuándo usarías uno sobre el otro?](#ent18) |
 | [Cuales son los ataques mas comunes en la web? Nombrar tambien sus protecciones del lado del cliente](#ent19) |
 | [¿Qué es el concepto de "lazy loading" y cómo se implementa en una aplicación web?](#ent20) |
-| [Mejorar performance en Javascript](#ent21) |
-| [Qué es un "array-like" en Javascript?](#alg26) |
-| [Mejorar performance en una aplicacion React](#ent24) |
-| [Mejorar performance en una aplicacion Angular](#ent25) |
-| [Que es una PWA?](#ent25-1) |
+| [Performance Javascript](#ent21) |
+| [Array-like](#alg26) |
+| [Performance React](#ent24) |
+| [Performance Angular](#ent25) |
+| [PWA (Progressive Web App)](#ent25-1) |
 | [Critical Rendering Path](#ent22) |
 | [¿Cuáles son las diferencias entre localStorage, sessionStorage y las cookies?](#ent23) |
 | [Web y Service Workers](#ent26) |
@@ -92,7 +92,7 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 | [Obfuscation and Minification](#ent55) |
 | [Promises - Async Await - Callbacks](#ent29) |
 | [Beneficios de usar Webpack o Rollup](#ent32) |
-| [¿Qué es el concepto de "tree shaking" y cómo se aplica en una aplicación JavaScript?](#ent33) |
+| [Tree shaking](#ent33) |
 | [Mejoras en el ciclo de vida](#ent68) |
 | [Redux, sus caracteristicas](#ent34) |
 | [Redux Async Flow](#ent53) |
@@ -104,27 +104,26 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 | [useFormStatus() React](#ent71) |
 | [useOptimistic() React](#ent72) |
 | [useCallback() React](#ent39) |
-| [useRef en React](#ent49) |
-| [useReducer en React](#ent50) |
+| [useRef() React](#ent49) |
+| [useReducer() React](#ent50) |
 | [Que mejoras hay en la migracion de AngularJS a Angular?](#ent51-1) |
 | [Decorators en Angular](#ent65) |
 | [Angular Signals](#ent65-1) |
 | [¿Qué es RxJS y qué problemas resuelve en el desarrollo de aplicaciones?](#ent38) |
 | [¿Qué es un Observable en RxJS y cómo difiere de una Promesa en JavaScript?](#ent39) |
 | [Explica la diferencia entre un Observable "cold" y "hot". Proporciona un ejemplo práctico de cada uno.](#ent40) |
-| [Beneficios de usar un CDN](#ent41) |
+| [CDN (Content Delivery Network)](#ent41) |
 | [Como organizarias el code reuse en una aplicacion?](#ent42) |
-| [Que es un higher order component?](#ent43) |
+| [Higher order component (HoC)](#ent43) |
 | [Patrones de disenio en React](#ent44) |
 | [Patrones de disenio en Angular](#ent45) |
 | [Patrones de disenio en Frontend](#ent46) |
 | [Antipatrones en Frontend](#ent47) |
-| [Que es el Server Side Rendering?](#ent48) |
-| [Que es el Static site rendering?](#ent52) |
-| [Arquitectura de microfrontends](#ent54) |
-| [¿Qué es el concepto de "code splitting" y cómo se implementa en una aplicación web?](#ent56) |
-| [¿Qué es el concepto de "serverless" y cómo se implementa en una aplicación web?](#ent57) |
-| [¿Qué es el concepto de "progressive web app" (Aplicaciones que se pueden instalar en cualquier dispositivo facilmente) y cómo se implementa en una aplicación web?](#ent58) |
+| [Server Side Rendering (SSR)](#ent48) |
+| [Static site rendering (SSR)](#ent52) |
+| [Microfrontends](#ent54) |
+| [Code splitting](#ent56) |
+| [Serverless](#ent57) |
 | [Es la metodologia Agile recomendable para todos los proyectos?](#ent60) |
 | [Que es un MVP?](#ent61) |
 | [Metodologias de estimacion de tareas](#ent66) |
