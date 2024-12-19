@@ -138,6 +138,12 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 |[Principios de Disponibilidad, Escalamiento en Frontend](#ent75)|
 | [Mencionar como manejarias la delegacion de tareas dentro de tu equipo](#ent76) |
 | [Se te da la tarea de empezar un nuevo proyecto, que preguntas realizarias para tomar que decisiones como un Tech Lead?](#ent76-1) |
+|[¿Que son los NFRs, Quién los define y cómo se priorizan?](#cic66) |
+|[Imagina que un cliente te dice que la aplicación es lenta y quiere que la aceleres, pero no te da más detalles. ¿Cómo manejarías esta situación?](#cic67) 💛|
+|[¿Cuáles son los posibles riesgos de adoptar una nueva tecnología en el proyecto? ¿Cómo mitigarlos?](#cic68)|
+|[Algunos miembros de tu equipo no pueden ponerse de acuerdo sobre una solución. Discuten y no pueden tomar una decisión. ¿Cómo resolverías esta situación conflictiva?](#cic69)|
+|[¿Cómo motivas a tu equipo y qué enfoques conoces? ¿Existe algún motivador universal para todos?](#cic70)|
+|[¿Cómo delegas tareas en tu equipo y cómo varía tu enfoque dependiendo de la antigüedad del miembro del equipo?](#cic70-1)|
 
 <a name="alg-base"></a>
 
@@ -404,12 +410,6 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 
 | Gestión de Proyectos - Liderazgo |
 |----------|
-|[¿Que son los NFRs, Quién los define y cómo se priorizan?](#cic66) |
-|[Imagina que un cliente te dice que la aplicación es lenta y quiere que la aceleres, pero no te da más detalles. ¿Cómo manejarías esta situación?](#cic67) 💛|
-|[¿Cuáles son los posibles riesgos de adoptar una nueva tecnología en el proyecto? ¿Cómo mitigarlos?](#cic68)|
-|[Algunos miembros de tu equipo no pueden ponerse de acuerdo sobre una solución. Discuten y no pueden tomar una decisión. ¿Cómo resolverías esta situación conflictiva?](#cic69)|
-|[¿Cómo motivas a tu equipo y qué enfoques conoces? ¿Existe algún motivador universal para todos?](#cic70)|
-|¿Cómo delegas tareas en tu equipo y cómo varía tu enfoque dependiendo de la antigüedad del miembro del equipo?|
 |¿Cómo realizas las revisiones de código en tus proyectos? ¿Qué verificas y cómo sabes que el código está listo para ser fusionado?|
 |¿Podrías nombrar algunos "code smells" (indicadores de problemas en el código)?|
 |¿Cómo estimas las tareas en tus proyectos? ¿Cómo manejas los problemas de sobreestimación o subestimación? ¿Cómo estimas tareas desconocidas?|
@@ -11423,6 +11423,93 @@ Este enfoque puede ayudar a resolver el conflicto de manera justa y equilibrada,
 ### 7. **Participación y Empoderamiento:**
     - Involucrar a los empleados en la toma de decisiones, darles autonomía y responsabilidad sobre su trabajo, y permitirles contribuir con ideas y soluciones puede aumentar la motivación y el compromiso.
 
+
+<a id="cic70-1"></a>
+
+### **¿Cómo delegas tareas en tu equipo y cómo varía tu enfoque dependiendo de la antigüedad del miembro del equipo?**
+
+[Volver al indice](#cic-base-2)
+
+Delegar tareas de manera efectiva es clave para maximizar la productividad del equipo, fomentar el desarrollo de habilidades y garantizar que los proyectos avancen correctamente. El enfoque para delegar puede variar dependiendo de la experiencia, antigüedad y nivel de confianza del miembro del equipo. Aquí hay una descripción detallada de cómo podría manejarlo:
+
+---
+
+### **1. Evaluar la tarea y sus requerimientos**
+Antes de delegar, es importante comprender la complejidad, prioridad y dependencia de la tarea. Preguntas clave:
+- ¿Requiere conocimientos técnicos avanzados o específicos?
+- ¿Tiene una fecha límite ajustada?
+- ¿Impacta a otras partes del proyecto?
+Esto me ayuda a decidir a quién asignar la tarea según su nivel de experiencia.
+
+---
+
+### **2. Delegar según el nivel de experiencia**
+El nivel de experiencia del miembro del equipo influye directamente en la forma en que se delega la tarea y el nivel de supervisión.
+
+#### **Miembros junior (nivel inicial)**
+- **Enfoque**: Darles tareas más claras, delimitadas y con un alcance bien definido. Estas tareas suelen tener menor impacto crítico y pueden ser oportunidades de aprendizaje.
+- **Estrategia**:
+  - Proporcionar instrucciones detalladas y un objetivo claro.
+  - Asignar tareas donde puedan desarrollar habilidades específicas.
+  - Supervisar más de cerca y revisar frecuentemente su progreso.
+  - Ser accesible para resolver dudas y brindar apoyo.
+- **Ejemplo**: "Quiero que implementes este componente siguiendo este diseño. Si tienes dudas con la estructura o lógica, revisémoslas antes de avanzar."
+
+#### **Miembros de nivel medio**
+- **Enfoque**: Confiar en su capacidad para completar tareas con menor supervisión, pero aún dando un poco de orientación cuando sea necesario.
+- **Estrategia**:
+  - Asignar tareas con mayor complejidad, pero que no afecten de manera crítica al proyecto.
+  - Establecer puntos de control para validar el progreso.
+  - Fomentar su autonomía y proactividad al resolver problemas.
+- **Ejemplo**: "Implementa este módulo. Asegúrate de integrar correctamente con el backend, y programemos una revisión después de que completes el 50%."
+
+#### **Miembros senior (alto nivel de experiencia)**
+- **Enfoque**: Darles autonomía total en tareas estratégicas o críticas y confiar en su criterio.
+- **Estrategia**:
+  - Asignar responsabilidades clave, como liderar partes complejas del proyecto.
+  - Fomentar que definan su propio enfoque para resolver problemas.
+  - Incluirlos en decisiones de alto nivel y en mentoría de otros miembros.
+- **Ejemplo**: "Tenemos un problema con la arquitectura actual del proyecto. ¿Puedes liderar la investigación de opciones y proponer una solución?"
+
+---
+
+### **3. Supervisión y seguimiento**
+El nivel de supervisión varía según la experiencia del miembro:
+- **Junior**: Revisiones más frecuentes (diarias o semanales) para asegurarse de que están en el camino correcto.
+- **Nivel medio**: Check-ins ocasionales o revisiones en puntos clave del progreso.
+- **Senior**: Supervisión mínima; confiar en su experiencia y proporcionar feedback al final del ciclo.
+
+---
+
+### **4. Fomentar la comunicación abierta**
+Independientemente de la antigüedad, siempre dejo claro que pueden acercarse si tienen dudas, enfrentan obstáculos o necesitan ajustar plazos. Esto genera confianza y ayuda a prevenir problemas antes de que se agraven.
+
+---
+
+### **5. Delegar con aprendizaje en mente**
+Siempre considero cómo las tareas que asigno pueden contribuir al desarrollo profesional de los miembros del equipo:
+- **Junior**: Les doy tareas que amplíen sus conocimientos básicos y habilidades técnicas.
+- **Medio**: Les asigno tareas que los expongan a nuevas responsabilidades, como comunicación con stakeholders o resolver problemas más abstractos.
+- **Senior**: Los desafío con tareas que requieran innovación o pensamiento estratégico.
+
+---
+
+### **6. Retroalimentación al finalizar**
+Una vez completada la tarea:
+- **Para juniors**: Brindar feedback detallado sobre lo que hicieron bien y dónde mejorar.
+- **Para niveles medios**: Reconocer su progreso y discutir cómo podrían optimizar su enfoque.
+- **Para seniors**: Discutir su trabajo en un nivel más estratégico, como el impacto general en el proyecto.
+
+---
+
+### **Resumen de mi enfoque**
+- **Evaluar las habilidades del miembro y las demandas de la tarea.**
+- **Asignar tareas de acuerdo con el nivel de experiencia.**
+- **Supervisar proporcionalmente según la antigüedad.**
+- **Fomentar la comunicación abierta para resolver bloqueos.**
+- **Dar retroalimentación constructiva después de completar la tarea.**
+
+Este enfoque ayuda a mantener al equipo alineado, desarrollar sus habilidades y garantizar que las tareas sean manejadas de manera eficiente según las capacidades individuales. ¿Quieres ejemplos específicos de tareas técnicas o gestión para cada nivel?
 
 ---
 
