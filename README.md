@@ -45,7 +45,7 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 - [Seguridad](#seg-base)
 - [Accesibilidad](#acc-base)
 
-<a name="entrevista"></a>
+ <a id="entrevista-base"></a>
 
 ## [Preguntas mas comunes en entrevistas de trabajo para un FE Engineer](#entrevista-base)
 
@@ -1179,8 +1179,6 @@ de teclado?|
 |¿Qué reglas de CSS son esenciales para garantizar una experiencia accesible  en un sitio web?|
 
 ---
-
- <a id="entrevista-base"></a>
 
 # Preguntas mas comunes en entrevistas de trabajo para un FE Engineer
 
