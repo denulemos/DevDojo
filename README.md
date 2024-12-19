@@ -54,7 +54,7 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 | Preguntas JavaScript |
 |----------|
 | [Parametros por valor y por referencia en Javascript](#ent0) |
-| [Prototype en Javascript](#ent0-1) |
+| [Prototype Javascript](#ent0-1) |
 | [Spread Operator](#ent0-3) |
 |[Spread vs Rest Operator](#ent0-4)|
 | [Null vs undefined vs never](#ent0-2) |
@@ -64,11 +64,11 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 | [.reduce() en JavaScript](#ent4) |
 |[Set vs Map vs WeakMap vs WeakSet en Javascript](#ent4-1)|
 | [Diferencia entre let, var y const](#var6) |
-| [Programacion Funcional, De que trata?](#ent8) |
-| [Que es una funcion lambda?](#ent8-1) |
-| [Que es la programacion reactiva?](#ent8-2) |
-| [Que es la programacion declarativa?](#ent8-3) |
-| [Que es la Paradigma Reactiva Funcional (FRP)?](#ent9) |
+| [Programacion Funcional](#ent8) |
+| [Funciones lambda](#ent8-1) |
+| [Programacion reactiva](#ent8-2) |
+| [Programacion declarativa](#ent8-3) |
+| [Paradigma Reactiva Funcional (FRP)?](#ent9) |
 |[¿Qué es el principio de Encapsulación y por qué es importante en OOP?](#ent10)|
 | [Principios SOLID](#ent11) |
 | [Que es la inyeccion de dependencias?](#ent12) |
@@ -97,13 +97,13 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 | [Redux, sus caracteristicas](#ent34) |
 | [Redux Async Flow](#ent53) |
 | [Context API](#ent35) |
-| [useEffect en React](#ent37) |
-| [useActionState en React](#ent69) |
+| [useEffect() React](#ent37) |
+| [useActionState() React](#ent69) |
 | [React Server Components](#ent69-1) |
-| [startTransition en React](#ent70) |
-| [useFormStatus en React](#ent71) |
-| [useOptimistic en React](#ent72) |
-| [useCallback en React](#ent39) |
+| [startTransition() React](#ent70) |
+| [useFormStatus() React](#ent71) |
+| [useOptimistic() React](#ent72) |
+| [useCallback() React](#ent39) |
 | [useRef en React](#ent49) |
 | [useReducer en React](#ent50) |
 | [Que mejoras hay en la migracion de AngularJS a Angular?](#ent51-1) |
@@ -130,12 +130,11 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 | [Metodologias de estimacion de tareas](#ent66) |
 | [Distintos tipos de testing en Frontend](#ent62) |
 | [Git vs Mercurial](#ent63) |
-| [Continuous Integration, Continuous Delivery, Continuous Deployment](#ent65-4) |
-| [Posibles mejoras al proceso CI-CD](#ent64) |
+| [Continuous Integration, Continuous Delivery, Continuous Deployment - Mejoras del proceso CI-CD](#ent65-4) |
 | [Que sucede cuando escribo una URL en el navegador y hago click en Enter?](#har19) |
-| [Explicar que es CORS](#ent67) |
-| [Como escalar una aplicacion NodeJS](#ent73) |
-| [Como escalar una aplicacion Frontend de la mejor forma](#ent74)|
+| [CORS](#ent67) |
+| [Escalabilidad NodeJS](#ent73) |
+| [Escalabilidad FE](#ent74)|
 |[Principios de Disponibilidad, Escalamiento en Frontend](#ent75)|
 | [Mencionar como manejarias la delegacion de tareas dentro de tu equipo](#ent76) |
 | [Se te da la tarea de empezar un nuevo proyecto, que preguntas realizarias para tomar que decisiones como un Tech Lead?](#ent76-1) |
@@ -1232,11 +1231,11 @@ function modificarArray(array) {
 
 <a id="ent0-1"></a>
 
-### **Prototype en Javascript**
+### **Prototype Javascript**
 
 [Volver al indice](#entrevista-base)
 
-`Prototype` permite que objetos y funciones en Javascript compartan propiedades y metodos entre si. 
+`Prototype` permite que objetos y funciones en Javascript compartan propiedades y metodos entre si.
 
 Todos los objetos en JS tienen una propiedad interna llamada `[[Prototype]]` al que se accede con `__proto__` o configurarla con `Object.create()`.
 Las funciones al ser tambien objetos en JS tienen una propiedad tambien llamada `prototype`
@@ -1622,7 +1621,7 @@ Ninguno de los `weak` es enumerable, es decir, no se pueden iterar sobre ellos.
 
 <a id="ent8"></a>
 
-### **Programacion Funcional, De que trata?**
+### **Programacion Funcional**
 
 [Volver al indice](#entrevista-base)
 
@@ -1661,7 +1660,7 @@ Los lenguajes de programacion hechos para la programacion funcional son Scala, E
 
 <a id="ent8-1"></a>
 
-### **Que es una funcion lambda?**
+### **Funciones lambda**
 
 [Volver al indice](#entrevista-base)
 
@@ -3199,6 +3198,304 @@ export default function ClientComponent() {
 
 Es muy util combinar esta funcionalidad con NextJs para mejorar el rendimiento de la aplicacion.
 
+<a id="ent70"></a>
+
+### **startTransition() React**
+
+[Volver al indice](#entrevista-base)
+
+La función `startTransition()` de React es una herramienta que se utiliza para gestionar actualizaciones de estado que no son críticas para la interacción inmediata del usuario. Su principal objetivo es mejorar la **experiencia de usuario** al permitir que las actualizaciones menos importantes no bloqueen el hilo de ejecución principal y no interfieran con las interacciones críticas.
+
+### ¿Cómo funciona `startTransition()`?
+
+En React, las actualizaciones de estado, por defecto, son **sincrónicas**, lo que significa que cualquier cambio en el estado de un componente o renderización se ejecutará inmediatamente, lo cual puede causar problemas de rendimiento si el componente tiene un renderizado pesado o si hay muchos cambios de estado que se ejecutan al mismo tiempo.
+
+`startTransition()` es una API que permite que ciertas actualizaciones no se consideren prioritarias. Cuando usas `startTransition()`, le estás diciendo a React que esta actualización es **baja prioridad** y puede ser interrumpida si el hilo está ocupado haciendo tareas más importantes, como responder a las interacciones del usuario.
+
+### ¿Cómo se usa `startTransition()`?
+
+Aquí tienes un ejemplo básico de cómo usar `startTransition()`:
+
+```javascript
+import React, { useState, startTransition } from 'react';
+
+function MyComponent() {
+  const [isPending, setIsPending] = useState(false);
+  const [inputValue, setInputValue] = useState('');
+
+  const handleChange = (event) => {
+    const { value } = event.target;
+
+    // Aquí usamos startTransition para hacer que el cambio en el estado de inputValue sea de baja prioridad
+    startTransition(() => {
+      setInputValue(value);
+    });
+
+    // Marca si la actualización está pendiente
+    setIsPending(true);
+  };
+
+  return (
+    <div>
+      <input type="text" value={inputValue} onChange={handleChange} />
+      {isPending && <div>Updating...</div>}
+    </div>
+  );
+}
+```
+
+1. **Prioridad baja para actualizaciones de estado**: Dentro del `startTransition()`, el cambio de estado `setInputValue(value)` se marca como una actualización de baja prioridad, lo que significa que React intentará procesar esta actualización solo cuando haya tiempo disponible, sin bloquear interacciones importantes como el input del usuario.
+   
+2. **Optimización del rendimiento**: Esto permite que, si hay una actualización costosa o renderizado en progreso, las actualizaciones menos importantes no retrasen la interacción del usuario.
+
+### ¿Cuándo se debería usar `startTransition()`?
+
+Se debe usar `startTransition()` cuando tengas actualizaciones de estado o renderizados que no necesiten ser procesados inmediatamente y que no afecten la interacción directa del usuario. Algunos ejemplos incluyen:
+
+- **Filtros o búsquedas en listas grandes**: Si tienes una búsqueda que filtra una lista muy grande y el filtrado no es urgente.
+- **Actualización de datos en segundo plano**: Si necesitas actualizar ciertos estados o cálculos en segundo plano sin interrumpir las interacciones del usuario.
+- **Animaciones o cambios visuales complejos**: Para renderizados pesados o animaciones que no son necesarias de inmediato, como transiciones de interfaz de usuario.
+
+### Beneficios de `startTransition()`
+
+1. **Mejora de la experiencia del usuario**: Evita que la interfaz se congele o se sienta lenta debido a renderizados pesados.
+2. **Optimización del rendimiento**: Al gestionar las actualizaciones de estado con menor prioridad, React puede hacer las actualizaciones más críticas primero, manteniendo la interfaz fluida.
+3. **Control más fino de las actualizaciones**: Permite una separación entre las tareas que son cruciales para la interacción del usuario y las que pueden esperar.
+
+### Limitaciones
+
+- **No reemplaza el uso de `useEffect`**: `startTransition()` no se debe usar para efectos secundarios que deban ocurrir de manera inmediata (como realizar peticiones API).
+- **No aplica a todas las actualizaciones de estado**: Debe usarse en contextos donde el rendimiento es una preocupación, pero no es necesario para todas las actualizaciones de estado.
+
+<a id="ent71"></a>
+
+### **Que mejoras hay en la migracion de AngularJS a Angular?**
+
+[Volver al indice](#entrevista-base)
+
+`useFormStatus()` es un **hook** en React que se introdujo en React 18 como parte de las nuevas APIs para mejorar la experiencia de formularios y manejar estados de carga en el proceso de envío de formularios. Está diseñado para trabajar con formularios que pueden estar en un estado de envío o validación y es especialmente útil para mejorar la accesibilidad y la usabilidad cuando los formularios se envían de manera asincrónica.
+
+`useFormStatus()` te permite manejar el estado de un formulario de forma declarativa y reaccionar a las actualizaciones del estado del formulario, como si está enviando datos (en proceso), si hay un error o si se ha completado con éxito.
+
+Este hook ofrece un estado relacionado con la validación y el envío del formulario, incluyendo propiedades como `pending` (si la acción de envío está pendiente), `submitted` (si el formulario ha sido enviado), y `error` (si hubo un error durante el envío).
+
+El hook `useFormStatus()` devuelve un objeto con los siguientes valores:
+
+1. **`pending`**: Un valor booleano que indica si el formulario está en proceso de envío. Es `true` cuando el formulario está esperando una respuesta (por ejemplo, esperando una respuesta del servidor).
+2. **`submitted`**: Un valor booleano que indica si el formulario ha sido enviado.
+3. **`error`**: Un valor que contiene cualquier error que ocurra durante el proceso de envío del formulario (puede ser un objeto de error si se produjo algún fallo).
+
+Ejemplo básico de uso
+
+Aquí te dejo un ejemplo básico de cómo usar `useFormStatus()` en un formulario React.
+
+```javascript
+import React, { useState } from 'react';
+import { useFormStatus } from 'react';
+
+function MyForm() {
+  const [formData, setFormData] = useState({ name: '', email: '' });
+  
+  // Usamos useFormStatus para manejar el estado del formulario
+  const { pending, submitted, error } = useFormStatus();
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    // Simula el envío del formulario (por ejemplo, hacer una petición a un servidor)
+    try {
+      // Aquí enviaríamos el formulario a una API, pero en este ejemplo solo simulamos
+      await new Promise((resolve) => setTimeout(resolve, 2000));  // Simulando un retraso
+      // Si el envío es exitoso, podemos marcar el formulario como enviado
+      console.log('Formulario enviado con éxito');
+    } catch (error) {
+      console.log('Error en el envío:', error);
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="name">Nombre</label>
+        <input 
+          type="text" 
+          id="name" 
+          value={formData.name}
+          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+        />
+      </div>
+      <div>
+        <label htmlFor="email">Correo Electrónico</label>
+        <input 
+          type="email" 
+          id="email" 
+          value={formData.email}
+          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+        />
+      </div>
+      
+      <button type="submit" disabled={pending}>
+        {pending ? 'Enviando...' : 'Enviar'}
+      </button>
+
+      {submitted && <p>Formulario enviado con éxito.</p>}
+      {error && <p>Error al enviar el formulario: {error.message}</p>}
+    </form>
+  );
+}
+
+export default MyForm;
+```
+
+Explicación del código:
+
+1. **Estados de Formulario**:
+   - Se utiliza `useState` para manejar los valores del formulario (`formData`).
+   - Se utiliza `useFormStatus()` para obtener el estado del formulario en cuanto a su envío (`pending`, `submitted`, `error`).
+   
+2. **Envío del Formulario**:
+   - El formulario está configurado para simular el proceso de envío de datos al hacer una petición simulada con `setTimeout`. 
+   - Durante este proceso, el botón de envío está deshabilitado si el formulario está en estado `pending`, es decir, si está esperando una respuesta.
+   
+3. **Mensajes de Estado**:
+   - Si el formulario se envía con éxito, se muestra un mensaje diciendo "Formulario enviado con éxito".
+   - Si hay un error durante el envío, se muestra un mensaje de error.
+
+Beneficios de usar `useFormStatus()`
+
+- **Mejora la accesibilidad**: Proporciona un estado claro y consistente sobre el envío del formulario, lo que es útil para los lectores de pantalla y otras herramientas de accesibilidad.
+- **Control de estado de carga**: Permite gestionar y mostrar los estados de carga, éxito y error sin tener que manejar manualmente estos estados.
+- **Flujo de trabajo simplificado**: Facilita la gestión del estado relacionado con el formulario, simplificando la lógica que generalmente involucra manejar los estados de validación, envío y error.
+
+Consideraciones
+
+- **Compatibilidad**: Asegúrate de que tu versión de React sea 18 o posterior, ya que `useFormStatus()` es una característica nueva que fue introducida en React 18.
+- **Flujos de trabajo complejos**: Si tu formulario involucra validación compleja o interacciones con múltiples APIs, es posible que necesites integrar este hook con otros hooks personalizados o librerías como Formik o React Hook Form para manejar el estado y las validaciones de manera más avanzada.
+
+<a id="ent72"></a>
+
+### **useOptimistic() React**
+
+[Volver al indice](#entrevista-base)
+
+El hook `useOptimistic()` es una característica introducida en React para manejar **actualizaciones optimistas** de manera más sencilla y declarativa. Se utiliza para actualizar la interfaz de usuario de manera inmediata, asumiendo que una operación asíncrona se completará correctamente, mientras el servidor procesa los datos. Si la operación falla, puedes revertir el estado de la interfaz de usuario.
+
+Este enfoque mejora la experiencia del usuario al hacer que las actualizaciones sean instantáneas, incluso antes de recibir una confirmación del servidor.
+
+---
+
+### ¿Cómo funciona `useOptimistic()`?
+
+`useOptimistic()` es un hook diseñado para trabajar con estados que podrían necesitar ser actualizados de forma optimista. Al usarlo, defines un estado inicial y una función para calcular el nuevo estado después de una actualización. React se encargará de manejar ese estado temporalmente mientras la operación real se completa.
+
+El hook devuelve un par de valores:
+
+1. **`optimisticState`**: El estado actual, incluyendo cualquier cambio optimista que se haya realizado.
+2. **`setOptimisticState`**: Una función para actualizar el estado de manera optimista.
+
+---
+
+### Sintaxis de `useOptimistic()`
+
+```javascript
+const [optimisticState, setOptimisticState] = useOptimistic(initialState, reducer);
+```
+
+- **`initialState`**: El estado inicial que quieres usar.
+- **`reducer`**: Una función que calcula el nuevo estado basado en el estado actual y una acción.
+
+---
+
+### Ejemplo básico
+
+Aquí tienes un ejemplo de cómo usar `useOptimistic()` para manejar una lista de tareas donde las eliminaciones se manejan de forma optimista:
+
+```javascript
+import React, { useOptimistic } from 'react';
+
+function TodoList() {
+  const initialTodos = [
+    { id: 1, text: 'Aprender React' },
+    { id: 2, text: 'Construir una app' },
+    { id: 3, text: 'Publicar en producción' },
+  ];
+
+  // Estado optimista para la lista de tareas
+  const [todos, setTodos] = useOptimistic(initialTodos, (currentTodos, action) => {
+    switch (action.type) {
+      case 'delete':
+        // Eliminar tarea de manera optimista
+        return currentTodos.filter((todo) => todo.id !== action.id);
+      default:
+        return currentTodos;
+    }
+  });
+
+  const handleDelete = async (id) => {
+    // Actualización optimista: elimina la tarea de inmediato
+    setTodos({ type: 'delete', id });
+
+    try {
+      // Simular una operación asíncrona, como una petición al servidor
+      await fetch(`/api/todos/${id}`, { method: 'DELETE' });
+    } catch (error) {
+      console.error('Error eliminando la tarea:', error);
+      // Si falla, puedes manejar la reversión manualmente (aquí no se implementa).
+    }
+  };
+
+  return (
+    <ul>
+      {todos.map((todo) => (
+        <li key={todo.id}>
+          {todo.text}{' '}
+          <button onClick={() => handleDelete(todo.id)}>Eliminar</button>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+export default TodoList;
+```
+
+---
+
+### Explicación del ejemplo:
+
+1. **Estado optimista**: Usamos `useOptimistic()` para definir un estado inicial de tareas y un `reducer` que nos permite actualizar ese estado de forma declarativa.
+
+2. **Actualización optimista**: Cuando el usuario elimina una tarea, el estado se actualiza inmediatamente en la interfaz de usuario sin esperar la confirmación del servidor.
+
+3. **Reversión manual (si es necesario)**: Si la operación asíncrona (como la petición al servidor) falla, puedes manejar la reversión al estado anterior. Este manejo de errores no se incluye en el ejemplo, pero es importante para aplicaciones reales.
+
+---
+
+### ¿Cuándo usar `useOptimistic()`?
+
+Usa `useOptimistic()` cuando quieras manejar interacciones de usuario con actualizaciones rápidas en la interfaz, pero que dependen de operaciones asíncronas que podrían fallar. Algunos casos comunes incluyen:
+
+- **Edición de datos**: Actualizar textos, estados o elementos en una lista.
+- **Eliminaciones**: Mostrar instantáneamente que un elemento fue eliminado, aunque aún no se haya confirmado en el servidor.
+- **Creación de elementos**: Mostrar nuevos elementos en la interfaz antes de recibir confirmación del servidor.
+- **Actualizaciones de likes/reacciones**: Incrementar un contador de likes instantáneamente mientras se envía la acción al servidor.
+
+---
+
+### Beneficios de `useOptimistic()`
+
+1. **Experiencia de usuario mejorada**: Las actualizaciones optimistas hacen que la aplicación parezca más rápida y responsiva.
+2. **Código más declarativo**: Con el uso de un `reducer`, puedes definir cómo manejar diferentes acciones de manera clara.
+3. **Integración con la API de React**: Funciona perfectamente con las características de React 18, como el concurrent rendering.
+
+---
+
+### Consideraciones:
+
+- **Reversión manual**: Si la operación falla, tendrás que manejar manualmente la reversión del estado optimista.
+- **No es adecuado para todas las operaciones**: Si el resultado de la operación en el servidor afecta de manera significativa la lógica de la aplicación, puede ser mejor esperar a la confirmación antes de actualizar el estado.
+- **Evitar estados inconsistentes**: Asegúrate de manejar errores correctamente para que la interfaz no muestre datos incorrectos.
+
 
 <a id="ent51-1"></a>
 
@@ -4545,6 +4842,528 @@ Para poder construir y planificar un MVP se deben dejar de lado los detalles inn
 - **Estimación por analogía**: Es una tecnica de estimacion de tareas que se basa en la comparacion de tareas similares realizadas anteriormente. Se asigna un tiempo estimado a cada tarea, y se compara con otras tareas para saber cual es mas compleja. Se usa en proyectos donde se tiene un historial de tareas realizadas.
 - **Estimación Delphi**: Es una tecnica de estimacion de tareas que se basa en la opinion de expertos. Se asigna un tiempo estimado a cada tarea, y se compara con otras tareas para saber cual es mas compleja. Se usa en proyectos donde se necesita una estimacion mas precisa.
 
+<a id="ent62"></a>
+
+### **Distintos tipos de testing en Frontend**
+
+[Volver al indice](#entrevista-base)
+
+- **Unit Testing**: Se enfoca en probar unidades individuales de codigo, como funciones o componentes, para asegurarse de que funcionan como se espera. Se pueden usar herramientas como Jest, Mocha o Jasmine.
+- **Integration Testing**: En el frontend, esto implica probar interacciones entre múltiples componentes o entre un componente y su API o base de datos. Se hace con Jest o Mocha. Por ejemplo, un test seria Verificar que un componente de formulario interactúe correctamente con un componente de validación o con una API para enviar datos.
+- **End-to-End Testing**: Se enfoca en probar la aplicacion en su totalidad, desde el frontend hasta el backend, para asegurarse de que todas las partes funcionan juntas como se espera. Se puede hacer con herramientas como Cypress o Selenium. Por ejemplo, un test seria Verificar que un usuario pueda registrarse en la aplicacion y que sus datos se guarden correctamente en la base de datos.
+- **Functional Testing**: Se enfoca en probar las funciones de la aplicacion, como la navegacion, la interaccion con los elementos de la interfaz de usuario y la entrada de datos. Se puede hacer con herramientas como Jest, Mocha o Jasmine. Por ejemplo, un test seria Verificar que un usuario pueda navegar por la aplicacion y que los botones y enlaces funcionen correctamente.
+- **UI/UX Testing**: Se enfoca en probar la interfaz de usuario y la experiencia del usuario, como la apariencia, la usabilidad y la accesibilidad de la aplicacion. Se puede hacer con herramientas como Storybook o Chromatic. Por ejemplo, un test seria Verificar que la aplicacion se vea y se comporte correctamente en diferentes dispositivos y navegadores.
+- **Performance Testing**: Se enfoca en probar el rendimiento de la aplicacion, como la velocidad de carga, la capacidad de respuesta y la escalabilidad. Se puede hacer con herramientas como Lighthouse, JMeter o WebPageTest. Por ejemplo, un test seria Verificar que la aplicacion se cargue en menos de 3 segundos y que pueda manejar 1000 usuarios simultáneos.
+- **Regression Testing**: Se enfoca en probar que los cambios recientes en el codigo no hayan afectado el funcionamiento de la aplicacion. Se puede hacer con herramientas como Jest, Mocha o Jasmine. Por ejemplo, un test seria Verificar que una nueva funcionalidad no haya introducido errores en funcionalidades existentes.
+- **Smoke Testing**: Se enfoca en probar las funcionalidades principales de la aplicacion para asegurarse de que funcionan correctamente antes de realizar pruebas más exhaustivas. Se puede hacer con herramientas como Jest, Mocha o Jasmine. Por ejemplo, un test seria Verificar que un usuario pueda iniciar sesión en la aplicacion y que sus datos se muestren correctamente en la pantalla principal.
+
+<a id="ent63"></a>
+
+### **Git vs Mercurial**
+
+[Volver al indice](#entrevista-base)
+
+Las diferencias principales entre **Git** y **Mercurial** son:
+
+### **1. Filosofía y Diseño**
+
+- **Git**:
+  - **Modelo distribuido**: Git es un sistema distribuido de control de versiones. Cada desarrollador tiene una copia completa del repositorio, incluidos el historial de cambios y las ramas.
+  - **Eficiencia y rendimiento**: Git está diseñado para ser rápido y manejar grandes repositorios con eficiencia, lo que lo hace ideal para proyectos de gran escala.
+  - **Complejidad**: Git puede ser más complejo debido a su amplio conjunto de características y su sintaxis más complicada. Ofrece una gran flexibilidad, pero eso puede hacer que sea más difícil de aprender para los principiantes.
+
+- **Mercurial**:
+  - **Modelo distribuido**: Al igual que Git, Mercurial también es distribuido, lo que significa que cada usuario tiene una copia completa del repositorio.
+  - **Simplicidad y enfoque**: Mercurial se centra en ser simple, intuitivo y fácil de usar. Su flujo de trabajo está diseñado para ser más sencillo, lo que puede facilitar su adopción en equipos pequeños o nuevos en el control de versiones.
+  - **Curva de aprendizaje**: Mercurial es generalmente considerado más fácil de aprender que Git debido a su sintaxis más sencilla y menos características avanzadas.
+
+### **2. Popularidad y Comunidad**
+
+- **Git**:
+  - **Adopción**: Git es más popular que Mercurial y se ha convertido en el estándar de facto para la mayoría de los proyectos de desarrollo de software, especialmente en plataformas como GitHub, GitLab y Bitbucket.
+  - **Ecosistema y herramientas**: Dado que Git es más utilizado, tiene un ecosistema más grande de herramientas, bibliotecas y documentación disponible. Muchas plataformas de desarrollo, CI/CD y servicios de repositorio están optimizados para Git.
+
+- **Mercurial**:
+  - **Adopción**: Aunque Mercurial tiene una base de usuarios leal, ha sido menos adoptado que Git, y muchos proyectos más grandes han migrado a Git. Un ejemplo famoso de esto es el caso de **Bitbucket**, que inicialmente soportaba Mercurial antes de que decidiera centrarse exclusivamente en Git.
+  - **Comunidad más pequeña**: Mercurial tiene una comunidad de usuarios más pequeña en comparación con Git, lo que puede resultar en una menor cantidad de recursos y soporte.
+
+### **3. Flujo de trabajo y rendimiento**
+
+- **Git**:
+  - **Ramas**: Git es conocido por su fuerte soporte para **ramas (branching)**, lo que permite a los desarrolladores crear y fusionar ramas de manera rápida y flexible. Git es altamente eficiente en cuanto al manejo de ramas, lo que lo hace perfecto para flujos de trabajo que dependen de ramificación y fusiones frecuentes.
+  - **Rendimiento**: Git generalmente tiene un buen rendimiento, incluso con repositorios grandes, aunque algunas operaciones complejas como el *merge* pueden ser lentas si no se gestionan correctamente.
+
+- **Mercurial**:
+  - **Ramas**: Mercurial utiliza un modelo de ramas diferente al de Git. Si bien Mercurial también soporta ramas, su enfoque es algo diferente y puede ser menos flexible en comparación con Git. Sin embargo, Mercurial proporciona soporte para **"named branches"** y **"bookmarks"** (que son más parecidos a las ramas en Git).
+  - **Rendimiento**: Mercurial también tiene un buen rendimiento, aunque puede no ser tan rápido como Git en repositorios de gran escala debido a su menor optimización para estos casos.
+
+### **4. Características clave**
+
+- **Git**:
+  - **Flexibilidad avanzada**: Git ofrece una gran cantidad de comandos y opciones avanzadas, lo que permite personalizar flujos de trabajo según las necesidades del equipo o el proyecto.
+  - **Staging Area**: Git tiene una **staging area** o área de preparación que permite a los desarrolladores seleccionar qué cambios se deben incluir en el próximo commit, lo que proporciona un control más preciso sobre las modificaciones.
+
+- **Mercurial**:
+  - **Simplicidad y enfoque**: Mercurial es más simple en cuanto a su conjunto de características. No tiene un equivalente directo a la **staging area** de Git, lo que hace que el flujo de trabajo sea más directo (aunque menos flexible).
+  - **Facilidad de uso**: Mercurial ofrece una interfaz de línea de comandos más simple y tiene menos configuraciones que gestionar.
+
+### **5. Soporte y Herramientas**
+
+- **Git**:
+  - **Herramientas**: Git es ampliamente soportado por herramientas de desarrollo modernas, como **GitHub**, **GitLab**, **Bitbucket** y otras plataformas de CI/CD. Además, la integración de Git con herramientas como **Visual Studio Code**, **Atom** y **Sublime Text** es muy robusta.
+  - **Servicios en la nube**: Git es compatible con todos los principales servicios en la nube de control de versiones (GitHub, GitLab, Bitbucket).
+
+- **Mercurial**:
+  - **Herramientas**: Mercurial tiene soporte en herramientas como **Bitbucket** (aunque ya no se usa para repositorios nuevos), **SourceForge**, y algunos editores de texto. Sin embargo, su integración no es tan amplia como la de Git.
+  - **Soporte de la comunidad**: La comunidad de Mercurial es más pequeña, lo que puede dificultar encontrar recursos y soporte en comparación con Git.
+
+### **6. Casos de uso y elección**
+
+- **Git**: 
+  - Ideal para equipos grandes, proyectos de código abierto y flujos de trabajo con ramificación frecuente.
+  - Utilizado ampliamente en la industria del software, especialmente en proyectos que requieren una integración estrecha con plataformas como GitHub o GitLab.
+  
+- **Mercurial**: 
+  - Mejor para equipos más pequeños que buscan una herramienta sencilla y rápida de implementar.
+  - Aún se utiliza en ciertos proyectos grandes y populares como **Mozilla** y **Facebook**, que lo adoptaron debido a sus beneficios para sus flujos de trabajo específicos.
+
+---
+
+### **Resumen de las diferencias clave**
+
+| Característica                 | **Git**                                  | **Mercurial**                        |
+|---------------------------------|------------------------------------------|--------------------------------------|
+| **Popularidad**                 | Mucho más popular, especialmente con GitHub | Menos popular, con base de usuarios más pequeña |
+| **Complejidad**                 | Más complejo, con muchas características avanzadas | Más simple, fácil de aprender |
+| **Rendimiento**                 | Muy eficiente, especialmente en grandes repositorios | Buen rendimiento, pero no tan optimizado en repositorios grandes |
+| **Soporte para ramas**          | Muy fuerte, con ramificación avanzada    | Menos flexible, pero soporta ramas básicas y bookmarks |
+| **Flujo de trabajo**            | Flexible, adecuado para equipos grandes y colaboraciones complejas | Flujo de trabajo más simple y directo |
+| **Herramientas y servicios**    | Gran soporte (GitHub, GitLab, Bitbucket) | Menos herramientas, principalmente Bitbucket antes de eliminar soporte |
+| **Curva de aprendizaje**       | Más empinada, requiere más tiempo para aprender | Más fácil de aprender, ideal para principiantes |
+
+### **Conclusión**
+
+**Git** es la opción preferida para la mayoría de los proyectos de desarrollo modernos debido a su flexibilidad, rendimiento, y soporte en plataformas como GitHub. Es ideal para proyectos grandes y equipos que necesitan un control detallado sobre sus flujos de trabajo y un ecosistema de herramientas robusto.
+
+**Mercurial** puede ser una excelente opción para proyectos pequeños o equipos que buscan una solución más simple y fácil de aprender, aunque su adopción está disminuyendo debido a la creciente popularidad de Git.
+
+<a id="ent65-4"></a>
+
+### **Continuous Integration, Continuous Delivery, Continuous Deployment - Mejoras del proceso CI-CD**
+
+[Volver al indice](#entrevista-base)
+
+**Continuous Integration (CI)**
+
+Es el integrar los cambios de los desarrolladores al codigo al repositorio asegurandose que el codigo nuevo se integre bien al viejo.
+
+- Automatización completa: Asegúrate de que todos los pasos de la integración, como la ejecución de pruebas, la verificación de la calidad del código (linting, formateo), y el despliegue a un entorno de staging, sean completamente automáticos.
+- Integración con herramientas de CI: Usa herramientas como Jenkins, GitLab CI, CircleCI, Travis CI o GitHub Actions para gestionar las integraciones automáticas.
+- Feedback rápido: Asegúrate de que los desarrolladores reciban retroalimentación casi en tiempo real sobre el estado de la integración, de modo que puedan actuar rápidamente en caso de que se detecten errores.
+
+**Continuous Delivery (CD)**
+
+Se extiende a CI ya que consta de llevar este codigo ya integrado a un entorno, la idea es poder deployar en todo momento sin necesidad de intervenciones manuales necesarias. 
+
+- Implementar pipelines de CD: Usa herramientas como Jenkins, GitLab CI/CD, CircleCI, Travis CI, entre otras, para crear pipelines de entrega continua que validen y desplieguen automáticamente en entornos de staging o producción.
+- Pruebas de aceptación automatizadas: Integra pruebas de aceptación y pruebas funcionales en el pipeline de CD para asegurar que el código sea probado exhaustivamente antes de ser entregado a producción.
+- Control de versiones y etiquetado de releases: Usa etiquetas o versiones específicas en los despliegues, lo que permite tener un control más riguroso de qué cambios están en producción en todo momento.
+
+**Continuous Deployment (CD)**
+
+Es una rama de Delivery, pero exclusivamente hacia produccion
+
+- Pruebas exhaustivas y monitoreo: Dado que los cambios se despliegan automáticamente, es crucial que el proceso de pruebas esté completamente automatizado y que existan pruebas de integración y pruebas de aceptación completas. Además, debe haber un monitoreo riguroso en producción para detectar cualquier problema rápidamente.
+- Despliegue progresivo: Implementa estrategias como canary releases o blue-green deployments para minimizar el riesgo de fallos en producción. Estas técnicas permiten realizar despliegues graduales y probar nuevos cambios en una pequeña porción de los usuarios antes de hacerlo en toda la base de usuarios.
+- Rollback automático: Implementa mecanismos automáticos para revertir rápidamente cualquier despliegue que cause problemas en producción, asegurando que los usuarios no experimenten interrupciones.
+
+En resumen, hay que prestar especial atencion al testing automatizado y a la retroalimentacion rapida, al igual que a la automatizacion de todo el proceso. Tambien a las analiticas y alarmas, ya que de esa manera podremos darnos cuenta si hay algo que esta saliendo mal o afectado.
+
+<a id="ent67"></a>
+
+### **CORS**
+
+[Volver al indice](#entrevista-base)
+
+**CORS** (Cross-Origin Resource Sharing) es un mecanismo de seguridad implementado en los navegadores web que permite o restringe que los recursos de una página web sean solicitados desde un dominio distinto al que sirve la página. Este sistema es utilizado para evitar ciertos riesgos de seguridad, como ataques de **Cross-Site Request Forgery (CSRF)** o **Cross-Site Scripting (XSS)**.
+
+Por defecto, los navegadores restringen las solicitudes **cross-origin** (de un origen a otro) debido a la política de **mismo origen** (*same-origin policy*). La política de mismo origen significa que, por razones de seguridad, una página web solo puede hacer solicitudes a su propio dominio, protocolo y puerto, y no a otros dominios. 
+
+Sin embargo, hay muchos casos en los que una aplicación web legítima necesita hacer solicitudes a otro dominio (por ejemplo, hacer una llamada a una API en un dominio diferente). Aquí es donde entra en juego **CORS**, que permite a los servidores especificar si se permiten solicitudes de otros orígenes.
+
+### **¿Cómo Funciona CORS?**
+
+Cuando una página web intenta realizar una solicitud HTTP a un dominio diferente (es decir, una solicitud "cross-origin"), el navegador envía una solicitud HTTP preliminar llamada **preflight request** (opcional en algunos casos) utilizando el método **OPTIONS** para verificar con el servidor si la solicitud real está permitida.
+
+1. **Preflight Request**: El navegador realiza una solicitud `OPTIONS` al servidor del otro dominio con ciertos encabezados para comprobar si el servidor permite solicitudes de ese origen.
+   - Ejemplo de solicitud `OPTIONS`:
+     ```http
+     OPTIONS /api/data HTTP/1.1
+     Host: example.com
+     Origin: http://another-domain.com
+     ```
+
+2. **Respuesta del Servidor**: Si el servidor permite la solicitud desde el origen específico, responde con encabezados `Access-Control-Allow-Origin` y otros encabezados relacionados con CORS, indicando que la solicitud es permitida.
+   - Ejemplo de respuesta exitosa:
+     ```http
+     HTTP/1.1 200 OK
+     Access-Control-Allow-Origin: http://another-domain.com
+     Access-Control-Allow-Methods: GET, POST
+     Access-Control-Allow-Headers: Content-Type
+     ```
+
+3. **Real Request**: Si la respuesta del servidor es positiva, el navegador puede continuar con la solicitud real (por ejemplo, una solicitud GET, POST, etc.) y enviarla al servidor.
+
+4. **Si no se permite la solicitud**: Si el servidor no permite la solicitud desde un origen diferente, el navegador bloqueará la solicitud y no permitirá que la aplicación obtenga los datos.
+
+### **Encabezados Comunes de CORS**
+
+- **`Access-Control-Allow-Origin`**: Especifica qué dominios están permitidos para hacer solicitudes a este servidor. Puede ser un dominio específico (por ejemplo, `http://example.com`) o un valor especial `*` que indica que cualquier dominio puede acceder.
+  
+- **`Access-Control-Allow-Methods`**: Indica qué métodos HTTP están permitidos (por ejemplo, `GET`, `POST`, `PUT`).
+
+- **`Access-Control-Allow-Headers`**: Especifica qué encabezados pueden ser utilizados por la solicitud real.
+
+- **`Access-Control-Allow-Credentials`**: Indica si las credenciales (como cookies o encabezados de autenticación) pueden ser enviadas con la solicitud. El valor debe ser `true` para permitir el envío de credenciales.
+
+- **`Access-Control-Expose-Headers`**: Permite exponer ciertos encabezados específicos en la respuesta, de modo que el cliente pueda acceder a ellos.
+
+- **`Access-Control-Max-Age`**: Especifica durante cuánto tiempo la respuesta a una solicitud de preflight puede ser almacenada en caché, evitando que el navegador tenga que realizar una solicitud de preflight repetidamente.
+
+### **Ejemplo Práctico**
+
+Imagina que tienes una aplicación web que se sirve desde `http://example-client.com` y hace solicitudes a una API alojada en `http://api-server.com`. Si no se configura adecuadamente CORS en el servidor de la API, el navegador bloqueará las solicitudes de `http://example-client.com` debido a que el dominio es diferente.
+
+En el servidor de la API, podrías configurar los encabezados CORS para permitir que las solicitudes desde `http://example-client.com` sean aceptadas. Ejemplo de configuración de CORS en un servidor:
+
+```http
+Access-Control-Allow-Origin: http://example-client.com
+Access-Control-Allow-Methods: GET, POST, PUT
+Access-Control-Allow-Headers: Content-Type
+```
+
+### **Problemas Comunes con CORS**
+
+- **Bloqueo de solicitudes no configuradas**: Si el servidor no permite solicitudes desde el dominio del cliente (ya sea a través de `Access-Control-Allow-Origin` o mediante otros encabezados), el navegador bloqueará la solicitud.
+  
+- **Preflight Request**: Algunas solicitudes (como las que incluyen métodos no estándar o encabezados personalizados) requieren una solicitud `OPTIONS` de preflight, lo que puede causar un pequeño retraso.
+
+- **`Access-Control-Allow-Credentials`**: Si se necesitan enviar cookies o credenciales de sesión, es necesario que el servidor configure correctamente este encabezado, y no se puede usar el valor `*` en `Access-Control-Allow-Origin`.
+
+
+CORS es una política de seguridad en los navegadores que controla cómo los recursos de un sitio web pueden ser solicitados desde otro dominio. Permite que los servidores controlen qué orígenes pueden interactuar con ellos, asegurando que las solicitudes cross-origin se manejen de manera segura y controlada. Sin la configuración adecuada de CORS, las aplicaciones web pueden enfrentar problemas al intentar interactuar con APIs externas o servicios alojados en otros dominios.
+
+<a id="ent73"></a>
+
+### **Escalabilidad NodeJS**
+
+[Volver al indice](#entrevista-base)
+
+La **escalabilidad** de una aplicación Node.js se refiere a su capacidad para manejar un número creciente de solicitudes o carga de trabajo sin perder rendimiento ni confiabilidad. Dado que Node.js está basado en un modelo de **event loop** de un solo hilo, tiene ciertas limitaciones en cuanto a cómo manejar múltiples solicitudes simultáneas. Sin embargo, se pueden aplicar varias estrategias para mejorar la escalabilidad de una aplicación Node.js y asegurar que pueda manejar más tráfico y usuarios a medida que crece.
+
+A continuación, te detallo algunas de las principales estrategias para hacer que una aplicación Node.js sea escalable:
+
+### **1. Uso de Clusters (Escalabilidad Horizontal)**
+
+Aunque Node.js usa un solo hilo para manejar solicitudes, puedes aprovechar todos los núcleos de CPU de tu servidor utilizando el **módulo `cluster`**. Esto permite crear múltiples instancias de tu aplicación Node.js que pueden ejecutarse en diferentes procesos, distribuyendo la carga de trabajo entre varios núcleos de CPU.
+
+- **¿Cómo funciona?** Cada instancia o "worker" del cluster puede manejar su propio conjunto de solicitudes. Si tu servidor tiene varios núcleos de CPU, puedes crear tantos procesos como núcleos haya, lo que mejora el rendimiento y permite que tu aplicación maneje más tráfico.
+  
+- **Implementación básica con `cluster`:**
+  ```javascript
+  const cluster = require('cluster');
+  const http = require('http');
+  const numCPUs = require('os').cpus().length; // Número de núcleos disponibles
+  
+  if (cluster.isMaster) {
+    // Crear un worker para cada núcleo del procesador
+    for (let i = 0; i < numCPUs; i++) {
+      cluster.fork();
+    }
+
+    cluster.on('exit', (worker, code, signal) => {
+      console.log(`Worker ${worker.process.pid} died`);
+    });
+  } else {
+    // Código de la aplicación
+    http.createServer((req, res) => {
+      res.writeHead(200);
+      res.end('Hello World');
+    }).listen(8000);
+  }
+  ```
+
+### **2. Balanceo de Carga**
+
+El **balanceo de carga** se utiliza para distribuir el tráfico entre múltiples instancias de la aplicación en diferentes servidores o máquinas, de modo que ningún servidor se sobrecargue. Esto es especialmente útil para aplicaciones Node.js en entornos de producción distribuidos.
+
+- **Soluciones comunes de balanceo de carga**:
+  - **Nginx o HAProxy**: Puedes usar servidores de balanceo de carga como Nginx o HAProxy para distribuir el tráfico HTTP entre varias instancias de tu aplicación Node.js. Estos servidores pueden distribuir las solicitudes entrantes entre los diferentes procesos de la aplicación (por ejemplo, instancias que están ejecutándose en diferentes máquinas o contenedores).
+
+  - **Load Balancers en la nube**: Servicios como **AWS Elastic Load Balancing** o **Google Cloud Load Balancing** también pueden distribuir las solicitudes entre diferentes servidores.
+
+### **3. Desacoplar y Dividir en Microservicios**
+
+Una de las mejores formas de escalar una aplicación Node.js es dividirla en **microservicios**. Los microservicios son una arquitectura que descompone la aplicación en servicios pequeños e independientes, cada uno con su propio dominio de negocio y base de datos. Esto permite que diferentes servicios se escalen de forma independiente según la carga.
+
+- **¿Cómo funciona?** En lugar de una aplicación monolítica, donde todo está en un solo bloque, los microservicios permiten desplegar y escalar cada parte de la aplicación por separado. Si un servicio experimenta una carga alta, puedes escalar solo ese servicio, sin afectar a otros.
+
+- **Beneficios de los microservicios**:
+  - Escalabilidad independiente para cada componente.
+  - Despliegue y mantenimiento más sencillo.
+  - Resiliencia, ya que si un microservicio falla, no afecta a toda la aplicación.
+
+- **Tecnologías asociadas**:
+  - **Docker**: Permite empaquetar microservicios en contenedores que pueden ser ejecutados en cualquier entorno.
+  - **Kubernetes**: Orquestador de contenedores que facilita la gestión y escalado de microservicios.
+
+### **4. Cacheo de Respuestas**
+
+Una de las técnicas clave para mejorar la escalabilidad de una aplicación Node.js es el **cacheo**. Al almacenar en caché las respuestas de las solicitudes más comunes o de larga duración, puedes reducir significativamente la carga en el servidor y acelerar el tiempo de respuesta.
+
+- **Cacheo en memoria**: Puedes usar herramientas como **Redis** o **Memcached** para almacenar respuestas en memoria y evitar hacer consultas repetitivas a bases de datos u otras fuentes externas.
+
+- **Cacheo de respuestas HTTP**: Si tu aplicación maneja muchas solicitudes similares, puedes usar herramientas como **Varnish** o configurar **caching HTTP** en el servidor para almacenar respuestas de manera eficiente.
+
+### **5. Optimización de Base de Datos**
+
+Las aplicaciones Node.js a menudo dependen de bases de datos para almacenar y recuperar información. La escalabilidad de tu aplicación también depende de cómo escalas y optimizas tu base de datos.
+
+- **Sharding**: Distribuir datos entre varias bases de datos, de modo que cada base de datos maneje solo una parte de los datos. Esto puede ser especialmente útil en bases de datos NoSQL como MongoDB.
+
+- **Replicación**: Configurar replicación para distribuir las consultas entre varias réplicas de bases de datos y mejorar la disponibilidad.
+
+- **Índices**: Asegúrate de que tu base de datos esté optimizada con índices para mejorar el rendimiento de las consultas.
+
+### **6. Optimización del Event Loop**
+
+El **event loop** de Node.js es el mecanismo que maneja todas las solicitudes de entrada y salida de la aplicación. Es importante optimizar el código para evitar bloqueos del event loop, que pueden afectar negativamente el rendimiento y la capacidad de escalado.
+
+- **Operaciones asincrónicas**: Utiliza operaciones asincrónicas siempre que sea posible para evitar bloquear el event loop. Esto incluye hacer uso de **callbacks**, **promesas** o **async/await**.
+
+- **Worker Threads**: En algunas situaciones, podrías necesitar realizar tareas de procesamiento intensivo. Para evitar que el event loop se bloquee, puedes usar **Worker Threads**, que permiten realizar tareas intensivas en segundo plano sin bloquear la ejecución principal.
+
+### **7. Escalabilidad en la Nube**
+
+Node.js se integra muy bien con servicios en la **nube** como **AWS**, **Google Cloud** o **Microsoft Azure**, lo que facilita la escalabilidad automática.
+
+- **Autoescalado**: Estos proveedores en la nube permiten configurar el **autoescalado**, lo que significa que, a medida que la demanda de tu aplicación aumenta, los servidores adicionales se crearán automáticamente, y cuando la demanda disminuye, los recursos se liberan.
+
+- **Funcionalidades como AWS Lambda**: Si tu aplicación es pequeña o tiene tareas que no requieren servidores constantes, puedes aprovechar **AWS Lambda** o **Google Cloud Functions** para manejar cargas de trabajo bajo demanda y solo cobrar por el tiempo de ejecución real.
+
+### **8. Manejo de Conexiones Simultáneas**
+
+Node.js es ideal para manejar una gran cantidad de conexiones simultáneas gracias a su arquitectura basada en el event loop. Sin embargo, en aplicaciones de alto tráfico, es importante manejar las conexiones de manera eficiente.
+
+- **Conexiones HTTP/2**: Usar HTTP/2 permite mejorar la eficiencia de las conexiones y reducir la latencia de la comunicación entre el cliente y el servidor.
+
+- **Keep-Alive y conexiones persistentes**: Configura conexiones persistentes para reducir la sobrecarga asociada con la apertura y cierre de nuevas conexiones HTTP.
+
+
+La escalabilidad en Node.js se puede lograr mediante diferentes estrategias que abarcan desde la **optimización del event loop**, la **escala horizontal con clústeres**, hasta el **uso de microservicios** y **caché**. Implementar estas prácticas te permitirá construir aplicaciones que puedan manejar más tráfico, ser más resilientes y ofrecer una experiencia de usuario más rápida y confiable.
+
+<a id="ent74"></a>
+
+### **Escalabilidad FE**
+
+[Volver al indice](#entrevista-base)
+
+La **escalabilidad del frontend** se refiere a la capacidad de una aplicación web para manejar un aumento en el número de usuarios, volumen de datos o complejidad, sin que su rendimiento o experiencia de usuario se vea afectada. A medida que las aplicaciones web crecen, se vuelve crucial adoptar estrategias y mejores prácticas para asegurar que el frontend pueda adaptarse y escalar eficientemente. Aquí te explico algunos enfoques y prácticas clave para lograr la escalabilidad en el desarrollo frontend.
+
+### **1. Componentización y Reutilización de Código**
+
+Una de las formas más efectivas de escalar una aplicación frontend es **componentizar** la interfaz de usuario. Esto implica dividir la UI en componentes pequeños, independientes y reutilizables.
+
+- **Beneficios**:
+  - Facilita el mantenimiento y la evolución de la aplicación.
+  - Mejora la reutilización de código.
+  - Permite el trabajo en paralelo por parte de diferentes equipos de desarrollo.
+  
+- **Frameworks como React, Vue, Angular** proporcionan formas naturales de crear aplicaciones basadas en componentes que pueden ser reutilizados en distintas partes de la aplicación.
+
+- **Estrategias**:
+  - Asegúrate de que los componentes sean **lo más desacoplados posible**. Un componente debe manejar una única responsabilidad.
+  - Utiliza **props** o **state management** (como Redux, Vuex, etc.) para gestionar el estado de la aplicación de manera centralizada, evitando el paso de información innecesaria entre componentes.
+
+### **2. Lazy Loading**
+
+El **Lazy Loading** o carga diferida es una técnica que retrasa la carga de recursos, como módulos, imágenes o componentes, hasta que realmente son necesarios.
+
+- **Beneficios**:
+  - Mejora el tiempo de carga inicial de la aplicación, permitiendo que los usuarios vean rápidamente la interfaz principal.
+  - Reduce el consumo de recursos al cargar solo lo que se necesita en cada momento.
+  
+- **Implementación en React**:
+  ```javascript
+  const LazyComponent = React.lazy(() => import('./LazyComponent'));
+
+  function App() {
+    return (
+      <Suspense fallback={<div>Loading...</div>}>
+        <LazyComponent />
+      </Suspense>
+    );
+  }
+  ```
+  La función `React.lazy()` permite la carga diferida de un componente, y `Suspense` maneja el estado de carga.
+
+- **En Angular y Vue**: También existen soluciones de carga diferida de módulos y rutas, lo que permite dividir la aplicación en fragmentos que se cargan solo cuando el usuario navega a ellos.
+
+### **3. Code Splitting**
+
+El **code splitting** es una técnica que divide el código en "trozos" más pequeños (chunks) que solo se cargan cuando son necesarios. Esto es similar al lazy loading, pero se aplica a los scripts de JavaScript.
+
+- **Beneficios**:
+  - Mejora el tiempo de carga inicial, ya que no se necesita cargar todo el código de una vez.
+  - Permite una distribución eficiente del código, cargando solo lo que es relevante para la parte específica de la aplicación que el usuario está utilizando.
+
+- **Implementación en Webpack**:
+  ```javascript
+  import(/* webpackChunkName: "module1" */ './module1');
+  ```
+
+  Webpack automáticamente crea archivos más pequeños basados en el código de los módulos que se importan de manera diferida.
+
+### **4. Optimización de Imágenes y Archivos Estáticos**
+
+Las imágenes y otros archivos estáticos son comúnmente los elementos más pesados de una aplicación web. Optimizar estos recursos es esencial para mejorar el rendimiento y la escalabilidad.
+
+- **Estrategias de optimización**:
+  - **Compresión**: Usa herramientas de compresión de imágenes como **ImageOptim**, **TinyPNG** o **Squoosh** para reducir el tamaño de las imágenes sin perder calidad perceptible.
+  - **Formato adecuado**: Utiliza formatos modernos de imagen como **WebP**, que ofrecen una mejor compresión sin sacrificar calidad.
+  - **Lazy loading de imágenes**: Al igual que el lazy loading de componentes, las imágenes pueden cargarse solo cuando están a punto de ser visibles en la pantalla (usando la API `IntersectionObserver`).
+
+  ```html
+  <img src="image.jpg" loading="lazy" alt="Imagen optimizada">
+  ```
+
+### **5. Manejo Eficiente del Estado**
+
+A medida que las aplicaciones crecen, la complejidad en la gestión del estado puede aumentar. Usar un sistema adecuado para el manejo del estado puede ser esencial para escalar la aplicación y evitar problemas como el acoplamiento de datos o la redundancia.
+
+- **Opciones de gestión de estado**:
+  - **Redux** (en React) o **Vuex** (en Vue) son bibliotecas de gestión de estado centralizado.
+  - **Context API** en React también puede servir para gestionar estados globales sin necesidad de bibliotecas externas.
+  - **React Query** y **Apollo Client** son herramientas útiles cuando se trabaja con datos remotos (APIs), que manejan el estado de la caché y las peticiones a APIs.
+
+- **Estrategias**:
+  - Mantén el estado **descentralizado** en componentes pequeños cuando sea posible. Solo centraliza el estado cuando sea necesario.
+  - Utiliza **acciones y reducers** en Redux para gestionar el estado de manera predecible y escalable.
+  - Mantén los estados **inmutables** para evitar efectos secundarios inesperados.
+
+### **6. Paginación e Infinite Scrolling**
+
+Para manejar grandes volúmenes de datos sin sobrecargar el frontend ni afectar la experiencia del usuario, se deben emplear técnicas como la **paginación** o el **infinite scrolling**.
+
+- **Paginación**: Divide el conjunto de datos en páginas manejables, permitiendo que el usuario navegue entre ellas.
+- **Infinite Scrolling**: Carga más datos de manera incremental a medida que el usuario hace scroll hacia abajo. Esta es una técnica útil para aplicaciones que muestran una lista continua de elementos, como redes sociales o aplicaciones de noticias.
+
+### **7. Uso de Service Workers y Caching**
+
+El uso de **Service Workers** y estrategias de caché es clave para la escalabilidad de aplicaciones frontend, especialmente en el contexto de **Progressive Web Apps (PWAs)**.
+
+- **Service Workers** permiten que los recursos se almacenen en caché, lo que hace que las aplicaciones sean mucho más rápidas y funcione sin conexión a internet.
+  
+- **Estrategias de caché**:
+  - Utiliza **Cache API** para almacenar y recuperar archivos de manera eficiente.
+  - Implementa un **"Cache First"** o **"Network First"** para optimizar la forma en que la aplicación maneja las solicitudes.
+
+### **8. Optimización del Renderizado**
+
+El rendimiento del renderizado es crucial para escalar una aplicación frontend. Un renderizado eficiente reduce el uso de recursos y mejora la experiencia del usuario.
+
+- **React**:
+  - Usa **React.memo()** para evitar renderizados innecesarios de componentes.
+  - **PureComponent** es útil para componentes que solo deben re-renderizarse cuando sus props cambian.
+  - Utiliza **Suspense** para cargar partes de la UI de forma diferida y mejorar la experiencia de usuario.
+
+- **Vue**:
+  - Usa la directiva `v-if` para renderizar solo los componentes necesarios.
+  - Optimiza el uso de **computed properties** y **watchers**.
+
+### **9. Reducción del Tamaño del Bundle**
+
+Reducir el tamaño de los archivos JavaScript que se descargan en el navegador mejora la escalabilidad de una aplicación, especialmente en redes lentas.
+
+- **Estrategias**:
+  - Usa **Tree Shaking** para eliminar código no utilizado.
+  - Utiliza herramientas como **Webpack** y **Rollup** para optimizar el tamaño de los bundles.
+  - Comprime los archivos con **gzip** o **Brotli**.
+
+### **10. Prácticas de Optimización en la Nube**
+
+Si la aplicación frontend depende de APIs o servicios en la nube, asegúrate de que estos servicios puedan escalar automáticamente para manejar una mayor carga.
+
+- Usa **CDNs (Content Delivery Networks)** para distribuir contenido estático como imágenes, archivos CSS/JS, etc., desde servidores más cercanos al usuario.
+- Implementa **autoescalado** en la infraestructura de backend y utiliza soluciones de caching.
+
+<a id="ent75"></a>
+
+### **Principios de Disponibilidad, Escalamiento en Frontend**
+
+[Volver al indice](#entrevista-base)
+
+La **disponibilidad** y el **escalamiento** son principios clave en el desarrollo de aplicaciones frontend para asegurar que el sistema sea confiable, rápido y capaz de manejar un volumen creciente de usuarios o datos. A continuación, se detallan los principios relacionados con estos conceptos, adaptados al contexto del frontend:
+
+### **1. Disponibilidad en el Frontend**
+
+La **disponibilidad** se refiere a que la aplicación esté accesible y funcione correctamente cuando los usuarios la necesiten. En el contexto del frontend, esto implica garantizar que la aplicación se cargue rápidamente, que no se caiga debido a errores de código y que siga funcionando incluso cuando haya problemas en el backend o con la conectividad de la red.
+
+#### **Principios clave de disponibilidad en el frontend**:
+
+- **Uso de Service Workers**: Los **Service Workers** permiten que una aplicación web funcione sin conexión o con una conexión intermitente. Al usar un Service Worker, puedes almacenar en caché recursos esenciales (HTML, CSS, JS) para que la aplicación siga funcionando aunque la conexión a internet se pierda temporalmente.
+  - **Ejemplo**: Implementación de una Progressive Web App (PWA) que permite acceder a funcionalidades básicas sin conexión.
+
+- **Redundancia de recursos**: Asegúrate de que los recursos esenciales (scripts, imágenes, fuentes) se distribuyan en **CDNs** (Content Delivery Networks) para que la aplicación esté disponible incluso si un servidor se cae o está inactivo.
+
+- **Caché local y manejo de errores**: Usar técnicas como **Local Storage** o **IndexedDB** para almacenar temporalmente datos críticos que puedan necesitarse cuando el backend no esté disponible. Esto permite una **experiencia offline** que no depende totalmente de la conectividad en todo momento.
+  
+- **Detección y manejo de fallos**: Implementa estrategias de manejo de errores que detecten problemas rápidamente y brinden retroalimentación al usuario (como mensajes de error claros o páginas de mantenimiento). Por ejemplo, mostrar una pantalla de **"fallback"** mientras los datos se cargan o cuando hay un problema de conectividad.
+
+- **Escalabilidad de servicios externos**: Asegúrate de que los servicios de terceros (APIs, bases de datos, etc.) a los que se conecta el frontend puedan manejar **altos volúmenes de tráfico** sin interrupciones. Por ejemplo, utilizando soluciones como **load balancing** para distribuir solicitudes.
+
+### **2. Escalamiento en el Frontend**
+
+El **escalamiento** se refiere a la capacidad de una aplicación de manejar una mayor carga de usuarios o de datos sin que su rendimiento se degrade. En el contexto del frontend, esto implica asegurar que la aplicación pueda adaptarse a un mayor volumen de usuarios, contenido o interacciones sin afectar la **experiencia de usuario**.
+
+#### **Principios clave de escalamiento en el frontend**:
+
+- **Optimización de recursos**: A medida que la aplicación crece, los recursos como JavaScript, CSS, imágenes y otros archivos estáticos deben optimizarse para reducir su tamaño y mejorar los tiempos de carga.
+  - **Code splitting**: Divide tu código en diferentes "chunks" o fragmentos que se cargan bajo demanda (por ejemplo, con **React.lazy** o **Vue's async components**). Esto asegura que los usuarios solo descarguen lo necesario, reduciendo el tamaño inicial de la carga.
+  - **Minificación y compresión**: Minifica los archivos JavaScript y CSS, y usa compresión de archivos como **gzip** o **Brotli** para reducir el tamaño de los archivos transferidos entre el servidor y el cliente.
+
+- **Carga diferida (Lazy Loading)**: Utiliza el **lazy loading** de componentes, imágenes, y módulos para cargar solo lo necesario cuando el usuario interactúa con la aplicación. Esto reduce el tiempo de carga inicial y mejora la experiencia del usuario.
+  - **Ejemplo**: En una lista infinita de productos, solo carga las imágenes o detalles de los productos que están visibles en la pantalla.
+
+- **Cacheo de recursos**: Implementa técnicas de caché para minimizar la necesidad de hacer solicitudes repetidas al servidor. Esto incluye el uso de **CDNs**, **Service Workers**, y estrategias como **cache-first** o **network-first** para manejar las peticiones de datos.
+  - **Ejemplo**: Almacenar en caché los datos de la API para que no tengas que hacer una nueva solicitud cada vez que un usuario regresa a la aplicación.
+
+- **Optimización de imágenes y archivos estáticos**: Las imágenes suelen ser una de las principales causas de que una página web sea lenta. Usar herramientas de optimización y elegir el formato adecuado (como **WebP**) puede reducir significativamente el tamaño de las imágenes y mejorar el rendimiento.
+  - **Estrategias**:
+    - Utilizar imágenes de **resolución adecuada** para los diferentes tamaños de pantalla.
+    - Usar el atributo `loading="lazy"` en imágenes que no sean críticas para la visualización inicial.
+
+- **Virtualización de listas y tablas**: En aplicaciones que muestran grandes cantidades de datos, utiliza técnicas de **virtualización** para cargar solo una parte de la lista o tabla en el viewport visible, reduciendo el trabajo de renderizado.
+  - **Ejemplo**: Librerías como **React Virtualized** o **Vue Virtual Scroller** ayudan a mostrar solo los elementos visibles, mejorando el rendimiento.
+
+- **Manejo eficiente del estado**: A medida que tu aplicación crece, es fundamental tener un sistema eficiente para manejar el estado. Utiliza patrones y herramientas adecuadas para mantener el estado de la aplicación bien organizado y predecible.
+  - **Bibliotecas de gestión del estado** como **Redux**, **Vuex**, o el **Context API** en React ayudan a centralizar y manejar el flujo de datos de manera eficiente, evitando la propagación innecesaria de cambios de estado a través de componentes.
+
+- **Reducción del re-renderizado**: Minimiza el número de **re-renderizados** de componentes cuando no es necesario. Usa técnicas como **React.memo**, **shouldComponentUpdate** o **PureComponent** en React para evitar renderizados innecesarios de componentes cuando sus propiedades no han cambiado.
+
+- **Optimización del rendimiento del renderizado**: Usa el **Virtual DOM** (como en **React**) para hacer comparaciones rápidas entre el DOM real y el virtual, actualizando solo los cambios necesarios.
+  - **Web Workers**: Para evitar bloquear el hilo principal, puedes usar **Web Workers** para realizar tareas pesadas en segundo plano y no interrumpir la experiencia del usuario.
+
+### **3. Escalabilidad Horizontal en el Frontend**
+
+A medida que el número de usuarios aumenta, también puede ser necesario escalar la infraestructura de tu frontend de forma **horizontal**, distribuyendo la carga entre múltiples instancias de tu aplicación. En este caso, las **CDNs** y el uso de **caché distribuida** son herramientas esenciales para escalar eficazmente.
+
+- **Uso de múltiples servidores de frontend**: Si tu aplicación es muy popular, puedes distribuir el tráfico entre varios servidores frontend. Las **CDNs** permiten que los recursos estáticos de la aplicación se sirvan desde múltiples ubicaciones geográficas, asegurando una **distribución eficiente** de los recursos.
+
+- **Autocuración de fallos**: Asegúrate de que tu infraestructura pueda detectar y recuperarse automáticamente de posibles fallos de servidor o red. Esto puede incluir el monitoreo de servidores, el **failover automático** y la distribución de carga entre múltiples instancias.
+
+La **disponibilidad** y el **escalamiento** en frontend son cruciales para garantizar una **experiencia de usuario fluida y confiable** en aplicaciones que crecen en tamaño y en complejidad. Para mejorar la disponibilidad, las técnicas como el uso de **Service Workers** y la **gestión de errores** son esenciales, mientras que el escalamiento se logra optimizando recursos, utilizando **lazy loading**, **code splitting**, y manejando eficientemente el **estado de la aplicación**. Además, técnicas como el **cacheo** de datos, la **optimización de imágenes** y el uso de **CDNs** son fundamentales para asegurar que tu aplicación pueda manejar el crecimiento del tráfico sin perder rendimiento.
+
 <a id="ent76"></a>
 
 ### **Mencionar como manejarias la delegacion de tareas dentro de tu equipo**
@@ -4556,6 +5375,96 @@ La idea es que cada miembro del equipo tenga sus fortalezas, y es deber de los l
 Lo ideal es que cada miembro del equipo trabaje en tareas que esten acordes a sus habilidades y debilidades de manera independiente, pero no sacando el trabajo en equipo, que debe seguir teniendo una comunicacion fluida para pedir recursos o colaboracion con algunas cosas. Para lograr esto no solo depende del desarollador si no de quien arma las tasks que las mismas sean claras, y que las prioridades ante todo tambien lo sean.
 
 Ademas, otra cosa importante que se mejora al delegar tareas es que hay una distribucion del conocimiento bastante pareja, para que no quede el conocimiento concentrado en un solo miembro, y que luego el mismo sufra un exceso de trabajo debido a esto.
+
+<a id="ent76-1"></a>
+
+### **Se te da la tarea de empezar un nuevo proyecto, que preguntas realizarias para tomar que decisiones como un Tech Lead?**
+
+[Volver al indice](#entrevista-base)
+
+La respuesta a las preguntas clave planteadas puede influir directamente en las decisiones que tomes como **Tech Lead** para guiar el proyecto hacia el éxito. Aquí te dejo cómo podrías tomar decisiones en base a las respuestas de cada pregunta, para definir la arquitectura, el stack tecnológico, la metodología y las prioridades del proyecto.
+
+### **1. ¿Cuál es el objetivo principal del proyecto?**
+   - **Decisiones posibles**:
+     - **Definir funcionalidades clave**: Si el objetivo es resolver un problema específico (como un carrito de compras o un sistema de mensajería), priorizar las características necesarias para resolver ese problema.
+     - **Enfoque en UX/UI**: Si la prioridad es mejorar la experiencia de usuario, asegurar que el diseño y la interacción sean fáciles de usar.
+     - **Definir KPIs**: Establecer métricas claras para medir el progreso y el éxito (conversiones, retención de usuarios, rendimiento).
+
+### **2. ¿Cuál es el alcance y la visión del producto?**
+   - **Decisiones posibles**:
+     - **Priorizar MVP (Minimum Viable Product)**: Si el alcance es limitado, podrías optar por un MVP para lanzar rápidamente con las funcionalidades básicas y luego iterar.
+     - **Planificación a largo plazo**: Si la visión es a largo plazo, elegir arquitecturas que permitan la expansión o escalabilidad (por ejemplo, microservicios, arquitectura modular).
+
+### **3. ¿Cuál es el presupuesto y los plazos?**
+   - **Decisiones posibles**:
+     - **Tecnologías y herramientas más económicas**: Si el presupuesto es limitado, optar por soluciones de código abierto o de bajo costo (como frameworks populares).
+     - **MVP o lanzamientos escalonados**: Si los plazos son ajustados, optar por un enfoque ágil, desarrollando un MVP y luego agregando características de manera iterativa.
+     - **Recursos disponibles**: Seleccionar tecnologías que coincidan con la experiencia de tu equipo, evitando aprender tecnologías nuevas que retrasen el proyecto.
+
+### **4. ¿Qué tecnologías usaremos?**
+   - **Decisiones posibles**:
+     - **Selección de stack tecnológico**: Si el equipo ya tiene experiencia con una tecnología específica, podrías optar por eso para minimizar el tiempo de aprendizaje.
+     - **Evaluación de rendimiento y escalabilidad**: Si el proyecto necesita escalar rápidamente, optar por tecnologías que permitan un crecimiento fácil (como Node.js, microservicios).
+     - **Evaluación de frameworks**: Si la prioridad es el desarrollo rápido, podrías optar por frameworks como React, Angular o Vue para facilitar la creación de la interfaz de usuario.
+
+### **5. ¿Cómo manejaremos el desarrollo y la entrega?**
+   - **Decisiones posibles**:
+     - **Metodología ágil**: Si el proyecto es dinámico y requiere flexibilidad, aplicar metodologías ágiles como Scrum o Kanban para adaptarse rápidamente a los cambios.
+     - **Automatización de CI/CD**: Si el proyecto requiere despliegues rápidos, configurar pipelines de integración continua (CI) y entrega continua (CD) desde el inicio.
+
+### **6. ¿Cuál es el enfoque de escalabilidad y rendimiento?**
+   - **Decisiones posibles**:
+     - **Escalabilidad a través de microservicios**: Si el tráfico esperado es grande o la aplicación debe soportar muchos usuarios concurrentes, considerar una arquitectura de microservicios o serverless.
+     - **Optimización de rendimiento**: Implementar estrategias como lazy loading, caché, y el uso de un CDN para mejorar la carga y rendimiento.
+
+### **7. ¿Cómo gestionaremos el estado y la arquitectura de la aplicación?**
+   - **Decisiones posibles**:
+     - **Arquitectura de estado**: Si el proyecto necesita manejar un estado global complejo, puedes elegir soluciones como Redux o Context API.
+     - **Componentización**: Adoptar un enfoque modular para dividir la UI en componentes reutilizables, lo que facilita el mantenimiento y la escalabilidad.
+
+### **8. ¿Cómo aseguraremos la calidad del código?**
+   - **Decisiones posibles**:
+     - **Implementación de revisiones de código**: Establecer un proceso de revisión de código formal para mantener la calidad del código.
+     - **Uso de linters y formateadores**: Configurar herramientas como ESLint o Prettier para mantener un estilo de código coherente.
+     - **Pruebas automatizadas**: Implementar pruebas unitarias, de integración y end-to-end para garantizar que el código esté libre de errores.
+
+### **9. ¿Cómo gestionaremos la seguridad?**
+   - **Decisiones posibles**:
+     - **Autenticación y autorización**: Si el proyecto necesita manejar información sensible, implementar soluciones robustas de autenticación (JWT, OAuth).
+     - **Protección contra vulnerabilidades**: Establecer estrategias de mitigación contra vulnerabilidades comunes (como inyecciones SQL, CSRF, XSS).
+     - **Encriptación de datos**: Asegurar que los datos sensibles sean cifrados, tanto en tránsito como en reposo.
+
+### **10. ¿Cómo manejará la aplicación la infraestructura y el despliegue?**
+   - **Decisiones posibles**:
+     - **Infraestructura escalable**: Elegir proveedores de infraestructura en la nube (AWS, Google Cloud, Azure) que permitan escalar fácilmente según el crecimiento del proyecto.
+     - **Contenedores y orquestación**: Usar Docker y Kubernetes si necesitas un entorno de contenedores para facilitar la gestión de la infraestructura.
+
+### **11. ¿Cómo gestionaremos la documentación?**
+   - **Decisiones posibles**:
+     - **Documentación técnica**: Decidir si usar herramientas como Swagger para documentar APIs o GitHub Wiki para la documentación del proyecto.
+     - **Documentación de código**: Establecer una convención para comentar el código y generar documentación de forma automática (JSDoc, TypeDoc).
+
+### **12. ¿Cómo gestionaremos el equipo?**
+   - **Decisiones posibles**:
+     - **Asignación de roles**: Definir claramente las responsabilidades y los roles de cada miembro del equipo, desde los desarrolladores hasta los testers y diseñadores.
+     - **Proceso de trabajo colaborativo**: Establecer herramientas de comunicación (Slack, Teams) y colaboración (Trello, Jira) para mantener a todos alineados.
+
+### **13. ¿Cómo aseguraremos la calidad del soporte post-lanzamiento?**
+   - **Decisiones posibles**:
+     - **Mantenimiento y parches**: Crear un plan de mantenimiento post-lanzamiento para corregir bugs y realizar actualizaciones regulares.
+     - **Monitorización de la aplicación**: Implementar herramientas de monitorización (New Relic, Sentry) para detectar y corregir problemas en tiempo real.
+
+### **14. ¿Cuáles son los riesgos y dependencias del proyecto?**
+   - **Decisiones posibles**:
+     - **Gestión de riesgos**: Identificar los principales riesgos (tecnológicos, de recursos, de negocio) y definir planes de mitigación.
+     - **Gestión de dependencias externas**: Evaluar las dependencias de terceros (APIs, bibliotecas) y definir estrategias para asegurar su fiabilidad.
+
+### **15. ¿Cómo aseguraremos la accesibilidad y la experiencia de usuario?**
+   - **Decisiones posibles**:
+     - **Diseño inclusivo**: Asegurarse de que el diseño cumpla con los estándares de accesibilidad (WCAG).
+     - **Pruebas de usabilidad**: Realizar pruebas de usabilidad con usuarios reales para asegurarse de que la interfaz sea intuitiva y fácil de usar.
+
+
 
 ---
 
