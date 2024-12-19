@@ -80,10 +80,8 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 | [Diferencias entre REST y GraphQL](#ent18) |
 | [Cuales son los ataques mas comunes en la web? Nombrar tambien sus protecciones del lado del cliente](#ent19) |
 | [Lazy loading](#ent20) |
-| [Performance Javascript](#ent21) |
+| [Performance](#ent21) |
 | [Array-like](#alg26) |
-| [Performance React](#ent24) |
-| [Performance Angular](#ent25) |
 | [PWA (Progressive Web App)](#ent25-1) |
 | [Critical Rendering Path](#ent22) |
 | [¿Cuáles son las diferencias entre localStorage, sessionStorage y las cookies?](#ent23) |
@@ -2120,6 +2118,14 @@ Cuando por ejemplo estoy en la pagina de mi banco, y al mismo tiempo ingreso a u
 
 [Volver al indice](#entrevista-base)
 
+- Virtualizacion (Como el Lazy Loading pero para listas)
+- Lazy Loading de imagenes (Cargar las imagenes solo cuando son visibles)
+- Lazy Loading de modulos (Cargar modulos solo cuando son necesarios)
+- Code Splitting (Dividir el codigo en partes mas pequeñas para cargar solo lo necesario)
+- Catching (Guardar datos en memoria para no tener que volver a pedirlos)
+- Optimizar el tamanio del bundle
+- Evitar memory leaks (No declarar cosas que no se usan)
+
 Tambien llamado carga diferida es un metodo en desarrollo web y mobile en donde los recursos necesarios con cargados solo cuando se necesitan, reduciendo el tiempo de carga inicial y ahorrando ancho de banda.
 
 Se realiza con:
@@ -2148,7 +2154,6 @@ function App() {
 }
 ```
 
-
 - Modulos, no se incluyen en el bundle principal de una si no que solo se incluye si es necesario
 
 ```javascript
@@ -2163,7 +2168,7 @@ El modulo miModulo.js es solo cargado cuando se apreta el boton.
 
 <a id="ent21"></a>
 
-### **Mejorar performance en Javascript**
+### **Mejoras de Performance**
 
 [Volver al indice](#entrevista-base)
 
@@ -2247,6 +2252,7 @@ console.time("Tiempo de ejecución");
 console.timeEnd("Tiempo de ejecución");
 ```
 
+- React cuenta con React DevTools, y entre las herramientas se encuentra el Profiler que nos puede ayudar a identificar componentes lentos.
 - Si se pueden combinar las operaciones `map`, `filter` y `reduce` en una sola, hacerlo, ya que es mucho mas eficiente y se evitan recorridos multiples al mismo set de datos. 
 - Evitar mutar los datos si no es necesario.
 - Usar `Maps` y `Sets` en lugar de arrays si necesito hacer busquedas frecuentes, ya que son mucho mas eficientes. Si tengo que usar un Array, usar `push` y `pop` en lugar de un ejemplo un `shift` ya que es mucho mas eficiente.
@@ -2261,16 +2267,26 @@ async function fetchData() {
 ```
 
 - Minificar el codigo con herramientas como Rollup, asi se reduce el peso del archivo y se mejora la velocidad de carga.
+- Configura herramientas como Terser y habilita la compresión Gzip o Brotli en el servidor.
+- Usar imagenes que esten optimizadas en formatos nuevos como WEBP o AVIF, y si es posible, usar SVG en lugar de imagenes.
 - Minimizar las manipulaciones directas al DOM, usar `documentFragment` para manipulaciones masivas.
-- Y como fue mencionado anteriormente, la Memoization es una tecnica muy util para mejorar la performance de la aplicacion, guardando operaciones constosas para no tener que volver a realizarlas.
+- Usar `@ViewChild` en lugar de `document.getElementById` para acceder a elementos del DOM
 
-<a id="ent24"></a>
+```typescript
+@Component({
+  selector: 'app-my-component',
+  template: `<div #myElement>Elemento</div>`
+})
 
-### **Mejorar performance en una aplicacion React**
+export class MyComponent {
+  @ViewChild('myElement') myElement: ElementRef;
 
-[Volver al indice](#entrevista-base)
-
-- Hacer uso de la memoizacion en los componentes que lo necesiten mediante el uso de `useMemo` para valores y `useCallback` para funciones, y asi evitar re-renderizados innecesarios si es que se recibe la misma informacion.
+  ngAfterViewInit() {
+    this.myElement.nativeElement.style.color = 'red';
+  }
+}
+```
+- Y como fue mencionado anteriormente, la Memoization es una tecnica muy util para mejorar la performance de la aplicacion, guardando operaciones constosas para no tener que volver a realizarlas. Hacer uso de la memoizacion en los componentes que lo necesiten mediante el uso de `useMemo` para valores y `useCallback` para funciones, y asi evitar re-renderizados innecesarios si es que se recibe la misma informacion.
 
 ```jsx
 import React, { useMemo, useCallback } from "react";
@@ -2292,6 +2308,26 @@ const ExpensiveComponent = ({ num }) => {
 items.map(item => <Item key={item.id} data={item} />);
 ```
 
+- Usar `trackBy` en las listas para evitar re-renderizados innecesarios
+
+```typescript
+@Component({
+  selector: 'app-my-list',
+  template: `
+    <ul>
+      <li *ngFor="let item of items; trackBy: trackByFn">{{ item }}</li>
+    </ul>
+  `
+})
+export class MyListComponent {
+  items = [1, 2, 3, 4, 5];
+
+  trackByFn(index: number, item: number): number {
+    return index;
+  }
+}
+```
+
 - Utilizar Code Splitting para guardar las partes mas pesadas de la aplicacion para cuando son realmente necesarias
 
 ```jsx
@@ -2308,12 +2344,47 @@ function App() {
 }
 ```
 
+- Implementar Lazy Loading para cargar modulos solo cuando son necesarios
+
+```typescript
+const routes: Routes = [
+  {
+    path: 'feature',
+    loadChildren: () => import('./feature/feature.module').then(m => m.FeatureModule)
+  }
+];
+```
+
 - Cargar modulos cuando solo son necesarios
 
 ```jsx
 if (condition) {
    import("./module").then(mod => mod.function());
 }
+```
+
+- Si debo renderizar una lista muy extensa, usar `react-window` o `react-virtualized` para solo renderizar los elementos que estan en pantalla, y no todos los elementos de la lista. Es como un lazy loading pero para listas.
+
+```jsx
+import { FixedSizeList } from "react-window";
+
+const Row = ({ index, style }) => <div style={style}>Fila {index}</div>;
+
+function App() {
+   return (
+       <FixedSizeList height={400} itemCount={1000} itemSize={35} width={300}>
+           {Row}
+       </FixedSizeList>
+   );
+}
+```
+
+- Virtualizar (que es como el lazy loading pero para listas) las listas que tengan muchos elementos
+
+```html
+<cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+  <div *cdkVirtualFor="let item of items">{{ item }}</div>
+</cdk-virtual-scroll-viewport>
 ```
 
 - **Lifting State Up** es una tecnica en React donde se sube el estado de un componente hijo a un componente padre, esto ayuda a evitar re-renderizados innecesarios.
@@ -2345,47 +2416,6 @@ function Child({ count, setCount }) {
 import { isEmpty } from "lodash"; // Solo importa una función
 ```
 
-- Configura herramientas como Terser y habilita la compresión Gzip o Brotli en el servidor.
-- Usar imagenes que esten optimizadas en formatos nuevos como WEBP o AVIF, y si es posible, usar SVG en lugar de imagenes.
-- Si debo renderizar una lista muy extensa, usar `react-window` o `react-virtualized` para solo renderizar los elementos que estan en pantalla, y no todos los elementos de la lista. Es como un lazy loading pero para listas.
-
-```jsx
-import { FixedSizeList } from "react-window";
-
-const Row = ({ index, style }) => <div style={style}>Fila {index}</div>;
-
-function App() {
-   return (
-       <FixedSizeList height={400} itemCount={1000} itemSize={35} width={300}>
-           {Row}
-       </FixedSizeList>
-   );
-}
-```
-
-- React cuenta con React DevTools, y entre las herramientas se encuentra el Profiler que nos puede ayudar a identificar componentes lentos.
-- Evitar los estilos inline, y si puedo usar librerias como Tailwind para disminuir el tamanio de mis hojas de estilo, hacerlo (aunque no coincido mucho con esto ya que de por si el Stylesheet de Tailwind que estoy importando tambien es bastante grande)
-- Evitar funciones pesadas en el JSX
-
-```jsx
-// Malo:
-const sum = array.reduce((acc, val) => acc + val, 0);
-
-return <div>{sum}</div>;
-
-// Optimizado:
-const sum = useMemo(() => array.reduce((acc, val) => acc + val, 0), [array]);
-return <div>{sum}</div>;
-```
-
-- Como se menciono anteriormente el uso de Web Workers para operaciones pesadas o para operaciones que se deben realizar en otro thread es muy util.
-
-<a id="ent25"></a>
-
-### **Mejorar performance en una aplicacion Angular**
-
-[Volver al indice](#entrevista-base)
-
 - Angular tiene un metodo de detectar cambios que puede llevar a re-renderizados innecesarios, para evitar esto, se puede usar `ChangeDetectionStrategy.OnPush` en los componentes que no necesitan ser re-renderizados todo el tiempo.
 
 ```typescript
@@ -2398,26 +2428,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 })
 export class MyComponent {
   @Input() data: string;
-}
-```
-
-- Usar `trackBy` en las listas para evitar re-renderizados innecesarios
-
-```typescript
-@Component({
-  selector: 'app-my-list',
-  template: `
-    <ul>
-      <li *ngFor="let item of items; trackBy: trackByFn">{{ item }}</li>
-    </ul>
-  `
-})
-export class MyListComponent {
-  items = [1, 2, 3, 4, 5];
-
-  trackByFn(index: number, item: number): number {
-    return index;
-  }
 }
 ```
 
@@ -2471,23 +2481,6 @@ export class MyComponent {
 }
 ```
 
-- Usar `@ViewChild` en lugar de `document.getElementById` para acceder a elementos del DOM
-
-```typescript
-@Component({
-  selector: 'app-my-component',
-  template: `<div #myElement>Elemento</div>`
-})
-
-export class MyComponent {
-  @ViewChild('myElement') myElement: ElementRef;
-
-  ngAfterViewInit() {
-    this.myElement.nativeElement.style.color = 'red';
-  }
-}
-```
-
 - Evitar llamadas a funciones en el `ng.html` ya que se ejecutan en cada ciclo de deteccion de cambios
 
 ```html
@@ -2496,17 +2489,6 @@ export class MyComponent {
 
 <!-- Mejor esto -->
 <p>{{ value }}</p>
-```
-
-- Implementar Lazy Loading para cargar modulos solo cuando son necesarios
-
-```typescript
-const routes: Routes = [
-  {
-    path: 'feature',
-    loadChildren: () => import('./feature/feature.module').then(m => m.FeatureModule)
-  }
-];
 ```
 
 - Habilitar el Preloading strategy para cargar modulos en segundo plano
@@ -2519,14 +2501,6 @@ import { PreloadAllModules } from '@angular/router';
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
-```
-
-- Virtualizar (que es como el lazy loading pero para listas) las listas que tengan muchos elementos
-
-```html
-<cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
-  <div *cdkVirtualFor="let item of items">{{ item }}</div>
-</cdk-virtual-scroll-viewport>
 ```
 
 - Convierte tu aplicación en una Progressive Web App para mejorar el rendimiento y el almacenamiento en caché de recursos. 
@@ -8261,11 +8235,21 @@ Algunas reglas no escritas, pero que se han asumido *por convención* son:
 
 ### **Diferencia entre let, var y const** 💛
 
-[Volver al indice](#alg-base-var)
+[Volver al indice](#entrevista-base)
 
 La diferencia es el alcance de cada uno.
 
-- **var:** Es la manera de declarar variables en ES5. Es global o local en una funcion.
+- **var:** Es viable dentro de una funcion, incluso si es declarada dentro de un if o loop, es valida afuera, y es global si esta fuera de una funcion. Se puede reasignar y redeclarar.
+
+```javascript
+function ejemplo() {
+  if (true) {
+    var x = 10;
+  }
+  console.log(x); // 10 (aunque x se declaró dentro del bloque if)
+}
+```
+
 - **let:** Es la manera de declarar variables en ES6. Es local en un bloque.
 - **const:** Es la manera de declarar constantes en ES6. Es local en un bloque.
 
