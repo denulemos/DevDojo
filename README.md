@@ -137,7 +137,7 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 |[Riesgos de adoptar una nueva tecnología en el proyecto](#cic68)|
 |[Algunos miembros de tu equipo no pueden ponerse de acuerdo sobre una solución. Discuten y no pueden tomar una decisión. ¿Cómo resolverías esta situación conflictiva?](#cic69)|
 |[Motivacion](#cic70)|
-|[¿Cómo delegas tareas en tu equipo y cómo varía tu enfoque dependiendo de la antigüedad del miembro del equipo?](#cic70-1)|
+|[Delegacion](#cic70-1)|
 
 <a name="alg-base"></a>
 
@@ -1961,8 +1961,6 @@ export class CarComponent {
   }
 }
 ```
-
-
 
 <a id="ent16"></a>
 
