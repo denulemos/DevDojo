@@ -1,6 +1,6 @@
 <div align="center">
 
-# DevDojo 
+# DevDojo
 
 ![Dev GIF](https://i.pinimg.com/originals/a7/a8/d0/a7a8d06c754cfbbbc37e64cb118c513c.gif)
 
@@ -12,6 +12,7 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 
 ## Tabla de Contenidos
 
+- [Preguntas mas comunes en entrevistas de trabajo para un FE Engineer](#entrevista)
 - [Algoritmos y manejo de datos](#alg-base)
   - [Algoritmos de Ordenamiento](#alg-base-ord)
   - [Complejidad Algorítmica](#alg-base-comp)
@@ -23,10 +24,16 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
   - [Programación Funcional y Orientada a Objetos](#alg-base-obj)
   - [Manejo de Eventos y Asincronía](#alg-base-async)
 - [Metodos y Operadores en Javascript](#alg-base-2)
+  - [Estructuras Avanzadas y Generics](#alg-base-3)
+  - [Buenas Prácticas y Casos Comunes](#alg-base-4)
 - [Organizacion en Software - Derecho en IT](#cic-base)
 - [Gestion de proyectos - Liderazgo](#cic-base-2)
 - [Typescript](#typ-base)
-- [Javascript Frameworks and Libraries](#rea-base)
+- [Javascript Frameworks y Librerias](#rea-base)
+  - [HTML](#html-base)
+  - [React](#react-base)
+  - [Angular](#angular-base)
+  - [Conceptos Generales](#fe-base)
 - [Styles - Estilos](#sty-base)
 - [Desarrollo Mobile](#mob-base)
 - [React Native](#mob-base-rn)
@@ -37,6 +44,100 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 - [Bases de Datos](#bd-base)
 - [Seguridad](#seg-base)
 - [Accesibilidad](Accesibilidad.md)
+
+ <a id="entrevista-base"></a>
+
+## [Preguntas mas comunes en entrevistas de trabajo para un FE Engineer](#entrevista-base)
+
+Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de trabajo para un Frontend Engineer. Engloba conceptos comunmente preguntados sobre Javascript, patrones de disenio, mejora de performance, etc. Tambien se agregan preguntas sobre React, Redux y Angular en esta ocasion.
+
+| Preguntas JavaScript |
+|----------|
+| [Parametros por valor y por referencia](#ent0) |
+| [Prototype Javascript](#ent0-1) |
+|[Spread y Rest Operator](#ent0-4)|
+| [Null vs undefined vs never](#ent0-2) |
+| [`.sort()`](#ent1) |
+| [`.map()`](#ent2) |
+| [`.filter()`](#ent3) |
+| [`.reduce()`](#ent4) |
+|[Set vs Map vs WeakMap vs WeakSet](#ent4-1)|
+| [Diferencia entre let, var y const](#var6) |
+| [Programacion Funcional](#ent8) |
+| [Pure function en Programacion Funcional](#ent13) |
+| [Currying (funcion dentro de funcion)](#ent15) |
+| [¿Qué ventajas ofrece la inmutabilidad al manejar estructuras de datos? Proporciona un ejemplo práctico.](#ent14) |
+| [Programacion reactiva (Observables, RxJs, Subscribers)](#ent8-2) |
+| [Programacion declarativa (SQL)](#ent8-3) |
+| [Paradigma Reactiva Funcional (FRP)? (Funcional + Reactiva)](#ent9) |
+| [Funciones lambda (Funciones Anonimas)](#ent8-1) |
+|[Encapsulación (Private, public)](#ent10)|
+| [Principios SOLID](#ent11) |
+| [Que es la inyeccion de dependencias?](#ent12) |
+| [Memoization](#ent16) |
+| [¿Cuáles son las diferencias clave entre HTTP/1.1, HTTP/2 y HTTP/3? ¿Por qué se considera HTTP/2 más eficiente que HTTP/1.1?](#ent17) |
+| [Diferencias entre REST y GraphQL](#ent18) |
+| [Cuales son los ataques mas comunes en la web? Nombrar tambien sus protecciones del lado del cliente](#ent19) |
+| [Lazy loading](#ent20) |
+| [Performance](#ent21) |
+| [Array-like](#alg26) |
+| [PWA (Progressive Web App)](#ent25-1) |
+| [Critical Rendering Path](#ent22) |
+| [¿Cuáles son las diferencias entre localStorage, sessionStorage y las cookies?](#ent23) |
+| [Web y Service Workers](#ent26) |
+| [Event Loop (Macro, Micro tasks, Callback Queue)](#ent27) |
+| [Obfuscation and Minification](#ent55) |
+| [Promises - Async Await - Callbacks](#ent29) |
+| [Beneficios de usar Webpack o Rollup](#ent32) |
+| [Tree shaking](#ent33) |
+| [Mejoras en el ciclo de vida](#ent68) |
+| [Redux, sus caracteristicas](#ent34) |
+| [Redux Async Flow](#ent53) |
+| [Context API](#ent35) |
+| [useEffect() React](#ent37) |
+| [useActionState() React](#ent69) |
+| [React Server Components](#ent69-1) |
+| [startTransition() React](#ent70) |
+| [useFormStatus() React](#ent71) |
+| [useOptimistic() React](#ent72) |
+| [useCallback() React](#ent39) |
+| [Que mejoras hay en la migracion de AngularJS a Angular?](#ent51-1) |
+| [Decorators en Angular](#ent65) |
+| [Angular Signals](#ent65-1) |
+| [RxJS](#ent38) |
+| [Observable en RxJS](#ent39) |
+| [Observable "cold" y "hot"](#ent40) |
+| [CDN (Content Delivery Network)](#ent41) |
+| [Como organizarias el code reuse en una aplicacion?](#ent42) |
+| [Higher order component (HoC)](#ent43) |
+| [Patrones de disenio en React](#ent44) |
+| [Patrones de disenio en Angular](#ent45) |
+| [Patrones de disenio en Frontend](#ent46) |
+| [Antipatrones en Frontend](#ent47) |
+| [Server Side Rendering (SSR)](#ent48) |
+| [Static site rendering (SSR)](#ent52) |
+| [Microfrontends](#ent54) |
+| [Code splitting](#ent56) |
+| [Serverless](#ent57) |
+| [Es la metodologia Agile recomendable para todos los proyectos?](#ent60) |
+| [MVP (Minimum Viable Product)](#ent61) |
+| [Metodologias de estimacion de tareas](#ent66) |
+| [Distintos tipos de testing en Frontend](#ent62) |
+| [Git vs Mercurial](#ent63) |
+| [Continuous Integration, Continuous Delivery, Continuous Deployment - Mejoras del proceso CI-CD](#ent65-4) |
+| [Que sucede cuando escribo una URL en el navegador y hago click en Enter?](#har19) |
+| [CORS](#ent67) |
+| [Escalabilidad NodeJS](#ent73) |
+| [Escalabilidad FE](#ent74)|
+|[Principios de Disponibilidad, Escalamiento en Frontend](#ent75)|
+| [Mencionar como manejarias la delegacion de tareas dentro de tu equipo](#ent76) |
+| [Se te da la tarea de empezar un nuevo proyecto, que preguntas realizarias para tomar que decisiones como un Tech Lead?](#ent76-1) |
+|[¿Que son los NFRs, Quién los define y cómo se priorizan?](#cic66) |
+|[Imagina que un cliente te dice que la aplicación es lenta y quiere que la aceleres, pero no te da más detalles. ¿Cómo manejarías esta situación?](#cic67) 💛|
+|[Riesgos de adoptar una nueva tecnología en el proyecto](#cic68)|
+|[Algunos miembros de tu equipo no pueden ponerse de acuerdo sobre una solución. Discuten y no pueden tomar una decisión. ¿Cómo resolverías esta situación conflictiva?](#cic69)|
+|[Motivacion](#cic70)|
+|[Delegacion](#cic70-1)|
 
 <a name="alg-base"></a>
 
@@ -104,7 +205,7 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [Devolver una colección secundaria en Java](#alg25) |
 |¿Qué consideraciones de diseño debemos tener en cuenta al trabajar con colecciones como atributos de clases?|
 |¿Cómo evitar la mutabilidad no deseada al devolver colecciones de una clase?|
-| [Set() en Javascript (HashSet)](#alg29) 💛|
+| [Set() (HashSet)](#alg29) 💛|
 | [HashTables (.Map)](#alg30) 💛 |
 |[¿Cuál es la diferencia entre un Set y un Array en JavaScript?](#alg301)|
 |[¿En qué situaciones es más eficiente usar un HashMap en lugar de un Array?](#alg302)|
@@ -206,8 +307,10 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [Export Fallback con export default](#var18) |
 | [Diferencia entre import y require](#var9) |
 | [Función Object.freeze](#var8) |
-|[¿Qué es la destructuración y cómo se utiliza? ](#var8-2) 💛|
+|[¿Qué es la destructuración y cómo se utiliza?](#var8-2) 💛|
 |[¿Cómo se diferencia un Spread Operator de un Rest Operator?](#var8-3) 💛|
+
+<a name="alg-base-3"></a>
 
 | Estructuras Avanzadas y Generics |
 |----------|
@@ -216,6 +319,8 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [Recursividad](#alg52) |
 | [Factorial](#alg53) |
 | [¿Qué son los generics y cómo se implementan en TypeScript?](#alg53-2) 💛|
+
+<a name="alg-base-4"></a>
 
 | Buenas Prácticas y Casos Comunes |
 |----------|
@@ -299,12 +404,6 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 
 | Gestión de Proyectos - Liderazgo |
 |----------|
-|[¿Que son los NFRs, Quién los define y cómo se priorizan?](#cic66) |
-|[Imagina que un cliente te dice que la aplicación es lenta y quiere que la aceleres, pero no te da más detalles. ¿Cómo manejarías esta situación?](#cic67) 💛|
-|[¿Cuáles son los posibles riesgos de adoptar una nueva tecnología en el proyecto? ¿Cómo mitigarlos?](#cic68)|
-|[Algunos miembros de tu equipo no pueden ponerse de acuerdo sobre una solución. Discuten y no pueden tomar una decisión. ¿Cómo resolverías esta situación conflictiva?](#cic69)|
-|[¿Cómo motivas a tu equipo y qué enfoques conoces? ¿Existe algún motivador universal para todos?](#cic70)|
-|¿Cómo delegas tareas en tu equipo y cómo varía tu enfoque dependiendo de la antigüedad del miembro del equipo?|
 |¿Cómo realizas las revisiones de código en tus proyectos? ¿Qué verificas y cómo sabes que el código está listo para ser fusionado?|
 |¿Podrías nombrar algunos "code smells" (indicadores de problemas en el código)?|
 |¿Cómo estimas las tareas en tus proyectos? ¿Cómo manejas los problemas de sobreestimación o subestimación? ¿Cómo estimas tareas desconocidas?|
@@ -335,6 +434,8 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 |En un equipo, ¿cómo promoverías una comunicación efectiva entre desarrolladores con diferentes niveles de experiencia?|
 |¿Qué harías si descubrieras que algunos miembros del equipo están luchando por adaptarse al ritmo del proyecto o a las tecnologías utilizadas?|
 |Imagina el caso, vas a desarrollar una gran característica, que requiere esfuerzos de ingenieros de FE y BE. ¿Cómo dividirías esta característica y cómo manejarías las dependencias entre los ingenieros de FE y BE?|
+| En que se diferencia un rol de desarrollador a uno de Tech Lead |
+| Como se daria un feedback dificil? |
 
 <a name="typ-base"></a>
 
@@ -361,10 +462,10 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 |[Cual es la diferencia entre el uso de types e interfaces?](#typ17) 💛|
 |[¿Qué son los tipos Union e Intersection y cuándo se utilizan?](#typ18)|
 |[¿Qué son los Utility Types como Partial, Pick, y Omit, y en qué casos son útiles?](#typ19)💛 |
-|¿Cómo funcionan los Mapped Types y cómo se aplican en proyectos complejos?|
-|¿Qué son los Conditional Types y cómo permiten lógica avanzada en los tipos?|
+|[¿Cómo funcionan los Mapped Types y cómo se aplican en proyectos complejos?](#typ20)|
+|[¿Qué son los Conditional Types y cómo permiten lógica avanzada en los tipos?](#typ21)|
+|[¿Cómo funcionan los decoradores en TypeScript y en qué casos son útiles?](#typ22)|
 |¿Qué técnicas avanzadas de Type Narrowing puedes usar para trabajar con tipos complejos?|
-|¿Cómo funcionan los decoradores en TypeScript y en qué casos son útiles?|
 |¿Cómo crear y utilizar tipos genéricos con restricciones múltiples (T extends U)?|
 |¿Cómo funcionan keyof y los Lookup Types para trabajar dinámicamente con claves y valores?|
 |¿Cómo manejas tipos recursivos en TypeScript?|
@@ -427,30 +528,34 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 
 <a name="rea-base"></a>
 
-## [Javascript Frameworks and Libraries](#rea)
+## [Javascript Frameworks y Librerias](#rea)
+
+<a name="html-base"></a>
 
 | HTML |
 |----------|
-| [¿Cuál es la diferencia entre h1, h2, etc.?](#rea40) |
-| [Vínculos Relativos en HTML](#rea56) |
-| [Vínculos Absolutos en HTML](#rea57) |
-| [¿Para qué es el Doctype?](#rea54) |
-| [Atributo placeholder para campos en HTML](#rea55) |
-| [Cual es la importancia del uso de todos los elementos HTML?](#rea41) |
-| [Que son los atributos de los elementos HTML?](#rea42) |
-| [Cuáles son las partes de un documento HTML?](#rea43) |
-| [Puedo escribir las etiquetas en mayúscula y minúscula?](#rea44) |
-| [Qué son los mapa de imagen?](#rea45) |
-| [Que es el tag DataList?](#rea46) |
+| [¿Cuál es la diferencia entre h1, h2, etc.?](#html1) |
+| [Vínculos Relativos en HTML](#html2) |
+| [Vínculos Absolutos en HTML](#html3) |
+| [¿Para qué es el Doctype?](#html4) |
+| [Atributo placeholder para campos en HTML](#html5) |
+| [Que es HTML Semantico? 💛](#html6) |
+| [Que son los atributos de los elementos HTML?](#html7) |
+| [Cuáles son las partes de un documento HTML?](#html8) |
+| [Puedo escribir las etiquetas en mayúscula y minúscula?](#html9) |
+| [Qué son los mapa de imagen?](#html10) |
+| [Que es el tag DataList?](#html11) |
+
+<a name="react-base"></a>
 
 | React |
 |----------|
 | [¿Qué es React?](#rea47) |
-|[Libreria vs Framework](#rea47-2)|
+|[Libreria vs Framework 💛](#rea47-2)|
 | [Para que es el comando React eject?](#rea49) |
-| [Que son las Ref?](#rea52) |
-| [De que tratan los Ciclos de Vida Componentes?](#rea62) |
-|Componentes de clase vs Componentes de Funcion 💛|
+| [Que son las Ref?](#rea52-5) |
+| [De que tratan los Ciclos de Vida Componentes?](#react62) |
+|[Componentes de clase vs Componentes de Funcion 💛](#rea62-1)|
 | [componentWillReceiveProps()](#rea55) |
 | [componentDidMount()](#rea56) |
 | [componentWillUnmount()](#rea57) |
@@ -459,14 +564,14 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [shouldComponentUpdate()](#rea60) |
 | [componentWillUpdate()](#rea61) |
 | [useCallback](#rea1) 💛|
-| [useDispatch](#rea2) 💛|
+| [useDispatch - Hook Redux](#rea2)|
 | [useEffect](#rea3) 💛|
 |[Puede el useEffect ser asincrono? Porque?](#rea3-2) 💛|
 | [useState](#rea4) 💛|
-| [useSelector](#rea5) |
+| [useSelector - Hook Redux](#rea5) |
 | [useRef](#rea6) 💛|
 | [useMemo](#rea7) 💛|
-|¿Cuál es la diferencia entre useCallback y useMemo? 💛|
+|[¿Cuál es la diferencia entre useCallback y useMemo?](#rea7-1) 💛|
 | [useReducer](#rea8) 💛|
 | [useLayoutEffect](#rea9) |
 |[¿Qué diferencia hay entre useEffect y useLayoutEffect? ¿Cuándo usarías cada uno?](#rea9-1)|
@@ -477,7 +582,7 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [¿Cual es el flujo de Redux?](#rea22) |
 | [Que es ContextAPI?](#rea23) 💛|
 | [Que es React Fiber?](#rea24) |
-|Que tener en cuenta para tener una buena performance en React 💛|
+|[Que tener en cuenta para tener una buena performance en React](#rea24-1) 💛|
 | [¿Qué es el Virtual DOM?](#rea39) 💛|
 |Para que tipo de proyectos React es recomendable?|
 |¿Cuál es la diferencia entre React.createElement() y JSX?|
@@ -513,6 +618,8 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 |¿Qué es el "code splitting" y cómo lo implementarías en una aplicación React?|
 |¿Cómo manejarías la autenticación y autorización en una aplicación React?|
 
+<a name="angular-base"></a>
+
 | Angular |
 |----------|
 | [Diferencia entre AngularJS y Angular](#rea10) 💛|
@@ -522,8 +629,8 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [¿Qué es un Decorador en Angular?](#rea14) 💛|
 | [Event Binding en Angular (Manejo de Eventos)](#rea15) |
 | [Data Binding en Angular](#rea16) |
-|Que son los componentes standalone y cuando conviene utilizarlos? 💛|
-|¿Qué problemas de rendimiento pueden existir en Angular y cómo se solucionan? 💛|
+|[Que son los componentes standalone y cuando conviene utilizarlos?](#angular-1) 💛|
+|[¿Qué problemas de rendimiento pueden existir en Angular y cómo se solucionan?](#angular-2) 💛|
 |¿Cómo funciona la detección de cambios en Angular?|
 |¿Cómo se maneja la inyección de dependencias y la inversión de control en las aplicaciones de Angular? 💛|
 |¿Qué es la compilación JIT y AOT en Angular? Diferencias, pros y contras.|
@@ -535,6 +642,8 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 |¿Cómo se manejan las peticiones HTTP en Angular?|
 |¿Qué es el patrón de diseño "Smart vs Dumb Components" y cómo se aplica en Angular?|
 |¿Qué son los pipes en Angular y cómo se utilizan?|
+
+<a name="fe-base"></a>
 
 | Conceptos Generales |
 |----------|
@@ -566,7 +675,7 @@ Preguntas con 💛 son preguntas de entrevista (Rol Frontend)
 | [Que es el Scope en Javascript?](#rea45) |
 | [Fetch API](#rea46) |
 | [Cómo se pueden crear objetos genéricos?](#rea47) |
-| [Document.ready vs Window.onload](#rea48) |
+| [Document.ready vs Window.onload](#js1) |
 | [Que es la expresion de Funcion Inmediatamente Invocada - Immediatelyinvoked Function Expression (IIFE)?](#rea49) |
 | [Qué es un Event listener?](#rea50) |
 | [isNaN vs Math.isNaN](#rea51) |
@@ -933,6 +1042,4225 @@ inspección profunda de paquetes?|
 
 ---
 
+# Preguntas mas comunes en entrevistas de trabajo para un FE Engineer
+
+<a id="ent0"></a>
+
+### **Parametros por valor y por referencia en Javascript**
+
+[Volver al indice](#entrevista-base)
+
+En Javascript podemos pasar como parametro valores que pueden ser por valor en si mismo o por referencia, es decir, pasamos el puntero de memoria que apunta a la direccion de memoria donde se encuentra el valor.
+
+**Parametros por valor**
+
+Esto se hace usualmente con elementos tipo `number`, `string`, `boolean`, `null`, `undefined`, `symbol`, `bigint`.
+Si tenemos el valor en una variable, debemos realizar la re-asignacion para cambiar el valor del mismo.
+
+```javascript
+let a = 1;
+
+// Aca estamos modificando el valor de a
+function modificarValor(a) {
+  a = 2;
+}
+
+// Si bien estamos modificando el 1 por 2, el valor de a sigue siendo 1
+function noModificarValor(a) {
+  a++;
+}
+```
+
+En cambio en el caso de variables del tipo objeto, arrays, entre otros, estos son pasados por referencia, por lo que si modificamos el valor de un objeto o array, este se vera reflejado en la variable original.
+
+```javascript
+let obj = { a: 1 };
+
+// Aca estamos modificando el valor de a, ya que no llega el valor de objeto, si no el puntero de memoria
+function modificarValor(obj) {
+  obj.a = 2;
+}
+
+let array = [1, 2, 3];
+
+// Aca estamos modificando el valor de la posicion 0
+function modificarArray(array) {
+  array[0] = 2;
+}
+```
+
+<a id="ent0-1"></a>
+
+### **Prototype Javascript**
+
+[Volver al indice](#entrevista-base)
+
+`Prototype` permite que objetos y funciones en Javascript compartan propiedades y metodos entre si.
+
+Todos los objetos en JS tienen una propiedad interna llamada `[[Prototype]]` al que se accede con `__proto__` o configurarla con `Object.create()`.
+Las funciones al ser tambien objetos en JS tienen una propiedad tambien llamada `prototype`
+
+```javascript
+const animal = {
+  hacerSonido: function () {
+    console.log("El animal hace un sonido");
+  },
+};
+
+const perro = {
+  nombre: "Firulais",
+};
+
+// Vinculamos el prototipo de "perro" al objeto "animal"
+Object.setPrototypeOf(perro, animal);
+
+// Ahora "perro" puede usar el método de "animal"
+perro.hacerSonido(); // El animal hace un sonido
+```
+
+`hacerSonido` no esta definido en `perro`, pero lo JS lo busco en su prototipo `animal`
+
+```javascript
+function Persona(nombre) {
+  this.nombre = nombre;
+}
+
+// Agregamos un método al prototipo de Persona
+Persona.prototype.saludar = function () {
+  console.log(`Hola, me llamo ${this.nombre}`);
+};
+
+// Creamos una nueva instancia de Persona
+const juan = new Persona("Juan");
+
+// Llamamos al método saludar
+juan.saludar(); // Hola, me llamo Juan
+```
+
+Hay algo llamado `prototype chain`, que es una cadena de prototipos que se va formando cuando se busca una propiedad o metodo en un objeto. Si no se encuentra en el objeto, JS busca en el prototipo, y si no se encuentra ahi, busca en el prototipo del prototipo, y asi sucesivamente. Al final, si no hay resultados, se devuelve `undefined`.
+
+Todos los objetos de JS heredan metodos de un Prototype, `Object.prototype` es el eslabon mas alto de la cadena de herencia.
+
+```javascript
+const arr = [1, 2, 3];
+
+// Los métodos como `push` están en el prototipo de Array
+console.log(arr.__proto__ === Array.prototype); // true
+
+// El prototipo de Array.prototype es Object.prototype
+console.log(Array.prototype.__proto__ === Object.prototype); // true
+
+// El final de la cadena de prototipos es null
+console.log(Object.prototype.__proto__); // null
+```
+
+En resumen, prototype es la base del funcionamiento de objetos y de la herencia en JS.
+
+
+
+<a id="ent0-4"></a>
+
+### **Spread vs Rest Operator**
+
+[Volver al indice](#entrevista-base)
+
+Spread es cuando los 3 puntos se encuentran al principio, de ese modo por ejemplo, puedo pasar un array como parametro pero en vez de tomar su referencia tomo su valor. Convierte un array en una lista de argumentos.
+
+```javascript
+const arr = [1, 2, 3];
+
+function sumar(a, b, c) {
+  return a + b + c;
+}
+
+console.log(sumar(...arr)); // 6
+```
+
+En el caso del Rest Operator, es cuando los 3 puntos se encuentran en el parametro de una funcion, y se utiliza para agrupar elementos en un array. Convierte los argumentos de una funcion en un array.
+
+```javascript
+function sumar(...numeros) {
+  return numeros.reduce((acc, num) => acc + num, 0);
+}
+
+console.log(sumar(1, 2, 3, 4, 5)); // 15
+```
+
+El operador es el mismo pero su nombre depende del contexto en donde esten siendo usados. 
+
+<a id="ent0-2"></a>
+
+### **Null vs undefined vs never**
+
+[Volver al indice](#entrevista-base)
+
+`null` y `undefined` son valores que existen tanto en JS como en TS, pero `never` es propio de TS.
+
+`null` es ningun valor en particular, califica como inicializacion en si mismo. 
+`undefined` es el valor por defecto de una variable que no ha sido inicializada.
+`never` es un tipo que representa un valor que nunca sucedera. Aparece seguido en errores de compilacion cuando se declara un array pero, o no se inicializa o no se declara de que tipo es, y se intenta hacer alguna operacion con la misma.
+
+```typescript
+let a: null = null;
+let b: undefined = undefined;
+
+let c: never = (() => {
+  throw new Error("Error");
+})();
+```
+
+<a id="ent1"></a>
+
+### **.sort() en JavaScript**
+
+[Volver al indice](#entrevista-base)
+
+Esta funcion modifica al array original.
+
+```javascript
+array.sort*([compareFunction])
+```
+
+Es la funcion que se utiliza para ordenar elementos de un array. En casos de numeros no compuestos (es decir de un solo digito) funciona bien en su forma sin parametros extra:
+
+```javascript
+
+const numeros = [3, 1, 2];
+
+// Ordena los elementos de menor a mayor
+numeros.sort();
+```
+
+Pero en caso de numeros o palabras compuestas, la funcion en si misma realiza un Orden lexicográfico, no numérico, entonces el funcionamiento debe ser llevado a cabo de otra forma:
+
+```javascript
+const numeros = [10, 20, 1, 2];
+
+// Ordena los elementos de menor a mayor
+numeros.sort((a, b) => a - b);
+
+// Cuando esa resta sea negativa, a va antes que b, si es positiva, b va antes que a
+
+// En el caso de palabras
+const palabras = ["manzana", "banana", "cereza"];
+
+// Ordena los elementos alfabéticamente
+palabras.sort((a, b) => a.localeCompare(b));
+```
+
+a - b devuelve:
+
+- Un número negativo si a < b (debe aparecer antes).
+- Un número positivo si a > b (debe aparecer después).
+- 0 si son iguales.
+
+En caso de una ordenacion de arrays donde pueden encontrarse elementos `null` o `undefined`, se puede utilizar la siguiente funcion:
+
+```javascript
+const numeros = [10, 20, 1, 2, null, undefined];
+
+numeros.sort((a, b) => {
+  if (a == null) {
+    return 1;
+  }
+  if (b == undefined) {
+    return -1;
+  }
+  return a - b;
+});
+```
+
+Esto lo que hace es enviar a los elementos `null` al final del array, y a los `undefined` al principio. Si este caso de uso no se tiene en cuenta, la funcion `sort` devolvera `undefined` en caso de encontrar un elemento `null` o `undefined`.
+
+<a id="ent2"></a>
+
+### **.map() en JavaScript**
+
+[Volver al indice](#entrevista-base)
+
+Es una funcion que no modifica el array original, sino que devuelve un nuevo array con los elementos modificados.
+
+```javascript
+array.map(callback(element, index, array), thisArg)
+```
+
+Esta funcion ejecuta la funcion callback que se le envia como parametro en cada elemento del array
+
+```javascript
+const numeros = [1, 2, 3, 4];
+const duplicados = numeros.map(num => num * 2);
+
+console.log(duplicados); // [2, 4, 6, 8]
+console.log(numeros);    // [1, 2, 3, 4] (el array original no se modifica)
+```
+
+Hay que estar atento a que la funcion de callback devuelva algo, de lo contrario, el array resultante tendra elementos `undefined`.
+
+`map()` puede ser encadenado con otros metodos como `filter()` o `reduce()`
+
+```javascript
+const numeros = [1, 2, 3, 4, 5, 6];
+
+const paresDuplicados = numeros
+  .filter(num => num % 2 === 0) // Filtrar números pares
+  .map(num => num * 2);         // Multiplicarlos por 2
+
+console.log(paresDuplicados); // [4, 8, 12]
+```
+
+La diferencia entre el uso de `map()` y un recorrido `forEach` es que `map` devuelve un array nuevo, mientras que `forEach` no devuelve nada, solo itera.
+
+<a id="ent3"></a>
+
+### **.filter() en JavaScript**
+
+[Volver al indice](#entrevista-base)
+
+Es un metodo que tambien devuelve un nuevo array, pero con los elementos que cumplan con la condicion que se le pasa como parametro.
+
+```javascript
+array.filter(callback(element, index, array), thisArg)
+```
+
+Por ejemplo, si quiero filtrar los elementos pares de un array:
+
+```javascript
+const numeros = [1, 2, 3, 4, 5, 6];
+
+const resultado = numeros.filter(numero => numero % 2 === 0);
+
+console.log(resultado); // [2, 4, 6]
+```
+
+Lo que se debe tener en cuenta en la funcion callback dentro del `filter` es que debe devolver un valor booleano, que si es `true` incluye al elemento en el nuevo array, y viceversa, de lo contrario obtendremos un array vacio como resultado.
+
+<a id="ent4"></a>
+
+### **.reduce() en JavaScript**
+
+[Volver al indice](#entrevista-base)
+
+Generalmente se utiliza para sumarizar de alguna forma los elementos de un array, ya sea sumandolos, concatenandolos, etc.
+
+```javascript
+array.reduce(reducerFunction(accumulator, currentValue, currentIndex, originalArray), initialValue)
+```
+
+`initialValue` en el caso de las funciones de sumatoria en general es 0, pero puede ser cualquier valor que se desee.
+
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+const sum = numbers.reduce((accumulator, currentValue) => {
+  return accumulator + currentValue;
+}, 0); // Initial value is 0
+
+console.log(sum); // Output: 15
+```
+
+<a id="ent4-1"></a>
+
+### **Set vs Map en Javascript**
+
+[Volver al indice](#entrevista-base)
+
+Los 3 son colecciones pero tienen caracteristicas distintas entre si.
+
+`Set` no permite valores repetidos, y no es de tipo clave-valor. Sus metodos son:
+
+```javascript
+const set = new Set();
+```
+
+- `add(value)`: Agrega un valor al set
+- `delete(value)`: Elimina un valor del set
+- `has(value)`: Devuelve `true` si el valor existe en el set, `false` en caso contrario
+- `clear()`: Elimina todos los valores del set
+- `size`: Devuelve la cantidad de valores en el set
+
+En cambio `Map` es un mapa de clave-valor que permite valores repetidos pero no kjey repetidos. Sus metodos son:
+
+```javascript
+const map = new Map();
+```
+
+- `set(key, value)`: Agrega un par clave-valor al mapa
+- `get(key)`: Devuelve el valor asociado a la clave
+- `delete(key)`: Elimina un par clave-valor del mapa
+- `has(key)`: Devuelve `true` si la clave existe en el mapa, `false` en caso contrario
+- `clear()`: Elimina todos los pares clave-valor del mapa
+- `size`: Devuelve la cantidad de pares clave-valor en el mapa
+
+`WeakMap` es un tipo de `Map` que no permite claves de tipo primitivo, solo objetos. No tiene metodos para iterar sobre sus elementos, ni tampoco tiene el metodo `size`. Es útil en situaciones donde se necesita asociar datos adicionales a un objeto sin interferir con la recolección de basura del objeto. Por ejemplo, en la gestión de metadatos de objetos que son creados y destruidos dinámicamente, o para mantener información privada de instancias en bibliotecas y frameworks sin exponer esos datos en las propias instancias.
+
+```javascript
+let weakMap = new WeakMap();
+let obj = {};
+
+// Añadir datos al WeakMap
+weakMap.set(obj, { key: "value" });
+
+console.log(weakMap.get(obj)); // Output: { key: "value" }
+
+// Verificar si una clave existe
+console.log(weakMap.has(obj)); // Output: true
+
+// Eliminar una entrada
+weakMap.delete(obj);
+console.log(weakMap.has(obj)); // Output: false
+
+// El objeto obj ya no tiene otras referencias, puede ser recolectado por el recolector de basura
+obj = null; // Ahora weakMap está vacío
+```
+
+En resumen, WeakMap proporciona una forma segura de memoria para asociar datos a objetos mientras permite que esos objetos sean recolectados por el recolector de basura cuando ya no son necesarios, ayudando a prevenir problemas de memoria en aplicaciones grandes y complejas.
+
+Tambien existe el `WeakSet` que es similar al `WeakMap` pero solo acepta objetos y no tiene metodos para iterar sobre sus elementos. Mismo caso que este, es util para asociar datos a objetos sin interferir con la recoleccion de basura.
+
+```javascript
+let weakSet = new WeakSet();
+
+let obj = {};
+let obj2 = {};
+
+// Añadir objetos al WeakSet
+weakSet.add(obj);
+weakSet.add(obj2);
+
+console.log(weakSet.has(obj)); // Output: true
+console.log(weakSet.has(obj2)); // Output: true
+
+// Eliminar un objeto
+weakSet.delete(obj);
+console.log(weakSet.has(obj)); // Output: false
+```
+
+Ninguno de los `weak` es enumerable, es decir, no se pueden iterar sobre ellos.
+
+<a id="ent8"></a>
+
+### **Programacion Funcional**
+
+[Volver al indice](#entrevista-base)
+
+Es un paradigma de programacion donde una regla principal es que los datos son inmutables, por eso a las funciones tipo `filter` o `map` se dicen que son funciones puras, ya que no modifican el array original, sino que devuelven un nuevo array con los elementos modificados. Entre otras cosas. 
+
+Las caracteristicas de la programacion funcional son:
+
+- Datos inmutables, la principal razon de esto es para evitar errores de estado compartido
+- Las funciones se consideran de primera clase, esto quiere decir que pueden ser asignados a variables, ser pasados a funciones como parametros igual que cualquier otra estructura de datos, incluso ser devueltos por una funcion.
+- Se introducen las **Funciones Puras** las cuales son funciones que ante los mismos argumentos siempre devuelven lo mismo, y no tienen efectos secundarios, facilitando la depuracion.
+- Se introduce el **Lazy Evaluation** que es basicamente no evaluar una expresion a menos que sea necesario, permitiendo mejor rendimiento y estructuras de datos infinitas.
+- En la programacion funcional se acostumbra a usar recursion en lugar de bucles `for` o `while`, ya que es mas facil de leer y de mantener.
+
+Javascript no es un lenguaje puramente funcional, aunque tiene algunos conceptos soportados por el mismo. 
+
+```javascript
+// Función pura
+const sumar = (x, y) => x + y;
+
+// Uso de funciones de primera clase
+const aplicarOperacion = (a, b, operacion) => operacion(a, b);
+
+console.log(aplicarOperacion(3, 4, sumar)); // Output: 7
+
+// Inmutabilidad
+const agregarElemento = (array, elemento) => [...array, elemento];
+
+const original = [1, 2, 3];
+const nuevo = agregarElemento(original, 4);
+
+console.log(original); // Output: [1, 2, 3]
+console.log(nuevo);    // Output: [1, 2, 3, 4]
+```
+
+Los lenguajes de programacion hechos para la programacion funcional son Scala, Erlang, Haskell entre otros, son lenguajes usados en sistemas funcancieros, telecomunicaciones, analisis de datos entre otras areas.
+
+<a id="ent13"></a>
+
+### **Explica el concepto de "pure function" y por qué es fundamental en la programación funcional.**
+
+[Volver al indice](#entrevista-base)
+
+Como se explico anteriormente, las Pure functions son funciones que, al recibir los mismos parametros, siempre devuelven el mismo resultado.
+
+```typescript
+// Función pura
+function sumar(a: number, b: number): number {
+    return a + b;
+}
+
+// Función impura
+let resultado = 0;
+function sumar(a: number, b: number): number {
+    resultado += a + b;
+    return resultado;
+}
+```
+
+La diferencia entre ambas funciones es que la impura esta mutando a la variable resultado, en cambio, la funcion pura, simplemente devuelve el resultado de la operacion, sin mutar la informacion, algo principal cuando se trata de programacion funcional.
+
+<a id="ent14"></a>
+
+### **¿Qué ventajas ofrece la inmutabilidad al manejar estructuras de datos? Proporciona un ejemplo práctico.**
+
+[Volver al indice](#entrevista-base)
+
+Solo a modo de repaso, la inmutabilidad es algo muy propio de la programacion funcional. Algunas de sus ventajas son:
+
+- Al no estar modificando directamente mis datos, evito errores de estado compartido
+- Eliminamos los errores de concurrencia, ya que los datos no estan siendo modificados, entonces no tengo necesidad de tener si o si la ultima version de los mismos para poder continuar
+- Se pueden implementar facilmente funciones de `undo`, ya que se puede volver a la version anterior muy facilmente
+- Integridad de datos, ya que al no estar modificando los datos, no se pueden corromper los mismos
+
+```typescript
+const tareasOriginales = [
+    { id: 1, texto: 'Hacer la compra', completada: false },
+    { id: 2, texto: 'Llamar al médico', completada: true }
+];
+
+function agregarTarea(tareas, nuevaTarea) {
+    return [...tareas, nuevaTarea];
+}
+
+const nuevaTarea = { id: 3, texto: 'Pagar el alquiler', completada: false };
+const tareasActualizadas = agregarTarea(tareasOriginales, nuevaTarea);
+
+console.log(tareasOriginales); // La lista original permanece sin cambios
+console.log(tareasActualizadas); // Nueva lista con la tarea agregada
+```
+
+Un ejemplo de la IA que me gusto mucho para explicar esto: 
+
+Imagina que estás escribiendo un documento en un procesador de textos. Cada vez que haces un cambio, como añadir una palabra, el programa no borra todo el documento y lo reescribe desde cero con la palabra añadida. En lugar de eso, crea una nueva versión del documento con la palabra incluida. Si algo sale mal mientras escribes, siempre puedes volver a la versión anterior sin problemas. Esto es similar a cómo funciona la inmutabilidad en las aplicaciones de software.
+
+<a id="ent15"></a>
+
+### **Currying**
+
+[Volver al indice](#entrevista-base)
+
+Es una tecnica de programacion funcional donde meto una funcion dentro de otra, y todas estas reciben solo un parametro a la vez. 
+
+```typescript
+function multiply(a: number): (b: number) => number {
+    return function(b: number): number {
+        return a * b;
+    };
+}
+
+// Uso de la función curried
+const multiplyByTwo = multiply(2);
+const result = multiplyByTwo(3);  // result será 6
+console.log(result);
+```
+
+En este ejemplo, multiply es una función que toma el primer número, a, y devuelve otra función que toma el segundo número, b. La función devuelta realiza la multiplicación de a y b.
+
+Al dividir todo en pequenias funciones, hace que la reutilizacion de codigo sea mucho mejor. 
+
+<a id="ent8-1"></a>
+
+### **Funciones lambda**
+
+[Volver al indice](#entrevista-base)
+
+Las funciones Lambda son basicamente funciones cortas y anonimas. En Javascript se podria decir que son funciones flecha, ya que no tienen nombre y se definen con `=>`.
+
+```javascript
+const sumar = (a, b) => a + b;
+```
+
+<a id="ent8-2"></a>
+
+### **Que es la programacion reactiva?**
+
+[Volver al indice](#entrevista-base)
+
+Es el tipo de programacion que se maneja cuando se usa RxJS en Angular. Basicamente es un paradigma de programacion orientado a manejar datos asincronos, algo muy propio de las paginas web, donde mientras estamos obteniendo informacion de un servicio, es muy importante que sigamos pudiendo interactuar con la pagina.
+
+- Orientada a datos: Se basa en la propagacion de cambios en los datos a lo largo de la aplicacion.
+- Asincrona y no bloqueante: Es importante que mientras se realiza una operacion, no se bloquee la responsividad de nuestra aplicacion.
+- Propagacion de cambios: Si tengo muchos componentes que consumen informacion, los mismos deberian mutar si esta informacion cambia.
+- Programacion declarativa: A menudo utiliza un estilo declarativo, donde se especifica la lógica de control sin describir su flujo de control, lo que facilita el razonamiento sobre el código y reduce los errores.
+
+Los elementos comunes de la programacion reactiva son:
+
+- Observables: Representas flujos de datos que pueden ser observados y reaccionar a los cambios.
+- Observadores: Son funciones que reaccionan a los cambios en los observables. Tambien se le dicen Subscriptores.
+- Operadores: Son funciones que permiten manipular los datos emitidos por los observables.
+
+```jsx
+import { fromEvent } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+// Crear un observable que emite eventos de clic en un botón
+const button = document.querySelector('button');
+const clicks = fromEvent(button, 'click');
+
+// Transformar el flujo de datos para contar los clics
+const clickPositions = clicks.pipe(
+  map(event => ({ x: event.clientX, y: event.clientY }))
+);
+
+// Suscribirse al observable para hacer algo con los datos
+clickPositions.subscribe(pos => {
+  console.log(`Clic en posición: x=${pos.x}, y=${pos.y}`);
+});
+```
+
+Se podria decir que los **WebSockets** tienen mucho que ver con la programacion reactiva en si misma, ya que se basa en la propagacion de datos en tiempo real.
+
+<a id="ent8-3"></a>
+
+### **Que es la programacion declarativa?**
+
+[Volver al indice](#entrevista-base)
+
+La programacion declarativa se concentra en que cosas hay que hacer y no necesariamente en como hacerlas. Un ejemplo es SQL, donde se le dice a la base de datos que datos queremos, pero no como obtenerlos.
+
+<a id="ent9"></a>
+
+### **Que es la Paradigma Reactiva Funcional (FRP)?**
+
+[Volver al indice](#entrevista-base)
+
+Combina las ideas de la Programacion Funcional (funciones anonimas) con la Programacion Reactiva (observables). Podria ponerse de ejemplo tambien los framework de Frontend como Angular junto a RxJS.
+
+<a id="ent10"></a>
+
+### **¿Qué es el principio de Encapsulación y por qué es importante en OOP?**
+
+[Volver al indice](#entrevista-base)
+
+Es la capacidad de ocultar la informacion interna de una funcion ya que solo deberia importarnos el resultado de la misma, no como se llego a ese resultado.
+
+En JS se puede manejar el concepto mediante distintos medios
+
+- Usando `private` o `public` para las funciones que quiero que tengan una cierta privacidad
+- Usando `let`, `var` o `const` para declarar ciertas cosas dentro de un scope limitado
+
+<a id="ent11"></a>
+
+### **Principios SOLID**
+
+[Volver al indice](#entrevista-base)
+
+SOLID es un acronimo que representa 5 reglas del codigo limpio, introducidas por Robert C. Martin en su libro Clean Code.
+
+1. Single Responsibility Principle (SRP): Una clase deberia tener una sola razon para cambiar, es decir, una sola responsabilidad.
+
+```typescript
+// Mal: Esta clase maneja tanto los detalles del usuario como la persistencia de datos.
+class User {
+    constructor(public username: string) {}
+
+    saveUser(user: User) {
+        // código para guardar el usuario en una base de datos
+    }
+}
+
+// Bien: Separación de responsabilidades
+class User {
+    constructor(public username: string) {}
+}
+
+class UserRepository {
+    saveUser(user: User) {
+        // código para guardar el usuario en una base de datos
+    }
+}
+```
+
+2. Open Closed Principle (OCP): Las clases deberian estar abiertas para extension pero cerradas para modificacion.
+
+```typescript
+// Bien: Usando la abstracción para permitir la extensión sin modificar la clase existente
+abstract class Shape {
+    abstract area(): number;
+}
+
+class Rectangle extends Shape {
+    constructor(public width: number, public height: number) {
+        super();
+    }
+
+    area(): number {
+        return this.width * this.height;
+    }
+}
+
+class Circle extends Shape {
+    constructor(public radius: number) {
+        super();
+    }
+
+    area(): number {
+        return Math.PI * this.radius * this.radius;
+    }
+}
+
+function calculateArea(shapes: Shape[]): number {
+    return shapes.reduce((area, shape) => area + shape.area(), 0);
+}
+```
+
+3. Liskov Substitution Principle (LSP): Los objetos de una superclase deberian ser reemplazables por objetos de sus subclases sin afectar la funcionalidad del programa.
+
+```typescript
+class Bird {
+    fly() {
+        console.log("Puedo volar!");
+    }
+}
+
+class Duck extends Bird {}
+
+class Ostrich extends Bird {
+    fly() {
+        throw new Error("No puedo volar!");
+    }
+}
+
+function makeBirdFly(bird: Bird) {
+    bird.fly();
+}
+
+const duck = new Duck();
+const ostrich = new Ostrich();
+
+makeBirdFly(duck);      // Funciona bien
+makeBirdFly(ostrich);   // Error en tiempo de ejecución
+```
+
+4. Principio de Segregación de Interfaces (Interface Segregation Principle, ISP): Un cliente no deberia verse forzado a depender de interfaces que no usa.
+
+```typescript
+interface Bird {
+    eat(): void;
+}
+
+interface FlyingBird extends Bird {
+    fly(): void;
+}
+
+class Duck implements FlyingBird {
+    eat() {
+        console.log("El pato está comiendo.");
+    }
+
+    fly() {
+        console.log("El pato está volando.");
+    }
+}
+
+class Ostrich implements Bird {
+    eat() {
+        console.log("El avestruz está comiendo.");
+    }
+}
+```
+
+
+5. Dependency Inversion Principle (DIP): Las clases de alto nivel no deberian depender de las clases de bajo nivel. Ambas deberian depender de abstracciones.
+
+```typescript
+interface Database {
+    save(data: string): void;
+}
+
+class MongoDB implements Database {
+    save(data: string) {
+        console.log(`Guardando datos en MongoDB: ${data}`);
+    }
+}
+
+class UserService {
+    constructor(private db: Database) {}
+
+    saveUserData(data: string) {
+        this.db.save(data);
+    }
+}
+
+const db = new MongoDB();
+const userService = new UserService(db);
+userService.saveUserData("datos de usuario");
+```
+
+<a id="ent12"></a>
+
+### **Que es la inyeccion de dependencias?**
+
+[Volver al indice](#entrevista-base)
+
+Es un patron de disenio (DI) en donde si necesito un servicio o componentes, no los creo en el componente padre mismo, si no que lo creo en otro archivo y simplemente lo inyecto en donde lo necesito.
+
+Esto facilita el testing ya que lo vuelve mas modular en si mismo, y me facilita el uso de `stub` o `mocks` para simular el funcionamiento de algo inyectado.
+
+```typescript
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+class EngineService {
+  start() {
+    console.log('Engine started');
+  }
+}
+
+import { Component } from '@angular/core';
+import { EngineService } from './engine.service';
+
+@Component({
+  selector: 'app-car',
+  template: `<h1>Car Component</h1>`
+})
+export class CarComponent {
+
+  // Aca angular utiliza el constructor para inyectar el servicio EngineService
+  constructor(private engineService: EngineService) {}
+
+  // En Angular mas moderno se recomienda usar el injects en vez de agregarlo en el constructor como se ve aca abajo
+  private readonly engineService = inject(EngineService);
+
+  startCar() {
+    this.engineService.start();
+  }
+}
+```
+
+<a id="ent16"></a>
+
+### **Memoization**
+
+[Volver al indice](#entrevista-base)
+
+Es una tecnica donde se guarda el resultado de una operacion costosa para poder devolverla si se realizan llamadas consecutivas a la misma operacion. Es muy util en funciones puras donde el resultado depende exclusivamente de los valores de entrada.
+
+Cuando una función memoizada se llama por primera vez con un conjunto particular de argumentos, calcula el resultado como lo haría normalmente. Luego, antes de devolver el resultado, lo almacena en una especie de caché (generalmente un objeto o un mapa) junto con los argumentos utilizados para generar ese resultado. Si la función se llama nuevamente con los mismos argumentos, la función puede simplemente buscar en la caché y devolver el resultado almacenado en lugar de recalcularlo.
+
+```typescript
+function memoize<T extends (...args: any[]) => any>(fn: T): T {
+    const cache = new Map<string, ReturnType<T>>();
+
+    return function(...args: Parameters<T>): ReturnType<T> {
+        const key = JSON.stringify(args);
+        if (cache.has(key)) {
+            return cache.get(key) as ReturnType<T>;
+        }
+
+        const result = fn(...args);
+        cache.set(key, result);
+        return result;
+    } as T;
+}
+
+function fibonacci(n: number): number {
+    if (n <= 1) return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+const memoizedFibonacci = memoize(fibonacci);
+
+console.log(memoizedFibonacci(40));  // Calcula y almacena en caché
+console.log(memoizedFibonacci(40));  // Recupera de la caché, mucho más rápido
+```
+
+Lo negativo que posee es que estas memorizaciones son guardadas en memoria, asi que seria necesario tener no solo un buen sistema de limpieza de cache si no tambien de manejo de memoria. 
+
+En React tenemos el hook `useMemo` que hace uso de esto mismo guardando resultados, tambien tenemos `useCallback` que es similar pero para funciones.
+
+<a id="ent17"></a>
+
+### **¿Cuáles son las diferencias clave entre HTTP/1.1, HTTP/2 y HTTP/3? ¿Por qué se considera HTTP/2 más eficiente que HTTP/1.1?**
+
+[Volver al indice](#entrevista-base)
+
+Todas estas versiones de HTTP introdujeron mejoras enormes en cada una de ellas. La primera version introdujo el protocolo de comunicacion en la web, la segunda version introdujo cosas que incluso al dia de hoy usamos como la multiplicidad de solicitudes sin esperar un desbloqueo e incluso la posibilidad de manejar un Servidor Push, donde se podia obtener data de antemano sin que el usuario vaya a solicitarla, dando como resultado la aparicion de las notificaciones push que hoy usamos.
+En el caso de HTTP/3, se introdujo el protocolo QUIC, que es un protocolo de transporte que se ejecuta sobre UDP en lugar de TCP, lo que permite una comunicacion mas rapida y segura, pero el mayor salto fue desde HTTP1 a HTTP2.
+
+<a id="ent18"></a>
+
+### **Explica las diferencias entre REST y GraphQL. ¿Cuándo usarías uno sobre el otro?**
+
+[Volver al indice](#entrevista-base)
+
+| REST | GraphQL |
+| --- | --- |
+| Es un link para cada recurso | Es un solo link para varios recursos, endpoint unico |
+| Puede tener problemas de sobre-recuperacion (mas informacion de la necesaria) o sub-recuperacion (Menos informacion de la necesaria), lo cual causa que necesitemos varias consultas para tener lo que precisamos, o tengamos payloads muy pesados | El cliente puede especificar que campos quiere en la consulta |
+| Es mas facil de desarrollar desde cero pero complicado de escalar | Su inicializacion es compleja, pero si se tienen los datos necesarios, los cambios que se tendrian que hacer serian minimos |
+| Como las consultas son con su propio endpoint y pueden ser dentro de todo predecibles, el catching es mucho mas facil de implementar | Como las consultas son variadas, el catching es complicado de implementar, aunque hay tecnicas especificas | 
+| Se recomienda usar REST cuando la seguridad y el catching son una prioridad, ademas si tengo clientes que buscan servicios predecibles | Se recomienda cuando es importante el minimizar la cantidad de solicitudes hechas en el servidor |
+
+<a id="ent19"></a>
+
+### **Cuales son los ataques mas comunes en la web? Nombrar tambien sus protecciones del lado del cliente**
+
+[Volver al indice](#entrevista-base)
+
+**Cross Site Scripting XSS**
+
+Es injectar scripts en las paginas web para obtener datos como cookies, sesiones, etc.
+
+- Usar `Content Security Policy` para limitar los recursos que se pueden cargar en una página web
+- Asegurar los inputs de los usuarios para que no se pueda inyectar codigo malicioso
+- Usar funciones para escapar caracteres especiales que pueden identificar cuando se trata de un script
+
+**Inyeccion SQL**
+
+Es muy parecido al anterior pero en este caso el usuario trata de correr consultar SQL en los inputs o en las requests al servidor para obtener cierto acceso o informacion. 
+
+- Sanitizar los inputs de los usuarios
+
+**Man in the middle**
+
+Es cuando un tercer interlocutor esta espiando de alguna manera la comunicacion entre dos puntos. 
+
+- Usar HTTPS para asegurar la comunicacion
+- Implementar HSTP Strict Transport Security para forzar conexiones seguras
+- Verificar los certificados SSL/TLS
+
+**Clickjacking**
+
+Engaña al usuario para que haga clic en algo diferente a lo que percibe, potencialmente revelando información confidencial o tomando control de su cuenta.
+
+- Utilizar la cabecera HTTP X-Frame-Options para evitar que la página sea incrustada en iframes de otros dominios.
+
+**CSRF (Cross-Site Request Forgery)**
+
+Cuando por ejemplo estoy en la pagina de mi banco, y al mismo tiempo ingreso a una pagina maliciosa, podria suceder que se realicen trasferencias en mi banco sin mi autorizacion. 
+
+- Uso de tokens CSRF que es una especie de identificacion unica que se envia por solicitud y que es validada antes de realizar la accion
+- Usar metodos POST cuando son metodos importantes ya que la mayoria de las CSRF tratan de ser realizadas con metodos GET ya que son mas faciles de disimular
+- Politica SAmeSite en las cookies. La política de SameSite es una configuración que puedes añadir a las cookies para controlar si se deben enviar con solicitudes de origen cruzado. Si configuras `SameSite=Strict`, la cookie solo se enviará si la solicitud proviene del mismo sitio que originalmente estableció la cookie. Esto ayuda a prevenir ataques CSRF porque impide que las cookies se envíen junto con solicitudes iniciadas por sitios maliciosos. Es decir, las cookies no pueden ser compartidas con otros dominios. 
+
+<a id="ent20"></a>
+
+### **¿Qué es el concepto de "lazy loading" y cómo se implementa en una aplicación web?**
+
+[Volver al indice](#entrevista-base)
+
+- Virtualizacion (Como el Lazy Loading pero para listas)
+- Lazy Loading de imagenes (Cargar las imagenes solo cuando son visibles)
+- Lazy Loading de modulos (Cargar modulos solo cuando son necesarios)
+- Code Splitting (Dividir el codigo en partes mas pequeñas para cargar solo lo necesario)
+- Catching (Guardar datos en memoria para no tener que volver a pedirlos)
+- Optimizar el tamanio del bundle
+- Evitar memory leaks (No declarar cosas que no se usan)
+
+Tambien llamado carga diferida es un metodo en desarrollo web y mobile en donde los recursos necesarios con cargados solo cuando se necesitan, reduciendo el tiempo de carga inicial y ahorrando ancho de banda.
+
+Se realiza con:
+
+- Imagenes, se cargan cuando ya son visibles
+
+```html
+<img src="imagen.jpg" alt="Ejemplo" loading="lazy" />
+```
+
+- Componentes, se cargan cuando se necesitan
+
+```jsx
+import React, { Suspense, lazy } from 'react';
+
+const LazyComponent = lazy(() => import('./MiComponente'));
+
+function App() {
+    return (
+        <div>
+            <Suspense fallback={<div>Cargando...</div>}>
+                <LazyComponent />
+            </Suspense>
+        </div>
+    );
+}
+```
+
+- Modulos, no se incluyen en el bundle principal de una si no que solo se incluye si es necesario
+
+```javascript
+document.getElementById("boton").addEventListener("click", () => {
+    import('./miModulo.js').then(module => {
+        module.miFuncion();
+    });
+});
+```
+
+El modulo miModulo.js es solo cargado cuando se apreta el boton.
+
+<a id="ent21"></a>
+
+### **Mejoras de Performance**
+
+[Volver al indice](#entrevista-base)
+
+- Utilizar `for` en lugar de `forEach` ya que aparentemente es mucho mas eficiente
+- Reducir la cantidad de llamadas a funciones dentro de un bucle.
+- Cachear valores para no re-calcularlos todo el tiempo
+
+```javascript
+const length = array.length; // Cachea la longitud del array
+for (let i = 0; i < length; i++) {
+    console.log(array[i]);
+}
+```
+
+- Cuando trabajes con eventos frecuentes (como scroll o input), usa debouncing o throttling para limitar la cantidad de ejecuciones.
+
+  - Debouncing: Retrasa la ejecución hasta que la acción se detenga.
+
+```javascript
+function debounce(func, delay) {
+    let timer;
+    return (...args) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => func(...args), delay);
+    };
+}
+
+const onResize = debounce(() => console.log("Resize terminado"), 300);
+window.addEventListener('resize', onResize);
+```
+
+  - Throttling: Limita la frecuencia de ejecución a un cierto intervalo.
+
+```javascript
+function throttle(func, limit) {
+    let lastFunc, lastTime;
+    return (...args) => {
+        const now = Date.now();
+        if (!lastTime || now - lastTime >= limit) {
+            func(...args);
+            lastTime = now;
+        } else {
+            clearTimeout(lastFunc);
+            lastFunc = setTimeout(() => {
+                func(...args);
+                lastTime = now;
+            }, limit - (now - lastTime));
+        }
+    };
+}
+
+const onScroll = throttle(() => console.log("Scrolling"), 200);
+window.addEventListener('scroll', onScroll);
+```
+
+- Evitar declarar cosas que no se usan para evitar Memory Leaks
+- Usar `let` y `const` en lugar de `var` para evitar problemas de scope
+- Javascript es **Single Thread** por lo cual debemos evitar operaciones asincronas que sean muy largas, y si debo implementarlo, hacer uso de `Web Workers`.
+
+```javascript
+// worker.js
+self.onmessage = function (e) {
+    const result = e.data * 2;
+    self.postMessage(result);
+};
+
+---
+
+const worker = new Worker("worker.js");
+worker.postMessage(5);
+
+worker.onmessage = function (e) {
+    console.log("Resultado del worker:", e.data);
+};
+
+- Realizar un profiling de la aplicacion para ver que partes del codigo estan consumiendo mas recursos y optimizarlas. Esto se puede hacer con el `Performance API` de Javascript
+
+```javascript
+console.time("Tiempo de ejecución");
+// Código a medir
+console.timeEnd("Tiempo de ejecución");
+```
+
+- React cuenta con React DevTools, y entre las herramientas se encuentra el Profiler que nos puede ayudar a identificar componentes lentos.
+- Si se pueden combinar las operaciones `map`, `filter` y `reduce` en una sola, hacerlo, ya que es mucho mas eficiente y se evitan recorridos multiples al mismo set de datos. 
+- Evitar mutar los datos si no es necesario.
+- Usar `Maps` y `Sets` en lugar de arrays si necesito hacer busquedas frecuentes, ya que son mucho mas eficientes. Si tengo que usar un Array, usar `push` y `pop` en lugar de un ejemplo un `shift` ya que es mucho mas eficiente.
+- Si se puede utilizar `async/await` en lugar de promises chaining hacerlo, ya que es mucho mas facil de leer y de mantener.
+
+```javascript
+async function fetchData() {
+   const response = await fetch("https://api.example.com/data");
+   const data = await response.json();
+   console.log(data);
+}
+```
+
+- Minificar el codigo con herramientas como Rollup, asi se reduce el peso del archivo y se mejora la velocidad de carga.
+- Configura herramientas como Terser y habilita la compresión Gzip o Brotli en el servidor.
+- Usar imagenes que esten optimizadas en formatos nuevos como WEBP o AVIF, y si es posible, usar SVG en lugar de imagenes.
+- Minimizar las manipulaciones directas al DOM, usar `documentFragment` para manipulaciones masivas.
+- Usar `@ViewChild` en lugar de `document.getElementById` para acceder a elementos del DOM
+
+```typescript
+@Component({
+  selector: 'app-my-component',
+  template: `<div #myElement>Elemento</div>`
+})
+
+export class MyComponent {
+  @ViewChild('myElement') myElement: ElementRef;
+
+  ngAfterViewInit() {
+    this.myElement.nativeElement.style.color = 'red';
+  }
+}
+```
+- Y como fue mencionado anteriormente, la Memoization es una tecnica muy util para mejorar la performance de la aplicacion, guardando operaciones constosas para no tener que volver a realizarlas. Hacer uso de la memoizacion en los componentes que lo necesiten mediante el uso de `useMemo` para valores y `useCallback` para funciones, y asi evitar re-renderizados innecesarios si es que se recibe la misma informacion.
+
+```jsx
+import React, { useMemo, useCallback } from "react";
+
+const ExpensiveComponent = ({ num }) => {
+    const computedValue = useMemo(() => num * 10, [num]);
+
+    const handleClick = useCallback(() => {
+        console.log("Clicked");
+    }, []);
+
+    return <div onClick={handleClick}>{computedValue}</div>;
+};
+```
+
+- Evitar el re-rendering de los elementos de una lista mediante el uso de sus `keys` unicas, esto ayuda a identificar a React que elementos precisan se re-renderizados y cuales no.
+
+```jsx
+items.map(item => <Item key={item.id} data={item} />);
+```
+
+- Usar `trackBy` en las listas para evitar re-renderizados innecesarios
+
+```typescript
+@Component({
+  selector: 'app-my-list',
+  template: `
+    <ul>
+      <li *ngFor="let item of items; trackBy: trackByFn">{{ item }}</li>
+    </ul>
+  `
+})
+export class MyListComponent {
+  items = [1, 2, 3, 4, 5];
+
+  trackByFn(index: number, item: number): number {
+    return index;
+  }
+}
+```
+
+- Utilizar Code Splitting para guardar las partes mas pesadas de la aplicacion para cuando son realmente necesarias
+
+```jsx
+import React, { Suspense, lazy } from "react";
+
+const HeavyComponent = lazy(() => import("./HeavyComponent"));
+
+function App() {
+   return (
+       <Suspense fallback={<div>Cargando...</div>}>
+           <HeavyComponent />
+       </Suspense>
+   );
+}
+```
+
+- Implementar Lazy Loading para cargar modulos solo cuando son necesarios
+
+```typescript
+const routes: Routes = [
+  {
+    path: 'feature',
+    loadChildren: () => import('./feature/feature.module').then(m => m.FeatureModule)
+  }
+];
+```
+
+- Cargar modulos cuando solo son necesarios
+
+```jsx
+if (condition) {
+   import("./module").then(mod => mod.function());
+}
+```
+
+- Si debo renderizar una lista muy extensa, usar `react-window` o `react-virtualized` para solo renderizar los elementos que estan en pantalla, y no todos los elementos de la lista. Es como un lazy loading pero para listas.
+
+```jsx
+import { FixedSizeList } from "react-window";
+
+const Row = ({ index, style }) => <div style={style}>Fila {index}</div>;
+
+function App() {
+   return (
+       <FixedSizeList height={400} itemCount={1000} itemSize={35} width={300}>
+           {Row}
+       </FixedSizeList>
+   );
+}
+```
+
+- Virtualizar (que es como el lazy loading pero para listas) las listas que tengan muchos elementos
+
+```html
+<cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+  <div *cdkVirtualFor="let item of items">{{ item }}</div>
+</cdk-virtual-scroll-viewport>
+```
+
+- **Lifting State Up** es una tecnica en React donde se sube el estado de un componente hijo a un componente padre, esto ayuda a evitar re-renderizados innecesarios.
+
+```jsx
+function Parent() {
+    const [count, setCount] = useState(0);
+
+    return (
+        <div>
+            <Child count={count} setCount={setCount} />
+        </div>
+    );
+}
+
+function Child({ count, setCount }) {
+    return (
+        <div>
+            <button onClick={() => setCount(count + 1)}>Incrementar</button>
+        </div>
+    );
+}
+```
+
+- Si voy a hacer uso de un estado global, usar librerias como Redux Toolkit para manejarlo de manera eficiente, ya que Redux Toolkit maneja el estado de manera inmutable, lo cual es muy importante para React.
+- No importar librerias cuando no son necesarias, y de esas librerias, solo importar los elementos que voy a precisar y no toda la libreria en si misma. Tambien evitar librerias pesadas como Moment o lodash que tienen reemplazos mas pequenios o incluso nativos en Javascript. 
+
+```jsx
+import { isEmpty } from "lodash"; // Solo importa una función
+```
+
+- Angular tiene un metodo de detectar cambios que puede llevar a re-renderizados innecesarios, para evitar esto, se puede usar `ChangeDetectionStrategy.OnPush` en los componentes que no necesitan ser re-renderizados todo el tiempo.
+
+```typescript
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+
+@Component({
+  selector: 'app-my-component',
+  template: `<div>{{ data }}</div>`,
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class MyComponent {
+  @Input() data: string;
+}
+```
+
+- Usar `async` pipe en lugar de subscribirse a un observable manualmente
+
+```typescript
+@Component({
+  selector: 'app-my-component',
+  template: `<div>{{ data$ | async }}</div>`
+})
+
+export class MyComponent {
+  data$ = this.myService.getData();
+
+  constructor(private myService: MyService) {}
+}
+```
+
+- Usar `ng-container` para evitar elementos HTML innecesarios
+
+```typescript
+@Component({
+  selector: 'app-my-component',
+  template: `
+    <ng-container *ngIf="condition">
+      <div>Contenido</div>
+    </ng-container>
+  `
+})
+```
+
+- Usar `ChangeDetectorRef` para marcar los componentes como dirty o checkearlos manualmente. Que sea dirty significa que se debe re-renderizar.
+
+```typescript
+import { ChangeDetectorRef, Component } from '@angular/core';
+
+@Component({
+  selector: 'app-my-component',
+  template: `<div>{{ data }}</div>`
+})
+
+export class MyComponent {
+  data: string;
+
+  constructor(private cdr: ChangeDetectorRef) {}
+
+  fetchData() {
+    this.data = 'Datos cargados';
+    this.cdr.detectChanges();
+  }
+}
+```
+
+- Evitar llamadas a funciones en el `ng.html` ya que se ejecutan en cada ciclo de deteccion de cambios
+
+```html
+<!-- Evita esto -->
+<p>{{ calculateValue() }}</p>
+
+<!-- Mejor esto -->
+<p>{{ value }}</p>
+```
+
+- Habilitar el Preloading strategy para cargar modulos en segundo plano
+
+```typescript
+import { PreloadAllModules } from '@angular/router';
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
+  exports: [RouterModule]
+})
+export class AppRoutingModule {}
+```
+
+- Convierte tu aplicación en una Progressive Web App para mejorar el rendimiento y el almacenamiento en caché de recursos. 
+- Usa HttpClient con RxJS operadores para manejar las solicitudes HTTP de manera eficiente. Usa shareReplay para compartir respuestas en lugar de ejecutar solicitudes repetidas.
+
+```typescript
+import { shareReplay } from 'rxjs/operators';
+
+this.data$ = this.http.get('api/data').pipe(shareReplay(1));
+```
+
+- Implementar Catching
+
+```typescript
+private cache = new Map();
+
+getData() {
+  if (this.cache.has('data')) {
+    return of(this.cache.get('data'));
+  }
+
+  return this.http.get('api/data').pipe(
+    tap(data => this.cache.set('data', data))
+  );
+}
+```
+
+- Habilitar AOT (Ahead-of-Time Compilation) para compilar tu aplicación Angular en tiempo de compilación en lugar de tiempo de ejecución.
+
+```bash
+ng build --aot
+```
+
+<a id="ent25-1"></a>
+
+### **Que es una PWA?**
+
+[Volver al indice](#entrevista-base)
+
+Una Progressive Web App (PWA) es una aplicación web que utiliza tecnologías web modernas para proporcionar una experiencia de usuario similar a la de una aplicación nativa. Funciona tanto en Web como Mobile ya que se adapta. 
+
+Es la tipica aplicacion que podemos instalar en nuestros telefonos sin pasar por la Web Store, haciendo tambien mucho mas facil su actualizacion en caso de ser necesaria. 
+
+Hace uso de **Service Workers** para manejar los datos en segundo plano, y en el caso de haber notificaciones push, tambien manejarlas, ademas permite su funcionamiento offline. 
+
+El framework mas famoso para hacer PWA es Angular, ya que tiene un modulo especifico para ello, pero tambien se puede hacer con React y Vue. Ionic tambien es un framework que se especializa en PWA.
+
+<a id="ent22"></a>
+
+### **Critical Rendering Path**
+
+[Volver al indice](#entrevista-base)
+
+Es el paso a paso que se lleva a cabo para mostrarle al usuario la aplicacion en pantalla. Consta de los siguientes pasos:
+
+- **HTML**: El navegador recibe el HTML y lo convierte en el DOM
+- **CSS**: El navegador recibe el CSS y lo convierte en el CSSOM
+- **Render Tree**: Se combinan el DOM y el CSSOM para crear el Render Tree (Si un elemento tiene `display: none` no es incluido en el mismo)
+- **Layout**: Se calcula el layout de la pagina, tambien se le dice reflow.
+- **Paint**: Se pinta la pagina en pantalla
+- **Composite**: Se combinan las capas para mostrar la pagina en pantalla
+
+Si yo optimizo este proceso, la carga de mi pagina sera mucho mas veloz. 
+
+- Minimizar el tamanio de los archivos mediante la minificacion y compresion de los mismos
+- Eliminar el CSS no utilizado para disminuir el peso
+- Servir recursos estáticos desde un CDN reduce los tiempos de descarga.
+- Optimizar imagenes usando formatos modernos como WEBP o AVIF
+- Cuando JS se esta ejecutando, el renderizado es bloqueado. Usar `async` o `defer` en los scripts para evitar esto. `async` descarga el script de manera asincrona y lo ejecuta cuando esta listo, `defer` descarga el script de manera asincrona pero lo ejecuta cuando el DOM esta listo.
+
+<a id="ent23"></a>
+
+### **¿Cuáles son las diferencias entre localStorage, sessionStorage y las cookies?**
+
+[Volver al indice](#entrevista-base)
+
+| SessionStorage | LocalStorage | Cookies |
+| --- | --- | --- |
+| Los datos se guardan por pestania y no son compartidos entre pestanias | Los datos se guardan en el navegador y son persistentes una vez que el usuario cierra la pestania | Los datos se guardan en el navegador y son persistentes una vez que el usuario cierra la pestania |
+| El tamaño maximo es de 5MB | El tamaño maximo es de 5MB | El tamaño maximo es de 4KB |
+| Se puede acceder a los datos a traves de `window.sessionStorage` | Se puede acceder a los datos a traves de `window.localStorage` | Se puede acceder a los datos a traves de `document.cookie` |
+| Los datos se guardan en forma de pares clave-valor | Los datos se guardan en forma de pares clave-valor | Los datos se guardan en forma de pares clave-valor |
+| Los datos se almacenan en el lado del cliente | Los datos se almacenan en el lado del cliente | Los datos se almacenan en el lado del cliente |
+| Los datos no se envian al servidor con cada solicitud HTTP | Los datos no se envian al servidor con cada solicitud HTTP | Los datos se envian al servidor con cada solicitud HTTP, es por eso que es importante resguardarlas ya que pueden tener session keys para la identificacion ante el llamado a un servicio |
+
+<a id="ent26"></a>
+
+### **Web y Service Workers**
+
+[Volver al indice](#entrevista-base)
+
+Como se menciono anteriormente, Javascript es single-thread, y esto puede ser un problema cuando se trata de operaciones pesadas o que se deben realizar en segundo plano. Para esto se crearon los Service Workers, que son scripts que se ejecutan en segundo plano y que permiten realizar operaciones como notificaciones push, actualizaciones de contenido, y manejo de cache. Es especialmente util tambien cuando quiero que mi app tenga cierta funcionalidad offline.
+
+Los Service Workers son eventos que se ejecutan en segundo plano y que no tienen acceso al DOM, pero si pueden comunicarse con la pagina principal mediante mensajes.
+
+```javascript
+// service-worker.js
+self.addEventListener('fetch', event => {
+    event.respondWith(
+        caches.match(event.request).then(response => {
+            return response || fetch(event.request);
+        })
+    );
+});
+```
+
+```javascript
+// main.js
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js')
+        .then(registration => console.log('Service Worker registrado'))
+        .catch(error => console.error('Error al registrar el Service Worker', error));
+}
+```
+
+<a id="ent27"></a>
+
+### **Event Loop (Macro, Micro tasks, Callback Queue)**
+
+[Volver al indice](#entrevista-base)
+
+El Event Loop es un bucle que se encarga de manejar los eventos y las operaciones asincronas en Javascript.
+
+- **Call Stack**: Es donde se guardan las operaciones sincronas, y se ejecutan en orden de llegada.
+- **Web API**: Es donde se guardan las operaciones asincronas, como `setTimeout`, `fetch`, `addEventListener`, etc.
+- **Callback Queue**: Es donde se guardan las operaciones que se deben ejecutar una vez que el Call Stack este vacio, como los Callbacks.
+- **Event Loop**: Es el encargado de chequear el Call Stack y el Callback Queue, y si el Call Stack esta vacio, toma la primera operacion de la Callback Queue y la pone en el Call Stack.
+- **Microtask Queue**: Es donde se guardan las Promises, y tiene prioridad sobre el Callback Queue.
+
+```javascript
+console.log('Inicio');
+
+setTimeout(() => console.log('Timeout'), 0);
+
+console.log('Fin');
+```
+
+En este caso, el `setTimeout` se va a ejecutar una vez que el Call Stack este vacio, por lo que el orden de ejecucion va a ser `Inicio`, `Fin`, `Timeout`.
+En el caso de las Promises, estas se ejecutan en el Microtask Queue, que tiene prioridad sobre el Callback Queue.
+
+```javascript
+console.log('Inicio');
+
+Promise.resolve().then(() => console.log('Promise'));
+
+console.log('Fin');
+```
+
+En este caso, el orden de ejecucion va a ser `Inicio`, `Fin`, `Promise`, ya que las Promises se ejecutan en el Microtask Queue.
+
+En el caso de los Callbacks, estos se ejecutan en el Callback Queue, y se ejecutan una vez que el Call Stack este vacio.
+
+```javascript
+console.log('Inicio');
+
+setTimeout(() => console.log('Timeout'), 0);
+
+Promise.resolve().then(() => console.log('Promise'));
+
+console.log('Fin');
+```
+
+Y en el caso de async-await se ejecutan en el Microtask Queue, por lo que tienen prioridad sobre los Callbacks.
+
+```javascript
+console.log('Inicio');
+
+(async () => {
+    await Promise.resolve();
+    console.log('Async');
+})();
+
+console.log('Fin');
+```
+
+<a id="ent55"></a>
+
+### **Obfuscation and Minification**
+
+[Volver al indice](#entrevista-base)
+
+La **Minificacion** es eliminar espacios innecesarios para reducir el tamaño del archivo, y asi mejorar la velocidad de carga de la pagina, siempre y cuando su funcionalidad no se vea comprometida. Es reversible, es decir que el codigo original puede ser reconstruido.
+
+La **Obfuscacion** transforma el codigo en algo que los humanos no van a poder entender pero la computadora aun si. Se usa para proteger al codigo de ingenieria inversa, y es irreversible (solo en algunos casos). Debe combinarse con la minificacion, si no el tamanio del archivo podria ser aun mayor. 
+
+La Minificacion se usa en produccion para reducir el tamanio del bundle. La ofsucacion se usa cuando se precisa proteger al codigo fuente por haber manejo de informacion sensible.
+
+<a id="ent29"></a>
+
+### **Promises - Async Await - Callbacks**
+
+[Volver al indice](#entrevista-base)
+
+**Callbacks** es la forma mas antigua de manejar procesos asincronicos en Javascript. En frontend podria ser reemplazado por Promises o Async Await, pero en backend (NodeJs) sigue siendo muy utilizado.
+
+```javascript
+function fetchData(callback) {
+    setTimeout(() => {
+        callback('Datos');
+    }, 1000);
+}
+
+fetchData(data => {
+    console.log(data);
+});
+```
+
+La desventaja de su uso es el famoso **Callback hell** donde al anidar un callback dentro de otro callback puede surgir un codigo bastante ilegible. 
+
+```javascript
+// Ejemplo callback hell
+
+function fetchData(callback) {
+    setTimeout(() => {
+        callback('Datos');
+    }, 1000);
+}
+
+// Anidamiento de callbacks
+fetchData(data => {
+    console.log(data);
+    fetchData(data => {
+        console.log(data);
+        fetchData(data => {
+            console.log(data);
+        });
+    });
+});
+```
+
+Otra cosa a tener cuenta es que los Callbacks se guardan en el **Callback Stack** que tiene menos prioridad de ejecucion que el **Microtask Queue**, donde se guardan las Promises.
+
+Las **Promises** son una forma mas moderna de manejar los procesos asincronicos en Javascript. Poseen diversos estados:
+
+- Rejected: Algo salio mal en la ejecucion, entonces se buscara el codigo catch
+- Solved: La promise se soluciono de forma exitosa
+- Pending: La promise aun esta pendiente de finalizacion
+
+```javascript
+function fetchData() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('Datos');
+        }, 1000);
+    });
+}
+
+fetchData().then(data => {
+    console.log(data);
+});
+```
+
+Las Promises son mucho mas faciles de leer y de mantener que los Callbacks, y ademas se pueden encadenar.
+
+```javascript
+fetchData()
+    .then(data => {
+        console.log(data);
+        return fetchData();
+    })
+    .then(data => {
+        console.log(data);
+        return fetchData();
+    })
+    .then(data => {
+        console.log(data);
+    });
+```
+
+Otra ventaja de las promises es que se pueden, por ejemplo, llamar a varios servicios y finalizar la promise una vez que tenemos todos los resultados
+
+```javascript
+Promise.all([fetchData(), fetchData(), fetchData()])
+    .then(data => {
+        console.log(data);
+    });
+```
+
+**Async Await** es una forma de manejar las Promises de una forma mas sincronica, y es mucho mas facil de leer y de mantener que las Promises.
+
+```javascript
+async function fetchData() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('Datos');
+        }, 1000);
+    });
+}
+
+(async () => {
+    const data = await fetchData();
+    console.log(data);
+})();
+```
+
+El uso de Async Await es muy recomendado en el desarrollo de aplicaciones modernas, ya que es mucho mas facil de leer y de mantener que las Promises.
+
+Promises y Callbacks pueden ser combinados con Async Await, pero no es recomendado ya que se pierde la ventaja de Async Await.
+
+En RxJS se pueden manejar las Promises de una forma mas avanzada, y se pueden hacer operaciones mas complejas con ellas.
+
+<a id="ent32"></a>
+
+### **Beneficios de usar Webpack o Rollup**
+
+[Volver al indice](#entrevista-base)
+
+Son herramientas para realizar el bundle de las aplicaciones.
+
+- Combinan multiples archivos para disminuir la cantidad de solicitudes HTTP
+- Mejoran la velocidad de la carga de recursos en produccion
+- Se realiza Tree Shaking para eliminar el codigo no utilizado
+- Se permite la minificacion
+- Cambian parte del codigo para hacerlo compatible con navegadores que no soporten Javascript
+- Proveen herramientas como HMR (Hot Module Replacement) que permiten actualizaciones rápidas sin recargar toda la aplicación.
+
+Rollup es recomendado para librerias mas pequenias que Webpack en si mismo, ya que ofrece una optimizacion avanzada.
+
+<a id="ent33"></a>
+
+### **¿Qué es el concepto de "tree shaking" y cómo se aplica en una aplicación JavaScript?**
+
+[Volver al indice](#entrevista-base)
+
+El **Tree Shaking** es una tecnica de optimizacion que se utiliza para eliminar el codigo no utilizado de un bundle. Se realiza mediante el uso de modulos ES6, y se realiza en el proceso de minificacion.
+
+```javascript
+// modulo.js
+export const a = 1;
+
+// main.js
+import { a } from './modulo';
+
+console.log(a);
+```
+
+En este caso, si no se utiliza la variable `a` en el archivo `main.js`, el Tree Shaking se encargara de eliminarla del bundle final, mismo con las dependencias. 
+
+<a id="ent68"></a>
+
+### **Mejoras en el ciclo de vida**
+
+[Volver al indice](#entrevista-base)
+
+**React**
+
+En React los componentes se montan, actualizan y desmontan. Para mejorar el ciclo de vida podriamos hacer lo siguiente:
+
+- Optimizar el montaje utilizando `React.memo` para evitar re-renderizados innecesarios, especialmente si se tratan de componentes que no dependen de props y state.
+
+```jsx
+const MyComponent = React.memo(function MyComponent(props) {
+    return <div>{props.value}</div>;
+});
+```
+
+- Cargar componentes de manera diferida y cuando se los precisa para mejorar el rendimiento inicial de la aplicacion
+
+```jsx
+const LazyComponent = React.lazy(() => import('./LazyComponent'));
+
+function App() {
+    return (
+        <React.Suspense fallback={<div>Cargando...</div>}>
+            <LazyComponent />
+        </React.Suspense>
+    );
+}
+```
+
+- Usar el `useEffect` de manera eficiente evitando tareas costosas o innecesarias durante el montaje. Una forma seria usando la funcion de cleanUp para evitar fugas de memoria.
+
+```jsx
+useEffect(() => {
+    const timer = setInterval(() => console.log('Hola'), 1000);
+    return () => clearInterval(timer); // Limpieza en desmontaje
+}, []);
+```
+
+- Desglosar componentes grandes en mas pequenios para manejar su montaje de forma mas especifica.
+- Cancela timers, fetch requests y eventos al desmontar el componente.
+
+**Angular**
+
+En Angular existes hooks como `ngOnInit`, `ngOnChanges`, `ngAfterViewInit`, `ngOnDestroy` que se pueden utilizar para mejorar el ciclo de vida de los componentes.
+
+- Usar `ngOnInit` para inicializaciones
+
+```typescript
+ngOnInit() {
+    this.loadData();
+}
+```
+
+- Usar `ngOnChanges` de manera eficiente evitando logica innecesaria, podriamos realizar logica pesada solo cuando los inputs cambien.
+
+```typescript
+ngOnChanges(changes: SimpleChanges) {
+    if (changes['data'] && changes['data'].currentValue) {
+        this.processData(changes['data'].currentValue);
+    }
+}
+```
+
+- Usar `ChangeDetectionStrategy.OnPush` en los componentes para evitar re-renderizados innecesarios.
+
+```typescript
+@Component({
+    selector: 'app-my-component',
+    templateUrl: './my-component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class MyComponent { }
+```
+
+- Usar el `ngOnDestroy` para realizar limpieza. Cancelar subscripciones, detener timers o event listeners.
+
+```typescript
+ngOnDestroy() {
+    this.subscription.unsubscribe();
+}
+```
+
+Tambien se puede controlar el ciclo de vida de las subscripciones mediante herramientas dadas por RxJs como `takeUntil` o `takeWhile`.
+
+```typescript
+private destroy$ = new Subject<void>();
+
+this.service.getData()
+  .pipe(takeUntil(this.destroy$))
+  .subscribe(data => this.data = data);
+
+ngOnDestroy() {
+    this.destroy$.next();
+    this.destroy$.complete();
+}
+```
+
+<a id="ent34"></a>
+
+### **Redux, sus caracteristicas**
+
+[Volver al indice](#entrevista-base)
+
+Redux es un contenedor de estado que se usa generalmente con React. 
+
+En el **Redux Store** se guarda el estado de la aplicacion al cual podemos acceder mediante **Actions**. 
+
+```javascript
+{
+  type: 'PEDIR_PIZZA',
+  payload: { item: 'pizza' }
+}
+```
+
+El `type` es el tipo de accion que se desea realizar de una cantidad pre-definida, el `payload` es la informacion necesaria para realizar este cambio. Este pedido es manejado por el **Reducer**
+
+```javascript
+function pedidosReducer(state = [], action) {
+  switch (action.type) {
+    case 'PEDIR_PIZZA':
+      return [...state, action.payload.item]; // Añade 'pizza' al pedido
+    default:
+      return state; // Devuelve el estado tal cual si no reconoce la acción
+  }
+}
+```
+
+Una vez que el cambio esta hecho, todos los componentes que la consumen estan al tanto de este cambio y cambian en consecuencia.
+
+Redux guarda la informacion en un solo lugar de la aplicacion y la distribuye a todos los componentes que la necesitan, y es facil de depurar. Es especialmete util en aplicaciones grandes.
+
+<a id="ent53"></a>
+
+### **Redux Async Flow**
+
+[Volver al indice](#entrevista-base)
+
+Redux Async Flow es el flujo asincrono de Redux. Si bien Redux maneja los estados de manera asincrona, a veces necesitamos llevar a cabo tareas asincronas en si mismos, como llamar a una API, y Redux no entiende funciones asincronas, no sabe esperar a que la API termine su procesamiento. 
+
+Para solucionar esto se usa un middleware llamado `Redux Thunk` o `Redux Saga` que funciona como intermediario entre los actions y los reducers, los mismos permiten ejeuctan funciones asincronas en las acciones y despachar nuevas acciones una vez que la primera tarea asincrona termino.
+
+```javascript
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+
+const store = createStore(reducer, applyMiddleware(thunk));
+```
+
+Se suele manejar la informacion en un objeto con 3 elementos:
+
+```javascript
+{
+  loading: false,
+  data: [...], // Datos obtenidos
+  error: null
+}
+```
+
+<a id="ent35"></a>
+
+### **Context API**
+
+[Volver al indice](#entrevista-base)
+
+ContextAPI es una herramienta que viene con React de manera nativa que cumple la misma funcion que Redux pero de una manera mucho mas pequenia. 
+A veces nos puede suceder que si queremos que cierta informacion sea usada por varios componentes caemos en un **prop drilling** donde terminamos pasando esas mismas props de un componente a otro, incluso si ese componente no lo necesita en su totalidad. 
+
+```jsx
+const App = () => {
+  const user = { name: 'John Doe' }; // Datos globales
+
+  return (
+    <Parent user={user} />
+  );
+};
+
+const Parent = ({ user }) => {
+  return (
+    <Child user={user} />
+  );
+};
+
+const Child = ({ user }) => {
+  return <h1>{user.name}</h1>;
+};
+```
+
+En este caso, ContextApi soluciona este problema disponibilizando un sistema de estado global, haciendo que solo el que lo necesita acceda a la informacion. 
+
+ContextApi funciona bajo 3 conceptos:
+
+- Context: Es un contenedor para datos que pueden ser compartidos entre componentes
+
+```jsx
+const UserContext = React.createContext();
+```
+
+- Provider: Es un componente que provee la infomacion a los componentes que lo precisan, solo se deben poner dentro de este los componentes que necesitan la informacion.
+
+```jsx
+<UserContext.Provider value={{ name: 'John Doe' }}>
+  <Parent />
+</UserContext.Provider>
+```
+
+- Consumer: Es el componente que precisa acceder a esta informacion.
+
+```jsx  
+import React from 'react';
+import { UserContext } from './UserContext';
+
+const Child = () => {
+  return (
+    <UserContext.Consumer>
+      {(user) => <h1>Hola, {user.name}!</h1>}
+    </UserContext.Consumer>
+  );
+};
+```
+
+Tambien se puede utilizar el hook `useContext` que facilita la consumicion de esta informacion.
+
+```jsx
+import React, { useContext } from 'react';
+import { UserContext } from './UserContext';
+
+const Child = () => {
+  const user = useContext(UserContext); // Consumir el contexto directamente
+  return <h1>Hola, {user.name}!</h1>;
+};
+```
+
+Las limitaciones que posee ContextApi son
+
+- Cuando el valor del contexto cambia, los elementos que la consumen se van a re-renderizar de manera innecesaria en algunos casos, es por eso que es recomendable dividir los componentes en unidades mas pequenias para poder manejar esto de mejor manera
+- Si preciso manejar estados mas complejos, Redux sigue siendo la mejor opcion
+
+<a id="ent37"></a>
+
+### **useEffect en React**
+
+[Volver al indice](#entrevista-base)
+
+El hook `useEffect` es un hook que aparecio como reemplazo de las funciones de manejo de ciclo de vida de los componentes de clase.
+
+Podemos hacer que se ejecute ante cada renderizado, solo al montar el componente, solo al desmontar el componente, o solo cuando ciertos valores cambian.
+
+```jsx
+// Se ejecuta ante cada renderizado
+useEffect(() => {
+    console.log('Hola');
+});
+
+// Se ejecuta solo al montar el componente
+useEffect(() => {
+    console.log('Hola');
+}, []);
+
+// Se ejecuta solo al desmontar el componente
+useEffect(() => {
+    return () => console.log('Adios');
+}, []);
+
+// Se ejecuta solo cuando el valor de `value` cambia
+useEffect(() => {
+    console.log('Hola');
+}, [value]);
+```
+
+Se pueden realizar diversas cosas dentro del useEffect, como llamadas a las APIs, para las cuales se recomienda que esten en otra funcion aparte y no dentro del useEffect, convirtiendolo en asincrono, ya que React espera que useEffect devuelva `undefined` o una funcion de limpieza, no una Promise. Probablemente funcione, pero tendremos un error en la consola.
+
+<a id="ent69"></a>
+
+### **useActionState en React**
+
+[Volver al indice](#entrevista-base)
+
+Es un hook que en React 18 fue considerado experimental, utilizado para simpliificr la gestion de acciones asincronas en los componentes, como el estado de `loading`, `error` y `data`.
+
+```jsx
+const [state, action, isPending] = useActionState(actionFunction, initialState);
+```
+
+- `actionFunction` es la funcion asincrona
+- `initialState` es el valor inicial del estado
+
+Este hook nos ahorra usar multiples `useState` para el manejo de estos estados
+
+<a id="ent69-1"></a>
+
+### **React Server Components**
+
+[Volver al indice](#entrevista-base)
+
+Es una caracteristica de React que nos permite renderizar algunos componentes en el lado del servidor, y que el cliente solo reciba el HTML necesario para renderizar la pagina, y que lo hidrate (que significa que los hace interactivos sin tener que re-renderizarlos completamente) de ser necesario, esto es muy util para componentes que son estaticos y no son interactivos, todo esto para evitar la carga de JS inutil.
+
+- Disminuye el peso del bundle 
+- Mejora el tiempo de carga ya que el browser no debe hacer tanto trabajo para cargar la pagina
+- Se pueden realizar acciones como acceder a una base de datos desde el lado del servidor sin necesitar de involucrar al cliente
+- En estos componentes marcados como `Server Component` no se puede usar `useState` o `useEffect`, ya que estos son manejados por el cliente
+
+```jsx
+// Componente del Servidor (Rendimiento en el servidor)
+export default function ServerComponent() {
+  // Este código se ejecuta en el servidor
+  const data = fetchDataFromDatabase();  // Llamada al servidor o base de datos
+  return <div>Datos del servidor: {data}</div>;
+}
+
+// Componente del Cliente (Rendimiento en el cliente)
+export default function ClientComponent() {
+  // Este componente puede ser interactivo
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <button onClick={() => setCount(count + 1)}>Haz clic</button>
+      <p>Has hecho clic {count} veces</p>
+    </div>
+  );
+}
+```
+
+Es muy util combinar esta funcionalidad con NextJs para mejorar el rendimiento de la aplicacion.
+
+<a id="ent70"></a>
+
+### **startTransition() React**
+
+[Volver al indice](#entrevista-base)
+
+La función `startTransition()` de React es una herramienta que se utiliza para gestionar actualizaciones de estado que no son críticas para la interacción inmediata del usuario. Su principal objetivo es mejorar la **experiencia de usuario** al permitir que las actualizaciones menos importantes no bloqueen el hilo de ejecución principal y no interfieran con las interacciones críticas.
+
+### ¿Cómo funciona `startTransition()`?
+
+En React, las actualizaciones de estado, por defecto, son **sincrónicas**, lo que significa que cualquier cambio en el estado de un componente o renderización se ejecutará inmediatamente, lo cual puede causar problemas de rendimiento si el componente tiene un renderizado pesado o si hay muchos cambios de estado que se ejecutan al mismo tiempo.
+
+`startTransition()` es una API que permite que ciertas actualizaciones no se consideren prioritarias. Cuando usas `startTransition()`, le estás diciendo a React que esta actualización es **baja prioridad** y puede ser interrumpida si el hilo está ocupado haciendo tareas más importantes, como responder a las interacciones del usuario.
+
+### ¿Cómo se usa `startTransition()`?
+
+Aquí tienes un ejemplo básico de cómo usar `startTransition()`:
+
+```javascript
+import React, { useState, startTransition } from 'react';
+
+function MyComponent() {
+  const [isPending, setIsPending] = useState(false);
+  const [inputValue, setInputValue] = useState('');
+
+  const handleChange = (event) => {
+    const { value } = event.target;
+
+    // Aquí usamos startTransition para hacer que el cambio en el estado de inputValue sea de baja prioridad
+    startTransition(() => {
+      setInputValue(value);
+    });
+
+    // Marca si la actualización está pendiente
+    setIsPending(true);
+  };
+
+  return (
+    <div>
+      <input type="text" value={inputValue} onChange={handleChange} />
+      {isPending && <div>Updating...</div>}
+    </div>
+  );
+}
+```
+
+1. **Prioridad baja para actualizaciones de estado**: Dentro del `startTransition()`, el cambio de estado `setInputValue(value)` se marca como una actualización de baja prioridad, lo que significa que React intentará procesar esta actualización solo cuando haya tiempo disponible, sin bloquear interacciones importantes como el input del usuario.
+   
+2. **Optimización del rendimiento**: Esto permite que, si hay una actualización costosa o renderizado en progreso, las actualizaciones menos importantes no retrasen la interacción del usuario.
+
+### ¿Cuándo se debería usar `startTransition()`?
+
+Se debe usar `startTransition()` cuando tengas actualizaciones de estado o renderizados que no necesiten ser procesados inmediatamente y que no afecten la interacción directa del usuario. Algunos ejemplos incluyen:
+
+- **Filtros o búsquedas en listas grandes**: Si tienes una búsqueda que filtra una lista muy grande y el filtrado no es urgente.
+- **Actualización de datos en segundo plano**: Si necesitas actualizar ciertos estados o cálculos en segundo plano sin interrumpir las interacciones del usuario.
+- **Animaciones o cambios visuales complejos**: Para renderizados pesados o animaciones que no son necesarias de inmediato, como transiciones de interfaz de usuario.
+
+### Beneficios de `startTransition()`
+
+1. **Mejora de la experiencia del usuario**: Evita que la interfaz se congele o se sienta lenta debido a renderizados pesados.
+2. **Optimización del rendimiento**: Al gestionar las actualizaciones de estado con menor prioridad, React puede hacer las actualizaciones más críticas primero, manteniendo la interfaz fluida.
+3. **Control más fino de las actualizaciones**: Permite una separación entre las tareas que son cruciales para la interacción del usuario y las que pueden esperar.
+
+### Limitaciones
+
+- **No reemplaza el uso de `useEffect`**: `startTransition()` no se debe usar para efectos secundarios que deban ocurrir de manera inmediata (como realizar peticiones API).
+- **No aplica a todas las actualizaciones de estado**: Debe usarse en contextos donde el rendimiento es una preocupación, pero no es necesario para todas las actualizaciones de estado.
+
+<a id="ent71"></a>
+
+### **Que mejoras hay en la migracion de AngularJS a Angular?**
+
+[Volver al indice](#entrevista-base)
+
+`useFormStatus()` es un **hook** en React que se introdujo en React 18 como parte de las nuevas APIs para mejorar la experiencia de formularios y manejar estados de carga en el proceso de envío de formularios. Está diseñado para trabajar con formularios que pueden estar en un estado de envío o validación y es especialmente útil para mejorar la accesibilidad y la usabilidad cuando los formularios se envían de manera asincrónica.
+
+`useFormStatus()` te permite manejar el estado de un formulario de forma declarativa y reaccionar a las actualizaciones del estado del formulario, como si está enviando datos (en proceso), si hay un error o si se ha completado con éxito.
+
+Este hook ofrece un estado relacionado con la validación y el envío del formulario, incluyendo propiedades como `pending` (si la acción de envío está pendiente), `submitted` (si el formulario ha sido enviado), y `error` (si hubo un error durante el envío).
+
+El hook `useFormStatus()` devuelve un objeto con los siguientes valores:
+
+1. **`pending`**: Un valor booleano que indica si el formulario está en proceso de envío. Es `true` cuando el formulario está esperando una respuesta (por ejemplo, esperando una respuesta del servidor).
+2. **`submitted`**: Un valor booleano que indica si el formulario ha sido enviado.
+3. **`error`**: Un valor que contiene cualquier error que ocurra durante el proceso de envío del formulario (puede ser un objeto de error si se produjo algún fallo).
+
+Ejemplo básico de uso
+
+Aquí te dejo un ejemplo básico de cómo usar `useFormStatus()` en un formulario React.
+
+```javascript
+import React, { useState } from 'react';
+import { useFormStatus } from 'react';
+
+function MyForm() {
+  const [formData, setFormData] = useState({ name: '', email: '' });
+  
+  // Usamos useFormStatus para manejar el estado del formulario
+  const { pending, submitted, error } = useFormStatus();
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    // Simula el envío del formulario (por ejemplo, hacer una petición a un servidor)
+    try {
+      // Aquí enviaríamos el formulario a una API, pero en este ejemplo solo simulamos
+      await new Promise((resolve) => setTimeout(resolve, 2000));  // Simulando un retraso
+      // Si el envío es exitoso, podemos marcar el formulario como enviado
+      console.log('Formulario enviado con éxito');
+    } catch (error) {
+      console.log('Error en el envío:', error);
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="name">Nombre</label>
+        <input 
+          type="text" 
+          id="name" 
+          value={formData.name}
+          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+        />
+      </div>
+      <div>
+        <label htmlFor="email">Correo Electrónico</label>
+        <input 
+          type="email" 
+          id="email" 
+          value={formData.email}
+          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+        />
+      </div>
+      
+      <button type="submit" disabled={pending}>
+        {pending ? 'Enviando...' : 'Enviar'}
+      </button>
+
+      {submitted && <p>Formulario enviado con éxito.</p>}
+      {error && <p>Error al enviar el formulario: {error.message}</p>}
+    </form>
+  );
+}
+
+export default MyForm;
+```
+
+Explicación del código:
+
+1. **Estados de Formulario**:
+   - Se utiliza `useState` para manejar los valores del formulario (`formData`).
+   - Se utiliza `useFormStatus()` para obtener el estado del formulario en cuanto a su envío (`pending`, `submitted`, `error`).
+   
+2. **Envío del Formulario**:
+   - El formulario está configurado para simular el proceso de envío de datos al hacer una petición simulada con `setTimeout`. 
+   - Durante este proceso, el botón de envío está deshabilitado si el formulario está en estado `pending`, es decir, si está esperando una respuesta.
+   
+3. **Mensajes de Estado**:
+   - Si el formulario se envía con éxito, se muestra un mensaje diciendo "Formulario enviado con éxito".
+   - Si hay un error durante el envío, se muestra un mensaje de error.
+
+Beneficios de usar `useFormStatus()`
+
+- **Mejora la accesibilidad**: Proporciona un estado claro y consistente sobre el envío del formulario, lo que es útil para los lectores de pantalla y otras herramientas de accesibilidad.
+- **Control de estado de carga**: Permite gestionar y mostrar los estados de carga, éxito y error sin tener que manejar manualmente estos estados.
+- **Flujo de trabajo simplificado**: Facilita la gestión del estado relacionado con el formulario, simplificando la lógica que generalmente involucra manejar los estados de validación, envío y error.
+
+Consideraciones
+
+- **Compatibilidad**: Asegúrate de que tu versión de React sea 18 o posterior, ya que `useFormStatus()` es una característica nueva que fue introducida en React 18.
+- **Flujos de trabajo complejos**: Si tu formulario involucra validación compleja o interacciones con múltiples APIs, es posible que necesites integrar este hook con otros hooks personalizados o librerías como Formik o React Hook Form para manejar el estado y las validaciones de manera más avanzada.
+
+<a id="ent72"></a>
+
+### **useOptimistic() React**
+
+[Volver al indice](#entrevista-base)
+
+El hook `useOptimistic()` es una característica introducida en React para manejar **actualizaciones optimistas** de manera más sencilla y declarativa. Se utiliza para actualizar la interfaz de usuario de manera inmediata, asumiendo que una operación asíncrona se completará correctamente, mientras el servidor procesa los datos. Si la operación falla, puedes revertir el estado de la interfaz de usuario.
+
+Este enfoque mejora la experiencia del usuario al hacer que las actualizaciones sean instantáneas, incluso antes de recibir una confirmación del servidor.
+
+---
+
+### ¿Cómo funciona `useOptimistic()`?
+
+`useOptimistic()` es un hook diseñado para trabajar con estados que podrían necesitar ser actualizados de forma optimista. Al usarlo, defines un estado inicial y una función para calcular el nuevo estado después de una actualización. React se encargará de manejar ese estado temporalmente mientras la operación real se completa.
+
+El hook devuelve un par de valores:
+
+1. **`optimisticState`**: El estado actual, incluyendo cualquier cambio optimista que se haya realizado.
+2. **`setOptimisticState`**: Una función para actualizar el estado de manera optimista.
+
+---
+
+### Sintaxis de `useOptimistic()`
+
+```javascript
+const [optimisticState, setOptimisticState] = useOptimistic(initialState, reducer);
+```
+
+- **`initialState`**: El estado inicial que quieres usar.
+- **`reducer`**: Una función que calcula el nuevo estado basado en el estado actual y una acción.
+
+---
+
+### Ejemplo básico
+
+Aquí tienes un ejemplo de cómo usar `useOptimistic()` para manejar una lista de tareas donde las eliminaciones se manejan de forma optimista:
+
+```javascript
+import React, { useOptimistic } from 'react';
+
+function TodoList() {
+  const initialTodos = [
+    { id: 1, text: 'Aprender React' },
+    { id: 2, text: 'Construir una app' },
+    { id: 3, text: 'Publicar en producción' },
+  ];
+
+  // Estado optimista para la lista de tareas
+  const [todos, setTodos] = useOptimistic(initialTodos, (currentTodos, action) => {
+    switch (action.type) {
+      case 'delete':
+        // Eliminar tarea de manera optimista
+        return currentTodos.filter((todo) => todo.id !== action.id);
+      default:
+        return currentTodos;
+    }
+  });
+
+  const handleDelete = async (id) => {
+    // Actualización optimista: elimina la tarea de inmediato
+    setTodos({ type: 'delete', id });
+
+    try {
+      // Simular una operación asíncrona, como una petición al servidor
+      await fetch(`/api/todos/${id}`, { method: 'DELETE' });
+    } catch (error) {
+      console.error('Error eliminando la tarea:', error);
+      // Si falla, puedes manejar la reversión manualmente (aquí no se implementa).
+    }
+  };
+
+  return (
+    <ul>
+      {todos.map((todo) => (
+        <li key={todo.id}>
+          {todo.text}{' '}
+          <button onClick={() => handleDelete(todo.id)}>Eliminar</button>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+export default TodoList;
+```
+
+---
+
+### Explicación del ejemplo:
+
+1. **Estado optimista**: Usamos `useOptimistic()` para definir un estado inicial de tareas y un `reducer` que nos permite actualizar ese estado de forma declarativa.
+
+2. **Actualización optimista**: Cuando el usuario elimina una tarea, el estado se actualiza inmediatamente en la interfaz de usuario sin esperar la confirmación del servidor.
+
+3. **Reversión manual (si es necesario)**: Si la operación asíncrona (como la petición al servidor) falla, puedes manejar la reversión al estado anterior. Este manejo de errores no se incluye en el ejemplo, pero es importante para aplicaciones reales.
+
+---
+
+### ¿Cuándo usar `useOptimistic()`?
+
+Usa `useOptimistic()` cuando quieras manejar interacciones de usuario con actualizaciones rápidas en la interfaz, pero que dependen de operaciones asíncronas que podrían fallar. Algunos casos comunes incluyen:
+
+- **Edición de datos**: Actualizar textos, estados o elementos en una lista.
+- **Eliminaciones**: Mostrar instantáneamente que un elemento fue eliminado, aunque aún no se haya confirmado en el servidor.
+- **Creación de elementos**: Mostrar nuevos elementos en la interfaz antes de recibir confirmación del servidor.
+- **Actualizaciones de likes/reacciones**: Incrementar un contador de likes instantáneamente mientras se envía la acción al servidor.
+
+---
+
+### Beneficios de `useOptimistic()`
+
+1. **Experiencia de usuario mejorada**: Las actualizaciones optimistas hacen que la aplicación parezca más rápida y responsiva.
+2. **Código más declarativo**: Con el uso de un `reducer`, puedes definir cómo manejar diferentes acciones de manera clara.
+3. **Integración con la API de React**: Funciona perfectamente con las características de React 18, como el concurrent rendering.
+
+---
+
+### Consideraciones:
+
+- **Reversión manual**: Si la operación falla, tendrás que manejar manualmente la reversión del estado optimista.
+- **No es adecuado para todas las operaciones**: Si el resultado de la operación en el servidor afecta de manera significativa la lógica de la aplicación, puede ser mejor esperar a la confirmación antes de actualizar el estado.
+- **Evitar estados inconsistentes**: Asegúrate de manejar errores correctamente para que la interfaz no muestre datos incorrectos.
+
+
+<a id="ent51-1"></a>
+
+### **Que mejoras hay en la migracion de AngularJS a Angular?**
+
+[Volver al indice](#entrevista-base)
+
+| AngularJS | Angular |
+| --- | --- |
+| Arquitectura MVC (no estrictamente aplicado pero que usaba varios conceptos del mismo donde se separa la logica de negocio de la vista y el controlador) donde los controllers eran el nucleo de la logica de los componentes, y las directivas permitian la reutilizacion de partes de la interfaz | Arquitectura basada en componentes, cada componente tiene su vista y logica, mejorando la modularidad y reutilizacion de codigo |
+| Poseia inyeccion de dependencias aunque era mucho mas complejo de entender, y no era facil de testear | Inyeccion de dependencias mucho mas facil de entender y de testear |
+| El lenguaje principal de AngularJs es Javascript | Angular por defecto usa Typescript |
+| Funcionaba con two-way data binding, que era bueno pero en aplicaciones grandes podia significar un gran problema de rendimiento ya que para mantener los datos actualizados en la vista se debian hacer muchas operaciones | Usa one-way data binding, que es mucho mas eficiente y facil de mantener, ademas de introducir Change Detection y compilacion AOT (ahead of time) precompilando el codigo antes de la ejecucion mejorando tiempos de carga |
+| El sistema de routing de AngularJs era bueno y basico | El sistema de routing de Angular es mas avanzado y ofrece muchas mas herramientas como lazy loading, guards, resolvers, etc |
+| Soportaba enlaces bidireccionales de datos, pero no estaba enfocado en una programacion reactiva | Se puede usar RxJS para manejar los datos de manera reactiva |
+| Todo nuevo archivo y agregado debia hacerse a mano | Se cuenta con Angular CLI que automatiza muchas cosas |
+| En AngularJS tenemos modulos, pero no se soporta el Lazy Loading | Se soporta el Lazy Loading |
+
+<a id="ent65"></a>
+
+### **Decorators en Angular**
+
+[Volver al indice](#entrevista-base)
+
+El concepto de decorators en si no es propio de Angular si no que viene de Typescript. Los decoradores son funciones que se utilizan para modificar clases, metodos, propiedades, parametros, etc.
+
+- `@Component`: Se utiliza para decorar una clase que define un componente de Angular
+
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root', // Nombre de la etiqueta HTML
+  templateUrl: './app.component.html', // Archivo HTML
+  styleUrls: ['./app.component.css'] // Estilos CSS
+})
+export class AppComponent {
+  title = 'Mi aplicación Angular';
+}
+```
+
+- `@Injectable`: marca una clase como inyección de dependencias en Angular. Se usa para declarar que una clase puede ser inyectada en otros componentes o servicios
+
+```typescript
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root' // Este servicio estará disponible en toda la aplicación
+})
+export class DataService {
+  constructor() {}
+
+  getData() {
+    return ['Elemento1', 'Elemento2', 'Elemento3'];
+  }
+}
+```
+
+- ` @NgModule`: Se usa para definir que este componente es un modulo en si mismo. Con la aparicion de los componentes standalone ya no es tan comunmente usado.
+
+```typescript
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [AppComponent], // Componentes que pertenecen al módulo
+  imports: [BrowserModule], // Otros módulos que necesita
+  providers: [], // Servicios a inyectar
+  bootstrap: [AppComponent] // Componente inicial
+})
+export class AppModule {}
+```
+
+- `@Input`: se utiliza para marcar una propiedad de un componente que va a recibir datos desde su componente padre.
+
+```typescript
+import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-child',
+  template: '<h2>{{ name }}</h2>'
+})
+export class ChildComponent {
+  @Input() name: string; // Recibe un valor desde el componente padre
+}
+```
+
+- `@Output`: El decorador @Output se usa para crear un evento personalizado en un componente que puede ser escuchado por su componente padre.
+
+```typescript
+import { Component, Output, EventEmitter } from '@angular/core';
+
+@Component({
+  selector: 'app-child',
+  template: '<button (click)="sendMessage()">Enviar Mensaje</button>'
+})
+export class ChildComponent {
+  @Output() messageEvent = new EventEmitter<string>();
+
+  sendMessage() {
+    this.messageEvent.emit('Hola desde el componente hijo');
+  }
+}
+```
+
+- `@HostListener`: Cuando preciso escuchar cualquier accion en el navegador, como clicks o cambios en el tamanio de la pantalla.
+
+```typescript
+import { Component, HostListener } from '@angular/core';
+
+@Component({
+  selector: 'app-resize-listener',
+  template: '<p>El tamaño de la ventana es: {{ width }}px</p>'
+})
+export class ResizeListenerComponent {
+  width: number = window.innerWidth;
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.width = window.innerWidth;
+  }
+}
+```
+
+- `@ViewChild`: Se utiliza para acceder a un componente hijo desde su componente padre.
+
+```typescript
+import { Component, ViewChild, AfterViewInit } from '@angular/core';
+
+@Component({
+  selector: 'app-parent',
+  template: '<app-child #childComponent></app-child>'
+})
+export class ParentComponent implements AfterViewInit {
+  @ViewChild('childComponent') child: any;
+
+  ngAfterViewInit() {
+    console.log(this.child); // Accede al componente hijo
+  }
+}
+```
+
+<a id="ent65-1"></a>
+
+### **Angular Signals**
+
+[Volver al indice](#entrevista-base)
+
+Angular signals es una caracteristica que aparecio con Angular 16 en donde se introducen herramientas de reacividad para mejorar la gestion de estados y deteccion de cambios. Reemplaza a algunos elementos nativos y a algunos usos de RxJs
+
+Se inspira en **Patrones declarativos** como en el caso de SolidJS o Svelte. 
+
+Un **Signal** es un contenedor que mantiene un valor reactivo (es decir, un valor que cambia con el tiempo) y que puede ser observado por otros componentes, entonces cuando este valor cambia, los componentes cambian en consecuencia. 
+
+```typescript
+import { signal } from '@angular/core';
+
+const counter = signal(0); // Signal inicializado con un valor
+console.log(counter()); // Acceder al valor del signal: 0
+
+counter.set(1); // Actualizar el valor del signal
+console.log(counter()); // Acceder al nuevo valor: 1
+```
+
+No es necesario el manejo de subscripciones como en el caso de RxJS ya que la reactividad esta integrada en el mismo Angular. 
+Al cambiar este Signal, Angular actualiza solo lo necesario sin tener que recorrer todo el arbol de componentes. 
+
+Se pueden crear Signals compuestos, es decir, de mas de un elemento en ellos
+
+```typescript
+import { signal, computed } from '@angular/core';
+
+const firstName = signal('John');
+const lastName = signal('Doe');
+const fullName = computed(() => `${firstName()} ${lastName()}`);
+
+console.log(fullName()); // "John Doe"
+
+firstName.set('Jane');
+console.log(fullName()); // "Jane Doe"
+```
+
+Y si quiero ejecutar una logica cuando un Signal cambia, puedo usar los `Effects`, algo muy similar al `useEffect` de React
+
+```typescript
+import { signal, effect } from '@angular/core';
+
+const counter = signal(0);
+
+effect(() => {
+    console.log(`Counter value is: ${counter()}`);
+});
+
+counter.set(1); // Consola: "Counter value is: 1"
+```
+
+<a id="ent38"></a>
+
+### **¿Qué es RxJS y qué problemas resuelve en el desarrollo de aplicaciones?**
+
+[Volver al indice](#entrevista-base)
+
+Reactive Extensions for Javascript (RxJS) es una libreria que nos permite trabajar con programacion reactiva en Javascript permitiendo el manejo de flujos asincronos de una forma mas declarativa, reactiva y consistente.
+
+- Manejo de peticiones asincronas, en vez de utilizar Callbacks o Promises anidados, se pueden utilizar Observables para manejar flujos de datos asincronos
+- Cuando tengo varias fuentes de datos que manejar que interactuan entre si, en RxJS puedo utilizar operadores como `map`, `combineLatest`, `map`, `filter` y `switchMap` para manejar estos flujos.
+- RxJS ofrece herramientas como `takeUntil` o `takeWhile` para manejar las subscripciones de una forma eficiente y asi evitar memory leaks
+- Con RxJs puedo manejar tanto flujos de datos sincronicos como asincronicos, y puedo combinarlos de una forma muy sencilla
+- Si necesito coordinar multiples tareas asincronicas o flujos, RxJS me permite hacerlo de una forma muy sencilla con `forkJoin`, `merge`, `concat`, `combineLatest`, `zip`, etc, mejorando la concurrencia (la cual significa que puedo manejar multiples tareas al mismo tiempo)
+
+En parte su uso podria ser reemplazado con Angular Signals en Angular 16, pero RxJS sigue siendo una herramienta muy poderosa para manejar flujos de datos asincronos.
+
+<a id="ent39"></a>
+
+### **¿Qué es un Observable en RxJS y cómo difiere de una Promesa en JavaScript?**
+
+[Volver al indice](#entrevista-base)
+
+RxJS (Reactive Extensions for JS) es una libreria que nos permite trabajar con programacion reactiva en Javascript, y la misma posee `Observables` que es un objeto que reprssenta una coleccion de valores o eventos que se emiten a lo largo del tiempo.
+
+Las Promises solo pueden manejar un valor o evento, los Observables pueden manejar varias de manera sincronica e asincronica, por eso es ideal para el manejo de solicitudes HTTP. 
+
+Los observables pueden ser modificados mediante el uso de otras tools de RxJS como `map` (transforma los valores), `filter` (filtra los valores), `reduce` (reduce los valores), `merge` (combina los valores de varios observables), `concat` (combina los valores de varios observables en orden), `forkJoin` (combina los valores de varios observables y devuelve un solo valor), `switchMap` (cancela la subscripcion anterior y se suscribe a la nueva), `debounceTime` (espera un tiempo antes de emitir un valor), `distinctUntilChanged` (emite un valor solo si es diferente al anterior), `catchError` (captura un error y lo maneja), `retry` (reintenta la operacion si falla), entre otros.
+
+Sin embargo los observables por si mismos no hacen nada, precisan que algo este **subscripto** a ellos para que hagan algo, es por eso que es importante desubscribirse de ellos en el estado unmounted de la aplicacion. 
+
+```javascript
+import { Observable } from 'rxjs';
+
+const observable = new Observable(subscriber => {
+  subscriber.next('Hello');
+  subscriber.next('World');
+  subscriber.complete();
+});
+
+observable.subscribe({
+  next(value) {
+    console.log(value); // 'Hello', 'World'
+  },
+  complete() {
+    console.log('Done!');
+  }
+});
+```
+
+| Promises | Observables |
+| --- | --- |
+| Solo pueden emitir un valor o un error | Pueden emitir multiples valores a lo largo del tiempo siempre y cuando la subscripcion este activa |
+| Apenas se crea la Promise, la misma es ejecutad, se le dice `Eager` | No hace nada hasta que alguien este observandolo, es por eso que se le dice `lazy`, porque por si mismo no hace nada |
+| La promesa no se puede cancelar | Se puede cancelar la subscripcion a un observable |
+
+<a id="ent40"></a>
+
+### **Explica la diferencia entre un Observable "cold" y "hot". Proporciona un ejemplo práctico de cada uno.**
+
+[Volver al indice](#entrevista-base)
+
+Los **Cold Observables** son Observables que crean un flujo de datos por cada subscriptor, produciendo datos on-demand, es decir, solo cuando alguien se subscribe. El ejemplo mas comun es el llamado a un servicio con HTTP.
+
+```typescript
+import { Observable } from 'rxjs';
+import { ajax } from 'rxjs/ajax';
+
+const httpObservable = ajax.getJSON('https://jsonplaceholder.typicode.com/posts/1');
+
+// Ambas ejecutaran una llamada HTTP
+httpObservable.subscribe(data => console.log('Subscriber 1:', data));
+httpObservable.subscribe(data => console.log('Subscriber 2:', data));
+``` 
+
+Los **Hot Observables** tienen su propio flujo independiente de las subscripciones, un ejemplo puede ser un WebSocket, donde los datos se emiten independientemente de las subscripciones. Tambien puede suceder que si una parte de subscribe de forma muy tardia, se pierda de alguna informacion, no vera ningun historial al respecto.
+
+```typescript
+import { fromEvent } from 'rxjs';
+
+const clicks$ = fromEvent(document, 'click');
+
+clicks$.subscribe(() => console.log('Subscriber 1: Click detected'));
+setTimeout(() => {
+  clicks$.subscribe(() => console.log('Subscriber 2: Click detected (late subscriber)'));
+}, 5000);
+```
+
+<a id="ent41"></a>
+
+### **Beneficios de usar un CDN**
+
+[Volver al indice](#entrevista-base)
+
+El uso de CDN consta de poner todos mis archivos estaticos en un servidor (preferentemente de alta disponibilidad) para poder obtener mis archivos desde ahi, y no desde mi propio bundle, aumentando asi el peso del mismo.
+
+Como la idea del servidor CDN (Content Delivery Network) es que sea de alta disponibilidad, es muy comun tener servidores en distintas regiones, permitiendo que el usuario acceda al servidor mas cercano a su ubicacion actual para poder obtener la informacion de manera mucho mas rapida. 
+
+Tambien el contenido obtenido de estos CDN es guardado por el servidor a modo de catching, haciendo que su segunda obtencion sea mucho mas veloz. 
+
+Generalmente se usan para:
+
+- Archivos estaticos como fue anteriormente mencionado
+- Distribucion de librerias de terceros como por ejemplo Bootstrap
+- Entrega de contenido multimedia que puede ser un poco pesado
+- Paginas web globales
+
+Cloudflare, Akamai, AWS CloudFront, Google Cloud CDN, son algunos servicios disponibles para CDN cuyo precio varia segun el servicio de catching, seguridad y latencia.
+
+<a id="ent42"></a>
+
+### **Como organizarias el code reuse en una aplicacion?**
+
+[Volver al indice](#entrevista-base)
+
+- Una forma seria fomentando la **Modularizacion**, haciendo modulos reutilizables y separados por responsabilidades. Usa patrones como Separation of Concerns (SoC) y Single Responsibility Principle (SRP)
+- Algo muy parecido pero cuando se utilizan frameworks de Frontend pero con los componentes visuales. 
+- Hacer uso del tipico archivo `utils` con funciones que pueden ser utilizadas en toda la aplicacion.
+- Mismo con los servicios. Apuntar a un patron `Singleton` para garantizar que solo haya una instancia de un servicio en toda la aplicacion.
+- Si hay alguna funcion que incluso podria ser usada en otras aplicaciones, considerar la creacion de una libreria.
+- Apoyarse mucho en patrones de disenio:
+  - Factory Pattern: Crear objetos de forma centralizada
+  - Singleton Pattern: Resguardar una sola instancia de un objeto
+  - Observer Pattern: Manejar eventos y notificaciones de manera centralizada
+  - Strategy Pattern: Cambiar el comportamiento de un objeto en tiempo de ejecucion, para encapsular diferentes algoritmos reutilizables. Esto podria relacionarse mucho con la herencia.
+
+```typescript
+interface PaymentStrategy {
+  pay(amount: number): void;
+}
+
+class CreditCardPayment implements PaymentStrategy {
+  pay(amount: number) {
+    console.log(`Paid ${amount} using credit card`);
+  }
+}
+
+class PaypalPayment implements PaymentStrategy {
+  pay(amount: number) {
+    console.log(`Paid ${amount} using PayPal`);
+  }
+}
+
+const paymentMethod: PaymentStrategy = new CreditCardPayment();
+paymentMethod.pay(100); // "Paid 100 using credit card"
+```
+
+- En React el uso de custom Hooks es ideal para el manejo de logica repetida
+- Hacer uso del tipico archivo de constantes para manejar la misma informacion a lo largo de toda la aplicacion desde una misma fuente.
+
+<a id="ent43"></a>
+
+### **Que es un higher order component?**
+
+[Volver al indice](#entrevista-base)
+
+Es un patron de disenio muy comunmente usado en React en donde una funcion recibe como parametro un componente y devuelve un componente nuevo con una funcioanlidad extendida.
+
+```jsx
+const withExtraProps = (WrappedComponent) => {
+  return (props) => {
+    const extraProps = { extra: 'some extra prop' };
+    return <WrappedComponent {...props} {...extraProps} />;
+  };
+};
+```
+
+Es muy comun cuando debo chequear varias veces si el usuario se encuentra autenticado en la aplicacion
+
+```jsx
+const withAuth = (WrappedComponent) => {
+  return (props) => {
+    const isAuthenticated = true; // Lógica de autenticación
+    if (!isAuthenticated) {
+      return <div>No estás autenticado</div>;
+    }
+    return <WrappedComponent {...props} />;
+  };
+};
+
+const Dashboard = () => {
+  return <h1>Bienvenido al Dashboard</h1>;
+};
+
+const ProtectedDashboard = withAuth(Dashboard);
+
+// Ahora ProtectedDashboard verifica autenticación antes de renderizar Dashboard
+export default function App() {
+  return <ProtectedDashboard />;
+}
+
+```
+
+Existe el concepto de **wrapper hell** en donde tengo demasiados niveles anidados en los componentes, este fue el motivo por el cual React introdujo a los Custom Hook 
+
+```jsx
+const useAuth = () => {
+  const isAuthenticated = true; // Lógica de autenticación
+  return isAuthenticated;
+};
+
+const Dashboard = () => {
+  const isAuthenticated = useAuth();
+  if (!isAuthenticated) {
+    return <div>No estás autenticado</div>;
+  }
+  return <h1>Bienvenido al Dashboard</h1>;
+};
+```
+
+Hoy en dia los HOC son utiles cuando se utilizan patrones de clases, o cuando se necesita un mayor control sobre el ciclo de vida del componente.
+
+<a id="ent44"></a>
+
+### **Patrones de disenio en React**
+
+[Volver al indice](#entrevista-base)
+
+**Componentizacion**
+
+Es el separar la interfaz de usuario en componentes reutilizables, es la base de React en si mismo.
+
+**Contenedor y Presentación (Container-Presenter Pattern)**
+
+Separar los componentes que se encargan de la UI de los componentes de logica. Se le dice componente presentacion y componente contenedor
+
+```jsx
+// Componente Presentación
+const UserList = ({ users }) => (
+  <ul>
+    {users.map((user) => (
+      <li key={user.id}>{user.name}</li>
+    ))}
+  </ul>
+);
+
+// Componente Contenedor
+const UserContainer = () => {
+  const [users, setUsers] = React.useState([]);
+
+  React.useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then((res) => res.json())
+      .then((data) => setUsers(data));
+  }, []);
+
+  return <UserList users={users} />;
+};
+
+export default UserContainer;
+```
+
+**Higher-Order Components (HOCs)**
+
+Como se explico anteriormente, es un patron de disenio muy comunmente usado en React en donde una funcion recibe como parametro un componente y devuelve un componente nuevo con una funcionalidad extendida.
+
+```jsx
+const withLogging = (WrappedComponent) => {
+  return (props) => {
+    console.log('Componente renderizado con props:', props);
+    return <WrappedComponent {...props} />;
+  };
+};
+
+// Uso
+const MyComponent = ({ message }) => <div>{message}</div>;
+const MyComponentWithLogging = withLogging(MyComponent);
+
+// Render
+<MyComponentWithLogging message="Hola, mundo!" />;
+```
+
+**Render Props**
+
+Es un patron de disenio que permite a los componentes compartir logica de renderizado con otros componentes.
+
+```jsx
+const Mouse = ({ render }) => {
+  const [position, setPosition] = React.useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (event) => {
+    setPosition({
+      x: event.clientX,
+      y: event.clientY
+    });
+  };
+
+  React.useEffect(() => {
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
+  return render(position);
+};
+
+// Uso
+const App = () => (
+  <Mouse
+    render={({ x, y }) => (
+      <div>
+        <h1>El mouse está en la posición ({x}, {y})</h1>
+      </div>
+    )}
+  />
+);
+```
+
+**Custom Hooks**
+
+Es un patron de disenio que permite extraer logica de un componente en una funcion reutilizable. reemplaza en parte a los HOC
+
+```jsx
+const useMouse = () => {
+  const [position, setPosition] = React.useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (event) => {
+    setPosition({
+      x: event.clientX,
+      y: event.clientY
+    });
+  };
+
+  React.useEffect(() => {
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
+  return position;
+};
+
+// Uso
+const App = () => {
+  const { x, y } = useMouse();
+
+  return (
+    <div>
+      <h1>El mouse está en la posición ({x}, {y})</h1>
+    </div>
+  );
+};
+```
+
+**Context API - Context pattern**
+
+Es un patron de disenio que permite pasar datos a traves del arbol de componentes sin tener que pasar props manualmente en cada nivel. Elimina el Prop Drilling.
+
+```jsx
+const ThemeContext = React.createContext();
+
+const ThemeProvider = ({ children }) => {
+  const [theme, setTheme] = React.useState('light');
+  return (
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+};
+
+const ThemeSwitcher = () => {
+  const { theme, setTheme } = React.useContext(ThemeContext);
+  return (
+    <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
+      Cambiar a {theme === 'light' ? 'oscuro' : 'claro'}
+    </button>
+  );
+};
+
+const App = () => (
+  <ThemeProvider>
+    <ThemeSwitcher />
+  </ThemeProvider>
+);
+```
+
+**Compound Components**
+
+Es un patron de disenio que permite a los componentes trabajar juntos de manera mas eficiente, como por ejemplo un `select` y `option`
+
+```jsx
+const Select = ({ children }) => {
+  const [selected, setSelected] = React.useState(null);
+
+  const onSelect = (value) => {
+    setSelected(value);
+  };
+
+  return (
+    <div>
+      {React.Children.map(children, (child) => {
+        if (child.type === Option) {
+          return React.cloneElement(child, {
+            onSelect,
+            selected: child.props.value === selected
+          });
+        }
+        return child;
+      })}
+    </div>
+  );
+};
+
+const Option = ({ value, onSelect, selected, children }) => (
+  <div
+    onClick={() => onSelect(value)}
+    style={{ background: selected ? 'lightblue' : 'white' }}
+  >
+    {children}
+  </div>
+);
+
+// Uso
+
+const App = () => (
+  <Select>
+    <Option value="1">Opción 1</Option>
+    <Option value="2">Opción 2</Option>
+    <Option value="3">Opción 3</Option>
+  </Select>
+);
+```
+
+**Controlled y Uncontrolled Components**
+
+Es un patron de disenio que permite manejar los componentes de una forma mas eficiente, en los **Controlled Components** el estado del componente es manejado por React, mientras que en los **Uncontrolled Components** el estado es manejado por el propio componente.
+
+```jsx
+// Controlled Component
+const ControlledInput = () => {
+  const [value, setValue] = React.useState('');
+
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
+
+  return <input value={value} onChange={handleChange} />;
+};
+
+// Uncontrolled Component
+const UncontrolledInput = () => {
+  const inputRef = React.useRef();
+
+  const handleClick = () => {
+    console.log(inputRef.current.value);
+  };
+
+  return (
+    <div>
+    // El estado es manejado por el DOM
+      <input ref={inputRef} />
+      <button onClick={handleClick}>Obtener valor</button>
+    </div>
+  );
+};
+```
+
+<a id="ent45"></a>
+
+### **Patrones de disenio en Angular**
+
+[Volver al indice](#entrevista-base)
+
+**Arquitectura modular**
+
+Trata de separar toda la aplicacion en modulos logicos y funcionales que agrupan componentes, servivios y directivas relacionadas.
+
+```typescript
+// Módulo de usuario (user.module.ts)
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { UserComponent } from './user.component';
+
+@NgModule({
+  declarations: [UserComponent],
+  imports: [CommonModule],
+})
+export class UserModule {}
+
+// Módulo principal (app.module.ts)
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
+import { UserModule } from './user/user.module';
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [BrowserModule, UserModule],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}
+```
+
+**Inyeccion de Dependencias**
+
+Angular gestiona los servicios compartidos mediante la inyeccion de dependencias. Se inyecta mediante el constructor o con `injector`
+
+```typescript
+// Servicio (logger.service.ts)
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root', // Disponible en toda la app
+})
+export class LoggerService {
+  log(message: string): void {
+    console.log('Log:', message);
+  }
+}
+
+// Componente que usa el servicio (app.component.ts)
+import { Component } from '@angular/core';
+import { LoggerService } from './logger.service';
+
+@Component({
+  selector: 'app-root',
+  template: `<button (click)="logMessage()">Log</button>`,
+})
+export class AppComponent {
+  constructor(private logger: LoggerService) {}
+
+  logMessage(): void {
+    this.logger.log('Mensaje desde el componente');
+  }
+}
+```
+
+**Component Communication**
+
+Es el uso de `@Input` y `@Output` para la comunicacion entre componentes, en conjunto con `EventEmitter` para emision de eventos desde componentes hijos y `ViewChild` para acceder a componentes hijos desde componentes padres.
+
+```typescript
+// Componente hijo (child.component.ts)
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+
+@Component({
+  selector: 'app-child',
+  template: `<button (click)="notify()">Notificar al padre</button>`,
+})
+export class ChildComponent {
+  @Input() childMessage: string = ''; // Recibe datos del padre
+  @Output() notifyParent = new EventEmitter<string>();
+
+  notify(): void {
+    this.notifyParent.emit('Mensaje del hijo');
+  }
+}
+
+// Componente padre (parent.component.ts)
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-parent',
+  template: `
+    <app-child
+      [childMessage]="'Hola desde el padre'"
+      (notifyParent)="handleNotification($event)"
+    ></app-child>
+  `,
+})
+export class ParentComponent {
+  handleNotification(message: string): void {
+    console.log('Mensaje recibido:', message);
+  }
+}
+```
+
+**Singleton Services**
+
+Si un servicio que luego sera inyectado posee el `injectable` con el valor `root` eso significa que habra una sola instancia de la misma en toda la aplicacion.
+
+```typescript
+// Servicio global (state.service.ts)
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class StateService {
+  private state = { counter: 0 };
+
+  getCounter(): number {
+    return this.state.counter;
+  }
+
+  incrementCounter(): void {
+    this.state.counter++;
+  }
+}
+
+// Componentes que comparten el estado
+@Component({ /* ... */ })
+export class ComponentA {
+  constructor(private stateService: StateService) {}
+
+  increment(): void {
+    this.stateService.incrementCounter();
+  }
+}
+
+@Component({ /* ... */ })
+export class ComponentB {
+  constructor(private stateService: StateService) {}
+
+  getCounter(): number {
+    return this.stateService.getCounter();
+  }
+}
+```
+
+**Redux Pattern**
+
+Es el uso de Redux o NgRx para el manejo de estados complejos en aplicaciones grandes. 
+
+```typescript
+
+// Defino estado y accioned
+
+export interface AppState {
+  count: number;
+}
+
+export const increment = createAction('[Counter] Increment');
+export const decrement = createAction('[Counter] Decrement');
+
+// Reducer
+
+export const counterReducer = createReducer(
+  initialState,
+  on(increment, (state) => ({ ...state, count: state.count + 1 })),
+  on(decrement, (state) => ({ ...state, count: state.count - 1 }))
+);
+
+// Uso
+
+export class CounterComponent {
+  count$ = this.store.select('count');
+
+  constructor(private store: Store<{ count: number }>) {}
+
+  increment() {
+    this.store.dispatch(increment());
+  }
+
+  decrement() {
+    this.store.dispatch(decrement());
+  }
+}
+```
+
+**Reactive Forms**
+
+Mediante el uso de `ReactiveFormsModule` puedo manejar estados complejos de formularios.
+
+```typescript
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+@Component({
+  selector: 'app-reactive-form',
+  template: `
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <input formControlName="name" placeholder="Nombre" />
+      <button type="submit" [disabled]="form.invalid">Enviar</button>
+    </form>
+  `,
+})
+export class ReactiveFormComponent {
+  form: FormGroup;
+
+  constructor(private fb: FormBuilder) {
+    this.form = this.fb.group({
+      name: ['', Validators.required],
+    });
+  }
+
+  onSubmit(): void {
+    console.log(this.form.value);
+  }
+}
+```
+
+**Lazy Loading**
+
+Es el uso de `loadChildren` en el archivo de rutas para cargar modulos de manera asincrona.
+
+```typescript
+// Ruta con Lazy Loading (app-routing.module.ts)
+const routes: Routes = [
+  { path: '', component: HomeComponent },
+  {
+    path: 'users',
+    loadChildren: () =>
+      import('./user/user.module').then((m) => m.UserModule),
+  },
+];
+```
+
+**Facade Pattern**
+
+Abstrae la logica compleja de varios servicios en una sola clase para proporcionar una API simplificada para el resto de la aplicacion.
+
+Por ejemplo en este caso, `UserFacade` combina el uso de `userService` y `authService` en uno solo.
+
+```typescript
+// Servicios individuales
+@Injectable({ providedIn: 'root' })
+export class UserService {
+  getUser() {
+    return { name: 'John Doe' };
+  }
+}
+
+@Injectable({ providedIn: 'root' })
+export class AuthService {
+  isAuthenticated() {
+    return true;
+  }
+}
+
+// Fachada (user.facade.ts)
+@Injectable({ providedIn: 'root' })
+export class UserFacade {
+  constructor(
+    private userService: UserService,
+    private authService: AuthService
+  ) {}
+
+  getUserData() {
+    if (this.authService.isAuthenticated()) {
+      return this.userService.getUser();
+    }
+    return null;
+  }
+}
+
+// Componente que usa la fachada
+@Component({ /* ... */ })
+export class ProfileComponent {
+  constructor(private userFacade: UserFacade) {}
+
+  getUser() {
+    console.log(this.userFacade.getUserData());
+  }
+}
+```
+
+<a id="ent46"></a>
+
+### **Patrones de disenio en Frontend**
+
+[Volver al indice](#entrevista-base)
+
+**Patrones de estructura**
+
+- **Atomic Design**: Basado en dividir la interfaz en componentes más pequeños y reutilizables. Los átomos son los elementos básicos (como botones e inputs), las moléculas combinaciones de átomos (como un formulario), y los organismos son bloques completos de la interfaz (como una barra de navegación).
+- **Layout Responsivos**: Usar técnicas como CSS Grid o Flexbox junto con media queries para crear interfaces adaptativas que se ajusten a diferentes resoluciones y dispositivos.
+- **Componentizacion**: Dividir la UI en componentes reutilizables mejora la mantenibilidad, legibilidad y escalabilidad del código.
+
+**Patrones de comportamiento**
+
+- **Singleton**: Manejar un unico estado compartido across toda la aplicacion como una sesion de usuario o un carrito de compras. 
+- **Observer**: Manejar eventos y notificaciones de manera centralizada mediante subscripciones y emisiones de eventos. Por ejemplo, es útil para manejar eventos en tiempo real, como actualizaciones de datos en un chat o en una notificación global.
+- **Strategy**: Cambiar el comportamiento de un objeto en tiempo de ejecucion, para encapsular diferentes algoritmos reutilizables. Esto podria relacionarse mucho con la herencia. Por ejemplo, en una tienda online, podrías encapsular diferentes estrategias de cálculo de descuento para aplicarlas en diferentes contextos.
+- **Factory**: Crear objetos de forma centralizada. Por ejemplo, se puede usar una Factory para generar diferentes instancias de botones o componentes dinámicamente, dependiendo de los parámetros recibidos.
+- **Decorator**: Agregar funcionalidades a un objeto sin modificar su estructura. Por ejemplo, añadir un log a una función sin modificar su lógica original.
+- **Facade**: Abstrae la logica compleja de varios servicios en una sola clase para proporcionar una API simplificada para el resto de la aplicacion. Por ejemplo, un servicio que combine múltiples API y exponga una interfaz simplificada a los consumidores.
+- **Adapter**: Permite que dos interfaces incompatibles trabajen juntas
+- **Chain of Responsibility**: Permite que multiples objetos manejen una peticion sin que el cliente sepa cual objeto la maneja
+- **Command**: Encapsula una peticion como un objeto, permitiendo parametrizar clientes con diferentes peticiones, colas y logs
+- **State**: Permite que un objeto cambie su comportamiento cuando su estado cambia
+- **Memento**: Permite que un objeto capture su estado interno y lo restaure mas tarde
+- **Proxy**: Proporciona un objeto de sustitucion o marcador de posicion para otro objeto
+- **Template Method**: Define el esqueleto de un algoritmo en una operacion, permitiendo que las subclases redefinan ciertos pasos del algoritmo sin cambiar su estructura
+
+**Patrones de renderizado**
+
+- **Lazy Loading**: Retrasa la carga de recursos hasta que los mismos sean necesarios
+- **Skeleton Screens**: Muestra un esqueleto, es decir, un elemento basico o placeholder mientras los datos reales son cargados
+- **Infinite Scroll y Paginacion**: Carga de contenido mediante el scroll o mediante la paginacion
+
+**Patrones de gestion de estado**
+
+- **Flux**: Patron unidireccional de flujo de datos como Redux. (acciones -> reducers -> estado -> vista).
+- **MVC** Se divide la logica en 3 capas, el modelo donde se gestionan datos, view donde se muestran los datos y controller, donde se conectan ambos
+- **MVVM**: Modelo Vista VistaModelo, donde el ViewModel se encarga de la logica de negocio y la vista de la presentacion, en esto se basa Angular
+
+**Patrones de comunicacion**
+
+- **Mediator**: Un intermediario que gestiona la comunicación entre módulos o componentes. Un ejemplo es Redux o ContextApi, mejora la desacopladura entre módulos, lo que simplifica el mantenimiento.
+- **Pub-Sub**: Componentes se encargan de publicar eventos y otros se subcriben a los mismos, como un sistema de notificaciones. `EventEmitter` en Angular o `EventTarget` en Javascript
+
+**Patrones de optimizacion**
+
+- **Virtual DOM**: Usado en React para comparar en todo momento las diferencias entre el DOM y el DOM Virtual, y asi actualizar solo lo necesario.
+- **Code Splitting**: Dividir el codigo en distintos bundles para cargar solo lo necesario, usar `React.lazy` o `import()`
+- **Memoizacion**: Guardar el resultado de una funcion para evitar recalcularlo en el futuro
+
+<a id="ent47"></a>
+
+### **Antipatrones en Frontend**
+
+[Volver al indice](#entrevista-base)
+
+Un antipatron es una solucion comun pero ineficiente a un problema comun.
+
+- Spaghetti Code: Codigo desorganizado y dificil de mantener
+- Over-Engineering: Hacer una solucion mas compleja de lo necesario
+- HArdcoding: Codificar valores que deberian ser dinamicos
+- Global Scope Pollution: Crear variables globales que pueden ser accedidas desde cualquier parte de la aplicacion pero en demasiada cantidad, causando conflictos
+- Lack of State Management: No manejar el estado de la aplicacion de manera eficiente, como usar `useState` en muchos componentes sin ningun tipo de sincronizacion clara
+- No seguir el principio DRY (Do not repeat youself) copiando y pegando codigo en lugar de hacerlo reutilizable
+- Overfetching, es traer demasiada informacion desde un servicio cuando solo preciso una parte
+- Underfetching es lo contrario al anterior, traer menos datos de los que necesito, obligandome a hacer demasiadas llamadas
+- CSS Specificity Hell, es cuando se tiene un archivo de estilos muy grande y no se puede sobreescribir facilmente
+- No manejar errores de manera correcta, por ejemplo, no usar el bloque catch en un llamado asincronico.
+
+<a id="ent48"></a>
+
+### **Que es el Server Side Rendering?**
+
+[Volver al indice](#entrevista-base)
+
+Consta de renderizar los componentes del lado del servidor en lugar del HTMl minimo y necesario. 
+
+- Se hace una solicitud al servidor
+- El servidor procesa los componentes y genera un HTML completamente renderizado basado en datos necesarios
+- Se entrega el HTML al cliente
+- El codigo cliente hidrata este codigo, haciendolo interactivo
+
+Sus **beneficios** son:
+
+- Mejor rendimiento inicial ya que se recibe un HTML ya completo
+- SEO optimizado ya que los motores de busqueda pueden leer el contenido de la pagina de antemano e indexarlo, mismo para las redes sociales
+- Mayor accesibilidad, todo lo estatico ya se encuentra en pantalla para ser consumido
+
+Sus **desventajas** son:
+
+- Mayor carga en el servidor ya que debe procesar cada solicitud y si es una aplicacion muy grande se vuelve mas complicado
+- Latencia inicial, debe cargarse todo y en el mientras tanto puede que no veamos nada
+- Es complejo de aplicar
+- La hidratacion puede ser costosa de implementar
+
+Generalmente se usa NextJs que es un framework de React que facilita la implementacion de SSR
+
+```javascript
+import React from 'react';
+
+export async function getServerSideProps() {
+  // Código que se ejecuta en el servidor
+  const data = await fetch('https://api.example.com/posts').then((res) => res.json());
+  return { props: { posts: data } };
+}
+
+export default function Home({ posts }) {
+  return (
+    <div>
+      <h1>Posts</h1>
+      <ul>
+        {posts.map((post) => (
+          <li key={post.id}>{post.title}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+```
+
+En el caso de Angular existe Angular Universal. 
+
+Se recomienda usar SSR cuando:
+
+- Nuestra pagina depende del SEO
+- Se quiere mejorar el tiempo de primera carga para usuarios con conexiones lentas
+- Es importante tener contenido 100% accesible
+
+<a id="ent52"></a>
+
+### **Que es el Static site rendering?**
+
+[Volver al indice](#entrevista-base)
+
+Es basicamente cuando las paginas de una web se generan como archivos HTML estaticos en el momento de la compilacion. El contenido es estatico y esta listo para ser servido por un CDN o un servidor, no es generado de manera dinamica. No se depende del backend para la carga.
+
+En React se puede implementar usando `getStaticProps`
+
+```javascript
+import React from "react";
+
+export async function getStaticProps() {
+  // Llamada a una API o fuente de datos durante el tiempo de compilación
+  const data = await fetch("https://api.example.com/posts").then((res) =>
+    res.json()
+  );
+
+  return {
+    props: {
+      posts: data,
+    },
+  };
+}
+
+export default function Home({ posts }) {
+  return (
+    <div>
+      <h1>Posts</h1>
+      <ul>
+        {posts.map((post) => (
+          <li key={post.id}>{post.title}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+```
+
+Tambien se utiliza `Gatsby` para esto. Toda la generacion de contenido ocurre durante la compilacion
+
+```jsx
+import React from "react";
+import { graphql } from "gatsby";
+
+export const query = graphql`
+  query {
+    allMarkdownRemark {
+      edges {
+        node {
+          frontmatter {
+            title
+          }
+          html
+        }
+      }
+    }
+  }
+`;
+
+export default function Blog({ data }) {
+  return (
+    <div>
+      {data.allMarkdownRemark.edges.map(({ node }, index) => (
+        <article key={index}>
+          <h2>{node.frontmatter.title}</h2>
+          <div dangerouslySetInnerHTML={{ __html: node.html }} />
+        </article>
+      ))}
+    </div>
+  );
+}
+```
+
+Se recomienda su uso para portfolios, documentaciones, landing pages, todo lo que sea estatico y no posea mucha posibilidad de interaccion.
+
+<a id="ent54"></a>
+
+### **Arquitectura de microfrontends**
+
+[Volver al indice](#entrevista-base)
+
+Es una arquitectura que se basa en dividir partes de una pagina en distintos repositorios independientes a cargo de distintos equipos. Todo los microfrontend se juntan para formar la aplicacion en si misma. 
+
+Para cada repositorio se puede usar la tecnologia deseada, despliegues independientes, escalabilidad y mantenibilidad. Tambien el mismo microfrontend puede ser utilizado varias veces. 
+
+Sus desventajas son que se requiere una infraestructura mucho mas poderosa para poder gestionar los mismos. 
+
+Dentro de la arquitectura de microfrontend tenemos distintos **Patrones de integracion**
+
+**Integracion del lado del servidor**
+
+El servidor ensambla todos los componentes antes de enviarla al cliente.
+
+**Integracion del lado del cliente**
+
+Cada microfrontend es cargado de manera independiente en el cliente y se ensambla en el navegador.
+
+**Integracion basada en iframes**
+
+Cada microfrontend es renderizado en su propio iframe independiente
+
+**Integracion basada en Web Components**
+
+Cada microfrontend es un Web Component independiente que se puede cargar en cualquier aplicacion
+
+Entre microfrontends la comunicacion se manera de la siguiente manera:
+
+- Eventos globales, crear un `bus de eventos` para que los microfrontends se comuniquen entre si
+- Estado compartido, usar herramientas como Redux, RxJs o un almacenamiento global que este compartido
+- Pasar datos mediante props, como si fueran componentes de React
+- API-REST o GraphQL si quiero que los componentes se comuniquen mediante una API
+
+<a id="ent56"></a>
+
+### **¿Qué es el concepto de "code splitting" y cómo se implementa en una aplicación web?**
+
+[Volver al indice](#entrevista-base)
+
+El Code Splitting es una tecnica en frontend para mejorar la performance, basicamente trata de no cargar todos los archivos o modulos de la aplicacion al mismo tiempo, sino que se carguen solo cuando sean necesarios.
+
+Se puede implementar mediante el uso de Webpack y su funcion `import()`
+
+```javascript
+// Antes: importar todo de forma estática
+import { heavyFunction } from './heavyModule';
+heavyFunction();
+
+// Con code splitting: importar de forma dinámica
+const loadHeavyModule = async () => {
+  // Heavy module sera cargado solo cuando se llame a la funcion, guardado en un archivo aparte
+    const { heavyFunction } = await import('./heavyModule');
+    heavyFunction();
+};
+
+loadHeavyModule();
+```
+
+Tambien ofrece la posibilidad de dividir varias partes del codigo en bundles distintos
+
+```javascript
+entry: {
+    app: './src/index.js',
+    admin: './src/admin.js'
+},
+output: {
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist')
+}
+```
+
+En React se utiliza `React.lazy` y `Suspense` para cargar componentes de manera dinamica
+
+```javascript
+import React, { Suspense } from 'react';
+
+// Importar un componente de forma dinámica
+const LazyComponent = React.lazy(() => import('./LazyComponent'));
+
+const App = () => (
+    <Suspense fallback={<div>Cargando...</div>}>
+    // Solo se cargara mientras sea necesario, mientras tanto se muestra el loading
+        <LazyComponent />
+    </Suspense>
+);
+
+export default App;
+```
+
+En Angular se puede implementar en las rutas, las cuales pueden cargar solo cuando sean necesarias
+
+```typescript
+const routes: Routes = [
+    { path: '', component: HomeComponent },
+    {
+        path: 'admin',
+        loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
+    }
+];
+```
+
+El modulo `admin` solo se cargara cuando se acceda a la ruta `/admin`
+
+En JS vainilla se puede implementar mediante imports dinamicos
+
+```javascript
+document.getElementById('loadFeature').addEventListener('click', () => {
+    import('./feature.js')
+        .then((module) => {
+            module.runFeature();
+        })
+        .catch((err) => {
+            console.error('Error cargando el módulo:', err);
+        });
+});
+```
+
+<a id="ent57"></a>
+
+### **¿Qué es el concepto de "serverless" y cómo se implementa en una aplicación web?**
+
+[Volver al indice](#entrevista-base)
+
+Serverless es una arquitectura donde no se tienen servidores on-premise (es decir, fisicos en un datacenter propio)  si no que se dependen de servicios en la nube como AWS, Azure o Google Cloud para proveer estos servicios. 
+
+En el caso de la web se podria manejar de la siguiente manera:
+
+- **Frontend**: Se puede usar servicios como AWS S3 para almacenar los archivos estaticos, CloudFront para la CDN, y servicios como AWS Amplify para el despliegue de la aplicacion
+- **Backend**: Se puede usar AWS Lambda para funciones serverless, API Gateway para manejar las peticiones, DynamoDB para la base de datos, S3 para almacenar archivos, etc
+- **Base de datos**: Se puede usar servicios como DynamoDB, Firestore, o Aurora Serverless para manejar la base de datos
+- **Autenticacion**: Se puede usar Cognito, Auth0 o Firebase para manejar la autenticacion
+- **Almacenamiento**: Se puede usar S3, Cloud Storage o Azure Blob Storage para almacenar archivos
+- **Notificaciones**: Se puede usar SNS, Firebase Cloud Messaging o Twilio para enviar notificaciones
+- **Analiticas**: Se puede usar Google Analytics, AWS Pinpoint o Firebase Analytics para analiticas
+
+<a id="ent58"></a>
+
+### **¿Qué es el concepto de "progressive web app" y cómo se implementa en una aplicación web?**
+
+[Volver al indice](#entrevista-base)
+
+Es esa aplicacion mobile que si accedemos a la misma desde el navegador nos da la opcion de descargarla sin usar a ninguna Store como intermediario, es una pagina que puede funcionar en varios dispositivos de la misma manera. 
+
+Hace uso de `Service Workers` para manejar la cache y la disponibilidad offline, `Web App Manifest` para definir la apariencia de la aplicacion, y `HTTPS` para garantizar la seguridad de la aplicacion.
+
+Una desventaja que poseen es que no se tienen algunas ventajas como con las aplicaciones nativas, pero igualmente se pueden instalar en el dispositivo y actualizarse por si solas. 
+
+<a id="ent60"></a>
+
+### **Es la metodologia Agile recomendable para todos los proyectos?**
+
+[Volver al indice](#entrevista-base)
+
+No es adecuada para todo tipo de proyectos, es muy util cuando los requisitos no estan al 100% definidos desde el principio y se sabe que va a tener que cambiar en el tiempo, y ajustarse a diversos requerimientos. 
+Si los requisitos son definidos, rigidos y no van a cambiar, no es recomendable usar Agile, ya que se pierde tiempo en la planificacion y en la adaptacion a los cambios.
+
+Tampoco se recomienda que se aplique en equipos muy distribuidos y grandes, ya que en esos casos la comunicacion se puede ver sumamente afectada.
+
+En el caso de que hayan proyectos en donde se tiene un deadline demasiado estricto, un presuesto ajustado, puede que sea mejor usar un approach mas apuntado a **Waterfall**.
+
+En los casos donde Agile no sea adecuado, las siguientes metodologías podrían ser más apropiadas:
+
+- Waterfall (Cascada): Bueno para proyectos con un alcance claro y requisitos definidos de principio a fin, como en el desarrollo de software empresarial con pocos cambios en el camino.
+- Lean: Enfocada en la eficiencia de los procesos y la reducción de desperdicios. Es ideal para proyectos donde se busca minimizar costos y tiempo, y priorizar el valor del cliente.
+- PRINCE2: Una metodología estructurada para la gestión de proyectos, útil en proyectos más grandes y complejos que requieren un enfoque detallado de planificación y control.
+
+Agile es excelente para proyectos con alta incertidumbre, cambios frecuentes y que necesitan entregas incrementales. Sin embargo, no es adecuado para todos los tipos de proyectos. Si el alcance es fijo, el presupuesto es limitado, o el proyecto necesita cumplir con regulaciones estrictas, otras metodologías como Waterfall o Lean pueden ser más efectivas. La clave está en evaluar las características del proyecto y las necesidades del equipo antes de elegir una metodología.
+
+<a id="ent61"></a>
+
+### **Que es un MVP?**
+
+[Volver al indice](#entrevista-base)
+
+MVP (Minimum Viable Product) es una version de un producto con un conjunto minimo de caracteristicas que es suficiente para lanzar el producto y que sea funcional, para poder obtener un feedback rapido y poder iterar sobre el mismo. 
+Generalmente se lanza a un grupo disminuido de usuarios para que puedan dar feedback sobre el mismo. 
+
+Para poder construir y planificar un MVP se deben dejar de lado los detalles innecesarios y es importante enfocarse en la funcionalidad principal y mas importante. 
+
+<a id="ent66"></a>
+
+### **Metodologias de estimacion de tareas**
+
+[Volver al indice](#entrevista-base)
+
+- **Story Points**: Es una tecnica de estimacion de tareas que se basa en la complejidad de la tarea, no en el tiempo que se tarda en realizarla. Se asigna un valor numerico a cada tarea, y se compara con otras tareas para saber cual es mas compleja. Se usa en Scrum.
+- **Horas-Dias Directo**: Es una tecnica de estimacion de tareas que se basa en el tiempo que se tarda en realizar una tarea. Se asigna un tiempo estimado a cada tarea, y se compara con otras tareas para saber cual es mas compleja. Se usa en metodologias mas tradicionales.
+- **Técnica de PERT**: Es una tecnica de estimacion de tareas que se basa en la probabilidad de que una tarea se complete en un tiempo determinado. Se asigna un tiempo optimista, pesimista y mas probable a cada tarea, y se calcula el tiempo esperado. Se usa en proyectos donde se necesita una estimacion mas precisa.
+- **Estimación por analogía**: Es una tecnica de estimacion de tareas que se basa en la comparacion de tareas similares realizadas anteriormente. Se asigna un tiempo estimado a cada tarea, y se compara con otras tareas para saber cual es mas compleja. Se usa en proyectos donde se tiene un historial de tareas realizadas.
+- **Estimación Delphi**: Es una tecnica de estimacion de tareas que se basa en la opinion de expertos. Se asigna un tiempo estimado a cada tarea, y se compara con otras tareas para saber cual es mas compleja. Se usa en proyectos donde se necesita una estimacion mas precisa.
+
+<a id="ent62"></a>
+
+### **Distintos tipos de testing en Frontend**
+
+[Volver al indice](#entrevista-base)
+
+- **Unit Testing**: Se enfoca en probar unidades individuales de codigo, como funciones o componentes, para asegurarse de que funcionan como se espera. Se pueden usar herramientas como Jest, Mocha o Jasmine.
+- **Integration Testing**: En el frontend, esto implica probar interacciones entre múltiples componentes o entre un componente y su API o base de datos. Se hace con Jest o Mocha. Por ejemplo, un test seria Verificar que un componente de formulario interactúe correctamente con un componente de validación o con una API para enviar datos.
+- **End-to-End Testing**: Se enfoca en probar la aplicacion en su totalidad, desde el frontend hasta el backend, para asegurarse de que todas las partes funcionan juntas como se espera. Se puede hacer con herramientas como Cypress o Selenium. Por ejemplo, un test seria Verificar que un usuario pueda registrarse en la aplicacion y que sus datos se guarden correctamente en la base de datos.
+- **Functional Testing**: Se enfoca en probar las funciones de la aplicacion, como la navegacion, la interaccion con los elementos de la interfaz de usuario y la entrada de datos. Se puede hacer con herramientas como Jest, Mocha o Jasmine. Por ejemplo, un test seria Verificar que un usuario pueda navegar por la aplicacion y que los botones y enlaces funcionen correctamente.
+- **UI/UX Testing**: Se enfoca en probar la interfaz de usuario y la experiencia del usuario, como la apariencia, la usabilidad y la accesibilidad de la aplicacion. Se puede hacer con herramientas como Storybook o Chromatic. Por ejemplo, un test seria Verificar que la aplicacion se vea y se comporte correctamente en diferentes dispositivos y navegadores.
+- **Performance Testing**: Se enfoca en probar el rendimiento de la aplicacion, como la velocidad de carga, la capacidad de respuesta y la escalabilidad. Se puede hacer con herramientas como Lighthouse, JMeter o WebPageTest. Por ejemplo, un test seria Verificar que la aplicacion se cargue en menos de 3 segundos y que pueda manejar 1000 usuarios simultáneos.
+- **Regression Testing**: Se enfoca en probar que los cambios recientes en el codigo no hayan afectado el funcionamiento de la aplicacion. Se puede hacer con herramientas como Jest, Mocha o Jasmine. Por ejemplo, un test seria Verificar que una nueva funcionalidad no haya introducido errores en funcionalidades existentes.
+- **Smoke Testing**: Se enfoca en probar las funcionalidades principales de la aplicacion para asegurarse de que funcionan correctamente antes de realizar pruebas más exhaustivas. Se puede hacer con herramientas como Jest, Mocha o Jasmine. Por ejemplo, un test seria Verificar que un usuario pueda iniciar sesión en la aplicacion y que sus datos se muestren correctamente en la pantalla principal.
+
+<a id="ent63"></a>
+
+### **Git vs Mercurial**
+
+[Volver al indice](#entrevista-base)
+
+Las diferencias principales entre **Git** y **Mercurial** son:
+
+### **1. Filosofía y Diseño**
+
+- **Git**:
+  - **Modelo distribuido**: Git es un sistema distribuido de control de versiones. Cada desarrollador tiene una copia completa del repositorio, incluidos el historial de cambios y las ramas.
+  - **Eficiencia y rendimiento**: Git está diseñado para ser rápido y manejar grandes repositorios con eficiencia, lo que lo hace ideal para proyectos de gran escala.
+  - **Complejidad**: Git puede ser más complejo debido a su amplio conjunto de características y su sintaxis más complicada. Ofrece una gran flexibilidad, pero eso puede hacer que sea más difícil de aprender para los principiantes.
+
+- **Mercurial**:
+  - **Modelo distribuido**: Al igual que Git, Mercurial también es distribuido, lo que significa que cada usuario tiene una copia completa del repositorio.
+  - **Simplicidad y enfoque**: Mercurial se centra en ser simple, intuitivo y fácil de usar. Su flujo de trabajo está diseñado para ser más sencillo, lo que puede facilitar su adopción en equipos pequeños o nuevos en el control de versiones.
+  - **Curva de aprendizaje**: Mercurial es generalmente considerado más fácil de aprender que Git debido a su sintaxis más sencilla y menos características avanzadas.
+
+### **2. Popularidad y Comunidad**
+
+- **Git**:
+  - **Adopción**: Git es más popular que Mercurial y se ha convertido en el estándar de facto para la mayoría de los proyectos de desarrollo de software, especialmente en plataformas como GitHub, GitLab y Bitbucket.
+  - **Ecosistema y herramientas**: Dado que Git es más utilizado, tiene un ecosistema más grande de herramientas, bibliotecas y documentación disponible. Muchas plataformas de desarrollo, CI/CD y servicios de repositorio están optimizados para Git.
+
+- **Mercurial**:
+  - **Adopción**: Aunque Mercurial tiene una base de usuarios leal, ha sido menos adoptado que Git, y muchos proyectos más grandes han migrado a Git. Un ejemplo famoso de esto es el caso de **Bitbucket**, que inicialmente soportaba Mercurial antes de que decidiera centrarse exclusivamente en Git.
+  - **Comunidad más pequeña**: Mercurial tiene una comunidad de usuarios más pequeña en comparación con Git, lo que puede resultar en una menor cantidad de recursos y soporte.
+
+### **3. Flujo de trabajo y rendimiento**
+
+- **Git**:
+  - **Ramas**: Git es conocido por su fuerte soporte para **ramas (branching)**, lo que permite a los desarrolladores crear y fusionar ramas de manera rápida y flexible. Git es altamente eficiente en cuanto al manejo de ramas, lo que lo hace perfecto para flujos de trabajo que dependen de ramificación y fusiones frecuentes.
+  - **Rendimiento**: Git generalmente tiene un buen rendimiento, incluso con repositorios grandes, aunque algunas operaciones complejas como el *merge* pueden ser lentas si no se gestionan correctamente.
+
+- **Mercurial**:
+  - **Ramas**: Mercurial utiliza un modelo de ramas diferente al de Git. Si bien Mercurial también soporta ramas, su enfoque es algo diferente y puede ser menos flexible en comparación con Git. Sin embargo, Mercurial proporciona soporte para **"named branches"** y **"bookmarks"** (que son más parecidos a las ramas en Git).
+  - **Rendimiento**: Mercurial también tiene un buen rendimiento, aunque puede no ser tan rápido como Git en repositorios de gran escala debido a su menor optimización para estos casos.
+
+### **4. Características clave**
+
+- **Git**:
+  - **Flexibilidad avanzada**: Git ofrece una gran cantidad de comandos y opciones avanzadas, lo que permite personalizar flujos de trabajo según las necesidades del equipo o el proyecto.
+  - **Staging Area**: Git tiene una **staging area** o área de preparación que permite a los desarrolladores seleccionar qué cambios se deben incluir en el próximo commit, lo que proporciona un control más preciso sobre las modificaciones.
+
+- **Mercurial**:
+  - **Simplicidad y enfoque**: Mercurial es más simple en cuanto a su conjunto de características. No tiene un equivalente directo a la **staging area** de Git, lo que hace que el flujo de trabajo sea más directo (aunque menos flexible).
+  - **Facilidad de uso**: Mercurial ofrece una interfaz de línea de comandos más simple y tiene menos configuraciones que gestionar.
+
+### **5. Soporte y Herramientas**
+
+- **Git**:
+  - **Herramientas**: Git es ampliamente soportado por herramientas de desarrollo modernas, como **GitHub**, **GitLab**, **Bitbucket** y otras plataformas de CI/CD. Además, la integración de Git con herramientas como **Visual Studio Code**, **Atom** y **Sublime Text** es muy robusta.
+  - **Servicios en la nube**: Git es compatible con todos los principales servicios en la nube de control de versiones (GitHub, GitLab, Bitbucket).
+
+- **Mercurial**:
+  - **Herramientas**: Mercurial tiene soporte en herramientas como **Bitbucket** (aunque ya no se usa para repositorios nuevos), **SourceForge**, y algunos editores de texto. Sin embargo, su integración no es tan amplia como la de Git.
+  - **Soporte de la comunidad**: La comunidad de Mercurial es más pequeña, lo que puede dificultar encontrar recursos y soporte en comparación con Git.
+
+### **6. Casos de uso y elección**
+
+- **Git**: 
+  - Ideal para equipos grandes, proyectos de código abierto y flujos de trabajo con ramificación frecuente.
+  - Utilizado ampliamente en la industria del software, especialmente en proyectos que requieren una integración estrecha con plataformas como GitHub o GitLab.
+  
+- **Mercurial**: 
+  - Mejor para equipos más pequeños que buscan una herramienta sencilla y rápida de implementar.
+  - Aún se utiliza en ciertos proyectos grandes y populares como **Mozilla** y **Facebook**, que lo adoptaron debido a sus beneficios para sus flujos de trabajo específicos.
+
+---
+
+### **Resumen de las diferencias clave**
+
+| Característica                 | **Git**                                  | **Mercurial**                        |
+|---------------------------------|------------------------------------------|--------------------------------------|
+| **Popularidad**                 | Mucho más popular, especialmente con GitHub | Menos popular, con base de usuarios más pequeña |
+| **Complejidad**                 | Más complejo, con muchas características avanzadas | Más simple, fácil de aprender |
+| **Rendimiento**                 | Muy eficiente, especialmente en grandes repositorios | Buen rendimiento, pero no tan optimizado en repositorios grandes |
+| **Soporte para ramas**          | Muy fuerte, con ramificación avanzada    | Menos flexible, pero soporta ramas básicas y bookmarks |
+| **Flujo de trabajo**            | Flexible, adecuado para equipos grandes y colaboraciones complejas | Flujo de trabajo más simple y directo |
+| **Herramientas y servicios**    | Gran soporte (GitHub, GitLab, Bitbucket) | Menos herramientas, principalmente Bitbucket antes de eliminar soporte |
+| **Curva de aprendizaje**       | Más empinada, requiere más tiempo para aprender | Más fácil de aprender, ideal para principiantes |
+
+### **Conclusión**
+
+**Git** es la opción preferida para la mayoría de los proyectos de desarrollo modernos debido a su flexibilidad, rendimiento, y soporte en plataformas como GitHub. Es ideal para proyectos grandes y equipos que necesitan un control detallado sobre sus flujos de trabajo y un ecosistema de herramientas robusto.
+
+**Mercurial** puede ser una excelente opción para proyectos pequeños o equipos que buscan una solución más simple y fácil de aprender, aunque su adopción está disminuyendo debido a la creciente popularidad de Git.
+
+<a id="ent65-4"></a>
+
+### **Continuous Integration, Continuous Delivery, Continuous Deployment - Mejoras del proceso CI-CD**
+
+[Volver al indice](#entrevista-base)
+
+**Continuous Integration (CI)**
+
+Es el integrar los cambios de los desarrolladores al codigo al repositorio asegurandose que el codigo nuevo se integre bien al viejo.
+
+- Automatización completa: Asegúrate de que todos los pasos de la integración, como la ejecución de pruebas, la verificación de la calidad del código (linting, formateo), y el despliegue a un entorno de staging, sean completamente automáticos.
+- Integración con herramientas de CI: Usa herramientas como Jenkins, GitLab CI, CircleCI, Travis CI o GitHub Actions para gestionar las integraciones automáticas.
+- Feedback rápido: Asegúrate de que los desarrolladores reciban retroalimentación casi en tiempo real sobre el estado de la integración, de modo que puedan actuar rápidamente en caso de que se detecten errores.
+
+**Continuous Delivery (CD)**
+
+Se extiende a CI ya que consta de llevar este codigo ya integrado a un entorno, la idea es poder deployar en todo momento sin necesidad de intervenciones manuales necesarias. 
+
+- Implementar pipelines de CD: Usa herramientas como Jenkins, GitLab CI/CD, CircleCI, Travis CI, entre otras, para crear pipelines de entrega continua que validen y desplieguen automáticamente en entornos de staging o producción.
+- Pruebas de aceptación automatizadas: Integra pruebas de aceptación y pruebas funcionales en el pipeline de CD para asegurar que el código sea probado exhaustivamente antes de ser entregado a producción.
+- Control de versiones y etiquetado de releases: Usa etiquetas o versiones específicas en los despliegues, lo que permite tener un control más riguroso de qué cambios están en producción en todo momento.
+
+**Continuous Deployment (CD)**
+
+Es una rama de Delivery, pero exclusivamente hacia produccion
+
+- Pruebas exhaustivas y monitoreo: Dado que los cambios se despliegan automáticamente, es crucial que el proceso de pruebas esté completamente automatizado y que existan pruebas de integración y pruebas de aceptación completas. Además, debe haber un monitoreo riguroso en producción para detectar cualquier problema rápidamente.
+- Despliegue progresivo: Implementa estrategias como canary releases o blue-green deployments para minimizar el riesgo de fallos en producción. Estas técnicas permiten realizar despliegues graduales y probar nuevos cambios en una pequeña porción de los usuarios antes de hacerlo en toda la base de usuarios.
+- Rollback automático: Implementa mecanismos automáticos para revertir rápidamente cualquier despliegue que cause problemas en producción, asegurando que los usuarios no experimenten interrupciones.
+
+En resumen, hay que prestar especial atencion al testing automatizado y a la retroalimentacion rapida, al igual que a la automatizacion de todo el proceso. Tambien a las analiticas y alarmas, ya que de esa manera podremos darnos cuenta si hay algo que esta saliendo mal o afectado.
+
+<a id="ent67"></a>
+
+### **CORS**
+
+[Volver al indice](#entrevista-base)
+
+**CORS** (Cross-Origin Resource Sharing) es un mecanismo de seguridad implementado en los navegadores web que permite o restringe que los recursos de una página web sean solicitados desde un dominio distinto al que sirve la página. Este sistema es utilizado para evitar ciertos riesgos de seguridad, como ataques de **Cross-Site Request Forgery (CSRF)** o **Cross-Site Scripting (XSS)**.
+
+Por defecto, los navegadores restringen las solicitudes **cross-origin** (de un origen a otro) debido a la política de **mismo origen** (*same-origin policy*). La política de mismo origen significa que, por razones de seguridad, una página web solo puede hacer solicitudes a su propio dominio, protocolo y puerto, y no a otros dominios. 
+
+Sin embargo, hay muchos casos en los que una aplicación web legítima necesita hacer solicitudes a otro dominio (por ejemplo, hacer una llamada a una API en un dominio diferente). Aquí es donde entra en juego **CORS**, que permite a los servidores especificar si se permiten solicitudes de otros orígenes.
+
+### **¿Cómo Funciona CORS?**
+
+Cuando una página web intenta realizar una solicitud HTTP a un dominio diferente (es decir, una solicitud "cross-origin"), el navegador envía una solicitud HTTP preliminar llamada **preflight request** (opcional en algunos casos) utilizando el método **OPTIONS** para verificar con el servidor si la solicitud real está permitida.
+
+1. **Preflight Request**: El navegador realiza una solicitud `OPTIONS` al servidor del otro dominio con ciertos encabezados para comprobar si el servidor permite solicitudes de ese origen.
+   - Ejemplo de solicitud `OPTIONS`:
+     ```http
+     OPTIONS /api/data HTTP/1.1
+     Host: example.com
+     Origin: http://another-domain.com
+     ```
+
+2. **Respuesta del Servidor**: Si el servidor permite la solicitud desde el origen específico, responde con encabezados `Access-Control-Allow-Origin` y otros encabezados relacionados con CORS, indicando que la solicitud es permitida.
+   - Ejemplo de respuesta exitosa:
+     ```http
+     HTTP/1.1 200 OK
+     Access-Control-Allow-Origin: http://another-domain.com
+     Access-Control-Allow-Methods: GET, POST
+     Access-Control-Allow-Headers: Content-Type
+     ```
+
+3. **Real Request**: Si la respuesta del servidor es positiva, el navegador puede continuar con la solicitud real (por ejemplo, una solicitud GET, POST, etc.) y enviarla al servidor.
+
+4. **Si no se permite la solicitud**: Si el servidor no permite la solicitud desde un origen diferente, el navegador bloqueará la solicitud y no permitirá que la aplicación obtenga los datos.
+
+### **Encabezados Comunes de CORS**
+
+- **`Access-Control-Allow-Origin`**: Especifica qué dominios están permitidos para hacer solicitudes a este servidor. Puede ser un dominio específico (por ejemplo, `http://example.com`) o un valor especial `*` que indica que cualquier dominio puede acceder.
+  
+- **`Access-Control-Allow-Methods`**: Indica qué métodos HTTP están permitidos (por ejemplo, `GET`, `POST`, `PUT`).
+
+- **`Access-Control-Allow-Headers`**: Especifica qué encabezados pueden ser utilizados por la solicitud real.
+
+- **`Access-Control-Allow-Credentials`**: Indica si las credenciales (como cookies o encabezados de autenticación) pueden ser enviadas con la solicitud. El valor debe ser `true` para permitir el envío de credenciales.
+
+- **`Access-Control-Expose-Headers`**: Permite exponer ciertos encabezados específicos en la respuesta, de modo que el cliente pueda acceder a ellos.
+
+- **`Access-Control-Max-Age`**: Especifica durante cuánto tiempo la respuesta a una solicitud de preflight puede ser almacenada en caché, evitando que el navegador tenga que realizar una solicitud de preflight repetidamente.
+
+### **Ejemplo Práctico**
+
+Imagina que tienes una aplicación web que se sirve desde `http://example-client.com` y hace solicitudes a una API alojada en `http://api-server.com`. Si no se configura adecuadamente CORS en el servidor de la API, el navegador bloqueará las solicitudes de `http://example-client.com` debido a que el dominio es diferente.
+
+En el servidor de la API, podrías configurar los encabezados CORS para permitir que las solicitudes desde `http://example-client.com` sean aceptadas. Ejemplo de configuración de CORS en un servidor:
+
+```http
+Access-Control-Allow-Origin: http://example-client.com
+Access-Control-Allow-Methods: GET, POST, PUT
+Access-Control-Allow-Headers: Content-Type
+```
+
+### **Problemas Comunes con CORS**
+
+- **Bloqueo de solicitudes no configuradas**: Si el servidor no permite solicitudes desde el dominio del cliente (ya sea a través de `Access-Control-Allow-Origin` o mediante otros encabezados), el navegador bloqueará la solicitud.
+  
+- **Preflight Request**: Algunas solicitudes (como las que incluyen métodos no estándar o encabezados personalizados) requieren una solicitud `OPTIONS` de preflight, lo que puede causar un pequeño retraso.
+
+- **`Access-Control-Allow-Credentials`**: Si se necesitan enviar cookies o credenciales de sesión, es necesario que el servidor configure correctamente este encabezado, y no se puede usar el valor `*` en `Access-Control-Allow-Origin`.
+
+
+CORS es una política de seguridad en los navegadores que controla cómo los recursos de un sitio web pueden ser solicitados desde otro dominio. Permite que los servidores controlen qué orígenes pueden interactuar con ellos, asegurando que las solicitudes cross-origin se manejen de manera segura y controlada. Sin la configuración adecuada de CORS, las aplicaciones web pueden enfrentar problemas al intentar interactuar con APIs externas o servicios alojados en otros dominios.
+
+<a id="ent73"></a>
+
+### **Escalabilidad NodeJS**
+
+[Volver al indice](#entrevista-base)
+
+La **escalabilidad** de una aplicación Node.js se refiere a su capacidad para manejar un número creciente de solicitudes o carga de trabajo sin perder rendimiento ni confiabilidad. Dado que Node.js está basado en un modelo de **event loop** de un solo hilo, tiene ciertas limitaciones en cuanto a cómo manejar múltiples solicitudes simultáneas. Sin embargo, se pueden aplicar varias estrategias para mejorar la escalabilidad de una aplicación Node.js y asegurar que pueda manejar más tráfico y usuarios a medida que crece.
+
+A continuación, te detallo algunas de las principales estrategias para hacer que una aplicación Node.js sea escalable:
+
+### **1. Uso de Clusters (Escalabilidad Horizontal)**
+
+Aunque Node.js usa un solo hilo para manejar solicitudes, puedes aprovechar todos los núcleos de CPU de tu servidor utilizando el **módulo `cluster`**. Esto permite crear múltiples instancias de tu aplicación Node.js que pueden ejecutarse en diferentes procesos, distribuyendo la carga de trabajo entre varios núcleos de CPU.
+
+- **¿Cómo funciona?** Cada instancia o "worker" del cluster puede manejar su propio conjunto de solicitudes. Si tu servidor tiene varios núcleos de CPU, puedes crear tantos procesos como núcleos haya, lo que mejora el rendimiento y permite que tu aplicación maneje más tráfico.
+  
+- **Implementación básica con `cluster`:**
+  ```javascript
+  const cluster = require('cluster');
+  const http = require('http');
+  const numCPUs = require('os').cpus().length; // Número de núcleos disponibles
+  
+  if (cluster.isMaster) {
+    // Crear un worker para cada núcleo del procesador
+    for (let i = 0; i < numCPUs; i++) {
+      cluster.fork();
+    }
+
+    cluster.on('exit', (worker, code, signal) => {
+      console.log(`Worker ${worker.process.pid} died`);
+    });
+  } else {
+    // Código de la aplicación
+    http.createServer((req, res) => {
+      res.writeHead(200);
+      res.end('Hello World');
+    }).listen(8000);
+  }
+  ```
+
+### **2. Balanceo de Carga**
+
+El **balanceo de carga** se utiliza para distribuir el tráfico entre múltiples instancias de la aplicación en diferentes servidores o máquinas, de modo que ningún servidor se sobrecargue. Esto es especialmente útil para aplicaciones Node.js en entornos de producción distribuidos.
+
+- **Soluciones comunes de balanceo de carga**:
+  - **Nginx o HAProxy**: Puedes usar servidores de balanceo de carga como Nginx o HAProxy para distribuir el tráfico HTTP entre varias instancias de tu aplicación Node.js. Estos servidores pueden distribuir las solicitudes entrantes entre los diferentes procesos de la aplicación (por ejemplo, instancias que están ejecutándose en diferentes máquinas o contenedores).
+
+  - **Load Balancers en la nube**: Servicios como **AWS Elastic Load Balancing** o **Google Cloud Load Balancing** también pueden distribuir las solicitudes entre diferentes servidores.
+
+### **3. Desacoplar y Dividir en Microservicios**
+
+Una de las mejores formas de escalar una aplicación Node.js es dividirla en **microservicios**. Los microservicios son una arquitectura que descompone la aplicación en servicios pequeños e independientes, cada uno con su propio dominio de negocio y base de datos. Esto permite que diferentes servicios se escalen de forma independiente según la carga.
+
+- **¿Cómo funciona?** En lugar de una aplicación monolítica, donde todo está en un solo bloque, los microservicios permiten desplegar y escalar cada parte de la aplicación por separado. Si un servicio experimenta una carga alta, puedes escalar solo ese servicio, sin afectar a otros.
+
+- **Beneficios de los microservicios**:
+  - Escalabilidad independiente para cada componente.
+  - Despliegue y mantenimiento más sencillo.
+  - Resiliencia, ya que si un microservicio falla, no afecta a toda la aplicación.
+
+- **Tecnologías asociadas**:
+  - **Docker**: Permite empaquetar microservicios en contenedores que pueden ser ejecutados en cualquier entorno.
+  - **Kubernetes**: Orquestador de contenedores que facilita la gestión y escalado de microservicios.
+
+### **4. Cacheo de Respuestas**
+
+Una de las técnicas clave para mejorar la escalabilidad de una aplicación Node.js es el **cacheo**. Al almacenar en caché las respuestas de las solicitudes más comunes o de larga duración, puedes reducir significativamente la carga en el servidor y acelerar el tiempo de respuesta.
+
+- **Cacheo en memoria**: Puedes usar herramientas como **Redis** o **Memcached** para almacenar respuestas en memoria y evitar hacer consultas repetitivas a bases de datos u otras fuentes externas.
+
+- **Cacheo de respuestas HTTP**: Si tu aplicación maneja muchas solicitudes similares, puedes usar herramientas como **Varnish** o configurar **caching HTTP** en el servidor para almacenar respuestas de manera eficiente.
+
+### **5. Optimización de Base de Datos**
+
+Las aplicaciones Node.js a menudo dependen de bases de datos para almacenar y recuperar información. La escalabilidad de tu aplicación también depende de cómo escalas y optimizas tu base de datos.
+
+- **Sharding**: Distribuir datos entre varias bases de datos, de modo que cada base de datos maneje solo una parte de los datos. Esto puede ser especialmente útil en bases de datos NoSQL como MongoDB.
+
+- **Replicación**: Configurar replicación para distribuir las consultas entre varias réplicas de bases de datos y mejorar la disponibilidad.
+
+- **Índices**: Asegúrate de que tu base de datos esté optimizada con índices para mejorar el rendimiento de las consultas.
+
+### **6. Optimización del Event Loop**
+
+El **event loop** de Node.js es el mecanismo que maneja todas las solicitudes de entrada y salida de la aplicación. Es importante optimizar el código para evitar bloqueos del event loop, que pueden afectar negativamente el rendimiento y la capacidad de escalado.
+
+- **Operaciones asincrónicas**: Utiliza operaciones asincrónicas siempre que sea posible para evitar bloquear el event loop. Esto incluye hacer uso de **callbacks**, **promesas** o **async/await**.
+
+- **Worker Threads**: En algunas situaciones, podrías necesitar realizar tareas de procesamiento intensivo. Para evitar que el event loop se bloquee, puedes usar **Worker Threads**, que permiten realizar tareas intensivas en segundo plano sin bloquear la ejecución principal.
+
+### **7. Escalabilidad en la Nube**
+
+Node.js se integra muy bien con servicios en la **nube** como **AWS**, **Google Cloud** o **Microsoft Azure**, lo que facilita la escalabilidad automática.
+
+- **Autoescalado**: Estos proveedores en la nube permiten configurar el **autoescalado**, lo que significa que, a medida que la demanda de tu aplicación aumenta, los servidores adicionales se crearán automáticamente, y cuando la demanda disminuye, los recursos se liberan.
+
+- **Funcionalidades como AWS Lambda**: Si tu aplicación es pequeña o tiene tareas que no requieren servidores constantes, puedes aprovechar **AWS Lambda** o **Google Cloud Functions** para manejar cargas de trabajo bajo demanda y solo cobrar por el tiempo de ejecución real.
+
+### **8. Manejo de Conexiones Simultáneas**
+
+Node.js es ideal para manejar una gran cantidad de conexiones simultáneas gracias a su arquitectura basada en el event loop. Sin embargo, en aplicaciones de alto tráfico, es importante manejar las conexiones de manera eficiente.
+
+- **Conexiones HTTP/2**: Usar HTTP/2 permite mejorar la eficiencia de las conexiones y reducir la latencia de la comunicación entre el cliente y el servidor.
+
+- **Keep-Alive y conexiones persistentes**: Configura conexiones persistentes para reducir la sobrecarga asociada con la apertura y cierre de nuevas conexiones HTTP.
+
+
+La escalabilidad en Node.js se puede lograr mediante diferentes estrategias que abarcan desde la **optimización del event loop**, la **escala horizontal con clústeres**, hasta el **uso de microservicios** y **caché**. Implementar estas prácticas te permitirá construir aplicaciones que puedan manejar más tráfico, ser más resilientes y ofrecer una experiencia de usuario más rápida y confiable.
+
+<a id="ent74"></a>
+
+### **Escalabilidad FE**
+
+[Volver al indice](#entrevista-base)
+
+La **escalabilidad del frontend** se refiere a la capacidad de una aplicación web para manejar un aumento en el número de usuarios, volumen de datos o complejidad, sin que su rendimiento o experiencia de usuario se vea afectada. A medida que las aplicaciones web crecen, se vuelve crucial adoptar estrategias y mejores prácticas para asegurar que el frontend pueda adaptarse y escalar eficientemente. Aquí te explico algunos enfoques y prácticas clave para lograr la escalabilidad en el desarrollo frontend.
+
+### **1. Componentización y Reutilización de Código**
+
+Una de las formas más efectivas de escalar una aplicación frontend es **componentizar** la interfaz de usuario. Esto implica dividir la UI en componentes pequeños, independientes y reutilizables.
+
+- **Beneficios**:
+  - Facilita el mantenimiento y la evolución de la aplicación.
+  - Mejora la reutilización de código.
+  - Permite el trabajo en paralelo por parte de diferentes equipos de desarrollo.
+  
+- **Frameworks como React, Vue, Angular** proporcionan formas naturales de crear aplicaciones basadas en componentes que pueden ser reutilizados en distintas partes de la aplicación.
+
+- **Estrategias**:
+  - Asegúrate de que los componentes sean **lo más desacoplados posible**. Un componente debe manejar una única responsabilidad.
+  - Utiliza **props** o **state management** (como Redux, Vuex, etc.) para gestionar el estado de la aplicación de manera centralizada, evitando el paso de información innecesaria entre componentes.
+
+### **2. Lazy Loading**
+
+El **Lazy Loading** o carga diferida es una técnica que retrasa la carga de recursos, como módulos, imágenes o componentes, hasta que realmente son necesarios.
+
+- **Beneficios**:
+  - Mejora el tiempo de carga inicial de la aplicación, permitiendo que los usuarios vean rápidamente la interfaz principal.
+  - Reduce el consumo de recursos al cargar solo lo que se necesita en cada momento.
+  
+- **Implementación en React**:
+  ```javascript
+  const LazyComponent = React.lazy(() => import('./LazyComponent'));
+
+  function App() {
+    return (
+      <Suspense fallback={<div>Loading...</div>}>
+        <LazyComponent />
+      </Suspense>
+    );
+  }
+  ```
+  La función `React.lazy()` permite la carga diferida de un componente, y `Suspense` maneja el estado de carga.
+
+- **En Angular y Vue**: También existen soluciones de carga diferida de módulos y rutas, lo que permite dividir la aplicación en fragmentos que se cargan solo cuando el usuario navega a ellos.
+
+### **3. Code Splitting**
+
+El **code splitting** es una técnica que divide el código en "trozos" más pequeños (chunks) que solo se cargan cuando son necesarios. Esto es similar al lazy loading, pero se aplica a los scripts de JavaScript.
+
+- **Beneficios**:
+  - Mejora el tiempo de carga inicial, ya que no se necesita cargar todo el código de una vez.
+  - Permite una distribución eficiente del código, cargando solo lo que es relevante para la parte específica de la aplicación que el usuario está utilizando.
+
+- **Implementación en Webpack**:
+  ```javascript
+  import(/* webpackChunkName: "module1" */ './module1');
+  ```
+
+  Webpack automáticamente crea archivos más pequeños basados en el código de los módulos que se importan de manera diferida.
+
+### **4. Optimización de Imágenes y Archivos Estáticos**
+
+Las imágenes y otros archivos estáticos son comúnmente los elementos más pesados de una aplicación web. Optimizar estos recursos es esencial para mejorar el rendimiento y la escalabilidad.
+
+- **Estrategias de optimización**:
+  - **Compresión**: Usa herramientas de compresión de imágenes como **ImageOptim**, **TinyPNG** o **Squoosh** para reducir el tamaño de las imágenes sin perder calidad perceptible.
+  - **Formato adecuado**: Utiliza formatos modernos de imagen como **WebP**, que ofrecen una mejor compresión sin sacrificar calidad.
+  - **Lazy loading de imágenes**: Al igual que el lazy loading de componentes, las imágenes pueden cargarse solo cuando están a punto de ser visibles en la pantalla (usando la API `IntersectionObserver`).
+
+  ```html
+  <img src="image.jpg" loading="lazy" alt="Imagen optimizada">
+  ```
+
+### **5. Manejo Eficiente del Estado**
+
+A medida que las aplicaciones crecen, la complejidad en la gestión del estado puede aumentar. Usar un sistema adecuado para el manejo del estado puede ser esencial para escalar la aplicación y evitar problemas como el acoplamiento de datos o la redundancia.
+
+- **Opciones de gestión de estado**:
+  - **Redux** (en React) o **Vuex** (en Vue) son bibliotecas de gestión de estado centralizado.
+  - **Context API** en React también puede servir para gestionar estados globales sin necesidad de bibliotecas externas.
+  - **React Query** y **Apollo Client** son herramientas útiles cuando se trabaja con datos remotos (APIs), que manejan el estado de la caché y las peticiones a APIs.
+
+- **Estrategias**:
+  - Mantén el estado **descentralizado** en componentes pequeños cuando sea posible. Solo centraliza el estado cuando sea necesario.
+  - Utiliza **acciones y reducers** en Redux para gestionar el estado de manera predecible y escalable.
+  - Mantén los estados **inmutables** para evitar efectos secundarios inesperados.
+
+### **6. Paginación e Infinite Scrolling**
+
+Para manejar grandes volúmenes de datos sin sobrecargar el frontend ni afectar la experiencia del usuario, se deben emplear técnicas como la **paginación** o el **infinite scrolling**.
+
+- **Paginación**: Divide el conjunto de datos en páginas manejables, permitiendo que el usuario navegue entre ellas.
+- **Infinite Scrolling**: Carga más datos de manera incremental a medida que el usuario hace scroll hacia abajo. Esta es una técnica útil para aplicaciones que muestran una lista continua de elementos, como redes sociales o aplicaciones de noticias.
+
+### **7. Uso de Service Workers y Caching**
+
+El uso de **Service Workers** y estrategias de caché es clave para la escalabilidad de aplicaciones frontend, especialmente en el contexto de **Progressive Web Apps (PWAs)**.
+
+- **Service Workers** permiten que los recursos se almacenen en caché, lo que hace que las aplicaciones sean mucho más rápidas y funcione sin conexión a internet.
+  
+- **Estrategias de caché**:
+  - Utiliza **Cache API** para almacenar y recuperar archivos de manera eficiente.
+  - Implementa un **"Cache First"** o **"Network First"** para optimizar la forma en que la aplicación maneja las solicitudes.
+
+### **8. Optimización del Renderizado**
+
+El rendimiento del renderizado es crucial para escalar una aplicación frontend. Un renderizado eficiente reduce el uso de recursos y mejora la experiencia del usuario.
+
+- **React**:
+  - Usa **React.memo()** para evitar renderizados innecesarios de componentes.
+  - **PureComponent** es útil para componentes que solo deben re-renderizarse cuando sus props cambian.
+  - Utiliza **Suspense** para cargar partes de la UI de forma diferida y mejorar la experiencia de usuario.
+
+- **Vue**:
+  - Usa la directiva `v-if` para renderizar solo los componentes necesarios.
+  - Optimiza el uso de **computed properties** y **watchers**.
+
+### **9. Reducción del Tamaño del Bundle**
+
+Reducir el tamaño de los archivos JavaScript que se descargan en el navegador mejora la escalabilidad de una aplicación, especialmente en redes lentas.
+
+- **Estrategias**:
+  - Usa **Tree Shaking** para eliminar código no utilizado.
+  - Utiliza herramientas como **Webpack** y **Rollup** para optimizar el tamaño de los bundles.
+  - Comprime los archivos con **gzip** o **Brotli**.
+
+### **10. Prácticas de Optimización en la Nube**
+
+Si la aplicación frontend depende de APIs o servicios en la nube, asegúrate de que estos servicios puedan escalar automáticamente para manejar una mayor carga.
+
+- Usa **CDNs (Content Delivery Networks)** para distribuir contenido estático como imágenes, archivos CSS/JS, etc., desde servidores más cercanos al usuario.
+- Implementa **autoescalado** en la infraestructura de backend y utiliza soluciones de caching.
+
+<a id="ent75"></a>
+
+### **Principios de Disponibilidad, Escalamiento en Frontend**
+
+[Volver al indice](#entrevista-base)
+
+La **disponibilidad** y el **escalamiento** son principios clave en el desarrollo de aplicaciones frontend para asegurar que el sistema sea confiable, rápido y capaz de manejar un volumen creciente de usuarios o datos. A continuación, se detallan los principios relacionados con estos conceptos, adaptados al contexto del frontend:
+
+### **1. Disponibilidad en el Frontend**
+
+La **disponibilidad** se refiere a que la aplicación esté accesible y funcione correctamente cuando los usuarios la necesiten. En el contexto del frontend, esto implica garantizar que la aplicación se cargue rápidamente, que no se caiga debido a errores de código y que siga funcionando incluso cuando haya problemas en el backend o con la conectividad de la red.
+
+#### **Principios clave de disponibilidad en el frontend**:
+
+- **Uso de Service Workers**: Los **Service Workers** permiten que una aplicación web funcione sin conexión o con una conexión intermitente. Al usar un Service Worker, puedes almacenar en caché recursos esenciales (HTML, CSS, JS) para que la aplicación siga funcionando aunque la conexión a internet se pierda temporalmente.
+  - **Ejemplo**: Implementación de una Progressive Web App (PWA) que permite acceder a funcionalidades básicas sin conexión.
+
+- **Redundancia de recursos**: Asegúrate de que los recursos esenciales (scripts, imágenes, fuentes) se distribuyan en **CDNs** (Content Delivery Networks) para que la aplicación esté disponible incluso si un servidor se cae o está inactivo.
+
+- **Caché local y manejo de errores**: Usar técnicas como **Local Storage** o **IndexedDB** para almacenar temporalmente datos críticos que puedan necesitarse cuando el backend no esté disponible. Esto permite una **experiencia offline** que no depende totalmente de la conectividad en todo momento.
+  
+- **Detección y manejo de fallos**: Implementa estrategias de manejo de errores que detecten problemas rápidamente y brinden retroalimentación al usuario (como mensajes de error claros o páginas de mantenimiento). Por ejemplo, mostrar una pantalla de **"fallback"** mientras los datos se cargan o cuando hay un problema de conectividad.
+
+- **Escalabilidad de servicios externos**: Asegúrate de que los servicios de terceros (APIs, bases de datos, etc.) a los que se conecta el frontend puedan manejar **altos volúmenes de tráfico** sin interrupciones. Por ejemplo, utilizando soluciones como **load balancing** para distribuir solicitudes.
+
+### **2. Escalamiento en el Frontend**
+
+El **escalamiento** se refiere a la capacidad de una aplicación de manejar una mayor carga de usuarios o de datos sin que su rendimiento se degrade. En el contexto del frontend, esto implica asegurar que la aplicación pueda adaptarse a un mayor volumen de usuarios, contenido o interacciones sin afectar la **experiencia de usuario**.
+
+#### **Principios clave de escalamiento en el frontend**:
+
+- **Optimización de recursos**: A medida que la aplicación crece, los recursos como JavaScript, CSS, imágenes y otros archivos estáticos deben optimizarse para reducir su tamaño y mejorar los tiempos de carga.
+  - **Code splitting**: Divide tu código en diferentes "chunks" o fragmentos que se cargan bajo demanda (por ejemplo, con **React.lazy** o **Vue's async components**). Esto asegura que los usuarios solo descarguen lo necesario, reduciendo el tamaño inicial de la carga.
+  - **Minificación y compresión**: Minifica los archivos JavaScript y CSS, y usa compresión de archivos como **gzip** o **Brotli** para reducir el tamaño de los archivos transferidos entre el servidor y el cliente.
+
+- **Carga diferida (Lazy Loading)**: Utiliza el **lazy loading** de componentes, imágenes, y módulos para cargar solo lo necesario cuando el usuario interactúa con la aplicación. Esto reduce el tiempo de carga inicial y mejora la experiencia del usuario.
+  - **Ejemplo**: En una lista infinita de productos, solo carga las imágenes o detalles de los productos que están visibles en la pantalla.
+
+- **Cacheo de recursos**: Implementa técnicas de caché para minimizar la necesidad de hacer solicitudes repetidas al servidor. Esto incluye el uso de **CDNs**, **Service Workers**, y estrategias como **cache-first** o **network-first** para manejar las peticiones de datos.
+  - **Ejemplo**: Almacenar en caché los datos de la API para que no tengas que hacer una nueva solicitud cada vez que un usuario regresa a la aplicación.
+
+- **Optimización de imágenes y archivos estáticos**: Las imágenes suelen ser una de las principales causas de que una página web sea lenta. Usar herramientas de optimización y elegir el formato adecuado (como **WebP**) puede reducir significativamente el tamaño de las imágenes y mejorar el rendimiento.
+  - **Estrategias**:
+    - Utilizar imágenes de **resolución adecuada** para los diferentes tamaños de pantalla.
+    - Usar el atributo `loading="lazy"` en imágenes que no sean críticas para la visualización inicial.
+
+- **Virtualización de listas y tablas**: En aplicaciones que muestran grandes cantidades de datos, utiliza técnicas de **virtualización** para cargar solo una parte de la lista o tabla en el viewport visible, reduciendo el trabajo de renderizado.
+  - **Ejemplo**: Librerías como **React Virtualized** o **Vue Virtual Scroller** ayudan a mostrar solo los elementos visibles, mejorando el rendimiento.
+
+- **Manejo eficiente del estado**: A medida que tu aplicación crece, es fundamental tener un sistema eficiente para manejar el estado. Utiliza patrones y herramientas adecuadas para mantener el estado de la aplicación bien organizado y predecible.
+  - **Bibliotecas de gestión del estado** como **Redux**, **Vuex**, o el **Context API** en React ayudan a centralizar y manejar el flujo de datos de manera eficiente, evitando la propagación innecesaria de cambios de estado a través de componentes.
+
+- **Reducción del re-renderizado**: Minimiza el número de **re-renderizados** de componentes cuando no es necesario. Usa técnicas como **React.memo**, **shouldComponentUpdate** o **PureComponent** en React para evitar renderizados innecesarios de componentes cuando sus propiedades no han cambiado.
+
+- **Optimización del rendimiento del renderizado**: Usa el **Virtual DOM** (como en **React**) para hacer comparaciones rápidas entre el DOM real y el virtual, actualizando solo los cambios necesarios.
+  - **Web Workers**: Para evitar bloquear el hilo principal, puedes usar **Web Workers** para realizar tareas pesadas en segundo plano y no interrumpir la experiencia del usuario.
+
+### **3. Escalabilidad Horizontal en el Frontend**
+
+A medida que el número de usuarios aumenta, también puede ser necesario escalar la infraestructura de tu frontend de forma **horizontal**, distribuyendo la carga entre múltiples instancias de tu aplicación. En este caso, las **CDNs** y el uso de **caché distribuida** son herramientas esenciales para escalar eficazmente.
+
+- **Uso de múltiples servidores de frontend**: Si tu aplicación es muy popular, puedes distribuir el tráfico entre varios servidores frontend. Las **CDNs** permiten que los recursos estáticos de la aplicación se sirvan desde múltiples ubicaciones geográficas, asegurando una **distribución eficiente** de los recursos.
+
+- **Autocuración de fallos**: Asegúrate de que tu infraestructura pueda detectar y recuperarse automáticamente de posibles fallos de servidor o red. Esto puede incluir el monitoreo de servidores, el **failover automático** y la distribución de carga entre múltiples instancias.
+
+La **disponibilidad** y el **escalamiento** en frontend son cruciales para garantizar una **experiencia de usuario fluida y confiable** en aplicaciones que crecen en tamaño y en complejidad. Para mejorar la disponibilidad, las técnicas como el uso de **Service Workers** y la **gestión de errores** son esenciales, mientras que el escalamiento se logra optimizando recursos, utilizando **lazy loading**, **code splitting**, y manejando eficientemente el **estado de la aplicación**. Además, técnicas como el **cacheo** de datos, la **optimización de imágenes** y el uso de **CDNs** son fundamentales para asegurar que tu aplicación pueda manejar el crecimiento del tráfico sin perder rendimiento.
+
+<a id="ent76"></a>
+
+### **Mencionar como manejarias la delegacion de tareas dentro de tu equipo**
+
+[Volver al indice](#entrevista-base)
+
+La idea es que cada miembro del equipo tenga sus fortalezas, y es deber de los lideres identificar cuales son estos, al igual que sus areas a mejorar, y asignar tareas acorde a esto. Esto nos sirve para fomentar la colaboracion, independencia y autonomia de los miembros del equipo, al igual que su confianza.
+
+Lo ideal es que cada miembro del equipo trabaje en tareas que esten acordes a sus habilidades y debilidades de manera independiente, pero no sacando el trabajo en equipo, que debe seguir teniendo una comunicacion fluida para pedir recursos o colaboracion con algunas cosas. Para lograr esto no solo depende del desarollador si no de quien arma las tasks que las mismas sean claras, y que las prioridades ante todo tambien lo sean.
+
+Ademas, otra cosa importante que se mejora al delegar tareas es que hay una distribucion del conocimiento bastante pareja, para que no quede el conocimiento concentrado en un solo miembro, y que luego el mismo sufra un exceso de trabajo debido a esto.
+
+<a id="ent76-1"></a>
+
+### **Se te da la tarea de empezar un nuevo proyecto, que preguntas realizarias para tomar que decisiones como un Tech Lead?**
+
+[Volver al indice](#entrevista-base)
+
+La respuesta a las preguntas clave planteadas puede influir directamente en las decisiones que tomes como **Tech Lead** para guiar el proyecto hacia el éxito. Aquí te dejo cómo podrías tomar decisiones en base a las respuestas de cada pregunta, para definir la arquitectura, el stack tecnológico, la metodología y las prioridades del proyecto.
+
+### **1. ¿Cuál es el objetivo principal del proyecto?**
+   - **Decisiones posibles**:
+     - **Definir funcionalidades clave**: Si el objetivo es resolver un problema específico (como un carrito de compras o un sistema de mensajería), priorizar las características necesarias para resolver ese problema.
+     - **Enfoque en UX/UI**: Si la prioridad es mejorar la experiencia de usuario, asegurar que el diseño y la interacción sean fáciles de usar.
+     - **Definir KPIs**: Establecer métricas claras para medir el progreso y el éxito (conversiones, retención de usuarios, rendimiento).
+
+### **2. ¿Cuál es el alcance y la visión del producto?**
+   - **Decisiones posibles**:
+     - **Priorizar MVP (Minimum Viable Product)**: Si el alcance es limitado, podrías optar por un MVP para lanzar rápidamente con las funcionalidades básicas y luego iterar.
+     - **Planificación a largo plazo**: Si la visión es a largo plazo, elegir arquitecturas que permitan la expansión o escalabilidad (por ejemplo, microservicios, arquitectura modular).
+
+### **3. ¿Cuál es el presupuesto y los plazos?**
+   - **Decisiones posibles**:
+     - **Tecnologías y herramientas más económicas**: Si el presupuesto es limitado, optar por soluciones de código abierto o de bajo costo (como frameworks populares).
+     - **MVP o lanzamientos escalonados**: Si los plazos son ajustados, optar por un enfoque ágil, desarrollando un MVP y luego agregando características de manera iterativa.
+     - **Recursos disponibles**: Seleccionar tecnologías que coincidan con la experiencia de tu equipo, evitando aprender tecnologías nuevas que retrasen el proyecto.
+
+### **4. ¿Qué tecnologías usaremos?**
+   - **Decisiones posibles**:
+     - **Selección de stack tecnológico**: Si el equipo ya tiene experiencia con una tecnología específica, podrías optar por eso para minimizar el tiempo de aprendizaje.
+     - **Evaluación de rendimiento y escalabilidad**: Si el proyecto necesita escalar rápidamente, optar por tecnologías que permitan un crecimiento fácil (como Node.js, microservicios).
+     - **Evaluación de frameworks**: Si la prioridad es el desarrollo rápido, podrías optar por frameworks como React, Angular o Vue para facilitar la creación de la interfaz de usuario.
+
+### **5. ¿Cómo manejaremos el desarrollo y la entrega?**
+   - **Decisiones posibles**:
+     - **Metodología ágil**: Si el proyecto es dinámico y requiere flexibilidad, aplicar metodologías ágiles como Scrum o Kanban para adaptarse rápidamente a los cambios.
+     - **Automatización de CI/CD**: Si el proyecto requiere despliegues rápidos, configurar pipelines de integración continua (CI) y entrega continua (CD) desde el inicio.
+
+### **6. ¿Cuál es el enfoque de escalabilidad y rendimiento?**
+   - **Decisiones posibles**:
+     - **Escalabilidad a través de microservicios**: Si el tráfico esperado es grande o la aplicación debe soportar muchos usuarios concurrentes, considerar una arquitectura de microservicios o serverless.
+     - **Optimización de rendimiento**: Implementar estrategias como lazy loading, caché, y el uso de un CDN para mejorar la carga y rendimiento.
+
+### **7. ¿Cómo gestionaremos el estado y la arquitectura de la aplicación?**
+   - **Decisiones posibles**:
+     - **Arquitectura de estado**: Si el proyecto necesita manejar un estado global complejo, puedes elegir soluciones como Redux o Context API.
+     - **Componentización**: Adoptar un enfoque modular para dividir la UI en componentes reutilizables, lo que facilita el mantenimiento y la escalabilidad.
+
+### **8. ¿Cómo aseguraremos la calidad del código?**
+   - **Decisiones posibles**:
+     - **Implementación de revisiones de código**: Establecer un proceso de revisión de código formal para mantener la calidad del código.
+     - **Uso de linters y formateadores**: Configurar herramientas como ESLint o Prettier para mantener un estilo de código coherente.
+     - **Pruebas automatizadas**: Implementar pruebas unitarias, de integración y end-to-end para garantizar que el código esté libre de errores.
+
+### **9. ¿Cómo gestionaremos la seguridad?**
+   - **Decisiones posibles**:
+     - **Autenticación y autorización**: Si el proyecto necesita manejar información sensible, implementar soluciones robustas de autenticación (JWT, OAuth).
+     - **Protección contra vulnerabilidades**: Establecer estrategias de mitigación contra vulnerabilidades comunes (como inyecciones SQL, CSRF, XSS).
+     - **Encriptación de datos**: Asegurar que los datos sensibles sean cifrados, tanto en tránsito como en reposo.
+
+### **10. ¿Cómo manejará la aplicación la infraestructura y el despliegue?**
+   - **Decisiones posibles**:
+     - **Infraestructura escalable**: Elegir proveedores de infraestructura en la nube (AWS, Google Cloud, Azure) que permitan escalar fácilmente según el crecimiento del proyecto.
+     - **Contenedores y orquestación**: Usar Docker y Kubernetes si necesitas un entorno de contenedores para facilitar la gestión de la infraestructura.
+
+### **11. ¿Cómo gestionaremos la documentación?**
+   - **Decisiones posibles**:
+     - **Documentación técnica**: Decidir si usar herramientas como Swagger para documentar APIs o GitHub Wiki para la documentación del proyecto.
+     - **Documentación de código**: Establecer una convención para comentar el código y generar documentación de forma automática (JSDoc, TypeDoc).
+
+### **12. ¿Cómo gestionaremos el equipo?**
+   - **Decisiones posibles**:
+     - **Asignación de roles**: Definir claramente las responsabilidades y los roles de cada miembro del equipo, desde los desarrolladores hasta los testers y diseñadores.
+     - **Proceso de trabajo colaborativo**: Establecer herramientas de comunicación (Slack, Teams) y colaboración (Trello, Jira) para mantener a todos alineados.
+
+### **13. ¿Cómo aseguraremos la calidad del soporte post-lanzamiento?**
+   - **Decisiones posibles**:
+     - **Mantenimiento y parches**: Crear un plan de mantenimiento post-lanzamiento para corregir bugs y realizar actualizaciones regulares.
+     - **Monitorización de la aplicación**: Implementar herramientas de monitorización (New Relic, Sentry) para detectar y corregir problemas en tiempo real.
+
+### **14. ¿Cuáles son los riesgos y dependencias del proyecto?**
+   - **Decisiones posibles**:
+     - **Gestión de riesgos**: Identificar los principales riesgos (tecnológicos, de recursos, de negocio) y definir planes de mitigación.
+     - **Gestión de dependencias externas**: Evaluar las dependencias de terceros (APIs, bibliotecas) y definir estrategias para asegurar su fiabilidad.
+
+### **15. ¿Cómo aseguraremos la accesibilidad y la experiencia de usuario?**
+   - **Decisiones posibles**:
+     - **Diseño inclusivo**: Asegurarse de que el diseño cumpla con los estándares de accesibilidad (WCAG).
+     - **Pruebas de usabilidad**: Realizar pruebas de usabilidad con usuarios reales para asegurarse de que la interfaz sea intuitiva y fácil de usar.
+
+
+
+---
+
 <a id="seg"></a>
 
 # Seguridad
@@ -993,7 +5321,7 @@ El ciberespacio es un ambiente complejo en donde interactúan los seres humanos,
 - Ciberterrorismo
 - Hacktivismo
 - Daños informáticos
-- Ciberataques 
+- Ciberataques
 
 <a id="seg7"></a>
 
@@ -1425,6 +5753,740 @@ La pericia se dirige a quienes no son especialistas por eso debe mantener un len
 - Toda aquella información que el perito considere conveniente para el esclarecimiento del caso. Puede ser explicaciones adicionales, nuevos elementos que el perito considere relevantes, etc.
 
 ---
+<a id="acc"></a>
+
+# Accesibilidad
+
+<a id="acc1"></a>
+
+### **¿Qué es la accesibilidad web?**
+
+[Volver al indice](#acc-base)
+
+Es la práctica continua de asegurarnos de que todo lo que desarrollamos para la web se pueda usar, interpretar y operar por la mayor cantidad de personas posibles.
+
+<a id="acc2"></a>
+
+### **¿Cuáles son sus beneficios?**
+
+[Volver al indice](#acc-base)
+
+* Mejora la experiencia de usuario.
+* Mejora el SEO.
+* Aumenta el alcance de la audiencia, ya que hoy en día casi un 20% de la población mundial posee algún tipo de discapacidad.
+* Reduce el riesgo de demandas legales, en algunos lugares es la ley, como en EE. UU., donde todos los productos y programas deben ser accesibles. En otros países hay normas o guías para esto mismo.
+* Mejora la reputación de la marca.
+* Mejora la usabilidad de nuestros proyectos.
+
+<a id="acc3"></a>
+
+### **¿Qué significa A11y?**
+
+[Volver al indice](#acc-base)
+
+Es una abreviación de la palabra "accessibility" y se utiliza para referirse a la accesibilidad web. La "A" y la "y" son las letras que comienzan y terminan la palabra, mientras que el "11" representa las 11 letras que hay en medio.
+
+a|ccessibilit|y = a11y
+
+<a id="acc4"></a>
+
+### **¿Cuáles son las herramientas más usadas en accesibilidad?**
+
+[Volver al indice](#acc-base)
+
+* Screen Readers
+* Braille Output devices
+* Configuraciones propias del sistema operativo
+* Navegadores con herramientas de accesibilidad
+
+<a id="acc5"></a>
+
+### **¿Qué es un Screen Reader?**
+
+[Volver al indice](#acc-base)
+
+Es un software que convierte el texto en voz o en braille. Es utilizado por personas ciegas o con baja visión para poder navegar por la web.
+
+<a id="acc6"></a>
+
+### **¿Qué es el contraste de color?**
+
+[Volver al indice](#acc-base)
+
+Es la diferencia entre el color del texto y el color del fondo. Un buen contraste es importante para que las personas con discapacidad visual puedan leer el contenido.
+
+<a id="acc7"></a>
+
+### **¿Qué es el texto alternativo?**
+
+[Volver al indice](#acc-base)
+
+Es una descripción alternativa que se le da a una imagen, para que las personas con discapacidad visual puedan entender de qué se trata la imagen.
+
+<a id="acc8"></a>
+
+### **¿Qué es el teclado virtual?**
+
+[Volver al indice](#acc-base)
+
+Es una herramienta que permite a las personas con discapacidad motriz o que no pueden utilizar un teclado físico, poder navegar por la web.
+
+<a id="acc9"></a>
+
+### **¿De qué trata el Web Content Accessibility Guidelines (WCAG)?**
+
+[Volver al indice](#acc-base)
+
+Son estándares internacionales de accesibilidad apuntados a web y mobile nativo. Fueron creados por W3C (World Wide Web Consortium), que construyeron estándares también en HTML y CSS.
+
+Poseen 3 niveles de éxito:
+
+* 30: A
+* 20: AA
+* 28: AAA
+* 50: A + AA
+* 78: A + AA + AAA
+
+Cada nivel es progresivo, es decir, para tener 50, se debe tener A y AA aprobados.
+
+Generalmente, el nivel AAA, el cual es el más avanzado, es al que debemos apuntar si trabajamos en servicios del gobierno, universidades o servicios esenciales, donde es extremadamente importante que todos puedan acceder a todo.
+
+<a id="acc10"></a>
+
+### **¿De qué tratan los principios POUR - Principios WCAG?**
+
+[Volver al indice](#acc-base)
+
+POUR significa Perceivable, Operable, Understandable y Robust, la idea es aplicar los 4.
+
+* **Perceivable (Perceptible)**: Todos los usuarios deberían poder percibir la información importante en la pantalla, para cumplir este se deben agregar alt a las imágenes, agregar transcritos a videos y/o audios y no apoyarnos 100% sobre el color de las cosas.
+* **Operable**: La interfaz debería poder ser navegable por teclado o por pantalla táctil, también que los reproductores tengan todos sus botones accesibles y que los usuarios tengan el tiempo necesario para poder rellenar un formulario.
+* **Understandable**: Todo el contenido de la página debe poder ser entendido por cualquiera. Si un lector de pantalla estuviera leyendo nuestra página, ¿tendría sentido lo que está leyendo? Se debe escribir simple, que la navegación sea predecible y que los mensajes de error sean explicativos.
+* **Robust**: Poder soportar las tecnologías de accesibilidad disponibles. ¿Funciona en todos los navegadores y/o sistemas operativos? ¿También en distintas formas de pantalla de celular? Se debe poder usar desde cualquier dispositivo de cualquier tamaño.
+
+<a id="acc11"></a>
+
+### **¿Qué es ARIA - Accessible Rich Internet Applications?**
+
+[Volver al indice](#acc-base)
+
+Fue desarrollado por WAI (Web Accessibility Initiative), es un set de atributos que se pueden agregar a los elementos HTML para aumentar la accesibilidad.
+No cambia la apariencia ni el comportamiento de los elementos, esta diferencia solo puede ser notada por los usuarios con discapacidades. Es responsabilidad del Dev hacer que el sitio sea lo más accesible posible.
+
+Los elementos de ARIA son:
+
+* **role**: Define lo que un elemento hace en la página.
+`<div role="button">Self-destruct</div>`
+* **Propiedades** normales como `aria-describedby` y el ID definen las características y relaciones de los elementos.
+
+```jsx
+<div role="button" aria-describedby="more-info">Self-destruct</div>
+
+<div id="more-info">This page will self-destruct in 10 seconds.</div>
+```
+
+* **States/values** definen las condiciones actuales y la data asociada con el elemento.
+
+```jsx
+<div role="button" aria-describedby="more-info" aria-pressed="false">
+Self-destruct
+</div>
+
+<div id="more-info">
+This page will self-destruct in 10 seconds.
+</div>
+```
+
+No es necesario usar los 3 elementos de ARIA en una sola línea de código.
+
+Con la nueva versión de HTML5 se incluyeron elementos como main, header, footer, aside y nav, con sus atributos como hidden y required, con estos nuevos elementos el uso de ARIA se hace menos necesario.
+
+Son usados para definir cada parte en particular de la página. Se recomienda que haya un solo main (que contiene todo el contenido), y que el mismo no tenga dentro ni el footer, ni otros elementos.
+
+```jsx
+<header>
+ <h1>Titulo importante header</h1>
+</header>
+
+<main></main>
+
+<footer></footer>
+```
+
+<a id="acc12"></a>
+
+### **¿Cuándo es necesario utilizar ARIA?**
+
+[Volver al indice](#acc-base)
+
+Usar ARIA en un elemento no hace que el mismo sea accesible automáticamente, se debe usar correctamente si se decide usar. Se debe usar ARIA cuando un elemento HTML no tiene soporte de accesibilidad, es decir, los elementos que no son semánticos.
+
+```jsx
+😡 <a role="button">Submit</a>
+✅ <button>Submit</button>
+```
+
+No agregar ARIA innecesario.
+
+```jsx
+😡 <h2 role="tab">Heading tab</h2>
+✅ <div role="tab"><h2>Heading tab</h2></div>
+```
+
+Siempre tener soporte a teclados usando el tabindex para establecer la prioridad de foco con teclado. Se debe evitar establecer tabindex mayores a cero para evitar que el orden de focus sea desordenado.
+
+```jsx
+✅ <span role="button" tabindex="0">Submit</span>
+😡 <span role="button" tabindex="1">Submit</span>
+```
+
+No agregar role=”presentation” o “aria-hidden= “true”” a los elementos que necesitan tener focus, ya que de lo contrario, se saltean al momento de navegar.
+
+```jsx
+✅ <div><button>Submit</button></div>
+😡 <div aria-hidden="true"><button>Submit</button></div>
+```
+
+Usar nombres accesibles, por ejemplo, en este caso el nombre accesible es “Red Leather Boots”. Cuando una imagen y está explicada por el texto de la página y es puramente decorativa, el alto no es necesario, se puede dejar este alt con un String vacío
+
+```jsx
+html
+<!-- A plain link with text between the link tags. -->
+<a href="shoes.html">Red leather boots</a>
+
+<!-- A linked image, where the image has alt text. -->
+<a href="shoes.html"><img src="shoes.png" alt="Red leather boots"></a>
+
+<!-- A checkbox input with a label. -->
+<input type="checkbox" id="shoes">
+<label for="shoes">Red leather boots</label>
+
+<!-- Imagen decorativa -->
+<img src="visualDecoration.jpeg" alt="">
+```
+
+No usar roles redundantes, por ejemplo:
+
+```jsx
+✅ <ul>...</ul>
+😡 <ul role="list">...</ul>
+```
+
+* Usar `<form>` o `<section>` sin el atributo name es un 😡 definitivo
+
+```jsx
+<section aria-label="Introduction to stamp collecting">
+    <p>Stamp collecting, also known as philately, is
+    and other materials relating
+    to postal delivery.</p>
+ </section>
+```
+
+Si vamos a agregar JS a un elemento, que sea en lo posible en un elemento de semantic HTML
+
+```jsx
+✅ <button onclick="doAction()">Click me!</div>
+😡 <div role="button" tabindex="0" onclick="doAction()">Click me!</div>
+```
+
+Si se va a utilizar un elemento no semántico para trigger de un evento JS, se debe agregar un `keydown/keyup` event.
+
+Se debe agregar el título de la página para que el Screen Reader le diga a los usuarios donde están posicionados, esto es especialmente para las SPA que funcionan desde un solo index.
+
+<a id="acc13"></a>
+
+### **Contenido Dinámico y Accesibilidad**
+
+[Volver al indice](#acc-base)
+
+Una de las funcionalidades de JS es la habilidad de agregar código HTML de manera dinámica. Por ejemplo, si quiero mostrar un mensaje que le avise al usuario que se loggeo correctamente:
+
+* Agrego el HTML:
+
+```html
+document.querySelector("#banner").innerHTML = '<p>You are now logged in</p>';
+```
+
+* Agrego el CSS:
+
+```html
+document.querySelector("#banner").setAttribute("style", "border-color:#0000ff;");
+```
+
+Para ambas cosas y para esta función, hay pros y contras
+
+| 😡 | ✅ |
+| --- | --- |
+| Renderizar grandes porciones de HTML no semántico | Renderizar de a pequeños pedazos de HTML semántico |
+| No dar tiempo para que la tecnología de accesibilidad reconozca al nuevo contenido dinámico | Agregar un setTimeout para dar tiempo a que los usuarios escuchen todo el mensaje |
+| Aplicar estilos en onFocus() | Usar :focus en CSS para realizar esto mismo |
+| Aplicar estilos inline | Poner los estilos en el stylesheet |
+| Crear archivos JS demasiado largos | Usar menos JS, muchas cosas pueden hacerse con CSS |
+
+Se debe usar JS simple y conciso.
+
+<a id="acc14"></a>
+
+### **Manejo de Focus**
+
+[Volver al indice](#acc-base)
+
+Cuando un componente no está manejado de forma correcta puede crear un **keyboard trap**, ya que es muy probable que el focus quede trabado en un solo componente, es muy común que esto pase en los modales.
+
+😡
+
+```jsx
+class Modal extends React.Component {
+  componentDidMount() {
+    this.modalTarget = document.createElement("div");
+    this.modalBackdrop = document.createElement("div");
+    this.modalTarget.className = "react-modal";
+    this.modalBackdrop.className = "react-modal__backdrop";
+    document.body.appendChild(this.modalTarget);
+    document.body.appendChild(this.modalBackdrop);
+    this._render();
+
+    setTimeout(() => {
+      this.modalTarget.classList.add("react-modal--in");
+      this.modalBackdrop.classList.add("react-modal__backdrop--in");
+    }, 40);
+  }
+
+  componentWillUpdate() {
+    this._render();
+  }
+
+  componentWillUnmount() {
+    this.modalTarget.classList.remove("react-modal--in");
+    this.modalBackdrop.classList.remove("react-modal__backdrop--in");
+    setTimeout(() => {
+      ReactDOM.unmountComponentAtNode(this.modalTarget);
+      document.body.removeChild(this.modalTarget);
+      document.body.removeChild(this.modalBackdrop);
+    }, 500);
+  }
+
+  renderModalDialogue() {
+    return <div className="react-modal__dialogue">{this.props.children}</div>;
+  }
+
+  _render() {
+    ReactDOM.render(this.renderModalDialogue(), this.modalTarget);
+  }
+
+  render() {
+    return <noscript />;
+  }
+}
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      modalActive: false
+    };
+    this.handleModalOpen = this.handleModalOpen.bind(this);
+    this.handleModalClose = this.handleModalClose.bind(this);
+  }
+  handleModalOpen() {
+    this.setState({ modalActive: true });
+  }
+  handleModalClose() {
+    this.setState({ modalActive: false });
+  }
+  render() {
+    const { modalActive } = this.state;
+    return (
+      <div>
+        <button onClick={this.handleModalOpen} className="btn btn-primary">
+          Show Message
+        </button>
+        {modalActive && (
+          <Modal>
+            <div className="deque-dialog-screen">
+              <h1
+                id="dialogMessageAlertHeading"
+                className="deque-dialog-heading"
+              >
+                Message Alert Dialog
+              </h1>
+              <p
+                id="dialogMessageAlertDescription"
+                className="deque-dialog-description"
+              >
+                This is the description for the message alert dialog
+              </p>
+              <div role="document" className="deque-dialog-content">
+                <p>
+                  Message alert dialogs are more urgent than regular message
+                  dialogs. They can contain long (or short) passages of text.
+                </p>
+              </div>
+              <p className="deque-dialog-buttons">
+                <button
+                  onClick={this.handleModalClose}
+                  className="deque-button deque-dialog-button-submit"
+                  aria-label="button"
+                >
+                  Continue
+                </button>
+                <button
+                  onClick={this.handleModalClose}
+                  className="deque-dialog-button-cancel"
+                  aria-label="button"
+                >
+                  Cancel
+                </button>
+                <button className="deque-dialog-button-close">
+                  <span aria-hidden="true"></span>
+                </button>
+              </p>
+            </div>
+          </Modal>
+        )}
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<App />, document.getElementById("app"));
+```
+
+✅
+
+```jsx
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      showModal: false
+    };
+
+    this.handleOpenModal = this.handleOpenModal.bind(this);
+    this.handleCloseModal = this.handleCloseModal.bind(this);
+  }
+
+  handleOpenModal() {
+    this.setState({ showModal: true });
+  }
+
+  handleCloseModal() {
+    this.setState({ showModal: false });
+  }
+
+  render() {
+    return (
+      <div class="buttonbox">
+        <button onClick={this.handleOpenModal}>Show Message</button>
+        <ReactModal
+          isOpen={this.state.showModal}
+          contentLabel="Minimal Modal Example"
+          className="react-modal__dialogue"
+        >
+          <div className="deque-dialog-screen">
+            <h1 id="dialogMessageAlertHeading" className="deque-dialog-heading">
+              Message Alert Dialog
+            </h1>
+            <p
+              id="dialogMessageAlertDescription"
+              className="deque-dialog-description"
+            >
+              This is the description for the message alert dialog
+            </p>
+            <div role="document" className="deque-dialog-content">
+              <p>
+                Message alert dialogs are more urgent than regular message
+                dialogs. They can contain long (or short) passages of text.
+              </p>
+            </div>
+            <p className="deque-dialog-buttons">
+              <button
+                onClick={this.handleCloseModal}
+                className="deque-button deque-dialog-button-submit"
+                aria-label="Continue"
+              >
+                Continue
+              </button>
+              <button
+                onClick={this.handleCloseModal}
+                className="deque-button deque-dialog-button-cancel"
+                aria-label="Cancel"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={this.handleCloseModal}
+                className="deque-dialog-button-close"
+                aria-label="Close modal"
+              >
+                X<span aria-hidden="true"></span>
+              </button>
+            </p>
+          </div>
+        </ReactModal>
+      </div>
+    );
+  }
+}
+
+const props = {};
+
+ReactDOM.render(<App {...props} />, document.getElementById("app"));
+```
+
+Se debe también manejar el focus a nivel página, poniendo énfasis en las SPA que cuando se cambia de sección no hay un refresh. Cada vez que se cambia de página, se debe definir donde debe quedar el focus, esto es decidido por el equipo de desarrollo.
+
+<a id="acc15"></a>
+
+### **CSS Accesible**
+
+[Volver al indice](#acc-base)
+
+Se puede hacer que cierto CSS Custom sea visto solo por el Screen Reader, esto se usa cuando tengo muchos gráficos en la pagina pero necesito que haya un texto alternativo para el mismo
+
+```css
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  top: auto;
+  overflow: hidden;
+}
+```
+
+Sin embargo, sí a un CSS de mi pagina le agrego los atributos **`display:none`** o **`visibility:hidden`** este elemento va a ser ignorado tanto por la página como por el Screen Reader
+
+* Cuando hablamos del **contraste** de una página, las “reglas” de la web accesibility recomiendan al menos 4.5:1 radio para un texto normal, el cual es calculado comparando la luminancia relativa de dos colores. Hay varias herramientas online para hacer esta comparación. Es necesario que haya un contraste considerable entre el fondo y el color de texto para que personas con problemas visuales puedan leer correctamente la página.
+
+Hay varios tipos de problemas de visión con respecto a los colores, el más común, es con el verde, también hay varias herramientas en internet que ayudan a simular el cómo se vería tu web si lo viera alguien con ciertos problemas visuales.
+
+<a id="acc16"></a>
+
+### **Que practicas conlleva tener un HTML Accesible?**
+
+[Volver al indice](#acc-base)
+
+* Se deben poner captions en las tables
+
+```jsx
+<table>
+  ✅ <caption>My stamp collection</caption>
+  <tr>
+    <th>Animal</th>
+    <th>Year</th>
+    <th>Condition</th>
+  </tr>
+</table>
+```
+
+* Utilizar correctamente los headings y con el orden correcto de prioridad
+
+```jsx
+😡
+<div>
+  <p>¿Cómo empiezo una colección de sellos?</p>
+  <p>Equipo que necesitarás</p>
+    <div>
+      <p>Lupa</p>
+      <p>Sellos</p>
+    </div>
+</div>
+
+<div>
+ <h3>Sellos</h3>
+ <p>La colección de sellos, también conocida como filatelia, es el estudio de los sellos postales, sobres franqueados, matasellos, postales y otros materiales relacionados con la entrega postal.</p>
+</div>
+<div>
+ <h3>¿Cómo empiezo una colección de sellos?</h3>
+  <h2>Equipo que necesitarás</h2>
+ <h4>...</h4>
+</div>
+
+
+✅
+<div>
+  <h1>¿Cómo empiezo una colección de sellos?</h1>
+  <h2>Equipo que necesitarás</h2>
+  <ol>
+    <li>Pinzas pequeñas con puntas redondeadas</li>
+    <li>Bisagras para sellos</li>
+  </ol>
+</div>
+
+<header>
+  <h1>Colección de Sellos</h1>
+</header>
+<main>
+ <section aria-label="Introducción a la colección de sellos">
+  <h2>¿Qué es la colección de sellos?</h2>
+  <p>La colección de sellos, también conocida como filatelia, es el estudio de los sellos postales, sobres franqueados, matasellos, postales y otros materiales relacionados con la entrega postal.</p>
+ </section>
+
+ <section aria-label="Comenzar una colección de sellos">
+  <h2>¿Cómo empiezo una colección de sellos?</h2>
+    <h3>Equipo necesario</h3>
+    <p>...</p>
+
+    <h3>Cómo adquirir sellos</h3>
+    <p>...</p>
+
+    <h3>Organizaciones a las que puedes unirte</h3>
+  <p>...</p>
+ </section>
+</main>
+```
+
+* Si se trata de una SPA se debe actualizar el `<title>` o `document.title` de la página para informar al usuario de donde está parado
+
+```jsx
+😡 <title>The Food Channel | Outrageous Pumpkins | Season 3 </title>
+✅ <title>Season 3 | Outrageous Pumpkins | The Food Channel</title>
+```
+
+* Agregar el atributo lang al HTML, esto para que el Screen reader reconozca con qué acento leer todo
+
+```jsx
+😡 <html>...</html>
+✅ <html lang="en">...</html>
+```
+
+* Si el contenido de la página está definido en un lang en particular, pero cierta parte de la misma está en otro idioma, esto se puede aclarar
+
+```jsx
+<html lang="en">
+  <body>...
+    <div>
+      <p>While traveling in Estonia this summer, I often asked,
+        <span lang="ee">"Kas sa räägid inglise keelt?"</span>
+        when I met someone new.</p>
+    </div>
+  </body>
+</html>
+```
+
+* Agregar `title` y la propiedad de scrolling al mismo, esto para que las personas con baja visión puedan saltear este iframe que probablemente no puedan ver.
+
+```jsx
+😡 <iframe src="https://www.youtube.com/embed/3obixhGZ5ds"></iframe>
+✅ <iframe title="Google Pixel - Lizzo in Real Tone"
+  src="https://www.youtube.com/embed/3obixhGZ5ds"
+  scrolling="auto">
+</iframe>
+```
+
+* Se recomienda, sí se tiene en un formulario una pregunta en el cual, hay varios **radiobutton** que responden a la misma, el envolver está en un **fieldset**, que ayuda a englobar tanto las opciones como las posibles respuestas, siendo la consigna o la pregunta el **legend** del fieldset
+
+```html
+<form>
+  <fieldset>
+    <legend>Elige uno de estos tres elementos:</legend>
+    <input id="uno" type="radio" name="elementos" value="uno">
+    <label for="uno">Opción Uno</label><br>
+    <input id="dos" type="radio" name="elementos" value="dos">
+    <label for="dos">Opción Dos</label><br>
+    <input id="tres" type="radio" name="elementos" value="tres">
+    <label for="tres">Opción Tres</label>
+  </fieldset>
+</form>
+```
+
+* También se recomienda englobar las fechas y/o horas en un **datetime tag**
+
+```html
+<p>Master Camper Cat officiated the cage match between Goro and Scorpion <time datetime="2013-02-13">last Wednesday</time>, which ended in a draw.</p>
+```
+
+* Se recomienda también, sí se tiene una lista de links, que se englobe en un **nav** y se le ponga un **aria-label** para que el Screen Reader sepa que es una lista de links
+
+```html
+<nav aria-label="Primary">
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/services">Services</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+</nav>
+```
+
+<a id="acc17"></a>
+
+### **Nombrar algunas ARIAS existentes**
+
+[Volver al indice](#acc-base)
+
+* `aria-expanded`: Se usa cuando un dropdown está expandido o no
+
+```html
+<button id="toggle" aria-expanded="false">
+```
+
+* `aria-pressed`: Se usa cuando un botón fue seleccionado o presionado
+
+```jsx
+ <div role="main" class="grid">
+        <div class="grid-item" id="colorOne">
+            <button class="btn" id="buttonOne" aria-label="Press me please">Press me please!</button>
+        </div>
+        <div class="grid-item">
+            <button class="btn" id="buttonTwo" aria-label="No press me">No press me!</button>
+        </div>
+    </div>
+```
+
+* `aria-hidden`: Se usa para esconder un elemento de la página
+
+```html
+<div aria-hidden="true"></div>
+```
+
+* `aria-label`: Se usa para darle un nombre a un elemento
+
+```html
+<button aria-label="Close"></button>
+```
+
+* `aria-describedby`: Se usa para describir un elemento
+
+```html
+<div id="more-info">This page will self-destruct in 10 seconds.</div>
+<button aria-describedby="more-info">Self-destruct</button>
+```
+
+* `aria-labelledby`: Se usa para referenciar un elemento por su ID
+
+```html
+<h1 id="title">My title</h1>
+<div aria-labelledby="title">...</div>
+```
+
+* `aria-controls`: Se usa para referenciar un elemento por su ID
+
+```html
+<div id="menu">...</div>
+<button aria-controls="menu">Open menu</button>
+```
+
+* `aria-live`: Se usa para anunciar cambios en la página
+
+```html
+<div aria-live="polite"></div>
+```
+
+* `aria-atomic`: Se usa para anunciar cambios en la página
+
+```html
+<div aria-atomic="true"></div>
+```
+
+* `aria-busy`: Se usa para anunciar cambios en la página
+
+```html
+<div aria-busy="true"></div>
+```
+
+---
 <a id="alg"></a>
 
 # Algoritmos y complejidad
@@ -1442,7 +6504,7 @@ function binarySearch(arr, target) {
   // Inicializamos los extremos del rango de búsqueda.
   let left = 0; // Índice del extremo izquierdo del rango.
   let right = arr.length - 1; // Índice del extremo derecho del rango.
-  
+
   // Calculamos el índice medio inicial.
   let middle = Math.floor((left + right) / 2);
 
@@ -1492,7 +6554,7 @@ No, no se puede, ya que encontrar el index del elemento del medio es demasiado c
 
 [Volver al indice](#alg-base)
 
-La diferencia principal es que en Binary Search se divide el array en dos partes y se busca en la mitad, mientras que en Linear Search se recorre todo el array hasta encontrar el elemento, es la que hacemos tipicamente en codigo. 
+La diferencia principal es que en Binary Search se divide el array en dos partes y se busca en la mitad, mientras que en Linear Search se recorre todo el array hasta encontrar el elemento, es la que hacemos tipicamente en codigo.
 
 La complejidad de Binary Search es O(log n) y la de Linear Search es O(n).
 
@@ -1525,7 +6587,7 @@ const selectionSort = (array) => {
       }
     }
 
-// Luego de que nuestro for interno finalizo, hago el swap de valores 
+// Luego de que nuestro for interno finalizo, hago el swap de valores
     const temp = array[i];
     array[i] = array[minIndex];
     array[minIndex] = temp;
@@ -1552,7 +6614,7 @@ const insertionSort = (array) => {
     // Un algoritmo de ordenación por inserción comienza la ordenación al principio de la lista, lo que significa que el primer elemento ya está ordenado.
   for (let i = 1; i < array.length; i++){
     const currValue = array[i];
-    let j = i - 1; 
+    let j = i - 1;
     // Mientras no vaya mas alla del inicio del array, y mientras no se encuentre un valor mas pequenio del guardado en currValue
       while(j >= 0 && array[j] > currValue) {
         array[j + 1] = array[j];
@@ -1631,18 +6693,18 @@ Es recursivo
      if (arr.length <= 1) {
          return arr;
      }
-     
+
      // Encuentra el punto medio del array
      const mid = Math.floor(arr.length / 2);
-     
+
      // Divide el array en mitades
      const left = arr.slice(0, mid);
      const right = arr.slice(mid);
-     
+
      // Ordena recursivamente las mitades izquierda y derecha
      return merge(mergeSort(left), mergeSort(right));
  }
- 
+
  // Función para combinar y ordenar dos arrays ordenados
  function merge(left, right) {
      // Array para almacenar el resultado fusionado
@@ -1650,7 +6712,7 @@ Es recursivo
      // Índices para recorrer los arrays izquierdo y derecho
      let leftIndex = 0;
      let rightIndex = 0;
- 
+
      // Mientras haya elementos en ambos arrays
      while (leftIndex < left.length && rightIndex < right.length) {
          // Compara los elementos actuales de ambos arrays
@@ -1664,9 +6726,9 @@ Es recursivo
              rightIndex++;
          }
      }
- 
+
      // Después de salir del bucle, uno de los arrays puede tener elementos restantes
- 
+
  ```
 
 Su complejidad temporal es de O(n log n)
@@ -1813,7 +6875,7 @@ int fibonacci (int n) {
 
 * **O (N log N) =>** Aplica a Merge Sort, Heap Sort y Quick Sort, que son los mas eficientes.
 
-* **O(log n)** => Es muy comun verlo en la busqueda binaria, ya que se situa a la mitad de un array ordenado y de ahi, mediante comparacion, encuentra el elemento.  
+* **O(log n)** => Es muy comun verlo en la busqueda binaria, ya que se situa a la mitad de un array ordenado y de ahi, mediante comparacion, encuentra el elemento.
 
 * **O(1)** => Tiempo constante, el algoritmo no variará su rendimiento con la entrada. Por ejemplo, asignaciones de variables.
 
@@ -1832,7 +6894,7 @@ int max(int a, int b) {
 * **O(n)** => Crecimiento Lineal, indica que el crecimiento de complejidad del algoritmo es proporcional al input. Mas datos, mas complejidad. Aparece en iteraciones.
 
 ```jsx
-for (int i = 0; i<n; i++) 
+for (int i = 0; i<n; i++)
  print(arr[1]);
 
 // En el peor de los casos se recorre el array entero para encontrar a un solo empleado.
@@ -1938,16 +7000,16 @@ Las lineas dentro de un bucle tendrán el mismo tipo de complejidad que su ciclo
 ```javascript
 public static void main(String[] args){
     int []arr = {5,3,4,8,7,5,4,2,4}; // 1
-    
+
     for (int j = 1; j < arr.length; j++) { // n
         int actual = arr[j]; // n
-        
+
         int i = j - 1; // n
         while (i >= 0 && arr[i] > actual) { // n^2
             arr[i+1] = arr[i]; // n^2
             i --; // n^2 - Ya que su padre es // n^2
         }
-        
+
         arr[i + 1] = actual;
     }
 }
@@ -2006,7 +7068,7 @@ void foo(int[] array) {
     for (int i = 0; i < array.length; i++) { // O(N)
         product *= array[i];
     }
-    
+
     System.out.println(sum + product);
 }
 ```
@@ -2066,7 +7128,7 @@ void reverseArray(int [] array) {
     int reversePosition = array.length - 1 - i;
     // Posicion actual
     int tmpVal = array[i];
-    
+
     // Cambiamos de lugar
     array[i] = array[reversePosition];
     array[reversePosition] = tmpVal;
@@ -2126,7 +7188,7 @@ int[] appendToNew(int[] array, int val) {
   for (int i = 0; i < array.length; i++){
     bigger[i] = array[i];
   }
-  
+
   bigger[bigger.length - 1] = val;
   return bigger;
 }
@@ -2174,6 +7236,8 @@ En Java, los `ArrayList` son una implementación de la interfaz `List`. También
 ### **Qué es un "array-like" en Javascript?** 💛
 
 [Volver al indice](#alg-base-arr)
+
+Es un tipo de dato similar a un Array pero que no posee todas las funciones heredadas de Prototype de un Array.
 
 Un array-like es un objeto que tiene propiedades indexadas y una propiedad length. Aunque no es un array, se comporta como tal. Por ejemplo, el objeto arguments es un array-like.
 
@@ -2427,7 +7491,7 @@ El crecimiento dinámico de un ArrayList en Java puede afectar su rendimiento en
 
 [Volver al indice](#alg-base-arr)
 
-Para agregar un elemento a un ArrayList utilizaremos el método add(elemento), el cual permite agregar un nuevo elemento al final de la estructura (es decir, como último elemento). 
+Para agregar un elemento a un ArrayList utilizaremos el método add(elemento), el cual permite agregar un nuevo elemento al final de la estructura (es decir, como último elemento).
 
 Por ejemplo, para agregar un elemento, podemos hacer:
 
@@ -2759,7 +7823,7 @@ for (let [key, value] of myMap) {
 
 <a id="alg301"></a>
 
-### **¿Cuál es la diferencia entre un Set y un Array en JavaScript?** 
+### **¿Cuál es la diferencia entre un Set y un Array en JavaScript?**
 
 [Volver al indice](#alg-base-col)
 
@@ -2776,7 +7840,7 @@ for (let [key, value] of myMap) {
 
 <a id="alg302"></a>
 
-### **¿En qué situaciones es más eficiente usar un HashMap en lugar de un Array?** 
+### **¿En qué situaciones es más eficiente usar un HashMap en lugar de un Array?**
 
 [Volver al indice](#alg-base-col)
 
@@ -2826,47 +7890,47 @@ Sus inconvenientes son:
 ```java
 public class SingleLinkedList {
   public Node head; // El primer nodo de todos
-  
+
   public void agregarAlFinal(int value) {
     // Si es el primer elemento de todos
     if (head == null) {
       head = new Node(value);
       return;
     }
-    
+
     Node current = head;
     // Mientras no encuentre un nodo sin referencia next (el ultimo)
     while (current.next != null) {
       current = current.next;
     }
-    
+
     current.next = new Node(value);
   }
-  
+
   public void eliminarNodo(int value) {
     // No hay elementos a eliminar porque no hay lista
     if (head == null) return;
-    
+
     if (head.value == value) {
       // Si el elemento a borrar es el head, paso el head al segundo elemento de la lista
       head = head.next;
       return;
     }
-    
+
     Node current = head;
     while(current.next != null) {
       if (current.next.value == value) {
         current.next = current.next.next;
         return
       }
-      
+
       current = current.next;
     }
   }
-  
+
   public void print() {
     if (head == null) return;
-    
+
     Node current = head;
     while (current.next != null) {
       System.out.println(current.value);
@@ -2995,11 +8059,21 @@ Algunas reglas no escritas, pero que se han asumido *por convención* son:
 
 ### **Diferencia entre let, var y const** 💛
 
-[Volver al indice](#alg-base-var)
+[Volver al indice](#entrevista-base)
 
 La diferencia es el alcance de cada uno.
 
-- **var:** Es la manera de declarar variables en ES5. Es global o local en una funcion.
+- **var:** Es viable dentro de una funcion, incluso si es declarada dentro de un if o loop, es valida afuera, y es global si esta fuera de una funcion. Se puede reasignar y redeclarar.
+
+```javascript
+function ejemplo() {
+  if (true) {
+    var x = 10;
+  }
+  console.log(x); // 10 (aunque x se declaró dentro del bloque if)
+}
+```
+
 - **let:** Es la manera de declarar variables en ES6. Es local en un bloque.
 - **const:** Es la manera de declarar constantes en ES6. Es local en un bloque.
 
@@ -3223,7 +8297,7 @@ Es excelente para cuando queremos insertar conjuntos de datos ordenados o para l
 public class Node {
   public int value;
   public Node[] hijos;
-  
+
   // Puede ser cualquier tipo de dato, no solo int
   public Node(int value) {
     this.value = value;
@@ -3291,7 +8365,7 @@ En este arbol todos los niveles estan completos excepto por el ultimo. Si el ult
 
 Es un arbol 100% balanceado.
 
-```javascript 
+```javascript
 // Definición de la clase TreeNode para un árbol binario
 class TreeNode {
     constructor(value) {
@@ -3544,7 +8618,7 @@ En las **Funciones Declarativas** usamos la palabra reservada `Function` para po
 
 ```jsx
  function saludar(nombre) {
-	console.log(`Hola ${nombre}`);
+  console.log(`Hola ${nombre}`);
 }
 
 saludar('Diego');
@@ -3577,7 +8651,7 @@ class C {
   m1() {}
   m2() {}
 }
- 
+
 const obj = new C();
 console.assert( typeof obj.m1 === 'function' );
 console.assert( typeof obj.m2 === 'function' );
@@ -3679,10 +8753,10 @@ let animal = {
 
 let mascota = animal
 animal.especie = 'gato'
-console.log(mascota.nombre) // gato, se copio referencia no valor 
+console.log(mascota.nombre) // gato, se copio referencia no valor
 
 ---
-    
+
 let object = {a: 1, b:2};
 let referencia = object; // Esto es solo una referencia
 
@@ -3716,7 +8790,7 @@ var saludar;
     saludar = "dice hola"
 ```
 
-Es el usar las variables antes de que sean declaradas. 
+Es el usar las variables antes de que sean declaradas.
 
 <a id="var25"></a>
 
@@ -3738,13 +8812,13 @@ function x () {
   function C () {
   }
 }
- 
+
 // uso de ambas
 try {
   const obj = new C();
   console.assert( false );
 } catch (err) {
-  console.assert( 
+  console.assert(
     err.message === 'C is not defined'
   );
 }
@@ -3753,7 +8827,7 @@ try {
 Ambas pueden ser definidas de forma anonima. Sus referencias funcionan igual que con object, no se envia una copia, si no una referencia de la misma.
 
 ```jsx
-const C = class {}; 
+const C = class {};
 const C = function () {};
 
 console.assert( typeof  C === 'function' );
@@ -3783,16 +8857,16 @@ const crearUsuario = ({ userName, avatar }) => ({
         return this
       }
     });
-    
+
         console.log(crearUsuario({ userName: 'Bender', avatar: 'bender.png' }));
-    
+
     {
       "id":"17hakg9a7jas",
       "avatar": "bender.png",
       "userName": "Bender",
       "cambiarUsername": [Function cambiarUsername]
       "cambiarAvatar": [Function cambiarAvatar]
-    
+
     }
     */
 ```
@@ -3818,11 +8892,11 @@ add(10)(20)(30); // 60
 
 <a id="var23-1"></a>
 
-### **¿Qué son las funciones puras y cómo se relacionan con la programación funcional?** 
+### **¿Qué son las funciones puras y cómo se relacionan con la programación funcional?**
 
 [Volver al indice](#alg-base-obj)
 
-Las funciones puras son funciones que siempre devuelven el mismo resultado dadas los mismos parametros, no dependen de factores externos como states o variables. 
+Las funciones puras son funciones que siempre devuelven el mismo resultado dadas los mismos parametros, no dependen de factores externos como states o variables.
 
 ```jsx
 function suma (a, b) {
@@ -3894,7 +8968,7 @@ Agregamos el evento al container y dependiendo donde es el click (en cual boton)
 
 [Volver al indice](#alg-base-async)
 
-Cuando agregamos un elemento parece que solo lo agregamos a un elemento DOM pero en realidad este se propaga en una direccion. Podemos elegir cual direccion escuchan nuestros eventos. 
+Cuando agregamos un elemento parece que solo lo agregamos a un elemento DOM pero en realidad este se propaga en una direccion. Podemos elegir cual direccion escuchan nuestros eventos.
 
 - Fase Capture: Llega al evento que dispara el evento
 - Fase Target
@@ -3968,7 +9042,7 @@ async function getPost() {
 
 [Volver al indice](#alg-base-async)
 
-Es una funcion que se pasa como argumento a otra funcion y se invoca dentro de la funcion externa para completar alguna accion. Se usa para manejar operaciones asincronicas. 
+Es una funcion que se pasa como argumento a otra funcion y se invoca dentro de la funcion externa para completar alguna accion. Se usa para manejar operaciones asincronicas.
 
 ```jsx
 function doSomethingAsync(callback) {
@@ -4049,12 +9123,12 @@ Y sus desventajas son:
 - **Callbacks:** Puede llevar a un Callback Hell.
 - **Promises:** Puede ser complicado de entender.
 - **Async Await:** No maneja errores de manera eficiente.
-  
-El mas usado es **Promises** por su facilidad de lectura y manejo de errores. 
+
+El mas usado es **Promises** por su facilidad de lectura y manejo de errores.
 
 <a id="var10"></a>
 
-### **Como funciona setTimeout?** 
+### **Como funciona setTimeout?**
 
 [Volver al indice](#alg-base-async)
 
@@ -4064,31 +9138,31 @@ Por ejemplo, el codigo imprimirá “Hola Mundo” despues de 2 segundos
 
 ```jsx
 setTimeout(function(){
-	console.log('hola mundo');
+  console.log('hola mundo');
 }, 2000);
 ```
 
-El primer parámetro es la función a ejecutar, puede ser hecha ahi mismo como en el ejemplo anterior, o ya estar hecha como en este ejemplo: 
+El primer parámetro es la función a ejecutar, puede ser hecha ahi mismo como en el ejemplo anterior, o ya estar hecha como en este ejemplo:
 
 ```jsx
 function saludos(nombre, rol) {
-	console.log(`hola mi nombre es ${nombre} y mi rol es ${rol}`);
+  console.log(`hola mi nombre es ${nombre} y mi rol es ${rol}`);
 }
 
 setTimeout(saludos, 3000, "denu", "administrador");
 ```
 
-¿Porque no pasar los parametros directamente a la funcion y recien despues del tiempo? Porque JS ejecutará la funcion sin esperar al timeout, ya que estarias pasando una llamada a la funcion, no la referencia a la funcion. 
+¿Porque no pasar los parametros directamente a la funcion y recien despues del tiempo? Porque JS ejecutará la funcion sin esperar al timeout, ya que estarias pasando una llamada a la funcion, no la referencia a la funcion.
 
 ```jsx
-setTimeout(saludos('denu', 'admin'), 3000); // NO 
+setTimeout(saludos('denu', 'admin'), 3000); // NO
 ```
 
 Si quiero cancelar un setTimeout debo utilizar `clearTimeout()`
 
 ```jsx
 const timeoutid = setTimeout (function() {
-	console.log('hola');
+  console.log('hola');
 }, 2000);
 
 clearTimeout(timeoutid)
@@ -4211,13 +9285,13 @@ El patrón pub/sub (publicación/suscripción) es un patrón de diseño de softw
 // Implementación de un patrón pub/sub
 const pubsub = (function() {
   const events = {};
-  
+
   // Suscribirse a un evento
   function subscribe(eventName, fn) {
     events[eventName] = events[eventName] || [];
     events[eventName].push(fn);
   }
-  
+
   // Publicar un evento
   function publish(eventName, data) {
     if (events[eventName]) {
@@ -4226,7 +9300,7 @@ const pubsub = (function() {
       });
     }
   }
-  
+
   return {
     subscribe,
     publish
@@ -4251,7 +9325,7 @@ pubsub.publish('event1', 'hello, world!'); // Publicar 'event1'
 
 ### **Generics en Java**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-3)
 
 Cada tipo primitivo (int, boolean, float..) tiene su clase hermana. Las clases siempre empiezan en mayus, los minuscula son llamados clases envoltorio.
 
@@ -4271,7 +9345,7 @@ Los ArrayList reconocen el tipo de dato que evaluan <String> / <Integer> por los
 
 ### **Estructuras de Datos**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-3)
 
 Manera de estructurar datos, Array, ArrayList, Pila, Cola..
 
@@ -4329,9 +9403,9 @@ private class IteratorSorteador implements Iterator<T>{
 
 <a id="alg52"></a>
 
-### Recursividad
+### **Recursividad**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-3)
 
 Son problemas que se pueden dividir en subproblemas. Por ejemplo: Calcula el elemento, obten los primero n elementos o un metodo que compute todos..
 
@@ -4341,7 +9415,7 @@ TODOS los algoritmos recursivos tienen una alternativa iterativa. Su complejidad
 
 ### **Factorial**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-3)
 
 El factorial de un número entero positivo n, denotado como n!, es el producto de todos los enteros positivos menores o iguales a n. Por ejemplo, el factorial de 5 se denota como 5! y se calcula como 5! = 5 * 4 * 3 * 2 * 1 = 120.
 
@@ -4366,7 +9440,7 @@ console.log(factorial(5)); // Output: 120
 
 ### **¿Qué son los generics y cómo se implementan en TypeScript?** 💛
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-3)
 
 Los generics son una característica de TypeScript que permite crear componentes, funciones y clases que pueden trabajar con una variedad de tipos de datos. Los generics permiten escribir código que es reutilizable y flexible, ya que no está limitado a un solo tipo de datos.
 
@@ -4383,11 +9457,52 @@ const array2 = makeArray<string>('hello'); // array2 es de tipo string[]
 
 Es ideal para reemplazar el uso de any. Por ejemplo, si se usa any, se pierde la información del tipo de datos que se está utilizando, lo que puede llevar a errores en tiempo de ejecución. Con generics, se puede especificar el tipo de datos que se espera y TypeScript se encargará de verificar que se cumpla en tiempo de compilación.
 
+---
+
+<a id="var27"></a>
+
+### **Funciones en Javascript**
+
+[Volver al indice](#alg-base-2)
+
+En javascript aveces no necesitamos nombrar nuestras funciones, especialmente cuando pasamos una funcion como argumento a otra funcion. Para eso las **funciones inline**, no les ponemos nombre a las funciones porque no vamos a necesitarlas en ningún otro lado.
+
+```jsx
+const myFunc = function() {
+  const myVar = "value";
+  return myVar; 
+  }
+```
+
+Otra cosa que ofrece ES6 es reemplazar el cuerpo de la funcion por una flecha, en el caso de que el cuerpo no sea necesario y la funcion solo conste de un return, es decir
+
+```jsx
+const myFunc = () => "value" //Igual a return “value”;
+```
+
+También podemos realizar operaciones en una sola linea
+
+```jsx
+// doubles input value and returns it
+const doubler = (item) => item * 2;
+```
+
+También podemos setear **parametros por defecto**
+ en nuestras funciones, sí llamamos a la funcion sin pasarle parametro, tomara el ya seteado por defecto.
+
+```jsx
+function greeting(name = "Anonymous") {
+  return "Hello " + name;
+}
+console.log(greeting("John")); // Hello John
+console.log(greeting()); // Hello Anonymous Por defecto
+```
+
 <a id="alg55"></a>
 
-### Metodos de Strings en Javascript
+### **Metodos de Strings en Javascript**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-2)
 
 ```javascript
 // Creacion de Strings
@@ -4405,7 +9520,7 @@ test[test.length - 1] // a
 test.charAt(0) // h
 
 // Obtener el index de una letra - Case sensitive
-const test = "hola denu hola"; 
+const test = "hola denu hola";
 test.indexOf("hola"); // 0 -- primera ocurrencia de la palabra
 test.indexOf("holax"); // -1
 test.lastIndexOf("hola"); // 10 -- ultima ocurrencia de la palabra
@@ -4416,9 +9531,9 @@ test.indexOf("hola", +infinito) // Por defecto empieza desde mas infinito
 
 <a id="alg56"></a>
 
-### Métodos de Objectos en Javascript
+### **Métodos de Objectos en Javascript**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-2)
 
 ```javascript
 // Object.create() -- Crea un nuevo objeto con el prototipo de pasamos por parametro
@@ -4429,7 +9544,7 @@ console.log(persona.nombre); // denu
 const persona = {
     init: function (nombre) {
         this.nombre = nombre;
-        return this; 
+        return this;
     },
     saludar: function() {
         console.log("hola, soy " + this.nombre);
@@ -4464,14 +9579,236 @@ objectToMap({a: 1, b: 2}); // Map {'a' => 1, 'b' => 2}
 
 ```
 
+<a id="var30"></a>
 
+### **Diferencia entre Map y Weakmap**
 
+[Volver al indice](#alg-base-2)
+
+Son casi iguales, son la clasica estructura de datos de diccionario, su diferencia es que se puede acceder a los clave-valores de un Map usando .values o .keys, en un Weakmap no se puede hacer eso.
+
+```jsx
+const map = new Map()
+const weakMap = new weakMap()
+
+const obj = {
+  hola: 'mundo',
+}
+
+map.set('denu', 'lemon')
+weakMap.set(myObjKey, 'lemon weakmap')
+
+// Map
+map.get('denu') // lemon
+map.keys() // {'denu'}
+map.values() // {'lemon'}
+
+// Weakmap
+weakMap.get(obj) // lemon weakmap
+weakMap.keys() // ERROR
+weakMap.values() // ERROR
+```
+
+Weakmap es una caja negra en donde solo se puede acceder a los valores si se tiene la Key.
+
+Weakmap, ademas, solo admite objetos como clave, estos estan debilmente referenciados por lo que puede ser recolectados por el garbage collector de JS si asi lo considera, destruyendo esa entrada en el Weakmap y liberando memoria.
+
+<a id="var29"></a>
+
+### **Diferencia entre `for in` y `for of`**
+
+[Volver al indice](#alg-base-2)
+
+- For in toma los indices de los elementos que estan siendo recorridos
+
+```javascript
+const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+for (const index in digits) {
+  console.log(digits[index]);
+}
+```
+
+- For of toma los valores en si
+
+```javascript
+const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+for (const digit of digits) {
+  console.log(digit);
+}
+```
+
+<a id="var32"></a>
+
+### **Diferencia entre foreach, map y reduce**
+
+[Volver al indice](#alg-base-2)
+
+- **Foreach** itera por cada uno. Ejecuta la función que se le pasa por parámetro para cada elemento del array. Este método no devuelve nada, por lo tanto, si intentamos guardar su ejecución en una variable lo que ocurrirá es que esa variable tomará el valor de undefined.
+
+```jsx
+[1, 2, 3, 4].forEach(function (item) {
+   console.log(item);
+});
+// Imprimirá por consola
+1
+2
+3
+4
+
+let numbers = [1, 2, 3, 4].forEach(function (item) {
+     console.log(item);
+});
+console.log(numbers); // undefined
+```
+
+- **Map**: Devuelve una nueva matriz aplicando la funcion de devolucion de llamada en cada elemento de la matriz.
+
+```jsx
+var result = [1,2,3,4].map((item) => { return item * 2; });
+console.log(result);
+// Resultado
+[2,4,6,8]
+```
+
+- **Reduce** tiene un acumulador y todo. Nos permite, dada una función, “reducirlo” o “transformar” los elementos de un arreglo en un nuevo y único valor.
+
+```jsx
+var myArray = [10, 20, 30];
+var total = myArray.reduce((accumulator, number) => {
+ return accumulator + number;
+});
+total;
+// Prints 60
+```
+
+<a id="var16"></a>
+
+### **Rest Operator**
+
+[Volver al indice](#alg-base-2)
+
+Con esto, se pueden crear funciones que pueden tomar una variable cantidad de argumentos, y estos pueden ser accedidos luego por estar guardados en un Array de dentro de la misma funcion
+
+```jsx
+function howMany(...args) {
+  return "You have passed " + args.length + " arguments.";
+}
+console.log(howMany(0, 1, 2)); // You have passed 3 arguments
+console.log(howMany("string", null, [1, 2, 3], { })); // You have passed 4 argume
+```
+
+Es decir, esta funcion..
+
+```jsx
+const product = (function() {
+  "use strict";
+  return function product(n1, n2, n3) {
+    const args = [n1, n2, n3];
+    return args.reduce((a, b) => a * b, 1);
+  };
+})();
+console.log(product(2, 4, 6));//48
+```
+
+Es lo mismo que esta
+
+```jsx
+const product = (function() {
+  "use strict";
+  return function product(...n) {
+    return n.reduce((a, b) => a * b, 1);
+  };
+})();
+console.log(product(2, 4, 6));//48
+```
+
+Otra funcion puede ser sacar el valor maximo de un Array de la siguiente manera
+
+```jsx
+const arr = [6, 89, 3, 45];
+const maximus = Math.max(...arr); // returns 89
+```
+
+Esto también se puede usar con **objetos,**
+escribir este codigo
+
+```jsx
+var voxel = {x: 3.6, y: 7.4, z: 6.54 };
+var x = voxel.x; // x = 3.6
+var y = voxel.y; // y = 7.4
+var z = voxel.z; // z = 6.54
+```
+
+Es lo mismo que hacer esto
+
+```jsx
+const { x, y, z } = voxel; // x = 3.6, y = 7.4, z = 6.54
+```
+
+También podemos transformar los objetos nested en variables
+
+```jsx
+const a = {
+  start: { x: 5, y: 6},
+  end: { x: 6, y: -9 }
+};
+const { start : { x: startX, y: startY }} = a;
+console.log(startX, startY); // 5, 6
+```
+
+<a id="var17"></a>
+
+### **Creando Strings con Template Literal - Template Strings**
+
+[Volver al indice](#alg-base-2)
+
+Es un tipo especial de String que hace que el manejo de String complejos sea más facil, pudiendo crear Strings multilinea para invocarlos luego, por ejemplo:
+
+```jsx
+const person = {
+  name: "Zodiac Hasbro",
+  age: 56
+};
+
+// Template literal with multi-line and string interpolation
+const greeting = `Hello, my name is ${person.name}!
+I am ${person.age} years old.`;
+
+console.log(greeting); // prints
+// Hello, my name is Zodiac Hasbro!
+// I am 56 years old.
+```
+
+Se usa otro tipo de “comilla” cuando se quiere invocar al String (`) y no es necesario poner /n para que se haga un salto de línea en el texto de salida
+
+<a id="var18"></a>
+
+### **Export Fallback con export default**
+
+[Volver al indice](#alg-base-2)
+
+Lo mismo que el anterior, sí queremos exportar una funcion, cuando la declaramos, la exportamos. Se usa cuando quiero exportar solo un valor o funcion, solo puedo elegir un valor que tenga esta propiedad de exportacion, tampoco se puede usar con const, var o let.
+
+```jsx
+export default function add(x,y) {
+  return x + y;
+}
+```
+
+Despues lo importo agregandole un nombre de variable cualquiera e invocandolo normalmente.
+
+```jsx
+import add from "math_functions";
+add(5,4); //Devuelve el resultado de acuerdo al metodo exportado anteriormente
+```
 
 <a id="var9"></a>
 
 ### **Diferencia entre import y require**
 
-[Volver al indice](#alg-base)
+[Volver al indice](#alg-base-2)
 
 - Require: Se usa para importar las funciones y el codigo en un archivo externo. Esto posee un problema, el cual es que este codigo puede ser muy largo y solo necesito una parte del codigo.
 - Import: Herramienta de ES6 para importar solo los componentes que necesitamos de un archivo.
@@ -4496,7 +9833,7 @@ let obj = {
 Object.freeze(obj);
 obj.review = "bad"; //will be ignored. Mutation not allowed
 obj.newProp = "Test"; // will be ignored. Mutation not allowed
-console.log(obj); 
+console.log(obj);
 // { name: "FreeCodeCamp", review:"Awesome"}
 ```
 
@@ -4520,7 +9857,7 @@ const {name, age} = person;
 console.log(name, age); // denu 25
 ```
 
-Esto no ahorra tener que crear dos variables distintas en dos lineas distintas y asignarlas de manera independiente. 
+Esto no ahorra tener que crear dos variables distintas en dos lineas distintas y asignarlas de manera independiente.
 
 <a id="var8-3"></a>
 
@@ -4588,227 +9925,7 @@ console.log(rest); // [3, 4]
 
 Ambos usan la misma sintaxis (`...`), pero el **contexto** es lo que determina si se trata de un **Spread** o un **Rest**.
 
-
-<a id="var16"></a>
-
-### **Rest Operator**
-
-[Volver al indice](#alg-base)
-
-Con esto, se pueden crear funciones que pueden tomar una variable cantidad de argumentos, y estos pueden ser accedidos luego por estar guardados en un Array de dentro de la misma funcion
-
-```jsx
-function howMany(...args) {
-  return "You have passed " + args.length + " arguments.";
-}
-console.log(howMany(0, 1, 2)); // You have passed 3 arguments
-console.log(howMany("string", null, [1, 2, 3], { })); // You have passed 4 argume
-```
-
-Es decir, esta funcion..
-
-```jsx
-const product = (function() {
-	"use strict";
-	return function product(n1, n2, n3) {
-		const args = [n1, n2, n3];
-		return args.reduce((a, b) => a * b, 1);
-	};
-})();
-console.log(product(2, 4, 6));//48
-```
-
-Es lo mismo que esta
-
-```jsx
-const product = (function() {
-	"use strict";
-	return function product(...n) {		
-		return n.reduce((a, b) => a * b, 1);
-	};
-})();
-console.log(product(2, 4, 6));//48
-```
-
-Otra funcion puede ser sacar el valor maximo de un Array de la siguiente manera
-
-```jsx
-const arr = [6, 89, 3, 45];
-const maximus = Math.max(...arr); // returns 89
-```
-
-Esto también se puede usar con **objetos,** 
-escribir este codigo
-
-```jsx
-var voxel = {x: 3.6, y: 7.4, z: 6.54 };
-var x = voxel.x; // x = 3.6
-var y = voxel.y; // y = 7.4
-var z = voxel.z; // z = 6.54
-```
-
-Es lo mismo que hacer esto
-
-```jsx
-const { x, y, z } = voxel; // x = 3.6, y = 7.4, z = 6.54
-```
-
-También podemos transformar los objetos nested en variables
-
-```jsx
-const a = {
-  start: { x: 5, y: 6},
-  end: { x: 6, y: -9 }
-};
-const { start : { x: startX, y: startY }} = a;
-console.log(startX, startY); // 5, 6
-```
-
-<a id="var17"></a>
-
-### **Creando Strings con Template Literal - Template Strings**
-
-[Volver al indice](#alg-base)
-
-Es un tipo especial de String que hace que el manejo de String complejos sea más facil, pudiendo crear Strings multilinea para invocarlos luego, por ejemplo:
-
-```jsx
-const person = {
-  name: "Zodiac Hasbro",
-  age: 56
-};
-
-// Template literal with multi-line and string interpolation
-const greeting = `Hello, my name is ${person.name}!
-I am ${person.age} years old.`;
-
-console.log(greeting); // prints
-// Hello, my name is Zodiac Hasbro!
-// I am 56 years old.
-```
-
-Se usa otro tipo de “comilla” cuando se quiere invocar al String (`) y no es necesario poner /n para que se haga un salto de línea en el texto de salida
-
-<a id="var18"></a>
-
-### **Export Fallback con export default**
-
-[Volver al indice](#alg-base)
-
-Lo mismo que el anterior, sí queremos exportar una funcion, cuando la declaramos, la exportamos. Se usa cuando quiero exportar solo un valor o funcion, solo puedo elegir un valor que tenga esta propiedad de exportacion, tampoco se puede usar con const, var o let.
-
-```jsx
-export default function add(x,y) {
-  return x + y;
-}
-```
-
-Despues lo importo agregandole un nombre de variable cualquiera e invocandolo normalmente.
-
-```jsx
-import add from "math_functions";
-add(5,4); //Devuelve el resultado de acuerdo al metodo exportado anteriormente
-```
-
-<a id="var27"></a>
-
-### **Funciones en Javascript**
-
-[Volver al indice](#alg-base)
-
-En javascript aveces no necesitamos nombrar nuestras funciones, especialmente cuando pasamos una funcion como argumento a otra funcion. Para eso las **funciones inline**, no les ponemos nombre a las funciones porque no vamos a necesitarlas en ningún otro lado.
-
-```jsx
-const myFunc = function() {
-  const myVar = "value";
-  return myVar; }
-```
-
-Otra cosa que ofrece ES6 es reemplazar el cuerpo de la funcion por una flecha, en el caso de que el cuerpo no sea necesario y la funcion solo conste de un return, es decir
-
-```jsx
-const myFunc = () => "value" //Igual a return “value”;
-```
-
-También podemos realizar operaciones en una sola linea
-
-```jsx
-// doubles input value and returns it
-const doubler = (item) => item * 2;
-```
-
-También podemos setear **parametros por defecto** 
- en nuestras funciones, sí llamamos a la funcion sin pasarle parametro, tomara el ya seteado por defecto.
-
-```jsx
-function greeting(name = "Anonymous") {
-  return "Hello " + name;
-}
-console.log(greeting("John")); // Hello John
-console.log(greeting()); // Hello Anonymous Por defecto
-```
-
-
-
-<a id="var29"></a>
-
-### **Diferencia entre `for in` y `for of`**
-
-[Volver al indice](#alg-base)
-
-- For in toma los indices de los elementos que estan siendo recorridos
-
-```javascript
-const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-for (const index in digits) {
-  console.log(digits[index]);
-}
-```
-
-- For of toma los valores en si
-
-```javascript
-const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-for (const digit of digits) {
-  console.log(digit);
-}
-```
-
-<a id="var30"></a>
-
-### **Diferencia entre Map y Weakmap**
-
-[Volver al indice](#alg-base)
-
-Son casi iguales, son la clasica estructura de datos de diccionario, su diferencia es que se puede acceder a los clave-valores de un Map usando .values o .keys
-
-```jsx
-const map = new Map()
-const weakMap = new weakMap()
-
-const obj = {
-	hola: 'mundo',
-}
-
-map.set('denu', 'lemon')
-weakMap.set(myObjKey, 'lemon weakmap')
-
-// Map
-map.get('denu') // lemon
-map.keys() // {'denu'}
-map.values() // {'lemon'}
-
-// Weakmap
-weakMap.get(obj) // lemon weakmap
-weakMap.keys() // ERROR
-weakMap.values() // ERROR
-```
-
-Weakmap es una caja negra en donde solo se puede acceder a los valores si se tiene la Key. 
-
-Weakmap, ademas, solo admite objetos como clave, estos estan debilmente referenciados por lo que puede ser recolectados por el garbage collector de JS si asi lo considera, destruyendo esa entrada en el Weakmap y liberando memoria.
+---
 
 <a id="var31"></a>
 
@@ -4823,48 +9940,6 @@ miVariableGlobal = 'Hola mundo'
 ```
 
 Puede dar al choque entre variables locales y globales por nombre. Ademas es dificil limpiar el codigo basado en variables globales
-
-<a id="var32"></a>
-
-### **Diferencia entre foreach, map y reduce**
-
-- **Foreach** itera por cada uno. Ejecuta la función que se le pasa por parámetro para cada elemento del array. Este método no devuelve nada, por lo tanto, si intentamos guardar su ejecución en una variable lo que ocurrirá es que esa variable tomará el valor de undefined.
-
-```jsx
-[1, 2, 3, 4].forEach(function (item) {   
-   console.log(item); 
-});
-// Imprimirá por consola
-1
-2
-3
-4
-
-let numbers = [1, 2, 3, 4].forEach(function (item) {   
-     console.log(item); 
-});
-console.log(numbers); // undefined
-```
-
-- **Map**: Devuelve una nueva matriz aplicando la funcion de devolucion de llamada en cada elemento de la matriz.
-
-```jsx
-var result = [1,2,3,4].map((item) => { return item * 2; });
-console.log(result);
-// Resultado
-[2,4,6,8]
-```
-
-- **Reduce** tiene un acumulador y todo. Nos permite, dada una función, “reducirlo” o “transformar” los elementos de un arreglo en un nuevo y único valor.
-
-```jsx
-var myArray = [10, 20, 30];
-var total = myArray.reduce((accumulator, number) => {
- return accumulator + number;
-});
-total;
-// Prints 60
-```
 
 <a id="var33"></a>
 
@@ -5423,9 +10498,9 @@ Los derechos personalísimos son derechos inalienables, no pueden ser enajenados
 - **Derechos de autoría:** Sí el autor de una novela hace un contrato con una editorial para publicar y editar la obra, sí hay una cláusula que autoriza publicar la obra con el nombre de otra persona como autor, esta no tendría validez.
 - **Derecho de integridad:** es el derecho inalienable a que la obra se mantenga intacta, sin agregados, según el autor la hizo. Cualquier cláusula contraria será nula
 - **Derecho de arrepentimiento:** Sí el autor se arrepiente una vez que sus libros están a la venta, el editor no puede seguir vendiendo. El autor debe pagar los daños que produce su decisión. Por el motivo que sea.
-    
+
     https://lh7-us.googleusercontent.com/DkRMPgn0J8E2o8YK-jpsJNTl_MJ5ybdJBYQyBl6OvBKELvIFeq5_yzPZWcJWtiiwqDwxLQCoApPbtiPEjEPfuoZDpz122odphA4z5PAOmB5V27CVKPkGGhG4EDHxAXvocdCzCo1WjhLincN4mo2VDw
-    
+
 
 El derecho de explotación económica permite al autor difundir su obra a través de autorizaciones de reproducción, pagas o gratuitas. El autor realiza convenios que establecen dentro de la totalidad de lo posible, los límites de lo autorizado. El autor diseña lo que va a entregar a través de convenios.
 
@@ -5730,23 +10805,23 @@ El **Error-A** es dejar afuera del tipo acciones que son parecidas a las que que
 El **Error-B** es cuando hay una redacción incorrecta del tipo, y quedaron incluidas cosas que no era la idea que estuvieran ahí, esto es más grave y tiene otro costo
 
 | Violación de correo electrónico
- (art. 153 del C.P. prisión de 15 días a 6 meses) | Abriere o accediera => comunicación electrónica.  
-Apoderare => comunicación electrónica.  
-Suprimiere o desviare => comunicación electrónica.  
+ (art. 153 del C.P. prisión de 15 días a 6 meses) | Abriere o accediera => comunicación electrónica.
+Apoderare => comunicación electrónica.
+Suprimiere o desviare => comunicación electrónica.
 Interceptare o captare => comunicación electrónica o telecomunicaciones. |
 | --- | --- |
-| Acceso  indebido  a  un  sistema  informático  (art.  153  bis CP,  prisión  de  15  días  a  6  
+| Acceso  indebido  a  un  sistema  informático  (art.  153  bis CP,  prisión  de  15  días  a  6
 meses) | Accediera => sistema informático de acceso restringido. |
 | Publicación de comunicación electrónica (art. 155 CP, multa) | Hiciere publicar => comunicación electrónica no destinada a la publicidad. |
-| Acceso a bancos de datos personales (art. 157 bis, prisión de 1 mes a 2 años) | Accediera => banco de datos personales.  
-Proporcionare  o  revelare => información  registrada  en  un  registro  o  banco  de  
-datos personales sobre los que debiera guardar secreto.  
+| Acceso a bancos de datos personales (art. 157 bis, prisión de 1 mes a 2 años) | Accediera => banco de datos personales.
+Proporcionare  o  revelare => información  registrada  en  un  registro  o  banco  de
+datos personales sobre los que debiera guardar secreto.
 Insertar o hiciere insertar => datos en un archivo de datos personales. |
 | Fraude (art. 172/3 del CP, prisión de 1 mes a 6 años) | Defraudare=> mediante cualquier técnica de manipulación informática. |
-| Daños Informáticos (art. 183/4 del CP prisión de 15 días a 1 año) | Alterare,  destruyere,  inutilizar  => datos,  documentos,  programas  o  sistemas  
+| Daños Informáticos (art. 183/4 del CP prisión de 15 días a 1 año) | Alterare,  destruyere,  inutilizar  => datos,  documentos,  programas  o  sistemas
 informáticos.  Vendiere, distribuyere, hiciere circular o introdujera en un sistema informático programas destinados a causar daños. |
 | Interrupción de comunicaciones
- (art. 197 CP prisión de 6 meses a 2 años) | Interrumpiera o entorpecer la comunicación telegráfica, telefónica o de otra naturaleza (ello incluye todas las comunicaciones informáticas).  
+ (art. 197 CP prisión de 6 meses a 2 años) | Interrumpiera o entorpecer la comunicación telegráfica, telefónica o de otra naturaleza (ello incluye todas las comunicaciones informáticas).
 Resistieron violentamente => el  restablecimiento  de  una  comunicación  interrumpida. |
 
 <a id="cic61"></a>
@@ -6014,7 +11089,7 @@ Con estos detalles, puedo comenzar a identificar patrones y áreas específicas 
 
 **Reproducir el Problema**
 
-Es importante intentar reproducir la lentitud en mi entorno de desarrollo para ver si se puede identificar el origen del problema. Para esto, podría usar herramientas de monitoreo y registro (logs) en tiempo real para detectar cualquier irregularidad. 
+Es importante intentar reproducir la lentitud en mi entorno de desarrollo para ver si se puede identificar el origen del problema. Para esto, podría usar herramientas de monitoreo y registro (logs) en tiempo real para detectar cualquier irregularidad.
 
 **Diagnóstico**
 
@@ -6050,7 +11125,7 @@ En resumen, manejaría esta situación con un enfoque metódico: primero recolec
 
 <a id="cic68"></a>
 
-### **¿Cuáles son los posibles riesgos de adoptar una nueva tecnología en el proyecto? ¿Cómo mitigarlos?** 
+### **¿Cuáles son los posibles riesgos de adoptar una nueva tecnología en el proyecto? ¿Cómo mitigarlos?**
 
 [Volver al indice](#cic-base-2)
 
@@ -6066,7 +11141,7 @@ En resumen, los riesgos de adoptar una nueva tecnología pueden gestionarse a tr
 
 <a id="cic69"></a>
 
-### **Algunos miembros de tu equipo no pueden ponerse de acuerdo sobre una solución. Discuten y no pueden tomar una decisión. ¿Cómo resolverías esta situación conflictiva?** 
+### **Algunos miembros de tu equipo no pueden ponerse de acuerdo sobre una solución. Discuten y no pueden tomar una decisión. ¿Cómo resolverías esta situación conflictiva?**
 
 [Volver al indice](#cic-base-2)
 
@@ -6126,7 +11201,7 @@ Este enfoque puede ayudar a resolver el conflicto de manera justa y equilibrada,
 
 <a id="cic70"></a>
 
-### **¿Cómo motivas a tu equipo y qué enfoques conoces? ¿Existe algún motivador universal para todos?** 
+### **¿Cómo motivas a tu equipo y qué enfoques conoces? ¿Existe algún motivador universal para todos?**
 
 [Volver al indice](#cic-base-2)
 
@@ -6151,6 +11226,93 @@ Este enfoque puede ayudar a resolver el conflicto de manera justa y equilibrada,
 ### 7. **Participación y Empoderamiento:**
     - Involucrar a los empleados en la toma de decisiones, darles autonomía y responsabilidad sobre su trabajo, y permitirles contribuir con ideas y soluciones puede aumentar la motivación y el compromiso.
 
+
+<a id="cic70-1"></a>
+
+### **¿Cómo delegas tareas en tu equipo y cómo varía tu enfoque dependiendo de la antigüedad del miembro del equipo?**
+
+[Volver al indice](#cic-base-2)
+
+Delegar tareas de manera efectiva es clave para maximizar la productividad del equipo, fomentar el desarrollo de habilidades y garantizar que los proyectos avancen correctamente. El enfoque para delegar puede variar dependiendo de la experiencia, antigüedad y nivel de confianza del miembro del equipo. Aquí hay una descripción detallada de cómo podría manejarlo:
+
+---
+
+### **1. Evaluar la tarea y sus requerimientos**
+Antes de delegar, es importante comprender la complejidad, prioridad y dependencia de la tarea. Preguntas clave:
+- ¿Requiere conocimientos técnicos avanzados o específicos?
+- ¿Tiene una fecha límite ajustada?
+- ¿Impacta a otras partes del proyecto?
+Esto me ayuda a decidir a quién asignar la tarea según su nivel de experiencia.
+
+---
+
+### **2. Delegar según el nivel de experiencia**
+El nivel de experiencia del miembro del equipo influye directamente en la forma en que se delega la tarea y el nivel de supervisión.
+
+#### **Miembros junior (nivel inicial)**
+- **Enfoque**: Darles tareas más claras, delimitadas y con un alcance bien definido. Estas tareas suelen tener menor impacto crítico y pueden ser oportunidades de aprendizaje.
+- **Estrategia**:
+  - Proporcionar instrucciones detalladas y un objetivo claro.
+  - Asignar tareas donde puedan desarrollar habilidades específicas.
+  - Supervisar más de cerca y revisar frecuentemente su progreso.
+  - Ser accesible para resolver dudas y brindar apoyo.
+- **Ejemplo**: "Quiero que implementes este componente siguiendo este diseño. Si tienes dudas con la estructura o lógica, revisémoslas antes de avanzar."
+
+#### **Miembros de nivel medio**
+- **Enfoque**: Confiar en su capacidad para completar tareas con menor supervisión, pero aún dando un poco de orientación cuando sea necesario.
+- **Estrategia**:
+  - Asignar tareas con mayor complejidad, pero que no afecten de manera crítica al proyecto.
+  - Establecer puntos de control para validar el progreso.
+  - Fomentar su autonomía y proactividad al resolver problemas.
+- **Ejemplo**: "Implementa este módulo. Asegúrate de integrar correctamente con el backend, y programemos una revisión después de que completes el 50%."
+
+#### **Miembros senior (alto nivel de experiencia)**
+- **Enfoque**: Darles autonomía total en tareas estratégicas o críticas y confiar en su criterio.
+- **Estrategia**:
+  - Asignar responsabilidades clave, como liderar partes complejas del proyecto.
+  - Fomentar que definan su propio enfoque para resolver problemas.
+  - Incluirlos en decisiones de alto nivel y en mentoría de otros miembros.
+- **Ejemplo**: "Tenemos un problema con la arquitectura actual del proyecto. ¿Puedes liderar la investigación de opciones y proponer una solución?"
+
+---
+
+### **3. Supervisión y seguimiento**
+El nivel de supervisión varía según la experiencia del miembro:
+- **Junior**: Revisiones más frecuentes (diarias o semanales) para asegurarse de que están en el camino correcto.
+- **Nivel medio**: Check-ins ocasionales o revisiones en puntos clave del progreso.
+- **Senior**: Supervisión mínima; confiar en su experiencia y proporcionar feedback al final del ciclo.
+
+---
+
+### **4. Fomentar la comunicación abierta**
+Independientemente de la antigüedad, siempre dejo claro que pueden acercarse si tienen dudas, enfrentan obstáculos o necesitan ajustar plazos. Esto genera confianza y ayuda a prevenir problemas antes de que se agraven.
+
+---
+
+### **5. Delegar con aprendizaje en mente**
+Siempre considero cómo las tareas que asigno pueden contribuir al desarrollo profesional de los miembros del equipo:
+- **Junior**: Les doy tareas que amplíen sus conocimientos básicos y habilidades técnicas.
+- **Medio**: Les asigno tareas que los expongan a nuevas responsabilidades, como comunicación con stakeholders o resolver problemas más abstractos.
+- **Senior**: Los desafío con tareas que requieran innovación o pensamiento estratégico.
+
+---
+
+### **6. Retroalimentación al finalizar**
+Una vez completada la tarea:
+- **Para juniors**: Brindar feedback detallado sobre lo que hicieron bien y dónde mejorar.
+- **Para niveles medios**: Reconocer su progreso y discutir cómo podrían optimizar su enfoque.
+- **Para seniors**: Discutir su trabajo en un nivel más estratégico, como el impacto general en el proyecto.
+
+---
+
+### **Resumen de mi enfoque**
+- **Evaluar las habilidades del miembro y las demandas de la tarea.**
+- **Asignar tareas de acuerdo con el nivel de experiencia.**
+- **Supervisar proporcionalmente según la antigüedad.**
+- **Fomentar la comunicación abierta para resolver bloqueos.**
+- **Dar retroalimentación constructiva después de completar la tarea.**
+
+Este enfoque ayuda a mantener al equipo alineado, desarrollar sus habilidades y garantizar que las tareas sean manejadas de manera eficiente según las capacidades individuales. ¿Quieres ejemplos específicos de tareas técnicas o gestión para cada nivel?
 
 ---
 
@@ -6221,7 +11383,7 @@ Su tipado estricto ayuda a saber como funcionan las cosas, por ejemplo, en este 
 ```jsx
 function calcularISV (productos) {
  let total = 0;
- 
+
  productos.forEach( ({precio}) => {
   total += precio;
  }
@@ -6490,7 +11652,7 @@ const beer = new Beer('Imperial', 1000, 5);
 
 Nos permite categorizar objetos, es decir, que un objeto tenga un comportamiento ya esperado. Es un contrato.
 
-```typescript 
+```typescript
 interface Product {
  name: string;
  price: number;
@@ -6582,7 +11744,7 @@ type Status = 'active' | 'inactive';
 
 <a id="typ18"></a>
 
-### **¿Qué son los tipos Union e Intersection y cuándo se utilizan?**  
+### **¿Qué son los tipos Union e Intersection y cuándo se utilizan?**
 
 [Volver al indice](#typ-base)
 
@@ -6665,6 +11827,186 @@ type PersonWithoutAddress = Omit<Person, 'address'>;
 const personWithoutAddress: PersonWithoutAddress = { name: 'Alice', age: 30 }; // No contiene la propiedad 'address'
 ```
 
+<a id="typ20"></a>
+
+### **¿Cómo funcionan los Mapped Types y cómo se aplican en proyectos complejos?**
+
+[Volver al indice](#typ-base)
+
+Mapped Types en TypeScript son una forma de transformar tipos existentes en nuevos tipos utilizando un mecanismo de mapeo. Este es un concepto muy poderoso que te permite crear tipos dinámicamente basados en otros. Los Mapped Types se definen utilizando la sintaxis de los tipos indexados y la palabra clave `in`.
+
+Un ejemplo común de Mapped Types es la creación de un tipo que convierte todas las propiedades de un tipo dado en propiedades opcionales. Esto se puede lograr utilizando un Mapped Type con la palabra clave `Partial`.
+
+```typescript
+interface Person {
+ name: string;
+ age: number;
+}
+
+// Mapped Type que convierte todas las propiedades de Person en opcionales
+type PartialPerson = {
+ [K in keyof Person]?: Person[K];
+};
+
+const partialPerson: PartialPerson = {}; // Todas las propiedades son opcionales
+```
+
+En proyectos complejos, los Mapped Types pueden ser muy útiles para crear tipos dinámicamente basados en otros tipos existentes. Por ejemplo, puedes utilizar Mapped Types para crear tipos que transforman propiedades
+
+<a id="typ21"></a>
+
+### **¿Qué son los Conditional Types y cómo permiten lógica avanzada en los tipos?**
+
+[Volver al indice](#typ-base)
+
+Los Conditional Types en TypeScript son una característica avanzada que permite definir tipos condicionales basados en una condición booleana. Esto permite crear tipos que se comportan de manera diferente según una condición dada. Los Conditional Types se definen utilizando la palabra clave `extends` y la sintaxis de los tipos condicionales.
+
+```typescript
+type IsString<T> = T extends string ? 'yes' : 'no';
+
+type Test1 = IsString<string>; // 'yes'
+type Test2 = IsString<number>; // 'no'
+```
+
+<a id="typ22"></a>
+
+### **¿Cómo funcionan los decoradores en TypeScript y en qué casos son útiles?**
+
+[Volver al indice](#typ-base)
+
+Para usar decoradores, debes habilitar la opción experimentalDecorators en el archivo tsconfig.json:
+
+```json
+{
+ "compilerOptions": {
+  "experimentalDecorators": true
+ }
+}
+```
+
+Tipos de decoradores en TypeScript:
+
+- Decoradores de Clase
+
+Se aplican a la definición de una clase. Reciben como argumento el constructor de la clase y pueden modificar la clase misma.
+
+```typescript
+function Logger(target: Function) {
+  console.log(`Clase registrada: ${target.name}`);
+}
+
+@Logger
+class User {
+  constructor(public name: string) {}
+}
+
+// Output: "Clase registrada: User"
+```
+
+- Decoradores de Método
+
+Se aplican a los métodos de una clase y reciben metadatos sobre el método. Son útiles para extender o modificar el comportamiento de los métodos.
+
+```typescript
+function LogMethod(target: any, methodName: string, descriptor: PropertyDescriptor) {
+  const originalMethod = descriptor.value;
+  descriptor.value = function (...args: any[]) {
+    console.log(`Método ${methodName} ejecutado con argumentos: ${args}`);
+    return originalMethod.apply(this, args);
+  };
+}
+
+class Calculator {
+  @LogMethod
+  add(a: number, b: number): number {
+    return a + b;
+  }
+}
+
+const calc = new Calculator();
+calc.add(2, 3);
+// Output:
+// "Método add ejecutado con argumentos: 2,3"
+// 5
+```
+
+- Decoradores de Propiedad
+
+Se aplican a las propiedades de una clase. Reciben el prototipo del objeto y el nombre de la propiedad. Los decoradores de propiedad no tienen acceso al valor de la propiedad directamente (ya que el valor no está inicializado en tiempo de compilación).
+
+```typescript
+function PropertyMetadata(target: any, propertyName: string) {
+  console.log(`Propiedad decorada: ${propertyName}`);
+}
+
+class Product {
+  @PropertyMetadata
+  price: number;
+}
+
+// Output: "Propiedad decorada: price"
+```
+
+- Decoradores de Parámetro
+
+Se aplican a los parámetros de un método y reciben información sobre el parámetro decorado. Son útiles para implementar patrones como inyección de dependencias.
+
+```typescript
+function LogParameter(target: any, methodName: string, parameterIndex: number) {
+  console.log(`Parámetro decorado en el método ${methodName}, índice: ${parameterIndex}`);
+}
+
+class UserService {
+  greet(@LogParameter name: string) {
+    console.log(`Hola, ${name}!`);
+  }
+}
+
+const userService = new UserService();
+userService.greet("Ana");
+// Output:
+// "Parámetro decorado en el método greet, índice: 0"
+// "Hola, Ana!"
+```
+
+- Decoradores de Getter/Setter
+
+Se aplican a los accesores (get y set) y funcionan como los decoradores de método, pero se usan para modificar el comportamiento de getters y setters.
+
+```typescript
+function LogAccessor(target: any, propertyName: string, descriptor: PropertyDescriptor) {
+  const originalMethod = descriptor.get;
+  descriptor.get = function () {
+    console.log(`Accediendo a la propiedad ${propertyName}`);
+    return originalMethod?.apply(this);
+  };
+}
+
+class User {
+  private _age: number = 30;
+
+  @LogAccessor
+  get age() {
+    return this._age;
+  }
+}
+
+const user = new User();
+console.log(user.age);
+// Output:
+// "Accediendo a la propiedad age"
+// 30
+```
+
+Los decoradores son muy usados en, por ejemplo, Angular, para configurar clases de cierta forma predeterminada
+
+```typescript
+@Injectable()
+class UserService {
+  // Servicio disponible para otros
+}
+```
+
 ---
 
 <a id="sty"></a>
@@ -6729,7 +12071,7 @@ Block element modifier, consiste en escribir nombres de clases que dejen en clar
 ```jsx
 :root {
     --color-3: #000000;
-} 
+}
 
 html, body {
     background-color: var(--color-3);
@@ -6824,7 +12166,7 @@ En el HTML se hace el link al Stylesheet .css que es compilado desde sass.
 ```scss
 // Los comentarios de 2 barras no aparecen en el CSS compilado
 
-/* 
+/*
  Este tipo de comentarios si aparecen en el codigo CSS compilado
 */
 ```
@@ -6860,7 +12202,7 @@ Si tengo dos archivos en mi directorio sass, y no quiero que los dos aparezcan c
 El archivo con el guion bajo en su nombre no sera compilado, sera llamado en otro elemento que lo utilizara.
 
 ```scss
-// No es necesario ni la extension ni el guion 
+// No es necesario ni la extension ni el guion
 // bajo en el nombre del archivo a importar
 @use 'variables';
 
@@ -6984,7 +12326,7 @@ div {
 Entonces en SASS podemos usar mixins, que son como funciones que podemos invocar para reutilizar el codigo. Hasta tiene parametros y todo para cambiar los valores
 
 ```jsx
-@mixin box-shadow($x, $y, $blur, $c){ 
+@mixin box-shadow($x, $y, $blur, $c){
   -webkit-box-shadow: $x $y $blur $c;
   -moz-box-shadow: $x $y $blur $c;
   -ms-box-shadow: $x $y $blur $c;
@@ -7251,43 +12593,19 @@ Las pruebas deben tener una salida booleana y pasar o fallar. La misma prueba qu
 
 # Frontend Frameworks and Libraries
 
-<a id="rea40"></a>
+<a id="html1"></a>
 
 ## **¿Cuál es la diferencia entre h1, h2, etc.?**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#html-base)
 
 Los elementos de encabezado h1 a h6 se utilizan para indicar la importancia del contenido que les sigue. Cuanto menor sea el número, mayor será la importancia, por lo que los elementos h2 tienen menos importancia que los elementos h1. Utiliza solo un elemento h1 por página y coloca los encabezados de menor importancia debajo de los de mayor importancia.
 
-<a id="rea54"></a>
-
-### **¿Para qué es el Doctype?**
-
-[Volver al indice](#rea-base)
-
-El doctype es una declaración que se utiliza en un documento HTML para informar al navegador web sobre la versión de HTML en la que está escrito el documento. El doctype debe ser la primera línea de un documento HTML y se utiliza para garantizar que el navegador web interprete el documento correctamente.
-
-```html
-<!DOCTYPE html>
-```
-
-<a id="rea55"></a>
-
-### **Atributo placeholder para campos en HTML**
-
-[Volver al indice](#rea-base)
-
-El atributo placeholder me permite , guiar al usuario con referencia lo que tiene que colocar dentro de nuestro campo. Por ejemplo:
-
-```html
-<label> Nombre <br> <input type=”text” placeholder=”Nombre Completo”> </label>
-```
-
-<a id="rea56"></a>
+<a id="html2"></a>
 
 ### **Vínculos Relativos en HTML**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#html-base)
 
 Los vínculos relativos son aquellos que permiten interconectar los archivos de nuestro sitio (internos, dentro de nuestro sitio o servidor).
 Si por ejemplo quiero ir de mi archivo index a mi contacto.html lo haré de la siguiente forma:
@@ -7309,13 +12627,13 @@ Si mi archivo contacto se encontrase dentro de una carpeta la ruta a marcar ser�
 <a href="en/contacto.html" title="Contacto"> Contacto </a>
 ```
 
-<a id="rea57"></a>
+<a id="html3"></a>
 
 ### **Vínculos Absolutos en HTML**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#html-base)
 
-Los vínculos absolutos son aquellos que permiten interconectar los archivos de nuestro sitio (internos, dentro de nuestro sitio o servidor).
+Es la URL que dirige a un recurso en la web, por ejemplo, si quiero ir a google.com desde mi archivo index.html, lo haré de la siguiente forma:
 
 ```html
 <!doctype html>
@@ -7324,25 +12642,64 @@ Los vínculos absolutos son aquellos que permiten interconectar los archivos de 
 <a href="https://www.google.com" title="Contacto"> Contacto </a>
 ```
 
-<a id="rea41"></a>
+<a id="html4"></a>
 
-### **Cual es la importancia del uso de todos los elementos HTML?**
+### **¿Para qué es el Doctype?**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#html-base)
 
-HTML5 tiene algunos elementos que identifican diferentes áreas de contenido. Estos elementos hacen que tu HTML sea más fácil de leer y ayudan con la Optimización para Motores de Búsqueda (SEO) y la accesibilidad.
+El doctype es una declaración que se utiliza en un documento HTML para informar al navegador web sobre la versión de HTML en la que está escrito el documento. El doctype debe ser la primera línea de un documento HTML y se utiliza para garantizar que el navegador web interprete el documento correctamente.
 
-<a id="rea42"></a>
+```html
+<!DOCTYPE html>
+```
+
+<a id="html5"></a>
+
+### **Atributo placeholder para campos en HTML**
+
+[Volver al indice](#html-base)
+
+El atributo placeholder me permite guiar al usuario con referencia lo que tiene que colocar dentro de nuestro campo. Por ejemplo:
+
+```html
+<label> Nombre <br> <input type=”text” placeholder=”Nombre Completo”> </label>
+```
+
+Esto indica al usuario que en ese campo va el nombre completo, o tambien se podria poner un ejemplo.
+
+<a id="html6"></a>
+
+### **Que es HTML Semantico?** 💛
+
+[Volver al indice](#html-base)
+
+Es el uso de etiquetas introducidas en HTML5 en vez de divs y span para la division de secciones en mi HTML.
+
+```html
+<header> </header>
+<nav> </nav>
+<main> </main>
+<section> </section>
+<article> </article>
+<aside> </aside>
+<footer> </footer>
+```
+
+Esto a nivel de renderizado no cambia nada, pero si hace que mi codigo sea mucho mas accesible. Los motores de busqueda pueden entender mejor el contenido de mi pagina, y los lectores de pantalla tambien.
+
+
+<a id="html7"></a>
 
 ### **Que son los atributos de los elementos HTML?**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#html-base)
 
 Los atributos HTML son palabras especiales utilizadas dentro de la etiqueta de apertura de un elemento para controlar el comportamiento del elemento. El atributo src en un elemento img especifica la URL de la imagen (dónde se encuentra la imagen).
 
 `<img src="linkaimagen.com/fcc_secondary.svg">`
 
-<a id="rea43"></a>
+<a id="html8"></a>
 
 ### **Cuáles son las partes de un documento HTML?**
 
@@ -7358,26 +12715,26 @@ El resultado de un documento básico tiene la siguiente estructura:
 
 ```html
 <html>
-	<head>
-		<title>Mi documento básico</title>
-	</head>
+  <head>
+    <title>Mi documento básico</title>
+  </head>
 <body>
-	<p>Este es el cuerpo de mi primera página HTML</p>
-	<p>Este segundo párrafo también forma parte del cuerpo</p>
+  <p>Este es el cuerpo de mi primera página HTML</p>
+  <p>Este segundo párrafo también forma parte del cuerpo</p>
 </body>
 </html>
 ```
 
-<a id="rea44"></a>
+<a id="html9"></a>
 
 ### **Puedo escribir las etiquetas en mayúscula y minúscula?**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#html-base)
 
 En HTML las mayúsculas y minúsculas son indiferentes. Quiere decir que las etiquetas pueden ser escritas con cualquier tipo de combinación de mayúsculas y minúsculas. Resulta, sin embargo, aconsejable acostumbrarse a escribirlas en minúscula, ya que otras tecnologías que pueden c onvivir
 con nuestro HTML (XML por ejemplo) no son tan permisivas y nunca viene mal hacernos a las buenas costumbres desde el principio, para evitar fallos triviales en un futuro.
 
-<a id="rea45"></a>
+<a id="html10"></a>
 
 ### **Qué son los mapa de imagen?**
 
@@ -7410,7 +12767,7 @@ area shape="rect" coords="19,156,170,211" [href="mailto:rectangulo@direccion.com
 La verdad es que los mapas de imágenes son tediosos a veces de crear, y para eso contamos con generadores online por ejemplo:
 https://www.image-maps.com/
 
-<a id="rea46"></a>
+<a id="html11"></a>
 
 ### **Que es el tag DataList?**
 
@@ -7420,17 +12777,19 @@ Se usa para proveer con un autocomplete a algunos elementos
 <form action="action_page.php" method="get">
 <input list="browsers" name="browser" id="browser">
 <datalist id="browsers">
-	<option value="Edge"
-	<option value="Firefox">
+  <option value="Edge"
+  <option value="Firefox">
 </datalist>
 </form>
 ```
+
+---
 
 <a id="rea47"></a>
 
 ### **¿Qué es React?**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 React fue creado por Facebook en el año 2013, y sigue siendo mantenida por él. (ahora Meta). Algunos ejemplos de proveedores que usan React son, además de Facebook, PayPal, Netflix, etc., páginas con un gran flujo de usuarios al día de hoy.
 
@@ -7446,20 +12805,20 @@ Tambien se puede trabajar del lado del servidor con Node, aplicaciones mobile co
 
 <a id="rea47-2"></a>
 
-### **Libreria vs Framework**
+### **Libreria vs Framework** 💛
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 - **Libreria:** Es un conjunto de funciones que se pueden usar en un proyecto. El programador decide cuando y como usarla, es mucho mas flexible. Ejemplo: React, Redux, Lodash.
 - **Framework:** Es un conjunto de reglas y estructuras que se deben seguir para desarrollar un proyecto. El framework decide cuando y como usarlo. Ejemplo: Angular, Vue, Django.
 
-Es por eso que cuando vemos un proyecto hecho con React, y luego otro tambien hecho con React, su estructura puede ser completamente distinta. En cambio, cuando vemos proyectos Angular, podemos encontrar la misma estructura base en todos. 
+Es por eso que cuando vemos un proyecto hecho con React, y luego otro tambien hecho con React, su estructura puede ser completamente distinta. En cambio, cuando vemos proyectos Angular, podemos encontrar la misma estructura base en todos.
 
 <a id="rea49"></a>
 
 ### **Para que es el comando React eject?**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 El comando `eject` de React es una forma de sacar toda la configuración de Webpack y Babel que React trae por defecto, para poder modificarla a gusto. Es una forma de tener control total sobre la configuración de la aplicación.
 
@@ -7469,68 +12828,13 @@ cd my-app
 npm run eject
 ```
 
-<a id="rea48"></a>
-
-### **¿De qué hablamos cuando hablamos de una SPA (Single Page App)?**
-
-[Volver al indice](#rea-base)
-
-Una SPA (Single Page Application) son apps web que simulan ser una única página con contenido dinámico. La idea es darle la “ilusión” al usuario de que está navegando una aplicación de escritorio, que no recarga, no se satura, etc.
-
-Las únicas recargas, o pantallas de carga, son cuando se está trayendo información del servidor. No se recarga toda la página, aun así, solo ciertas partes, dando a una experiencia mucho más fluida.
-
-En resumen:
-
-- Se evita la constante recarga entera de la página
-- La página no se satura ni realiza peticiones constantes al servidor. Únicamente se pide lo necesario.
-
-<a id="rea50"></a>
-
-### **(Performance) Como evitar mandar muchos eventos inutiles, por ejemplo, ejecutar un search por letra?**
-
-[Volver al indice](#rea-base)
-
-Debounce es un termino de electronica que ayuda a que, por ejemplo, si apretamos varias veces un boton, no se manden muchas veces las instrucciones
-
-```jsx
-function useDebounce(value: string, delay: number) {
-	const [debouncedValue, setDebouncedValue] = useState(value);
-
-	useEffect(() => {
-			const timeoutId = setTimeout(() => {
-				setDebouncedValue(value)
-		}, delay)
-
-		return () => clearTimeout(timeoutId)
-}, [value])
-
-return debouncedValue;
-}
-
-// Luego en el component que tiene el search
-
-const queryDebouncedValue = useDebounce(query, 300)
-
-useEffect(() => {
-api.search(queryDebouncedValue).then(setProducts);
-}, [queryDebouncedValue]);
-```
-
-<a id="rea51"></a>
-
-### **Que es async rendering?**
-
-[Volver al indice](#rea-base)
-
-Permite que el renderizado pueda interrumpirse, permitiendo renderizar varios arboles de componentes a la vez sin necesidad de bloquear el hilo principal del navegador.
-
-<a id="rea52"></a>
+<a id="rea52-5"></a>
 
 ### **Que son las Ref?**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
-Permite a react manipular directamente el DOM Sin necesidad de actualizar un componente, asumen cambios en los mismos que no se pueden resolver mediante el traspaso de props o cuyo impacto se limita al propio componente no siendo rentable renderizarlo de nuevo. 
+Permite a react manipular directamente el DOM Sin necesidad de actualizar un componente, asumen cambios en los mismos que no se pueden resolver mediante el traspaso de props o cuyo impacto se limita al propio componente no siendo rentable renderizarlo de nuevo.
 
 ```jsx
 class AnimatedSpinner extends Component {
@@ -7547,7 +12851,7 @@ class AnimatedSpinner extends Component {
   render() {
     return (
       <>
-        <div ref={this.animationRef} className="spinner"> </div>     // 2. asociación
+        <div ref={this.animationRef} className="spinner"> </div>  // asociación
         <button onClick={this.triggerAnimation}> Animar </button>
 
     )
@@ -7555,45 +12859,43 @@ class AnimatedSpinner extends Component {
 }
 ```
 
-<a id="rea53"></a>
-
-### **Para que son los eventos sinteticos (SyntheticEvent)?**
-
-[Volver al indice](#rea-base)
-
-Funcionan de la misma forma que los eventos normales de los exploradores. Los eventos sinteticos usan codigo que puede ser aplicado en multiples exploradores web mientras que los eventos normales se enfocan en un solo navegador
-
-Ayuda a que el dev no se preocupe tanto en como manejar un evento segun el navegador para el cual esta desarrollando, ya que estos eventos simulan muchos eventos y garantiza el mismo comportamiento.
-
-<a id="rea54"></a>
-
-### **Que significa prop drilling y como evitarlo?**
-
-[Volver al indice](#rea-base)
-
-Es cuando las props que se comparten acumulan demasiadas dependencias. Da lugar a flujos de datos profundos, dificiles de identificar y refactorizar. Dos formas de resolverlo son:
-
-- Composicion de componentes frente a un mismo juego de datos compartido por varios componentes
-- Redux o API Context, aptas para escenarios mas complejos donde conviene manejar un estado global.
-
-<a id="rea62"></a>
+<a id="react62"></a>
 
 ### **De que tratan los Ciclos de Vida Componentes?**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 React provee de metodos especificos para los ciclos de vida de los componentes, en este caso, veremos en los de clase. Se llaman cuando el componente se monta, actualiza o desmonta, veamos las deficiones:
 
 - Monta: El componente se renderiza en la pagina
 - Desmonta: El componente es removido de la pagina
+- Actualiza: El componente se actualiza en la pagina
 
-Varios de los estados que veremos a continuacion se encuentran deprecados, y deben usarse con un tag UNSAFE para su uso
+Varios de los estados que veremos que se utilizaban tipicamente en componentes de clase se encuentran deprecados, y deben usarse con un tag UNSAFE para su uso.
+
+<a id="rea62-1"></a>
+
+### **Componentes de clase vs Componentes de Funcion 💛**
+
+[Volver al indice](#react-base)
+
+Antes se utilizaban los componentes de clase para componentes complejos, y los componentes de funcion para componentes con poca logica en si mismos, hoy en dia se puede decir que los componentes de funcion reemplazaron completamente a los componentes de clase.
+
+Los componentes de funcion son mas faciles de leer, escribir y testear, y son mas faciles de optimizar. Los componentes de clase son mas dificiles de leer, escribir y testear, y son mas dificiles de optimizar.
+
+| Componentes de Clase | Componentes de Funcion |
+| --- | --- |
+| Manejaba los props con `this.props` | Maneja los props como argumentos de la funcion |
+| Manejaba los ciclos de vida con funciones como `componentDidMount()` | Maneja los ciclos de vida con hooks como `useEffect()` |
+| Manejaba los eventos con funciones como `this.handleClick` | Maneja los eventos con funciones como `handleClick` |
+| Manejaba el estado con `this.state` | Maneja el estado con `useState` |
+| Manejaba el contexto con `this.context` | Maneja el contexto con `useContext` |
 
 <a id="rea55"></a>
 
 ### **componentWillReceiveProps()**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 Se ejecuta cuando hay alguna actualizacion de alguna prop
 
@@ -7609,7 +12911,7 @@ componentWillReceiveProps(nextProps) {
 
 ### **componentDidMount()**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 Se llama cuando el componente es renderizado en la pagina. Se puede usar para inicializar cosas, como para pedir la informacion inicial de los componentes.
 
@@ -7623,7 +12925,7 @@ componentDidMount() {
 
 ### **componentWillUnmount()**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 Es llamado antes de que el componente sea desmontado del DOM. Se puede usar para liberar recursos. No existe un “DidUnmount” ya que, una vez que se desmonta, ya no se puede hacer nada por el mismo.
 
@@ -7638,7 +12940,7 @@ componentWillUnmount() {
 
 ### **componentWillMount()**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 Corresponde a cuando el componente va a montarse, se ejecuta antes de su montaje, es como el constructor del mismo.
 
@@ -7652,7 +12954,7 @@ componentWillMount() {
 
 ### **componentWillMount()**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 Se llama cuando el componente se actualiza en el DOM. Podemos hacerlo para, por ejemplo, para avisar que el counter fue incrementado en uno.
 
@@ -7666,7 +12968,7 @@ componentDidUpdate() {
 
 ### **shouldComponentUpdate()**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 Nos permite decidir si debemos ejecutar o no el render. Muestra con que valores, o bajo que condiciones, se realizará la actualizacion.
 
@@ -7681,7 +12983,7 @@ shouldComponentUpdate(nextProps, nextState) {
 
 ### **componentWillUpdate()**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 Es cuando se esta por ejecutar el render. Nos ayuda a setear valores globales justo antes del mismo.
 
@@ -7694,9 +12996,9 @@ componentWillUpdate() {
 
 <a id="rea1"></a>
 
-### **useCallback**
+### **useCallback** 💛
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 Tiene dos casos de uso:
 
@@ -7741,9 +13043,9 @@ Si no tuviéramos el useCallback, el useEffect se dispararía ante cada cambio d
 
 <a id="rea2"></a>
 
-### **useDispatch**
+### **useDispatch - Hook Redux** 
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 Es para ejecutar las acciones que podamos tener en nuestro Redux
 
@@ -7784,7 +13086,7 @@ const submitNewProduct = (e) => {
 
 ### **useEffect** 💛
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 Reemplaza las funciones del ciclo de vida para los componentes de función, los combina en uno solo, es un Hook.
 
@@ -7857,7 +13159,7 @@ useEffect(() => {console.log("Mount");}, [state]);
 
 ### **Puede el useEffect ser asincrono? Porque?** 💛
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 El useEffect **no** deberia ser asincrono en si mismo, ya que no se puede retornar una promesa. Pero si se puede llamar a una funcion asincrona dentro del useEffect
 
@@ -7883,7 +13185,7 @@ En el caso de que el useEffect en si mismo sea asincrono, el codigo funcionara, 
 
 ### **useState**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 Hooks permiten usar los state dentro de los componentes funcionales. El más común es el useState que necesita ser importado de la siguiente manera para ser usado
 
@@ -7914,9 +13216,11 @@ Los Hooks solo pueden ser usados dentro de un componente funcional, en el caso d
 
 <a id="rea5"></a>
 
-### **useSelector**
+### **useSelector - Hook Redux**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
+
+Es un hook dado por Redux. 
 
 Es para acceder a un state dentro del componente. Es decir, si tenemos un state de error, poder reflejar algo en la UI en funcion de su valor.
 
@@ -7928,7 +13232,7 @@ const error = useSelector(state => state.error)
 
 ### **useRef**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 Es otro Hook que viene con React. Asi que debe ser importado en conjunto
 
@@ -7991,7 +13295,7 @@ Notar que nos referimos al valor del ref o para su cambio con current
 
 ### **useMemo**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 Primero para entender este Hook, debemos entender el uso de Memo en React.
 
@@ -8005,7 +13309,7 @@ import React, {memo} from 'react';
 export const Small = memo(({value}) => {
     console.log("Me volvi a llamar");
     // http?
-    
+
     return (
         <small>{value}</small>
     )
@@ -8036,11 +13340,50 @@ const twoRandomProducts = useMemo(() => [...products]
 .slice(0,2), [products]); // dependencia de products, si products no cambia, memo no cambia
 ```
 
+<a id="rea7-1"></a>
+
+### **¿Cuál es la diferencia entre useCallback y useMemo?**
+
+[Volver al indice](#react-base)
+
+Tanto useCallback como useMemo son hooks de React diseñados para optimizar el rendimiento al evitar cálculos innecesarios o recreaciones de funciones/valores. La diferencia principal radica en qué optimizan y cómo se usan:
+
+- `useCallback` memoriza funciones, evitando que se creen nuevas instancias de la función en cada renderizado. Se usa para evitar que las funciones se pasen como propiedades a componentes hijos se vuelvan a renderizar innecesariamente.
+
+```jsx
+const memoizedCallback = useCallback(() => {
+  // lógica de la función
+}, [dependencias]);
+
+const handleClick = useCallback(() => {
+  console.log('Button clicked');
+}, []);
+
+return <Button onClick={handleClick} />;
+```
+
+- `useMemo` memoriza valores, evitando que se recalculen en cada renderizado. Se usa para evitar cálculos costosos en componentes funcionales.
+
+```jsx
+const memoizedValue = useMemo(() => {
+  // lógica de cálculo
+  return resultado;
+}, [dependencias]);
+
+const filteredItems = useMemo(() => {
+  return items.filter(item => item.isActive);
+}, [items]);
+
+return <ItemList items={filteredItems} />;
+```
+
+Ambos dependen de un array de dependencias para saber cuándo deben actualizarse. Si las dependencias no cambian, el hook devuelve el valor o la función memorizada.
+
 <a id="rea8"></a>
 
 ### **useReducer**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 Es una alternativa a useState que se utiliza de la siguiente manera al momento de inicializar el componente:
 
@@ -8070,8 +13413,8 @@ function Counter() {
   return (
     <>
       Count: {state.count}
-      <button onCLick={() => dispatch({type: 'decrement'}))> - </button>
-      <button onCLick={() => dispatch({type: 'increment'}))> + </button>
+      <button onCLick={() => dispatch({type: 'decrement'})}> - </button>
+      <button onCLick={() => dispatch({type: 'increment'})}> + </button>
     </>
   );
 }
@@ -8081,7 +13424,7 @@ function Counter() {
 
 ### **useLayoutEffect**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 No es un Hook muy común en si mismo. Se dispara de forma asíncrona después de que todas las manipulaciones del DOM se hayan hecho, se usa para tomar referencias, como por ejemplos, tamaños de cajas de textos, etc...
 
@@ -8129,7 +13472,7 @@ Ante cada cambio de quote que se haga, volverá a cero y volverá a tener otro v
 
 ### **¿Qué diferencia hay entre useEffect y useLayoutEffect? ¿Cuándo usarías cada uno?**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#react-base)
 
 Ambos son Hooks de React que se utilizan para ejecutar efectos secundarios en componentes funcionales. La diferencia principal entre useEffect y useLayoutEffect es cuándo se ejecutan.
 
@@ -8149,11 +13492,226 @@ Ambos son Hooks de React que se utilizan para ejecutar efectos secundarios en co
 
 En resumen, useEffect se utiliza para efectos secundarios asincrónicos que no requieren acceso inmediato al DOM, mientras que useLayoutEffect se utiliza para efectos secundarios síncronos que requieren acceso inmediato al DOM y afectan la geometría de los elementos.
 
+<a id="rea18"></a>
+
+### **¿Que es Redux?**
+
+[Volver al indice](#react-base)
+
+Redux permitira manejar el state global de manera facil conforme van creciendo, tambien ayuda a manejar los datos dependiendo de las acciones del usuario. Fue creado por un dev del equipo de React.
+
+- Solo hay 1 state principal
+- El state cambia depende lo que pase en la interfaz de usuario
+- Solo ciertas funciones cambiarán el State
+- Solo se hace un cambio a la vez
+
+<a id="rea19"></a>
+
+### **Cuando conviene usar Redux?**
+
+[Volver al indice](#rea-base)
+
+Si la app es pequeña, se recomienda ContextAPI o hooks. Si es grande, y va a ser mantenido por varias personas, se recomeinda Redux
+
+- No hace la app mas rapida
+- Existe Redux para muchos frameworks, no solo React
+- No es necesario usarlo en cada proyecto
+
+<a id="rea20"></a>
+
+### **¿Cuales son los beneficios de usar Redux?**
+
+[Volver al indice](#react-base)
+
+- Como su estructura es muy estricta, es muy facil de mantener y de organizar, tambien es muy estable.
+- Da una fiable representacion del servidor, es muy util especialmente para presentaciones preliminares. Puede optimizar, por ejemplo, motores de busqueda.
+- Provee muchas herramientas para los devs
+- Es facil de probar, las funciones de redux y el codigo en si son pequeñas y atomicas.
+
+<a id="rea21"></a>
+
+### **Redux vs ContextAPI**
+
+[Volver al indice](#react-base)
+
+**Context**
+
+- Context es una herramienta de React que permite pasar datos a traves del arbol de componentes sin tener que pasar props manualmente en cada nivel
+- Context es una buena opcion para datos que son necesarios en muchos componentes de la aplicacion
+- Context es una buena opcion para datos que no cambian frecuentemente
+- Context viene integrado a React
+- Es facil de entender para principiantes
+- No requiere mucho codigo boilerplate
+
+**Redux**
+
+- Redux es una libreria de manejo de estado que permite manejar el estado de la aplicacion de manera predecible
+- Redux es una buena opcion para datos que cambian frecuentemente
+- Redux es una buena opcion para aplicaciones grandes con muchos componentes
+- Redux no viene integrado a React, se debe instalar por separado
+
+<a id="rea22"></a>
+
+### **¿Cual es el flujo de Redux?**
+
+[Volver al indice](#react-base)
+
+Store
+
+- Contiene el state y solo hay un Store por app
+
+Dispatch
+
+- Ejecuta una accion, es una funcion que maneja un state
+
+```jsx
+dispatch(addProductOk(product))
+```
+
+Actions
+
+- Objetos en JS con tipo y payload (datos que modificaran el state)
+- Los componentes no deben modificar el state directamente, se modifica por medio de funciones llamadas Actions
+
+Subscribe
+
+- Similar al event listener para el state
+
+Reducer
+
+- Funciones que saben que hacer con las acciones y el payload
+
+<a id="rea23"></a>
+
+### **Que es ContextAPI?**
+
+[Volver al indice](#react-base)
+
+Es una manera de tener un estado global sin dependencias como Redux, ya que viene desde React 16.3.
+
+Se pueden pasar state o funciones desde el componente principal hacia los hijos, nos evitamos pasarlo por cada uno de los componentes, es algo global.
+
+Cuenta con el hook `useContext` que facilita el acceso a los datos del Context.
+
+Children refiere a los componentes dentro del Provider que recibirán estos datos.
+
+Provider: De donde vienen los datos
+
+```jsx
+import {createContext} from 'react';
+
+const QuoteContext = createContext();
+
+const QuoteProvider = ({children}) => {
+  return (
+    <QuoteContext.Provider
+    value=({})>
+      {children}
+    </QuoteContext.Provider>
+  )
+}
+
+export { QuoteProvider }
+export default QuoteContext;
+```
+
+Dentro de value ponemos lo que queremos exportar para el resto de componentes, y luego, lo consumimos de la siguiente manera:
+
+```jsx
+// Donde entre llaves ponemos lo que queremos consumir de ese Context.
+const {} = useContext(QuoteContext);
+```
+
+<a id="rea24"></a>
+
+### **Que es React Fiber?**
+
+[Volver al indice](#rea-base)
+
+La arquitectura de React hizo que fuera muy facil trabajar no solo en web si no tambien en mobile (React Native) y en hasta aplicaciones de Realidad Virtual. Asi los dev de React decidieron separar su algoritmo de reconciliacion (el que compara los cambios entre DOM y VDOM) y el lienzo donde esos cambios se muestran (Web, Mobile, etc..)
+
+Fiber fue diseñado para mejorar el rendimiento, particularmente en aplicaciones que requieren animaciones, interacciones complejas y actualizaciones de gran volumen.
+
+React Fiber organiza la renderización en dos fases principales:
+
+- **Fase de Render (Reconciliación)**: Se construye o actualiza un árbol de componentes de manera asíncrona. React decide qué cambios deben aplicarse al DOM basándose en las prioridades.
+- **Fase de Commit**: Es sincrónica y rápida. Los cambios calculados en la fase de render se aplican al DOM real.
+
+React Fiber no cambia cómo los desarrolladores escriben código React, pero mejora significativamente el rendimiento y la flexibilidad de las aplicaciones React modernas. Es la base que permite que React maneje de manera eficiente aplicaciones cada vez más interactivas y complejas.
+
+<a id="rea24-1"></a>
+
+### **Que tener en cuenta para tener una buena performance en React** 💛
+
+[Volver al indice](#react-base)
+
+- Usar memorizacion para evitar renderizados innecesarios. Usar `useMemo` para valores y `useCallback` para funciones.
+
+```jsx
+import React, { useMemo, useCallback } from 'react';
+
+const Componente = ({ lista }) => {
+  const listaOrdenada = useMemo(() => lista.sort(), [lista]);
+  const manejarClick = useCallback(() => console.log('Clicked'), []);
+  return <button onClick={manejarClick}>Ordenar</button>;
+};
+```
+
+- Usa contextos (React Context) de manera adecuada para evitar actualizaciones globales innecesarias.
+- Evita la mutacion directa de objetos y arrays. Usa `useState` y `useReducer` para actualizar el estado de manera inmutable.
+- Divide la logica en componentes mas pequeños y reutilizables.
+- Usar la propiedad `key` cuando se renderizan listas para mejorar el rendimiento, ya que ayuda a React a identificar elementos únicos y realizar actualizaciones más eficientes.
+- Usar React Window o React Virtualized para renderizar grandes listas de elementos de manera eficiente.
+
+```jsx
+import { FixedSizeList as List } from 'react-window';
+
+const Row = ({ index, style }) => (
+  <div style={style}>Row {index}</div>
+);
+
+const App = () => (
+  <List height={150} itemCount={1000} itemSize={35} width={300}>
+    {Row}
+  </List>
+);
+```
+
+- Usa React.lazy y Suspense para cargar componentes bajo demanda y mejorar los tiempos de carga.
+- Usa herramientas como Webpack para dividir el código en partes más pequeñas y cargar solo lo necesario.
+- Limita el uso de operaciones manuales con el DOM que pueden interferir con la reconciliación de React.
+- Usa herramientas como className o bibliotecas como styled-components en lugar de pasar estilos inline directamente en los elementos. Evita renders excesivos de estilos dinámicos.
+- Usa Server-Side Rendering (SSR) con herramientas como Next.js para mejorar tiempos de carga inicial
+- Usa las herramientas de React para identificar problemas de rendimiento como React DevTools y React Profiler.
+- Optimización de imágenes, carga diferida y compresión de recursos para mejorar los tiempos de carga y la experiencia del usuario. Usa formatos modernos como WebP.
+
+<a id="rea39"></a>
+
+### **¿Qué es el Virtual DOM?** 💛
+
+[Volver al indice](#react-base)
+
+Para que React pueda efectuar esta suerte de “recarga parcial por pedazos” de una página, debe usar el Virtual DOM, que es una representación del DOM real.
+
+Cuando un elemento cambia, primero se actualiza el VDOM de forma muy rápida, luego, React compara este VDOM propio con el DOM real, y basándonos en sus diferencias, únicamente aplica los cambios necesarios para que ambos coincidan.
+
+Todo sale de app.js, que contiene X cantidad de componentes, y estos poseen Z cantidad de componentes en sí mismos. Si actualizamos a `app.js`, se actualiza la página entera, pero si actualizamos algo dentro de estos componentes, únicamente se actualizará de este componente “para arriba” en la jerarquía de componentes.
+
+Más arriba la jerarquía, más refrescos habrá. Un componente hijo, idealmente, no deberia necesitar modificar el estado del componente padre.
+
+- Aumenta la velocidad de la aplicacion
+- No acapara mucha memoria, hace que el uso de la misma sea mucho mas eficiente
+- Provee una capa adicional de Scripting, dandole un peso mas a la CPU
+
+![Virtual Dom](src/vdom.png)
+
+---
+
 <a id="rea10"></a>
 
 ### **Diferencia entre AngularJS y Angular**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#angular-base)
 
 AngularJS y Angular son dos frameworks de JavaScript desarrollados por Google, pero tienen diferencias significativas en cuanto a su arquitectura y características.
 
@@ -8181,21 +13739,25 @@ En resumen, AngularJS es el primer framework desarrollado por Google, que utiliz
 
 ### **¿Qué son los modulos en Angular?**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#angular-base)
 
-Las aplicaciones de Angular son Modulares, en Angular existe NgModules. Sirve para mantener la lógica de un flujo de trabajo de la aplicación. Por ejemplo, se tiene un e-commerce, con sus módulos correspondientes, usuarios vendedores, compradores, productos, etc.. 
+Las aplicaciones de Angular son Modulares, en Angular existe NgModules. Sirve para mantener la lógica de un flujo de trabajo de la aplicación. Por ejemplo, se tiene un e-commerce, con sus módulos correspondientes, usuarios vendedores, compradores, productos, etc..
 
-Son diseños lógicos que se encargan de trabajar dentro de la aplicación, se usan para poder importar librerías u otros módulos dentro de los mismos. Cada módulo hasta puede tener su propio ruteo. 
+Son diseños lógicos que se encargan de trabajar dentro de la aplicación, se usan para poder importar librerías u otros módulos dentro de los mismos. Cada módulo hasta puede tener su propio ruteo.
+
+Se identifican por su nombre que tipicamente es `app.module.ts` o similares. Hoy en dia en las ultimas versiones de Angular se usan cada vez mas los componentes standalone, donde no es necesario el uso de modulos.
+
+---
 
 <a id="rea12"></a>
 
 ### **¿Qué es Property Binding?**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#angular-base)
 
-Es la forma que tiene Angular de controlar y cambiar las propiedades de los elementos HTML usando corchetes [] 
+Es la forma que tiene Angular de controlar y cambiar las propiedades de los elementos HTML usando corchetes []
 
-```tsx
+```html
 <input [value]="empresa" [disabled]="habilitado"  />
 
 // Empresa y habilitado son datos dinamicos
@@ -8205,7 +13767,7 @@ Los corchetes (square brakets) hacen que Angular evalúe el lado derecho de la a
 
 A menudo, “interpolation” y “Property Binding” pueden lograr los mismos resultados. Los siguientes pares de enlaces hacen lo mismo.
 
-```tsx
+```html
 // Interpolacion
 <p><img src="{{itemImageUrl}}"> is the <i>interpolated</i> image.</p>
 
@@ -8213,7 +13775,7 @@ A menudo, “interpolation” y “Property Binding” pueden lograr los mismos 
 <p><img [src]="itemImageUrl"> is the <i>property bound</i> image.</p>
 ```
 
-Al establecer una propiedad de elemento en un valor de datos que no sea un String a secas (por ejemplo, objetos), debe usar “Property Binding”. 
+Al establecer una propiedad de elemento en un valor de datos que no sea un String a secas (por ejemplo, objetos), debe usar “Property Binding”.
 
 Se recomienda comprender los “Event binding” para entender el flujo de datos de la aplicacion y como este interactua con “interpolation” y “Property Binding”.
 
@@ -8221,7 +13783,7 @@ Se recomienda comprender los “Event binding” para entender el flujo de datos
 
 ### **¿Cuál es el flujo de datos una aplicación Angular?**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#angular-base)
 
 - Enlace unidireccional [] para enlazar desde la capa lógica (component.ts) a la vista (html).
 - Enlace unidireccional () para enlazar de la vista (html) a la capa lógica (component.ts).
@@ -8231,7 +13793,7 @@ Se recomienda comprender los “Event binding” para entender el flujo de datos
 
 ### **¿Qué es un Decorador en Angular?**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#angular-base)
 
 Indica como debe comportarse el componente. Dentro de este decorador, puedes observar el selector del componente (un nombre para el mismo), el template HTML y la hoja de estilos que usará.
 
@@ -8247,7 +13809,7 @@ Indica como debe comportarse el componente. Dentro de este decorador, puedes obs
 
 ### **Event Binding en Angular (Manejo de Eventos)**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#angular-base)
 
 ```tsx
 <button (click)="onSave()">Save</button>
@@ -8264,7 +13826,7 @@ Indica como debe comportarse el componente. Dentro de este decorador, puedes obs
 btnDisabled = true;
 
 onSave() {
-	this.btnDisabled = false; // Se usa this para hacer referencia al contexto actual
+  this.btnDisabled = false; // Se usa this para hacer referencia al contexto actual
 }
 
 handleClick($event: Event) {
@@ -8278,7 +13840,7 @@ handleClick($event: Event) {
 
 ### **Data Binding en Angular**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#angular-base)
 
 El atributo **ngModel** permite el **intercambio de datos de forma bidireccional** entre el componente y la vista. Lo que suceda en el componente, se verá reflejado en la vista. Lo que se suceda en la vista, inmediatamente impactará en el componente.
 
@@ -8305,11 +13867,11 @@ import { FormsModule } from '@angular/forms';
 export class AppModule { }
 ```
 
-<a id="rea16-1"></a>
+<a id="angular-1"></a>
 
-### **Que son los componentes standalone y cuando conviene utilizarlos?** 
+### **Que son los componentes standalone y cuando conviene utilizarlos?**
 
-[Volver al indice](#rea-base)
+[Volver al indice](#angular-base)
 
 Son una característica introducida en Angular 14 que permite definir componentes sin necesidad de declararlos en un módulo (`NgModule`). En lugar de eso, los componentes standalone se definen utilizando la propiedad `standalone: true` en el decorador `@Component`, y ellos mismos pueden importar directamente otros componentes, directivas, pipes, o módulos necesarios.
 
@@ -8373,13 +13935,13 @@ Conviene usar componentes standalone en las siguientes situaciones:
 
 Los componentes standalone simplifican la arquitectura de Angular al reducir la dependencia de módulos y alinear el framework con tendencias modernas en diseño de componentes. Conviene adoptarlos cuando buscas simplicidad, modularidad y mayor flexibilidad en proyectos nuevos o en escenarios específicos como componentes reutilizables o lazy loading.
 
-<a id="rea16-2"></a>
+<a id="angular-2"></a>
 
-### **¿Podrías describir algunos problemas de rendimiento que hayas enfrentado en aplicaciones Angular y cómo los resolviste?** 
+### **¿Podrías describir algunos problemas de rendimiento que hayas enfrentado en aplicaciones Angular y cómo los resolviste?** 💛
 
-[Volver al indice](#rea-base)
+[Volver al indice](#angular-base)
 
-Claro, aquí tienes una descripción de problemas de rendimiento comunes en aplicaciones Angular y las estrategias que he utilizado para resolverlos. 
+Claro, aquí tienes una descripción de problemas de rendimiento comunes en aplicaciones Angular y las estrategias que he utilizado para resolverlos.
 
 ---
 
@@ -8405,7 +13967,7 @@ Claro, aquí tienes una descripción de problemas de rendimiento comunes en apli
   }
   ```
 
-- **Desuscripción de Observables:**  
+- **Desuscripción de Observables:**
   Aseguré que todos los observables y suscripciones se manejaran adecuadamente utilizando operadores como `takeUntil` o librerías como `RxJS`.
 
 ---
@@ -8543,6 +14105,84 @@ Claro, aquí tienes una descripción de problemas de rendimiento comunes en apli
 
 Optimizar aplicaciones Angular requiere identificar los cuellos de botella específicos, ya sea en el DOM, la carga de datos o las dependencias. Las herramientas de Angular como `OnPush`, `Lazy Loading` y `Virtual Scroll`, junto con estrategias como el uso de cache y optimización de recursos, pueden mejorar significativamente el rendimiento.
 
+---
+
+<a id="rea48"></a>
+
+### **¿De qué hablamos cuando hablamos de una SPA (Single Page App)?**
+
+[Volver al indice](#fe-base)
+
+Una SPA (Single Page Application) son apps web que simulan ser una única página con contenido dinámico. La idea es darle la “ilusión” al usuario de que está navegando una aplicación de escritorio, que no recarga, no se satura, etc.
+
+Las únicas recargas, o pantallas de carga, son cuando se está trayendo información del servidor. No se recarga toda la página, aun así, solo ciertas partes, dando a una experiencia mucho más fluida.
+
+En resumen:
+
+- Se evita la constante recarga entera de la página
+- La página no se satura ni realiza peticiones constantes al servidor. Únicamente se pide lo necesario.
+
+<a id="rea50"></a>
+
+### **(Performance) Como evitar mandar muchos eventos inutiles, por ejemplo, ejecutar un search por letra?**
+
+[Volver al indice](#rea-base)
+
+Debounce es un termino de electronica que ayuda a que, por ejemplo, si apretamos varias veces un boton, no se manden muchas veces las instrucciones
+
+```jsx
+function useDebounce(value: string, delay: number) {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+
+  useEffect(() => {
+      const timeoutId = setTimeout(() => {
+        setDebouncedValue(value)
+    }, delay)
+
+    return () => clearTimeout(timeoutId)
+}, [value])
+
+return debouncedValue;
+}
+
+// Luego en el component que tiene el search
+
+const queryDebouncedValue = useDebounce(query, 300)
+
+useEffect(() => {
+api.search(queryDebouncedValue).then(setProducts);
+}, [queryDebouncedValue]);
+```
+
+<a id="rea51"></a>
+
+### **Que es async rendering?**
+
+[Volver al indice](#rea-base)
+
+Permite que el renderizado pueda interrumpirse, permitiendo renderizar varios arboles de componentes a la vez sin necesidad de bloquear el hilo principal del navegador.
+
+<a id="rea53"></a>
+
+### **Para que son los eventos sinteticos (SyntheticEvent)?**
+
+[Volver al indice](#rea-base)
+
+Funcionan de la misma forma que los eventos normales de los exploradores. Los eventos sinteticos usan codigo que puede ser aplicado en multiples exploradores web mientras que los eventos normales se enfocan en un solo navegador
+
+Ayuda a que el dev no se preocupe tanto en como manejar un evento segun el navegador para el cual esta desarrollando, ya que estos eventos simulan muchos eventos y garantiza el mismo comportamiento.
+
+<a id="rea54"></a>
+
+### **Que significa prop drilling y como evitarlo?**
+
+[Volver al indice](#rea-base)
+
+Es cuando las props que se comparten acumulan demasiadas dependencias. Da lugar a flujos de datos profundos, dificiles de identificar y refactorizar. Dos formas de resolverlo son:
+
+- Composicion de componentes frente a un mismo juego de datos compartido por varios componentes
+- Redux o API Context, aptas para escenarios mas complejos donde conviene manejar un estado global. 
+
 
 <a id="rea17"></a>
 
@@ -8554,9 +14194,9 @@ Optimizar aplicaciones Angular requiere identificar los cuellos de botella espec
 
 **Queries Optimistics**: Mostrar el cambio en la UI independientemente del resultado del servidor, como el like de Instagram, primero se anima, luego se ejecuta la peticion de forma asincrona, y luego se tiene en cuenta el resultado
 
-**Pedir solo lo necesario**: Solo pedir los datos necesarios, no traer cosas de más. Hay muchas aplicaciones hechas front-first, donde el back adapta sus servicios a lo que el front necesita. 
+**Pedir solo lo necesario**: Solo pedir los datos necesarios, no traer cosas de más. Hay muchas aplicaciones hechas front-first, donde el back adapta sus servicios a lo que el front necesita.
 
-**Tener un connection state**: Si no hay internet, no realizar peticiones. Como Youtube, cualquier cosa que quiera hacer el cliente sin internet, no se va a realizar para nada. 
+**Tener un connection state**: Si no hay internet, no realizar peticiones. Como Youtube, cualquier cosa que quiera hacer el cliente sin internet, no se va a realizar para nada.
 
 **Group Notifications**: Si la aplicacion utiliza notificaciones, hacerlo de a grupos para no hacer jobs grandes
 
@@ -8568,161 +14208,21 @@ En caso de componentes lentos en React, podemos usar esta herramienta y ver cual
 - Flame Chart: Representa el estado de la aplicacion para un commit en particular
 - Component chart: Ver cuantas veces se proceso un componente en particular
 
-Para testear el rendimiento de una web se puede utilizar Lighthouse de Google en DevTools  
+Para testear el rendimiento de una web se puede utilizar Lighthouse de Google en DevTools
 
-**Lazy Loading**: No cargar todas las imagenes de una, ir cargando a medida que el usuario lo va necesitando. 
+**Lazy Loading**: No cargar todas las imagenes de una, ir cargando a medida que el usuario lo va necesitando.
 
 **Usar Cache**: Si manejamos payloads muy grandes, no conviene cargar todo esto en memoria, se recomienda usar un cache, ir guardando estos payloads y volver a consultarlos a medida que sea necesario
 
 **Usar HTTP 2**: Si necesito hacer demasiados request en paralelo (cosa que no es recomendable), HTTP 2 tiene una coneexion TCP muy buena, para el multiplexing (no siempre es aplicable)
 
-**Hacer UI que llamen lo menos posible al backend**: Que sean UI que dependan de pocos llamados para funcionar (si se puede, ya que hay dependencias entre payloads) 
+**Hacer UI que llamen lo menos posible al backend**: Que sean UI que dependan de pocos llamados para funcionar (si se puede, ya que hay dependencias entre payloads)
 
-⚛️ **No pasar props que no son necesarios**: El propering afecta al rendimiento en React. El estado debe estar tan cerca como pueda de donde se esté usando. Mientras mas props recibimos, mayor es la dependencia con el componente padre. 
+⚛️ **No pasar props que no son necesarios**: El propering afecta al rendimiento en React. El estado debe estar tan cerca como pueda de donde se esté usando. Mientras mas props recibimos, mayor es la dependencia con el componente padre.
 
 ⚛️ **Evitar renderizados de mas**: Usar useMemo (memorizacion en React) para evitar renderizados o componentes puros
 
 **Tener varias zonas de disponibilidad**: Esto para evitar la latencia en la obtencion de recursos.
-
-<a id="rea18"></a>
-
-### **¿Que es Redux?**
-
-[Volver al indice](#rea-base)
-
-Redux permitira manejar el state global de manera facil conforme van creciendo, tambien ayuda a manejar los datos dependiendo de las acciones del usuario. Fue creado por un dev del equipo de React. 
-
-- Solo hay 1 state principal
-- El state cambia depende lo que pase en la interfaz de usuario
-- Solo ciertas funciones cambiarán el State
-- Solo se hace un cambio a la vez
-
-<a id="rea19"></a>
-
-### **Cuando conviene usar Redux?**
-
-[Volver al indice](#rea-base)
-
-Si la app es pequeña, se recomienda ContextAPI o hooks. Si es grande, y va a ser mantenido por varias personas, se recomeinda Redux
-
-- No hace la app mas rapida
-- Existe Redux para muchos frameworks, no solo React
-- No es necesario usarlo en cada proyecto
-
-<a id="rea20"></a>
-
-### **¿Cuales son los beneficios de usar Redux?**
-
-[Volver al indice](#rea-base)
-
-- Como su estructura es muy estricta, es muy facil de mantener y de organizar, tambien es muy estable.
-- Da una fiable representacion del servidor, es muy util especialmente para presentaciones preliminares. Puede optimizar, por ejemplo, motores de busqueda.
-- Provee muchas herramientas para los devs
-- Es facil de probar, las funciones de redux y el codigo en si son pequeñas y atomicas.
-
-<a id="rea21"></a>
-
-### **Redux vs ContextAPI**
-
-[Volver al indice](#rea-base)
-
-**Context**
-
-- Context es una herramienta de React que permite pasar datos a traves del arbol de componentes sin tener que pasar props manualmente en cada nivel
-- Context es una buena opcion para datos que son necesarios en muchos componentes de la aplicacion
-- Context es una buena opcion para datos que no cambian frecuentemente
-- Context viene integrado a React
-- Es facil de entender para principiantes
-- No requiere mucho codigo boilerplate
-
-**Redux**
-
-- Redux es una libreria de manejo de estado que permite manejar el estado de la aplicacion de manera predecible
-- Redux es una buena opcion para datos que cambian frecuentemente
-- Redux es una buena opcion para aplicaciones grandes con muchos componentes
-- Redux no viene integrado a React, se debe instalar por separado
-
-<a id="rea22"></a>
-
-### **¿Cual es el flujo de Redux?**
-
-[Volver al indice](#rea-base)
-
-Store
-
-- Contiene el state y solo hay un Store por app
-
-Dispatch
-
-- Ejecuta una accion, es una funcion que maneja un state
-
-```jsx
-dispatch(addProductOk(product))
-```
-
-Actions
-
-- Objetos en JS con tipo y payload (datos que modificaran el state)
-- Los componentes no deben modificar el state directamente, se modifica por medio de funciones llamadas Actions
-
-Subscribe
-
-- Similar al event listener para el state
-
-Reducer
-
-- Funciones que saben que hacer con las acciones y el payload
-
-<a id="rea23"></a>
-
-### **Que es ContextAPI?**
-
-[Volver al indice](#rea-base)
-
-Es una manera de tener un estado global sin dependencias como Redux, ya que viene desde React 16.3.
-
-Se pueden pasar state o funciones desde el componente principal hacia los hijos, nos evitamos pasarlo por cada uno de los componentes, es algo global.
-
-Cuenta con el hook `useContext` que facilita el acceso a los datos del Context.
-
-Children refiere a los componentes dentro del Provider que recibirán estos datos.
-
-Provider: De donde vienen los datos
-
-```jsx
-import {createContext} from 'react';
-
-const QuoteContext = createContext();
-
-const QuoteProvider = ({children}) => {
-  return (
-    <QuoteContext.Provider
-    value=({})>
-      {children}
-    </QuoteContext.Provider>
-  )
-}
-
-export { QuoteProvider }
-export default QuoteContext;
-```
-
-Dentro de value ponemos lo que queremos exportar para el resto de componentes, y luego, lo consumimos de la siguiente manera:
-
-```jsx
-// Donde entre llaves ponemos lo que queremos consumir de ese Context.
-const {} = useContext(QuoteContext);
-```
-
-<a id="rea24"></a>
-
-### **Que es React Fiber?**
-
-[Volver al indice](#rea-base)
-
-La arquitectura de React hizo que fuera muy facil para trabajar no solo en web si no tambien en mobile (React Native) y en hasta aplicaciones de Realidad Virtual. Asi los dev de React decidieron separar su algoritmo de reconciliacion (el que compara los cambios entre DOM y VDOM) y el lienzo donde esos cambios se muestran (Web, Mobile, etc..)
-
-Es una estructura de datos que representa un trabajo por hacer.
 
 <a id="rea25"></a>
 
@@ -8730,9 +14230,11 @@ Es una estructura de datos que representa un trabajo por hacer.
 
 [Volver al indice](#rea-base)
 
-Se usan las claves para diferenciar entre simples elementos DOM virtuales con los que son unicos. Ayudan a React a reciclar elementos DOM existentes para que la libreria pueda ejecutarse y renderizarse mas rápidamente, ya que React recicla los elementos que no fueron modificados de los que si para no renderizarlos cuando no es necesario. Este elemento se usa mas que nada en iteraciones de listas. 
+Se usan las claves para diferenciar entre simples elementos DOM virtuales con los que son unicos. Ayudan a React a reciclar elementos DOM existentes para que la libreria pueda ejecutarse y renderizarse mas rápidamente, ya que React recicla los elementos que no fueron modificados de los que si para no renderizarlos cuando no es necesario. Este elemento se usa mas que nada en iteraciones de listas.
 
-El key no afecta el renderizado en si, es por eso que igualmente funciona el render, solo se muestra un warning. 
+Esto optimiza el proceso de **reconciliacion**
+
+El key no afecta el renderizado en si, es por eso que igualmente funciona el render, solo se muestra un warning.
 
 ```jsx
 const numbers = [1, 2, 3, 4, 5];
@@ -8742,6 +14244,11 @@ const listItems = numbers.map((number) =>
   </li>
 );
 ```
+
+Su no uso ocasiona
+
+- Renderizados innecesarios, ya que no se pueden identificar que elementos especificos cambiaron
+- Pérdida de estado en los componentes (por ejemplo, un input pierde su texto cuando cambia el orden de la lista).
 
 <a id="rea26"></a>
 
@@ -8823,15 +14330,15 @@ Por ejemplo tenemos dos objetos y una funcion
 
 ```jsx
 const user = {
-	name: 'Marcos'
+  name: 'Marcos'
 };
 
 const business = {
-	name: 'Headbook'
+  name: 'Headbook'
 }
 
 function showInfo(likes, friends){
-	return `${this.name} tiene ${likes} likes y ${friends}`
+  return `${this.name} tiene ${likes} likes y ${friends}`
 }
 ```
 
@@ -8843,7 +14350,7 @@ showInfo.call(user, 4, 5); // le pasamos la referencia que deseamos y las props
 
 showInfo.apply(user, [4,5]); // lo mismo pero los params deben ir en un array
 
-const newFunction = showInfo.bind(user); 
+const newFunction = showInfo.bind(user);
 newFunction(10,15); // hacemos otra funcion que toma otro contexto
 ```
 
@@ -8900,7 +14407,7 @@ Babel es un compilador para JavaScript. Permite transformar codigo escrito con l
 
 [Volver al indice](#rea-base)
 
-Es el responsable de producir los bundles a partir del codigo Front. Es un Module Bundler, hay otras opciones como Gulp, Rollup, etc.. 
+Es el responsable de producir los bundles a partir del codigo Front. Es un Module Bundler, hay otras opciones como Gulp, Rollup, etc..
 
 Los bundles son paquetes de codigo necesarios para poder llevar a produccion un proyecto, traspilando el codigo y el empaquetado de los modulos en uno o varios archivos compactados, minimizados y optimizados. Es lo que se hace cuando se hace `build`.
 
@@ -8910,9 +14417,9 @@ Los bundles son paquetes de codigo necesarios para poder llevar a produccion un 
 
 [Volver al indice](#rea-base)
 
-Es crear paginas HTML renderizadas en servidor para que lleguen listas. Se crean usando NodeJS que generalmente se usa con Express (para utilizar verbos de HTTP). 
+Es crear paginas HTML renderizadas en servidor para que lleguen listas. Se crean usando NodeJS que generalmente se usa con Express (para utilizar verbos de HTTP).
 
-NextJS es una opcion para usar esto. Favorecen mucho al SEO ya que renderizan la pagina antes de que pueda ser enviada al navegador. 
+NextJS es una opcion para usar esto. Favorecen mucho al SEO ya que renderizan la pagina antes de que pueda ser enviada al navegador.
 
 <a id="rea37"></a>
 
@@ -8920,7 +14427,7 @@ NextJS es una opcion para usar esto. Favorecen mucho al SEO ya que renderizan la
 
 [Volver al indice](#rea-base)
 
-Es remover codigo no usado, como, por ejemplo, imports y exports que no fueron usados. Esto lo hace webpack y Rollup de manera automatica. 
+Es remover codigo no usado, como, por ejemplo, imports y exports que no fueron usados. Esto lo hace webpack y Rollup de manera automatica.
 
 <a id="rea38"></a>
 
@@ -8928,14 +14435,14 @@ Es remover codigo no usado, como, por ejemplo, imports y exports que no fueron u
 
 [Volver al indice](#rea-base)
 
-Es Search Engine Optimization, es lo que hace que un sitio sea encontrado por Google, y HTML hace un aporte con su metadata para que esto suceda. Por ejemplo, no se recomienda usar muchos <h1> en un HTML para no afectar al SEO. 
+Es Search Engine Optimization, es lo que hace que un sitio sea encontrado por Google, y HTML hace un aporte con su metadata para que esto suceda. Por ejemplo, no se recomienda usar muchos <h1> en un HTML para no afectar al SEO.
 
 - Describir la pagina con titulos y fragmentos unicos. Uso de <title> y utilizar terminos claros. Todas las paginas del sitio deben tener una meta descripcion para que aparezca la misma en los resultados del buscador
 
 ```html
 <head>
-	<title>Bienvenidos</title>
-	<meta name="description" content="Sitio web">
+  <title>Bienvenidos</title>
+  <meta name="description" content="Sitio web">
 </head>
 ```
 
@@ -8947,26 +14454,6 @@ Es Search Engine Optimization, es lo que hace que un sitio sea encontrado por Go
 ```
 
 - Crear diseños accesibles, crear paginas para los usuarios, no solo para los motores de busqueda. Un ejemplo para testear la accesibilidad, es cargar la pagina sin JS habilitado.
-
-<a id="rea39"></a>
-
-### **¿Qué es el Virtual DOM?**
-
-[Volver al indice](#rea-base)
-
-Para que React pueda efectuar esta suerte de “recarga parcial por pedazos” de una página, debe usar el Virtual DOM, que es una representación del DOM real.
-
-Cuando un elemento cambia, primero se actualiza el VDOM de forma muy rápida, luego, React compara este VDOM propio con el DOM real, y basándonos en sus diferencias, únicamente aplica los cambios necesarios para que ambos coincidan.
-
-Todo sale de app.js, que contiene X cantidad de componentes, y estos poseen Z cantidad de componentes en sí mismos. Si actualizamos a `app.js`, se actualiza la página entera, pero si actualizamos algo dentro de estos componentes, únicamente se actualizará de este componente “para arriba” en la jerarquía de componentes.
-
-Más arriba la jerarquía, más refrescos habrá. Un componente hijo, idealmente, no deberia necesitar modificar el estado del componente padre.
-
-- Aumenta la velocidad de la aplicacion
-- No acapara mucha memoria, hace que el uso de la misma sea mucho mas eficiente
-- Provee una capa adicional de Scripting, dandole un peso mas a la CPU
-
-![Virtual Dom](src/vdom.png)
 
 <a id="rea40"></a>
 
@@ -8990,7 +14477,7 @@ La tipificación de variables, sirve para asignar un número a una variable y de
 
 [Volver al indice](#rea-base)
 
-En JavaScript, un valor se considera "falsy" si se convierte en `false` cuando se evalúa en un contexto booleano. 
+En JavaScript, un valor se considera "falsy" si se convierte en `false` cuando se evalúa en un contexto booleano.
 
 ```jsx
 // Falso
@@ -9056,11 +14543,11 @@ Coercion es la forma en la que podemos cambiar de un tipo de valor a otro
 
 ```jsx
 //Aquí obligamos a la variable a convertirse en string (coerción explícita)
-var c = String(a); 
+var c = String(a);
 console.log(c);
 
 //Aquí obligamos a la variable a convertirse en número (coerción explícita)
-var d = Number(c); 
+var d = Number(c);
 console.log(d);
 ```
 
@@ -9068,14 +14555,14 @@ console.log(d);
 
 ```jsx
 //Convierte a 4 en un string y lo concatena con el "7", por esto regresa un string de valor "47"
-var a = 4 + "7"; 
+var a = 4 + "7";
 
 //Convierte al "7" en un número y realiza la operación, por esto devuelve 28
-4 * "7"; 
+4 * "7";
 
 var a = 20;
 var b = a + ""; //Aquí concatenamos para convertir la variable a string (coerción implícita)
-console.log(b); 
+console.log(b);
 ```
 
 <a id="rea45"></a>
@@ -9084,7 +14571,7 @@ console.log(b);
 
 [Volver al indice](#rea-base)
 
-Es el contexto actual de ejecución. 
+Es el contexto actual de ejecución.
 
 Cuando hacemos referencia a una variable, javascript busca su definicion en cada entorno, o Scope, esto depende de como (var, const, let) y donde la declaremos (fuera o dentro de una funcion).
 
@@ -9145,7 +14632,7 @@ var myObjeto = new Object({
 {nombre: "Diego", apeliido: "Querales", edad: 25}
 ```
 
-<a id="rea48"></a>
+<a id="js1"></a>
 
 ### **Document.ready vs Window.onload**
 
@@ -9157,17 +14644,17 @@ var myObjeto = new Object({
 
 [Volver al indice](#rea-base)
 
-Es una tecnica que se usaba para emular las variables privadas. 
+Es una tecnica que se usaba para emular las variables privadas.
 
 ```jsx
 const modulo = (function(){
-	function metodoPrivado () {
-	}
-	const valorPrivado = "algo"
-	return {
-	  get: valorPrivado,
-	  set: function(v) { valorPrivador = v }
-	}
+  function metodoPrivado () {
+  }
+  const valorPrivado = "algo"
+  return {
+    get: valorPrivado,
+    set: function(v) { valorPrivador = v }
+  }
 })()
 
 var x = modulo()
@@ -9183,7 +14670,7 @@ x.valorPrivado //Error
 
 [Volver al indice](#rea-base)
 
-Supongamos que estamos usando una libreria para renderizar items de una coleccion de datos, esta expone un componente llamado RenderItem que tiene una sola prop disponible onClick que no acepta ningun parametro. ¿Y si quiero mandarle un argumento? 
+Supongamos que estamos usando una libreria para renderizar items de una coleccion de datos, esta expone un componente llamado RenderItem que tiene una sola prop disponible onClick que no acepta ningun parametro. ¿Y si quiero mandarle un argumento?
 
 ```jsx
 // Esta es el closure
@@ -9217,7 +14704,7 @@ Creamos una funcion que recibe el titulo que se quiere mostrar y retorna otra fu
 
 [Volver al indice](#rea-base)
 
-NaN son operaciones aritmeticas que no pueden ser representadas correctamente. Ambas funciones tienen como objetivo identificar si un valor es NaN. `isNaN` global aplica una coercion de tipos al argumento que le pasamos, `Math.isNan` no lo hace, lo que hace que sea mas seguro de usar para valores no numericos. 
+NaN son operaciones aritmeticas que no pueden ser representadas correctamente. Ambas funciones tienen como objetivo identificar si un valor es NaN. `isNaN` global aplica una coercion de tipos al argumento que le pasamos, `Math.isNan` no lo hace, lo que hace que sea mas seguro de usar para valores no numericos.
 
 ```jsx
 isNaN('denu') // devolvera true porque primero intentará convertir la cadena a un numero
@@ -9228,7 +14715,7 @@ Number.isNaN('denu') // false porque no convertirá la cadena a numero
 
 ```javascript
 
-// .includes() Detecta y devuelve true o false si el String posee un substring en el 
+// .includes() Detecta y devuelve true o false si el String posee un substring en el
 const str = 'This is my example string!';
 const substr = 'my';
 
@@ -9238,7 +14725,7 @@ console.log(str.includes(substr)); // true
 stringObj.indexOf("string to check for") // -1 Si no se encuentra
 
 //.replace Reemplaza de un String o un regex un valor por otro, no muta al objeto en si, devuelve lo nuevo
-array[0] = array[0].replace("PM", '') // Quita el PM del string dentro de ese array 
+array[0] = array[0].replace("PM", '') // Quita el PM del string dentro de ese array
 ```
 
 <a id="rea52"></a>
@@ -9257,7 +14744,7 @@ let sym3 = Symbol()
 sym1 === sym3 // false
 ```
 
-Tambien sirve para crear claves unicas en los objetos, donde los autores de librerias, navegadores web o cualquier runtime de ES podra evitar que hubieran colisiones al momento de agregar una prop u objeto global 
+Tambien sirve para crear claves unicas en los objetos, donde los autores de librerias, navegadores web o cualquier runtime de ES podra evitar que hubieran colisiones al momento de agregar una prop u objeto global
 
 ```jsx
 const sym1 = Symbol()
@@ -9277,7 +14764,7 @@ obj[sym2] = 'b'
 
 Javascript ejecuta una linea de codigo por vez. **Event Loop** se encarga de gestionar las funciones asincronas.
 Funciona con una Call Stack y una Callback Queue. Cuando hay una linea en ejecucion, se agrega al Call Stack, y cuando finaliza, se elimina. La Queue tiene las funciones callback que deben ejecutarse, no debe haber ninguna funcion ejecutandose en la Call Stack ni debe haber otra funcion adelante suyo en la Queue.
-Cuando ejecutamos una funcion con setTimeout, la misma se entrega a Timers API, y aunque setTimeout sea cero, habrá un retraso en la ejecucion de esta funcion, haciendo que tenga que esperar en la Queue a que termine de ejecutarse el codigo asincrono. 
+Cuando ejecutamos una funcion con setTimeout, la misma se entrega a Timers API, y aunque setTimeout sea cero, habrá un retraso en la ejecucion de esta funcion, haciendo que tenga que esperar en la Queue a que termine de ejecutarse el codigo asincrono.
 
 ![js](src/js1.png)
 
@@ -9306,12 +14793,12 @@ Se produce cuando una variable que esta en un scope mas reducido tiene el mismo 
 function test() {
 
 var variable = "hola";
-console.log(variable); 
+console.log(variable);
 
-	function test1() {
-		var variable = "denu";
-    	console.log(variable); 
-	}
+  function test1() {
+    var variable = "denu";
+      console.log(variable);
+  }
 
   test1(); // denu
 }
@@ -9368,7 +14855,7 @@ Aunque React Native tiene muchas ventajas, puede no ser la mejor opción para ap
 
 - React Native utiliza componentes nativos reales, mientras que frameworks como Ionic o Cordova renderizan interfaces usando un WebView, lo que puede afectar el rendimiento.
 - Las aplicaciones de React Native tienen una experiencia de usuario más fluida y cercana a lo nativo.
-  
+
 **Frente a Desarrollo Nativo Puro (Swift/Objective-C y Kotlin/Java):**
 
 - React Native es más rápido de desarrollar gracias a la reutilización de código, pero puede no ofrecer acceso directo a todas las API nativas de cada plataforma.
@@ -9721,7 +15208,7 @@ const insertUser = (name, age) => {
 
 Si el usuario posee mas experiencia con bases de datos noSQL, se pueden usar librerias como `realm` o `watermelonDB` para manejar la persistencia de datos.
 
-**Realm** es ideal para aplicaciones con sincronizacion en tiempo real. 
+**Realm** es ideal para aplicaciones con sincronizacion en tiempo real.
 
 ```jsx
 import Realm from 'realm';
@@ -9801,7 +15288,7 @@ existe la posibilidad de implementar un servicio de autenticacion con Google, Fa
 
 2. Verificacion de credenciales
 
-Se verifica contra un backend propio o un servicio de terceros la informacion dada por el usuario. Se envian 
+Se verifica contra un backend propio o un servicio de terceros la informacion dada por el usuario. Se envian
 a traves de una solicitud HTTPS a un servidor.
 En caso de que las credenciales sean validadas, se vuelve un token de acceso como JWT.
 
@@ -9815,7 +15302,7 @@ En Android, se puede usar el `Encrypted Shared Preferences` o librerías como `r
 
 Como se menciono antes, se necesita el token para validar que el usuario se encuentra loggeado en cada reinicio de la aplicacion, tambien para enviar este token en caso de que se hagan ciertas solicitudes a la API.
 
-Una vez que se cierra la sesion, el token es eliminado. 
+Una vez que se cierra la sesion, el token es eliminado.
 
 Otros extras a tener en cuenta son:
 
@@ -10022,14 +15509,14 @@ const LanguageSelector = () => {
 
 ```pseudocode
 1. pedir el primer numero
-2. se guarda el numero en la variable numero 
-3. se pide el 2do numero 
-4. se guarda el 2do numero en la variable numero 2 
-5. preguntarle al usuario que cuenta quiere hacer 
-6. si el usuario quiere division se chequea que la varieble 2 no sea 0 
+2. se guarda el numero en la variable numero
+3. se pide el 2do numero
+4. se guarda el 2do numero en la variable numero 2
+5. preguntarle al usuario que cuenta quiere hacer
+6. si el usuario quiere division se chequea que la varieble 2 no sea 0
 7. si alguna de las variebles es cero debe aparecer un perro rojo
-8. realizar la cuenta 
-9. guardar resultado en la varieble resultado 
+8. realizar la cuenta
+9. guardar resultado en la varieble resultado
 10. se muestra el resultado
 
 1. Solicitar el nombre al usuario
@@ -10488,7 +15975,7 @@ La revisión de código es una excelente manera de evitar trampas técnicas comu
 
 Un revisor también puede detectar y reemplazar dependencias externas recién introducidas con licencias inapropiadas o vulnerabilidades conocidas antes de que aparezcan en producción.
 
-Que puede suceder si evito una Code Review? 
+Que puede suceder si evito una Code Review?
 
 **Menos Calidad de Código estructural**
 
@@ -10552,7 +16039,7 @@ Este diseño se enfoca en el dominio del problema, es decir, en el problema que 
 
 Por ejemplo, para desarrollar el software de un hospital, debo tener en cuenta las necesidades del usuario y sobre todo, si es necesario, un marco juridico, mas si se trata de informacion sensible sobre pacientes.
 
-**Software del modelo del dominio anemico**: No tiene un conocimiento sobre el dominio donde el software se desempeña. 
+**Software del modelo del dominio anemico**: No tiene un conocimiento sobre el dominio donde el software se desempeña.
 
 **Software del modelo del dominio rico**: Tiene un conocimiento profundo sobre el dominio donde el software se desempeña.
 
@@ -10780,7 +16267,7 @@ if (password != null && password.length > 9 && !password.contains(username)){}
 /*
 * @param title The title of the book
 * @param descripcion The description of the book
-* 
+*
 */
 public void addBook(String title, String description){}
 
@@ -11081,7 +16568,7 @@ console.log(GeometryModule.calculateCircleArea(5)); // Output: 78.53981633974483
 console.log(GeometryModule.calculateRectanglePerimeter(4, 6)); // Output: 20
 
 ---
-    
+
 // Módulo con baja cohesión
 const LowCohesionModule = (function() {
     // Función para calcular el área de un círculo
@@ -11325,7 +16812,7 @@ A diferencia del upcasting, siempre se hace indicando cual es la subclase
 Perro fido;
 Mascota a;
 Perro  mismoFido;
-       
+
 fido = new Perro("Fido",
                "Bull Dog");
 a = fido;
@@ -11498,7 +16985,7 @@ Mejorar la calidad del código en un proyecto en marcha requiere un enfoque estr
   - Usa patrones de diseño (como Factory, Singleton o Strategy) si simplifican el código.
 - **Eliminar código muerto:** Identifica funciones, componentes o estilos que ya no se usan y elimínalos.
 - **Simplificación de funciones:** Divide funciones complejas en funciones más pequeñas y reutilizables.
-  
+
 *Ejemplo de refactorización:*
 
 Código inicial:
@@ -11579,7 +17066,7 @@ function calculateTotal(items) {
 
 [Volver al indice](#cod-base)
 
-Cuando te enfrentas a plazos ajustados y necesitas priorizar la entrega sobre la calidad del código, es importante abordar la situación de manera estratégica para minimizar el impacto a largo plazo. 
+Cuando te enfrentas a plazos ajustados y necesitas priorizar la entrega sobre la calidad del código, es importante abordar la situación de manera estratégica para minimizar el impacto a largo plazo.
 
 
 ### **1. Planificación y comunicación temprana**
@@ -11587,8 +17074,8 @@ Cuando te enfrentas a plazos ajustados y necesitas priorizar la entrega sobre la
   - Informa que, para cumplir con el plazo, es posible que se comprometa la calidad del código.
   - Explica los riesgos de acumular deuda técnica, como mayor dificultad de mantenimiento, bugs futuros, y tiempo extra para agregar nuevas funcionalidades.
   - Propón un plan para abordar esa deuda técnica después del plazo.
-  
-  *Ejemplo:*  
+
+  *Ejemplo:*
   "Podemos cumplir con la fecha límite, pero algunos aspectos del código serán soluciones temporales. Después de la entrega, necesitaremos tiempo para refactorizar y mejorar la calidad del código para evitar problemas futuros."
 
 
@@ -11638,13 +17125,13 @@ Incluso bajo presión, sigue estas prácticas para evitar errores desastrosos:
 - **Usa nombres significativos:** No sacrifiques claridad; el código mal estructurado no tiene que ser ilegible.
 - **Evita dependencias rígidas:** Asegúrate de que las soluciones rápidas no bloqueen la integración de futuras funcionalidades.
 
-  *Ejemplo de mala práctica:*  
+  *Ejemplo de mala práctica:*
   ```javascript
   // Hardcode que será difícil de mantener
   const API_URL = "http://localhost:3000/api/v1/products";
   ```
 
-  *Mejor alternativa:*  
+  *Mejor alternativa:*
   ```javascript
   // Define constantes para permitir configuraciones futuras
   const API_URL = process.env.API_URL || "http://localhost:3000/api/v1/products";
@@ -11657,7 +17144,7 @@ Después de cumplir el plazo:
 - **Incrementa la cobertura de pruebas:** Agrega pruebas unitarias y de integración para las áreas con código temporal.
 - **Aprende de la experiencia:** Analiza qué causó el plazo ajustado y ajusta los procesos (como planificación o estimaciones) para evitar futuras situaciones similares.
 
-Aunque no es ideal escribir "mal código," puedes minimizar el impacto con documentación, encapsulación, y planificación. Siempre prioriza una refactorización inmediata después de cumplir con los plazos. Esto garantizará que el proyecto siga siendo mantenible y escalable en el futuro. 
+Aunque no es ideal escribir "mal código," puedes minimizar el impacto con documentación, encapsulación, y planificación. Siempre prioriza una refactorización inmediata después de cumplir con los plazos. Esto garantizará que el proyecto siga siendo mantenible y escalable en el futuro.
 
 <a id="cod58"></a>
 
@@ -11726,7 +17213,7 @@ public Double calcularArea(Double hipotenusa, Double cateto) {
 
 public Double calcularArea (Double hipotenusa, Double cateto) {
     Double cateto_2 = Math.sqrt(hipotenusa*hipotenusa - cateto*cateto);
-    
+
     return cateto * cateto_2 / 2;
 }
 ```
@@ -11801,32 +17288,32 @@ public interface GameConstants {
 
 ```jsx
 public class Game {
-	private int currentLevel;
-	DifficultyLevel difficultyLevel;
+  private int currentLevel;
+  DifficultyLevel difficultyLevel;
 
-	public int levelsLeft() {
-		return difficultyLevel.numberOfLevels() - currentLevel;
-	}
+  public int levelsLeft() {
+    return difficultyLevel.numberOfLevels() - currentLevel;
+  }
 }
 
 public enum DifficultyLevel {
-	EASY {
-		public int numberOfLevels() {
-			return 20;
-		}
-	},
-	MEDIUM {
-		public int numberOfLevels() {
-			return 30;
-		}
-	},
-	HARD {
-		public int numberOfLevels(){
-			return 50;
-		}
-	}
+  EASY {
+    public int numberOfLevels() {
+      return 20;
+    }
+  },
+  MEDIUM {
+    public int numberOfLevels() {
+      return 30;
+    }
+  },
+  HARD {
+    public int numberOfLevels(){
+      return 50;
+    }
+  }
 
-	public abstract int numberOfLevels();
+  public abstract int numberOfLevels();
 }
 ```
 
@@ -11842,7 +17329,7 @@ Se evitan los condicionales por nivel de dificultad en el ejemplo.
 
 ```jsx
 public interface FileDownloader {
-	File download(String webUrl);
+  File download(String webUrl);
 }
 ```
 
@@ -11855,17 +17342,17 @@ public interface FileDownloader {
 
 ```jsx
 for (int i = 0; i < numberOfRequests; i++) {
-	processRequest(requests.get(i));
+  processRequest(requests.get(i));
 }
 
 // NOPE
 public class Car {
-	private int hp;
+  private int hp;
 }
 
 // SIP
 public class Car {
-	private int horsePower;
+  private int horsePower;
 }
 ```
 
@@ -11930,7 +17417,7 @@ public class Comments {}
 git clone {nuestroProyecto}
 mvn install
 ```
- 
+
 **Los test requieren mas de un paso** Los test se deben ejecutar con un unico comando facil, rapido y obvio, al igual que la compilacion. Si esto no se cumple, pueden haber altas chances de que los test no suelan correrse por el trabajo que conllevan en si mismos. La idea es ejecutarlos muy seguido.
 Tambien hay herramientas de automatizacion para los tests, con comandos especificos para los tests. En maven existe `mvn test`
 
@@ -11951,7 +17438,7 @@ En este ejemplo podemos ver que se ahorraron muchas letras en los nombres de las
 
 ```javascript
 public int otCalc(){
-	return isWkn * wkRte + (int) Math.round(0.5 * wkRte * ...);
+  return isWkn * wkRte + (int) Math.round(0.5 * wkRte * ...);
 }
 ```
 
@@ -11999,12 +17486,12 @@ Si tenemos que definir una variable mas para que quede mas claro, lo hacemos.
 
 ```jsx
 if (level + 1 == game.getMaxLevel()) {
-	loadFinalBoss();
+  loadFinalBoss();
 }
 
 Integer nextLevel = level + 1;
 if (nextLevel == game.getMaxLevel()) {
-	loadFinalBoss();
+  loadFinalBoss();
 }
 ```
 
@@ -12452,6 +17939,1019 @@ En resumen, mientras que el desarrollo basado en tronco enfatiza la simplicidad 
 
 ---
 
+<a id="har"></a>
+
+# Hardware, Sistemas, Infraestructura y Arquitectura
+
+<a id="har1"></a>
+
+### **Gabinete**
+
+[Volver al indice](#har-base)
+
+Es el principal contenedor de todos los componentes de una computadora. Más allá del diseño, la búsqueda de un buen gabinete debe incluir una mirada atenta a estos aspectos técnicos:
+
+- **La chapa**: La misma debe ser de buena calidad para garantizar una adecuada protección de los componentes.
+- **La fuente**: Es importante que sea compatible con el tipo de motherboard que vamos a usar, y sus requerimientos de consumo eléctrico, ya que podemos tener problemas de funcionamiento si la cantidad de potencia que nuestra fuente entrega no es suficiente para el equipo que estamos ensamblando.
+- **Ventilación**: Es un punto clave, porque cuanto más potente es el procesador, más será el calor que va a emitir, y debemos asegurarnos que el gabinete posee buenas cualidades de disipación del calor y flujo de aire en su interior.
+- **Tamaño**: La selección del mismo estará relacionada con el tipo de uso que le daremos al equipo, considerando que a menor tamaño de gabinete menor será el espacio entre los componentes y por consiguiente será más complicada la disipación de calor y el trabajo sobre el mismo cuando se requiera realizar cambios o reparaciones.
+
+<a id="har2"></a>
+
+### **Motherboard**
+
+[Volver al indice](#har-base)
+
+Es el elemento principal de toda la PC, en el que se encuentran todos los demás aparatos y dispositivos. La principal funcion es generar a través de un circuito eléctrico la conexión entre los componentes. De ella depende tanto el rendimiento del sistema en índole general como así también el funcionamiento de los elementos que lo componen.
+
+Se diseña básicamente para realizar tareas específicas vitales para el funcionamiento del ordenador (Conexión física, Administración, Control de energia, Comunicación datos, Temporización, Sincronismo, Control y monitoreo.. ). Para que la placa base cumpla con su cometido, lleva instalado un software muy básico denominado BIOS (Basic Input / Output System).
+
+- **Zócalo del microprocesador**: Lugar donde se alojara el microprocesador, existen diversos modelos para cada marca de procesadores, por lo que debemos asegurarnos que estamos usando el mother indicado para el mismo, de lo contrario no podremos colocar el procesador.
+- **Chipset Northbridge**: Es uno de los chips más importantes. Su función es conectar al microprocesador con la memoria RAM, el puerto AGP y el puerto PCI express.
+- **Chipset Southbridge**: Su misión es controlar todas las funciones de entrada y salida. Además se conecta al Northbridge por medio de un bus específico.
+- **Slot de expansion**: Son ranuras que permiten la incorporación de tarjetas especificas adicionales. Pueden ser usados para ingresar tarjetas de video, sonido, etc..
+- **Puertos I/O (Entrada y Salida)**:  Son puertos que nos permiten interconectar nuestra computadora con otros dispositivos externos.
+- **Zócalos de memoria**: Albergan a las memorias RAM que se adicionan al mother.
+- **Memoria ROM**: Aloja al BIOS del mother, este es el que nos permite configurar al sistema y sus componentes.
+- **Pila**: Mantiene tensión continua en el mother de modo de guardar todas las configuraciones necesarias.
+- **Conectores Serial ATA**: Son conectores de alto rendimiento. Se usan para conectar discos rígidos de gran capacidad y reemplazan al IDE.
+- **Conectores IDE - FDD (sin uso)**: Se encargan de generar la conexión entre la disquetera, el rígido y las lectograbadoras.
+
+<a id="har3"></a>
+
+### **Microprocesador**
+
+[Volver al indice](#har-base)
+
+Es la parte de la pc diseñada para llevar a cabo la ejecucion de los programas. Es comparable a un cerebro, su funcion se basa en la ejecucion de instrucciones a muy bajo nivel haciendo operaciones logicas simples. Tiene millones de elementos microscopicos llamados transistores.
+
+<a id="har4"></a>
+
+### **Memoria RAM**
+
+[Volver al indice](#har-base)
+
+Es donde la computadora guarda los datos que esta usando al momento de procesarlos o trabajar con ellos. El almacenamiento es considerado temporal porque los datos y programas permanecen en ella mientras la computadora esta encendida, desapareciendo cuando la misma se apaga.  Físicamente, estan constituidas por un conjunto de chips o módulos de chips normalmente conectados a la tarjeta madre. Son rectangulos negros soldados en grupos a unas placas con pines/contactos. La diferencia entre la RAM y otros tipos de memoria de almacenamiento, es que la RAM es mucho más rapida.
+
+<a id="har5"></a>
+
+### **Disco Rigido**
+
+[Volver al indice](#har-base)
+
+Es el dispositivo encargado de almacenar informacion de forma persistente en la PC. Generalmente usan un sistema de grabacion magnetica analogica. En este disco encontramos dentro de la carcasa una serie de platos metalicos apilados girando a gran velocidad. Sobre estos se situan los cabezales encargados de leer o escribir los impulsos magneticos.  El disco rigido es el sistema de almacenamiento más importante de la pc, y en el se guarda, por ejemplo el SO.
+
+- **IDE/ATA**: Es el standar más difundido en el mercado, a traves de los años fue mejorando la velocidad de transferencia de datos entre dispositivos, pero actualmente se encuentra en retirada.
+- **SCSI**: Es una interfaz standar para la transferencia de datos entre periféricos en el bus de la pc, fue usada en servidores y computadoras con necesidad de gran velocidad de transferencia de datos.
+- **SATA**: Es la reemplazante del IDE. Es actualmente el estandar más usado en el mercado, mejorando las velocidades.
+
+<a id="har6"></a>
+
+### **Lectograbadora CD/DVD**
+
+[Volver al indice](#har-base)
+
+Permiten la lectura de CDs y DVDs. La realizan a traves de la utilización de discos opticos los cuales son leidos y escritos mediante un laser. Permiten guardar grandes cantidades de datos en espacios reducidos.
+
+<a id="har7"></a>
+
+### **Placas adicionales**
+
+[Volver al indice](#har-base)
+
+- **Placa de red**: permite conectar una pc a una red de computadoras. Esto nos deja compartir y acceder a varios recursos que esten disponibles en la red.
+- **MODEM**: Dispositivo que transforma las señas digitales de una computadora en analogicas y viceversa, para poder enviar/recibir paquetes de datos.
+- **Placa de video**: Componente electronico requerido para generar una señal de video que se manda a una pantalla de video por medio de un cable. Se pueden visualizar los datos que procesa la computadora en un lenguaje humano.
+- **Placa de sonido**: Permite reproducir sonidos.
+
+<a id="har8"></a>
+
+### **Que es la virtualizacion?**
+
+[Volver al indice](#har-base)
+
+Virtualizar significa aparentar que algo con una forma tiene otra. Virtualizar una computadora representa simular que se trata de una o múltiples computadoras completamente diferentes.
+
+La virtualización es una tecnología que permite que los sistemas operativos se ejecuten como aplicaciones dentro de otros sistemas operativos.
+
+En términos generales, la virtualización es un software que también incluye emulación. La emulación se utiliza cuando el tipo de CPU de origen es diferente del tipo de CPU de destino. Este mismo concepto puede extenderse para permitir que todo un sistema operativo escrito para una plataforma funcione en otra.
+
+En la emulación, cada instrucción a nivel de máquina que se ejecuta de forma nativa en el sistema de origen debe traducirse a la función equivalente en el sistema de destino. Esto, con frecuencia, resulta en varias instrucciones en el destino. Aún si la CPU fuente y la CPU destino tienen niveles de rendimiento similares, el código emulado puede funcionar mucho más lento que el código nativo.
+
+Un ejemplo común de emulación se produce cuando un programa fuente no se compila a código nativo pero en su lugar se ejecuta en su forma de alto nivel o se convierte en un formulario intermedio. Esto se conoce como interpretación.
+
+Algunos lenguajes, como BASIC, pueden ser compilados o interpretados. Java en contraste, siempre se interpreta. La interpretación es una forma de emulación en la que el código de lenguaje de alto nivel se traduce a instrucciones nativas de la CPU, no emulando otra CPU, sino una máquina virtual teórica en la que ese lenguaje podría funcionar de forma nativa. Por lo tanto, se puede ejecutar programas Java en "máquinas virtuales Java", pero técnicamente esas máquinas virtuales son emuladores Java.
+
+La idea fundamental de una máquina virtual es la de abstraer el hardware de la computadora, formando entornos de ejecución diferentes, creando así la ilusión de que cada entorno de ejecución tiene su propia computadora.
+
+En otras palabras, una máquina virtual (MV o VM *Virtual Machine* por su sigla en inglés), no es más que un software que es capaz de albergar en su interior otro sistema operativo haciendo creer que se tiene una computadora real.
+
+<a id="har9"></a>
+
+### **Para qué se usan las máquinas virtuales?**
+
+¿Para qué querría alguien crear un PC virtual dentro de su PC?
+
+A primera vista, esta idea parece algo intrascendente, las máquinas virtuales tienen una variedad de utilidades tanto en el entorno profesional como en el del usuario final.
+
+Algunos de los principales usos de las máquinas virtuales de sistema son:
+
+- Para probar otros sistemas operativos: Instalar un sistema operativo en una PC es un proceso largo y difícil de revertir si los resultados no son satisfactorios. De esta manera, cuando hay una nueva versión de Windows (o cualquier otro sistema operativo) es más fácil y seguro probarla instalándola en una máquina virtual. Si algo no funciona correctamente, se elimina la VM, sin riesgo de perder mucho tiempo o datos.
+- Para ejecutar programas antiguos: ¿Qué sucede si una empresa o negocio depende de un software o aplicaciones a medida que no se actualizan desde hace 10 o 20 años? Si no se puede actualizar el software no queda otra opción que seguir ejecutándolo en un sistema operativo de su época. Usando una máquina virtual este sistema antiguo puede funcionar en un hardware actual. Lo mismo se puede aplicar a juegos antiguos que han dejado de funcionar en hardware o software moderno.
+- Para usar aplicaciones disponibles para otros sistemas operativos: Algunas veces es necesario una máquina virtual para ejecutar aplicaciones que han sido desarrolladas para otro sistema operativo distinto al anfitrión. Por ejemplo, para usar una aplicación para Linux desde Windows, o viceversa.
+- Para probar una aplicación en distintos sistemas: Para un desarrollador de una aplicación le permite probar que funcione correctamente en la mayor cantidad de configuraciones posibles, y esto incluye distintas versiones de sistemas operativos. Una opción es tener varias PCs instaladas con distintas versiones de Windows, por ejemplo, o simplemente una PC con máquinas virtuales de cada versión.
+- Seguridad adicional: Una máquina virtual no puede acceder al resto de datos de la máquina anfitrión. Esta característica permite que una máquina virtual proporcione una seguridad adicional en tareas precisas en las que se debe estar seguro de que una aplicación no tendrá acceso al resto los datos. Es por eso que se suelen usar para hacer cosas tan peligrosas como instalar virus y malware para estudiarlos.
+- Para aprovechar su gran dinamismo: Por su naturaleza las máquinas virtuales son muy útiles en ocasiones donde se necesita un extremo dinamismo en el sistema, se puede guardar estados (copias exactas de datos), ampliarlas, moverlas a un hardware totalmente distinto y seguirán funcionando sin problemas. Por esto son imprescindibles por ejemplo en empresas con servidores web que hospedan varias máquinas con las páginas web de sus clientes.
+
+Todos estos usos tienen una contrapartida o efecto negativo: el rendimiento. Como es de esperar, si el hardware de la PC se usa para soportar dos (o más) sistemas operativos a la vez, en vez de uno, el rendimiento se resiente.
+
+Aunque las aplicaciones para crear máquinas virtuales son cada vez más eficientes y el hardware más potente, emular un sistema siempre requiere un esfuerzo extra que no es necesario si el software se pudiera comunicar directamente con el hardware, sin intermediarios.
+
+<a id="har10"></a>
+
+### **Cómo se usa una máquina virtual?**
+
+[Volver al indice](#har-base)
+
+Para usar una máquina virtual lo primero que se necesita es instalar una aplicación en la PC, que pueda crearla o al menos reproducirla.
+
+Hay varias aplicaciones conocidas que hacen esto, como son VirtualBox, VMWare, QEMU, Parallels, etc.
+
+<a id="har11"></a>
+
+### **Cuales son los beneficios del uso de máquinas virtuales?**
+
+[Volver al indice](#har-base)
+
+El concepto de VM presenta grandes ventajas. Este tipo de entorno brinda una protección completa de los diversos recursos del sistema. Cada máquina virtual está completamente aislada de las demás. De esta forma, los procesos que ejecutan están limitados por los recursos y abstracciones proporcionados por la VM. Estos procesos no pueden escaparse de esta "computadora virtual".
+
+Un sistema de máquina virtual es un medio muy cómodo para la investigación y desarrollo de sistemas operativos. De esta forma se puede ejecutar el sistema operativo que se quiere probar, sin necesidad de instalarlo directamente en una computadora y sin peligro de des- configurar el sistema operativo primario.
+
+<a id="har12"></a>
+
+### **Que es un hipervisor?**
+
+[Volver al indice](#har-base)
+
+El software de virtualización implementa lo que se denomina hipervisor o VMM *(Virtual Machine Monitor)* que consiste en una capa de abstracción entre el hardware de la máquina física (*host*, anfitrión) y la máquina virtual formada por hardware y software virtualizado, haciendo el papel de intermediario entre lo real y lo virtualizado.
+
+El sistema operativo instalado en la computadora real, con el que arranca, recibe el nombre de anfitrión *(host)*, mientras que el sistema operativo que se instala en la VM se denomina huésped *(guest)*.
+
+La capa de software hipervisor o VMM, gestiona y arbitra los cuatro recursos principales de una computadora: CPU, memoria, almacenamiento y conexiones de red, repartiendo dinámicamente estos recursos entre todas las máquinas virtuales creadas en la PC anfitriona. Esto permite tener varias máquinas virtuales ejecutándose en la misma computadora física.
+
+<a id="har13"></a>
+
+### **Que es un hipervisor de tipo 1?**
+
+[Volver al indice](#har-base)
+
+Denominado también como “virtualización en modo nativo”, se caracteriza porque este software se instala directamente sobre el equipo haciendo las funciones tanto de sistema operativo (SO) como de virtualización.
+
+Este método de virtualización se utiliza generalmente en las empresas que pueden disponer de uno o varios servidores dedicados en forma exclusiva a la virtualización de sistemas.
+
+![alt text](src/virtualizacion1.png)
+
+<a id="har14"></a>
+
+### **Que es un hipervisor de tipo 2?**
+
+[Volver al indice](#har-base)
+
+El software de virtualización de tipo 2, o alojado (*hosted*), se caracteriza porque debe ser instalado en un equipo que cuente con un SO previo anfitrión (como Linux, Microsoft Windows, Mac OS X, etc.).
+
+Este es el método de virtualización apropiado e ideal para probar software (sistemas operativos y aplicaciones) sin riesgo de afectar a nada de lo que haya en la máquina anfitriona. Ésta forma de virtualización es menos eficiente que la anterior, pero se puede seguir utilizando el equipo físico con otras aplicaciones en el SO anfitrión.
+
+![alt text](src/virtualizacion2.png)
+
+<a id="har15"></a>
+
+### **Que es una maquina virtual de sistema?**
+
+Una máquina virtual de sistema es aquella que emula a una computadora completa. El software se puede hacer pasar por otro dispositivo -como una PC- de tal modo que se ejecuta otro sistema operativo en su interior. Tiene su propio disco duro, memoria, tarjeta de video y demás componentes de hardware, aunque todos ellos son virtuales.
+
+Que sus componentes sean virtuales no significa que necesariamente no existan. Por ejemplo, una máquina virtual puede tener recursos reservados de 1 GB de RAM y 20 GB de disco duro, que obviamente salen de algún sitio: salen de la PC donde está instalada la máquina virtual
+
+Otros dispositivos podrían realmente ser inexistentes físicamente, como por ejemplo un CD (ROM) que puede ser el contenido de una imagen ISO en vez del leído en un lector de CD verdadero.
+
+Para el sistema operativo que se ejecuta dentro de la máquina virtual toda esta emulación es transparente e invisible.
+
+Todo funciona igual a si se estuviera ejecutando en una PC normal, sin que sepa que en verdad está incrustado dentro de un recinto, dentro de otro sistema operativo. De hecho, nada impide crear otra máquina virtual dentro de la anterior máquina virtual.
+
+Una máquina virtual no puede acceder al resto de datos de la máquina anfitrión. A pesar de estar físicamente funcionando en la misma, están aisladas. Sin embargo, las principales aplicaciones de máquinas virtuales como VirtualBox o VMWare disponen de atajos y herramientas para facilitar la tarea de pasar archivos de una máquina a otra.
+
+![alt text](src/virtualizacion3.png)
+
+<a id="har16"></a>
+
+### **Que es una maquina virtual de procesos?**
+
+[Volver al indice](#har-base)
+
+Una máquina virtual de proceso tiene menor alcance que una de sistema. En vez de emular una PC por completo, como su nombre lo indica, una máquina virtual de proceso ejecuta un proceso concreto, como una aplicación, en su entorno de ejecución.
+
+Cada vez que se ejecuta una aplicación basada en Java o basada en .NET Framework, se está utilizando una máquina virtual de proceso.
+
+Este modelo es muy usado cuando se desarrollan aplicaciones para varias plataformas, ya que en lugar de tener que programar específicamente para cada sistema, el entorno de ejecución (es decir, la máquina virtual de proceso) es quien se encarga de interactuar con el sistema operativo.
+
+Las máquinas virtuales de proceso permiten ejecutar aplicaciones que se comportarán de igual forma en plataformas tan distintas como, por ejemplo: Linux, Windows, Mac, sin que el usuario note diferencias.
+
+![alt text](src/virtualizacion4.png)
+
+<a id="har17"></a>
+
+### **Como funciona internet?**
+
+[Volver al indice](#har-base)
+
+Muchos ven a Internet como una “nube” de tecnología o alguna suerte de repositorio de aplicaciones y datos a los que se puede acceder, trabajar o simplemente consultar.
+
+Internet se define como una gran “red de redes”, es decir, una red conectada a otra de manera continua y simultánea.
+
+Lo que define a estas redes como tales es que existe “interconexión” entre sus componentes, aún cuando no se encuentren la totalidad de los puntos conectados entre sí. Desde cualquier punto de la red podremos llegar a otro, con más o menos vueltas, pero todos los destinos son alcanzables. Internet es justamente eso: una gran red donde todos los dispositivos están conectados entre sí.
+
+<a id="har18"></a>
+
+### **Como se comunican las redes de Internet?**
+
+[Volver al indice](#har-base)
+
+Para que una interconexión sea realmente global, todas las redes que se conectan a la gran red de redes deben hacerlo a través de un mismo protocolo o “lenguaje en común”.
+Es decir, el protocolo de comunicación de Internet debe ser una implementación estándar que garantice la conexión desde cualquier origen hasta cualquier destino.
+Durante la década del  ́70, un grupo de investigadores de Estados Unidos creó un protocolo de comunicación que denominaron TCP/IP, y conectaron entre sí a un conjunto de redes de computadoras a pedido del gobierno de ese país, sin saber que el proyecto resultaría tan exitoso y tendría alcance global. De esta forma, TCP/IP se convirtió en el modelo de comunicación de las redes que componen Internet.
+
+<a id="har19"></a>
+
+### **Que sucede cuando escribo una URL en el navegador y hago click en Enter?**
+
+[Volver al indice](#har-base)
+
+- El browser tiene que encontrar la manera de traducir esa URL a una IP. Para eso usa el DNS, que es como un libro telefonico.
+  - Busca el IP adress en el DNS Cache
+  - Si no lo encuentra, ISP inicia una consula al DNS para buscar direcciones en estos DNS
+  - Si no lo encuentra ahi, el navegador envia una peticion HTTP para encontrarlo en internet
+  - Una vez encontrado, se establece una conexion con el servidor. Esto se llama conexion TCP.
+
+<a id="har20"></a>
+
+### **Como se define la Interconexión?**
+
+[Volver al indice](#har-base)
+
+Probablemente la computadora que utilizamos a diario en la oficina esté conectada a una red de computadoras. En nuestra casa, la computadora portátil, tablet y celulares los vinculamos a un dispositivo inalámbrico que luego se conecta a la red de fibra óptica de la empresa que nos brinda servicio de Internet y de televisión por cable o telefonía. Éste se comunica a la red de otro Proveedor de Servicios de Internet o ISP (por sus siglas en inglés) más grande, que llega a un número mayor de hogares y empresas, y así sucesivamente. A su vez, estos proveedores de acceso internacional se interconectan con otros más grandes, denominados Carriers, a través de fibras ópticas transcontinentales y satélites, entre otros.
+
+Con el correr de los años, esta gran red de redes ha pasado a ocupar un lugar relevante en múltiples niveles, ya que es transversal a cuestiones sociales, políticas y económicas, y ya no excluyente de ámbitos tecnológicos. El impacto de Internet es tal que ha
+modificado paradigmas y continúa estableciendo nuevos desafíos en torno a la educación, la industria, la seguridad, los derechos humanos, las políticas públicas y las nuevas tecnologías, entre otros.
+
+De lo anterior se hace evidente que Internet no es algo dado y que es producto de un proceso histórico e interdisciplinario que continúa en constante movimiento y en donde la participación de diversas partes interesadas ha sido determinante para su desarrollo.
+Es por esto que resulta fundamental comprender que la participación de diversos sectores, y más aun de nuevas generaciones, en la Gobernanza de Internet, es indispensable en las definiciones del futuro de Internet, contemplando intereses y derechos de todos los sectores de la comunidad.
+
+<a id="har21"></a>
+
+### **Que es una red de computadoras?**
+
+[Volver al indice](#har-base)
+
+Una red de computadoras, también llamada red informática, es un conjunto de equipos informáticos conectados entre sí por medio de dispositivos físicos que envían y reciben impulsos eléctricos, ondas electromagnéticas o cualquier otro medio para el transporte de datos con la finalidad de compartir información y recursos.
+
+- Redes de datos o de información capaces de transportar muchos tipos diferentes de
+comunicaciones.
+- Colección de dos o más dispositivos interconectados de manera que puedan intercambiar información mediante cable o por otros medios inalámbricos.
+
+<a id="har22"></a>
+
+### **Que elementos conforman una red?**
+
+[Volver al indice](#har-base)
+
+- **Dispositivos**:  Son usados para comunicarse entre sí
+- **Medio**:  La forma en que los dispositivos están conectados los unos a los otros
+- **Mensajes**:  Información que viaja a través del medio
+- **Reglas**:  Gobiernan la forma en que los mensajes fluyen a través de la red
+
+<a id="har23"></a>
+
+### **Cual es la finalidad de una red?**
+
+[Volver al indice](#har-base)
+
+La finalidad principal para la creación de una red de computadoras es compartir los recursos y la información en la distancia, asegurar la confiabilidad y la disponibilidad de la misma, aumentar la velocidad de transmisión de los datos y reducir el costo general de estas acciones.
+
+Respecto a la estructura física, los modos de conexión física, los flujos de datos, etc.. Una red la constituyen dos o más computadoras que comparten determinados recursos, hardware y/o software.
+La estructura y el modo de funcionamiento de las redes informáticas actuales están definidos por varios estándares, siendo el más importante y extendido de todos ellos el modelo TCP/IP basado en el modelo OSI.
+
+Los distintos criterios de clasificación de redes son:
+
+- Por alcance
+- Por tipo de conexión
+- Por relación funcional
+- Por topología
+- Por direccionalidad de datos
+- Por grado de autentificación
+- Por grado de difusión
+
+<a id="har24"></a>
+
+### **Clasificación por alcance**
+
+[Volver al indice](#har-base)
+
+- **Red LAN (Local Area Network o Red de área local)** Están los tipos básicos de red. Su alcance es de tan solo unos metros, suficientes como para conectar el equipo de cómputo de un mismo edificio o de un mismo campus universitario. Estas son mantenidas y administradas por el propietario de la red.  La velocidad está entre los 1 y 100 Mbps. Son de propiedad privada y no están sujetas a regulaciones del gobierno.
+- **Red MAN (Metropolitan Área Network o Red de área metropolitana)** Cubren extensiones mayores como pueden ser una ciudad o un distrito. Mediante la interconexión de redes LAN distribuyen la informática a los diferentes puntos del distrito. Este tipo de redes son comúnmente utilizadas por bibliotecas, universidades u organismos oficiales. La extensión máxima de estas redes es de hasta 100 km.
+- **Red WAN (Wide Area Network o Red de área extensa)** Las redes de área amplia conectan equipos distantes entre sí, su alcance es muy extenso típicamente global. A diferencia de las redes LAN y MAN, este tipo de redes no tienen un administrador en particular, por lo general son mantenidas por los mismos usuarios quienes prestan sus recursos. Un ejemplo es el propio internet.
+- **VPN (Virtual Private Networks o Redes Privadas virtuales)** Es como un túnel de tu PC a una empresa por ejemplo. Es un grupo de computadoras con un conjunto común de recursos a compartir y de requerimientos, que se comunican entre sí como si estuvieran dentro de una red privada, pero utilizando una red pública para la transmisión /recepción de los recursos que comparten.
+
+<a id="har25"></a>
+
+### **Clasificación por tipo de conexión**
+
+[Volver al indice](#har-base)
+
+- **Cable Coaxial** Se usa para transportar señales eléctricas de alta frecuencia que posee dos conductores concéntricos, uno central llamado vivo, encargado de llevar la información y uno exterior, de aspecto tubular, llamado malla o blindaje, que sirve como referencia de tierra y retorno de las corrientes. Entre ambos se encuentra una capa aislante llamada dieléctrico, de cuyas características dependerá principalmente la calidad del cable. Todo el conjunto suele estar protegido por una cubierta aislante. Ya no se usa tanto.
+- **Cable de par trenzado** Es un medio de conexión utilizado en telecomunicaciones en la que dos conductores eléctricos aislados son entrelazados para tener menores interferencias de fuentes externas y aumentar la potencia y disminuir la diafonía de los cables adyacentes. Este cable está conformado por 4 pares trenzados, comúnmente identificado con colores normalizados. Se clasifica en categorías numeradas, las cuales están asociadas al ancho de banda que pueden soportar. La categoría más usada actualmente es la Categoría 5, soporta hasta 100 Mhz.
+- **Fibra Óptica** La fibra óptica es un medio de transmisión empleado habitualmente en redes de datos, un hilo muy fino de material transparente, vidrio o metales plásticos, por el que se envían pulsos de luz que representan los datos a transmitir. El haz de luz queda completamente confinado y se propaga por el interior de la fibra con un ángulo de reflexión por encima del ángulo límite de reflexión total. La fuente de luz puede ser láser o un LED. Las fibras se utilizan ampliamente en telecomunicaciones, ya que permiten enviar gran cantidad de datos a una gran distancia, con velocidades similares a las de radio o cable. Son el medio de transmisión por excelencia al ser inmune a las interferencias electromagnéticas, también se utilizan para redes locales, en donde se necesite aprovechar las ventajas de la fibra óptica sobre otros medios de transmisión.
+
+<a id="har26"></a>
+
+### **Clasificación de redes por tipología**
+
+[Volver al indice](#har-base)
+
+- **Anillo** La topología de anillo conecta a cualquier terminal únicamente con sus dos destinos más próximos mediante una línea dedicada, de tal forma que la última de las terminales se conecta con la primera de ellas por uno de los extremos, formando así un ciclo o un anillo a través del cual fluye la información cuando las terminales se comunican. La comunicación en un anillo es unidireccional o simple, y viaja de terminal a terminal hasta que encuentra su destino y regresa a su origen. Tiene la desventaja de que cualquier fallo entre alguna de las líneas dedicadas genera una falla letal en la red.
+- **Estrella** Esta topología conecta a todas las terminales entre sí, aunque no en forma directa. Para ello utiliza un elemento que organiza el flujo de la información en la red mediante switches que conectan a la terminal destino con la terminal origen. A este elemento se le conoce como concentrador y su tarea debe ser invisible a las terminales que se comunican. La ventaja de la topología estrella es que es más robusta que la anillo, ya que si falla una terminal, el resto sigue funcionando. La desventaja es que si falla el concentrador entonces fallará toda la red.
+- **Bus** Esta topología se caracteriza por tener un único canal de comunicaciones, al cual se conectan los diferentes dispositivos. De esta forma todos los dispositivos comparten el mismo canal para comunicarse entre sí. Encuentra dentro de sus principales ventajas su fácil instalación e implementación, con una arquitectura muy simple, pero con sus desventajas las cuales desmotivan su uso.
+- **Árbol**  Es el más usado de todos, es una topología derivada de la topología estrella. En esta hay diferentes estrellas conectadas entre sí, utilizando concentradores como elemento de interconexión.
+- **Malla** También es muy usado. En esta topología se busca la conexión física entre todas las terminales de la red. Utilizando conexiones punto a punto, esto permitirá que cualquier terminal se comunique con otras terminales de forma paralela si fuera necesario. La principal ventaja es que este tipo de redes difícilmente falla, pues inclusive, si alguna de estas líneas fallara, aun así se podrían encontrar otras rutas para lograr la información. La desventaja de la topología en malla, es que se requiere demasiado cableado específicamente si existen n terminales en la red entonces se requerirían N cables = n(n-1)/2 cables en total. Además cada terminal requiere n-1 puertos de comunicación. También el mantenimiento resulta costoso a largo plazo.
+
+<a id="har27"></a>
+
+### **Como se cuál es mi dirección TCP-IP?**
+
+[Volver al indice](#har-base)
+
+Cada dispositivo tiene su propia dirección TCP/IP. Por lo general, el dispositivo puede comunicarse automáticamente, pero a veces es necesario proporcionar su dirección TCP/IP de forma manual. El modo de encontrar su dirección IP depende del sistema operativo.
+
+Podés consultar tu IP pública desde una página web como https://www.cual-es-mi-ip.net/
+
+Conceptualmente, el número obtenido se puede asemejar a la “dirección” de una habitación de hotel, en la que la gerencia del mismo sabe que puede encontrarlo o el número de teléfono de tu celular.
+
+<a id="har28"></a>
+
+### **Cuáles son las 4 capas del modelo TCP-IP?**
+
+[Volver al indice](#har-base)
+
+TCP/IP es un protocolo de enlace de datos que se utiliza en Internet. Su modelo se divide en cuatro capas diferenciadas. Cuando se emplean juntas, es posible referirse a ellas como un paquete de protocolos.
+
+- **Capa de enlace de datos**
+La capa de enlace de datos (también denominada capa de enlace, capa de interfaz de red o capa física) es la que maneja las partes físicas del envío y recepción de datos mediante el cable Ethernet, la red inalámbrica, la tarjeta de interfaz de red, el controlador del dispositivo en el equipo, etcétera.
+- **Capa de Internet**
+La capa de Internet (también denominada capa de red) controla el movimiento de los paquetes alrededor de la red.
+- **Capa de transporte**
+La capa de transporte es la que proporciona una conexión de datos fiable entre dos dispositivos. Divide los datos en paquetes, hace acuse de recibo de los paquetes que recibe del otro dispositivo y se asegura de que el otro dispositivo haga acuse de recibo de los paquetes que recibe a su vez.
+- **Capa de aplicaciones**
+La capa de aplicaciones es el grupo de aplicaciones que requiere comunicación de red. Es con lo que el usuario suele interactuar, como el correo electrónico y la mensajería. Como la capa inferior gestiona los detalles de la comunicación, las aplicaciones no tienen que preocuparse por ello.
+
+<a id="har29"></a>
+
+### **Que significa TCP-IP?**
+
+[Volver al indice](#har-base)
+
+TCP/IP son las siglas de Transmission Control Protocol/Internet Protocol (Protocolo de control de transmisión/Protocolo de Internet). TCP/IP es un conjunto de reglas estandarizadas que permiten a los equipos comunicarse en una red como Internet.
+
+<a id="har30"></a>
+
+### **Que es un protocolo TCP-IP y como funciona?**
+
+[Volver al indice](#har-base)
+
+Como sucede con las personas, es importante que los equipos tengan un modo común de comunicarse entre ellos. Para la mayoría de los equipos actuales, este modo es TCP/IP. TCP/IP suele venir integrado en los equipos y está automatizado en buena medida, aunque puede ser útil comprender el modelo TCP/IP, en especial si va a configurar un equipo para conectarlo a otro sistema. Este artículo explica cómo funciona TCP/IP.
+
+<a id="har31"></a>
+
+### **En que se diferencian TCP e IP?**
+
+[Volver al indice](#har-base)
+
+TCP e IP son dos protocolos distintos para redes informáticas.
+IP es la parte que obtiene la dirección a la que se envían los datos. TCP se encarga de la entrega de los datos una vez hallada dicha dirección IP.
+
+Es posible separarlos, pero lo cierto es que no tiene mucho sentido diferenciar entre TCP e IP. Como se usan juntos tan habitualmente, “TCP/IP” y “modelo TCP/IP” son ya terminología reconocida.
+Mírelo de esta forma: La dirección IP es como el número de teléfono que se asigna a su smartphone. TCP es toda la tecnología que hace que el teléfono emita un timbre al recibir una llamada y que le permite hablar con alguien al otro lado de la línea. Son cosas diferentes, pero tampoco tienen sentido la una sin la otra.
+
+<a id="har32"></a>
+
+### **TCP-IP funciona con toda clase de direcciones IP?**
+
+[Volver al indice](#har-base)
+
+Hay varios tipos de direcciones IP. No obstante, todas ellas utilizan TCP/IP.
+Las diferencias entre los tipos de direcciones IP son transparentes para el usuario esporádico, y el hecho de que no necesite saber mucho al respecto es una de las ventajas de TCP/IP. Normalmente, estos asuntos los administra quien haya configurado el sistema operativo del equipo o el dispositivo móvil. En cualquier caso, a modo de aclaración:
+
+- Las direcciones IP estáticas no cambian en ningún momento. Son como
+la dirección fija de su domicilio, un dato inalterable.
+- Las direcciones IP dinámicas cambian, o al menos están diseñadas para
+cambiar. Cuando un sistema informático utiliza una dirección IP dinámica,
+anuncia “¡aquí es donde puedes encontrarme!” a la red local.
+
+Tal vez haya oído hablar de ciudades en las que la población crece tan rápido que se han tenido que crear nuevos códigos de área para que los recién llegados puedan tener número de teléfono. Con el número siempre creciente de dispositivos conectados, TCP/IP ha tenido un problema similar. Básicamente, Internet se estaba quedando sin direcciones IP. Por eso se desarrolló una nueva versión de dirección IP denominada IPv6, una alternativa a las direcciones IPv4 existentes.
+
+De hecho, TCP/IP se incluye como estándar TCP/IP es el paquete de protocolos más utilizado en la web. Millones de personas lo emplean cada día, aunque no sean conscientes de ello.
+
+En la inmensa mayoría de los equipos, TCP/IP se integra como estándar. No tiene que hacer nada para configurarlo de manera manual. En ocasiones, tal vez tenga que decirle a una aplicación cuál es su dirección TCP/IP.
+
+En algunas circunstancias puede querer ocultar su dirección IP, normalmente por motivos de seguridad.
+
+<a id="har33"></a>
+
+### **¿Qué es un DNS Cache?**
+
+[Volver al indice](#har-base)
+
+Es una copia local de la base de datos de DNS, que contiene registros de consultas de DNS que se han realizado recientemente. Se utiliza para mejorar la velocidad de acceso a los sitios web, ya que evita la necesidad de realizar consultas de DNS a servidores remotos.
+
+<a id="har34"></a>
+
+### **¿Que es SSL y TLS?**
+
+[Volver al indice](#har-base)
+
+- SSL => Secure Socket Layer, hecho por netscape, en 1995 cuando salió, se empezó a usar la capa segura en web. Su último lanzamiento fue en 1996, y dejó de existir cuando en 2014 fue atacado (POODLE). Sigue siendo usado.
+- TLS => Transport Layer Security, sucesor de SSL, y es el estándar para implementar HTTPS.
+
+<a id="har35"></a>
+
+### **¿Que son las Autoridades de Certificado? (CA)**
+
+[Volver al indice](#har-base)
+
+Son las entidades que emiten los certificados seguros para nuestra página. Se verifica el dominio, y el mismo es confiado por el SO, el cual actualiza constantemente la base de datos de CA confiables. También se eliminan CA confiables por distintas razones (como darle un certificado a quien NO es el dueño de la web).
+
+<a id="har36"></a>
+
+### **¿Que es un TLS Handshake?**
+
+[Volver al indice](#har-base)
+
+Es como un “Client Hello” al servidor receptor. El servidor responderá a este saludo con un “Server Hello”, ahora el cliente puede verificar la key pública que el servidor devolvió en su respuesta en su lista de certificados confiables, es la fase de negociación, la cual no está encriptada aún, es una comunicación sin contenido aun.  Una vez que esto termine, ya se puede establecer una conexión segura.
+
+<a id="har37"></a>
+
+### **Cuáles son los códigos de respuesta más comunes?**
+
+[Volver al indice](#har-base)
+
+- **404** Not Found
+- **403** Forbidden
+- **401** No Autorizado
+- **500** Internal Server Error
+- **503** Servicio no disponible
+- **200** Ok
+- **201** Creado
+- **202** Aceptado
+
+Los códigos 400 hacen referencia a errores con la request, 500 hacen referencia a errores en el servidor. 200 siempre refiere a respuestas positivas
+
+<a id="har38"></a>
+
+### **¿Qué es un DNS?**
+
+[Volver al indice](#har-base)
+
+Es un sistema de nomenclatura jerárquica para computadoras, servicios o cualquier recurso conectado a internet o a una red privada. Este sistema asocia información variada con nombres de dominio asignados a cada uno de los participantes. Su función principal es traducir (resolver) un nombre de dominio en una dirección IP.
+
+- **El usuario escribe la URL en el navegador**
+- **El navegador busca la IP del dominio en el DNS local**
+- **Si no la encuentra, busca en el DNS del ISP**
+- **Si no la encuentra, busca en el DNS Root**
+- **El DNS Root le dice donde está el DNS del dominio**
+- **El DNS del dominio le dice la IP del dominio**
+- **El navegador se conecta a la IP del dominio**
+
+<a id="har39"></a>
+
+### **¿Qué es HTTPS?**
+
+[Volver al indice](#har-base)
+
+Mas de la mitad de las páginas poseen HTTPS en el 2016, hasta en paginas donde no necesariamente intercambiamos información (como páginas de noticias), teniendo paginas que directamente forman el HTTPS (cuando ingreso la URL con HTTP, se redirecciona al sitio seguro automáticamente).
+
+- **Optimiza los motores de búsqueda:** Tener el HTTPS funcionando hace que en una búsqueda en google tu sitio aparezca rápido
+- Se evitará que se envie informacion en una request no segura
+- **Se usa brote compression**, es un algoritmo de compresión de google que es muy bueno, aumenta la velocidad del sitio disminuyendo el tráfico
+
+<a id="har40"></a>
+
+### **Clasificación de redes por relación funcional**
+
+[Volver al indice](#har-base)
+
+- **Redes Cliente-Servidor** La arquitectura cliente-servidor es un modelo de aplicación distribuida en el que las tareas se reparten entre los proveedores de recursos o servicios, llamados servidores, y los demandantes, llamados clientes. Un cliente realiza peticiones a otro programa, el servidor, que le da respuesta. Esta idea también se puede aplicar a programas que se ejecutan sobre una sola computadora, aunque es más ventajosa en un sistema operativo multiusuario distribuido a través de una red de computadoras. En esta arquitectura, la capacidad de proceso está repartía entre los clientes y los servidores, aunque son más importantes las ventajas de tipo organizativo debidas a la centralización de la gestión de la información y la separación de responsabilidades, lo que facilita y clarifica el diseño del sistema. La separación entre cliente y servidor es una separación de tipo lógico, donde el servidor no se ejecuta necesariamente sobre una sola máquina ni es necesariamente un solo programa. Los tipos específicos de servidores incluyen los servidores web, los servidores de archivo, de correo, etc.. Mientras que sus propósitos varían en unos servicios a otros, la arquitectura básica seguirá siendo la misma.
+- **Redes peer to peer** Una red peer-to-peer o un red de pares o red entre iguales o red punto a punto (P2P por sus siglas en inglés) es una red de computadoras en la que todos o algunos aspectos funcionan sin clientes ni servidores fijos, sino una serie de nodos que se comportan como iguales entre sí. Es decir, actúan simultáneamente como clientes y servidores respecto a los demás nodos de red. Las redes P2P permiten el intercambio directo de información, en cualquier formato, entre los ordenadores interconectados. Las redes peer-to-peer aprovechan, administran y optimizan el uso del ancho de banda de los demás usuarios de la red por medio de la conectividad entre los mismos y obtienen así más rendimiento en las conexiones y transferencias que con algunos métodos centralizados convencionales, donde una cantidad relativamente pequeña de servidores provee el total del año de banda y recursos compartidos para un servicio o aplicación.
+
+<a id="har41"></a>
+
+### **Clasificación de redes por direccionalidad de datos**
+
+[Volver al indice](#har-base)
+
+- **Simplex** En este tipo de comunicación, la información fluye en una sola dirección, es decir, desde el emisor hacia el receptor. Un ejemplo de este tipo de comunicación es la televisión, donde la información fluye desde la estación de televisión hacia el televisor.
+- **Half Duplex** En este tipo de comunicación, la información fluye en ambas direcciones, pero no al mismo tiempo. Un ejemplo de este tipo de comunicación es un walkie-talkie, donde una persona habla y luego escucha la respuesta.
+- **Full Duplex** En este tipo de comunicación, la información fluye en ambas direcciones al mismo tiempo. Un ejemplo de este tipo de comunicación es una llamada telefónica, donde ambas partes pueden hablar y escuchar al mismo tiempo.
+
+<a id="har42"></a>
+
+### **Clasificación de redes por grado de autentificación**
+
+[Volver al indice](#har-base)
+
+- **Redes públicas** Son aquellas que están abiertas al público en general, como por ejemplo Internet.
+- **Redes privadas** Son aquellas que están restringidas a un grupo de usuarios específicos, como por ejemplo una red de una empresa.
+
+<a id="har43"></a>
+
+### **Clasificación de redes por grado de difusión**
+
+[Volver al indice](#har-base)
+
+- **Redes de difusión** Son aquellas en las que la información se envía a todos los nodos de la red.
+- **Redes de punto a punto** Son aquellas en las que la información se envía de un nodo a otro nodo específico.
+
+<a id="har44"></a>
+
+### **¿Qué son las Redes Inalámbricas?**
+
+[Volver al indice](#har-base)
+
+El término red inalámbrica se utiliza en informática para designar la conexión de nodos sin necesidad de una conexión física , esta se da por medio de ondas electromagnéticas. La transmisión y la recepción se realizan a través de puertos.  En la actualidad este tipo de redes ha cobrado gran importancia, ya que entre sus principales ventajas se puede destacar su costo, ya que se elimina todo el cable Ethernet y conexiones físicas entre nodos, sin embargo también cuenta con una desventaja considerable ya que para este tipo de red se debe tener un nivel de seguridad mucho más exigente y robusto para evitar el uso no autorizado.
+
+Algunos medios de conexión son:
+
+- **Radiofrecuencias:** Es un tipo de red muy actual, usada en distintas empresas dedicadas al soporte de redes en situaciones difíciles para el establecimiento de cableado, como es el caso de edificios antiguos no pensados para la ubicación de los diversos equipos componentes de una red de ordenadores. Los dispositivos inalámbricos que permiten la constitución de estas redes utilizan diversos protocolos como el WiFi, el estándar IEEE 802.11. El cual es para las redes inalámbricas, lo que Ethernet para las redes de área local (LAN) cableadas.
+- **Infrarrojo:** Se trata de emisores/receptores de las ondas infrarrojas entre ambos dispositivos, cada dispositivo necesita “ver” al otro para realizar la comunicación por ello su escasa utilización a gran escala.
+- **Microondas:** Su funcionamiento se basa en el envío /recepción de datos por intermedio de microondas, para lograrlo es necesario instalar antenas en un área despejada de árboles u otras obstrucciones, tiene como principal ventaja facilitar su instalación en zonas donde por problemas de infraestructura es muy difícil acceder al cableado estructurado, en contrapartida su elevado costo la convierte en una solución no apta para uso doméstico.
+- **Conectores IDE-FDD:** Se encargan de generar la conexión entre la disquetera, el rígido y las lectograbadoras.
+- **Conectores Serial ATA:** Son conectores de alto rendimiento, se usan para conectar discos rígidos de gran capacidad y que reemplazan al IDE.
+
+<a id="har45"></a>
+
+### **¿Qué es un DNS Root?**
+
+[Volver al indice](#har-base)
+
+Es el servidor DNS de nivel superior en la jerarquía de DNS. Contiene la información de los servidores de nombres de dominio de nivel superior (TLD) y los servidores de nombres de dominio de nivel superior (SLD).
+
+<a id="har46"></a>
+
+### **¿Qué es un TLD?**
+
+[Volver al indice](#har-base)
+
+Es la parte más a la derecha de un nombre de dominio, como .com, .org, .net, etc..
+
+<a id="har47"></a>
+
+### **¿Qué es un SLD?**
+
+[Volver al indice](#har-base)
+
+Es la parte del nombre de dominio que está inmediatamente a la izquierda del TLD, como google.com, facebook.com, etc..
+
+<a id="har48"></a>
+
+### **¿Qué es un DNS Poisoning?**
+
+[Volver al indice](#har-base)
+
+Es un ataque informático en el que se introduce información falsa en la base de datos de DNS de un servidor, con el objetivo de redirigir a los usuarios a sitios web maliciosos o de phishing.
+
+<a id="har49"></a>
+
+### **¿Qué es un DNS Spoofing?**
+
+[Volver al indice](#har-base)
+
+Es un ataque informático en el que se falsifica la información de DNS de un servidor, con el objetivo de redirigir a los usuarios a sitios web maliciosos o de phishing.
+
+<a id="arc1"></a>
+
+### **¿Qué resuelve la arquitectura de Microfrontends?**
+
+[Volver al indice](#har-base)
+
+Tenemos la aplicacion monolitica que tiene tanto el BD, Backend y Frotend en un solo monolito, y generalmente con un solo equipo manejandolo. A medida que va creciendo, se va separando el backend del frontend.
+Llega el punto en que el backend ya se maneja mediante microservicios con sus BD propias, separados por funciones del negocio (por ejemplo, un microservicio de pagos, otro de autenticacion, etc..)
+Luego, al seguir siendo un frontend monolico, hay conflictos entre equipos y en los cambios en un mismo repositorio, y la afectacion de otras areas.
+La idea del microfrontend es separar el frontend en partes pequeñas por funciones del negocio al igual que los microservicios.
+Los equipos pasan a ser dueños de toda la vertical de negocios (Back, front y DB)
+
+<a id="arc2"></a>
+
+### **¿Cuales son las caracteristicas de un Microfrontend?**
+
+[Volver al indice](#har-base)
+
+- **Aplicación contenedora**
+
+Es un contenedor que se va a asegurar de que cada frontend se reuna y que el usuario tenga una experiencia coherente, que todo se sienta parte del mismo sistema.
+
+- **IFrames**: Son una buena forma de embeber paginas dentro de otras. Tiene algunas limitaciones
+- **Web Components:** La app contenedora se encarga de renderizar los microfrontends como components
+
+```markdown
+const Restaurant = ({history}) => {
+    <MicroFrontend name="restaurant" />
+}
+```
+
+- **JS Puro**: Se puede hacer una composicion de las vistas o un enrutamiento (Si vas a esta URL cargo esto)
+
+* Cada frontend debe tener su propio repositorio: Para que cada equipo tenga 100% de control sobre esa aplicacion.
+* Cada aplicacion debe poder desplegarse de forma independiente: No deben haber dependencias entre frontends
+
+- **Comunicacion entre microfrontends**
+
+- **Event Bus**: Es un canal de comunicacion entre los microfrontends. Se puede usar un bus de eventos para comunicar los microfrontends entre si.
+- **API Gateway**: Es un punto de entrada para todas las peticiones de los microfrontends. Se encarga de enrutar las peticiones a los microservicios correspondientes.
+
+- **¿Cuando usarlo?**
+
+- **Cuando se tiene un equipo grande**: Para que cada equipo se encargue de una parte del negocio
+- **Cuando se tiene una aplicacion grande**: Para que sea mas facil de mantener y escalar
+- **Cuando se tiene una aplicacion con muchas funcionalidades**: Para que cada microfrontend se encargue de una funcionalidad especifica
+
+- **Desventajas**
+
+**Complejidad**: Es mas complejo que un monolito
+**Performance**: Al tener que cargar varios frontends, puede afectar la performance
+**Seguridad**: Al tener varios frontends, puede haber problemas de seguridad.
+
+<a id="arc3"></a>
+
+### **¿Qué beneficios y desventajas ves en la introducción de la arquitectura de microfrontends en algunos de tus proyectos?**
+
+[Volver al indice](#har-base)
+
+Los Beneficios principales en la introducción de la arquitectura de microfrontends son:
+
+- Escalabilidad y mantenibilidad: Permite escalar y mantener diferentes partes de la aplicación de forma independiente, lo que facilita la gestión de equipos y la evolución de la aplicación a medida que crece.
+
+- Flexibilidad tecnológica: Permite el uso de diferentes tecnologías y frameworks en cada microfrontend, lo que facilita la adopción de nuevas tecnologías y la actualización de componentes sin afectar a toda la aplicación.
+
+- Desarrollo paralelo: Permite que equipos separados trabajen en diferentes partes de la aplicación simultáneamente, lo que acelera el desarrollo y reduce los cuellos de botella.
+
+Sin embargo, también hay algunas desventajas potenciales en la introducción de la arquitectura de microfrontends:
+
+- Complejidad inicial: La introducción de microfrontends puede requerir un esfuerzo adicional en la configuración inicial y la gestión de la comunicación entre los diferentes microservicios.
+
+- Mayor sobrecarga de red: Al dividir la aplicación en múltiples microfrontends, puede aumentar la cantidad de solicitudes de red y la complejidad de la gestión de la comunicación entre ellos.
+
+- Posible fragmentación de la experiencia del usuario: Si no se gestiona adecuadamente, la arquitectura de microfrontends puede resultar en una experiencia de usuario fragmentada debido a las diferencias en la navegación y la interacción entre los diferentes microservicios.
+
+En resumen, mientras que la arquitectura de microfrontends ofrece beneficios significativos en términos de escalabilidad y flexibilidad, también introduce complejidades adicionales que deben ser consideradas y gestionadas cuidadosamente en función de las necesidades específicas de cada proyecto.
+
+<a id="arc4"></a>
+
+### **¿Qué es la arquitectura de monolitos?**
+
+[Volver al indice](#har-base)
+
+Los monolitos representan una arquitectura tradicional en el desarrollo de aplicaciones web, caracterizada por consolidar todas las funcionalidades de un sistema en un único bloque de código. A diferencia de los microservicios, donde cada función se implementa de manera independiente, los monolitos son estructuras más compactas y centralizadas.
+En un monolito, todas las partes de una aplicación, como la interfaz de usuario, la lógica de negocio y la persistencia de datos, coexisten en la misma base de código. Esta simplicidad estructural puede facilitar el desarrollo inicial y la comprensión global del sistema, ya que todas las partes están directamente interconectadas. Además, los monolitos suelen ser más sencillos de implementar, desplegar y gestionar, ya que toda la aplicación se ejecuta como una entidad única.
+La arquitectura de monolitos ha sido históricamente la elección predeterminada para muchos proyectos debido a su simplicidad aparente. Sin embargo, a medida que las aplicaciones crecen en tamaño y complejidad, los monolitos pueden presentar desafíos significativos. La modificación de una parte del código puede afectar de forma inesperada otras partes del sistema, lo que puede dificultar la implementación de nuevas características, o la implementación de soluciones a problemas y bugs.
+La escalabilidad también puede ser un desafío en los monolitos, ya que toda la aplicación debe ser escalada verticalmente, es decir, aumentando los recursos de la máquina que ejecuta el monolito. Esto puede resultar costoso y menos eficiente en comparación con la escalabilidad horizontal que ofrecen los microservicios.
+Si bien durante los últimos años, la arquitectura de monolitos ha sido sujeta de cuestionamientos sobre si puede satisfacer las demandas de aplicaciones modernas altamente escalables y distribuida, existen muchas aplicaciones de gran escala que siguen utilizando este enfoque. En los últimos meses hemos visto este discurso ser ajustado para preguntarnos si realmente las aplicaciones modernas requieren una arquitectura de microservicios o no.
+
+<a id="arc5"></a>
+
+### **En que se comparan los microservicios con los monolitos?**
+
+[Volver al indice](#har-base)
+
+Si hablamos de frameworks del backend, encontramos una distinción clara entre aquellos que son más usados en monolitos, de los que son usados en microservicios, y tiene que ver con el tamaño del framework. Podemos distinguir dos principales categorías entre los frameworks web tradicionales, y los llamados micro frameworks.
+Hablamos de frameworks web tradicionales a los que históricamente han integrado la vista, y la lógica del negocio en una misma base de código, hablamos sobre todo de frameworks MVC como Ruby on Rails, Django, Laravel, .NET, Spring, por mencionar algunos, pero también podemos incluir a algunos modernos que aplican este mismo principio de una misma base de código como Next.js.
+Estos frameworks se caracterizan por implementar las opiniones de los autores, ser de convención por sobre configuración, y empaquetar muchas funcionalidades sobre el framework, lo que les permite implementar sobre el mismo sistema, distintas facetas del proyecto.
+Por otro lado, los conocidos como micro frameworks, se tratan de frameworks poco opinados, generalmente de configuración sobre convención, con funcionalidad mínima implementada, entre ellos podemos destacar algunos comúnes como Express, Flask, Django REST Framework, entre otros.
+Estos micro frameworks son ideales para la arquitectura de micro servicios, porque al ofrecer una base mínima de convenciones y funcionalidades, permiten que proyectos de funcionalidad específica sean implementados, sin que se incluyan funcionalidades que no han de ser utilizadas.
+Un ejemplo claro es el del motor de render de vistas, encargado de generar el HTML con la información de la capa de datos, comúnmente de un modelo, los frameworks “grandes” suelen incluir un sistema de render de vistas por defecto, mientras que los micro frameworks no lo incluyen y más bien requieren que el desarrollador configure el de su preferencia. Para una arquitectura de micro servicios donde la interfaz está separada de otros servicios que manejan datos, es ideal que dichos servicios se desarrollen sobre frameworks que no incluyan un motor de render de vistas que no será utilizado.
+
+**Es hora de escalar, ¿cuál elijo?**
+
+Existen dos principales áreas de análisis: hasta dónde puede escalar (viabilidad), y cómo se aprovechan los recursos de la infraestructura (eficiencia).
+
+**Eficiencia**: Una arquitectura de microservicios permite que cada componente del sistema escale de manera independiente y de acuerdo a sus necesidades, en ese sentido, el proceso de escalar puede ser más sencillo, en contra de los monolitos. En el caso de los monolitos, el proceso de escala es vertical y menos eficiente, todos los componentes viven en la misma base de código y comparten infraestructura, por lo que, no es posible considerar las necesidades de cada componente en el proceso de escalar la infraestructura. Esto puede implicar que la infraestructura de un monolito sea excesiva para las necesidades de algunos componentes y ajustada para otros, mientras que para los componentes de un monolito la infraestructura es la adecuada para cada componente.
+
+**Viabilidad**: Una de las principales razones por las que una organización decide migrar de un monolito hacia una arquitectura de microservicios responde a la viabilidad de que el monolito soporte la escala actual de la compañía. Es más eficiente escalar una arquitectura de microservicios, esto no significa que los monolitos funcionen solo para aplicaciones de baja escala y poco tráfico. Existen grandes proyectos con millones de usuarios implementados sobre monolitos, así como algunos más pequeños y de menor escala que usan microservicios. En muchas ocasiones, las y los expertos apuntan al tamaño de la empresa, y no al de la escala, para determinar qué arquitectura usar.
+
+La arquitectura de microservicios responde mejor a organizaciones grandes, donde cada equipo puede implementar la funcionalidad de un componente a su mejor criterio, sin la necesidad de coordinar con otros equipos, mientras que en el caso de los monolitos, todos los equipos deben compartir el mismo contexto y las mismas reglas en el desarrollo del proyecto, aumentando la necesidad de coordinación, reuniones, y comunicación entre equipos.
+Por otro lado, para un equipo mediano a pequeño, una arquitectura de monolito puede eficientizar el desarrollo de nuevas características, ya que algunos miembros del equipo pueden necesitar contexto de la operación de múltiples componentes del sistema.
+En resumen, escalar eficientemente para altas cargas de tráfico, y para empresas de gran tamaño, suelen ser las principales razones para migrar de monolitos a microservicios, mientras que también, podemos decir que un equipo pequeño, sin importar la escala de tráfico que maneja, puede beneficiarse de una arquitectura de monolito.
+
+**Despliegue a producción, ¿qué cambia?**
+
+En el caso de monolitos, la implementación ocurre de manera unitaria, ya que toda la aplicación se desarrolla sobre la misma base de código. Esto simplifica el proceso de despliegue, ya que no hay necesidad de coordinar múltiples servicios. No existe un problema de coordinación de versiones, como posiblemente suceda con los microservicios, luego de que todos los componentes comparten el mismo código, esto minimiza los conflictos por gestión de versiones. El despliegue de monolitos suele requerir una orquestación menos compleja, ya que todas las dependencias están presentes en un único entorno. Sin embargo, esto también implica que cualquier error en una parte del sistema puede tener impactos en la totalidad de la aplicación.
+
+En el contexto de los microservicios, cada servicio puede ser desarrollado, probado y desplegado de manera independiente. Esto permite a los equipos actualizar servicios sin afectar la totalidad de la aplicación. La independencia en el despliegue permite que apliquemos algunas metodologías populares como integración continua o despliegue continuo, muy comúnes en equipos de desarrollo que implementan metodologías agiles, la existencias de múltiples servicios implica que exista coordinación de versiones entre ellos, luego de que cada microservicio tiene su propio ciclo de vida, es posible que uno dependa de una versión distinta a la que uno de los servicios está implementando. El despliegue de microservicios generalmente requiere una orquestación más sofisticada. Herramientas como Kubernetes o Docker Swarm se utilizan comúnmente para gestionar la implementación, escalado y actualización de servicios. Esta complejidad adicional es necesaria para mantener la coherencia y la disponibilidad del sistema.
+
+En resumen, la elección entre monolitos y microservicios en el despliegue depende de las necesidades específicas del proyecto. Monolitos ofrecen simplicidad, coherencia; microservicios brindan independencia y escalabilidad.
+
+**Teniendo en cuenta a la nube, que cambia?**
+
+Cuando se trata de monolitos, el despliegue sigue siendo unitario, pero la nube ofrece oportunidades para optimizar recursos. La capacidad de escalar verticalmente en entornos basados en la nube permite ajustar los recursos de manera más eficiente, aunque aún se comparte la misma base de código. La coordinación de versiones puede ser menos compleja, pero la nube proporciona herramientas para gestionar actualizaciones y rollbacks de manera más flexible, facilitando el mantenimiento de la coherencia en el despliegue.
+
+En el contexto de los microservicios, la independencia en el despliegue encuentra un aliado poderoso en la nube. Cada servicio puede aprovechar los recursos de manera autónoma, escalando horizontalmente según las demandas específicas de cada componente. La nube facilita la implementación de metodologías ágiles como la integración continua y despliegue continuo, permitiendo una evolución constante de los servicios de forma independiente. La coordinación de versiones se vuelve más esencial en entornos basados en la nube, ya que cada microservicio puede tener su propio ciclo de vida. Herramientas de orquestación como Kubernetes se convierten en aliados clave para gestionar la complejidad del despliegue.
+
+En resumen, la elección entre monolitos y microservicios en la nube se centra en cómo aprovechar al máximo las capacidades escalables y flexibles de estos entornos. Monolitos pueden beneficiarse de la escalabilidad vertical, mientras que los microservicios encuentran en la nube un terreno propicio para su independencia y agilidad.
+
+<a id="arc6"></a>
+
+### **Cómo hace Amazon route 53 para dar alta disponibilidad y baja latencia?**
+
+[Volver al indice](#har-base)
+
+- Servidores distribuidos globalmente. Hay DNS en todo el mundo, sí haces una query desde cualquier lugar del mundo, va a haber un servidor DNS cerca para cumplirlo
+- Dependencia: Route 53 proporciona un alto nivel de confiabilidad requerido por las aplicaciones críticas.
+- Ubicaciones óptimas: Route 53 atiende las solicitudes desde el centro de datos más cercano al cliente que envía la solicitud. AWS tiene centros de datos en todo el mundo. Los datos se pueden almacenar en caché en diferentes centros de datos ubicados en diferentes regiones del mundo según los requisitos y la configuración elegida. Route 53 permite que cualquier servidor en cualquier centro de datos que tenga los datos necesarios para responder. De esta manera, permite que el servidor más cercano atienda la solicitud del cliente, reduciendo así el tiempo de atención
+
+<a id="arc7"></a>
+
+### **Cuál es la diferencia entre Availability Zone y Region?**
+
+[Volver al indice](#har-base)
+
+Availability Zone es una ubicación física donde Amazon tiene un data center. Una Region es una colección o grupo de AZ o Data Centers.
+
+Esto ayuda a que los servicios tengan más disponibilidad mientras se colocan distintas VM en distintos lugares del mundo para cumplir peticiones. Esto también ayuda a que el servicio se mantenga siempre disponible aunque un Data Center caiga.
+
+<a id="arc8"></a>
+
+### **Qué es la alta disponibilidad?**
+
+[Volver al indice](#har-base)
+
+La alta disponibilidad es un término que se utiliza para describir la capacidad de un sistema o componente para estar operativo y accesible durante un período de tiempo determinado. La alta disponibilidad se logra mediante la implementación de redundancia y tolerancia a fallos en los sistemas y componentes críticos.
+
+<a id="arc9"></a>
+
+### **Qué es la baja latencia?**
+
+[Volver al indice](#har-base)
+
+La baja latencia es el tiempo que tarda un sistema en responder a una solicitud. La baja latencia es importante en aplicaciones en tiempo real, como juegos en línea, transmisión de video y aplicaciones financieras, donde incluso pequeños retrasos pueden afectar la experiencia del usuario.
+
+<a id="arc10"></a>
+
+### **Qué es un sistema tolerante a fallos?**
+
+Un sistema tolerante a fallos es un sistema que puede continuar funcionando incluso si uno o más de sus componentes fallan. Los sistemas tolerantes a fallos se diseñan para minimizar el impacto de los fallos y garantizar que el sistema siga siendo operativo y accesible en caso de fallo de un componente.
+
+<a id="arc11"></a>
+
+### **Qué es un sistema distribuido?**
+
+[Volver al indice](#har-base)
+
+Un sistema distribuido es un sistema de software que se ejecuta en múltiples computadoras interconectadas y se comunica a través de una red de computadoras. Los sistemas distribuidos se utilizan para distribuir la carga de trabajo, mejorar la escalabilidad y la disponibilidad, y permitir la colaboración y la comunicación entre múltiples usuarios y sistemas.
+
+<a id="arc12"></a>
+
+### **Qué es un sistema de alta disponibilidad?**
+
+[Volver al indice](#har-base)
+
+Un sistema de alta disponibilidad es un sistema que está diseñado para garantizar que esté operativo y accesible durante un período de tiempo determinado. Los sistemas de alta disponibilidad se implementan mediante la redundancia y la tolerancia a fallos en los sistemas y componentes críticos para garantizar que el sistema siga siendo operativo en caso de fallo de un componente.
+
+<a id="arc13"></a>
+
+### **Qué es un CDN?**
+
+[Volver al indice](#har-base)
+
+Un CDN (Content Delivery Network) es una red de servidores distribuidos geográficamente que se utilizan para entregar contenido web, como imágenes, videos, archivos y otros recursos estáticos, a los usuarios finales de manera rápida y eficiente. Los CDNs almacenan en caché el contenido en servidores distribuidos en todo el mundo y utilizan algoritmos de enrutamiento inteligentes para dirigir a los usuarios al servidor más cercano para una entrega rápida y eficiente del contenido.
+
+<a id="arc14"></a>
+
+### **Qué es un balanceador de carga?**
+
+[Volver al indice](#har-base)
+
+Un balanceador de carga es un dispositivo de red que distribuye el tráfico de red entre múltiples servidores o dispositivos de red para garantizar que el tráfico se distribuya
+de manera uniforme y eficiente entre los servidores. Los balanceadores de carga se utilizan para mejorar la escalabilidad, la disponibilidad y el rendimiento de las aplicaciones web y los servicios en línea al distribuir la carga de trabajo entre múltiples servidores y garantizar que los servidores no se sobrecarguen.
+
+<a id="arc15"></a>
+
+### **Que es una cookie?**
+
+[Volver al indice](#har-base)
+
+Las cookies son textos planos con poca dificultad para entender de que se tratan, guardados localmente en cada pc. Se puede saber para que sirve cada cookie con solo leerlo
+
+1. Hacer una request a una page desde el server
+2. El server responde con la pagina y las cookies
+3. El browser muestra la pagina y guarda las cookies
+
+Otras propiedades de las cookies son..
+
+- Son simples, contienen un par de “variable” y “valor” en sí mismo, y pesan menos de 4KB, las cookies son válidas en un solo dominio, el host del dominio actual, excluyendo subdominios, aunque podemos hacer que una cookie sea válida también para los subdominios estableciendo una propiedad específica de dominio, es decir, en vez de que el dominio sea [www.facebook.com](http://www.facebook.com/), que el dominio sea facebook.com, pudiendo poner cualquier cosa además del www.
+- Los sitios web suelen usar las cookies para **identificar a los usuarios**, y sus **preferencias**, también para trackear el **comportamiento en la web**, es por eso que guardan en sí mismos info del usuario y su estatus online.
+- Las cookies también sirven para que un usuario entre a la misma web y no tenga que logearse una y otra vez, para lograr esto se crea una cookie única en cada navegador con las **credenciales del usuario**. Y cada vez que el usuario ingresa, el sitio checkea sí esa credencial existe, y sí no existe, la pide.
+- Cuando se crea una cookie, también se crea con una fecha de expiracion bajo el label **Expires**, con una fecha y una hora en particular. Esto se hace por cuestiones de seguridad, ya que sí alguien logra “robar” una cookie de auteticacion, podria logearse con la cuenta de cierta persona, esto se evita ya que la cookie checkea sí se trata del mismo nevegador el que pretende acceder a esa cookie.
+
+<a id="arc16"></a>
+
+### **Que es el cookie tracking?**
+
+[Volver al indice](#har-base)
+
+Las cookies cumplen un rol importante no solo en la autenticacion sí no también en el track de tu comportamiento online, esto con un **tracking cookie**. Usualmente, muchas paginas usan herramientas de trackeo de otros lugares y no propios, lo cual hace que se pueda trackear la actividad de distintas web al mismo tiempo.
+
+Tracking pixel: Es un pequeño pedazo de codigo que es pedido desde el dominio de la web que hace el tracking para insertar la cookie, es invisible para el usuario en la web.
+
+```html
+<img height="0" width="0" alt="" src="http://track.com"/>
+```
+
+El tracking cookie puede tener mucha informacion, como la IP y el navegador que se esta usando.
+
+```html
+TrackingID=3984720234; Ip=11.0.1.1; origin=stuff.com
+```
+
+El tracking puede servirle a muchas empresas para obtener informacion exacta acerca del perfil del usuario, y así, ofrecer publicidad, dando a muchos problemas de privacidad para los usuarios, es por eso que se pide permiso antes de guardar cookies.
+
+
+<a id="arc17"></a>
+
+### **Como creo una cookie con Javascript?**
+
+[Volver al indice](#har-base)
+
+1. Crear una funcion de Javascript
+
+```jsx
+function addCookie() {}
+```
+
+2. Le agregamos dos parametros a la funcion. **cname**
+es el nombre de la cookie, y **value**
+para el valor de la cookie
+
+```jsx
+function addCookie(cname, value) { }
+```
+
+3. Para crear la cookie debemos llamar a la funcion **document.cookie**
+
+```jsx
+function addCookie(cname, value) {
+   document.cookie= cname + “=” + value + “;”
+ }
+```
+
+4. Ya teniendo esta funcion creada, podemos crear una cookie por fuera de la funcion, como **username**
+
+```jsx
+function addCookie(cname, value) {
+   document.cookie= cname + “=” + value + “;”
+     }
+
+addCookie(“username”,”denukennedy”);
+```
+
+5. Para ver la cookie creada, invocamos a un console log.
+
+```jsx
+function addCookie(cname, value) {
+   document.cookie= cname + “=” + value + “;”
+     }
+
+addCookie(“username”,”denulemos”);
+console.log(document.cookie);
+```
+
+<a id="arc18"></a>
+
+### **¿Cual es la diferencia entre Cookies, SessionStorage y LocalStorage?**
+
+[Volver al indice](#har-base)
+
+|  | Cookies | Local Storage | Session Storage |
+| --- | --- | --- | --- |
+| Capacidad | 4kb | 10 mb | 5 mb |
+| Navegadores | HTML 4 / 5 | HTML 5 | HTML 5 |
+| Accesible desde | Cualquier ventana | Cualquier ventana | Tab donde fue creada |
+| Expira | Seteado a mano, si no se aclara, vence cuando termina la sesion | Nunca | Cuando se cierra la tab |
+| Storage Location | Navegador y Server | Navegador | Navegador |
+| Enviado con Requests | Si | No | No |
+| Tipo de dato | Tod | Solo guarda Strings. Si queremos guardar objetos, arrays, u otros, debemos converirlos en String con JSON.stringify() |  |
+| Deberia usarse |  | Para guardar informacion NO sensible ya que es facilmente accesible |  |
+- Las cookies se usan para Auth mas que nada
+
+```jsx
+// Local Storage
+localStorage.setItem(’item’, ‘valor’)
+localStorage.getItem(’item’)
+localStorage.removeItem('item')
+localStorage.clear();
+localStorage.key(1); // Obtener un valor/string de una posicion particular
+
+// Session Storage
+sessionStorage.setItem('item', 'valor);
+sessionStorage.getItem('item')
+sessionStorage.removeItem('item')
+sessionStorage.clear();
+
+// Cookies
+document.cookie = "item=true";
+// Con expire date
+document.cookie= "item=true; expires= Fri, 31 Dec 9999 23:59:59 GMT; path=/"
+document.cookie // No se puede obtener una sola cookie por vez,
+// todas se almacenan en un String, deben parsearse
+
+```
+
+<a id="arc19"></a>
+
+### **¿Como puedo borrar una cookie?**
+
+[Volver al indice](#har-base)
+
+Para borrar una cookie, debemos setear la fecha de expiracion a una fecha pasada, de esta manera, el navegador la eliminara automaticamente.
+
+```jsx
+function deleteCookie(cname) {
+  document.cookie = cname + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+}
+```
+
+<a id="arc20"></a>
+
+### **¿Que es CORS?**
+
+[Volver al indice](#har-base)
+
+Es un mecanismo que usa cabeceras HTTP adicionales para permitir que un user-agent obtenga permiso para acceder a recursos seleccionados desde un servidor en un origen distinto (dominio) al que pertenece. Por ejemplo, si tengo mi dominio [`denisse.com`](http://denisse.com), uso XMLHttpRequest para cargar el recurso [`http://api.domain-b.com/data.json`](http://api.domain-b.com/data.json)
+
+Tambien sirve para obtener fuentes externas, texturas webGL, Imagenes, hojas de estilos y Scripts.
+
+<a id="arc21"></a>
+
+### **¿Que es un Sistema Operativo?**
+
+[Volver al indice](#har-base)
+
+Un sistema operativo debe asignar los recursos de la computadora entre las necesidades potencialmente competitivas de múltiples procesos.En el caso del procesador, el recurso que se debe asignar es el tiempo de ejecución en el procesador. La forma de asignarlo es la planificación.La función de planificación debe estar diseñada para satisfacer varios objetivos que incluyen:
+
+- Equidad
+- Ausencia de inanición de cualquier proceso
+- Uso eficiente del tiempo del procesador
+- Baja sobrecarga
+
+**Objetivos**
+
+- Asignar procesos a ejecutar por el/los procesador/es
+- Tiempo de respuesta
+- Rendimiento del sistema
+- Rendimiento del procesador
+
+En un sistema de un solo procesador, sólo se puede ejecutar un proceso a la vez. Otros deberán esperar hasta que la CPU esté libre y se pueda reprogramar. El objetivo de la multiprogramación es tener algún proceso en marcha en todo momento, para maximizar la utilización de la CPU.
+
+La idea es relativamente simple. Un proceso se ejecuta hasta que debe esperar, típicamente para la terminación de una petición de E/S. En un sistema informático simple, la CPU se queda inactiva. Todo este tiempo de espera se desperdicia (no se realiza ningún trabajo útil). Con la multiprogramación, se trata de utilizar este tiempo de manera productiva. Para esto, se mantienen varios procesos en la memoria a la vez. Cuando un proceso tiene que esperar, el sistema operativo toma la CPU saca a ese proceso y da la CPU a otro proceso. Cada vez que un proceso tiene que esperar, otro proceso puede asumir el uso de la CPU.La programación de este tipo es una función fundamental del sistema operativo.
+
+<a id="arc22"></a>
+
+### **FCFS (First come, first served)**
+
+[Volver al indice](#har-base)
+
+El algoritmo de programación de CPU más sencillo es el algoritmo de programación de la primera llegada, primero servido (FCFS).
+
+Con este esquema, el proceso que primero solicita la CPU es el primero que se le asigna. La implementación de la directiva FCFS se administra fácilmente con una cola FIFO.
+
+Cuando un proceso entra en la cola lista, su PCB está vinculado a la final de la cola. Cuando la CPU está libre, se asigna al proceso en la cabeza de la cola. El proceso en ejecución se elimina de la cola. El código para la programación FCFS es fácil de escribir y entender. El lado negativo de este algoritmo es el tiempo medio de espera que a menudo bastante largo
+
+<a id="arc23"></a>
+
+### **SPN/SJF (Shorted Process Next/Shorted Job First)**
+
+[Volver al indice](#har-base)
+
+Un enfoque diferente para la planificación de la CPU es el algoritmo de planificación de la tarea más corta (SJF). Este algoritmo asocia con cada proceso la longitud de la siguiente ráfaga de CPU del proceso. Cuando la CPU está disponible, se la asigna al proceso que tiene la ráfaga de CPU más pequeña. Si las siguientes ráfagas de CPU de dos procesos son las mismas, se puede utilizar la planificación FCFS para romper el empate.
+
+Aunque el algoritmo SJF es óptimo, no se puede implementar en el nivel de programación de CPU a corto plazo, debido a que no hay manera de saber la longitud de la próxima ráfaga de la CPU. Una aproximación a este problema es tratar de aproximar la programación SJF. Es posible que no se conozca la longitud de la siguiente ráfaga de CPU, pero se podría predecir su valor, asumiendo que la próxima ráfaga de uso de la CPU sea similar, en duración, a las anteriores. Mediante el cálculo de una aproximación de la duración de la siguiente ráfaga de la CPU, se puede seleccionar el proceso con la ráfaga de CPU más corta prevista
+
+<a id="arc24"></a>
+
+### **SRT (Shortest Remaining Time)**
+
+[Volver al indice](#har-base)
+
+Es un método de planificación con selección del proceso con tiempo restante más corto. (Versión expropiativa del proceso más corto -política SPN-).
+
+El proceso en CPU es desalojado si llega a la cola un proceso con duración más corta. Para esto, se debe estimar el tiempo de procesamiento
+
+---
+
 <a id="bd"></a>
 
 # Bases de Datos
@@ -12560,7 +19060,7 @@ problemas complejos, no se requiera de algún dato en la 3era forma.
 
 ```sql
 --Usando cursores
- 
+
 declare @bd varchar(50)
 DECLARE bdcursor cursor for
 select name from master..sysdatabases where name not in ('master','tempdb','msdb')
@@ -12568,22 +19068,22 @@ open bdcursor
 fetch bdcursor into @bd
 WHILE @@FETCH_STATUS = 0
 BEGIN
-print 'Base de Datos: ' + @bd 
+print 'Base de Datos: ' + @bd
 fetch bdcursor into @bd
 END
 DEALLOCATE bdcursor
- 
- 
+
+
 --Sin cursores
 DECLARE @dbName VARCHAR(50)
 SET @dbName = ''
- 
+
 WHILE @dbName IS NOT NULL
 BEGIN
 SELECT @dbName = MIN( Name )
 FROM master..sysdatabases
 WHERE name not in ('master','tempdb','msdb') and Name > @dbName
- 
+
 IF @dbName IS NOT NULL
 BEGIN
 print 'Base de Datos: ' + @dbName
@@ -12598,13 +19098,13 @@ END
 DECLARE @TableVar TABLE
   (Cola int PRIMARY KEY,
    Colb char(3))
- 
+
 INSERT INTO @TableVar VALUES (1, 'abc')
 INSERT INTO @TableVar VALUES (2, 'def')
- 
+
 SELECT * FROM @TableVar
 GO
- 
+
 -- Tabla derivada
 SELECT ST.stor_id, ST.stor_name
 FROM stores AS ST,
@@ -12626,15 +19126,15 @@ SELECT LocationID FROM Locations WHERE Specialities LIKE 'A%s'
 - Hacer uso de SHOWPLAN_TEXT o SHOWPLAN_ALL para analizar los queries. Alternativamente puede usar la interfaz gráfica para mostrar el plan de ejecución estimado (Query analizar).
 
 ```sql
-USE AdventureWorks;  
-GO  
-SET SHOWPLAN_TEXT ON;  
-GO  
-SELECT *  
-FROM Production.Product   
-WHERE ProductID = 905;  
-GO  
-SET SHOWPLAN_TEXT OFF;  
+USE AdventureWorks;
+GO
+SET SHOWPLAN_TEXT ON;
+GO
+SELECT *
+FROM Production.Product
+WHERE ProductID = 905;
+GO
+SET SHOWPLAN_TEXT OFF;
 GO
 ```
 
@@ -12680,8 +19180,8 @@ VALUES (1, 'England')
 Son triggers especiales que se crean **a nivel de base de datos** y que disparan en respuesta a eventos DML  (Update – Delete – Insert). Suelen ser utilizados para ejecutar tareas administrativas en una base de datos auditando y regulando cierta clase de eventos.
 
 ```sql
-CREATE TRIGGER <Nombre del Trigger> 
-ON DATABASE 
+CREATE TRIGGER <Nombre del Trigger>
+ON DATABASE
 FOR <DROP TABLE, ALTER TABLE>
 AS
 BEGIN
@@ -12698,7 +19198,7 @@ CREATE TRIGGER TR_Seguridad
        AS
        BEGIN
          RAISERROR ('No está permitido borrar ni modificar tablas !' , 16, 1)
-         ROLLBACK TRANSACTION 
+         ROLLBACK TRANSACTION
 
        END
 ```
@@ -12778,7 +19278,7 @@ Un Join que referencia a la misma tabla.
 SELECT A.CustomerName AS CustomerName1, B.CustomerName AS CustomerName2, A.City
 FROM Customers A, Customers B
 WHERE A.CustomerID <> B.CustomerID --No se repiten ID
-AND A.City <> B.City --Esta linea hace que no se repitan ciudades 
+AND A.City <> B.City --Esta linea hace que no se repitan ciudades
 ORDER BY A.City;
 ```
 
@@ -12840,7 +19340,7 @@ No se pueden invocar por si mismos, se disparan automáticamente
 - No se pueden modificar los datos de estas tablas
 
 ```sql
-CREATE TRIGGER <Nombre del Trigger> 
+CREATE TRIGGER <Nombre del Trigger>
 ON <Nombre de la Tabla>
 AFTER <INSERT,DELETE,UPDATE>
       AS
@@ -12856,14 +19356,14 @@ END
 
 ```sql
 -----------------------------------------------------------------
-      --  TRIGGER DML                                                                            
-      --  Detalle: este trigger genera un histórico de stock cada vez 
+      --  TRIGGER DML
+      --  Detalle: este trigger genera un histórico de stock cada vez
           que se modifica la existencia de un artículo --
       -----------------------------------------------------------------
       CREATE TRIGGER TR_ARTICULOS
       ON ARTICULOS
       AFTER UPDATE
-      AS 
+      AS
         BEGIN
          INSERT INTO HCO_STOCK
          (IDARTICULO, STOCK, FECHA)
@@ -12884,7 +19384,7 @@ END
 CREATE TRIGGER TR_ARTICULOS
       ON ARTICULOS
       AFTER UPDATE
-      AS 
+      AS
         BEGIN
            IF UPDATE (STOCK)    -- sólo si actualiza STOCK
             BEGIN
@@ -12902,14 +19402,14 @@ END
 CREATE TRIGGER TR_ARTICULOS
       ON ARTICULOS
       AFTER UPDATE
-      AS 
+      AS
         BEGIN
              INSERT INTO HCO_ARTICULOS
              (IDARTICULO, STOCK, FECHA)
              SELECT IDARTOCULO, STOCK, getdate()
              FROM INSERTED
-                
-             ROLLBACK 
+
+             ROLLBACK
 END
 ```
 
