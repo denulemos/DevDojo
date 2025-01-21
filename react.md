@@ -37,6 +37,12 @@
 | [Para que sirven las claves o Keys en React?](#rea25) |
 |[Que tener en cuenta para tener una buena performance en React](#rea24-1) 💛|
 | [¿Qué es el Virtual DOM?](#rea39) 💛|
+| [Redux Async Flow](#ent53) |
+| [useActionState() React](#ent69) |
+| [startTransition() React](#ent70) |
+| [useFormStatus() React](#ent71) |
+| [useOptimistic() React](#ent72) |
+| [React Server Components](#ent69-1) |
 |Para que tipo de proyectos React es recomendable?|
 |¿Cuál es la diferencia entre React.createElement() y JSX?|
 |¿Qué es un Fragment en React y para qué se utiliza?|
@@ -376,72 +382,33 @@ const submitNewProduct = (e) => {
 
 [Volver al indice](#react-base)
 
-Reemplaza las funciones del ciclo de vida para los componentes de función, los combina en uno solo, es un Hook.
+El hook `useEffect` es un hook que aparecio como reemplazo de las funciones de manejo de ciclo de vida de los componentes de clase.
+
+Podemos hacer que se ejecute ante cada renderizado, solo al montar el componente, solo al desmontar el componente, o solo cuando ciertos valores cambian.
 
 ```jsx
-import React, {useEffect} from 'react';
-```
-
-Requiere ser importado para ser usado
-
-Por ejemplo, en el caso del contador, quedaria algo asi con Hooks
-
-```jsx
-function Counter() {
-    const [counter, setCounter] = useState(0);
-
-    useEffect(()=> {
-        alert("Amount of Clicks: " + counter);
-    })
-
-    function increment() {
-        setCounter(counter++);
-    }
-
-    return <div>
-    <p>{counter}</p>
-    <button onClick={increment}>Increment</button>
-    </div>;
-}
-```
-
-Cuando el componente se monta y actualiza se ejecuta el useEffect()
-
-Si queremos que useEffect se ejecute solo ante la actualización del componente y no cuando se monta, agregamos un pequeño array vacío al final del useEffect(). Este array puede llenarse de dependencia que puede que usemos al ejecutar el Hook.
-
-```jsx
+// Se ejecuta ante cada renderizado
 useEffect(() => {
-    // Codigo
-}), []);
-```
-
-Y si queremos que cumpla una función de “clean up” como en el caso del componentWillUnmount(), podemos devolver una función que limpie lo necesario
-
-```jsx
-useEffect(() => {
-    return () => {
-        // cleanup, se ejecuta ultimo
-    };
+    console.log('Hola');
 });
+
+// Se ejecuta solo al montar el componente
+useEffect(() => {
+    console.log('Hola');
+}, []);
+
+// Se ejecuta solo al desmontar el componente
+useEffect(() => {
+    return () => console.log('Adios');
+}, []);
+
+// Se ejecuta solo cuando el valor de `value` cambia
+useEffect(() => {
+    console.log('Hola');
+}, [value]);
 ```
 
-Si queremos que nuestro useEffect funcione como un componentDidMount() y un componentDidUpdate()
-
-```jsx
-useEffect(() => {console.log("Update"); });
-```
-
-Si queremos que funcione como un componentDidMount() (Solo se ejecuta cuando es montado)
-
-```jsx
-useEffect(() => {console.log("Mount");}, []);
-```
-
-Y si queremos que se ejecute ante el cambio de un state
-
-```jsx
-useEffect(() => {console.log("Mount");}, [state]);
-```
+Se pueden realizar diversas cosas dentro del useEffect, como llamadas a las APIs, para las cuales se recomienda que esten en otra funcion aparte y no dentro del useEffect, convirtiendolo en asincrono, ya que React espera que useEffect devuelva `undefined` o una funcion de limpieza, no una Promise. Probablemente funcione, pero tendremos un error en la consola.
 
 <a id="rea3-2"></a>
 
@@ -793,6 +760,34 @@ Redux permitira manejar el state global de manera facil conforme van creciendo, 
 - Solo ciertas funciones cambiarán el State
 - Solo se hace un cambio a la vez
 
+Redux es un contenedor de estado que se usa generalmente con React. 
+
+En el **Redux Store** se guarda el estado de la aplicacion al cual podemos acceder mediante **Actions**. 
+
+```javascript
+{
+  type: 'PEDIR_PIZZA',
+  payload: { item: 'pizza' }
+}
+```
+
+El `type` es el tipo de accion que se desea realizar de una cantidad pre-definida, el `payload` es la informacion necesaria para realizar este cambio. Este pedido es manejado por el **Reducer**
+
+```javascript
+function pedidosReducer(state = [], action) {
+  switch (action.type) {
+    case 'PEDIR_PIZZA':
+      return [...state, action.payload.item]; // Añade 'pizza' al pedido
+    default:
+      return state; // Devuelve el estado tal cual si no reconoce la acción
+  }
+}
+```
+
+Una vez que el cambio esta hecho, todos los componentes que la consumen estan al tanto de este cambio y cambian en consecuencia.
+
+Redux guarda la informacion en un solo lugar de la aplicacion y la distribuye a todos los componentes que la necesitan, y es facil de depurar. Es especialmete util en aplicaciones grandes.
+
 <a id="rea19"></a>
 
 ### **Cuando conviene usar Redux?**
@@ -875,40 +870,79 @@ Reducer
 
 [Volver al indice](#react-base)
 
-Es una manera de tener un estado global sin dependencias como Redux, ya que viene desde React 16.3.
-
-Se pueden pasar state o funciones desde el componente principal hacia los hijos, nos evitamos pasarlo por cada uno de los componentes, es algo global.
-
-Cuenta con el hook `useContext` que facilita el acceso a los datos del Context.
-
-Children refiere a los componentes dentro del Provider que recibirán estos datos.
-
-Provider: De donde vienen los datos
+ContextAPI es una herramienta que viene con React de manera nativa que cumple la misma funcion que Redux pero de una manera mucho mas pequenia. 
+A veces nos puede suceder que si queremos que cierta informacion sea usada por varios componentes caemos en un **prop drilling** donde terminamos pasando esas mismas props de un componente a otro, incluso si ese componente no lo necesita en su totalidad. 
 
 ```jsx
-import {createContext} from 'react';
+const App = () => {
+  const user = { name: 'John Doe' }; // Datos globales
 
-const QuoteContext = createContext();
-
-const QuoteProvider = ({children}) => {
   return (
-    <QuoteContext.Provider
-    value=({})>
-      {children}
-    </QuoteContext.Provider>
-  )
-}
+    <Parent user={user} />
+  );
+};
 
-export { QuoteProvider }
-export default QuoteContext;
+const Parent = ({ user }) => {
+  return (
+    <Child user={user} />
+  );
+};
+
+const Child = ({ user }) => {
+  return <h1>{user.name}</h1>;
+};
 ```
 
-Dentro de value ponemos lo que queremos exportar para el resto de componentes, y luego, lo consumimos de la siguiente manera:
+En este caso, ContextApi soluciona este problema disponibilizando un sistema de estado global, haciendo que solo el que lo necesita acceda a la informacion. 
+
+ContextApi funciona bajo 3 conceptos:
+
+- Context: Es un contenedor para datos que pueden ser compartidos entre componentes
 
 ```jsx
-// Donde entre llaves ponemos lo que queremos consumir de ese Context.
-const {} = useContext(QuoteContext);
+const UserContext = React.createContext();
 ```
+
+- Provider: Es un componente que provee la infomacion a los componentes que lo precisan, solo se deben poner dentro de este los componentes que necesitan la informacion.
+
+```jsx
+<UserContext.Provider value={{ name: 'John Doe' }}>
+  <Parent />
+</UserContext.Provider>
+```
+
+- Consumer: Es el componente que precisa acceder a esta informacion.
+
+```jsx  
+import React from 'react';
+import { UserContext } from './UserContext';
+
+const Child = () => {
+  return (
+    <UserContext.Consumer>
+      {(user) => <h1>Hola, {user.name}!</h1>}
+    </UserContext.Consumer>
+  );
+};
+```
+
+Tambien se puede utilizar el hook `useContext` que facilita la consumicion de esta informacion.
+
+```jsx
+import React, { useContext } from 'react';
+import { UserContext } from './UserContext';
+
+const Child = () => {
+  const user = useContext(UserContext); // Consumir el contexto directamente
+  return <h1>Hola, {user.name}!</h1>;
+};
+```
+
+Las limitaciones que posee ContextApi son
+
+- Cuando el valor del contexto cambia, los elementos que la consumen se van a re-renderizar de manera innecesaria en algunos casos, es por eso que es recomendable dividir los componentes en unidades mas pequenias para poder manejar esto de mejor manera
+- Si preciso manejar estados mas complejos, Redux sigue siendo la mejor opcion
+
 
 <a id="rea24"></a>
 
@@ -926,6 +960,32 @@ React Fiber organiza la renderización en dos fases principales:
 - **Fase de Commit**: Es sincrónica y rápida. Los cambios calculados en la fase de render se aplican al DOM real.
 
 React Fiber no cambia cómo los desarrolladores escriben código React, pero mejora significativamente el rendimiento y la flexibilidad de las aplicaciones React modernas. Es la base que permite que React maneje de manera eficiente aplicaciones cada vez más interactivas y complejas.
+
+<a id="rea25"></a>
+
+### **Para que sirven las claves o Keys en React?**
+
+[Volver al indice](#rea-base)
+
+Se usan las claves para diferenciar entre simples elementos DOM virtuales con los que son unicos. Ayudan a React a reciclar elementos DOM existentes para que la libreria pueda ejecutarse y renderizarse mas rápidamente, ya que React recicla los elementos que no fueron modificados de los que si para no renderizarlos cuando no es necesario. Este elemento se usa mas que nada en iteraciones de listas.
+
+Esto optimiza el proceso de **reconciliacion**
+
+El key no afecta el renderizado en si, es por eso que igualmente funciona el render, solo se muestra un warning.
+
+```jsx
+const numbers = [1, 2, 3, 4, 5];
+const listItems = numbers.map((number) =>
+  <li key={number.toString()}>
+    {number}
+  </li>
+);
+```
+
+Su no uso ocasiona
+
+- Renderizados innecesarios, ya que no se pueden identificar que elementos especificos cambiaron
+- Pérdida de estado en los componentes (por ejemplo, un input pierde su texto cuando cambia el orden de la lista).
 
 <a id="rea24-1"></a>
 
@@ -992,3 +1052,382 @@ Más arriba la jerarquía, más refrescos habrá. Un componente hijo, idealmente
 - Provee una capa adicional de Scripting, dandole un peso mas a la CPU
 
 ![Virtual Dom](src/vdom.png)
+
+<a id="ent53"></a>
+
+### **Redux Async Flow**
+
+[Volver al indice](#entrevista-base)
+
+Redux Async Flow es el flujo asincrono de Redux. Si bien Redux maneja los estados de manera asincrona, a veces necesitamos llevar a cabo tareas asincronas en si mismos, como llamar a una API, y Redux no entiende funciones asincronas, no sabe esperar a que la API termine su procesamiento. 
+
+Para solucionar esto se usa un middleware llamado `Redux Thunk` o `Redux Saga` que funciona como intermediario entre los actions y los reducers, los mismos permiten ejeuctan funciones asincronas en las acciones y despachar nuevas acciones una vez que la primera tarea asincrona termino.
+
+```javascript
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+
+const store = createStore(reducer, applyMiddleware(thunk));
+```
+
+Se suele manejar la informacion en un objeto con 3 elementos:
+
+```javascript
+{
+  loading: false,
+  data: [...], // Datos obtenidos
+  error: null
+}
+```
+
+<a id="ent69"></a>
+
+### **useActionState en React**
+
+[Volver al indice](#entrevista-base)
+
+Es un hook que en React 18 fue considerado experimental, utilizado para simpliificr la gestion de acciones asincronas en los componentes, como el estado de `loading`, `error` y `data`.
+
+```jsx
+const [state, action, isPending] = useActionState(actionFunction, initialState);
+```
+
+- `actionFunction` es la funcion asincrona
+- `initialState` es el valor inicial del estado
+
+Este hook nos ahorra usar multiples `useState` para el manejo de estos estados
+
+<a id="ent70"></a>
+
+### **startTransition() React**
+
+[Volver al indice](#entrevista-base)
+
+La función `startTransition()` de React es una herramienta que se utiliza para gestionar actualizaciones de estado que no son críticas para la interacción inmediata del usuario. Su principal objetivo es mejorar la **experiencia de usuario** al permitir que las actualizaciones menos importantes no bloqueen el hilo de ejecución principal y no interfieran con las interacciones críticas.
+
+### ¿Cómo funciona `startTransition()`?
+
+En React, las actualizaciones de estado, por defecto, son **sincrónicas**, lo que significa que cualquier cambio en el estado de un componente o renderización se ejecutará inmediatamente, lo cual puede causar problemas de rendimiento si el componente tiene un renderizado pesado o si hay muchos cambios de estado que se ejecutan al mismo tiempo.
+
+`startTransition()` es una API que permite que ciertas actualizaciones no se consideren prioritarias. Cuando usas `startTransition()`, le estás diciendo a React que esta actualización es **baja prioridad** y puede ser interrumpida si el hilo está ocupado haciendo tareas más importantes, como responder a las interacciones del usuario.
+
+### ¿Cómo se usa `startTransition()`?
+
+Aquí tienes un ejemplo básico de cómo usar `startTransition()`:
+
+```javascript
+import React, { useState, startTransition } from 'react';
+
+function MyComponent() {
+  const [isPending, setIsPending] = useState(false);
+  const [inputValue, setInputValue] = useState('');
+
+  const handleChange = (event) => {
+    const { value } = event.target;
+
+    // Aquí usamos startTransition para hacer que el cambio en el estado de inputValue sea de baja prioridad
+    startTransition(() => {
+      setInputValue(value);
+    });
+
+    // Marca si la actualización está pendiente
+    setIsPending(true);
+  };
+
+  return (
+    <div>
+      <input type="text" value={inputValue} onChange={handleChange} />
+      {isPending && <div>Updating...</div>}
+    </div>
+  );
+}
+```
+
+1. **Prioridad baja para actualizaciones de estado**: Dentro del `startTransition()`, el cambio de estado `setInputValue(value)` se marca como una actualización de baja prioridad, lo que significa que React intentará procesar esta actualización solo cuando haya tiempo disponible, sin bloquear interacciones importantes como el input del usuario.
+   
+2. **Optimización del rendimiento**: Esto permite que, si hay una actualización costosa o renderizado en progreso, las actualizaciones menos importantes no retrasen la interacción del usuario.
+
+### ¿Cuándo se debería usar `startTransition()`?
+
+Se debe usar `startTransition()` cuando tengas actualizaciones de estado o renderizados que no necesiten ser procesados inmediatamente y que no afecten la interacción directa del usuario. Algunos ejemplos incluyen:
+
+- **Filtros o búsquedas en listas grandes**: Si tienes una búsqueda que filtra una lista muy grande y el filtrado no es urgente.
+- **Actualización de datos en segundo plano**: Si necesitas actualizar ciertos estados o cálculos en segundo plano sin interrumpir las interacciones del usuario.
+- **Animaciones o cambios visuales complejos**: Para renderizados pesados o animaciones que no son necesarias de inmediato, como transiciones de interfaz de usuario.
+
+### Beneficios de `startTransition()`
+
+1. **Mejora de la experiencia del usuario**: Evita que la interfaz se congele o se sienta lenta debido a renderizados pesados.
+2. **Optimización del rendimiento**: Al gestionar las actualizaciones de estado con menor prioridad, React puede hacer las actualizaciones más críticas primero, manteniendo la interfaz fluida.
+3. **Control más fino de las actualizaciones**: Permite una separación entre las tareas que son cruciales para la interacción del usuario y las que pueden esperar.
+
+### Limitaciones
+
+- **No reemplaza el uso de `useEffect`**: `startTransition()` no se debe usar para efectos secundarios que deban ocurrir de manera inmediata (como realizar peticiones API).
+- **No aplica a todas las actualizaciones de estado**: Debe usarse en contextos donde el rendimiento es una preocupación, pero no es necesario para todas las actualizaciones de estado.
+
+<a id="ent71"></a>
+
+### **useFormStatus() React**
+
+[Volver al indice](#entrevista-base)
+
+`useFormStatus()` es un **hook** en React que se introdujo en React 18 como parte de las nuevas APIs para mejorar la experiencia de formularios y manejar estados de carga en el proceso de envío de formularios. Está diseñado para trabajar con formularios que pueden estar en un estado de envío o validación y es especialmente útil para mejorar la accesibilidad y la usabilidad cuando los formularios se envían de manera asincrónica.
+
+`useFormStatus()` te permite manejar el estado de un formulario de forma declarativa y reaccionar a las actualizaciones del estado del formulario, como si está enviando datos (en proceso), si hay un error o si se ha completado con éxito.
+
+Este hook ofrece un estado relacionado con la validación y el envío del formulario, incluyendo propiedades como `pending` (si la acción de envío está pendiente), `submitted` (si el formulario ha sido enviado), y `error` (si hubo un error durante el envío).
+
+El hook `useFormStatus()` devuelve un objeto con los siguientes valores:
+
+1. **`pending`**: Un valor booleano que indica si el formulario está en proceso de envío. Es `true` cuando el formulario está esperando una respuesta (por ejemplo, esperando una respuesta del servidor).
+2. **`submitted`**: Un valor booleano que indica si el formulario ha sido enviado.
+3. **`error`**: Un valor que contiene cualquier error que ocurra durante el proceso de envío del formulario (puede ser un objeto de error si se produjo algún fallo).
+
+Ejemplo básico de uso
+
+Aquí te dejo un ejemplo básico de cómo usar `useFormStatus()` en un formulario React.
+
+```javascript
+import React, { useState } from 'react';
+import { useFormStatus } from 'react';
+
+function MyForm() {
+  const [formData, setFormData] = useState({ name: '', email: '' });
+  
+  // Usamos useFormStatus para manejar el estado del formulario
+  const { pending, submitted, error } = useFormStatus();
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    // Simula el envío del formulario (por ejemplo, hacer una petición a un servidor)
+    try {
+      // Aquí enviaríamos el formulario a una API, pero en este ejemplo solo simulamos
+      await new Promise((resolve) => setTimeout(resolve, 2000));  // Simulando un retraso
+      // Si el envío es exitoso, podemos marcar el formulario como enviado
+      console.log('Formulario enviado con éxito');
+    } catch (error) {
+      console.log('Error en el envío:', error);
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="name">Nombre</label>
+        <input 
+          type="text" 
+          id="name" 
+          value={formData.name}
+          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+        />
+      </div>
+      <div>
+        <label htmlFor="email">Correo Electrónico</label>
+        <input 
+          type="email" 
+          id="email" 
+          value={formData.email}
+          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+        />
+      </div>
+      
+      <button type="submit" disabled={pending}>
+        {pending ? 'Enviando...' : 'Enviar'}
+      </button>
+
+      {submitted && <p>Formulario enviado con éxito.</p>}
+      {error && <p>Error al enviar el formulario: {error.message}</p>}
+    </form>
+  );
+}
+
+export default MyForm;
+```
+
+Explicación del código:
+
+1. **Estados de Formulario**:
+   - Se utiliza `useState` para manejar los valores del formulario (`formData`).
+   - Se utiliza `useFormStatus()` para obtener el estado del formulario en cuanto a su envío (`pending`, `submitted`, `error`).
+   
+2. **Envío del Formulario**:
+   - El formulario está configurado para simular el proceso de envío de datos al hacer una petición simulada con `setTimeout`. 
+   - Durante este proceso, el botón de envío está deshabilitado si el formulario está en estado `pending`, es decir, si está esperando una respuesta.
+   
+3. **Mensajes de Estado**:
+   - Si el formulario se envía con éxito, se muestra un mensaje diciendo "Formulario enviado con éxito".
+   - Si hay un error durante el envío, se muestra un mensaje de error.
+
+Beneficios de usar `useFormStatus()`
+
+- **Mejora la accesibilidad**: Proporciona un estado claro y consistente sobre el envío del formulario, lo que es útil para los lectores de pantalla y otras herramientas de accesibilidad.
+- **Control de estado de carga**: Permite gestionar y mostrar los estados de carga, éxito y error sin tener que manejar manualmente estos estados.
+- **Flujo de trabajo simplificado**: Facilita la gestión del estado relacionado con el formulario, simplificando la lógica que generalmente involucra manejar los estados de validación, envío y error.
+
+Consideraciones
+
+- **Compatibilidad**: Asegúrate de que tu versión de React sea 18 o posterior, ya que `useFormStatus()` es una característica nueva que fue introducida en React 18.
+- **Flujos de trabajo complejos**: Si tu formulario involucra validación compleja o interacciones con múltiples APIs, es posible que necesites integrar este hook con otros hooks personalizados o librerías como Formik o React Hook Form para manejar el estado y las validaciones de manera más avanzada.
+
+<a id="ent72"></a>
+
+### **useOptimistic() React**
+
+[Volver al indice](#entrevista-base)
+
+El hook `useOptimistic()` es una característica introducida en React para manejar **actualizaciones optimistas** de manera más sencilla y declarativa. Se utiliza para actualizar la interfaz de usuario de manera inmediata, asumiendo que una operación asíncrona se completará correctamente, mientras el servidor procesa los datos. Si la operación falla, puedes revertir el estado de la interfaz de usuario.
+
+Este enfoque mejora la experiencia del usuario al hacer que las actualizaciones sean instantáneas, incluso antes de recibir una confirmación del servidor.
+
+---
+
+### ¿Cómo funciona `useOptimistic()`?
+
+`useOptimistic()` es un hook diseñado para trabajar con estados que podrían necesitar ser actualizados de forma optimista. Al usarlo, defines un estado inicial y una función para calcular el nuevo estado después de una actualización. React se encargará de manejar ese estado temporalmente mientras la operación real se completa.
+
+El hook devuelve un par de valores:
+
+1. **`optimisticState`**: El estado actual, incluyendo cualquier cambio optimista que se haya realizado.
+2. **`setOptimisticState`**: Una función para actualizar el estado de manera optimista.
+
+---
+
+### Sintaxis de `useOptimistic()`
+
+```javascript
+const [optimisticState, setOptimisticState] = useOptimistic(initialState, reducer);
+```
+
+- **`initialState`**: El estado inicial que quieres usar.
+- **`reducer`**: Una función que calcula el nuevo estado basado en el estado actual y una acción.
+
+---
+
+### Ejemplo básico
+
+Aquí tienes un ejemplo de cómo usar `useOptimistic()` para manejar una lista de tareas donde las eliminaciones se manejan de forma optimista:
+
+```javascript
+import React, { useOptimistic } from 'react';
+
+function TodoList() {
+  const initialTodos = [
+    { id: 1, text: 'Aprender React' },
+    { id: 2, text: 'Construir una app' },
+    { id: 3, text: 'Publicar en producción' },
+  ];
+
+  // Estado optimista para la lista de tareas
+  const [todos, setTodos] = useOptimistic(initialTodos, (currentTodos, action) => {
+    switch (action.type) {
+      case 'delete':
+        // Eliminar tarea de manera optimista
+        return currentTodos.filter((todo) => todo.id !== action.id);
+      default:
+        return currentTodos;
+    }
+  });
+
+  const handleDelete = async (id) => {
+    // Actualización optimista: elimina la tarea de inmediato
+    setTodos({ type: 'delete', id });
+
+    try {
+      // Simular una operación asíncrona, como una petición al servidor
+      await fetch(`/api/todos/${id}`, { method: 'DELETE' });
+    } catch (error) {
+      console.error('Error eliminando la tarea:', error);
+      // Si falla, puedes manejar la reversión manualmente (aquí no se implementa).
+    }
+  };
+
+  return (
+    <ul>
+      {todos.map((todo) => (
+        <li key={todo.id}>
+          {todo.text}{' '}
+          <button onClick={() => handleDelete(todo.id)}>Eliminar</button>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+export default TodoList;
+```
+
+---
+
+### Explicación del ejemplo:
+
+1. **Estado optimista**: Usamos `useOptimistic()` para definir un estado inicial de tareas y un `reducer` que nos permite actualizar ese estado de forma declarativa.
+
+2. **Actualización optimista**: Cuando el usuario elimina una tarea, el estado se actualiza inmediatamente en la interfaz de usuario sin esperar la confirmación del servidor.
+
+3. **Reversión manual (si es necesario)**: Si la operación asíncrona (como la petición al servidor) falla, puedes manejar la reversión al estado anterior. Este manejo de errores no se incluye en el ejemplo, pero es importante para aplicaciones reales.
+
+---
+
+### ¿Cuándo usar `useOptimistic()`?
+
+Usa `useOptimistic()` cuando quieras manejar interacciones de usuario con actualizaciones rápidas en la interfaz, pero que dependen de operaciones asíncronas que podrían fallar. Algunos casos comunes incluyen:
+
+- **Edición de datos**: Actualizar textos, estados o elementos en una lista.
+- **Eliminaciones**: Mostrar instantáneamente que un elemento fue eliminado, aunque aún no se haya confirmado en el servidor.
+- **Creación de elementos**: Mostrar nuevos elementos en la interfaz antes de recibir confirmación del servidor.
+- **Actualizaciones de likes/reacciones**: Incrementar un contador de likes instantáneamente mientras se envía la acción al servidor.
+
+---
+
+### Beneficios de `useOptimistic()`
+
+1. **Experiencia de usuario mejorada**: Las actualizaciones optimistas hacen que la aplicación parezca más rápida y responsiva.
+2. **Código más declarativo**: Con el uso de un `reducer`, puedes definir cómo manejar diferentes acciones de manera clara.
+3. **Integración con la API de React**: Funciona perfectamente con las características de React 18, como el concurrent rendering.
+
+---
+
+### Consideraciones:
+
+- **Reversión manual**: Si la operación falla, tendrás que manejar manualmente la reversión del estado optimista.
+- **No es adecuado para todas las operaciones**: Si el resultado de la operación en el servidor afecta de manera significativa la lógica de la aplicación, puede ser mejor esperar a la confirmación antes de actualizar el estado.
+- **Evitar estados inconsistentes**: Asegúrate de manejar errores correctamente para que la interfaz no muestre datos incorrectos.
+
+<a id="ent69-1"></a>
+
+### **React Server Components**
+
+[Volver al indice](#entrevista-base)
+
+Es una caracteristica de React que nos permite renderizar algunos componentes en el lado del servidor, y que el cliente solo reciba el HTML necesario para renderizar la pagina, y que lo hidrate (que significa que los hace interactivos sin tener que re-renderizarlos completamente) de ser necesario, esto es muy util para componentes que son estaticos y no son interactivos, todo esto para evitar la carga de JS inutil.
+
+- Disminuye el peso del bundle 
+- Mejora el tiempo de carga ya que el browser no debe hacer tanto trabajo para cargar la pagina
+- Se pueden realizar acciones como acceder a una base de datos desde el lado del servidor sin necesitar de involucrar al cliente
+- En estos componentes marcados como `Server Component` no se puede usar `useState` o `useEffect`, ya que estos son manejados por el cliente
+
+```jsx
+// Componente del Servidor (Rendimiento en el servidor)
+export default function ServerComponent() {
+  // Este código se ejecuta en el servidor
+  const data = fetchDataFromDatabase();  // Llamada al servidor o base de datos
+  return <div>Datos del servidor: {data}</div>;
+}
+
+// Componente del Cliente (Rendimiento en el cliente)
+export default function ClientComponent() {
+  // Este componente puede ser interactivo
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <button onClick={() => setCount(count + 1)}>Haz clic</button>
+      <p>Has hecho clic {count} veces</p>
+    </div>
+  );
+}
+```
+
+Es muy util combinar esta funcionalidad con NextJs para mejorar el rendimiento de la aplicacion.
