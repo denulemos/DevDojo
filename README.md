@@ -25,7 +25,6 @@ Preguntas son agregadas todas las semanas. Se aceptan sugerencias mediante Pull 
   - [Estructuras Avanzadas y Generics](#alg-base-3)
   - [Buenas Prácticas y Casos Comunes](#alg-base-4)
 - [Organizacion en Software - Derecho en IT](./Organizacion.md)
-- [Gestion de proyectos - Liderazgo](#cic-base-2)
 - [Typescript - Javascript](./JSTS.md)
 - [Javascript Frameworks y Librerias](#rea-base)
   - [HTML - CSS - SCSS](./html.md)
@@ -79,7 +78,6 @@ Preguntas son agregadas todas las semanas. Se aceptan sugerencias mediante Pull 
 | Arrays y ArrayLists |
 |----------|
 | [Estructuras de datos (Arrays en Java)](#alg15) |
-| [Funcion .sort()](#alg28) 💛|
 | [Especificando la clase de contenido de un ArrayList en Java](#alg16) |
 | [Creación de un ArrayList en Java](#alg17) |
 |[¿Cuál es la diferencia entre un ArrayList y un array tradicional en Java?](#alg17-2)|
@@ -97,9 +95,6 @@ Preguntas son agregadas todas las semanas. Se aceptan sugerencias mediante Pull 
 |----------|
 | [Creando colecciones como atributo de una clase en Java](#alg24) |
 | [Devolver una colección secundaria en Java](#alg25) |
-| [Set() (HashSet)](#alg29) 💛|
-| [HashTables (.Map)](#alg30) 💛 |
-|[¿Cuál es la diferencia entre un Set y un Array en JavaScript?](#alg301)|
 |[¿En qué situaciones es más eficiente usar un HashMap en lugar de un Array?](#alg302)|
 | [Linked Lists](#alg31) 💛|
 | [¿Cuales son los beneficios de un Linked List sobre un Array?](#alg32) |
@@ -168,15 +163,6 @@ Preguntas son agregadas todas las semanas. Se aceptan sugerencias mediante Pull 
 | [Event delegation](#var11) |
 | [Bubble vs Capture](#var15) |
 | [Funciones de "bloqueo" y "no bloqueo"](#var13) |
-| [Promises](#var21) 💛|
-| [Async Await](#var21-1) 💛|
-|[Callbacks](#var21-2) 💛|
-| [Callback Hell](#var12) 💛|
-| [Comparacion entre Promises, Callbacks y Async-await](#var22) 💛 |
-| [Como funciona setTimeout?](#var10) |
-|[¿Qué es un Promise.all y cuándo usarlo?](#var10-1) 💛|
-| [¿Cómo se maneja un error en una promesa?](#var10-2) 💛|
-|[¿Cómo funcionan Promise.allSettled, Promise.race y Promise.any?](#var10-3) 💛|
 | [¿Cómo manejarías errores en funciones con async/await de forma eficiente?](#var10-4) 💛|
 |[¿Cómo implementarías un patrón pub/sub para manejar eventos entre diferentes partes de una aplicación?](#var10-5)|
 
@@ -198,43 +184,6 @@ Preguntas son agregadas todas las semanas. Se aceptan sugerencias mediante Pull 
 | [Entre JS y un script ASP, ¿Cual es mas rápido?](#var34) |
 | [Qué es una variable global, como se declara y cuales problemas puede tener?](#var31) |
 
-<a name="cic-base-2"></a>
-
-| Gestión de Proyectos - Liderazgo |
-|----------|
-|¿Cómo realizas las revisiones de código en tus proyectos? ¿Qué verificas y cómo sabes que el código está listo para ser fusionado?|
-|¿Podrías nombrar algunos "code smells" (indicadores de problemas en el código)?|
-|¿Cómo estimas las tareas en tus proyectos? ¿Cómo manejas los problemas de sobreestimación o subestimación? ¿Cómo estimas tareas desconocidas?|
-|Recomendaciones para realizar un onboarding a un desarrollador nuevo dependiendo de su nivel|
-|¿Cómo te comunicas con el cliente acerca de los puntos de historia? ¿Cómo explicas los puntos de historia para que sean más comprensibles?|
-|El cliente quiere agregar una característica super importante durante el sprint activo. No tienes capacidad y tu equipo está completamente ocupado. ¿Cómo manejarías este requerimiento?|
-|Durante la sesión de refinamiento, proporcionaste una solución técnica para la tarea y la mencionaste en la historia. Pero tu compañero de equipo la implementó de manera completamente diferente. ¿Cómo revisarías su código? ¿Le harías cancelar el PR e implementar la característica como tú propusiste?|
-|¿Cuál es el proceso de revisión de código en tus proyectos? ¿A qué prestas atención cuando revisas el código? Revisión de código con el cliente: ¿qué harías si no estás de acuerdo con los comentarios del cliente?|
-|Estás liderando el equipo y tienes ingenieros con diferentes opiniones sobre el estilo de código. Uno de ellos escribe, por ejemplo, funciones de flecha y otro escribe declaraciones de funciones regulares. Discuten constantemente entre sí. ¿Cómo resolverías esta situación conflictiva?|
-|Imagina el caso, usas SCRUM en el proyecto, pero constantemente fallas en los sprints. Parte de las historias no se completan, otra parte de las historias llega a QA el último día del sprint. Discutamos las posibles razones y busquemos soluciones.|
-|Imagina que tienes una velocidad estable. Tienes 2 meses, pero ves que no puedes entregar el alcance a tiempo. Retraso potencial ~ 2 semanas. El cliente no quiere mover el día de lanzamiento. ¿Podrías proponer algunas ideas de cómo hacer un lanzamiento?|
-|Imagina que tienes un miembro del equipo que no tiene suficiente experiencia y conocimientos para completar sus tareas correctamente y a tiempo. ¿Cómo organizarías el trabajo con esa persona? ¿Lo reemplazarías? ¿Lo mentorizarías?|
-|Discute los desafíos durante la actividad de mentoría.|
-|¿Cómo documentas tus elecciones de diseño? ¿Por qué?|
-|Deuda técnica. Medición y gestión.|
-|Estás comenzando un proyecto desde cero (greenfield project). ¿Qué requisitos considerarías al elegir la pila tecnológica?|
-|Si tuvieras que desarrollar el frontend y hay un sistema de diseño existente en Angular, requisitos de SEO, métricas web (Web Vitals) y soporte para navegadores modernos, ¿cómo procederías?|
-|¿Qué proceso de desarrollo adoptarías en un proyecto greenfield con un plazo fijo de entrega?|
-|Si los requisitos cambian constantemente, ¿qué metodología sería más adecuada?|
-|Si necesitas dividir un proyecto en múltiples equipos, ¿cómo organizarías la base de código para evitar duplicación, mejorar la escalabilidad y prevenir conflictos?|
-|¿Cómo gestionarías cambios en los requisitos durante un sprint?|
-|¿Cómo equilibrarías el impacto en el alcance y la planificación?|
-|Tienes un proyecto con requisitos inestables que cambian constantemente y el cliente altera prioridades con frecuencia. ¿Qué metodología utilizarías para manejar estas condiciones?|
-|Cuando entrevistas a candidatos, ¿cómo identificas señales verdes o rojas?|
-|¿En qué aspectos pones mayor atención durante una entrevista?|
-|¿Tienes un plan estructurado para realizar entrevistas o prefieres adaptarte a las respuestas del candidato?|
-|¿Cómo equilibras seguir un plan con dejar espacio para conversaciones abiertas?|
-|En un equipo, ¿cómo promoverías una comunicación efectiva entre desarrolladores con diferentes niveles de experiencia?|
-|¿Qué harías si descubrieras que algunos miembros del equipo están luchando por adaptarse al ritmo del proyecto o a las tecnologías utilizadas?|
-|Imagina el caso, vas a desarrollar una gran característica, que requiere esfuerzos de ingenieros de FE y BE. ¿Cómo dividirías esta característica y cómo manejarías las dependencias entre los ingenieros de FE y BE?|
-| En que se diferencia un rol de desarrollador a uno de Tech Lead |
-| Como se daria un feedback dificil? |
-
 <a name="rea-base"></a>
 
 ## [Javascript Frameworks y Librerias](#rea)
@@ -243,15 +192,12 @@ Preguntas son agregadas todas las semanas. Se aceptan sugerencias mediante Pull 
 
 | Conceptos Generales |
 |----------|
-|Que es el Critical rendering path?|
 | [¿De qué hablamos cuando hablamos de una SPA (Single Page App)?](#rea48) 💛|
 | [Como evitar mandar muchos eventos inutiles, por ejemplo, ejecutar un search por letra?](#rea50) 💛|
 | [Que es async rendering?](#rea51) 💛|
 | [Para que son los eventos sinteticos (SyntheticEvent)?](#rea53) |
 | [Que significa prop drilling y como evitarlo?](#rea54) |
 | [Como puedo mejorar la performance de mi Frontend?](#rea17) 💛|
-|Recibes un requisito no funcional para mejorar el SEO y acelerar la métrica de FCP (First Contentful Paint). Actualmente, tienes una aplicación SPA desarrollada en React o Angular que se renderiza completamente en el cliente. ¿Qué opciones considerarías para satisfacer este requisito?|
-|¿Cómo implementarías SSR (Server-Side Rendering) o SSG (Static Site Generation) en un SPA existente? |
 | [¿Que es async, preload y prefetch?](#rea29) |
 | [Cual es la diferencia entre call, bind y apply?](#rea30) |
 | [Cual es la diferencia entre setTimeout() y setInterval()?](#rea31) 💛|
@@ -277,52 +223,6 @@ Preguntas son agregadas todas las semanas. Se aceptan sugerencias mediante Pull 
 | [Que es Symbol?](#rea52) |
 | [Cual es la diferencia entre un event loop, microtask y macrotask?](#rea53) |
 | [Variable Shadowing - Ocultamiento de Variables](#rea54) |
-|¿Qué son los observables? Multicast vs Unicast, "hot" vs "cold".|
-
-| Server Side Rendering |
-|----------|
-|¿Qué es la generación de sitios estáticos, SSR y SPA del lado del cliente? Pros y contras de ambos enfoques.|
-|¿Qué es el Server Side Rendering (SSR) y cómo funciona? 💛|
-|¿Cuáles son las ventajas y desventajas de usar SSR en lugar de Client Side Rendering (CSR)?|
-|¿En qué casos sería más beneficioso utilizar SSR en lugar de CSR?|
-|¿Cómo afecta el SSR al rendimiento de una aplicación web?|
-|¿Cómo maneja el SSR la carga inicial de la página y cómo afecta esto a la experiencia del usuario?|
-|¿Cómo afecta el SSR al SEO de una aplicación web?|
-|¿Cómo se manejan las solicitudes de datos asíncronos en SSR?|
-|¿Cómo se maneja el enrutamiento en una aplicación con SSR?|
-|¿Cómo se maneja el estado de la aplicación en un entorno SSR?|
-|¿Qué herramientas o frameworks son comúnmente utilizados para implementar SSR y por qué?|
-|¿Cómo se maneja la autenticación de usuarios en una aplicación con SSR?|
-|¿Cómo se maneja la caché en una aplicación con SSR?|
-|¿Cómo se manejan los errores y las excepciones en una aplicación con SSR?|
-|¿Cómo se maneja la compatibilidad entre navegadores en una aplicación con SSR?|
-|¿Cómo se manejan las pruebas en una aplicación con SSR?|
-|¿Cómo se maneja la implementación y el despliegue en una aplicación con SSR?|
-|¿Cómo se maneja la escalabilidad en una aplicación con SSR?|
-|¿Cómo se maneja la seguridad en una aplicación con SSR?|
-|¿Cómo se maneja la carga de recursos estáticos (imágenes, CSS, JavaScript) en SSR?|
-|¿Cómo se maneja la internacionalización y la localización en una aplicación con SSR?|
-
-| Comunicación de Red y Recuperación de Datos en JavaScript |
-|----------|
-|¿Cómo se realiza la comunicación de red en JavaScript?|
-|¿Cómo se pueden obtener datos de un servidor en JavaScript?|
-|¿Qué es REST y cómo se utiliza en JavaScript?|
-|¿Cómo se maneja el problema de la Política del Mismo Origen en JavaScript?|
-|¿Qué es el Modelo de Madurez de Richardson y cómo se aplica en JavaScript?|
-|¿Qué es la consulta de sondeo (polling) y la consulta de sondeo prolongada (long polling) en JavaScript?|
-|¿Cómo se utiliza HTTP en JavaScript para la comunicación de red?|
-|¿Qué son los WebSockets y cómo se utilizan en JavaScript?|
-|¿Qué es GraphQL y cómo se utiliza en JavaScript?|
-
-| Rendimiento y Latencia en JavaScript |
-|----------|
-|¿Cómo se puede lograr una baja latencia en JavaScript? 💛|
-|¿Cuáles son algunos problemas comunes de rendimiento en JavaScript y cómo se pueden resolver? 💛|
-|¿Cuáles son algunos problemas comunes de memoria en JavaScript y cómo se pueden resolver? 💛|
-|¿Cómo investigarías problemas de rendimiento o memoria en JavaScript?|
-|¿Qué herramientas se pueden utilizar para optimizar el rendimiento en JavaScript?|
-|¿Cómo se pueden modelar el rendimiento en JavaScript?|
 
 
 <a name="cod-base"></a>
@@ -426,17 +326,12 @@ Preguntas son agregadas todas las semanas. Se aceptan sugerencias mediante Pull 
 | [¿Que quiere decir "Ciberamenazas"?](#seg2) |
 | [¿Qué quiere decir "Vulnerabilidad"?](#seg3) |
 | [¿Cuáles son las ciberamenazas actuales?](#seg7) |
-|¿Por qué es importante entender las vulnerabilidades en ciberseguridad?|
-|¿Cómo se define una amenaza en ciberseguridad y cuál es su relación con una vulnerabilidad?|
-|¿Qué es XSS, CSRF, CSP, CORS, DoS y cómo se manejan estos problemas de seguridad en la web?|
 
 | Metodologías y Roles en Ciberseguridad |
 |----------|
 | [¿Cuál es el perfil del Oficial de seguridad informática?](#seg9) |
 | [¿De qué pasos consta la metodología de ciberseguridad?](#seg10) |
 | [¿De qué pasos criterios de seguridad consta la metodología de ciberseguridad?](#seg11) |
-|¿Qué habilidades técnicas y no técnicas debe tener un Oficial de seguridad informática?|
-|¿Cuáles son los diferentes enfoques en las metodologías de gestión de riesgos de ciberseguridad?|
 
 | Tipos de Ciberataques |
 |----------|
@@ -444,8 +339,6 @@ Preguntas son agregadas todas las semanas. Se aceptan sugerencias mediante Pull 
 | [¿Qué son los ataques internos?](#seg15) |
 | [¿Qué tipos de Ingenierías sociales existen?](#seg16) |
 | [¿Cuáles son las etapas en un proceso de hacking?](#seg14) |
-|¿Cómo prevenir los ataques internos dentro de una organización?|
-|¿Qué papel juega el phishing en los ciberataques actuales?|
 
 | Medidas de prevencion |
 |----------|
@@ -453,8 +346,6 @@ Preguntas son agregadas todas las semanas. Se aceptan sugerencias mediante Pull 
 | [¿Qué es la triada CIA?](#seg17) |
 | [¿Qué es la seguridad perimetral?](#seg18) |
 | [Es una amenaza.. Verdadero o Falso?](#seg23) |
-|¿Qué otros modelos de seguridad, además de la triada CIA, se utilizan en la industria de la ciberseguridad?|
-|¿Qué son las políticas de seguridad de la información y cómo ayudan en la prevención de ciberataques?|
 
 | IDS (Intrusion Detection Systems) |
 |----------|
@@ -462,16 +353,11 @@ Preguntas son agregadas todas las semanas. Se aceptan sugerencias mediante Pull 
 | [Tecnicas de detección de intrusiones](#seg20) |
 | [Indicadores de una intrusión](#seg21) |
 | [Tipos de IDS](#seg22) |
-|¿Cómo se diferencia un IDS de un IPS (Intrusion Prevention System)?|
-|¿Qué métodos utilizan los IDS para detectar intrusiones en tiempo real?|
 
 | Firewalls |
 |----------|
 | [¿Qué es un Firewall?](#seg24) |
 | [Tipos de Firewall](#seg25) |
-|¿Cuál es la diferencia entre un firewall de filtrado de paquetes y un firewall de
-inspección profunda de paquetes?|
-|¿Cómo se puede configurar un firewall para proteger una red corporativa?|
 
 | Criptografía |
 |----------|
@@ -480,15 +366,11 @@ inspección profunda de paquetes?|
 | [¿Cuáles son los requisitos de un Cripto sistema?](#seg28) |
 | [¿Cómo funciona el Cifrado Simétrico?](#seg29) |
 | [¿Cómo funciona el Cifrado Asimétrico?](#seg30) |
-|¿Por qué es importante el uso de certificados digitales y cómo están relacionados con la criptografía?|
-|¿Qué es la criptografía cuántica y cómo afectará la ciberseguridad en el futuro?|
 
 | Informática Forense |
 |----------|
 | [Adquisición en Informática Forense](#seg31) |
 | [El informe pericial informático](#seg32) |
-|¿Qué debe contener un informe pericial informático y por qué es crucial para una investigación legal?|
-|¿Qué herramientas se utilizan comúnmente para la adquisición forense de datos?|
 
 ---
 
@@ -1729,43 +1611,6 @@ A continuación, veremos cómo crear colecciones de objetos utilizando `ArrayLis
 
 En Java, los `ArrayList` son una implementación de la interfaz `List`. También se los conoce como listas, aunque este concepto es más amplio de lo que trataremos aquí, donde sólo los utilizaremos para crear colecciones dinámicas de datos.
 
-<a id="alg28"></a>
-
-### **Funcion `.sort()`** 💛
-
-[Volver al indice](#alg-base-arr)
-
-`.sort()` es una funcion que viene en Javascript. Funciona bien con numeros simples, pero no con numeros complejos como, por ejemplo, 10.
-
-```javascript
-[2,3,1].sort() => [1,2,3];
-[2,10,3].sort() => [10, 2, 3];
-```
-
-Esto es porque esta funcion primero convierte los numeros a String y los ordena alfabeticamente. Es por eso que es necesario usar una funcion de callback.
-
-```javascript
-const sortedValues = inputValues.sort((a, b) => {
-    return a - b;
-  });
-```
-
-Esta funcion devuelve un numero. El mismo determina lo siguiente:
-
-* Si el numero es negativo, acomoda a antes que b.
-* Si es positivo, b va antes que a
-* Si es cero, no cambia nada
-
-```javascript
-const inputValues = [2, 10, 3];
-
-const sortedValues = inputValues.sort((a, b) => {
-  return a + b;
-});
-
-console.log(sortedValues); // Output: [10, 3, 2]
-```
-
 <a id="alg16"></a>
 
 ### **Especificando la clase de contenido de un ArrayList en Java**
@@ -2057,138 +1902,6 @@ public ArrayList<Socio> obtenerVitalicios() {
 
 En este caso agregará a la colección vitalicios (creada como variable local) todos aquellos socios que cumplan con la condición de ser vitalicios. Pero, ¿qué pasará, entonces, con la lista de socios principal, donde estaban los estos socios, ahora en la lista de socios vitalicios?
 No pasará nada: todos los socios estarán en la lista principal, y aquellos que cumplan con lo condición deseada, además, estarán en esta lista secundaria. Cada socio vitalicio estará tanto en la lista secundaria como en la principal, porque en ambas se guarda la referencia al objeto de clase Socio en cuestión. En caso de eliminar el elemento de una de las listas, seguirá vivo en la otra. Esto puede no ser algo deseable, pero es algo que se tratará en otra oportunidad.
-
-<a id="alg29"></a>
-
-### **Set() en Javascript** (HashSet) 💛
-
-[Volver al indice](#alg-base-col)
-
-Es una estructura de datos que solo permite valores unicos. Si paso un array a un set, va a eliminar todos los valores duplicados.
-
-* `new Set()` -> Crea el set nuevo, si es desde un array, elimina duplicados
-* `Add()`
-* `Delete()`
-* `Has()` -> Devuelve true o false si el valor ya existe
-* `clear()`-> Remover todos los elementos del set
-* `Values()` -> devuelve un iterator con todos los valores
-* `forEach()`
-* `keys()`-> mismo con values
-* `Entries()` -> devuelve un iterator con [value, value] pares
-
-```javascript
-// Crear una nueva instancia de Set
-const mySet = new Set();
-
-// Agregar elementos al Set
-mySet.add("apple");
-mySet.add("banana");
-mySet.add("orange");
-mySet.add("apple"); // Los Sets no permiten elementos duplicados, por lo que esta línea no tendrá ningún efecto
-
-// Verificar si un elemento existe en el Set
-console.log(mySet.has("apple")); // Output: true
-console.log(mySet.has("grape")); // Output: false
-
-// Eliminar un elemento del Set
-mySet.delete("banana");
-
-// Iterar sobre los elementos del Set
-for (let item of mySet) {
-    console.log(item);
-}
-// Output:
-// apple
-// orange
-
-```
-
-<a id="alg30"></a>
-
-### **HashTables** (.Map) 💛
-
-[Volver al indice](#alg-base-col)
-
-Es una estructura de datos que almacena valores dado su Hash (int o long). Son muy eficientes para una busqueda dada por clave.
-
-Sus operaciones son:
-
-* Insertar nuevo par clave, valor - `index = hash(key) % array_length` , su complejidad es `O(1)`
-* Obtener un valor mediante su clave, su complejidad es `O(1)` en un caso promedio, `O(N)` en el peor de los casos, en general si la funcion Hash es inadecuada.
-
-```javascript
-// Definición de una Hashtable
-const hashtable = {};
-
-// Agregar elementos a la Hashtable
-hashtable["key1"] = "value1";
-hashtable["key2"] = "value2";
-hashtable["key3"] = "value3";
-
-// Acceder a elementos en la Hashtable
-console.log(hashtable["key1"]); // Output: "value1"
-console.log(hashtable["key2"]); // Output: "value2"
-
-// Verificar si una clave existe en la Hashtable
-console.log("key4" in hashtable); // Output: false
-
-// Eliminar un elemento de la Hashtable
-delete hashtable["key3"];
-
-// Iterar sobre las claves de la Hashtable
-for (let key in hashtable) {
-    console.log(key + ": " + hashtable[key]);
-}
-// Output:
-// key1: value1
-// key2: value2
-
-----
-
-// Crear una nueva instancia de Map
-const myMap = new Map();
-
-// Agregar elementos a la Map
-myMap.set("key1", "value1");
-myMap.set("key2", "value2");
-myMap.set("key3", "value3");
-
-// Acceder a elementos en la Map
-console.log(myMap.get("key1")); // Output: "value1"
-console.log(myMap.get("key2")); // Output: "value2"
-
-// Verificar si una clave existe en la Map
-console.log(myMap.has("key4")); // Output: false
-
-// Eliminar un elemento de la Map
-myMap.delete("key3");
-
-// Iterar sobre las claves y valores de la Map
-for (let [key, value] of myMap) {
-    console.log(key + ": " + value);
-}
-// Output:
-// key1: value1
-// key2: value2
-
-```
-
-<a id="alg301"></a>
-
-### **¿Cuál es la diferencia entre un Set y un Array en JavaScript?**
-
-[Volver al indice](#alg-base-col)
-
-| Set | Array |
-| --- | ----- |
-| Almacena valores únicos | Almacena valores duplicados |
-| No tiene índices | Tiene índices |
-| No tiene métodos como push(), pop(), shift(), unshift() | Tiene métodos como push(), pop(), shift(), unshift() |
-| No tiene métodos como map(), filter(), reduce() | Tiene métodos como map(), filter(), reduce() |
-| No tiene métodos como sort(), reverse() | Tiene métodos como sort(), reverse() |
-| No tiene métodos como find(), findIndex(), every(), some() | Tiene métodos como find(), findIndex(), every(), some() |
-| No tiene métodos como splice(), slice() | Tiene métodos como splice(), slice() |
-| No tiene métodos como join(), concat() | Tiene métodos como join(), concat() |
 
 <a id="alg302"></a>
 
@@ -3286,8 +2999,6 @@ Si utilizas funciones puras, puedes:
 
 ---
 
-
-
 <a id="var11"></a>
 
 ### **Event delegation**
@@ -3319,276 +3030,6 @@ Cuando agregamos un elemento parece que solo lo agregamos a un elemento DOM pero
 Cuando emites una función de bloqueo, las demás piezas de código detienen su ejecución hasta que haya sido completado un evento designado de Entrada/Salida.
 
 A su vez, las funciones de no bloqueo le permiten al desarrollador realizar múltiples tareas (Manteniendo múltiples códigos en ejecución) mientras que simultáneamente se realizan múltiples eventos de Entrada/Salida.
-
-<a id="var21"></a>
-
-### **Promises** 💛
-
-[Volver al indice](#alg-base-async)
-
-Las promises son una buena forma de manejar operaciones asincronicas. Puede tener 3 estados, `Pending`, `Fulfilled` y `Rejected`. Son utiles cuando hay que manejar mas de una operacion asincronica una despues de la otra, para eso se puede usar **Promise Chaining** usando then() y catch() para el manejo de cada una.
-
-Se pueden implementar por ejemplo, en un Lazy loading.
-
-```jsx
-const myPromise = new Promise((resolve, reject) => {
-  if (Math.random() * 100 < 90) {
-    resolve('Hello, Promises!');
-  }
-  reject(new Error('In 10% of the cases, I fail. Miserably.'));
-});
-```
-
-<a id="var21-1"></a>
-
-### **Async Await** 💛
-
-[Volver al indice](#alg-base-async)
-
-Es una forma de escribir promises de manera mas limpia. Se usa para escribir codigo asincronico de manera sincronica. Se usa con la palabra `async` antes de la funcion y `await` antes de la promesa.
-
-```jsx
-async function myAsyncFunction() {
-  try {
-    const value = await promise;
-    console.log(value);
-  } catch (error) {
-    console.error(error);
-  }
-}
-```
-
-Tambien se puede usar con `fetch` para hacer peticiones a una API
-
-```jsx
-async function getPost() {
-  try {
-    const response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
-    const post = await response.json();
-    console.log(post);
-  } catch (error) {
-    console.error(error);
-  }
-}
-```
-
-<a id="var21-2"></a>
-
-### **Callbacks** 💛
-
-[Volver al indice](#alg-base-async)
-
-Es una funcion que se pasa como argumento a otra funcion y se invoca dentro de la funcion externa para completar alguna accion. Se usa para manejar operaciones asincronicas.
-
-```jsx
-function doSomethingAsync(callback) {
-  setTimeout(function() {
-    callback('First data');
-  }, 1000);
-}
-
-function doOtherThingAsync(callback) {
-  setTimeout(function() {
-    callback('Second data');
-  }, 1000);
-}
-
-function doAll() {
-  try {
-    doSomethingAsync(function(data) {
-      var processedData = data.split('');
-      try {
-        doOtherThingAsync(function(data2) {
-          var processedData2 = data2.split('');
-          try {
-            setTimeout(function() {
-              console.log(processedData, processedData2);
-            }, 1000);
-          } catch (err) {
-            // handle error
-          }
-        });
-      } catch (err) {
-        // handle error
-      }
-    });
-  } catch (err) {
-    // handle error
-  }
-}
-
-doAll();
-```
-
-<a id="var12"></a>
-
-### **Callback Hell** 💛
-
-[Volver al indice](#alg-base-async)
-
-Es un termino que se usa para describir un codigo que se vuelve dificil de leer y mantener por el anidamiento excesivo de callbacks. Se puede evitar con Promises, Async Await o Modularizando el codigo.
-
-```jsx
-doSomething(function(result) {
-  doSomething(result, function(newResult) {
-    doSomething(newResult, function(finalResult) {
-      console.log(finalResult);
-    }, failureCallback);
-  }, failureCallback);
-}, failureCallback);
-```
-
-<a id="var22"></a>
-
-### **Comparacion entre Promises, Callbacks y Async-await** 💛
-
-[Volver al indice](#alg-base-async)
-
-- **Callbacks:** Es una funcion que se pasa como argumento a otra funcion y se invoca dentro de la funcion externa para completar alguna accion. Se usa para manejar operaciones asincronicas.
-- **Promises:** Son una buena forma de manejar operaciones asincronicas. Puede tener 3 estados, `Pending`, `Fulfilled` y `Rejected`. Son utiles cuando hay que manejar mas de una operacion asincronica una despues de la otra, para eso se puede usar **Promise Chaining** usando then() y catch() para el manejo de cada una.
-- **Async Await:** Es una forma de escribir promises de manera mas limpia. Se usa para escribir codigo asincronico de manera sincronica. Se usa con la palabra `async` antes de la funcion y `await` antes de la promesa.
-
-Sus ventajas son:
-
-- **Callbacks:** Son simples y faciles de entender.
-- **Promises:** Son mas faciles de leer y entender que los callbacks.
-- **Async Await:** Es la forma mas limpia de escribir codigo asincronico.
-
-Y sus desventajas son:
-
-- **Callbacks:** Puede llevar a un Callback Hell.
-- **Promises:** Puede ser complicado de entender.
-- **Async Await:** No maneja errores de manera eficiente.
-
-El mas usado es **Promises** por su facilidad de lectura y manejo de errores.
-
-<a id="var10"></a>
-
-### **Como funciona setTimeout?**
-
-[Volver al indice](#alg-base-async)
-
-Permite ejecutar un fragmento de código una vez pasa un tiempo determinado.
-
-Por ejemplo, el codigo imprimirá “Hola Mundo” despues de 2 segundos
-
-```jsx
-setTimeout(function(){
-  console.log('hola mundo');
-}, 2000);
-```
-
-El primer parámetro es la función a ejecutar, puede ser hecha ahi mismo como en el ejemplo anterior, o ya estar hecha como en este ejemplo:
-
-```jsx
-function saludos(nombre, rol) {
-  console.log(`hola mi nombre es ${nombre} y mi rol es ${rol}`);
-}
-
-setTimeout(saludos, 3000, "denu", "administrador");
-```
-
-¿Porque no pasar los parametros directamente a la funcion y recien despues del tiempo? Porque JS ejecutará la funcion sin esperar al timeout, ya que estarias pasando una llamada a la funcion, no la referencia a la funcion.
-
-```jsx
-setTimeout(saludos('denu', 'admin'), 3000); // NO
-```
-
-Si quiero cancelar un setTimeout debo utilizar `clearTimeout()`
-
-```jsx
-const timeoutid = setTimeout (function() {
-  console.log('hola');
-}, 2000);
-
-clearTimeout(timeoutid)
-```
-
-<a id="var10-1"></a>
-
-### **¿Qué es un Promise.all y cuándo usarlo?** 💛
-
-[Volver al indice](#alg-base-async)
-
-Promise.all es una funcion que recibe un array de promesas y devuelve una nueva promesa que se resuelve cuando todas las promesas del array se han resuelto o cuando el array de promesas esta vacio.
-
-```jsx
-const promise1 = Promise.resolve(3);
-const promise2 = 42;
-const promise3 = new Promise((resolve, reject) => {
-  setTimeout(resolve, 100, 'foo');
-});
-
-Promise.all([promise1, promise2, promise3]).then((values) => {
-  console.log(values); // [3, 42, "foo"]
-});
-```
-
-Se utiliza cuando se necesita esperar a que todas las promesas se resuelvan para continuar con el codigo.
-
-<a id="var10-2"></a>
-
-### **¿Cómo se maneja un error en una promesa?** 💛
-
-[Volver al indice](#alg-base-async)
-
-Para manejar un error en una promesa se usa el metodo `catch()`
-
-```jsx
-const myPromise = new Promise((resolve, reject) => {
-  if (Math.random() * 100 < 90) {
-    resolve('Hello, Promises!');
-  }
-  reject(new Error('In 10% of the cases, I fail. Miserably.'));
-});
-
-myPromise.then((resolvedValue) => {
-  console.log(resolvedValue);
-}).catch((error) => {
-  console.log(error);
-});
-```
-
-<a id="var10-3"></a>
-
-### **¿Cómo funcionan Promise.allSettled, Promise.race y Promise.any?** 💛
-
-[Volver al indice](#alg-base-async)
-
-- **Promise.allSettled:** Devuelve una promesa que se resuelve después de que todas las promesas del iterable se hayan resuelto o rechazado, con un array de objetos que describen el resultado de cada promesa.
-
-```jsx
-const promise1 = Promise.resolve(3);
-const promise2 = new Promise((resolve, reject) => setTimeout(reject, 100, 'foo'));
-const promises = [promise1, promise2];
-
-Promise.allSettled(promises).
-  then((results) => results.forEach((result) => console.log(result.status))); // "fulfilled", "rejected"
-```
-
-- **Promise.race**: Devuelve una promesa que se resuelve o rechaza tan pronto como una de las promesas del iterable se resuelve o se rechaza, con el valor o la razón de esa promesa.
-
-```jsx
-const promise1 = new Promise((resolve, reject) => setTimeout(resolve, 500, 'one'));
-const promise2 = new Promise((resolve, reject) => setTimeout(resolve, 100, 'two'));
-
-Promise.race([promise1, promise2]).then((value) => {
-  console.log(value); // "two"
-});
-```
-
--**Promise.any**: Devuelve una promesa que se resuelve tan pronto como una de las promesas del iterable se resuelve, con el valor de esa promesa.
-
-```jsx
-const promise1 = new Promise((resolve, reject) => setTimeout(reject, 500, 'one'));
-const promise2 = new Promise((resolve, reject) => setTimeout(resolve, 100, 'two'));
-
-Promise.any([promise1, promise2]).then((value) => {
-  console.log(value); // "two"
-});
-```
-
-La diferencia entre `any` y `race` es que `any` se resuelve con el primer valor resuelto, mientras que `race` se resuelve con el primer valor resuelto o rechazado, `any` ignora cualquier valor rechazado, a menos que todas las promises hayan tenido el mismo resultado de rechazo.
 
 <a id="var10-4"></a>
 

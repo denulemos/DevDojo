@@ -27,6 +27,18 @@
 | [Cuales son las funciones array de JavaScript?](#alg27) 💛 |
 |[¿Cómo funcionan los arrays en JavaScript internamente?](#alg282)|
 | [Para que sirve event.preventDefault()?](#var7) 💛 |
+| [Set() (HashSet)](#alg29) 💛|
+| [HashTables (.Map)](#alg30) 💛 |
+|[¿Cuál es la diferencia entre un Set y un Array en JavaScript?](#alg301)|
+| [Promises](#var21) 💛|
+| [Async Await](#var21-1) 💛|
+|[Callbacks](#var21-2) 💛|
+| [Callback Hell](#var12) 💛|
+| [Comparacion entre Promises, Callbacks y Async-await](#var22) 💛 |
+| [Como funciona setTimeout?](#var10) |
+|[¿Qué es un Promise.all y cuándo usarlo?](#var10-1) 💛|
+| [¿Cómo se maneja un error en una promesa?](#var10-2) 💛|
+|[¿Cómo funcionan Promise.allSettled, Promise.race y Promise.any?](#var10-3) 💛|
 
 <a name="typ-base"></a>
 
@@ -1451,7 +1463,7 @@ Ninguno de los `weak` es enumerable, es decir, no se pueden iterar sobre ellos.
 
 ### **Parametros por valor y por referencia en Javascript**
 
-[Volver al indice](#entrevista-base)
+[Volver al indice](#alg-base-2)
 
 En Javascript podemos pasar como parametro valores que pueden ser por valor en si mismo o por referencia, es decir, pasamos el puntero de memoria que apunta a la direccion de memoria donde se encuentra el valor.
 
@@ -1496,7 +1508,7 @@ function modificarArray(array) {
 
 ### **Prototype Javascript**
 
-[Volver al indice](#entrevista-base)
+[Volver al indice](#alg-base-2)
 
 `Prototype` permite que objetos y funciones en Javascript compartan propiedades y metodos entre si.
 
@@ -1563,7 +1575,7 @@ En resumen, prototype es la base del funcionamiento de objetos y de la herencia 
 
 ### **Spread vs Rest Operator**
 
-[Volver al indice](#entrevista-base)
+[Volver al indice](#alg-base-2)
 
 Spread es cuando los 3 puntos se encuentran al principio, de ese modo por ejemplo, puedo pasar un array como parametro pero en vez de tomar su referencia tomo su valor. Convierte un array en una lista de argumentos.
 
@@ -1593,7 +1605,7 @@ El operador es el mismo pero su nombre depende del contexto en donde esten siend
 
 ### **Qué es un "array-like" en Javascript?** 💛
 
-[Volver al indice](#alg-base-arr)
+[Volver al indice](#alg-base-2)
 
 Es un tipo de dato similar a un Array pero que no posee todas las funciones heredadas de Prototype de un Array.
 
@@ -1633,7 +1645,7 @@ console.log(array); // Imprime: ['a', 'b', 'c']
 
 ### **Cuales son las funciones array de JavaScript?** 💛
 
-[Volver al indice](#alg-base-arr)
+[Volver al indice](#alg-base-2)
 
 ```jsx
 // Agrega al final
@@ -1718,7 +1730,7 @@ splice(indice, cantidad elementos a eliminar, agrego, agrego);
 
 ### **¿Cómo funcionan los arrays en JavaScript internamente?**
 
-[Volver al indice](#alg-base-arr)
+[Volver al indice](#alg-base-2)
 
 Los arrays en JavaScript son objetos especiales que permiten almacenar múltiples elementos en una sola variable. A diferencia de otros lenguajes de programación, los arrays en JavaScript no tienen un tamaño fijo y pueden contener elementos de diferentes tipos.
 
@@ -1739,7 +1751,7 @@ Por eso existe el `array-like` en Javascript
 
 ### **Para que sirve event.preventDefault()?** 💛
 
-[Volver al indice](#alg-base-async)
+[Volver al indice](#alg-base-2)
 
 Los botones de los form en HTML por defecto hacen un submit, lo que puede llevar a que se recargue la pagina. Para evitar esto, se usa `event.preventDefault()` para evitar que se ejecute el comportamiento por defecto del evento.
 
@@ -1752,3 +1764,405 @@ document.getElementById("myForm").addEventListener("submit", function(event){
 ```
 
 U otro ejemplo es para evitar que el resto de eventos que se ejecutarian por defecto, no lo hagan
+
+<a id="alg29"></a>
+
+### **Set() en Javascript** (HashSet) 💛
+
+[Volver al indice](#alg-base-col)
+
+Es una estructura de datos que solo permite valores unicos. Si paso un array a un set, va a eliminar todos los valores duplicados.
+
+* `new Set()` -> Crea el set nuevo, si es desde un array, elimina duplicados
+* `Add()`
+* `Delete()`
+* `Has()` -> Devuelve true o false si el valor ya existe
+* `clear()`-> Remover todos los elementos del set
+* `Values()` -> devuelve un iterator con todos los valores
+* `forEach()`
+* `keys()`-> mismo con values
+* `Entries()` -> devuelve un iterator con [value, value] pares
+
+```javascript
+// Crear una nueva instancia de Set
+const mySet = new Set();
+
+// Agregar elementos al Set
+mySet.add("apple");
+mySet.add("banana");
+mySet.add("orange");
+mySet.add("apple"); // Los Sets no permiten elementos duplicados, por lo que esta línea no tendrá ningún efecto
+
+// Verificar si un elemento existe en el Set
+console.log(mySet.has("apple")); // Output: true
+console.log(mySet.has("grape")); // Output: false
+
+// Eliminar un elemento del Set
+mySet.delete("banana");
+
+// Iterar sobre los elementos del Set
+for (let item of mySet) {
+    console.log(item);
+}
+// Output:
+// apple
+// orange
+
+```
+
+<a id="alg30"></a>
+
+### **HashTables** (.Map) 💛
+
+[Volver al indice](#alg-base-col)
+
+Es una estructura de datos que almacena valores dado su Hash (int o long). Son muy eficientes para una busqueda dada por clave.
+
+Sus operaciones son:
+
+* Insertar nuevo par clave, valor - `index = hash(key) % array_length` , su complejidad es `O(1)`
+* Obtener un valor mediante su clave, su complejidad es `O(1)` en un caso promedio, `O(N)` en el peor de los casos, en general si la funcion Hash es inadecuada.
+
+```javascript
+// Definición de una Hashtable
+const hashtable = {};
+
+// Agregar elementos a la Hashtable
+hashtable["key1"] = "value1";
+hashtable["key2"] = "value2";
+hashtable["key3"] = "value3";
+
+// Acceder a elementos en la Hashtable
+console.log(hashtable["key1"]); // Output: "value1"
+console.log(hashtable["key2"]); // Output: "value2"
+
+// Verificar si una clave existe en la Hashtable
+console.log("key4" in hashtable); // Output: false
+
+// Eliminar un elemento de la Hashtable
+delete hashtable["key3"];
+
+// Iterar sobre las claves de la Hashtable
+for (let key in hashtable) {
+    console.log(key + ": " + hashtable[key]);
+}
+// Output:
+// key1: value1
+// key2: value2
+
+----
+
+// Crear una nueva instancia de Map
+const myMap = new Map();
+
+// Agregar elementos a la Map
+myMap.set("key1", "value1");
+myMap.set("key2", "value2");
+myMap.set("key3", "value3");
+
+// Acceder a elementos en la Map
+console.log(myMap.get("key1")); // Output: "value1"
+console.log(myMap.get("key2")); // Output: "value2"
+
+// Verificar si una clave existe en la Map
+console.log(myMap.has("key4")); // Output: false
+
+// Eliminar un elemento de la Map
+myMap.delete("key3");
+
+// Iterar sobre las claves y valores de la Map
+for (let [key, value] of myMap) {
+    console.log(key + ": " + value);
+}
+// Output:
+// key1: value1
+// key2: value2
+
+```
+
+<a id="alg301"></a>
+
+### **¿Cuál es la diferencia entre un Set y un Array en JavaScript?**
+
+[Volver al indice](#alg-base-col)
+
+| Set | Array |
+| --- | ----- |
+| Almacena valores únicos | Almacena valores duplicados |
+| No tiene índices | Tiene índices |
+| No tiene métodos como push(), pop(), shift(), unshift() | Tiene métodos como push(), pop(), shift(), unshift() |
+| No tiene métodos como map(), filter(), reduce() | Tiene métodos como map(), filter(), reduce() |
+| No tiene métodos como sort(), reverse() | Tiene métodos como sort(), reverse() |
+| No tiene métodos como find(), findIndex(), every(), some() | Tiene métodos como find(), findIndex(), every(), some() |
+| No tiene métodos como splice(), slice() | Tiene métodos como splice(), slice() |
+| No tiene métodos como join(), concat() | Tiene métodos como join(), concat() |
+
+<a id="var21"></a>
+
+### **Promises** 💛
+
+[Volver al indice](#alg-base-async)
+
+Las promises son una buena forma de manejar operaciones asincronicas. Puede tener 3 estados, `Pending`, `Fulfilled` y `Rejected`. Son utiles cuando hay que manejar mas de una operacion asincronica una despues de la otra, para eso se puede usar **Promise Chaining** usando then() y catch() para el manejo de cada una.
+
+Se pueden implementar por ejemplo, en un Lazy loading.
+
+```jsx
+const myPromise = new Promise((resolve, reject) => {
+  if (Math.random() * 100 < 90) {
+    resolve('Hello, Promises!');
+  }
+  reject(new Error('In 10% of the cases, I fail. Miserably.'));
+});
+```
+
+<a id="var21-1"></a>
+
+### **Async Await** 💛
+
+[Volver al indice](#alg-base-async)
+
+Es una forma de escribir promises de manera mas limpia. Se usa para escribir codigo asincronico de manera sincronica. Se usa con la palabra `async` antes de la funcion y `await` antes de la promesa.
+
+```jsx
+async function myAsyncFunction() {
+  try {
+    const value = await promise;
+    console.log(value);
+  } catch (error) {
+    console.error(error);
+  }
+}
+```
+
+Tambien se puede usar con `fetch` para hacer peticiones a una API
+
+```jsx
+async function getPost() {
+  try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+    const post = await response.json();
+    console.log(post);
+  } catch (error) {
+    console.error(error);
+  }
+}
+```
+
+<a id="var21-2"></a>
+
+### **Callbacks** 💛
+
+[Volver al indice](#alg-base-async)
+
+Es una funcion que se pasa como argumento a otra funcion y se invoca dentro de la funcion externa para completar alguna accion. Se usa para manejar operaciones asincronicas.
+
+```jsx
+function doSomethingAsync(callback) {
+  setTimeout(function() {
+    callback('First data');
+  }, 1000);
+}
+
+function doOtherThingAsync(callback) {
+  setTimeout(function() {
+    callback('Second data');
+  }, 1000);
+}
+
+function doAll() {
+  try {
+    doSomethingAsync(function(data) {
+      var processedData = data.split('');
+      try {
+        doOtherThingAsync(function(data2) {
+          var processedData2 = data2.split('');
+          try {
+            setTimeout(function() {
+              console.log(processedData, processedData2);
+            }, 1000);
+          } catch (err) {
+            // handle error
+          }
+        });
+      } catch (err) {
+        // handle error
+      }
+    });
+  } catch (err) {
+    // handle error
+  }
+}
+
+doAll();
+```
+
+<a id="var12"></a>
+
+### **Callback Hell** 💛
+
+[Volver al indice](#alg-base-async)
+
+Es un termino que se usa para describir un codigo que se vuelve dificil de leer y mantener por el anidamiento excesivo de callbacks. Se puede evitar con Promises, Async Await o Modularizando el codigo.
+
+```jsx
+doSomething(function(result) {
+  doSomething(result, function(newResult) {
+    doSomething(newResult, function(finalResult) {
+      console.log(finalResult);
+    }, failureCallback);
+  }, failureCallback);
+}, failureCallback);
+```
+
+<a id="var22"></a>
+
+### **Comparacion entre Promises, Callbacks y Async-await** 💛
+
+[Volver al indice](#alg-base-async)
+
+- **Callbacks:** Es una funcion que se pasa como argumento a otra funcion y se invoca dentro de la funcion externa para completar alguna accion. Se usa para manejar operaciones asincronicas.
+- **Promises:** Son una buena forma de manejar operaciones asincronicas. Puede tener 3 estados, `Pending`, `Fulfilled` y `Rejected`. Son utiles cuando hay que manejar mas de una operacion asincronica una despues de la otra, para eso se puede usar **Promise Chaining** usando then() y catch() para el manejo de cada una.
+- **Async Await:** Es una forma de escribir promises de manera mas limpia. Se usa para escribir codigo asincronico de manera sincronica. Se usa con la palabra `async` antes de la funcion y `await` antes de la promesa.
+
+Sus ventajas son:
+
+- **Callbacks:** Son simples y faciles de entender.
+- **Promises:** Son mas faciles de leer y entender que los callbacks.
+- **Async Await:** Es la forma mas limpia de escribir codigo asincronico.
+
+Y sus desventajas son:
+
+- **Callbacks:** Puede llevar a un Callback Hell.
+- **Promises:** Puede ser complicado de entender.
+- **Async Await:** No maneja errores de manera eficiente.
+
+El mas usado es **Promises** por su facilidad de lectura y manejo de errores.
+
+<a id="var10"></a>
+
+### **Como funciona setTimeout?**
+
+[Volver al indice](#alg-base-async)
+
+Permite ejecutar un fragmento de código una vez pasa un tiempo determinado.
+
+Por ejemplo, el codigo imprimirá “Hola Mundo” despues de 2 segundos
+
+```jsx
+setTimeout(function(){
+  console.log('hola mundo');
+}, 2000);
+```
+
+El primer parámetro es la función a ejecutar, puede ser hecha ahi mismo como en el ejemplo anterior, o ya estar hecha como en este ejemplo:
+
+```jsx
+function saludos(nombre, rol) {
+  console.log(`hola mi nombre es ${nombre} y mi rol es ${rol}`);
+}
+
+setTimeout(saludos, 3000, "denu", "administrador");
+```
+
+¿Porque no pasar los parametros directamente a la funcion y recien despues del tiempo? Porque JS ejecutará la funcion sin esperar al timeout, ya que estarias pasando una llamada a la funcion, no la referencia a la funcion.
+
+```jsx
+setTimeout(saludos('denu', 'admin'), 3000); // NO
+```
+
+Si quiero cancelar un setTimeout debo utilizar `clearTimeout()`
+
+```jsx
+const timeoutid = setTimeout (function() {
+  console.log('hola');
+}, 2000);
+
+clearTimeout(timeoutid)
+```
+
+<a id="var10-1"></a>
+
+### **¿Qué es un Promise.all y cuándo usarlo?** 💛
+
+[Volver al indice](#alg-base-async)
+
+Promise.all es una funcion que recibe un array de promesas y devuelve una nueva promesa que se resuelve cuando todas las promesas del array se han resuelto o cuando el array de promesas esta vacio.
+
+```jsx
+const promise1 = Promise.resolve(3);
+const promise2 = 42;
+const promise3 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 100, 'foo');
+});
+
+Promise.all([promise1, promise2, promise3]).then((values) => {
+  console.log(values); // [3, 42, "foo"]
+});
+```
+
+Se utiliza cuando se necesita esperar a que todas las promesas se resuelvan para continuar con el codigo.
+
+<a id="var10-2"></a>
+
+### **¿Cómo se maneja un error en una promesa?** 💛
+
+[Volver al indice](#alg-base-async)
+
+Para manejar un error en una promesa se usa el metodo `catch()`
+
+```jsx
+const myPromise = new Promise((resolve, reject) => {
+  if (Math.random() * 100 < 90) {
+    resolve('Hello, Promises!');
+  }
+  reject(new Error('In 10% of the cases, I fail. Miserably.'));
+});
+
+myPromise.then((resolvedValue) => {
+  console.log(resolvedValue);
+}).catch((error) => {
+  console.log(error);
+});
+```
+
+<a id="var10-3"></a>
+
+### **¿Cómo funcionan Promise.allSettled, Promise.race y Promise.any?** 💛
+
+[Volver al indice](#alg-base-async)
+
+- **Promise.allSettled:** Devuelve una promesa que se resuelve después de que todas las promesas del iterable se hayan resuelto o rechazado, con un array de objetos que describen el resultado de cada promesa.
+
+```jsx
+const promise1 = Promise.resolve(3);
+const promise2 = new Promise((resolve, reject) => setTimeout(reject, 100, 'foo'));
+const promises = [promise1, promise2];
+
+Promise.allSettled(promises).
+  then((results) => results.forEach((result) => console.log(result.status))); // "fulfilled", "rejected"
+```
+
+- **Promise.race**: Devuelve una promesa que se resuelve o rechaza tan pronto como una de las promesas del iterable se resuelve o se rechaza, con el valor o la razón de esa promesa.
+
+```jsx
+const promise1 = new Promise((resolve, reject) => setTimeout(resolve, 500, 'one'));
+const promise2 = new Promise((resolve, reject) => setTimeout(resolve, 100, 'two'));
+
+Promise.race([promise1, promise2]).then((value) => {
+  console.log(value); // "two"
+});
+```
+
+-**Promise.any**: Devuelve una promesa que se resuelve tan pronto como una de las promesas del iterable se resuelve, con el valor de esa promesa.
+
+```jsx
+const promise1 = new Promise((resolve, reject) => setTimeout(reject, 500, 'one'));
+const promise2 = new Promise((resolve, reject) => setTimeout(resolve, 100, 'two'));
+
+Promise.any([promise1, promise2]).then((value) => {
+  console.log(value); // "two"
+});
+```
+
+La diferencia entre `any` y `race` es que `any` se resuelve con el primer valor resuelto, mientras que `race` se resuelve con el primer valor resuelto o rechazado, `any` ignora cualquier valor rechazado, a menos que todas las promises hayan tenido el mismo resultado de rechazo.
