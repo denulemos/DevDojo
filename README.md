@@ -79,10 +79,7 @@ Preguntas son agregadas todas las semanas. Se aceptan sugerencias mediante Pull 
 | Arrays y ArrayLists |
 |----------|
 | [Estructuras de datos (Arrays en Java)](#alg15) |
-| [Qué es un "array-like" en Javascript?](#alg26) 💛|
-| [Cuales son las funciones array de JavaScript?](#alg27) 💛 |
 | [Funcion .sort()](#alg28) 💛|
-|[¿Cómo funcionan los arrays en JavaScript internamente?](#alg282)|
 | [Especificando la clase de contenido de un ArrayList en Java](#alg16) |
 | [Creación de un ArrayList en Java](#alg17) |
 |[¿Cuál es la diferencia entre un ArrayList y un array tradicional en Java?](#alg17-2)|
@@ -167,7 +164,7 @@ Preguntas son agregadas todas las semanas. Se aceptan sugerencias mediante Pull 
 
 | Manejo de Eventos y Asincronía |
 |----------|
-| [Para que sirve event.preventDefault()?](#var7) 💛 |
+
 | [Event delegation](#var11) |
 | [Bubble vs Capture](#var15) |
 | [Funciones de "bloqueo" y "no bloqueo"](#var13) |
@@ -182,8 +179,6 @@ Preguntas son agregadas todas las semanas. Se aceptan sugerencias mediante Pull 
 |[¿Cómo funcionan Promise.allSettled, Promise.race y Promise.any?](#var10-3) 💛|
 | [¿Cómo manejarías errores en funciones con async/await de forma eficiente?](#var10-4) 💛|
 |[¿Cómo implementarías un patrón pub/sub para manejar eventos entre diferentes partes de una aplicación?](#var10-5)|
-
-
 
 <a name="alg-base-3"></a>
 
@@ -1734,131 +1729,6 @@ A continuación, veremos cómo crear colecciones de objetos utilizando `ArrayLis
 
 En Java, los `ArrayList` son una implementación de la interfaz `List`. También se los conoce como listas, aunque este concepto es más amplio de lo que trataremos aquí, donde sólo los utilizaremos para crear colecciones dinámicas de datos.
 
-<a id="alg26"></a>
-
-### **Qué es un "array-like" en Javascript?** 💛
-
-[Volver al indice](#alg-base-arr)
-
-Es un tipo de dato similar a un Array pero que no posee todas las funciones heredadas de Prototype de un Array.
-
-Un array-like es un objeto que tiene propiedades indexadas y una propiedad length. Aunque no es un array, se comporta como tal. Por ejemplo, el objeto arguments es un array-like.
-
-```javascript
-// Definición de un objeto "array-like"
-var arrayLike = {
-  0: 'a',
-  1: 'b',
-  2: 'c',
-  length: 3 // La propiedad length es importante para que se comporte como un array
-};
-
-// Acceder a elementos
-console.log(arrayLike[0]); // Imprime: 'a'
-console.log(arrayLike[1]); // Imprime: 'b'
-
-// Iteración sobre el objeto "array-like"
-for (var i = 0; i < arrayLike.length; i++) {
-  console.log(arrayLike[i]);
-}
-// Imprime:
-// 'a'
-// 'b'
-// 'c'
-```
-
-Es un objeto, no es un array. Para pasar su valor a un array, debo usar el spread operator
-
-```javascript
-var array = [...arrayLike];
-console.log(array); // Imprime: ['a', 'b', 'c']
-```
-
-<a id="alg27"></a>
-
-### **Cuales son las funciones array de JavaScript?** 💛
-
-[Volver al indice](#alg-base-arr)
-
-```jsx
-// Agrega al final
-[1,2,3].push(4) // [1,2,3,4]
-
-// Quita y devuelve el último elemento
-[1,2,3].pop() // [1,2]
-
-// Quita y devuelve el primer elemento
-[1,2,3].shift() // [2,3]
-
-// Agrega al principio
-[1,2,3].unshift(0) // [0,1,2,3]
-
-//  Combina dos o más arreglos y devuelve un nuevo arreglo - los CONCATENA
-const arr1 = [1, 2, 3];
-const arr2 = [4, 5, 6];
-arr1.concat(arr2); // [1, 2, 3, 4, 5, 6]
-
-// Devuelve un array donde cada elemento del array tiene en el medio
-// el valor pasado como argumento
-['a', 'b'].join('-') // a-b
-
-// Devuelve una copia superficial de una porción del arreglo en un nuevo arreglo seleccionando los elementos desde el inicio hasta el final (o hasta un índice especificado).
-const arr = [1, 2, 3, 4, 5];
-arr.slice(1, 4); // Copia desde el índice 1 hasta el índice 3 [2, 3, 4]
-
-// Devuelve el index del elemento, si no lo encuentra, devuelve -1
-['a', 'b'].indexOf('b') // 1
-
-// Devuelve si el elemento existe en el array
-['a', 'b'].includes('b') // true
-
-// Devuelve el primer elemento que cumple con la condición
-[3,5,6,8].find((valorActual) => valorActual % 2 === 0) // 6
-
-// Devuelve el index del primer elemento que cumple con la condición
-[2,4,3,5].findIndex((valorActual) => valorActual % 2 !== 0) // 2
-
-// Devuelve un nuevo array con los elementos modificados, en este caso los multiplica por 2. Devuelve un nuevo array, no muta el array modificado
-const array = [3,4,8,6].map((n) => n * 2) // [6,8,16,12]
-
-// Devuelve un nuevo array con los elementos que cumplan con la condición
-// Si el valorActual cumple con la condicion, queda en el array, de lo contrario, se quita
-[1,4,7,8].filter((valorActual) => valorActual % 2 === 0) // [4,8]
-
-// Devuelve un solo valor, en este caso la suma de los elementos
-[2,4,3,7].reduce((accumulator, currentValue) => accumulator + currentValue) // 16
-
-// El accomulator puede ser inicializado de antemano, si no, se toma como valor inicial el primer elemento del array
-[2,4,3,7].reduce((accumulator, currentValue) => accumulator + currentValue, 0)
-
-// Devuelve true si todos los elementos cumplen con la condicion
-[2,3,4,5].every((valorActual) => valorActual < 6) // true
-
-// Devuelve true si algunos de los elementos cumplen con la condicion
-[3,5,6,8].some((valorActual) => valorActual > 6) // true
-
-// Cambia el contenido de un arreglo eliminando elementos existentes y/o agregando nuevos elementos.
-const arr = [1, 2, 3, 4, 5];
-arr.splice(2, 1, "a", "b"); // Elimina 1 elemento desde el índice 2 y agrega "a" y "b" [1, 2, "a", "b", 4, 5]
-splice(indice, cantidad elementos a eliminar, agrego, agrego);
-
-// Da vuelta el Array
-[1,2,3,4].reverse() // [4,3,2,1]
-
-// Devuelve, si es positivo, el elemento en el lugar 2 (0,1,2), caso negativo, contando desde el final.
-[5, 12, 8, 130, 44].at(-2) // 130
-[5, 12, 8, 130, 44].at(2) // 8
-
-// Recorre el array
-[1,2,3].forEach(x => console.log(x))
-
-// Conviene valores a un array
-"hola".split() => ['h','o','l','a'];
-//Se puede separar la palabra dependiendo de un regex
-"hola, denu".split(/,\s*/g) => ['hola', 'denu'];
-
-```
-
 <a id="alg28"></a>
 
 ### **Funcion `.sort()`** 💛
@@ -1895,27 +1765,6 @@ const sortedValues = inputValues.sort((a, b) => {
 
 console.log(sortedValues); // Output: [10, 3, 2]
 ```
-
-<a id="alg282"></a>
-
-### **¿Cómo funcionan los arrays en JavaScript internamente?**
-
-[Volver al indice](#alg-base-arr)
-
-Los arrays en JavaScript son objetos especiales que permiten almacenar múltiples elementos en una sola variable. A diferencia de otros lenguajes de programación, los arrays en JavaScript no tienen un tamaño fijo y pueden contener elementos de diferentes tipos.
-
-Internamente, los arrays en JavaScript se implementan como objetos con propiedades indexadas. Cada elemento del array se almacena en una propiedad con un índice numérico. Por ejemplo, el array [1, 2, 3] se representa internamente como un objeto con las siguientes propiedades:
-
-```javascript
-{
-  0: 1,
-  1: 2,
-  2: 3,
-  length: 3
-}
-```
-
-Por eso existe el `array-like` en Javascript
 
 <a id="alg16"></a>
 
@@ -3437,23 +3286,7 @@ Si utilizas funciones puras, puedes:
 
 ---
 
-<a id="var7"></a>
 
-### **Para que sirve event.preventDefault()?** 💛
-
-[Volver al indice](#alg-base-async)
-
-Los botones de los form en HTML por defecto hacen un submit, lo que puede llevar a que se recargue la pagina. Para evitar esto, se usa `event.preventDefault()` para evitar que se ejecute el comportamiento por defecto del evento.
-
-Por ejemplo, si quiero que al hacer click en un boton no se recargue la pagina, puedo hacer lo siguiente:
-
-```jsx
-document.getElementById("myForm").addEventListener("submit", function(event){
-  event.preventDefault();
-});
-```
-
-U otro ejemplo es para evitar que el resto de eventos que se ejecutarian por defecto, no lo hagan
 
 <a id="var11"></a>
 

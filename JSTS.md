@@ -20,6 +20,13 @@
 | [`.filter()`](#ent3) |
 | [`.reduce()`](#ent4) |
 |[Set vs Map vs WeakMap vs WeakSet](#ent4-1)|
+| [Parametros por valor y por referencia](#ent0) |
+| [Prototype Javascript](#ent0-1) |
+|[Spread y Rest Operator](#ent0-4)|
+| [Qué es un "array-like" en Javascript?](#alg26) 💛|
+| [Cuales son las funciones array de JavaScript?](#alg27) 💛 |
+|[¿Cómo funcionan los arrays en JavaScript internamente?](#alg282)|
+| [Para que sirve event.preventDefault()?](#var7) 💛 |
 
 <a name="typ-base"></a>
 
@@ -49,21 +56,6 @@
 |[¿Cómo funcionan los Mapped Types y cómo se aplican en proyectos complejos?](#typ20)|
 |[¿Qué son los Conditional Types y cómo permiten lógica avanzada en los tipos?](#typ21)|
 |[¿Cómo funcionan los decoradores en TypeScript y en qué casos son útiles?](#typ22)|
-|¿Qué técnicas avanzadas de Type Narrowing puedes usar para trabajar con tipos complejos?|
-|¿Cómo crear y utilizar tipos genéricos con restricciones múltiples (T extends U)?|
-|¿Cómo funcionan keyof y los Lookup Types para trabajar dinámicamente con claves y valores?|
-|¿Cómo manejas tipos recursivos en TypeScript?|
-|¿Cómo configuras un TSConfig.json para proyectos complejos con monorepos o múltiples builds?|
-|¿Qué estrategias usarías para gestionar grandes bases de código utilizando tipos estrictos en TypeScript?|
-|¿Cómo manejarías el uso avanzado de this en métodos y funciones en TypeScript?|
-|¿Cómo implementarías patrones de diseño utilizando características avanzadas de TypeScript?|
-|¿Cómo evaluarías el impacto de strictNullChecks en un proyecto existente y cómo migrarías gradualmente?|
-|¿Cómo aprovecharías TypeScript para mejorar el rendimiento y la seguridad en aplicaciones críticas?|
-|¿Qué son los módulos de declaración (.d.ts) y cómo los usas para bibliotecas externas?|
-|¿Cómo extender interfaces o tipos definidos en bibliotecas de terceros?|
-|¿Cómo manejarías la interoperabilidad entre TypeScript y bibliotecas escritas en JavaScript puro?|
-|¿Qué patrones sigues para definir tipos o interfaces en aplicaciones orientadas a dominios complejos?|
-|¿Cómo aprovechar las herramientas de linting y análisis estático para mantener la calidad del código en TypeScript?|
 
 ---
 
@@ -1454,3 +1446,309 @@ console.log(weakSet.has(obj)); // Output: false
 ```
 
 Ninguno de los `weak` es enumerable, es decir, no se pueden iterar sobre ellos.
+
+<a id="ent0"></a>
+
+### **Parametros por valor y por referencia en Javascript**
+
+[Volver al indice](#entrevista-base)
+
+En Javascript podemos pasar como parametro valores que pueden ser por valor en si mismo o por referencia, es decir, pasamos el puntero de memoria que apunta a la direccion de memoria donde se encuentra el valor.
+
+**Parametros por valor**
+
+Esto se hace usualmente con elementos tipo `number`, `string`, `boolean`, `null`, `undefined`, `symbol`, `bigint`.
+Si tenemos el valor en una variable, debemos realizar la re-asignacion para cambiar el valor del mismo.
+
+```javascript
+let a = 1;
+
+// Aca estamos modificando el valor de a
+function modificarValor(a) {
+  a = 2;
+}
+
+// Si bien estamos modificando el 1 por 2, el valor de a sigue siendo 1
+function noModificarValor(a) {
+  a++;
+}
+```
+
+En cambio en el caso de variables del tipo objeto, arrays, entre otros, estos son pasados por referencia, por lo que si modificamos el valor de un objeto o array, este se vera reflejado en la variable original.
+
+```javascript
+let obj = { a: 1 };
+
+// Aca estamos modificando el valor de a, ya que no llega el valor de objeto, si no el puntero de memoria
+function modificarValor(obj) {
+  obj.a = 2;
+}
+
+let array = [1, 2, 3];
+
+// Aca estamos modificando el valor de la posicion 0
+function modificarArray(array) {
+  array[0] = 2;
+}
+```
+
+<a id="ent0-1"></a>
+
+### **Prototype Javascript**
+
+[Volver al indice](#entrevista-base)
+
+`Prototype` permite que objetos y funciones en Javascript compartan propiedades y metodos entre si.
+
+Todos los objetos en JS tienen una propiedad interna llamada `[[Prototype]]` al que se accede con `__proto__` o configurarla con `Object.create()`.
+Las funciones al ser tambien objetos en JS tienen una propiedad tambien llamada `prototype`
+
+```javascript
+const animal = {
+  hacerSonido: function () {
+    console.log("El animal hace un sonido");
+  },
+};
+
+const perro = {
+  nombre: "Firulais",
+};
+
+// Vinculamos el prototipo de "perro" al objeto "animal"
+Object.setPrototypeOf(perro, animal);
+
+// Ahora "perro" puede usar el método de "animal"
+perro.hacerSonido(); // El animal hace un sonido
+```
+
+`hacerSonido` no esta definido en `perro`, pero lo JS lo busco en su prototipo `animal`
+
+```javascript
+function Persona(nombre) {
+  this.nombre = nombre;
+}
+
+// Agregamos un método al prototipo de Persona
+Persona.prototype.saludar = function () {
+  console.log(`Hola, me llamo ${this.nombre}`);
+};
+
+// Creamos una nueva instancia de Persona
+const juan = new Persona("Juan");
+
+// Llamamos al método saludar
+juan.saludar(); // Hola, me llamo Juan
+```
+
+Hay algo llamado `prototype chain`, que es una cadena de prototipos que se va formando cuando se busca una propiedad o metodo en un objeto. Si no se encuentra en el objeto, JS busca en el prototipo, y si no se encuentra ahi, busca en el prototipo del prototipo, y asi sucesivamente. Al final, si no hay resultados, se devuelve `undefined`.
+
+Todos los objetos de JS heredan metodos de un Prototype, `Object.prototype` es el eslabon mas alto de la cadena de herencia.
+
+```javascript
+const arr = [1, 2, 3];
+
+// Los métodos como `push` están en el prototipo de Array
+console.log(arr.__proto__ === Array.prototype); // true
+
+// El prototipo de Array.prototype es Object.prototype
+console.log(Array.prototype.__proto__ === Object.prototype); // true
+
+// El final de la cadena de prototipos es null
+console.log(Object.prototype.__proto__); // null
+```
+
+En resumen, prototype es la base del funcionamiento de objetos y de la herencia en JS.
+
+<a id="ent0-4"></a>
+
+### **Spread vs Rest Operator**
+
+[Volver al indice](#entrevista-base)
+
+Spread es cuando los 3 puntos se encuentran al principio, de ese modo por ejemplo, puedo pasar un array como parametro pero en vez de tomar su referencia tomo su valor. Convierte un array en una lista de argumentos.
+
+```javascript
+const arr = [1, 2, 3];
+
+function sumar(a, b, c) {
+  return a + b + c;
+}
+
+console.log(sumar(...arr)); // 6
+```
+
+En el caso del Rest Operator, es cuando los 3 puntos se encuentran en el parametro de una funcion, y se utiliza para agrupar elementos en un array. Convierte los argumentos de una funcion en un array.
+
+```javascript
+function sumar(...numeros) {
+  return numeros.reduce((acc, num) => acc + num, 0);
+}
+
+console.log(sumar(1, 2, 3, 4, 5)); // 15
+```
+
+El operador es el mismo pero su nombre depende del contexto en donde esten siendo usados. 
+
+<a id="alg26"></a>
+
+### **Qué es un "array-like" en Javascript?** 💛
+
+[Volver al indice](#alg-base-arr)
+
+Es un tipo de dato similar a un Array pero que no posee todas las funciones heredadas de Prototype de un Array.
+
+Un array-like es un objeto que tiene propiedades indexadas y una propiedad length. Aunque no es un array, se comporta como tal. Por ejemplo, el objeto arguments es un array-like.
+
+```javascript
+// Definición de un objeto "array-like"
+var arrayLike = {
+  0: 'a',
+  1: 'b',
+  2: 'c',
+  length: 3 // La propiedad length es importante para que se comporte como un array
+};
+
+// Acceder a elementos
+console.log(arrayLike[0]); // Imprime: 'a'
+console.log(arrayLike[1]); // Imprime: 'b'
+
+// Iteración sobre el objeto "array-like"
+for (var i = 0; i < arrayLike.length; i++) {
+  console.log(arrayLike[i]);
+}
+// Imprime:
+// 'a'
+// 'b'
+// 'c'
+```
+
+Es un objeto, no es un array. Para pasar su valor a un array, debo usar el spread operator
+
+```javascript
+var array = [...arrayLike];
+console.log(array); // Imprime: ['a', 'b', 'c']
+```
+
+<a id="alg27"></a>
+
+### **Cuales son las funciones array de JavaScript?** 💛
+
+[Volver al indice](#alg-base-arr)
+
+```jsx
+// Agrega al final
+[1,2,3].push(4) // [1,2,3,4]
+
+// Quita y devuelve el último elemento
+[1,2,3].pop() // [1,2]
+
+// Quita y devuelve el primer elemento
+[1,2,3].shift() // [2,3]
+
+// Agrega al principio
+[1,2,3].unshift(0) // [0,1,2,3]
+
+//  Combina dos o más arreglos y devuelve un nuevo arreglo - los CONCATENA
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+arr1.concat(arr2); // [1, 2, 3, 4, 5, 6]
+
+// Devuelve un array donde cada elemento del array tiene en el medio
+// el valor pasado como argumento
+['a', 'b'].join('-') // a-b
+
+// Devuelve una copia superficial de una porción del arreglo en un nuevo arreglo seleccionando los elementos desde el inicio hasta el final (o hasta un índice especificado).
+const arr = [1, 2, 3, 4, 5];
+arr.slice(1, 4); // Copia desde el índice 1 hasta el índice 3 [2, 3, 4]
+
+// Devuelve el index del elemento, si no lo encuentra, devuelve -1
+['a', 'b'].indexOf('b') // 1
+
+// Devuelve si el elemento existe en el array
+['a', 'b'].includes('b') // true
+
+// Devuelve el primer elemento que cumple con la condición
+[3,5,6,8].find((valorActual) => valorActual % 2 === 0) // 6
+
+// Devuelve el index del primer elemento que cumple con la condición
+[2,4,3,5].findIndex((valorActual) => valorActual % 2 !== 0) // 2
+
+// Devuelve un nuevo array con los elementos modificados, en este caso los multiplica por 2. Devuelve un nuevo array, no muta el array modificado
+const array = [3,4,8,6].map((n) => n * 2) // [6,8,16,12]
+
+// Devuelve un nuevo array con los elementos que cumplan con la condición
+// Si el valorActual cumple con la condicion, queda en el array, de lo contrario, se quita
+[1,4,7,8].filter((valorActual) => valorActual % 2 === 0) // [4,8]
+
+// Devuelve un solo valor, en este caso la suma de los elementos
+[2,4,3,7].reduce((accumulator, currentValue) => accumulator + currentValue) // 16
+
+// El accomulator puede ser inicializado de antemano, si no, se toma como valor inicial el primer elemento del array
+[2,4,3,7].reduce((accumulator, currentValue) => accumulator + currentValue, 0)
+
+// Devuelve true si todos los elementos cumplen con la condicion
+[2,3,4,5].every((valorActual) => valorActual < 6) // true
+
+// Devuelve true si algunos de los elementos cumplen con la condicion
+[3,5,6,8].some((valorActual) => valorActual > 6) // true
+
+// Cambia el contenido de un arreglo eliminando elementos existentes y/o agregando nuevos elementos.
+const arr = [1, 2, 3, 4, 5];
+arr.splice(2, 1, "a", "b"); // Elimina 1 elemento desde el índice 2 y agrega "a" y "b" [1, 2, "a", "b", 4, 5]
+splice(indice, cantidad elementos a eliminar, agrego, agrego);
+
+// Da vuelta el Array
+[1,2,3,4].reverse() // [4,3,2,1]
+
+// Devuelve, si es positivo, el elemento en el lugar 2 (0,1,2), caso negativo, contando desde el final.
+[5, 12, 8, 130, 44].at(-2) // 130
+[5, 12, 8, 130, 44].at(2) // 8
+
+// Recorre el array
+[1,2,3].forEach(x => console.log(x))
+
+// Conviene valores a un array
+"hola".split() => ['h','o','l','a'];
+//Se puede separar la palabra dependiendo de un regex
+"hola, denu".split(/,\s*/g) => ['hola', 'denu'];
+
+```
+
+<a id="alg282"></a>
+
+### **¿Cómo funcionan los arrays en JavaScript internamente?**
+
+[Volver al indice](#alg-base-arr)
+
+Los arrays en JavaScript son objetos especiales que permiten almacenar múltiples elementos en una sola variable. A diferencia de otros lenguajes de programación, los arrays en JavaScript no tienen un tamaño fijo y pueden contener elementos de diferentes tipos.
+
+Internamente, los arrays en JavaScript se implementan como objetos con propiedades indexadas. Cada elemento del array se almacena en una propiedad con un índice numérico. Por ejemplo, el array [1, 2, 3] se representa internamente como un objeto con las siguientes propiedades:
+
+```javascript
+{
+  0: 1,
+  1: 2,
+  2: 3,
+  length: 3
+}
+```
+
+Por eso existe el `array-like` en Javascript
+
+<a id="var7"></a>
+
+### **Para que sirve event.preventDefault()?** 💛
+
+[Volver al indice](#alg-base-async)
+
+Los botones de los form en HTML por defecto hacen un submit, lo que puede llevar a que se recargue la pagina. Para evitar esto, se usa `event.preventDefault()` para evitar que se ejecute el comportamiento por defecto del evento.
+
+Por ejemplo, si quiero que al hacer click en un boton no se recargue la pagina, puedo hacer lo siguiente:
+
+```jsx
+document.getElementById("myForm").addEventListener("submit", function(event){
+  event.preventDefault();
+});
+```
+
+U otro ejemplo es para evitar que el resto de eventos que se ejecutarian por defecto, no lo hagan
