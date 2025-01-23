@@ -39,6 +39,14 @@
 |[¿Qué es un Promise.all y cuándo usarlo?](#var10-1) 💛|
 | [¿Cómo se maneja un error en una promesa?](#var10-2) 💛|
 |[¿Cómo funcionan Promise.allSettled, Promise.race y Promise.any?](#var10-3) 💛|
+| [Diferencia entre let, var y const](#var6) 💛 |
+| [Cual es la diferencia entre setTimeout() y setInterval()?](#rea31) 💛|
+| [Qué es el namespacing de JS?](#rea40) |
+| [Fetch API](#rea46) |
+| [Cómo se pueden crear objetos genéricos?](#rea47) |
+| [Document.ready vs Window.onload](#js1) |
+| [Que es el Scope en Javascript?](#rea45) |
+
 
 <a name="typ-base"></a>
 
@@ -68,12 +76,34 @@
 |[¿Cómo funcionan los Mapped Types y cómo se aplican en proyectos complejos?](#typ20)|
 |[¿Qué son los Conditional Types y cómo permiten lógica avanzada en los tipos?](#typ21)|
 |[¿Cómo funcionan los decoradores en TypeScript y en qué casos son útiles?](#typ22)|
+| [¿Qué son los generics y cómo se implementan en TypeScript?](#alg53-2) 💛|
 
 ---
 
 <a id="typ"></a>
 
 # Typescript
+
+<a id="alg53-2"></a>
+
+### **¿Qué son los generics y cómo se implementan en TypeScript?** 💛
+
+[Volver al indice](#typ-base)
+
+Los generics son una característica de TypeScript que permite crear componentes, funciones y clases que pueden trabajar con una variedad de tipos de datos. Los generics permiten escribir código que es reutilizable y flexible, ya que no está limitado a un solo tipo de datos.
+
+Para definir un tipo genérico en TypeScript, se utiliza la sintaxis de ángulos (<>) para especificar un tipo de parámetro genérico. Por ejemplo, la siguiente función toma un argumento de tipo genérico T y devuelve un array de ese tipo:
+
+```typescript
+function makeArray<T>(value: T): T[] {
+    return [value];
+}
+
+const array1 = makeArray<number>(1); // array1 es de tipo number[]
+const array2 = makeArray<string>('hello'); // array2 es de tipo string[]
+```
+
+Es ideal para reemplazar el uso de any. Por ejemplo, si se usa any, se pierde la información del tipo de datos que se está utilizando, lo que puede llevar a errores en tiempo de ejecución. Con generics, se puede especificar el tipo de datos que se espera y TypeScript se encargará de verificar que se cumpla en tiempo de compilación.
 
 <a id="typ1"></a>
 
@@ -1814,7 +1844,7 @@ for (let item of mySet) {
 
 ### **HashTables** (.Map) 💛
 
-[Volver al indice](#alg-base-col)
+[Volver al indice](#alg-base-2)
 
 Es una estructura de datos que almacena valores dado su Hash (int o long). Son muy eficientes para una busqueda dada por clave.
 
@@ -1884,7 +1914,7 @@ for (let [key, value] of myMap) {
 
 ### **¿Cuál es la diferencia entre un Set y un Array en JavaScript?**
 
-[Volver al indice](#alg-base-col)
+[Volver al indice](#alg-base-2)
 
 | Set | Array |
 | --- | ----- |
@@ -1920,7 +1950,7 @@ const myPromise = new Promise((resolve, reject) => {
 
 ### **Async Await** 💛
 
-[Volver al indice](#alg-base-async)
+[Volver al indice](#alg-base-2)
 
 Es una forma de escribir promises de manera mas limpia. Se usa para escribir codigo asincronico de manera sincronica. Se usa con la palabra `async` antes de la funcion y `await` antes de la promesa.
 
@@ -1953,7 +1983,7 @@ async function getPost() {
 
 ### **Callbacks** 💛
 
-[Volver al indice](#alg-base-async)
+[Volver al indice](#alg-base-2)
 
 Es una funcion que se pasa como argumento a otra funcion y se invoca dentro de la funcion externa para completar alguna accion. Se usa para manejar operaciones asincronicas.
 
@@ -2001,7 +2031,7 @@ doAll();
 
 ### **Callback Hell** 💛
 
-[Volver al indice](#alg-base-async)
+[Volver al indice](#alg-base-2)
 
 Es un termino que se usa para describir un codigo que se vuelve dificil de leer y mantener por el anidamiento excesivo de callbacks. Se puede evitar con Promises, Async Await o Modularizando el codigo.
 
@@ -2019,7 +2049,7 @@ doSomething(function(result) {
 
 ### **Comparacion entre Promises, Callbacks y Async-await** 💛
 
-[Volver al indice](#alg-base-async)
+[Volver al indice](#alg-base-2)
 
 - **Callbacks:** Es una funcion que se pasa como argumento a otra funcion y se invoca dentro de la funcion externa para completar alguna accion. Se usa para manejar operaciones asincronicas.
 - **Promises:** Son una buena forma de manejar operaciones asincronicas. Puede tener 3 estados, `Pending`, `Fulfilled` y `Rejected`. Son utiles cuando hay que manejar mas de una operacion asincronica una despues de la otra, para eso se puede usar **Promise Chaining** usando then() y catch() para el manejo de cada una.
@@ -2043,7 +2073,7 @@ El mas usado es **Promises** por su facilidad de lectura y manejo de errores.
 
 ### **Como funciona setTimeout?**
 
-[Volver al indice](#alg-base-async)
+[Volver al indice](#alg-base-2)
 
 Permite ejecutar un fragmento de código una vez pasa un tiempo determinado.
 
@@ -2085,7 +2115,7 @@ clearTimeout(timeoutid)
 
 ### **¿Qué es un Promise.all y cuándo usarlo?** 💛
 
-[Volver al indice](#alg-base-async)
+[Volver al indice](#alg-base-2)
 
 Promise.all es una funcion que recibe un array de promesas y devuelve una nueva promesa que se resuelve cuando todas las promesas del array se han resuelto o cuando el array de promesas esta vacio.
 
@@ -2107,7 +2137,7 @@ Se utiliza cuando se necesita esperar a que todas las promesas se resuelvan para
 
 ### **¿Cómo se maneja un error en una promesa?** 💛
 
-[Volver al indice](#alg-base-async)
+[Volver al indice](#alg-base-2)
 
 Para manejar un error en una promesa se usa el metodo `catch()`
 
@@ -2130,7 +2160,7 @@ myPromise.then((resolvedValue) => {
 
 ### **¿Cómo funcionan Promise.allSettled, Promise.race y Promise.any?** 💛
 
-[Volver al indice](#alg-base-async)
+[Volver al indice](#alg-base-2)
 
 - **Promise.allSettled:** Devuelve una promesa que se resuelve después de que todas las promesas del iterable se hayan resuelto o rechazado, con un array de objetos que describen el resultado de cada promesa.
 
@@ -2166,3 +2196,243 @@ Promise.any([promise1, promise2]).then((value) => {
 ```
 
 La diferencia entre `any` y `race` es que `any` se resuelve con el primer valor resuelto, mientras que `race` se resuelve con el primer valor resuelto o rechazado, `any` ignora cualquier valor rechazado, a menos que todas las promises hayan tenido el mismo resultado de rechazo.
+
+<a id="var5"></a>
+
+### **Nombres de Variables**
+
+[Volver al indice](#alg-base-2)
+
+Cuando vayamos a dar un nombre a una variable deberemos tener en cuenta una serie de normas. Es decir, no podemos poner el nombre que nos dé la gana a una variable.
+
+Es recomendable que los nombres de los identificadores sean legibles y no acrónimos que no podamos leer. De tal manera que a la hora de verlos se auto-documenten por sí mismos. Además estos identificadores nunca podrán coincidir con las palabras reservadas ni comenzar con un número.
+
+Algunas reglas no escritas, pero que se han asumido *por convención* son:
+
+* Los identificadores siempre se escriben en minúsculas. (pe. nombre). Y si son dos o más palabras, el inicio de cada siguiente palabra se escriba en mayúsculas (pe. nombrePersona)
+* Si el identificador implica que sea una constante (es decir que hayamos utilizado los modificadores *final static*), dicho nombre se suele escribir en mayúsculas (pe. LETRA). Y si la constante está compuesta de dos palabras, estas se separan con un subrayado (pe. LETRA_PI).
+
+<a id="var6"></a>
+
+### **Diferencia entre let, var y const** 💛
+
+[Volver al indice](#alg-base-2)
+
+La diferencia es el alcance de cada uno.
+
+- **var:** Es viable dentro de una funcion, incluso si es declarada dentro de un if o loop, es valida afuera, y es global si esta fuera de una funcion. Se puede reasignar y redeclarar.
+
+```javascript
+function ejemplo() {
+  if (true) {
+    var x = 10;
+  }
+  console.log(x); // 10 (aunque x se declaró dentro del bloque if)
+}
+```
+
+- **let:** Es la manera de declarar variables en ES6. Es local en un bloque.
+- **const:** Es la manera de declarar constantes en ES6. Es local en un bloque.
+
+```jsx
+
+var saludar = "hey, hola";
+var saludar = "dice Hola tambien";
+    saludar = "dice Hola tambien";
+
+
+let camper = 'James';
+let camper = 'David'; // throws an error
+let saludar = "dice Hola";
+    saludar = "dice Hola tambien";
+let saludar = "dice Hola tambien"; // error: Identifier 'saludar' has already been declared
+```
+
+Sí pongo un “use Strict” en la parte alta del codigo, la consola me va a tirar error cuando trate de codear algo de manera “insegura” o poco practica.
+
+```jsx
+"use strict";
+x = 3.14; // throws an error because x is not declared
+```
+
+Cuando declaras una variable con **var,** es declarada de manera global, o local sí esta adentro de una funcion.
+
+- Pueden ser modificadas y re-declaradas dentro de su ambito.
+- Puede ser declarada sin ser inicializada, se inicializa con undefined por defecto.
+- Puede ser declarada global o dentro de una funcion.
+
+En cambio con **let,** sí declaro la funcion dentro de un block, statement o expresion, se va a declarar solo dentro de estas y no globalmente.
+
+- No puede ser re-declarado pero si modificado.
+- Puede ser declarada sin ser inicializada, se inicializa con undefined por defecto.
+- Funciona a nivel bloque.
+
+```jsx
+var numArray = [];
+for (var i = 0; i < 3; i++) {
+  numArray.push(i);
+}
+console.log(numArray); // [0, 1, 2]
+console.log(i); // 3
+
+'use strict';
+let printNumTwo;
+for (let i = 0; i < 3; i++) {
+  if (i === 2) {
+    printNumTwo = function() {
+      return i;
+    };
+  }
+}
+console.log(printNumTwo()); // 2
+console.log(i); // i no esta definido
+```
+
+También se puede declarar usando la palabra **const**, que es una constante. Se declara y no puede ser cambiada en su valor, solo sirve de lectura.
+
+```jsx
+"use strict"
+const FAV_PET = "Cats";
+FAV_PET = "Dogs"; // error: Assignment to constant variable.
+```
+
+Se recomienda poner el nombre de las constantes en mayúscula.
+
+```jsx
+"use strict";
+const s = [5, 6, 7];
+s = [1, 2, 3]; // error asignando a una constante
+s[2] = 45; // funciona
+console.log(s); //  [5, 6, 45]
+```
+
+Los array sí pueden ser modificados en sí mismos, lo que no se puede es apuntar a otro array distinto.
+
+```jsx
+const s = [5, 7, 2];
+function editInPlace() {
+  "use strict";
+  // s = [2, 5, 7]; // error asignando a una constante
+  s[0] = 2;
+  s[1] = 5;
+  s[2] = 7;
+}
+editInPlace();
+```
+
+<a id="rea31"></a>
+
+### **Cual es la diferencia entre setTimeout() y setInterval()?**
+
+[Volver al indice](#alg-base-2)
+
+- `SetTimeout` nos permite ejecutar una funcion una vez despues del intervalo de tiempo
+
+```jsx
+*setTimeout(sayHi, 1000, "Hola", "John");*
+```
+
+- `SetInterval` nos permite ejecutar una funcion repetidamente. Esperando el intervalo, ejecutando y asi sucesivamente.
+
+```jsx
+let timerId = setInterval(() => alert('tick'), 2000);
+
+// después de 5 segundos parar
+setTimeout(() => { clearInterval(timerId); alert('stop'); }, 5000);
+```
+
+<a id="rea40"></a>
+
+### **Qué es el namespacing de JS?**
+
+[Volver al indice](#alg-base-2)
+
+Namespacing se utiliza para agrupar funciones, variables, etc con un nombre único.  Esto mejora la modularidad en codificación y permite la reutilización del código.
+
+```javascript
+var myNamespace = {
+  myFunction: function() {
+    console.log('Hello, World!');
+  },
+  myVariable: 'Hello, World!'
+};
+
+myNamespace.myFunction(); // Hello, World!
+
+console.log(myNamespace.myVariable); // Hello, World!
+```
+
+<a id="rea46"></a>
+
+### **Fetch API**
+
+[Volver al indice](#alg-base-2)
+
+Es una interfaz moderna que permite hacer peticiones HTTP desde el navegador. Es una alternativa a XMLHttpRequest y es más fácil de usar y más potente.
+
+```jsx
+fetch('https://api.github.com/users')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error(error));
+
+// Otra forma de hacerlo
+
+async function fetchData() {
+  try {
+    const response = await fetch('https://api.github.com/users');
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+```
+
+<a id="rea47"></a>
+
+### **Cómo se pueden crear objetos genéricos?**
+
+[Volver al indice](#alg-base-2)
+
+```jsx
+var myObjeto = new Object({
+'nombre': 'Diego',
+'apeliido': 'Querales',
+'edad': 25,
+})
+// Salida por consola
+{nombre: "Diego", apeliido: "Querales", edad: 25}
+```
+
+<a id="js1"></a>
+
+### **Document.ready vs Window.onload**
+
+[Volver al indice](#alg-base-2)
+
+`Document.ready` se ejecuta despues de cargar todo el HTML. `Window.onload` se ejecuta cuando ya cargo completamente todo el contenido, mas adelante.
+
+<a id="rea45"></a>
+
+### **Que es el Scope en Javascript?**
+
+[Volver al indice](#alg-base-2)
+
+Es el contexto actual de ejecución.
+
+Cuando hacemos referencia a una variable, javascript busca su definicion en cada entorno, o Scope, esto depende de como (var, const, let) y donde la declaremos (fuera o dentro de una funcion).
+
+```javascript
+var variable = "global"; // Variable global, todos pueden acceder a ella
+
+function test() { // Tiene acceso a variable y variable1
+    var variable1 = "hola"; // Variable local -hola
+}
+
+function test2() { // Tiene acceso a variable y variable1
+    var variable1 = "chau"; // Variable local - chau
+}
+```
+
+Entre scopes hay jerarquia. Primero se busca la variable en el mismo scope local, luego en el scope padre y luego el global.

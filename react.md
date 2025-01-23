@@ -43,6 +43,7 @@
 | [useFormStatus() React](#ent71) |
 | [useOptimistic() React](#ent72) |
 | [React Server Components](#ent69-1) |
+| [Funciones de alto nivel / Higher order Function](#rea43) |
 |Para que tipo de proyectos React es recomendable?|
 |¿Cuál es la diferencia entre React.createElement() y JSX?|
 |¿Qué es un Fragment en React y para qué se utiliza?|
@@ -1399,7 +1400,7 @@ Usa `useOptimistic()` cuando quieras manejar interacciones de usuario con actual
 
 ### **React Server Components**
 
-[Volver al indice](#entrevista-base)
+[Volver al indice](#react-base)
 
 Es una caracteristica de React que nos permite renderizar algunos componentes en el lado del servidor, y que el cliente solo reciba el HTML necesario para renderizar la pagina, y que lo hidrate (que significa que los hace interactivos sin tener que re-renderizarlos completamente) de ser necesario, esto es muy util para componentes que son estaticos y no son interactivos, todo esto para evitar la carga de JS inutil.
 
@@ -1431,3 +1432,40 @@ export default function ClientComponent() {
 ```
 
 Es muy util combinar esta funcionalidad con NextJs para mejorar el rendimiento de la aplicacion.
+
+<a id="rea43"></a>
+
+### **Funciones de alto nivel / Higher order Function**
+
+[Volver al indice](#react-base)
+
+Habían muchas funcionalidades que se estaban repitiendo, entonces JS decidio hacerlas nativas, como iteraciones. Funciones de orden mayor es que reciben como parametro los iterables y un callback, que se ejecutaba en cada elemento iterado.
+
+Hoy en dia todo esto esta abstraído y solo pasamos el callback.
+
+Ejemplos puede ser .map, .filter, .reduce
+
+```javascript
+// Función de orden superior que toma una función como argumento
+function operacionMatematica(x, y, operacion) {
+  return operacion(x, y);
+}
+
+// Funciones que serán pasadas como argumentos a la función de orden superior
+function suma(a, b) {
+  return a + b;
+}
+
+function resta(a, b) {
+  return a - b;
+}
+
+function multiplicacion(a, b) {
+  return a * b;
+}
+
+// Uso de la función de orden superior con diferentes funciones como argumentos
+console.log(operacionMatematica(5, 3, suma)); // Devuelve 8 (5 + 3)
+console.log(operacionMatematica(10, 4, resta)); // Devuelve 6 (10 - 4)
+console.log(operacionMatematica(6, 2, multiplicacion)); // Devuelve 12 (6 * 2)
+```
