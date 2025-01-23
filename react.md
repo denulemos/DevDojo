@@ -1469,3 +1469,59 @@ console.log(operacionMatematica(5, 3, suma)); // Devuelve 8 (5 + 3)
 console.log(operacionMatematica(10, 4, resta)); // Devuelve 6 (10 - 4)
 console.log(operacionMatematica(6, 2, multiplicacion)); // Devuelve 12 (6 * 2)
 ```
+
+Es un patron de disenio muy comunmente usado en React en donde una funcion recibe como parametro un componente y devuelve un componente nuevo con una funcioanlidad extendida.
+
+```jsx
+const withExtraProps = (WrappedComponent) => {
+  return (props) => {
+    const extraProps = { extra: 'some extra prop' };
+    return <WrappedComponent {...props} {...extraProps} />;
+  };
+};
+```
+
+Es muy comun cuando debo chequear varias veces si el usuario se encuentra autenticado en la aplicacion
+
+```jsx
+const withAuth = (WrappedComponent) => {
+  return (props) => {
+    const isAuthenticated = true; // Lógica de autenticación
+    if (!isAuthenticated) {
+      return <div>No estás autenticado</div>;
+    }
+    return <WrappedComponent {...props} />;
+  };
+};
+
+const Dashboard = () => {
+  return <h1>Bienvenido al Dashboard</h1>;
+};
+
+const ProtectedDashboard = withAuth(Dashboard);
+
+// Ahora ProtectedDashboard verifica autenticación antes de renderizar Dashboard
+export default function App() {
+  return <ProtectedDashboard />;
+}
+
+```
+
+Existe el concepto de **wrapper hell** en donde tengo demasiados niveles anidados en los componentes, este fue el motivo por el cual React introdujo a los Custom Hook 
+
+```jsx
+const useAuth = () => {
+  const isAuthenticated = true; // Lógica de autenticación
+  return isAuthenticated;
+};
+
+const Dashboard = () => {
+  const isAuthenticated = useAuth();
+  if (!isAuthenticated) {
+    return <div>No estás autenticado</div>;
+  }
+  return <h1>Bienvenido al Dashboard</h1>;
+};
+```
+
+Hoy en dia los HOC son utiles cuando se utilizan patrones de clases, o cuando se necesita un mayor control sobre el ciclo de vida del componente.

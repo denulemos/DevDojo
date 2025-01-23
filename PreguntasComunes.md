@@ -6,10 +6,8 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 
 | Preguntas |
 |----------|
-| [Null vs undefined vs never](#ent0-2) |
 | [Programacion Funcional](#ent8) |
 | [Pure function en Programacion Funcional](#ent13) |
-| [Currying (funcion dentro de funcion)](#ent15) |
 | [¿Qué ventajas ofrece la inmutabilidad al manejar estructuras de datos? Proporciona un ejemplo práctico.](#ent14) |
 | [Programacion reactiva (Observables, RxJs, Subscribers)](#ent8-2) |
 | [Programacion declarativa (SQL)](#ent8-3) |
@@ -27,8 +25,6 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 | [PWA (Progressive Web App)](#ent25-1) |
 | [Critical Rendering Path](#ent22) |
 | [¿Cuáles son las diferencias entre localStorage, sessionStorage y las cookies?](#ent23) |
-| [Web y Service Workers](#ent26) |
-| [Event Loop (Macro, Micro tasks, Callback Queue)](#ent27) |
 | [Obfuscation and Minification](#ent55) |
 | [Promises - Async Await - Callbacks](#ent29) |
 | [Beneficios de usar Webpack o Rollup](#ent32) |
@@ -36,7 +32,6 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 | [Mejoras en el ciclo de vida](#ent68) |
 | [CDN (Content Delivery Network)](#ent41) |
 | [Como organizarias el code reuse en una aplicacion?](#ent42) |
-| [Higher order component (HoC)](#ent43) |
 | [Patrones de disenio en React](#ent44) |
 | [Patrones de disenio en Frontend](#ent46) |
 | [Antipatrones en Frontend](#ent47) |
@@ -60,28 +55,6 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 
 # Preguntas mas comunes en entrevistas de trabajo para un FE Engineer
 
-
-
-<a id="ent0-2"></a>
-
-### **Null vs undefined vs never**
-
-[Volver al indice](#entrevista-base)
-
-`null` y `undefined` son valores que existen tanto en JS como en TS, pero `never` es propio de TS.
-
-`null` es ningun valor en particular, califica como inicializacion en si mismo. 
-`undefined` es el valor por defecto de una variable que no ha sido inicializada.
-`never` es un tipo que representa un valor que nunca sucedera. Aparece seguido en errores de compilacion cuando se declara un array pero, o no se inicializa o no se declara de que tipo es, y se intenta hacer alguna operacion con la misma.
-
-```typescript
-let a: null = null;
-let b: undefined = undefined;
-
-let c: never = (() => {
-  throw new Error("Error");
-})();
-```
 
 <a id="ent8"></a>
 
@@ -179,31 +152,6 @@ console.log(tareasActualizadas); // Nueva lista con la tarea agregada
 Un ejemplo de la IA que me gusto mucho para explicar esto: 
 
 Imagina que estás escribiendo un documento en un procesador de textos. Cada vez que haces un cambio, como añadir una palabra, el programa no borra todo el documento y lo reescribe desde cero con la palabra añadida. En lugar de eso, crea una nueva versión del documento con la palabra incluida. Si algo sale mal mientras escribes, siempre puedes volver a la versión anterior sin problemas. Esto es similar a cómo funciona la inmutabilidad en las aplicaciones de software.
-
-<a id="ent15"></a>
-
-### **Currying**
-
-[Volver al indice](#entrevista-base)
-
-Es una tecnica de programacion funcional donde meto una funcion dentro de otra, y todas estas reciben solo un parametro a la vez. 
-
-```typescript
-function multiply(a: number): (b: number) => number {
-    return function(b: number): number {
-        return a * b;
-    };
-}
-
-// Uso de la función curried
-const multiplyByTwo = multiply(2);
-const result = multiplyByTwo(3);  // result será 6
-console.log(result);
-```
-
-En este ejemplo, multiply es una función que toma el primer número, a, y devuelve otra función que toma el segundo número, b. La función devuelta realiza la multiplicación de a y b.
-
-Al dividir todo en pequenias funciones, hace que la reutilizacion de codigo sea mucho mejor. 
 
 <a id="ent8-1"></a>
 
@@ -1057,96 +1005,6 @@ Si yo optimizo este proceso, la carga de mi pagina sera mucho mas veloz.
 | Los datos se almacenan en el lado del cliente | Los datos se almacenan en el lado del cliente | Los datos se almacenan en el lado del cliente |
 | Los datos no se envian al servidor con cada solicitud HTTP | Los datos no se envian al servidor con cada solicitud HTTP | Los datos se envian al servidor con cada solicitud HTTP, es por eso que es importante resguardarlas ya que pueden tener session keys para la identificacion ante el llamado a un servicio |
 
-<a id="ent26"></a>
-
-### **Web y Service Workers**
-
-[Volver al indice](#entrevista-base)
-
-Como se menciono anteriormente, Javascript es single-thread, y esto puede ser un problema cuando se trata de operaciones pesadas o que se deben realizar en segundo plano. Para esto se crearon los Service Workers, que son scripts que se ejecutan en segundo plano y que permiten realizar operaciones como notificaciones push, actualizaciones de contenido, y manejo de cache. Es especialmente util tambien cuando quiero que mi app tenga cierta funcionalidad offline.
-
-Los Service Workers son eventos que se ejecutan en segundo plano y que no tienen acceso al DOM, pero si pueden comunicarse con la pagina principal mediante mensajes.
-
-```javascript
-// service-worker.js
-self.addEventListener('fetch', event => {
-    event.respondWith(
-        caches.match(event.request).then(response => {
-            return response || fetch(event.request);
-        })
-    );
-});
-```
-
-```javascript
-// main.js
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js')
-        .then(registration => console.log('Service Worker registrado'))
-        .catch(error => console.error('Error al registrar el Service Worker', error));
-}
-```
-
-<a id="ent27"></a>
-
-### **Event Loop (Macro, Micro tasks, Callback Queue)**
-
-[Volver al indice](#entrevista-base)
-
-El Event Loop es un bucle que se encarga de manejar los eventos y las operaciones asincronas en Javascript.
-
-- **Call Stack**: Es donde se guardan las operaciones sincronas, y se ejecutan en orden de llegada.
-- **Web API**: Es donde se guardan las operaciones asincronas, como `setTimeout`, `fetch`, `addEventListener`, etc.
-- **Callback Queue**: Es donde se guardan las operaciones que se deben ejecutar una vez que el Call Stack este vacio, como los Callbacks.
-- **Event Loop**: Es el encargado de chequear el Call Stack y el Callback Queue, y si el Call Stack esta vacio, toma la primera operacion de la Callback Queue y la pone en el Call Stack.
-- **Microtask Queue**: Es donde se guardan las Promises, y tiene prioridad sobre el Callback Queue.
-
-```javascript
-console.log('Inicio');
-
-setTimeout(() => console.log('Timeout'), 0);
-
-console.log('Fin');
-```
-
-En este caso, el `setTimeout` se va a ejecutar una vez que el Call Stack este vacio, por lo que el orden de ejecucion va a ser `Inicio`, `Fin`, `Timeout`.
-En el caso de las Promises, estas se ejecutan en el Microtask Queue, que tiene prioridad sobre el Callback Queue.
-
-```javascript
-console.log('Inicio');
-
-Promise.resolve().then(() => console.log('Promise'));
-
-console.log('Fin');
-```
-
-En este caso, el orden de ejecucion va a ser `Inicio`, `Fin`, `Promise`, ya que las Promises se ejecutan en el Microtask Queue.
-
-En el caso de los Callbacks, estos se ejecutan en el Callback Queue, y se ejecutan una vez que el Call Stack este vacio.
-
-```javascript
-console.log('Inicio');
-
-setTimeout(() => console.log('Timeout'), 0);
-
-Promise.resolve().then(() => console.log('Promise'));
-
-console.log('Fin');
-```
-
-Y en el caso de async-await se ejecutan en el Microtask Queue, por lo que tienen prioridad sobre los Callbacks.
-
-```javascript
-console.log('Inicio');
-
-(async () => {
-    await Promise.resolve();
-    console.log('Async');
-})();
-
-console.log('Fin');
-```
-
 <a id="ent55"></a>
 
 ### **Obfuscation and Minification**
@@ -1472,67 +1330,6 @@ paymentMethod.pay(100); // "Paid 100 using credit card"
 - En React el uso de custom Hooks es ideal para el manejo de logica repetida
 - Hacer uso del tipico archivo de constantes para manejar la misma informacion a lo largo de toda la aplicacion desde una misma fuente.
 
-<a id="ent43"></a>
-
-### **Que es un higher order component?**
-
-[Volver al indice](#entrevista-base)
-
-Es un patron de disenio muy comunmente usado en React en donde una funcion recibe como parametro un componente y devuelve un componente nuevo con una funcioanlidad extendida.
-
-```jsx
-const withExtraProps = (WrappedComponent) => {
-  return (props) => {
-    const extraProps = { extra: 'some extra prop' };
-    return <WrappedComponent {...props} {...extraProps} />;
-  };
-};
-```
-
-Es muy comun cuando debo chequear varias veces si el usuario se encuentra autenticado en la aplicacion
-
-```jsx
-const withAuth = (WrappedComponent) => {
-  return (props) => {
-    const isAuthenticated = true; // Lógica de autenticación
-    if (!isAuthenticated) {
-      return <div>No estás autenticado</div>;
-    }
-    return <WrappedComponent {...props} />;
-  };
-};
-
-const Dashboard = () => {
-  return <h1>Bienvenido al Dashboard</h1>;
-};
-
-const ProtectedDashboard = withAuth(Dashboard);
-
-// Ahora ProtectedDashboard verifica autenticación antes de renderizar Dashboard
-export default function App() {
-  return <ProtectedDashboard />;
-}
-
-```
-
-Existe el concepto de **wrapper hell** en donde tengo demasiados niveles anidados en los componentes, este fue el motivo por el cual React introdujo a los Custom Hook 
-
-```jsx
-const useAuth = () => {
-  const isAuthenticated = true; // Lógica de autenticación
-  return isAuthenticated;
-};
-
-const Dashboard = () => {
-  const isAuthenticated = useAuth();
-  if (!isAuthenticated) {
-    return <div>No estás autenticado</div>;
-  }
-  return <h1>Bienvenido al Dashboard</h1>;
-};
-```
-
-Hoy en dia los HOC son utiles cuando se utilizan patrones de clases, o cuando se necesita un mayor control sobre el ciclo de vida del componente.
 
 <a id="ent44"></a>
 
