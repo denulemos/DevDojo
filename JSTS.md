@@ -49,6 +49,12 @@
 | [Currying (funcion dentro de funcion)](#ent15) |
 | [Web y Service Workers](#ent26) |
 | [Event Loop (Macro, Micro tasks, Callback Queue)](#ent27) |
+| [Entre JS y un script ASP, ¿Cual es mas rápido?](#var34) |
+| [¿Qué es una funcion Declarativa y una Expresiva?](#var35) |
+| [¿Cómo manejarías errores en funciones con async/await de forma eficiente?](#var10-4) 💛|
+| [Diferencia entre primitivo y objeto](#var14) |
+| [Variable Hoisting](#var24) 💛 |
+| [Diferencia entre class y function](#var25) |
 
 <a name="typ-base"></a>
 
@@ -2574,4 +2580,168 @@ console.log('Inicio');
 })();
 
 console.log('Fin');
+```
+
+<a id="var34"></a>
+
+### **Entre JS y un script ASP, ¿Cual es mas rápido?**
+
+[Volver al indice](#alg-base-2)
+
+JavaScript es más rápido porque es un lenguaje del lado del cliente y no necesita la ayuda del servidor web para ejecutarse. Por otra parte el ASP es un lenguaje del lado del servidor. Motivo por el que siempre es más lento que JavaScript. Sin embargo, Javascript ahora, también puede ser usado como un lenguaje de lado del servidor (server side) (nodejs).
+
+<a id="var35"></a>
+
+### **¿Qué es una funcion Declarativa y una Expresiva?**
+
+[Volver al indice](#alg-base-2)
+
+En las **Funciones Declarativas** usamos la palabra reservada `Function` para poder declararla
+
+```jsx
+ function saludar(nombre) {
+  console.log(`Hola ${nombre}`);
+}
+
+saludar('Diego');
+```
+
+La **Expresiva (Expresion de Funcion)** es cuando la declaramos tipo variable como funcion anonima
+
+```jsx
+var nombre = function(nombre){
+    console.log(`Hola ${nombre}`)
+}
+
+nombre(‘Diego’);
+```
+
+A las funciones declarativas se les aplica hoisting, a la otra no, hoisting se aplica solo a las palabra sreservadas `var` y `function`, es decir, a la expresion de funcion podriamos llamarla recien despues de declararla.
+
+<a id="var10-4"></a>
+
+### **¿Cómo manejarías errores en funciones con async/await de forma eficiente?**
+
+[Volver al indice](#alg-base-async)
+
+Para manejar errores en funciones con async/await de forma eficiente, se puede usar un bloque `try/catch` para manejar errores de manera sincrona.
+
+```jsx
+async function myAsyncFunction() {
+  try {
+    const value = await promise;
+    console.log(value);
+  } catch (error) {
+    console.error(error);
+  }
+}
+```
+
+<a id="var14"></a>
+
+### **Diferencia entre primitivo y objeto**
+
+[Volver al indice](#alg-base-obj)
+
+- Los primitivos se pasan por valor, los objetos se pasan por referencia
+- Los primitivos se copian por valor y los objetos se copian por referencia
+- Los primitivos se comparan por valor y los objetos por referencia
+- Los primitivos son inmutables, el unico elemento inmutable del objeto es su referencia, el valor puede ser modificado.
+
+Casos **primitivos**
+
+```jsx
+let animal = ‘perro’
+let mascota = animal
+animal = 'gato'
+console.log(mascota) // perro, se copio por valor y no referencia
+```
+
+Caso **objetos** ( Como puedo clonar un objeto ?)
+
+```jsx
+let animal = {
+  nombre: 'perro'
+}
+
+let mascota = animal
+animal.especie = 'gato'
+console.log(mascota.nombre) // gato, se copio referencia no valor
+
+---
+
+let object = {a: 1, b:2};
+let referencia = object; // Esto es solo una referencia
+
+let clone = {...object}; // Esto si es un clon
+let clone2 = Object.assign({}, object);// Esto si es un clon
+
+clone.foo = "foo";
+clone2.foo = "denu";
+
+console.log(object);// { a: 1, b: 2 }
+console.log(referencia); // { a: 1, b: 2 }
+console.log(clone); // { a: 1, b: 2, foo: 'foo' }
+```
+
+<a id="var24"></a>
+
+### **Variable Hoisting** 💛
+
+[Volver al indice](#alg-base-obj)
+
+Es un mecanismo de JS en el que las variables y declaraciones de funciones se mueven a la parte superior de su ambito antes de la ejecucion del codigo.
+
+```jsx
+console.log (saludar);
+    var saludar = "dice hola"
+
+// es decir
+
+var saludar;
+    console.log(saludar); // saludar is undefined
+    saludar = "dice hola"
+```
+
+Es el usar las variables antes de que sean declaradas.
+
+<a id="var25"></a>
+
+### **Diferencia entre class y function**
+
+[Volver al indice](#alg-base-obj)
+
+class tiene un alcance comprendido por llaves, al igual que las variables let. function es local a la funcion donde fue definida, no podemos usar una clase o funcion constructora por fuera del alcance en donde se encuentra.
+
+```jsx
+// Class
+{
+  class C {
+  }
+}
+
+// Function
+function x () {
+  function C () {
+  }
+}
+
+// uso de ambas
+try {
+  const obj = new C();
+  console.assert( false );
+} catch (err) {
+  console.assert(
+    err.message === 'C is not defined'
+  );
+}
+```
+
+Ambas pueden ser definidas de forma anonima. Sus referencias funcionan igual que con object, no se envia una copia, si no una referencia de la misma.
+
+```jsx
+const C = class {};
+const C = function () {};
+
+console.assert( typeof  C === 'function' );
 ```
