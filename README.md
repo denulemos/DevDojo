@@ -821,9 +821,9 @@ Es remover codigo no usado, como, por ejemplo, imports y exports que no fueron u
 
 [Volver al indice](#rea-base)
 
-Es Search Engine Optimization, es lo que hace que un sitio sea encontrado por Google, y HTML hace un aporte con su metadata para que esto suceda. Por ejemplo, no se recomienda usar muchos <h1> en un HTML para no afectar al SEO.
+Es Search Engine Optimization, es lo que hace que un sitio sea encontrado por Google, y HTML hace un aporte con su metadata para que esto suceda. Por ejemplo, no se recomienda usar muchos h1 en un HTML para no afectar al SEO.
 
-- Describir la pagina con titulos y fragmentos unicos. Uso de <title> y utilizar terminos claros. Todas las paginas del sitio deben tener una meta descripcion para que aparezca la misma en los resultados del buscador
+- Describir la pagina con titulos y fragmentos unicos. Uso de title y utilizar terminos claros. Todas las paginas del sitio deben tener una meta descripcion para que aparezca la misma en los resultados del buscador
 
 ```html
 <head>
