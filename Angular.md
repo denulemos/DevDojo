@@ -44,8 +44,6 @@ Son diseños lógicos que se encargan de trabajar dentro de la aplicación, se u
 
 Se identifican por su nombre que tipicamente es `app.module.ts` o similares. Hoy en dia en las ultimas versiones de Angular se usan cada vez mas los componentes standalone, donde no es necesario el uso de modulos.
 
----
-
 <a id="rea12"></a>
 
 ### **¿Qué es Property Binding?**
