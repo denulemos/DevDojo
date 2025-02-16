@@ -2,7 +2,6 @@
 
 | Angular |
 |----------|
-| [Diferencia entre AngularJS y Angular](#rea10) 💛|
 | [¿Qué son los modulos en Angular?](#rea11) |
 | [¿Qué es Property Binding?](#rea12) |
 | [¿Cuál es el flujo de datos una aplicación Angular?](#rea13) |
@@ -18,9 +17,9 @@
 | [Observable en RxJS](#ent39) |
 | [Observable "cold" y "hot"](#ent40) |
 | [Patrones de disenio en Angular](#ent45) |
-|¿Cómo funciona la detección de cambios en Angular?|
-|¿Cómo se maneja la inyección de dependencias y la inversión de control en las aplicaciones de Angular? 💛|
-|¿Qué es la compilación JIT y AOT en Angular? Diferencias, pros y contras.|
+|[¿Cómo funciona la detección de cambios en Angular?](#angular2)|
+|[¿Cómo se maneja la inyección de dependencias y la inversión de control en las aplicaciones de Angular?](#angular3) 💛|
+|[¿Qué es la compilación JIT y AOT en Angular? Diferencias, pros y contras](#angular4)|
 |¿Cómo se maneja la gestión del estado en las aplicaciones de Angular?|
 |¿Cómo se puede compartir el estado en las aplicaciones de Angular? Servicios vs Flux vs Redux. Pros y contras de cada enfoque.|
 |¿Qué es el enrutamiento en Angular y cómo se configura?|
@@ -32,34 +31,6 @@
 
 
 ---
-
-<a id="rea10"></a>
-
-### **Diferencia entre AngularJS y Angular**
-
-[Volver al indice](#angular-base)
-
-AngularJS y Angular son dos frameworks de JavaScript desarrollados por Google, pero tienen diferencias significativas en cuanto a su arquitectura y características.
-
-1. **AngularJS (1.x)**:
-   - AngularJS es el primer framework de JavaScript desarrollado por Google. Se lanzó en 2010.
-   - Utiliza un enfoque MVC (Modelo-Vista-Controlador) para el desarrollo de aplicaciones web.
-   - AngularJS usa la sintaxis de enlace de datos bidireccional para sincronizar automáticamente los datos del modelo y la vista.
-   - Usa directivas para extender el HTML con nuevas funcionalidades.
-   - Utiliza inyección de dependencias para facilitar la creación y administración de componentes.
-   - AngularJS se basa en JavaScript puro y no requiere TypeScript.
-
-2. **Angular (2+)**:
-   - Angular, también conocido como Angular 2 y versiones posteriores, es una reescritura completa de AngularJS.
-   - Se lanzó en 2016 y fue reconstruido con TypeScript.
-   - Adopta un enfoque de componentes, donde las aplicaciones se construyen a partir de componentes independientes y reutilizables.
-   - Utiliza un enfoque unidireccional para la vinculación de datos, lo que mejora el rendimiento y la previsibilidad.
-   - Angular cuenta con un enfoque modular, lo que permite la carga bajo demanda de características y optimización del rendimiento.
-   - Ofrece una mejor optimización para dispositivos móviles y es más adecuado para el desarrollo de aplicaciones empresariales complejas.
-   - Angular proporciona herramientas integradas para realizar pruebas unitarias y de extremo a extremo.
-   - Angular es compatible con las últimas especificaciones de JavaScript (ES6/ES7) y TypeScript.
-
-En resumen, AngularJS es el primer framework desarrollado por Google, que utiliza un enfoque MVC y está basado en JavaScript puro, mientras que Angular es una reescritura completa en TypeScript, con un enfoque de componentes, vinculación de datos unidireccional y una arquitectura más modular y optimizada para aplicaciones empresariales modernas.
 
 <a id="rea11"></a>
 
@@ -435,7 +406,7 @@ Optimizar aplicaciones Angular requiere identificar los cuellos de botella espec
 
 ### **Angular Signals**
 
-[Volver al indice](#entrevista-base)
+[Volver al indice](#angular-base)
 
 Angular signals es una caracteristica que aparecio con Angular 16 en donde se introducen herramientas de reacividad para mejorar la gestion de estados y deteccion de cambios. Reemplaza a algunos elementos nativos y a algunos usos de RxJs
 
@@ -489,7 +460,7 @@ counter.set(1); // Consola: "Counter value is: 1"
 
 ### **Que mejoras hay en la migracion de AngularJS a Angular?**
 
-[Volver al indice](#entrevista-base)
+[Volver al indice](#angular-base)
 
 | AngularJS | Angular |
 | --- | --- |
@@ -506,7 +477,7 @@ counter.set(1); // Consola: "Counter value is: 1"
 
 ### **Decorators en Angular**
 
-[Volver al indice](#entrevista-base)
+[Volver al indice](#angular-base)
 
 El concepto de decorators en si no es propio de Angular si no que viene de Typescript. Los decoradores son funciones que se utilizan para modificar clases, metodos, propiedades, parametros, etc.
 
@@ -631,7 +602,7 @@ export class ParentComponent implements AfterViewInit {
 
 ### **¿Qué es RxJS y qué problemas resuelve en el desarrollo de aplicaciones?**
 
-[Volver al indice](#entrevista-base)
+[Volver al indice](#angular-base)
 
 Reactive Extensions for Javascript (RxJS) es una libreria que nos permite trabajar con programacion reactiva en Javascript permitiendo el manejo de flujos asincronos de una forma mas declarativa, reactiva y consistente.
 
@@ -647,7 +618,7 @@ En parte su uso podria ser reemplazado con Angular Signals en Angular 16, pero R
 
 ### **¿Qué es un Observable en RxJS y cómo difiere de una Promesa en JavaScript?**
 
-[Volver al indice](#entrevista-base)
+[Volver al indice](#angular-base)
 
 RxJS (Reactive Extensions for JS) es una libreria que nos permite trabajar con programacion reactiva en Javascript, y la misma posee `Observables` que es un objeto que reprssenta una coleccion de valores o eventos que se emiten a lo largo del tiempo.
 
@@ -686,7 +657,7 @@ observable.subscribe({
 
 ### **Explica la diferencia entre un Observable "cold" y "hot". Proporciona un ejemplo práctico de cada uno.**
 
-[Volver al indice](#entrevista-base)
+[Volver al indice](#angular-base)
 
 Los **Cold Observables** son Observables que crean un flujo de datos por cada subscriptor, produciendo datos on-demand, es decir, solo cuando alguien se subscribe. El ejemplo mas comun es el llamado a un servicio con HTTP.
 
@@ -718,7 +689,7 @@ setTimeout(() => {
 
 ### **Patrones de disenio en Angular**
 
-[Volver al indice](#entrevista-base)
+[Volver al indice](#angular-base)
 
 **Arquitectura modular**
 
@@ -1003,3 +974,132 @@ export class ProfileComponent {
   }
 }
 ```
+
+<a id="angular2"></a>
+
+### **¿Cómo funciona la detección de cambios en Angular?**
+
+[Volver al indice](#angular-base)
+
+Angular usa un sistema basado en zonas y el algoritmo de determinacion de diferencias (Dirty Checking) para saber cuando actualizar la interfaz.
+
+Hay varios factores dentro de este sistema:
+
+- **zone.js**: Es una libreria que detecta eventos asincronicos como eventos del DOM (click), peticiones HTTP, timers (setTimeout) y Promesas. Cuando se detecta un evento, se ejecuta un ciclo de deteccion de cambios.
+- **Ciclo de deteccion de cambios**: Cuando se inicia la deteccion de cambios, primero se recorre el arbol de componentes, se comparan los valores y si se detectan cambios, la vista es actualizada. Este proceso se repite hasta que no haya mas cambios.
+
+Hay varias estrategias para detectar los cambios:
+
+* **Default**: Angular recorre todo el arbol de componentes y verifica si hay cambios en las propiedades de los componentes. Si hay cambios, actualiza la vista. Se ejecuta ante cualquier evento asincronico y puede afectar el rendimiento si hay muchos componentes.
+* **OnPush**: Solo se actualiza el componente si hay cambios en las propiedades de entrada (`@Input`) o si se emite un evento (`@Output`). Es mas eficiente que la estrategia por defecto.
+
+```typescript
+@Component({
+  selector: 'app-ejemplo',
+  templateUrl: './ejemplo.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush // Activa la detección optimizada
+})
+```
+
+La deteccion de cambios sin embargo puede ser tambien forzada mediante el uso de `ChangeDetectorRef`
+
+- ChangeDetectorRef.detectChanges() → Recorre el árbol de componentes y actualiza la vista.
+- ChangeDetectorRef.markForCheck() → Marca el componente como "sucio" para la próxima detección.
+
+```typescript
+constructor(private cdr: ChangeDetectorRef) {}
+
+ngAfterViewInit() {
+  this.cdr.detectChanges(); // Forzar actualización
+}
+```
+
+<a id="angular3"></a>
+
+### **¿Cómo se maneja la inyección de dependencias y la inversión de control en las aplicaciones de Angular?**
+
+[Volver al indice](#angular-base)
+
+La inyeccion de dependencias es basicamente el hecho de crear un archivo con servicios que sirvan para ser **inyectados** en otros componentes. 
+
+```typescript
+@Injectable({
+  providedIn: 'root' // Angular lo registra en el inyector raíz automáticamente
+})
+```
+
+Luego este componente es inyectado en el constructor (o mediante el inject) del componente donde se desea usar.
+
+```typescript
+constructor(private userService: UserService) {}
+```
+
+Se pueden definir distintos niveles de inyeccion, por ejemplo:
+
+- **root**: El servicio esta disponible globalmente para toda la aplicacion
+- **Nivel de Módulo (providers: [] en @NgModule)**: El servicio esta disponible solo para el módulo en el que se encuentra
+- **Componente**: El servicio esta disponible solo para el componente en el que se encuentra
+
+Gracias a la **Inversion de Control** de Angular, no es necesario hacer un `new` de un servicio, sino que Angular se encarga de hacerlo por nosotros. 
+
+```typescript	
+export class EjemploComponent {
+  miServicio = new MiServicioService(); // 🚨 Mala práctica: acoplamiento fuerte
+}
+
+export class EjemploComponent {
+  constructor(private miServicio: MiServicioService) { } // ✔ Mejor práctica
+}
+```
+
+Si se busca inyectar una **interfaz** en lugar de una clase, se usa `InjectionToken`
+
+```typescript
+
+import { InjectionToken } from '@angular/core';
+
+export const CONFIG_TOKEN = new InjectionToken<string>('config');
+
+@NgModule({
+  providers: [
+    { provide: CONFIG_TOKEN, useValue: 'Modo oscuro' }
+  ]
+})
+export class AppModule { }
+
+// En el componente
+
+constructor(@Inject(CONFIG_TOKEN) private config: string) {
+  console.log(this.config); // 'Modo oscuro'
+}
+```
+
+<a id="angular4"></a>
+
+### **¿Qué es la compilación JIT y AOT en Angular? Diferencias, pros y contras**
+
+[Volver al indice](#angular-base)
+
+Como el codigo TS y HTML precisa ser compilado para ser mostrado en el navegador, se ofrecen dos modos de compilacion
+
+**Just-in-Time (JIT)**
+
+Se compilan las planillas cuando la aplicacion es ejecutada en el navegador, se usa en desarrollo, ya que no es necesario recompilar todo el proyecto para poder ver los cambios. 
+
+- El bundle final es mas grande ya que incluye al compilador de Angular en si mismo
+- La app es mas lenta al iniciar ya que debe compilar en el navegador
+- Es mas facil de depurar ya que el codigo fuente es mas claro, pero menos seguro. 
+
+Es el activado con `ng serve`
+
+**Ahead-of-Time (AOT)**
+
+Compila el codigo antes de mostrarlo en el navegador, se usa en produccion ya que el rendimiento es optimizado
+
+- Inicio mas rapido ya que el codigo es compilado antes de llegar al browser
+- El bundle final es mas pequeño ya que no incluye al compilador de Angular
+- Es mas dificil de depurar ya que el codigo fuente es mas dificil de leer, pero mas seguro
+- Detecta errores en las plantillas durante la compilacion, evitando fallos en ejecucion
+- La compilacion es mucho mas lenta durante el build
+
+Es el activado con `ng build --aot`
