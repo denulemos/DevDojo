@@ -25,7 +25,7 @@ Preguntas son agregadas todas las semanas. Se aceptan sugerencias mediante Pull 
 - [Conceptos Generales](#fe-base)
 - [Desarrollo Mobile y React Native](./DesarrolloMobile.md)
 - [QA](./QA.md)
-- [Control de Versiones y Cambios](./Versionado.md)
+- [Control de Versiones y Cambios - Integracion Continua](./Versionado.md)
 - [Clean Code y Best Practices](./CleanCode.md)
 - [Hardware, Sistemas, Infraestructura y Arquitectura](./Hardware.md)
 - [Bases de Datos](./BaseDatos.md)
