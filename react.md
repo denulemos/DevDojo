@@ -44,7 +44,6 @@
 | [useOptimistic() React](#ent72) |
 | [React Server Components](#ent69-1) |
 | [Funciones de alto nivel / Higher order Function](#rea43) |
-|Para que tipo de proyectos React es recomendable?|
 |¿Cuál es la diferencia entre React.createElement() y JSX?|
 |¿Qué es un Fragment en React y para qué se utiliza?|
 |¿Cómo funcionan las claves (keys) en las listas de React? ¿Por qué son importantes?|

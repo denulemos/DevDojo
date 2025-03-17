@@ -1,6 +1,6 @@
 <a name="har-base"></a>
 
-## [Hardware, Sistemas, Infraestructura y Arquitectura](#har)
+## [Hardware, Redes, Infraestructura y Arquitectura](#har)
 
 | Temas |
 |----------|

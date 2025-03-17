@@ -22,9 +22,9 @@
 |[¿Cómo funciona la detección de cambios en Angular?](#angular2)|
 |[¿Cómo se maneja la inyección de dependencias y la inversión de control en las aplicaciones de Angular?](#angular3) 💛|
 |[¿Qué es la compilación JIT y AOT en Angular? Diferencias, pros y contras](#angular4)|
+|[¿Qué es el enrutamiento en Angular y cómo se configura?](#angular5)|
 |¿Cómo se maneja la gestión del estado en las aplicaciones de Angular?|
 |¿Cómo se puede compartir el estado en las aplicaciones de Angular? Servicios vs Flux vs Redux. Pros y contras de cada enfoque.|
-|¿Qué es el enrutamiento en Angular y cómo se configura?|
 |¿Cómo se manejan las rutas protegidas en Angular?|
 |¿Qué es el lazy loading y cómo se implementa en Angular?|
 |¿Cómo se manejan las peticiones HTTP en Angular?|
@@ -1157,3 +1157,62 @@ Compila el codigo antes de mostrarlo en el navegador, se usa en produccion ya qu
 - La compilacion es mucho mas lenta durante el build
 
 Es el activado con `ng build --aot`
+
+<a id="angular5"></a>
+
+### **¿Qué es el enrutamiento en Angular y cómo se configura?**
+
+[Volver al indice](#angular-base)
+
+Es la configuracion que permite a los usuarios navegar en nuestra aplicacion sin necesidad de recargar la pagina por cada cambio en el caso de los SPA.
+Tambien se encarga de gestionar las URL para facilitar el compartir links y la navegabilidad.
+Se configura mediante el `RouterModule` en un array de rutas, el cual se referencia con un path y un componente. 
+
+```ts
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+
+const routes: Routes = [
+  { path: '', component: HomeComponent }, // Ruta raíz
+  { path: 'about', component: AboutComponent }, // Ruta para "Acerca de"
+  { path: '**', component: NotFoundComponent } // Ruta comodín para páginas no encontradas
+];
+```
+
+En el mismo tambien se pueden manejar componentes con Lazy Loading
+
+```ts
+{ path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) }
+```
+
+Restringir el acceso a rutas protegidas
+
+```ts
+{ path: 'admin', component: AdminComponent, canActivate: [AuthGuard] }
+```
+
+Y luego en el ng.html que hace de entrypoint de nuestra app, referenciamos al contenido "routerizado"
+
+```html
+<nav>
+  <a routerLink="/">Inicio</a>
+  <a routerLink="/about">Acerca de</a>
+</nav>
+
+<router-outlet></router-outlet>
+```
+
+Tambien es posible manejar las rutas desde el codigo logico de nuestra app por fuera de los componentes
+
+```ts
+import { Router } from '@angular/router';
+
+constructor(private router: Router) {}
+
+irAAbout() {
+  this.router.navigate(['/about']);
+}
+```
