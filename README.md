@@ -27,7 +27,7 @@ Preguntas son agregadas todas las semanas. Se aceptan sugerencias mediante Pull 
 - [QA](./QA.md)
 - [Control de Versiones y Cambios - Integracion Continua](./Versionado.md)
 - [Clean Code y Best Practices](./CleanCode.md)
-- [Hardware, Redes, Infraestructura y Arquitectura](./Hardware.md)
+- [Hardware, Redes, Infraestructura y System Design](./Hardware.md)
 - [Bases de Datos](./BaseDatos.md)
 - [Seguridad](./Seguridad.md)
 - [Accesibilidad](./Accesibilidad.md)
