@@ -53,6 +53,19 @@
 | [¿Qué es un SLD?](#har47) |
 | [¿Qué es un DNS Poisoning?](#har48) |
 | [¿Qué es un DNS Spoofing?](#har49) |
+| [Que es una cookie?](#arc15) |
+| [Que es el cookie tracking?](#arc16) |
+| [Como creo una cookie con Javascript?](#arc17) |
+| [¿Cual es la diferencia entre Cookies, SessionStorage y LocalStorage?](#arc18) |
+| [¿Como puedo borrar una cookie?](#arc19) |
+| [¿Que es CORS?](#arc20) |
+| [¿Que es un Sistema Operativo?](#arc21) |
+| [FCFS (First come, first served)](#arc22) |
+| [SPN/SJF (Shorted Process Next/Shorted Job First)](#arc23) |
+| [SRT (Shortest Remaining Time)](#arc24) |
+
+| System Design |
+|----------|
 | [¿Qué resuelve la arquitectura de Microfrontends?](#arc1) |
 | [¿Cuales son las caracteristicas de un Microfrontend?](#arc2) |
 | [¿Qué beneficios y desventajas ves en la introducción de la arquitectura de microfrontends en algunos de tus proyectos?](#arc3) |
@@ -67,18 +80,6 @@
 | [Qué es un sistema de alta disponibilidad?](#arc12) |
 | [Qué es un CDN?](#arc13) |
 | [Qué es un balanceador de carga?](#arc14) |
-| [Que es una cookie?](#arc15) |
-| [Que es el cookie tracking?](#arc16) |
-| [Como creo una cookie con Javascript?](#arc17) |
-| [¿Cual es la diferencia entre Cookies, SessionStorage y LocalStorage?](#arc18) |
-| [¿Como puedo borrar una cookie?](#arc19) |
-| [¿Que es CORS?](#arc20) |
-| [¿Que es un Sistema Operativo?](#arc21) |
-| [FCFS (First come, first served)](#arc22) |
-| [SPN/SJF (Shorted Process Next/Shorted Job First)](#arc23) |
-| [SRT (Shortest Remaining Time)](#arc24) |
-
----
 
 ---
 
