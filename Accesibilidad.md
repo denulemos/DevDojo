@@ -7,30 +7,25 @@
 | [¿Qué es la accesibilidad web?](#acc1) |
 | [¿Cuáles son sus beneficios?](#acc2) |
 | [¿Qué significa A11y?](#acc3) |
-|¿Qué leyes o normativas existen a nivel global relacionadas con la accesibilidad web?|
-|¿Por qué es importante la accesibilidad web para las personas con discapacidades?|
+|[¿Qué leyes o normativas existen a nivel global relacionadas con la accesibilidad web?](#acc33)|
 
 | Fundamentos y Principios |
 |----------|
 | [¿De qué trata el Web Content Accessibility Guidelines (WCAG)?](#acc9) |
 | [¿De qué tratan los principios POUR - Principios WCAG?](#acc10) |
-|¿Cómo se aplica la regla de "suficiente tiempo para leer y usar el contenido" en el diseño web accesible?|
-|¿Qué significa que una página web sea "perceptible, operable, comprensible y robusta"?|
 
 | Herramientas |
 |----------|
 | [¿Cuáles son las herramientas más usadas en accesibilidad?](#acc4) |
 | [¿Qué es un screen reader?](#acc5) |
-|¿Qué herramientas específicas se utilizan para realizar auditorías de accesibilidad en un sitio web?|
-|¿Cómo funciona un lector de pantalla y qué desafíos puede presentar a los diseñadores web?|
+| [Herramientas de pruebas automatizadas de Accesibilidad](#acc55) |
+
 
 | Elementos Clave |
 |----------|
 | [¿Qué es el contraste de color?](#acc6) |
 | [¿Qué es el texto alternativo?](#acc7) |
 | [¿Qué es el teclado virtual?](#acc8) |
-|¿Cómo puede el contraste de color impactar en la legibilidad del contenido para personas con deficiencia visual?|
-|¿Qué buenas prácticas deben seguirse para escribir texto alternativo efectivo?|
 
 | ARIA y Contenido Dinámico |
 |----------|
@@ -38,17 +33,12 @@
 | [¿Cuándo es necesario utilizar ARIA?](#acc12) |
 | [Contenido dinámico y accesibilidad](#acc13) |
 | [Nombrar algunas ARIA existentes](#acc16) |
-|¿Cuáles son las limitaciones de usar ARIA y por qué no siempre es la mejor solución para mejorar la accesibilidad?|
-|¿Cómo se utiliza ARIA para mejorar la accesibilidad de contenido dinámico como menús o formularios interactivos?|
 
 | Buenas Prácticas y Técnicas |
 |----------|
 | [Manejo de focus](#acc14) |
 | [CSS accesible](#acc15) |
 | [¿Qué prácticas conlleva tener un HTML accesible?](#acc17) |
-| ¿Cómo influye el manejo adecuado del focus en la accesibilidad para usuarios
-de teclado?|
-|¿Qué reglas de CSS son esenciales para garantizar una experiencia accesible  en un sitio web?|
 
 ---
 
@@ -87,16 +77,62 @@ Es una abreviación de la palabra "accessibility" y se utiliza para referirse a 
 
 a|ccessibilit|y = a11y
 
+<a id="acc33"></a>
+
+### **¿Qué leyes o normativas existen a nivel global relacionadas con la accesibilidad web?**
+
+[Volver al indice](#acc-base)
+
+Existen diversas regulaciones que garantizan la accesibilidad en los sitios web y aplicaciones mobile. 
+
+Se puede mencionar la ADA que es la Ley de estadounidenses con discapacidades que se convirtio en la primera ley integral que trata este tema
+
+- Se prohibe la discriminacion de cualquier persona con discapacidad en cualquier etapa del empleo
+- Todos los transportes publicos deben ser accesibles
+- Todos los edificios publicos deben tambien ser accesibles
+
+Otra ley es la Ley de Rehabilitacion de EEUU que prohibio por primera vez la discriminacion de personas con discapacidad, y hace poco se agrego una enmienda que obliga a los organismos estatales a adaptar sus plataformas informaticas a esto, ahora tambien se agrego al WCAG que es un estandar internacional de accesibilidad del contenido web. 
+Sucedio algo muy parecido en la UE, obligando a organismos estatales a cumplir con WCAG 2.1 Nivel AA. 
+
+Si bien hoy en dia no hay sanciones muy duras al no cumplir estas medidas, a futuro puede ser que vayan aumentando ya que la cantidad de demandas fue creciendo con el tiempo. 
+
 <a id="acc4"></a>
 
 ### **¿Cuáles son las herramientas más usadas en accesibilidad?**
 
 [Volver al indice](#acc-base)
 
-* Screen Readers
-* Braille Output devices
-* Configuraciones propias del sistema operativo
-* Navegadores con herramientas de accesibilidad
+Para las personas con discapacidades visuales las herramientas mas utilizadas son:
+
+- Lectores de pantalla JAWS, NVDA, VoiceOver, TalkBack
+- Lupa de pantalla
+- Pantalla braille
+- Reconocimiento de voz
+
+Para las personas con discapacidades auditivas las herramientas mas utilizadas son:
+
+- Mecanismos de soporte de reproductores de video que permiten subtitulos y transcripciones
+- Mecanimos de soporte de audio que tambien permiten transcripciones
+- Dar medios de contacto nuestros que no se limiten solo al telefono
+
+Para los usuarios con discapacidades motrices las siguientes herramientas son las mas utilizadas:
+
+- Teclados o Joysticks
+- Varios dispositivos que permiten a los usuarios controlar un teclado virtual moviendo la cabeza, los ojos, las piernas, etc.
+- Palillo bucal
+- Varita para la cabeza
+- Raton Trackball de gran tamanio
+
+Para este tipo de usuarios es sumamente importante que todos los elementos de la pagina puedan ser accesibles por un medio que no sea exclusivo del mouse
+
+Tambien se tienen en cuenta a los usuarios con discapacidades cognitivas, que si bien no es una discapacidad fisica, se pueden tener en cuenta diversas medidas para poder mejorar su experiencia:
+
+- Software de aprendizaje visual
+- Corrector ortografico
+- Evitar el desorden en nuestra pagina, incluir suficiente espacio en blanco
+- Evitar un alto contraste entre el texto y el fondo
+- Evitar demasiada informacion en una sola pantalla
+- Identificar en que parte de la pagina se encuentra actualmente el usuario para adaptarlo
 
 <a id="acc5"></a>
 
@@ -104,7 +140,35 @@ a|ccessibilit|y = a11y
 
 [Volver al indice](#acc-base)
 
-Es un software que convierte el texto en voz o en braille. Es utilizado por personas ciegas o con baja visión para poder navegar por la web.
+Es una herramienta que permite a las personas con discapacidad visual el poder acceder al contenido de una pagina web, puede transmitir la informacion mediante voz o braille mediante un dispositivo externo. 
+
+Se anunciarán elementos con el siguiente css:
+
+opacidad: 0;
+left: -9999px;
+content: “Estoy aquí”;
+
+Los elementos con el siguiente css no se anunciarán:
+
+screen: ninguna;
+visibility: oculta;
+
+<a id="acc55"></a>
+
+### **Herramientas de pruebas automatizadas de Accesibilidad**
+
+[Volver al indice](#acc-base)
+
+Las herramientas automatizadas comprueban los siguientes elementos:
+
+- Marcado HTML
+- CSS
+- Contraste de color
+- Tamaño del texto
+- Estructura de la página
+- Atributos de Aria
+
+Hay varias herramientas en linea como Lighthouse, WAVE, AXE, CSS Validation Service entre otros.
 
 <a id="acc6"></a>
 
@@ -149,6 +213,8 @@ Poseen 3 niveles de éxito:
 Cada nivel es progresivo, es decir, para tener 50, se debe tener A y AA aprobados.
 
 Generalmente, el nivel AAA, el cual es el más avanzado, es al que debemos apuntar si trabajamos en servicios del gobierno, universidades o servicios esenciales, donde es extremadamente importante que todos puedan acceder a todo.
+
+Segun esta se deben cumplir 4 condiciones, que la web sea Perceptible, Operable, Comprensible y Robusta. 
 
 <a id="acc10"></a>
 
