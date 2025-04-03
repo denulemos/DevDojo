@@ -20,7 +20,6 @@
 | [¿Qué es un screen reader?](#acc5) |
 | [Herramientas de pruebas automatizadas de Accesibilidad](#acc55) |
 
-
 | Elementos Clave |
 |----------|
 | [¿Qué es el contraste de color?](#acc6) |
@@ -39,6 +38,7 @@
 | [Manejo de focus](#acc14) |
 | [CSS accesible](#acc15) |
 | [¿Qué prácticas conlleva tener un HTML accesible?](#acc17) |
+| [HTML Accesible](#acc177) |
 
 ---
 
@@ -849,4 +849,206 @@ Hay varios tipos de problemas de visión con respecto a los colores, el más com
 
 ```html
 <div aria-busy="true"></div>
+```
+
+<a id="acc177"></a>
+
+### **HTML Accesible**
+
+[Volver al indice](#acc-base)
+
+- Se debe especificar el lang dentro del head del HTML, de otra forma el lector de pantalla tomara el lenguaje del ordenador por defecto para leer las cosas, y se podrian producir errores inesperados
+
+```html
+<html lang="en">
+```
+
+Y si tengo partes de la pagina en donde manejo distintos lenguajes, los mismos deben ser especificados
+
+```html
+<html lang="en">
+...
+    <body>
+        <p>I'm a sentence in English containing the part <strong lang="fr">en français</strong>.</p>
+    </body>
+</html>
+```
+
+Mismo cuando se trata de lenguajes que se leen de atras para adelante
+
+```html
+<html lang="en">
+...
+    <body>
+        <p>I'm a sentence in English containing the part <strong lang="ar" dir="rtl">في العربية</strong>.</p>
+    </body>
+</html>
+```
+
+- Se debe agregar la metadata respecto al viewport, ya que no todos los dispositivos son del mismo tamanio y es necesario que nuestra pagina funcione en todos. 
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1">
+```
+
+Puedo agregar el atributo `user-escalable` para evitar que el usuario pueda hacer zoom, pero no es recomendable ya que hay personas que necesitan hacer zoom para poder leer la pagina. Sus valores validos son 1 o 0, si se usa este ultimo, estariamos violando una regla del WCAG. 
+
+- Se debe agregar un titulo explicativo a la pagina mediante el uso de `title` dentro del head.
+
+```html
+<title>The Document Title element - HTML: HyperText Markup Language | MDN</title>
+```
+
+Se recomienda poner la informacion unica primero, y luego la informacion variable.
+
+- Ordenar de manera correcta los titulos, siendo el h1 el mas importante y el h6 el menos importante. Evitar utilizar mas de 1 `h1` por pagina, ya que esto puede confundir a los lectores de pantalla.
+
+```html
+<h1>My Favorite books by authors</h1>
+  <h2>J. K. Rowling</h2>
+    <h3>Wizarding World</h3>
+      <h4>Harry Potter and the Philosopher’s Stone</h4>
+      <h4>Harry Potter and the Chamber of Secrets</h4>
+    <h3>Robert Galbraith</h3>
+      <h4>The Cuckoo’s Calling</h4>
+      <h4>The Silkworm</h4>
+  <h2>Victor Hugo</h2>
+    <h3>The Hunchback of Notre-Dame</h3>
+```
+
+- Si uso acronimos, puedo usar `<abbr>` para definirlos, y agregar el atributo `title` para que el lector de pantalla pueda leerlo correctamente
+
+```html
+<p>My favorite book is <abbr title="Harry Potter and the Philosopher’s Stone">HP</abbr></p>
+```
+
+- Se debe agregar un `alt` a las imagenes, ya que si no se hace, el lector de pantalla no va a poder leer la imagen. Si la imagen es puramente decorativa, se puede dejar el `alt` vacio. 
+
+```html
+<img src="image.jpg" alt="My image">
+```
+
+- Se debe agregar un `alt` a los iframes, ya que si no se hace, el lector de pantalla no va a poder leer el iframe. Si el iframe es puramente decorativo, se puede dejar el `alt` vacio. 
+
+```html
+<iframe src="https://www.youtube.com/embed/3obixhGZ5ds" title="Google Pixel - Lizzo in Real Tone"></iframe>
+```
+
+- Si tengo texto entre quotes, se recomienda usar el tag `blockquote` para que el lector de pantalla lo lea correctamente
+
+```html
+<blockquote>
+  <p>My favorite book is Harry Potter and the Philosopher’s Stone</p>
+  <cite>J. K. Rowling</cite>
+</blockquote>
+```
+
+- Es sumamente importante hacer uso de Semantic HTML para la organizacion de los elementos en el documento. Como se puede ver en el codigo siguiente, se hace uso de `header`, `nav`, `main`, `section`, `article` y `footer` para organizar la pagina. 
+
+```html
+<header>
+  <h1>My Favorite books by authors</h1>
+  <nav>
+    <ul>
+      <li><a href="#rowling">J. K. Rowling</a></li>
+      <li><a href="#hugo">Victor Hugo</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <section id="rowling">
+    <h2>J. K. Rowling</h2>
+    <article>
+      <h3>Wizarding World</h3>
+      <p>...</p>
+    </article>
+    <article>
+      <h3>Robert Galbraith</h3>
+      <p>...</p>
+    </article>
+  </section>
+
+  <section id="hugo">
+    <h2>Victor Hugo</h2>
+    <article>
+      <h3>The Hunchback of Notre-Dame</h3>
+      <p>...</p>
+    </article>
+  </section>
+</main>
+<footer>
+  <p>My favorite books by authors</p>
+  <p>Copyright © 2023</p>
+</footer>
+```
+
+- Otro elemento muy importante para la navegabilidad es el uso de `tabindex`, que permite navegar por los elementos de la pagina mediante el uso del teclado. Se recomienda usarlo solo en los elementos que no son interactivos, ya que si no se hace, el lector de pantalla no va a poder leer el elemento. 
+
+```html
+<button tabindex="0">My button</button>
+```
+
+- Si tenemos un formulario con varios elementos, se recomienda usar el tag `fieldset` para agrupar los elementos y el tag `legend` para describir el grupo de elementos. 
+
+```html
+<form>
+  <fieldset>
+    <legend>My favorite books by authors</legend>
+    <label for="rowling">J. K. Rowling</label>
+    <input type="checkbox" id="rowling" name="rowling" value="rowling">
+    <label for="hugo">Victor Hugo</label>
+    <input type="checkbox" id="hugo" name="hugo" value="hugo">
+  </fieldset>
+  <input type="submit" value="Submit">
+</form>
+```
+
+Mismo caso con los botones, se recomienda usar el tag `button` para agrupar los elementos y el tag `legend` para describir el grupo de elementos. 
+
+```html
+<div role="group" aria-labelledby="buttonGroup">
+  <h2 id="buttonGroup">My favorite books by authors</h2>
+  <button id="rowling">J. K. Rowling</button>
+  <button id="hugo">Victor Hugo</button>
+</div>
+```
+
+Tambien se recomienda agregar `form instructions` para que el lector de pantalla pueda leer la instruccion del formulario. 
+
+```html
+<form>
+  <fieldset>
+    <legend>My favorite books by authors</legend>
+    <label for="rowling">J. K. Rowling</label>
+    <input type="checkbox" id="rowling" name="rowling" value="rowling">
+    <label for="hugo">Victor Hugo</label>
+    <input type="checkbox" id="hugo" name="hugo" value="hugo">
+  </fieldset>
+  <input type="submit" value="Submit">
+  <p id="formInstructions">Please select at least one author</p>
+</form>
+```
+
+Mismo con la validacion de los mismos, por ejemplo, la limitacion de caracteres en un input 
+
+```html
+<input type="text" id="name" name="name" maxlength="10">
+<p id="nameError" class="error">Please enter a name with less than 10 characters</p>
+```
+
+- Si tenemos links en nuestro documento, se recomienda usar el tag `a` para agrupar los elementos y el tag `aria-label` para describir el grupo de elementos. 
+
+```html
+<a href="https://www.google.com" aria-label="Google">Google</a>
+<a href="https://www.facebook.com" aria-label="Facebook">Facebook</a>
+<a href="https://www.twitter.com" aria-label="Twitter">Twitter</a>
+```
+
+En CSS tenemos la posibilidad de eliminar el estilo de los links, pero no se recomienda ya que esto puede confundir al lector de pantalla, ya que el mismo puede no reconocer si el link fue visitado o no. 
+
+```css
+a {
+  text-decoration: none;
+  color: inherit;
+}
 ```
