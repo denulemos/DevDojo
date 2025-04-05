@@ -284,35 +284,25 @@ Son usados para definir cada parte en particular de la página. Se recomienda qu
 
 [Volver al indice](#acc-base)
 
-Usar ARIA en un elemento no hace que el mismo sea accesible automáticamente, se debe usar correctamente si se decide usar. Se debe usar ARIA cuando un elemento HTML no tiene soporte de accesibilidad, es decir, los elementos que no son semánticos.
+Se debe usar ARIA cuando un elemento HTML no tiene soporte de accesibilidad, es decir, los elementos que no son semánticos. Se dice que es preferible no tener ARIA que tener un ARIA mal hecho, ya que puede llevar a distintas confunsiones. 
 
-```jsx
-😡 <a role="button">Submit</a>
-✅ <button>Submit</button>
-```
+- Si un elemento es focusable, evitar utilizar `role="presentation"` o `aria-hidden="true"`.
 
-No agregar ARIA innecesario.
-
-```jsx
-😡 <h2 role="tab">Heading tab</h2>
-✅ <div role="tab"><h2>Heading tab</h2></div>
-```
-
-Siempre tener soporte a teclados usando el tabindex para establecer la prioridad de foco con teclado. Se debe evitar establecer tabindex mayores a cero para evitar que el orden de focus sea desordenado.
+- Siempre tener soporte a teclados usando el tabindex para establecer la prioridad de foco con teclado. Se debe evitar establecer tabindex mayores a cero para evitar que el orden de focus sea desordenado.
 
 ```jsx
 ✅ <span role="button" tabindex="0">Submit</span>
 😡 <span role="button" tabindex="1">Submit</span>
 ```
 
-No agregar role=”presentation” o “aria-hidden= “true”” a los elementos que necesitan tener focus, ya que de lo contrario, se saltean al momento de navegar.
+- No agregar role=”presentation” o “aria-hidden= “true”” a los elementos que necesitan tener focus, ya que de lo contrario, se saltean al momento de navegar.
 
 ```jsx
 ✅ <div><button>Submit</button></div>
 😡 <div aria-hidden="true"><button>Submit</button></div>
 ```
 
-Usar nombres accesibles, por ejemplo, en este caso el nombre accesible es “Red Leather Boots”. Cuando una imagen y está explicada por el texto de la página y es puramente decorativa, el alto no es necesario, se puede dejar este alt con un String vacío
+- Usar nombres accesibles, por ejemplo, en este caso el nombre accesible es “Red Leather Boots”. Cuando una imagen y está explicada por el texto de la página y es puramente decorativa, el alto no es necesario, se puede dejar este alt con un String vacío
 
 ```jsx
 html
@@ -337,7 +327,7 @@ No usar roles redundantes, por ejemplo:
 😡 <ul role="list">...</ul>
 ```
 
-* Usar `<form>` o `<section>` sin el atributo name es un 😡 definitivo
+- Usar `<form>` o `<section>` sin el atributo name es un 😡 definitivo
 
 ```jsx
 <section aria-label="Introduction to stamp collecting">
@@ -347,16 +337,18 @@ No usar roles redundantes, por ejemplo:
  </section>
 ```
 
-Si vamos a agregar JS a un elemento, que sea en lo posible en un elemento de semantic HTML
+- Si vamos a agregar JS a un elemento, que sea en lo posible en un elemento de semantic HTML
 
 ```jsx
 ✅ <button onclick="doAction()">Click me!</div>
 😡 <div role="button" tabindex="0" onclick="doAction()">Click me!</div>
 ```
 
-Si se va a utilizar un elemento no semántico para trigger de un evento JS, se debe agregar un `keydown/keyup` event.
+- Si se va a utilizar un elemento no semántico para trigger de un evento JS, se debe agregar un `keydown/keyup` event.
 
-Se debe agregar el título de la página para que el Screen Reader le diga a los usuarios donde están posicionados, esto es especialmente para las SPA que funcionan desde un solo index.
+- Se debe agregar el título de la página para que el Screen Reader le diga a los usuarios donde están posicionados, esto es especialmente para las SPA que funcionan desde un solo index.
+
+
 
 <a id="acc13"></a>
 
@@ -626,7 +618,7 @@ Sin embargo, sí a un CSS de mi pagina le agrego los atributos **`display:none`*
 
 Hay varios tipos de problemas de visión con respecto a los colores, el más común, es con el verde, también hay varias herramientas en internet que ayudan a simular el cómo se vería tu web si lo viera alguien con ciertos problemas visuales.
 
-<a id="acc16"></a>
+<a id="acc17"></a>
 
 ### **Que practicas conlleva tener un HTML Accesible?**
 
@@ -775,7 +767,7 @@ Hay varios tipos de problemas de visión con respecto a los colores, el más com
 </nav>
 ```
 
-<a id="acc17"></a>
+<a id="acc16"></a>
 
 ### **Nombrar algunas ARIAS existentes**
 
@@ -810,6 +802,7 @@ Hay varios tipos de problemas de visión con respecto a los colores, el más com
 
 ```html
 <button aria-label="Close"></button>
+<img src="logo.png" aria-label="Company Logo"/>
 ```
 
 * `aria-describedby`: Se usa para describir un elemento
@@ -819,11 +812,14 @@ Hay varios tipos de problemas de visión con respecto a los colores, el más com
 <button aria-describedby="more-info">Self-destruct</button>
 ```
 
-* `aria-labelledby`: Se usa para referenciar un elemento por su ID
+* `aria-labelledby`: Se usa para referenciar un elemento por su ID, a que elemento se le hace referencia. No usarlo en conjunto con `aria-label` ya que el mismo no va a funcionar. 
 
 ```html
-<h1 id="title">My title</h1>
-<div aria-labelledby="title">...</div>
+<div id="buttonLabel">Submit</div>
+<button aria-labelledby="buttonLabel">Click me</button>
+
+<label id="nameLabel">Name:</label>
+<input type="text" aria-labelledby="nameLabel">
 ```
 
 * `aria-controls`: Se usa para referenciar un elemento por su ID
@@ -849,6 +845,38 @@ Hay varios tipos de problemas de visión con respecto a los colores, el más com
 
 ```html
 <div aria-busy="true"></div>
+```
+
+* `aria-placeholder`: Es para darle una cierta pista de lo que se espera en un cierto input en un formulario
+
+```html
+<input type="text" aria-placeholder="Enter your name">
+```
+
+* `aria-haspopup`: Indican cuando un pop-up va a ser triggereado al interactuar con el elemento, como un button. Toma un valor booleano. 
+
+```html
+<button aria-haspopup="true">Open menu</button>
+```
+
+* `aria-expanded`: Indica si un elemento está expandido o colapsado. Toma un valor booleano.
+
+```html
+<button aria-expanded="false">Open menu</button>
+```
+
+* `aria-hidden`: Indica si un elemento está oculto o no. Toma un valor booleano. Recibio hace poco una actualizacion que permite que oculte al mismo estilo de `display: none` el elemento del DOM.   
+
+Por ejemplo, si una imagen es solo decorativa y no posee un `alt`, se puede usar `aria-hidden` para que el lector de pantalla no la lea. 
+
+```html
+<img src="decorative-image.jpg" alt="" aria-hidden="true"/>
+```
+
+* `aria-disabled`: Indica si un elemento está deshabilitado o no. Toma un valor booleano. Se utiliza cuando elemento esta disponible pero no es interactivo. 
+
+```html
+<button aria-disabled="true">Submit</button>
 ```
 
 <a id="acc177"></a>
