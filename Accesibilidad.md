@@ -19,9 +19,6 @@
 | [¿Cuáles son las herramientas más usadas en accesibilidad?](#acc4) |
 | [¿Qué es un screen reader?](#acc5) |
 | [Herramientas de pruebas automatizadas de Accesibilidad](#acc55) |
-
-| Elementos Clave |
-|----------|
 | [¿Qué es el contraste de color?](#acc6) |
 | [¿Qué es el texto alternativo?](#acc7) |
 | [¿Qué es el teclado virtual?](#acc8) |
