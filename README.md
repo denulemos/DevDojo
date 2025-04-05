@@ -14,7 +14,7 @@ Preguntas son agregadas todas las semanas. Se aceptan sugerencias mediante Pull 
 - [Algoritmos, Manejo de Datos y Tipos de Programacion](./Algoritmos.md)
 - [Organizacion en Software - Derecho en IT](./Organizacion.md)
 - [Typescript - Javascript](./JSTS.md)
-- [HTML - CSS - SCSS](./html.md)
+- [HTML - CSS](./html.md)
 - [React](./react.md)
 - [Angular](./Angular.md)
 - [Desarrollo Mobile y React Native](./DesarrolloMobile.md)

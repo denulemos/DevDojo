@@ -1,6 +1,6 @@
 <a name="mob-base"></a>
 
-## [Desarrollo Mobile](#mob)
+# [Desarrollo Mobile](#mob)
 
 | Temas |
 |----------|
@@ -23,11 +23,9 @@
 
 ---
 
----
-
 <a id="mob"></a>
 
-# Desarrollo Mobile
+## Desarrollo Mobile
 
 <a id="mob1"></a>
 
