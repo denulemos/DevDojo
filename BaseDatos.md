@@ -1,9 +1,10 @@
 <a name="bd-base"></a>
 
-## [Bases de Datos](#bd)
+# [Bases de Datos](#bd)
 
 | Fundamentos de Bases de Datos |
 |----------|
+| [Que es la programacion declarativa?](#ent8-3) |
 | [Cuáles son los elementos de una base de datos?](#bd1) |
 | [Cuales son los elementos de Data Control Language? (DCL)](#bd2) |
 | [Lenguaje de manipulación de datos (DML)](#bd3) |
@@ -57,7 +58,15 @@
 
 <a id="bd"></a>
 
-# Bases de Datos
+## Bases de Datos
+
+<a id="ent8-3"></a>
+
+### **Que es la programacion declarativa?**
+
+[Volver al indice](#bd-base)
+
+La programacion declarativa se concentra en que cosas hay que hacer y no necesariamente en como hacerlas. Un ejemplo es SQL, donde se le dice a la base de datos que datos queremos, pero no como obtenerlos.
 
 <a id="bd1"></a>
 

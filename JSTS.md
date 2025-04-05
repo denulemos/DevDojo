@@ -55,6 +55,8 @@
 | [Diferencia entre primitivo y objeto](#var14) |
 | [Variable Hoisting](#var24) 💛 |
 | [Diferencia entre class y function](#var25) |
+| [isNaN vs Math.isNaN](#rea515) |
+| [Concepto Truthy and Falsy](#rea42) |
 
 <a name="typ-base"></a>
 
@@ -2496,7 +2498,7 @@ Al dividir todo en pequenias funciones, hace que la reutilizacion de codigo sea 
 
 ### **Web y Service Workers**
 
-[Volver al indice](#entrevista-base)
+[Volver al indice](#alg-base-2)
 
 Como se menciono anteriormente, Javascript es single-thread, y esto puede ser un problema cuando se trata de operaciones pesadas o que se deben realizar en segundo plano. Para esto se crearon los Service Workers, que son scripts que se ejecutan en segundo plano y que permiten realizar operaciones como notificaciones push, actualizaciones de contenido, y manejo de cache. Es especialmente util tambien cuando quiero que mi app tenga cierta funcionalidad offline.
 
@@ -2709,7 +2711,7 @@ Es el usar las variables antes de que sean declaradas.
 
 ### **Diferencia entre class y function**
 
-[Volver al indice](#alg-base-obj)
+[Volver al indice](#alg-base-2)
 
 class tiene un alcance comprendido por llaves, al igual que las variables let. function es local a la funcion donde fue definida, no podemos usar una clase o funcion constructora por fuera del alcance en donde se encuentra.
 
@@ -2744,4 +2746,59 @@ const C = class {};
 const C = function () {};
 
 console.assert( typeof  C === 'function' );
+```
+
+<a id="rea515"></a>
+
+### **isNaN vs Math.isNaN**
+
+[Volver al indice](#alg-base-2)
+
+NaN son operaciones aritmeticas que no pueden ser representadas correctamente. Ambas funciones tienen como objetivo identificar si un valor es NaN. `isNaN` global aplica una coercion de tipos al argumento que le pasamos, `Math.isNan` no lo hace, lo que hace que sea mas seguro de usar para valores no numericos.
+
+```jsx
+isNaN('denu') // devolvera true porque primero intentará convertir la cadena a un numero
+Number.isNaN('denu') // false porque no convertirá la cadena a numero
+```
+
+### **Metodos String**
+
+```javascript
+
+// .includes() Detecta y devuelve true o false si el String posee un substring en el
+const str = 'This is my example string!';
+const substr = 'my';
+
+console.log(str.includes(substr)); // true
+
+//.indexOf() es otra forma de saber si un substring se encuentra dentro de un string si el mismo no funciona
+stringObj.indexOf("string to check for") // -1 Si no se encuentra
+
+//.replace Reemplaza de un String o un regex un valor por otro, no muta al objeto en si, devuelve lo nuevo
+array[0] = array[0].replace("PM", '') // Quita el PM del string dentro de ese array
+```
+
+<a id="rea42"></a>
+
+### **Concepto Truthy and Falsy**
+
+[Volver al indice](#alg-base-2)
+
+En JavaScript, un valor se considera "falsy" si se convierte en `false` cuando se evalúa en un contexto booleano.
+
+```jsx
+// Falso
+Boolean(0); //false
+Boolean(null); //false
+Boolean(NaN); //false
+Boolean(undefined); //false
+Boolean(false); //false
+Boolean(""); //false
+
+// Verdadero:
+Boolean(1); //true para 1 o cualquier número diferente de cero (0)
+Boolean("a"); //true para cualquier caracter o espacio en blanco en el string
+Boolean([]); //true aunque el array esté vacío
+Boolean({}); //true aunque el objeto esté vacío
+Boolean(function(){}); //Cualquier función es verdadera también
 ```
