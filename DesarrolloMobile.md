@@ -20,20 +20,6 @@
 |[¿Cómo se maneja la persistencia de datos en una aplicación React Native?](#mob10)|
 |[¿Cómo se maneja la autenticación de usuarios en una aplicación React Native?](#mob11)|
 |[¿Cómo se maneja la internacionalización en una aplicación React Native?](#mob12)|
-|¿Cómo se maneja la compatibilidad entre diferentes versiones de sistemas  operativos en una aplicación React Native?|
-|¿Cómo se maneja la compatibilidad entre diferentes tamaños de pantalla en una aplicación React Native?|
-|¿Cómo se maneja la optimización del rendimiento en una aplicación React Native?|
-|¿Cómo se maneja la depuración en una aplicación React Native?|
-|¿Cómo se maneja el manejo de errores y las excepciones en una aplicación React Native?|
-|¿Cómo se maneja la implementación y el despliegue en una aplicación React Native?|
-|¿Cómo se maneja la escalabilidad en una aplicación React Native?|
-|¿Cómo se maneja la seguridad en una aplicación React Native?|
-|¿Cómo se maneja la carga de recursos estáticos (imágenes, CSS, JavaScript) en React Native?|
-|¿Cómo se maneja la comunicación entre JavaScript y el código nativo en React Native?|
-|¿Cómo se maneja la animación en una aplicación React Native?|
-|¿Cómo se maneja el acceso a las funcionalidades del dispositivo (cámara, GPS, etc.) en una aplicación React Native?|
-|¿Cómo se manejan las pruebas en una aplicación React Native?|
-|¿Cómo se maneja la actualización de la aplicación en una aplicación React Native?|
 
 ---
 

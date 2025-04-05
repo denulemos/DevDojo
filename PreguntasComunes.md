@@ -1,6 +1,7 @@
 <a id="entrevista-base"></a>
+<a name="rea-base"></a>
 
-## [Preguntas mas comunes en entrevistas de trabajo para un FE Engineer](#entrevista-base)
+## [Conjunto de preguntas generales para un Frontend Engineer](#entrevista-base)
 
 Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de trabajo para un Frontend Engineer. Engloba conceptos comunmente preguntados sobre Javascript, patrones de disenio, mejora de performance, etc. Tambien se agregan preguntas sobre React, Redux y Angular en esta ocasion.
 
@@ -50,6 +51,30 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 | [Escalabilidad NodeJS](#ent73) |
 | [Escalabilidad FE](#ent74)|
 |[Principios de Disponibilidad, Escalamiento en Frontend](#ent75)|
+| [¿De qué hablamos cuando hablamos de una SPA (Single Page App)?](#rea48) 💛|
+| [Como evitar mandar muchos eventos inutiles, por ejemplo, ejecutar un search por letra?](#rea50) 💛|
+| [Que es async rendering?](#rea51) 💛|
+| [Para que son los eventos sinteticos (SyntheticEvent)?](#rea53) |
+| [Que significa prop drilling y como evitarlo?](#rea54) |
+| [Como puedo mejorar la performance de mi Frontend?](#rea17) 💛|
+| [¿Que es async, preload y prefetch?](#rea29) |
+| [Cual es la diferencia entre call, bind y apply?](#rea30) |
+| [Qué es "REPL" y para qué sirve?](#rea32) |
+| [Qué es el "demultiplexer"?](#rea33) |
+| [Que hace Babel?](#rea34) |
+| [Que hace Webpack?](#rea35) |
+| [Que es el server side rendering?](#rea36) |
+| [Que es Tree Shaking?](#rea37) |
+| [¿Que es el SEO?](#rea38) |
+| [Que es la tipificacion de Variables?](#rea41) |
+| [Concepto Truthy and Falsy](#rea42) |
+| [Que es la Coercion explicita e Implicita?](#rea44) |
+| [Que es la expresion de Funcion Inmediatamente Invocada - Immediatelyinvoked Function Expression (IIFE)?](#rea49) |
+| [Qué es un Event listener?](#rea505) |
+| [isNaN vs Math.isNaN](#rea515) |
+| [Que es Symbol?](#rea52) |
+| [Cual es la diferencia entre un event loop, microtask y macrotask?](#rea535) |
+| [Variable Shadowing - Ocultamiento de Variables](#rea545) |
 
 ---
 
@@ -2602,3 +2627,490 @@ La respuesta a las preguntas clave planteadas puede influir directamente en las 
      - **Pruebas de usabilidad**: Realizar pruebas de usabilidad con usuarios reales para asegurarse de que la interfaz sea intuitiva y fácil de usar.
 
 
+
+<a id="rea48"></a>
+
+### **¿De qué hablamos cuando hablamos de una SPA (Single Page App)?**
+
+[Volver al indice](#fe-base)
+
+Una SPA (Single Page Application) son apps web que simulan ser una única página con contenido dinámico. La idea es darle la “ilusión” al usuario de que está navegando una aplicación de escritorio, que no recarga, no se satura, etc.
+
+Las únicas recargas, o pantallas de carga, son cuando se está trayendo información del servidor. No se recarga toda la página, aun así, solo ciertas partes, dando a una experiencia mucho más fluida.
+
+En resumen:
+
+- Se evita la constante recarga entera de la página
+- La página no se satura ni realiza peticiones constantes al servidor. Únicamente se pide lo necesario.
+
+<a id="rea50"></a>
+
+### **(Performance) Como evitar mandar muchos eventos inutiles, por ejemplo, ejecutar un search por letra?**
+
+[Volver al indice](#rea-base)
+
+Debounce es un termino de electronica que ayuda a que, por ejemplo, si apretamos varias veces un boton, no se manden muchas veces las instrucciones
+
+```jsx
+function useDebounce(value: string, delay: number) {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+
+  useEffect(() => {
+      const timeoutId = setTimeout(() => {
+        setDebouncedValue(value)
+    }, delay)
+
+    return () => clearTimeout(timeoutId)
+}, [value])
+
+return debouncedValue;
+}
+
+// Luego en el component que tiene el search
+
+const queryDebouncedValue = useDebounce(query, 300)
+
+useEffect(() => {
+api.search(queryDebouncedValue).then(setProducts);
+}, [queryDebouncedValue]);
+```
+
+<a id="rea51"></a>
+
+### **Que es async rendering?**
+
+[Volver al indice](#rea-base)
+
+Permite que el renderizado pueda interrumpirse, permitiendo renderizar varios arboles de componentes a la vez sin necesidad de bloquear el hilo principal del navegador.
+
+<a id="rea53"></a>
+
+### **Para que son los eventos sinteticos (SyntheticEvent)?**
+
+[Volver al indice](#rea-base)
+
+Funcionan de la misma forma que los eventos normales de los exploradores. Los eventos sinteticos usan codigo que puede ser aplicado en multiples exploradores web mientras que los eventos normales se enfocan en un solo navegador
+
+Ayuda a que el dev no se preocupe tanto en como manejar un evento segun el navegador para el cual esta desarrollando, ya que estos eventos simulan muchos eventos y garantiza el mismo comportamiento.
+
+<a id="rea54"></a>
+
+### **Que significa prop drilling y como evitarlo?**
+
+[Volver al indice](#rea-base)
+
+Es cuando las props que se comparten acumulan demasiadas dependencias. Da lugar a flujos de datos profundos, dificiles de identificar y refactorizar. Dos formas de resolverlo son:
+
+- Composicion de componentes frente a un mismo juego de datos compartido por varios componentes
+- Redux o API Context, aptas para escenarios mas complejos donde conviene manejar un estado global. 
+
+<a id="rea17"></a>
+
+### **Como puedo mejorar la performance de mi Frontend?**
+
+[Volver al indice](#rea-base)
+
+**Paginacion**: No se puede renderizar mucha informacion al mismo tiempo, hace un payload gigante, y satura a la base de datos. Es preferible pedir de a pedazos de data para disminuir el peso en el Backend
+
+**Queries Optimistics**: Mostrar el cambio en la UI independientemente del resultado del servidor, como el like de Instagram, primero se anima, luego se ejecuta la peticion de forma asincrona, y luego se tiene en cuenta el resultado
+
+**Pedir solo lo necesario**: Solo pedir los datos necesarios, no traer cosas de más. Hay muchas aplicaciones hechas front-first, donde el back adapta sus servicios a lo que el front necesita.
+
+**Tener un connection state**: Si no hay internet, no realizar peticiones. Como Youtube, cualquier cosa que quiera hacer el cliente sin internet, no se va a realizar para nada.
+
+**Group Notifications**: Si la aplicacion utiliza notificaciones, hacerlo de a grupos para no hacer jobs grandes
+
+**Evitar queries expensive**: Por ejemplo, Twitter no da la opcion de seguir o dejar de seguir gente de a grupos grandes ya que es innecesariamente caro para el servidor
+
+⚛️ **Podemos usar el Profiler que viene con React Dev Tools**
+En caso de componentes lentos en React, podemos usar esta herramienta y ver cual fue el componente que causo el problema.
+
+- Flame Chart: Representa el estado de la aplicacion para un commit en particular
+- Component chart: Ver cuantas veces se proceso un componente en particular
+
+Para testear el rendimiento de una web se puede utilizar Lighthouse de Google en DevTools
+
+**Lazy Loading**: No cargar todas las imagenes de una, ir cargando a medida que el usuario lo va necesitando.
+
+**Usar Cache**: Si manejamos payloads muy grandes, no conviene cargar todo esto en memoria, se recomienda usar un cache, ir guardando estos payloads y volver a consultarlos a medida que sea necesario
+
+**Usar HTTP 2**: Si necesito hacer demasiados request en paralelo (cosa que no es recomendable), HTTP 2 tiene una coneexion TCP muy buena, para el multiplexing (no siempre es aplicable)
+
+**Hacer UI que llamen lo menos posible al backend**: Que sean UI que dependan de pocos llamados para funcionar (si se puede, ya que hay dependencias entre payloads)
+
+⚛️ **No pasar props que no son necesarios**: El propering afecta al rendimiento en React. El estado debe estar tan cerca como pueda de donde se esté usando. Mientras mas props recibimos, mayor es la dependencia con el componente padre.
+
+⚛️ **Evitar renderizados de mas**: Usar useMemo (memorizacion en React) para evitar renderizados o componentes puros
+
+**Tener varias zonas de disponibilidad**: Esto para evitar la latencia en la obtencion de recursos.
+
+<a id="rea29"></a>
+
+### **¿Que es async, preload y prefetch?**
+
+[Volver al indice](#rea-base)
+
+En JavaScript, `async`, `preload` y `prefetch` son conceptos relacionados pero diferentes:
+
+1. **Async/Await**:
+   - `async` y `await` son características introducidas en JavaScript para facilitar la escritura y gestión de código asíncrono.
+   - `async` se utiliza para declarar que una función devuelve una promesa. Esto permite que la función se pueda utilizar con `await` para esperar la resolución de la promesa dentro de un contexto asíncrono.
+   - `await` se utiliza dentro de funciones `async` para esperar la resolución de una promesa antes de continuar con la ejecución del código.
+   - Estas características son útiles para trabajar con operaciones asíncronas, como solicitudes HTTP, operaciones de lectura/escritura de archivos, y otras operaciones que pueden tomar tiempo y no bloquean la ejecución del código.
+
+2. **Preload**:
+   - `preload` es una directiva HTML que se utiliza para indicar al navegador que cargue un recurso de manera prioritaria.
+   - Se puede usar en elementos `<link>` o en elementos `<script>` para pre-cargar recursos como archivos CSS, JavaScript, fuentes web, etc.
+   - El navegador descarga estos recursos en segundo plano mientras procesa el resto del contenido de la página. Esto puede mejorar significativamente los tiempos de carga de la página al garantizar que los recursos importantes se carguen antes de que sean necesarios.
+
+3. **Prefetch**:
+   - `prefetch` es similar a `preload`, pero se utiliza para indicar al navegador que cargue recursos que probablemente se necesitarán en el futuro, pero no de manera inmediata.
+   - Se utiliza principalmente para cargar recursos relacionados con rutas de navegación o acciones del usuario que aún no se han realizado.
+   - Al igual que `preload`, se puede usar en elementos `<link>` o en elementos `<script>`, y ayuda a mejorar el rendimiento de la aplicación al anticiparse a las necesidades futuras de recursos.
+
+En resumen, `async` y `await` se utilizan en JavaScript para trabajar con código asíncrono de manera más legible y manejable, mientras que `preload` y `prefetch` son directivas HTML utilizadas para optimizar la carga de recursos en las páginas web, priorizando recursos importantes o anticipándose a las necesidades futuras de recursos.
+
+<a id="rea30"></a>
+
+### **Cual es la diferencia entre call, bind y apply?**
+
+[Volver al indice](#rea-base)
+
+Por ejemplo tenemos dos objetos y una funcion
+
+```jsx
+const user = {
+  name: 'Marcos'
+};
+
+const business = {
+  name: 'Headbook'
+}
+
+function showInfo(likes, friends){
+  return `${this.name} tiene ${likes} likes y ${friends}`
+}
+```
+
+En ese caso, el [`this.name`](http://this.name)hace referencia al contexto global. ¿Como hacer para matchearlo de manera dinamica por objeto?
+
+```jsx
+showInfo.call(user, 4, 5); // le pasamos la referencia que deseamos y las props
+// Marcos tiene 4 likes y 5 amigos
+
+showInfo.apply(user, [4,5]); // lo mismo pero los params deben ir en un array
+
+const newFunction = showInfo.bind(user);
+newFunction(10,15); // hacemos otra funcion que toma otro contexto
+```
+
+Basicamente los 3 asocian un objeto a `this`
+
+<a id="rea32"></a>
+
+### **Qué es "REPL" y para qué sirve?**
+
+[Volver al indice](#rea-base)
+
+REPL, acrónimo en Ingles de "Leer, Evaluar, Imprimir, Bucle". Este shell es utilizado para realizar declaraciones específicas en JavaScript.
+
+<a id="rea33"></a>
+
+### **Qué es el "demultiplexer"?**
+
+[Volver al indice](#rea-base)
+
+El **demultiplexer,** *es una interfaz encargada de las notificaciones dentro de Node JS.* Es utilizado para recopilar información de eventos específicos y formar preguntas, brindando así lo que se conoce como un **Evento QUE**.
+
+<a id="rea34"></a>
+
+### **Que hace Babel?**
+
+[Volver al indice](#rea-base)
+
+Babel es un compilador para JavaScript. Permite transformar codigo escrito con las ultimas caracteristicas y traducirlo en codigo de JS bien vanilla que pueda ser entendido por navegadores antiguos.
+
+<a id="rea35"></a>
+
+### **Que hace Webpack?**
+
+[Volver al indice](#rea-base)
+
+Es el responsable de producir los bundles a partir del codigo Front. Es un Module Bundler, hay otras opciones como Gulp, Rollup, etc..
+
+Los bundles son paquetes de codigo necesarios para poder llevar a produccion un proyecto, traspilando el codigo y el empaquetado de los modulos en uno o varios archivos compactados, minimizados y optimizados. Es lo que se hace cuando se hace `build`.
+
+<a id="rea36"></a>
+
+### **Que es el server side rendering?**
+
+[Volver al indice](#rea-base)
+
+Es crear paginas HTML renderizadas en servidor para que lleguen listas. Se crean usando NodeJS que generalmente se usa con Express (para utilizar verbos de HTTP).
+
+NextJS es una opcion para usar esto. Favorecen mucho al SEO ya que renderizan la pagina antes de que pueda ser enviada al navegador.
+
+<a id="rea37"></a>
+
+### **Que es Tree Shaking?**
+
+[Volver al indice](#rea-base)
+
+Es remover codigo no usado, como, por ejemplo, imports y exports que no fueron usados. Esto lo hace webpack y Rollup de manera automatica.
+
+<a id="rea38"></a>
+
+### **¿Que es el SEO?**
+
+[Volver al indice](#rea-base)
+
+Es Search Engine Optimization, es lo que hace que un sitio sea encontrado por Google, y HTML hace un aporte con su metadata para que esto suceda. Por ejemplo, no se recomienda usar muchos h1 en un HTML para no afectar al SEO.
+
+- Describir la pagina con titulos y fragmentos unicos. Uso de title y utilizar terminos claros. Todas las paginas del sitio deben tener una meta descripcion para que aparezca la misma en los resultados del buscador
+
+```html
+<head>
+  <title>Bienvenidos</title>
+  <meta name="description" content="Sitio web">
+</head>
+```
+
+- Usar codigos de estado HTTP Significativos. Google usa rastreadores sobre los sitios web, o robots, es un programa que descubre y analiza sitios web, en google se llama Google Bot, que usa codigos de estado HTTP. Si uso codigos significativos, le indico al robot si esta pagina debe ser indexada, o no (por ejemplo, si es 404, no es trackeado)
+- Solucionar problemas con imagenes y carga diferida. Cargar cuando el usuario este por verlas.
+
+```html
+<img src="image.jpg" alt="..." loading="lazy">
+```
+
+- Crear diseños accesibles, crear paginas para los usuarios, no solo para los motores de busqueda. Un ejemplo para testear la accesibilidad, es cargar la pagina sin JS habilitado.
+
+<a id="rea41"></a>
+
+### **Que es la tipificacion de Variables?**
+
+[Volver al indice](#rea-base)
+
+La tipificación de variables, sirve para asignar un número a una variable y después asignar un string a la misma variable.
+
+<a id="rea42"></a>
+
+### **Concepto Truthy and Falsy**
+
+[Volver al indice](#rea-base)
+
+En JavaScript, un valor se considera "falsy" si se convierte en `false` cuando se evalúa en un contexto booleano.
+
+```jsx
+// Falso
+Boolean(0); //false
+Boolean(null); //false
+Boolean(NaN); //false
+Boolean(undefined); //false
+Boolean(false); //false
+Boolean(""); //false
+
+// Verdadero:
+Boolean(1); //true para 1 o cualquier número diferente de cero (0)
+Boolean("a"); //true para cualquier caracter o espacio en blanco en el string
+Boolean([]); //true aunque el array esté vacío
+Boolean({}); //true aunque el objeto esté vacío
+Boolean(function(){}); //Cualquier función es verdadera también
+```
+
+<a id="rea44"></a>
+
+### **Que es la Coercion explicita e Implicita?**
+
+Coercion es la forma en la que podemos cambiar de un tipo de valor a otro
+
+- **Coercion explícita:** Obligamos que un valor de un tipo cambie a otro valor de otro tipo
+
+```jsx
+//Aquí obligamos a la variable a convertirse en string (coerción explícita)
+var c = String(a);
+console.log(c);
+
+//Aquí obligamos a la variable a convertirse en número (coerción explícita)
+var d = Number(c);
+console.log(d);
+```
+
+- **Coercion Implicita:** El lenguaje cambia el tipo de valor por detrás
+
+```jsx
+//Convierte a 4 en un string y lo concatena con el "7", por esto regresa un string de valor "47"
+var a = 4 + "7";
+
+//Convierte al "7" en un número y realiza la operación, por esto devuelve 28
+4 * "7";
+
+var a = 20;
+var b = a + ""; //Aquí concatenamos para convertir la variable a string (coerción implícita)
+console.log(b);
+```
+
+<a id="rea49"></a>
+
+### **Que es la expresion de Funcion Inmediatamente Invocada - Immediately-invoked Function Expression (IIFE)?**
+
+[Volver al indice](#rea-base)
+
+Es una tecnica que se usaba para emular las variables privadas.
+
+```jsx
+const modulo = (function(){
+  function metodoPrivado () {
+  }
+  const valorPrivado = "algo"
+  return {
+    get: valorPrivado,
+    set: function(v) { valorPrivador = v }
+  }
+})()
+
+var x = modulo()
+x.get() // "algo"
+x.set("Otro valor")
+x.get() // "otro valor"
+x.valorPrivado //Error
+```
+
+<a id="rea505"></a>
+
+### **Qué es un Event listener?**
+
+[Volver al indice](#rea-base)
+
+Supongamos que estamos usando una libreria para renderizar items de una coleccion de datos, esta expone un componente llamado RenderItem que tiene una sola prop disponible onClick que no acepta ningun parametro. ¿Y si quiero mandarle un argumento?
+
+```jsx
+// Esta es el closure
+// en es5
+function onItemClick(titulo) {
+    return function() {
+      alert("Click en " + titulo)
+    }
+}
+// en es6
+const onItemClick = titulo => () => alert(`Click en ${titulo}`)
+
+return (
+  <Contenedor>
+{items.map(item => {
+return (
+   <RenderItem onClick={onItemClick(item.titulo)}>
+    <Titulo>{item.titulo}</Titulo>
+  </RenderItem>
+)
+})}
+</Contenedor>
+)
+```
+
+Creamos una funcion que recibe el titulo que se quiere mostrar y retorna otra funcion que cumple con la definicion de la funcion que RenderItem recibe como prop.
+
+<a id="rea515"></a>
+
+### **isNaN vs Math.isNaN**
+
+[Volver al indice](#rea-base)
+
+NaN son operaciones aritmeticas que no pueden ser representadas correctamente. Ambas funciones tienen como objetivo identificar si un valor es NaN. `isNaN` global aplica una coercion de tipos al argumento que le pasamos, `Math.isNan` no lo hace, lo que hace que sea mas seguro de usar para valores no numericos.
+
+```jsx
+isNaN('denu') // devolvera true porque primero intentará convertir la cadena a un numero
+Number.isNaN('denu') // false porque no convertirá la cadena a numero
+```
+
+### **Metodos String**
+
+```javascript
+
+// .includes() Detecta y devuelve true o false si el String posee un substring en el
+const str = 'This is my example string!';
+const substr = 'my';
+
+console.log(str.includes(substr)); // true
+
+//.indexOf() es otra forma de saber si un substring se encuentra dentro de un string si el mismo no funciona
+stringObj.indexOf("string to check for") // -1 Si no se encuentra
+
+//.replace Reemplaza de un String o un regex un valor por otro, no muta al objeto en si, devuelve lo nuevo
+array[0] = array[0].replace("PM", '') // Quita el PM del string dentro de ese array
+```
+
+<a id="rea52"></a>
+
+### **Que es Symbol?**
+
+[Volver al indice](#rea-base)
+
+Son valores primitivos de JS (como String, boolean, etc..) agregados al ES6. Son valores unicos en JS, antes si queriamos tener un valor unico debiamos usar objetos (porque solo son iguales a ellos mismos), es util para crear constantes
+
+```jsx
+let sym1 = Symbol()
+let sym2 = Symbol('denu')
+let sym3 = Symbol()
+
+sym1 === sym3 // false
+```
+
+Tambien sirve para crear claves unicas en los objetos, donde los autores de librerias, navegadores web o cualquier runtime de ES podra evitar que hubieran colisiones al momento de agregar una prop u objeto global
+
+```jsx
+const sym1 = Symbol()
+const sym2 = Symbol()
+
+const obj = {}
+
+obj[sym1] = 'a'
+obj[sym2] = 'b'
+```
+
+<a id="rea535"></a>
+
+### **Cual es la diferencia entre un event loop, microtask y macrotask?**
+
+[Volver al indice](#rea-base)
+
+Javascript ejecuta una linea de codigo por vez. **Event Loop** se encarga de gestionar las funciones asincronas.
+Funciona con una Call Stack y una Callback Queue. Cuando hay una linea en ejecucion, se agrega al Call Stack, y cuando finaliza, se elimina. La Queue tiene las funciones callback que deben ejecutarse, no debe haber ninguna funcion ejecutandose en la Call Stack ni debe haber otra funcion adelante suyo en la Queue.
+Cuando ejecutamos una funcion con setTimeout, la misma se entrega a Timers API, y aunque setTimeout sea cero, habrá un retraso en la ejecucion de esta funcion, haciendo que tenga que esperar en la Queue a que termine de ejecutarse el codigo asincrono.
+
+* macroTasks: [setTimeout](https://developer.mozilla.org/docs/Web/API/WindowTimers/setTimeout), [setInterval](https://developer.mozilla.org/docs/Web/API/WindowTimers/setInterval), [setImmediate](https://developer.mozilla.org/docs/Web/API/Window/setImmediate), [requestAnimationFrame](https://developer.mozilla.org/docs/Web/API/window/requestAnimationFrame), [I/O](https://developer.mozilla.org/docs/Mozilla/Projects/NSPR/Reference/I_O_Functions), UI rendering
+* microTasks: [process.nextTick](https://nodejs.org/uk/docs/guides/event-loop-timers-and-nexttick/), [Promises](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise), [queueMicrotask](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/queueMicrotask), [MutationObserver](https://developer.mozilla.org/docs/Web/API/MutationObserver)
+
+Solo despues de que las task en las microTasks estan completas, event loop tomará las task de macrotasks. Mientras mas microtasks haya, mas delay habra en los macrotasks. Se recomienda usar microtasks cuando se necesitan hacer cosas de forma asincrona, de otra manera, siempre es recomendado usar macrotasks.
+
+En resumen, su funcionamiento en ingles seria:
+
+- *Tasks* are taken from the *Task (MacroTask) Queue*.
+- *Task* from the *Task Queue* is a *Macrotask* != a *Microtask*.
+- *Microtasks* are processed when the current task ends and the *microtask* queue is cleared before the next *macrotask* cycle.
+- *Microtasks* can enqueue other *microtasks*. All are executed before the next task inline.
+- UI rendering is run after all microtasks execution (NA for nodejs).
+
+<a id="rea545"></a>
+
+### **Variable Shadowing - Ocultamiento de Variables**
+
+[Volver al indice](#rea-base)
+
+Se produce cuando una variable que esta en un scope mas reducido tiene el mismo nombre que otra que esta en un scope superior siguiendo la cadena
+
+```javascript
+function test() {
+
+var variable = "hola";
+console.log(variable);
+
+  function test1() {
+    var variable = "denu";
+      console.log(variable);
+  }
+
+  test1(); // denu
+}
+
+test(); // hola
+```

@@ -1,6 +1,6 @@
 <a name="cod-base"></a>
 
-## [Clean Code y Best Practices](#cod)
+# [Clean Code y Best Practices](#cod)
 
 | Temas |
 |----------|
@@ -18,6 +18,9 @@
 | [Cuales son los beneficios de una Code Review?](#cod12) |
 | [Que tipos de Code review existen?](#cod13) |
 | [Domain Driven Design](#cod14) |
+
+| Patrones de diseño|
+|----------|
 | [¿Qué es un patrón de diseño?](#cod15) |
 | [En qué se inspiran los patrones de diseño?](#cod16) |
 | [¿Qué se obtiene con la implementación de patrones de diseño?](#cod17) |
@@ -31,6 +34,9 @@
 | [Patrones Estructurales](#cod25) |
 | [Patrones Creacionales](#cod26) |
 | [Patrones Comportamiento](#cod27) |
+
+| Recomendaciones |
+|----------|
 | [Excepciones en lugar de codigos de error](#cod28) |
 | [Manejo de Comentarios en el codigo](#cod29) |
 | [Acomplamiento artificial](#cod30) |
@@ -42,6 +48,9 @@
 | [Acoplamiento (Evitar)](#cod36) |
 | [Cohesion (Fomentar)](#cod37) |
 | [Uso de numeros magicos en lugar de constantes](#cod38) |
+
+| Tipos de Programacion y Objetos |
+|----------|
 | [Qué es la Programación orientada a Objetos?](#cod39) |
 | [Qué es la programación procedural?](#cod40) |
 | [Qué es la programacion declarativa?](#cod41) |
@@ -87,7 +96,7 @@
 
 <a id="cod"></a>
 
-# Clean Code y Best Practices
+## Clean Code y Best Practices
 
 <a id="diag1"></a>
 
