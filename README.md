@@ -24,7 +24,7 @@ Preguntas son agregadas todas las semanas. Se aceptan sugerencias mediante Pull 
 - [Hardware](./Hardware.md)
 - [Redes y Virtualizacion](./RedesVirtualizacion.md)
 - [System Design](./SystemDesign.md)
-- [Hardware, Redes, Infraestructura y System Design](./Hardware.md)
+- [Hardware y Sistemas Operativos](./Hardware.md)
 - [Bases de Datos](./BaseDatos.md)
 - [Seguridad](./Seguridad.md)
 - [Accesibilidad](./Accesibilidad.md)

@@ -1,6 +1,6 @@
 <a name="har-base"></a>
 
-## [System Design](#har)
+# [System Design](#har)
 
 | Cookies y Almacenamiento Web |
 |----------|

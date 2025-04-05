@@ -1,6 +1,6 @@
 <a name="har-base"></a>
 
-## [Hardware, Redes, Infraestructura y System Design](#har)
+# [Hardware y Sistemas Operativos](#har)
 
 | Temas |
 |----------|
@@ -25,7 +25,7 @@
 
 <a id="har"></a>
 
-# Hardware, Sistemas, Infraestructura y Arquitectura
+## Hardware, Sistemas, Infraestructura y Arquitectura
 
 <a id="har1"></a>
 
