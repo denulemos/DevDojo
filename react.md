@@ -12,8 +12,8 @@
 |[¿Qué es un Fragment en React y para qué se utiliza?](#rea44)|
 | [Funciones de alto nivel / Higher order Function](#rea43) |
 | [Patrones de disenio en React](#ent44) |
-|¿Qué es el modo estricto de React (React.StrictMode) y para qué sirve?|
-|Consideraciones de Seguridad en React 🔐|
+|[¿Qué es el modo estricto de React (React.StrictMode) y para qué sirve?](#rea68)|
+|[Consideraciones de Seguridad en React 🔐](#rea69)|
 
 | Hooks |
 |----------|
@@ -51,7 +51,6 @@
 |----------|
 |[¿Cómo funcionan las claves (keys) en las listas de React? ¿Por qué son importantes?](#rea45)|
 |¿Qué son las "re-renderizaciones innecesarias" y cómo las evitarías? 💛|
-|¿Cómo usarías React.memo para mejorar la performance de un componente? 💛|
 |¿Qué herramientas usarías para identificar problemas de rendimiento en una aplicación React? 💛|
 |¿Cómo se gestiona el "debounce" o "throttle" en React para eventos como el scroll o input?|
 |¿Cómo implementarías un "Suspense" en React para manejar la carga de datos de forma asincrónica? 💛|
@@ -70,8 +69,7 @@
 
 | Testing |
 |----------|
-|¿Cómo realizarías pruebas unitarias para un componente React?|
-|¿Qué es React Testing Library y en qué se diferencia de otras herramientas como Enzyme?|
+|[Nombrar distintas herramientas de Testing para React](#rea99)|
 
 ---
 
@@ -1742,6 +1740,132 @@ const UncontrolledInput = () => {
 };
 ```
 
+<a id="rea68"></a>
+
+### **¿Qué es el modo estricto de React (React.StrictMode) y para qué sirve?**
+
+[Volver al indice](#react-base)
+
+React.StrictMode es una herramienta de desarrollo que React proporciona para identificar posibles problemas en una aplicación. Es un componente que no afecta el comportamiento de la aplicación en producción, pero ayuda a detectar errores y advertencias en el desarrollo.
+
+1. **Identificación de problemas de ciclo de vida**: Detecta métodos de ciclo de vida obsoletos o inseguros, como `componentWillMount`, `componentWillReceiveProps`, y `componentWillUpdate`.
+
+1. **Advertencias sobre efectos secundarios**: Ejecuta los efectos secundarios (como los definidos en `useEffect`) dos veces en modo desarrollo para asegurarse de que sean puros y no contengan errores.
+
+1. **Detección de APIs obsoletas**: Identifica el uso de APIs de React que están en desuso o que podrían causar problemas en el futuro.
+
+1. **Comprobación de referencias de cadenas**: Detecta el uso de referencias de cadenas (`string refs`), que son una práctica obsoleta.
+
+1. **Ayuda con la migración a nuevas versiones**: Facilita la transición a nuevas versiones de React al advertir sobre prácticas que podrían no ser compatibles en el futuro.
+
+```jsx
+import React from 'react';
+
+function App() {
+  return (
+   <React.StrictMode>
+    <MyComponent />
+   </React.StrictMode>
+  );
+}
+
+export default App;
+```
+
+- Mejora la calidad del código al identificar problemas potenciales.
+- Ayuda a adoptar mejores prácticas de React.
+- Facilita la migración a futuras versiones de React.
+- Solo funciona en modo desarrollo, no afecta el comportamiento en producción.
+- Puede generar advertencias adicionales que no siempre son críticas.
+
+<a id="rea69"></a>
+
+### **Consideraciones de Seguridad en React 🔐**
+
+[Volver al indice](#react-base)
+
+**Evitar la inyección de código malicioso (XSS)**
+
+- Nunca uses `dangerouslySetInnerHTML` a menos que sea absolutamente necesario. Si lo usas, asegúrate de sanitizar el contenido con una biblioteca como `DOMPurify`.
+- Valida y escapa cualquier dato que provenga de fuentes externas antes de renderizarlo.
+
+```jsx
+import DOMPurify from 'dompurify';
+
+const sanitizedHTML = DOMPurify.sanitize(untrustedHTML);
+<div dangerouslySetInnerHTML={{ __html: sanitizedHTML }} />;
+```
+
+**Usar HTTPS**
+
+- Asegúrate de que tu aplicación esté servida a través de HTTPS para proteger la transmisión de datos entre el cliente y el servidor.
+
+**Proteger las claves API**
+
+- Nunca expongas claves API en el código del cliente. Usa un servidor intermedio para manejar las solicitudes que requieran autenticación.
+
+**Implementar Content Security Policy (CSP)**
+
+Configura una política de seguridad de contenido para prevenir la ejecución de scripts no confiables.
+
+```html
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://apis.google.com">
+```
+
+**Autenticación y Autorización**
+
+- Usa bibliotecas como `jsonwebtoken` para manejar tokens de autenticación de manera segura.
+- Protege las rutas sensibles con componentes de alto orden o hooks personalizados.
+
+```jsx
+const ProtectedRoute = ({ children }) => {
+  const isAuthenticated = useAuth();
+  return isAuthenticated ? children : <Redirect to="/login" />;
+};
+```
+
+**Evitar la exposición de datos sensibles**
+
+No almacenes información sensible como contraseñas o tokens en el estado global o en el almacenamiento local sin cifrar.
+
+**Validación de entradas**
+
+Valida todas las entradas del usuario tanto en el cliente como en el servidor para prevenir ataques como SQL Injection o XSS.
+
+**Mantén tus dependencias actualizadas**
+
+Usa herramientas como `npm audit` o `yarn audit` para identificar vulnerabilidades en las dependencias.
+
+**Evitar el uso de eval()**
+
+Nunca uses `eval()` o funciones similares que ejecuten código arbitrario.
+
+**Protección contra ataques CSRF**
+Usa tokens CSRF para proteger las solicitudes sensibles.
+
+**Deshabilitar herramientas de desarrollo en producción**
+Asegúrate de que las herramientas como React Developer Tools estén deshabilitadas en el entorno de producción.
+
+```javascript
+if (process.env.NODE_ENV === 'production') {
+  // Deshabilitar herramientas de desarrollo
+}
+```
+
+**Configurar correctamente los permisos de CORS**
+Asegúrate de que tu servidor tenga configuraciones de CORS adecuadas para evitar accesos no autorizados.
+
+**Usar Helmet para mejorar la seguridad**
+Usa bibliotecas como `helmet` para configurar encabezados HTTP de seguridad.
+
+```javascript
+import helmet from 'helmet';
+app.use(helmet());
+```
+
+**Evitar el Prop Drilling de datos sensibles**
+Usa Context API o Redux para manejar datos sensibles de manera segura y evitar pasarlos innecesariamente a través de props.
+
 <a id="rea44"></a>
 
 ### **¿Qué es un Fragment en React y para qué se utiliza?**
@@ -1974,3 +2098,19 @@ export default Counter;
 
 Este enfoque es ideal para aplicaciones pequeñas o medianas donde no se justifica la complejidad de Redux o Context API.
 
+<a id="rea99"></a>
+
+### **Nombrar distintas herramientas de Testing para React**
+
+[Volver al indice](#react-base)
+
+- **Jest**: Framework de pruebas por defecto para aplicaciones React creado por Facebook. Soporta pruebas unitarias, de integración y de snapshot.
+- **React Testing Library**: Biblioteca enfocada en pruebas de componentes React desde la perspectiva del usuario final.
+- **Enzyme**: Herramienta creada por Airbnb para pruebas de componentes React, aunque está menos recomendada en proyectos nuevos debido a su falta de soporte para React 18.
+- **Cypress**: Herramienta de pruebas end-to-end que permite probar aplicaciones React en un navegador real.
+- **Playwright**: Herramienta moderna para pruebas end-to-end que soporta múltiples navegadores.
+- **Puppeteer**: Biblioteca para pruebas end-to-end que interactúa con navegadores basados en Chromium.
+- **Storybook Testing Library**: Permite realizar pruebas en historias de Storybook para componentes React.
+- **MSW (Mock Service Worker)**: Herramienta para simular APIs en pruebas de integración.
+- **Vitest**: Framework de pruebas rápido y moderno que puede usarse con React, similar a Jest.
+- **Testing Playground**: Herramienta visual para generar selectores de pruebas compatibles con React Testing Library.
