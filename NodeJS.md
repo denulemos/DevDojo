@@ -14,10 +14,10 @@
 
 | Express.js y estructura de APIs |
 |----------|
-| ¿Qué es Express.js y por qué se usa con Node? |
-| ¿Cómo crear una API REST simple con Express? |
-| ¿Qué es el middleware en Express y para qué sirve? |
-| ¿Cómo estructurar una API REST escalable con Express? |
+| [¿Qué es Express.js y por qué se usa con Node?](#node10) |
+| [¿Cómo crear una API REST simple con Express?](#node11) |
+| [¿Qué es el middleware en Express y para qué sirve?](#node12) |
+| [¿Cómo estructurar una API REST escalable con Express?](#node13) |
 | ¿Cómo implementar controladores y rutas en Express? |
 | ¿Qué son middlewares de error y cómo se crean? |
 | ¿Cómo loguear peticiones y errores en producción (winston, morgan)? |
@@ -26,7 +26,7 @@
 |----------|
 | ¿Qué es una REST API? |
 | ¿Qué métodos HTTP se usan comúnmente en una API REST? |
-| ¿Qué es CORS y cómo lo manejás en una API REST? |
+| [¿Qué es CORS y cómo lo manejás en una API REST?](#node14) |
 | ¿Cómo manejar la carga de archivos (file uploads) en Express? |
 | ¿Cómo implementar una API versionada (v1, v2...)? |
 | [Diferencias entre REST y GraphQL](#ent18) |
@@ -453,3 +453,295 @@ La escalabilidad en Node.js se puede lograr mediante diferentes estrategias que 
 | Es mas facil de desarrollar desde cero pero complicado de escalar | Su inicializacion es compleja, pero si se tienen los datos necesarios, los cambios que se tendrian que hacer serian minimos |
 | Como las consultas son con su propio endpoint y pueden ser dentro de todo predecibles, el catching es mucho mas facil de implementar | Como las consultas son variadas, el catching es complicado de implementar, aunque hay tecnicas especificas | 
 | Se recomienda usar REST cuando la seguridad y el catching son una prioridad, ademas si tengo clientes que buscan servicios predecibles | Se recomienda cuando es importante el minimizar la cantidad de solicitudes hechas en el servidor |
+
+<a id="node10"></a>
+
+### **¿Qué es Express.js y por qué se usa con Node?**
+
+[Volver al indice](#node-base)
+
+Express.js es un framework minimalista y flexible para construir aplicaciones web y APIs con Node.js. Simplifica el proceso de crear servidores y manejar rutas, solicitudes y respuestas.
+
+**¿Por qué usar Express.js con Node?**
+
+1. **Facilita la creación de servidores**: Con Express, puedes configurar un servidor en pocas líneas de código.
+
+    ```javascript
+    const express = require('express');
+    const app = express();
+
+    app.get('/', (req, res) => {
+         res.send('¡Hola, mundo!');
+    });
+
+    app.listen(3000, () => {
+         console.log('Servidor corriendo en el puerto 3000');
+    });
+    ```
+
+2. **Manejo de rutas**: Permite definir rutas para diferentes URLs y métodos HTTP (GET, POST, etc.).
+3. **Middleware**: Puedes usar middleware para manejar tareas comunes como autenticación, manejo de errores o análisis de datos en las solicitudes.
+4. **Extensible**: Tiene una gran cantidad de paquetes y plugins disponibles para agregar funcionalidades.
+
+En resumen, Express.js hace que trabajar con Node.js sea más rápido y sencillo, especialmente para construir aplicaciones web y APIs.
+
+<a id="node11"></a>
+
+### **¿Cómo crear una API REST simple con Express?**
+
+[Volver al indice](#node-base)
+
+Crear una API REST simple con Express es fácil y directo. Aquí tienes un ejemplo paso a paso:
+
+1. **Instalar Node.js y Express**  
+    Asegúrate de tener Node.js instalado. Luego, crea un proyecto y añade Express:
+
+    ```bash
+    mkdir mi-api
+    cd mi-api
+    npm init -y
+    npm install express
+    ```
+
+2. **Crear el archivo principal**  
+    Crea un archivo llamado `index.js` y escribe el siguiente código básico:
+
+    ```javascript
+    const express = require('express');
+    const app = express();
+    const port = 3000;
+
+    // Middleware para parsear JSON
+    app.use(express.json());
+
+    // Rutas simples
+    app.get('/', (req, res) => {
+         res.send('¡Bienvenido a mi API!');
+    });
+
+    // Obtener todos los elementos
+    app.get('/items', (req, res) => {
+         res.json([{ id: 1, nombre: 'Item 1' }, { id: 2, nombre: 'Item 2' }]);
+    });
+
+    // Crear un nuevo elemento
+    app.post('/items', (req, res) => {
+         const nuevoItem = req.body;
+         res.status(201).json({ mensaje: 'Elemento creado', item: nuevoItem });
+    });
+
+    // Actualizar un elemento
+    app.put('/items/:id', (req, res) => {
+         const id = req.params.id;
+         const datosActualizados = req.body;
+         res.json({ mensaje: `Elemento ${id} actualizado`, datos: datosActualizados });
+    });
+
+    // Eliminar un elemento
+    app.delete('/items/:id', (req, res) => {
+         const id = req.params.id;
+         res.json({ mensaje: `Elemento ${id} eliminado` });
+    });
+
+    // Iniciar el servidor
+    app.listen(port, () => {
+         console.log(`Servidor corriendo en http://localhost:${port}`);
+    });
+    ```
+
+3. **Ejecutar el servidor**  
+    Inicia el servidor con el siguiente comando:
+    ```bash
+    node index.js
+    ```
+
+4. **Probar la API**  
+    Usa herramientas como Postman o cURL para probar las rutas:
+    - `GET /items` para obtener todos los elementos.
+    - `POST /items` con un cuerpo JSON para crear un nuevo elemento.
+    - `PUT /items/:id` para actualizar un elemento.
+    - `DELETE /items/:id` para eliminar un elemento.
+
+<a id="node12"></a>
+
+### **¿Qué es el middleware en Express y para qué sirve?**
+
+[Volver al indice](#node-base)
+
+Un **middleware** en Express es simplemente una función que se ejecuta durante el ciclo de vida de una solicitud HTTP. Se utiliza para procesar solicitudes y respuestas antes de que lleguen a la ruta final o después de que la ruta haya respondido.
+
+**¿Para qué sirve?**
+
+- Manejar tareas comunes como autenticación, validación de datos, manejo de errores, o registro de solicitudes.
+- Modificar la solicitud (`req`) o la respuesta (`res`) antes de enviarlas al cliente.
+
+**Ejemplo básico de middleware:**
+
+```javascript
+const express = require('express');
+const app = express();
+
+// Middleware que se ejecuta para todas las solicitudes
+app.use((req, res, next) => {
+    console.log(`Solicitud recibida: ${req.method} ${req.url}`);
+    next(); // Pasa al siguiente middleware o ruta
+});
+
+// Ruta principal
+app.get('/', (req, res) => {
+    res.send('¡Hola, mundo!');
+});
+
+// Iniciar el servidor
+app.listen(3000, () => {
+    console.log('Servidor corriendo en el puerto 3000');
+});
+```
+
+**Ejemplo con middleware para validar datos:**
+
+```javascript
+// Middleware para validar que el cuerpo de la solicitud tenga un campo "nombre"
+function validarNombre(req, res, next) {
+    if (!req.body.nombre) {
+        return res.status(400).send('El campo "nombre" es obligatorio');
+    }
+    next(); // Si todo está bien, pasa a la siguiente función
+}
+
+app.use(express.json()); // Middleware para parsear JSON
+
+app.post('/usuarios', validarNombre, (req, res) => {
+    res.send(`Usuario ${req.body.nombre} creado`);
+});
+```
+
+En resumen, los middlewares son como "filtros" o "intermediarios" que ayudan a procesar las solicitudes y respuestas en Express.
+
+<a id="node13"></a>
+
+### **¿Cómo estructurar una API REST escalable con Express?**
+
+[Volver al indice](#node-base)
+
+Para estructurar una API REST escalable con Express de manera sencilla, sigue estos pasos básicos:
+
+1. **Organiza tu proyecto en carpetas**  
+    Divide tu proyecto en carpetas para mantener el código limpio y organizado. Por ejemplo:
+    ```
+    mi-api/
+    ├── controllers/   # Lógica de negocio
+    ├── routes/        # Definición de rutas
+    ├── models/        # Modelos de datos (si usas una base de datos)
+    ├── middlewares/   # Funciones middleware
+    ├── config/        # Configuraciones (como variables de entorno)
+    ├── index.js       # Punto de entrada principal
+    ```
+
+2. **Crea un archivo para cada responsabilidad**  
+    - **Controladores**: Contienen la lógica de negocio.
+    - **Rutas**: Definen las rutas y conectan con los controladores.
+    - **Middlewares**: Manejan tareas comunes como validación o autenticación.
+
+3. **Ejemplo básico de estructura**  
+    - **Archivo `index.js`**:  
+      ```javascript
+      const express = require('express');
+      const app = express();
+      const port = 3000;
+
+      // Middleware para parsear JSON
+      app.use(express.json());
+
+      // Importar rutas
+      const userRoutes = require('./routes/userRoutes');
+      app.use('/users', userRoutes);
+
+      app.listen(port, () => {
+            console.log(`Servidor corriendo en http://localhost:${port}`);
+      });
+      ```
+
+    - **Archivo `routes/userRoutes.js`**:  
+      ```javascript
+      const express = require('express');
+      const router = express.Router();
+      const userController = require('../controllers/userController');
+
+      router.get('/', userController.getAllUsers);
+      router.post('/', userController.createUser);
+
+      module.exports = router;
+      ```
+
+    - **Archivo `controllers/userController.js`**:  
+      ```javascript
+      const getAllUsers = (req, res) => {
+            res.json([{ id: 1, name: 'John Doe' }]);
+      };
+
+      const createUser = (req, res) => {
+            const newUser = req.body;
+            res.status(201).json({ message: 'Usuario creado', user: newUser });
+      };
+
+      module.exports = { getAllUsers, createUser };
+      ```
+
+4. **Usa herramientas adicionales**  
+    - **dotenv**: Para manejar variables de entorno.
+    - **Joi o Zod**: Para validar datos.
+    - **Winston o Morgan**: Para registrar logs.
+
+5. **Escalabilidad**  
+    - Divide la lógica en módulos pequeños y reutilizables.
+    - Usa controladores para manejar la lógica de negocio.
+    - Implementa middlewares para tareas comunes.
+
+<a id="node14"></a>
+
+### **¿Qué es CORS y cómo lo manejás en una API REST?**
+
+[Volver al indice](#node-base)
+
+CORS (Cross-Origin Resource Sharing) es una forma de decirle a los navegadores que está bien compartir recursos (como datos de una API) entre diferentes dominios. Por defecto, los navegadores bloquean solicitudes de un dominio a otro por razones de seguridad. CORS permite que un servidor diga: "Está bien, este dominio puede acceder a mis datos".
+
+**Ejemplo simple:**
+- Tu API está en `https://mi-api.com`.
+- Tu frontend está en `https://mi-frontend.com`.
+- Sin CORS, el navegador bloqueará las solicitudes del frontend a la API.
+
+**¿Cómo manejar CORS en una API REST con Express?**
+
+1. **Instalar el paquete `cors`:**
+    ```bash
+    npm install cors
+    ```
+
+2. **Usarlo en tu servidor:**
+    ```javascript
+    const express = require('express');
+    const cors = require('cors');
+    const app = express();
+
+    // Permitir CORS para todos los dominios
+    app.use(cors());
+
+    app.get('/datos', (req, res) => {
+         res.json({ mensaje: '¡Hola desde la API!' });
+    });
+
+    app.listen(3000, () => {
+         console.log('Servidor corriendo en http://localhost:3000');
+    });
+    ```
+
+3. **Configurar CORS para dominios específicos (opcional):**
+    ```javascript
+    const corsOptions = {
+         origin: 'https://mi-frontend.com', // Solo este dominio puede acceder
+    };
+    app.use(cors(corsOptions));
+    ```
+
+En resumen, CORS es como un portero que decide quién puede entrar a tu API. Con el paquete `cors`, puedes configurarlo fácilmente en Express.

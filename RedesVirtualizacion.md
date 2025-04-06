@@ -1,7 +1,5 @@
 <a name="har-base"></a>
 
-## [Redes y Virtualizacion](#har)
-
 | Virtualizacion |
 |----------|
  [Que es la virtualizacion?](#har8) |
@@ -24,6 +22,9 @@
 | [Que elementos conforman una red?](#har22) |
 | [Cual es la finalidad de una red?](#har23) |
 | [¿Cuáles son las diferencias clave entre HTTP/1.1, HTTP/2 y HTTP/3? ¿Por qué se considera HTTP/2 más eficiente que HTTP/1.1?](#ent17) |
+|[¿Cuáles son los dos tipos de arquitectura del WWW?](#ent17.2)|
+|[¿Qué recursos pueden compartir los usuarios en una red LAN?](#ent17.3)|
+| [¿Dónde puede residir la base de datos en un sistema cliente-servidor?](#ent17.4)|
 
 | Clasificacion de redes |
 |----------|
@@ -293,6 +294,67 @@ Los distintos criterios de clasificación de redes son:
 
 Todas estas versiones de HTTP introdujeron mejoras enormes en cada una de ellas. La primera version introdujo el protocolo de comunicacion en la web, la segunda version introdujo cosas que incluso al dia de hoy usamos como la multiplicidad de solicitudes sin esperar un desbloqueo e incluso la posibilidad de manejar un Servidor Push, donde se podia obtener data de antemano sin que el usuario vaya a solicitarla, dando como resultado la aparicion de las notificaciones push que hoy usamos.
 En el caso de HTTP/3, se introdujo el protocolo QUIC, que es un protocolo de transporte que se ejecuta sobre UDP en lugar de TCP, lo que permite una comunicacion mas rapida y segura, pero el mayor salto fue desde HTTP1 a HTTP2.
+
+<a id="ent17.2"></a>
+
+### **¿Cuáles son los dos tipos de arquitectura del WWW?**
+
+[Volver al indice](#har-base)
+
+La arquitectura del WWW se basa en dos tipos de arquitectura:
+
+- **Arquitectura cliente-servidor**: En este modelo, el cliente (el navegador web) envía solicitudes al servidor (el sitio web) y recibe respuestas. El servidor almacena y gestiona los recursos, mientras que el cliente los solicita y los presenta al usuario.
+- **Arquitectura peer-to-peer (P2P)**: En este modelo, los nodos de la red actúan como iguales y pueden compartir recursos directamente entre sí sin necesidad de un servidor central. Esto permite una mayor descentralización y eficiencia en la distribución de datos.
+- **Arquitectura distribuida**: En este modelo, los recursos y servicios están distribuidos en múltiples servidores y nodos, lo que permite una mayor escalabilidad y redundancia. Los usuarios pueden acceder a los recursos desde diferentes ubicaciones y dispositivos, lo que mejora la disponibilidad y la resiliencia de la red.
+- **Arquitectura de microservicios**: En este modelo, las aplicaciones se dividen en pequeños servicios independientes que pueden comunicarse entre sí a través de APIs. Esto permite una mayor flexibilidad y escalabilidad, ya que cada servicio puede ser desarrollado y desplegado de forma independiente.
+- **Arquitectura de nube**: En este modelo, los recursos y servicios se alojan en la nube y se accede a ellos a través de Internet. Esto permite una mayor escalabilidad y flexibilidad, ya que los usuarios pueden acceder a los recursos desde cualquier lugar y en cualquier momento.
+- **Arquitectura de contenedores**: En este modelo, las aplicaciones se ejecutan en contenedores que son ligeros y portátiles. Esto permite una mayor eficiencia y flexibilidad, ya que los contenedores pueden ser desplegados y escalados rápidamente en diferentes entornos.
+- **Arquitectura de eventos**: En este modelo, los eventos son el principal motor de la comunicación entre los diferentes componentes de la arquitectura. Los eventos pueden ser generados por los usuarios o por el sistema, y pueden ser procesados en tiempo real o almacenados para su posterior análisis.
+- **Arquitectura de API**: En este modelo, las aplicaciones se comunican entre sí a través de APIs (interfaces de programación de aplicaciones). Esto permite una mayor interoperabilidad y flexibilidad, ya que las aplicaciones pueden integrarse fácilmente entre sí y con otros servicios.
+- **Arquitectura de servicios web**: En este modelo, los servicios se exponen a través de protocolos estándar como SOAP o REST. Esto permite una mayor interoperabilidad y flexibilidad, ya que los servicios pueden ser consumidos por diferentes aplicaciones y plataformas.
+- **Arquitectura de microservicios basada en eventos**: En este modelo, los microservicios se comunican entre sí a través de eventos. Esto permite una mayor escalabilidad y flexibilidad, ya que los microservicios pueden ser desplegados y escalados de forma independiente y pueden reaccionar a eventos en tiempo real.
+- **Arquitectura de servicios sin servidor (serverless)**: En este modelo, los desarrolladores pueden construir y ejecutar aplicaciones sin tener que preocuparse por la infraestructura subyacente. Los servicios en la nube manejan automáticamente la escalabilidad y la disponibilidad, lo que permite a los desarrolladores centrarse en el código y la lógica de negocio.
+- **Arquitectura de malla de servicios**: En este modelo, los microservicios se comunican entre sí a través de una red de servicios. Esto permite una mayor escalabilidad y flexibilidad, ya que los microservicios pueden ser desplegados y escalados de forma independiente y pueden comunicarse entre sí a través de una red de servicios.
+- **Arquitectura de eventos basada en microservicios**: En este modelo, los microservicios se comunican entre sí a través de eventos. Esto permite una mayor escalabilidad y flexibilidad, ya que los microservicios pueden ser desplegados y escalados de forma independiente y pueden reaccionar a eventos en tiempo real.
+
+Entre otros.
+
+<a id="ent17.3"></a>
+
+### **¿Qué recursos pueden compartir los usuarios en una red LAN?**
+
+[Volver al indice](#har-base)
+
+Los usuarios en una red LAN pueden compartir diversos recursos para facilitar la colaboración y optimizar el uso de dispositivos y servicios. Algunos de los recursos más comunes que se pueden compartir son:
+
+- **Archivos y carpetas**: Los usuarios pueden compartir documentos, imágenes, videos y otros archivos almacenados en sus computadoras para que otros puedan acceder a ellos.
+- **Impresoras**: Una impresora conectada a la red puede ser utilizada por varios usuarios, eliminando la necesidad de tener una impresora para cada computadora.
+- **Conexión a Internet**: Todos los dispositivos en la red pueden compartir una única conexión a Internet, lo que permite que varios usuarios naveguen al mismo tiempo.
+- **Dispositivos de almacenamiento**: Unidades de almacenamiento externas, como discos duros o servidores NAS, pueden ser compartidas para guardar y acceder a datos de forma centralizada.
+- **Aplicaciones y software**: Algunos programas pueden ser instalados en un servidor y utilizados por varios usuarios en la red.
+- **Escáneres**: Similar a las impresoras, los escáneres conectados a la red pueden ser utilizados por múltiples usuarios.
+- **Recursos multimedia**: Archivos de música, videos o presentaciones pueden ser compartidos para su reproducción en diferentes dispositivos.
+- **Bases de datos**: Las empresas suelen compartir bases de datos para que los empleados puedan acceder a información centralizada.
+
+Estos recursos compartidos hacen que las redes LAN sean ideales para hogares, oficinas y entornos educativos, ya que permiten una mayor eficiencia y colaboración.  
+
+<a id="ent17.4"></a>
+
+### **¿Dónde puede residir la base de datos en un sistema cliente-servidor?**
+
+[Volver al indice](#har-base)
+
+La base de datos en un sistema cliente-servidor puede residir en diferentes ubicaciones dependiendo de la arquitectura y las necesidades del sistema. Aquí hay una explicación sencilla:
+
+- **En el servidor**: Esta es la configuración más común. La base de datos se almacena en el servidor, que es una computadora centralizada. Los clientes (como aplicaciones o navegadores) envían solicitudes al servidor para acceder a los datos. El servidor procesa estas solicitudes y devuelve los resultados al cliente.
+
+- **En un servidor dedicado**: En sistemas más grandes, la base de datos puede residir en un servidor dedicado exclusivamente para gestionar datos. Esto mejora el rendimiento y la seguridad, ya que el servidor de base de datos no comparte recursos con otras aplicaciones.
+
+- **En la nube**: Muchas bases de datos modernas se alojan en servicios en la nube como AWS, Azure o Google Cloud. Esto permite acceder a los datos desde cualquier lugar con conexión a Internet y facilita la escalabilidad.
+
+- **En el cliente**: En algunos casos, especialmente en aplicaciones pequeñas o desconectadas, la base de datos puede residir en el dispositivo del cliente. Por ejemplo, aplicaciones móviles que almacenan datos localmente.
+
+En resumen, la base de datos puede estar en el servidor, en un servidor dedicado, en la nube o incluso en el cliente, dependiendo de cómo esté diseñado el sistema.  
 
 <a id="har24"></a>
 

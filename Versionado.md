@@ -1,7 +1,5 @@
 <a name="cam-base"></a>
 
-# [Control de Versiones y Cambios - Integracion Continua](#cam)
-
 | Temas |
 |----------|
 | [Git vs Mercurial](#ent63) |
@@ -15,7 +13,6 @@
 | [Que es Continuous Integration en detalle?](#cam8) |
 | [Que es Continuous Delivery en detalle?](#cam9) |
 | [Que es Continuous Deployment en detalle?](#cam10) |
-
 
 ---
 
