@@ -50,7 +50,7 @@
 | Performance |
 |----------|
 |[¿Cómo funcionan las claves (keys) en las listas de React? ¿Por qué son importantes?](#rea45)|
-|¿Qué son las "re-renderizaciones innecesarias" y cómo las evitarías? 💛|
+|[¿Qué son las "re-renderizaciones innecesarias" y cómo las evitarías?](#rea455) 💛|
 |¿Qué herramientas usarías para identificar problemas de rendimiento en una aplicación React? 💛|
 |¿Cómo se gestiona el "debounce" o "throttle" en React para eventos como el scroll o input?|
 |¿Cómo implementarías un "Suspense" en React para manejar la carga de datos de forma asincrónica? 💛|
@@ -1938,6 +1938,93 @@ function ItemList({ items }) {
 ```
 
 No se recomienda usar el index del elemento en un array como identificador, ya que esto puede causar problemas al reordenar la lista y especialmente si se contempla el eliminar elementos.
+
+<a id="rea455"></a>
+
+### **¿Qué son las "re-renderizaciones innecesarias" y cómo las evitarías?**
+
+[Volver al indice](#react-base)
+
+Las **re-renderizaciones innecesarias** ocurren cuando un componente de React se vuelve a renderizar sin que haya cambios en las props o el estado que afecten su salida visual. Esto puede impactar negativamente el rendimiento de la aplicación, especialmente en componentes complejos o listas grandes.
+
+**Causas comunes de re-renderizaciones innecesarias:**
+
+1. **Cambios en el estado o props que no afectan al componente.**
+2. **Funciones recreadas en cada renderizado.**
+3. **Falta de uso de claves (`key`) únicas en listas.**
+4. **Componentes hijos que se renderizan aunque sus props no hayan cambiado.**
+5. **Uso excesivo de contextos que provocan re-renderizaciones globales.**
+
+**Cómo evitarlas:**
+
+1. **Usar `React.memo` para memorizar componentes funcionales:**
+Evita que un componente se vuelva a renderizar si sus props no han cambiado.
+
+  ```jsx
+  const MyComponent = React.memo(({ value }) => {
+    return <div>{value}</div>;
+  });
+  ```
+
+**Usar `useMemo` para memorizar valores calculados:** Evita cálculos costosos en cada renderizado.
+
+  ```jsx
+  const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
+  ```
+
+**Usar `useCallback` para memorizar funciones:** Evita que las funciones se recreen en cada renderizado.
+
+  ```jsx
+  const handleClick = useCallback(() => {
+    console.log('Clicked');
+  }, []);
+  ```
+
+**Evitar pasar funciones inline como props:** Las funciones inline se recrean en cada renderizado, lo que puede causar re-renderizaciones en componentes hijos.
+
+  ```jsx
+  // En lugar de esto:
+  <Child onClick={() => doSomething()} />
+  // Usa:
+  const handleClick = useCallback(() => doSomething(), []);
+  <Child onClick={handleClick} />
+  ```
+
+**Dividir componentes grandes en componentes más pequeños:**
+Esto reduce el impacto de las actualizaciones al limitar el alcance de las re-renderizaciones.
+
+**Usar claves (`key`) únicas en listas:** Ayuda a React a identificar qué elementos han cambiado.
+
+  ```jsx
+  items.map((item) => <li key={item.id}>{item.name}</li>);
+  ```
+
+**Evitar el uso excesivo de contextos:** Divide los contextos en unidades más pequeñas para evitar re-renderizaciones globales innecesarias.
+
+**Usar herramientas de análisis de rendimiento:** React DevTools y el Profiler pueden ayudarte a identificar qué componentes se están renderizando innecesariamente.
+
+#### **Ejemplo práctico:**
+
+```jsx
+const Parent = () => {
+  const [count, setCount] = useState(0);
+  const handleClick = useCallback(() => setCount((prev) => prev + 1), []);
+
+  return (
+   <div>
+    <button onClick={handleClick}>Incrementar</button>
+    <Child count={count} />
+   </div>
+  );
+};
+
+const Child = React.memo(({ count }) => {
+  console.log('Renderizando Child');
+  return <div>Count: {count}</div>;
+});
+```
+
+En este ejemplo, `React.memo` y `useCallback` evitan que el componente `Child` se vuelva a renderizar innecesariamente.
 
 <a id="rea46"></a>
 

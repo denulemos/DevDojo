@@ -1,7 +1,5 @@
 <a name="cic-base"></a>
 
-## [Organizacion en Software - Derecho en IT](#cic)
-
 | Temas |
 |----------|
 | [¿Qué es el ciclo de vida de un software?](#cic1) |
