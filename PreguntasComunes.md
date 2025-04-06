@@ -27,7 +27,6 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 
 | Preguntas Generales o Sin Categorizar (aun!) |
 |----------|
-| [Diferencias entre REST y GraphQL](#ent18) |
 | [Cuales son los ataques mas comunes en la web? Nombrar tambien sus protecciones del lado del cliente](#ent19) |
 | [Lazy loading](#ent20) |
 | [Performance](#ent21) |
@@ -482,20 +481,6 @@ console.log(memoizedFibonacci(40));  // Recupera de la caché, mucho más rápid
 Lo negativo que posee es que estas memorizaciones son guardadas en memoria, asi que seria necesario tener no solo un buen sistema de limpieza de cache si no tambien de manejo de memoria. 
 
 En React tenemos el hook `useMemo` que hace uso de esto mismo guardando resultados, tambien tenemos `useCallback` que es similar pero para funciones.
-
-<a id="ent18"></a>
-
-### **Explica las diferencias entre REST y GraphQL. ¿Cuándo usarías uno sobre el otro?**
-
-[Volver al indice](#entrevista-base)
-
-| REST | GraphQL |
-| --- | --- |
-| Es un link para cada recurso | Es un solo link para varios recursos, endpoint unico |
-| Puede tener problemas de sobre-recuperacion (mas informacion de la necesaria) o sub-recuperacion (Menos informacion de la necesaria), lo cual causa que necesitemos varias consultas para tener lo que precisamos, o tengamos payloads muy pesados | El cliente puede especificar que campos quiere en la consulta |
-| Es mas facil de desarrollar desde cero pero complicado de escalar | Su inicializacion es compleja, pero si se tienen los datos necesarios, los cambios que se tendrian que hacer serian minimos |
-| Como las consultas son con su propio endpoint y pueden ser dentro de todo predecibles, el catching es mucho mas facil de implementar | Como las consultas son variadas, el catching es complicado de implementar, aunque hay tecnicas especificas | 
-| Se recomienda usar REST cuando la seguridad y el catching son una prioridad, ademas si tengo clientes que buscan servicios predecibles | Se recomienda cuando es importante el minimizar la cantidad de solicitudes hechas en el servidor |
 
 <a id="ent19"></a>
 

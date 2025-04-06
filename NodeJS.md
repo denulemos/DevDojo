@@ -28,7 +28,7 @@
 | ¿Qué es CORS y cómo lo manejás en una API REST? |
 | ¿Cómo manejar la carga de archivos (file uploads) en Express? |
 | ¿Cómo implementar una API versionada (v1, v2...)? |
-| ¿Diferencias entre REST y GraphQL? |
+| [Diferencias entre REST y GraphQL](#ent18) |
 | ¿Cómo implementar paginación, filtrado y ordenamiento en una REST API? |
 | ¿Cómo se manejan las relaciones entre entidades en una API REST (por ejemplo, usuarios y posts)? |
 
@@ -41,3 +41,16 @@
 
 ---
 
+<a id="ent18"></a>
+
+### **Explica las diferencias entre REST y GraphQL. ¿Cuándo usarías uno sobre el otro?**
+
+[Volver al indice](#node-base)
+
+| REST | GraphQL |
+| --- | --- |
+| Es un link para cada recurso | Es un solo link para varios recursos, endpoint unico |
+| Puede tener problemas de sobre-recuperacion (mas informacion de la necesaria) o sub-recuperacion (Menos informacion de la necesaria), lo cual causa que necesitemos varias consultas para tener lo que precisamos, o tengamos payloads muy pesados | El cliente puede especificar que campos quiere en la consulta |
+| Es mas facil de desarrollar desde cero pero complicado de escalar | Su inicializacion es compleja, pero si se tienen los datos necesarios, los cambios que se tendrian que hacer serian minimos |
+| Como las consultas son con su propio endpoint y pueden ser dentro de todo predecibles, el catching es mucho mas facil de implementar | Como las consultas son variadas, el catching es complicado de implementar, aunque hay tecnicas especificas | 
+| Se recomienda usar REST cuando la seguridad y el catching son una prioridad, ademas si tengo clientes que buscan servicios predecibles | Se recomienda cuando es importante el minimizar la cantidad de solicitudes hechas en el servidor |
