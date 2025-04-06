@@ -7,9 +7,6 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 
 | Programacion Funcional |
 |----------|
-| [Programacion Funcional](#ent8) |
-| [Pure function en Programacion Funcional](#ent13) |
-| [¿Qué ventajas ofrece la inmutabilidad al manejar estructuras de datos? Proporciona un ejemplo práctico.](#ent14) |
 | [Programacion reactiva (Observables, RxJs, Subscribers)](#ent8-2) |
 | [Paradigma Reactiva Funcional (FRP)? (Funcional + Reactiva)](#ent9) |
 | [Funciones lambda (Funciones Anonimas)](#ent8-1) |
@@ -142,39 +139,7 @@ function sumar(a: number, b: number): number {
 
 La diferencia entre ambas funciones es que la impura esta mutando a la variable resultado, en cambio, la funcion pura, simplemente devuelve el resultado de la operacion, sin mutar la informacion, algo principal cuando se trata de programacion funcional.
 
-<a id="ent14"></a>
 
-### **¿Qué ventajas ofrece la inmutabilidad al manejar estructuras de datos? Proporciona un ejemplo práctico.**
-
-[Volver al indice](#entrevista-base)
-
-Solo a modo de repaso, la inmutabilidad es algo muy propio de la programacion funcional. Algunas de sus ventajas son:
-
-- Al no estar modificando directamente mis datos, evito errores de estado compartido
-- Eliminamos los errores de concurrencia, ya que los datos no estan siendo modificados, entonces no tengo necesidad de tener si o si la ultima version de los mismos para poder continuar
-- Se pueden implementar facilmente funciones de `undo`, ya que se puede volver a la version anterior muy facilmente
-- Integridad de datos, ya que al no estar modificando los datos, no se pueden corromper los mismos
-
-```typescript
-const tareasOriginales = [
-    { id: 1, texto: 'Hacer la compra', completada: false },
-    { id: 2, texto: 'Llamar al médico', completada: true }
-];
-
-function agregarTarea(tareas, nuevaTarea) {
-    return [...tareas, nuevaTarea];
-}
-
-const nuevaTarea = { id: 3, texto: 'Pagar el alquiler', completada: false };
-const tareasActualizadas = agregarTarea(tareasOriginales, nuevaTarea);
-
-console.log(tareasOriginales); // La lista original permanece sin cambios
-console.log(tareasActualizadas); // Nueva lista con la tarea agregada
-```
-
-Un ejemplo de la IA que me gusto mucho para explicar esto: 
-
-Imagina que estás escribiendo un documento en un procesador de textos. Cada vez que haces un cambio, como añadir una palabra, el programa no borra todo el documento y lo reescribe desde cero con la palabra añadida. En lugar de eso, crea una nueva versión del documento con la palabra incluida. Si algo sale mal mientras escribes, siempre puedes volver a la versión anterior sin problemas. Esto es similar a cómo funciona la inmutabilidad en las aplicaciones de software.
 
 <a id="ent8-1"></a>
 

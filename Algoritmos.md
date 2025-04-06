@@ -111,10 +111,12 @@
 
 | Programación Funcional y Orientada a Objetos |
 |----------|
+| [Que es la programacion orientada a objetos?](#var24) |
 | [Que es la programacion funcional?](#var27-1) 💛 |
 | [Que es el Function Factory?](#var20) |
 | [Que es el Currying?](#var23)  💛 |
 | [¿Qué son las funciones puras y cómo se relacionan con la programación funcional?](#var23-1)|
+| [¿Qué ventajas ofrece la inmutabilidad al manejar estructuras de datos? Proporciona un ejemplo práctico.](#ent14) |
 
 <a name="alg-base-async"></a>
 
@@ -1895,6 +1897,25 @@ function factorial(n) {
 console.log(factorial(5)); // Output: 120
 ```
 
+<a id="var24"></a>
+
+### **Que es la programacion orientada a objetos?**
+
+[Volver al indice](#alg-base-3)
+
+La programación orientada a objetos (POO) es un estilo de programación que organiza el código en "objetos". Un objeto es como una caja que contiene datos (llamados atributos) y cosas que puede hacer (llamadas métodos).
+
+Por ejemplo, imagina que tienes un objeto llamado "Perro". Este objeto podría tener atributos como "nombre" y "edad", y métodos como "ladrar()" o "correr()". Así, puedes crear muchos perros con diferentes nombres y edades, pero todos pueden ladrar y correr.
+
+La POO se basa en cuatro ideas principales:
+
+1. **Clases y objetos**: Una clase es como un molde (por ejemplo, "Perro"), y un objeto es una cosa creada a partir de ese molde (por ejemplo, "mi perro Fido").
+2. **Encapsulación**: Los datos de un objeto están protegidos y solo se pueden cambiar usando sus métodos.
+3. **Herencia**: Puedes crear nuevas clases basadas en otras. Por ejemplo, una clase "Perro" puede heredar de una clase más general llamada "Animal".
+4. **Polimorfismo**: Los objetos pueden comportarse de manera diferente según el contexto. Por ejemplo, un método "hacerSonido()" puede hacer que un perro ladre y un gato maúlle.
+
+En resumen, la POO te ayuda a organizar tu código de manera que sea más fácil de entender, reutilizar y mantener.
+
 <a id="var27-1"></a>
 
 ### **Que es la programacion funcional?** 💛
@@ -2095,3 +2116,37 @@ pubsub.publish('event1', 'hello, world!'); // Publicar 'event1'
 
 // Salida: 'hello, world!'
 ```
+
+<a id="ent14"></a>
+
+### **¿Qué ventajas ofrece la inmutabilidad al manejar estructuras de datos? Proporciona un ejemplo práctico.**
+
+[Volver al indice](#alg-base-obj)
+
+Solo a modo de repaso, la inmutabilidad es algo muy propio de la programacion funcional. Algunas de sus ventajas son:
+
+- Al no estar modificando directamente mis datos, evito errores de estado compartido
+- Eliminamos los errores de concurrencia, ya que los datos no estan siendo modificados, entonces no tengo necesidad de tener si o si la ultima version de los mismos para poder continuar
+- Se pueden implementar facilmente funciones de `undo`, ya que se puede volver a la version anterior muy facilmente
+- Integridad de datos, ya que al no estar modificando los datos, no se pueden corromper los mismos
+
+```typescript
+const tareasOriginales = [
+    { id: 1, texto: 'Hacer la compra', completada: false },
+    { id: 2, texto: 'Llamar al médico', completada: true }
+];
+
+function agregarTarea(tareas, nuevaTarea) {
+    return [...tareas, nuevaTarea];
+}
+
+const nuevaTarea = { id: 3, texto: 'Pagar el alquiler', completada: false };
+const tareasActualizadas = agregarTarea(tareasOriginales, nuevaTarea);
+
+console.log(tareasOriginales); // La lista original permanece sin cambios
+console.log(tareasActualizadas); // Nueva lista con la tarea agregada
+```
+
+Un ejemplo de la IA que me gusto mucho para explicar esto: 
+
+Imagina que estás escribiendo un documento en un procesador de textos. Cada vez que haces un cambio, como añadir una palabra, el programa no borra todo el documento y lo reescribe desde cero con la palabra añadida. En lugar de eso, crea una nueva versión del documento con la palabra incluida. Si algo sale mal mientras escribes, siempre puedes volver a la versión anterior sin problemas. Esto es similar a cómo funciona la inmutabilidad en las aplicaciones de software.
