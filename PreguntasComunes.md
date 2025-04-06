@@ -1,7 +1,7 @@
 <a id="entrevista-base"></a>
 <a name="rea-base"></a>
 
-## [Conjunto de preguntas generales para un Frontend Engineer](#entrevista-base)
+# [Conjunto de preguntas generales para un Frontend Engineer](#entrevista-base)
 
 Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de trabajo para un Frontend Engineer. Engloba conceptos comunmente preguntados sobre Javascript, patrones de disenio, mejora de performance, etc. Tambien se agregan preguntas sobre React, Redux y Angular en esta ocasion.
 
@@ -20,7 +20,6 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 | [Encapsulación (Private, public)](#ent10)|
 | [Principios SOLID](#ent11) |
 | [Que es la inyeccion de dependencias?](#ent12) |
-| [Patrones de disenio en React](#ent44) |
 | [Patrones de disenio en Frontend](#ent46) |
 | [Antipatrones en Frontend](#ent47) |
 | [Microfrontends](#ent54) |
@@ -28,7 +27,6 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 
 | Preguntas Generales o Sin Categorizar (aun!) |
 |----------|
-| [¿Cuáles son las diferencias clave entre HTTP/1.1, HTTP/2 y HTTP/3? ¿Por qué se considera HTTP/2 más eficiente que HTTP/1.1?](#ent17) |
 | [Diferencias entre REST y GraphQL](#ent18) |
 | [Cuales son los ataques mas comunes en la web? Nombrar tambien sus protecciones del lado del cliente](#ent19) |
 | [Lazy loading](#ent20) |
@@ -80,7 +78,7 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 
 ---
 
-# Preguntas mas comunes en entrevistas de trabajo para un FE Engineer
+## Preguntas mas comunes en entrevistas de trabajo para un FE Engineer
 
 
 <a id="ent8"></a>
@@ -484,15 +482,6 @@ console.log(memoizedFibonacci(40));  // Recupera de la caché, mucho más rápid
 Lo negativo que posee es que estas memorizaciones son guardadas en memoria, asi que seria necesario tener no solo un buen sistema de limpieza de cache si no tambien de manejo de memoria. 
 
 En React tenemos el hook `useMemo` que hace uso de esto mismo guardando resultados, tambien tenemos `useCallback` que es similar pero para funciones.
-
-<a id="ent17"></a>
-
-### **¿Cuáles son las diferencias clave entre HTTP/1.1, HTTP/2 y HTTP/3? ¿Por qué se considera HTTP/2 más eficiente que HTTP/1.1?**
-
-[Volver al indice](#entrevista-base)
-
-Todas estas versiones de HTTP introdujeron mejoras enormes en cada una de ellas. La primera version introdujo el protocolo de comunicacion en la web, la segunda version introdujo cosas que incluso al dia de hoy usamos como la multiplicidad de solicitudes sin esperar un desbloqueo e incluso la posibilidad de manejar un Servidor Push, donde se podia obtener data de antemano sin que el usuario vaya a solicitarla, dando como resultado la aparicion de las notificaciones push que hoy usamos.
-En el caso de HTTP/3, se introdujo el protocolo QUIC, que es un protocolo de transporte que se ejecuta sobre UDP en lugar de TCP, lo que permite una comunicacion mas rapida y segura, pero el mayor salto fue desde HTTP1 a HTTP2.
 
 <a id="ent18"></a>
 
@@ -1348,254 +1337,6 @@ paymentMethod.pay(100); // "Paid 100 using credit card"
 
 - En React el uso de custom Hooks es ideal para el manejo de logica repetida
 - Hacer uso del tipico archivo de constantes para manejar la misma informacion a lo largo de toda la aplicacion desde una misma fuente.
-
-
-<a id="ent44"></a>
-
-### **Patrones de disenio en React**
-
-[Volver al indice](#entrevista-base)
-
-**Componentizacion**
-
-Es el separar la interfaz de usuario en componentes reutilizables, es la base de React en si mismo.
-
-**Contenedor y Presentación (Container-Presenter Pattern)**
-
-Separar los componentes que se encargan de la UI de los componentes de logica. Se le dice componente presentacion y componente contenedor
-
-```jsx
-// Componente Presentación
-const UserList = ({ users }) => (
-  <ul>
-    {users.map((user) => (
-      <li key={user.id}>{user.name}</li>
-    ))}
-  </ul>
-);
-
-// Componente Contenedor
-const UserContainer = () => {
-  const [users, setUsers] = React.useState([]);
-
-  React.useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/users')
-      .then((res) => res.json())
-      .then((data) => setUsers(data));
-  }, []);
-
-  return <UserList users={users} />;
-};
-
-export default UserContainer;
-```
-
-**Higher-Order Components (HOCs)**
-
-Como se explico anteriormente, es un patron de disenio muy comunmente usado en React en donde una funcion recibe como parametro un componente y devuelve un componente nuevo con una funcionalidad extendida.
-
-```jsx
-const withLogging = (WrappedComponent) => {
-  return (props) => {
-    console.log('Componente renderizado con props:', props);
-    return <WrappedComponent {...props} />;
-  };
-};
-
-// Uso
-const MyComponent = ({ message }) => <div>{message}</div>;
-const MyComponentWithLogging = withLogging(MyComponent);
-
-// Render
-<MyComponentWithLogging message="Hola, mundo!" />;
-```
-
-**Render Props**
-
-Es un patron de disenio que permite a los componentes compartir logica de renderizado con otros componentes.
-
-```jsx
-const Mouse = ({ render }) => {
-  const [position, setPosition] = React.useState({ x: 0, y: 0 });
-
-  const handleMouseMove = (event) => {
-    setPosition({
-      x: event.clientX,
-      y: event.clientY
-    });
-  };
-
-  React.useEffect(() => {
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
-
-  return render(position);
-};
-
-// Uso
-const App = () => (
-  <Mouse
-    render={({ x, y }) => (
-      <div>
-        <h1>El mouse está en la posición ({x}, {y})</h1>
-      </div>
-    )}
-  />
-);
-```
-
-**Custom Hooks**
-
-Es un patron de disenio que permite extraer logica de un componente en una funcion reutilizable. reemplaza en parte a los HOC
-
-```jsx
-const useMouse = () => {
-  const [position, setPosition] = React.useState({ x: 0, y: 0 });
-
-  const handleMouseMove = (event) => {
-    setPosition({
-      x: event.clientX,
-      y: event.clientY
-    });
-  };
-
-  React.useEffect(() => {
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
-
-  return position;
-};
-
-// Uso
-const App = () => {
-  const { x, y } = useMouse();
-
-  return (
-    <div>
-      <h1>El mouse está en la posición ({x}, {y})</h1>
-    </div>
-  );
-};
-```
-
-**Context API - Context pattern**
-
-Es un patron de disenio que permite pasar datos a traves del arbol de componentes sin tener que pasar props manualmente en cada nivel. Elimina el Prop Drilling.
-
-```jsx
-const ThemeContext = React.createContext();
-
-const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = React.useState('light');
-  return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
-      {children}
-    </ThemeContext.Provider>
-  );
-};
-
-const ThemeSwitcher = () => {
-  const { theme, setTheme } = React.useContext(ThemeContext);
-  return (
-    <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
-      Cambiar a {theme === 'light' ? 'oscuro' : 'claro'}
-    </button>
-  );
-};
-
-const App = () => (
-  <ThemeProvider>
-    <ThemeSwitcher />
-  </ThemeProvider>
-);
-```
-
-**Compound Components**
-
-Es un patron de disenio que permite a los componentes trabajar juntos de manera mas eficiente, como por ejemplo un `select` y `option`
-
-```jsx
-const Select = ({ children }) => {
-  const [selected, setSelected] = React.useState(null);
-
-  const onSelect = (value) => {
-    setSelected(value);
-  };
-
-  return (
-    <div>
-      {React.Children.map(children, (child) => {
-        if (child.type === Option) {
-          return React.cloneElement(child, {
-            onSelect,
-            selected: child.props.value === selected
-          });
-        }
-        return child;
-      })}
-    </div>
-  );
-};
-
-const Option = ({ value, onSelect, selected, children }) => (
-  <div
-    onClick={() => onSelect(value)}
-    style={{ background: selected ? 'lightblue' : 'white' }}
-  >
-    {children}
-  </div>
-);
-
-// Uso
-
-const App = () => (
-  <Select>
-    <Option value="1">Opción 1</Option>
-    <Option value="2">Opción 2</Option>
-    <Option value="3">Opción 3</Option>
-  </Select>
-);
-```
-
-**Controlled y Uncontrolled Components**
-
-Es un patron de disenio que permite manejar los componentes de una forma mas eficiente, en los **Controlled Components** el estado del componente es manejado por React, mientras que en los **Uncontrolled Components** el estado es manejado por el propio componente.
-
-```jsx
-// Controlled Component
-const ControlledInput = () => {
-  const [value, setValue] = React.useState('');
-
-  const handleChange = (event) => {
-    setValue(event.target.value);
-  };
-
-  return <input value={value} onChange={handleChange} />;
-};
-
-// Uncontrolled Component
-const UncontrolledInput = () => {
-  const inputRef = React.useRef();
-
-  const handleClick = () => {
-    console.log(inputRef.current.value);
-  };
-
-  return (
-    <div>
-    // El estado es manejado por el DOM
-      <input ref={inputRef} />
-      <button onClick={handleClick}>Obtener valor</button>
-    </div>
-  );
-};
-```
 
 <a id="ent46"></a>
 

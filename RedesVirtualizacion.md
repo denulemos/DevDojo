@@ -23,6 +23,7 @@
 | [Que es una red de computadoras?](#har21) |
 | [Que elementos conforman una red?](#har22) |
 | [Cual es la finalidad de una red?](#har23) |
+| [¿Cuáles son las diferencias clave entre HTTP/1.1, HTTP/2 y HTTP/3? ¿Por qué se considera HTTP/2 más eficiente que HTTP/1.1?](#ent17) |
 
 | Clasificacion de redes |
 |----------|
@@ -283,6 +284,15 @@ Los distintos criterios de clasificación de redes son:
 - Por direccionalidad de datos
 - Por grado de autentificación
 - Por grado de difusión
+
+<a id="ent17"></a>
+
+### **¿Cuáles son las diferencias clave entre HTTP/1.1, HTTP/2 y HTTP/3? ¿Por qué se considera HTTP/2 más eficiente que HTTP/1.1?**
+
+[Volver al indice](#har-base)
+
+Todas estas versiones de HTTP introdujeron mejoras enormes en cada una de ellas. La primera version introdujo el protocolo de comunicacion en la web, la segunda version introdujo cosas que incluso al dia de hoy usamos como la multiplicidad de solicitudes sin esperar un desbloqueo e incluso la posibilidad de manejar un Servidor Push, donde se podia obtener data de antemano sin que el usuario vaya a solicitarla, dando como resultado la aparicion de las notificaciones push que hoy usamos.
+En el caso de HTTP/3, se introdujo el protocolo QUIC, que es un protocolo de transporte que se ejecuta sobre UDP en lugar de TCP, lo que permite una comunicacion mas rapida y segura, pero el mayor salto fue desde HTTP1 a HTTP2.
 
 <a id="har24"></a>
 

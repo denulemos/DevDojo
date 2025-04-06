@@ -12,6 +12,7 @@
 |[Que son los componentes standalone y cuando conviene utilizarlos?](#angular-1) 💛|
 |[¿Qué problemas de rendimiento pueden existir en Angular y cómo se solucionan?](#angular-2) 💛|
 | [Angular Signals](#ent65-1) |
+| [Angular Signals vs Observables](#ent65-11) |
 | [Que mejoras hay en la migracion de AngularJS a Angular?](#ent51-1) |
 | [¿Qué es RxJS y qué problemas resuelve en el desarrollo de aplicaciones?](#ent38) |
 | [Observable en RxJS](#ent39) |
@@ -23,14 +24,7 @@
 |[¿Cómo se maneja la inyección de dependencias y la inversión de control en las aplicaciones de Angular?](#angular3) 💛|
 |[¿Qué es la compilación JIT y AOT en Angular? Diferencias, pros y contras](#angular4)|
 |[¿Qué es el enrutamiento en Angular y cómo se configura?](#angular5)|
-|¿Cómo se maneja la gestión del estado en las aplicaciones de Angular?|
-|¿Cómo se puede compartir el estado en las aplicaciones de Angular? Servicios vs Flux vs Redux. Pros y contras de cada enfoque.|
-|¿Cómo se manejan las rutas protegidas en Angular?|
-|¿Qué es el lazy loading y cómo se implementa en Angular?|
-|¿Cómo se manejan las peticiones HTTP en Angular?|
-|¿Qué es el patrón de diseño "Smart vs Dumb Components" y cómo se aplica en Angular?|
-|¿Qué son los pipes en Angular y cómo se utilizan?|
-
+| [Como se implementa Lazy Loading en Angular?](#angular6)|
 
 ---
 
@@ -581,6 +575,20 @@ effect(() => {
 
 counter.set(1); // Consola: "Counter value is: 1"
 ```
+
+<a id="ent65-11"></a>
+
+### **Angular Signals vs Observables**
+
+[Volver al indice](#angular-base)
+
+Algunas de las ventajas del uso de Signals vs Observables son:
+
+- No es necesario subscribirse ni desuscribirse de los Signals, posee un sistema de reactividad automatica que detecta cualquier cambio de input
+- Signals es mucho mas simple y declarativo que RxJS
+- Se evitan re-renderings innecesarios ya que Angular maneja mucho mejor la deteccion de cambios
+
+Sin embargo, si uno planifica trabajar con WebSockets o Eventos Complejos, Observables puede ser una mejor opcion, ya que posee herramientas para manejar la informacion de forma mucho mas especifica.
 
 <a id="ent51-1"></a>
 
@@ -1214,5 +1222,39 @@ constructor(private router: Router) {}
 
 irAAbout() {
   this.router.navigate(['/about']);
+}
+```
+
+<a id="angular6"></a>
+
+### **Como se implementa Lazy Loading en Angular?**
+
+[Volver al indice](#angular-base)
+
+Lazy Loading carga un modulo solo cuando el usuario esta por acceder a la misma. Antes de la introduccion de standalone components, era necesario crear modulos para cada componente, pero ahora no es necesario. Se utiliza `loadComponent` en lugar de `loadChildren`
+
+```ts
+import { Routes } from '@angular/router';
+
+export const routes: Routes = [
+  {
+    path: 'admin',
+    loadComponent: () => import('./admin/admin.component').then(m => m.AdminComponent)
+  },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  }
+];
+```
+
+Tambien puede complementarse muy bien con `Route Guards` para proteger rutas y asegurarse de que el usuario tenga acceso a la misma si posee autorizacion. 
+
+```ts
+{
+  path: 'admin',
+  loadComponent: () => import('./admin/admin.component').then(m => m.AdminComponent),
+  canActivate: [authGuard]
 }
 ```
