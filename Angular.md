@@ -1,30 +1,36 @@
 <a name="angular-base"></a>
 
-| Angular |
+| Arquitectura y Organización del Proyecto |
 |----------|
 | [¿Cuales son algunas reglas de Clean Code en Angular?](#rea1) |
 | [¿Qué son los modulos en Angular?](#rea11) |
-| [¿Qué es Property Binding?](#rea12) |
-| [¿Cuál es el flujo de datos una aplicación Angular?](#rea13) |
+|[¿Qué problemas de rendimiento pueden existir en Angular y cómo se solucionan?](#angular-2) 💛|
+|[¿Cómo se maneja la inyección de dependencias y la inversión de control en las aplicaciones de Angular?](#angular3) 💛|
+|[¿Qué es la compilación JIT y AOT en Angular? Diferencias, pros y contras](#angular4)|
+|[¿Qué es el enrutamiento en Angular y cómo se configura?](#angular5)|
+| [Como se implementa Lazy Loading en Angular?](#angular6)|
+| [Que mejoras hay en la migracion de AngularJS a Angular?](#ent51-1) |
+
+| Componentes y Estructura |
+|----------|
 | [¿Qué es un Decorador en Angular?](#rea14) 💛|
+|[Que son los componentes standalone y cuando conviene utilizarlos?](#angular-1) 💛|
+| [¿Cuál es el flujo de datos una aplicación Angular?](#rea13) |
+| [Patrones de disenio en Angular](#ent45) |
+|[¿Cómo funciona la detección de cambios en Angular?](#angular2)|
+
+| Manejo de datos |
+|----------|
+| [¿Qué es Property Binding?](#rea12) |
 | [Event Binding en Angular (Manejo de Eventos)](#rea15) |
 | [Data Binding en Angular](#rea16) |
-|[Que son los componentes standalone y cuando conviene utilizarlos?](#angular-1) 💛|
-|[¿Qué problemas de rendimiento pueden existir en Angular y cómo se solucionan?](#angular-2) 💛|
 | [Angular Signals](#ent65-1) |
 | [Angular Signals vs Observables](#ent65-11) |
-| [Que mejoras hay en la migracion de AngularJS a Angular?](#ent51-1) |
 | [¿Qué es RxJS y qué problemas resuelve en el desarrollo de aplicaciones?](#ent38) |
 | [Observable en RxJS](#ent39) |
 | [Formas de desubscripcion de Observables](#rea3) |
 | [Porque es importante desuscribirnos de los Observables?](#rea2) |
 | [Observable "cold" y "hot"](#ent40) |
-| [Patrones de disenio en Angular](#ent45) |
-|[¿Cómo funciona la detección de cambios en Angular?](#angular2)|
-|[¿Cómo se maneja la inyección de dependencias y la inversión de control en las aplicaciones de Angular?](#angular3) 💛|
-|[¿Qué es la compilación JIT y AOT en Angular? Diferencias, pros y contras](#angular4)|
-|[¿Qué es el enrutamiento en Angular y cómo se configura?](#angular5)|
-| [Como se implementa Lazy Loading en Angular?](#angular6)|
 
 ---
 
