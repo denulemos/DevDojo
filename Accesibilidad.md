@@ -36,6 +36,7 @@
 | [CSS accesible](#acc15) |
 | [¿Qué prácticas conlleva tener un HTML accesible?](#acc17) |
 | [HTML Accesible](#acc177) |
+| [Javascript afecta la Accesibilidad de mi pagina?](#acc178) |
 
 ---
 
@@ -1077,3 +1078,28 @@ a {
   color: inherit;
 }
 ```
+
+<a id="acc178"></a>
+
+### **Javascript Accesible**
+
+[Volver al indice](#acc-base)
+
+Depende el uso que se le de en el mismo, JS puede afectar la accesibilidad de nuestra pagina, muchas veces aplicamos eventos que afectan la accesibilidad sin darnos cuenta, aunque al mismo tiempo, podemos utilizarlo tambien para mejorarlo de las siguientes formas:
+
+- **Focus**: Se puede usar JS para manejar el focus de los elementos, por ejemplo, si tenemos un modal, podemos usar JS para que el focus quede dentro del modal y no se escape al resto de la pagina.
+- **Keyboard events**: Se pueden usar JS para manejar los eventos de teclado, por ejemplo, si tenemos un dropdown, podemos usar JS para que el dropdown se cierre al presionar la tecla ESC.
+- **ARIA**: Se pueden usar JS para manejar los atributos ARIA, por ejemplo, si tenemos un dropdown, podemos usar JS para que el atributo `aria-expanded` cambie de valor al abrir o cerrar el dropdown.
+- **Live regions**: Se pueden usar JS para manejar las regiones vivas, por ejemplo, si tenemos un mensaje de error, podemos usar JS para que el mensaje de error se lea al cambiar el valor del atributo `aria-live`.
+- **Focus management**: Se pueden usar JS para manejar el focus de los elementos, por ejemplo, si tenemos un modal, podemos usar JS para que el focus quede dentro del modal y no se escape al resto de la pagina.
+
+Hay diversos **patrones** que podemos aplicar a nuestro codigo para mejorar la accesibilidad de nuestra pagina, como por ejemplo:  
+
+- **Modal**: Se puede usar JS para manejar el focus de los elementos, por ejemplo, si tenemos un modal, podemos usar JS para que el focus quede dentro del modal y no se escape al resto de la pagina.
+- **Dropdown**: Se pueden usar JS para manejar los eventos de teclado, por ejemplo, si tenemos un dropdown, podemos usar JS para que el dropdown se cierre al presionar la tecla ESC.
+- **Tabs**: Se pueden usar JS para manejar los eventos de teclado, por ejemplo, si tenemos un tabs, podemos usar JS para que el tabs se cierre al presionar la tecla ESC.
+- **Accordion**: Se pueden usar JS para manejar los eventos de teclado, por ejemplo, si tenemos un accordion, podemos usar JS para que el accordion se cierre al presionar la tecla ESC.
+- **Tooltip**: Se pueden usar JS para manejar los eventos de teclado, por ejemplo, si tenemos un tooltip, podemos usar JS para que el tooltip se cierre al presionar la tecla ESC.
+- **Carousel**: Se pueden usar JS para manejar los eventos de teclado, por ejemplo, si tenemos un carousel, podemos usar JS para que el carousel se cierre al presionar la tecla ESC.
+- **Datepicker**: Se pueden usar JS para manejar los eventos de teclado, por ejemplo, si tenemos un datepicker, podemos usar JS para que el datepicker se cierre al presionar la tecla ESC.
+- **Slider**: Se pueden usar JS para manejar los eventos de teclado, por ejemplo, si tenemos un slider, podemos usar JS para que el slider se cierre al presionar la tecla ESC.
