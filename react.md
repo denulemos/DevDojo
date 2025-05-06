@@ -51,7 +51,7 @@
 |----------|
 |[¿Cómo funcionan las claves (keys) en las listas de React? ¿Por qué son importantes?](#rea45)|
 |[¿Qué son las "re-renderizaciones innecesarias" y cómo las evitarías?](#rea455) 💛|
-|¿Qué herramientas usarías para identificar problemas de rendimiento en una aplicación React? 💛|
+|[¿Qué herramientas usarías para identificar problemas de rendimiento en una aplicación React?](#rea456) 💛|
 |¿Cómo se gestiona el "debounce" o "throttle" en React para eventos como el scroll o input?|
 |¿Cómo implementarías un "Suspense" en React para manejar la carga de datos de forma asincrónica? 💛|
 
@@ -2025,6 +2025,24 @@ const Child = React.memo(({ count }) => {
 ```
 
 En este ejemplo, `React.memo` y `useCallback` evitan que el componente `Child` se vuelva a renderizar innecesariamente.
+
+<a id="rea456"></a>
+
+### **¿Qué herramientas usarías para identificar problemas de rendimiento en una aplicación React?**
+
+[Volver al indice](#react-base)
+
+- Con **React DevTools** se puede utilizar el Profiler que nos ayuda a identificar problemas de rendimiento en la aplicación. Permite ver qué componentes se están renderizando y cuánto tiempo tardan en hacerlo, y que props se ven modificadas.
+- Se puede usar **Lighthouse** para auditar el rendimiento de la aplicación, incluyendo el tiempo de carga y el tamaño del bundle. Esta herramienta se encuentra en las DevTools de Chrome.
+- **Web Vitals** es una biblioteca que mide métricas clave de rendimiento, como el tiempo de carga y la interactividad. Proporciona información sobre la experiencia del usuario en la aplicación.
+- **React Profiler API** permite medir el rendimiento de los componentes y registrar información sobre las re-renderizaciones. Se puede integrar en la aplicación para obtener métricas personalizadas mediante el uso de `Profiler`.
+- **Redux DevTools** si se está utilizando Redux, permite ver las acciones y el estado de la aplicación, lo que puede ayudar a identificar problemas de rendimiento relacionados con el manejo del estado global.
+- **Herramientas de análisis de bundle** como `webpack-bundle-analyzer` o `source-map-explorer` ayudan a identificar el tamaño del bundle y las dependencias que están afectando el rendimiento de la aplicación.
+- **Herramientas de monitoreo de rendimiento** como `Sentry`, `New Relic` o `Datadog` permiten rastrear el rendimiento de la aplicación en producción y detectar problemas en tiempo real.
+- Usar `why-did-you-render` para detectar re-renderizaciones innecesarias en componentes funcionales. Esta herramienta ayuda a identificar cuándo un componente se vuelve a renderizar sin necesidad.
+- **Herramientas de análisis de código estático** como `ESLint` y `Prettier` pueden ayudar a identificar patrones de código que podrían afectar el rendimiento, como el uso excesivo de funciones inline o la falta de claves únicas en listas.
+- **Herramientas de monitoreo de errores** como `Sentry` o `Rollbar` pueden ayudar a identificar errores y problemas de rendimiento en la aplicación en producción, lo que permite realizar ajustes y mejoras.
+- **Herramientas de análisis de red** en las DevTools del navegador permiten ver el tiempo de carga de los recursos y las solicitudes de red, lo que puede ayudar a identificar cuellos de botella en la carga de la aplicación.
 
 <a id="rea46"></a>
 
