@@ -2,24 +2,34 @@
 
 ## [QA](#qa)
 
-| Temas |
+| Conceptos Fundamentales |
 |----------|
 | [Que es el testing?](#qa1) |
-| [Que es un Test Limpio?](#qa2) |
 | [Cuando empezar a testear?](#qa3) |
 | [Cuando terminar de testear?](#qa4) |
 | [Diferencia entre coverage y confianza](#qa5) |
+
+| Tipos de Testing |
+|----------|
+| [Que tipos de testing hay?](#qa8) |
 | [Diferencia entre unit test e Integration Test](#qa6) |
 | [Que test de performance existen?](#qa7) |
-| [Que tipos de testing hay?](#qa8) |
+| [Distintos tipos de testing en Frontend](#ent62) |
+
+| Testing de Unidad |
+|----------|
+| [Que es un Test Limpio?](#qa2) |
 | [Que verifica el Unit Test?](#qa9) |
 | [Principios FIRST de los Unit test](#qa10) |
-|¿Qué código debería estar cubierto con pruebas unitarias? Imagina que quieres refactorizar la aplicación y moverla de Angular a React, por ejemplo. La UX y la lógica se mantienen igual. ¿Qué tipo de pruebas serían útiles en este caso?|
-|¿Qué tipo de pruebas utilizas en el proyecto? Imagina que estás comenzando una refactorización completa de la aplicación. ¿Qué tipo de pruebas podrían ayudarte a tener más confianza durante el proceso de refactorización?|
+
+| Estrategias y Mejores Prácticas |
+|----------|
+| [¿Qué código debería estar cubierto con pruebas unitarias?](#qa11) |
+| [Pruebas para refactorización entre frameworks](#qa12) |
+| [Estrategias de testing para refactorización completa](#qa13) |
 
 ---
 
----
 
 <a id="qa"></a>
 
@@ -107,11 +117,34 @@ Son comparables a comprobar si una batería de un teléfono móvil está cargada
   * Que el **software soporte muchos datos**
   * Enfocado en base de datos y transacciones
 
+
+<a id="ent62"></a>
+
+### **Distintos tipos de testing en Frontend**
+
+[Volver al indice](#qa-base)
+
+- **Unit Testing**: Pruebas pequeñas que verifican que una pieza específica de código funciona correctamente por sí sola. Por ejemplo, probar que una función que suma dos números devuelve el resultado correcto.
+
+- **Integration Testing**: Pruebas que verifican que diferentes partes de la aplicación funcionan bien juntas. Por ejemplo, probar que cuando llenas un formulario y haces clic en "Enviar", los datos llegan correctamente al servidor.
+
+- **End-to-End Testing**: Pruebas que simulan a un usuario real usando la aplicación completa. Por ejemplo, probar todo el proceso desde que un usuario se registra hasta que hace una compra.
+
+- **Functional Testing**: Pruebas que verifican que las funcionalidades principales de la app funcionan como deberían. Por ejemplo, probar que los botones hacen lo que deben hacer cuando los presionas.
+
+- **UI/UX Testing**: Pruebas que verifican que la aplicación se ve bien y es fácil de usar. Por ejemplo, probar que los botones son lo suficientemente grandes para hacer clic y que los colores tienen buen contraste.
+
+- **Performance Testing**: Pruebas que verifican qué tan rápida y eficiente es la aplicación. Por ejemplo, probar que una página carga rápidamente y no se congela cuando muchas personas la usan al mismo tiempo.
+
+- **Regression Testing**: Pruebas que verifican que las cosas que ya funcionaban siguen funcionando después de hacer cambios. Por ejemplo, probar que después de agregar una nueva función, las funciones viejas siguen funcionando bien.
+
+- **Smoke Testing**: Pruebas rápidas de las funciones más importantes para asegurarse que nada está gravemente roto. Por ejemplo, probar que los usuarios pueden iniciar sesión y ver la página principal antes de hacer pruebas más detalladas.
+
 <a id="qa8"></a>
 
 ### **Que tipos de testing hay?**
 
-[Volver al indice](qa-base)
+[Volver al indice](#qa-base)
 
 * Integracion - Integration: Que un **código con otro se integre bien**, a veces lo hace el tester o el dev, Ejecutada por el **integrador**
 * Unit:

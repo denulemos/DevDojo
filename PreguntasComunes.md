@@ -12,7 +12,7 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 | [Funciones lambda (Funciones Anonimas)](#ent8-1) |
 | [Memoization](#ent16) |
 
-| Patrones de Disenio y Arquitectura |
+| Patrones y Arquitectura |
 |----------|
 | [Encapsulación (Private, public)](#ent10)|
 | [Principios SOLID](#ent11) |
@@ -22,54 +22,72 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 | [Microfrontends](#ent54) |
 | [Como organizarias el code reuse en una aplicacion?](#ent42) |
 
-| Preguntas Generales o Sin Categorizar (aun!) |
+| Performance y Optimización |
 |----------|
-| [Cuales son los ataques mas comunes en la web? Nombrar tambien sus protecciones del lado del cliente](#ent19) |
 | [Lazy loading](#ent20) |
 | [Performance](#ent21) |
-| [PWA (Progressive Web App)](#ent25-1) |
 | [Critical Rendering Path](#ent22) |
-| [¿Cuáles son las diferencias entre localStorage, sessionStorage y las cookies?](#ent23) |
-| [Obfuscation and Minification](#ent55) |
-| [Promises - Async Await - Callbacks](#ent29) |
-| [Beneficios de usar Webpack o Rollup](#ent32) |
 | [Tree shaking](#ent33) |
-| [Mejoras en el ciclo de vida](#ent68) |
+| [Code splitting](#ent56) |
+| [Como puedo mejorar la performance de mi Frontend?](#rea17) 💛|
+| [¿Que es async, preload y prefetch?](#rea29) |
+
+| Seguridad y Almacenamiento |
+|----------|
+| [Cuales son los ataques mas comunes en la web? Nombrar tambien sus protecciones del lado del cliente](#ent19) |
+| [¿Cuáles son las diferencias entre localStorage, sessionStorage y las cookies?](#ent23) |
+| [CORS](#ent67) |
+| [Obfuscation and Minification](#ent55) |
+
+| Desarrollo y Herramientas |
+|----------|
+| [Beneficios de usar Webpack o Rollup](#ent32) |
+| [Que hace Babel?](#rea34) |
+| [Que hace Webpack?](#rea35) |
 | [CDN (Content Delivery Network)](#ent41) |
 | [Server Side Rendering (SSR)](#ent48) |
 | [Static site rendering (SSR)](#ent52) |
-| [Code splitting](#ent56) |
 | [Serverless](#ent57) |
-| [Es la metodologia Agile recomendable para todos los proyectos?](#ent60) |
-| [MVP (Minimum Viable Product)](#ent61) |
-| [Metodologias de estimacion de tareas](#ent66) |
-| [Distintos tipos de testing en Frontend](#ent62) |
-| [Continuous Integration, Continuous Delivery, Continuous Deployment - Mejoras del proceso CI-CD](#ent65-4) |
-| [CORS](#ent67) |
-| [Escalabilidad FE](#ent74)|
-|[Principios de Disponibilidad, Escalamiento en Frontend](#ent75)|
-| [¿De qué hablamos cuando hablamos de una SPA (Single Page App)?](#rea48) 💛|
+| [PWA (Progressive Web App)](#ent25-1) |
+
+| JavaScript y Eventos |
+|----------|
+| [Promises - Async Await - Callbacks](#ent29) |
+| [Cual es la diferencia entre call, bind y apply?](#rea30) |
 | [Como evitar mandar muchos eventos inutiles, por ejemplo, ejecutar un search por letra?](#rea50) 💛|
 | [Que es async rendering?](#rea51) 💛|
 | [Para que son los eventos sinteticos (SyntheticEvent)?](#rea53) |
+| [Cual es la diferencia entre un event loop, microtask y macrotask?](#rea535) |
+| [Variable Shadowing - Ocultamiento de Variables](#rea545) |
+
+| Metodologías y Procesos |
+|----------|
+| [Es la metodologia Agile recomendable para todos los proyectos?](#ent60) |
+| [MVP (Minimum Viable Product)](#ent61) |
+| [Metodologias de estimacion de tareas](#ent66) |
+| [Continuous Integration, Continuous Delivery, Continuous Deployment - Mejoras del proceso CI-CD](#ent65-4) |
+
+| Testing y Calidad |
+|----------|
+| [Mejoras en el ciclo de vida](#ent68) |
+
+| Arquitectura y Escalabilidad |
+|----------|
+| [Escalabilidad FE](#ent74)|
+| [Principios de Disponibilidad, Escalamiento en Frontend](#ent75)|
+| [¿De qué hablamos cuando hablamos de una SPA (Single Page App)?](#rea48) 💛|
 | [Que significa prop drilling y como evitarlo?](#rea54) |
-| [Como puedo mejorar la performance de mi Frontend?](#rea17) 💛|
-| [¿Que es async, preload y prefetch?](#rea29) |
-| [Cual es la diferencia entre call, bind y apply?](#rea30) |
+
+| Conceptos Generales |
+|----------|
 | [Qué es "REPL" y para qué sirve?](#rea32) |
 | [Qué es el "demultiplexer"?](#rea33) |
-| [Que hace Babel?](#rea34) |
-| [Que hace Webpack?](#rea35) |
-| [Que es el server side rendering?](#rea36) |
-| [Que es Tree Shaking?](#rea37) |
 | [¿Que es el SEO?](#rea38) |
 | [Que es la tipificacion de Variables?](#rea41) |
 | [Que es la Coercion explicita e Implicita?](#rea44) |
-| [Que es la expresion de Funcion Inmediatamente Invocada - Immediatelyinvoked Function Expression (IIFE)?](#rea49) |
+| [Que es la expresion de Funcion Inmediatamente Invocada - Immediately invoked Function Expression (IIFE)?](#rea49) |
 | [Qué es un Event listener?](#rea505) |
 | [Que es Symbol?](#rea52) |
-| [Cual es la diferencia entre un event loop, microtask y macrotask?](#rea535) |
-| [Variable Shadowing - Ocultamiento de Variables](#rea545) |
 
 ---
 
@@ -1687,21 +1705,6 @@ Para poder construir y planificar un MVP se deben dejar de lado los detalles inn
 - **Técnica de PERT**: Es una tecnica de estimacion de tareas que se basa en la probabilidad de que una tarea se complete en un tiempo determinado. Se asigna un tiempo optimista, pesimista y mas probable a cada tarea, y se calcula el tiempo esperado. Se usa en proyectos donde se necesita una estimacion mas precisa.
 - **Estimación por analogía**: Es una tecnica de estimacion de tareas que se basa en la comparacion de tareas similares realizadas anteriormente. Se asigna un tiempo estimado a cada tarea, y se compara con otras tareas para saber cual es mas compleja. Se usa en proyectos donde se tiene un historial de tareas realizadas.
 - **Estimación Delphi**: Es una tecnica de estimacion de tareas que se basa en la opinion de expertos. Se asigna un tiempo estimado a cada tarea, y se compara con otras tareas para saber cual es mas compleja. Se usa en proyectos donde se necesita una estimacion mas precisa.
-
-<a id="ent62"></a>
-
-### **Distintos tipos de testing en Frontend**
-
-[Volver al indice](#entrevista-base)
-
-- **Unit Testing**: Se enfoca en probar unidades individuales de codigo, como funciones o componentes, para asegurarse de que funcionan como se espera. Se pueden usar herramientas como Jest, Mocha o Jasmine.
-- **Integration Testing**: En el frontend, esto implica probar interacciones entre múltiples componentes o entre un componente y su API o base de datos. Se hace con Jest o Mocha. Por ejemplo, un test seria Verificar que un componente de formulario interactúe correctamente con un componente de validación o con una API para enviar datos.
-- **End-to-End Testing**: Se enfoca en probar la aplicacion en su totalidad, desde el frontend hasta el backend, para asegurarse de que todas las partes funcionan juntas como se espera. Se puede hacer con herramientas como Cypress o Selenium. Por ejemplo, un test seria Verificar que un usuario pueda registrarse en la aplicacion y que sus datos se guarden correctamente en la base de datos.
-- **Functional Testing**: Se enfoca en probar las funciones de la aplicacion, como la navegacion, la interaccion con los elementos de la interfaz de usuario y la entrada de datos. Se puede hacer con herramientas como Jest, Mocha o Jasmine. Por ejemplo, un test seria Verificar que un usuario pueda navegar por la aplicacion y que los botones y enlaces funcionen correctamente.
-- **UI/UX Testing**: Se enfoca en probar la interfaz de usuario y la experiencia del usuario, como la apariencia, la usabilidad y la accesibilidad de la aplicacion. Se puede hacer con herramientas como Storybook o Chromatic. Por ejemplo, un test seria Verificar que la aplicacion se vea y se comporte correctamente en diferentes dispositivos y navegadores.
-- **Performance Testing**: Se enfoca en probar el rendimiento de la aplicacion, como la velocidad de carga, la capacidad de respuesta y la escalabilidad. Se puede hacer con herramientas como Lighthouse, JMeter o WebPageTest. Por ejemplo, un test seria Verificar que la aplicacion se cargue en menos de 3 segundos y que pueda manejar 1000 usuarios simultáneos.
-- **Regression Testing**: Se enfoca en probar que los cambios recientes en el codigo no hayan afectado el funcionamiento de la aplicacion. Se puede hacer con herramientas como Jest, Mocha o Jasmine. Por ejemplo, un test seria Verificar que una nueva funcionalidad no haya introducido errores en funcionalidades existentes.
-- **Smoke Testing**: Se enfoca en probar las funcionalidades principales de la aplicacion para asegurarse de que funcionan correctamente antes de realizar pruebas más exhaustivas. Se puede hacer con herramientas como Jest, Mocha o Jasmine. Por ejemplo, un test seria Verificar que un usuario pueda iniciar sesión en la aplicacion y que sus datos se muestren correctamente en la pantalla principal.
 
 <a id="ent65-4"></a>
 

@@ -1,7 +1,5 @@
 <a name="bd-base"></a>
 
-# [Bases de Datos](#bd)
-
 | Fundamentos de Bases de Datos |
 |----------|
 | [Que es la programacion declarativa?](#ent8-3) |
@@ -9,7 +7,7 @@
 | [Cuales son los elementos de Data Control Language? (DCL)](#bd2) |
 | [Lenguaje de manipulación de datos (DML)](#bd3) |
 | [Lenguaje de definición de datos (DDL)](#bd4) |
-| ¿Qué es un índice en una base de datos? |
+| [¿Qué es un índice en una base de datos?](#bd44) |
 | ¿Cuál es la diferencia entre un índice único y un índice no único? |
 |¿Qué es una clave primaria y cómo se utiliza?|
 |¿Qué es una clave foránea y cómo se utiliza?|
@@ -54,11 +52,9 @@
 
 ---
 
----
-
 <a id="bd"></a>
 
-## Bases de Datos
+# Bases de Datos
 
 <a id="ent8-3"></a>
 
@@ -116,6 +112,35 @@ Las sentencias DDL se utilizan para crear y modificar la estructura de las tabla
 - ALTER - modifica la estructura de la base de datos.
 - DROP - borra objetos de la base de datos.
 - TRUNCATE - elimina todos los registros de la tabla, incluyendo todos los espacios asignados a los registros. Además, reinicia los campos autonuméricos.
+
+<a id="bd44"></a>
+
+### **¿Qué es un índice en una base de datos?**
+
+[Volver al indice](#bd-base)
+
+Imagina que tienes una guía telefónica y quieres encontrar el número de "Denu Lemon":
+
+- Sin índice: Tendrías que revisar página por página hasta encontrar el nombre (esto sería muy lento)
+- Con índice: Vas directamente a la sección "L" y encuentras rápidamente a "Lemon"
+
+En una base de datos funciona igual:
+- Sin índice: La base de datos tiene que revisar TODA la tabla para encontrar lo que buscas
+- Con índice: La base de datos sabe exactamente dónde buscar la información
+
+Ventajas:
+- Hace las búsquedas muchísimo más rápidas
+- Ayuda a encontrar datos duplicados fácilmente
+
+Desventajas:
+- Ocupa más espacio en el disco duro
+- Hace que agregar o modificar datos sea un poco más lento (porque tiene que actualizar también el índice)
+
+¿Cuándo usarlos?
+- Cuando tienes muchos datos en una tabla
+- En columnas que usas frecuentemente para buscar información
+- En columnas que necesitan tener valores únicos
+
 
 <a id="bd5"></a>
 
