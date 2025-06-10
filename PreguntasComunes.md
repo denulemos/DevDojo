@@ -1,59 +1,97 @@
 <a id="entrevista-base"></a>
+<a name="rea-base"></a>
 
-## [Preguntas mas comunes en entrevistas de trabajo para un FE Engineer](#entrevista-base)
+# [Conjunto de preguntas generales para un Frontend Engineer](#entrevista-base)
 
 Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de trabajo para un Frontend Engineer. Engloba conceptos comunmente preguntados sobre Javascript, patrones de disenio, mejora de performance, etc. Tambien se agregan preguntas sobre React, Redux y Angular en esta ocasion.
 
-| Preguntas |
+| Programacion Funcional |
 |----------|
-| [Programacion Funcional](#ent8) |
-| [Pure function en Programacion Funcional](#ent13) |
-| [¿Qué ventajas ofrece la inmutabilidad al manejar estructuras de datos? Proporciona un ejemplo práctico.](#ent14) |
 | [Programacion reactiva (Observables, RxJs, Subscribers)](#ent8-2) |
-| [Programacion declarativa (SQL)](#ent8-3) |
 | [Paradigma Reactiva Funcional (FRP)? (Funcional + Reactiva)](#ent9) |
 | [Funciones lambda (Funciones Anonimas)](#ent8-1) |
-|[Encapsulación (Private, public)](#ent10)|
+| [Memoization](#ent16) |
+
+| Patrones y Arquitectura |
+|----------|
+| [Encapsulación (Private, public)](#ent10)|
 | [Principios SOLID](#ent11) |
 | [Que es la inyeccion de dependencias?](#ent12) |
-| [Memoization](#ent16) |
-| [¿Cuáles son las diferencias clave entre HTTP/1.1, HTTP/2 y HTTP/3? ¿Por qué se considera HTTP/2 más eficiente que HTTP/1.1?](#ent17) |
-| [Diferencias entre REST y GraphQL](#ent18) |
-| [Cuales son los ataques mas comunes en la web? Nombrar tambien sus protecciones del lado del cliente](#ent19) |
-| [Lazy loading](#ent20) |
-| [Performance](#ent21) |
-| [PWA (Progressive Web App)](#ent25-1) |
-| [Critical Rendering Path](#ent22) |
-| [¿Cuáles son las diferencias entre localStorage, sessionStorage y las cookies?](#ent23) |
-| [Obfuscation and Minification](#ent55) |
-| [Promises - Async Await - Callbacks](#ent29) |
-| [Beneficios de usar Webpack o Rollup](#ent32) |
-| [Tree shaking](#ent33) |
-| [Mejoras en el ciclo de vida](#ent68) |
-| [CDN (Content Delivery Network)](#ent41) |
-| [Como organizarias el code reuse en una aplicacion?](#ent42) |
-| [Patrones de disenio en React](#ent44) |
 | [Patrones de disenio en Frontend](#ent46) |
 | [Antipatrones en Frontend](#ent47) |
+| [Microfrontends](#ent54) |
+| [Como organizarias el code reuse en una aplicacion?](#ent42) |
+
+| Performance y Optimización |
+|----------|
+| [Lazy loading](#ent20) |
+| [Performance](#ent21) |
+| [Critical Rendering Path](#ent22) |
+| [Tree shaking](#ent33) |
+| [Code splitting](#ent56) |
+| [Como puedo mejorar la performance de mi Frontend?](#rea17) 💛|
+| [¿Que es async, preload y prefetch?](#rea29) |
+
+| Seguridad y Almacenamiento |
+|----------|
+| [Cuales son los ataques mas comunes en la web? Nombrar tambien sus protecciones del lado del cliente](#ent19) |
+| [¿Cuáles son las diferencias entre localStorage, sessionStorage y las cookies?](#ent23) |
+| [CORS](#ent67) |
+| [Obfuscation and Minification](#ent55) |
+
+| Desarrollo y Herramientas |
+|----------|
+| [Beneficios de usar Webpack o Rollup](#ent32) |
+| [Que hace Babel?](#rea34) |
+| [Que hace Webpack?](#rea35) |
+| [CDN (Content Delivery Network)](#ent41) |
 | [Server Side Rendering (SSR)](#ent48) |
 | [Static site rendering (SSR)](#ent52) |
-| [Microfrontends](#ent54) |
-| [Code splitting](#ent56) |
 | [Serverless](#ent57) |
+| [PWA (Progressive Web App)](#ent25-1) |
+
+| JavaScript y Eventos |
+|----------|
+| [Promises - Async Await - Callbacks](#ent29) |
+| [Cual es la diferencia entre call, bind y apply?](#rea30) |
+| [Como evitar mandar muchos eventos inutiles, por ejemplo, ejecutar un search por letra?](#rea50) 💛|
+| [Que es async rendering?](#rea51) 💛|
+| [Para que son los eventos sinteticos (SyntheticEvent)?](#rea53) |
+| [Cual es la diferencia entre un event loop, microtask y macrotask?](#rea535) |
+| [Variable Shadowing - Ocultamiento de Variables](#rea545) |
+
+| Metodologías y Procesos |
+|----------|
 | [Es la metodologia Agile recomendable para todos los proyectos?](#ent60) |
 | [MVP (Minimum Viable Product)](#ent61) |
 | [Metodologias de estimacion de tareas](#ent66) |
-| [Distintos tipos de testing en Frontend](#ent62) |
-| [Git vs Mercurial](#ent63) |
 | [Continuous Integration, Continuous Delivery, Continuous Deployment - Mejoras del proceso CI-CD](#ent65-4) |
-| [CORS](#ent67) |
-| [Escalabilidad NodeJS](#ent73) |
+
+| Testing y Calidad |
+|----------|
+| [Mejoras en el ciclo de vida](#ent68) |
+
+| Arquitectura y Escalabilidad |
+|----------|
 | [Escalabilidad FE](#ent74)|
-|[Principios de Disponibilidad, Escalamiento en Frontend](#ent75)|
+| [Principios de Disponibilidad, Escalamiento en Frontend](#ent75)|
+| [¿De qué hablamos cuando hablamos de una SPA (Single Page App)?](#rea48) 💛|
+| [Que significa prop drilling y como evitarlo?](#rea54) |
+
+| Conceptos Generales |
+|----------|
+| [Qué es "REPL" y para qué sirve?](#rea32) |
+| [Qué es el "demultiplexer"?](#rea33) |
+| [¿Que es el SEO?](#rea38) |
+| [Que es la tipificacion de Variables?](#rea41) |
+| [Que es la Coercion explicita e Implicita?](#rea44) |
+| [Que es la expresion de Funcion Inmediatamente Invocada - Immediately invoked Function Expression (IIFE)?](#rea49) |
+| [Qué es un Event listener?](#rea505) |
+| [Que es Symbol?](#rea52) |
 
 ---
 
-# Preguntas mas comunes en entrevistas de trabajo para un FE Engineer
+## Preguntas mas comunes en entrevistas de trabajo para un FE Engineer
 
 
 <a id="ent8"></a>
@@ -119,39 +157,7 @@ function sumar(a: number, b: number): number {
 
 La diferencia entre ambas funciones es que la impura esta mutando a la variable resultado, en cambio, la funcion pura, simplemente devuelve el resultado de la operacion, sin mutar la informacion, algo principal cuando se trata de programacion funcional.
 
-<a id="ent14"></a>
 
-### **¿Qué ventajas ofrece la inmutabilidad al manejar estructuras de datos? Proporciona un ejemplo práctico.**
-
-[Volver al indice](#entrevista-base)
-
-Solo a modo de repaso, la inmutabilidad es algo muy propio de la programacion funcional. Algunas de sus ventajas son:
-
-- Al no estar modificando directamente mis datos, evito errores de estado compartido
-- Eliminamos los errores de concurrencia, ya que los datos no estan siendo modificados, entonces no tengo necesidad de tener si o si la ultima version de los mismos para poder continuar
-- Se pueden implementar facilmente funciones de `undo`, ya que se puede volver a la version anterior muy facilmente
-- Integridad de datos, ya que al no estar modificando los datos, no se pueden corromper los mismos
-
-```typescript
-const tareasOriginales = [
-    { id: 1, texto: 'Hacer la compra', completada: false },
-    { id: 2, texto: 'Llamar al médico', completada: true }
-];
-
-function agregarTarea(tareas, nuevaTarea) {
-    return [...tareas, nuevaTarea];
-}
-
-const nuevaTarea = { id: 3, texto: 'Pagar el alquiler', completada: false };
-const tareasActualizadas = agregarTarea(tareasOriginales, nuevaTarea);
-
-console.log(tareasOriginales); // La lista original permanece sin cambios
-console.log(tareasActualizadas); // Nueva lista con la tarea agregada
-```
-
-Un ejemplo de la IA que me gusto mucho para explicar esto: 
-
-Imagina que estás escribiendo un documento en un procesador de textos. Cada vez que haces un cambio, como añadir una palabra, el programa no borra todo el documento y lo reescribe desde cero con la palabra añadida. En lugar de eso, crea una nueva versión del documento con la palabra incluida. Si algo sale mal mientras escribes, siempre puedes volver a la versión anterior sin problemas. Esto es similar a cómo funciona la inmutabilidad en las aplicaciones de software.
 
 <a id="ent8-1"></a>
 
@@ -204,14 +210,6 @@ clickPositions.subscribe(pos => {
 ```
 
 Se podria decir que los **WebSockets** tienen mucho que ver con la programacion reactiva en si misma, ya que se basa en la propagacion de datos en tiempo real.
-
-<a id="ent8-3"></a>
-
-### **Que es la programacion declarativa?**
-
-[Volver al indice](#entrevista-base)
-
-La programacion declarativa se concentra en que cosas hay que hacer y no necesariamente en como hacerlas. Un ejemplo es SQL, donde se le dice a la base de datos que datos queremos, pero no como obtenerlos.
 
 <a id="ent9"></a>
 
@@ -465,29 +463,6 @@ console.log(memoizedFibonacci(40));  // Recupera de la caché, mucho más rápid
 Lo negativo que posee es que estas memorizaciones son guardadas en memoria, asi que seria necesario tener no solo un buen sistema de limpieza de cache si no tambien de manejo de memoria. 
 
 En React tenemos el hook `useMemo` que hace uso de esto mismo guardando resultados, tambien tenemos `useCallback` que es similar pero para funciones.
-
-<a id="ent17"></a>
-
-### **¿Cuáles son las diferencias clave entre HTTP/1.1, HTTP/2 y HTTP/3? ¿Por qué se considera HTTP/2 más eficiente que HTTP/1.1?**
-
-[Volver al indice](#entrevista-base)
-
-Todas estas versiones de HTTP introdujeron mejoras enormes en cada una de ellas. La primera version introdujo el protocolo de comunicacion en la web, la segunda version introdujo cosas que incluso al dia de hoy usamos como la multiplicidad de solicitudes sin esperar un desbloqueo e incluso la posibilidad de manejar un Servidor Push, donde se podia obtener data de antemano sin que el usuario vaya a solicitarla, dando como resultado la aparicion de las notificaciones push que hoy usamos.
-En el caso de HTTP/3, se introdujo el protocolo QUIC, que es un protocolo de transporte que se ejecuta sobre UDP en lugar de TCP, lo que permite una comunicacion mas rapida y segura, pero el mayor salto fue desde HTTP1 a HTTP2.
-
-<a id="ent18"></a>
-
-### **Explica las diferencias entre REST y GraphQL. ¿Cuándo usarías uno sobre el otro?**
-
-[Volver al indice](#entrevista-base)
-
-| REST | GraphQL |
-| --- | --- |
-| Es un link para cada recurso | Es un solo link para varios recursos, endpoint unico |
-| Puede tener problemas de sobre-recuperacion (mas informacion de la necesaria) o sub-recuperacion (Menos informacion de la necesaria), lo cual causa que necesitemos varias consultas para tener lo que precisamos, o tengamos payloads muy pesados | El cliente puede especificar que campos quiere en la consulta |
-| Es mas facil de desarrollar desde cero pero complicado de escalar | Su inicializacion es compleja, pero si se tienen los datos necesarios, los cambios que se tendrian que hacer serian minimos |
-| Como las consultas son con su propio endpoint y pueden ser dentro de todo predecibles, el catching es mucho mas facil de implementar | Como las consultas son variadas, el catching es complicado de implementar, aunque hay tecnicas especificas | 
-| Se recomienda usar REST cuando la seguridad y el catching son una prioridad, ademas si tengo clientes que buscan servicios predecibles | Se recomienda cuando es importante el minimizar la cantidad de solicitudes hechas en el servidor |
 
 <a id="ent19"></a>
 
@@ -1330,254 +1305,6 @@ paymentMethod.pay(100); // "Paid 100 using credit card"
 - En React el uso de custom Hooks es ideal para el manejo de logica repetida
 - Hacer uso del tipico archivo de constantes para manejar la misma informacion a lo largo de toda la aplicacion desde una misma fuente.
 
-
-<a id="ent44"></a>
-
-### **Patrones de disenio en React**
-
-[Volver al indice](#entrevista-base)
-
-**Componentizacion**
-
-Es el separar la interfaz de usuario en componentes reutilizables, es la base de React en si mismo.
-
-**Contenedor y Presentación (Container-Presenter Pattern)**
-
-Separar los componentes que se encargan de la UI de los componentes de logica. Se le dice componente presentacion y componente contenedor
-
-```jsx
-// Componente Presentación
-const UserList = ({ users }) => (
-  <ul>
-    {users.map((user) => (
-      <li key={user.id}>{user.name}</li>
-    ))}
-  </ul>
-);
-
-// Componente Contenedor
-const UserContainer = () => {
-  const [users, setUsers] = React.useState([]);
-
-  React.useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/users')
-      .then((res) => res.json())
-      .then((data) => setUsers(data));
-  }, []);
-
-  return <UserList users={users} />;
-};
-
-export default UserContainer;
-```
-
-**Higher-Order Components (HOCs)**
-
-Como se explico anteriormente, es un patron de disenio muy comunmente usado en React en donde una funcion recibe como parametro un componente y devuelve un componente nuevo con una funcionalidad extendida.
-
-```jsx
-const withLogging = (WrappedComponent) => {
-  return (props) => {
-    console.log('Componente renderizado con props:', props);
-    return <WrappedComponent {...props} />;
-  };
-};
-
-// Uso
-const MyComponent = ({ message }) => <div>{message}</div>;
-const MyComponentWithLogging = withLogging(MyComponent);
-
-// Render
-<MyComponentWithLogging message="Hola, mundo!" />;
-```
-
-**Render Props**
-
-Es un patron de disenio que permite a los componentes compartir logica de renderizado con otros componentes.
-
-```jsx
-const Mouse = ({ render }) => {
-  const [position, setPosition] = React.useState({ x: 0, y: 0 });
-
-  const handleMouseMove = (event) => {
-    setPosition({
-      x: event.clientX,
-      y: event.clientY
-    });
-  };
-
-  React.useEffect(() => {
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
-
-  return render(position);
-};
-
-// Uso
-const App = () => (
-  <Mouse
-    render={({ x, y }) => (
-      <div>
-        <h1>El mouse está en la posición ({x}, {y})</h1>
-      </div>
-    )}
-  />
-);
-```
-
-**Custom Hooks**
-
-Es un patron de disenio que permite extraer logica de un componente en una funcion reutilizable. reemplaza en parte a los HOC
-
-```jsx
-const useMouse = () => {
-  const [position, setPosition] = React.useState({ x: 0, y: 0 });
-
-  const handleMouseMove = (event) => {
-    setPosition({
-      x: event.clientX,
-      y: event.clientY
-    });
-  };
-
-  React.useEffect(() => {
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
-
-  return position;
-};
-
-// Uso
-const App = () => {
-  const { x, y } = useMouse();
-
-  return (
-    <div>
-      <h1>El mouse está en la posición ({x}, {y})</h1>
-    </div>
-  );
-};
-```
-
-**Context API - Context pattern**
-
-Es un patron de disenio que permite pasar datos a traves del arbol de componentes sin tener que pasar props manualmente en cada nivel. Elimina el Prop Drilling.
-
-```jsx
-const ThemeContext = React.createContext();
-
-const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = React.useState('light');
-  return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
-      {children}
-    </ThemeContext.Provider>
-  );
-};
-
-const ThemeSwitcher = () => {
-  const { theme, setTheme } = React.useContext(ThemeContext);
-  return (
-    <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
-      Cambiar a {theme === 'light' ? 'oscuro' : 'claro'}
-    </button>
-  );
-};
-
-const App = () => (
-  <ThemeProvider>
-    <ThemeSwitcher />
-  </ThemeProvider>
-);
-```
-
-**Compound Components**
-
-Es un patron de disenio que permite a los componentes trabajar juntos de manera mas eficiente, como por ejemplo un `select` y `option`
-
-```jsx
-const Select = ({ children }) => {
-  const [selected, setSelected] = React.useState(null);
-
-  const onSelect = (value) => {
-    setSelected(value);
-  };
-
-  return (
-    <div>
-      {React.Children.map(children, (child) => {
-        if (child.type === Option) {
-          return React.cloneElement(child, {
-            onSelect,
-            selected: child.props.value === selected
-          });
-        }
-        return child;
-      })}
-    </div>
-  );
-};
-
-const Option = ({ value, onSelect, selected, children }) => (
-  <div
-    onClick={() => onSelect(value)}
-    style={{ background: selected ? 'lightblue' : 'white' }}
-  >
-    {children}
-  </div>
-);
-
-// Uso
-
-const App = () => (
-  <Select>
-    <Option value="1">Opción 1</Option>
-    <Option value="2">Opción 2</Option>
-    <Option value="3">Opción 3</Option>
-  </Select>
-);
-```
-
-**Controlled y Uncontrolled Components**
-
-Es un patron de disenio que permite manejar los componentes de una forma mas eficiente, en los **Controlled Components** el estado del componente es manejado por React, mientras que en los **Uncontrolled Components** el estado es manejado por el propio componente.
-
-```jsx
-// Controlled Component
-const ControlledInput = () => {
-  const [value, setValue] = React.useState('');
-
-  const handleChange = (event) => {
-    setValue(event.target.value);
-  };
-
-  return <input value={value} onChange={handleChange} />;
-};
-
-// Uncontrolled Component
-const UncontrolledInput = () => {
-  const inputRef = React.useRef();
-
-  const handleClick = () => {
-    console.log(inputRef.current.value);
-  };
-
-  return (
-    <div>
-    // El estado es manejado por el DOM
-      <input ref={inputRef} />
-      <button onClick={handleClick}>Obtener valor</button>
-    </div>
-  );
-};
-```
-
 <a id="ent46"></a>
 
 ### **Patrones de disenio en Frontend**
@@ -1979,111 +1706,6 @@ Para poder construir y planificar un MVP se deben dejar de lado los detalles inn
 - **Estimación por analogía**: Es una tecnica de estimacion de tareas que se basa en la comparacion de tareas similares realizadas anteriormente. Se asigna un tiempo estimado a cada tarea, y se compara con otras tareas para saber cual es mas compleja. Se usa en proyectos donde se tiene un historial de tareas realizadas.
 - **Estimación Delphi**: Es una tecnica de estimacion de tareas que se basa en la opinion de expertos. Se asigna un tiempo estimado a cada tarea, y se compara con otras tareas para saber cual es mas compleja. Se usa en proyectos donde se necesita una estimacion mas precisa.
 
-<a id="ent62"></a>
-
-### **Distintos tipos de testing en Frontend**
-
-[Volver al indice](#entrevista-base)
-
-- **Unit Testing**: Se enfoca en probar unidades individuales de codigo, como funciones o componentes, para asegurarse de que funcionan como se espera. Se pueden usar herramientas como Jest, Mocha o Jasmine.
-- **Integration Testing**: En el frontend, esto implica probar interacciones entre múltiples componentes o entre un componente y su API o base de datos. Se hace con Jest o Mocha. Por ejemplo, un test seria Verificar que un componente de formulario interactúe correctamente con un componente de validación o con una API para enviar datos.
-- **End-to-End Testing**: Se enfoca en probar la aplicacion en su totalidad, desde el frontend hasta el backend, para asegurarse de que todas las partes funcionan juntas como se espera. Se puede hacer con herramientas como Cypress o Selenium. Por ejemplo, un test seria Verificar que un usuario pueda registrarse en la aplicacion y que sus datos se guarden correctamente en la base de datos.
-- **Functional Testing**: Se enfoca en probar las funciones de la aplicacion, como la navegacion, la interaccion con los elementos de la interfaz de usuario y la entrada de datos. Se puede hacer con herramientas como Jest, Mocha o Jasmine. Por ejemplo, un test seria Verificar que un usuario pueda navegar por la aplicacion y que los botones y enlaces funcionen correctamente.
-- **UI/UX Testing**: Se enfoca en probar la interfaz de usuario y la experiencia del usuario, como la apariencia, la usabilidad y la accesibilidad de la aplicacion. Se puede hacer con herramientas como Storybook o Chromatic. Por ejemplo, un test seria Verificar que la aplicacion se vea y se comporte correctamente en diferentes dispositivos y navegadores.
-- **Performance Testing**: Se enfoca en probar el rendimiento de la aplicacion, como la velocidad de carga, la capacidad de respuesta y la escalabilidad. Se puede hacer con herramientas como Lighthouse, JMeter o WebPageTest. Por ejemplo, un test seria Verificar que la aplicacion se cargue en menos de 3 segundos y que pueda manejar 1000 usuarios simultáneos.
-- **Regression Testing**: Se enfoca en probar que los cambios recientes en el codigo no hayan afectado el funcionamiento de la aplicacion. Se puede hacer con herramientas como Jest, Mocha o Jasmine. Por ejemplo, un test seria Verificar que una nueva funcionalidad no haya introducido errores en funcionalidades existentes.
-- **Smoke Testing**: Se enfoca en probar las funcionalidades principales de la aplicacion para asegurarse de que funcionan correctamente antes de realizar pruebas más exhaustivas. Se puede hacer con herramientas como Jest, Mocha o Jasmine. Por ejemplo, un test seria Verificar que un usuario pueda iniciar sesión en la aplicacion y que sus datos se muestren correctamente en la pantalla principal.
-
-<a id="ent63"></a>
-
-### **Git vs Mercurial**
-
-[Volver al indice](#entrevista-base)
-
-Las diferencias principales entre **Git** y **Mercurial** son:
-
-### **1. Filosofía y Diseño**
-
-- **Git**:
-  - **Modelo distribuido**: Git es un sistema distribuido de control de versiones. Cada desarrollador tiene una copia completa del repositorio, incluidos el historial de cambios y las ramas.
-  - **Eficiencia y rendimiento**: Git está diseñado para ser rápido y manejar grandes repositorios con eficiencia, lo que lo hace ideal para proyectos de gran escala.
-  - **Complejidad**: Git puede ser más complejo debido a su amplio conjunto de características y su sintaxis más complicada. Ofrece una gran flexibilidad, pero eso puede hacer que sea más difícil de aprender para los principiantes.
-
-- **Mercurial**:
-  - **Modelo distribuido**: Al igual que Git, Mercurial también es distribuido, lo que significa que cada usuario tiene una copia completa del repositorio.
-  - **Simplicidad y enfoque**: Mercurial se centra en ser simple, intuitivo y fácil de usar. Su flujo de trabajo está diseñado para ser más sencillo, lo que puede facilitar su adopción en equipos pequeños o nuevos en el control de versiones.
-  - **Curva de aprendizaje**: Mercurial es generalmente considerado más fácil de aprender que Git debido a su sintaxis más sencilla y menos características avanzadas.
-
-### **2. Popularidad y Comunidad**
-
-- **Git**:
-  - **Adopción**: Git es más popular que Mercurial y se ha convertido en el estándar de facto para la mayoría de los proyectos de desarrollo de software, especialmente en plataformas como GitHub, GitLab y Bitbucket.
-  - **Ecosistema y herramientas**: Dado que Git es más utilizado, tiene un ecosistema más grande de herramientas, bibliotecas y documentación disponible. Muchas plataformas de desarrollo, CI/CD y servicios de repositorio están optimizados para Git.
-
-- **Mercurial**:
-  - **Adopción**: Aunque Mercurial tiene una base de usuarios leal, ha sido menos adoptado que Git, y muchos proyectos más grandes han migrado a Git. Un ejemplo famoso de esto es el caso de **Bitbucket**, que inicialmente soportaba Mercurial antes de que decidiera centrarse exclusivamente en Git.
-  - **Comunidad más pequeña**: Mercurial tiene una comunidad de usuarios más pequeña en comparación con Git, lo que puede resultar en una menor cantidad de recursos y soporte.
-
-### **3. Flujo de trabajo y rendimiento**
-
-- **Git**:
-  - **Ramas**: Git es conocido por su fuerte soporte para **ramas (branching)**, lo que permite a los desarrolladores crear y fusionar ramas de manera rápida y flexible. Git es altamente eficiente en cuanto al manejo de ramas, lo que lo hace perfecto para flujos de trabajo que dependen de ramificación y fusiones frecuentes.
-  - **Rendimiento**: Git generalmente tiene un buen rendimiento, incluso con repositorios grandes, aunque algunas operaciones complejas como el *merge* pueden ser lentas si no se gestionan correctamente.
-
-- **Mercurial**:
-  - **Ramas**: Mercurial utiliza un modelo de ramas diferente al de Git. Si bien Mercurial también soporta ramas, su enfoque es algo diferente y puede ser menos flexible en comparación con Git. Sin embargo, Mercurial proporciona soporte para **"named branches"** y **"bookmarks"** (que son más parecidos a las ramas en Git).
-  - **Rendimiento**: Mercurial también tiene un buen rendimiento, aunque puede no ser tan rápido como Git en repositorios de gran escala debido a su menor optimización para estos casos.
-
-### **4. Características clave**
-
-- **Git**:
-  - **Flexibilidad avanzada**: Git ofrece una gran cantidad de comandos y opciones avanzadas, lo que permite personalizar flujos de trabajo según las necesidades del equipo o el proyecto.
-  - **Staging Area**: Git tiene una **staging area** o área de preparación que permite a los desarrolladores seleccionar qué cambios se deben incluir en el próximo commit, lo que proporciona un control más preciso sobre las modificaciones.
-
-- **Mercurial**:
-  - **Simplicidad y enfoque**: Mercurial es más simple en cuanto a su conjunto de características. No tiene un equivalente directo a la **staging area** de Git, lo que hace que el flujo de trabajo sea más directo (aunque menos flexible).
-  - **Facilidad de uso**: Mercurial ofrece una interfaz de línea de comandos más simple y tiene menos configuraciones que gestionar.
-
-### **5. Soporte y Herramientas**
-
-- **Git**:
-  - **Herramientas**: Git es ampliamente soportado por herramientas de desarrollo modernas, como **GitHub**, **GitLab**, **Bitbucket** y otras plataformas de CI/CD. Además, la integración de Git con herramientas como **Visual Studio Code**, **Atom** y **Sublime Text** es muy robusta.
-  - **Servicios en la nube**: Git es compatible con todos los principales servicios en la nube de control de versiones (GitHub, GitLab, Bitbucket).
-
-- **Mercurial**:
-  - **Herramientas**: Mercurial tiene soporte en herramientas como **Bitbucket** (aunque ya no se usa para repositorios nuevos), **SourceForge**, y algunos editores de texto. Sin embargo, su integración no es tan amplia como la de Git.
-  - **Soporte de la comunidad**: La comunidad de Mercurial es más pequeña, lo que puede dificultar encontrar recursos y soporte en comparación con Git.
-
-### **6. Casos de uso y elección**
-
-- **Git**: 
-  - Ideal para equipos grandes, proyectos de código abierto y flujos de trabajo con ramificación frecuente.
-  - Utilizado ampliamente en la industria del software, especialmente en proyectos que requieren una integración estrecha con plataformas como GitHub o GitLab.
-  
-- **Mercurial**: 
-  - Mejor para equipos más pequeños que buscan una herramienta sencilla y rápida de implementar.
-  - Aún se utiliza en ciertos proyectos grandes y populares como **Mozilla** y **Facebook**, que lo adoptaron debido a sus beneficios para sus flujos de trabajo específicos.
-
----
-
-### **Resumen de las diferencias clave**
-
-| Característica                 | **Git**                                  | **Mercurial**                        |
-|---------------------------------|------------------------------------------|--------------------------------------|
-| **Popularidad**                 | Mucho más popular, especialmente con GitHub | Menos popular, con base de usuarios más pequeña |
-| **Complejidad**                 | Más complejo, con muchas características avanzadas | Más simple, fácil de aprender |
-| **Rendimiento**                 | Muy eficiente, especialmente en grandes repositorios | Buen rendimiento, pero no tan optimizado en repositorios grandes |
-| **Soporte para ramas**          | Muy fuerte, con ramificación avanzada    | Menos flexible, pero soporta ramas básicas y bookmarks |
-| **Flujo de trabajo**            | Flexible, adecuado para equipos grandes y colaboraciones complejas | Flujo de trabajo más simple y directo |
-| **Herramientas y servicios**    | Gran soporte (GitHub, GitLab, Bitbucket) | Menos herramientas, principalmente Bitbucket antes de eliminar soporte |
-| **Curva de aprendizaje**       | Más empinada, requiere más tiempo para aprender | Más fácil de aprender, ideal para principiantes |
-
-### **Conclusión**
-
-**Git** es la opción preferida para la mayoría de los proyectos de desarrollo modernos debido a su flexibilidad, rendimiento, y soporte en plataformas como GitHub. Es ideal para proyectos grandes y equipos que necesitan un control detallado sobre sus flujos de trabajo y un ecosistema de herramientas robusto.
-
-**Mercurial** puede ser una excelente opción para proyectos pequeños o equipos que buscan una solución más simple y fácil de aprender, aunque su adopción está disminuyendo debido a la creciente popularidad de Git.
-
 <a id="ent65-4"></a>
 
 ### **Continuous Integration, Continuous Delivery, Continuous Deployment - Mejoras del proceso CI-CD**
@@ -2189,115 +1811,6 @@ Access-Control-Allow-Headers: Content-Type
 
 
 CORS es una política de seguridad en los navegadores que controla cómo los recursos de un sitio web pueden ser solicitados desde otro dominio. Permite que los servidores controlen qué orígenes pueden interactuar con ellos, asegurando que las solicitudes cross-origin se manejen de manera segura y controlada. Sin la configuración adecuada de CORS, las aplicaciones web pueden enfrentar problemas al intentar interactuar con APIs externas o servicios alojados en otros dominios.
-
-<a id="ent73"></a>
-
-### **Escalabilidad NodeJS**
-
-[Volver al indice](#entrevista-base)
-
-La **escalabilidad** de una aplicación Node.js se refiere a su capacidad para manejar un número creciente de solicitudes o carga de trabajo sin perder rendimiento ni confiabilidad. Dado que Node.js está basado en un modelo de **event loop** de un solo hilo, tiene ciertas limitaciones en cuanto a cómo manejar múltiples solicitudes simultáneas. Sin embargo, se pueden aplicar varias estrategias para mejorar la escalabilidad de una aplicación Node.js y asegurar que pueda manejar más tráfico y usuarios a medida que crece.
-
-A continuación, te detallo algunas de las principales estrategias para hacer que una aplicación Node.js sea escalable:
-
-### **1. Uso de Clusters (Escalabilidad Horizontal)**
-
-Aunque Node.js usa un solo hilo para manejar solicitudes, puedes aprovechar todos los núcleos de CPU de tu servidor utilizando el **módulo `cluster`**. Esto permite crear múltiples instancias de tu aplicación Node.js que pueden ejecutarse en diferentes procesos, distribuyendo la carga de trabajo entre varios núcleos de CPU.
-
-- **¿Cómo funciona?** Cada instancia o "worker" del cluster puede manejar su propio conjunto de solicitudes. Si tu servidor tiene varios núcleos de CPU, puedes crear tantos procesos como núcleos haya, lo que mejora el rendimiento y permite que tu aplicación maneje más tráfico.
-  
-- **Implementación básica con `cluster`:**
-  ```javascript
-  const cluster = require('cluster');
-  const http = require('http');
-  const numCPUs = require('os').cpus().length; // Número de núcleos disponibles
-  
-  if (cluster.isMaster) {
-    // Crear un worker para cada núcleo del procesador
-    for (let i = 0; i < numCPUs; i++) {
-      cluster.fork();
-    }
-
-    cluster.on('exit', (worker, code, signal) => {
-      console.log(`Worker ${worker.process.pid} died`);
-    });
-  } else {
-    // Código de la aplicación
-    http.createServer((req, res) => {
-      res.writeHead(200);
-      res.end('Hello World');
-    }).listen(8000);
-  }
-  ```
-
-### **2. Balanceo de Carga**
-
-El **balanceo de carga** se utiliza para distribuir el tráfico entre múltiples instancias de la aplicación en diferentes servidores o máquinas, de modo que ningún servidor se sobrecargue. Esto es especialmente útil para aplicaciones Node.js en entornos de producción distribuidos.
-
-- **Soluciones comunes de balanceo de carga**:
-  - **Nginx o HAProxy**: Puedes usar servidores de balanceo de carga como Nginx o HAProxy para distribuir el tráfico HTTP entre varias instancias de tu aplicación Node.js. Estos servidores pueden distribuir las solicitudes entrantes entre los diferentes procesos de la aplicación (por ejemplo, instancias que están ejecutándose en diferentes máquinas o contenedores).
-
-  - **Load Balancers en la nube**: Servicios como **AWS Elastic Load Balancing** o **Google Cloud Load Balancing** también pueden distribuir las solicitudes entre diferentes servidores.
-
-### **3. Desacoplar y Dividir en Microservicios**
-
-Una de las mejores formas de escalar una aplicación Node.js es dividirla en **microservicios**. Los microservicios son una arquitectura que descompone la aplicación en servicios pequeños e independientes, cada uno con su propio dominio de negocio y base de datos. Esto permite que diferentes servicios se escalen de forma independiente según la carga.
-
-- **¿Cómo funciona?** En lugar de una aplicación monolítica, donde todo está en un solo bloque, los microservicios permiten desplegar y escalar cada parte de la aplicación por separado. Si un servicio experimenta una carga alta, puedes escalar solo ese servicio, sin afectar a otros.
-
-- **Beneficios de los microservicios**:
-  - Escalabilidad independiente para cada componente.
-  - Despliegue y mantenimiento más sencillo.
-  - Resiliencia, ya que si un microservicio falla, no afecta a toda la aplicación.
-
-- **Tecnologías asociadas**:
-  - **Docker**: Permite empaquetar microservicios en contenedores que pueden ser ejecutados en cualquier entorno.
-  - **Kubernetes**: Orquestador de contenedores que facilita la gestión y escalado de microservicios.
-
-### **4. Cacheo de Respuestas**
-
-Una de las técnicas clave para mejorar la escalabilidad de una aplicación Node.js es el **cacheo**. Al almacenar en caché las respuestas de las solicitudes más comunes o de larga duración, puedes reducir significativamente la carga en el servidor y acelerar el tiempo de respuesta.
-
-- **Cacheo en memoria**: Puedes usar herramientas como **Redis** o **Memcached** para almacenar respuestas en memoria y evitar hacer consultas repetitivas a bases de datos u otras fuentes externas.
-
-- **Cacheo de respuestas HTTP**: Si tu aplicación maneja muchas solicitudes similares, puedes usar herramientas como **Varnish** o configurar **caching HTTP** en el servidor para almacenar respuestas de manera eficiente.
-
-### **5. Optimización de Base de Datos**
-
-Las aplicaciones Node.js a menudo dependen de bases de datos para almacenar y recuperar información. La escalabilidad de tu aplicación también depende de cómo escalas y optimizas tu base de datos.
-
-- **Sharding**: Distribuir datos entre varias bases de datos, de modo que cada base de datos maneje solo una parte de los datos. Esto puede ser especialmente útil en bases de datos NoSQL como MongoDB.
-
-- **Replicación**: Configurar replicación para distribuir las consultas entre varias réplicas de bases de datos y mejorar la disponibilidad.
-
-- **Índices**: Asegúrate de que tu base de datos esté optimizada con índices para mejorar el rendimiento de las consultas.
-
-### **6. Optimización del Event Loop**
-
-El **event loop** de Node.js es el mecanismo que maneja todas las solicitudes de entrada y salida de la aplicación. Es importante optimizar el código para evitar bloqueos del event loop, que pueden afectar negativamente el rendimiento y la capacidad de escalado.
-
-- **Operaciones asincrónicas**: Utiliza operaciones asincrónicas siempre que sea posible para evitar bloquear el event loop. Esto incluye hacer uso de **callbacks**, **promesas** o **async/await**.
-
-- **Worker Threads**: En algunas situaciones, podrías necesitar realizar tareas de procesamiento intensivo. Para evitar que el event loop se bloquee, puedes usar **Worker Threads**, que permiten realizar tareas intensivas en segundo plano sin bloquear la ejecución principal.
-
-### **7. Escalabilidad en la Nube**
-
-Node.js se integra muy bien con servicios en la **nube** como **AWS**, **Google Cloud** o **Microsoft Azure**, lo que facilita la escalabilidad automática.
-
-- **Autoescalado**: Estos proveedores en la nube permiten configurar el **autoescalado**, lo que significa que, a medida que la demanda de tu aplicación aumenta, los servidores adicionales se crearán automáticamente, y cuando la demanda disminuye, los recursos se liberan.
-
-- **Funcionalidades como AWS Lambda**: Si tu aplicación es pequeña o tiene tareas que no requieren servidores constantes, puedes aprovechar **AWS Lambda** o **Google Cloud Functions** para manejar cargas de trabajo bajo demanda y solo cobrar por el tiempo de ejecución real.
-
-### **8. Manejo de Conexiones Simultáneas**
-
-Node.js es ideal para manejar una gran cantidad de conexiones simultáneas gracias a su arquitectura basada en el event loop. Sin embargo, en aplicaciones de alto tráfico, es importante manejar las conexiones de manera eficiente.
-
-- **Conexiones HTTP/2**: Usar HTTP/2 permite mejorar la eficiencia de las conexiones y reducir la latencia de la comunicación entre el cliente y el servidor.
-
-- **Keep-Alive y conexiones persistentes**: Configura conexiones persistentes para reducir la sobrecarga asociada con la apertura y cierre de nuevas conexiones HTTP.
-
-
-La escalabilidad en Node.js se puede lograr mediante diferentes estrategias que abarcan desde la **optimización del event loop**, la **escala horizontal con clústeres**, hasta el **uso de microservicios** y **caché**. Implementar estas prácticas te permitirá construir aplicaciones que puedan manejar más tráfico, ser más resilientes y ofrecer una experiencia de usuario más rápida y confiable.
 
 <a id="ent74"></a>
 
@@ -2602,3 +2115,435 @@ La respuesta a las preguntas clave planteadas puede influir directamente en las 
      - **Pruebas de usabilidad**: Realizar pruebas de usabilidad con usuarios reales para asegurarse de que la interfaz sea intuitiva y fácil de usar.
 
 
+
+<a id="rea48"></a>
+
+### **¿De qué hablamos cuando hablamos de una SPA (Single Page App)?**
+
+[Volver al indice](#fe-base)
+
+Una SPA (Single Page Application) son apps web que simulan ser una única página con contenido dinámico. La idea es darle la “ilusión” al usuario de que está navegando una aplicación de escritorio, que no recarga, no se satura, etc.
+
+Las únicas recargas, o pantallas de carga, son cuando se está trayendo información del servidor. No se recarga toda la página, aun así, solo ciertas partes, dando a una experiencia mucho más fluida.
+
+En resumen:
+
+- Se evita la constante recarga entera de la página
+- La página no se satura ni realiza peticiones constantes al servidor. Únicamente se pide lo necesario.
+
+<a id="rea50"></a>
+
+### **(Performance) Como evitar mandar muchos eventos inutiles, por ejemplo, ejecutar un search por letra?**
+
+[Volver al indice](#rea-base)
+
+Debounce es un termino de electronica que ayuda a que, por ejemplo, si apretamos varias veces un boton, no se manden muchas veces las instrucciones
+
+```jsx
+function useDebounce(value: string, delay: number) {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+
+  useEffect(() => {
+      const timeoutId = setTimeout(() => {
+        setDebouncedValue(value)
+    }, delay)
+
+    return () => clearTimeout(timeoutId)
+}, [value])
+
+return debouncedValue;
+}
+
+// Luego en el component que tiene el search
+
+const queryDebouncedValue = useDebounce(query, 300)
+
+useEffect(() => {
+api.search(queryDebouncedValue).then(setProducts);
+}, [queryDebouncedValue]);
+```
+
+<a id="rea51"></a>
+
+### **Que es async rendering?**
+
+[Volver al indice](#rea-base)
+
+Permite que el renderizado pueda interrumpirse, permitiendo renderizar varios arboles de componentes a la vez sin necesidad de bloquear el hilo principal del navegador.
+
+<a id="rea53"></a>
+
+### **Para que son los eventos sinteticos (SyntheticEvent)?**
+
+[Volver al indice](#rea-base)
+
+Funcionan de la misma forma que los eventos normales de los exploradores. Los eventos sinteticos usan codigo que puede ser aplicado en multiples exploradores web mientras que los eventos normales se enfocan en un solo navegador
+
+Ayuda a que el dev no se preocupe tanto en como manejar un evento segun el navegador para el cual esta desarrollando, ya que estos eventos simulan muchos eventos y garantiza el mismo comportamiento.
+
+<a id="rea54"></a>
+
+### **Que significa prop drilling y como evitarlo?**
+
+[Volver al indice](#rea-base)
+
+Es cuando las props que se comparten acumulan demasiadas dependencias. Da lugar a flujos de datos profundos, dificiles de identificar y refactorizar. Dos formas de resolverlo son:
+
+- Composicion de componentes frente a un mismo juego de datos compartido por varios componentes
+- Redux o API Context, aptas para escenarios mas complejos donde conviene manejar un estado global. 
+
+<a id="rea17"></a>
+
+### **Como puedo mejorar la performance de mi Frontend?**
+
+[Volver al indice](#rea-base)
+
+**Paginacion**: No se puede renderizar mucha informacion al mismo tiempo, hace un payload gigante, y satura a la base de datos. Es preferible pedir de a pedazos de data para disminuir el peso en el Backend
+
+**Queries Optimistics**: Mostrar el cambio en la UI independientemente del resultado del servidor, como el like de Instagram, primero se anima, luego se ejecuta la peticion de forma asincrona, y luego se tiene en cuenta el resultado
+
+**Pedir solo lo necesario**: Solo pedir los datos necesarios, no traer cosas de más. Hay muchas aplicaciones hechas front-first, donde el back adapta sus servicios a lo que el front necesita.
+
+**Tener un connection state**: Si no hay internet, no realizar peticiones. Como Youtube, cualquier cosa que quiera hacer el cliente sin internet, no se va a realizar para nada.
+
+**Group Notifications**: Si la aplicacion utiliza notificaciones, hacerlo de a grupos para no hacer jobs grandes
+
+**Evitar queries expensive**: Por ejemplo, Twitter no da la opcion de seguir o dejar de seguir gente de a grupos grandes ya que es innecesariamente caro para el servidor
+
+⚛️ **Podemos usar el Profiler que viene con React Dev Tools**
+En caso de componentes lentos en React, podemos usar esta herramienta y ver cual fue el componente que causo el problema.
+
+- Flame Chart: Representa el estado de la aplicacion para un commit en particular
+- Component chart: Ver cuantas veces se proceso un componente en particular
+
+Para testear el rendimiento de una web se puede utilizar Lighthouse de Google en DevTools
+
+**Lazy Loading**: No cargar todas las imagenes de una, ir cargando a medida que el usuario lo va necesitando.
+
+**Usar Cache**: Si manejamos payloads muy grandes, no conviene cargar todo esto en memoria, se recomienda usar un cache, ir guardando estos payloads y volver a consultarlos a medida que sea necesario
+
+**Usar HTTP 2**: Si necesito hacer demasiados request en paralelo (cosa que no es recomendable), HTTP 2 tiene una coneexion TCP muy buena, para el multiplexing (no siempre es aplicable)
+
+**Hacer UI que llamen lo menos posible al backend**: Que sean UI que dependan de pocos llamados para funcionar (si se puede, ya que hay dependencias entre payloads)
+
+⚛️ **No pasar props que no son necesarios**: El propering afecta al rendimiento en React. El estado debe estar tan cerca como pueda de donde se esté usando. Mientras mas props recibimos, mayor es la dependencia con el componente padre.
+
+⚛️ **Evitar renderizados de mas**: Usar useMemo (memorizacion en React) para evitar renderizados o componentes puros
+
+**Tener varias zonas de disponibilidad**: Esto para evitar la latencia en la obtencion de recursos.
+
+<a id="rea29"></a>
+
+### **¿Que es async, preload y prefetch?**
+
+[Volver al indice](#rea-base)
+
+En JavaScript, `async`, `preload` y `prefetch` son conceptos relacionados pero diferentes:
+
+1. **Async/Await**:
+   - `async` y `await` son características introducidas en JavaScript para facilitar la escritura y gestión de código asíncrono.
+   - `async` se utiliza para declarar que una función devuelve una promesa. Esto permite que la función se pueda utilizar con `await` para esperar la resolución de la promesa dentro de un contexto asíncrono.
+   - `await` se utiliza dentro de funciones `async` para esperar la resolución de una promesa antes de continuar con la ejecución del código.
+   - Estas características son útiles para trabajar con operaciones asíncronas, como solicitudes HTTP, operaciones de lectura/escritura de archivos, y otras operaciones que pueden tomar tiempo y no bloquean la ejecución del código.
+
+2. **Preload**:
+   - `preload` es una directiva HTML que se utiliza para indicar al navegador que cargue un recurso de manera prioritaria.
+   - Se puede usar en elementos `<link>` o en elementos `<script>` para pre-cargar recursos como archivos CSS, JavaScript, fuentes web, etc.
+   - El navegador descarga estos recursos en segundo plano mientras procesa el resto del contenido de la página. Esto puede mejorar significativamente los tiempos de carga de la página al garantizar que los recursos importantes se carguen antes de que sean necesarios.
+
+3. **Prefetch**:
+   - `prefetch` es similar a `preload`, pero se utiliza para indicar al navegador que cargue recursos que probablemente se necesitarán en el futuro, pero no de manera inmediata.
+   - Se utiliza principalmente para cargar recursos relacionados con rutas de navegación o acciones del usuario que aún no se han realizado.
+   - Al igual que `preload`, se puede usar en elementos `<link>` o en elementos `<script>`, y ayuda a mejorar el rendimiento de la aplicación al anticiparse a las necesidades futuras de recursos.
+
+En resumen, `async` y `await` se utilizan en JavaScript para trabajar con código asíncrono de manera más legible y manejable, mientras que `preload` y `prefetch` son directivas HTML utilizadas para optimizar la carga de recursos en las páginas web, priorizando recursos importantes o anticipándose a las necesidades futuras de recursos.
+
+<a id="rea30"></a>
+
+### **Cual es la diferencia entre call, bind y apply?**
+
+[Volver al indice](#rea-base)
+
+Por ejemplo tenemos dos objetos y una funcion
+
+```jsx
+const user = {
+  name: 'Marcos'
+};
+
+const business = {
+  name: 'Headbook'
+}
+
+function showInfo(likes, friends){
+  return `${this.name} tiene ${likes} likes y ${friends}`
+}
+```
+
+En ese caso, el [`this.name`](http://this.name)hace referencia al contexto global. ¿Como hacer para matchearlo de manera dinamica por objeto?
+
+```jsx
+showInfo.call(user, 4, 5); // le pasamos la referencia que deseamos y las props
+// Marcos tiene 4 likes y 5 amigos
+
+showInfo.apply(user, [4,5]); // lo mismo pero los params deben ir en un array
+
+const newFunction = showInfo.bind(user);
+newFunction(10,15); // hacemos otra funcion que toma otro contexto
+```
+
+Basicamente los 3 asocian un objeto a `this`
+
+<a id="rea32"></a>
+
+### **Qué es "REPL" y para qué sirve?**
+
+[Volver al indice](#rea-base)
+
+REPL, acrónimo en Ingles de "Leer, Evaluar, Imprimir, Bucle". Este shell es utilizado para realizar declaraciones específicas en JavaScript.
+
+<a id="rea33"></a>
+
+### **Qué es el "demultiplexer"?**
+
+[Volver al indice](#rea-base)
+
+El **demultiplexer,** *es una interfaz encargada de las notificaciones dentro de Node JS.* Es utilizado para recopilar información de eventos específicos y formar preguntas, brindando así lo que se conoce como un **Evento QUE**.
+
+<a id="rea34"></a>
+
+### **Que hace Babel?**
+
+[Volver al indice](#rea-base)
+
+Babel es un compilador para JavaScript. Permite transformar codigo escrito con las ultimas caracteristicas y traducirlo en codigo de JS bien vanilla que pueda ser entendido por navegadores antiguos.
+
+<a id="rea35"></a>
+
+### **Que hace Webpack?**
+
+[Volver al indice](#rea-base)
+
+Es el responsable de producir los bundles a partir del codigo Front. Es un Module Bundler, hay otras opciones como Gulp, Rollup, etc..
+
+Los bundles son paquetes de codigo necesarios para poder llevar a produccion un proyecto, traspilando el codigo y el empaquetado de los modulos en uno o varios archivos compactados, minimizados y optimizados. Es lo que se hace cuando se hace `build`.
+
+<a id="rea36"></a>
+
+### **Que es el server side rendering?**
+
+[Volver al indice](#rea-base)
+
+Es crear paginas HTML renderizadas en servidor para que lleguen listas. Se crean usando NodeJS que generalmente se usa con Express (para utilizar verbos de HTTP).
+
+NextJS es una opcion para usar esto. Favorecen mucho al SEO ya que renderizan la pagina antes de que pueda ser enviada al navegador.
+
+<a id="rea37"></a>
+
+### **Que es Tree Shaking?**
+
+[Volver al indice](#rea-base)
+
+Es remover codigo no usado, como, por ejemplo, imports y exports que no fueron usados. Esto lo hace webpack y Rollup de manera automatica.
+
+<a id="rea38"></a>
+
+### **¿Que es el SEO?**
+
+[Volver al indice](#rea-base)
+
+Es Search Engine Optimization, es lo que hace que un sitio sea encontrado por Google, y HTML hace un aporte con su metadata para que esto suceda. Por ejemplo, no se recomienda usar muchos h1 en un HTML para no afectar al SEO.
+
+- Describir la pagina con titulos y fragmentos unicos. Uso de title y utilizar terminos claros. Todas las paginas del sitio deben tener una meta descripcion para que aparezca la misma en los resultados del buscador
+
+```html
+<head>
+  <title>Bienvenidos</title>
+  <meta name="description" content="Sitio web">
+</head>
+```
+
+- Usar codigos de estado HTTP Significativos. Google usa rastreadores sobre los sitios web, o robots, es un programa que descubre y analiza sitios web, en google se llama Google Bot, que usa codigos de estado HTTP. Si uso codigos significativos, le indico al robot si esta pagina debe ser indexada, o no (por ejemplo, si es 404, no es trackeado)
+- Solucionar problemas con imagenes y carga diferida. Cargar cuando el usuario este por verlas.
+
+```html
+<img src="image.jpg" alt="..." loading="lazy">
+```
+
+- Crear diseños accesibles, crear paginas para los usuarios, no solo para los motores de busqueda. Un ejemplo para testear la accesibilidad, es cargar la pagina sin JS habilitado.
+
+<a id="rea41"></a>
+
+### **Que es la tipificacion de Variables?**
+
+[Volver al indice](#rea-base)
+
+La tipificación de variables, sirve para asignar un número a una variable y después asignar un string a la misma variable.
+
+<a id="rea44"></a>
+
+### **Que es la Coercion explicita e Implicita?**
+
+Coercion es la forma en la que podemos cambiar de un tipo de valor a otro
+
+- **Coercion explícita:** Obligamos que un valor de un tipo cambie a otro valor de otro tipo
+
+```jsx
+//Aquí obligamos a la variable a convertirse en string (coerción explícita)
+var c = String(a);
+console.log(c);
+
+//Aquí obligamos a la variable a convertirse en número (coerción explícita)
+var d = Number(c);
+console.log(d);
+```
+
+- **Coercion Implicita:** El lenguaje cambia el tipo de valor por detrás
+
+```jsx
+//Convierte a 4 en un string y lo concatena con el "7", por esto regresa un string de valor "47"
+var a = 4 + "7";
+
+//Convierte al "7" en un número y realiza la operación, por esto devuelve 28
+4 * "7";
+
+var a = 20;
+var b = a + ""; //Aquí concatenamos para convertir la variable a string (coerción implícita)
+console.log(b);
+```
+
+<a id="rea49"></a>
+
+### **Que es la expresion de Funcion Inmediatamente Invocada - Immediately-invoked Function Expression (IIFE)?**
+
+[Volver al indice](#rea-base)
+
+Es una tecnica que se usaba para emular las variables privadas.
+
+```jsx
+const modulo = (function(){
+  function metodoPrivado () {
+  }
+  const valorPrivado = "algo"
+  return {
+    get: valorPrivado,
+    set: function(v) { valorPrivador = v }
+  }
+})()
+
+var x = modulo()
+x.get() // "algo"
+x.set("Otro valor")
+x.get() // "otro valor"
+x.valorPrivado //Error
+```
+
+<a id="rea505"></a>
+
+### **Qué es un Event listener?**
+
+[Volver al indice](#rea-base)
+
+Supongamos que estamos usando una libreria para renderizar items de una coleccion de datos, esta expone un componente llamado RenderItem que tiene una sola prop disponible onClick que no acepta ningun parametro. ¿Y si quiero mandarle un argumento?
+
+```jsx
+// Esta es el closure
+// en es5
+function onItemClick(titulo) {
+    return function() {
+      alert("Click en " + titulo)
+    }
+}
+// en es6
+const onItemClick = titulo => () => alert(`Click en ${titulo}`)
+
+return (
+  <Contenedor>
+{items.map(item => {
+return (
+   <RenderItem onClick={onItemClick(item.titulo)}>
+    <Titulo>{item.titulo}</Titulo>
+  </RenderItem>
+)
+})}
+</Contenedor>
+)
+```
+
+Creamos una funcion que recibe el titulo que se quiere mostrar y retorna otra funcion que cumple con la definicion de la funcion que RenderItem recibe como prop.
+
+<a id="rea52"></a>
+
+### **Que es Symbol?**
+
+[Volver al indice](#rea-base)
+
+Son valores primitivos de JS (como String, boolean, etc..) agregados al ES6. Son valores unicos en JS, antes si queriamos tener un valor unico debiamos usar objetos (porque solo son iguales a ellos mismos), es util para crear constantes
+
+```jsx
+let sym1 = Symbol()
+let sym2 = Symbol('denu')
+let sym3 = Symbol()
+
+sym1 === sym3 // false
+```
+
+Tambien sirve para crear claves unicas en los objetos, donde los autores de librerias, navegadores web o cualquier runtime de ES podra evitar que hubieran colisiones al momento de agregar una prop u objeto global
+
+```jsx
+const sym1 = Symbol()
+const sym2 = Symbol()
+
+const obj = {}
+
+obj[sym1] = 'a'
+obj[sym2] = 'b'
+```
+
+<a id="rea535"></a>
+
+### **Cual es la diferencia entre un event loop, microtask y macrotask?**
+
+[Volver al indice](#rea-base)
+
+Javascript ejecuta una linea de codigo por vez. **Event Loop** se encarga de gestionar las funciones asincronas.
+Funciona con una Call Stack y una Callback Queue. Cuando hay una linea en ejecucion, se agrega al Call Stack, y cuando finaliza, se elimina. La Queue tiene las funciones callback que deben ejecutarse, no debe haber ninguna funcion ejecutandose en la Call Stack ni debe haber otra funcion adelante suyo en la Queue.
+Cuando ejecutamos una funcion con setTimeout, la misma se entrega a Timers API, y aunque setTimeout sea cero, habrá un retraso en la ejecucion de esta funcion, haciendo que tenga que esperar en la Queue a que termine de ejecutarse el codigo asincrono.
+
+* macroTasks: [setTimeout](https://developer.mozilla.org/docs/Web/API/WindowTimers/setTimeout), [setInterval](https://developer.mozilla.org/docs/Web/API/WindowTimers/setInterval), [setImmediate](https://developer.mozilla.org/docs/Web/API/Window/setImmediate), [requestAnimationFrame](https://developer.mozilla.org/docs/Web/API/window/requestAnimationFrame), [I/O](https://developer.mozilla.org/docs/Mozilla/Projects/NSPR/Reference/I_O_Functions), UI rendering
+* microTasks: [process.nextTick](https://nodejs.org/uk/docs/guides/event-loop-timers-and-nexttick/), [Promises](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise), [queueMicrotask](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/queueMicrotask), [MutationObserver](https://developer.mozilla.org/docs/Web/API/MutationObserver)
+
+Solo despues de que las task en las microTasks estan completas, event loop tomará las task de macrotasks. Mientras mas microtasks haya, mas delay habra en los macrotasks. Se recomienda usar microtasks cuando se necesitan hacer cosas de forma asincrona, de otra manera, siempre es recomendado usar macrotasks.
+
+En resumen, su funcionamiento en ingles seria:
+
+- *Tasks* are taken from the *Task (MacroTask) Queue*.
+- *Task* from the *Task Queue* is a *Macrotask* != a *Microtask*.
+- *Microtasks* are processed when the current task ends and the *microtask* queue is cleared before the next *macrotask* cycle.
+- *Microtasks* can enqueue other *microtasks*. All are executed before the next task inline.
+- UI rendering is run after all microtasks execution (NA for nodejs).
+
+<a id="rea545"></a>
+
+### **Variable Shadowing - Ocultamiento de Variables**
+
+[Volver al indice](#rea-base)
+
+Se produce cuando una variable que esta en un scope mas reducido tiene el mismo nombre que otra que esta en un scope superior siguiendo la cadena
+
+```javascript
+function test() {
+
+var variable = "hola";
+console.log(variable);
+
+  function test1() {
+    var variable = "denu";
+      console.log(variable);
+  }
+
+  test1(); // denu
+}
+
+test(); // hola
+```

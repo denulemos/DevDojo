@@ -1,14 +1,13 @@
 <a name="bd-base"></a>
 
-## [Bases de Datos](#bd)
-
 | Fundamentos de Bases de Datos |
 |----------|
+| [Que es la programacion declarativa?](#ent8-3) |
 | [Cuáles son los elementos de una base de datos?](#bd1) |
 | [Cuales son los elementos de Data Control Language? (DCL)](#bd2) |
 | [Lenguaje de manipulación de datos (DML)](#bd3) |
 | [Lenguaje de definición de datos (DDL)](#bd4) |
-| ¿Qué es un índice en una base de datos? |
+| [¿Qué es un índice en una base de datos?](#bd44) |
 | ¿Cuál es la diferencia entre un índice único y un índice no único? |
 |¿Qué es una clave primaria y cómo se utiliza?|
 |¿Qué es una clave foránea y cómo se utiliza?|
@@ -21,9 +20,6 @@
 | [Cuales son los grados de Normalización?](#bd7) |
 | ¿Cómo funciona la normalización en bases de datos relacionales?|
 |¿Qué es la desnormalización y cuándo es apropiada?|
-
-| Transacciones y Concurrencia |
-|----------|
 |¿Qué es una transacción en bases de datos y cuáles son sus propiedades (ACID)?|
 |¿Qué es la atomicidad en las transacciones de bases de datos?|
 |¿Qué es la concurrencia en bases de datos y cómo se maneja?|
@@ -45,27 +41,6 @@
 |¿Qué son los procedimientos almacenados y cuál es su ventaja?|
 |¿Qué es un trigger y cómo se diferencia de un procedimiento almacenado?|
 
-| Bases de Datos Distribuidas y NoSQL |
-|----------|
-| ¿Qué es una base de datos NoSQL y cuáles son sus tipos?|
-| ¿Qué es la consistencia en el contexto de bases de datos distribuidas?|
-| ¿Qué son las bases de datos distribuidas y qué desafíos presentan?|
-
-| Manejo de Datos y Seguridad |
-|----------|
-|¿Cómo se realiza un backup y restauración en bases de datos?|
-|¿Cuáles son los elementos de Data Control Language? (DCL)|
-|¿Qué es la seguridad en las bases de datos?|
-
-|Modelos de Datos |
-|----------|
-|¿Qué es un modelo de datos jerárquico en bases de datos?|
-
-|Bases de Datos Relacionales vs No Relacionales|
-|----------|
-|¿Cuál es la diferencia entre una base de datos transaccional y una base de datos analítica?|
-|¿Cuáles son las ventajas de utilizar bases de datos NoSQL frente a bases de datos SQL?|
-
 | Consultas y Operaciones |
 |----------|
 | [Inner Join](#bd10) |
@@ -77,11 +52,17 @@
 
 ---
 
----
-
 <a id="bd"></a>
 
 # Bases de Datos
+
+<a id="ent8-3"></a>
+
+### **Que es la programacion declarativa?**
+
+[Volver al indice](#bd-base)
+
+La programacion declarativa se concentra en que cosas hay que hacer y no necesariamente en como hacerlas. Un ejemplo es SQL, donde se le dice a la base de datos que datos queremos, pero no como obtenerlos.
 
 <a id="bd1"></a>
 
@@ -131,6 +112,35 @@ Las sentencias DDL se utilizan para crear y modificar la estructura de las tabla
 - ALTER - modifica la estructura de la base de datos.
 - DROP - borra objetos de la base de datos.
 - TRUNCATE - elimina todos los registros de la tabla, incluyendo todos los espacios asignados a los registros. Además, reinicia los campos autonuméricos.
+
+<a id="bd44"></a>
+
+### **¿Qué es un índice en una base de datos?**
+
+[Volver al indice](#bd-base)
+
+Imagina que tienes una guía telefónica y quieres encontrar el número de "Denu Lemon":
+
+- Sin índice: Tendrías que revisar página por página hasta encontrar el nombre (esto sería muy lento)
+- Con índice: Vas directamente a la sección "L" y encuentras rápidamente a "Lemon"
+
+En una base de datos funciona igual:
+- Sin índice: La base de datos tiene que revisar TODA la tabla para encontrar lo que buscas
+- Con índice: La base de datos sabe exactamente dónde buscar la información
+
+Ventajas:
+- Hace las búsquedas muchísimo más rápidas
+- Ayuda a encontrar datos duplicados fácilmente
+
+Desventajas:
+- Ocupa más espacio en el disco duro
+- Hace que agregar o modificar datos sea un poco más lento (porque tiene que actualizar también el índice)
+
+¿Cuándo usarlos?
+- Cuando tienes muchos datos en una tabla
+- En columnas que usas frecuentemente para buscar información
+- En columnas que necesitan tener valores únicos
+
 
 <a id="bd5"></a>
 

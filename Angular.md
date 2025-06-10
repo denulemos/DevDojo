@@ -1,36 +1,53 @@
 <a name="angular-base"></a>
 
-| Angular |
+| Arquitectura y Organización del Proyecto |
 |----------|
+| [¿Cuales son algunas reglas de Clean Code en Angular?](#rea1) |
 | [¿Qué son los modulos en Angular?](#rea11) |
-| [¿Qué es Property Binding?](#rea12) |
-| [¿Cuál es el flujo de datos una aplicación Angular?](#rea13) |
-| [¿Qué es un Decorador en Angular?](#rea14) 💛|
-| [Event Binding en Angular (Manejo de Eventos)](#rea15) |
-| [Data Binding en Angular](#rea16) |
-|[Que son los componentes standalone y cuando conviene utilizarlos?](#angular-1) 💛|
 |[¿Qué problemas de rendimiento pueden existir en Angular y cómo se solucionan?](#angular-2) 💛|
-| [Angular Signals](#ent65-1) |
-| [Que mejoras hay en la migracion de AngularJS a Angular?](#ent51-1) |
-| [Decorators en Angular](#ent65) |
-| [¿Qué es RxJS y qué problemas resuelve en el desarrollo de aplicaciones?](#ent38) |
-| [Observable en RxJS](#ent39) |
-| [Observable "cold" y "hot"](#ent40) |
-| [Patrones de disenio en Angular](#ent45) |
-|[¿Cómo funciona la detección de cambios en Angular?](#angular2)|
 |[¿Cómo se maneja la inyección de dependencias y la inversión de control en las aplicaciones de Angular?](#angular3) 💛|
 |[¿Qué es la compilación JIT y AOT en Angular? Diferencias, pros y contras](#angular4)|
-|[¿Cómo se maneja la gestión del estado en las aplicaciones de Angular?](#angular5)|
-|¿Cómo se puede compartir el estado en las aplicaciones de Angular? Servicios vs Flux vs Redux. Pros y contras de cada enfoque.|
-|¿Qué es el enrutamiento en Angular y cómo se configura?|
-|¿Cómo se manejan las rutas protegidas en Angular?|
-|¿Qué es el lazy loading y cómo se implementa en Angular?|
-|¿Cómo se manejan las peticiones HTTP en Angular?|
-|¿Qué es el patrón de diseño "Smart vs Dumb Components" y cómo se aplica en Angular?|
-|¿Qué son los pipes en Angular y cómo se utilizan?|
+|[¿Qué es el enrutamiento en Angular y cómo se configura?](#angular5)|
+| [Como se implementa Lazy Loading en Angular?](#angular6)|
+| [Que mejoras hay en la migracion de AngularJS a Angular?](#ent51-1) |
 
+| Componentes y Estructura |
+|----------|
+| [¿Qué es un Decorador en Angular?](#rea14) 💛|
+|[Que son los componentes standalone y cuando conviene utilizarlos?](#angular-1) 💛|
+| [¿Cuál es el flujo de datos una aplicación Angular?](#rea13) |
+| [Patrones de disenio en Angular](#ent45) |
+|[¿Cómo funciona la detección de cambios en Angular?](#angular2)|
+
+| Manejo de datos |
+|----------|
+| [¿Qué es Property Binding?](#rea12) |
+| [Event Binding en Angular (Manejo de Eventos)](#rea15) |
+| [Data Binding en Angular](#rea16) |
+| [Angular Signals](#ent65-1) |
+| [Angular Signals vs Observables](#ent65-11) |
+| [¿Qué es RxJS y qué problemas resuelve en el desarrollo de aplicaciones?](#ent38) |
+| [Observable en RxJS](#ent39) |
+| [Formas de desubscripcion de Observables](#rea3) |
+| [Porque es importante desuscribirnos de los Observables?](#rea2) |
+| [Observable "cold" y "hot"](#ent40) |
 
 ---
+
+<a id="rea1"></a>
+
+### **¿Cuales son algunas reglas de Clean Code en Angular?**
+
+[Volver al indice](#angular-base)
+
+Entre las tipicas reglas de Clean Code que existen para nuestro codigo, hay otros especificos de Angular que podrian ser tenidos en cuenta:
+
+- Los componentes deben tener una única responsabilidad. Si un componente se vuelve demasiado grande o realiza múltiples tareas, divide su funcionalidad en componentes más pequeños.
+- Usa componentes hijos cuando un componente se vuelve complejo y necesita dividirse
+- Mantener los archivos template simples, manejar toda logica en los archivos correspondientes
+- Se debe delegar el trabajo pesado, como el llamado a APIS, a los servicios. Los componentes deben manejar todo lo relacionado a la UI y nada mas.
+- Desubscribirnos de los Observables a la hora de no utilizarlos mas.
+- Usar Angular CLI para la creacion de nuevo codigo, para asegurarnos que se siguen los mejores estandar de codigo posible. 
 
 <a id="rea11"></a>
 
@@ -140,12 +157,123 @@ Las dos hacen lo mismo si es un string, pero si estás trabajando con cosas más
 
 Indica como debe comportarse el componente. Dentro de este decorador, puedes observar el selector del componente (un nombre para el mismo), el template HTML y la hoja de estilos que usará.
 
-```tsx
+- `@Component`: Se utiliza para decorar una clase que define un componente de Angular
+
+```typescript
+import { Component } from '@angular/core';
+
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-root', // Nombre de la etiqueta HTML
+  templateUrl: './app.component.html', // Archivo HTML
+  styleUrls: ['./app.component.css'] // Estilos CSS
 })
+export class AppComponent {
+  title = 'Mi aplicación Angular';
+}
+```
+
+- `@Injectable`: marca una clase como inyección de dependencias en Angular. Se usa para declarar que una clase puede ser inyectada en otros componentes o servicios
+
+```typescript
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root' // Este servicio estará disponible en toda la aplicación
+})
+export class DataService {
+  constructor() {}
+
+  getData() {
+    return ['Elemento1', 'Elemento2', 'Elemento3'];
+  }
+}
+```
+
+- ` @NgModule`: Se usa para definir que este componente es un modulo en si mismo. Con la aparicion de los componentes standalone ya no es tan comunmente usado.
+
+```typescript
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [AppComponent], // Componentes que pertenecen al módulo
+  imports: [BrowserModule], // Otros módulos que necesita
+  providers: [], // Servicios a inyectar
+  bootstrap: [AppComponent] // Componente inicial
+})
+export class AppModule {}
+```
+
+- `@Input`: se utiliza para marcar una propiedad de un componente que va a recibir datos desde su componente padre.
+
+```typescript
+import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-child',
+  template: '<h2>{{ name }}</h2>'
+})
+export class ChildComponent {
+  @Input() name: string; // Recibe un valor desde el componente padre
+}
+```
+
+- `@Output`: El decorador @Output se usa para crear un evento personalizado en un componente que puede ser escuchado por su componente padre.
+
+```typescript
+import { Component, Output, EventEmitter } from '@angular/core';
+
+@Component({
+  selector: 'app-child',
+  template: '<button (click)="sendMessage()">Enviar Mensaje</button>'
+})
+export class ChildComponent {
+  @Output() messageEvent = new EventEmitter<string>();
+
+  sendMessage() {
+    this.messageEvent.emit('Hola desde el componente hijo');
+  }
+}
+```
+
+- `@HostListener`: Cuando preciso escuchar cualquier accion en el navegador, como clicks o cambios en el tamanio de la pantalla.
+
+```typescript
+import { Component, HostListener } from '@angular/core';
+
+@Component({
+  selector: 'app-resize-listener',
+  template: '<p>El tamaño de la ventana es: {{ width }}px</p>'
+})
+
+export class ResizeListenerComponent {
+  width: number = window.innerWidth;
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.width = window.innerWidth;
+  }
+}
+```
+
+- `@ViewChild`: Se utiliza para acceder a un componente hijo desde su componente padre.
+
+```typescript
+import { Component, ViewChild, AfterViewInit } from '@angular/core';
+
+@Component({
+  selector: 'app-parent',
+  template: '<app-child #childComponent></app-child>'
+})
+
+export class ParentComponent implements AfterViewInit {
+  @ViewChild('childComponent') child: any;
+
+  ngAfterViewInit() {
+    console.log(this.child); // Accede al componente hijo
+  }
+}
 ```
 
 <a id="rea15"></a>
@@ -502,6 +630,20 @@ effect(() => {
 counter.set(1); // Consola: "Counter value is: 1"
 ```
 
+<a id="ent65-11"></a>
+
+### **Angular Signals vs Observables**
+
+[Volver al indice](#angular-base)
+
+Algunas de las ventajas del uso de Signals vs Observables son:
+
+- No es necesario subscribirse ni desuscribirse de los Signals, posee un sistema de reactividad automatica que detecta cualquier cambio de input
+- Signals es mucho mas simple y declarativo que RxJS
+- Se evitan re-renderings innecesarios ya que Angular maneja mucho mejor la deteccion de cambios
+
+Sin embargo, si uno planifica trabajar con WebSockets o Eventos Complejos, Observables puede ser una mejor opcion, ya que posee herramientas para manejar la informacion de forma mucho mas especifica.
+
 <a id="ent51-1"></a>
 
 ### **Que mejoras hay en la migracion de AngularJS a Angular?**
@@ -519,130 +661,6 @@ counter.set(1); // Consola: "Counter value is: 1"
 | Todo nuevo archivo y agregado debia hacerse a mano | Se cuenta con Angular CLI que automatiza muchas cosas |
 | En AngularJS tenemos modulos, pero no se soporta el Lazy Loading | Se soporta el Lazy Loading |
 
-<a id="ent65"></a>
-
-### **Decorators en Angular**
-
-[Volver al indice](#angular-base)
-
-El concepto de decorators en si no es propio de Angular si no que viene de Typescript. Los decoradores son funciones que se utilizan para modificar clases, metodos, propiedades, parametros, etc.
-
-- `@Component`: Se utiliza para decorar una clase que define un componente de Angular
-
-```typescript
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-root', // Nombre de la etiqueta HTML
-  templateUrl: './app.component.html', // Archivo HTML
-  styleUrls: ['./app.component.css'] // Estilos CSS
-})
-export class AppComponent {
-  title = 'Mi aplicación Angular';
-}
-```
-
-- `@Injectable`: marca una clase como inyección de dependencias en Angular. Se usa para declarar que una clase puede ser inyectada en otros componentes o servicios
-
-```typescript
-import { Injectable } from '@angular/core';
-
-@Injectable({
-  providedIn: 'root' // Este servicio estará disponible en toda la aplicación
-})
-export class DataService {
-  constructor() {}
-
-  getData() {
-    return ['Elemento1', 'Elemento2', 'Elemento3'];
-  }
-}
-```
-
-- ` @NgModule`: Se usa para definir que este componente es un modulo en si mismo. Con la aparicion de los componentes standalone ya no es tan comunmente usado.
-
-```typescript
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
-
-@NgModule({
-  declarations: [AppComponent], // Componentes que pertenecen al módulo
-  imports: [BrowserModule], // Otros módulos que necesita
-  providers: [], // Servicios a inyectar
-  bootstrap: [AppComponent] // Componente inicial
-})
-export class AppModule {}
-```
-
-- `@Input`: se utiliza para marcar una propiedad de un componente que va a recibir datos desde su componente padre.
-
-```typescript
-import { Component, Input } from '@angular/core';
-
-@Component({
-  selector: 'app-child',
-  template: '<h2>{{ name }}</h2>'
-})
-export class ChildComponent {
-  @Input() name: string; // Recibe un valor desde el componente padre
-}
-```
-
-- `@Output`: El decorador @Output se usa para crear un evento personalizado en un componente que puede ser escuchado por su componente padre.
-
-```typescript
-import { Component, Output, EventEmitter } from '@angular/core';
-
-@Component({
-  selector: 'app-child',
-  template: '<button (click)="sendMessage()">Enviar Mensaje</button>'
-})
-export class ChildComponent {
-  @Output() messageEvent = new EventEmitter<string>();
-
-  sendMessage() {
-    this.messageEvent.emit('Hola desde el componente hijo');
-  }
-}
-```
-
-- `@HostListener`: Cuando preciso escuchar cualquier accion en el navegador, como clicks o cambios en el tamanio de la pantalla.
-
-```typescript
-import { Component, HostListener } from '@angular/core';
-
-@Component({
-  selector: 'app-resize-listener',
-  template: '<p>El tamaño de la ventana es: {{ width }}px</p>'
-})
-export class ResizeListenerComponent {
-  width: number = window.innerWidth;
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event: Event) {
-    this.width = window.innerWidth;
-  }
-}
-```
-
-- `@ViewChild`: Se utiliza para acceder a un componente hijo desde su componente padre.
-
-```typescript
-import { Component, ViewChild, AfterViewInit } from '@angular/core';
-
-@Component({
-  selector: 'app-parent',
-  template: '<app-child #childComponent></app-child>'
-})
-export class ParentComponent implements AfterViewInit {
-  @ViewChild('childComponent') child: any;
-
-  ngAfterViewInit() {
-    console.log(this.child); // Accede al componente hijo
-  }
-}
-```
 
 <a id="ent38"></a>
 
@@ -698,6 +716,58 @@ observable.subscribe({
 | Solo pueden emitir un valor o un error | Pueden emitir multiples valores a lo largo del tiempo siempre y cuando la subscripcion este activa |
 | Apenas se crea la Promise, la misma es ejecutad, se le dice `Eager` | No hace nada hasta que alguien este observandolo, es por eso que se le dice `lazy`, porque por si mismo no hace nada |
 | La promesa no se puede cancelar | Se puede cancelar la subscripcion a un observable |
+
+<a id="rea3"></a>
+
+### **Formas de desubscripcion de Observables**
+
+[Volver al indice](#angular-base)
+
+Uso de `ngOnDestroy`
+
+```ts
+ ngOnInit() {
+    this.subscription = this.myService.getData().subscribe(data => {
+      // Manejo de los datos
+    });
+  }
+
+  ngOnDestroy() {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }
+```
+
+Uso de `TakeUntil`
+
+```ts
+private destroy$ = new Subject<void>();
+
+  ngOnInit() {
+    this.myService.getData()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(data => {
+        // Manejo de los datos
+      });
+  }
+
+  ngOnDestroy() {
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
+```
+
+
+<a id="rea2"></a>
+
+### **Porque es importante desuscribirnos de los Observables?**
+
+[Volver al indice](#angular-base)
+
+- **Evitar Memory Leaks** Estas ocurren cuando objetos que ya no estamos usando quedan en memoria, si no te desubscribis de los observables, por su naturaleza, se seguiran ejecutando siempre y cuando tengan subscribers que lo escuchen.
+- **Controlar el Ciclo de Vida del Observable**: Como Angular no lo maneja de manera automatica, es responsabilidad del desarrollador su manejo. Utilizar técnicas de desuscripción adecuadas (como ngOnDestroy o el operador takeUntil) garantiza que los observables solo vivan durante el ciclo de vida necesario y no más.
+- **Evitar el Doble Manejo de Datos**: Si no te desuscribes de un observable, puedes terminar recibiendo datos que ya no necesitas o que no tienen sentido para el componente actual. Esto puede generar lógica extra para manejar estos casos y complicar el código.
 
 <a id="ent40"></a>
 
@@ -1152,11 +1222,93 @@ Es el activado con `ng build --aot`
 
 <a id="angular5"></a>
 
-### **¿Cómo se maneja la gestión del estado en las aplicaciones de Angular?**
+### **¿Qué es el enrutamiento en Angular y cómo se configura?**
 
 [Volver al indice](#angular-base)
 
-Dentro de Angular podemos manejar distintos tipos de estados
+Es la configuracion que permite a los usuarios navegar en nuestra aplicacion sin necesidad de recargar la pagina por cada cambio en el caso de los SPA.
+Tambien se encarga de gestionar las URL para facilitar el compartir links y la navegabilidad.
+Se configura mediante el `RouterModule` en un array de rutas, el cual se referencia con un path y un componente. 
 
-- Estado Local: Se maneja con variables locales dentro de los componentes, se pierden al refrescar la pagina
-- Estado Global: Son datos compartidos entre varios componentes
+```ts
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+
+const routes: Routes = [
+  { path: '', component: HomeComponent }, // Ruta raíz
+  { path: 'about', component: AboutComponent }, // Ruta para "Acerca de"
+  { path: '**', component: NotFoundComponent } // Ruta comodín para páginas no encontradas
+];
+```
+
+En el mismo tambien se pueden manejar componentes con Lazy Loading
+
+```ts
+{ path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) }
+```
+
+Restringir el acceso a rutas protegidas
+
+```ts
+{ path: 'admin', component: AdminComponent, canActivate: [AuthGuard] }
+```
+
+Y luego en el ng.html que hace de entrypoint de nuestra app, referenciamos al contenido "routerizado"
+
+```html
+<nav>
+  <a routerLink="/">Inicio</a>
+  <a routerLink="/about">Acerca de</a>
+</nav>
+
+<router-outlet></router-outlet>
+```
+
+Tambien es posible manejar las rutas desde el codigo logico de nuestra app por fuera de los componentes
+
+```ts
+import { Router } from '@angular/router';
+
+constructor(private router: Router) {}
+
+irAAbout() {
+  this.router.navigate(['/about']);
+}
+```
+
+<a id="angular6"></a>
+
+### **Como se implementa Lazy Loading en Angular?**
+
+[Volver al indice](#angular-base)
+
+Lazy Loading carga un modulo solo cuando el usuario esta por acceder a la misma. Antes de la introduccion de standalone components, era necesario crear modulos para cada componente, pero ahora no es necesario. Se utiliza `loadComponent` en lugar de `loadChildren`
+
+```ts
+import { Routes } from '@angular/router';
+
+export const routes: Routes = [
+  {
+    path: 'admin',
+    loadComponent: () => import('./admin/admin.component').then(m => m.AdminComponent)
+  },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  }
+];
+```
+
+Tambien puede complementarse muy bien con `Route Guards` para proteger rutas y asegurarse de que el usuario tenga acceso a la misma si posee autorizacion. 
+
+```ts
+{
+  path: 'admin',
+  loadComponent: () => import('./admin/admin.component').then(m => m.AdminComponent),
+  canActivate: [authGuard]
+}
+```

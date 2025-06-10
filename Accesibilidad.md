@@ -7,30 +7,21 @@
 | [¿Qué es la accesibilidad web?](#acc1) |
 | [¿Cuáles son sus beneficios?](#acc2) |
 | [¿Qué significa A11y?](#acc3) |
-|¿Qué leyes o normativas existen a nivel global relacionadas con la accesibilidad web?|
-|¿Por qué es importante la accesibilidad web para las personas con discapacidades?|
+|[¿Qué leyes o normativas existen a nivel global relacionadas con la accesibilidad web?](#acc33)|
 
 | Fundamentos y Principios |
 |----------|
 | [¿De qué trata el Web Content Accessibility Guidelines (WCAG)?](#acc9) |
 | [¿De qué tratan los principios POUR - Principios WCAG?](#acc10) |
-|¿Cómo se aplica la regla de "suficiente tiempo para leer y usar el contenido" en el diseño web accesible?|
-|¿Qué significa que una página web sea "perceptible, operable, comprensible y robusta"?|
 
 | Herramientas |
 |----------|
 | [¿Cuáles son las herramientas más usadas en accesibilidad?](#acc4) |
 | [¿Qué es un screen reader?](#acc5) |
-|¿Qué herramientas específicas se utilizan para realizar auditorías de accesibilidad en un sitio web?|
-|¿Cómo funciona un lector de pantalla y qué desafíos puede presentar a los diseñadores web?|
-
-| Elementos Clave |
-|----------|
+| [Herramientas de pruebas automatizadas de Accesibilidad](#acc55) |
 | [¿Qué es el contraste de color?](#acc6) |
 | [¿Qué es el texto alternativo?](#acc7) |
 | [¿Qué es el teclado virtual?](#acc8) |
-|¿Cómo puede el contraste de color impactar en la legibilidad del contenido para personas con deficiencia visual?|
-|¿Qué buenas prácticas deben seguirse para escribir texto alternativo efectivo?|
 
 | ARIA y Contenido Dinámico |
 |----------|
@@ -38,17 +29,14 @@
 | [¿Cuándo es necesario utilizar ARIA?](#acc12) |
 | [Contenido dinámico y accesibilidad](#acc13) |
 | [Nombrar algunas ARIA existentes](#acc16) |
-|¿Cuáles son las limitaciones de usar ARIA y por qué no siempre es la mejor solución para mejorar la accesibilidad?|
-|¿Cómo se utiliza ARIA para mejorar la accesibilidad de contenido dinámico como menús o formularios interactivos?|
 
 | Buenas Prácticas y Técnicas |
 |----------|
 | [Manejo de focus](#acc14) |
 | [CSS accesible](#acc15) |
 | [¿Qué prácticas conlleva tener un HTML accesible?](#acc17) |
-| ¿Cómo influye el manejo adecuado del focus en la accesibilidad para usuarios
-de teclado?|
-|¿Qué reglas de CSS son esenciales para garantizar una experiencia accesible  en un sitio web?|
+| [HTML Accesible](#acc177) |
+| [Javascript afecta la Accesibilidad de mi pagina?](#acc178) |
 
 ---
 
@@ -87,16 +75,62 @@ Es una abreviación de la palabra "accessibility" y se utiliza para referirse a 
 
 a|ccessibilit|y = a11y
 
+<a id="acc33"></a>
+
+### **¿Qué leyes o normativas existen a nivel global relacionadas con la accesibilidad web?**
+
+[Volver al indice](#acc-base)
+
+Existen diversas regulaciones que garantizan la accesibilidad en los sitios web y aplicaciones mobile. 
+
+Se puede mencionar la ADA que es la Ley de estadounidenses con discapacidades que se convirtio en la primera ley integral que trata este tema
+
+- Se prohibe la discriminacion de cualquier persona con discapacidad en cualquier etapa del empleo
+- Todos los transportes publicos deben ser accesibles
+- Todos los edificios publicos deben tambien ser accesibles
+
+Otra ley es la Ley de Rehabilitacion de EEUU que prohibio por primera vez la discriminacion de personas con discapacidad, y hace poco se agrego una enmienda que obliga a los organismos estatales a adaptar sus plataformas informaticas a esto, ahora tambien se agrego al WCAG que es un estandar internacional de accesibilidad del contenido web. 
+Sucedio algo muy parecido en la UE, obligando a organismos estatales a cumplir con WCAG 2.1 Nivel AA. 
+
+Si bien hoy en dia no hay sanciones muy duras al no cumplir estas medidas, a futuro puede ser que vayan aumentando ya que la cantidad de demandas fue creciendo con el tiempo. 
+
 <a id="acc4"></a>
 
 ### **¿Cuáles son las herramientas más usadas en accesibilidad?**
 
 [Volver al indice](#acc-base)
 
-* Screen Readers
-* Braille Output devices
-* Configuraciones propias del sistema operativo
-* Navegadores con herramientas de accesibilidad
+Para las personas con discapacidades visuales las herramientas mas utilizadas son:
+
+- Lectores de pantalla JAWS, NVDA, VoiceOver, TalkBack
+- Lupa de pantalla
+- Pantalla braille
+- Reconocimiento de voz
+
+Para las personas con discapacidades auditivas las herramientas mas utilizadas son:
+
+- Mecanismos de soporte de reproductores de video que permiten subtitulos y transcripciones
+- Mecanimos de soporte de audio que tambien permiten transcripciones
+- Dar medios de contacto nuestros que no se limiten solo al telefono
+
+Para los usuarios con discapacidades motrices las siguientes herramientas son las mas utilizadas:
+
+- Teclados o Joysticks
+- Varios dispositivos que permiten a los usuarios controlar un teclado virtual moviendo la cabeza, los ojos, las piernas, etc.
+- Palillo bucal
+- Varita para la cabeza
+- Raton Trackball de gran tamanio
+
+Para este tipo de usuarios es sumamente importante que todos los elementos de la pagina puedan ser accesibles por un medio que no sea exclusivo del mouse
+
+Tambien se tienen en cuenta a los usuarios con discapacidades cognitivas, que si bien no es una discapacidad fisica, se pueden tener en cuenta diversas medidas para poder mejorar su experiencia:
+
+- Software de aprendizaje visual
+- Corrector ortografico
+- Evitar el desorden en nuestra pagina, incluir suficiente espacio en blanco
+- Evitar un alto contraste entre el texto y el fondo
+- Evitar demasiada informacion en una sola pantalla
+- Identificar en que parte de la pagina se encuentra actualmente el usuario para adaptarlo
 
 <a id="acc5"></a>
 
@@ -104,7 +138,35 @@ a|ccessibilit|y = a11y
 
 [Volver al indice](#acc-base)
 
-Es un software que convierte el texto en voz o en braille. Es utilizado por personas ciegas o con baja visión para poder navegar por la web.
+Es una herramienta que permite a las personas con discapacidad visual el poder acceder al contenido de una pagina web, puede transmitir la informacion mediante voz o braille mediante un dispositivo externo. 
+
+Se anunciarán elementos con el siguiente css:
+
+opacidad: 0;
+left: -9999px;
+content: “Estoy aquí”;
+
+Los elementos con el siguiente css no se anunciarán:
+
+screen: ninguna;
+visibility: oculta;
+
+<a id="acc55"></a>
+
+### **Herramientas de pruebas automatizadas de Accesibilidad**
+
+[Volver al indice](#acc-base)
+
+Las herramientas automatizadas comprueban los siguientes elementos:
+
+- Marcado HTML
+- CSS
+- Contraste de color
+- Tamaño del texto
+- Estructura de la página
+- Atributos de Aria
+
+Hay varias herramientas en linea como Lighthouse, WAVE, AXE, CSS Validation Service entre otros.
 
 <a id="acc6"></a>
 
@@ -149,6 +211,8 @@ Poseen 3 niveles de éxito:
 Cada nivel es progresivo, es decir, para tener 50, se debe tener A y AA aprobados.
 
 Generalmente, el nivel AAA, el cual es el más avanzado, es al que debemos apuntar si trabajamos en servicios del gobierno, universidades o servicios esenciales, donde es extremadamente importante que todos puedan acceder a todo.
+
+Segun esta se deben cumplir 4 condiciones, que la web sea Perceptible, Operable, Comprensible y Robusta. 
 
 <a id="acc10"></a>
 
@@ -218,35 +282,25 @@ Son usados para definir cada parte en particular de la página. Se recomienda qu
 
 [Volver al indice](#acc-base)
 
-Usar ARIA en un elemento no hace que el mismo sea accesible automáticamente, se debe usar correctamente si se decide usar. Se debe usar ARIA cuando un elemento HTML no tiene soporte de accesibilidad, es decir, los elementos que no son semánticos.
+Se debe usar ARIA cuando un elemento HTML no tiene soporte de accesibilidad, es decir, los elementos que no son semánticos. Se dice que es preferible no tener ARIA que tener un ARIA mal hecho, ya que puede llevar a distintas confunsiones. 
 
-```jsx
-😡 <a role="button">Submit</a>
-✅ <button>Submit</button>
-```
+- Si un elemento es focusable, evitar utilizar `role="presentation"` o `aria-hidden="true"`.
 
-No agregar ARIA innecesario.
-
-```jsx
-😡 <h2 role="tab">Heading tab</h2>
-✅ <div role="tab"><h2>Heading tab</h2></div>
-```
-
-Siempre tener soporte a teclados usando el tabindex para establecer la prioridad de foco con teclado. Se debe evitar establecer tabindex mayores a cero para evitar que el orden de focus sea desordenado.
+- Siempre tener soporte a teclados usando el tabindex para establecer la prioridad de foco con teclado. Se debe evitar establecer tabindex mayores a cero para evitar que el orden de focus sea desordenado.
 
 ```jsx
 ✅ <span role="button" tabindex="0">Submit</span>
 😡 <span role="button" tabindex="1">Submit</span>
 ```
 
-No agregar role=”presentation” o “aria-hidden= “true”” a los elementos que necesitan tener focus, ya que de lo contrario, se saltean al momento de navegar.
+- No agregar role=”presentation” o “aria-hidden= “true”” a los elementos que necesitan tener focus, ya que de lo contrario, se saltean al momento de navegar.
 
 ```jsx
 ✅ <div><button>Submit</button></div>
 😡 <div aria-hidden="true"><button>Submit</button></div>
 ```
 
-Usar nombres accesibles, por ejemplo, en este caso el nombre accesible es “Red Leather Boots”. Cuando una imagen y está explicada por el texto de la página y es puramente decorativa, el alto no es necesario, se puede dejar este alt con un String vacío
+- Usar nombres accesibles, por ejemplo, en este caso el nombre accesible es “Red Leather Boots”. Cuando una imagen y está explicada por el texto de la página y es puramente decorativa, el alto no es necesario, se puede dejar este alt con un String vacío
 
 ```jsx
 html
@@ -271,7 +325,7 @@ No usar roles redundantes, por ejemplo:
 😡 <ul role="list">...</ul>
 ```
 
-* Usar `<form>` o `<section>` sin el atributo name es un 😡 definitivo
+- Usar `<form>` o `<section>` sin el atributo name es un 😡 definitivo
 
 ```jsx
 <section aria-label="Introduction to stamp collecting">
@@ -281,16 +335,18 @@ No usar roles redundantes, por ejemplo:
  </section>
 ```
 
-Si vamos a agregar JS a un elemento, que sea en lo posible en un elemento de semantic HTML
+- Si vamos a agregar JS a un elemento, que sea en lo posible en un elemento de semantic HTML
 
 ```jsx
 ✅ <button onclick="doAction()">Click me!</div>
 😡 <div role="button" tabindex="0" onclick="doAction()">Click me!</div>
 ```
 
-Si se va a utilizar un elemento no semántico para trigger de un evento JS, se debe agregar un `keydown/keyup` event.
+- Si se va a utilizar un elemento no semántico para trigger de un evento JS, se debe agregar un `keydown/keyup` event.
 
-Se debe agregar el título de la página para que el Screen Reader le diga a los usuarios donde están posicionados, esto es especialmente para las SPA que funcionan desde un solo index.
+- Se debe agregar el título de la página para que el Screen Reader le diga a los usuarios donde están posicionados, esto es especialmente para las SPA que funcionan desde un solo index.
+
+
 
 <a id="acc13"></a>
 
@@ -560,7 +616,7 @@ Sin embargo, sí a un CSS de mi pagina le agrego los atributos **`display:none`*
 
 Hay varios tipos de problemas de visión con respecto a los colores, el más común, es con el verde, también hay varias herramientas en internet que ayudan a simular el cómo se vería tu web si lo viera alguien con ciertos problemas visuales.
 
-<a id="acc16"></a>
+<a id="acc17"></a>
 
 ### **Que practicas conlleva tener un HTML Accesible?**
 
@@ -709,7 +765,7 @@ Hay varios tipos de problemas de visión con respecto a los colores, el más com
 </nav>
 ```
 
-<a id="acc17"></a>
+<a id="acc16"></a>
 
 ### **Nombrar algunas ARIAS existentes**
 
@@ -744,6 +800,7 @@ Hay varios tipos de problemas de visión con respecto a los colores, el más com
 
 ```html
 <button aria-label="Close"></button>
+<img src="logo.png" aria-label="Company Logo"/>
 ```
 
 * `aria-describedby`: Se usa para describir un elemento
@@ -753,11 +810,14 @@ Hay varios tipos de problemas de visión con respecto a los colores, el más com
 <button aria-describedby="more-info">Self-destruct</button>
 ```
 
-* `aria-labelledby`: Se usa para referenciar un elemento por su ID
+* `aria-labelledby`: Se usa para referenciar un elemento por su ID, a que elemento se le hace referencia. No usarlo en conjunto con `aria-label` ya que el mismo no va a funcionar. 
 
 ```html
-<h1 id="title">My title</h1>
-<div aria-labelledby="title">...</div>
+<div id="buttonLabel">Submit</div>
+<button aria-labelledby="buttonLabel">Click me</button>
+
+<label id="nameLabel">Name:</label>
+<input type="text" aria-labelledby="nameLabel">
 ```
 
 * `aria-controls`: Se usa para referenciar un elemento por su ID
@@ -784,3 +844,262 @@ Hay varios tipos de problemas de visión con respecto a los colores, el más com
 ```html
 <div aria-busy="true"></div>
 ```
+
+* `aria-placeholder`: Es para darle una cierta pista de lo que se espera en un cierto input en un formulario
+
+```html
+<input type="text" aria-placeholder="Enter your name">
+```
+
+* `aria-haspopup`: Indican cuando un pop-up va a ser triggereado al interactuar con el elemento, como un button. Toma un valor booleano. 
+
+```html
+<button aria-haspopup="true">Open menu</button>
+```
+
+* `aria-expanded`: Indica si un elemento está expandido o colapsado. Toma un valor booleano.
+
+```html
+<button aria-expanded="false">Open menu</button>
+```
+
+* `aria-hidden`: Indica si un elemento está oculto o no. Toma un valor booleano. Recibio hace poco una actualizacion que permite que oculte al mismo estilo de `display: none` el elemento del DOM.   
+
+Por ejemplo, si una imagen es solo decorativa y no posee un `alt`, se puede usar `aria-hidden` para que el lector de pantalla no la lea. 
+
+```html
+<img src="decorative-image.jpg" alt="" aria-hidden="true"/>
+```
+
+* `aria-disabled`: Indica si un elemento está deshabilitado o no. Toma un valor booleano. Se utiliza cuando elemento esta disponible pero no es interactivo. 
+
+```html
+<button aria-disabled="true">Submit</button>
+```
+
+<a id="acc177"></a>
+
+### **HTML Accesible**
+
+[Volver al indice](#acc-base)
+
+- Se debe especificar el lang dentro del head del HTML, de otra forma el lector de pantalla tomara el lenguaje del ordenador por defecto para leer las cosas, y se podrian producir errores inesperados
+
+```html
+<html lang="en">
+```
+
+Y si tengo partes de la pagina en donde manejo distintos lenguajes, los mismos deben ser especificados
+
+```html
+<html lang="en">
+...
+    <body>
+        <p>I'm a sentence in English containing the part <strong lang="fr">en français</strong>.</p>
+    </body>
+</html>
+```
+
+Mismo cuando se trata de lenguajes que se leen de atras para adelante
+
+```html
+<html lang="en">
+...
+    <body>
+        <p>I'm a sentence in English containing the part <strong lang="ar" dir="rtl">في العربية</strong>.</p>
+    </body>
+</html>
+```
+
+- Se debe agregar la metadata respecto al viewport, ya que no todos los dispositivos son del mismo tamanio y es necesario que nuestra pagina funcione en todos. 
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1">
+```
+
+Puedo agregar el atributo `user-escalable` para evitar que el usuario pueda hacer zoom, pero no es recomendable ya que hay personas que necesitan hacer zoom para poder leer la pagina. Sus valores validos son 1 o 0, si se usa este ultimo, estariamos violando una regla del WCAG. 
+
+- Se debe agregar un titulo explicativo a la pagina mediante el uso de `title` dentro del head.
+
+```html
+<title>The Document Title element - HTML: HyperText Markup Language | MDN</title>
+```
+
+Se recomienda poner la informacion unica primero, y luego la informacion variable.
+
+- Ordenar de manera correcta los titulos, siendo el h1 el mas importante y el h6 el menos importante. Evitar utilizar mas de 1 `h1` por pagina, ya que esto puede confundir a los lectores de pantalla.
+
+```html
+<h1>My Favorite books by authors</h1>
+  <h2>J. K. Rowling</h2>
+    <h3>Wizarding World</h3>
+      <h4>Harry Potter and the Philosopher’s Stone</h4>
+      <h4>Harry Potter and the Chamber of Secrets</h4>
+    <h3>Robert Galbraith</h3>
+      <h4>The Cuckoo’s Calling</h4>
+      <h4>The Silkworm</h4>
+  <h2>Victor Hugo</h2>
+    <h3>The Hunchback of Notre-Dame</h3>
+```
+
+- Si uso acronimos, puedo usar `<abbr>` para definirlos, y agregar el atributo `title` para que el lector de pantalla pueda leerlo correctamente
+
+```html
+<p>My favorite book is <abbr title="Harry Potter and the Philosopher’s Stone">HP</abbr></p>
+```
+
+- Se debe agregar un `alt` a las imagenes, ya que si no se hace, el lector de pantalla no va a poder leer la imagen. Si la imagen es puramente decorativa, se puede dejar el `alt` vacio. 
+
+```html
+<img src="image.jpg" alt="My image">
+```
+
+- Se debe agregar un `alt` a los iframes, ya que si no se hace, el lector de pantalla no va a poder leer el iframe. Si el iframe es puramente decorativo, se puede dejar el `alt` vacio. 
+
+```html
+<iframe src="https://www.youtube.com/embed/3obixhGZ5ds" title="Google Pixel - Lizzo in Real Tone"></iframe>
+```
+
+- Si tengo texto entre quotes, se recomienda usar el tag `blockquote` para que el lector de pantalla lo lea correctamente
+
+```html
+<blockquote>
+  <p>My favorite book is Harry Potter and the Philosopher’s Stone</p>
+  <cite>J. K. Rowling</cite>
+</blockquote>
+```
+
+- Es sumamente importante hacer uso de Semantic HTML para la organizacion de los elementos en el documento. Como se puede ver en el codigo siguiente, se hace uso de `header`, `nav`, `main`, `section`, `article` y `footer` para organizar la pagina. 
+
+```html
+<header>
+  <h1>My Favorite books by authors</h1>
+  <nav>
+    <ul>
+      <li><a href="#rowling">J. K. Rowling</a></li>
+      <li><a href="#hugo">Victor Hugo</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <section id="rowling">
+    <h2>J. K. Rowling</h2>
+    <article>
+      <h3>Wizarding World</h3>
+      <p>...</p>
+    </article>
+    <article>
+      <h3>Robert Galbraith</h3>
+      <p>...</p>
+    </article>
+  </section>
+
+  <section id="hugo">
+    <h2>Victor Hugo</h2>
+    <article>
+      <h3>The Hunchback of Notre-Dame</h3>
+      <p>...</p>
+    </article>
+  </section>
+</main>
+<footer>
+  <p>My favorite books by authors</p>
+  <p>Copyright © 2023</p>
+</footer>
+```
+
+- Otro elemento muy importante para la navegabilidad es el uso de `tabindex`, que permite navegar por los elementos de la pagina mediante el uso del teclado. Se recomienda usarlo solo en los elementos que no son interactivos, ya que si no se hace, el lector de pantalla no va a poder leer el elemento. 
+
+```html
+<button tabindex="0">My button</button>
+```
+
+- Si tenemos un formulario con varios elementos, se recomienda usar el tag `fieldset` para agrupar los elementos y el tag `legend` para describir el grupo de elementos. 
+
+```html
+<form>
+  <fieldset>
+    <legend>My favorite books by authors</legend>
+    <label for="rowling">J. K. Rowling</label>
+    <input type="checkbox" id="rowling" name="rowling" value="rowling">
+    <label for="hugo">Victor Hugo</label>
+    <input type="checkbox" id="hugo" name="hugo" value="hugo">
+  </fieldset>
+  <input type="submit" value="Submit">
+</form>
+```
+
+Mismo caso con los botones, se recomienda usar el tag `button` para agrupar los elementos y el tag `legend` para describir el grupo de elementos. 
+
+```html
+<div role="group" aria-labelledby="buttonGroup">
+  <h2 id="buttonGroup">My favorite books by authors</h2>
+  <button id="rowling">J. K. Rowling</button>
+  <button id="hugo">Victor Hugo</button>
+</div>
+```
+
+Tambien se recomienda agregar `form instructions` para que el lector de pantalla pueda leer la instruccion del formulario. 
+
+```html
+<form>
+  <fieldset>
+    <legend>My favorite books by authors</legend>
+    <label for="rowling">J. K. Rowling</label>
+    <input type="checkbox" id="rowling" name="rowling" value="rowling">
+    <label for="hugo">Victor Hugo</label>
+    <input type="checkbox" id="hugo" name="hugo" value="hugo">
+  </fieldset>
+  <input type="submit" value="Submit">
+  <p id="formInstructions">Please select at least one author</p>
+</form>
+```
+
+Mismo con la validacion de los mismos, por ejemplo, la limitacion de caracteres en un input 
+
+```html
+<input type="text" id="name" name="name" maxlength="10">
+<p id="nameError" class="error">Please enter a name with less than 10 characters</p>
+```
+
+- Si tenemos links en nuestro documento, se recomienda usar el tag `a` para agrupar los elementos y el tag `aria-label` para describir el grupo de elementos. 
+
+```html
+<a href="https://www.google.com" aria-label="Google">Google</a>
+<a href="https://www.facebook.com" aria-label="Facebook">Facebook</a>
+<a href="https://www.twitter.com" aria-label="Twitter">Twitter</a>
+```
+
+En CSS tenemos la posibilidad de eliminar el estilo de los links, pero no se recomienda ya que esto puede confundir al lector de pantalla, ya que el mismo puede no reconocer si el link fue visitado o no. 
+
+```css
+a {
+  text-decoration: none;
+  color: inherit;
+}
+```
+
+<a id="acc178"></a>
+
+### **Javascript Accesible**
+
+[Volver al indice](#acc-base)
+
+Depende el uso que se le de en el mismo, JS puede afectar la accesibilidad de nuestra pagina, muchas veces aplicamos eventos que afectan la accesibilidad sin darnos cuenta, aunque al mismo tiempo, podemos utilizarlo tambien para mejorarlo de las siguientes formas:
+
+- **Focus**: Se puede usar JS para manejar el focus de los elementos, por ejemplo, si tenemos un modal, podemos usar JS para que el focus quede dentro del modal y no se escape al resto de la pagina.
+- **Keyboard events**: Se pueden usar JS para manejar los eventos de teclado, por ejemplo, si tenemos un dropdown, podemos usar JS para que el dropdown se cierre al presionar la tecla ESC.
+- **ARIA**: Se pueden usar JS para manejar los atributos ARIA, por ejemplo, si tenemos un dropdown, podemos usar JS para que el atributo `aria-expanded` cambie de valor al abrir o cerrar el dropdown.
+- **Live regions**: Se pueden usar JS para manejar las regiones vivas, por ejemplo, si tenemos un mensaje de error, podemos usar JS para que el mensaje de error se lea al cambiar el valor del atributo `aria-live`.
+- **Focus management**: Se pueden usar JS para manejar el focus de los elementos, por ejemplo, si tenemos un modal, podemos usar JS para que el focus quede dentro del modal y no se escape al resto de la pagina.
+
+Hay diversos **patrones** que podemos aplicar a nuestro codigo para mejorar la accesibilidad de nuestra pagina, como por ejemplo:  
+
+- **Modal**: Se puede usar JS para manejar el focus de los elementos, por ejemplo, si tenemos un modal, podemos usar JS para que el focus quede dentro del modal y no se escape al resto de la pagina.
+- **Dropdown**: Se pueden usar JS para manejar los eventos de teclado, por ejemplo, si tenemos un dropdown, podemos usar JS para que el dropdown se cierre al presionar la tecla ESC.
+- **Tabs**: Se pueden usar JS para manejar los eventos de teclado, por ejemplo, si tenemos un tabs, podemos usar JS para que el tabs se cierre al presionar la tecla ESC.
+- **Accordion**: Se pueden usar JS para manejar los eventos de teclado, por ejemplo, si tenemos un accordion, podemos usar JS para que el accordion se cierre al presionar la tecla ESC.
+- **Tooltip**: Se pueden usar JS para manejar los eventos de teclado, por ejemplo, si tenemos un tooltip, podemos usar JS para que el tooltip se cierre al presionar la tecla ESC.
+- **Carousel**: Se pueden usar JS para manejar los eventos de teclado, por ejemplo, si tenemos un carousel, podemos usar JS para que el carousel se cierre al presionar la tecla ESC.
+- **Datepicker**: Se pueden usar JS para manejar los eventos de teclado, por ejemplo, si tenemos un datepicker, podemos usar JS para que el datepicker se cierre al presionar la tecla ESC.
+- **Slider**: Se pueden usar JS para manejar los eventos de teclado, por ejemplo, si tenemos un slider, podemos usar JS para que el slider se cierre al presionar la tecla ESC.

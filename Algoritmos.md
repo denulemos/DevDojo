@@ -1,6 +1,6 @@
 <a name="alg-base"></a>
 
-# Algoritmos
+# Algoritmos, Manejo de Datos y Tipos de Programacion
 
 (Mayoria de ejemplos hechos en Java)
 
@@ -106,6 +106,26 @@
 |[Estructuras de Datos](#alg36) |
 | [Recursividad](#alg52) |
 | [Factorial](#alg53) |
+
+<a name="alg-base-obj"></a>
+
+| Programación Funcional y Orientada a Objetos |
+|----------|
+| [Que es la programacion orientada a objetos?](#var24) |
+| [Que es la programacion funcional?](#var27-1) 💛 |
+| [Que es el Function Factory?](#var20) |
+| [Que es el Currying?](#var23)  💛 |
+| [¿Qué son las funciones puras y cómo se relacionan con la programación funcional?](#var23-1)|
+| [¿Qué ventajas ofrece la inmutabilidad al manejar estructuras de datos? Proporciona un ejemplo práctico.](#ent14) |
+
+<a name="alg-base-async"></a>
+
+| Manejo de Eventos y Asincronía |
+|----------|
+| [Event delegation](#var11) |
+| [Bubble vs Capture](#var15) |
+| [Funciones de "bloqueo" y "no bloqueo"](#var13) |
+|[¿Cómo implementarías un patrón pub/sub para manejar eventos entre diferentes partes de una aplicación?](#var10-5)|
 
 ---
 
@@ -1876,3 +1896,257 @@ function factorial(n) {
 // Ejemplo de uso
 console.log(factorial(5)); // Output: 120
 ```
+
+<a id="var24"></a>
+
+### **Que es la programacion orientada a objetos?**
+
+[Volver al indice](#alg-base-3)
+
+La programación orientada a objetos (POO) es un estilo de programación que organiza el código en "objetos". Un objeto es como una caja que contiene datos (llamados atributos) y cosas que puede hacer (llamadas métodos).
+
+Por ejemplo, imagina que tienes un objeto llamado "Perro". Este objeto podría tener atributos como "nombre" y "edad", y métodos como "ladrar()" o "correr()". Así, puedes crear muchos perros con diferentes nombres y edades, pero todos pueden ladrar y correr.
+
+La POO se basa en cuatro ideas principales:
+
+1. **Clases y objetos**: Una clase es como un molde (por ejemplo, "Perro"), y un objeto es una cosa creada a partir de ese molde (por ejemplo, "mi perro Fido").
+2. **Encapsulación**: Los datos de un objeto están protegidos y solo se pueden cambiar usando sus métodos.
+3. **Herencia**: Puedes crear nuevas clases basadas en otras. Por ejemplo, una clase "Perro" puede heredar de una clase más general llamada "Animal".
+4. **Polimorfismo**: Los objetos pueden comportarse de manera diferente según el contexto. Por ejemplo, un método "hacerSonido()" puede hacer que un perro ladre y un gato maúlle.
+
+En resumen, la POO te ayuda a organizar tu código de manera que sea más fácil de entender, reutilizar y mantener.
+
+<a id="var27-1"></a>
+
+### **Que es la programacion funcional?** 💛
+
+[Volver al indice](#alg-base-obj)
+
+Es un paradigma de programación que trata de minimizar los cambios de estado y los datos mutables. Se basa en funciones puras, que son funciones que no tienen efectos secundarios y siempre devuelven el mismo resultado para los mismos argumentos.
+
+```jsx
+const sum = (a, b) => a + b;
+```
+
+La programación funcional se basa en los siguientes principios:
+
+- **Inmutabilidad**: Los datos no cambian una vez que se han creado.
+- **Funciones puras**: Las funciones no tienen efectos secundarios y siempre devuelven el mismo resultado para los mismos argumentos.
+- **Composición de funciones**: Las funciones se pueden combinar para crear funciones más complejas.
+- **Declaratividad**: Se centra en qué se quiere hacer, no en cómo hacerlo.
+- **Transparencia referencial**: Dado un valor de entrada, la función siempre devolverá el mismo valor de salida.
+- **Recursión**: Se pueden definir funciones que se llaman a sí mismas para resolver problemas de manera iterativa.
+- **Funciones de orden superior**: Las funciones pueden tomar otras funciones como argumentos o devolver funciones como resultado.
+- **Evaluación perezosa**: Los valores se calculan solo cuando se necesitan.
+- **Currying**: Transformar una función que toma varios argumentos en una secuencia de funciones que toman un solo argumento.
+
+<a id="var20"></a>
+
+### **Que es el Function Factory?**
+
+[Volver al indice](#alg-base-obj)
+
+Son funciones que crean funciones u objetos. Con este patron se puede implementar Currying
+
+```jsx
+const crearUsuario = ({ userName, avatar }) => ({
+      id: crearUnID(),
+      userName,
+      avatar,
+      cambiarUserName (userName) {
+        this.userName = userName;
+        return this;
+      },
+      cambiarAvatar (url) {
+        // ejecuta logica para obtener el avatar desde la url
+        const nuevoAvatar = obtenerAvtarDesdeUrl(url)
+        this.avatar = nuevoAvatar
+        return this
+      }
+    });
+
+        console.log(crearUsuario({ userName: 'Bender', avatar: 'bender.png' }));
+
+    {
+      "id":"17hakg9a7jas",
+      "avatar": "bender.png",
+      "userName": "Bender",
+      "cambiarUsername": [Function cambiarUsername]
+      "cambiarAvatar": [Function cambiarAvatar]
+
+    }
+    */
+```
+
+<a id="var23"></a>
+
+### **Que es el Currying?** 💛
+
+[Volver al indice](#alg-base-obj)
+
+Es una técnica de programación funcional que consiste en transformar una función que recibe múltiples argumentos en una secuencia de funciones que reciben un solo argumento.
+
+```jsx
+function add(x) {
+  return function(y) {
+    return function(z) {
+      return x + y + z;
+    }
+  }
+}
+add(10)(20)(30); // 60
+```
+
+<a id="var23-1"></a>
+
+### **¿Qué son las funciones puras y cómo se relacionan con la programación funcional?**
+
+[Volver al indice](#alg-base-obj)
+
+Las funciones puras son funciones que siempre devuelven el mismo resultado dadas los mismos parametros, no dependen de factores externos como states o variables.
+
+```jsx
+function suma (a, b) {
+  return a + b;
+}
+
+function agregarElemento(array, elemento) {
+  return [...array, elemento]; // Crea un nuevo array sin modificar el original
+}
+
+const miArray = [1, 2, 3];
+const nuevoArray = agregarElemento(miArray, 4);
+
+console.log(miArray);      // [1, 2, 3] (el array original no se modifica)
+console.log(nuevoArray);   // [1, 2, 3, 4]
+
+```
+
+Una funcion que no es pura se puede ver asi:
+
+```jsx
+let contador = 0;
+
+function incrementar(a) {
+  contador++; // Modifica el estado externo
+  return a + contador;
+}
+```
+
+Si utilizas funciones puras, puedes:
+
+- Evitar errores al no modificar datos globales ni estados externos.
+- Hacer pruebas unitarias fácilmente, porque su comportamiento es predecible.
+- Aprovechar características como la memoización, donde puedes guardar los resultados de funciones puras y reutilizarlos para optimización.
+
+<a id="var11"></a>
+
+### **Event delegation**
+
+[Volver al indice](#alg-base-async)
+
+Por ejemplo, si tenemos botones y queremos hacer eventos para todos los botones, no es viable hacer un evento por boton ya que no es escalable.
+
+Agregamos el evento al container y dependiendo donde es el click (en cual boton), se detecta una cierta clase o propiedad, y se ejecuta el evento correspondiente utilizando [`e.target`](http://e.target) para identificar el elemento, por ejemplo.
+
+<a id="var15"></a>
+
+### **Bubble vs Capture**
+
+[Volver al indice](#alg-base-async)
+
+Cuando agregamos un elemento parece que solo lo agregamos a un elemento DOM pero en realidad este se propaga en una direccion. Podemos elegir cual direccion escuchan nuestros eventos.
+
+- Fase Capture: Llega al evento que dispara el evento
+- Fase Target
+- Fase Bubbling
+
+<a id="var13"></a>
+
+### **Funciones de "bloqueo" y "no bloqueo"**
+
+[Volver al indice](#alg-base-async)
+
+Cuando emites una función de bloqueo, las demás piezas de código detienen su ejecución hasta que haya sido completado un evento designado de Entrada/Salida.
+
+A su vez, las funciones de no bloqueo le permiten al desarrollador realizar múltiples tareas (Manteniendo múltiples códigos en ejecución) mientras que simultáneamente se realizan múltiples eventos de Entrada/Salida.
+
+<a id="var10-5"></a>
+
+### **¿Cómo implementarías un patrón pub/sub para manejar eventos entre diferentes partes de una aplicación?**
+
+[Volver al indice](#alg-base-async)
+
+El patrón pub/sub (publicación/suscripción) es un patrón de diseño de software que permite la comunicación entre diferentes partes de una aplicación.
+
+```jsx
+// Implementación de un patrón pub/sub
+const pubsub = (function() {
+  const events = {};
+
+  // Suscribirse a un evento
+  function subscribe(eventName, fn) {
+    events[eventName] = events[eventName] || [];
+    events[eventName].push(fn);
+  }
+
+  // Publicar un evento
+  function publish(eventName, data) {
+    if (events[eventName]) {
+      events[eventName].forEach((fn) => {
+        fn(data);
+      });
+    }
+  }
+
+  return {
+    subscribe,
+    publish
+  };
+})();
+
+// Uso del patrón pub/sub
+function mySubscriber(data) {
+  console.log(data);
+}
+
+// Suscribirse a un evento
+pubsub.subscribe('event1', mySubscriber); // Suscribirse a 'event1'
+pubsub.publish('event1', 'hello, world!'); // Publicar 'event1'
+
+// Salida: 'hello, world!'
+```
+
+<a id="ent14"></a>
+
+### **¿Qué ventajas ofrece la inmutabilidad al manejar estructuras de datos? Proporciona un ejemplo práctico.**
+
+[Volver al indice](#alg-base-obj)
+
+Solo a modo de repaso, la inmutabilidad es algo muy propio de la programacion funcional. Algunas de sus ventajas son:
+
+- Al no estar modificando directamente mis datos, evito errores de estado compartido
+- Eliminamos los errores de concurrencia, ya que los datos no estan siendo modificados, entonces no tengo necesidad de tener si o si la ultima version de los mismos para poder continuar
+- Se pueden implementar facilmente funciones de `undo`, ya que se puede volver a la version anterior muy facilmente
+- Integridad de datos, ya que al no estar modificando los datos, no se pueden corromper los mismos
+
+```typescript
+const tareasOriginales = [
+    { id: 1, texto: 'Hacer la compra', completada: false },
+    { id: 2, texto: 'Llamar al médico', completada: true }
+];
+
+function agregarTarea(tareas, nuevaTarea) {
+    return [...tareas, nuevaTarea];
+}
+
+const nuevaTarea = { id: 3, texto: 'Pagar el alquiler', completada: false };
+const tareasActualizadas = agregarTarea(tareasOriginales, nuevaTarea);
+
+console.log(tareasOriginales); // La lista original permanece sin cambios
+console.log(tareasActualizadas); // Nueva lista con la tarea agregada
+```
+
+Un ejemplo de la IA que me gusto mucho para explicar esto: 
+
+Imagina que estás escribiendo un documento en un procesador de textos. Cada vez que haces un cambio, como añadir una palabra, el programa no borra todo el documento y lo reescribe desde cero con la palabra añadida. En lugar de eso, crea una nueva versión del documento con la palabra incluida. Si algo sale mal mientras escribes, siempre puedes volver a la versión anterior sin problemas. Esto es similar a cómo funciona la inmutabilidad en las aplicaciones de software.

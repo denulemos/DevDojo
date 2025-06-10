@@ -1,11 +1,62 @@
 <a name="react-base"></a>
 
-| React |
+| Conceptos Generales |
 |----------|
 | [¿Qué es React?](#rea47) |
-|[Libreria vs Framework 💛](#rea47-2)|
 | [Para que es el comando React eject?](#rea49) |
 | [Que son las Ref?](#rea52-5) |
+|[Libreria vs Framework 💛](#rea47-2)|
+| [¿Qué es el Virtual DOM?](#rea39) 💛|
+| [Que es React Fiber?](#rea24) |
+|[Que tener en cuenta para tener una buena performance en React](#rea24-1) 💛|
+|[¿Qué es un Fragment en React y para qué se utiliza?](#rea44)|
+| [Funciones de alto nivel / Higher order Function](#rea43) |
+| [Patrones de disenio en React](#ent44) |
+|[¿Qué es el modo estricto de React (React.StrictMode) y para qué sirve?](#rea68)|
+|[Consideraciones de Seguridad en React 🔐](#rea69)|
+
+| Hooks |
+|----------|
+| [useState](#rea4) 💛|
+| [useEffect](#rea3) 💛|
+|[Puede el useEffect ser asincrono? Porque?](#rea3-2) 💛|
+| [useRef](#rea6) 💛|
+| [useReducer](#rea8) 💛|
+| [useCallback](#rea1) 💛|
+| [useMemo](#rea7) 💛|
+|[¿Cuál es la diferencia entre useCallback y useMemo?](#rea7-1) 💛|
+| [useLayoutEffect](#rea9) |
+|[¿Qué diferencia hay entre useEffect y useLayoutEffect? ¿Cuándo usarías cada uno?](#rea9-1)|
+|[¿Qué son los custom hooks? ¿Cómo los crearías y para qué sirven?](#rea46) 💛|
+| [useActionState()](#ent69) |
+| [startTransition()](#ent70) |
+| [useFormStatus()](#ent71) |
+| [useOptimistic()](#ent72) |
+| [SSR - React Server Components](#ent69-1) |
+
+| Manejo de Estado |
+|----------|
+| [¿Que es Redux?](#rea18) 💛|
+| [Cuando conviene usar Redux?](#rea19) |
+| [¿Cuales son los beneficios de usar Redux?](#rea20) |
+| [¿Cual es el flujo de Redux?](#rea22) |
+| [Redux Async Flow](#ent53) |
+| [useDispatch](#rea2)|
+| [useSelector](#rea5) |
+| [Que es ContextAPI?](#rea23) 💛|
+| [Redux vs ContextAPI](#rea21) 💛|
+|[¿Cómo manejarías el estado global sin usar Redux ni Context API?](#rea62) 💛|
+
+| Performance |
+|----------|
+|[¿Cómo funcionan las claves (keys) en las listas de React? ¿Por qué son importantes?](#rea45)|
+|[¿Qué son las "re-renderizaciones innecesarias" y cómo las evitarías?](#rea455) 💛|
+|[¿Qué herramientas usarías para identificar problemas de rendimiento en una aplicación React?](#rea456) 💛|
+|¿Cómo se gestiona el "debounce" o "throttle" en React para eventos como el scroll o input?|
+|¿Cómo implementarías un "Suspense" en React para manejar la carga de datos de forma asincrónica? 💛|
+
+| Ciclo de vida y Componentes Clásicos |
+|----------|
 | [De que tratan los Ciclos de Vida Componentes?](#react62) |
 |[Componentes de clase vs Componentes de Funcion 💛](#rea62-1)|
 | [componentWillReceiveProps()](#rea55) |
@@ -15,68 +66,10 @@
 | [componentDidUpdate()](#rea59) |
 | [shouldComponentUpdate()](#rea60) |
 | [componentWillUpdate()](#rea61) |
-| [useCallback](#rea1) 💛|
-| [useDispatch - Hook Redux](#rea2)|
-| [useEffect](#rea3) 💛|
-|[Puede el useEffect ser asincrono? Porque?](#rea3-2) 💛|
-| [useState](#rea4) 💛|
-| [useSelector - Hook Redux](#rea5) |
-| [useRef](#rea6) 💛|
-| [useMemo](#rea7) 💛|
-|[¿Cuál es la diferencia entre useCallback y useMemo?](#rea7-1) 💛|
-| [useReducer](#rea8) 💛|
-| [useLayoutEffect](#rea9) |
-|[¿Qué diferencia hay entre useEffect y useLayoutEffect? ¿Cuándo usarías cada uno?](#rea9-1)|
-| [¿Que es Redux?](#rea18) 💛|
-| [Cuando conviene usar Redux?](#rea19) |
-| [¿Cuales son los beneficios de usar Redux?](#rea20) |
-| [Redux vs ContextAPI](#rea21) 💛|
-| [¿Cual es el flujo de Redux?](#rea22) |
-| [Que es ContextAPI?](#rea23) 💛|
-| [Que es React Fiber?](#rea24) |
-| [Para que sirven las claves o Keys en React?](#rea25) |
-|[Que tener en cuenta para tener una buena performance en React](#rea24-1) 💛|
-| [¿Qué es el Virtual DOM?](#rea39) 💛|
-| [Redux Async Flow](#ent53) |
-| [useActionState() React](#ent69) |
-| [startTransition() React](#ent70) |
-| [useFormStatus() React](#ent71) |
-| [useOptimistic() React](#ent72) |
-| [React Server Components](#ent69-1) |
-| [Funciones de alto nivel / Higher order Function](#rea43) |
-|Para que tipo de proyectos React es recomendable?|
-|¿Cuál es la diferencia entre React.createElement() y JSX?|
-|¿Qué es un Fragment en React y para qué se utiliza?|
-|¿Cómo funcionan las claves (keys) en las listas de React? ¿Por qué son importantes?|
-|¿Qué es un "error boundary" y cómo se implementa en React?|
-|¿Qué son los custom hooks? ¿Cómo los crearías y para qué sirven? 💛|
-|¿Qué es el hook useImperativeHandle y en qué casos se utiliza?|
-|¿Qué es el hook useTransition y cómo mejora la experiencia de usuario en aplicaciones de React?|
-|¿Cómo manejarías el estado global sin usar Redux ni Context API? 💛|
-|¿Qué son los Higher-Order Components (HOCs) y cómo se diferencian de los Render Props? 💛|
-|¿Qué es el patrón "Compound Components" en React y cuándo sería útil implementarlo?|
-|¿Cómo manejarías la composición de componentes en lugar de la herencia en React? 💛|
-|¿Qué es un "portal" en React y para qué se utiliza?|
-|¿Cómo implementarías un "Suspense" en React para manejar la carga de datos de forma asincrónica? 💛|
-|¿Qué son las "re-renderizaciones innecesarias" y cómo las evitarías? 💛|
-|¿Cómo usarías React.memo para mejorar la performance de un componente? 💛|
-|¿Qué herramientas usarías para identificar problemas de rendimiento en una aplicación React? 💛|
-|¿Cómo se gestiona el "debounce" o "throttle" en React para eventos como el scroll o input?|
-|¿Cómo integrarías una librería de terceros en un proyecto de React?|
-|¿Qué consideraciones tienes al usar React con TypeScript?|
-|¿Qué diferencia hay entre usar un API REST y GraphQL con React?|
-|¿Cómo manejarías la gestión de estados en aplicaciones grandes sin que se vuelva complicado?|
-|¿Cómo realizarías pruebas unitarias para un componente React?|
-|¿Qué es React Testing Library y en qué se diferencia de otras herramientas como Enzyme?|
-|¿Cómo probarías un hook personalizado?|
-|¿Qué es el modo estricto de React (React.StrictMode) y para qué sirve?|
-|¿Cómo manejarías la internacionalización (i18n) en una aplicación React?|
-|¿Qué diferencia hay entre SSR (Server-Side Rendering), CSR (Client-Side Rendering) y SSG (Static Site Generation)?|
-|¿Qué son los Concurrent Features de React y cómo afectan la experiencia del usuario?|
-|¿Qué problemas podrías encontrar al implementar un formulario grande en React y cómo los solucionarías?|
-|¿Cómo manejarías la gestión de rutas en una aplicación React?|
-|¿Qué es el "code splitting" y cómo lo implementarías en una aplicación React?|
-|¿Cómo manejarías la autenticación y autorización en una aplicación React?|
+
+| Testing |
+|----------|
+|[Nombrar distintas herramientas de Testing para React](#rea99)|
 
 ---
 
@@ -962,32 +955,6 @@ React Fiber organiza la renderización en dos fases principales:
 
 React Fiber no cambia cómo los desarrolladores escriben código React, pero mejora significativamente el rendimiento y la flexibilidad de las aplicaciones React modernas. Es la base que permite que React maneje de manera eficiente aplicaciones cada vez más interactivas y complejas.
 
-<a id="rea25"></a>
-
-### **Para que sirven las claves o Keys en React?**
-
-[Volver al indice](#rea-base)
-
-Se usan las claves para diferenciar entre simples elementos DOM virtuales con los que son unicos. Ayudan a React a reciclar elementos DOM existentes para que la libreria pueda ejecutarse y renderizarse mas rápidamente, ya que React recicla los elementos que no fueron modificados de los que si para no renderizarlos cuando no es necesario. Este elemento se usa mas que nada en iteraciones de listas.
-
-Esto optimiza el proceso de **reconciliacion**
-
-El key no afecta el renderizado en si, es por eso que igualmente funciona el render, solo se muestra un warning.
-
-```jsx
-const numbers = [1, 2, 3, 4, 5];
-const listItems = numbers.map((number) =>
-  <li key={number.toString()}>
-    {number}
-  </li>
-);
-```
-
-Su no uso ocasiona
-
-- Renderizados innecesarios, ya que no se pueden identificar que elementos especificos cambiaron
-- Pérdida de estado en los componentes (por ejemplo, un input pierde su texto cuando cambia el orden de la lista).
-
 <a id="rea24-1"></a>
 
 ### **Que tener en cuenta para tener una buena performance en React** 💛
@@ -1525,3 +1492,730 @@ const Dashboard = () => {
 ```
 
 Hoy en dia los HOC son utiles cuando se utilizan patrones de clases, o cuando se necesita un mayor control sobre el ciclo de vida del componente.
+
+<a id="ent44"></a>
+
+### **Patrones de disenio en React**
+
+[Volver al indice](#react-base)
+
+**Componentizacion**
+
+Es el separar la interfaz de usuario en componentes reutilizables, es la base de React en si mismo.
+
+**Contenedor y Presentación (Container-Presenter Pattern)**
+
+Separar los componentes que se encargan de la UI de los componentes de logica. Se le dice componente presentacion y componente contenedor
+
+```jsx
+// Componente Presentación
+const UserList = ({ users }) => (
+  <ul>
+    {users.map((user) => (
+      <li key={user.id}>{user.name}</li>
+    ))}
+  </ul>
+);
+
+// Componente Contenedor
+const UserContainer = () => {
+  const [users, setUsers] = React.useState([]);
+
+  React.useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then((res) => res.json())
+      .then((data) => setUsers(data));
+  }, []);
+
+  return <UserList users={users} />;
+};
+
+export default UserContainer;
+```
+
+**Higher-Order Components (HOCs)**
+
+Como se explico anteriormente, es un patron de disenio muy comunmente usado en React en donde una funcion recibe como parametro un componente y devuelve un componente nuevo con una funcionalidad extendida.
+
+```jsx
+const withLogging = (WrappedComponent) => {
+  return (props) => {
+    console.log('Componente renderizado con props:', props);
+    return <WrappedComponent {...props} />;
+  };
+};
+
+// Uso
+const MyComponent = ({ message }) => <div>{message}</div>;
+const MyComponentWithLogging = withLogging(MyComponent);
+
+// Render
+<MyComponentWithLogging message="Hola, mundo!" />;
+```
+
+**Render Props**
+
+Es un patron de disenio que permite a los componentes compartir logica de renderizado con otros componentes.
+
+```jsx
+const Mouse = ({ render }) => {
+  const [position, setPosition] = React.useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (event) => {
+    setPosition({
+      x: event.clientX,
+      y: event.clientY
+    });
+  };
+
+  React.useEffect(() => {
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
+  return render(position);
+};
+
+// Uso
+const App = () => (
+  <Mouse
+    render={({ x, y }) => (
+      <div>
+        <h1>El mouse está en la posición ({x}, {y})</h1>
+      </div>
+    )}
+  />
+);
+```
+
+**Custom Hooks**
+
+Es un patron de disenio que permite extraer logica de un componente en una funcion reutilizable. reemplaza en parte a los HOC
+
+```jsx
+const useMouse = () => {
+  const [position, setPosition] = React.useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (event) => {
+    setPosition({
+      x: event.clientX,
+      y: event.clientY
+    });
+  };
+
+  React.useEffect(() => {
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
+  return position;
+};
+
+// Uso
+const App = () => {
+  const { x, y } = useMouse();
+
+  return (
+    <div>
+      <h1>El mouse está en la posición ({x}, {y})</h1>
+    </div>
+  );
+};
+```
+
+**Context API - Context pattern**
+
+Es un patron de disenio que permite pasar datos a traves del arbol de componentes sin tener que pasar props manualmente en cada nivel. Elimina el Prop Drilling.
+
+```jsx
+const ThemeContext = React.createContext();
+
+const ThemeProvider = ({ children }) => {
+  const [theme, setTheme] = React.useState('light');
+  return (
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+};
+
+const ThemeSwitcher = () => {
+  const { theme, setTheme } = React.useContext(ThemeContext);
+  return (
+    <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
+      Cambiar a {theme === 'light' ? 'oscuro' : 'claro'}
+    </button>
+  );
+};
+
+const App = () => (
+  <ThemeProvider>
+    <ThemeSwitcher />
+  </ThemeProvider>
+);
+```
+
+**Compound Components**
+
+Es un patron de disenio que permite a los componentes trabajar juntos de manera mas eficiente, como por ejemplo un `select` y `option`
+
+```jsx
+const Select = ({ children }) => {
+  const [selected, setSelected] = React.useState(null);
+
+  const onSelect = (value) => {
+    setSelected(value);
+  };
+
+  return (
+    <div>
+      {React.Children.map(children, (child) => {
+        if (child.type === Option) {
+          return React.cloneElement(child, {
+            onSelect,
+            selected: child.props.value === selected
+          });
+        }
+        return child;
+      })}
+    </div>
+  );
+};
+
+const Option = ({ value, onSelect, selected, children }) => (
+  <div
+    onClick={() => onSelect(value)}
+    style={{ background: selected ? 'lightblue' : 'white' }}
+  >
+    {children}
+  </div>
+);
+
+// Uso
+
+const App = () => (
+  <Select>
+    <Option value="1">Opción 1</Option>
+    <Option value="2">Opción 2</Option>
+    <Option value="3">Opción 3</Option>
+  </Select>
+);
+```
+
+**Controlled y Uncontrolled Components**
+
+Es un patron de disenio que permite manejar los componentes de una forma mas eficiente, en los **Controlled Components** el estado del componente es manejado por React, mientras que en los **Uncontrolled Components** el estado es manejado por el propio componente.
+
+```jsx
+// Controlled Component
+const ControlledInput = () => {
+  const [value, setValue] = React.useState('');
+
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
+
+  return <input value={value} onChange={handleChange} />;
+};
+
+// Uncontrolled Component
+const UncontrolledInput = () => {
+  const inputRef = React.useRef();
+
+  const handleClick = () => {
+    console.log(inputRef.current.value);
+  };
+
+  return (
+    <div>
+    // El estado es manejado por el DOM
+      <input ref={inputRef} />
+      <button onClick={handleClick}>Obtener valor</button>
+    </div>
+  );
+};
+```
+
+<a id="rea68"></a>
+
+### **¿Qué es el modo estricto de React (React.StrictMode) y para qué sirve?**
+
+[Volver al indice](#react-base)
+
+React.StrictMode es una herramienta de desarrollo que React proporciona para identificar posibles problemas en una aplicación. Es un componente que no afecta el comportamiento de la aplicación en producción, pero ayuda a detectar errores y advertencias en el desarrollo.
+
+1. **Identificación de problemas de ciclo de vida**: Detecta métodos de ciclo de vida obsoletos o inseguros, como `componentWillMount`, `componentWillReceiveProps`, y `componentWillUpdate`.
+
+1. **Advertencias sobre efectos secundarios**: Ejecuta los efectos secundarios (como los definidos en `useEffect`) dos veces en modo desarrollo para asegurarse de que sean puros y no contengan errores.
+
+1. **Detección de APIs obsoletas**: Identifica el uso de APIs de React que están en desuso o que podrían causar problemas en el futuro.
+
+1. **Comprobación de referencias de cadenas**: Detecta el uso de referencias de cadenas (`string refs`), que son una práctica obsoleta.
+
+1. **Ayuda con la migración a nuevas versiones**: Facilita la transición a nuevas versiones de React al advertir sobre prácticas que podrían no ser compatibles en el futuro.
+
+```jsx
+import React from 'react';
+
+function App() {
+  return (
+   <React.StrictMode>
+    <MyComponent />
+   </React.StrictMode>
+  );
+}
+
+export default App;
+```
+
+- Mejora la calidad del código al identificar problemas potenciales.
+- Ayuda a adoptar mejores prácticas de React.
+- Facilita la migración a futuras versiones de React.
+- Solo funciona en modo desarrollo, no afecta el comportamiento en producción.
+- Puede generar advertencias adicionales que no siempre son críticas.
+
+<a id="rea69"></a>
+
+### **Consideraciones de Seguridad en React 🔐**
+
+[Volver al indice](#react-base)
+
+**Evitar la inyección de código malicioso (XSS)**
+
+- Nunca uses `dangerouslySetInnerHTML` a menos que sea absolutamente necesario. Si lo usas, asegúrate de sanitizar el contenido con una biblioteca como `DOMPurify`.
+- Valida y escapa cualquier dato que provenga de fuentes externas antes de renderizarlo.
+
+```jsx
+import DOMPurify from 'dompurify';
+
+const sanitizedHTML = DOMPurify.sanitize(untrustedHTML);
+<div dangerouslySetInnerHTML={{ __html: sanitizedHTML }} />;
+```
+
+**Usar HTTPS**
+
+- Asegúrate de que tu aplicación esté servida a través de HTTPS para proteger la transmisión de datos entre el cliente y el servidor.
+
+**Proteger las claves API**
+
+- Nunca expongas claves API en el código del cliente. Usa un servidor intermedio para manejar las solicitudes que requieran autenticación.
+
+**Implementar Content Security Policy (CSP)**
+
+Configura una política de seguridad de contenido para prevenir la ejecución de scripts no confiables.
+
+```html
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://apis.google.com">
+```
+
+**Autenticación y Autorización**
+
+- Usa bibliotecas como `jsonwebtoken` para manejar tokens de autenticación de manera segura.
+- Protege las rutas sensibles con componentes de alto orden o hooks personalizados.
+
+```jsx
+const ProtectedRoute = ({ children }) => {
+  const isAuthenticated = useAuth();
+  return isAuthenticated ? children : <Redirect to="/login" />;
+};
+```
+
+**Evitar la exposición de datos sensibles**
+
+No almacenes información sensible como contraseñas o tokens en el estado global o en el almacenamiento local sin cifrar.
+
+**Validación de entradas**
+
+Valida todas las entradas del usuario tanto en el cliente como en el servidor para prevenir ataques como SQL Injection o XSS.
+
+**Mantén tus dependencias actualizadas**
+
+Usa herramientas como `npm audit` o `yarn audit` para identificar vulnerabilidades en las dependencias.
+
+**Evitar el uso de eval()**
+
+Nunca uses `eval()` o funciones similares que ejecuten código arbitrario.
+
+**Protección contra ataques CSRF**
+Usa tokens CSRF para proteger las solicitudes sensibles.
+
+**Deshabilitar herramientas de desarrollo en producción**
+Asegúrate de que las herramientas como React Developer Tools estén deshabilitadas en el entorno de producción.
+
+```javascript
+if (process.env.NODE_ENV === 'production') {
+  // Deshabilitar herramientas de desarrollo
+}
+```
+
+**Configurar correctamente los permisos de CORS**
+Asegúrate de que tu servidor tenga configuraciones de CORS adecuadas para evitar accesos no autorizados.
+
+**Usar Helmet para mejorar la seguridad**
+Usa bibliotecas como `helmet` para configurar encabezados HTTP de seguridad.
+
+```javascript
+import helmet from 'helmet';
+app.use(helmet());
+```
+
+**Evitar el Prop Drilling de datos sensibles**
+Usa Context API o Redux para manejar datos sensibles de manera segura y evitar pasarlos innecesariamente a través de props.
+
+<a id="rea44"></a>
+
+### **¿Qué es un Fragment en React y para qué se utiliza?**
+
+[Volver al indice](#react-base)
+
+Un **Fragment** en React es un componente especial que permite agrupar varios elementos sin añadir nodos adicionales al DOM. Es útil cuando necesitas devolver múltiples elementos desde un componente sin envolverlos en un elemento contenedor como un `<div>`.
+
+### ¿Por qué usar Fragment?
+
+1. **Evitar nodos innecesarios en el DOM**: Usar un `<div>` u otro contenedor puede generar nodos adicionales que no son necesarios, lo que puede afectar el rendimiento o el estilo de la aplicación.
+2. **Mejorar la semántica del HTML**: Al no añadir contenedores innecesarios, el HTML resultante es más limpio y semántico.
+
+### Ejemplo básico
+
+```jsx
+import React from 'react';
+
+function MyComponent() {
+  return (
+    <>
+      <h1>Título</h1>
+      <p>Este es un párrafo.</p>
+    </>
+  );
+}
+
+export default MyComponent;
+```
+
+También puedes usar `React.Fragment` explícitamente, especialmente si necesitas añadir una clave (`key`) a los elementos agrupados, como en una lista:
+
+```jsx
+import React from 'react';
+
+function MyList({ items }) {
+  return (
+    <React.Fragment>
+      {items.map((item, index) => (
+        <li key={index}>{item}</li>
+      ))}
+    </React.Fragment>
+  );
+}
+
+export default MyList;
+```
+
+<a id="rea45"></a>
+
+### **¿Cómo funcionan las claves (keys) en las listas de React? ¿Por qué son importantes?**
+
+[Volver al indice](#react-base)
+
+Las **claves (keys)** en React son atributos especiales que se utilizan para identificar de manera única los elementos en una lista. Son importantes porque ayudan a React a identificar qué elementos han cambiado, se han agregado o se han eliminado, lo que mejora el rendimiento y la eficiencia del proceso de reconciliación.
+Las claves deben ser únicas entre los elementos hermanos, pero no necesitan ser únicas en toda la aplicación. Generalmente, se recomienda usar un identificador único de los datos (como un ID) como clave.
+
+Sin claves, React tendria que reconstruir toda la lista desde cero ante cada cambio, lo que puede ser ineficiente y causar problemas de rendimiento.
+
+```jsx
+function ItemList({ items }) {
+  return (
+    <ul>
+      {items.map((item) => (
+        <li key={item.id}>{item.name}</li>
+      ))}
+    </ul>
+  );
+}
+```
+
+No se recomienda usar el index del elemento en un array como identificador, ya que esto puede causar problemas al reordenar la lista y especialmente si se contempla el eliminar elementos.
+
+<a id="rea455"></a>
+
+### **¿Qué son las "re-renderizaciones innecesarias" y cómo las evitarías?**
+
+[Volver al indice](#react-base)
+
+Las **re-renderizaciones innecesarias** ocurren cuando un componente de React se vuelve a renderizar sin que haya cambios en las props o el estado que afecten su salida visual. Esto puede impactar negativamente el rendimiento de la aplicación, especialmente en componentes complejos o listas grandes.
+
+**Causas comunes de re-renderizaciones innecesarias:**
+
+1. **Cambios en el estado o props que no afectan al componente.**
+2. **Funciones recreadas en cada renderizado.**
+3. **Falta de uso de claves (`key`) únicas en listas.**
+4. **Componentes hijos que se renderizan aunque sus props no hayan cambiado.**
+5. **Uso excesivo de contextos que provocan re-renderizaciones globales.**
+
+**Cómo evitarlas:**
+
+1. **Usar `React.memo` para memorizar componentes funcionales:**
+Evita que un componente se vuelva a renderizar si sus props no han cambiado.
+
+  ```jsx
+  const MyComponent = React.memo(({ value }) => {
+    return <div>{value}</div>;
+  });
+  ```
+
+**Usar `useMemo` para memorizar valores calculados:** Evita cálculos costosos en cada renderizado.
+
+  ```jsx
+  const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
+  ```
+
+**Usar `useCallback` para memorizar funciones:** Evita que las funciones se recreen en cada renderizado.
+
+  ```jsx
+  const handleClick = useCallback(() => {
+    console.log('Clicked');
+  }, []);
+  ```
+
+**Evitar pasar funciones inline como props:** Las funciones inline se recrean en cada renderizado, lo que puede causar re-renderizaciones en componentes hijos.
+
+  ```jsx
+  // En lugar de esto:
+  <Child onClick={() => doSomething()} />
+  // Usa:
+  const handleClick = useCallback(() => doSomething(), []);
+  <Child onClick={handleClick} />
+  ```
+
+**Dividir componentes grandes en componentes más pequeños:**
+Esto reduce el impacto de las actualizaciones al limitar el alcance de las re-renderizaciones.
+
+**Usar claves (`key`) únicas en listas:** Ayuda a React a identificar qué elementos han cambiado.
+
+  ```jsx
+  items.map((item) => <li key={item.id}>{item.name}</li>);
+  ```
+
+**Evitar el uso excesivo de contextos:** Divide los contextos en unidades más pequeñas para evitar re-renderizaciones globales innecesarias.
+
+**Usar herramientas de análisis de rendimiento:** React DevTools y el Profiler pueden ayudarte a identificar qué componentes se están renderizando innecesariamente.
+
+#### **Ejemplo práctico:**
+
+```jsx
+const Parent = () => {
+  const [count, setCount] = useState(0);
+  const handleClick = useCallback(() => setCount((prev) => prev + 1), []);
+
+  return (
+   <div>
+    <button onClick={handleClick}>Incrementar</button>
+    <Child count={count} />
+   </div>
+  );
+};
+
+const Child = React.memo(({ count }) => {
+  console.log('Renderizando Child');
+  return <div>Count: {count}</div>;
+});
+```
+
+En este ejemplo, `React.memo` y `useCallback` evitan que el componente `Child` se vuelva a renderizar innecesariamente.
+
+<a id="rea456"></a>
+
+### **¿Qué herramientas usarías para identificar problemas de rendimiento en una aplicación React?**
+
+[Volver al indice](#react-base)
+
+- Con **React DevTools** se puede utilizar el Profiler que nos ayuda a identificar problemas de rendimiento en la aplicación. Permite ver qué componentes se están renderizando y cuánto tiempo tardan en hacerlo, y que props se ven modificadas.
+- Se puede usar **Lighthouse** para auditar el rendimiento de la aplicación, incluyendo el tiempo de carga y el tamaño del bundle. Esta herramienta se encuentra en las DevTools de Chrome.
+- **Web Vitals** es una biblioteca que mide métricas clave de rendimiento, como el tiempo de carga y la interactividad. Proporciona información sobre la experiencia del usuario en la aplicación.
+- **React Profiler API** permite medir el rendimiento de los componentes y registrar información sobre las re-renderizaciones. Se puede integrar en la aplicación para obtener métricas personalizadas mediante el uso de `Profiler`.
+- **Redux DevTools** si se está utilizando Redux, permite ver las acciones y el estado de la aplicación, lo que puede ayudar a identificar problemas de rendimiento relacionados con el manejo del estado global.
+- **Herramientas de análisis de bundle** como `webpack-bundle-analyzer` o `source-map-explorer` ayudan a identificar el tamaño del bundle y las dependencias que están afectando el rendimiento de la aplicación.
+- **Herramientas de monitoreo de rendimiento** como `Sentry`, `New Relic` o `Datadog` permiten rastrear el rendimiento de la aplicación en producción y detectar problemas en tiempo real.
+- Usar `why-did-you-render` para detectar re-renderizaciones innecesarias en componentes funcionales. Esta herramienta ayuda a identificar cuándo un componente se vuelve a renderizar sin necesidad.
+- **Herramientas de análisis de código estático** como `ESLint` y `Prettier` pueden ayudar a identificar patrones de código que podrían afectar el rendimiento, como el uso excesivo de funciones inline o la falta de claves únicas en listas.
+- **Herramientas de monitoreo de errores** como `Sentry` o `Rollbar` pueden ayudar a identificar errores y problemas de rendimiento en la aplicación en producción, lo que permite realizar ajustes y mejoras.
+- **Herramientas de análisis de red** en las DevTools del navegador permiten ver el tiempo de carga de los recursos y las solicitudes de red, lo que puede ayudar a identificar cuellos de botella en la carga de la aplicación.
+
+<a id="rea46"></a>
+
+### **¿Qué son los custom hooks? ¿Cómo los crearías y para qué sirven?**
+
+[Volver al indice](#react-base)
+
+Los **custom hooks** son funciones en React que permiten encapsular y reutilizar lógica relacionada con los hooks nativos de React, como `useState`, `useEffect`, `useContext`, entre otros. Sirven para extraer lógica repetitiva o compleja de los componentes, haciéndolos más limpios y fáciles de mantener.
+
+Su nombre debe comenzar con "use" y debe ser llamado dentro de un componente funcional o de otro hook.
+
+#### Ejemplo básico: Hook para manejar el estado de un formulario
+
+```jsx
+import { useState } from 'react';
+
+function useForm(initialValues) {
+  const [values, setValues] = useState(initialValues);
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setValues({
+      ...values,
+      [name]: value,
+    });
+  };
+
+  return [values, handleChange];
+}
+
+export default useForm;
+```
+
+Uso del custom hook en un componente:
+
+```jsx
+import React from 'react';
+import useForm from './useForm';
+
+function MyForm() {
+  const [formValues, handleInputChange] = useForm({ name: '', email: '' });
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(formValues);
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        name="name"
+        value={formValues.name}
+        onChange={handleInputChange}
+        placeholder="Nombre"
+      />
+      <input
+        name="email"
+        value={formValues.email}
+        onChange={handleInputChange}
+        placeholder="Correo"
+      />
+      <button type="submit">Enviar</button>
+    </form>
+  );
+}
+```
+
+1. **Reutilización de lógica**: Permiten compartir lógica entre componentes sin duplicar código.
+2. **Separación de preocupaciones**: Ayudan a mantener los componentes más limpios al mover la lógica compleja a un hook separado.
+3. **Facilidad de prueba**: Los custom hooks son funciones puras, lo que facilita su prueba unitaria.
+4. **Consistencia**: Garantizan que la lógica compartida se implemente de manera uniforme en toda la aplicación.
+
+<a id="rea62"></a>
+
+### **¿Cómo manejarías el estado global sin usar Redux ni Context API?**
+
+[Volver al indice](#react-base)
+
+Una forma de manejar el estado global sin usar Redux ni Context API es utilizando un enfoque basado en hooks personalizados y el sistema de suscripción de React. Este método permite compartir el estado entre componentes sin necesidad de bibliotecas externas.
+
+#### Ejemplo: Crear un estado global con un hook personalizado
+
+```jsx
+import { useState, useEffect } from 'react';
+
+let globalState = {};
+let listeners = [];
+let actions = {};
+
+export const useGlobalState = () => {
+  const [, setState] = useState(globalState);
+
+  const dispatch = (actionType, payload) => {
+    const newState = actions[actionType](globalState, payload);
+    globalState = { ...globalState, ...newState };
+    listeners.forEach((listener) => listener(globalState));
+  };
+
+  useEffect(() => {
+    const listener = (newState) => setState(newState);
+    listeners.push(listener);
+    return () => {
+      listeners = listeners.filter((l) => l !== listener);
+    };
+  }, []);
+
+  return [globalState, dispatch];
+};
+
+export const initGlobalState = (initialState, globalActions) => {
+  globalState = { ...initialState };
+  actions = { ...globalActions };
+};
+```
+
+#### Uso del estado global
+
+1. **Inicializar el estado global**:
+
+```jsx
+import { initGlobalState } from './useGlobalState';
+
+initGlobalState(
+  { count: 0 },
+  {
+    increment: (state) => ({ count: state.count + 1 }),
+    decrement: (state) => ({ count: state.count - 1 }),
+  }
+);
+```
+
+2. **Consumir el estado global en un componente**:
+
+```jsx
+import React from 'react';
+import { useGlobalState } from './useGlobalState';
+
+const Counter = () => {
+  const [state, dispatch] = useGlobalState();
+
+  return (
+    <div>
+      <p>Count: {state.count}</p>
+      <button onClick={() => dispatch('increment')}>Increment</button>
+      <button onClick={() => dispatch('decrement')}>Decrement</button>
+    </div>
+  );
+};
+
+export default Counter;
+```
+
+- **Sin dependencias externas**: No necesitas instalar bibliotecas adicionales.
+- **Ligero y personalizable**: Puedes adaptar la lógica según las necesidades de tu aplicación.
+- **Fácil de entender**: Utiliza conceptos básicos de React como hooks y suscripciones.
+- **Menos herramientas de desarrollo**: No tendrás acceso a herramientas avanzadas como las DevTools de Redux.
+- **Escalabilidad limitada**: Puede volverse difícil de mantener en aplicaciones muy grandes.
+
+Este enfoque es ideal para aplicaciones pequeñas o medianas donde no se justifica la complejidad de Redux o Context API.
+
+<a id="rea99"></a>
+
+### **Nombrar distintas herramientas de Testing para React**
+
+[Volver al indice](#react-base)
+
+- **Jest**: Framework de pruebas por defecto para aplicaciones React creado por Facebook. Soporta pruebas unitarias, de integración y de snapshot.
+- **React Testing Library**: Biblioteca enfocada en pruebas de componentes React desde la perspectiva del usuario final.
+- **Enzyme**: Herramienta creada por Airbnb para pruebas de componentes React, aunque está menos recomendada en proyectos nuevos debido a su falta de soporte para React 18.
+- **Cypress**: Herramienta de pruebas end-to-end que permite probar aplicaciones React en un navegador real.
+- **Playwright**: Herramienta moderna para pruebas end-to-end que soporta múltiples navegadores.
+- **Puppeteer**: Biblioteca para pruebas end-to-end que interactúa con navegadores basados en Chromium.
+- **Storybook Testing Library**: Permite realizar pruebas en historias de Storybook para componentes React.
+- **MSW (Mock Service Worker)**: Herramienta para simular APIs en pruebas de integración.
+- **Vitest**: Framework de pruebas rápido y moderno que puede usarse con React, similar a Jest.
+- **Testing Playground**: Herramienta visual para generar selectores de pruebas compatibles con React Testing Library.
