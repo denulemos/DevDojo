@@ -20,7 +20,7 @@
 |[¿Cómo funciona la detección de cambios en Angular?](#angular2)|
 |[¿Cómo se maneja la inyección de dependencias y la inversión de control en las aplicaciones de Angular?](#angular3) 💛|
 |[¿Qué es la compilación JIT y AOT en Angular? Diferencias, pros y contras](#angular4)|
-|¿Cómo se maneja la gestión del estado en las aplicaciones de Angular?|
+|[¿Cómo se maneja la gestión del estado en las aplicaciones de Angular?](#angular5)|
 |¿Cómo se puede compartir el estado en las aplicaciones de Angular? Servicios vs Flux vs Redux. Pros y contras de cada enfoque.|
 |¿Qué es el enrutamiento en Angular y cómo se configura?|
 |¿Cómo se manejan las rutas protegidas en Angular?|
@@ -38,11 +38,44 @@
 
 [Volver al indice](#angular-base)
 
-Las aplicaciones de Angular son Modulares, en Angular existe NgModules. Sirve para mantener la lógica de un flujo de trabajo de la aplicación. Por ejemplo, se tiene un e-commerce, con sus módulos correspondientes, usuarios vendedores, compradores, productos, etc..
+**⚠️ En versiones nuevas de Angular (como Angular 15+), ya no es obligatorio usar módulos. Ahora puedes tener componentes "standalone": independientes, sin necesidad de estar dentro de un módulo.**
 
-Son diseños lógicos que se encargan de trabajar dentro de la aplicación, se usan para poder importar librerías u otros módulos dentro de los mismos. Cada módulo hasta puede tener su propio ruteo.
+Imaginá que tu aplicación es una casa grande. En esa casa, hay habitaciones diferentes para distintas tareas: la cocina, el dormitorio, el baño, etc. Cada habitación tiene su propósito y sus herramientas.
 
-Se identifican por su nombre que tipicamente es `app.module.ts` o similares. Hoy en dia en las ultimas versiones de Angular se usan cada vez mas los componentes standalone, donde no es necesario el uso de modulos.
+En Angular, esa casa es tu aplicación, y cada habitación es un módulo (`NgModule`).
+
+- Ayudan a organizar el código para que no sea un caos.
+- Agrupan cosas que trabajan juntas, como componentes, servicios, y rutas.
+- Te permiten importar otras librerías (por ejemplo, para mostrar botones, manejar formularios, etc.).
+- Podes tener rutas específicas dentro de un módulo (como si tuvieras un mini-GPS dentro de cada habitación).
+
+Supongamos que estás creando una tienda online:
+
+- 🛍 Módulo de productos: todo lo que tiene que ver con mostrar productos, ver detalles, etc.
+- 👩‍💼 Módulo de usuarios vendedores: gestión de sus productos, sus ventas.
+- 🧑‍🤝‍🧑 Módulo de compradores: ver historial de compras, carrito, etc.
+
+Cada módulo tiene su propio archivo `.module.ts`, como `productos.module.ts`
+
+```js
+@NgModule({
+  declarations: [ProductoComponent],
+  imports: [CommonModule],
+  exports: [ProductoComponent]
+})
+export class ProductosModule {}
+```
+
+- declarations: qué componentes tiene este módulo.
+- imports: qué cosas necesita (otros módulos, librerías, etc).
+- exports: qué cosas le comparte a otros módulos.
+
+Para resumir un poco:
+
+- Los módulos son como grupos de funcionalidades que organizan tu app.
+- Hacen que sea más fácil de mantener y escalar.
+- Son como contenedores de lógica, donde pones componentes, servicios, rutas, etc.
+- Aunque ahora podés usar componentes independientes, los módulos siguen siendo útiles en muchos casos.
 
 <a id="rea12"></a>
 
@@ -50,29 +83,44 @@ Se identifican por su nombre que tipicamente es `app.module.ts` o similares. Hoy
 
 [Volver al indice](#angular-base)
 
-Es la forma que tiene Angular de controlar y cambiar las propiedades de los elementos HTML usando corchetes []
+Property Binding es cuando le pasás un valor dinámico a un elemento HTML usando corchetes [].
+Es la forma que tiene Angular de decir: *“Ey, esta propiedad va a cambiar, así que estate atento”*
 
 ```html
-<input [value]="empresa" [disabled]="habilitado"  />
-
-// Empresa y habilitado son datos dinamicos
+<input [value]="empresa" [disabled]="habilitado" >
 ```
 
-Los corchetes (square brakets) hacen que Angular evalúe el lado derecho de la asignación como una expresión dinámica. Sin los corchetes, Angular trata el lado derecho como un literal de cadena y establece la propiedad en ese valor estático.
+- empresa y habilitado son variables de tu componente.
+- value y disabled son propiedades del `<input>`.
+- El [value]="empresa" significa: "Poné el valor de esta variable dentro del input."
 
-A menudo, “interpolation” y “Property Binding” pueden lograr los mismos resultados. Los siguientes pares de enlaces hacen lo mismo.
+En cambio, la misma linea de codigo SIN corchetes: 
 
 ```html
-// Interpolacion
-<p><img src="{{itemImageUrl}}"> is the <i>interpolated</i> image.</p>
-
-// Property Binding
-<p><img [src]="itemImageUrl"> is the <i>property bound</i> image.</p>
+<input type="text" value="empresa" disabled="habilitado" >
 ```
 
-Al establecer una propiedad de elemento en un valor de datos que no sea un String a secas (por ejemplo, objetos), debe usar “Property Binding”.
+Acá Angular no entiende que empresa o habilitado son variables.
+Los toma como texto plano. O sea, va a escribir literalmente "empresa" en el input.
 
-Se recomienda comprender los “Event binding” para entender el flujo de datos de la aplicacion y como este interactua con “interpolation” y “Property Binding”.
+#### ¿Y qué diferencia hay con la interpolación `{{}}`?
+
+Ambas cosas sirven para mostrar datos, pero se usan en contextos distintos.
+
+```html
+<!-- Interpolación -->
+<img src="{{itemImageUrl}}" />
+
+<!-- Property Binding -->
+<img [src]="itemImageUrl" />
+```
+
+Las dos hacen lo mismo si es un string, pero si estás trabajando con cosas más complejas que un texto (como objetos, booleanos, números, arrays), usá Property Binding. **¿Por qué?** Porque Angular entiende mejor ese tipo de datos con los corchetes
+
+- Property Binding = `[propiedad]="valor"`
+- Angular escucha y actualiza la propiedad del HTML cuando cambie el valor.
+- Te ayuda a tener una app reactiva, sin andar actualizando todo a mano.
+- Si pasás algo que no es un texto, usá sí o sí Property Binding.
 
 <a id="rea13"></a>
 
@@ -1101,3 +1149,14 @@ Compila el codigo antes de mostrarlo en el navegador, se usa en produccion ya qu
 - La compilacion es mucho mas lenta durante el build
 
 Es el activado con `ng build --aot`
+
+<a id="angular5"></a>
+
+### **¿Cómo se maneja la gestión del estado en las aplicaciones de Angular?**
+
+[Volver al indice](#angular-base)
+
+Dentro de Angular podemos manejar distintos tipos de estados
+
+- Estado Local: Se maneja con variables locales dentro de los componentes, se pierden al refrescar la pagina
+- Estado Global: Son datos compartidos entre varios componentes
