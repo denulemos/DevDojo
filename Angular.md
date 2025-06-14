@@ -3,7 +3,7 @@
 | Arquitectura y Organización del Proyecto |
 |----------|
 | [¿Cuales son algunas reglas de Clean Code en Angular?](#rea1) |
-| [¿Qué son los modulos en Angular?](#rea11) |
+| ❓ [¿Qué son los modulos en Angular?](#rea11) |
 |[¿Qué problemas de rendimiento pueden existir en Angular y cómo se solucionan?](#angular-2) 💛|
 |[¿Cómo se maneja la inyección de dependencias y la inversión de control en las aplicaciones de Angular?](#angular3) 💛|
 |[¿Qué es la compilación JIT y AOT en Angular? Diferencias, pros y contras](#angular4)|
@@ -14,14 +14,14 @@
 | Componentes y Estructura |
 |----------|
 | [¿Qué es un Decorador en Angular?](#rea14) 💛|
-|[Que son los componentes standalone y cuando conviene utilizarlos?](#angular-1) 💛|
+|❓ [¿Qué son los componentes standalone y cuando conviene utilizarlos?](#angular-1) 💛|
 | [¿Cuál es el flujo de datos una aplicación Angular?](#rea13) |
 | [Patrones de disenio en Angular](#ent45) |
-|[¿Cómo funciona la detección de cambios en Angular?](#angular2)|
+|[❓ ¿Cómo funciona la detección de cambios en Angular?](#angular2)|
 
 | Manejo de datos |
 |----------|
-| [¿Qué es Property Binding?](#rea12) |
+| ❓[¿Qué es Property Binding?](#rea12) |
 | [Event Binding en Angular (Manejo de Eventos)](#rea15) |
 | [Data Binding en Angular](#rea16) |
 | [Angular Signals](#ent65-1) |
@@ -1097,12 +1097,15 @@ export class ProfileComponent {
 
 [Volver al indice](#angular-base)
 
-Angular usa un sistema basado en zonas y el algoritmo de determinacion de diferencias (Dirty Checking) para saber cuando actualizar la interfaz.
+Sí, y no. Por defecto, Angular vuelve a revisar todos los componentes desde la raíz hacia abajo, cada vez que cree que algo pudo haber cambiado. Esto es gracias a algo que se llama **zone.js**, una librería que observa cosas como:
 
-Hay varios factores dentro de este sistema:
+- setTimeout
+- eventos de usuario
+- llamadas HTTP
+- promesas
 
-- **zone.js**: Es una libreria que detecta eventos asincronicos como eventos del DOM (click), peticiones HTTP, timers (setTimeout) y Promesas. Cuando se detecta un evento, se ejecuta un ciclo de deteccion de cambios.
-- **Ciclo de deteccion de cambios**: Cuando se inicia la deteccion de cambios, primero se recorre el arbol de componentes, se comparan los valores y si se detectan cambios, la vista es actualizada. Este proceso se repite hasta que no haya mas cambios.
+Entonces Angular dice: “Algo pasó, mejor reviso todo, por si las dudas”, a esto se le dice **Dirty Checking**
+Si tu app es de tamanio pequenio, ni lo notás. Pero en apps grandes con muchos componentes, puede volverse lento. 
 
 Hay varias estrategias para detectar los cambios:
 
@@ -1119,8 +1122,8 @@ Hay varias estrategias para detectar los cambios:
 
 La deteccion de cambios sin embargo puede ser tambien forzada mediante el uso de `ChangeDetectorRef`
 
-- ChangeDetectorRef.detectChanges() → Recorre el árbol de componentes y actualiza la vista.
-- ChangeDetectorRef.markForCheck() → Marca el componente como "sucio" para la próxima detección.
+- `ChangeDetectorRef.detectChanges()` → Recorre el árbol de componentes y actualiza la vista.
+- `ChangeDetectorRef.markForCheck()` → Marca el componente como "sucio" para la próxima detección.
 
 ```typescript
 constructor(private cdr: ChangeDetectorRef) {}
