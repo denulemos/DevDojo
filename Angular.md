@@ -3,7 +3,7 @@
 | Arquitectura y Organización del Proyecto |
 |----------|
 | [¿Cuales son algunas reglas de Clean Code en Angular?](#rea1) |
-| ❓ [¿Qué son los modulos en Angular?](#rea11) |
+| [¿Qué son los modulos en Angular?](#rea11) |
 |[¿Qué problemas de rendimiento pueden existir en Angular y cómo se solucionan?](#angular-2) 💛|
 |[¿Cómo se maneja la inyección de dependencias y la inversión de control en las aplicaciones de Angular?](#angular3) 💛|
 |[¿Qué es la compilación JIT y AOT en Angular? Diferencias, pros y contras](#angular4)|
@@ -14,14 +14,14 @@
 | Componentes y Estructura |
 |----------|
 | [¿Qué es un Decorador en Angular?](#rea14) 💛|
-|❓ [¿Qué son los componentes standalone y cuando conviene utilizarlos?](#angular-1) 💛|
+|[¿Qué son los componentes standalone y cuando conviene utilizarlos?](#angular-1) 💛|
 | [¿Cuál es el flujo de datos una aplicación Angular?](#rea13) |
 | [Patrones de disenio en Angular](#ent45) |
-|[❓ ¿Cómo funciona la detección de cambios en Angular?](#angular2)|
+|[¿Cómo funciona la detección de cambios en Angular?](#angular2)|
 
 | Manejo de datos |
 |----------|
-| ❓[¿Qué es Property Binding?](#rea12) |
+| [¿Qué es Property Binding?](#rea12) |
 | [Event Binding en Angular (Manejo de Eventos)](#rea15) |
 | [Data Binding en Angular](#rea16) |
 | [Angular Signals](#ent65-1) |
@@ -40,14 +40,129 @@
 
 [Volver al indice](#angular-base)
 
-Entre las tipicas reglas de Clean Code que existen para nuestro codigo, hay otros especificos de Angular que podrian ser tenidos en cuenta:
+🔹 **1. Un componente, una responsabilidad**
+**❌ Malo:** un componente que muestra una lista *y* también guarda datos en el servidor.
+**✅ Bueno:** un componente que solo muestra la lista, y otro que se encarga de guardar los datos.
 
-- Los componentes deben tener una única responsabilidad. Si un componente se vuelve demasiado grande o realiza múltiples tareas, divide su funcionalidad en componentes más pequeños.
-- Usa componentes hijos cuando un componente se vuelve complejo y necesita dividirse
-- Mantener los archivos template simples, manejar toda logica en los archivos correspondientes
-- Se debe delegar el trabajo pesado, como el llamado a APIS, a los servicios. Los componentes deben manejar todo lo relacionado a la UI y nada mas.
-- Desubscribirnos de los Observables a la hora de no utilizarlos mas.
-- Usar Angular CLI para la creacion de nuevo codigo, para asegurarnos que se siguen los mejores estandar de codigo posible. 
+```ts
+// ❌ Esto hace demasiado:
+@Component({...})
+export class UsuarioComponent {
+  usuarios = [];
+  guardarUsuario(usuario) {
+    // guardar en API
+  }
+}
+```
+
+```ts
+// ✅ Separado en dos componentes:
+- UsuarioListaComponent (muestra)
+- UsuarioFormularioComponent (guarda)
+```
+
+🔹 **2. Usá componentes hijos**
+Cuando un componente se vuelve grande, dividilo en partes más pequeñas:
+
+```html
+<!-- padre -->
+<app-info-personal></app-info-personal>
+<app-preferencias></app-preferencias>
+```
+
+🔹 **3. Plantillas (HTML) simples y limpias**
+**❌ Malo:**
+
+```html
+<div *ngIf="user && user.age > 18 && user.isActive">...</div>
+```
+
+**✅ Bueno:**
+
+```ts
+mostrarContenido() {
+  return this.user && this.user.age > 18 && this.user.isActive;
+}
+```
+
+```html
+<div *ngIf="mostrarContenido()">...</div>
+```
+
+
+🔹 **4. Servicios para lógica pesada**
+El componente solo debería mostrar cosas, **no** manejar llamadas a APIs.
+
+```ts
+// Servicio
+getDatos() {
+  return this.http.get('https://api.com/datos');
+}
+```
+
+```ts
+// Componente
+this.apiService.getDatos().subscribe(...);
+```
+
+🔹 **5. Desuscribirse de los Observables**
+
+```ts
+subscripcion: Subscription;
+
+ngOnInit() {
+  this.subscripcion = this.servicio.getDatos().subscribe(...);
+}
+
+ngOnDestroy() {
+  this.subscripcion.unsubscribe();
+}
+```
+
+O mejor aún, usá el `async` pipe:
+
+```html
+<div *ngIf="datos$ | async as datos">
+  {{ datos.nombre }}
+</div>
+```
+
+🔹 **6. Usá Angular CLI**
+Siempre preferí:
+
+```bash
+ng generate component usuario
+ng generate service api
+```
+
+Te asegura estructura clara y buenas prácticas.
+
+
+🔹 **7. Evitá lógica compleja en el HTML**
+Si hay mucha lógica en el template, movela al archivo `.ts`.
+
+
+🔹 **8. Usá tipado estricto y `interfaces`**
+No uses `any`. Definí tus modelos:
+
+```ts
+interface Usuario {
+  nombre: string;
+  edad: number;
+}
+```
+
+
+🔹 **9. Poné nombres claros y descriptivos**
+**❌ Malo:** `comp1`, `servicio2`
+**✅ Bueno:** `FormularioUsuarioComponent`, `AutenticacionService`
+
+
+🔹 **10. Estilo consistente con Prettier/ESLint**
+Instalá herramientas que formateen y detecten errores automáticamente.
+
+
+
 
 <a id="rea11"></a>
 
@@ -412,169 +527,130 @@ Los componentes standalone simplifican la arquitectura de Angular al reducir la 
 
 [Volver al indice](#angular-base)
 
-Claro, aquí tienes una descripción de problemas de rendimiento comunes en aplicaciones Angular y las estrategias que he utilizado para resolverlos.
+#### 1. ⚠️ Renderizado excesivo (detección de cambios ineficiente)
 
----
+**Qué pasa:**
+Angular, por defecto, revisa todo el árbol de componentes cada vez que algo cambia. En apps grandes, esto puede hacer que se renderice más de lo necesario, generando lentitud.
 
-**1. Renderizado excesivo (Change Detection Ineficiente)**
+**Cómo lo solucionás:**
 
-**Problema:**
-- Angular utiliza un sistema de detección de cambios (`Change Detection`) que verifica cada componente en el árbol para detectar actualizaciones. Si no se optimiza, puede provocar renderizados innecesarios, afectando el rendimiento en aplicaciones grandes o con datos dinámicos.
+* Activá `ChangeDetectionStrategy.OnPush` en tus componentes. Esto le dice a Angular que solo actualice el componente si cambian sus `@Input` o se dispara un evento (como un observable).
 
-**Solución:**
-- **Uso de `OnPush` Change Detection:**
-  Configuré el componente con `changeDetection: ChangeDetectionStrategy.OnPush`, lo que indica a Angular que solo actualice el componente si cambian sus entradas (`@Input`) o eventos explícitos como observables.
+```ts
+@Component({
+  selector: 'app-mi-componente',
+  template: `{{ data }}`,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class MiComponente {
+  @Input() data!: string;
+}
+```
 
-  ```typescript
-  import { ChangeDetectionStrategy, Component } from '@angular/core';
+* Desuscribite de los observables cuando ya no los necesites, usando `takeUntil` o el operador `async` directamente en el HTML.
 
-  @Component({
-    selector: 'app-my-component',
-    template: `<p>{{ data }}</p>`,
-    changeDetection: ChangeDetectionStrategy.OnPush,
-  })
-  export class MyComponent {
-    @Input() data!: string;
-  }
-  ```
+#### 2. 🐢 Carga innecesaria de módulos
 
-- **Desuscripción de Observables:**
-  Aseguré que todos los observables y suscripciones se manejaran adecuadamente utilizando operadores como `takeUntil` o librerías como `RxJS`.
+**Qué pasa:**
+Si cargás todos los módulos desde el inicio (eager loading), el usuario va a esperar más para ver algo en pantalla.
 
----
+**Cómo lo solucionás:**
 
-**2. Carga innecesaria de datos (Lazy Loading ineficiente)**
+* Aplicá **lazy loading** en rutas que no se usan de entrada:
 
-**Problema:**
-- Los módulos o componentes se cargaban todos al inicio (Eager Loading), incluso aquellos que no eran necesarios de inmediato, aumentando los tiempos de carga inicial.
+```ts
+{
+  path: 'admin',
+  loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
+}
+```
 
-**Solución:**
+* Si querés un balance, podés usar una **estrategia de pre-carga personalizada** para cargar algunos módulos después de la carga inicial, mientras el usuario está inactivo.
 
-- **Lazy Loading con Rutas:**
-  Implementé la carga diferida (`Lazy Loading`) para módulos relacionados con rutas específicas, de forma que solo se cargaran cuando fueran necesarias.
+#### 3. 📋 Listas largas que se renderizan lento
 
-  ```typescript
-  const routes: Routes = [
-    {
-      path: 'feature',
-      loadChildren: () => import('./feature/feature.module').then(m => m.FeatureModule),
-    },
-  ];
-  ```
+**Qué pasa:**
+Una tabla con miles de filas puede hacer que todo se vuelva pesado, ya que Angular intenta renderizar todos los ítems del DOM.
 
-- **Preloading Strategy personalizada:**
-  Para evitar demoras en la carga de módulos críticos, utilicé una estrategia de pre-carga personalizada para cargar solo ciertos módulos cuando el usuario está inactivo.
+**Cómo lo solucionás:**
 
----
+* Usá **Virtual Scroll** del Angular CDK para renderizar solo lo visible:
 
-**3. Renderizado lento de listas grandes**
+```html
+<cdk-virtual-scroll-viewport itemSize="50" style="height: 300px;">
+  <div *cdkVirtualFor="let item of items">{{ item }}</div>
+</cdk-virtual-scroll-viewport>
+```
 
-**Problema:**
-- En componentes con listas grandes (por ejemplo, una tabla con miles de filas), el renderizado era muy lento debido a que Angular intentaba procesar todos los elementos del DOM.
+* Si estás trayendo todo desde una API, agregá **paginación en el backend** para evitar cargar miles de elementos de una sola.
 
-**Solución:**
-- **Uso de Virtual Scroll (Angular CDK):**
-  Reemplacé listas convencionales (`*ngFor`) con el `cdk-virtual-scroll`, que solo renderiza los elementos visibles en la pantalla.
+#### 4. 🖼️ Imágenes pesadas
 
-  ```html
-  <cdk-virtual-scroll-viewport itemSize="50" style="height: 300px;">
-    <div *cdkVirtualFor="let item of items">{{ item }}</div>
-  </cdk-virtual-scroll-viewport>
-  ```
+**Qué pasa:**
+Imágenes grandes o mal optimizadas pueden hacer que la página tarde en cargar, sobre todo en dispositivos móviles.
 
-- **Paginación en el backend:**
-  Implementé paginación en el backend para limitar la cantidad de datos enviados al cliente, reduciendo el impacto en memoria y procesamiento.
+**Cómo lo solucionás:**
 
----
+* Usá `loading="lazy"` en todas las etiquetas `<img>`:
 
-**4. Problemas con imágenes grandes**
+```html
+<img src="imagen.jpg" alt="Ejemplo" loading="lazy" />
+```
 
-**Problema:**
-- La carga de imágenes grandes o innecesarias causaba tiempos de carga lentos y un impacto significativo en el rendimiento, especialmente en dispositivos móviles.
+* Comprimí y redimensioná las imágenes con herramientas como **TinyPNG**, **ImageMagick** o servicios como **Cloudinary**.
 
-**Solución:**
-- **Lazy Loading de Imágenes:**
-  Configuré `loading="lazy"` en las etiquetas `<img>` para que las imágenes se cargaran solo cuando estuvieran cerca de entrar en el viewport.
+#### 5. 📝 Formularios lentos
 
-  ```html
-  <img src="path/to/image.jpg" alt="Example" loading="lazy" />
-  ```
+**Qué pasa:**
+Si tenés formularios con muchas validaciones, lógica compleja o campos dinámicos, la app se puede trabar al escribir.
 
-- **Optimización de imágenes:**
-  Implementé herramientas como **ImageMagick** o **Cloudinary** para comprimir y redimensionar imágenes antes de enviarlas al cliente.
+**Cómo lo solucionás:**
 
----
+* Evitá validaciones complejas innecesarias. Usá funciones simples y validaciones asincrónicas solo si realmente las necesitás.
 
-**5. Demora en formularios complejos**
+```ts
+myForm = this.fb.group({
+  email: ['', [Validators.required, Validators.email]],
+});
+```
 
-**Problema:**
-- Formularios grandes con validaciones dinámicas ralentizaban la experiencia del usuario.
+* Dividí formularios largos en **pasos o secciones** (wizard), para no cargar todo al mismo tiempo.
 
-**Solución:**
-- **Optimización de validaciones:**
-  - Utilicé validaciones asincrónicas solo cuando eran absolutamente necesarias.
-  - Reemplacé validadores complejos con funciones más simples.
+#### 6. 🔁 Llamadas repetidas a la API
 
-  ```typescript
-  myForm = this.fb.group({
-    email: ['', [Validators.required, Validators.email]],
-  });
-  ```
+**Qué pasa:**
+Si hacés muchas llamadas iguales a la misma API desde distintos lugares, saturás el backend y hacés más lenta tu app.
 
-- **División de formularios:**
-  Dividí formularios extensos en pasos con componentes separados (wizard), cargando solo la parte visible.
+**Cómo lo solucionás:**
 
----
+* Implementá cache en los servicios, por ejemplo con `Map` y RxJS:
 
-**6. API calls repetitivos**
+```ts
+private cache = new Map<string, any>();
 
-**Problema:**
-- Varias partes de la aplicación realizaban solicitudes redundantes al backend, lo que aumentaba el tiempo de respuesta y sobrecargaba el servidor.
+getData(url: string): Observable<any> {
+  if (this.cache.has(url)) return of(this.cache.get(url));
+  return this.http.get(url).pipe(tap(data => this.cache.set(url, data)));
+}
+```
 
-**Solución:**
-- **Cache en servicios:**
-  Implementé cache utilizando el patrón de memoización con RxJS y un `BehaviorSubject` para almacenar y reutilizar los datos en lugar de hacer múltiples solicitudes.
+* Agrupá múltiples llamadas con `forkJoin` o `combineLatest` para hacer una sola petición conjunta.
 
-  ```typescript
-  private cache = new Map<string, any>();
+#### 7. 📦 Scripts pesados y dependencias innecesarias
 
-  getData(url: string): Observable<any> {
-    if (this.cache.has(url)) {
-      return of(this.cache.get(url));
-    }
-    return this.http.get(url).pipe(
-      tap(data => this.cache.set(url, data))
-    );
-  }
-  ```
+**Qué pasa:**
+Agregar muchas librerías sin control aumenta el tamaño del bundle, haciendo más lenta la app.
 
-- **Combinar solicitudes (ForkJoin):**
-  Agrupé múltiples llamadas a la API en una sola utilizando `forkJoin` o `combineLatest`.
+**Cómo lo solucionás:**
 
----
+* Limpiá el `package.json`: eliminá lo que no uses.
+* Importá solo los módulos necesarios:
 
-**7. Scripts pesados y dependencias innecesarias**
+```ts
+import { MatButtonModule } from '@angular/material/button'; // No todo Angular Material
+```
 
-**Problema:**
-- La aplicación cargaba muchas librerías de terceros y scripts, aumentando el tamaño del bundle.
-
-**Solución:**
-- **Eliminación de dependencias no usadas:**
-  Revisé `package.json` y eliminé librerías no esenciales, reemplazándolas con implementaciones nativas o más ligeras.
-
-- **Uso de importaciones específicas:**
-  En lugar de importar módulos completos de Angular Material o librerías, importé solo los módulos necesarios.
-
-  ```typescript
-  import { MatButtonModule } from '@angular/material/button';
-  ```
-
-- **Habilitación de Tree Shaking:**
-  Configuré correctamente Webpack y Angular CLI para asegurarnos de que el código no usado se eliminara en el proceso de construcción.
-
----
-
-Optimizar aplicaciones Angular requiere identificar los cuellos de botella específicos, ya sea en el DOM, la carga de datos o las dependencias. Las herramientas de Angular como `OnPush`, `Lazy Loading` y `Virtual Scroll`, junto con estrategias como el uso de cache y optimización de recursos, pueden mejorar significativamente el rendimiento.
+* Asegurate de que el **tree shaking** esté funcionando en tu build.
 
 <a id="ent65-1"></a>
 
