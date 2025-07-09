@@ -13,9 +13,6 @@
 |----------|
 | [Que es CI-CD?](#cam6)   |
 | [Que es un Pipeline?](#cam7) |
-| [Que es Continuous Integration en detalle?](#cam8) |
-| [Que es Continuous Delivery en detalle?](#cam9) |
-| [Que es Continuous Deployment en detalle?](#cam10) |
 
 
 ---
@@ -237,45 +234,3 @@ Cuando subís cambios, el pipeline sigue una serie de pasos (probar, construir, 
 
 Así te asegurás de que todo funciona bien antes de que tu software llegue a los usuarios, y sin hacerlo a mano cada vez
 
-<a id="cam8"></a>
-
-### **Que es Continuous Integration en detalle?**
-
-[Volver al indice](#cam-base)
-
-Es la herramienta encontrada para evitar el **integration hell** donde se espera hasta el fin de un sprint o proyecto para mergear todos los cambios de todos los dev en un solo codigo. 
-Cada cambio es integrado lo mas rapido posible y debe pasar por una serie de checks automaticos, poniendo especial enfasis en el Test automatizado.
-
-**Costos de su implementacion**
-
-- El equipo debera escribir tests automatizados que deben correr ante cada codigo mergeado
-- Se necesita un servidor de CI que pueda monitorear el branch principal ante cualquier problema
-- Si se implementa desde cero al principio se debe frenar un poco el ritmo de releases
-- Se vuelve un requerimiento el escribir tests y actualizarlos ante cada cambio importante
-
-**Beneficios**
-
-- Hay menos bugs ya que gracias a los tests automatizados se pueden encontrar problemas de forma temprana
-- Los dev son alertados cuando el branch principal esta roto sin necesidad de estar yendo a produccion
-- Menos tiempo de testing manual
-- Los costos de testing son mucho menores ya que se pueden correr miles de tests en pocos segundos
-
-<a id="cam9"></a>
-
-### **Que es Continuous Delivery en detalle?**
-
-[Volver al indice](#cam-base)
-
-Es el hecho de que, luego de que los cambios son mergeados, los mismos son deployados de forma automatica a un ambiente, o manual si tambien se desea triggerear este proceso de forma temprana. 
-
-Esto en el caso de ser usado de forma productiva acelera mucho las releases, especialmente si los mismos solo poseen cambios pequenios. 
-
-<a id="cam10"></a>
-
-### **Que es Continuous Deployment en detalle?**
-
-[Volver al indice](#cam-base)
-
-Es lo mismo que Delivery, pero un paso mas adelantado. Si un solo test falla, ya los cambios no van a ir deployados a produccion, quitando el peso del release day por completo, ya que la idea es, de nuevo, sacar releases lo mas rapido o seguido posible. 
-
-Para esto se debe tener una excelente cultura del testing y de la documentacion. 
