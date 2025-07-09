@@ -564,7 +564,7 @@ Crear una API REST simple con Express es fácil y directo. Aquí tienes un ejemp
 
 <a id="node12"></a>
 
-### **¿Qué es el middleware en Express y para qué sirve?**
+### **¿Qué es un Middleware?**
 
 [Volver al indice](#node-base)
 
