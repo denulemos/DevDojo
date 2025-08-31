@@ -1,36 +1,42 @@
 <a name="angular-base"></a>
 
-| Arquitectura y Organización del Proyecto |
+| Preguntas generales |
 |----------|
-| [¿Cuales son algunas reglas de Clean Code en Angular?](#rea1) |
 | [¿Qué son los modulos en Angular?](#rea11) |
-|[¿Qué problemas de rendimiento pueden existir en Angular y cómo se solucionan?](#angular-2) 💛|
-|[¿Cómo se maneja la inyección de dependencias y la inversión de control en las aplicaciones de Angular?](#angular3) 💛|
-|[¿Qué es la compilación JIT y AOT en Angular? Diferencias, pros y contras](#angular4)|
-|[¿Qué es el enrutamiento en Angular y cómo se configura?](#angular5)|
-| [Como se implementa Lazy Loading en Angular?](#angular6)|
-| [Que mejoras hay en la migracion de AngularJS a Angular?](#ent51-1) |
-
-| Componentes y Estructura |
-|----------|
-| [¿Qué es un Decorador en Angular?](#rea14) 💛|
 |[¿Qué son los componentes standalone y cuando conviene utilizarlos?](#angular-1) 💛|
-| [¿Cuál es el flujo de datos una aplicación Angular?](#rea13) |
-| [Patrones de disenio en Angular](#ent45) |
-|[¿Cómo funciona la detección de cambios en Angular?](#angular2)|
-
-| Manejo de datos |
-|----------|
 | [¿Qué es Property Binding?](#rea12) |
+| [Que mejoras hay en la migracion de AngularJS a Angular?](#ent51-1) |
+| [¿Qué es RxJS y qué problemas resuelve en el desarrollo de aplicaciones?](#ent38) |
+| [¿Qué es un Observable en RxJS y cómo difiere de una Promesa en JavaScript?](#ent39) |
+| [Porque es importante desuscribirnos de los Observables?](#rea2) |
+| [Formas de desubscripcion de Observables](#rea3) |
+| [Cual es la diferencia entre un Observable "cold" y "hot"?](#ent40) |
+| [Angular Signals vs Observables](#ent65-11) |
+| [¿Qué es Angular Signals?](#ent65-1) |
+| [Manejo de estado de una aplicación Angular, qué metodos hay?](#angular-5) |
+|[¿Qué es la compilación JIT y AOT en Angular? Diferencias, pros y contras](#angular4)|
+|[¿Cómo se maneja la inyección de dependencias y la inversión de control en las aplicaciones de Angular?](#angular3) 💛|
+|[¿Qué es el Two-Way Data Binding en Angular?](#angular-4) |
+|[¿Qué es un Pipe en Angular y para qué sirve?](#angular-51) |
+
+
+
+|[¿Qué es el enrutamiento en Angular y cómo se configura?](#angular5)|
+| [¿Qué es un Decorador en Angular?](#rea14) 💛|
+| [¿Cuál es el flujo de datos una aplicación Angular?](#rea13) |
 | [Event Binding en Angular (Manejo de Eventos)](#rea15) |
 | [Data Binding en Angular](#rea16) |
-| [Angular Signals](#ent65-1) |
-| [Angular Signals vs Observables](#ent65-11) |
-| [¿Qué es RxJS y qué problemas resuelve en el desarrollo de aplicaciones?](#ent38) |
-| [Observable en RxJS](#ent39) |
-| [Formas de desubscripcion de Observables](#rea3) |
-| [Porque es importante desuscribirnos de los Observables?](#rea2) |
-| [Observable "cold" y "hot"](#ent40) |
+
+| Clean Code |
+|----------|
+| [¿Cuales son algunas reglas de Clean Code en Angular?](#rea1) |
+| [Patrones de disenio en Angular](#ent45) |
+
+| Performance |
+|----------|
+|[¿Qué problemas de rendimiento pueden existir en Angular y cómo se solucionan?](#angular-2) 💛|
+| [Como se implementa Lazy Loading en Angular?](#angular6)|
+|[¿Cómo funciona la detección de cambios en Angular?](#angular2)|
 
 ---
 
@@ -523,7 +529,7 @@ Los componentes standalone simplifican la arquitectura de Angular al reducir la 
 
 <a id="angular-2"></a>
 
-### **¿Podrías describir algunos problemas de rendimiento que hayas enfrentado en aplicaciones Angular y cómo los resolviste?** 💛
+### **¿Qué problemas de rendimiento pueden existir en Angular y cómo se solucionan?** 
 
 [Volver al indice](#angular-base)
 
@@ -652,9 +658,43 @@ import { MatButtonModule } from '@angular/material/button'; // No todo Angular M
 
 * Asegurate de que el **tree shaking** esté funcionando en tu build.
 
+<a id="angular6"></a>
+
+### **Como se implementa Lazy Loading en Angular?**
+
+[Volver al indice](#angular-base)
+
+Lazy Loading carga un modulo solo cuando el usuario esta por acceder a la misma. Antes de la introduccion de standalone components, era necesario crear modulos para cada componente, pero ahora no es necesario. Se utiliza `loadComponent` en lugar de `loadChildren`
+
+```ts
+import { Routes } from '@angular/router';
+
+export const routes: Routes = [
+  {
+    path: 'admin',
+    loadComponent: () => import('./admin/admin.component').then(m => m.AdminComponent)
+  },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  }
+];
+```
+
+Tambien puede complementarse muy bien con `Route Guards` para proteger rutas y asegurarse de que el usuario tenga acceso a la misma si posee autorizacion. 
+
+```ts
+{
+  path: 'admin',
+  loadComponent: () => import('./admin/admin.component').then(m => m.AdminComponent),
+  canActivate: [authGuard]
+}
+```
+
 <a id="ent65-1"></a>
 
-### **Angular Signals**
+### **¿Qué es Angular Signals?**
 
 [Volver al indice](#angular-base)
 
@@ -706,11 +746,145 @@ effect(() => {
 counter.set(1); // Consola: "Counter value is: 1"
 ```
 
+<a id="angular-5"></a>
+
+### **Manejo de estado de una aplicación Angular, qué metodos hay?**
+
+[Volver al indice](#angular-base)
+
+En Angular, el manejo de estado de una aplicación puede hacerse de varias maneras, dependiendo de la complejidad y los requerimientos de la aplicación. Aquí hay algunos métodos comunes:
+
+1. **Servicios compartidos**: Utilizar servicios para almacenar y compartir el estado entre componentes. Los servicios pueden contener propiedades y métodos para manipular el estado.
+
+   ```typescript
+   @Injectable({
+     providedIn: 'root',
+   })
+   export class StateService {
+     private state = { count: 0 };
+
+     getCount() {
+       return this.state.count;
+     }
+
+     increment() {
+       this.state.count++;
+     }
+   }
+   ```
+
+2. **BehaviorSubject de RxJS**: Utilizar `BehaviorSubject` para manejar el estado reactivo. Permite emitir y suscribirse a cambios en el estado.
+
+   ```typescript
+    import { Injectable } from '@angular/core';
+    import { BehaviorSubject } from 'rxjs';
+    @Injectable({
+      providedIn: 'root',
+    })
+    export class StateService {
+      private state = new BehaviorSubject<{ count: number }>({ count: 0 });
+
+      getState() {
+        return this.state.asObservable();
+      }
+
+      increment() {
+        const currentState = this.state.getValue();
+        this.state.next({ count: currentState.count + 1 });
+      }
+    }
+    ```
+
+3. **NgRx**: Utilizar NgRx, una librería basada en Redux, para manejar el estado de la aplicación de manera más estructurada y predecible. NgRx utiliza acciones, reducers y efectos para gestionar el estado.
+
+    ```typescript
+    // Acción
+    export const increment = createAction('[Counter] Increment');
+  
+    // Reducer
+    export const counterReducer = createReducer(
+      initialState,
+      on(increment, (state) => ({ ...state, count: state.count + 1 }))
+    );
+  
+    // Componente
+    export class CounterComponent {
+      count$ = this.store.select('count');
+  
+      constructor(private store: Store<{ count: number }>) {}
+  
+      increment() {
+        this.store.dispatch(increment());
+      }
+    }
+    ```
+
+4. **Akita**: Otra librería para el manejo de estado que proporciona una API simple y flexible, ideal para aplicaciones más pequeñas o medianas.
+
+5. **Signals**: Con Angular 16, se introdujo Signals, que permite manejar el estado de manera reactiva y declarativa, similar a los observables pero con una sintaxis más simple y sin necesidad de suscripciones.
+
+   ```typescript
+   import { signal } from '@angular/core';
+
+   const count = signal(0);
+
+   function increment() {
+     count.set(count() + 1);
+   }
+   ```
+
 <a id="ent65-11"></a>
 
 ### **Angular Signals vs Observables**
 
 [Volver al indice](#angular-base)
+
+Observables
+
+```typescript
+import { Component } from '@angular/core';
+import { Observable, interval } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+@Component({
+  selector: 'app-observable-example',
+  template: `<p>Contador: {{ counter$ | async }}</p>`,
+})
+export class ObservableExampleComponent {
+  counter$: Observable<number>;
+
+  constructor() {
+    this.counter$ = interval(1000).pipe(map((value) => value + 1));
+  }
+}
+```
+
+Signals
+
+```typescript
+import { Component, signal, effect } from '@angular/core';
+
+@Component({
+  selector: 'app-signal-example',
+  template: `<p>Contador: {{ counter() }}</p>`,
+})
+export class SignalExampleComponent {
+  counter = signal(0);
+
+  constructor() {
+    setInterval(() => {
+      this.counter.set(this.counter() + 1);
+    }, 1000);
+  }
+}
+```
+
+Comparación
+
+- **Observables**: Necesitan suscripción y, opcionalmente, el uso del `async` pipe para manejar el flujo de datos. Son ideales para manejar flujos complejos o múltiples fuentes de datos.
+- **Signals**: Son más simples y no requieren suscripción explícita. Angular maneja automáticamente la reactividad, lo que los hace ideales para estados locales y cambios simples.
+
+Ambos enfoques pueden coexistir en una aplicación Angular, dependiendo de las necesidades específicas del proyecto.
 
 Algunas de las ventajas del uso de Signals vs Observables son:
 
@@ -847,7 +1021,7 @@ private destroy$ = new Subject<void>();
 
 <a id="ent40"></a>
 
-### **Explica la diferencia entre un Observable "cold" y "hot". Proporciona un ejemplo práctico de cada uno.**
+### **Cual es la diferencia entre un Observable "cold" y "hot"?**
 
 [Volver al indice](#angular-base)
 
@@ -1173,6 +1347,20 @@ export class ProfileComponent {
 
 [Volver al indice](#angular-base)
 
+Angular tiene un sistema que cada vez que:
+
+- tocás algo del DOM (como un botón),
+
+- hacés un evento ((click), (input), etc.),
+
+- llega un nuevo dato de un observable o un servicio,
+
+automáticamente revisa todos los componentes y se pregunta: **“¿Cambió algo que estoy mostrando en la pantalla?”**
+
+Si la respuesta es sí, Angular actualiza lo que ve el usuario.
+
+**¿Angular revisa TODO todo el tiempo?**
+
 Sí, y no. Por defecto, Angular vuelve a revisar todos los componentes desde la raíz hacia abajo, cada vez que cree que algo pudo haber cambiado. Esto es gracias a algo que se llama **zone.js**, una librería que observa cosas como:
 
 - setTimeout
@@ -1269,6 +1457,44 @@ constructor(@Inject(CONFIG_TOKEN) private config: string) {
 }
 ```
 
+<a id="angular-4"></a>
+
+### **¿Qué es el Two-Way Data Binding en Angular?**
+
+[Volver al indice](#angular-base)
+
+El Two-Way Data Binding es una forma de vincular datos entre el componente y la vista de manera que si cambia el valor en el HTML, también cambia en el componente, y viceversa. Es como una autopista de doble mano: lo que escribís en el input se refleja en la variable, y si la variable cambia, el input también.
+
+Se usa con la sintaxis especial `[(ngModel)]`:
+
+```html
+<input [(ngModel)]="nombre">
+```
+
+- Si escribís algo en el input, la variable `nombre` se actualiza.
+- Si cambiás el valor de `nombre` en el componente, el input también lo muestra.
+
+**¿Cuándo usarlo?**  
+Cuando necesitás que el usuario pueda modificar datos y que esos cambios se reflejen automáticamente en tu lógica (por ejemplo, formularios).
+
+<a id="angular-51"></a>
+
+### **¿Qué es un Pipe en Angular y para qué sirve?**
+
+[Volver al indice](#angular-base)
+
+Un Pipe es una herramienta para transformar datos directamente en el HTML, sin tener que modificar el valor original en el componente. Es como un filtro que le da formato a lo que se muestra.
+
+Ejemplo de uso:
+
+```html
+<p>{{ fecha | date:'shortDate' }}</p>
+<p>{{ precio | currency:'USD' }}</p>
+```
+
+- `date` transforma una fecha a un formato legible.
+- `currency` muestra un número como dinero.
+
 <a id="angular4"></a>
 
 ### **¿Qué es la compilación JIT y AOT en Angular? Diferencias, pros y contras**
@@ -1355,39 +1581,5 @@ constructor(private router: Router) {}
 
 irAAbout() {
   this.router.navigate(['/about']);
-}
-```
-
-<a id="angular6"></a>
-
-### **Como se implementa Lazy Loading en Angular?**
-
-[Volver al indice](#angular-base)
-
-Lazy Loading carga un modulo solo cuando el usuario esta por acceder a la misma. Antes de la introduccion de standalone components, era necesario crear modulos para cada componente, pero ahora no es necesario. Se utiliza `loadComponent` en lugar de `loadChildren`
-
-```ts
-import { Routes } from '@angular/router';
-
-export const routes: Routes = [
-  {
-    path: 'admin',
-    loadComponent: () => import('./admin/admin.component').then(m => m.AdminComponent)
-  },
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  }
-];
-```
-
-Tambien puede complementarse muy bien con `Route Guards` para proteger rutas y asegurarse de que el usuario tenga acceso a la misma si posee autorizacion. 
-
-```ts
-{
-  path: 'admin',
-  loadComponent: () => import('./admin/admin.component').then(m => m.AdminComponent),
-  canActivate: [authGuard]
 }
 ```
