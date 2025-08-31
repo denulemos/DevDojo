@@ -2,12 +2,10 @@
 
 ## [Accesibilidad 🌐](#acc)
 
-[README](https://github.com/denulemos/DevDojo/blob/master/Accesibilidad.md)
-
 | Nivel de Dificultad: Fácil 🟢 |
 |------------------------------|
-| [¿Qué significa a11y y por qué es importante?](#1) |
-| [¿Qué es el atributo alt en imágenes?](#2) |
+| [¿Qué significa a11y y por qué es importante en el desarrollo web?](#1) |
+| [¿Qué es un atributo alt en imágenes y para qué se usa?](#2) |
 | [WCAG: Las reglas de oro de la accesibilidad](#3) |
 | [Principios POUR: La base de la accesibilidad](#4)|
 | [¿Qué etiquetas semánticas de HTML ayudan a mejorar la accesibilidad?](#5)|
@@ -18,12 +16,18 @@
 | Nivel de Dificultad: Medio 🟡 |
 |------------------------------|
 |[¿Cuál es la diferencia entre `aria-label`, `aria-labelledby` y `aria-describedby`? ¿Cuándo usar cada uno?](#9)|
+|[¿Cuál es la diferencia entre usar un botón `<button>` y un `<div>` con `onClick` en términos de accesibilidad?](#10)|
+| [¿Cómo se puede hacer accesible una navegación con teclado en un sitio web?](#11) |
+
+| Nivel de Dificultad: Avanzado 🔴 |
+|------------------------------|
+| [¿Qué consideraciones tomarías para accesibilidad en un proyecto multilingüe y con lectura RTL (right-to-left)?](#12) |
 
 ---
 
 <a id="1"></a>
 
-### ¿Qué significa a11y y por qué es importante?
+### ¿Qué significa a11y y por qué es importante en el desarrollo web?
 
 [Volver al índice](#base)
 
@@ -39,7 +43,7 @@ En resumen, la accesibilidad hace que la web sea más inclusiva y útil para tod
 
 <a id="2"></a>
 
-### ¿Qué es el atributo alt en imágenes?
+### ¿Qué es un atributo alt en imágenes y para qué se usa?
 
 [Volver al índice](#base)
 
@@ -297,8 +301,89 @@ En resumen, un buen contraste de colores mejora la legibilidad y hace que tu con
 
 ---
 
-<a id="9"></a>
+<a id="10"></a>
 
-### ¿Cuál es la diferencia entre `aria-label`, `aria-labelledby` y `aria-describedby`? ¿Cuándo usar cada uno?
+### ¿Cuál es la diferencia entre usar un botón `<button>` y un `<div>` con `onClick` en términos de accesibilidad?
 
 [Volver al índice](#base)
+
+La diferencia clave entre usar un botón `<button>` y un `<div>` con `onClick` es que el botón es accesible "de fábrica", mientras que el `<div>` necesita muchos ajustes extra para que sea igual de accesible para todas las personas, especialmente quienes usan teclado o lectores de pantalla.
+
+Accesibilidad con `<button>`
+
+- **Funciona con teclado y mouse sin hacer nada extra**: Al presionar Tab, el foco va al botón, y puedes activarlo con Enter o la barra espaciadora.[2][3]
+- **Los lectores de pantalla lo reconocen como botón** y lo anuncian así, lo que ayuda a la gente con discapacidad visual a saber que hay un botón interactivo.[4]
+- **Ya es accesible para todo el mundo**, incluyendo personas que solo pueden usar teclado o tecnología asistida.
+
+Accesibilidad con `<div onClick>`
+
+- **No es accesible por defecto**: Un `<div>` no recibe el foco con Tab ni se activa con Enter/espacio; solo funciona con el mouse, así que una parte de las personas no puede usarlo.[6][2]
+- **No lo anuncian como botón los lectores de pantalla**: El `<div>` solo se presenta como parte del contenido, no como algo en lo que se puede hacer clic.[1][4]
+- **Puedes mejorarlo, pero requiere trabajo extra**, por ejemplo:
+  - Agregar `tabindex="0"` para que el div reciba foco con Tab.
+  - Agregar `role="button"` y manejar los eventos de teclado (por ejemplo, si la persona presiona Enter o espacio, debe disparar el mismo evento que el click).
+
+- **Usar `<button>` es la forma fácil y correcta** para asegurarse de que todos puedan usar tu interfaz.
+- **Usar `<div>` solo se recomienda si no queda más remedio**, pero tendrás que ocuparte tú de toda la accesibilidad, lo cual es más complicado y propenso a errores.
+
+En resumen, el botón es accesible desde el principio, mientras que el `<div>` con onClick necesita muchos extras para llegar al mismo nivel de accesibilidad.
+
+---
+
+<a id="11"></a>
+
+### ¿Cómo se puede hacer accesible una navegación con teclado en un sitio web?
+
+[Volver al índice](#base)
+
+Para que una navegación en un sitio web sea accesible con el teclado, hay que asegurarse de que todas las partes interactivas (botones, enlaces, menús, formularios) se puedan recorrer usando la tecla Tab, y que sea claro qué elemento tiene el foco en todo momento.
+
+1. Usa elementos nativos
+Los enlaces `<a>` y los botones `<button>` ya son accesibles y se pueden navegar con Tab sin hacer nada extra.
+
+2. Orden lógico de Tab
+El orden en que Tab avanza debe tener sentido. Evita esconder elementos importantes o poner cosas interactivas fuera del orden normal.
+
+3. Resalta el foco
+Cuando Tab selecciona un elemento, debe verse claramente (puedes usar CSS como `:focus` para ponerle un borde o cambiar el color).
+
+4. No bloquees la navegación
+Evita quitar el enfoque (`outline: none`) o impedir que Tab funcione. Si usas elementos personalizados, como un `<div>`, agrega `tabindex="0"` para que se pueda seleccionar con Tab.
+
+5. Accesibilidad en menús
+Si tienes menús desplegables, sé cuidadoso:
+- Permite abrir/cerrar el menú con el teclado (usando Enter o barra espaciadora).
+- Permite moverse entre las opciones con las flechas del teclado.
+
+6. Formularios
+En formularios, asegúrate de que Tab avance ordenadamente por los campos y botones, y que los labels estén bien relacionados con cada campo.
+
+---
+
+<a id="12"></a>
+
+### ¿Cómo se puede hacer accesible una navegación con teclado en un sitio web?
+
+[Volver al índice](#base)
+
+Al crear un proyecto accesible que sea multilingüe y soporte lectura de derecha a izquierda (RTL), es clave pensar tanto en las diferencias de idioma como en el sentido de lectura para que cualquier persona pueda usarlo sin problemas.
+
+Multilingüe
+
+- Asegúrate de que los textos estén bien traducidos y adaptados, no solo literalmente, sino tomando en cuenta expresiones y cultura local.
+- Permite que las personas elijan el idioma fácilmente, por ejemplo, con un selector claro y accesible (que funcione con teclado y lectores de pantalla).
+- Piensa en que el tamaño del texto puede variar según el idioma, así que usa diseños flexibles para que nada se corte o se vea mal.
+- Verifica que los textos, botones y mensajes estén bien etiquetados para lectores de pantalla en cada idioma.
+
+RTL (Right-to-Left)
+
+- Usa la propiedad `dir="rtl"` en tu HTML cuando el idioma lo requiera, para que todo se alinee correctamente de derecha a izquierda.
+- Cambia la posición de los menús, iconos y barras de navegación para que tengan sentido en RTL (por ejemplo, menú principal a la derecha en vez de a la izquierda).
+- Asegúrate de que la navegación con teclado siga un orden lógico también en modo RTL.
+- Ajusta gráficos, tablas y formularios para que se lean correctamente de derecha a izquierda.
+
+Otras consideraciones
+
+- Las imágenes y colores pueden tener significados distintos según la cultura, así que revisa que todo sea apropiado para cada idioma y región.
+- Los formatos de fechas, números y direcciones también deben adaptarse según el idioma para evitar confusiones.
+- Prueba tu sitio con herramientas de accesibilidad y usuarios reales en todos los idiomas y modos de lectura para asegurarte de que la experiencia sea buena para todos.
