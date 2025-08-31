@@ -18,9 +18,7 @@
 |[¿Cómo se maneja la inyección de dependencias y la inversión de control en las aplicaciones de Angular?](#angular3) 💛|
 |[¿Qué es el Two-Way Data Binding en Angular?](#angular-4) |
 |[¿Qué es un Pipe en Angular y para qué sirve?](#angular-51) |
-
-
-
+| [¿Qué es un Service en Angular y por qué se usa?](#angular-52) |
 |[¿Qué es el enrutamiento en Angular y cómo se configura?](#angular5)|
 | [¿Qué es un Decorador en Angular?](#rea14) 💛|
 | [¿Cuál es el flujo de datos una aplicación Angular?](#rea13) |
@@ -1494,6 +1492,25 @@ Ejemplo de uso:
 
 - `date` transforma una fecha a un formato legible.
 - `currency` muestra un número como dinero.
+
+<a id="angular-52"></a>
+
+### **¿Qué es un Service en Angular y por qué se usa?**
+
+[Volver al indice](#angular-base)
+
+Un Service es una clase donde ponés lógica que querés compartir entre varios componentes, como llamadas a APIs, manejo de datos, o utilidades. Así evitás repetir código y mantenés tus componentes más limpios.
+
+Ejemplo típico:
+
+```typescript
+@Injectable({ providedIn: 'root' })
+export class ApiService {
+  getUsuarios() {
+    return this.http.get('/api/usuarios');
+  }
+}
+```
 
 <a id="angular4"></a>
 
