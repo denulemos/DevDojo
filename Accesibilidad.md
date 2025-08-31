@@ -22,6 +22,7 @@
 | Nivel de Dificultad: Avanzado 🔴 |
 |------------------------------|
 | [¿Qué consideraciones tomarías para accesibilidad en un proyecto multilingüe y con lectura RTL (right-to-left)?](#12) |
+| [¿Qué estrategias seguirías para asegurar la accesibilidad continua en un equipo grande (CI/CD, linters, tests automáticos, auditorías)?](#13) |
 
 ---
 
@@ -387,3 +388,30 @@ Otras consideraciones
 - Las imágenes y colores pueden tener significados distintos según la cultura, así que revisa que todo sea apropiado para cada idioma y región.
 - Los formatos de fechas, números y direcciones también deben adaptarse según el idioma para evitar confusiones.
 - Prueba tu sitio con herramientas de accesibilidad y usuarios reales en todos los idiomas y modos de lectura para asegurarte de que la experiencia sea buena para todos.
+
+---
+
+<a id="13"></a>
+
+### ¿Qué estrategias seguirías para asegurar la accesibilidad continua en un equipo grande (CI/CD, linters, tests automáticos, auditorías)?
+
+[Volver al índice](#base)
+
+Para asegurar accesibilidad de forma continua en un equipo grande, lo mejor es incluirla en los hábitos del grupo y usar herramientas automáticas que funcionen como "guardianes" del código, revisando que todo siga buenas prácticas, sin depender solo de las personas.
+
+1. Usa herramientas automáticas (linters y tests)
+Imagínate un “corrector” automático para el código, que te avisa si faltó algo accesible, como poner etiquetas en los botones, usar órdenes lógicos en el teclado, o si el contraste de colores es bajo. Estos linters y tests revisan cada vez que se suben cambios y avisan si algo se hizo mal.
+
+2. CI/CD = revisores robot
+Cada vez que alguien del equipo hace cambios, el “robot revisor” (CI/CD) los chequea y no deja que se publiquen si hay errores de accesibilidad. Así nadie puede olvidar estos detalles importantes.
+
+3. Auditorías periódicas
+Cada cierto tiempo, se hace una revisión extra (como pasarle un escáner especial a la web) y se chequea que todo siga siendo accesible, por si algo se escapó. Si se encuentran problemas, se anotan y se arreglan entre todos.
+
+4. Capacitación y comunicación fácil
+Todo el equipo debe saber, aunque sea lo básico, sobre accesibilidad y por qué es importante. Explicarlo con ejemplos reales y usando lenguaje sencillo ayuda mucho.
+
+5. Feedback directo
+Si un usuario o alguien del equipo encuentra un problema de accesibilidad, debe haber una forma sencilla y rápida de avisar y arreglarlo.
+
+Con estas estrategias, se logra que la accesibilidad no dependa solo de una persona ni se convierta en tarea extra; es parte automática y natural del flujo de trabajo del equipo.
