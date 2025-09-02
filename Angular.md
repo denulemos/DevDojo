@@ -19,16 +19,20 @@
 |[¿Qué es el Two-Way Data Binding en Angular?](#angular-4) |
 |[¿Qué es un Pipe en Angular y para qué sirve?](#angular-51) |
 | [¿Qué es un Service en Angular y por qué se usa?](#angular-52) |
+| [¿Qué es un Guard en Angular y para qué sirve?](#angular-53) |
+| [¿Qué es un Resolver en Angular?](#angular-54) |
+| [¿Qué es un Directive en Angular?](#angular-55) |
 |[¿Qué es el enrutamiento en Angular y cómo se configura?](#angular5)|
 | [¿Qué es un Decorador en Angular?](#rea14) 💛|
-| [¿Cuál es el flujo de datos una aplicación Angular?](#rea13) |
-| [Event Binding en Angular (Manejo de Eventos)](#rea15) |
-| [Data Binding en Angular](#rea16) |
+|[¿Qué es un Input y un Output en Angular?](#angular-56)|
+|[¿Qué es un módulo compartido (Shared Module) y para qué sirve?](#angular-57)|
+|[¿Qué diferencias hay entre `ViewChild` y `ContentChild`? ¿Cuándo usarías cada uno?](#angular-58)|
 
 | Clean Code |
 |----------|
 | [¿Cuales son algunas reglas de Clean Code en Angular?](#rea1) |
 | [Patrones de disenio en Angular](#ent45) |
+|[¿Cómo organizas un proyecto grande en Angular? ¿Usas Nx o alguna otra herramienta de monorepo?](#angular-59)|
 
 | Performance |
 |----------|
@@ -239,7 +243,7 @@ En cambio, la misma linea de codigo SIN corchetes:
 Acá Angular no entiende que empresa o habilitado son variables.
 Los toma como texto plano. O sea, va a escribir literalmente "empresa" en el input.
 
-#### ¿Y qué diferencia hay con la interpolación `{{}}`?
+¿Y qué diferencia hay con la interpolación `{{}}`?
 
 Ambas cosas sirven para mostrar datos, pero se usan en contextos distintos.
 
@@ -257,16 +261,6 @@ Las dos hacen lo mismo si es un string, pero si estás trabajando con cosas más
 - Angular escucha y actualiza la propiedad del HTML cuando cambie el valor.
 - Te ayuda a tener una app reactiva, sin andar actualizando todo a mano.
 - Si pasás algo que no es un texto, usá sí o sí Property Binding.
-
-<a id="rea13"></a>
-
-### **¿Cuál es el flujo de datos una aplicación Angular?**
-
-[Volver al indice](#angular-base)
-
-- Enlace unidireccional [] para enlazar desde la capa lógica (component.ts) a la vista (html).
-- Enlace unidireccional () para enlazar de la vista (html) a la capa lógica (component.ts).
-- Enlace bidireccional [()] para enlazar una secuencia de vista bidireccional a la capa lógica (component.ts).
 
 <a id="rea14"></a>
 
@@ -395,66 +389,30 @@ export class ParentComponent implements AfterViewInit {
 }
 ```
 
-<a id="rea15"></a>
+<a id="angular-56"></a>
 
-### **Event Binding en Angular (Manejo de Eventos)**
-
-[Volver al indice](#angular-base)
-
-```tsx
-<button (click)="onSave()">Save</button>
-
-// Multiples eventos
-<button (click)="clickEvent()" (mouseenter)="mouseEnterEvent()">Click Me</button>
-
-<button (click)="handleClick($event)">Save</button>
-
-<button (click)="value = value + 1">Presioname</button>
-
-// -- En app.component.ts ---
-
-btnDisabled = true;
-
-onSave() {
-  this.btnDisabled = false; // Se usa this para hacer referencia al contexto actual
-}
-
-handleClick($event: Event) {
-    const element = event.target as HTMLElement;
-}
-```
-
-- Usar () en el template html es sinónimo de llamar “addEventListener()”
-
-<a id="rea16"></a>
-
-### **Data Binding en Angular**
+### **¿Qué es un Input y un Output en Angular?**
 
 [Volver al indice](#angular-base)
 
-El atributo **ngModel** permite el **intercambio de datos de forma bidireccional** entre el componente y la vista. Lo que suceda en el componente, se verá reflejado en la vista. Lo que se suceda en la vista, inmediatamente impactará en el componente.
+- **@Input:** Permite que un componente hijo reciba datos de su componente padre.
+- **@Output:** Permite que un componente hijo le envíe eventos o datos al padre.
 
-```tsx
-<input #nameInput="ngModel" [(ngModel)]="name" />
+Ejemplo:
 
-<p>{{nameInput.valid}}</p> // true o false dependiendo de validaciones html
+```typescript
+// Hijo
+@Input() mensaje: string;
+@Output() notificar = new EventEmitter<string>();
+
+enviar() {
+  this.notificar.emit('¡Hola padre!');
+}
 ```
 
-Si no quieres la bidireccionalidad, solo colocamos los corchetes `[ngModel]` para que la comunicación sea unidireccional. Para utilizar ngModel, es necesario hacer uso e importar **Angular Forms**
-
-```tsx
-... // -- app.module.ts ---
-import { FormsModule } from '@angular/forms';
-
-@NgModule({
-  declarations: [ ... ],
-  imports: [
-    FormsModule
-  ],
-  providers: [],
-  bootstrap: [ ... ]
-})
-export class AppModule { }
+```html
+<!-- Padre -->
+<app-hijo [mensaje]="texto" (notificar)="recibir($event)"></app-hijo>
 ```
 
 <a id="angular-1"></a>
@@ -1512,6 +1470,99 @@ export class ApiService {
 }
 ```
 
+<a id="angular-53"></a>
+
+### **¿Qué es un Guard en Angular y para qué sirve?**
+
+[Volver al indice](#angular-base)
+
+Un Guard es como un portero para tus rutas. Decide si un usuario puede entrar a una página o no (por ejemplo, si está logueado o tiene permisos).
+
+Ejemplo básico:
+
+```typescript
+@Injectable({ providedIn: 'root' })
+export class AuthGuard implements CanActivate {
+  canActivate(): boolean {
+    return this.authService.estaLogueado();
+  }
+}
+```
+
+Y lo usás en tus rutas:
+
+```typescript
+{ path: 'admin', component: AdminComponent, canActivate: [AuthGuard] }
+```
+
+<a id="angular-54"></a>
+
+### **¿Qué es un Resolver en Angular?**
+
+[Volver al indice](#angular-base)
+
+Un Resolver es una clase que se encarga de traer datos antes de que se muestre una ruta. Así, cuando el usuario entra a una página, ya tiene toda la información lista y no ve pantallas vacías o "cargando".
+
+Ejemplo:
+
+```typescript
+import { Injectable } from '@angular/core';
+import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
+import { Observable } from 'rxjs';
+import { ApiService } from './api.service';
+import { Usuario } from './usuario.model';
+
+@Injectable({ providedIn: 'root' })
+export class UsuarioResolver implements Resolve<Usuario> {
+  constructor(private apiService: ApiService) {}
+
+  resolve(route: ActivatedRouteSnapshot): Observable<Usuario> {
+    return this.apiService.getUsuario(route.params['id']);
+  }
+}
+```
+
+Y en la ruta:
+
+```typescript
+{ path: 'usuario/:id', component: UsuarioComponent, resolve: { usuario: UsuarioResolver } }
+```
+
+```typescript
+@Injectable({ providedIn: 'root' })
+export class UsuarioResolver implements Resolve<Usuario> {
+  resolve(route: ActivatedRouteSnapshot): Observable<Usuario> {
+    return this.apiService.getUsuario(route.params['id']);
+  }
+}
+```
+
+Y en la ruta:
+
+```typescript
+{ path: 'usuario/:id', component: UsuarioComponent, resolve: { usuario: UsuarioResolver } }
+```
+
+<a id="angular-55"></a>
+
+### **¿Qué es un Directive en Angular?**
+
+[Volver al indice](#angular-base)
+
+Una Directiva es una instrucción que le das a un elemento HTML para que cambie su comportamiento o apariencia. Hay directivas estructurales (como `*ngIf`, `*ngFor`) y de atributo (como `[ngClass]`, `[ngStyle]`).
+
+Ejemplo:
+
+```html
+<div *ngIf="mostrar">Solo se muestra si 'mostrar' es true</div>
+<ul>
+  <li *ngFor="let item of lista">{{ item }}</li>
+</ul>
+```
+
+También podés crear tus propias directivas para reutilizar lógica visual.
+
+
 <a id="angular4"></a>
 
 ### **¿Qué es la compilación JIT y AOT en Angular? Diferencias, pros y contras**
@@ -1600,3 +1651,90 @@ irAAbout() {
   this.router.navigate(['/about']);
 }
 ```
+
+<a id="angular-57"></a>
+
+### **¿Qué es un módulo compartido (Shared Module) y para qué sirve?**
+
+[Volver al indice](#angular-base)
+
+Un Shared Module es un módulo donde ponés componentes, pipes y directivas que vas a usar en varios lugares de tu app. Así, evitás importar lo mismo muchas veces y mantenés tu código más organizado.
+
+Ejemplo:
+
+```typescript
+@NgModule({
+  declarations: [MiPipe, MiDirectiva],
+  exports: [MiPipe, MiDirectiva, CommonModule]
+})
+export class SharedModule {}
+```
+
+Luego lo importás en otros módulos que lo necesiten.
+
+<a id="angular-58"></a>
+
+### **¿Qué diferencias hay entre `ViewChild` y `ContentChild`? ¿Cuándo usarías cada uno?**
+
+[Volver al indice](#angular-base)
+
+`ViewChild` y `ContentChild` son dos decoradores en Angular que se utilizan para acceder a elementos del DOM o componentes hijos, pero tienen propósitos diferentes.
+
+- **ViewChild:** Se usa para acceder a un elemento del DOM o un componente hijo que está en la vista del componente actual. Es útil cuando necesitas interactuar con un elemento que está directamente en el template del componente.
+
+```typescript
+import { Component, ViewChild } from '@angular/core';
+import { ElementRef } from '@angular/core';
+@Component({
+  selector: 'app-mi-componente',
+  template: `<input #miInput type="text">`
+})
+export class MiComponente {
+  @ViewChild('miInput') inputRef!: ElementRef;
+
+  ngAfterViewInit() {
+    this.inputRef.nativeElement.focus(); // Accede al input y le da foco
+  }
+}
+```
+
+- **ContentChild:** Se usa para acceder a un elemento del DOM o un componente hijo que está proyectado dentro del componente actual mediante `<ng-content>`. Es útil cuando necesitas interactuar con contenido que se inserta en el componente desde el exterior.
+
+```typescript
+import { Component, ContentChild } from '@angular/core';
+import { ElementRef } from '@angular/core';
+
+@Component({
+  selector: 'app-mi-componente',
+  template: `<ng-content></ng-content>`
+})
+
+export class MiComponente {
+  @ContentChild('miContenido') contenidoRef!: ElementRef;
+
+  ngAfterContentInit() {
+    console.log(this.contenidoRef.nativeElement.textContent); // Accede al contenido proyectado
+  }
+}
+```
+
+<a id="angular-59"></a>
+
+### **¿Cómo organizas un proyecto grande en Angular? ¿Usas Nx o alguna otra herramienta de monorepo?**
+
+[Volver al indice](#angular-base)
+
+- **Modularización:** Divide la aplicación en módulos lógicos. Cada módulo debe tener una responsabilidad clara y contener componentes, servicios y otros elementos relacionados.
+- **Lazy Loading:** Implementa lazy loading para cargar módulos solo cuando sean necesarios, mejorando el rendimiento inicial de la aplicación.
+- **Shared Module:** Crea un módulo compartido para componentes, directivas y pipes que se usan en varios lugares de la aplicación.
+- **Core Module:** Crea un módulo core para servicios singleton que se usan en toda la aplicación, como servicios de autenticación o configuración.
+- **Feature Modules:** Agrupa funcionalidades relacionadas en módulos específicos. Por ejemplo, un módulo de usuarios, un módulo de productos, etc.
+- **Uso de Nx o Monorepos:** Si el proyecto es muy grande o tiene múltiples aplicaciones, considera usar herramientas como Nx para gestionar un monorepo. Esto permite compartir código entre aplicaciones y bibliotecas, y facilita la gestión de dependencias y versiones.
+- **Estructura de carpetas:** Mantén una estructura de carpetas clara y consistente. Por ejemplo, puedes tener carpetas para `components`, `services`, `models`, `pipes`, etc.
+- **Documentación:** Documenta el código y las decisiones arquitectónicas. Esto es especialmente importante en proyectos grandes donde varios desarrolladores pueden trabajar en diferentes partes de la aplicación.
+- **Pruebas:** Implementa pruebas unitarias y de integración para asegurar la calidad del código. Usa herramientas como Jasmine y Karma para pruebas unitarias, y Protractor o Cypress para pruebas end-to-end.
+- **Linting y Formateo:** Usa herramientas como ESLint y Prettier para mantener un código limpio y consistente. Configura reglas de linting que se ajusten a las convenciones del equipo.
+- **Gestión de Estado:** Considera usar una librería de gestión de estado como NgRx o Akita para manejar el estado de la aplicación de manera predecible y escalable.
+- **Optimización de Rendimiento:** Utiliza herramientas de análisis de rendimiento como el Angular DevTools para identificar cuellos de botella y optimizar la aplicación.
+- **Seguridad:** Implementa buenas prácticas de seguridad, como sanitización de entradas, protección contra ataques XSS y CSRF, y uso de HTTPS.
+
