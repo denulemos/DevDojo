@@ -1,51 +1,78 @@
 <a name="react-base"></a>
 
-| Conceptos Generales |
+
+| Conceptos Generales (Preguntas en común con devhood) |
 |----------|
-| [¿Qué es React?](#rea47) |
-| [Para que es el comando React eject?](#rea49) |
-| [Que son las Ref?](#rea52-5) |
-|[Libreria vs Framework 💛](#rea47-2)|
+| [¿Cuál es la diferencia entre una librería y un framework?](#rea47-2) |
+| [¿Para qué sirve el comando `eject` en React?](#rea49) |
+| [¿Qué son las Ref en React?](#rea52-5) |
 | [¿Qué es el Virtual DOM?](#rea39) 💛|
 | [Que es React Fiber?](#rea24) |
 |[Que tener en cuenta para tener una buena performance en React](#rea24-1) 💛|
 |[¿Qué es un Fragment en React y para qué se utiliza?](#rea44)|
-| [Funciones de alto nivel / Higher order Function](#rea43) |
-| [Patrones de disenio en React](#ent44) |
 |[¿Qué es el modo estricto de React (React.StrictMode) y para qué sirve?](#rea68)|
-|[Consideraciones de Seguridad en React 🔐](#rea69)|
-
-| Hooks |
-|----------|
-| [useState](#rea4) 💛|
-| [useEffect](#rea3) 💛|
-|[Puede el useEffect ser asincrono? Porque?](#rea3-2) 💛|
-| [useRef](#rea6) 💛|
-| [useReducer](#rea8) 💛|
-| [useCallback](#rea1) 💛|
-| [useMemo](#rea7) 💛|
-|[¿Cuál es la diferencia entre useCallback y useMemo?](#rea7-1) 💛|
-| [useLayoutEffect](#rea9) |
-|[¿Qué diferencia hay entre useEffect y useLayoutEffect? ¿Cuándo usarías cada uno?](#rea9-1)|
-|[¿Qué son los custom hooks? ¿Cómo los crearías y para qué sirven?](#rea46) 💛|
-| [useActionState()](#ent69) |
-| [startTransition()](#ent70) |
-| [useFormStatus()](#ent71) |
-| [useOptimistic()](#ent72) |
-| [SSR - React Server Components](#ent69-1) |
-
-| Manejo de Estado |
-|----------|
 | [¿Que es Redux?](#rea18) 💛|
 | [Cuando conviene usar Redux?](#rea19) |
 | [¿Cuales son los beneficios de usar Redux?](#rea20) |
 | [¿Cual es el flujo de Redux?](#rea22) |
+| [Que es ContextAPI?](#rea23) 💛|
+| [Redux vs ContextAPI](#rea21) 💛|
+|[¿Cuál es la diferencia entre useCallback y useMemo?](#rea7-1) 💛|
+|[¿Qué diferencia hay entre useEffect y useLayoutEffect? ¿Cuándo usarías cada uno?](#rea9-1)|
+| [useReducer](#rea8) 💛|
+| [useLayoutEffect](#rea9) |
+|[¿Qué son los custom hooks? ¿Cómo los crearías y para qué sirven?](#rea46) 💛|
+|[¿Cómo funcionan las claves (keys) en las listas de React? ¿Por qué son importantes?](#rea45)|
+|[¿Qué son las "re-renderizaciones innecesarias" y cómo las evitarías?](#rea455) 💛|
+|[¿Qué herramientas usarías para identificar problemas de rendimiento en una aplicación React?](#rea456) 💛|
+|[¿Cómo manejarías el estado global sin usar Redux ni Context API?](#rea62) 💛|
+|[Componentes de clase vs Componentes de Funcion 💛](#rea62-1)|
+| [SSR - React Server Components](#ent69-1) |
+
+| Ciclo de vida y Componentes Clásicos |
+|----------|
+| [Ciclos de vida en React - Component LifeCycle](#react62) |
+| [componentWillReceiveProps()](#rea55) |
+| [componentDidMount()](#rea56) |
+| [componentWillUnmount()](#rea57) |
+| [componentWillMount()](#rea58) |
+| [componentDidUpdate()](#rea59) |
+| [shouldComponentUpdate()](#rea60) |
+| [componentWillUpdate()](#rea61) |
+| [useState](#rea4) 💛|
+| [useEffect](#rea3) 💛|
+|[Puede el useEffect ser asincrono?](#rea3-2) 💛|
+| [useRef](#rea6) 💛|
+| [useReducer](#rea8) 💛|
+| [useCallback](#rea1) 💛|
+| [useMemo()](#rea7) 💛|
+| [useLayoutEffect](#rea9) |
+|[¿Cuál es la diferencia entre useCallback y useMemo?](#rea7-1) 💛|
+|[¿Qué diferencia hay entre useEffect y useLayoutEffect? ¿Cuándo usarías cada uno?](#rea9-1)|
+|[¿Qué son los custom hooks? ¿Cómo los crearías y para qué sirven?](#rea46) 💛|
+| [useRef](#rea6) 💛|
+| [useActionState()](#ent69) |
+| [startTransition()](#ent70) |
+| [useFormStatus()](#ent71) |
+| [useOptimistic()](#ent72) |
+
+| Testing |
+|----------|
+|[Nombrar distintas herramientas de Testing para React](#rea99)|
+
+| Conceptos Generales (Solo en DevDojo) |
+|----------|
+| [¿Qué es React?](#rea47) |
+| [Funciones de alto nivel / Higher order Function](#rea43) |
+| [Patrones de disenio en React](#ent44) |
+|[Consideraciones de Seguridad en React 🔐](#rea69)|
+
+
+| Manejo de Estado |
+|----------|
 | [Redux Async Flow](#ent53) |
 | [useDispatch](#rea2)|
 | [useSelector](#rea5) |
-| [Que es ContextAPI?](#rea23) 💛|
-| [Redux vs ContextAPI](#rea21) 💛|
-|[¿Cómo manejarías el estado global sin usar Redux ni Context API?](#rea62) 💛|
 
 | Performance |
 |----------|
@@ -55,23 +82,30 @@
 |¿Cómo se gestiona el "debounce" o "throttle" en React para eventos como el scroll o input?|
 |¿Cómo implementarías un "Suspense" en React para manejar la carga de datos de forma asincrónica? 💛|
 
-| Ciclo de vida y Componentes Clásicos |
-|----------|
-| [De que tratan los Ciclos de Vida Componentes?](#react62) |
-|[Componentes de clase vs Componentes de Funcion 💛](#rea62-1)|
-| [componentWillReceiveProps()](#rea55) |
-| [componentDidMount()](#rea56) |
-| [componentWillUnmount()](#rea57) |
-| [componentWillMount()](#rea58) |
-| [componentDidUpdate()](#rea59) |
-| [shouldComponentUpdate()](#rea60) |
-| [componentWillUpdate()](#rea61) |
-
-| Testing |
-|----------|
-|[Nombrar distintas herramientas de Testing para React](#rea99)|
-
 ---
+
+<a id="rea47-2"></a>
+
+### **¿Cuál es la diferencia entre una librería y un framework?** 
+
+[Volver al indice](#react-base)
+
+Imagina que estás cocinando:
+
+- **Librería:** Es como tener un libro de recetas. Tú eliges qué receta usar y cuándo. Tienes el control y decides cómo organizar tu cocina.  
+  Ejemplo: **React**, **Redux**, **Lodash**.
+
+- **Framework:** Es como tener un chef jefe en tu cocina que te dice exactamente qué hacer, en qué orden y cómo organizar todo. El framework manda, tú sigues las reglas.  
+  Ejemplo: **Angular**, **Vue**, **Django**.
+
+| Característica         | Librería                | Framework                |
+|----------------------- |------------------------|--------------------------|
+| ¿Quién tiene el control? | El programador         | El framework             |
+| ¿Flexibilidad?         | Mucha                   | Menos, hay que seguir reglas |
+| ¿Estructura fija?      | No, cada proyecto puede ser distinto | Sí, todos los proyectos se parecen |
+| Ejemplos               | React, Redux, Lodash    | Angular, Vue, Django     |
+
+Por eso, dos proyectos hechos con React pueden ser muy diferentes entre sí, pero dos proyectos hechos con Angular suelen tener la misma estructura.
 
 <a id="rea47"></a>
 
@@ -91,75 +125,75 @@ Al ser una libreria, se puede usar directamente en un HTML (aunque no es la mane
 
 Tambien se puede trabajar del lado del servidor con Node, aplicaciones mobile con React Native y de escritorio con Electron. Todo con el mismo tipo de codigo.
 
-<a id="rea47-2"></a>
-
-### **Libreria vs Framework** 💛
-
-[Volver al indice](#react-base)
-
-- **Libreria:** Es un conjunto de funciones que se pueden usar en un proyecto. El programador decide cuando y como usarla, es mucho mas flexible. Ejemplo: React, Redux, Lodash.
-- **Framework:** Es un conjunto de reglas y estructuras que se deben seguir para desarrollar un proyecto. El framework decide cuando y como usarlo. Ejemplo: Angular, Vue, Django.
-
-Es por eso que cuando vemos un proyecto hecho con React, y luego otro tambien hecho con React, su estructura puede ser completamente distinta. En cambio, cuando vemos proyectos Angular, podemos encontrar la misma estructura base en todos.
-
 <a id="rea49"></a>
 
-### **Para que es el comando React eject?**
+### **¿Para qué sirve el comando `eject` en React?**
 
 [Volver al indice](#react-base)
 
-El comando `eject` de React es una forma de sacar toda la configuración de Webpack y Babel que React trae por defecto, para poder modificarla a gusto. Es una forma de tener control total sobre la configuración de la aplicación.
+Cuando creás una app con `create-react-app`, toda la configuración complicada (Webpack, Babel, etc.) está "escondida" para que no tengas que preocuparte. Pero si algún día necesitás cambiar algo avanzado (por ejemplo, agregar un plugin raro), podés usar el comando:
 
-```jsx
-npx create-react-app my-app
-cd my-app
+```bash
 npm run eject
 ```
 
+Esto "destapa" toda la configuración y la pone en tu proyecto para que la puedas modificar. **OJO:** No se puede volver atrás fácilmente. Usalo solo si realmente necesitás cambiar la configuración interna de React.
+
 <a id="rea52-5"></a>
 
-### **Que son las Ref?**
+### **¿Qué son las Ref en React?**
 
 [Volver al indice](#react-base)
 
-Permite a react manipular directamente el DOM Sin necesidad de actualizar un componente, asumen cambios en los mismos que no se pueden resolver mediante el traspaso de props o cuyo impacto se limita al propio componente no siendo rentable renderizarlo de nuevo.
+Las **Ref** en React sirven para acceder directamente a un elemento del DOM (por ejemplo, un `<div>`, un `<input>`, etc.) desde tu código JavaScript, sin tener que pasar por el sistema de props o estado de React.
+
+**¿Para qué se usan?**
+- Cuando necesitas modificar algo del DOM directamente (por ejemplo, enfocar un input, reproducir un video, medir el tamaño de un elemento, etc.).
+- Cuando NO querés que el componente se vuelva a renderizar solo por ese cambio.
+
+**Ejemplo fácil con componente funcional:**
 
 ```jsx
-class AnimatedSpinner extends Component {
+import React, { useRef } from 'react';
 
-  constructor() {
-    super()
-    this.animationRef = React.createRef()    // 1. creación
-  }
+function MiComponente() {
+  const inputRef = useRef(); // Creamos la ref
 
-  triggerAnimation() {
-    this.animationRef.current.className.add('animated')  // 3. acceso
-  }
+  const enfocarInput = () => {
+    inputRef.current.focus(); // Accedemos al input y lo enfocamos
+  };
 
-  render() {
-    return (
-      <>
-        <div ref={this.animationRef} className="spinner"> </div>  // asociación
-        <button onClick={this.triggerAnimation}> Animar </button>
-
-    )
-  }
+  return (
+    <>
+      <input ref={inputRef} placeholder="Escribí algo..." />
+      <button onClick={enfocarInput}>Enfocar input</button>
+    </>
+  );
 }
 ```
 
+**¿Qué pasa acá?**
+- `useRef()` crea una referencia.
+- Se la damos al `<input ref={inputRef} />`.
+- Cuando apretás el botón, el input se enfoca automáticamente.
+
+Las Ref son como un "puente" para manipular directamente elementos del DOM desde React, sin tener que actualizar el estado ni renderizar de nuevo el componente.
+
 <a id="react62"></a>
 
-### **De que tratan los Ciclos de Vida Componentes?**
+### **Ciclos de vida en React - Component LifeCycle**
 
 [Volver al indice](#react-base)
 
-React provee de metodos especificos para los ciclos de vida de los componentes, en este caso, veremos en los de clase. Se llaman cuando el componente se monta, actualiza o desmonta, veamos las deficiones:
+Los **ciclos de vida** de los componentes en React son una serie de métodos especiales que permiten ejecutar código en momentos específicos del ciclo de vida de un componente de clase: cuando se monta (aparece en pantalla), se actualiza (cambia su estado o props) o se desmonta (se elimina del DOM).
 
-- Monta: El componente se renderiza en la pagina
-- Desmonta: El componente es removido de la pagina
-- Actualiza: El componente se actualiza en la pagina
+- **Montaje (Mounting):** El componente se crea y se inserta en el DOM.
+- **Actualización (Updating):** El componente se vuelve a renderizar debido a cambios en props o estado.
+- **Desmontaje (Unmounting):** El componente se elimina del DOM.
 
-Varios de los estados que veremos que se utilizaban tipicamente en componentes de clase se encuentran deprecados, y deben usarse con un tag UNSAFE para su uso.
+React proporciona métodos como `componentDidMount`, `componentDidUpdate` y `componentWillUnmount` para manejar estas etapas. Algunos métodos antiguos están deprecados y requieren el prefijo `UNSAFE_` para ser usados, ya que pueden causar problemas en futuras versiones de React.
+
+Hoy en día, en componentes funcionales, estos ciclos de vida se gestionan principalmente con el hook `useEffect`.
 
 <a id="rea62-1"></a>
 
@@ -284,7 +318,7 @@ componentWillUpdate() {
 
 <a id="rea1"></a>
 
-### **useCallback** 💛
+### **useCallback()** 
 
 [Volver al indice](#react-base)
 
@@ -406,7 +440,7 @@ Se pueden realizar diversas cosas dentro del useEffect, como llamadas a las APIs
 
 <a id="rea3-2"></a>
 
-### **Puede el useEffect ser asincrono? Porque?** 💛
+### **Puede el useEffect ser asincrono?** 💛
 
 [Volver al indice](#react-base)
 
