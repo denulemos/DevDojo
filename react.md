@@ -6,28 +6,26 @@
 | [¿Cuál es la diferencia entre una librería y un framework?](#rea47-2) |
 | [¿Para qué sirve el comando `eject` en React?](#rea49) |
 | [¿Qué son las Ref en React?](#rea52-5) |
-| [¿Qué es el Virtual DOM?](#rea39) 💛|
+| [¿Qué es el Virtual DOM?](#rea39) |
 | [Que es React Fiber?](#rea24) |
-|[Que tener en cuenta para tener una buena performance en React](#rea24-1) 💛|
+|[Que tener en cuenta para tener una buena performance en React](#rea24-1) |
 |[¿Qué es un Fragment en React y para qué se utiliza?](#rea44)|
 |[¿Qué es el modo estricto de React (React.StrictMode) y para qué sirve?](#rea68)|
-|[¿Cuál es la diferencia entre useCallback y useMemo?](#rea7-1) 💛|
-|[¿Qué diferencia hay entre useEffect y useLayoutEffect? ¿Cuándo usarías cada uno?](#rea9-1)|
-| [useLayoutEffect](#rea9) |
-|[¿Qué son los custom hooks? ¿Cómo los crearías y para qué sirven?](#rea46) 💛|
 |[¿Cómo funcionan las claves (keys) en las listas de React? ¿Por qué son importantes?](#rea45)|
-|[¿Qué son las "re-renderizaciones innecesarias" y cómo las evitarías?](#rea455) 💛|
-|[¿Qué herramientas usarías para identificar problemas de rendimiento en una aplicación React?](#rea456) 💛|
-|[Componentes de clase vs Componentes de Funcion 💛](#rea62-1)|
+|[¿Qué son las "re-renderizaciones innecesarias" y cómo las evitarías?](#rea455) |
+|[¿Qué herramientas usarías para identificar problemas de rendimiento en una aplicación React?](#rea456) |
+|[Componentes de clase vs Componentes de Funcion ](#rea62-1)|
 | [SSR - React Server Components](#ent69-1) |
+| [Patrones de disenio en React](#ent44) |
+|[Consideraciones de Seguridad en React 🔐](#rea69)|
 
 | Redux |
 |----------|
 | [¿Que es Redux?](#rea18) 💛|
 | [¿Cual es el flujo de Redux?](#rea22) |
-| [Que es ContextAPI?](#rea23) 💛|
-| [Redux vs ContextAPI](#rea21) 💛|
-|[¿Cómo manejarías el estado global sin usar Redux ni Context API?](#rea62) 💛|
+| [Que es ContextAPI?](#rea23) |
+| [Redux vs ContextAPI](#rea21) |
+|[¿Cómo manejarías el estado global sin usar Redux ni Context API?](#rea62) |
 | [useReducer](#rea8) 💛|
 | [Redux Async Flow](#ent53) |
 | [useDispatch](#rea2)|
@@ -43,39 +41,37 @@
 | [componentDidUpdate()](#rea59) |
 | [shouldComponentUpdate()](#rea60) |
 | [componentWillUpdate()](#rea61) |
-| [useState](#rea4) 💛|
-| [useEffect](#rea3) 💛|
-|[Puede el useEffect ser asincrono?](#rea3-2) 💛|
-| [useRef](#rea6) 💛|
-| [useReducer](#rea8) 💛|
-| [useCallback](#rea1) 💛|
-| [useMemo()](#rea7) 💛|
-| [useLayoutEffect](#rea9) |
-|[¿Cuál es la diferencia entre useCallback y useMemo?](#rea7-1) 💛|
+| [useState](#rea4) |
+| [useEffect](#rea3) |
+|[¿Cuál es la diferencia entre useCallback y useMemo?](#rea7-1) |
 |[¿Qué diferencia hay entre useEffect y useLayoutEffect? ¿Cuándo usarías cada uno?](#rea9-1)|
-|[¿Qué son los custom hooks? ¿Cómo los crearías y para qué sirven?](#rea46) 💛|
-| [useRef](#rea6) 💛|
+|[Puede el useEffect ser asincrono?](#rea3-2) |
+| [useRef](#rea6) |
+| [useReducer](#rea8) |
+| [useCallback](#rea1) |
+| [useMemo()](#rea7) |
+| [useLayoutEffect](#rea9) |
+|[¿Cuál es la diferencia entre useCallback y useMemo?](#rea7-1) |
+|[¿Qué diferencia hay entre useEffect y useLayoutEffect? ¿Cuándo usarías cada uno?](#rea9-1)|
+|[¿Qué son los custom hooks? ¿Cómo los crearías y para qué sirven?](#rea46) |
+| [useRef](#rea6) |
 | [useActionState()](#ent69) |
 | [startTransition()](#ent70) |
 | [useFormStatus()](#ent71) |
 | [useOptimistic()](#ent72) |
+| [useLayoutEffect](#rea9) |
+|[¿Qué son los custom hooks? ¿Cómo los crearías y para qué sirven?](#rea46) |
 
 | Testing |
 |----------|
 |[Nombrar distintas herramientas de Testing para React](#rea99)|
 
-| Conceptos Generales (Solo en DevDojo) |
-|----------|
-| [Funciones de alto nivel / Higher order Function](#rea43) |
-| [Patrones de disenio en React](#ent44) |
-|[Consideraciones de Seguridad en React 🔐](#rea69)|
-
 
 | Performance |
 |----------|
 |[¿Cómo funcionan las claves (keys) en las listas de React? ¿Por qué son importantes?](#rea45)|
-|[¿Qué son las "re-renderizaciones innecesarias" y cómo las evitarías?](#rea455) 💛|
-|[¿Qué herramientas usarías para identificar problemas de rendimiento en una aplicación React?](#rea456) 💛|
+|[¿Qué son las "re-renderizaciones innecesarias" y cómo las evitarías?](#rea455) |
+|[¿Qué herramientas usarías para identificar problemas de rendimiento en una aplicación React?](#rea456) |
 
 ---
 
@@ -1403,42 +1399,47 @@ export default function ClientComponent() {
 
 Es muy util combinar esta funcionalidad con NextJs para mejorar el rendimiento de la aplicacion.
 
-<a id="rea43"></a>
+<a id="ent44"></a>
 
-### **Funciones de alto nivel / Higher order Function**
+### **Patrones de disenio en React**
 
 [Volver al indice](#react-base)
 
-Habían muchas funcionalidades que se estaban repitiendo, entonces JS decidio hacerlas nativas, como iteraciones. Funciones de orden mayor es que reciben como parametro los iterables y un callback, que se ejecutaba en cada elemento iterado.
+**Componentizacion**
 
-Hoy en dia todo esto esta abstraído y solo pasamos el callback.
+Es el separar la interfaz de usuario en componentes reutilizables, es la base de React en si mismo.
 
-Ejemplos puede ser .map, .filter, .reduce
+**Contenedor y Presentación (Container-Presenter Pattern)**
 
-```javascript
-// Función de orden superior que toma una función como argumento
-function operacionMatematica(x, y, operacion) {
-  return operacion(x, y);
-}
+Separar los componentes que se encargan de la UI de los componentes de logica. Se le dice componente presentacion y componente contenedor
 
-// Funciones que serán pasadas como argumentos a la función de orden superior
-function suma(a, b) {
-  return a + b;
-}
+```jsx
+// Componente Presentación
+const UserList = ({ users }) => (
+  <ul>
+    {users.map((user) => (
+      <li key={user.id}>{user.name}</li>
+    ))}
+  </ul>
+);
 
-function resta(a, b) {
-  return a - b;
-}
+// Componente Contenedor
+const UserContainer = () => {
+  const [users, setUsers] = React.useState([]);
 
-function multiplicacion(a, b) {
-  return a * b;
-}
+  React.useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then((res) => res.json())
+      .then((data) => setUsers(data));
+  }, []);
 
-// Uso de la función de orden superior con diferentes funciones como argumentos
-console.log(operacionMatematica(5, 3, suma)); // Devuelve 8 (5 + 3)
-console.log(operacionMatematica(10, 4, resta)); // Devuelve 6 (10 - 4)
-console.log(operacionMatematica(6, 2, multiplicacion)); // Devuelve 12 (6 * 2)
+  return <UserList users={users} />;
+};
+
+export default UserContainer;
 ```
+
+**Higher-Order Components (HOCs)**
 
 Es un patron de disenio muy comunmente usado en React en donde una funcion recibe como parametro un componente y devuelve un componente nuevo con una funcioanlidad extendida.
 
@@ -1495,66 +1496,6 @@ const Dashboard = () => {
 ```
 
 Hoy en dia los HOC son utiles cuando se utilizan patrones de clases, o cuando se necesita un mayor control sobre el ciclo de vida del componente.
-
-<a id="ent44"></a>
-
-### **Patrones de disenio en React**
-
-[Volver al indice](#react-base)
-
-**Componentizacion**
-
-Es el separar la interfaz de usuario en componentes reutilizables, es la base de React en si mismo.
-
-**Contenedor y Presentación (Container-Presenter Pattern)**
-
-Separar los componentes que se encargan de la UI de los componentes de logica. Se le dice componente presentacion y componente contenedor
-
-```jsx
-// Componente Presentación
-const UserList = ({ users }) => (
-  <ul>
-    {users.map((user) => (
-      <li key={user.id}>{user.name}</li>
-    ))}
-  </ul>
-);
-
-// Componente Contenedor
-const UserContainer = () => {
-  const [users, setUsers] = React.useState([]);
-
-  React.useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/users')
-      .then((res) => res.json())
-      .then((data) => setUsers(data));
-  }, []);
-
-  return <UserList users={users} />;
-};
-
-export default UserContainer;
-```
-
-**Higher-Order Components (HOCs)**
-
-Como se explico anteriormente, es un patron de disenio muy comunmente usado en React en donde una funcion recibe como parametro un componente y devuelve un componente nuevo con una funcionalidad extendida.
-
-```jsx
-const withLogging = (WrappedComponent) => {
-  return (props) => {
-    console.log('Componente renderizado con props:', props);
-    return <WrappedComponent {...props} />;
-  };
-};
-
-// Uso
-const MyComponent = ({ message }) => <div>{message}</div>;
-const MyComponentWithLogging = withLogging(MyComponent);
-
-// Render
-<MyComponentWithLogging message="Hola, mundo!" />;
-```
 
 **Render Props**
 
