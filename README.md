@@ -28,4 +28,5 @@ Preguntas son agregadas todas las semanas. Se aceptan sugerencias mediante Pull 
 - [Redes y Virtualizacion](./RedesVirtualizacion.md)
 - [Seguridad](./Seguridad.md)
 - [System Design](./SystemDesign.md)
-- [Typescript - Javascript](./JSTS.md)
+- [Javascript](./JSTS.md)
+- [Typescript](./TS.md)

@@ -1,95 +1,63 @@
 <a name="alg-base-2"></a>
 
-| JavaScript |
-|----------|
-| [Funciones en Javascript](#var27) |
-| [Metodos de Strings en Javascript](#alg55) |
-| [Métodos de Objectos en Javascript](#alg56) |
-| [Diferencia entre Map y Weakmap](#var30) |
-| [Diferencia entre `for in` y `for of`](#var29) |
-| [Diferencia entre foreach, map y reduce](#var32) |
-| [Rest Operator](#var16) |
-| [Creando Strings con Template Literal - Template Strings](#var17)|
-| [Export Fallback con export default](#var18) |
-| [Diferencia entre import y require](#var9) |
-| [Función Object.freeze](#var8) |
-|[¿Qué es la destructuración y cómo se utiliza?](#var8-2) 💛|
-|[¿Cómo se diferencia un Spread Operator de un Rest Operator?](#var8-3) 💛|
-| [`.sort()`](#ent1) |
-| [`.map()`](#ent2) |
-| [`.filter()`](#ent3) |
-| [`.reduce()`](#ent4) |
-|[Set vs Map vs WeakMap vs WeakSet](#ent4-1)|
-| [Parametros por valor y por referencia](#ent0) |
-| [Prototype Javascript](#ent0-1) |
-|[Spread y Rest Operator](#ent0-4)|
-| [Qué es un "array-like" en Javascript?](#alg26) 💛|
-| [Cuales son las funciones array de JavaScript?](#alg27) 💛 |
-|[¿Cómo funcionan los arrays en JavaScript internamente?](#alg282)|
-| [Para que sirve event.preventDefault()?](#var7) 💛 |
-| [Set() (HashSet)](#alg29) 💛|
-| [HashTables (.Map)](#alg30) 💛 |
-|[¿Cuál es la diferencia entre un Set y un Array en JavaScript?](#alg301)|
-| [Promises](#var21) 💛|
-| [Async Await](#var21-1) 💛|
-|[Callbacks](#var21-2) 💛|
-| [Callback Hell](#var12) 💛|
-| [Comparacion entre Promises, Callbacks y Async-await](#var22) 💛 |
-| [Como funciona setTimeout?](#var10) |
-|[¿Qué es un Promise.all y cuándo usarlo?](#var10-1) 💛|
-| [¿Cómo se maneja un error en una promesa?](#var10-2) 💛|
-|[¿Cómo funcionan Promise.allSettled, Promise.race y Promise.any?](#var10-3) 💛|
-| [Diferencia entre let, var y const](#var6) 💛 |
-| [Cual es la diferencia entre setTimeout() y setInterval()?](#rea31) 💛|
-| [Qué es el namespacing de JS?](#rea40) |
-| [Fetch API](#rea46) |
-| [Cómo se pueden crear objetos genéricos?](#rea47) |
-| [Document.ready vs Window.onload](#js1) |
-| [Que es el Scope en Javascript?](#rea45) |
-| [Currying (funcion dentro de funcion)](#ent15) |
-| [Web y Service Workers](#ent26) |
-| [Event Loop (Macro, Micro tasks, Callback Queue)](#ent27) |
-| [Entre JS y un script ASP, ¿Cual es mas rápido?](#var34) |
-| [¿Qué es una funcion Declarativa y una Expresiva?](#var35) |
-| [¿Cómo manejarías errores en funciones con async/await de forma eficiente?](#var10-4) 💛|
-| [Diferencia entre primitivo y objeto](#var14) |
-| [Variable Hoisting](#var24) 💛 |
-| [Diferencia entre class y function](#var25) |
-| [isNaN vs Math.isNaN](#rea515) |
-| [Concepto Truthy and Falsy](#rea42) |
+### JavaScript
 
-<a name="typ-base"></a>
-
-## [Typescript](#typ)
-
-| Temas |
-|----------|
-| [Qué es TypeScript?](#typ1) |
-| [TSConfig.json](#typ2) |
-| [Watch Mode](#typ3) |
-| [Cuáles son sus características superadoras?](#typ4) |
-| [Cómo declaro una variable?](#typ5) |
-| [Tuples - Tuplas](#typ6) |
-| [Tipo de dato Never](#typ7) 💛 |
-| [Tipo de dato Any](#typ8) |
-| [Cómo declaro un objeto?](#typ9) |
-| [Cómo declaro una función?](#typ10) |
-| [Parametros REST](#typ11) |
-|[Cómo creo una clase?](#typ12) |
-| [Cómo se transpilan las interfaces de TypeScript?](#typ13) |
-| [Cómo hago que las props de una interface sean opcionales?](#typ14) |
-| [Herencia en Typescript](#typ15) |
-| [Interfaces en Typescript](#typ16) |
-|[Cual es la diferencia entre el uso de types e interfaces?](#typ17) 💛|
-|[¿Qué son los tipos Union e Intersection y cuándo se utilizan?](#typ18)|
-|[¿Qué son los Utility Types como Partial, Pick, y Omit, y en qué casos son útiles?](#typ19)💛 |
-|[¿Cómo funcionan los Mapped Types y cómo se aplican en proyectos complejos?](#typ20)|
-|[¿Qué son los Conditional Types y cómo permiten lógica avanzada en los tipos?](#typ21)|
-|[¿Cómo funcionan los decoradores en TypeScript y en qué casos son útiles?](#typ22)|
-| [¿Qué son los generics y cómo se implementan en TypeScript?](#alg53-2) 💛|
-| [Null vs undefined vs never](#ent0-2) |
+| Tema | Enlace |
+|------|--------|
+| Métodos de Strings | [Ver](#alg55) |
+| Métodos de Objetos en Javascript | [Ver](#alg56) |
+| Se pueden comparar dos Objetos con `===` ? | [Ver](#alg56-2) |
+| Diferencia entre Map y WeakMap | [Ver](#var30) |
+| Diferencia entre `for in` y `for of` | [Ver](#var29) |
+| Diferencia entre foreach, map y reduce | [Ver](#var32) |
+| Rest Operator | [Ver](#var16) |
+| ¿Cómo puedes incrustar variables o expresiones dentro de una string en JavaScript? | [Ver](#var17) |
+| ¿Para qué se utiliza export default en los módulos ES6 y cómo se importa? | [Ver](#var18) |
+| Diferencia entre import y require | [Ver](#var9) |
+| Función Object.freeze | [Ver](#var8) |
+| ¿Qué es la destructuración y cómo se utiliza? 💛 | [Ver](#var8-2) |
+| ¿Cómo se diferencia un Spread Operator de un Rest Operator?  | [Ver](#var8-3) |
+| `.sort()` | [Ver](#ent1) |
+| `.map()` | [Ver](#ent2) |
+| `.filter()` | [Ver](#ent3) |
+| `.reduce()` | [Ver](#ent4) |
+| Set vs Map | [Ver](#ent4-1) |
+| Parámetros por valor y por referencia | [Ver](#ent0) |
+| Prototype Javascript | [Ver](#ent0-1) |
+| Qué es un "array-like" en Javascript?  | [Ver](#alg26) |
+| Funciones array  | [Ver](#alg27) |
+| ¿Cómo funcionan los arrays en JavaScript internamente? | [Ver](#alg282) |
+| Para qué sirve `event.preventDefault()`?  | [Ver](#var7) |
+| ¿Cuál es la diferencia entre un Set y un Array en JavaScript? | [Ver](#alg301) |
+| Promises  | [Ver](#var21) |
+| Async Await  | [Ver](#var21-1) |
+| Callbacks  | [Ver](#var21-2) |
+| Callback Hell  | [Ver](#var12) |
+| Comparación entre Promises, Callbacks y Async-await  | [Ver](#var22) |
+| Cómo funciona setTimeout? | [Ver](#var10) |
+| ¿Qué es un `Promise.all` y cuándo usarlo?  | [Ver](#var10-1) |
+| ¿Cómo se maneja un error en una promesa?  | [Ver](#var10-2) |
+| ¿Cómo funcionan `Promise.allSettled`, `Promise.race` y `Promise.any`?  | [Ver](#var10-3) |
+| Diferencia entre let, var y const  | [Ver](#var6) |
+| Diferencia entre `setTimeout()` y `setInterval()`  | [Ver](#rea31) |
+| Qué es el namespacing de JS? | [Ver](#rea40) |
+| Fetch API | [Ver](#rea46) |
+| Cómo se pueden crear objetos genéricos? | [Ver](#rea47) |
+| `Document.ready` vs `Window.onload` | [Ver](#js1) |
+| Qué es el Scope en Javascript? | [Ver](#rea45) |
+| Currying (función dentro de función) | [Ver](#ent15) |
+| Web y Service Workers | [Ver](#ent26) |
+| Event Loop (Macro, Micro tasks, Callback Queue) | [Ver](#ent27) |
+| ¿Qué es una función Declarativa y una Expresiva? | [Ver](#var35) |
+| ¿Cómo manejarías errores en funciones con async/await de forma eficiente?  | [Ver](#var10-4) |
+| Diferencia entre primitivo y objeto | [Ver](#var14) |
+| Variable Hoisting  | [Ver](#var24) |
+| Diferencia entre class y function | [Ver](#var25) |
+| isNaN vs Math.isNaN | [Ver](#rea515) |
+| Concepto Truthy and Falsy | [Ver](#rea42) |
 
 ---
+
 
 <a id="typ"></a>
 
@@ -136,135 +104,6 @@ const array2 = makeArray<string>('hello'); // array2 es de tipo string[]
 ```
 
 Es ideal para reemplazar el uso de any. Por ejemplo, si se usa any, se pierde la información del tipo de datos que se está utilizando, lo que puede llevar a errores en tiempo de ejecución. Con generics, se puede especificar el tipo de datos que se espera y TypeScript se encargará de verificar que se cumpla en tiempo de compilación.
-
-<a id="typ1"></a>
-
-### **Qué es TypeScript?**
-
-[Volver al indice](#typ-base)
-
-Es un superset de JavaScript, es el mismo JavaScript pero le extiende características, o posee cosas propias.
-
-Es mantenido por Microsoft
-
-* Ofrece tipado estricto y flexible
-* Mejora la legibilidad del código
-* Nos permite usar características modernas de Javascript sin miedo a la compatibilidad
-* Mejora el intellisense
-* Nos permite la **inyección de dependencias**
-
-<a id="typ2"></a>
-
-### **TSConfig.json**
-
-[Volver al indice](#typ-base)
-
-Es el archivo de configuración de TypeScript, en el se definen las reglas de compilación de TypeScript.
-
-Mediante estas configuraciones se **deberia** buscar que Typescript sea lo mas estricto posible.
-
-```json
-{
- "compilerOptions": {
-  "target": "es5", // A que versión de JS se compilará
-  "module": "commonjs", // Sistema de modulos
-  "strict": true, // Habilita todas las opciones estrictas
-  "noImplicitAny": true, // No permite any
-  "esModuleInterop": true, // Permite importar modulos de ES6
-  "skipLibCheck": true, // No revisa las librerias
-  "forceConsistentCasingInFileNames": true, // Obliga a que los nombres de archivos sean consistentes
- }
-}
-```
-
-<a id="typ3"></a>
-
-### **Watch Mode**
-
-[Volver al indice](#typ-base)
-
-Typescript al ejecutarse es traducido a Javascript. Para que Typescript esté pendiente de los cambios en los archivos y los compile automáticamente, se puede usar el siguiente comando
-
-```bash
-tsc --watch
-```
-
-<a id="typ4"></a>
-
-### **Cuáles son sus características superadoras?**
-
-[Volver al indice](#typ-base)
-
-Su tipado estricto ayuda a saber como funcionan las cosas, por ejemplo, en este código Javascript
-
-```jsx
-function calcularISV (productos) {
- let total = 0;
-
- productos.forEach( ({precio}) => {
-  total += precio;
- }
-
- return [total, total * 0.15]
-}
-```
-
-* No sabemos de que tipo de dato son los productos
-* Como luce un producto
-* Que propiedades debe tener el producto para que el código funcione
-
-Entonces, en Typescript quedaría algo así la firma de nuestro método
-
-```tsx
-function calcularISV(productos: Producto[]): [number, number] {}
-```
-
-* Productos es un arreglo del tipo Producto
-* ¿Cómo luce Producto? Se puede definir con una interfaz
-
-```tsx
-interface Producto {
- desc: string;
- precio: number;
-}
-```
-
-* Retorna un arreglo de dos números
-
-<a id="typ5"></a>
-
-### **Cómo declaro una variable?**
-
-[Volver al indice](#typ-base)
-
-Por defecto, implicitamente Typescript asigna un tipo a las variables, pero se puede asignar un tipo explicito. `any` deberia evitarse a toda costa, a menos que sea un elemento reutilizable.
-
-```tsx
-let nombre: string = 'Denu'; // Tipo explicito
-let nombre= 'Denu' // Tipo implicito
-
-// Variable de dos posibles tipos
-let variable: number | string = 95;
-variable = 'Denu'
-
-let arrayVariable: (boolean | string | number)[] = ['Denu', 22, false]
-```
-
-<a id="typ6"></a>
-
-### **Tuples - Tuplas**
-
-El primer dato del Array SIEMPRE sera un string y el segundo un number.
-
-```tsx
-let persona: [string, number] = ['Denu', 24];
-
-persona[0] = 10; // Error
-persona[1] = 'Denu'; // Error
-
-persona[0] = 'Denu';
-persona[1] = 24;
-```
 
 <a id="typ7"></a>
 
@@ -828,75 +667,46 @@ class UserService {
 
 # Javascript
 
-<a id="var27"></a>
-
-### **Funciones en Javascript**
-
-[Volver al indice](#alg-base-2)
-
-En javascript aveces no necesitamos nombrar nuestras funciones, especialmente cuando pasamos una funcion como argumento a otra funcion. Para eso las **funciones inline**, no les ponemos nombre a las funciones porque no vamos a necesitarlas en ningún otro lado.
-
-```jsx
-const myFunc = function() {
-  const myVar = "value";
-  return myVar; 
-  }
-```
-
-Otra cosa que ofrece ES6 es reemplazar el cuerpo de la funcion por una flecha, en el caso de que el cuerpo no sea necesario y la funcion solo conste de un return, es decir
-
-```jsx
-const myFunc = () => "value" //Igual a return “value”;
-```
-
-También podemos realizar operaciones en una sola linea
-
-```jsx
-// doubles input value and returns it
-const doubler = (item) => item * 2;
-```
-
-También podemos setear **parametros por defecto**
- en nuestras funciones, sí llamamos a la funcion sin pasarle parametro, tomara el ya seteado por defecto.
-
-```jsx
-function greeting(name = "Anonymous") {
-  return "Hello " + name;
-}
-console.log(greeting("John")); // Hello John
-console.log(greeting()); // Hello Anonymous Por defecto
-```
-
 <a id="alg55"></a>
 
 ### **Metodos de Strings en Javascript**
 
 [Volver al indice](#alg-base-2)
 
-```javascript
-// Creacion de Strings
-const notAnObject = "Hola";
-const yesAnObject = new String("Hola"); // Acceso a todos los metodos del OBJETO String
-
-// Descubrir el tamaño de mi String -- LOS ESPACIOS CUENTAN COMO UN ESPACIO
-const test = "hola";
-test.length // 4
-
-// Acceder a un caracter en especifico
-const test = "hola";
-test[0] // h
-test[test.length - 1] // a
-test.charAt(0) // h
-
-// Obtener el index de una letra - Case sensitive
-const test = "hola denu hola";
-test.indexOf("hola"); // 0 -- primera ocurrencia de la palabra
-test.indexOf("holax"); // -1
-test.lastIndexOf("hola"); // 10 -- ultima ocurrencia de la palabra
-test.lastIndexOf("holax"); // -1
-test.indexOf("hola", 0); // Se puede aclarar desde donde comienza, por defecto comienza desde cero
-test.indexOf("hola", +infinito) // Por defecto empieza desde mas infinito
-```
+| Método | Descripción |
+|--------|-------------|
+| `charAt(index)` | Devuelve el carácter en la posición especificada por `index`. |
+| `concat(string1, string2, ...)` | Combina dos o más cadenas y devuelve una nueva cadena. |
+| `includes(substring)` | Verifica si la cadena contiene la subcadena especificada. Devuelve `true` o `false`. |
+| `indexOf(substring)` | Devuelve el índice de la primera aparición de la subcadena. Si no se encuentra, devuelve `-1`. |
+| `lastIndexOf(substring)` | Devuelve el índice de la última aparición de la subcadena. Si no se encuentra, devuelve `-1`. |
+| `slice(start, end)` | Extrae una sección de la cadena desde `start` hasta `end` (no incluido) y devuelve una nueva cadena. |
+| `split(separator)` | Divide la cadena en un array de subcadenas utilizando el `separator` especificado. |
+| `substring(start, end)` | Extrae los caracteres entre `start` y `end` y devuelve una nueva cadena. |
+| `toLowerCase()` | Convierte la cadena a minúsculas. | 
+| `toUpperCase()` | Convierte la cadena a mayúsculas. |
+| `trim()` | Elimina los espacios en blanco al inicio y al final de la cadena. |
+| `replace(searchValue, newValue)` | Reemplaza la primera aparición de `searchValue` con `newValue`. |
+| `replaceAll(searchValue, newValue)` | Reemplaza todas las apariciones de `searchValue` con `newValue`. |
+| `startsWith(substring)` | Verifica si la cadena comienza con la subcadena especificada. Devuelve `true` o `false`. |
+| `endsWith(substring)` | Verifica si la cadena termina con la subcadena especificada. Devuelve `true` o `false`. |
+| `repeat(count)` | Devuelve una nueva cadena que repite la cadena original `count` veces. |  
+| `padStart(targetLength, padString)` | Rellena la cadena al inicio con `padString` hasta alcanzar la longitud `targetLength`. |
+| `padEnd(targetLength, padString)` | Rellena la cadena al final con `padString` hasta alcanzar la longitud `targetLength`. | 
+| `match(regex)` | Devuelve un array con todas las coincidencias de la expresión regular `regex` en la cadena. |
+| `matchAll(regex)` | Devuelve un iterador con todas las coincidencias de la expresión regular `regex` en la cadena. |
+| `search(regex)` | Devuelve el índice de la primera coincidencia de la expresión regular `regex` en la cadena. Si no se encuentra, devuelve `-1`. |
+| `localeCompare(string)` | Compara la cadena con otra cadena y devuelve un número que indica si la cadena es menor, igual o mayor que la otra. | 
+| `valueOf()` | Devuelve el valor primitivo de la cadena. |
+| `toString()` | Devuelve la cadena como una cadena de texto. |
+| `charCodeAt(index)` | Devuelve el código Unicode del carácter en la posición especificada por `index`. |
+| `fromCharCode(code1, code2, ...)` | Devuelve una cadena creada a partir de los códigos Unicode especificados. |
+| `fromCodePoint(code1, code2, ...)` | Devuelve una cadena creada a partir de los puntos de código Unicode especificados. |
+| `normalize(form)` | Normaliza la cadena según la forma de normalización Unicode especificada (`NFC`, `NFD`, `NFKC`, `NFKD`). |
+| `toLocaleLowerCase()` | Convierte la cadena a minúsculas según las reglas de localización. |
+| `toLocaleUpperCase()` | Convierte la cadena a mayúsculas según las reglas de localización. |
+| `substr(start, length)` | Extrae una sección de la cadena comenzando en `start` y con una longitud de `length`. |
+| `search(regex)` | Busca una coincidencia entre la cadena y una expresión regular. Devuelve el índice de la primera coincidencia o `-1` si no se encuentra. |
 
 <a id="alg56"></a>
 
@@ -904,49 +714,57 @@ test.indexOf("hola", +infinito) // Por defecto empieza desde mas infinito
 
 [Volver al indice](#alg-base-2)
 
+| Método | Descripción |
+|--------|-------------|
+| `Object.keys(obj)` | Devuelve un array con las claves enumerables de un objeto. |
+| `Object.values(obj)` | Devuelve un array con los valores de las claves enumerables de un objeto. |
+| `Object.entries(obj)` | Devuelve un array de pares [clave, valor] de un objeto. |
+| `Object.assign(target, ...sources)` | Copia las propiedades de uno o más objetos fuente al objeto destino. |
+| `Object.freeze(obj)` | Congela un objeto, impidiendo que se modifiquen sus propiedades. |
+| `Object.seal(obj)` | Sella un objeto, impidiendo que se agreguen o eliminen propiedades, pero permitiendo modificaciones en las existentes. |
+| `Object.getPrototypeOf(obj)` | Devuelve el prototipo de un objeto. |
+| `Object.setPrototypeOf(obj, prototype)` | Establece el prototipo de un objeto. |
+| `Object.create(proto, propertiesObject)` | Crea un nuevo objeto con el prototipo y las propiedades especificadas. |
+| `Object.defineProperty(obj, prop, descriptor)` | Define una nueva propiedad o modifica una existente en un objeto. |
+| `Object.defineProperties(obj, props)` | Define múltiples propiedades en un objeto. |
+| `Object.is(value1, value2)` | Determina si dos valores son el mismo valor. |
+| `Object.isExtensible(obj)` | Determina si un objeto es extensible (se le pueden agregar nuevas propiedades). |
+| `Object.preventExtensions(obj)` | Previene que se agreguen nuevas propiedades a un objeto. |
+| `Object.isFrozen(obj)` | Determina si un objeto está congelado. |
+| `Object.isSealed(obj)` | Determina si un objeto está sellado. |
+| `Object.getOwnPropertyDescriptor(obj, prop)` | Devuelve el descriptor de una propiedad específica de un objeto. |
+| `Object.getOwnPropertyNames(obj)` | Devuelve un array con los nombres de todas las propiedades (enumerables y no enumerables) de un objeto. |
+| `Object.getOwnPropertySymbols(obj)` | Devuelve un array con los símbolos de las propiedades de un objeto. |
+| `Object.hasOwn(obj, prop)` | Determina si un objeto tiene la propiedad especificada como propiedad propia (no heredada). |
+| `Object.fromEntries(iterable)` | Convierte una lista de pares clave-valor en un objeto. |
+
+<a id="alg56-2"></a>
+
+### **Se pueden comparar dos Objetos con `===` ?**
+
+[Volver al indice](#alg-base-2)
+
+No, en JavaScript, dos objetos no son iguales a menos que sean la misma referencia en memoria. Incluso si dos objetos tienen las mismas propiedades y valores, se consideran diferentes si no son la misma instancia.
+
 ```javascript
-// Object.create() -- Crea un nuevo objeto con el prototipo de pasamos por parametro
-const objeto = {nombre: "denu"};
-const persona = Object.create(objeto);
-console.log(persona.nombre); // denu
+const obj1 = { a: 1, b: 2 };
+const obj2 = { a: 1, b: 2 };
+const obj3 = obj1;
 
-const persona = {
-    init: function (nombre) {
-        this.nombre = nombre;
-        return this;
-    },
-    saludar: function() {
-        console.log("hola, soy " + this.nombre);
-        return this;
-    }
-}
-
-const objeto = Object.create(persona).init("denu"); // init funcionaria como constructor
-console.log(objeto.saludar()) // "hola, soy denu"
-
-// Object.assign() -- Clona o mergea objetos
-
-const persona = {
-    nombre: "denu",
-    apellido: "perez"
-}
-
-const persona2 {
-    ojos: "verdes"
-}
-
-const clon = Object.assign({}, persona); // No es una referencia, es una copia
-const fusion = Object.assign({}, persona, persona2); // El primer parametro es el objeto destino, inicializado en vacio
-
-// Map - Object
-const mapToObject = map => Object.fromEntries(map.entries());
-mapToObject(new Map([['a', 1], ['b', 2]])); // {a: 1, b: 2}
-
-// Object - Map
-const objectToMap = obj => new Map(Object.entries(obj));
-objectToMap({a: 1, b: 2}); // Map {'a' => 1, 'b' => 2}
-
+console.log(obj1 === obj2); // false
+console.log(obj1 === obj3); // true
 ```
+
+La forma de compararlos serialmente es convertirlos a JSON:
+
+```javascript
+const obj1 = { a: 1, b: 2 };
+const obj2 = { a: 1, b: 2 };
+
+console.log(JSON.stringify(obj1) === JSON.stringify(obj2)); // true
+```
+
+O usando lodash, `_.isEqual(obj1, obj2)`.
 
 <a id="var30"></a>
 
@@ -1129,11 +947,11 @@ console.log(startX, startY); // 5, 6
 
 <a id="var17"></a>
 
-### **Creando Strings con Template Literal - Template Strings**
+### **¿Cómo puedes incrustar variables o expresiones dentro de una string?**
 
 [Volver al indice](#alg-base-2)
 
-Es un tipo especial de String que hace que el manejo de String complejos sea más facil, pudiendo crear Strings multilinea para invocarlos luego, por ejemplo:
+Con **template literals**:
 
 ```jsx
 const person = {
@@ -1154,7 +972,7 @@ Se usa otro tipo de “comilla” cuando se quiere invocar al String (`) y no es
 
 <a id="var18"></a>
 
-### **Export Fallback con export default**
+### **¿Para qué se utiliza export default en los módulos ES6 y cómo se importa?**
 
 [Volver al indice](#alg-base-2)
 
@@ -1188,11 +1006,11 @@ import { countItems } from "math_array_functions"
 
 <a id="var8"></a>
 
-### **Función Object.freeze**
+### **¿Cómo puedes hacer que un objeto en JavaScript sea inmutable? (`Object.freeze`)**
 
 [Volver al indice](#alg-base-2)
 
-Es una funcion que evita que puedas modificar propiedades de un objeto o una variable
+Con `Object.freeze` se puede hacer que un objeto sea inmutable. Es una funcion que evita que puedas modificar propiedades de un objeto o una variable
 
 ```jsx
 let obj = {
@@ -1296,7 +1114,7 @@ Ambos usan la misma sintaxis (`...`), pero el **contexto** es lo que determina s
 
 <a id="ent1"></a>
 
-### **.sort() en JavaScript**
+### **`.sort()`**
 
 [Volver al indice](#alg-base-2)
 
@@ -1359,7 +1177,7 @@ Esto lo que hace es enviar a los elementos `null` al final del array, y a los `u
 
 <a id="ent2"></a>
 
-### **.map() en JavaScript**
+### **`.map()`**
 
 [Volver al indice](#alg-base-2)
 
@@ -1397,7 +1215,7 @@ La diferencia entre el uso de `map()` y un recorrido `forEach` es que `map` devu
 
 <a id="ent3"></a>
 
-### **.filter() en JavaScript**
+### **`.filter()`**
 
 [Volver al indice](#alg-base-2)
 
@@ -1421,7 +1239,7 @@ Lo que se debe tener en cuenta en la funcion callback dentro del `filter` es que
 
 <a id="ent4"></a>
 
-### **.reduce() en JavaScript**
+### `.reduce()`
 
 [Volver al indice](#alg-base-2)
 
@@ -1444,7 +1262,7 @@ console.log(sum); // Output: 15
 
 <a id="ent4-1"></a>
 
-### **Set vs Map en Javascript**
+### **Set vs Map**
 
 [Volver al indice](#alg-base-2)
 
@@ -1633,39 +1451,9 @@ console.log(Object.prototype.__proto__); // null
 
 En resumen, prototype es la base del funcionamiento de objetos y de la herencia en JS.
 
-<a id="ent0-4"></a>
-
-### **Spread vs Rest Operator**
-
-[Volver al indice](#alg-base-2)
-
-Spread es cuando los 3 puntos se encuentran al principio, de ese modo por ejemplo, puedo pasar un array como parametro pero en vez de tomar su referencia tomo su valor. Convierte un array en una lista de argumentos.
-
-```javascript
-const arr = [1, 2, 3];
-
-function sumar(a, b, c) {
-  return a + b + c;
-}
-
-console.log(sumar(...arr)); // 6
-```
-
-En el caso del Rest Operator, es cuando los 3 puntos se encuentran en el parametro de una funcion, y se utiliza para agrupar elementos en un array. Convierte los argumentos de una funcion en un array.
-
-```javascript
-function sumar(...numeros) {
-  return numeros.reduce((acc, num) => acc + num, 0);
-}
-
-console.log(sumar(1, 2, 3, 4, 5)); // 15
-```
-
-El operador es el mismo pero su nombre depende del contexto en donde esten siendo usados. 
-
 <a id="alg26"></a>
 
-### **Qué es un "array-like" en Javascript?** 💛
+### **Qué es un "array-like" en Javascript?** 
 
 [Volver al indice](#alg-base-2)
 
@@ -1705,7 +1493,7 @@ console.log(array); // Imprime: ['a', 'b', 'c']
 
 <a id="alg27"></a>
 
-### **Cuales son las funciones array de JavaScript?** 💛
+### **Funciones array** 
 
 [Volver al indice](#alg-base-2)
 
@@ -1811,7 +1599,7 @@ Por eso existe el `array-like` en Javascript
 
 <a id="var7"></a>
 
-### **Para que sirve event.preventDefault()?** 💛
+### **Para que sirve `event.preventDefault()`?** 
 
 [Volver al indice](#alg-base-2)
 
@@ -1826,121 +1614,6 @@ document.getElementById("myForm").addEventListener("submit", function(event){
 ```
 
 U otro ejemplo es para evitar que el resto de eventos que se ejecutarian por defecto, no lo hagan
-
-<a id="alg29"></a>
-
-### **Set() en Javascript** (HashSet) 💛
-
-[Volver al indice](#alg-base-col)
-
-Es una estructura de datos que solo permite valores unicos. Si paso un array a un set, va a eliminar todos los valores duplicados.
-
-* `new Set()` -> Crea el set nuevo, si es desde un array, elimina duplicados
-* `Add()`
-* `Delete()`
-* `Has()` -> Devuelve true o false si el valor ya existe
-* `clear()`-> Remover todos los elementos del set
-* `Values()` -> devuelve un iterator con todos los valores
-* `forEach()`
-* `keys()`-> mismo con values
-* `Entries()` -> devuelve un iterator con [value, value] pares
-
-```javascript
-// Crear una nueva instancia de Set
-const mySet = new Set();
-
-// Agregar elementos al Set
-mySet.add("apple");
-mySet.add("banana");
-mySet.add("orange");
-mySet.add("apple"); // Los Sets no permiten elementos duplicados, por lo que esta línea no tendrá ningún efecto
-
-// Verificar si un elemento existe en el Set
-console.log(mySet.has("apple")); // Output: true
-console.log(mySet.has("grape")); // Output: false
-
-// Eliminar un elemento del Set
-mySet.delete("banana");
-
-// Iterar sobre los elementos del Set
-for (let item of mySet) {
-    console.log(item);
-}
-// Output:
-// apple
-// orange
-
-```
-
-<a id="alg30"></a>
-
-### **HashTables** (.Map) 💛
-
-[Volver al indice](#alg-base-2)
-
-Es una estructura de datos que almacena valores dado su Hash (int o long). Son muy eficientes para una busqueda dada por clave.
-
-Sus operaciones son:
-
-* Insertar nuevo par clave, valor - `index = hash(key) % array_length` , su complejidad es `O(1)`
-* Obtener un valor mediante su clave, su complejidad es `O(1)` en un caso promedio, `O(N)` en el peor de los casos, en general si la funcion Hash es inadecuada.
-
-```javascript
-// Definición de una Hashtable
-const hashtable = {};
-
-// Agregar elementos a la Hashtable
-hashtable["key1"] = "value1";
-hashtable["key2"] = "value2";
-hashtable["key3"] = "value3";
-
-// Acceder a elementos en la Hashtable
-console.log(hashtable["key1"]); // Output: "value1"
-console.log(hashtable["key2"]); // Output: "value2"
-
-// Verificar si una clave existe en la Hashtable
-console.log("key4" in hashtable); // Output: false
-
-// Eliminar un elemento de la Hashtable
-delete hashtable["key3"];
-
-// Iterar sobre las claves de la Hashtable
-for (let key in hashtable) {
-    console.log(key + ": " + hashtable[key]);
-}
-// Output:
-// key1: value1
-// key2: value2
-
-----
-
-// Crear una nueva instancia de Map
-const myMap = new Map();
-
-// Agregar elementos a la Map
-myMap.set("key1", "value1");
-myMap.set("key2", "value2");
-myMap.set("key3", "value3");
-
-// Acceder a elementos en la Map
-console.log(myMap.get("key1")); // Output: "value1"
-console.log(myMap.get("key2")); // Output: "value2"
-
-// Verificar si una clave existe en la Map
-console.log(myMap.has("key4")); // Output: false
-
-// Eliminar un elemento de la Map
-myMap.delete("key3");
-
-// Iterar sobre las claves y valores de la Map
-for (let [key, value] of myMap) {
-    console.log(key + ": " + value);
-}
-// Output:
-// key1: value1
-// key2: value2
-
-```
 
 <a id="alg301"></a>
 
@@ -1961,7 +1634,7 @@ for (let [key, value] of myMap) {
 
 <a id="var21"></a>
 
-### **Promises** 💛
+### **Promises** 
 
 [Volver al indice](#alg-base-async)
 
@@ -1980,7 +1653,7 @@ const myPromise = new Promise((resolve, reject) => {
 
 <a id="var21-1"></a>
 
-### **Async Await** 💛
+### **Async Await** 
 
 [Volver al indice](#alg-base-2)
 
@@ -2013,7 +1686,7 @@ async function getPost() {
 
 <a id="var21-2"></a>
 
-### **Callbacks** 💛
+### **Callbacks** 
 
 [Volver al indice](#alg-base-2)
 
@@ -2061,7 +1734,7 @@ doAll();
 
 <a id="var12"></a>
 
-### **Callback Hell** 💛
+### **Callback Hell** 
 
 [Volver al indice](#alg-base-2)
 
@@ -2079,7 +1752,7 @@ doSomething(function(result) {
 
 <a id="var22"></a>
 
-### **Comparacion entre Promises, Callbacks y Async-await** 💛
+### **Comparacion entre Promises, Callbacks y Async-await** 
 
 [Volver al indice](#alg-base-2)
 
@@ -2103,49 +1776,28 @@ El mas usado es **Promises** por su facilidad de lectura y manejo de errores.
 
 <a id="var10"></a>
 
-### **Como funciona setTimeout?**
+### **Como funciona `setTimeout`?**
 
 [Volver al indice](#alg-base-2)
 
-Permite ejecutar un fragmento de código una vez pasa un tiempo determinado.
-
-Por ejemplo, el codigo imprimirá “Hola Mundo” despues de 2 segundos
+`setTimeout` es una funcion que permite ejecutar una funcion o un bloque de codigo despues de un tiempo determinado. Se utiliza para programar la ejecucion de una tarea en el futuro.
 
 ```jsx
-setTimeout(function(){
-  console.log('hola mundo');
-}, 2000);
-```
+console.log('Inicio');
 
-El primer parámetro es la función a ejecutar, puede ser hecha ahi mismo como en el ejemplo anterior, o ya estar hecha como en este ejemplo:
-
-```jsx
-function saludos(nombre, rol) {
-  console.log(`hola mi nombre es ${nombre} y mi rol es ${rol}`);
-}
-
-setTimeout(saludos, 3000, "denu", "administrador");
-```
-
-¿Porque no pasar los parametros directamente a la funcion y recien despues del tiempo? Porque JS ejecutará la funcion sin esperar al timeout, ya que estarias pasando una llamada a la funcion, no la referencia a la funcion.
-
-```jsx
-setTimeout(saludos('denu', 'admin'), 3000); // NO
-```
-
-Si quiero cancelar un setTimeout debo utilizar `clearTimeout()`
-
-```jsx
-const timeoutid = setTimeout (function() {
-  console.log('hola');
+setTimeout(function() {
+  console.log('Esto se ejecuta despues de 2 segundos');
 }, 2000);
 
-clearTimeout(timeoutid)
+console.log('Fin');
 ```
+
+En este ejemplo, la funcion dentro de `setTimeout` se ejecutara despues de 2 segundos, mientras que el resto del codigo continuara ejecutandose sin esperar.
+
 
 <a id="var10-1"></a>
 
-### **¿Qué es un Promise.all y cuándo usarlo?** 💛
+### **¿Qué es un `Promise.all` y cuándo usarlo?** 
 
 [Volver al indice](#alg-base-2)
 
@@ -2167,7 +1819,7 @@ Se utiliza cuando se necesita esperar a que todas las promesas se resuelvan para
 
 <a id="var10-2"></a>
 
-### **¿Cómo se maneja un error en una promesa?** 💛
+### **¿Cómo se maneja un error en una promesa?** 
 
 [Volver al indice](#alg-base-2)
 
@@ -2190,7 +1842,7 @@ myPromise.then((resolvedValue) => {
 
 <a id="var10-3"></a>
 
-### **¿Cómo funcionan Promise.allSettled, Promise.race y Promise.any?** 💛
+### **¿Cómo funcionan `Promise.allSettled`, `Promise.race` y `Promise.any`?** 
 
 [Volver al indice](#alg-base-2)
 
@@ -2427,19 +2079,53 @@ async function fetchData() {
 
 [Volver al indice](#alg-base-2)
 
-```jsx
-var myObjeto = new Object({
-'nombre': 'Diego',
-'apeliido': 'Querales',
-'edad': 25,
-})
-// Salida por consola
-{nombre: "Diego", apeliido: "Querales", edad: 25}
+Podes crear objetos genéricos en JavaScript usando funciones constructoras, la sintaxis de objetos literales o clases. Por ejemplo, usando un objeto literal:
+
+```javascript
+const persona = {
+  nombre: "Juan",
+  edad: 30,
+  saludar: function() {
+    console.log("Hola, soy " + this.nombre);
+  }
+};
+```
+
+O usando una función constructora para crear varios objetos similares:
+
+```javascript
+function Persona(nombre, edad) {
+  this.nombre = nombre;
+  this.edad = edad;
+  this.saludar = function() {
+    console.log("Hola, soy " + this.nombre);
+  };
+}
+
+const persona1 = new Persona("Ana", 25);
+persona1.saludar(); // Hola, soy Ana
+```
+
+También podes usar la sintaxis de clases (ES6):
+
+```javascript
+class Persona {
+  constructor(nombre, edad) {
+    this.nombre = nombre;
+    this.edad = edad;
+  }
+  saludar() {
+    console.log(`Hola, soy ${this.nombre}`);
+  }
+}
+
+const persona2 = new Persona("Luis", 40);
+persona2.saludar(); // Hola, soy Luis
 ```
 
 <a id="js1"></a>
 
-### **Document.ready vs Window.onload**
+### **`Document.ready` vs `Window.onload`**
 
 [Volver al indice](#alg-base-2)
 
@@ -2584,14 +2270,6 @@ console.log('Inicio');
 console.log('Fin');
 ```
 
-<a id="var34"></a>
-
-### **Entre JS y un script ASP, ¿Cual es mas rápido?**
-
-[Volver al indice](#alg-base-2)
-
-JavaScript es más rápido porque es un lenguaje del lado del cliente y no necesita la ayuda del servidor web para ejecutarse. Por otra parte el ASP es un lenguaje del lado del servidor. Motivo por el que siempre es más lento que JavaScript. Sin embargo, Javascript ahora, también puede ser usado como un lenguaje de lado del servidor (server side) (nodejs).
-
 <a id="var35"></a>
 
 ### **¿Qué es una funcion Declarativa y una Expresiva?**
@@ -2688,7 +2366,7 @@ console.log(clone); // { a: 1, b: 2, foo: 'foo' }
 
 <a id="var24"></a>
 
-### **Variable Hoisting** 💛
+### **Variable Hoisting** 
 
 [Volver al indice](#alg-base-obj)
 
@@ -2750,7 +2428,7 @@ console.assert( typeof  C === 'function' );
 
 <a id="rea515"></a>
 
-### **isNaN vs Math.isNaN**
+### **`isNaN` vs `Math.isNaN`**
 
 [Volver al indice](#alg-base-2)
 
@@ -2759,23 +2437,6 @@ NaN son operaciones aritmeticas que no pueden ser representadas correctamente. A
 ```jsx
 isNaN('denu') // devolvera true porque primero intentará convertir la cadena a un numero
 Number.isNaN('denu') // false porque no convertirá la cadena a numero
-```
-
-### **Metodos String**
-
-```javascript
-
-// .includes() Detecta y devuelve true o false si el String posee un substring en el
-const str = 'This is my example string!';
-const substr = 'my';
-
-console.log(str.includes(substr)); // true
-
-//.indexOf() es otra forma de saber si un substring se encuentra dentro de un string si el mismo no funciona
-stringObj.indexOf("string to check for") // -1 Si no se encuentra
-
-//.replace Reemplaza de un String o un regex un valor por otro, no muta al objeto en si, devuelve lo nuevo
-array[0] = array[0].replace("PM", '') // Quita el PM del string dentro de ese array
 ```
 
 <a id="rea42"></a>
