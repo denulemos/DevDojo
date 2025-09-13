@@ -283,23 +283,39 @@ section p {
 
 [Volver al indice](#sty-base)
 
-Block element modifier, consiste en escribir nombres de clases que dejen en claro que es lo que se esta representando en el HTML y en el CSS
+BEM (Block Element Modifier) es una metodología para nombrar clases en HTML y CSS que facilita la escritura de código claro, estructurado y fácil de mantener. Su objetivo es dejar explícito qué representa cada clase y cómo se relaciona con la estructura del componente.
 
-`bloque__elemento--modificador_elemento (header__title--warning)`
+- **Bloque (Block):** Representa el componente principal o contenedor (por ejemplo, `header`).
+- **Elemento (Element):** Es una parte del bloque que no tiene sentido por sí sola (por ejemplo, `header__title`).
+- **Modificador (Modifier):** Indica una variación o estado del bloque o elemento (por ejemplo, `header__title--warning`).
+
+**Ejemplo de nomenclatura BEM:**
+
+```html
+<header class="header">
+  <h1 class="header__title header__title--warning">Título</h1>
+</header>
+```
+
+Esto ayuda a evitar conflictos de estilos y hace que el código sea más predecible y escalable.
 
 <a id="sty4"></a>
 
 ### **Como declaro variables en CSS?**
 
-```jsx
+Puedes declarar variables en CSS utilizando la pseudo-clase `:root`, que representa el elemento raíz del documento. Así puedes definir variables globales que luego puedes reutilizar en todo tu CSS usando la función `var()`:
+
+```css
 :root {
-    --color-3: #000000;
+  --color-3: #000000;
 }
 
 html, body {
-    background-color: var(--color-3);
+  background-color: var(--color-3);
 }
 ```
+
+En este ejemplo, `--color-3` es una variable CSS que almacena el color negro, y luego se utiliza para establecer el color de fondo de la página. Las variables CSS ayudan a mantener tu código más limpio y fácil de mantener.
 
 <a id="sty5"></a>
 
@@ -368,7 +384,32 @@ Ayuda a tener un codigo modular, simple y escalable.
 
 [Volver al indice](#sty-base)
 
-La primera no utiliza llaves, solo tabulaciones, que se interpretan como bloques de codigo. La segunda es mas similar a CSS ya que utiliza llaves, y con funcionalidades extra
+**.sass** y **.scss** son dos sintaxis diferentes para escribir SASS:
+
+- **.sass** (Sass Indented Syntax): Usa indentación (espacios o tabs) para definir los bloques de código, no utiliza llaves `{}` ni punto y coma `;`. Es más concisa y legible para quienes prefieren la sintaxis tipo Python.
+  
+  ```sass
+  // Sintaxis .sass
+  $color: red
+  body
+  background: $color
+  ```
+
+- **.scss** (Sassy CSS): Es una extensión de CSS, por lo que todo CSS válido también es SCSS válido. Usa llaves `{}` y punto y coma `;`, igual que CSS, pero permite todas las características avanzadas de SASS.
+  
+  ```scss
+  // Sintaxis .scss
+  $color: red;
+  body {
+  background: $color;
+  }
+  ```
+
+**Resumen:**  
+- `.sass` es más minimalista y depende de la indentación.  
+- `.scss` es más familiar para quienes ya conocen CSS y es la sintaxis más utilizada actualmente.
+
+Ambas sintaxis se compilan al mismo CSS final, la elección depende de tus preferencias personales o del equipo de trabajo.
 
 <a id="sty8"></a>
 
