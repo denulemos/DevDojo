@@ -2,56 +2,28 @@
 
 ## [Seguridad](#seg)
 
-| Introducción y Conceptos Básicos |
-|----------|
-| [¿Qué es el ciberespacio?](#seg4) |
-| [¿Cuáles son los componentes del Ciberespacio?](#seg5) |
-| [¿Cuáles son los problemas del Ciberespacio?](#seg6) |
-| [¿Qué es la Ciberseguridad?](#seg8) |
-| [¿Qué quiere decir "Ciberataque"?](#seg1) |
-| [¿Que quiere decir "Ciberamenazas"?](#seg2) |
-| [¿Qué quiere decir "Vulnerabilidad"?](#seg3) |
-| [¿Cuáles son las ciberamenazas actuales?](#seg7) |
-
-| Metodologías y Roles en Ciberseguridad |
-|----------|
-| [¿Cuál es el perfil del Oficial de seguridad informática?](#seg9) |
-| [¿De qué pasos consta la metodología de ciberseguridad?](#seg10) |
-| [¿De qué pasos criterios de seguridad consta la metodología de ciberseguridad?](#seg11) |
-
 | Tipos de Ciberataques |
 |----------|
+| [¿Cuáles son las ciberamenazas actuales?](#seg7) |
 | [¿Cuáles son algunas modalidades comunes de ataques?](#seg13) |
 | [¿Qué son los ataques internos?](#seg15) |
 | [¿Qué tipos de Ingenierías sociales existen?](#seg16) |
 | [¿Cuáles son las etapas en un proceso de hacking?](#seg14) |
-
-| Medidas de prevencion |
-|----------|
 | [¿Cuáles son algunas medidas comunes contra los ataques?](#seg12) |
 | [¿Qué es la triada CIA?](#seg17) |
-| [¿Qué es la seguridad perimetral?](#seg18) |
-| [Es una amenaza.. Verdadero o Falso?](#seg23) |
-
-| IDS (Intrusion Detection Systems) |
-|----------|
 | [IDS (Intrusion Detection System)](#seg19) |
-| [Tecnicas de detección de intrusiones](#seg20) |
 | [Indicadores de una intrusión](#seg21) |
 | [Tipos de IDS](#seg22) |
-
-| Firewalls |
-|----------|
 | [¿Qué es un Firewall?](#seg24) |
-| [Tipos de Firewall](#seg25) |
-
-| Criptografía |
-|----------|
 | [¿Qué es la criptografía?](#seg26) |
 | [¿Qué es una función Hash?](#seg27) |
 | [¿Cuáles son los requisitos de un Cripto sistema?](#seg28) |
 | [¿Cómo funciona el Cifrado Simétrico?](#seg29) |
 | [¿Cómo funciona el Cifrado Asimétrico?](#seg30) |
+| [¿Qué es un ataque de fuerza bruta?](#seg33) |
+| [¿Qué es el phishing y cómo prevenirlo?](#seg34) |
+| [¿Cuáles son las mejores prácticas de seguridad en desarrollo web?](#seg39) |
+| [¿Qué es OWASP y por qué es importante?](#seg40) |
 
 | Informática Forense |
 |----------|
@@ -64,63 +36,6 @@
 
 # Seguridad
 
-<a id="seg1"></a>
-
-### **Qué quiere decir "Ciberataque"?**
-
-[Volver al indice](#seg-base)
-
-Es cualquier maniobra ofensiva de explotación deliberada que tiene como objetivo tomar el control, desestabilizar o dañar un sistema informático.
-
-<a id="seg2"></a>
-
-### **Que quiere decir "Ciberamenazas"?**
-
-[Volver al indice](#seg-base)
-
-Representa un evento con potencial de daño que puede afectar negativamente a las operaciones de una organización o a sus activos.
-
-<a id="seg3"></a>
-
-### **¿Qué quiere decir "Vulnerabilidad"?**
-
-[Volver al indice](#seg-base)
-
-Representa una condición de debilidad en los sistemas informáticos que permiten la materialización del daño
-
-<a id="seg4"></a>
-
-### **¿Qué es el ciberespacio?**
-
-[Volver al indice](#seg-base)
-
-El ciberespacio es un ambiente complejo en donde interactúan los seres humanos, el software y los servicios disponibles en Internet, soportados por el hardware y las redes de comunicaciones de todo el mundo
-
-<a id="seg5"></a>
-
-### **¿Cuáles son los componentes del Ciberespacio?**
-
-[Volver al indice](#seg-base)
-
-- Personas
-- Software
-- Servicios en Internet
-- Dispositivos Informaticos
-- Redes Digitales
-
-<a id="seg6"></a>
-
-### **Cuales son los problemas del Ciberespacio?**
-
-[Volver al indice](#seg-base)
-
-- Ciberdelincuencia
-- Robo de Informacion
-- Fraude informático
-- Ciberterrorismo
-- Hacktivismo
-- Daños informáticos
-- Ciberataques
 
 <a id="seg7"></a>
 
@@ -156,58 +71,6 @@ El ciberespacio es un ambiente complejo en donde interactúan los seres humanos,
 | Online Scams | Se recopila información por premios que no existen, es publicidad engañosa  |
 | Local Network Hack | Simula el ataque de una persona con acceso físico tratando de acceder de manera no permitida por una red local  |
 
-<a id="seg8"></a>
-
-### **¿Qué es la Ciberseguridad?**
-
-[Volver al indice](#seg-base)
-
-La Ciberseguridad surge como resultado de una visión amplia de los aspectos de seguridad que se deben tener a fin de poder minimizar los riesgos que proponen los nuevos desafíos y retos del ciberespacio. Se define como el conjunto de medidas de protección de la información, a través del tratamiento de las amenazas que ponen en riesgo a la misma y que es tratada por los sistemas de información interconectados
-
-La Ciberseguridad se centra únicamente en los activos digitales conectados a Internet. Mantiene su atención principalmente en los riesgos provenientes únicamente del ciberespacio. Extiende su visión a la protección de la infraestructura crítica de información
-
-<a id="seg9"></a>
-
-### **¿Cuál es el perfil del Oficial de seguridad informática?**
-
-[Volver al indice](#seg-base)
-
-El oficial de seguridad informática tiene la función de brindar los servicios de seguridad en la organización, a través de la planeación, coordinación y administración de los procesos de seguridad informática, así como difundir la cultura de seguridad informática entre todos los miembros de la organización
-
-- Analizar las necesidades particulares de la organización en cuestión de seguridad digital.
-- Elaborar y presupuestar un plan de prevención y de actuación ante los posibles ciberataques.
-- Determinar los requisitos de seguridad para el sistema en red de la organización.
-- Proteger los equipos de la organización contra accesos no autorizados o maliciosos.
-- Configurar las diferentes herramientas de software de seguridad.
-- Realizar pruebas y análisis de vulnerabilidades.
-- Llevar a cabo auditorías de seguridad informática.
-- Responder de manera inmediata ante incidentes de seguridad informática.
-- Investigar los ciberdelitos
-
-<a id="seg10"></a>
-
-### **¿De qué pasos consta la metodología de ciberseguridad?**
-
-[Volver al indice](#seg-base)
-
-- **Identificar**: se debe entender el funcionamiento de la organización para minimizar el riesgo de los sistemas, activos, datos y capacidades.
-- **Proteger**: se deben diseñar salvaguardas para limitar el impacto de los eventos potenciales sobre los servicios y las infraestructuras críticas
-- **Detectar**: ejecutar actividades para identificar la ocurrencia de un evento de ciberseguridad.
-- **Responder**: tomar las medidas apropiadas después de enterarse de un evento de seguridad.
-- **Recuperar**: planificar la capacidad de recuperación y la reparación oportuna de capacidades y servicios comprometidos
-
-<a id="seg11"></a>
-
-### **¿De qué pasos criterios de seguridad consta la metodología de ciberseguridad?**
-
-[Volver al indice](#seg-base)
-
-- Debido a los nuevos desafíos que vienen aparejados con las tecnologías, la rama de la ciberseguridad dentro de una organización debe ser considerada transversal, enfocándose principalmente en el resguardo de sus activos informáticos, pero también haciendohincapié en la concientización del factor humano
-- Al momento de evaluar una tecnología, se debe prestar atención al entorno donde se va a implementar, su relación con otros entornos y/o plataformas y/o servicios, su alcance y sus canales de comunicación
-- Se deben tener en cuenta sus vulnerabilidades asociadas y los riesgos inherentes y externos
-- Se debe considerar quienes serán los actores principales y los secundarios de la misma, afin de efectuar una correcta segregación funciones y/o roles
-- Es importante efectuar una validación univoca de la identidad de los actores
-- Se debe poder garantizar, en todo momento, una trazabilidad completa de la operatoria
 
 <a id="seg12"></a>
 
@@ -302,15 +165,6 @@ Pueden infiltrar un pendrive con una etiqueta engañosa para que sea usado por a
 
 **Triada de la seguridad informática:** No repudio, Autenticidad, Responsabilidad y Fiabilidad.
 
-<a id="seg18"></a>
-
-### **¿Qué es la seguridad perimetral?**
-
-[Volver al indice](#seg-base)
-
-- Conjunto de sistemas de detección electrónica hecho para proteger perímetros internos y externos
-- Su funcion es detectar, disuadir, y hasta parar un ataque con antelación
-- Algunos sistemas son: Firewall, DMZ, UTM, IDS, WAF, Web Filtering, AppControl, Antivirus y Antispam
 
 <a id="seg19"></a>
 
@@ -324,15 +178,6 @@ Pueden infiltrar un pendrive con una etiqueta engañosa para que sea usado por a
 - Su comportamiento en las redes influye el sniffing de paquetes
 - Si detecta un posible ataque, manda una alarma
 
-<a id="seg20"></a>
-
-### **Tecnicas de detección de intrusiones**
-
-[Volver al indice](#seg-base)
-
-- **Reconocimiento de Firmas: Identificación de eventos y acciones conocidas**
-- **Detección Anomalías: Identificación de comportamientos raros**
-- **Anomalía de protocolos:** Identificación de paquetes TCP/IP raros.
 
 <a id="seg21"></a>
 
@@ -372,16 +217,6 @@ Si el IDS Detecta algún tipo de ataque toma las siguientes medidas:
 - **Monitor Logs**: Correlaciona y analiza los logs de sistemas y aplicaciones.
 - **Verificador Integridad:** Chequea la integridad de archivos de un sistema
 
-<a id="seg23"></a>
-
-### **Es una amenaza.. Verdadero o Falso?**
-
-[Volver al indice](#seg-base)
-
-- **Verdadero Positivo**: Debería generarse una alarma y ésta se genera.
-- **Falso Positivo**: No debería generarse una alarma, pero ésta se genera
-- **Verdadero Negativo**: No debería generarse una alarma, y ésta no se genera.
-- **Falso Negativo:** Debería generarse una alarma, pero ésta no se genera
 
 <a id="seg24"></a>
 
@@ -396,12 +231,6 @@ Si el IDS Detecta algún tipo de ataque toma las siguientes medidas:
 - Toma acciones en base a cierto criterio y acepta o rechaza los paquetes
 
 El firewall **NO** protege conexiones que NO pasen por el Firewall, no protege contra el Malware, no protege contra acciones internas y no protege contra ataques de ingeniería social
-
-<a id="seg25"></a>
-
-### **Tipos de Firewall**
-
-[Volver al indice](#seg-base)
 
 **Packet Filters**
 
@@ -427,6 +256,7 @@ El firewall **NO** protege conexiones que NO pasen por el Firewall, no protege c
 - Son más costosos y difíciles de administrar.
 - Tienen gran capacidad de análisis y filtrado.
 
+
 <a id="seg26"></a>
 
 ### **Que es la Criptografia?**
@@ -446,27 +276,17 @@ El firewall **NO** protege conexiones que NO pasen por el Firewall, no protege c
 
 [Volver al indice](#seg-base)
 
-Es un algoritmo que consigue crear a partir de una entrada (ya sea un texto, una contraseña o un archivo, por ejemplo) una salida alfanumérica de longitud normalmente fija, que representa un resumen de toda la información que se le ha dado.
-Es decir, a partir de los datos de la entrada crea una cadena que solo puede volverse a crear con esos mismos datos.
+Una función hash es un algoritmo que toma una entrada (como un texto o archivo) y genera una cadena alfanumérica de longitud fija, llamada hash, que representa un resumen único de esa información. Es prácticamente imposible obtener la entrada original a partir del hash (es unidireccional).
 
-Para crear una firma digital, el software de firma crea un hash unidireccional de los datos electrónicos que se deben firmar. La clave privada se usa para encriptar el hash. El hash cifrado junto con otra información es la firma digital.
-Cualquier cambio en los datos, incluso cambiando o eliminando un solo carácter, da como resultado un valor diferente. Este atributo permite a otros validar la integridad de los datos mediante el uso de la clave pública del firmante para descifrar el hash.
+Las funciones hash se usan para verificar la integridad de los datos: si los datos cambian, el hash también cambia. Son fundamentales en firmas digitales, blockchain y almacenamiento seguro de contraseñas.
 
-Si el hash descifrado coincide con un segundo hash calculado de los mismos datos, prueba que los datos no han cambiado desde que se firmó. Si los dos hash no coinciden, los datos se han alterado de algún modo (integridad) o la firma se ha creado con una clave privada que no corresponde a la clave pública presentada por el firmante (autenticación).
-Las firmas digitales dificultan que el firmante niegue haber firmado algo (no repudio), suponiendo que su clave privada no se haya visto comprometida, ya que la firma digital es única tanto para el documento como para el firmante, y los une.
+Características principales:
+- Fácil de calcular.
+- Unidireccional (no se puede revertir).
+- El resultado siempre tiene la misma longitud.
+- Un pequeño cambio en la entrada produce un hash completamente diferente.
 
-Un certificado digital es un documento electrónico que contiene la firma digital de la autoridad emisora del certificado, vincula una clave pública con una identidad y se puede usar para verificar que una clave pública pertenece a una persona o entidad en particular.
-Las firmas digitales se usan ampliamente para proporcionar pruebas de autenticidad, integridad de los datos y no repudio de las comunicaciones y transacciones realizadas a través de Internet.
-
-- Es una funcion matemática fácil de calcular
-- Uno puede hacer un algoritmo **unidireccional** (no se puede decodificar, o no se debería)
-- Sirve para certificar que la informacion es veridica y no fue modificada
-- Se usa para el concepto de firma digital y en blockchain
-- **Compresión:** Son de longitud única su resultado
-- **Difusión: Sí se modifica la mitad de un bit del mensaje original, el hash cambia la mitad de sus bits.**
-- Mensaje => Algoritmo criptográfico (clave k) => Mensaje Cifrado (C)
-
-**Principales algoritmos hash:** MD4, SHA 56, Sha1, etc..
+Ejemplos de algoritmos hash: MD5, SHA-1, SHA-256.
 
 <a id="seg28"></a>
 
@@ -550,3 +370,73 @@ La pericia se dirige a quienes no son especialistas por eso debe mantener un len
 - El análisis efectuado.
 - Las conclusiones en forma de respuesta a los puntos de pericia ordenados.
 - Toda aquella información que el perito considere conveniente para el esclarecimiento del caso. Puede ser explicaciones adicionales, nuevos elementos que el perito considere relevantes, etc.
+
+---
+
+<a id="seg33"></a>
+
+### **¿Qué es un ataque de fuerza bruta?**
+
+[Volver al indice](#seg-base)
+
+Un ataque de fuerza bruta es cuando un atacante prueba todas las combinaciones posibles de contraseñas o claves hasta encontrar la correcta. Es como si intentaras abrir una cerradura probando todas las llaves que existen, una por una, hasta que alguna funcione. Es un método lento, pero puede funcionar si la contraseña es corta o fácil de adivinar. Por eso es importante usar contraseñas largas y complejas.
+
+<a id="seg34"></a>
+
+### **¿Qué es el phishing y cómo prevenirlo?**
+
+[Volver al indice](#seg-base)
+
+El **phishing** es una técnica de engaño donde un atacante se hace pasar por una persona o empresa de confianza (por ejemplo, tu banco o una red social) para robarte información personal, como contraseñas, números de tarjeta o datos bancarios. Normalmente, lo hacen enviando correos electrónicos, mensajes o creando páginas web falsas que parecen reales.
+
+**¿Cómo prevenirlo?**
+- No hagas clic en enlaces sospechosos ni descargues archivos de correos o mensajes que no esperabas.
+- Verifica siempre la dirección del remitente y la URL de la página web antes de ingresar tus datos.
+- Usa autenticación en dos pasos siempre que puedas.
+- Si tienes dudas, contacta directamente a la empresa o persona por otro medio.
+- Mantén actualizado tu navegador y antivirus.
+
+<a id="seg39"></a>
+
+### **¿Cuáles son las mejores prácticas de seguridad en desarrollo web?**
+
+[Volver al indice](#seg-base)
+
+- **Revisá y limpiá todo lo que el usuario escribe:** No te fíes de los datos que llegan de formularios o entradas. Siempre verificá y limpiá esa info para evitar problemas como inyección de código o scripts maliciosos.
+- **Usá HTTPS:** Así la información viaja segura y cifrada entre el usuario y tu sitio, evitando que alguien la intercepte.
+- **Controlá quién entra y qué puede hacer:** Implementá sistemas de inicio de sesión y permisos seguros, como OAuth o JWT, para que solo las personas correctas accedan a lo que deben.
+- **Protegé las contraseñas:** Nunca guardes contraseñas tal cual. Usá métodos de hash y “sal” (como bcrypt) para que estén seguras aunque alguien acceda a la base de datos.
+- **Mantené todo actualizado:** Actualizá tus librerías y herramientas seguido. Muchas vulnerabilidades se arreglan en nuevas versiones.
+- **Hacé revisiones de seguridad:** Cada tanto, revisá tu aplicación buscando posibles fallos o pedile a alguien que intente encontrar errores de seguridad.
+- **Poné límites a los datos sensibles:** No muestres ni guardes más información de la necesaria y usá cifrado para proteger datos importantes.
+- **Monitoreá tu aplicación:** Llevá un registro de lo que pasa en tu app para detectar comportamientos raros o sospechosos.
+- **Capacitá a tu equipo:** Asegurate de que todos conozcan las buenas prácticas de seguridad y estén atentos a posibles amenazas.
+
+---
+
+<a id="seg40"></a>
+
+### **¿Qué es OWASP y por qué es importante?**
+
+[Volver al indice](#seg-base)
+
+OWASP (Open Web Application Security Project) es una organización sin fines de lucro que se dedica a mejorar la seguridad del software. Proveen recursos, herramientas y guías para ayudar a desarrolladores y empresas a crear aplicaciones web más seguras.
+
+Uno de sus recursos más conocidos es el "OWASP Top Ten", que es una lista de las diez vulnerabilidades de seguridad más críticas en aplicaciones web. Esta lista ayuda a los desarrolladores a entender y priorizar los riesgos de seguridad que deben abordar en sus proyectos.
+
+OWASP es importante porque:
+- Promueve buenas prácticas de seguridad en el desarrollo de software.
+- Proporciona herramientas y recursos gratuitos para mejorar la seguridad.
+- Ayuda a crear conciencia sobre la importancia de la seguridad en el desarrollo web.
+- Facilita la colaboración entre profesionales de la seguridad y desarrolladores para enfrentar amenazas comunes.
+
+El **OWASP Top Ten** es una lista de las diez vulnerabilidades más críticas en aplicaciones web. La versión 2021 incluye:
+
+1. **Broken Access Control:** Fallas en la restricción de lo que los usuarios pueden ver o hacer.
+2. **Cryptographic Failures:** Problemas en la protección de datos sensibles, como cifrado débil o mal implementado.
+3. **Injection:** Inyección de código malicioso (por ejemplo, SQL, NoSQL, OS, LDAP) a través de entradas no validadas.
+4. **Insecure Design:** Falta de controles de seguridad en el diseño de la aplicación.
+5. **Security Misconfiguration:** Configuraciones inseguras o por defecto en servidores, bases de datos o frameworks.
+6. **Vulnerable and Outdated Components:** Uso de librerías, frameworks o componentes con vulnerabilidades conocidas.
+7. **Identification and Authentication Failures:** Problemas en la autentic
+
