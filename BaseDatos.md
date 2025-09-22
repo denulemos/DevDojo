@@ -8,38 +8,22 @@
 | [Lenguaje de manipulación de datos (DML)](#bd3) |
 | [Lenguaje de definición de datos (DDL)](#bd4) |
 | [¿Qué es un índice en una base de datos?](#bd44) |
-| ¿Cuál es la diferencia entre un índice único y un índice no único? |
-|¿Qué es una clave primaria y cómo se utiliza?|
-|¿Qué es una clave foránea y cómo se utiliza?|
-|¿Qué es un schema en una base de datos?|
 
 | Normalización y Diseño de Bases de Datos |
 |----------|
 | [Qué es la normalizacion?](#bd5) |
 | [Cuales son los objetivos de la Normalización?](#bd6) |
 | [Cuales son los grados de Normalización?](#bd7) |
-| ¿Cómo funciona la normalización en bases de datos relacionales?|
-|¿Qué es la desnormalización y cuándo es apropiada?|
-|¿Qué es una transacción en bases de datos y cuáles son sus propiedades (ACID)?|
-|¿Qué es la atomicidad en las transacciones de bases de datos?|
-|¿Qué es la concurrencia en bases de datos y cómo se maneja?|
 
 | Consultas y Optimización |
 |----------|
 | [Algunos tips de Performance SQL](#bd8) |
-|¿Cómo optimizar una consulta SQL para mejorar el rendimiento?|
-|¿Qué es una vista (view) en SQL y cuándo se debe usar?|
-|¿Qué es la diferencia entre INNER JOIN, LEFT JOIN y RIGHT JOIN?|
-|¿Qué es un Self Join?|
-|¿Qué son las consultas complejas y cómo se pueden manejar con SQL?|
 
 | Procedimientos, Triggers y Funciones |
 |----------|
 | [DDL Triggers](#bd9) |
 | [Diferencia entre OPENROWSET y OPENQUERY](#bd17) |
 | [DML Triggers](#bd14) |
-|¿Qué son los procedimientos almacenados y cuál es su ventaja?|
-|¿Qué es un trigger y cómo se diferencia de un procedimiento almacenado?|
 
 | Consultas y Operaciones |
 |----------|
