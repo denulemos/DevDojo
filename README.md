@@ -11,6 +11,7 @@ Preguntas son agregadas todas las semanas. Se aceptan sugerencias mediante Pull 
 ## Tabla de Temas (Sigue en desarrollo y re-organización)
 
 - [Accesibilidad](./Accesibilidad.md)
+- [Accesibilidad](./Accesibilidad.md)
 - [Algoritmos, Manejo de Datos y Tipos de Programacion](./Algoritmos.md)
 - [Angular](./Angular.md)
 - [Bases de Datos](./BaseDatos.md)
@@ -21,12 +22,14 @@ Preguntas son agregadas todas las semanas. Se aceptan sugerencias mediante Pull 
 - [Hardware](./Hardware.md)
 - [Hardware y Sistemas Operativos](./Hardware.md)
 - [HTML - CSS](./html.md)
+- [Javascript](./JSTS.md)
 - [NodeJS y RestAPI](./NodeJS.md)
 - [Organizacion en Software - Derecho en IT](./Organizacion.md)
+- [Programacion Orientada a Objetos](./poo.md)
 - [QA](./QA.md)
 - [React](./react.md)
 - [Redes y Virtualizacion](./RedesVirtualizacion.md)
 - [Seguridad](./Seguridad.md)
 - [System Design](./SystemDesign.md)
-- [Javascript](./JSTS.md)
 - [Typescript](./TS.md)
+

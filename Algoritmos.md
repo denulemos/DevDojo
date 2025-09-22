@@ -111,7 +111,6 @@
 
 | Programación Funcional y Orientada a Objetos |
 |----------|
-| [Que es la programacion orientada a objetos?](#var24) |
 | [Que es la programacion funcional?](#var27-1) 💛 |
 | [Que es el Function Factory?](#var20) |
 | [Que es el Currying?](#var23)  💛 |
@@ -1896,25 +1895,6 @@ function factorial(n) {
 // Ejemplo de uso
 console.log(factorial(5)); // Output: 120
 ```
-
-<a id="var24"></a>
-
-### **Que es la programacion orientada a objetos?**
-
-[Volver al indice](#alg-base-3)
-
-La programación orientada a objetos (POO) es un estilo de programación que organiza el código en "objetos". Un objeto es como una caja que contiene datos (llamados atributos) y cosas que puede hacer (llamadas métodos).
-
-Por ejemplo, imagina que tienes un objeto llamado "Perro". Este objeto podría tener atributos como "nombre" y "edad", y métodos como "ladrar()" o "correr()". Así, puedes crear muchos perros con diferentes nombres y edades, pero todos pueden ladrar y correr.
-
-La POO se basa en cuatro ideas principales:
-
-1. **Clases y objetos**: Una clase es como un molde (por ejemplo, "Perro"), y un objeto es una cosa creada a partir de ese molde (por ejemplo, "mi perro Fido").
-2. **Encapsulación**: Los datos de un objeto están protegidos y solo se pueden cambiar usando sus métodos.
-3. **Herencia**: Puedes crear nuevas clases basadas en otras. Por ejemplo, una clase "Perro" puede heredar de una clase más general llamada "Animal".
-4. **Polimorfismo**: Los objetos pueden comportarse de manera diferente según el contexto. Por ejemplo, un método "hacerSonido()" puede hacer que un perro ladre y un gato maúlle.
-
-En resumen, la POO te ayuda a organizar tu código de manera que sea más fácil de entender, reutilizar y mantener.
 
 <a id="var27-1"></a>
 
