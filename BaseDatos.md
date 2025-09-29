@@ -68,8 +68,25 @@ La programacion declarativa se concentra en que cosas hay que hacer y no necesar
 
 [Volver al indice](#bd-base)
 
-- GRANT - Dar permisos específicos a una tabla y/o objeto
-- REVOKE - Revocar permisos
+- **GRANT**: Da permisos a un usuario
+- **REVOKE**: Quita permisos a un usuario
+- **DENY**: Niega permisos a un usuario
+- **COMMIT**: Guarda los cambios hechos en la base de datos
+- **ROLLBACK**: Revierte los cambios hechos en la base de datos
+- **SAVEPOINT**: Crea un punto de guardado en una transacción para poder hacer rollback a ese punto específico
+- **TRANSACTION**: Inicia una transacción
+- **SET TRANSACTION**: Configura las propiedades de la transacción actual
+- **LOCK**: Bloquea una tabla o fila para evitar que otros usuarios la modifiquen mientras se está trabajando en ella
+- **UNLOCK**: Desbloquea una tabla o fila que fue bloqueada previamente
+- **EXPLAIN**: Muestra el plan de ejecución de una consulta SQL para optimización
+- **ANALYZE**: Recopila estadísticas sobre la distribución de datos en una tabla para ayudar al optimizador de consultas a tomar decisiones informadas
+- **MERGE**: Combina datos de dos tablas en una sola tabla
+- **CALL**: Invoca un procedimiento almacenado en la base de datos
+- **DESCRIBE**: Muestra la estructura de una tabla, incluyendo sus columnas y tipos de datos
+- **SHOW**: Muestra información sobre la base de datos, como tablas, vistas, índices, etc.
+- **USE**: Cambia la base de datos actual en uso
+- **SET**: Configura opciones de sesión para la base de datos
+- **HELP**: Proporciona ayuda sobre comandos y funciones de la base de datos
 
 <a id="bd3"></a>
 
