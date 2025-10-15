@@ -31,6 +31,12 @@ public int sumar(int a, int b) {
 }
 ```
 
+- `public`: Es el modificador de acceso, puede ser `private`, `protected` o `public`.
+- `int`: Es el tipo de dato que retorna la función. Si no retorna nada, se usa `void`.
+- `sumar`: Es el nombre de la función.
+- `(int a, int b)`: Son los parámetros que recibe la función, cada uno con su tipo de dato.
+- `return resultado;`: Devuelve el valor calculado por la función.
+
 ---
 
 <a id="java2"></a>
