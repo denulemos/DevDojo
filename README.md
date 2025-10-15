@@ -23,7 +23,7 @@ Preguntas son agregadas todas las semanas. Se aceptan sugerencias mediante Pull 
 - [Hardware y Sistemas Operativos](./Hardware.md)
 - [HTML - CSS](./html.md)
 - [Javascript](./JSTS.md)
-- [Java](./Java.md)
+- [Java y Spring](./Java.md)
 - [NodeJS y RestAPI](./NodeJS.md)
 - [Organizacion en Software - Derecho en IT](./Organizacion.md)
 - [Programacion Orientada a Objetos](./poo.md)
