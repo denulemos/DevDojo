@@ -4,41 +4,25 @@
 |----------|
 | [¿Qué es Node.js y para qué se utiliza?](#node1)|
 |[¿Cuál es la diferencia entre Node.js y el navegador en cuanto a ejecución de JavaScript?](#node2)|
-|[¿Qué es el Event Loop en Node.js?](#node3)|
-|[¿Qué son los módulos en Node.js? ¿Cuál es la diferencia entre CommonJS y ES Modules?](#node4)|
-| [¿Qué es npm y qué diferencia hay con npx?](#node5) |
-| [¿Qué es nodemon y para qué se utiliza?](#node6) |
-| [¿Cómo usar dotenv para manejar variables de entorno?](#node7) |
-| [¿Qué es clustering en Node.js y cuándo lo usarías?](#node8) |
-| [Escalabilidad NodeJS](#ent73) |
+|[Event Loop](#node3)|
+|[Módulos en Node.js - CommonJS y ES Modules](#node4)|
+| [NPM y NPX](#node5) |
+| [Nodemon](#node6) |
+| [Variables de entorno - dotenv](#node7) |
+| [Clustering](#node8) |
+| [Escalabilidad](#ent73) |
 
 | Express.js y estructura de APIs |
 |----------|
-| [¿Qué es Express.js y por qué se usa con Node?](#node10) |
+| [¿Qué es Express.js?](#node10) |
 | [¿Cómo crear una API REST simple con Express?](#node11) |
-| [¿Qué es el middleware en Express y para qué sirve?](#node12) |
+| [Middlewares](#node12) |
 | [¿Cómo estructurar una API REST escalable con Express?](#node13) |
-| ¿Cómo implementar controladores y rutas en Express? |
-| ¿Qué son middlewares de error y cómo se crean? |
-| ¿Cómo loguear peticiones y errores en producción (winston, morgan)? |
 
 | REST API - Conceptos y Buenas Prácticas |
 |----------|
-| ¿Qué es una REST API? |
-| ¿Qué métodos HTTP se usan comúnmente en una API REST? |
-| [¿Qué es CORS y cómo lo manejás en una API REST?](#node14) |
-| ¿Cómo manejar la carga de archivos (file uploads) en Express? |
-| ¿Cómo implementar una API versionada (v1, v2...)? |
-| [Diferencias entre REST y GraphQL](#ent18) |
-| ¿Cómo implementar paginación, filtrado y ordenamiento en una REST API? |
-| ¿Cómo se manejan las relaciones entre entidades en una API REST (por ejemplo, usuarios y posts)? |
-
-| Seguridad y Autenticación |
-|----------|
-| ¿Cómo se realiza la autenticación en una REST API con JWT? |
-| ¿Cómo proteger rutas privadas en Express? |
-| ¿Cómo manejar rate limiting y prevenir ataques de fuerza bruta? |
-| ¿Cómo validar datos en una API (por ejemplo, usando Joi o Zod)? |
+| [CORS](#node14) |
+| [REST vs GraphQL](#ent18) |
 
 ---
 
@@ -82,7 +66,7 @@ En resumen, el navegador es para la web y Node.js es para el servidor. Ambos usa
 
 <a id="node3"></a>
 
-### **¿Qué es el Event Loop en Node.js?**
+### **Event Loop en Node.js**
 
 [Volver al indice](#node-base)
 
@@ -118,7 +102,7 @@ El Event Loop tiene varias fases, cada una con un propósito específico:
 
 <a id="node4"></a>
 
-### **¿Qué son los módulos en Node.js? ¿Cuál es la diferencia entre CommonJS y ES Modules?**
+### **Módulos en Node.js - CommonJS y ES Modules**
 
 [Volver al indice](#node-base)
 
@@ -170,7 +154,7 @@ En general, CommonJS es ideal para proyectos existentes o cuando se necesita com
 
 <a id="node5"></a>
 
-### **¿Qué es npm y qué diferencia hay con npx?**
+### **NPM y NPX**
 
 [Volver al indice](#node-base)
 
@@ -195,7 +179,7 @@ En resumen:
 
 <a id="node6"></a>
 
-### **¿Qué es nodemon y para qué se utiliza?**
+### **Nodemon**
 
 [Volver al indice](#node-base)
 
@@ -221,7 +205,7 @@ Nodemon es una herramienta que se utiliza en el desarrollo con Node.js para faci
 
 <a id="node7"></a>
 
-### **¿Cómo usar dotenv para manejar variables de entorno?**
+### **Variables de entorno - dotenv**
 
 [Volver al indice](#node-base)
 
@@ -442,7 +426,7 @@ La escalabilidad en Node.js se puede lograr mediante diferentes estrategias que 
 
 <a id="ent18"></a>
 
-### **Diferencias entre REST y GraphQL**
+### **REST vs GraphQL**
 
 [Volver al indice](#node-base)
 
@@ -564,7 +548,7 @@ Crear una API REST simple con Express es fácil y directo. Aquí tienes un ejemp
 
 <a id="node12"></a>
 
-### **¿Qué es un Middleware?**
+### **Middlewares**
 
 [Volver al indice](#node-base)
 
@@ -700,7 +684,7 @@ Para estructurar una API REST escalable con Express de manera sencilla, sigue es
 
 <a id="node14"></a>
 
-### **¿Qué es CORS y cómo lo manejás en una API REST?**
+### **CORS**
 
 [Volver al indice](#node-base)
 
