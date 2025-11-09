@@ -52,7 +52,6 @@ Este es un conjunto de preguntas sumarizadas mas comunes en entrevistas de traba
 
 | JavaScript y Eventos |
 |----------|
-| [Promises - Async Await - Callbacks](#ent29) |
 | [Cual es la diferencia entre call, bind y apply?](#rea30) |
 | [Como evitar mandar muchos eventos inutiles, por ejemplo, ejecutar un search por letra?](#rea50) 💛|
 | [Que es async rendering?](#rea51) 💛|
