@@ -7,27 +7,27 @@
 | Qué es TypeScript? | [Ver](#typ1) |
 | TSConfig.json | [Ver](#typ2) |
 | Watch Mode | [Ver](#typ3) |
-| Cuáles son sus características superadoras? | [Ver](#typ4) |
-| Cómo declaro una variable? | [Ver](#typ5) |
+| Variables | [Ver](#typ5) |
 | Tuples - Tuplas | [Ver](#typ6) |
-| Tipo de dato Never  | [Ver](#typ7) |
-| Tipo de dato Any | [Ver](#typ8) |
-| Cómo declaro un objeto? | [Ver](#typ9) |
+| `Never` | [Ver](#typ7) |
+| `Any` | [Ver](#typ8) |
+| Objetos | [Ver](#typ9) |
 | Cómo declaro una función? | [Ver](#typ10) |
 | Parámetros REST | [Ver](#typ11) |
-| Cómo creo una clase? | [Ver](#typ12) |
+| Clases | [Ver](#typ12) |
 | Cómo se transpilan las interfaces de TypeScript? | [Ver](#typ13) |
 | Cómo hago que las props de una interface sean opcionales? | [Ver](#typ14) |
-| Herencia en Typescript | [Ver](#typ15) |
-| Interfaces en Typescript | [Ver](#typ16) |
-| Diferencia entre el uso de types e interfaces  | [Ver](#typ17) |
-| ¿Qué son los tipos Union e Intersection y cuándo se utilizan? | [Ver](#typ18) |
-| ¿Qué son los Utility Types como Partial, Pick, y Omit, y en qué casos son útiles?  | [Ver](#typ19) |
-| ¿Cómo funcionan los Mapped Types y cómo se aplican en proyectos complejos? | [Ver](#typ20) |
-| ¿Qué son los Conditional Types y cómo permiten lógica avanzada en los tipos? | [Ver](#typ21) |
-| ¿Cómo funcionan los decoradores en TypeScript y en qué casos son útiles? | [Ver](#typ22) |
-| ¿Qué son los generics y cómo se implementan en TypeScript?  | [Ver](#alg53-2) |
-| Null vs undefined vs never | [Ver](#ent0-2) |
+| Herencia | [Ver](#typ15) |
+| Interfaces | [Ver](#typ16) |
+| Types vs Interfaces | [Ver](#typ17) |
+| Union e Intersection | [Ver](#typ18) |
+| Partial, Pick, y Omit | [Ver](#typ19) |
+| Mapped Types | [Ver](#typ20) |
+| Conditional Types | [Ver](#typ21) |
+| Decoradores | [Ver](#typ22) |
+| Generics | [Ver](#alg53-2) |
+| `Null` vs `undefined` vs `never` | [Ver](#ent0-2) |
+| Typeguards (`typeof` e `instanceof`) | [Ver](#typ23) |
 
 ---
 
@@ -50,6 +50,42 @@ Es mantenido por Microsoft
 * Nos permite usar características modernas de Javascript sin miedo a la compatibilidad
 * Mejora el intellisense
 * Nos permite la **inyección de dependencias**
+
+Su tipado estricto ayuda a saber como funcionan las cosas, por ejemplo, en este código Javascript
+
+```jsx
+function calcularISV (productos) {
+ let total = 0;
+
+ productos.forEach( ({precio}) => {
+  total += precio;
+ }
+
+ return [total, total * 0.15]
+}
+```
+
+* No sabemos de que tipo de dato son los productos
+* Como luce un producto
+* Que propiedades debe tener el producto para que el código funcione
+
+Entonces, en Typescript quedaría algo así la firma de nuestro método
+
+```tsx
+function calcularISV(productos: Producto[]): [number, number] {}
+```
+
+* Productos es un arreglo del tipo Producto
+* ¿Cómo luce Producto? Se puede definir con una interfaz
+
+```tsx
+interface Producto {
+ desc: string;
+ precio: number;
+}
+```
+
+* Retorna un arreglo de dos números
 
 ---
 
@@ -89,51 +125,9 @@ Typescript al ejecutarse es traducido a Javascript. Para que Typescript esté pe
 tsc --watch
 ```
 
-<a id="typ4"></a>
-
-### **Cuáles son sus características superadoras?**
-
-[Volver al indice](#typ-base)
-
-Su tipado estricto ayuda a saber como funcionan las cosas, por ejemplo, en este código Javascript
-
-```jsx
-function calcularISV (productos) {
- let total = 0;
-
- productos.forEach( ({precio}) => {
-  total += precio;
- }
-
- return [total, total * 0.15]
-}
-```
-
-* No sabemos de que tipo de dato son los productos
-* Como luce un producto
-* Que propiedades debe tener el producto para que el código funcione
-
-Entonces, en Typescript quedaría algo así la firma de nuestro método
-
-```tsx
-function calcularISV(productos: Producto[]): [number, number] {}
-```
-
-* Productos es un arreglo del tipo Producto
-* ¿Cómo luce Producto? Se puede definir con una interfaz
-
-```tsx
-interface Producto {
- desc: string;
- precio: number;
-}
-```
-
-* Retorna un arreglo de dos números
-
 <a id="typ5"></a>
 
-### **Cómo declaro una variable en Typescript?**
+### **Variables**
 
 [Volver al indice](#typ-base)
 
@@ -177,7 +171,7 @@ let tuplaRest: [string, ...number[]] = ['Denu', 1, 2, 3];
 
 <a id="typ7"></a>
 
-### **Tipo de dato `Never`** 
+### **`Never`**
 
 [Volver al indice](#typ-base)
 
@@ -206,7 +200,7 @@ arreglo.push(1); // Error - Array no acepta number dentro de su tipo never[]
 
 <a id="typ8"></a>
 
-### **Tipo de dato `Any`**
+### **`Any`**
 
 [Volver al indice](#typ-base)
 
@@ -249,7 +243,7 @@ Es ideal para reemplazar el uso de any. Por ejemplo, si se usa any, se pierde la
 
 <a id="typ9"></a>
 
-### **Cómo declaro un objeto en Typescript?**
+### **Objetos**
 
 [Volver al indice](#typ-base)
 
@@ -273,6 +267,8 @@ personaje.nacionalidad = 'Costa Rica';
 <a id="typ10"></a>
 
 ### **Cómo declaro una función en Typescript?**
+
+[Volver al indice](#typ-base)
 
 ```tsx
 function sumar (a: number, b:number) : number {
@@ -335,7 +331,7 @@ interface MyInterface {
 
 <a id="typ18"></a>
 
-### **¿Qué son los tipos Union e Intersection y cuándo se utilizan?**
+### **Union e Intersection**
 
 [Volver al indice](#typ-base)
 
@@ -357,15 +353,13 @@ type User = { name: string; age: number };
 type Admin = User & { role: 'admin' };
 ```
 
-**Cuándo se utilizan:**
-
 - **Union Types:** Se utilizan cuando un valor puede ser de varios tipos diferentes en un contexto determinado. Por ejemplo, cuando un valor puede ser una cadena o un número, se puede utilizar un tipo de unión para representar esta posibilidad.
 
 - **Intersection Types:** Se utilizan cuando se desea combinar varios tipos en uno solo para crear un nuevo tipo que tenga todas las propiedades y métodos de los tipos combinados. Por ejemplo, cuando se desea crear un nuevo tipo que tenga todas las propiedades de dos tipos existentes, se puede utilizar un tipo de intersección para lograr esto.
 
 <a id="typ19"></a>
 
-### **¿Qué son los Utility Types como Partial, Pick, y Omit, y en qué casos son útiles?** 
+### **Partial, Pick, y Omit**
 
 [Volver al indice](#typ-base)
 
@@ -559,7 +553,7 @@ class UserService {
 
 <a id="typ21"></a>
 
-### **¿Qué son los Conditional Types y cómo permiten lógica avanzada en los tipos?**
+### **Conditional Types**
 
 [Volver al indice](#typ-base)
 
@@ -572,7 +566,9 @@ type Test1 = IsString<string>; // 'yes'
 type Test2 = IsString<number>; // 'no'
 ```
 
-### **Null vs undefined vs never**
+<a id="ent0-2"></a>
+
+### **`Null` vs `undefined` vs `never`**
 
 [Volver al indice](#typ-base)
 
@@ -611,7 +607,7 @@ sumar(1, 2, 3, 4, 5, 6, 7, 8, 9, 10); // 55
 
 <a id="typ12"></a>
 
-### **Cómo creo una clase?**
+### **Clases**
 
 [Volver al indice](#typ-base)
 
@@ -637,7 +633,7 @@ class Person {
 
 <a id="typ15"></a>
 
-### **Herencia en Typescript**
+### **Herencia**
 
 [Volver al indice](#typ-base)
 
@@ -658,7 +654,7 @@ const beer = new Beer('Imperial', 1000, 5);
 
 <a id="typ16"></a>
 
-### **Interfaces en Typescript**
+### **Interfaces**
 
 [Volver al indice](#typ-base)
 
@@ -687,13 +683,13 @@ class Beer extends Drink implements Product {
 
 <a id="typ17"></a>
 
-### **Cual es la diferencia entre el uso de types e interfaces?**
+### **Types vs Interfaces**
 
 [Volver al indice](#typ-base)
 
 Ambos se utilizan para definir tipos en TypeScript, pero tienen algunas diferencias clave en su comportamiento y uso:
 
-### Interfaces:
+**Interfaces**
 
 - **Extensibilidad:** Las interfaces pueden extender otras interfaces, lo que permite la creación de jerarquías de interfaces y la reutilización de definiciones de tipo.
 
@@ -733,7 +729,7 @@ interface Person {
 const person: Person = { name: 'Alice', age: 30 };
 ```
 
-### Types:
+**Types:**
 
 - **Unión y Intersección:** Los tipos permiten la creación de tipos de datos más complejos mediante la unión y la intersección de tipos.
 
@@ -780,3 +776,41 @@ const partialPerson: PartialPerson = {}; // Todas las propiedades son opcionales
 ```
 
 En proyectos complejos, los Mapped Types pueden ser muy útiles para crear tipos dinámicamente basados en otros tipos existentes. Por ejemplo, puedes utilizar Mapped Types para crear tipos que transforman propiedades
+
+<a id="typ23"></a>
+
+### **Typeguards (`typeof` e `instanceof`)**
+
+[Volver al indice](#typ-base)
+
+Un type guard (o guardián de tipo) es una forma de decirle a TypeScript:
+
+"Tranquilo, yo sé qué tipo de dato tengo acá".
+
+Sirve para que TypeScript entienda qué tipo exacto tiene una variable en un momento dado, especialmente cuando puede ser más de uno (por ejemplo, string | number)
+
+```typescript
+// Con typeof
+
+function imprimirDoble(valor: string | number) {
+  if (typeof valor === "number") {
+    console.log(valor * 2);
+  } else {
+    console.log(valor.repeat(2));
+  }
+}
+
+// Con instanceof
+
+class Perro { ladrar() {} }
+class Gato { maullar() {} }
+
+function hacerSonido(animal: Perro | Gato) {
+  if (animal instanceof Perro) {
+    animal.ladrar(); // 🐶
+  } else {
+    animal.maullar(); // 🐱
+  }
+}
+
+```

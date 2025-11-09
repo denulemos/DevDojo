@@ -5,56 +5,58 @@
 | Tema | Enlace |
 |------|--------|
 | Métodos de Strings | [Ver](#alg55) |
-| Métodos de Objetos en Javascript | [Ver](#alg56) |
+| Métodos de Objetos | [Ver](#alg56) |
 | Se pueden comparar dos Objetos con `===` ? | [Ver](#alg56-2) |
-| Diferencia entre Map y WeakMap | [Ver](#var30) |
+| `Map` vs `Weakmap` | [Ver](#var30) |
 | Diferencia entre `for in` y `for of` | [Ver](#var29) |
 | Diferencia entre foreach, map y reduce | [Ver](#var32) |
 | Rest Operator | [Ver](#var16) |
-| ¿Cómo puedes incrustar variables o expresiones dentro de una string en JavaScript? | [Ver](#var17) |
-| ¿Para qué se utiliza export default en los módulos ES6 y cómo se importa? | [Ver](#var18) |
-| Diferencia entre import y require | [Ver](#var9) |
-| Función Object.freeze | [Ver](#var8) |
+| Template Literals | [Ver](#var17) |
+| `export default` - Módulos ES6 | [Ver](#var18) |
+| `import` vs `require` | [Ver](#var9) |
+| `Object.freeze` - Inmutabilidad | [Ver](#var8) |
 | ¿Qué es la destructuración y cómo se utiliza? 💛 | [Ver](#var8-2) |
-| ¿Cómo se diferencia un Spread Operator de un Rest Operator?  | [Ver](#var8-3) |
+| Spread Operator vs Rest Operator | [Ver](#var8-3) |
 | `.sort()` | [Ver](#ent1) |
 | `.map()` | [Ver](#ent2) |
 | `.filter()` | [Ver](#ent3) |
 | `.reduce()` | [Ver](#ent4) |
 | Set vs Map | [Ver](#ent4-1) |
 | Parámetros por valor y por referencia | [Ver](#ent0) |
-| Prototype Javascript | [Ver](#ent0-1) |
+| Prototype | [Ver](#ent0-1) |
 | Qué es un "array-like" en Javascript?  | [Ver](#alg26) |
 | Funciones array  | [Ver](#alg27) |
 | ¿Cómo funcionan los arrays en JavaScript internamente? | [Ver](#alg282) |
-| Para qué sirve `event.preventDefault()`?  | [Ver](#var7) |
+| `event.preventDefault()` | [Ver](#var7) |
 | ¿Cuál es la diferencia entre un Set y un Array en JavaScript? | [Ver](#alg301) |
-| Promises  | [Ver](#var21) |
-| Async Await  | [Ver](#var21-1) |
-| Callbacks  | [Ver](#var21-2) |
-| Callback Hell  | [Ver](#var12) |
-| Comparación entre Promises, Callbacks y Async-await  | [Ver](#var22) |
-| Cómo funciona setTimeout? | [Ver](#var10) |
-| ¿Qué es un `Promise.all` y cuándo usarlo?  | [Ver](#var10-1) |
-| ¿Cómo se maneja un error en una promesa?  | [Ver](#var10-2) |
-| ¿Cómo funcionan `Promise.allSettled`, `Promise.race` y `Promise.any`?  | [Ver](#var10-3) |
+| Promises | [Ver](#var21) |
+| Async Await | [Ver](#var21-1) |
+| Callbacks | [Ver](#var21-2) |
+| Callback Hell | [Ver](#var12) |
+| Promises, Callbacks y Async-await | [Ver](#var22) |
+| `setTimeout` | [Ver](#var10) |
+| `Promise.all` | [Ver](#var10-1) |
+| ¿Cómo se maneja un error en una promesa? | [Ver](#var10-2) |
+| `Promise.allSettled` | [Ver](#var10-3) |
+| `Promise.race` | [Ver](#var10-5) |
+| `Promise.any` | [Ver](#var10-6) |
 | Diferencia entre let, var y const  | [Ver](#var6) |
-| Diferencia entre `setTimeout()` y `setInterval()`  | [Ver](#rea31) |
-| Qué es el namespacing de JS? | [Ver](#rea40) |
+| `setTimeout()` vs `setInterval()` | [Ver](#rea31) |
+| Namespacing | [Ver](#rea40) |
 | Fetch API | [Ver](#rea46) |
-| Cómo se pueden crear objetos genéricos? | [Ver](#rea47) |
+| Generics | [Ver](#rea47) |
 | `Document.ready` vs `Window.onload` | [Ver](#js1) |
-| Qué es el Scope en Javascript? | [Ver](#rea45) |
-| Currying (función dentro de función) | [Ver](#ent15) |
+| Scope | [Ver](#rea45) |
+| Currying | [Ver](#ent15) |
 | Web y Service Workers | [Ver](#ent26) |
-| Event Loop (Macro, Micro tasks, Callback Queue) | [Ver](#ent27) |
-| ¿Qué es una función Declarativa y una Expresiva? | [Ver](#var35) |
+| Event Loop | [Ver](#ent27) |
+| Declarativa vs Expresiva | [Ver](#var35) |
 | ¿Cómo manejarías errores en funciones con async/await de forma eficiente?  | [Ver](#var10-4) |
 | Diferencia entre primitivo y objeto | [Ver](#var14) |
-| Variable Hoisting  | [Ver](#var24) |
-| Diferencia entre class y function | [Ver](#var25) |
-| isNaN vs Math.isNaN | [Ver](#rea515) |
-| Concepto Truthy and Falsy | [Ver](#rea42) |
+| Hoisting | [Ver](#var24) |
+| `class` vs `function` | [Ver](#var25) |
+| `isNaN` vs `Math.isNaN` | [Ver](#rea515) |
+| Truthy and Falsy | [Ver](#rea42) |
 
 ---
 
@@ -62,7 +64,7 @@
 
 <a id="alg55"></a>
 
-### **Metodos de Strings en Javascript**
+### **Métodos de Strings**
 
 [Volver al indice](#alg-base-2)
 
@@ -103,7 +105,7 @@
 
 <a id="alg56"></a>
 
-### **Métodos de Objectos en Javascript**
+### **Métodos de Objetos**
 
 [Volver al indice](#alg-base-2)
 
@@ -161,7 +163,7 @@ O usando lodash, `_.isEqual(obj1, obj2)`.
 
 <a id="var30"></a>
 
-### **Diferencia entre Map y Weakmap**
+### **`Map` vs `Weakmap`**
 
 [Volver al indice](#alg-base-2)
 
@@ -269,7 +271,7 @@ total;
 
 [Volver al indice](#alg-base-2)
 
-Con esto, se pueden crear funciones que pueden tomar una variable cantidad de argumentos, y estos pueden ser accedidos luego por estar guardados en un Array de dentro de la misma funcion
+Se pueden crear funciones que pueden tomar una variable cantidad de argumentos, y estos pueden ser accedidos luego por estar guardados en un Array de dentro de la misma funcion
 
 ```jsx
 function howMany(...args) {
@@ -340,7 +342,7 @@ console.log(startX, startY); // 5, 6
 
 <a id="var17"></a>
 
-### **¿Cómo puedes incrustar variables o expresiones dentro de una string?**
+### **Template Literals**
 
 [Volver al indice](#alg-base-2)
 
@@ -365,7 +367,7 @@ Se usa otro tipo de “comilla” cuando se quiere invocar al String (`) y no es
 
 <a id="var18"></a>
 
-### **¿Para qué se utiliza export default en los módulos ES6 y cómo se importa?**
+### **`export default` - Módulos ES6**
 
 [Volver al indice](#alg-base-2)
 
@@ -386,12 +388,12 @@ add(5,4); //Devuelve el resultado de acuerdo al metodo exportado anteriormente
 
 <a id="var9"></a>
 
-### **Diferencia entre import y require**
+### **`import` vs `require`**
 
 [Volver al indice](#alg-base-2)
 
-- Require: Se usa para importar las funciones y el codigo en un archivo externo. Esto posee un problema, el cual es que este codigo puede ser muy largo y solo necesito una parte del codigo.
-- Import: Herramienta de ES6 para importar solo los componentes que necesitamos de un archivo.
+- `Require`: Se usa para importar las funciones y el codigo en un archivo externo. Esto posee un problema, el cual es que este codigo puede ser muy largo y solo necesito una parte del codigo.
+- `Import`: Herramienta de ES6 para importar solo los componentes que necesitamos de un archivo.
 
 ```jsx
 import { countItems } from "math_array_functions"
@@ -399,7 +401,7 @@ import { countItems } from "math_array_functions"
 
 <a id="var8"></a>
 
-### **¿Cómo puedes hacer que un objeto en JavaScript sea inmutable? (`Object.freeze`)**
+### **`Object.freeze` - Inmutabilidad**
 
 [Volver al indice](#alg-base-2)
 
@@ -441,7 +443,7 @@ Esto no ahorra tener que crear dos variables distintas en dos lineas distintas y
 
 <a id="var8-3"></a>
 
-### **¿Cómo se diferencia un Spread Operator de un Rest Operator?** 💛
+### **Spread Operator vs Rest Operator**
 
 [Volver al indice](#alg-base-2)
 
@@ -734,7 +736,7 @@ Ninguno de los `weak` es enumerable, es decir, no se pueden iterar sobre ellos.
 
 <a id="ent0"></a>
 
-### **Parametros por valor y por referencia en Javascript**
+### **Parametros por valor y por referencia**
 
 [Volver al indice](#alg-base-2)
 
@@ -779,7 +781,7 @@ function modificarArray(array) {
 
 <a id="ent0-1"></a>
 
-### **Prototype Javascript**
+### **Prototype**
 
 [Volver al indice](#alg-base-2)
 
@@ -992,7 +994,7 @@ Por eso existe el `array-like` en Javascript
 
 <a id="var7"></a>
 
-### **Para que sirve `event.preventDefault()`?** 
+### **`event.preventDefault()`**
 
 [Volver al indice](#alg-base-2)
 
@@ -1027,9 +1029,9 @@ U otro ejemplo es para evitar que el resto de eventos que se ejecutarian por def
 
 <a id="var21"></a>
 
-### **Promises** 
+### **Promises**
 
-[Volver al indice](#alg-base-async)
+[Volver al indice](#alg-base-2)
 
 Las promises son una buena forma de manejar operaciones asincronicas. Puede tener 3 estados, `Pending`, `Fulfilled` y `Rejected`. Son utiles cuando hay que manejar mas de una operacion asincronica una despues de la otra, para eso se puede usar **Promise Chaining** usando then() y catch() para el manejo de cada una.
 
@@ -1046,7 +1048,7 @@ const myPromise = new Promise((resolve, reject) => {
 
 <a id="var21-1"></a>
 
-### **Async Await** 
+### **Async Await**
 
 [Volver al indice](#alg-base-2)
 
@@ -1079,7 +1081,7 @@ async function getPost() {
 
 <a id="var21-2"></a>
 
-### **Callbacks** 
+### **Callbacks**
 
 [Volver al indice](#alg-base-2)
 
@@ -1127,7 +1129,7 @@ doAll();
 
 <a id="var12"></a>
 
-### **Callback Hell** 
+### **Callback Hell**
 
 [Volver al indice](#alg-base-2)
 
@@ -1145,7 +1147,7 @@ doSomething(function(result) {
 
 <a id="var22"></a>
 
-### **Comparacion entre Promises, Callbacks y Async-await** 
+### **Promises, Callbacks y Async-await**
 
 [Volver al indice](#alg-base-2)
 
@@ -1169,7 +1171,7 @@ El mas usado es **Promises** por su facilidad de lectura y manejo de errores.
 
 <a id="var10"></a>
 
-### **Como funciona `setTimeout`?**
+### **`setTimeout`**
 
 [Volver al indice](#alg-base-2)
 
@@ -1190,7 +1192,7 @@ En este ejemplo, la funcion dentro de `setTimeout` se ejecutara despues de 2 seg
 
 <a id="var10-1"></a>
 
-### **¿Qué es un `Promise.all` y cuándo usarlo?** 
+### **`Promise.all`**
 
 [Volver al indice](#alg-base-2)
 
@@ -1235,11 +1237,11 @@ myPromise.then((resolvedValue) => {
 
 <a id="var10-3"></a>
 
-### **¿Cómo funcionan `Promise.allSettled`, `Promise.race` y `Promise.any`?** 
+### **`Promise.allSettled`**
 
 [Volver al indice](#alg-base-2)
 
-- **Promise.allSettled:** Devuelve una promesa que se resuelve después de que todas las promesas del iterable se hayan resuelto o rechazado, con un array de objetos que describen el resultado de cada promesa.
+Devuelve una promesa que se resuelve después de que todas las promesas del iterable se hayan resuelto o rechazado, con un array de objetos que describen el resultado de cada promesa.
 
 ```jsx
 const promise1 = Promise.resolve(3);
@@ -1250,7 +1252,13 @@ Promise.allSettled(promises).
   then((results) => results.forEach((result) => console.log(result.status))); // "fulfilled", "rejected"
 ```
 
-- **Promise.race**: Devuelve una promesa que se resuelve o rechaza tan pronto como una de las promesas del iterable se resuelve o se rechaza, con el valor o la razón de esa promesa.
+<a id="var10-5"></a>
+
+### **`Promise.race`**
+
+[Volver al indice](#alg-base-2)
+
+Devuelve una promesa que se resuelve o rechaza tan pronto como una de las promesas del iterable se resuelve o se rechaza, con el valor o la razón de esa promesa.
 
 ```jsx
 const promise1 = new Promise((resolve, reject) => setTimeout(resolve, 500, 'one'));
@@ -1261,7 +1269,13 @@ Promise.race([promise1, promise2]).then((value) => {
 });
 ```
 
--**Promise.any**: Devuelve una promesa que se resuelve tan pronto como una de las promesas del iterable se resuelve, con el valor de esa promesa.
+<a id="var10-6"></a>
+
+### **`Promise.any`**
+
+[Volver al indice](#alg-base-2)
+
+Devuelve una promesa que se resuelve tan pronto como una de las promesas del iterable se resuelve, con el valor de esa promesa.
 
 ```jsx
 const promise1 = new Promise((resolve, reject) => setTimeout(reject, 500, 'one'));
@@ -1399,7 +1413,7 @@ editInPlace();
 
 <a id="rea31"></a>
 
-### **Cual es la diferencia entre setTimeout() y setInterval()?**
+### **`setTimeout()` vs `setInterval()`**
 
 [Volver al indice](#alg-base-2)
 
@@ -1420,7 +1434,7 @@ setTimeout(() => { clearInterval(timerId); alert('stop'); }, 5000);
 
 <a id="rea40"></a>
 
-### **Qué es el namespacing de JS?**
+### **Namespacing**
 
 [Volver al indice](#alg-base-2)
 
@@ -1468,7 +1482,7 @@ async function fetchData() {
 
 <a id="rea47"></a>
 
-### **Cómo se pueden crear objetos genéricos?**
+### **Generics**
 
 [Volver al indice](#alg-base-2)
 
@@ -1526,7 +1540,7 @@ persona2.saludar(); // Hola, soy Luis
 
 <a id="rea45"></a>
 
-### **Que es el Scope en Javascript?**
+### **Scope**
 
 [Volver al indice](#alg-base-2)
 
@@ -1605,7 +1619,7 @@ if ('serviceWorker' in navigator) {
 
 <a id="ent27"></a>
 
-### **Event Loop (Macro, Micro tasks, Callback Queue)**
+### **Event Loop**
 
 [Volver al indice](#alg-base-2)
 
@@ -1665,7 +1679,7 @@ console.log('Fin');
 
 <a id="var35"></a>
 
-### **¿Qué es una funcion Declarativa y una Expresiva?**
+### **Declarativa vs Expresiva**
 
 [Volver al indice](#alg-base-2)
 
@@ -1712,9 +1726,9 @@ async function myAsyncFunction() {
 
 <a id="var14"></a>
 
-### **Diferencia entre primitivo y objeto**
+### **Primitivo vs Objeto**
 
-[Volver al indice](#alg-base-obj)
+[Volver al indice](#alg-base-2)
 
 - Los primitivos se pasan por valor, los objetos se pasan por referencia
 - Los primitivos se copian por valor y los objetos se copian por referencia
@@ -1759,9 +1773,9 @@ console.log(clone); // { a: 1, b: 2, foo: 'foo' }
 
 <a id="var24"></a>
 
-### **Variable Hoisting** 
+### **Hoisting**
 
-[Volver al indice](#alg-base-obj)
+[Volver al indice](#alg-base-2)
 
 Es un mecanismo de JS en el que las variables y declaraciones de funciones se mueven a la parte superior de su ambito antes de la ejecucion del codigo.
 
@@ -1780,7 +1794,7 @@ Es el usar las variables antes de que sean declaradas.
 
 <a id="var25"></a>
 
-### **Diferencia entre class y function**
+### **`class` vs `function`**
 
 [Volver al indice](#alg-base-2)
 
@@ -1834,7 +1848,7 @@ Number.isNaN('denu') // false porque no convertirá la cadena a numero
 
 <a id="rea42"></a>
 
-### **Concepto Truthy and Falsy**
+### **Truthy and Falsy**
 
 [Volver al indice](#alg-base-2)
 
