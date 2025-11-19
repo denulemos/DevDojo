@@ -8,6 +8,8 @@
 
 Preguntas son agregadas todas las semanas. Se aceptan sugerencias mediante Pull Request!
 
+[Version Devhood Web - Mismo contenido, facil acceso](https://devhood-tau.vercel.app)
+
 ## Tabla de Temas (Sigue en desarrollo y re-organización)
 
 - [Accesibilidad](./Accesibilidad.md)
