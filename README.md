@@ -6,16 +6,15 @@
 
 </div>
 
+## Visita la version web! https://devhood-tau.vercel.app/
+
 Preguntas son agregadas todas las semanas. Se aceptan sugerencias mediante Pull Request!
 
 ## Tabla de Temas (Sigue en desarrollo y re-organización)
 
 - [Accesibilidad](./Accesibilidad.md)
-- [Algoritmos, Manejo de Datos y Tipos de Programacion](./Algoritmos.md)
 - [Angular](./Angular.md)
 - [Bases de Datos](./BaseDatos.md)
-- [Clean Code y Best Practices](./CleanCode.md)
-- [Conjunto de preguntas generales para un Frontend Engineer](./PreguntasComunes.md)
 - [Control de Versiones y Cambios - Integracion Continua](./Versionado.md)
 - [HTML - CSS](./html.md)
 - [Javascript](./JSTS.md)

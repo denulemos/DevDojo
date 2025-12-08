@@ -8,29 +8,15 @@
 | [Lenguaje de manipulación de datos (DML)](#bd3) |
 | [Lenguaje de definición de datos (DDL)](#bd4) |
 | [¿Qué es un índice en una base de datos?](#bd44) |
-
-| Normalización y Diseño de Bases de Datos |
-|----------|
 | [Qué es la normalizacion?](#bd5) |
-| [Cuales son los objetivos de la Normalización?](#bd6) |
-| [Cuales son los grados de Normalización?](#bd7) |
-
-| Consultas y Optimización |
-|----------|
-| [Algunos tips de Performance SQL](#bd8) |
-
-| Procedimientos, Triggers y Funciones |
-|----------|
-| [DDL Triggers](#bd9) |
-| [Diferencia entre OPENROWSET y OPENQUERY](#bd17) |
-| [DML Triggers](#bd14) |
+| [Performance SQL](#bd8) |
 
 | Consultas y Operaciones |
 |----------|
 | [Inner Join](#bd10) |
 | [Outer Join (Con left y right join)](#bd11) |
 | [Self Join](#bd12) |
-| [UNIÓN](#bd15) |
+| [UNION](#bd15) |
 | [TOP](#bd16) |
 | [EXCEPT](#bd13) |
 
@@ -96,10 +82,10 @@ La programacion declarativa se concentra en que cosas hay que hacer y no necesar
 
 Las sentencias de lenguaje de manipulación de datos (DML) son utilizadas para gestionar datos dentro de las bases de datos . Algunos ejemplos:
 
-- SELECT - para obtener datos de una base de datos.
-- INSERT - para insertar datos a una tabla.
-- UPDATE - para modificar datos existentes dentro de una tabla.
-- DELETE - elimina todos los registros de la tabla; no borra los espacios asignados a los registros.
+- `SELECT` - para obtener datos de una base de datos.
+- `INSERT` - para insertar datos a una tabla.
+- `UPDATE` - para modificar datos existentes dentro de una tabla.
+- `DELETE` - elimina todos los registros de la tabla; no borra los espacios asignados a los registros.
 
 <a id="bd4"></a>
 
@@ -109,10 +95,10 @@ Las sentencias de lenguaje de manipulación de datos (DML) son utilizadas para g
 
 Las sentencias DDL se utilizan para crear y modificar la estructura de las tablas así como otros objetos de la base de datos.
 
-- CREATE - para crear objetos en la base de datos.
-- ALTER - modifica la estructura de la base de datos.
-- DROP - borra objetos de la base de datos.
-- TRUNCATE - elimina todos los registros de la tabla, incluyendo todos los espacios asignados a los registros. Además, reinicia los campos autonuméricos.
+- `CREATE` - para crear objetos en la base de datos.
+- `ALTER` - modifica la estructura de la base de datos.
+- `DROP` - borra objetos de la base de datos.
+- `TRUNCATE` - elimina todos los registros de la tabla, incluyendo todos los espacios asignados a los registros. Además, reinicia los campos autonuméricos.
 
 <a id="bd44"></a>
 
@@ -149,16 +135,16 @@ Desventajas:
 
 [Volver al indice](#bd-base)
 
-Definición formal: La normalización es el proceso mediante el cual se transforman datos complejos a un conjunto de estructuras de datos más pequeñas, que además de ser más simples y más estables, son más fáciles de mantener.
+Normalización es el proceso de ordenar una base de datos para que no haya datos repetidos, sea más fácil de mantener y evites errores raros cuando guardás, editás o borrás información.
 
-También se puede entender la normalización como una serie de reglas que sirven para ayudar a los diseñadores de bases de datos a desarrollar un esquema que minimice los problemas de lógica.
+Normalizar = dividir la información en tablas lógicas + crear relaciones correctas.
 
-<a id="bd6"></a>
+Objetivos principales:
 
-### **Cuales son los objetivos de la Normalización?**
-
-[Volver al indice](#bd-base)
-
+- Evitar datos duplicados.
+- Evitar inconsistencias (que un dato cambie en un lado pero no en otro).
+- Hacer que la base sea más fácil de modificar.
+- Asegurar integridad de la info.
 - Evitar redundancia
 - Evitar problemas de actualización
 - Asegurar la integridad
@@ -167,23 +153,18 @@ También se puede entender la normalización como una serie de reglas que sirven
 deben ser del mismo tipo.
 - Ejemplo “Nacimiento” debe tener una fecha.
 
-<a id="bd7"></a>
-
-### **Cuales son los grados de Normalización?**
-
-[Volver al indice](#bd-base)
+Hay distintos grados de Normalizacion:
 
 - Primera forma normal
 - Segunda forma normal
 - Tercera formal normal
 
 Cada una de estas formas normales tiene sus reglas.
-Una base de datos no es necesario que este siempre en la 3era forma normal, puede ocurrir que para resolver
-problemas complejos, no se requiera de algún dato en la 3era forma.
+Una base de datos no es necesario que este siempre en la 3era forma normal, puede ocurrir que para resolver problemas complejos, no se requiera de algún dato en la 3era forma.
 
 <a id="bd8"></a>
 
-### **Algunos tips de Performance SQL**
+### **Performance SQL**
 
 [Volver al indice](#bd-base)
 
@@ -307,39 +288,9 @@ VALUES (1, 'England')
 ```
 
 - Es preferible usar constraints en la definición de las tablas para mantener la integridad referencial en vez de usar triggers ya que son más rápidos. Solo usar triggers para auditar, validaciones que no se puedan hacer con constraints.
-- Siempre acceder las tablas en el mismo orden en todos los sp’s y triggers, de esta manera evitamos generar deadlocks asi como también mantener las transacciones lo más pequeñas posibles. También hacer que las aplicaciones reintenten la transacción en caso de generarse un deadlock (error 1205).
-- No hacer llamado de funciones repetitivamente en los sp’s o triggers, en lugar de eso hacer el llamado una sola vez y guardarlo en alguna variable
-- También toma en cuenta el consumo de CPU que generan tus consultas
-
-<a id="bd9"></a>
-
-### **DDL Triggers**
-
-Son triggers especiales que se crean **a nivel de base de datos** y que disparan en respuesta a eventos DML  (Update – Delete – Insert). Suelen ser utilizados para ejecutar tareas administrativas en una base de datos auditando y regulando cierta clase de eventos.
-
-```sql
-CREATE TRIGGER <Nombre del Trigger>
-ON DATABASE
-FOR <DROP TABLE, ALTER TABLE>
-AS
-BEGIN
-   SET NOCOUNT ON;
-   -- Inserta aquí las instrucciones
-END
-```
-
-El siguiente trigger impide que sentencias DROP TABLE y ALTER TABLE a nivel de Base de Datos
-
-```sql
-CREATE TRIGGER TR_Seguridad
-       ON DATABASE FOR DROP_TABLE, ALTER_TABLE
-       AS
-       BEGIN
-         RAISERROR ('No está permitido borrar ni modificar tablas !' , 16, 1)
-         ROLLBACK TRANSACTION
-
-       END
-```
+- Siempre acceder las tablas en el mismo orden en todos los Store Proceedures y triggers, de esta manera evitamos generar deadlocks asi como también mantener las transacciones lo más pequeñas posibles. También hacer que las aplicaciones reintenten la transacción en caso de generarse un deadlock (error 1205).
+- No hacer llamado de funciones repetitivamente en los Store Proceedures o triggers, en lugar de eso hacer el llamado una sola vez y guardarlo en alguna variable
+- También tener en cuenta el consumo de CPU que generan tus consultas o queries.
 
 <a id="bd10"></a>
 
@@ -376,7 +327,7 @@ ON p.productoid = pr.productoid
 
 <a id="bd15"></a>
 
-### **UNIÓN**
+### **UNION**
 
 [Volver al indice](#bd-base)
 
@@ -438,149 +389,3 @@ SELECT b
 FROM tabla2
 ```
 
-<a id="bd14"></a>
-
-### **DML Triggers**
-
-[Volver al indice](#bd-base)
-
-Son procedimientos almacenados que se ejecutan automáticamente ante un evento DML (Update – Delete – Insert) que afecta una **tabla o vista.**
-
-Se los puede utilizar para, una vez desencadenados:
-
-- Forzar reglas de negocio
-- Mantener la integridad de datos
-- Querear otras tablas
-- Ejecutar complejas instrucciones SQL
-
-La integridad debiera ser forzada al nivel más bajo por índices que formen parte de un Primary Key o Foreing Key contraints -
-
-Los CHECK Constraints son otra alternativa
-
-Para asegurar la Integridad Referencial nada mejor que los Foreing Key
-
-Los DML TRIGGERS son especialmente utilizados cuando, con el simple uso de un constraint, no se cubren las necesidades de una aplicación
-
-**Consideraciones Generales y Beneficio**
-
-No se pueden invocar por si mismos, se disparan automáticamente
-
-- No reciben ni retornan parámetros
-- A diferencia de los constraint “check” pueden hacer referencia a otras tablas (por ejemplo se puede controlar una inserción en una tabla de ventas si y solo si el valor de un campo stock de una tabla artículos sea mayor a x cantidad)
-- Se pueden crear más de un trigger para un mismo evento en una tabla, con lo cual se pueden controlar múltiples alternativas sobre la misma tabla.
-- Permiten evaluar el estado de una tabla antes y después de una modificación y tomar acciones acorde a la evaluación
-- Permiten customizar mensajes de error, algo que los constraints en general no permiten.
-- Los triggers DML utilizan dos tablas especiales denominadas **Inserted** y **Deleted**.
-- Son tablas creadas automáticamente por el SQL con la misma estructura que la tabla sobre la cual está definido el trigger
-- La tabla **Inserted** solo tiene datos en operaciones de Insert y Update
-- La tabla **Deleted** sólo tiene datos en operaciones de Delete y Update
-- En caso de un update las tablas Inserted y Deleted tienen data al mismo tiempo.
-- No se pueden modificar los datos de estas tablas
-
-```sql
-CREATE TRIGGER <Nombre del Trigger>
-ON <Nombre de la Tabla>
-AFTER <INSERT,DELETE,UPDATE>
-      AS
-BEGIN
-SET NOCOUNT ON;
--- Inserta aquí las instrucciones
-END
-```
-
-**Ejemplos**
-
-1. Se graba un histórico de stock cada vez que se modifica un artículo de la tabla “articulos”
-
-```sql
------------------------------------------------------------------
-      --  TRIGGER DML
-      --  Detalle: este trigger genera un histórico de stock cada vez
-          que se modifica la existencia de un artículo --
-      -----------------------------------------------------------------
-      CREATE TRIGGER TR_ARTICULOS
-      ON ARTICULOS
-      AFTER UPDATE
-      AS
-        BEGIN
-         INSERT INTO HCO_STOCK
-         (IDARTICULO, STOCK, FECHA)
-         SELECT IDARTICULO, STOCK, getdate()
-         FROM INSERTED
-        END
-
-       --- Con este evento UPDATE se desencadena el Trigger
-
-      UPDATE ARTICULOS
-      SET STOCK = STOCK + 10
-      WHERE IDARTICULO = 1
-```
-
-2. Podemos hacer que el trigger del ejemplo 1 se desencadene sólo si una columna es afectada
-
-```sql
-CREATE TRIGGER TR_ARTICULOS
-      ON ARTICULOS
-      AFTER UPDATE
-      AS
-        BEGIN
-           IF UPDATE (STOCK)    -- sólo si actualiza STOCK
-            BEGIN
-             INSERT INTO HCO_STOCK
-             (IDARTICULO, STOCK, FECHA)
-             SELECT IDARTICULO, STOCK, getdate()
-             FROM INSERTED
-            END
-END
-```
-
-3. Podemos hacer que el trigger deshaga toda la operación incluyendo un ROLLBACK
-
-```sql
-CREATE TRIGGER TR_ARTICULOS
-      ON ARTICULOS
-      AFTER UPDATE
-      AS
-        BEGIN
-             INSERT INTO HCO_ARTICULOS
-             (IDARTICULO, STOCK, FECHA)
-             SELECT IDARTOCULO, STOCK, getdate()
-             FROM INSERTED
-
-             ROLLBACK
-END
-```
-
-4. Podemos DESACTIVAR/ACTIVAR un Trigger o Todos lo Triggers de la tabla
-
-```sql
-----------------------------------------------------------
-      -- Desactivar y Activar Todos los Triggers de una Tabla --
-      ---------------------------------------------------------
-
-      -- Desactiva todos los trigger de la tabla ARTICULOS
-      ALTER TABLE ARTICULOS DISABLE TRIGGER ALL
-      GO
-      -- Activa todos los trigger de la tabla ARTICULOS
-      ALTER TABLE ARTICULOS ENABLE TRIGGER ALL
-
-      ----------------------------------------------------
-      -- Desactivar y Activar Un Trigger en Particular --
-      ---------------------------------------------------
-
-      -- Desactiva el trigger TR_STOCK
-      DISABLE TRIGGER TR_STOCK ON ARTICULOS
-      GO
-      -- Activa el trigger TR_STOCK
-      ENABLE TRIGGER TR_STOCK ON ARTICULOS
-      GO
-```
-
-<a id="bd17"></a>
-
-### **Diferencia entre OPENROWSET y OPENQUERY**
-
-[Volver al indice](#bd-base)
-
-- **OPENROWSET:** hay que indicar toda la información de conexión de los datos externos (String de conexión o ConnectionString).
-- **OPENQUERY:** se indica el nombre del servidor linkeado al motor desde donde ejecuto las consultas.
