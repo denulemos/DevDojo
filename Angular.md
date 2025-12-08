@@ -1,5 +1,7 @@
 <a name="angular-base"></a>
 
+[Version Devhood Web](https://devhood-tau.vercel.app/docs/desarrollo-web/angular)
+
 | Preguntas generales |
 |----------|
 | [¿Qué son los modulos en Angular?](#rea11) |
@@ -7,7 +9,10 @@
 | [¿Qué es Property Binding?](#rea12) |
 | [Que mejoras hay en la migracion de AngularJS a Angular?](#ent51-1) |
 | [¿Qué es RxJS y qué problemas resuelve en el desarrollo de aplicaciones?](#ent38) |
-| [¿Qué es un Observable en RxJS y cómo difiere de una Promesa en JavaScript?](#ent39) |
+| [¿Qué es un Observable?](#ent39) |
+| [Next, Error y Complete - Return de los Observables](#ent39-2) |
+| [Observables vs Promises](#ent39-3) |
+| [Subjects](#ent39-5) |
 | [Porque es importante desuscribirnos de los Observables?](#rea2) |
 | [Formas de desubscripcion de Observables](#rea3) |
 | [Cual es la diferencia entre un Observable "cold" y "hot"?](#ent40) |
@@ -41,6 +46,51 @@
 |[¿Cómo funciona la detección de cambios en Angular?](#angular2)|
 
 ---
+
+<a id="rea11"></a>
+
+### **¿Qué son los modulos en Angular?**
+
+[Volver al indice](#angular-base)
+
+**⚠️ En versiones nuevas de Angular (como Angular 15+), ya no es obligatorio usar módulos. Ahora puedes tener componentes "standalone": independientes, sin necesidad de estar dentro de un módulo.**
+
+Imaginá que tu aplicación es una casa grande. En esa casa, hay habitaciones diferentes para distintas tareas: la cocina, el dormitorio, el baño, etc. Cada habitación tiene su propósito y sus herramientas.
+
+En Angular, esa casa es tu aplicación, y cada habitación es un módulo (`NgModule`).
+
+- Ayudan a organizar el código para que no sea un caos.
+- Agrupan cosas que trabajan juntas, como componentes, servicios, y rutas.
+- Te permiten importar otras librerías (por ejemplo, para mostrar botones, manejar formularios, etc.).
+- Podes tener rutas específicas dentro de un módulo (como si tuvieras un mini-GPS dentro de cada habitación).
+
+Supongamos que estás creando una tienda online:
+
+- 🛍 Módulo de productos: todo lo que tiene que ver con mostrar productos, ver detalles, etc.
+- 👩‍💼 Módulo de usuarios vendedores: gestión de sus productos, sus ventas.
+- 🧑‍🤝‍🧑 Módulo de compradores: ver historial de compras, carrito, etc.
+
+Cada módulo tiene su propio archivo `.module.ts`, como `productos.module.ts`
+
+```js
+@NgModule({
+  declarations: [ProductoComponent],
+  imports: [CommonModule],
+  exports: [ProductoComponent]
+})
+export class ProductosModule {}
+```
+
+- declarations: qué componentes tiene este módulo.
+- imports: qué cosas necesita (otros módulos, librerías, etc).
+- exports: qué cosas le comparte a otros módulos.
+
+Para resumir un poco:
+
+- Los módulos son como grupos de funcionalidades que organizan tu app.
+- Hacen que sea más fácil de mantener y escalar.
+- Son como contenedores de lógica, donde pones componentes, servicios, rutas, etc.
+- Aunque ahora podés usar componentes independientes, los módulos siguen siendo útiles en muchos casos.
 
 <a id="rea1"></a>
 
@@ -169,53 +219,6 @@ interface Usuario {
 🔹 **10. Estilo consistente con Prettier/ESLint**
 Instalá herramientas que formateen y detecten errores automáticamente.
 
-
-
-
-<a id="rea11"></a>
-
-### **¿Qué son los modulos en Angular?**
-
-[Volver al indice](#angular-base)
-
-**⚠️ En versiones nuevas de Angular (como Angular 15+), ya no es obligatorio usar módulos. Ahora puedes tener componentes "standalone": independientes, sin necesidad de estar dentro de un módulo.**
-
-Imaginá que tu aplicación es una casa grande. En esa casa, hay habitaciones diferentes para distintas tareas: la cocina, el dormitorio, el baño, etc. Cada habitación tiene su propósito y sus herramientas.
-
-En Angular, esa casa es tu aplicación, y cada habitación es un módulo (`NgModule`).
-
-- Ayudan a organizar el código para que no sea un caos.
-- Agrupan cosas que trabajan juntas, como componentes, servicios, y rutas.
-- Te permiten importar otras librerías (por ejemplo, para mostrar botones, manejar formularios, etc.).
-- Podes tener rutas específicas dentro de un módulo (como si tuvieras un mini-GPS dentro de cada habitación).
-
-Supongamos que estás creando una tienda online:
-
-- 🛍 Módulo de productos: todo lo que tiene que ver con mostrar productos, ver detalles, etc.
-- 👩‍💼 Módulo de usuarios vendedores: gestión de sus productos, sus ventas.
-- 🧑‍🤝‍🧑 Módulo de compradores: ver historial de compras, carrito, etc.
-
-Cada módulo tiene su propio archivo `.module.ts`, como `productos.module.ts`
-
-```js
-@NgModule({
-  declarations: [ProductoComponent],
-  imports: [CommonModule],
-  exports: [ProductoComponent]
-})
-export class ProductosModule {}
-```
-
-- declarations: qué componentes tiene este módulo.
-- imports: qué cosas necesita (otros módulos, librerías, etc).
-- exports: qué cosas le comparte a otros módulos.
-
-Para resumir un poco:
-
-- Los módulos son como grupos de funcionalidades que organizan tu app.
-- Hacen que sea más fácil de mantener y escalar.
-- Son como contenedores de lógica, donde pones componentes, servicios, rutas, etc.
-- Aunque ahora podés usar componentes independientes, los módulos siguen siendo útiles en muchos casos.
 
 <a id="rea12"></a>
 
@@ -886,17 +889,13 @@ En parte su uso podria ser reemplazado con Angular Signals en Angular 16, pero R
 
 <a id="ent39"></a>
 
-### **¿Qué es un Observable en RxJS y cómo difiere de una Promesa en JavaScript?**
+### **¿Qué es un Observable?**
 
 [Volver al indice](#angular-base)
 
-RxJS (Reactive Extensions for JS) es una libreria que nos permite trabajar con programacion reactiva en Javascript, y la misma posee `Observables` que es un objeto que reprssenta una coleccion de valores o eventos que se emiten a lo largo del tiempo.
-
-Las Promises solo pueden manejar un valor o evento, los Observables pueden manejar varias de manera sincronica e asincronica, por eso es ideal para el manejo de solicitudes HTTP. 
-
 Los observables pueden ser modificados mediante el uso de otras tools de RxJS como `map` (transforma los valores), `filter` (filtra los valores), `reduce` (reduce los valores), `merge` (combina los valores de varios observables), `concat` (combina los valores de varios observables en orden), `forkJoin` (combina los valores de varios observables y devuelve un solo valor), `switchMap` (cancela la subscripcion anterior y se suscribe a la nueva), `debounceTime` (espera un tiempo antes de emitir un valor), `distinctUntilChanged` (emite un valor solo si es diferente al anterior), `catchError` (captura un error y lo maneja), `retry` (reintenta la operacion si falla), entre otros.
 
-Sin embargo los observables por si mismos no hacen nada, precisan que algo este **subscripto** a ellos para que hagan algo, es por eso que es importante desubscribirse de ellos en el estado unmounted de la aplicacion. 
+Sin embargo los observables por si mismos no hacen nada, precisan que algo este **subscripto** a ellos para que hagan algo, similar al funcionamiento de un newsletter de email, si no nos suscribimos, no recibimos ningun email, y no sabemos cuantos email y cuando recibiremos esos emails, es por eso que es importante desubscribirse de ellos en el estado unmounted de la aplicacion, para no llenar nuestras casillas de correo de Spam
 
 ```javascript
 import { Observable } from 'rxjs';
@@ -917,11 +916,77 @@ observable.subscribe({
 });
 ```
 
+Ejemplo mas basico
+
+```javascript
+let observable = Observable.create((observer) => {
+  observer.next("Hello World!");
+});
+observable.subscribe(function logMessage(message) {
+  console.log(message);
+});
+```
+
+<a id="ent39-2"></a>
+
+### **Next, Error y Complete - Return de los Observables**
+
+[Volver al indice](#angular-base)
+
+Se pueden disparar valores del tipo: 
+- `next`
+- `error` que detiene la ejecucion y se interpreta como una excepcion
+- `complete`, que tambien detiene la ejecucion y no devuelve ningun valor. 
+
+Esto puede ser explicado con el siguiente codigo:
+
+```javascript
+let observable = Observable.create((observer: any) => {
+  observer.next("I am number 1"); // Impreso en consola
+  observer.next("I am number 2"); // Impreso en consola
+  observer.error("I am number 3"); // Impreso en consola FIN EJECUCION
+  observer.complete("I am number 4"); // No impreso, hubiera detenido la ejecucion tambien
+  observer.next("I am number 5");
+});
+
+observable.subscribe(function logMessage(message: any) {
+  console.log(message);
+});
+```
+
+<a id="ent39-3"></a>
+
+### **Observable vs Promises**
+
+[Volver al indice](#angular-base)
+
+Las Promises solo pueden manejar un valor o evento, los Observables pueden manejar varias de manera sincronica e asincronica, por eso es ideal para el manejo de solicitudes HTTP. 
+
 | Promises | Observables |
 | --- | --- |
 | Solo pueden emitir un valor o un error | Pueden emitir multiples valores a lo largo del tiempo siempre y cuando la subscripcion este activa |
 | Apenas se crea la Promise, la misma es ejecutad, se le dice `Eager` | No hace nada hasta que alguien este observandolo, es por eso que se le dice `lazy`, porque por si mismo no hace nada |
 | La promesa no se puede cancelar | Se puede cancelar la subscripcion a un observable |
+
+<a id="ent39-5"></a>
+
+### **Subjects**
+
+[Volver al indice](#angular-base)
+
+Es un tipo especial de Observable que permite que un mismo valor sea enviado a varios Observers, en general se envia un valor o flow de data distinto a cada observer ya que los Observables comunes son unicast (valor de uno a uno). 
+
+Subjects son multicast, un mismo resultado es mandado a varios al mismo tiempo. 
+
+![multicast](https://miro.medium.com/v2/resize:fit:1400/0*T1tftHIsMCcvhn7h)
+
+Se deberian usar cuando:
+
+- Tengo varios Suscribers y estoy interesado en que reciban la misma informacion todos al mismo tiempo
+- Solo quiero escuchar al evento y no quiero pasar ningun tipo de valor. 
+- `BehaviourSubject` cuando solo preciso el ultimo valor
+- `ReplaySubject` cuando quiero realizar una especie de caching y obtener solo valores anteriores. 
+
 
 <a id="rea3"></a>
 
