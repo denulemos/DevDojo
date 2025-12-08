@@ -8,7 +8,7 @@
 |----------|
 | [Binary Search](#alg1) |
 | [Podemos aplicar Binary Search a una Linked List ordenada?](#alg2) |
-|[¿Cuál es la diferencia entre Binary Search y Linear Search?](#alg22)|
+| [Binary Search vs Linear Search](#alg22)|
 
 <a name="alg-base-ord"></a>
 
@@ -191,13 +191,13 @@ No, no se puede, ya que encontrar el index del elemento del medio es demasiado c
 
 <a id="alg22"></a>
 
-### **¿Cuál es la diferencia entre Binary Search y Linear Search?**
+### **Binary Search vs Linear Search**
 
 [Volver al indice](#alg-base)
 
 La diferencia principal es que en Binary Search se divide el array en dos partes y se busca en la mitad, mientras que en Linear Search se recorre todo el array hasta encontrar el elemento, es la que hacemos tipicamente en codigo.
 
-La complejidad de Binary Search es O(log n) y la de Linear Search es O(n).
+La complejidad de Binary Search es `O(log n)` y la de Linear Search es `O(n)`.
 
 ---
 
