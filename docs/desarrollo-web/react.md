@@ -3,7 +3,6 @@ sidebar_position: 3
 ---
 # 🩵 React
 
-[Formato README en Github](https://github.com/denulemos/DevDojo/blob/master/react.md)
 
 ## Libreria vs Framework
 

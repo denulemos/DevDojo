@@ -2,7 +2,6 @@
 
 Ejemplos en **Java**
 
-[Formato README en Github](https://github.com/denulemos/DevDojo/blob/master/poo.md)
 
 ### Que es la programacion orientada a objetos?
 

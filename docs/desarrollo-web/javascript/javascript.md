@@ -3,7 +3,6 @@ sidebar_position: 1
 ---
 # 💛 Javascript
 
-[Formato README en Github](https://github.com/denulemos/DevDojo/blob/master/JSTS.md)
 
 ### Metodos de Strings
 

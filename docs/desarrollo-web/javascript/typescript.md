@@ -3,7 +3,6 @@ sidebar_position: 1
 ---
 # 💎 Typescript
 
-[Formato README en Github](https://github.com/denulemos/DevDojo/blob/master/TS.md)
 
 ### Qué es TypeScript?
 

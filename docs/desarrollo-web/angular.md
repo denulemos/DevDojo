@@ -1,6 +1,5 @@
 # Preguntas generales 
 
-[Formato README en Github](https://github.com/denulemos/DevDojo/blob/master/Angular.md)
 
 ## ¿Qué son los modulos en Angular?
 

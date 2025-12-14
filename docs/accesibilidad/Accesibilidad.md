@@ -3,7 +3,6 @@ id: accesibilidad
 title: 🌐 Accesibilidad
 ---
 
-[Formato README en Github](https://github.com/denulemos/DevDojo/blob/master/Accesibilidad.md)
 
 ### 🟢 ¿Qué significa a11y y por qué es importante en el desarrollo web?
 
