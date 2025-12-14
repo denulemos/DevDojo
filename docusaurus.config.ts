@@ -10,7 +10,7 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://devhood-tau.vercel.app/',
+  url: 'devdojodocs.vercel.app',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -67,9 +67,9 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/favicon.ico',
     navbar: {
-      title: 'DevHood',
+      title: 'DevDojo',
       logo: {
-        alt: 'DevHood Logo',
+        alt: 'DevDojo Logo',
         src: 'img/favicon.ico',
       },
       items: [

@@ -1,10 +1,10 @@
 {
   "title": {
-    "message": "DevHood",
+    "message": "DevDojo",
     "description": "The title in the navbar"
   },
   "logo.alt": {
-    "message": "DevHood Logo",
+    "message": "DevDojo Logo",
     "description": "The alt text of navbar logo"
   },
   "item.label.Dojos": {

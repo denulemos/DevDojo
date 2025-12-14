@@ -6,11 +6,11 @@
 
 </div>
 
-## Visita la version web! https://devhood-tau.vercel.app/
+## Visita la version web! https://devdojodocs.vercel.app/
 
 Preguntas son agregadas todas las semanas. Se aceptan sugerencias mediante Pull Request!
 
-[Version Devhood Web - Mismo contenido, facil acceso](https://devhood-tau.vercel.app)
+[Version DevDojo Web - Mismo contenido, facil acceso](https://devdojodocs.vercel.app)
 
 ## Tabla de Temas (Sigue en desarrollo y re-organización)
 
