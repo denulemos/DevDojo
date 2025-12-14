@@ -1,0 +1,93 @@
+.gridWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 900px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.08);
+  padding: 2.2rem 1rem 1.2rem 1rem;
+  text-decoration: none;
+  color: #222;
+  transition: transform 0.12s, box-shadow 0.12s;
+  min-height: 120px;
+}
+
+.card:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 6px 24px 0 rgba(0,120,231,0.13);
+  color: #0078e7;
+}
+
+.icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.name {
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.tableWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.indiceTable {
+  width: 100%;
+  max-width: 700px;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+.indiceTable th, .indiceTable td {
+  padding: 1rem 1.5rem;
+  text-align: left;
+}
+
+.indiceTable th {
+  background: #f5f6fa;
+  font-size: 1.1em;
+  color: #333;
+}
+
+.indiceTable tr:nth-child(even) {
+  background: #f9fafb;
+}
+
+.indiceTable tr:hover {
+  background: #e6f7ff;
+}
+
+.indiceTable a {
+  color: #0078e7;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.indiceTable a:hover {
+  text-decoration: underline;
+}

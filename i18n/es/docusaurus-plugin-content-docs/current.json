@@ -1,0 +1,14 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.💻 Desarrollo y Tecnologías": {
+    "message": "💻 Desarrollo y Tecnologías",
+    "description": "The label for category 💻 Desarrollo y Tecnologías in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.💻 Desarrollo y Tecnologías.link.generated-index.description": {
+    "message": "En esta categoría se encuentran tópicos relacionados con las tecnologías específicas utilizadas en el desarrollo de software.",
+    "description": "The generated-index page description for category 💻 Desarrollo y Tecnologías in sidebar tutorialSidebar"
+  }
+}

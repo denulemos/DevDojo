@@ -1,0 +1,63 @@
+.landing-layout main {
+  display: none;
+}
+
+.heroBannerAnimated {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+  background: linear-gradient(270deg, #EEA0AE, rgb(202, 221, 126), #AE6E7C);
+  background-size: 600% 600%;
+  animation: gradientBG 12s ease infinite;
+  color: white;
+  text-align: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 0 1rem;
+}
+
+.layoutNoMain main {
+  display: none !important;
+}
+
+.contentWrapper {
+  border: 1px solid white;
+  max-width: 1200px;
+  padding: 80px;
+  margin: 0 auto;
+}
+
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.heroTitle {
+  font-family: "Pacifico", cursive;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  margin: 0 0 1rem;
+}
+
+.hero__subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  margin-bottom: 2rem;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
