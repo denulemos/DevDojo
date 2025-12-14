@@ -1812,6 +1812,19 @@ Usa Context API o Redux para manejar datos sensibles de manera segura y evitar p
 
 ## **Performance** 
 
+### Qué es el **Algoritmo de Reconciliation**?
+
+El algoritmo de reconciliation es el proceso que usa React para decidir qué partes de la UI deben actualizarse cuando cambia el estado o las props.
+
+En vez de volver a renderizar todo el DOM real (que es caro), React:
+
+- Crea una nueva representación de la UI (Virtual DOM)
+- La compara con la versión anterior
+- Calcula el mínimo conjunto de cambios
+- Aplica solo esos cambios al DOM real
+
+Ese proceso de comparar y decidir es la reconciliation.
+
 ### No hagas que todo se vuelva a dibujar todo el tiempo
 
 - **¿Por qué?** Si cada vez que cambiás algo, toda la app se vuelve a dibujar, se pone lenta.
@@ -1883,6 +1896,9 @@ El Context de React es útil, pero si lo usás para todo, cada cambio hace que t
 
 Cuando hacés una lista con `.map()`, poné una `key` única en cada elemento. Así React sabe cuál es cuál y no se confunde.
 
+Sin Key, React asume que los elementos se corresponden por posición
+Con Key, React identifica qué elemento es cuál, aunque cambie de lugar
+
 ```jsx
 {items.map(item => <li key={item.id}>{item.nombre}</li>)}
 ```
@@ -1890,6 +1906,16 @@ Cuando hacés una lista con `.map()`, poné una `key` única en cada elemento. A
 ### Dividí tu app en componentes chiquitos
 
 Es más fácil de entender y solo se actualizan las partes que cambian.
+
+- Un cambio de estado solo afecta al componente específico.
+- React puede reconciliar mejor el árbol y evitar trabajo extra.
+- Es más efectivo usar memo, useCallback o useMemo cuando el componente tiene una responsabilidad clara.
+- Menos efectos colaterales (useEffect) ejecutándose sin necesidad
+
+Ademas React puede manejar mucho mejor el Virtual DOM
+
+- Componentes pequeños ⇒ árbol de componentes más predecible.
+- Comparaciones más simples durante el proceso de **diffing**.
 
 ### Re-renderizaciones innecesarias
 
