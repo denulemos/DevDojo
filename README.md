@@ -30,4 +30,10 @@ Preguntas son agregadas todas las semanas. Se aceptan sugerencias mediante Pull 
 - [Typescript](./docs/desarrollo-web/javascript/typescript.md)
 - [Versionado (Git/Mercurial)](./docs/versionado.md)
 
+¿Cómo veo la tabla con el indice de preguntas?
+
+Hacer click en el siguiente boton en la parte izquierda de la pantalla: 
+
+<img width="184" height="58" alt="image" src="https://github.com/user-attachments/assets/cbab556e-0781-497a-b361-508e63ac77e4" />
+
 
