@@ -1,6 +1,5 @@
 # 💚 NodeJS
 
-
 ### ¿Qué es Node.js y para qué se utiliza?
 
 Node.js es un entorno de ejecución de JavaScript que se ejecuta en el servidor. Fue construido sobre el motor V8 de Google Chrome, lo que le permite ejecutar código JavaScript fuera del navegador. 

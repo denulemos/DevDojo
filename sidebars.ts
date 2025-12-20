@@ -80,6 +80,7 @@ const sidebars: SidebarsConfig = {
       ],
     },
     'seguridad',
+    'arquitectura',
   ],
 };
 
