@@ -31,7 +31,39 @@ NO usarlo si:
 - Es un equipo pequeño
 - La app es pequeña
 
+### Qué es Module Federation?
 
+Es la base técnica más usada para micro-frontends modernos. **Module Federation es la herramienta, micro-frontends es el patrón/arquitectura**
 
+Es una forma de hacer que el **host** cargue partes de otra aplicacion en tiempo real sin tener que recompilarse, descargando el codigo del **remote** y usandolo como si fuera propio, todo esto durante el runtime.
 
+Antes si cambiaba una parte de la aplicacion habia que realizar un rebuild y un redeploy de todo, ahora cada equipo deploya su parte, el resto de la app no se entera y hay menos friccion.
+
+- App principal: layout + navegación
+- Micro-frontend “Search”
+- Micro-frontend “Profile”
+- Micro-frontend “Player”
+
+Importante:
+
+❌ no es un framework
+❌ no decide arquitectura por vos
+❌ no organiza carpetas ni equipos
+❌ no soluciona mal diseño
+
+Es solo la tecnología para cargar código remoto.
+
+Sus pros son:
+
+- deploys independientes reales
+- comparte dependencias
+- excelente para equipos grandes
+- muy flexible
+
+Y sus contras:
+
+- setup inicial complejo
+- debugging más difícil
+- tenés que cuidar versiones compartidas
+- no es para apps chicas
 
