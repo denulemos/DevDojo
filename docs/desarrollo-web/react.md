@@ -60,6 +60,128 @@ No se recomienda usar el index del elemento en un array como identificador, ya q
 
 ---
 
+## **Server Side Rendering en React**
+
+SSR en React se utiliza generalmente con 3 herramientas: 
+
+- NextJs (El mas usado)
+- Remix (Orientado a Web Standards)
+- Astro (SSR parcial)
+
+El flujo completo de SSR + Hydration seria el siguiente:
+
+`Request → Server (React render) → HTML listo → Browser pinta → JS carga → Hydration → App interactiva`
+
+### Qué es la hydration?
+
+Hydration es el momento en el que React “cobra vida” sobre un HTML que ya existe, ya que viene del servidor, React solo se encarga de agregarle la interactivilidad.
+
+Antes de Hydration, el navegador recibe lo siguiente
+
+```html
+<button>Comprar</button>
+```
+
+Es un boton que no hace nada por si mismo. Luego de Hydration, se asocia el HTML con el Virtual DOM y se asocian sus eventos, esto ejecutando `hydrateRoot()`
+
+```html
+<button onClick={()=> setCount(count + 1)}>
+  Comprar
+</button>
+```
+
+Este agregado de interactivilidad NO causa el re-render, por eso posee tan buen rendimiento en general.
+
+### Qué rompe la Hydration?
+
+Algo importante es que React espera que el HTML coincida exactamente con lo que renderizaria en el cliente, si esto no sucede, el error de hydration acontece. 
+
+- Usar `window` directamente
+- Usar `math.random` en el render
+- El uso de `Date.now()`
+- El acceso directo a `localStorage`
+
+Esto se soluciona con el uso del `useEffect`
+
+```js
+useEffect(() => {
+  setTime(new Date().toLocaleTimeString())
+}, [])
+```
+
+### React Server Components
+
+Son componentes que se ejecutan SOLO en el servidor, no llegan al navegador.
+
+- No se hidratan
+- No envian JS al cliente
+- No poseen `useState` ni `useEffect`
+- No suman JS al bundle
+
+Por ejemplo el siguiente componente:
+
+```tsx
+// app/page.tsx
+export default async function Page() {
+  const products = await fetchProducts()
+
+  return (
+    <ul>
+      {products.map(p => <li key={p.id}>{p.name}</li>)}
+    </ul>
+  )
+}
+```
+
+- Se ejecuta en el servidor
+- Puede acceder a la base de datos
+- No va al bundle del navegador
+
+Por otro lado, un Client component se veria asi
+
+```tsx
+'use client'
+
+export function Counter() {
+  const [count, setCount] = useState(0)
+
+  return (
+    <button onClick={() => setCount(count + 1)}>
+      {count}
+    </button>
+  )
+}
+```
+
+- Vive en el navegador
+- Tiene estado
+- Se hidrata
+
+Se puede realizar una mezcla de ambos
+
+```tsx
+import Counter from './Counter'
+
+export default async function Page() {
+  const data = await getData()
+
+  return (
+    <>
+      <h1>{data.title}</h1>
+      <Counter />
+    </>
+  )
+}
+```
+
+`Page` vive en el server, `Counter` se hidrata en el cliente. 
+
+Se recomiena el uso de Server Components para estructura y datos, para el resto, usar Client Components, solo donde hay interaccion. 
+
+“React Server Components allow us to move rendering and data fetching to the server, reducing client-side JavaScript and improving performance, while keeping interactivity through client components.”
+
+---
+
 ## Fragment `<>`
 
 Un **Fragment** en React es un componente especial que permite agrupar varios elementos sin añadir nodos adicionales al DOM. Es útil cuando necesitas devolver múltiples elementos desde un componente sin envolverlos en un elemento contenedor como un `<div>`.
