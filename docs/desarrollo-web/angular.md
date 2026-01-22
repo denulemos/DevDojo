@@ -1,7 +1,7 @@
 # Preguntas generales 
 
 
-## ¿Qué son los modulos en Angular?
+## Modulos
 
 **⚠️ En versiones nuevas de Angular (como Angular 15+), ya no es obligatorio usar módulos. Ahora puedes tener componentes "standalone": independientes, sin necesidad de estar dentro de un módulo.**
 
@@ -44,7 +44,7 @@ Para resumir un poco:
 
 ---
 
-## ¿Qué son los componentes standalone y cuando conviene utilizarlos?
+## Componentes Standalone
 
 Son una característica introducida en Angular 14 que permite definir componentes sin necesidad de declararlos en un módulo (`NgModule`). En lugar de eso, los componentes standalone se definen utilizando la propiedad `standalone: true` en el decorador `@Component`, y ellos mismos pueden importar directamente otros componentes, directivas, pipes, o módulos necesarios.
 
@@ -108,7 +108,7 @@ Los componentes standalone simplifican la arquitectura de Angular al reducir la 
 
 ---
 
-## ¿Qué es Property Binding?
+## Property Binding
 
 Property Binding es cuando le pasás un valor dinámico a un elemento HTML usando corchetes [].
 Es la forma que tiene Angular de decir: *“Ey, esta propiedad va a cambiar, así que estate atento”*
@@ -117,9 +117,9 @@ Es la forma que tiene Angular de decir: *“Ey, esta propiedad va a cambiar, as�
 <input [value]="empresa" [disabled]="habilitado" >
 ```
 
-- empresa y habilitado son variables de tu componente.
-- value y disabled son propiedades del `<input>`.
-- El [value]="empresa" significa: "Poné el valor de esta variable dentro del input."
+- `empresa` y `habilitado` son variables de tu componente.
+- `value` y `disabled` son propiedades del `<input>`.
+- El `[value]="empresa"` significa: "Poné el valor de esta variable dentro del input", es decir, en el componente tengo una variable con ese mismo nombre.
 
 En cambio, la misma linea de codigo SIN corchetes: 
 
@@ -128,9 +128,479 @@ En cambio, la misma linea de codigo SIN corchetes:
 ```
 
 Acá Angular no entiende que empresa o habilitado son variables.
-Los toma como texto plano. O sea, va a escribir literalmente "empresa" en el input.
+Los toma como texto plano. O sea, va a escribir literalmente "empresa" en el input. Pasan a ser propiedades planas del HTML.
 
-#### ¿Y qué diferencia hay con la interpolación `{{}}`?
+---
+
+## ¿Qué es la compilación JIT y AOT en Angular?
+
+Como el codigo TS y HTML precisa ser compilado para ser mostrado en el navegador, se ofrecen dos modos de compilacion
+
+**Just-in-Time (JIT)**
+
+Se compilan las planillas cuando la aplicacion es ejecutada en el navegador, se usa en desarrollo, ya que no es necesario recompilar todo el proyecto para poder ver los cambios. 
+
+- El bundle final es mas grande ya que incluye al compilador de Angular en si mismo
+- La app es mas lenta al iniciar ya que debe compilar en el navegador
+- Es mas facil de depurar ya que el codigo fuente es mas claro, pero menos seguro. 
+
+Es el activado con `ng serve`
+
+**Ahead-of-Time (AOT)**
+
+Compila el codigo antes de mostrarlo en el navegador, se usa en produccion ya que el rendimiento es optimizado
+
+- Inicio mas rapido ya que el codigo es compilado antes de llegar al browser
+- El bundle final es mas pequeño ya que no incluye al compilador de Angular
+- Es mas dificil de depurar ya que el codigo fuente es mas dificil de leer, pero mas seguro
+- Detecta errores en las plantillas durante la compilacion, evitando fallos en ejecucion
+- La compilacion es mucho mas lenta durante el build
+
+Es el activado con `ng build --aot`
+
+---
+
+## ¿Cómo se maneja la inyección de dependencias y la inversión de control en Angular?
+
+La inyeccion de dependencias es basicamente el hecho de crear un archivo con servicios que sirvan para ser **inyectados** en otros componentes. 
+
+```typescript
+@Injectable({
+  providedIn: 'root' // Angular lo registra en el inyector raíz automáticamente
+})
+```
+
+Luego este componente es inyectado en el constructor (o mediante el inject) del componente donde se desea usar.
+
+```typescript
+constructor(private userService: UserService) {}
+```
+
+Se pueden definir distintos niveles de inyección, por ejemplo:
+
+- **root**: El servicio esta disponible globalmente para toda la aplicacion
+- **Nivel de Módulo (providers: [] en @NgModule)**: El servicio esta disponible solo para el módulo en el que se encuentra
+- **Componente**: El servicio esta disponible solo para el componente en el que se encuentra
+
+Gracias a la **Inversion de Control** de Angular, no es necesario hacer un `new` de un servicio, sino que Angular se encarga de hacerlo por nosotros. 
+
+```typescript	
+export class EjemploComponent {
+  miServicio = new MiServicioService(); // 🚨 Mala práctica: acoplamiento fuerte
+}
+
+export class EjemploComponent {
+  constructor(private miServicio: MiServicioService) { } // ✔ Mejor práctica
+}
+```
+
+Si se busca inyectar una **interfaz** en lugar de una clase, se usa `InjectionToken`
+
+```typescript
+
+import { InjectionToken } from '@angular/core';
+
+export const CONFIG_TOKEN = new InjectionToken<string>('config');
+
+@NgModule({
+  providers: [
+    { provide: CONFIG_TOKEN, useValue: 'Modo oscuro' }
+  ]
+})
+export class AppModule { }
+
+// En el componente
+
+constructor(@Inject(CONFIG_TOKEN) private config: string) {
+  console.log(this.config); // 'Modo oscuro'
+}
+```
+
+---
+
+## Two-Way Data Binding
+
+El Two-Way Data Binding es una forma de vincular datos entre el componente y la vista de manera que si cambia el valor en el HTML, también cambia en el componente, y viceversa. Es como una autopista de doble mano: lo que escribís en el input se refleja en la variable, y si la variable cambia, el input también.
+
+Se usa con la sintaxis especial `[(ngModel)]`:
+
+```html
+<input [(ngModel)]="nombre">
+```
+
+- Si escribís algo en el input, la variable `nombre` se actualiza.
+- Si cambiás el valor de `nombre` en el componente, el input también lo muestra.
+
+**¿Cuándo usarlo?**  
+Cuando necesitás que el usuario pueda modificar datos y que esos cambios se reflejen automáticamente en tu lógica (por ejemplo, formularios).
+
+---
+
+## Pipes
+
+Un Pipe es una herramienta para transformar datos directamente en el HTML, sin tener que modificar el valor original en el componente. Es como un filtro que le da formato a lo que se muestra.
+
+Ejemplo de uso:
+
+```html
+<p>{{ fecha | date:'shortDate' }}</p>
+<p>{{ precio | currency:'USD' }}</p>
+```
+
+- `date` transforma una fecha a un formato legible.
+- `currency` muestra un número como dinero.
+
+---
+
+## Services
+
+Un Service es una clase donde ponés lógica que querés compartir entre varios componentes, como llamadas a APIs, manejo de datos, o utilidades. Así evitás repetir código y mantenés tus componentes más limpios.
+
+Ejemplo típico:
+
+```typescript
+@Injectable({ providedIn: 'root' })
+export class ApiService {
+  getUsuarios() {
+    return this.http.get('/api/usuarios');
+  }
+}
+```
+
+---
+
+## Guard
+
+Un Guard es como un portero para tus rutas. Decide si un usuario puede entrar a una página o no (por ejemplo, si está logueado o tiene permisos).
+
+Ejemplo básico:
+
+```typescript
+@Injectable({ providedIn: 'root' })
+export class AuthGuard implements CanActivate {
+  canActivate(): boolean {
+    return this.authService.estaLogueado();
+  }
+}
+```
+
+Y lo usás en tus rutas:
+
+```typescript
+{ path: 'admin', component: AdminComponent, canActivate: [AuthGuard] }
+```
+
+---
+
+## Resolver
+
+Un Resolver es una clase que se encarga de traer datos antes de que se muestre una ruta. Así, cuando el usuario entra a una página, ya tiene toda la información lista y no ve pantallas vacías o "cargando".
+
+Ejemplo:
+
+```typescript
+@Injectable({ providedIn: 'root' })
+export class UsuarioResolver implements Resolve<Usuario> {
+  resolve(route: ActivatedRouteSnapshot): Observable<Usuario> {
+    return this.apiService.getUsuario(route.params['id']);
+  }
+}
+```
+
+Y en la ruta:
+
+```typescript
+{ path: 'usuario/:id', component: UsuarioComponent, resolve: { usuario: UsuarioResolver } }
+```
+
+---
+
+## Directives
+
+Una Directiva es una instrucción que le das a un elemento HTML para que cambie su comportamiento o apariencia. Hay directivas estructurales (como `*ngIf`, `*ngFor`) y de atributo (como `[ngClass]`, `[ngStyle]`).
+
+Ejemplo:
+
+```html
+<div *ngIf="mostrar">Solo se muestra si 'mostrar' es true</div>
+<ul>
+  <li *ngFor="let item of lista">{{ item }}</li>
+</ul>
+```
+
+También podés crear tus propias directivas para reutilizar lógica visual.
+
+---
+
+## Decorators
+
+Indica como debe comportarse el componente. Dentro de este decorador, puedes observar el selector del componente (un nombre para el mismo), el template HTML y la hoja de estilos que usará.
+
+- `@Component`: Se utiliza para decorar una clase que define un componente de Angular
+
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root', // Nombre de la etiqueta HTML
+  templateUrl: './app.component.html', // Archivo HTML
+  styleUrls: ['./app.component.css'] // Estilos CSS
+})
+export class AppComponent {
+  title = 'Mi aplicación Angular';
+}
+```
+
+- `@Injectable`: marca una clase como inyección de dependencias en Angular. Se usa para declarar que una clase puede ser inyectada en otros componentes o servicios
+
+```typescript
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root' // Este servicio estará disponible en toda la aplicación
+})
+export class DataService {
+  constructor() {}
+
+  getData() {
+    return ['Elemento1', 'Elemento2', 'Elemento3'];
+  }
+}
+```
+
+- ` @NgModule`: Se usa para definir que este componente es un modulo en si mismo. Con la aparicion de los componentes standalone ya no es tan comunmente usado.
+
+```typescript
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [AppComponent], // Componentes que pertenecen al módulo
+  imports: [BrowserModule], // Otros módulos que necesita
+  providers: [], // Servicios a inyectar
+  bootstrap: [AppComponent] // Componente inicial
+})
+export class AppModule {}
+```
+
+- `@Input`: se utiliza para marcar una propiedad de un componente que va a recibir datos desde su componente padre.
+
+```typescript
+import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-child',
+  template: '<h2>{{ name }}</h2>'
+})
+export class ChildComponent {
+  @Input() name: string; // Recibe un valor desde el componente padre
+}
+```
+
+- `@Output`: El decorador @Output se usa para crear un evento personalizado en un componente que puede ser escuchado por su componente padre.
+
+```typescript
+import { Component, Output, EventEmitter } from '@angular/core';
+
+@Component({
+  selector: 'app-child',
+  template: '<button (click)="sendMessage()">Enviar Mensaje</button>'
+})
+export class ChildComponent {
+  @Output() messageEvent = new EventEmitter<string>();
+
+  sendMessage() {
+    this.messageEvent.emit('Hola desde el componente hijo');
+  }
+}
+```
+
+- `@HostListener`: Cuando preciso escuchar cualquier accion en el navegador, como clicks o cambios en el tamanio de la pantalla.
+
+```typescript
+import { Component, HostListener } from '@angular/core';
+
+@Component({
+  selector: 'app-resize-listener',
+  template: '<p>El tamaño de la ventana es: {{ width }}px</p>'
+})
+
+export class ResizeListenerComponent {
+  width: number = window.innerWidth;
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.width = window.innerWidth;
+  }
+}
+```
+
+- `@ViewChild`: Se utiliza para acceder a un componente hijo desde su componente padre.
+
+```typescript
+import { Component, ViewChild, AfterViewInit } from '@angular/core';
+
+@Component({
+  selector: 'app-parent',
+  template: '<app-child #childComponent></app-child>'
+})
+
+export class ParentComponent implements AfterViewInit {
+  @ViewChild('childComponent') child: any;
+
+  ngAfterViewInit() {
+    console.log(this.child); // Accede al componente hijo
+  }
+}
+```
+
+---
+
+## `Input` y `Output`
+
+- **@Input:** Permite que un componente hijo reciba datos de su componente padre.
+- **@Output:** Permite que un componente hijo le envíe eventos o datos al padre.
+
+Ejemplo:
+
+```typescript
+// Hijo
+@Input() mensaje: string;
+@Output() notificar = new EventEmitter<string>();
+
+enviar() {
+  this.notificar.emit('¡Hola padre!');
+}
+```
+
+```html
+<!-- Padre -->
+<app-hijo [mensaje]="texto" (notificar)="recibir($event)"></app-hijo>
+```
+
+---
+
+## Routing
+
+Es la configuracion que permite a los usuarios navegar en nuestra aplicacion sin necesidad de recargar la pagina por cada cambio en el caso de los SPA.
+Tambien se encarga de gestionar las URL para facilitar el compartir links y la navegabilidad.
+Se configura mediante el `RouterModule` en un array de rutas, el cual se referencia con un path y un componente. 
+
+```ts
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+
+const routes: Routes = [
+  { path: '', component: HomeComponent }, // Ruta raíz
+  { path: 'about', component: AboutComponent }, // Ruta para "Acerca de"
+  { path: '**', component: NotFoundComponent } // Ruta comodín para páginas no encontradas
+];
+```
+
+En el mismo tambien se pueden manejar componentes con Lazy Loading
+
+```ts
+{ path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) }
+```
+
+Restringir el acceso a rutas protegidas
+
+```ts
+{ path: 'admin', component: AdminComponent, canActivate: [AuthGuard] }
+```
+
+Y luego en el ng.html que hace de entrypoint de nuestra app, referenciamos al contenido "routerizado"
+
+```html
+<nav>
+  <a routerLink="/">Inicio</a>
+  <a routerLink="/about">Acerca de</a>
+</nav>
+
+<router-outlet></router-outlet>
+```
+
+Tambien es posible manejar las rutas desde el codigo logico de nuestra app por fuera de los componentes
+
+```ts
+import { Router } from '@angular/router';
+
+constructor(private router: Router) {}
+
+irAAbout() {
+  this.router.navigate(['/about']);
+}
+```
+
+---
+
+## Módulo compartido (Shared Module)
+
+Un Shared Module es un módulo donde ponés componentes, pipes y directivas que vas a usar en varios lugares de tu app. Así, evitás importar lo mismo muchas veces y mantenés tu código más organizado.
+
+Ejemplo:
+
+```typescript
+@NgModule({
+  declarations: [MiPipe, MiDirectiva],
+  exports: [MiPipe, MiDirectiva, CommonModule]
+})
+export class SharedModule {}
+```
+
+Luego lo importás en otros módulos que lo necesiten.
+
+---
+
+## `ViewChild` vs `ContentChild`
+
+`ViewChild` y `ContentChild` son dos decoradores en Angular que se utilizan para acceder a elementos del DOM o componentes hijos, pero tienen propósitos diferentes.
+
+- **ViewChild:** Se usa para acceder a un elemento del DOM o un componente hijo que está en la vista del componente actual. Es útil cuando necesitas interactuar con un elemento que está directamente en el template del componente.
+
+```typescript
+import { Component, ViewChild } from '@angular/core';
+import { ElementRef } from '@angular/core';
+@Component({
+  selector: 'app-mi-componente',
+  template: `<input #miInput type="text">`
+})
+export class MiComponente {
+  @ViewChild('miInput') inputRef!: ElementRef;
+
+  ngAfterViewInit() {
+    this.inputRef.nativeElement.focus(); // Accede al input y le da foco
+  }
+}
+```
+
+- **ContentChild:** Se usa para acceder a un elemento del DOM o un componente hijo que está proyectado dentro del componente actual mediante `<ng-content>`. Es útil cuando necesitas interactuar con contenido que se inserta en el componente desde el exterior.
+
+```typescript
+import { Component, ContentChild } from '@angular/core';
+import { ElementRef } from '@angular/core';
+
+@Component({
+  selector: 'app-mi-componente',
+  template: `<ng-content></ng-content>`
+})
+
+export class MiComponente {
+  @ContentChild('miContenido') contenidoRef!: ElementRef;
+
+  ngAfterContentInit() {
+    console.log(this.contenidoRef.nativeElement.textContent); // Accede al contenido proyectado
+  }
+}
+```
+
+---
+
+### Interpolación `{{}}`
 
 Ambas cosas sirven para mostrar datos, pero se usan en contextos distintos.
 
@@ -142,9 +612,11 @@ Ambas cosas sirven para mostrar datos, pero se usan en contextos distintos.
 <img [src]="itemImageUrl" />
 ```
 
-Las dos hacen lo mismo si es un string, pero si estás trabajando con cosas más complejas que un texto (como objetos, booleanos, números, arrays), usá Property Binding. **¿Por qué?** Porque Angular entiende mejor ese tipo de datos con los corchetes
+Las dos hacen lo mismo si es un string, pero si estás trabajando con cosas más complejas que un texto (como objetos, booleanos, números, arrays), usá Property Binding. 
 
-- Property Binding = `[propiedad]="valor"`
+**¿Por qué?** Porque Angular entiende mejor ese tipo de datos con los corchetes
+
+- Property Binding seria `[propiedad]="valor"`
 - Angular escucha y actualiza la propiedad del HTML cuando cambie el valor.
 - Te ayuda a tener una app reactiva, sin andar actualizando todo a mano.
 - Si pasás algo que no es un texto, usá sí o sí Property Binding.
@@ -180,7 +652,7 @@ En resumen, migrar a Angular permite crear aplicaciones más rápidas, escalable
 
 ---
 
-## **¿Qué es RxJS?**
+## **RxJS**
 
 Reactive Extensions for Javascript (RxJS) es una libreria que nos permite trabajar con programacion reactiva en Javascript permitiendo el manejo de flujos asincronos de una forma mas declarativa, reactiva y consistente.
 
@@ -192,9 +664,21 @@ Reactive Extensions for Javascript (RxJS) es una libreria que nos permite trabaj
 
 En parte su uso podria ser reemplazado con Angular Signals en Angular 16, pero RxJS sigue siendo una herramienta muy poderosa para manejar flujos de datos asincronos.
 
-### ¿Qué es un Observable?
+### Observable
 
-Los observables pueden ser modificados mediante el uso de otras tools de RxJS como `map` (transforma los valores), `filter` (filtra los valores), `reduce` (reduce los valores), `merge` (combina los valores de varios observables), `concat` (combina los valores de varios observables en orden), `forkJoin` (combina los valores de varios observables y devuelve un solo valor), `switchMap` (cancela la subscripcion anterior y se suscribe a la nueva), `debounceTime` (espera un tiempo antes de emitir un valor), `distinctUntilChanged` (emite un valor solo si es diferente al anterior), `catchError` (captura un error y lo maneja), `retry` (reintenta la operacion si falla), entre otros.
+Los observables pueden ser modificados mediante el uso de otras tools de RxJS como: 
+
+- `map` transforma los valores
+- `filter` filtra los valores
+- `reduce` reduce los valores
+- `merge` combina los valores de varios observables
+- `concat` combina los valores de varios observables en orden
+- `forkJoin` combina los valores de varios observables y devuelve un solo valor
+- `switchMap` cancela la subscripcion anterior y se suscribe a la nueva
+- `debounceTime` espera un tiempo antes de emitir un valor
+- `distinctUntilChanged` emite un valor solo si es diferente al anterior
+- `catchError` captura un error y lo maneja
+- `retry` reintenta la operacion si falla
 
 Sin embargo los observables por si mismos no hacen nada, precisan que algo este **subscripto** a ellos para que hagan algo, similar al funcionamiento de un newsletter de email, si no nos suscribimos, no recibimos ningun email, y no sabemos cuantos email y cuando recibiremos esos emails, es por eso que es importante desubscribirse de ellos en el estado unmounted de la aplicacion, para no llenar nuestras casillas de correo de Spam
 
@@ -228,6 +712,18 @@ observable.subscribe(function logMessage(message) {
 });
 ```
 
+### `map`
+
+### Observable vs Promises
+
+Las Promises solo pueden manejar un valor o evento, los Observables pueden manejar varias de manera sincronica e asincronica, por eso es ideal para el manejo de solicitudes HTTP. 
+
+| Promises | Observables |
+| --- | --- |
+| Solo pueden emitir un valor o un error | Pueden emitir multiples valores a lo largo del tiempo siempre y cuando la subscripcion este activa |
+| Apenas se crea la Promise, la misma es ejecutad, se le dice `Eager` | No hace nada hasta que alguien este observandolo, es por eso que se le dice `lazy`, porque por si mismo no hace nada |
+| La promesa no se puede cancelar | Se puede cancelar la subscripcion a un observable |
+
 ### Next, Error y Complete - Return de los Observables
 
 Se pueden disparar valores del tipo: 
@@ -251,15 +747,6 @@ observable.subscribe(function logMessage(message: any) {
 });
 ```
 
-### Observable vs Promises
-
-Las Promises solo pueden manejar un valor o evento, los Observables pueden manejar varias de manera sincronica e asincronica, por eso es ideal para el manejo de solicitudes HTTP. 
-
-| Promises | Observables |
-| --- | --- |
-| Solo pueden emitir un valor o un error | Pueden emitir multiples valores a lo largo del tiempo siempre y cuando la subscripcion este activa |
-| Apenas se crea la Promise, la misma es ejecutad, se le dice `Eager` | No hace nada hasta que alguien este observandolo, es por eso que se le dice `lazy`, porque por si mismo no hace nada |
-| La promesa no se puede cancelar | Se puede cancelar la subscripcion a un observable |
 
 ### Subjects
 
@@ -1184,470 +1671,3 @@ import { MatButtonModule } from '@angular/material/button'; // No todo Angular M
 ```
 
 * Asegurate de que el **tree shaking** esté funcionando en tu build.
-
-
-## ¿Qué es la compilación JIT y AOT en Angular?
-
-Como el codigo TS y HTML precisa ser compilado para ser mostrado en el navegador, se ofrecen dos modos de compilacion
-
-**Just-in-Time (JIT)**
-
-Se compilan las planillas cuando la aplicacion es ejecutada en el navegador, se usa en desarrollo, ya que no es necesario recompilar todo el proyecto para poder ver los cambios. 
-
-- El bundle final es mas grande ya que incluye al compilador de Angular en si mismo
-- La app es mas lenta al iniciar ya que debe compilar en el navegador
-- Es mas facil de depurar ya que el codigo fuente es mas claro, pero menos seguro. 
-
-Es el activado con `ng serve`
-
-**Ahead-of-Time (AOT)**
-
-Compila el codigo antes de mostrarlo en el navegador, se usa en produccion ya que el rendimiento es optimizado
-
-- Inicio mas rapido ya que el codigo es compilado antes de llegar al browser
-- El bundle final es mas pequeño ya que no incluye al compilador de Angular
-- Es mas dificil de depurar ya que el codigo fuente es mas dificil de leer, pero mas seguro
-- Detecta errores en las plantillas durante la compilacion, evitando fallos en ejecucion
-- La compilacion es mucho mas lenta durante el build
-
-Es el activado con `ng build --aot`
-
----
-
-## ¿Cómo se maneja la inyección de dependencias y la inversión de control en Angular?
-
-La inyeccion de dependencias es basicamente el hecho de crear un archivo con servicios que sirvan para ser **inyectados** en otros componentes. 
-
-```typescript
-@Injectable({
-  providedIn: 'root' // Angular lo registra en el inyector raíz automáticamente
-})
-```
-
-Luego este componente es inyectado en el constructor (o mediante el inject) del componente donde se desea usar.
-
-```typescript
-constructor(private userService: UserService) {}
-```
-
-Se pueden definir distintos niveles de inyección, por ejemplo:
-
-- **root**: El servicio esta disponible globalmente para toda la aplicacion
-- **Nivel de Módulo (providers: [] en @NgModule)**: El servicio esta disponible solo para el módulo en el que se encuentra
-- **Componente**: El servicio esta disponible solo para el componente en el que se encuentra
-
-Gracias a la **Inversion de Control** de Angular, no es necesario hacer un `new` de un servicio, sino que Angular se encarga de hacerlo por nosotros. 
-
-```typescript	
-export class EjemploComponent {
-  miServicio = new MiServicioService(); // 🚨 Mala práctica: acoplamiento fuerte
-}
-
-export class EjemploComponent {
-  constructor(private miServicio: MiServicioService) { } // ✔ Mejor práctica
-}
-```
-
-Si se busca inyectar una **interfaz** en lugar de una clase, se usa `InjectionToken`
-
-```typescript
-
-import { InjectionToken } from '@angular/core';
-
-export const CONFIG_TOKEN = new InjectionToken<string>('config');
-
-@NgModule({
-  providers: [
-    { provide: CONFIG_TOKEN, useValue: 'Modo oscuro' }
-  ]
-})
-export class AppModule { }
-
-// En el componente
-
-constructor(@Inject(CONFIG_TOKEN) private config: string) {
-  console.log(this.config); // 'Modo oscuro'
-}
-```
-
----
-
-## Two-Way Data Binding
-
-El Two-Way Data Binding es una forma de vincular datos entre el componente y la vista de manera que si cambia el valor en el HTML, también cambia en el componente, y viceversa. Es como una autopista de doble mano: lo que escribís en el input se refleja en la variable, y si la variable cambia, el input también.
-
-Se usa con la sintaxis especial `[(ngModel)]`:
-
-```html
-<input [(ngModel)]="nombre">
-```
-
-- Si escribís algo en el input, la variable `nombre` se actualiza.
-- Si cambiás el valor de `nombre` en el componente, el input también lo muestra.
-
-**¿Cuándo usarlo?**  
-Cuando necesitás que el usuario pueda modificar datos y que esos cambios se reflejen automáticamente en tu lógica (por ejemplo, formularios).
-
----
-
-## Pipes
-
-Un Pipe es una herramienta para transformar datos directamente en el HTML, sin tener que modificar el valor original en el componente. Es como un filtro que le da formato a lo que se muestra.
-
-Ejemplo de uso:
-
-```html
-<p>{{ fecha | date:'shortDate' }}</p>
-<p>{{ precio | currency:'USD' }}</p>
-```
-
-- `date` transforma una fecha a un formato legible.
-- `currency` muestra un número como dinero.
-
----
-
-## Services
-
-Un Service es una clase donde ponés lógica que querés compartir entre varios componentes, como llamadas a APIs, manejo de datos, o utilidades. Así evitás repetir código y mantenés tus componentes más limpios.
-
-Ejemplo típico:
-
-```typescript
-@Injectable({ providedIn: 'root' })
-export class ApiService {
-  getUsuarios() {
-    return this.http.get('/api/usuarios');
-  }
-}
-```
-
----
-
-## Guard
-
-Un Guard es como un portero para tus rutas. Decide si un usuario puede entrar a una página o no (por ejemplo, si está logueado o tiene permisos).
-
-Ejemplo básico:
-
-```typescript
-@Injectable({ providedIn: 'root' })
-export class AuthGuard implements CanActivate {
-  canActivate(): boolean {
-    return this.authService.estaLogueado();
-  }
-}
-```
-
-Y lo usás en tus rutas:
-
-```typescript
-{ path: 'admin', component: AdminComponent, canActivate: [AuthGuard] }
-```
-
----
-
-## Resolver
-
-Un Resolver es una clase que se encarga de traer datos antes de que se muestre una ruta. Así, cuando el usuario entra a una página, ya tiene toda la información lista y no ve pantallas vacías o "cargando".
-
-Ejemplo:
-
-```typescript
-@Injectable({ providedIn: 'root' })
-export class UsuarioResolver implements Resolve<Usuario> {
-  resolve(route: ActivatedRouteSnapshot): Observable<Usuario> {
-    return this.apiService.getUsuario(route.params['id']);
-  }
-}
-```
-
-Y en la ruta:
-
-```typescript
-{ path: 'usuario/:id', component: UsuarioComponent, resolve: { usuario: UsuarioResolver } }
-```
-
----
-
-## Directives
-
-Una Directiva es una instrucción que le das a un elemento HTML para que cambie su comportamiento o apariencia. Hay directivas estructurales (como `*ngIf`, `*ngFor`) y de atributo (como `[ngClass]`, `[ngStyle]`).
-
-Ejemplo:
-
-```html
-<div *ngIf="mostrar">Solo se muestra si 'mostrar' es true</div>
-<ul>
-  <li *ngFor="let item of lista">{{ item }}</li>
-</ul>
-```
-
-También podés crear tus propias directivas para reutilizar lógica visual.
-
----
-
-## Decorators
-
-Indica como debe comportarse el componente. Dentro de este decorador, puedes observar el selector del componente (un nombre para el mismo), el template HTML y la hoja de estilos que usará.
-
-- `@Component`: Se utiliza para decorar una clase que define un componente de Angular
-
-```typescript
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-root', // Nombre de la etiqueta HTML
-  templateUrl: './app.component.html', // Archivo HTML
-  styleUrls: ['./app.component.css'] // Estilos CSS
-})
-export class AppComponent {
-  title = 'Mi aplicación Angular';
-}
-```
-
-- `@Injectable`: marca una clase como inyección de dependencias en Angular. Se usa para declarar que una clase puede ser inyectada en otros componentes o servicios
-
-```typescript
-import { Injectable } from '@angular/core';
-
-@Injectable({
-  providedIn: 'root' // Este servicio estará disponible en toda la aplicación
-})
-export class DataService {
-  constructor() {}
-
-  getData() {
-    return ['Elemento1', 'Elemento2', 'Elemento3'];
-  }
-}
-```
-
-- ` @NgModule`: Se usa para definir que este componente es un modulo en si mismo. Con la aparicion de los componentes standalone ya no es tan comunmente usado.
-
-```typescript
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
-
-@NgModule({
-  declarations: [AppComponent], // Componentes que pertenecen al módulo
-  imports: [BrowserModule], // Otros módulos que necesita
-  providers: [], // Servicios a inyectar
-  bootstrap: [AppComponent] // Componente inicial
-})
-export class AppModule {}
-```
-
-- `@Input`: se utiliza para marcar una propiedad de un componente que va a recibir datos desde su componente padre.
-
-```typescript
-import { Component, Input } from '@angular/core';
-
-@Component({
-  selector: 'app-child',
-  template: '<h2>{{ name }}</h2>'
-})
-export class ChildComponent {
-  @Input() name: string; // Recibe un valor desde el componente padre
-}
-```
-
-- `@Output`: El decorador @Output se usa para crear un evento personalizado en un componente que puede ser escuchado por su componente padre.
-
-```typescript
-import { Component, Output, EventEmitter } from '@angular/core';
-
-@Component({
-  selector: 'app-child',
-  template: '<button (click)="sendMessage()">Enviar Mensaje</button>'
-})
-export class ChildComponent {
-  @Output() messageEvent = new EventEmitter<string>();
-
-  sendMessage() {
-    this.messageEvent.emit('Hola desde el componente hijo');
-  }
-}
-```
-
-- `@HostListener`: Cuando preciso escuchar cualquier accion en el navegador, como clicks o cambios en el tamanio de la pantalla.
-
-```typescript
-import { Component, HostListener } from '@angular/core';
-
-@Component({
-  selector: 'app-resize-listener',
-  template: '<p>El tamaño de la ventana es: {{ width }}px</p>'
-})
-
-export class ResizeListenerComponent {
-  width: number = window.innerWidth;
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event: Event) {
-    this.width = window.innerWidth;
-  }
-}
-```
-
-- `@ViewChild`: Se utiliza para acceder a un componente hijo desde su componente padre.
-
-```typescript
-import { Component, ViewChild, AfterViewInit } from '@angular/core';
-
-@Component({
-  selector: 'app-parent',
-  template: '<app-child #childComponent></app-child>'
-})
-
-export class ParentComponent implements AfterViewInit {
-  @ViewChild('childComponent') child: any;
-
-  ngAfterViewInit() {
-    console.log(this.child); // Accede al componente hijo
-  }
-}
-```
-
----
-
-## `Input` y `Output`
-
-- **@Input:** Permite que un componente hijo reciba datos de su componente padre.
-- **@Output:** Permite que un componente hijo le envíe eventos o datos al padre.
-
-Ejemplo:
-
-```typescript
-// Hijo
-@Input() mensaje: string;
-@Output() notificar = new EventEmitter<string>();
-
-enviar() {
-  this.notificar.emit('¡Hola padre!');
-}
-```
-
-```html
-<!-- Padre -->
-<app-hijo [mensaje]="texto" (notificar)="recibir($event)"></app-hijo>
-```
-
----
-
-## Routing
-
-Es la configuracion que permite a los usuarios navegar en nuestra aplicacion sin necesidad de recargar la pagina por cada cambio en el caso de los SPA.
-Tambien se encarga de gestionar las URL para facilitar el compartir links y la navegabilidad.
-Se configura mediante el `RouterModule` en un array de rutas, el cual se referencia con un path y un componente. 
-
-```ts
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-
-const routes: Routes = [
-  { path: '', component: HomeComponent }, // Ruta raíz
-  { path: 'about', component: AboutComponent }, // Ruta para "Acerca de"
-  { path: '**', component: NotFoundComponent } // Ruta comodín para páginas no encontradas
-];
-```
-
-En el mismo tambien se pueden manejar componentes con Lazy Loading
-
-```ts
-{ path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) }
-```
-
-Restringir el acceso a rutas protegidas
-
-```ts
-{ path: 'admin', component: AdminComponent, canActivate: [AuthGuard] }
-```
-
-Y luego en el ng.html que hace de entrypoint de nuestra app, referenciamos al contenido "routerizado"
-
-```html
-<nav>
-  <a routerLink="/">Inicio</a>
-  <a routerLink="/about">Acerca de</a>
-</nav>
-
-<router-outlet></router-outlet>
-```
-
-Tambien es posible manejar las rutas desde el codigo logico de nuestra app por fuera de los componentes
-
-```ts
-import { Router } from '@angular/router';
-
-constructor(private router: Router) {}
-
-irAAbout() {
-  this.router.navigate(['/about']);
-}
-```
-
----
-
-## Módulo compartido (Shared Module)
-
-Un Shared Module es un módulo donde ponés componentes, pipes y directivas que vas a usar en varios lugares de tu app. Así, evitás importar lo mismo muchas veces y mantenés tu código más organizado.
-
-Ejemplo:
-
-```typescript
-@NgModule({
-  declarations: [MiPipe, MiDirectiva],
-  exports: [MiPipe, MiDirectiva, CommonModule]
-})
-export class SharedModule {}
-```
-
-Luego lo importás en otros módulos que lo necesiten.
-
----
-
-## `ViewChild` vs `ContentChild`
-
-`ViewChild` y `ContentChild` son dos decoradores en Angular que se utilizan para acceder a elementos del DOM o componentes hijos, pero tienen propósitos diferentes.
-
-- **ViewChild:** Se usa para acceder a un elemento del DOM o un componente hijo que está en la vista del componente actual. Es útil cuando necesitas interactuar con un elemento que está directamente en el template del componente.
-
-```typescript
-import { Component, ViewChild } from '@angular/core';
-import { ElementRef } from '@angular/core';
-@Component({
-  selector: 'app-mi-componente',
-  template: `<input #miInput type="text">`
-})
-export class MiComponente {
-  @ViewChild('miInput') inputRef!: ElementRef;
-
-  ngAfterViewInit() {
-    this.inputRef.nativeElement.focus(); // Accede al input y le da foco
-  }
-}
-```
-
-- **ContentChild:** Se usa para acceder a un elemento del DOM o un componente hijo que está proyectado dentro del componente actual mediante `<ng-content>`. Es útil cuando necesitas interactuar con contenido que se inserta en el componente desde el exterior.
-
-```typescript
-import { Component, ContentChild } from '@angular/core';
-import { ElementRef } from '@angular/core';
-
-@Component({
-  selector: 'app-mi-componente',
-  template: `<ng-content></ng-content>`
-})
-
-export class MiComponente {
-  @ContentChild('miContenido') contenidoRef!: ElementRef;
-
-  ngAfterContentInit() {
-    console.log(this.contenidoRef.nativeElement.textContent); // Accede al contenido proyectado
-  }
-}
-```
