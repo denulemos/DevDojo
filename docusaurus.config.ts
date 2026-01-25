@@ -35,6 +35,17 @@ const config: Config = {
     },
   },
 },
+
+ themes: [
+    [
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      {
+        hashed: true,
+        language: ['es', 'en'],
+        docsRouteBasePath: '/docs', 
+      },
+    ],
+  ],
    stylesheets: [
     'https://fonts.googleapis.com/css2?family=Pacifico&display=swap',
   ],

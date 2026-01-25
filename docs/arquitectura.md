@@ -16,6 +16,8 @@ Lo que se debe buscar es este manejo es que sea **mantenible**, **reproducible**
 
 Centralizo el tooling, limito dependencias con reglas, comparto código vía paquetes bien definidos, y automatizo upgrades con overrides y CI para que el monorepo no se vuelva un lio.
 
+### System Design escalable en Usuarios
+
 ### Cómo implementás un System Design que escale entre múltiples equipos?
 
 Debemos tener en cuenta los siguientes puntos:
