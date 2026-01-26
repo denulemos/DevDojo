@@ -81,7 +81,15 @@ const sidebars: SidebarsConfig = {
       ],
     },
     'seguridad',
-    'arquitectura',
+    {
+      type: 'category',
+      label: '🧠 Arquitectura',
+      link: { type: 'doc', id: 'arquitectura' },
+      collapsed: true,
+      items: [
+        'microfrontends',
+      ],
+    },
   ],
 };
 
