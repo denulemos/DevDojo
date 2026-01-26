@@ -96,8 +96,6 @@ Tests:
 **Consumer-driven**: una app grande sirve como canary para detectar breaks.
 
 
-
-
 ## **Server Side Rendering**
 
 ### Que es Server Side Rendering?
