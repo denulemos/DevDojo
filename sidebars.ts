@@ -16,6 +16,16 @@ const sidebars: SidebarsConfig = {
   // Manual sidebar configuration with hola.md as landing page
   tutorialSidebar: [
     'landing/devhood',
+    {
+      type: 'category',
+      label: '📚 Teoria',
+      link: { type: 'doc', id: 'landing/teoria' },
+      collapsed: true,
+      items: [
+        'algoritmos',
+        'desarrollo-web/backend/poo',
+      ],
+    },
     'accesibilidad/accesibilidad',
     {
       type: 'category',
@@ -32,12 +42,7 @@ const sidebars: SidebarsConfig = {
             'desarrollo-web/angular/ejercicios-tecnicos',
           ],
         },
-        'desarrollo-web/react',
-        'desarrollo-web/scss',
-        'desarrollo-web/html',
-      ],
-    },
-    {
+        {
       type: 'category',
       label: '👨‍💻 Javascript',
       link: { type: 'doc', id: 'landing/jsts' },
@@ -45,10 +50,15 @@ const sidebars: SidebarsConfig = {
       items: [
         'desarrollo-web/javascript/javascript',
         'desarrollo-web/javascript/typescript',
-        'desarrollo-web/nodejs',
       ],
 
     },
+        'desarrollo-web/react',
+        'desarrollo-web/scss',
+        'desarrollo-web/html',
+      ],
+    },
+    
     {
       type: 'category',
       label: '⚙️ DevOps',
@@ -61,21 +71,12 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: '📚 Teoria',
-      link: { type: 'doc', id: 'landing/teoria' },
-      collapsed: true,
-      items: [
-        'algoritmos',
-        'desarrollo-web/backend/poo',
-      ],
-    },
-    {
-      type: 'category',
       label: '🖥️ Backend',
       link: { type: 'doc', id: 'landing/backend' },
       collapsed: true,
       items: [
         'desarrollo-web/backend/java',
+        'desarrollo-web/nodejs',
         'desarrollo-web/backend/basesDatos',
       ],
     },
