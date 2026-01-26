@@ -67,576 +67,163 @@ sidebar_position: 1
 | `Object.hasOwn(obj, prop)` | Determina si un objeto tiene la propiedad especificada como propiedad propia (no heredada). |
 | `Object.fromEntries(iterable)` | Convierte una lista de pares clave-valor en un objeto. |
 
-### Se pueden comparar dos Objetos con `===` ?
+---
 
-No, en JavaScript, dos objetos no son iguales a menos que sean la misma referencia en memoria. Incluso si dos objetos tienen las mismas propiedades y valores, se consideran diferentes si no son la misma instancia.
+## **Métodos Arrays**
+
+```jsx
+// Agrega al final
+[1,2,3].push(4) // [1,2,3,4]
+
+// Quita y devuelve el último elemento
+[1,2,3].pop() // [1,2]
+
+// Quita y devuelve el primer elemento
+[1,2,3].shift() // [2,3]
+
+// Agrega al principio
+[1,2,3].unshift(0) // [0,1,2,3]
+
+//  Combina dos o más arreglos y devuelve un nuevo arreglo - los CONCATENA
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+arr1.concat(arr2); // [1, 2, 3, 4, 5, 6]
+
+// Devuelve un array donde cada elemento del array tiene en el medio
+// el valor pasado como argumento
+['a', 'b'].join('-') // a-b
+
+// Devuelve una copia superficial de una porción del arreglo en un nuevo arreglo seleccionando los elementos desde el inicio hasta el final (o hasta un índice especificado).
+const arr = [1, 2, 3, 4, 5];
+arr.slice(1, 4); // Copia desde el índice 1 hasta el índice 3 [2, 3, 4]
+
+// Devuelve el index del elemento, si no lo encuentra, devuelve -1
+['a', 'b'].indexOf('b') // 1
+
+// Devuelve si el elemento existe en el array
+['a', 'b'].includes('b') // true
+
+// Devuelve el primer elemento que cumple con la condición
+[3,5,6,8].find((valorActual) => valorActual % 2 === 0) // 6
+
+// Devuelve el index del primer elemento que cumple con la condición
+[2,4,3,5].findIndex((valorActual) => valorActual % 2 !== 0) // 2
+
+// Devuelve un nuevo array con los elementos modificados, en este caso los multiplica por 2. Devuelve un nuevo array, no muta el array modificado
+const array = [3,4,8,6].map((n) => n * 2) // [6,8,16,12]
+
+// Devuelve un nuevo array con los elementos que cumplan con la condición
+// Si el valorActual cumple con la condicion, queda en el array, de lo contrario, se quita
+[1,4,7,8].filter((valorActual) => valorActual % 2 === 0) // [4,8]
+
+// Devuelve un solo valor, en este caso la suma de los elementos
+[2,4,3,7].reduce((accumulator, currentValue) => accumulator + currentValue) // 16
+
+// El accomulator puede ser inicializado de antemano, si no, se toma como valor inicial el primer elemento del array
+[2,4,3,7].reduce((accumulator, currentValue) => accumulator + currentValue, 0)
+
+// Devuelve true si todos los elementos cumplen con la condicion
+[2,3,4,5].every((valorActual) => valorActual < 6) // true
+
+// Devuelve true si algunos de los elementos cumplen con la condicion
+[3,5,6,8].some((valorActual) => valorActual > 6) // true
+
+// Cambia el contenido de un arreglo eliminando elementos existentes y/o agregando nuevos elementos.
+const arr = [1, 2, 3, 4, 5];
+arr.splice(2, 1, "a", "b"); // Elimina 1 elemento desde el índice 2 y agrega "a" y "b" [1, 2, "a", "b", 4, 5]
+splice(indice, cantidad elementos a eliminar, agrego, agrego);
+
+// Da vuelta el Array
+[1,2,3,4].reverse() // [4,3,2,1]
+
+// Devuelve, si es positivo, el elemento en el lugar 2 (0,1,2), caso negativo, contando desde el final.
+[5, 12, 8, 130, 44].at(-2) // 130
+[5, 12, 8, 130, 44].at(2) // 8
+
+// Recorre el array
+[1,2,3].forEach(x => console.log(x))
+
+// Conviene valores a un array
+"hola".split() => ['h','o','l','a'];
+//Se puede separar la palabra dependiendo de un regex
+"hola, denu".split(/,\s*/g) => ['hola', 'denu'];
+
+```
+
+---
+
+### `.map()`
+
+Es una funcion que no modifica el array original, sino que devuelve un nuevo array con los elementos modificados.
 
 ```javascript
-const obj1 = { a: 1, b: 2 };
-const obj2 = { a: 1, b: 2 };
-const obj3 = obj1;
-
-console.log(obj1 === obj2); // false
-console.log(obj1 === obj3); // true
+array.map(callback(element, index, array), thisArg)
 ```
 
-La forma de compararlos serialmente es convertirlos a JSON:
+Esta funcion ejecuta la funcion callback que se le envia como parametro en cada elemento del array
 
 ```javascript
-const obj1 = { a: 1, b: 2 };
-const obj2 = { a: 1, b: 2 };
+const numeros = [1, 2, 3, 4];
+const duplicados = numeros.map(num => num * 2);
 
-console.log(JSON.stringify(obj1) === JSON.stringify(obj2)); // true
+console.log(duplicados); // [2, 4, 6, 8]
+console.log(numeros);    // [1, 2, 3, 4] (el array original no se modifica)
 ```
 
-O usando lodash, `_.isEqual(obj1, obj2)`.
+Hay que estar atento a que la funcion de callback devuelva algo, de lo contrario, el array resultante tendra elementos `undefined`.
 
----
-
-### Namespacing
-
-Namespacing se utiliza para agrupar funciones, variables, etc con un nombre único.  Esto mejora la modularidad en codificación y permite la reutilización del código.
+`map()` puede ser encadenado con otros metodos como `filter()` o `reduce()`
 
 ```javascript
-var myNamespace = {
-  myFunction: function() {
-    console.log('Hello, World!');
-  },
-  myVariable: 'Hello, World!'
-};
+const numeros = [1, 2, 3, 4, 5, 6];
 
-myNamespace.myFunction(); // Hello, World!
+const paresDuplicados = numeros
+  .filter(num => num % 2 === 0) // Filtrar números pares
+  .map(num => num * 2);         // Multiplicarlos por 2
 
-console.log(myNamespace.myVariable); // Hello, World!
+console.log(paresDuplicados); // [4, 8, 12]
 ```
 
----
+La diferencia entre el uso de `map()` y un recorrido `forEach` es que `map` devuelve un array nuevo, mientras que `forEach` no devuelve nada, solo itera.
 
-### `setTimeout()` vs `setInterval()`
+### `.filter()`
 
-
-- `SetTimeout` nos permite ejecutar una funcion una vez despues del intervalo de tiempo
-
-```jsx
-*setTimeout(sayHi, 1000, "Hola", "John");*
-```
-
-- `SetInterval` nos permite ejecutar una funcion repetidamente. Esperando el intervalo, ejecutando y asi sucesivamente.
-
-```jsx
-let timerId = setInterval(() => alert('tick'), 2000);
-
-// después de 5 segundos parar
-setTimeout(() => { clearInterval(timerId); alert('stop'); }, 5000);
-```
-
----
-
-### `let`, `var` y `const`
-
-La diferencia es el alcance de cada uno.
-
-- **var:** Es viable dentro de una funcion, incluso si es declarada dentro de un if o loop, es valida afuera, y es global si esta fuera de una funcion. Se puede reasignar y redeclarar.
+Es un metodo que tambien devuelve un nuevo array, pero con los elementos que cumplan con la condicion que se le pasa como parametro.
 
 ```javascript
-function ejemplo() {
-  if (true) {
-    var x = 10;
-  }
-  console.log(x); // 10 (aunque x se declaró dentro del bloque if)
-}
+array.filter(callback(element, index, array), thisArg)
 ```
 
-- **let:** Es la manera de declarar variables en ES6. Es local en un bloque.
-- **const:** Es la manera de declarar constantes en ES6. Es local en un bloque.
-
-```jsx
-
-var saludar = "hey, hola";
-var saludar = "dice Hola tambien";
-    saludar = "dice Hola tambien";
-
-
-let camper = 'James';
-let camper = 'David'; // throws an error
-let saludar = "dice Hola";
-    saludar = "dice Hola tambien";
-let saludar = "dice Hola tambien"; // error: Identifier 'saludar' has already been declared
-```
-
-Sí pongo un “use Strict” en la parte alta del codigo, la consola me va a tirar error cuando trate de codear algo de manera “insegura” o poco practica.
-
-```jsx
-"use strict";
-x = 3.14; // throws an error because x is not declared
-```
-
-Cuando declaras una variable con **var,** es declarada de manera global, o local sí esta adentro de una funcion.
-
-- Pueden ser modificadas y re-declaradas dentro de su ambito.
-- Puede ser declarada sin ser inicializada, se inicializa con undefined por defecto.
-- Puede ser declarada global o dentro de una funcion.
-
-En cambio con **let,** sí declaro la funcion dentro de un block, statement o expresion, se va a declarar solo dentro de estas y no globalmente.
-
-- No puede ser re-declarado pero si modificado.
-- Puede ser declarada sin ser inicializada, se inicializa con undefined por defecto.
-- Funciona a nivel bloque.
-
-```jsx
-var numArray = [];
-for (var i = 0; i < 3; i++) {
-  numArray.push(i);
-}
-console.log(numArray); // [0, 1, 2]
-console.log(i); // 3
-
-'use strict';
-let printNumTwo;
-for (let i = 0; i < 3; i++) {
-  if (i === 2) {
-    printNumTwo = function() {
-      return i;
-    };
-  }
-}
-console.log(printNumTwo()); // 2
-console.log(i); // i no esta definido
-```
-
-También se puede declarar usando la palabra **const**, que es una constante. Se declara y no puede ser cambiada en su valor, solo sirve de lectura.
-
-```jsx
-"use strict"
-const FAV_PET = "Cats";
-FAV_PET = "Dogs"; // error: Assignment to constant variable.
-```
-
-Se recomienda poner el nombre de las constantes en mayúscula.
-
-```jsx
-"use strict";
-const s = [5, 6, 7];
-s = [1, 2, 3]; // error asignando a una constante
-s[2] = 45; // funciona
-console.log(s); //  [5, 6, 45]
-```
-
-Los array sí pueden ser modificados en sí mismos, lo que no se puede es apuntar a otro array distinto.
-
-```jsx
-const s = [5, 7, 2];
-function editInPlace() {
-  "use strict";
-  // s = [2, 5, 7]; // error asignando a una constante
-  s[0] = 2;
-  s[1] = 5;
-  s[2] = 7;
-}
-editInPlace();
-```
-
----
-
-### Generics
-
-Podes crear objetos genéricos en JavaScript usando funciones constructoras, la sintaxis de objetos literales o clases. Por ejemplo, usando un objeto literal:
+Por ejemplo, si quiero filtrar los elementos pares de un array:
 
 ```javascript
-const persona = {
-  nombre: "Juan",
-  edad: 30,
-  saludar: function() {
-    console.log("Hola, soy " + this.nombre);
-  }
-};
+const numeros = [1, 2, 3, 4, 5, 6];
+
+const resultado = numeros.filter(numero => numero % 2 === 0);
+
+console.log(resultado); // [2, 4, 6]
 ```
 
-O usando una función constructora para crear varios objetos similares:
+Lo que se debe tener en cuenta en la funcion callback dentro del `filter` es que debe devolver un valor booleano, que si es `true` incluye al elemento en el nuevo array, y viceversa, de lo contrario obtendremos un array vacio como resultado.
+
+### `.reduce()`
+
+Generalmente se utiliza para sumarizar de alguna forma los elementos de un array, ya sea sumandolos, concatenandolos, etc.
 
 ```javascript
-function Persona(nombre, edad) {
-  this.nombre = nombre;
-  this.edad = edad;
-  this.saludar = function() {
-    console.log("Hola, soy " + this.nombre);
-  };
-}
-
-const persona1 = new Persona("Ana", 25);
-persona1.saludar(); // Hola, soy Ana
+array.reduce(reducerFunction(accumulator, currentValue, currentIndex, originalArray), initialValue)
 ```
 
-También podes usar la sintaxis de clases (ES6):
+`initialValue` en el caso de las funciones de sumatoria en general es 0, pero puede ser cualquier valor que se desee.
 
 ```javascript
-class Persona {
-  constructor(nombre, edad) {
-    this.nombre = nombre;
-    this.edad = edad;
-  }
-  saludar() {
-    console.log(`Hola, soy ${this.nombre}`);
-  }
-}
+const numbers = [1, 2, 3, 4, 5];
+const sum = numbers.reduce((accumulator, currentValue) => {
+  return accumulator + currentValue;
+}, 0); // Initial value is 0
 
-const persona2 = new Persona("Luis", 40);
-persona2.saludar(); // Hola, soy Luis
+console.log(sum); // Output: 15
 ```
-
----
-
-### `Document.ready` vs `Window.onload`
-
-`Document.ready` se ejecuta despues de cargar todo el HTML. `Window.onload` se ejecuta cuando ya cargo completamente todo el contenido, mas adelante.
-
----
-
-### Scope
-
-Es el contexto actual de ejecución.
-
-Cuando hacemos referencia a una variable, javascript busca su definicion en cada entorno, o Scope, esto depende de como (var, const, let) y donde la declaremos (fuera o dentro de una funcion).
-
-```javascript
-var variable = "global"; // Variable global, todos pueden acceder a ella
-
-function test() { // Tiene acceso a variable y variable1
-    var variable1 = "hola"; // Variable local -hola
-}
-
-function test2() { // Tiene acceso a variable y variable1
-    var variable1 = "chau"; // Variable local - chau
-}
-```
-
-Entre scopes hay jerarquia. Primero se busca la variable en el mismo scope local, luego en el scope padre y luego el global.
-
----
-
-### Currying
-
-
-Es una tecnica de programacion funcional donde meto una funcion dentro de otra, y todas estas reciben solo un parametro a la vez. 
-
-```typescript
-function multiply(a: number): (b: number) => number {
-    return function(b: number): number {
-        return a * b;
-    };
-}
-
-// Uso de la función curried
-const multiplyByTwo = multiply(2);
-const result = multiplyByTwo(3);  // result será 6
-console.log(result);
-```
-
-En este ejemplo, multiply es una función que toma el primer número, a, y devuelve otra función que toma el segundo número, b. La función devuelta realiza la multiplicación de a y b.
-
-Al dividir todo en pequenias funciones, hace que la reutilizacion de codigo sea mucho mejor. 
-
----
-
-### Web y Service Workers
-
-Como se menciono anteriormente, Javascript es single-thread, y esto puede ser un problema cuando se trata de operaciones pesadas o que se deben realizar en segundo plano. Para esto se crearon los Service Workers, que son scripts que se ejecutan en segundo plano y que permiten realizar operaciones como notificaciones push, actualizaciones de contenido, y manejo de cache. Es especialmente util tambien cuando quiero que mi app tenga cierta funcionalidad offline.
-
-Los Service Workers son eventos que se ejecutan en segundo plano y que no tienen acceso al DOM, pero si pueden comunicarse con la pagina principal mediante mensajes.
-
-```javascript
-// service-worker.js
-self.addEventListener('fetch', event => {
-    event.respondWith(
-        caches.match(event.request).then(response => {
-            return response || fetch(event.request);
-        })
-    );
-});
-```
-
-```javascript
-// main.js
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js')
-        .then(registration => console.log('Service Worker registrado'))
-        .catch(error => console.error('Error al registrar el Service Worker', error));
-}
-```
-
----
-
-### `isNaN` vs `Math.isNaN`
-
-NaN son operaciones aritmeticas que no pueden ser representadas correctamente. Ambas funciones tienen como objetivo identificar si un valor es NaN. `isNaN` global aplica una coercion de tipos al argumento que le pasamos, `Math.isNan` no lo hace, lo que hace que sea mas seguro de usar para valores no numericos.
-
-```jsx
-isNaN('denu') // devolvera true porque primero intentará convertir la cadena a un numero
-Number.isNaN('denu') // false porque no convertirá la cadena a numero
-```
-
----
-
-### `class` vs `function`
-
-class tiene un alcance comprendido por llaves, al igual que las variables let. function es local a la funcion donde fue definida, no podemos usar una clase o funcion constructora por fuera del alcance en donde se encuentra.
-
-```jsx
-// Class
-{
-  class C {
-  }
-}
-
-// Function
-function x () {
-  function C () {
-  }
-}
-
-// uso de ambas
-try {
-  const obj = new C();
-  console.assert( false );
-} catch (err) {
-  console.assert(
-    err.message === 'C is not defined'
-  );
-}
-```
-
-Ambas pueden ser definidas de forma anonima. Sus referencias funcionan igual que con object, no se envia una copia, si no una referencia de la misma.
-
-```jsx
-const C = class {};
-const C = function () {};
-
-console.assert( typeof  C === 'function' );
-```
-
----
-
-### Truthy and Falsy
-
-En JavaScript, un valor se considera "falsy" si se convierte en `false` cuando se evalúa en un contexto booleano.
-
-```jsx
-// Falso
-Boolean(0); //false
-Boolean(null); //false
-Boolean(NaN); //false
-Boolean(undefined); //false
-Boolean(false); //false
-Boolean(""); //false
-
-// Verdadero:
-Boolean(1); //true para 1 o cualquier número diferente de cero (0)
-Boolean("a"); //true para cualquier caracter o espacio en blanco en el string
-Boolean([]); //true aunque el array esté vacío
-Boolean({}); //true aunque el objeto esté vacío
-Boolean(function(){}); //Cualquier función es verdadera también
-```
-
----
-
-### Hoisting
-
-
-Es un mecanismo de JS en el que las variables y declaraciones de funciones se mueven a la parte superior de su ambito antes de la ejecucion del codigo.
-
-```jsx
-console.log (saludar);
-    var saludar = "dice hola"
-
-// es decir
-
-var saludar;
-    console.log(saludar); // saludar is undefined
-    saludar = "dice hola"
-```
-
-Es el usar las variables antes de que sean declaradas.
-
----
-
-### Primitivo vs Objeto
-
-- Los primitivos se pasan por valor, los objetos se pasan por referencia
-- Los primitivos se copian por valor y los objetos se copian por referencia
-- Los primitivos se comparan por valor y los objetos por referencia
-- Los primitivos son inmutables, el unico elemento inmutable del objeto es su referencia, el valor puede ser modificado.
-
-Casos **primitivos**
-
-```jsx
-let animal = ‘perro’
-let mascota = animal
-animal = 'gato'
-console.log(mascota) // perro, se copio por valor y no referencia
-```
-
-Caso **objetos** ( Como puedo clonar un objeto ?)
-
-```jsx
-let animal = {
-  nombre: 'perro'
-}
-
-let mascota = animal
-animal.especie = 'gato'
-console.log(mascota.nombre) // gato, se copio referencia no valor
-
----
-
-let object = {a: 1, b:2};
-let referencia = object; // Esto es solo una referencia
-
-let clone = {...object}; // Esto si es un clon
-let clone2 = Object.assign({}, object);// Esto si es un clon
-
-clone.foo = "foo";
-clone2.foo = "denu";
-
-console.log(object);// { a: 1, b: 2 }
-console.log(referencia); // { a: 1, b: 2 }
-console.log(clone); // { a: 1, b: 2, foo: 'foo' }
-```
-
----
-
-### Declarativa vs Expresiva
-
-
-En las **Funciones Declarativas** usamos la palabra reservada `Function` para poder declararla
-
-```jsx
- function saludar(nombre) {
-  console.log(`Hola ${nombre}`);
-}
-
-saludar('Diego');
-```
-
-La **Expresiva (Expresion de Funcion)** es cuando la declaramos tipo variable como funcion anonima
-
-```jsx
-var nombre = function(nombre){
-    console.log(`Hola ${nombre}`)
-}
-
-nombre(‘Diego’);
-```
-
-A las funciones declarativas se les aplica hoisting, a la otra no, hoisting se aplica solo a las palabra sreservadas `var` y `function`, es decir, a la expresion de funcion podriamos llamarla recien despues de declararla.
-
----
-
-### Event Loop
-
-El Event Loop es un bucle que se encarga de manejar los eventos y las operaciones asincronas en Javascript.
-
-- **Call Stack**: Es donde se guardan las operaciones sincronas, y se ejecutan en orden de llegada.
-- **Web API**: Es donde se guardan las operaciones asincronas, como `setTimeout`, `fetch`, `addEventListener`, etc.
-- **Callback Queue**: Es donde se guardan las operaciones que se deben ejecutar una vez que el Call Stack este vacio, como los Callbacks.
-- **Event Loop**: Es el encargado de chequear el Call Stack y el Callback Queue, y si el Call Stack esta vacio, toma la primera operacion de la Callback Queue y la pone en el Call Stack.
-- **Microtask Queue**: Es donde se guardan las Promises, y tiene prioridad sobre el Callback Queue.
-
-```javascript
-console.log('Inicio');
-
-setTimeout(() => console.log('Timeout'), 0);
-
-console.log('Fin');
-```
-
-En este caso, el `setTimeout` se va a ejecutar una vez que el Call Stack este vacio, por lo que el orden de ejecucion va a ser `Inicio`, `Fin`, `Timeout`.
-En el caso de las Promises, estas se ejecutan en el Microtask Queue, que tiene prioridad sobre el Callback Queue.
-
-```javascript
-console.log('Inicio');
-
-Promise.resolve().then(() => console.log('Promise'));
-
-console.log('Fin');
-```
-
-En este caso, el orden de ejecucion va a ser `Inicio`, `Fin`, `Promise`, ya que las Promises se ejecutan en el Microtask Queue.
-
-En el caso de los Callbacks, estos se ejecutan en el Callback Queue, y se ejecutan una vez que el Call Stack este vacio.
-
-```javascript
-console.log('Inicio');
-
-setTimeout(() => console.log('Timeout'), 0);
-
-Promise.resolve().then(() => console.log('Promise'));
-
-console.log('Fin');
-```
-
-Y en el caso de async-await se ejecutan en el Microtask Queue, por lo que tienen prioridad sobre los Callbacks.
-
-```javascript
-console.log('Inicio');
-
-(async () => {
-    await Promise.resolve();
-    console.log('Async');
-})();
-
-console.log('Fin');
-```
-
----
-
-### `setTimeout`
-
-`setTimeout` es una funcion que permite ejecutar una funcion o un bloque de codigo despues de un tiempo determinado. Se utiliza para programar la ejecucion de una tarea en el futuro.
-
-```jsx
-console.log('Inicio');
-
-setTimeout(function() {
-  console.log('Esto se ejecuta despues de 2 segundos');
-}, 2000);
-
-console.log('Fin');
-```
-
-En este ejemplo, la funcion dentro de `setTimeout` se ejecutara despues de 2 segundos, mientras que el resto del codigo continuara ejecutandose sin esperar.
-
----
-
-### `Map` vs `Weakmap`
-
-
-Son casi iguales, son la clasica estructura de datos de diccionario, su diferencia es que se puede acceder a los clave-valores de un Map usando .values o .keys, en un Weakmap no se puede hacer eso.
-
-```jsx
-const map = new Map()
-const weakMap = new weakMap()
-
-const obj = {
-  hola: 'mundo',
-}
-
-map.set('denu', 'lemon')
-weakMap.set(myObjKey, 'lemon weakmap')
-
-// Map
-map.get('denu') // lemon
-map.keys() // {'denu'}
-map.values() // {'lemon'}
-
-// Weakmap
-weakMap.get(obj) // lemon weakmap
-weakMap.keys() // ERROR
-weakMap.values() // ERROR
-```
-
-Weakmap es una caja negra en donde solo se puede acceder a los valores si se tiene la Key.
-
-Weakmap, ademas, solo admite objetos como clave, estos estan debilmente referenciados por lo que puede ser recolectados por el garbage collector de JS si asi lo considera, destruyendo esa entrada en el Weakmap y liberando memoria.
 
 ---
 
@@ -778,93 +365,121 @@ const { start : { x: startX, y: startY }} = a;
 console.log(startX, startY); // 5, 6
 ```
 
----
+### `.sort()`
 
-### Template Literals
+Esta funcion modifica al array original.
 
-Con **template literals**:
-
-```jsx
-const person = {
-  name: "Zodiac Hasbro",
-  age: 56
-};
-
-// Template literal with multi-line and string interpolation
-const greeting = `Hello, my name is ${person.name}!
-I am ${person.age} years old.`;
-
-console.log(greeting); // prints
-// Hello, my name is Zodiac Hasbro!
-// I am 56 years old.
+```javascript
+array.sort*([compareFunction])
 ```
 
-Se usa otro tipo de “comilla” cuando se quiere invocar al String (`) y no es necesario poner /n para que se haga un salto de línea en el texto de salida
+Es la funcion que se utiliza para ordenar elementos de un array. En casos de numeros no compuestos (es decir de un solo digito) funciona bien en su forma sin parametros extra:
 
-### `export default` - Módulos ES6
+```javascript
 
-Lo mismo que el anterior, sí queremos exportar una funcion, cuando la declaramos, la exportamos. Se usa cuando quiero exportar solo un valor o funcion, solo puedo elegir un valor que tenga esta propiedad de exportacion, tampoco se puede usar con const, var o let.
+const numeros = [3, 1, 2];
 
-```jsx
-export default function add(x,y) {
-  return x + y;
+// Ordena los elementos de menor a mayor
+numeros.sort();
+```
+
+Pero en caso de numeros o palabras compuestas, la funcion en si misma realiza un Orden lexicográfico, no numérico, entonces el funcionamiento debe ser llevado a cabo de otra forma:
+
+```javascript
+const numeros = [10, 20, 1, 2];
+
+// Ordena los elementos de menor a mayor
+numeros.sort((a, b) => a - b);
+
+// Cuando esa resta sea negativa, a va antes que b, si es positiva, b va antes que a
+
+// En el caso de palabras
+const palabras = ["manzana", "banana", "cereza"];
+
+// Ordena los elementos alfabéticamente
+palabras.sort((a, b) => a.localeCompare(b));
+```
+
+a - b devuelve:
+
+- Un número negativo si a < b (debe aparecer antes).
+- Un número positivo si a > b (debe aparecer después).
+- 0 si son iguales.
+
+En caso de una ordenacion de arrays donde pueden encontrarse elementos `null` o `undefined`, se puede utilizar la siguiente funcion:
+
+```javascript
+const numeros = [10, 20, 1, 2, null, undefined];
+
+numeros.sort((a, b) => {
+  if (a == null) {
+    return 1;
+  }
+  if (b == undefined) {
+    return -1;
+  }
+  return a - b;
+});
+```
+
+Esto lo que hace es enviar a los elementos `null` al final del array, y a los `undefined` al principio. Si este caso de uso no se tiene en cuenta, la funcion `sort` devolvera `undefined` en caso de encontrar un elemento `null` o `undefined`.
+
+---
+
+### `array-like`
+
+Es un tipo de dato similar a un Array pero que no posee todas las funciones heredadas de Prototype de un Array.
+
+Un array-like es un objeto que tiene propiedades indexadas y una propiedad length. Aunque no es un array, se comporta como tal. Por ejemplo, el objeto arguments es un array-like.
+
+```javascript
+// Definición de un objeto "array-like"
+var arrayLike = {
+  0: 'a',
+  1: 'b',
+  2: 'c',
+  length: 3 // La propiedad length es importante para que se comporte como un array
+};
+
+// Acceder a elementos
+console.log(arrayLike[0]); // Imprime: 'a'
+console.log(arrayLike[1]); // Imprime: 'b'
+
+// Iteración sobre el objeto "array-like"
+for (var i = 0; i < arrayLike.length; i++) {
+  console.log(arrayLike[i]);
 }
+// Imprime:
+// 'a'
+// 'b'
+// 'c'
 ```
 
-Despues lo importo agregandole un nombre de variable cualquiera e invocandolo normalmente.
+Es un objeto, no es un array. Para pasar su valor a un array, debo usar el spread operator
 
-```jsx
-import add from "math_functions";
-add(5,4); //Devuelve el resultado de acuerdo al metodo exportado anteriormente
+```javascript
+var array = [...arrayLike];
+console.log(array); // Imprime: ['a', 'b', 'c']
 ```
-
-### `import` vs `require`
-
-- `Require`: Se usa para importar las funciones y el codigo en un archivo externo. Esto posee un problema, el cual es que este codigo puede ser muy largo y solo necesito una parte del codigo.
-- `Import`: Herramienta de ES6 para importar solo los componentes que necesitamos de un archivo.
-
-```jsx
-import { countItems } from "math_array_functions"
-```
-
-### `Object.freeze` - Inmutabilidad
-
-Con `Object.freeze` se puede hacer que un objeto sea inmutable. Es una funcion que evita que puedas modificar propiedades de un objeto o una variable
-
-```jsx
-let obj = {
-  name:"FreeCodeCamp",
-  review:"Awesome"
-};
-Object.freeze(obj);
-obj.review = "bad"; //will be ignored. Mutation not allowed
-obj.newProp = "Test"; // will be ignored. Mutation not allowed
-console.log(obj);
-// { name: "FreeCodeCamp", review:"Awesome"}
-```
-
-Cuando intento modificar algo, no tira error, simplemente lo ignora.
-
-### Destructuración
-
-
-La destructuración es una expresión de JavaScript que permite desempaquetar valores de arreglos o propiedades de objetos en distintas variables.
-
-```jsx
-const person = {
-  name: "denu",
-  age: 25
-};
-
-const {name, age} = person;
-console.log(name, age); // denu 25
-```
-
-Esto no ahorra tener que crear dos variables distintas en dos lineas distintas y asignarlas de manera independiente.
 
 ---
 
-### Spread Operator vs Rest Operator
+### Set vs Array
+
+| Set | Array |
+| --- | ----- |
+| Almacena valores únicos | Almacena valores duplicados |
+| No tiene índices | Tiene índices |
+| No tiene métodos como `push(), pop(), shift(), unshift()` | Tiene métodos como `push()`, `pop()`, `shift()`, `unshift()` |
+| No tiene métodos como `map(), filter(), reduce()` | Tiene métodos como `map(), filter(), reduce()` |
+| No tiene métodos como `sort(), reverse()` | Tiene métodos como `sort(), reverse()` |
+| No tiene métodos como `find(), findIndex(), every(), some()` | Tiene métodos como `find(), findIndex(), every(), some()` |
+| No tiene métodos como `splice(), slice()` | Tiene métodos como `splice(), slice()` |
+| No tiene métodos como `join(), concat()` | Tiene métodos como `join(), concat()` |
+
+---
+
+## Spread Operator vs Rest Operator
 
 El Spread Operator (...) y el Rest Operator (...) tienen la misma sintaxis, pero se usan en contextos diferentes y tienen propósitos distintos. Aquí te explico sus diferencias y cómo se usan:
 
@@ -926,141 +541,624 @@ console.log(rest); // [3, 4]
 
 Ambos usan la misma sintaxis (`...`), pero el **contexto** es lo que determina si se trata de un **Spread** o un **Rest**.
 
-### `.sort()`
+---
 
-Esta funcion modifica al array original.
+## Namespacing
 
-```javascript
-array.sort*([compareFunction])
-```
-
-Es la funcion que se utiliza para ordenar elementos de un array. En casos de numeros no compuestos (es decir de un solo digito) funciona bien en su forma sin parametros extra:
+Namespacing se utiliza para agrupar funciones, variables, etc con un nombre único.  Esto mejora la modularidad en codificación y permite la reutilización del código.
 
 ```javascript
+var myNamespace = {
+  myFunction: function() {
+    console.log('Hello, World!');
+  },
+  myVariable: 'Hello, World!'
+};
 
-const numeros = [3, 1, 2];
+myNamespace.myFunction(); // Hello, World!
 
-// Ordena los elementos de menor a mayor
-numeros.sort();
-```
-
-Pero en caso de numeros o palabras compuestas, la funcion en si misma realiza un Orden lexicográfico, no numérico, entonces el funcionamiento debe ser llevado a cabo de otra forma:
-
-```javascript
-const numeros = [10, 20, 1, 2];
-
-// Ordena los elementos de menor a mayor
-numeros.sort((a, b) => a - b);
-
-// Cuando esa resta sea negativa, a va antes que b, si es positiva, b va antes que a
-
-// En el caso de palabras
-const palabras = ["manzana", "banana", "cereza"];
-
-// Ordena los elementos alfabéticamente
-palabras.sort((a, b) => a.localeCompare(b));
-```
-
-a - b devuelve:
-
-- Un número negativo si a < b (debe aparecer antes).
-- Un número positivo si a > b (debe aparecer después).
-- 0 si son iguales.
-
-En caso de una ordenacion de arrays donde pueden encontrarse elementos `null` o `undefined`, se puede utilizar la siguiente funcion:
-
-```javascript
-const numeros = [10, 20, 1, 2, null, undefined];
-
-numeros.sort((a, b) => {
-  if (a == null) {
-    return 1;
-  }
-  if (b == undefined) {
-    return -1;
-  }
-  return a - b;
-});
-```
-
-Esto lo que hace es enviar a los elementos `null` al final del array, y a los `undefined` al principio. Si este caso de uso no se tiene en cuenta, la funcion `sort` devolvera `undefined` en caso de encontrar un elemento `null` o `undefined`.
-
-### `.map()`
-
-Es una funcion que no modifica el array original, sino que devuelve un nuevo array con los elementos modificados.
-
-```javascript
-array.map(callback(element, index, array), thisArg)
-```
-
-Esta funcion ejecuta la funcion callback que se le envia como parametro en cada elemento del array
-
-```javascript
-const numeros = [1, 2, 3, 4];
-const duplicados = numeros.map(num => num * 2);
-
-console.log(duplicados); // [2, 4, 6, 8]
-console.log(numeros);    // [1, 2, 3, 4] (el array original no se modifica)
-```
-
-Hay que estar atento a que la funcion de callback devuelva algo, de lo contrario, el array resultante tendra elementos `undefined`.
-
-`map()` puede ser encadenado con otros metodos como `filter()` o `reduce()`
-
-```javascript
-const numeros = [1, 2, 3, 4, 5, 6];
-
-const paresDuplicados = numeros
-  .filter(num => num % 2 === 0) // Filtrar números pares
-  .map(num => num * 2);         // Multiplicarlos por 2
-
-console.log(paresDuplicados); // [4, 8, 12]
-```
-
-La diferencia entre el uso de `map()` y un recorrido `forEach` es que `map` devuelve un array nuevo, mientras que `forEach` no devuelve nada, solo itera.
-
-### `.filter()`
-
-Es un metodo que tambien devuelve un nuevo array, pero con los elementos que cumplan con la condicion que se le pasa como parametro.
-
-```javascript
-array.filter(callback(element, index, array), thisArg)
-```
-
-Por ejemplo, si quiero filtrar los elementos pares de un array:
-
-```javascript
-const numeros = [1, 2, 3, 4, 5, 6];
-
-const resultado = numeros.filter(numero => numero % 2 === 0);
-
-console.log(resultado); // [2, 4, 6]
-```
-
-Lo que se debe tener en cuenta en la funcion callback dentro del `filter` es que debe devolver un valor booleano, que si es `true` incluye al elemento en el nuevo array, y viceversa, de lo contrario obtendremos un array vacio como resultado.
-
-### `.reduce()`
-
-Generalmente se utiliza para sumarizar de alguna forma los elementos de un array, ya sea sumandolos, concatenandolos, etc.
-
-```javascript
-array.reduce(reducerFunction(accumulator, currentValue, currentIndex, originalArray), initialValue)
-```
-
-`initialValue` en el caso de las funciones de sumatoria en general es 0, pero puede ser cualquier valor que se desee.
-
-```javascript
-const numbers = [1, 2, 3, 4, 5];
-const sum = numbers.reduce((accumulator, currentValue) => {
-  return accumulator + currentValue;
-}, 0); // Initial value is 0
-
-console.log(sum); // Output: 15
+console.log(myNamespace.myVariable); // Hello, World!
 ```
 
 ---
 
-### Set vs Map
+## `setTimeout()` vs `setInterval()`
+
+
+- `SetTimeout` nos permite ejecutar una funcion una vez despues del intervalo de tiempo
+
+```jsx
+*setTimeout(sayHi, 1000, "Hola", "John");*
+```
+
+- `SetInterval` nos permite ejecutar una funcion repetidamente. Esperando el intervalo, ejecutando y asi sucesivamente.
+
+```jsx
+let timerId = setInterval(() => alert('tick'), 2000);
+
+// después de 5 segundos parar
+setTimeout(() => { clearInterval(timerId); alert('stop'); }, 5000);
+```
+
+---
+
+## `let`, `var` y `const`
+
+La diferencia es el alcance de cada uno.
+
+- **var:** Es viable dentro de una funcion, incluso si es declarada dentro de un if o loop, es valida afuera, y es global si esta fuera de una funcion. Se puede reasignar y redeclarar.
+
+```javascript
+function ejemplo() {
+  if (true) {
+    var x = 10;
+  }
+  console.log(x); // 10 (aunque x se declaró dentro del bloque if)
+}
+```
+
+- **let:** Es la manera de declarar variables en ES6. Es local en un bloque.
+- **const:** Es la manera de declarar constantes en ES6. Es local en un bloque.
+
+```jsx
+
+var saludar = "hey, hola";
+var saludar = "dice Hola tambien";
+    saludar = "dice Hola tambien";
+
+
+let camper = 'James';
+let camper = 'David'; // throws an error
+let saludar = "dice Hola";
+    saludar = "dice Hola tambien";
+let saludar = "dice Hola tambien"; // error: Identifier 'saludar' has already been declared
+```
+
+Sí pongo un “use Strict” en la parte alta del codigo, la consola me va a tirar error cuando trate de codear algo de manera “insegura” o poco practica.
+
+```jsx
+"use strict";
+x = 3.14; // throws an error because x is not declared
+```
+
+Cuando declaras una variable con **var,** es declarada de manera global, o local sí esta adentro de una funcion.
+
+- Pueden ser modificadas y re-declaradas dentro de su ambito.
+- Puede ser declarada sin ser inicializada, se inicializa con undefined por defecto.
+- Puede ser declarada global o dentro de una funcion.
+
+En cambio con **let,** sí declaro la funcion dentro de un block, statement o expresion, se va a declarar solo dentro de estas y no globalmente.
+
+- No puede ser re-declarado pero si modificado.
+- Puede ser declarada sin ser inicializada, se inicializa con undefined por defecto.
+- Funciona a nivel bloque.
+
+```jsx
+var numArray = [];
+for (var i = 0; i < 3; i++) {
+  numArray.push(i);
+}
+console.log(numArray); // [0, 1, 2]
+console.log(i); // 3
+
+'use strict';
+let printNumTwo;
+for (let i = 0; i < 3; i++) {
+  if (i === 2) {
+    printNumTwo = function() {
+      return i;
+    };
+  }
+}
+console.log(printNumTwo()); // 2
+console.log(i); // i no esta definido
+```
+
+También se puede declarar usando la palabra **const**, que es una constante. Se declara y no puede ser cambiada en su valor, solo sirve de lectura.
+
+```jsx
+"use strict"
+const FAV_PET = "Cats";
+FAV_PET = "Dogs"; // error: Assignment to constant variable.
+```
+
+Se recomienda poner el nombre de las constantes en mayúscula.
+
+```jsx
+"use strict";
+const s = [5, 6, 7];
+s = [1, 2, 3]; // error asignando a una constante
+s[2] = 45; // funciona
+console.log(s); //  [5, 6, 45]
+```
+
+Los array sí pueden ser modificados en sí mismos, lo que no se puede es apuntar a otro array distinto.
+
+```jsx
+const s = [5, 7, 2];
+function editInPlace() {
+  "use strict";
+  // s = [2, 5, 7]; // error asignando a una constante
+  s[0] = 2;
+  s[1] = 5;
+  s[2] = 7;
+}
+editInPlace();
+```
+
+---
+
+## Generics
+
+Podes crear objetos genéricos en JavaScript usando funciones constructoras, la sintaxis de objetos literales o clases. Por ejemplo, usando un objeto literal:
+
+```javascript
+const persona = {
+  nombre: "Juan",
+  edad: 30,
+  saludar: function() {
+    console.log("Hola, soy " + this.nombre);
+  }
+};
+```
+
+O usando una función constructora para crear varios objetos similares:
+
+```javascript
+function Persona(nombre, edad) {
+  this.nombre = nombre;
+  this.edad = edad;
+  this.saludar = function() {
+    console.log("Hola, soy " + this.nombre);
+  };
+}
+
+const persona1 = new Persona("Ana", 25);
+persona1.saludar(); // Hola, soy Ana
+```
+
+También podes usar la sintaxis de clases (ES6):
+
+```javascript
+class Persona {
+  constructor(nombre, edad) {
+    this.nombre = nombre;
+    this.edad = edad;
+  }
+  saludar() {
+    console.log(`Hola, soy ${this.nombre}`);
+  }
+}
+
+const persona2 = new Persona("Luis", 40);
+persona2.saludar(); // Hola, soy Luis
+```
+
+---
+
+## `Document.ready` vs `Window.onload`
+
+`Document.ready` se ejecuta despues de cargar todo el HTML. `Window.onload` se ejecuta cuando ya cargo completamente todo el contenido, mas adelante.
+
+---
+
+## Scope
+
+Es el contexto actual de ejecución.
+
+Cuando hacemos referencia a una variable, javascript busca su definicion en cada entorno, o Scope, esto depende de como (var, const, let) y donde la declaremos (fuera o dentro de una funcion).
+
+```javascript
+var variable = "global"; // Variable global, todos pueden acceder a ella
+
+function test() { // Tiene acceso a variable y variable1
+    var variable1 = "hola"; // Variable local -hola
+}
+
+function test2() { // Tiene acceso a variable y variable1
+    var variable1 = "chau"; // Variable local - chau
+}
+```
+
+Entre scopes hay jerarquia. Primero se busca la variable en el mismo scope local, luego en el scope padre y luego el global.
+
+---
+
+## Currying
+
+
+Es una tecnica de programacion funcional donde meto una funcion dentro de otra, y todas estas reciben solo un parametro a la vez. 
+
+```typescript
+function multiply(a: number): (b: number) => number {
+    return function(b: number): number {
+        return a * b;
+    };
+}
+
+// Uso de la función curried
+const multiplyByTwo = multiply(2);
+const result = multiplyByTwo(3);  // result será 6
+console.log(result);
+```
+
+En este ejemplo, multiply es una función que toma el primer número, a, y devuelve otra función que toma el segundo número, b. La función devuelta realiza la multiplicación de a y b.
+
+Al dividir todo en pequenias funciones, hace que la reutilizacion de codigo sea mucho mejor. 
+
+---
+
+## Web y Service Workers
+
+Como se menciono anteriormente, Javascript es single-thread, y esto puede ser un problema cuando se trata de operaciones pesadas o que se deben realizar en segundo plano. Para esto se crearon los Service Workers, que son scripts que se ejecutan en segundo plano y que permiten realizar operaciones como notificaciones push, actualizaciones de contenido, y manejo de cache. Es especialmente util tambien cuando quiero que mi app tenga cierta funcionalidad offline.
+
+Los Service Workers son eventos que se ejecutan en segundo plano y que no tienen acceso al DOM, pero si pueden comunicarse con la pagina principal mediante mensajes.
+
+```javascript
+// service-worker.js
+self.addEventListener('fetch', event => {
+    event.respondWith(
+        caches.match(event.request).then(response => {
+            return response || fetch(event.request);
+        })
+    );
+});
+```
+
+```javascript
+// main.js
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js')
+        .then(registration => console.log('Service Worker registrado'))
+        .catch(error => console.error('Error al registrar el Service Worker', error));
+}
+```
+
+---
+
+## `isNaN` vs `Math.isNaN`
+
+NaN son operaciones aritmeticas que no pueden ser representadas correctamente. Ambas funciones tienen como objetivo identificar si un valor es NaN. `isNaN` global aplica una coercion de tipos al argumento que le pasamos, `Math.isNan` no lo hace, lo que hace que sea mas seguro de usar para valores no numericos.
+
+```jsx
+isNaN('denu') // devolvera true porque primero intentará convertir la cadena a un numero
+Number.isNaN('denu') // false porque no convertirá la cadena a numero
+```
+
+---
+
+## `class` vs `function`
+
+class tiene un alcance comprendido por llaves, al igual que las variables let. function es local a la funcion donde fue definida, no podemos usar una clase o funcion constructora por fuera del alcance en donde se encuentra.
+
+```jsx
+// Class
+{
+  class C {
+  }
+}
+
+// Function
+function x () {
+  function C () {
+  }
+}
+
+// uso de ambas
+try {
+  const obj = new C();
+  console.assert( false );
+} catch (err) {
+  console.assert(
+    err.message === 'C is not defined'
+  );
+}
+```
+
+Ambas pueden ser definidas de forma anonima. Sus referencias funcionan igual que con object, no se envia una copia, si no una referencia de la misma.
+
+```jsx
+const C = class {};
+const C = function () {};
+
+console.assert( typeof  C === 'function' );
+```
+
+---
+
+## Truthy and Falsy
+
+En JavaScript, un valor se considera "falsy" si se convierte en `false` cuando se evalúa en un contexto booleano.
+
+```jsx
+// Falso
+Boolean(0); //false
+Boolean(null); //false
+Boolean(NaN); //false
+Boolean(undefined); //false
+Boolean(false); //false
+Boolean(""); //false
+
+// Verdadero:
+Boolean(1); //true para 1 o cualquier número diferente de cero (0)
+Boolean("a"); //true para cualquier caracter o espacio en blanco en el string
+Boolean([]); //true aunque el array esté vacío
+Boolean({}); //true aunque el objeto esté vacío
+Boolean(function(){}); //Cualquier función es verdadera también
+```
+
+---
+
+## Hoisting
+
+
+Es un mecanismo de JS en el que las variables y declaraciones de funciones se mueven a la parte superior de su ambito antes de la ejecucion del codigo.
+
+```jsx
+console.log (saludar);
+    var saludar = "dice hola"
+
+// es decir
+
+var saludar;
+    console.log(saludar); // saludar is undefined
+    saludar = "dice hola"
+```
+
+Es el usar las variables antes de que sean declaradas.
+
+---
+
+## Primitivo vs Objeto
+
+- Los primitivos se pasan por valor, los objetos se pasan por referencia
+- Los primitivos se copian por valor y los objetos se copian por referencia
+- Los primitivos se comparan por valor y los objetos por referencia
+- Los primitivos son inmutables, el unico elemento inmutable del objeto es su referencia, el valor puede ser modificado.
+
+Casos **primitivos**
+
+```jsx
+let animal = ‘perro’
+let mascota = animal
+animal = 'gato'
+console.log(mascota) // perro, se copio por valor y no referencia
+```
+
+Caso **objetos**
+
+```jsx
+let animal = {
+  nombre: 'perro'
+}
+
+let mascota = animal
+animal.especie = 'gato'
+console.log(mascota.nombre) // gato, se copio referencia no valor
+```
+
+---
+
+## Declarativa vs Expresiva
+
+
+En las **Funciones Declarativas** usamos la palabra reservada `Function` para poder declararla
+
+```jsx
+ function saludar(nombre) {
+  console.log(`Hola ${nombre}`);
+}
+
+saludar('Diego');
+```
+
+La **Expresiva (Expresion de Funcion)** es cuando la declaramos tipo variable como funcion anonima
+
+```jsx
+var nombre = function(nombre){
+    console.log(`Hola ${nombre}`)
+}
+
+nombre(‘Diego’);
+```
+
+A las funciones declarativas se les aplica hoisting, a la otra no, hoisting se aplica solo a las palabra sreservadas `var` y `function`, es decir, a la expresion de funcion podriamos llamarla recien despues de declararla.
+
+---
+
+## Event Loop
+
+El Event Loop es un bucle que se encarga de manejar los eventos y las operaciones asincronas en Javascript.
+
+- **Call Stack**: Es donde se guardan las operaciones sincronas, y se ejecutan en orden de llegada.
+- **Web API**: Es donde se guardan las operaciones asincronas, como `setTimeout`, `fetch`, `addEventListener`, etc.
+- **Callback Queue**: Es donde se guardan las operaciones que se deben ejecutar una vez que el Call Stack este vacio, como los Callbacks.
+- **Event Loop**: Es el encargado de chequear el Call Stack y el Callback Queue, y si el Call Stack esta vacio, toma la primera operacion de la Callback Queue y la pone en el Call Stack.
+- **Microtask Queue**: Es donde se guardan las Promises, y tiene prioridad sobre el Callback Queue.
+
+```javascript
+console.log('Inicio');
+
+setTimeout(() => console.log('Timeout'), 0);
+
+console.log('Fin');
+```
+
+En este caso, el `setTimeout` se va a ejecutar una vez que el Call Stack este vacio, por lo que el orden de ejecucion va a ser `Inicio`, `Fin`, `Timeout`.
+En el caso de las Promises, estas se ejecutan en el Microtask Queue, que tiene prioridad sobre el Callback Queue.
+
+```javascript
+console.log('Inicio');
+
+Promise.resolve().then(() => console.log('Promise'));
+
+console.log('Fin');
+```
+
+En este caso, el orden de ejecucion va a ser `Inicio`, `Fin`, `Promise`, ya que las Promises se ejecutan en el Microtask Queue.
+
+En el caso de los Callbacks, estos se ejecutan en el Callback Queue, y se ejecutan una vez que el Call Stack este vacio.
+
+```javascript
+console.log('Inicio');
+
+setTimeout(() => console.log('Timeout'), 0);
+
+Promise.resolve().then(() => console.log('Promise'));
+
+console.log('Fin');
+```
+
+Y en el caso de async-await se ejecutan en el Microtask Queue, por lo que tienen prioridad sobre los Callbacks.
+
+```javascript
+console.log('Inicio');
+
+(async () => {
+    await Promise.resolve();
+    console.log('Async');
+})();
+
+console.log('Fin');
+```
+
+---
+
+## `setTimeout`
+
+`setTimeout` es una funcion que permite ejecutar una funcion o un bloque de codigo despues de un tiempo determinado. Se utiliza para programar la ejecucion de una tarea en el futuro.
+
+```jsx
+console.log('Inicio');
+
+setTimeout(function() {
+  console.log('Esto se ejecuta despues de 2 segundos');
+}, 2000);
+
+console.log('Fin');
+```
+
+En este ejemplo, la funcion dentro de `setTimeout` se ejecutara despues de 2 segundos, mientras que el resto del codigo continuara ejecutandose sin esperar.
+
+---
+
+## `Map` vs `Weakmap`
+
+
+Son casi iguales, son la clasica estructura de datos de diccionario, su diferencia es que se puede acceder a los clave-valores de un Map usando .values o .keys, en un Weakmap no se puede hacer eso.
+
+```jsx
+const map = new Map()
+const weakMap = new weakMap()
+
+const obj = {
+  hola: 'mundo',
+}
+
+map.set('denu', 'lemon')
+weakMap.set(myObjKey, 'lemon weakmap')
+
+// Map
+map.get('denu') // lemon
+map.keys() // {'denu'}
+map.values() // {'lemon'}
+
+// Weakmap
+weakMap.get(obj) // lemon weakmap
+weakMap.keys() // ERROR
+weakMap.values() // ERROR
+```
+
+Weakmap es una caja negra en donde solo se puede acceder a los valores si se tiene la Key.
+
+Weakmap, ademas, solo admite objetos como clave, estos estan debilmente referenciados por lo que puede ser recolectados por el garbage collector de JS si asi lo considera, destruyendo esa entrada en el Weakmap y liberando memoria.
+
+--- 
+
+## Template Literals
+
+Con **template literals**:
+
+```jsx
+const person = {
+  name: "Zodiac Hasbro",
+  age: 56
+};
+
+// Template literal with multi-line and string interpolation
+const greeting = `Hello, my name is ${person.name}!
+I am ${person.age} years old.`;
+
+console.log(greeting); // prints
+// Hello, my name is Zodiac Hasbro!
+// I am 56 years old.
+```
+
+Se usa otro tipo de “comilla” cuando se quiere invocar al String (`) y no es necesario poner /n para que se haga un salto de línea en el texto de salida
+
+## `export default` - Módulos ES6
+
+Lo mismo que el anterior, sí queremos exportar una funcion, cuando la declaramos, la exportamos. Se usa cuando quiero exportar solo un valor o funcion, solo puedo elegir un valor que tenga esta propiedad de exportacion, tampoco se puede usar con const, var o let.
+
+```jsx
+export default function add(x,y) {
+  return x + y;
+}
+```
+
+Despues lo importo agregandole un nombre de variable cualquiera e invocandolo normalmente.
+
+```jsx
+import add from "math_functions";
+add(5,4); //Devuelve el resultado de acuerdo al metodo exportado anteriormente
+```
+
+## `import` vs `require`
+
+- `Require`: Se usa para importar las funciones y el codigo en un archivo externo. Esto posee un problema, el cual es que este codigo puede ser muy largo y solo necesito una parte del codigo.
+- `Import`: Herramienta de ES6 para importar solo los componentes que necesitamos de un archivo.
+
+```jsx
+import { countItems } from "math_array_functions"
+```
+
+## `Object.freeze` - Inmutabilidad
+
+Con `Object.freeze` se puede hacer que un objeto sea inmutable. Es una funcion que evita que puedas modificar propiedades de un objeto o una variable
+
+```jsx
+let obj = {
+  name:"FreeCodeCamp",
+  review:"Awesome"
+};
+Object.freeze(obj);
+obj.review = "bad"; //will be ignored. Mutation not allowed
+obj.newProp = "Test"; // will be ignored. Mutation not allowed
+console.log(obj);
+// { name: "FreeCodeCamp", review:"Awesome"}
+```
+
+Cuando intento modificar algo, no tira error, simplemente lo ignora.
+
+## Destructuración
+
+La destructuración es una expresión de JavaScript que permite desempaquetar valores de arreglos o propiedades de objetos en distintas variables.
+
+```jsx
+const person = {
+  name: "denu",
+  age: 25
+};
+
+const {name, age} = person;
+console.log(name, age); // denu 25
+```
+
+Esto no ahorra tener que crear dos variables distintas en dos lineas distintas y asignarlas de manera independiente.
+
+---
+
+## Set vs Map
 
 Los 3 son colecciones pero tienen caracteristicas distintas entre si.
 
@@ -1137,7 +1235,7 @@ Ninguno de los `weak` es enumerable, es decir, no se pueden iterar sobre ellos.
 
 ---
 
-### Parametros por valor y por referencia
+## Parametros por valor y por referencia
 
 En Javascript podemos pasar como parametro valores que pueden ser por valor en si mismo o por referencia, es decir, pasamos el puntero de memoria que apunta a la direccion de memoria donde se encuentra el valor.
 
@@ -1180,7 +1278,7 @@ function modificarArray(array) {
 
 ---
 
-### Prototype
+## Prototype
 
 `Prototype` permite que objetos y funciones en Javascript compartan propiedades y metodos entre si.
 
@@ -1243,130 +1341,11 @@ console.log(Object.prototype.__proto__); // null
 
 En resumen, prototype es la base del funcionamiento de objetos y de la herencia en JS.
 
----
 
-### `array-like`
-
-Es un tipo de dato similar a un Array pero que no posee todas las funciones heredadas de Prototype de un Array.
-
-Un array-like es un objeto que tiene propiedades indexadas y una propiedad length. Aunque no es un array, se comporta como tal. Por ejemplo, el objeto arguments es un array-like.
-
-```javascript
-// Definición de un objeto "array-like"
-var arrayLike = {
-  0: 'a',
-  1: 'b',
-  2: 'c',
-  length: 3 // La propiedad length es importante para que se comporte como un array
-};
-
-// Acceder a elementos
-console.log(arrayLike[0]); // Imprime: 'a'
-console.log(arrayLike[1]); // Imprime: 'b'
-
-// Iteración sobre el objeto "array-like"
-for (var i = 0; i < arrayLike.length; i++) {
-  console.log(arrayLike[i]);
-}
-// Imprime:
-// 'a'
-// 'b'
-// 'c'
-```
-
-Es un objeto, no es un array. Para pasar su valor a un array, debo usar el spread operator
-
-```javascript
-var array = [...arrayLike];
-console.log(array); // Imprime: ['a', 'b', 'c']
-```
 
 ---
 
-### Arrays
-
-```jsx
-// Agrega al final
-[1,2,3].push(4) // [1,2,3,4]
-
-// Quita y devuelve el último elemento
-[1,2,3].pop() // [1,2]
-
-// Quita y devuelve el primer elemento
-[1,2,3].shift() // [2,3]
-
-// Agrega al principio
-[1,2,3].unshift(0) // [0,1,2,3]
-
-//  Combina dos o más arreglos y devuelve un nuevo arreglo - los CONCATENA
-const arr1 = [1, 2, 3];
-const arr2 = [4, 5, 6];
-arr1.concat(arr2); // [1, 2, 3, 4, 5, 6]
-
-// Devuelve un array donde cada elemento del array tiene en el medio
-// el valor pasado como argumento
-['a', 'b'].join('-') // a-b
-
-// Devuelve una copia superficial de una porción del arreglo en un nuevo arreglo seleccionando los elementos desde el inicio hasta el final (o hasta un índice especificado).
-const arr = [1, 2, 3, 4, 5];
-arr.slice(1, 4); // Copia desde el índice 1 hasta el índice 3 [2, 3, 4]
-
-// Devuelve el index del elemento, si no lo encuentra, devuelve -1
-['a', 'b'].indexOf('b') // 1
-
-// Devuelve si el elemento existe en el array
-['a', 'b'].includes('b') // true
-
-// Devuelve el primer elemento que cumple con la condición
-[3,5,6,8].find((valorActual) => valorActual % 2 === 0) // 6
-
-// Devuelve el index del primer elemento que cumple con la condición
-[2,4,3,5].findIndex((valorActual) => valorActual % 2 !== 0) // 2
-
-// Devuelve un nuevo array con los elementos modificados, en este caso los multiplica por 2. Devuelve un nuevo array, no muta el array modificado
-const array = [3,4,8,6].map((n) => n * 2) // [6,8,16,12]
-
-// Devuelve un nuevo array con los elementos que cumplan con la condición
-// Si el valorActual cumple con la condicion, queda en el array, de lo contrario, se quita
-[1,4,7,8].filter((valorActual) => valorActual % 2 === 0) // [4,8]
-
-// Devuelve un solo valor, en este caso la suma de los elementos
-[2,4,3,7].reduce((accumulator, currentValue) => accumulator + currentValue) // 16
-
-// El accomulator puede ser inicializado de antemano, si no, se toma como valor inicial el primer elemento del array
-[2,4,3,7].reduce((accumulator, currentValue) => accumulator + currentValue, 0)
-
-// Devuelve true si todos los elementos cumplen con la condicion
-[2,3,4,5].every((valorActual) => valorActual < 6) // true
-
-// Devuelve true si algunos de los elementos cumplen con la condicion
-[3,5,6,8].some((valorActual) => valorActual > 6) // true
-
-// Cambia el contenido de un arreglo eliminando elementos existentes y/o agregando nuevos elementos.
-const arr = [1, 2, 3, 4, 5];
-arr.splice(2, 1, "a", "b"); // Elimina 1 elemento desde el índice 2 y agrega "a" y "b" [1, 2, "a", "b", 4, 5]
-splice(indice, cantidad elementos a eliminar, agrego, agrego);
-
-// Da vuelta el Array
-[1,2,3,4].reverse() // [4,3,2,1]
-
-// Devuelve, si es positivo, el elemento en el lugar 2 (0,1,2), caso negativo, contando desde el final.
-[5, 12, 8, 130, 44].at(-2) // 130
-[5, 12, 8, 130, 44].at(2) // 8
-
-// Recorre el array
-[1,2,3].forEach(x => console.log(x))
-
-// Conviene valores a un array
-"hola".split() => ['h','o','l','a'];
-//Se puede separar la palabra dependiendo de un regex
-"hola, denu".split(/,\s*/g) => ['hola', 'denu'];
-
-```
-
----
-
-### `event.preventDefault()`
+## `event.preventDefault()`
 
 Los botones de los form en HTML por defecto hacen un submit, lo que puede llevar a que se recargue la pagina. Para evitar esto, se usa `event.preventDefault()` para evitar que se ejecute el comportamiento por defecto del evento.
 
@@ -1382,18 +1361,83 @@ U otro ejemplo es para evitar que el resto de eventos que se ejecutarian por def
 
 ---
 
-### Set vs Array
+## **Preguntas frecuentes**
 
-| Set | Array |
-| --- | ----- |
-| Almacena valores únicos | Almacena valores duplicados |
-| No tiene índices | Tiene índices |
-| No tiene métodos como `push(), pop(), shift(), unshift()` | Tiene métodos como `push()`, `pop()`, `shift()`, `unshift()` |
-| No tiene métodos como `map(), filter(), reduce()` | Tiene métodos como `map(), filter(), reduce()` |
-| No tiene métodos como `sort(), reverse()` | Tiene métodos como `sort(), reverse()` |
-| No tiene métodos como `find(), findIndex(), every(), some()` | Tiene métodos como `find(), findIndex(), every(), some()` |
-| No tiene métodos como `splice(), slice()` | Tiene métodos como `splice(), slice()` |
-| No tiene métodos como `join(), concat()` | Tiene métodos como `join(), concat()` |
+### Comparar dos Objetos con `===`, es posible?
+
+No, en JavaScript, dos objetos no son iguales a menos que sean la misma referencia en memoria. Incluso si dos objetos tienen las mismas propiedades y valores, se consideran diferentes si no son la misma instancia.
+
+```javascript
+const obj1 = { a: 1, b: 2 };
+const obj2 = { a: 1, b: 2 };
+const obj3 = obj1;
+
+console.log(obj1 === obj2); // false
+console.log(obj1 === obj3); // true
+```
+
+La forma de compararlos serialmente es convertirlos a JSON:
+
+```javascript
+const obj1 = { a: 1, b: 2 };
+const obj2 = { a: 1, b: 2 };
+
+console.log(JSON.stringify(obj1) === JSON.stringify(obj2)); // true
+```
+
+O usando lodash, `_.isEqual(obj1, obj2)`.
+
+### Clonar Objetos
+
+```jsx
+let object = {a: 1, b:2};
+let referencia = object; // Esto es solo una referencia
+
+let clone = {...object}; // Esto si es un clon
+let clone2 = Object.assign({}, object);// Esto si es un clon
+
+clone.foo = "foo";
+clone2.foo = "denu";
+
+console.log(object);// { a: 1, b: 2 }
+console.log(referencia); // { a: 1, b: 2 }
+console.log(clone); // { a: 1, b: 2, foo: 'foo' }
+```
+
+
+### Manejo de errores en Promises
+
+Para manejar un error en una promesa se usa el metodo `catch()`
+
+```jsx
+const myPromise = new Promise((resolve, reject) => {
+  if (Math.random() * 100 < 90) {
+    resolve('Hello, Promises!');
+  }
+  reject(new Error('In 10% of the cases, I fail. Miserably.'));
+});
+
+myPromise.then((resolvedValue) => {
+  console.log(resolvedValue);
+}).catch((error) => {
+  console.log(error);
+});
+```
+
+### Manejo de errores en `async-await`
+
+Para manejar errores en funciones con async/await de forma eficiente, se puede usar un bloque `try/catch` para manejar errores de manera sincrona.
+
+```jsx
+async function myAsyncFunction() {
+  try {
+    const value = await promise;
+    console.log(value);
+  } catch (error) {
+    console.error(error);
+  }
+}
+```
 
 ---
 
@@ -1436,26 +1480,6 @@ Se utiliza cuando se necesita esperar a que todas las promesas se resuelvan para
 
 ---
 
-### ¿Cómo se maneja un error en una promesa?
-
-Para manejar un error en una promesa se usa el metodo `catch()`
-
-```jsx
-const myPromise = new Promise((resolve, reject) => {
-  if (Math.random() * 100 < 90) {
-    resolve('Hello, Promises!');
-  }
-  reject(new Error('In 10% of the cases, I fail. Miserably.'));
-});
-
-myPromise.then((resolvedValue) => {
-  console.log(resolvedValue);
-}).catch((error) => {
-  console.log(error);
-});
-```
-
----
 
 ### `Promise.allSettled`
 
@@ -1645,8 +1669,6 @@ async function fetchData() {
 
 ### ¿Cómo manejarías errores en funciones con async/await de forma eficiente?
 
-[Volver al indice](#alg-base-async)
-
 Para manejar errores en funciones con async/await de forma eficiente, se puede usar un bloque `try/catch` para manejar errores de manera sincrona.
 
 ```jsx
@@ -1659,4 +1681,5 @@ async function myAsyncFunction() {
   }
 }
 ```
+
 

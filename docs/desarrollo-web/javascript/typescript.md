@@ -148,6 +148,8 @@ let tuplaRest: [string, ...number[]] = ['Denu', 1, 2, 3];
 
 ---
 
+---
+
 
 ### `Never`
 
@@ -192,6 +194,61 @@ En Javascript se traspilaria a
 let variable = 'Denu';
 variable = 22;
 variable = true;
+```
+
+---
+
+### `Null` vs `undefined` vs `never`
+
+`null` y `undefined` son valores que existen tanto en JS como en TS, pero `never` es propio de TS.
+
+`null` es ningun valor en particular, califica como inicializacion en si mismo. 
+`undefined` es el valor por defecto de una variable que no ha sido inicializada.
+`never` es un tipo que representa un valor que nunca sucedera. Aparece seguido en errores de compilacion cuando se declara un array pero, o no se inicializa o no se declara de que tipo es, y se intenta hacer alguna operacion con la misma.
+
+```typescript
+let a: null = null;
+let b: undefined = undefined;
+
+let c: never = (() => {
+  throw new Error("Error");
+})();
+```
+
+---
+
+### `any` vs `unknown` vs `never`
+
+- `any` : desactiva el chequeo. Podés asignar/callar/operar sin seguridad.
+
+```ts
+// any: podés hacer cualquier cosa
+let a: any = 5;
+a = "hola";
+a.noExiste(); // no error
+```
+
+- `unknown` : acepta cualquier valor, pero no te deja usarlo sin validar (type guard).
+
+```ts
+// unknown: tenés que validar
+let u: unknown = "hola";
+// u.toUpperCase(); // error
+
+if (typeof u === "string") {
+  u.toUpperCase(); // OK
+}
+
+```
+
+- `never` : representa “nunca ocurre”. Se usa en funciones que no retornan o en ramas imposibles.
+
+```ts
+// never: nunca ocurre
+function crash(): never {
+  throw new Error("boom");
+}
+
 ```
 
 ---
@@ -490,24 +547,7 @@ type Test1 = IsString<string>; // 'yes'
 type Test2 = IsString<number>; // 'no'
 ```
 
----
 
-### `Null` vs `undefined` vs `never`
-
-`null` y `undefined` son valores que existen tanto en JS como en TS, pero `never` es propio de TS.
-
-`null` es ningun valor en particular, califica como inicializacion en si mismo. 
-`undefined` es el valor por defecto de una variable que no ha sido inicializada.
-`never` es un tipo que representa un valor que nunca sucedera. Aparece seguido en errores de compilacion cuando se declara un array pero, o no se inicializa o no se declara de que tipo es, y se intenta hacer alguna operacion con la misma.
-
-```typescript
-let a: null = null;
-let b: undefined = undefined;
-
-let c: never = (() => {
-  throw new Error("Error");
-})();
-```
 
 ---
 
