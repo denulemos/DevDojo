@@ -1,6 +1,6 @@
 ---
 id: algoritmos
-title: Algoritmos
+title: 🔢 Algoritmos
 ---
 
 ## **Algoritmos de Búsqueda**

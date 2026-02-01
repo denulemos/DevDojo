@@ -1,4 +1,4 @@
-# 🗂️ Versionado (Git/Mercurial)
+# 🗂️ Versionado
 
 ### **Git vs Mercurial**
 

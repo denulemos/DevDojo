@@ -1,4 +1,4 @@
-# 🚀 CI/CD (Integración y entrega continua)
+# 🚀 CI/CD
 
 ### **¿Qué es CI/CD?**
 
