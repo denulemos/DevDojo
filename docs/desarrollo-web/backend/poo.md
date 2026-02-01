@@ -1,7 +1,13 @@
 # ✏️ Programación Orientada a Objetos
 
-Ejemplos en **Java**
+*Cuando en las entrevistas se realizan preguntas sobre POO, estas suelen ser bastante “vagas” en sí mismas, ya que la idea es ver cómo el candidato entiende el problema antes de escribir cualquier solución.*
 
+*A la hora de enfrentar este tipo de preguntas, se deben tener en cuenta las 6 W (por sus siglas en inglés): who, what, where, when, how, why.*
+
+*Por ejemplo, si se nos pide describir la estructura de una máquina de café, es necesario conocer diversos parámetros, como qué tipo de máquina es, si es industrial, quién será el usuario, etc. Todos estos detalles van a impactar de manera significativa en el diseño del sistema. Luego podremos pasar a evaluar las entidades, sus relaciones y sus usos.*
+
+
+Ejemplos en **Java**
 
 ### Que es la programacion orientada a objetos?
 

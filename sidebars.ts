@@ -24,6 +24,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'algoritmos',
         'desarrollo-web/backend/poo',
+        'patrones',
       ],
     },
     'accesibilidad/accesibilidad',
@@ -88,6 +89,7 @@ const sidebars: SidebarsConfig = {
       collapsed: true,
       items: [
         'microfrontends',
+        'systemdesign'
       ],
     },
   ],
