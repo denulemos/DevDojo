@@ -1,5 +1,63 @@
 # 🚀 Java 
 
+## Overloading vs Overriding
+
+**Overloading** es un termino usado para describir cuando dos metodos tienen el **mismo nombre** pero tienen un distinto numero o tipo de parametros. Una misma clase tiene varios métodos con mismo nombre pero distintos parámetros. Se decide en tiempo de compilación.
+
+```js
+public double compute(Circle c){}
+public double compute(Square s){}
+```
+
+**Overriding** es cuando una clase hija redefine un método de su clase padre para darle un comportamiento propio. Debe tener el mismo nombre, mismos parámetros y mismo tipo de retorno (o un subtipo compatible)
+
+Se usa para cambiar cómo se comporta un método heredado
+
+```js
+class Animal {
+    void sonido() {
+        System.out.println("Sonido genérico");
+    }
+}
+
+class Perro extends Animal {
+    @Override
+    void sonido() {
+        System.out.println("Guau");
+    }
+}
+
+// Uso
+public class Main {
+    public static void main(String[] args) {
+        Animal a = new Animal();
+        Animal p = new Perro();
+
+        a.sonido(); // Sonido genérico
+        p.sonido(); // Guau
+    }
+}
+```
+
+Ahora veamos un ejemplo de ambos
+
+```js
+class Animal {
+    void sonido() { System.out.println("Genérico"); } // se puede override
+}
+
+class Perro extends Animal {
+    @Override
+    void sonido() { System.out.println("Guau"); } // overriding
+}
+
+class Calculadora {
+    int suma(int a, int b) { return a + b; }
+    int suma(int a, int b, int c) { return a + b + c; } // overloading
+}
+```
+
+
 ## **Funciones**
 
 Las funciones en Java poseen la siguiente estructura:

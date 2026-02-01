@@ -1,6 +1,6 @@
 ---
 id: patrones
-title: 🧠 Patrones de diseño
+title: 🧩 Patrones de diseño
 ---
 
 ## Singleton
