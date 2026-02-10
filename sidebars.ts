@@ -79,6 +79,7 @@ const sidebars: SidebarsConfig = {
         'desarrollo-web/backend/java',
         'desarrollo-web/nodejs',
         'desarrollo-web/backend/basesDatos',
+        'api',
       ],
     },
     'seguridad',
