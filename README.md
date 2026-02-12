@@ -28,7 +28,7 @@ Preguntas son agregadas todas las semanas. Se aceptan sugerencias mediante Pull 
 - [Programación Orientada a Objetos](./docs/desarrollo-web/backend/poo.md)
 - [React](./docs/desarrollo-web/react.md)
 - [System Design](./devdojo-docs/docs/systemdesign.md)
-- [Seguridad)](./devdojo-docs/docs/seguridad.md)
+- [Seguridad](./docs/seguridad.md)
 - [Typescript](./docs/desarrollo-web/javascript/typescript.md)
 - [Versionado (Git/Mercurial)](./docs/versionado.md)
 
