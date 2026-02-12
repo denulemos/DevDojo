@@ -25,6 +25,7 @@ Preguntas son agregadas todas las semanas. Se aceptan sugerencias mediante Pull 
 - [Java](./docs/desarrollo-web/backend/java.md)
 - [Javascript](./docs/desarrollo-web/javascript/javascript.md)
 - [NodeJS](./docs/desarrollo-web/nodejs.md)
+- [Microfrontends](./docs/microfrontends.md)
 - [Programación Orientada a Objetos](./docs/desarrollo-web/backend/poo.md)
 - [React](./docs/desarrollo-web/react.md)
 - [System Design](./docs/systemdesign.md)

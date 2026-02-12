@@ -57,6 +57,7 @@ const sidebars: SidebarsConfig = {
         'desarrollo-web/react',
         'desarrollo-web/scss',
         'desarrollo-web/html',
+        'ssr',
       ],
     },
     
@@ -86,7 +87,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: '🧠 Arquitectura',
-      link: { type: 'doc', id: 'arquitectura' },
+      link: { type: 'doc', id: 'landing/arquitectura' },
       collapsed: true,
       items: [
         'microfrontends',
