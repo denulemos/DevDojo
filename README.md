@@ -16,6 +16,7 @@ Preguntas son agregadas todas las semanas. Se aceptan sugerencias mediante Pull 
 
 - [Accesibilidad](./docs/desarrollo-web/html.md)
 - [Algoritmos (Incompleto)](./docs/algoritmos.md)
+- [APIs)](./docs/api.md)
 - [Angular](./docs/desarrollo-web/angular.md)
 - [Bases de Datos](./docs/desarrollo-web/backend/basesDatos.md)
 - [CI/CD (Integración y entrega continua)](./devdojo-docs/docs/cicd.md)
@@ -26,6 +27,7 @@ Preguntas son agregadas todas las semanas. Se aceptan sugerencias mediante Pull 
 - [NodeJS](./docs/desarrollo-web/nodejs.md)
 - [Programación Orientada a Objetos](./docs/desarrollo-web/backend/poo.md)
 - [React](./docs/desarrollo-web/react.md)
+- [System Design](./devdojo-docs/docs/systemdesign.md)
 - [Seguridad)](./devdojo-docs/docs/seguridad.md)
 - [Typescript](./docs/desarrollo-web/javascript/typescript.md)
 - [Versionado (Git/Mercurial)](./docs/versionado.md)
