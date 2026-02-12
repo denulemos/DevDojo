@@ -1,10 +1,38 @@
-# 🔌 APIs
+﻿# 🔌 APIs
 
 ## ¿Qué es una API?
 
 Una API (Application Programming Interface) es un conjunto de reglas y protocolos que siguen las aplicaciones para comunicarse entre ellas.
 
 Por ejemplo, si se tiene una aplicación que informa sobre el clima, esta información no está directamente puesta en la aplicación, sino que esta llama a un servicio que provee los datos correspondientes para mostrarlos.
+
+## Seguridad en la API
+
+La seguridad de una API se asegura que solo clientes autenticados y autorizados puedan acceder a los recursos. Algunas medidas que se pueden tomar son:
+
+- HTTPS (SSL - TLS Encryption)
+- Authentication ([JWT](#jwt), [OAuth](#oauth), API Keys)
+- [Authorization](#authentication-vs-authorization) (Acceso basado en Roles)
+- Input Validation
+- Rate Limiting
+- Firewalls
+
+Por ejemplo, en una app bancaria:
+
+- HTTPS encripta las transacciones
+- JWT valida a los usuarios
+- Rate Limiting evita posibles ataques
+- Input Validation previene ataques del tipo SQL Injection
+
+## Manejo de errores
+
+Las mejores prácticas para esto son:
+
+- Devolver los códigos HTTP correspondientes, hay servicios que devuelven siempre un `200 OK` y envían el error en el payload, esto **no** es correcto.
+- Registrar errores 
+- No exponer stack traces internos del sistema
+
+Se recomienda tener un **manejo de errores centralizado** como un Middleware (ExpressJS) o Spring Boot Global Handler
 
 ## REST API
 
@@ -19,7 +47,7 @@ Por ejemplo, una aplicación de comida usa las siguientes REST APIs:
 
 ### REST Constraint
 
-Estas son reglas que definen como una REST API deberia funcionar.
+Estas son reglas que definen cómo una REST API debería funcionar.
 
 1. Client-Server
 2. Stateless
@@ -123,19 +151,19 @@ Estos parámetros son opcionales, generalmente son usados en servicios de búsqu
 
 ## Path Parameters
 
-Son variables embebidas en la URL que indican un recurso especifico. Son parte de la URL
+Son variables embebidas en la URL que indican un recurso específico. Son parte de la URL
 
-Por ejemplo: `DELETE /api/orders/123`, indica que hay que eliminar la orden numero 123
+Por ejemplo: `DELETE /api/orders/123`, indica que hay que eliminar la orden número 123
 
-Estos parametros son obligatorios y representan indicadores unicos de los recursos. 
+Estos parámetros son obligatorios y representan indicadores únicos de los recursos. 
 
 ## Versioning - Versionado
 
-El Versioning o Versionado es importante ya que es una manera de actualizar APIs sin romper aplicaciones legacy. Por ejemplo, si cambiamos un recurso llamado `name` por `fullname` es mejor hacerlo con la implementacion de dos APIs, la primera podria ser `/api/v1/users` y la segunda `/api/v2/users`.
+El Versioning o Versionado es importante ya que es una manera de actualizar APIs sin romper aplicaciones legacy. Por ejemplo, si cambiamos un recurso llamado `name` por `fullname` es mejor hacerlo con la implementación de dos APIs, la primera podría ser `/api/v1/users` y la segunda `/api/v2/users`.
 
 ## CORS
 
-(Ejemplos con Express en la seccion NodeJS)
+(Ejemplos con Express en la sección NodeJS)
 
 CORS (Cross-Origin Resource Sharing) es una forma de decirle a los navegadores que está bien compartir recursos (como datos de una API) entre diferentes dominios. Por defecto, los navegadores bloquean solicitudes de un dominio a otro por razones de seguridad. CORS permite que un servidor diga: "Está bien, este dominio puede acceder a mis datos".
 
@@ -148,19 +176,19 @@ En resumen, CORS es como un portero que decide quién puede entrar a tu API. Con
 
 ## Authentication vs Authorization
 
-- **Authentication**: Pregunta quien sos
-- **Authorization**: Pregunta que tenes permitido (Ya sabiendo quien sos)
+- **Authentication**: Pregunta quién sos
+- **Authorization**: Pregunta qué tenés permitido (ya sabiendo quién sos)
 
 ### JWT
 
-JSON Web Token es una herramienta compacta que ofrece un token de seguridad para la tramision de informacion entre el cliente y el servidor.
+JSON Web Token es una herramienta compacta que ofrece un token de seguridad para la transmisión de información entre el cliente y el servidor.
 
 Una vez que un usuario se logea en el sistema, recibe un JWT que le permite acceder a todos los recursos para los cuales tiene permiso, y este es enviado en cada request. 
 
 Consiste de 3 partes: **Header.Payload.Signature**
 
 - **Header**: El tipo de token y su algoritmo
-- **Payload**: La informacion del usuario y sus permisos
+- **Payload**: La información del usuario y sus permisos
 - **Signature**: Verifica la integridad del token
 
 ```
@@ -171,7 +199,7 @@ Consiste de 3 partes: **Header.Payload.Signature**
 }
 ```
 
-1. El usuario envia sus credenciales (`POST /login`)
+1. El usuario envía sus credenciales (`POST /login`)
 2. El servidor valida estas credenciales
 3. El servidor genera JWT
 4. JWT es enviado al cliente
@@ -182,7 +210,7 @@ Este proceso se llama **stateless auth flow**
 
 ### OAuth
 
-Es un framework de autorizacion que permite que aplicaciones third-party accedan a la informacion del usuario sin exponer ninguna contraseña. 
+Es un framework de autorización que permite que aplicaciones third-party accedan a la información del usuario sin exponer ninguna contraseña. 
 
 Por ejemplo, el **Login de Google**, en donde la app nunca ve tu contraseña, y recibe un access token de Google. 
 
@@ -190,91 +218,91 @@ Por ejemplo, el **Login de Google**, en donde la app nunca ve tu contraseña, y 
 
 Este sirve para obtener un nuevo access token sin necesidad de pedirle al usuario que haga el login de vuelta. 
 
-- Puede tener tiempo de expiracion
+- Puede tener tiempo de expiración
 - Se puede refrescar cada cierto tiempo
-- No es necesario que el usuario se este logeando constantemente
+- No es necesario que el usuario esté iniciando sesión constantemente
 
 ## API Rate Limiting
 
-Este limita la cantidad de requests que puede realizar un cliente a un servicio en una ventana de tiempo, por ejemplo, 100 request por minuto por usuario.
+Este limita la cantidad de requests que puede realizar un cliente a un servicio en una ventana de tiempo, por ejemplo, 100 requests por minuto por usuario.
 
 - Previene abusos 
 - Protege recursos
 - Asegura el fair usage
 
-Una API sin esta proteccion se encuentra expuesta a:
+Una API sin esta protección se encuentra expuesta a:
 
 - Bot Attacks
 - Ataques DDoS
 - Crashes del servidor
 
-Cuando se sobrepasa este limite, el servicio devuelve un error `429 Too Many Requests`
+Cuando se sobrepasa este límite, el servicio devuelve un error `429 Too Many Requests`
 
 ## Idempotency - Idempotencia
 
-Una operacion es Idemponente - Idemponent si ante cada ejecucion produce el mismo resultado. Por ejemplo, `POST /payments (with idempotency-key)`, si el usuario reintenta esta operacion por un error de red, el pago o la ejecucion de esta request es hecha **una sola vez**
+Una operación es idempotente si ante cada ejecución produce el mismo resultado. Por ejemplo, `POST /payments (with idempotency-key)`, si el usuario reintenta esta operación por un error de red, el pago o la ejecución de esta request es hecha **una sola vez**
 
-Los metodos Idemponentes son `GET, PUT` y `DELETE`
+Los métodos idempotentes son `GET, PUT` y `DELETE`
 
-`POST` no es idemponente ya que crea un nuevo recurso en cada ejecucion. 
+`POST` no es idempotente, ya que crea un nuevo recurso en cada ejecución. 
 
 ## Pagination
 
-Esta divide datasets grandes en chunks mas pequeños para **mejorar la performance**
+Esta divide datasets grandes en chunks más pequeños para **mejorar la performance**
 
 Por ejemplo, en un feed de Instagram:
 
 - Se cargan de a 10 posts
 - Al realizar el scroll, se carga el siguiente chunk de 10 posts
 
-`GET /api/posts?page=2&limit=20` -> Devuelve la pagina dos, que posea hasta 20 posts 
+`GET /api/posts?page=2&limit=20` -> Devuelve la página dos, que posea hasta 20 posts 
 
-Existen dos approaches para la paginacion:
+Existen dos approaches para la paginación:
 
 - Offset-based pagination
-- Cursor-based pagination (mejor para datasets mas grandes)
+- Cursor-based pagination (mejor para datasets más grandes)
 
 ## API Gateway
 
-Es un entry point que maneja las requests cuando se tienen varios servicios backend. Se encarga de la Autenticacion, Rate Limiting, Routing y Logging.
+Es un entry point que maneja las requests cuando se tienen varios servicios backend. Se encarga de la Autenticación, Rate Limiting, Routing y Logging.
 
 - Facilita el monitoring
 - Centraliza la seguridad
-- Simplifica la logica del lado del cliente
+- Simplifica la lógica del lado del cliente
 
 Cliente -> API Gateway -> Microservicio correspondiente 
 
 ## REST vs SOAP
 
-SOAP (Simple Object Access Protocol) es un protocolo de mensajeria basado en XML, muy usado en bancos y en sistemas legacy.
+SOAP (Simple Object Access Protocol) es un protocolo de mensajería basado en XML, muy usado en bancos y en sistemas legacy.
 
 | Feature | REST | SOAP |
 | --- | --- | --- |
 | Protocolo | HTTP | XML Based |
 | Formato | JSON | XML |
-| Velocidad | Rapido | Mas lento |
+| Velocidad | Rápido | Más lento |
 | Complejidad | Simple | Complejo |
 | Uso | Web apps modernas | Sistemas legacy |
 
 ## Microservicios vs Monolito
 
-**Microservicios** es un conjunto de apps pequeñas que trabajan en conjunto, se comunican entre si mediante APIs. **Monolito** es una sola aplicacion "todo en uno".
+**Microservicios** es un conjunto de apps pequeñas que trabajan en conjunto, se comunican entre sí mediante APIs. **Monolito** es una sola aplicación "todo en uno".
 
 | Microservicios | Monolito |
 | ---- | ---- |
-| Conjunto de apps pequeñas que trabajan en conjunto | una sola aplicacion "todo en uno" |
-|Cada servicio tiene su deploy independiente|Deploy conjunto. Infraestructura unica|
+| Conjunto de apps pequeñas que trabajan en conjunto | una sola aplicación "todo en uno" |
+|Cada servicio tiene su deploy independiente|Deploy conjunto. Infraestructura única|
 |Se escala por servicio lo necesario|Se escala todo junto|
-|Stack distinto entre servicios|Stack unico|
+|Stack distinto entre servicios|Stack único|
 |Ideal para aplicaciones grandes y cuando se busca escalabilidad|Ideal para proyectos pequeños, MVPs o equipos reducidos|
 
 ### SLA, SLO y SLI
 
-Son metricas para medir la calidad de los servicios, especialmente en sistemas distribuidos como microservicios
+Son métricas para medir la calidad de los servicios, especialmente en sistemas distribuidos como microservicios
 
 SLI (medición real) → SLO (objetivo interno) → SLA (promesa al cliente)
 
-- **SLI (Service Level Indicator):** Es el termometro de la aplicacion, como la latencia, disponibilidad..
+- **SLI (Service Level Indicator):** Es el termómetro de la aplicación, como la latencia, disponibilidad..
 - **SLO (Service Level Objective):** Es el objetivo interno que nos ponemos basado en el SLI, por ejemplo, se quiere un 99% de uptime al mes. 
 - **SLA (Service Level Agreement):** Es lo que se garantiza al cliente, por ejemplo, garantizamos un 98% de uptime. Si esta se rompe, hay penalizaciones. 
 
@@ -285,14 +313,14 @@ SLI (medición real) → SLO (objetivo interno) → SLA (promesa al cliente)
 
 Lo que se debe buscar es este manejo es que sea **mantenible**, **reproducible** y **barato de mantener**.
 
-- Tener una sola politica de dependencias
+- Tener una sola política de dependencias
 - Versionado y actualizaciones controladas
 - Dedupe y overrides para evitar **dependency hell**
 - Compartir dependencias sin romper el aislamiento 
-- Enforzo límites con ESLint (ej: `eslint-plugin-boundaries`) o reglas del monorepo
-- Evito imports “cruzados” random entre apps: todo via paquetes con API pública.
+- Refuerzo límites con ESLint (ej: `eslint-plugin-boundaries`) o reglas del monorepo
+- Evito imports “cruzados” random entre apps: todo vía paquetes con API pública.
 
-Centralizo el tooling, limito dependencias con reglas, comparto código vía paquetes bien definidos, y automatizo upgrades con overrides y CI para que el monorepo no se vuelva un lio.
+Centralizo el tooling, limito dependencias con reglas, comparto código vía paquetes bien definidos, y automatizo upgrades con overrides y CI para que el monorepo no se vuelva un lío.
 
 ## GraphQL
 
@@ -307,7 +335,26 @@ Es un lenguaje query que permite al cliente pedir la data exacta que el mismo pr
 }
 ```
 
-Soluciona el hecho de que REST a veces devuelve mas informacion de la necesaria. 
+Soluciona el hecho de que REST a veces devuelve más información de la necesaria. 
 
 ## API Throttling
+
+Es un control temporal sobre los request rates cuando la carga del servidor es demasiado alta. 
+
+Por ejemplo, si hay un Black Friday en Amazon y se espera un alto flujo de gente, se hace un throttle para evitar que el servidor se caiga.
+
+## Load Balancing
+
+Distribuye las requests a través de múltiples servidores alrededor del mundo para soportar la carga.
+
+## API Latency
+
+Es el tiempo que toma para que una request sea correctamente respondida. Mientras más latencia, peor experiencia de usuario. Para disminuirla tenemos las siguientes opciones:
+
+- Caching
+- Indexing de la Base de Datos
+- CDN
+- Procesamiento Async
+
+
 

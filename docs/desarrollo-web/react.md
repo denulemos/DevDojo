@@ -1,10 +1,9 @@
----
+﻿---
 sidebar_position: 3
 ---
 # 🩵 React
 
-
-## Libreria vs Framework
+## Librería vs Framework
 
 Imagina que estás cocinando:
 
@@ -60,7 +59,41 @@ No se recomienda usar el index del elemento en un array como identificador, ya q
 
 ---
 
-## **Server Side Rendering en React**
+## Virtual DOM
+
+Para que React pueda efectuar esta suerte de “recarga parcial por pedazos” de una página, debe usar el Virtual DOM, que es una representación del DOM real.
+
+Cuando un elemento cambia, primero se actualiza el VDOM de forma muy rápida, luego, React compara este VDOM propio con el DOM real, y basándonos en sus diferencias, únicamente aplica los cambios necesarios para que ambos coincidan.
+
+Todo sale de app.js, que contiene X cantidad de componentes, y estos poseen Z cantidad de componentes en sí mismos. Si actualizamos a `app.js`, se actualiza la página entera, pero si actualizamos algo dentro de estos componentes, únicamente se actualizará de este componente “para arriba” en la jerarquía de componentes.
+
+Más arriba la jerarquía, más refrescos habrá. Un componente hijo, idealmente, no deberia necesitar modificar el estado del componente padre.
+
+- Aumenta la velocidad de la aplicacion
+- No acapara mucha memoria, hace que el uso de la misma sea mucho mas eficiente
+- Provee una capa adicional de Scripting, dandole un peso mas a la CPU
+
+![Virtual Dom](src/vdom.png)
+
+
+---
+
+## React Fiber
+
+La arquitectura de React hizo que fuera muy facil trabajar no solo en web si no tambien en mobile (React Native) y en hasta aplicaciones de Realidad Virtual. Asi los dev de React decidieron separar su algoritmo de reconciliacion (el que compara los cambios entre DOM y VDOM) y el lienzo donde esos cambios se muestran (Web, Mobile, etc..)
+
+Fiber fue diseñado para mejorar el rendimiento, particularmente en aplicaciones que requieren animaciones, interacciones complejas y actualizaciones de gran volumen.
+
+React Fiber organiza la renderización en dos fases principales:
+
+- **Fase de Render (Reconciliación)**: Se construye o actualiza un árbol de componentes de manera asíncrona. React decide qué cambios deben aplicarse al DOM basándose en las prioridades.
+- **Fase de Commit**: Es sincrónica y rápida. Los cambios calculados en la fase de render se aplican al DOM real.
+
+React Fiber no cambia cómo los desarrolladores escriben código React, pero mejora significativamente el rendimiento y la flexibilidad de las aplicaciones React modernas. Es la base que permite que React maneje de manera eficiente aplicaciones cada vez más interactivas y complejas.
+
+---
+
+## Server-Side Rendering (SSR) en React
 
 SSR en React se utiliza generalmente con 3 herramientas: 
 
@@ -109,7 +142,7 @@ useEffect(() => {
 }, [])
 ```
 
-### React Server Components
+#### React Server Components (resumen rápido)
 
 Son componentes que se ejecutan SOLO en el servidor, no llegan al navegador.
 
@@ -182,6 +215,77 @@ Se recomiena el uso de Server Components para estructura y datos, para el resto,
 
 ---
 
+## Modo estricto de React (`React.StrictMode`)
+
+React.StrictMode es una herramienta de desarrollo que React proporciona para identificar posibles problemas en una aplicación. Es un componente que no afecta el comportamiento de la aplicación en producción, pero ayuda a detectar errores y advertencias en el desarrollo.
+
+1. **Identificación de problemas de ciclo de vida**: Detecta métodos de ciclo de vida obsoletos o inseguros, como `componentWillMount`, `componentWillReceiveProps`, y `componentWillUpdate`.
+
+1. **Advertencias sobre efectos secundarios**: Ejecuta los efectos secundarios (como los definidos en `useEffect`) dos veces en modo desarrollo para asegurarse de que sean puros y no contengan errores.
+
+1. **Detección de APIs obsoletas**: Identifica el uso de APIs de React que están en desuso o que podrían causar problemas en el futuro.
+
+1. **Comprobación de referencias de cadenas**: Detecta el uso de referencias de cadenas (`string refs`), que son una práctica obsoleta.
+
+1. **Ayuda con la migración a nuevas versiones**: Facilita la transición a nuevas versiones de React al advertir sobre prácticas que podrían no ser compatibles en el futuro.
+
+```jsx
+import React from 'react';
+
+function App() {
+  return (
+   <React.StrictMode>
+    <MyComponent />
+   </React.StrictMode>
+  );
+}
+
+export default App;
+```
+
+- Mejora la calidad del código al identificar problemas potenciales.
+- Ayuda a adoptar mejores prácticas de React.
+- Facilita la migración a futuras versiones de React.
+- Solo funciona en modo desarrollo, no afecta el comportamiento en producción.
+- Puede generar advertencias adicionales que no siempre son críticas.
+
+---
+
+### React Server Components (resumen rápido)
+
+Los **React Server Components** son una forma de hacer que parte de tu app se arme en el servidor y no en el navegador. Así, el usuario recibe la página ya lista y más liviana, porque no tiene que bajar tanto JavaScript.
+
+- **Más rápido**: la página carga antes porque el servidor hace el trabajo pesado.
+- **Menos código en el navegador**: solo se manda lo necesario.
+- **Podés pedir datos directamente desde el servidor** (por ejemplo, de una base de datos).
+
+**OJO:** En estos componentes no podés usar hooks como `useState` o `useEffect`, porque solo funcionan en el navegador.
+
+#### Ejemplo:
+
+```jsx
+// Componente que corre en el servidor
+export default function ServerComponent() {
+  const datos = buscarDatosEnLaBase(); // Esto solo lo hace el servidor
+  return <div>Datos: {datos}</div>;
+}
+
+// Componente que corre en el navegador
+export default function ClientComponent() {
+  const [contador, setContador] = useState(0);
+  return (
+    <div>
+      <button onClick={() => setContador(contador + 1)}>Sumar</button>
+      <p>Clicks: {contador}</p>
+    </div>
+  );
+}
+```
+
+Se usan mucho con frameworks como Next.js para que tu app sea más rápida y eficiente.
+
+---
+
 ## Fragment `<>`
 
 Un **Fragment** en React es un componente especial que permite agrupar varios elementos sin añadir nodos adicionales al DOM. Es útil cuando necesitas devolver múltiples elementos desde un componente sin envolverlos en un elemento contenedor como un `<div>`.
@@ -226,112 +330,6 @@ export default MyList;
 
 ---
 
-## Modo estricto de React (`React.StrictMode`)
-
-React.StrictMode es una herramienta de desarrollo que React proporciona para identificar posibles problemas en una aplicación. Es un componente que no afecta el comportamiento de la aplicación en producción, pero ayuda a detectar errores y advertencias en el desarrollo.
-
-1. **Identificación de problemas de ciclo de vida**: Detecta métodos de ciclo de vida obsoletos o inseguros, como `componentWillMount`, `componentWillReceiveProps`, y `componentWillUpdate`.
-
-1. **Advertencias sobre efectos secundarios**: Ejecuta los efectos secundarios (como los definidos en `useEffect`) dos veces en modo desarrollo para asegurarse de que sean puros y no contengan errores.
-
-1. **Detección de APIs obsoletas**: Identifica el uso de APIs de React que están en desuso o que podrían causar problemas en el futuro.
-
-1. **Comprobación de referencias de cadenas**: Detecta el uso de referencias de cadenas (`string refs`), que son una práctica obsoleta.
-
-1. **Ayuda con la migración a nuevas versiones**: Facilita la transición a nuevas versiones de React al advertir sobre prácticas que podrían no ser compatibles en el futuro.
-
-```jsx
-import React from 'react';
-
-function App() {
-  return (
-   <React.StrictMode>
-    <MyComponent />
-   </React.StrictMode>
-  );
-}
-
-export default App;
-```
-
-- Mejora la calidad del código al identificar problemas potenciales.
-- Ayuda a adoptar mejores prácticas de React.
-- Facilita la migración a futuras versiones de React.
-- Solo funciona en modo desarrollo, no afecta el comportamiento en producción.
-- Puede generar advertencias adicionales que no siempre son críticas.
-
----
-
-## React Server Components
-
-Los **React Server Components** son una forma de hacer que parte de tu app se arme en el servidor y no en el navegador. Así, el usuario recibe la página ya lista y más liviana, porque no tiene que bajar tanto JavaScript.
-
-- **Más rápido**: la página carga antes porque el servidor hace el trabajo pesado.
-- **Menos código en el navegador**: solo se manda lo necesario.
-- **Podés pedir datos directamente desde el servidor** (por ejemplo, de una base de datos).
-
-**OJO:** En estos componentes no podés usar hooks como `useState` o `useEffect`, porque solo funcionan en el navegador.
-
-#### Ejemplo:
-
-```jsx
-// Componente que corre en el servidor
-export default function ServerComponent() {
-  const datos = buscarDatosEnLaBase(); // Esto solo lo hace el servidor
-  return <div>Datos: {datos}</div>;
-}
-
-// Componente que corre en el navegador
-export default function ClientComponent() {
-  const [contador, setContador] = useState(0);
-  return (
-    <div>
-      <button onClick={() => setContador(contador + 1)}>Sumar</button>
-      <p>Clicks: {contador}</p>
-    </div>
-  );
-}
-```
-
-Se usan mucho con frameworks como Next.js para que tu app sea más rápida y eficiente.
-
----
-
-## **Testing** para React
-
-
-- **Jest**: Framework de pruebas por defecto para aplicaciones React creado por Facebook. Soporta pruebas unitarias, de integración y de snapshot.
-- **React Testing Library**: Biblioteca enfocada en pruebas de componentes React desde la perspectiva del usuario final.
-- **Enzyme**: Herramienta creada por Airbnb para pruebas de componentes React, aunque está menos recomendada en proyectos nuevos debido a su falta de soporte para React 18.
-- **Cypress**: Herramienta de pruebas end-to-end que permite probar aplicaciones React en un navegador real.
-- **Playwright**: Herramienta moderna para pruebas end-to-end que soporta múltiples navegadores.
-- **Puppeteer**: Biblioteca para pruebas end-to-end que interactúa con navegadores basados en Chromium.
-- **Storybook Testing Library**: Permite realizar pruebas en historias de Storybook para componentes React.
-- **MSW (Mock Service Worker)**: Herramienta para simular APIs en pruebas de integración.
-- **Vitest**: Framework de pruebas rápido y moderno que puede usarse con React, similar a Jest.
-- **Testing Playground**: Herramienta visual para generar selectores de pruebas compatibles con React Testing Library.
-
----
-
-## Virtual DOM
-
-Para que React pueda efectuar esta suerte de “recarga parcial por pedazos” de una página, debe usar el Virtual DOM, que es una representación del DOM real.
-
-Cuando un elemento cambia, primero se actualiza el VDOM de forma muy rápida, luego, React compara este VDOM propio con el DOM real, y basándonos en sus diferencias, únicamente aplica los cambios necesarios para que ambos coincidan.
-
-Todo sale de app.js, que contiene X cantidad de componentes, y estos poseen Z cantidad de componentes en sí mismos. Si actualizamos a `app.js`, se actualiza la página entera, pero si actualizamos algo dentro de estos componentes, únicamente se actualizará de este componente “para arriba” en la jerarquía de componentes.
-
-Más arriba la jerarquía, más refrescos habrá. Un componente hijo, idealmente, no deberia necesitar modificar el estado del componente padre.
-
-- Aumenta la velocidad de la aplicacion
-- No acapara mucha memoria, hace que el uso de la misma sea mucho mas eficiente
-- Provee una capa adicional de Scripting, dandole un peso mas a la CPU
-
-![Virtual Dom](src/vdom.png)
-
-
----
-
 ## Ref
 
 Las **Ref** en React sirven para acceder directamente a un elemento del DOM (por ejemplo, un `<div>`, un `<input>`, etc.) desde tu código JavaScript, sin tener que pasar por el sistema de props o estado de React.
@@ -370,22 +368,7 @@ Las Ref son como un "puente" para manipular directamente elementos del DOM desde
 
 ---
 
-## React Fiber
-
-La arquitectura de React hizo que fuera muy facil trabajar no solo en web si no tambien en mobile (React Native) y en hasta aplicaciones de Realidad Virtual. Asi los dev de React decidieron separar su algoritmo de reconciliacion (el que compara los cambios entre DOM y VDOM) y el lienzo donde esos cambios se muestran (Web, Mobile, etc..)
-
-Fiber fue diseñado para mejorar el rendimiento, particularmente en aplicaciones que requieren animaciones, interacciones complejas y actualizaciones de gran volumen.
-
-React Fiber organiza la renderización en dos fases principales:
-
-- **Fase de Render (Reconciliación)**: Se construye o actualiza un árbol de componentes de manera asíncrona. React decide qué cambios deben aplicarse al DOM basándose en las prioridades.
-- **Fase de Commit**: Es sincrónica y rápida. Los cambios calculados en la fase de render se aplican al DOM real.
-
-React Fiber no cambia cómo los desarrolladores escriben código React, pero mejora significativamente el rendimiento y la flexibilidad de las aplicaciones React modernas. Es la base que permite que React maneje de manera eficiente aplicaciones cada vez más interactivas y complejas.
-
----
-
-## Class components vs Functional Components
+## Class Components vs Functional Components
 
 Antes se utilizaban los componentes de clase para componentes complejos, y los componentes de funcion para componentes con poca logica en si mismos, hoy en dia se puede decir que los componentes de funcion reemplazaron completamente a los componentes de clase.
 
@@ -401,7 +384,7 @@ Los componentes de funcion son mas faciles de leer, escribir y testear, y son ma
 
 ---
 
-## **Ciclos de vida y Hooks**
+## Ciclo de vida y Hooks
 
 Los **ciclos de vida** de los componentes en React son una serie de métodos especiales que permiten ejecutar código en momentos específicos del ciclo de vida de un componente de clase: cuando se monta (aparece en pantalla), se actualiza (cambia su estado o props) o se desmonta (se elimina del DOM).
 
@@ -1169,7 +1152,8 @@ Se debe usar `startTransition()` cuando tengas actualizaciones de estado o rende
 
 
 ---
-## **State management**
+
+## State Management
 
 ### Redux
 
@@ -1557,7 +1541,7 @@ Se suele manejar la informacion en un objeto con 3 elementos:
 
 ---
 
-## **Patrones de disenio en React**
+## Patrones de diseño en React
 
 ### Componentizacion
 
@@ -1841,10 +1825,23 @@ const UncontrolledInput = () => {
 
 ---
 
-## **Seguridad en React 🔐**
+## Testing en React
 
 
-### Evitar la inyección de código malicioso (XSS)
+- **Jest**: Framework de pruebas por defecto para aplicaciones React creado por Facebook. Soporta pruebas unitarias, de integración y de snapshot.
+- **React Testing Library**: Biblioteca enfocada en pruebas de componentes React desde la perspectiva del usuario final.
+- **Enzyme**: Herramienta creada por Airbnb para pruebas de componentes React, aunque está menos recomendada en proyectos nuevos debido a su falta de soporte para React 18.
+- **Cypress**: Herramienta de pruebas end-to-end que permite probar aplicaciones React en un navegador real.
+- **Playwright**: Herramienta moderna para pruebas end-to-end que soporta múltiples navegadores.
+- **Puppeteer**: Biblioteca para pruebas end-to-end que interactúa con navegadores basados en Chromium.
+- **Storybook Testing Library**: Permite realizar pruebas en historias de Storybook para componentes React.
+- **MSW (Mock Service Worker)**: Herramienta para simular APIs en pruebas de integración.
+- **Vitest**: Framework de pruebas rápido y moderno que puede usarse con React, similar a Jest.
+- **Testing Playground**: Herramienta visual para generar selectores de pruebas compatibles con React Testing Library.
+
+---
+
+## 🔐 Seguridad
 
 - Nunca uses `dangerouslySetInnerHTML` a menos que sea absolutamente necesario. Si lo usas, asegúrate de sanitizar el contenido con una biblioteca como `DOMPurify`.
 - Valida y escapa cualquier dato que provenga de fuentes externas antes de renderizarlo.
@@ -1856,25 +1853,16 @@ const sanitizedHTML = DOMPurify.sanitize(untrustedHTML);
 <div dangerouslySetInnerHTML={{ __html: sanitizedHTML }} />;
 ```
 
-### Usar HTTPS
+- **Usar HTTPS**: Asegurate de que tu aplicación esté servida a través de HTTPS para proteger la transmisión de datos entre el cliente y el servidor.
 
-Asegúrate de que tu aplicación esté servida a través de HTTPS para proteger la transmisión de datos entre el cliente y el servidor.
+- **Proteger las claves API**: Nunca expongas claves API en el código del cliente. Usa un servidor intermedio para manejar las solicitudes que requieran autenticación.
 
-### Proteger las claves API
-
-- Nunca expongas claves API en el código del cliente. Usa un servidor intermedio para manejar las solicitudes que requieran autenticación.
-
-### Implementar Content Security Policy (CSP)
-
-Configura una política de seguridad de contenido para prevenir la ejecución de scripts no confiables.
+- **Implementar Content Security Policy (CSP)**: Configura una política de seguridad de contenido para prevenir la ejecución de scripts no confiables.
 
 ```html
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://apis.google.com">
 ```
-
-### Autenticación y Autorización
-
-- Usa bibliotecas como `jsonwebtoken` para manejar tokens de autenticación de manera segura.
+- **Autenticación y Autorización**: Usa bibliotecas como `jsonwebtoken` para manejar tokens de autenticación de manera segura.
 - Protege las rutas sensibles con componentes de alto orden o hooks personalizados.
 
 ```jsx
@@ -1884,27 +1872,17 @@ const ProtectedRoute = ({ children }) => {
 };
 ```
 
-### Evitar la exposición de datos sensibles
+- **Evitar la exposición de datos sensibles**: No almacenes información sensible como contraseñas o tokens en el estado global o en el almacenamiento local sin cifrar.
 
-No almacenes información sensible como contraseñas o tokens en el estado global o en el almacenamiento local sin cifrar.
+- **Validación de entradas**: Valida todas las entradas del usuario tanto en el cliente como en el servidor para prevenir ataques como SQL Injection o XSS.
 
-### Validación de entradas
+- **Mantén tus dependencias actualizadas**: Usa herramientas como `npm audit` o `yarn audit` para identificar vulnerabilidades en las dependencias.
 
-Valida todas las entradas del usuario tanto en el cliente como en el servidor para prevenir ataques como SQL Injection o XSS.
+- **Evitar el uso de `eval()`**: Nunca uses `eval()` o funciones similares que ejecuten código arbitrario.
 
-### Mantén tus dependencias actualizadas
+- **Protección contra ataques CSRF**: Usa tokens CSRF para proteger las solicitudes sensibles.
 
-Usa herramientas como `npm audit` o `yarn audit` para identificar vulnerabilidades en las dependencias.
-
-### Evitar el uso de eval()
-
-Nunca uses `eval()` o funciones similares que ejecuten código arbitrario.
-
-### Protección contra ataques CSRF
-Usa tokens CSRF para proteger las solicitudes sensibles.
-
-### Deshabilitar herramientas de desarrollo en producción
-Asegúrate de que las herramientas como React Developer Tools estén deshabilitadas en el entorno de producción.
+- **Deshabilitar herramientas de desarrollo en producción**: Asegúrate de que las herramientas como React Developer Tools estén deshabilitadas en el entorno de producción.
 
 ```javascript
 if (process.env.NODE_ENV === 'production') {
@@ -1912,45 +1890,25 @@ if (process.env.NODE_ENV === 'production') {
 }
 ```
 
-### Configurar correctamente los permisos de CORS
-Asegúrate de que tu servidor tenga configuraciones de CORS adecuadas para evitar accesos no autorizados.
+- **Configurar correctamente los permisos de CORS**: Asegúrate de que tu servidor tenga configuraciones de CORS adecuadas para evitar accesos no autorizados.
 
-**Usar Helmet para mejorar la seguridad**
-Usa bibliotecas como `helmet` para configurar encabezados HTTP de seguridad.
+- **Usar Helmet para mejorar la seguridad**: Usa bibliotecas como `helmet` para configurar encabezados HTTP de seguridad.
 
 ```javascript
 import helmet from 'helmet';
 app.use(helmet());
 ```
 
-### Evitar el Prop Drilling de datos sensibles
-Usa Context API o Redux para manejar datos sensibles de manera segura y evitar pasarlos innecesariamente a través de props.
-
-
-
-
+- **Evitar el Prop Drilling de datos sensibles**: Usa Context API o Redux para manejar datos sensibles de manera segura y evitar pasarlos innecesariamente a través de props.
 
 ---
 
-## **Performance** 
+## Performance
 
-### Qué es el **Algoritmo de Reconciliation**?
+- **No hagas que todo se vuelva a dibujar todo el tiempo**
 
-El algoritmo de reconciliation es el proceso que usa React para decidir qué partes de la UI deben actualizarse cuando cambia el estado o las props.
-
-En vez de volver a renderizar todo el DOM real (que es caro), React:
-
-- Crea una nueva representación de la UI (Virtual DOM)
-- La compara con la versión anterior
-- Calcula el mínimo conjunto de cambios
-- Aplica solo esos cambios al DOM real
-
-Ese proceso de comparar y decidir es la reconciliation.
-
-### No hagas que todo se vuelva a dibujar todo el tiempo
-
-- **¿Por qué?** Si cada vez que cambiás algo, toda la app se vuelve a dibujar, se pone lenta.
-- **¿Cómo lo evito?** Usá `useMemo` para guardar valores calculados y `useCallback` para guardar funciones. Así, React no recalcula ni recrea cosas que no cambiaron.
+Si cada vez que cambiás algo, toda la app se vuelve a dibujar, se pone lenta.
+Usá `useMemo` para guardar valores calculados y `useCallback` para guardar funciones. Así, React no recalcula ni recrea cosas que no cambiaron.
 
 ```jsx
 import React, { useMemo, useCallback } from 'react';
@@ -1963,13 +1921,9 @@ const Componente = ({ lista }) => {
 };
 ```
 
-### No cambies los objetos o arrays directamente
+- **No cambies los objetos o arrays directamente**: Siempre usá funciones como `setState` o `useReducer` para cambiar el estado. Si cambiás un array u objeto "a mano", React no se entera y no actualiza bien la pantalla.
 
-Siempre usá funciones como `setState` o `useReducer` para cambiar el estado. Si cambiás un array u objeto "a mano", React no se entera y no actualiza bien la pantalla.
-
-### Listas grandes: no muestres todo junto
-
-Si tenés una lista gigante (¡mil elementos!), usá librerías como **react-window** o **react-virtualized**. Solo muestran lo que el usuario ve en pantalla, no todo junto.
+- **Listas grandes: no muestres todo junto**:  Si tenés una lista gigante (¡mil elementos!), usá librerías como `react-window` o `react-virtualized`. Solo muestran lo que el usuario ve en pantalla, no todo junto.
 
 ```jsx
 import { FixedSizeList as List } from 'react-window';
@@ -1985,38 +1939,21 @@ const App = () => (
 );
 ```
 
-### Lazy Loading
+- **Lazy Loading**: Usá `React.lazy` y `Suspense` para cargar componentes solo cuando se necesitan. Así la app arranca más rápido.
 
-Usá `React.lazy` y `Suspense` para cargar componentes solo cuando se necesitan. Así la app arranca más rápido.
+- **Dividí el código en partes más chicas**: Herramientas como **Webpack** pueden dividir tu app en archivos más chicos. Así el navegador baja solo lo que necesita.
 
-### Dividí el código en partes más chicas
+- **No toques el DOM a mano**: Si cambiás cosas del DOM directamente (con `document.getElementById`, etc.), React se puede confundir. Dejá que React maneje todo.
 
-Herramientas como **Webpack** pueden dividir tu app en archivos más chicos. Así el navegador baja solo lo que necesita.
+- **No pongas estilos inline todo el tiempo**: Mejor usá `className` o librerías como **styled-components**. Los estilos inline pueden hacer que React vuelva a dibujar más de la cuenta.
 
-### No toques el DOM a mano
+- **Renderizado en el servidor (SSR)**: Si querés que la página cargue rápido desde el principio, usá frameworks como **Next.js** que hacen parte del trabajo en el servidor.
 
-Si cambiás cosas del DOM directamente (con `document.getElementById`, etc.), React se puede confundir. Dejá que React maneje todo.
+- **Imágenes y recursos livianos**: Usá imágenes comprimidas y formatos modernos como **WebP**. Cargá imágenes solo cuando se ven en pantalla (lazy loading).
 
-### No pongas estilos inline todo el tiempo
+- **No uses contextos para todo**: El Context de React es útil, pero si lo usás para todo, cada cambio hace que toda la app se vuelva a dibujar. Usalo solo para datos realmente globales (como el usuario logueado o el tema de la app).
 
-Mejor usá `className` o librerías como **styled-components**. Los estilos inline pueden hacer que React vuelva a dibujar más de la cuenta.
-
-### Renderizado en el servidor (SSR)
-
-Si querés que la página cargue rápido desde el principio, usá frameworks como **Next.js** que hacen parte del trabajo en el servidor.
-
-### Imágenes y recursos livianos
-
-- Usá imágenes comprimidas y formatos modernos como **WebP**.
-- Cargá imágenes solo cuando se ven en pantalla (lazy loading).
-
-### No uses contextos para todo
-
-El Context de React es útil, pero si lo usás para todo, cada cambio hace que toda la app se vuelva a dibujar. Usalo solo para datos realmente globales (como el usuario logueado o el tema de la app).
-
-### Usá `key` cuando hacés listas
-
-Cuando hacés una lista con `.map()`, poné una `key` única en cada elemento. Así React sabe cuál es cuál y no se confunde.
+- **Usá `key` cuando hacés listas**: Cuando hacés una lista con `.map()`, poné una `key` única en cada elemento. Así React sabe cuál es cuál y no se confunde.
 
 Sin Key, React asume que los elementos se corresponden por posición
 Con Key, React identifica qué elemento es cuál, aunque cambie de lugar
@@ -2025,9 +1962,7 @@ Con Key, React identifica qué elemento es cuál, aunque cambie de lugar
 {items.map(item => <li key={item.id}>{item.nombre}</li>)}
 ```
 
-### Dividí tu app en componentes chiquitos
-
-Es más fácil de entender y solo se actualizan las partes que cambian.
+- **Dividí tu app en componentes chiquitos**: Es más fácil de entender y solo se actualizan las partes que cambian.
 
 - Un cambio de estado solo afecta al componente específico.
 - React puede reconciliar mejor el árbol y evitar trabajo extra.
@@ -2038,6 +1973,19 @@ Ademas React puede manejar mucho mejor el Virtual DOM
 
 - Componentes pequeños ⇒ árbol de componentes más predecible.
 - Comparaciones más simples durante el proceso de **diffing**.
+
+### Algoritmo de Reconciliation
+
+El algoritmo de reconciliation es el proceso que usa React para decidir qué partes de la UI deben actualizarse cuando cambia el estado o las props.
+
+En vez de volver a renderizar todo el DOM real (que es caro), React:
+
+- Crea una nueva representación de la UI (Virtual DOM)
+- La compara con la versión anterior
+- Calcula el mínimo conjunto de cambios
+- Aplica solo esos cambios al DOM real
+
+Ese proceso de comparar y decidir es la reconciliation.
 
 ### Re-renderizaciones innecesarias
 
@@ -2124,7 +2072,7 @@ En este ejemplo, `React.memo` y `useCallback` evitan que el componente `Child` s
 
 ---
 
-### ¿Qué herramientas usarías para identificar problemas de rendimiento en una aplicación React?
+### Herramientas monitoreo performance en React
 
 - Con **React DevTools** se puede utilizar el Profiler que nos ayuda a identificar problemas de rendimiento en la aplicación. Permite ver qué componentes se están renderizando y cuánto tiempo tardan en hacerlo, y que props se ven modificadas.
 - Se puede usar **Lighthouse** para auditar el rendimiento de la aplicación, incluyendo el tiempo de carga y el tamaño del bundle. Esta herramienta se encuentra en las DevTools de Chrome.
