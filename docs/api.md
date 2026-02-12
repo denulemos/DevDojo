@@ -151,7 +151,7 @@ En resumen, CORS es como un portero que decide quién puede entrar a tu API. Con
 - **Authentication**: Pregunta quien sos
 - **Authorization**: Pregunta que tenes permitido (Ya sabiendo quien sos)
 
-## JWT
+### JWT
 
 JSON Web Token es una herramienta compacta que ofrece un token de seguridad para la tramision de informacion entre el cliente y el servidor.
 
@@ -170,3 +170,106 @@ Consiste de 3 partes: **Header.Payload.Signature**
     "exp": 23434534
 }
 ```
+
+1. El usuario envia sus credenciales (`POST /login`)
+2. El servidor valida estas credenciales
+3. El servidor genera JWT
+4. JWT es enviado al cliente
+5. El cliente guarda este JWT
+6. Este JWT es enviado en todas las request a esa API para identificar al cliente
+
+Este proceso se llama **stateless auth flow**
+
+### OAuth
+
+Es un framework de autorizacion que permite que aplicaciones third-party accedan a la informacion del usuario sin exponer ninguna contraseña. 
+
+Por ejemplo, el **Login de Google**, en donde la app nunca ve tu contraseña, y recibe un access token de Google. 
+
+### Refresh Token
+
+Este sirve para obtener un nuevo access token sin necesidad de pedirle al usuario que haga el login de vuelta. 
+
+- Puede tener tiempo de expiracion
+- Se puede refrescar cada cierto tiempo
+- No es necesario que el usuario se este logeando constantemente
+
+## API Rate Limiting
+
+Este limita la cantidad de requests que puede realizar un cliente a un servicio en una ventana de tiempo, por ejemplo, 100 request por minuto por usuario.
+
+- Previene abusos 
+- Protege recursos
+- Asegura el fair usage
+
+Una API sin esta proteccion se encuentra expuesta a:
+
+- Bot Attacks
+- Ataques DDoS
+- Crashes del servidor
+
+Cuando se sobrepasa este limite, el servicio devuelve un error `429 Too Many Requests`
+
+## Idempotency - Idempotencia
+
+Una operacion es Idemponente - Idemponent si ante cada ejecucion produce el mismo resultado. Por ejemplo, `POST /payments (with idempotency-key)`, si el usuario reintenta esta operacion por un error de red, el pago o la ejecucion de esta request es hecha **una sola vez**
+
+Los metodos Idemponentes son `GET, PUT` y `DELETE`
+
+`POST` no es idemponente ya que crea un nuevo recurso en cada ejecucion. 
+
+## Pagination
+
+Esta divide datasets grandes en chunks mas pequeños para **mejorar la performance**
+
+Por ejemplo, en un feed de Instagram:
+
+- Se cargan de a 10 posts
+- Al realizar el scroll, se carga el siguiente chunk de 10 posts
+
+`GET /api/posts?page=2&limit=20` -> Devuelve la pagina dos, que posea hasta 20 posts 
+
+Existen dos approaches para la paginacion:
+
+- Offset-based pagination
+- Cursor-based pagination (mejor para datasets mas grandes)
+
+## API Gateway
+
+Es un entry point que maneja las requests cuando se tienen varios servicios backend. Se encarga de la Autenticacion, Rate Limiting, Routing y Logging.
+
+- Facilita el monitoring
+- Centraliza la seguridad
+- Simplifica la logica del lado del cliente
+
+Cliente -> API Gateway -> Microservicio correspondiente 
+
+## REST vs SOAP
+
+SOAP (Simple Object Access Protocol) es un protocolo de mensajeria basado en XML, muy usado en bancos y en sistemas legacy.
+
+| Feature | REST | SOAP |
+| --- | --- | --- |
+| Protocolo | HTTP | XML Based |
+| Formato | JSON | XML |
+| Velocidad | Rapido | Mas lento |
+| Complejidad | Simple | Complejo |
+| Uso | Web apps modernas | Sistemas legacy |
+
+## GraphQL
+
+Es un lenguaje query que permite al cliente pedir la data exacta que el mismo precisa. 
+
+```
+{
+  user(id: 1) {
+    name
+    email
+  }
+}
+```
+
+Soluciona el hecho de que REST a veces devuelve mas informacion de la necesaria. 
+
+## API Throttling
+
