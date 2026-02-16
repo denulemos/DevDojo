@@ -94,6 +94,15 @@ const sidebars: SidebarsConfig = {
         'systemdesign'
       ],
     },
+    {
+      type: 'category',
+      label: '🤝 Soft Skills',
+      link: { type: 'doc', id: 'landing/soft' },
+      collapsed: true,
+      items: [
+        'comunicacion'
+      ],
+    },
   ],
 };
 
