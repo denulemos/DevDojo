@@ -347,6 +347,8 @@ Por ejemplo, si hay un Black Friday en Amazon y se espera un alto flujo de gente
 
 Distribuye las requests a través de múltiples servidores alrededor del mundo para soportar la carga.
 
+[Para mas detalles sobre este tema ingresá acá](./loadbalancer.md)
+
 ## API Latency
 
 Es el tiempo que toma para que una request sea correctamente respondida. Mientras más latencia, peor experiencia de usuario. Para disminuirla tenemos las siguientes opciones:
@@ -355,6 +357,5 @@ Es el tiempo que toma para que una request sea correctamente respondida. Mientra
 - Indexing de la Base de Datos
 - CDN
 - Procesamiento Async
-
 
 

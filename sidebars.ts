@@ -91,7 +91,8 @@ const sidebars: SidebarsConfig = {
       collapsed: true,
       items: [
         'microfrontends',
-        'systemdesign'
+        'systemdesign',
+        'loadbalancer'
       ],
     },
     {
