@@ -43,17 +43,8 @@ const sidebars: SidebarsConfig = {
             'desarrollo-web/angular/ejercicios-tecnicos',
           ],
         },
-        {
-      type: 'category',
-      label: '👨‍💻 Javascript',
-      link: { type: 'doc', id: 'landing/jsts' },
-      collapsed: true,
-      items: [
         'desarrollo-web/javascript/javascript',
         'desarrollo-web/javascript/typescript',
-      ],
-
-    },
         'desarrollo-web/react',
         'desarrollo-web/scss',
         'desarrollo-web/html',
