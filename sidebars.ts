@@ -20,7 +20,7 @@ const sidebars: SidebarsConfig = {
       label: '🧠 Arquitectura',
       link: { type: 'doc', id: 'landing/arquitectura' },
       collapsed: true,
-      items: ['microfrontends', 'systemdesign', 'loadbalancer'],
+      items: ['microfrontends', 'systemdesign', 'loadbalancer', 'microservicios'],
     },
     {
       type: 'category',
