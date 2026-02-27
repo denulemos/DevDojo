@@ -4,30 +4,43 @@ import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 
 /**
  * Creating a sidebar enables you to:
- - create an ordered group of docs
- - render a sidebar for each doc of that group
- - provide next/previous navigation
-
- The sidebars can be generated from the filesystem, or explicitly defined here.
-
- Create as many sidebars as you want.
+ * - create an ordered group of docs
+ * - render a sidebar for each doc of that group
+ * - provide next/previous navigation
+ *
+ * The sidebars can be generated from the filesystem, or explicitly defined here.
+ *
+ * Create as many sidebars as you want.
  */
 const sidebars: SidebarsConfig = {
-  // Manual sidebar configuration with hola.md as landing page
   tutorialSidebar: [
     'landing/devhood',
     {
       type: 'category',
-      label: '📚 Teoria',
-      link: { type: 'doc', id: 'landing/teoria' },
+      label: '🧠 Arquitectura',
+      link: { type: 'doc', id: 'landing/arquitectura' },
+      collapsed: true,
+      items: ['microfrontends', 'systemdesign', 'loadbalancer'],
+    },
+    {
+      type: 'category',
+      label: '🖥️ Backend',
+      link: { type: 'doc', id: 'landing/backend' },
       collapsed: true,
       items: [
-        'algoritmos',
-        'desarrollo-web/backend/poo',
-        'patrones',
+        'desarrollo-web/backend/java',
+        'desarrollo-web/nodejs',
+        'desarrollo-web/backend/basesDatos',
+        'api',
       ],
     },
-    'accesibilidad/accesibilidad',
+    {
+      type: 'category',
+      label: '⚙️ DevOps',
+      link: { type: 'doc', id: 'landing/devops' },
+      collapsed: true,
+      items: ['versionado', 'cicd'],
+    },
     {
       type: 'category',
       label: '🎨 Frontend',
@@ -51,50 +64,22 @@ const sidebars: SidebarsConfig = {
         'ssr',
       ],
     },
-    
-    {
-      type: 'category',
-      label: '⚙️ DevOps',
-      link: { type: 'doc', id: 'landing/devops' },
-      collapsed: true,
-      items: [
-        'versionado',
-        'cicd',
-      ],
-    },
-    {
-      type: 'category',
-      label: '🖥️ Backend',
-      link: { type: 'doc', id: 'landing/backend' },
-      collapsed: true,
-      items: [
-        'desarrollo-web/backend/java',
-        'desarrollo-web/nodejs',
-        'desarrollo-web/backend/basesDatos',
-        'api',
-      ],
-    },
-    'seguridad',
-    {
-      type: 'category',
-      label: '🧠 Arquitectura',
-      link: { type: 'doc', id: 'landing/arquitectura' },
-      collapsed: true,
-      items: [
-        'microfrontends',
-        'systemdesign',
-        'loadbalancer'
-      ],
-    },
     {
       type: 'category',
       label: '🤝 Soft Skills',
       link: { type: 'doc', id: 'landing/soft' },
       collapsed: true,
-      items: [
-        'comunicacion'
-      ],
+      items: ['comunicacion'],
     },
+    {
+      type: 'category',
+      label: '📚 Teoria',
+      link: { type: 'doc', id: 'landing/teoria' },
+      collapsed: true,
+      items: ['algoritmos', 'desarrollo-web/backend/poo', 'patrones'],
+    },
+    'accesibilidad/accesibilidad',
+    'seguridad',
   ],
 };
 
