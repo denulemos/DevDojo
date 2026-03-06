@@ -1,154 +1,97 @@
----
+﻿---
 sidebar_position: 1
 ---
+
 # 💛 Javascript
 
+## **Metodos y Colecciones**
 
-### Metodos de Strings
+### Métodos de Strings y Arrays
 
-| Método | Descripción |
-|--------|-------------|
-| `charAt(index)` | Devuelve el carácter en la posición especificada por `index`. |
-| `concat(string1, string2, ...)` | Combina dos o más cadenas y devuelve una nueva cadena. |
-| `includes(substring)` | Verifica si la cadena contiene la subcadena especificada. Devuelve `true` o `false`. |
-| `indexOf(substring)` | Devuelve el índice de la primera aparición de la subcadena. Si no se encuentra, devuelve `-1`. |
-| `lastIndexOf(substring)` | Devuelve el índice de la última aparición de la subcadena. Si no se encuentra, devuelve `-1`. |
-| `slice(start, end)` | Extrae una sección de la cadena desde `start` hasta `end` (no incluido) y devuelve una nueva cadena. |
-| `split(separator)` | Divide la cadena en un array de subcadenas utilizando el `separator` especificado. |
-| `substring(start, end)` | Extrae los caracteres entre `start` y `end` y devuelve una nueva cadena. |
-| `toLowerCase()` | Convierte la cadena a minúsculas. | 
-| `toUpperCase()` | Convierte la cadena a mayúsculas. |
-| `trim()` | Elimina los espacios en blanco al inicio y al final de la cadena. |
-| `replace(searchValue, newValue)` | Reemplaza la primera aparición de `searchValue` con `newValue`. |
-| `replaceAll(searchValue, newValue)` | Reemplaza todas las apariciones de `searchValue` con `newValue`. |
-| `startsWith(substring)` | Verifica si la cadena comienza con la subcadena especificada. Devuelve `true` o `false`. |
-| `endsWith(substring)` | Verifica si la cadena termina con la subcadena especificada. Devuelve `true` o `false`. |
-| `repeat(count)` | Devuelve una nueva cadena que repite la cadena original `count` veces. |  
-| `padStart(targetLength, padString)` | Rellena la cadena al inicio con `padString` hasta alcanzar la longitud `targetLength`. |
-| `padEnd(targetLength, padString)` | Rellena la cadena al final con `padString` hasta alcanzar la longitud `targetLength`. | 
-| `match(regex)` | Devuelve un array con todas las coincidencias de la expresión regular `regex` en la cadena. |
-| `matchAll(regex)` | Devuelve un iterador con todas las coincidencias de la expresión regular `regex` en la cadena. |
-| `search(regex)` | Devuelve el índice de la primera coincidencia de la expresión regular `regex` en la cadena. Si no se encuentra, devuelve `-1`. |
-| `localeCompare(string)` | Compara la cadena con otra cadena y devuelve un número que indica si la cadena es menor, igual o mayor que la otra. | 
-| `valueOf()` | Devuelve el valor primitivo de la cadena. |
-| `toString()` | Devuelve la cadena como una cadena de texto. |
-| `charCodeAt(index)` | Devuelve el código Unicode del carácter en la posición especificada por `index`. |
-| `fromCharCode(code1, code2, ...)` | Devuelve una cadena creada a partir de los códigos Unicode especificados. |
-| `fromCodePoint(code1, code2, ...)` | Devuelve una cadena creada a partir de los puntos de código Unicode especificados. |
-| `normalize(form)` | Normaliza la cadena según la forma de normalización Unicode especificada (`NFC`, `NFD`, `NFKC`, `NFKD`). |
-| `toLocaleLowerCase()` | Convierte la cadena a minúsculas según las reglas de localización. |
-| `toLocaleUpperCase()` | Convierte la cadena a mayúsculas según las reglas de localización. |
-| `substr(start, length)` | Extrae una sección de la cadena comenzando en `start` y con una longitud de `length`. |
-| `search(regex)` | Busca una coincidencia entre la cadena y una expresión regular. Devuelve el índice de la primera coincidencia o `-1` si no se encuentra. |
+| Tipo | Metodo | Descripcion | Ejemplo |
+|------|--------|-------------|---------|
+| `String` | `charAt(index)` | Devuelve el caracter en la posicion especificada por `index`. | `'hola'.charAt(1)` |
+| `String` | `concat(string1, string2, ...)` | Combina dos o mas cadenas y devuelve una nueva cadena. | `'Hola '.concat('mundo')` |
+| `String` | `includes(substring)` | Verifica si la cadena contiene la subcadena especificada. | `'javascript'.includes('script')` |
+| `String` | `indexOf(substring)` | Devuelve el indice de la primera aparicion de la subcadena o `-1`. | `'banana'.indexOf('na')` |
+| `String` | `lastIndexOf(substring)` | Devuelve el indice de la ultima aparicion de la subcadena o `-1`. | `'banana'.lastIndexOf('na')` |
+| `String` | `slice(start, end)` | Extrae una seccion de la cadena y devuelve una nueva cadena. | `'javascript'.slice(4, 10)` |
+| `String` | `split(separator)` | Divide la cadena en un array de subcadenas segun `separator`. | `'a,b,c'.split(',')` |
+| `String` | `substring(start, end)` | Extrae caracteres entre `start` y `end` y devuelve una nueva cadena. | `'javascript'.substring(0, 4)` |
+| `String` | `toLowerCase()` | Convierte la cadena a minusculas. | `'HOLA'.toLowerCase()` |
+| `String` | `toUpperCase()` | Convierte la cadena a mayusculas. | `'hola'.toUpperCase()` |
+| `String` | `trim()` | Elimina espacios al inicio y al final de la cadena. | `'  hola  '.trim()` |
+| `String` | `replace(searchValue, newValue)` | Reemplaza la primera aparicion de `searchValue`. | `'hola mundo'.replace('mundo', 'JS')` |
+| `String` | `replaceAll(searchValue, newValue)` | Reemplaza todas las apariciones de `searchValue`. | `'a-b-c'.replaceAll('-', ':')` |
+| `String` | `startsWith(substring)` | Verifica si la cadena comienza con `substring`. | `'javascript'.startsWith('java')` |
+| `String` | `endsWith(substring)` | Verifica si la cadena termina con `substring`. | `'javascript'.endsWith('script')` |
+| `String` | `repeat(count)` | Repite la cadena `count` veces y devuelve una nueva cadena. | `'ha'.repeat(3)` |
+| `String` | `padStart(targetLength, padString)` | Completa al inicio hasta `targetLength`. | `'5'.padStart(3, '0')` |
+| `String` | `padEnd(targetLength, padString)` | Completa al final hasta `targetLength`. | `'5'.padEnd(3, '0')` |
+| `String` | `match(regex)` | Devuelve coincidencias de una expresion regular. | `'a1b2'.match(/\d/g)` |
+| `String` | `matchAll(regex)` | Devuelve un iterador con todas las coincidencias. | `[...'a1b2'.matchAll(/\d/g)]` |
+| `String` | `search(regex)` | Devuelve el indice de la primera coincidencia o `-1`. | `'hola123'.search(/\d/)` |
+| `String` | `localeCompare(string)` | Compara cadenas y devuelve un numero segun su orden. | `'a'.localeCompare('b')` |
+| `String` | `valueOf()` | Devuelve el valor primitivo de la cadena. | `'hola'.valueOf()` |
+| `String` | `toString()` | Devuelve la representacion en texto de la cadena. | `'hola'.toString()` |
+| `String` | `charCodeAt(index)` | Devuelve el codigo Unicode del caracter en `index`. | `'A'.charCodeAt(0)` |
+| `String` | `fromCharCode(code1, code2, ...)` | Crea una cadena desde codigos Unicode. | `String.fromCharCode(72, 111, 108, 97)` |
+| `String` | `fromCodePoint(code1, code2, ...)` | Crea una cadena desde puntos de codigo Unicode. | `String.fromCodePoint(128512)` |
+| `String` | `normalize(form)` | Normaliza la cadena segun la forma Unicode indicada. | `'e\u0301'.normalize('NFC')` |
+| `String` | `toLocaleLowerCase()` | Convierte a minusculas segun reglas de localizacion. | `'İ'.toLocaleLowerCase('tr')` |
+| `String` | `toLocaleUpperCase()` | Convierte a mayusculas segun reglas de localizacion. | `'i'.toLocaleUpperCase('tr')` |
+| `String` | `substr(start, length)` | Extrae una seccion desde `start` con largo `length`. | `'javascript'.substr(4, 6)` |
+| `Array` | `push()` | Agrega al final del array (muta el array). | `[1,2,3].push(4)` |
+| `Array` | `pop()` | Quita y devuelve el ultimo elemento (muta el array). | `[1,2,3].pop()` |
+| `Array` | `shift()` | Quita y devuelve el primer elemento (muta el array). | `[1,2,3].shift()` |
+| `Array` | `unshift()` | Agrega al principio del array (muta el array). | `[1,2,3].unshift(0)` |
+| `Array` | `concat()` | Combina arrays y devuelve uno nuevo. | `[1,2].concat([3,4])` |
+| `Array` | `join()` | Une los elementos del array en un string con separador. | `['a','b'].join('-')` |
+| `Array` | `slice()` | Devuelve una copia parcial sin mutar el original. | `[1,2,3,4].slice(1,3)` |
+| `Array` | `indexOf()` | Devuelve el indice del elemento o `-1`. | `['a','b'].indexOf('b')` |
+| `Array` | `includes()` | Verifica si el elemento existe. | `['a','b'].includes('a')` |
+| `Array` | `find()` | Devuelve el primer elemento que cumple una condicion. | `[3,5,6,4].find(n => n % 2 === 0) => 6` |
+| `Array` | `findLast()` | Devuelve el **ultimo** elemento del array que cumple con la condicion | `[3,5,6,4].findLast(n => n % 2 === 0) => 4` |
+| `Array` | `findIndex()` | Devuelve el indice del primer elemento que cumple una condicion. | `[2,4,3].findIndex(n => n % 2 !== 0)` |
+| `Array` | `map()` | Crea un nuevo array transformando cada elemento. | `[1,2,3].map(n => n * 2)` |
+| `Array` | `filter()` | Crea un nuevo array con elementos que cumplen una condicion. | `[1,2,3,4].filter(n => n % 2 === 0)` |
+| `Array` | `reduce()` | Reduce el array a un solo valor. | `[1,2,3,4].reduce((acc, n) => acc + n, 0)` |
+| `Array` | `every()` | Devuelve `true` si todos cumplen una condicion. | `[2,4,6].every(n => n % 2 === 0)` |
+| `Array` | `some()` | Devuelve `true` si alguno cumple una condicion. | `[1,3,4].some(n => n % 2 === 0)` |
+| `Array` | `splice()` | Elimina y/o agrega elementos en una posicion (muta el array). | `arr.splice(1, 1, 'x')` |
+| `Array` | `reverse()` | Invierte el orden del array (muta el array). | `[1,2,3].reverse()` |
+| `Array` | `at()` | Devuelve el elemento por indice (acepta negativos), es mas limpio que usar `arr[arr.length - 1]` para obtener el ultimo elemento | `[10,20,30].at(-1) => 30` |
+| `Array` | `forEach()` | Recorre el array y ejecuta una funcion por elemento. | `[1,2,3].forEach(n => console.log(n))` |
+| `Array` | `flatMap()` | Combina el uso de `map()` y `flat()` | `[1,2,3].flatMap(x => [x, x * 2]) => [1,2,2,4,3,6]` |
+| `Array` | `fill()` | Rellena los valores con un valor, util para inicializar arrays | `Array(5).fill(0) => [0,0,0,0,0]` |
+| `Array` | `copyWithin()` | Permite copiar una secuencia de elementos y sobreescribir elementos a partir de un cierto index, **sin crear un nuevo array**, util para reorganizar data sin memoria extra | `[1,2,3,4,5].copyWithin(0,3) => [4,5,3,4,5]` |
 
-### Métodos de Objetos
 
-| Método | Descripción |
+### Metodos de Objetos
+
+| Metodo | DescripciÃ³n |
 |--------|-------------|
 | `Object.keys(obj)` | Devuelve un array con las claves enumerables de un objeto. |
 | `Object.values(obj)` | Devuelve un array con los valores de las claves enumerables de un objeto. |
 | `Object.entries(obj)` | Devuelve un array de pares [clave, valor] de un objeto. |
-| `Object.assign(target, ...sources)` | Copia las propiedades de uno o más objetos fuente al objeto destino. |
+| `Object.assign(target, ...sources)` | Copia las propiedades de uno o mÃ¡s objetos fuente al objeto destino. |
 | `Object.freeze(obj)` | Congela un objeto, impidiendo que se modifiquen sus propiedades. |
 | `Object.seal(obj)` | Sella un objeto, impidiendo que se agreguen o eliminen propiedades, pero permitiendo modificaciones en las existentes. |
 | `Object.getPrototypeOf(obj)` | Devuelve el prototipo de un objeto. |
 | `Object.setPrototypeOf(obj, prototype)` | Establece el prototipo de un objeto. |
 | `Object.create(proto, propertiesObject)` | Crea un nuevo objeto con el prototipo y las propiedades especificadas. |
 | `Object.defineProperty(obj, prop, descriptor)` | Define una nueva propiedad o modifica una existente en un objeto. |
-| `Object.defineProperties(obj, props)` | Define múltiples propiedades en un objeto. |
+| `Object.defineProperties(obj, props)` | Define mÃºltiples propiedades en un objeto. |
 | `Object.is(value1, value2)` | Determina si dos valores son el mismo valor. |
 | `Object.isExtensible(obj)` | Determina si un objeto es extensible (se le pueden agregar nuevas propiedades). |
 | `Object.preventExtensions(obj)` | Previene que se agreguen nuevas propiedades a un objeto. |
-| `Object.isFrozen(obj)` | Determina si un objeto está congelado. |
-| `Object.isSealed(obj)` | Determina si un objeto está sellado. |
-| `Object.getOwnPropertyDescriptor(obj, prop)` | Devuelve el descriptor de una propiedad específica de un objeto. |
+| `Object.isFrozen(obj)` | Determina si un objeto estÃ¡ congelado. |
+| `Object.isSealed(obj)` | Determina si un objeto estÃ¡ sellado. |
+| `Object.getOwnPropertyDescriptor(obj, prop)` | Devuelve el descriptor de una propiedad especÃ­fica de un objeto. |
 | `Object.getOwnPropertyNames(obj)` | Devuelve un array con los nombres de todas las propiedades (enumerables y no enumerables) de un objeto. |
-| `Object.getOwnPropertySymbols(obj)` | Devuelve un array con los símbolos de las propiedades de un objeto. |
+| `Object.getOwnPropertySymbols(obj)` | Devuelve un array con los sÃ­mbolos de las propiedades de un objeto. |
 | `Object.hasOwn(obj, prop)` | Determina si un objeto tiene la propiedad especificada como propiedad propia (no heredada). |
 | `Object.fromEntries(iterable)` | Convierte una lista de pares clave-valor en un objeto. |
-
----
-
-## **Métodos Arrays**
-
-```jsx
-// Agrega al final
-[1,2,3].push(4) // [1,2,3,4]
-
-// Quita y devuelve el último elemento
-[1,2,3].pop() // [1,2]
-
-// Quita y devuelve el primer elemento
-[1,2,3].shift() // [2,3]
-
-// Agrega al principio
-[1,2,3].unshift(0) // [0,1,2,3]
-
-//  Combina dos o más arreglos y devuelve un nuevo arreglo - los CONCATENA
-const arr1 = [1, 2, 3];
-const arr2 = [4, 5, 6];
-arr1.concat(arr2); // [1, 2, 3, 4, 5, 6]
-
-// Devuelve un array donde cada elemento del array tiene en el medio
-// el valor pasado como argumento
-['a', 'b'].join('-') // a-b
-
-// Devuelve una copia superficial de una porción del arreglo en un nuevo arreglo seleccionando los elementos desde el inicio hasta el final (o hasta un índice especificado).
-const arr = [1, 2, 3, 4, 5];
-arr.slice(1, 4); // Copia desde el índice 1 hasta el índice 3 [2, 3, 4]
-
-// Devuelve el index del elemento, si no lo encuentra, devuelve -1
-['a', 'b'].indexOf('b') // 1
-
-// Devuelve si el elemento existe en el array
-['a', 'b'].includes('b') // true
-
-// Devuelve el primer elemento que cumple con la condición
-[3,5,6,8].find((valorActual) => valorActual % 2 === 0) // 6
-
-// Devuelve el index del primer elemento que cumple con la condición
-[2,4,3,5].findIndex((valorActual) => valorActual % 2 !== 0) // 2
-
-// Devuelve un nuevo array con los elementos modificados, en este caso los multiplica por 2. Devuelve un nuevo array, no muta el array modificado
-const array = [3,4,8,6].map((n) => n * 2) // [6,8,16,12]
-
-// Devuelve un nuevo array con los elementos que cumplan con la condición
-// Si el valorActual cumple con la condicion, queda en el array, de lo contrario, se quita
-[1,4,7,8].filter((valorActual) => valorActual % 2 === 0) // [4,8]
-
-// Devuelve un solo valor, en este caso la suma de los elementos
-[2,4,3,7].reduce((accumulator, currentValue) => accumulator + currentValue) // 16
-
-// El accomulator puede ser inicializado de antemano, si no, se toma como valor inicial el primer elemento del array
-[2,4,3,7].reduce((accumulator, currentValue) => accumulator + currentValue, 0)
-
-// Devuelve true si todos los elementos cumplen con la condicion
-[2,3,4,5].every((valorActual) => valorActual < 6) // true
-
-// Devuelve true si algunos de los elementos cumplen con la condicion
-[3,5,6,8].some((valorActual) => valorActual > 6) // true
-
-// Cambia el contenido de un arreglo eliminando elementos existentes y/o agregando nuevos elementos.
-const arr = [1, 2, 3, 4, 5];
-arr.splice(2, 1, "a", "b"); // Elimina 1 elemento desde el índice 2 y agrega "a" y "b" [1, 2, "a", "b", 4, 5]
-splice(indice, cantidad elementos a eliminar, agrego, agrego);
-
-// Da vuelta el Array
-[1,2,3,4].reverse() // [4,3,2,1]
-
-// Devuelve, si es positivo, el elemento en el lugar 2 (0,1,2), caso negativo, contando desde el final.
-[5, 12, 8, 130, 44].at(-2) // 130
-[5, 12, 8, 130, 44].at(2) // 8
-
-// Recorre el array
-[1,2,3].forEach(x => console.log(x))
-
-// Conviene valores a un array
-"hola".split() => ['h','o','l','a'];
-//Se puede separar la palabra dependiendo de un regex
-"hola, denu".split(/,\s*/g) => ['hola', 'denu'];
-
-```
 
 ---
 
@@ -178,7 +121,7 @@ Hay que estar atento a que la funcion de callback devuelva algo, de lo contrario
 const numeros = [1, 2, 3, 4, 5, 6];
 
 const paresDuplicados = numeros
-  .filter(num => num % 2 === 0) // Filtrar números pares
+  .filter(num => num % 2 === 0) // Filtrar nÃºmeros pares
   .map(num => num * 2);         // Multiplicarlos por 2
 
 console.log(paresDuplicados); // [4, 8, 12]
@@ -254,13 +197,13 @@ for (const digit of digits) {
 
 ### `forEach`, `map` y `reduce`
 
-- **Foreach** itera por cada uno. Ejecuta la función que se le pasa por parámetro para cada elemento del array. Este método no devuelve nada, por lo tanto, si intentamos guardar su ejecución en una variable lo que ocurrirá es que esa variable tomará el valor de undefined.
+- **Foreach** itera por cada uno. Ejecuta la funciÃ³n que se le pasa por parÃ¡metro para cada elemento del array. Este mÃ©todo no devuelve nada, por lo tanto, si intentamos guardar su ejecuciÃ³n en una variable lo que ocurrirÃ¡ es que esa variable tomarÃ¡ el valor de undefined.
 
 ```jsx
 [1, 2, 3, 4].forEach(function (item) {
    console.log(item);
 });
-// Imprimirá por consola
+// ImprimirÃ¡ por consola
 1
 2
 3
@@ -281,7 +224,7 @@ console.log(result);
 [2,4,6,8]
 ```
 
-- **Reduce** tiene un acumulador y todo. Nos permite, dada una función, “reducirlo” o “transformar” los elementos de un arreglo en un nuevo y único valor.
+- **Reduce** tiene un acumulador y todo. Nos permite, dada una funciÃ³n, â€œreducirloâ€ o â€œtransformarâ€ los elementos de un arreglo en un nuevo y Ãºnico valor.
 
 ```jsx
 var myArray = [10, 20, 30];
@@ -338,7 +281,7 @@ const arr = [6, 89, 3, 45];
 const maximus = Math.max(...arr); // returns 89
 ```
 
-Esto también se puede usar con **objetos,**
+Esto tambiÃ©n se puede usar con **objetos,**
 escribir este codigo
 
 ```jsx
@@ -354,7 +297,7 @@ Es lo mismo que hacer esto
 const { x, y, z } = voxel; // x = 3.6, y = 7.4, z = 6.54
 ```
 
-También podemos transformar los objetos nested en variables
+TambiÃ©n podemos transformar los objetos nested en variables
 
 ```jsx
 const a = {
@@ -383,7 +326,7 @@ const numeros = [3, 1, 2];
 numeros.sort();
 ```
 
-Pero en caso de numeros o palabras compuestas, la funcion en si misma realiza un Orden lexicográfico, no numérico, entonces el funcionamiento debe ser llevado a cabo de otra forma:
+Pero en caso de numeros o palabras compuestas, la funcion en si misma realiza un Orden lexicogrÃ¡fico, no numÃ©rico, entonces el funcionamiento debe ser llevado a cabo de otra forma:
 
 ```javascript
 const numeros = [10, 20, 1, 2];
@@ -396,14 +339,14 @@ numeros.sort((a, b) => a - b);
 // En el caso de palabras
 const palabras = ["manzana", "banana", "cereza"];
 
-// Ordena los elementos alfabéticamente
+// Ordena los elementos alfabÃ©ticamente
 palabras.sort((a, b) => a.localeCompare(b));
 ```
 
 a - b devuelve:
 
-- Un número negativo si a < b (debe aparecer antes).
-- Un número positivo si a > b (debe aparecer después).
+- Un nÃºmero negativo si a < b (debe aparecer antes).
+- Un nÃºmero positivo si a > b (debe aparecer despuÃ©s).
 - 0 si son iguales.
 
 En caso de una ordenacion de arrays donde pueden encontrarse elementos `null` o `undefined`, se puede utilizar la siguiente funcion:
@@ -433,7 +376,7 @@ Es un tipo de dato similar a un Array pero que no posee todas las funciones here
 Un array-like es un objeto que tiene propiedades indexadas y una propiedad length. Aunque no es un array, se comporta como tal. Por ejemplo, el objeto arguments es un array-like.
 
 ```javascript
-// Definición de un objeto "array-like"
+// DefiniciÃ³n de un objeto "array-like"
 var arrayLike = {
   0: 'a',
   1: 'b',
@@ -445,7 +388,7 @@ var arrayLike = {
 console.log(arrayLike[0]); // Imprime: 'a'
 console.log(arrayLike[1]); // Imprime: 'b'
 
-// Iteración sobre el objeto "array-like"
+// IteraciÃ³n sobre el objeto "array-like"
 for (var i = 0; i < arrayLike.length; i++) {
   console.log(arrayLike[i]);
 }
@@ -468,24 +411,26 @@ console.log(array); // Imprime: ['a', 'b', 'c']
 
 | Set | Array |
 | --- | ----- |
-| Almacena valores únicos | Almacena valores duplicados |
-| No tiene índices | Tiene índices |
-| No tiene métodos como `push(), pop(), shift(), unshift()` | Tiene métodos como `push()`, `pop()`, `shift()`, `unshift()` |
-| No tiene métodos como `map(), filter(), reduce()` | Tiene métodos como `map(), filter(), reduce()` |
-| No tiene métodos como `sort(), reverse()` | Tiene métodos como `sort(), reverse()` |
-| No tiene métodos como `find(), findIndex(), every(), some()` | Tiene métodos como `find(), findIndex(), every(), some()` |
-| No tiene métodos como `splice(), slice()` | Tiene métodos como `splice(), slice()` |
-| No tiene métodos como `join(), concat()` | Tiene métodos como `join(), concat()` |
+| Almacena valores Ãºnicos | Almacena valores duplicados |
+| No tiene Ã­ndices | Tiene Ã­ndices |
+| No tiene mÃ©todos como `push(), pop(), shift(), unshift()` | Tiene mÃ©todos como `push()`, `pop()`, `shift()`, `unshift()` |
+| No tiene mÃ©todos como `map(), filter(), reduce()` | Tiene mÃ©todos como `map(), filter(), reduce()` |
+| No tiene mÃ©todos como `sort(), reverse()` | Tiene mÃ©todos como `sort(), reverse()` |
+| No tiene mÃ©todos como `find(), findIndex(), every(), some()` | Tiene mÃ©todos como `find(), findIndex(), every(), some()` |
+| No tiene mÃ©todos como `splice(), slice()` | Tiene mÃ©todos como `splice(), slice()` |
+| No tiene mÃ©todos como `join(), concat()` | Tiene mÃ©todos como `join(), concat()` |
 
 ---
 
-## Spread Operator vs Rest Operator
+## **Fundamentos del Lenguaje**
 
-El Spread Operator (...) y el Rest Operator (...) tienen la misma sintaxis, pero se usan en contextos diferentes y tienen propósitos distintos. Aquí te explico sus diferencias y cómo se usan:
+### Spread Operator vs Rest Operator
+
+El Spread Operator (...) y el Rest Operator (...) tienen la misma sintaxis, pero se usan en contextos diferentes y tienen propÃ³sitos distintos. AquÃ­ te explico sus diferencias y cÃ³mo se usan:
 
 **Spread Operator**
 
-- Propósito: Se utiliza para "expandir" o desempaquetar elementos de un objeto o arreglo en otro objeto o arreglo.
+- PropÃ³sito: Se utiliza para "expandir" o desempaquetar elementos de un objeto o arreglo en otro objeto o arreglo.
 - Contexto de uso: Generalmente se usa en situaciones donde necesitas copiar o combinar elementos de un arreglo o propiedades de un objeto.
 
 ```jsx
@@ -494,7 +439,7 @@ const arr2 = [...arr1, 4, 5];
 console.log(arr2); // [1, 2, 3, 4, 5]
 ```
 
-Aquí, el Spread Operator se usa para desempaquetar todos los elementos de arr1 y luego agregar los nuevos elementos 4 y 5 en el arreglo arr2.
+AquÃ­, el Spread Operator se usa para desempaquetar todos los elementos de arr1 y luego agregar los nuevos elementos 4 y 5 en el arreglo arr2.
 
 ```jsx
 const obj1 = { a: 1, b: 2 };
@@ -506,8 +451,8 @@ El Spread Operator se usa para copiar todas las propiedades de obj1 y agregar un
 
 **Rest Operator**
 
-- Propósito: Se usa para agrupar o recoger varios elementos (en un arreglo o un objeto) en una sola variable, generalmente en una función o al desestructurar un arreglo u objeto.
-- Contexto de uso: Se usa cuando quieres capturar múltiples elementos o propiedades y almacenarlos en un solo arreglo u objeto.
+- PropÃ³sito: Se usa para agrupar o recoger varios elementos (en un arreglo o un objeto) en una sola variable, generalmente en una funciÃ³n o al desestructurar un arreglo u objeto.
+- Contexto de uso: Se usa cuando quieres capturar mÃºltiples elementos o propiedades y almacenarlos en un solo arreglo u objeto.
 
 Ejemplo, recibir indefinida cantidad de parametros en una funcion
 
@@ -532,7 +477,7 @@ console.log(rest); // [3, 4]
 
 | **Aspecto**            | **Spread Operator (`...`)**                                      | **Rest Operator (`...`)**                                             |
 |------------------------|------------------------------------------------------------------|-----------------------------------------------------------------------|
-| **Propósito**           | Expande un arreglo o un objeto en elementos individuales.        | Recoge elementos en un arreglo o un objeto.                           |
+| **PropÃ³sito**           | Expande un arreglo o un objeto en elementos individuales.        | Recoge elementos en un arreglo o un objeto.                           |
 | **Contexto de uso**     | Al crear nuevos arreglos u objetos, o al pasar elementos.       | Al desestructurar datos o en funciones para agrupar argumentos.       |
 | **Uso en arreglos**     | Copiar, combinar o expandir elementos de un arreglo.             | Recoger el resto de los elementos que no se han asignado.            |
 | **Uso en objetos**      | Copiar, combinar o expandir propiedades de un objeto.            | Recoger el resto de las propiedades no desestructuradas.             |
@@ -543,9 +488,9 @@ Ambos usan la misma sintaxis (`...`), pero el **contexto** es lo que determina s
 
 ---
 
-## Namespacing
+### Namespacing
 
-Namespacing se utiliza para agrupar funciones, variables, etc con un nombre único.  Esto mejora la modularidad en codificación y permite la reutilización del código.
+Namespacing se utiliza para agrupar funciones, variables, etc con un nombre Ãºnico.Â  Esto mejora la modularidad en codificaciÃ³n y permite la reutilizaciÃ³n del cÃ³digo.
 
 ```javascript
 var myNamespace = {
@@ -562,7 +507,7 @@ console.log(myNamespace.myVariable); // Hello, World!
 
 ---
 
-## `setTimeout()` vs `setInterval()`
+### `setTimeout()` vs `setInterval()`
 
 
 - `SetTimeout` nos permite ejecutar una funcion una vez despues del intervalo de tiempo
@@ -576,13 +521,13 @@ console.log(myNamespace.myVariable); // Hello, World!
 ```jsx
 let timerId = setInterval(() => alert('tick'), 2000);
 
-// después de 5 segundos parar
+// despuÃ©s de 5 segundos parar
 setTimeout(() => { clearInterval(timerId); alert('stop'); }, 5000);
 ```
 
 ---
 
-## `let`, `var` y `const`
+### `let`, `var` y `const`
 
 La diferencia es el alcance de cada uno.
 
@@ -593,7 +538,7 @@ function ejemplo() {
   if (true) {
     var x = 10;
   }
-  console.log(x); // 10 (aunque x se declaró dentro del bloque if)
+  console.log(x); // 10 (aunque x se declarÃ³ dentro del bloque if)
 }
 ```
 
@@ -614,20 +559,20 @@ let saludar = "dice Hola";
 let saludar = "dice Hola tambien"; // error: Identifier 'saludar' has already been declared
 ```
 
-Sí pongo un “use Strict” en la parte alta del codigo, la consola me va a tirar error cuando trate de codear algo de manera “insegura” o poco practica.
+SÃ­ pongo un â€œuse Strictâ€ en la parte alta del codigo, la consola me va a tirar error cuando trate de codear algo de manera â€œinseguraâ€ o poco practica.
 
 ```jsx
 "use strict";
 x = 3.14; // throws an error because x is not declared
 ```
 
-Cuando declaras una variable con **var,** es declarada de manera global, o local sí esta adentro de una funcion.
+Cuando declaras una variable con **var,** es declarada de manera global, o local sÃ­ esta adentro de una funcion.
 
 - Pueden ser modificadas y re-declaradas dentro de su ambito.
 - Puede ser declarada sin ser inicializada, se inicializa con undefined por defecto.
 - Puede ser declarada global o dentro de una funcion.
 
-En cambio con **let,** sí declaro la funcion dentro de un block, statement o expresion, se va a declarar solo dentro de estas y no globalmente.
+En cambio con **let,** sÃ­ declaro la funcion dentro de un block, statement o expresion, se va a declarar solo dentro de estas y no globalmente.
 
 - No puede ser re-declarado pero si modificado.
 - Puede ser declarada sin ser inicializada, se inicializa con undefined por defecto.
@@ -654,7 +599,7 @@ console.log(printNumTwo()); // 2
 console.log(i); // i no esta definido
 ```
 
-También se puede declarar usando la palabra **const**, que es una constante. Se declara y no puede ser cambiada en su valor, solo sirve de lectura.
+TambiÃ©n se puede declarar usando la palabra **const**, que es una constante. Se declara y no puede ser cambiada en su valor, solo sirve de lectura.
 
 ```jsx
 "use strict"
@@ -662,7 +607,7 @@ const FAV_PET = "Cats";
 FAV_PET = "Dogs"; // error: Assignment to constant variable.
 ```
 
-Se recomienda poner el nombre de las constantes en mayúscula.
+Se recomienda poner el nombre de las constantes en mayÃºscula.
 
 ```jsx
 "use strict";
@@ -672,7 +617,7 @@ s[2] = 45; // funciona
 console.log(s); //  [5, 6, 45]
 ```
 
-Los array sí pueden ser modificados en sí mismos, lo que no se puede es apuntar a otro array distinto.
+Los array sÃ­ pueden ser modificados en sÃ­ mismos, lo que no se puede es apuntar a otro array distinto.
 
 ```jsx
 const s = [5, 7, 2];
@@ -688,9 +633,9 @@ editInPlace();
 
 ---
 
-## Generics
+### Generics
 
-Podes crear objetos genéricos en JavaScript usando funciones constructoras, la sintaxis de objetos literales o clases. Por ejemplo, usando un objeto literal:
+Podes crear objetos genÃ©ricos en JavaScript usando funciones constructoras, la sintaxis de objetos literales o clases. Por ejemplo, usando un objeto literal:
 
 ```javascript
 const persona = {
@@ -702,7 +647,7 @@ const persona = {
 };
 ```
 
-O usando una función constructora para crear varios objetos similares:
+O usando una funciÃ³n constructora para crear varios objetos similares:
 
 ```javascript
 function Persona(nombre, edad) {
@@ -717,7 +662,7 @@ const persona1 = new Persona("Ana", 25);
 persona1.saludar(); // Hola, soy Ana
 ```
 
-También podes usar la sintaxis de clases (ES6):
+TambiÃ©n podes usar la sintaxis de clases (ES6):
 
 ```javascript
 class Persona {
@@ -736,15 +681,15 @@ persona2.saludar(); // Hola, soy Luis
 
 ---
 
-## `Document.ready` vs `Window.onload`
+### `Document.ready` vs `Window.onload`
 
 `Document.ready` se ejecuta despues de cargar todo el HTML. `Window.onload` se ejecuta cuando ya cargo completamente todo el contenido, mas adelante.
 
 ---
 
-## Scope
+### Scope
 
-Es el contexto actual de ejecución.
+Es el contexto actual de ejecuciÃ³n.
 
 Cuando hacemos referencia a una variable, javascript busca su definicion en cada entorno, o Scope, esto depende de como (var, const, let) y donde la declaremos (fuera o dentro de una funcion).
 
@@ -764,7 +709,7 @@ Entre scopes hay jerarquia. Primero se busca la variable en el mismo scope local
 
 ---
 
-## Currying
+### Currying
 
 
 Es una tecnica de programacion funcional donde meto una funcion dentro de otra, y todas estas reciben solo un parametro a la vez. 
@@ -776,19 +721,19 @@ function multiply(a: number): (b: number) => number {
     };
 }
 
-// Uso de la función curried
+// Uso de la funciÃ³n curried
 const multiplyByTwo = multiply(2);
-const result = multiplyByTwo(3);  // result será 6
+const result = multiplyByTwo(3);  // result serÃ¡ 6
 console.log(result);
 ```
 
-En este ejemplo, multiply es una función que toma el primer número, a, y devuelve otra función que toma el segundo número, b. La función devuelta realiza la multiplicación de a y b.
+En este ejemplo, multiply es una funciÃ³n que toma el primer nÃºmero, a, y devuelve otra funciÃ³n que toma el segundo nÃºmero, b. La funciÃ³n devuelta realiza la multiplicaciÃ³n de a y b.
 
 Al dividir todo en pequenias funciones, hace que la reutilizacion de codigo sea mucho mejor. 
 
 ---
 
-## Web y Service Workers
+### Web y Service Workers
 
 Como se menciono anteriormente, Javascript es single-thread, y esto puede ser un problema cuando se trata de operaciones pesadas o que se deben realizar en segundo plano. Para esto se crearon los Service Workers, que son scripts que se ejecutan en segundo plano y que permiten realizar operaciones como notificaciones push, actualizaciones de contenido, y manejo de cache. Es especialmente util tambien cuando quiero que mi app tenga cierta funcionalidad offline.
 
@@ -816,18 +761,18 @@ if ('serviceWorker' in navigator) {
 
 ---
 
-## `isNaN` vs `Math.isNaN`
+### `isNaN` vs `Math.isNaN`
 
 NaN son operaciones aritmeticas que no pueden ser representadas correctamente. Ambas funciones tienen como objetivo identificar si un valor es NaN. `isNaN` global aplica una coercion de tipos al argumento que le pasamos, `Math.isNan` no lo hace, lo que hace que sea mas seguro de usar para valores no numericos.
 
 ```jsx
-isNaN('denu') // devolvera true porque primero intentará convertir la cadena a un numero
-Number.isNaN('denu') // false porque no convertirá la cadena a numero
+isNaN('denu') // devolvera true porque primero intentarÃ¡ convertir la cadena a un numero
+Number.isNaN('denu') // false porque no convertirÃ¡ la cadena a numero
 ```
 
 ---
 
-## `class` vs `function`
+### `class` vs `function`
 
 class tiene un alcance comprendido por llaves, al igual que las variables let. function es local a la funcion donde fue definida, no podemos usar una clase o funcion constructora por fuera del alcance en donde se encuentra.
 
@@ -866,9 +811,9 @@ console.assert( typeof  C === 'function' );
 
 ---
 
-## Truthy and Falsy
+### Truthy and Falsy
 
-En JavaScript, un valor se considera "falsy" si se convierte en `false` cuando se evalúa en un contexto booleano.
+En JavaScript, un valor se considera "falsy" si se convierte en `false` cuando se evalÃºa en un contexto booleano.
 
 ```jsx
 // Falso
@@ -880,16 +825,16 @@ Boolean(false); //false
 Boolean(""); //false
 
 // Verdadero:
-Boolean(1); //true para 1 o cualquier número diferente de cero (0)
+Boolean(1); //true para 1 o cualquier nÃºmero diferente de cero (0)
 Boolean("a"); //true para cualquier caracter o espacio en blanco en el string
-Boolean([]); //true aunque el array esté vacío
-Boolean({}); //true aunque el objeto esté vacío
-Boolean(function(){}); //Cualquier función es verdadera también
+Boolean([]); //true aunque el array estÃ© vacÃ­o
+Boolean({}); //true aunque el objeto estÃ© vacÃ­o
+Boolean(function(){}); //Cualquier funciÃ³n es verdadera tambiÃ©n
 ```
 
 ---
 
-## Hoisting
+### Hoisting
 
 
 Es un mecanismo de JS en el que las variables y declaraciones de funciones se mueven a la parte superior de su ambito antes de la ejecucion del codigo.
@@ -909,7 +854,7 @@ Es el usar las variables antes de que sean declaradas.
 
 ---
 
-## Primitivo vs Objeto
+### Primitivo vs Objeto
 
 - Los primitivos se pasan por valor, los objetos se pasan por referencia
 - Los primitivos se copian por valor y los objetos se copian por referencia
@@ -919,7 +864,7 @@ Es el usar las variables antes de que sean declaradas.
 Casos **primitivos**
 
 ```jsx
-let animal = ‘perro’
+let animal = â€˜perroâ€™
 let mascota = animal
 animal = 'gato'
 console.log(mascota) // perro, se copio por valor y no referencia
@@ -939,7 +884,7 @@ console.log(mascota.nombre) // gato, se copio referencia no valor
 
 ---
 
-## Declarativa vs Expresiva
+### Declarativa vs Expresiva
 
 
 En las **Funciones Declarativas** usamos la palabra reservada `Function` para poder declararla
@@ -959,14 +904,16 @@ var nombre = function(nombre){
     console.log(`Hola ${nombre}`)
 }
 
-nombre(‘Diego’);
+nombre(â€˜Diegoâ€™);
 ```
 
 A las funciones declarativas se les aplica hoisting, a la otra no, hoisting se aplica solo a las palabra sreservadas `var` y `function`, es decir, a la expresion de funcion podriamos llamarla recien despues de declararla.
 
 ---
 
-## Event Loop
+## **Asincronia y Runtime**
+
+### Event Loop
 
 El Event Loop es un bucle que se encarga de manejar los eventos y las operaciones asincronas en Javascript.
 
@@ -1024,7 +971,7 @@ console.log('Fin');
 
 ---
 
-## `setTimeout`
+### `setTimeout`
 
 `setTimeout` es una funcion que permite ejecutar una funcion o un bloque de codigo despues de un tiempo determinado. Se utiliza para programar la ejecucion de una tarea en el futuro.
 
@@ -1042,7 +989,9 @@ En este ejemplo, la funcion dentro de `setTimeout` se ejecutara despues de 2 seg
 
 ---
 
-## `Map` vs `Weakmap`
+## **Objetos, Modulos y Estructuras**
+
+### `Map` vs `WeakMap`
 
 
 Son casi iguales, son la clasica estructura de datos de diccionario, su diferencia es que se puede acceder a los clave-valores de un Map usando .values o .keys, en un Weakmap no se puede hacer eso.
@@ -1075,7 +1024,7 @@ Weakmap, ademas, solo admite objetos como clave, estos estan debilmente referenc
 
 --- 
 
-## Template Literals
+### Template Literals
 
 Con **template literals**:
 
@@ -1094,11 +1043,11 @@ console.log(greeting); // prints
 // I am 56 years old.
 ```
 
-Se usa otro tipo de “comilla” cuando se quiere invocar al String (`) y no es necesario poner /n para que se haga un salto de línea en el texto de salida
+Se usa otro tipo de â€œcomillaâ€ cuando se quiere invocar al String (`) y no es necesario poner /n para que se haga un salto de lÃ­nea en el texto de salida
 
-## `export default` - Módulos ES6
+### `export default` - MÃ³dulos ES6
 
-Lo mismo que el anterior, sí queremos exportar una funcion, cuando la declaramos, la exportamos. Se usa cuando quiero exportar solo un valor o funcion, solo puedo elegir un valor que tenga esta propiedad de exportacion, tampoco se puede usar con const, var o let.
+Lo mismo que el anterior, sÃ­ queremos exportar una funcion, cuando la declaramos, la exportamos. Se usa cuando quiero exportar solo un valor o funcion, solo puedo elegir un valor que tenga esta propiedad de exportacion, tampoco se puede usar con const, var o let.
 
 ```jsx
 export default function add(x,y) {
@@ -1113,7 +1062,7 @@ import add from "math_functions";
 add(5,4); //Devuelve el resultado de acuerdo al metodo exportado anteriormente
 ```
 
-## `import` vs `require`
+### `import` vs `require`
 
 - `Require`: Se usa para importar las funciones y el codigo en un archivo externo. Esto posee un problema, el cual es que este codigo puede ser muy largo y solo necesito una parte del codigo.
 - `Import`: Herramienta de ES6 para importar solo los componentes que necesitamos de un archivo.
@@ -1122,7 +1071,7 @@ add(5,4); //Devuelve el resultado de acuerdo al metodo exportado anteriormente
 import { countItems } from "math_array_functions"
 ```
 
-## `Object.freeze` - Inmutabilidad
+### `Object.freeze` - Inmutabilidad
 
 Con `Object.freeze` se puede hacer que un objeto sea inmutable. Es una funcion que evita que puedas modificar propiedades de un objeto o una variable
 
@@ -1140,9 +1089,9 @@ console.log(obj);
 
 Cuando intento modificar algo, no tira error, simplemente lo ignora.
 
-## Destructuración
+### DestructuraciÃ³n
 
-La destructuración es una expresión de JavaScript que permite desempaquetar valores de arreglos o propiedades de objetos en distintas variables.
+La destructuraciÃ³n es una expresiÃ³n de JavaScript que permite desempaquetar valores de arreglos o propiedades de objetos en distintas variables.
 
 ```jsx
 const person = {
@@ -1158,7 +1107,7 @@ Esto no ahorra tener que crear dos variables distintas en dos lineas distintas y
 
 ---
 
-## Set vs Map
+### Set vs Map
 
 Los 3 son colecciones pero tienen caracteristicas distintas entre si.
 
@@ -1187,13 +1136,13 @@ const map = new Map();
 - `clear()`: Elimina todos los pares clave-valor del mapa
 - `size`: Devuelve la cantidad de pares clave-valor en el mapa
 
-`WeakMap` es un tipo de `Map` que no permite claves de tipo primitivo, solo objetos. No tiene metodos para iterar sobre sus elementos, ni tampoco tiene el metodo `size`. Es útil en situaciones donde se necesita asociar datos adicionales a un objeto sin interferir con la recolección de basura del objeto. Por ejemplo, en la gestión de metadatos de objetos que son creados y destruidos dinámicamente, o para mantener información privada de instancias en bibliotecas y frameworks sin exponer esos datos en las propias instancias.
+`WeakMap` es un tipo de `Map` que no permite claves de tipo primitivo, solo objetos. No tiene metodos para iterar sobre sus elementos, ni tampoco tiene el metodo `size`. Es Ãºtil en situaciones donde se necesita asociar datos adicionales a un objeto sin interferir con la recolecciÃ³n de basura del objeto. Por ejemplo, en la gestiÃ³n de metadatos de objetos que son creados y destruidos dinÃ¡micamente, o para mantener informaciÃ³n privada de instancias en bibliotecas y frameworks sin exponer esos datos en las propias instancias.
 
 ```javascript
 let weakMap = new WeakMap();
 let obj = {};
 
-// Añadir datos al WeakMap
+// AÃ±adir datos al WeakMap
 weakMap.set(obj, { key: "value" });
 
 console.log(weakMap.get(obj)); // Output: { key: "value" }
@@ -1206,7 +1155,7 @@ weakMap.delete(obj);
 console.log(weakMap.has(obj)); // Output: false
 
 // El objeto obj ya no tiene otras referencias, puede ser recolectado por el recolector de basura
-obj = null; // Ahora weakMap está vacío
+obj = null; // Ahora weakMap estÃ¡ vacÃ­o
 ```
 
 En resumen, WeakMap proporciona una forma segura de memoria para asociar datos a objetos mientras permite que esos objetos sean recolectados por el recolector de basura cuando ya no son necesarios, ayudando a prevenir problemas de memoria en aplicaciones grandes y complejas.
@@ -1219,7 +1168,7 @@ let weakSet = new WeakSet();
 let obj = {};
 let obj2 = {};
 
-// Añadir objetos al WeakSet
+// AÃ±adir objetos al WeakSet
 weakSet.add(obj);
 weakSet.add(obj2);
 
@@ -1235,7 +1184,7 @@ Ninguno de los `weak` es enumerable, es decir, no se pueden iterar sobre ellos.
 
 ---
 
-## Parametros por valor y por referencia
+### Parametros por valor y por referencia
 
 En Javascript podemos pasar como parametro valores que pueden ser por valor en si mismo o por referencia, es decir, pasamos el puntero de memoria que apunta a la direccion de memoria donde se encuentra el valor.
 
@@ -1278,7 +1227,7 @@ function modificarArray(array) {
 
 ---
 
-## Prototype
+### Prototype
 
 `Prototype` permite que objetos y funciones en Javascript compartan propiedades y metodos entre si.
 
@@ -1299,7 +1248,7 @@ const perro = {
 // Vinculamos el prototipo de "perro" al objeto "animal"
 Object.setPrototypeOf(perro, animal);
 
-// Ahora "perro" puede usar el método de "animal"
+// Ahora "perro" puede usar el mÃ©todo de "animal"
 perro.hacerSonido(); // El animal hace un sonido
 ```
 
@@ -1310,7 +1259,7 @@ function Persona(nombre) {
   this.nombre = nombre;
 }
 
-// Agregamos un método al prototipo de Persona
+// Agregamos un mÃ©todo al prototipo de Persona
 Persona.prototype.saludar = function () {
   console.log(`Hola, me llamo ${this.nombre}`);
 };
@@ -1318,7 +1267,7 @@ Persona.prototype.saludar = function () {
 // Creamos una nueva instancia de Persona
 const juan = new Persona("Juan");
 
-// Llamamos al método saludar
+// Llamamos al mÃ©todo saludar
 juan.saludar(); // Hola, me llamo Juan
 ```
 
@@ -1329,7 +1278,7 @@ Todos los objetos de JS heredan metodos de un Prototype, `Object.prototype` es e
 ```javascript
 const arr = [1, 2, 3];
 
-// Los métodos como `push` están en el prototipo de Array
+// Los mÃ©todos como `push` estÃ¡n en el prototipo de Array
 console.log(arr.__proto__ === Array.prototype); // true
 
 // El prototipo de Array.prototype es Object.prototype
@@ -1345,7 +1294,7 @@ En resumen, prototype es la base del funcionamiento de objetos y de la herencia 
 
 ---
 
-## `event.preventDefault()`
+### `event.preventDefault()`
 
 Los botones de los form en HTML por defecto hacen un submit, lo que puede llevar a que se recargue la pagina. Para evitar esto, se usa `event.preventDefault()` para evitar que se ejecute el comportamiento por defecto del evento.
 
@@ -1361,7 +1310,7 @@ U otro ejemplo es para evitar que el resto de eventos que se ejecutarian por def
 
 ---
 
-## **Preguntas frecuentes**
+## **Preguntas Frecuentes**
 
 ### Comparar dos Objetos con `===`, es posible?
 
@@ -1483,7 +1432,7 @@ Se utiliza cuando se necesita esperar a que todas las promesas se resuelvan para
 
 ### `Promise.allSettled`
 
-Devuelve una promesa que se resuelve después de que todas las promesas del iterable se hayan resuelto o rechazado, con un array de objetos que describen el resultado de cada promesa.
+Devuelve una promesa que se resuelve despuÃ©s de que todas las promesas del iterable se hayan resuelto o rechazado, con un array de objetos que describen el resultado de cada promesa.
 
 ```jsx
 const promise1 = Promise.resolve(3);
@@ -1496,7 +1445,7 @@ Promise.allSettled(promises).
 
 ### `Promise.race`
 
-Devuelve una promesa que se resuelve o rechaza tan pronto como una de las promesas del iterable se resuelve o se rechaza, con el valor o la razón de esa promesa.
+Devuelve una promesa que se resuelve o rechaza tan pronto como una de las promesas del iterable se resuelve o se rechaza, con el valor o la razÃ³n de esa promesa.
 
 ```jsx
 const promise1 = new Promise((resolve, reject) => setTimeout(resolve, 500, 'one'));
@@ -1644,7 +1593,7 @@ El mas usado es **Promises** por su facilidad de lectura y manejo de errores.
 ### Fetch API
 
 
-Es una interfaz moderna que permite hacer peticiones HTTP desde el navegador. Es una alternativa a XMLHttpRequest y es más fácil de usar y más potente.
+Es una interfaz moderna que permite hacer peticiones HTTP desde el navegador. Es una alternativa a XMLHttpRequest y es mÃ¡s fÃ¡cil de usar y mÃ¡s potente.
 
 ```jsx
 fetch('https://api.github.com/users')
@@ -1667,7 +1616,7 @@ async function fetchData() {
 
 ---
 
-### ¿Cómo manejarías errores en funciones con async/await de forma eficiente?
+### Â¿CÃ³mo manejarÃ­as errores en funciones con async/await de forma eficiente?
 
 Para manejar errores en funciones con async/await de forma eficiente, se puede usar un bloque `try/catch` para manejar errores de manera sincrona.
 
@@ -1681,5 +1630,11 @@ async function myAsyncFunction() {
   }
 }
 ```
+
+
+
+
+
+
 
 

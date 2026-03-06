@@ -76,7 +76,7 @@ const sidebars: SidebarsConfig = {
       label: '📚 Teoria',
       link: { type: 'doc', id: 'landing/teoria' },
       collapsed: true,
-      items: ['algoritmos', 'desarrollo-web/backend/poo', 'patrones'],
+      items: ['algoritmos', 'desarrollo-web/backend/poo', 'patrones', 'internetredes'],
     },
     'accesibilidad/accesibilidad',
     'seguridad',
