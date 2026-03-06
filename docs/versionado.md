@@ -1,6 +1,6 @@
 # 🗂️ Versionado
 
-### **Git vs Mercurial**
+## Git vs Mercurial
 
 Las diferencias principales entre **Git** y **Mercurial** son:
 
@@ -80,20 +80,21 @@ Las diferencias principales entre **Git** y **Mercurial** son:
 Git es la opción más usada hoy en día, sobre todo si tu proyecto es grande o necesitas muchas herramientas y flexibilidad. Mercurial es una buena alternativa si buscas algo más simple y directo, aunque cada vez se usa menos.
 
 ---
+## **Git**
 
-### **Comandos Básicos de Git**
+### Comandos Básicos Git
 
 - `git init`: Inicia un repositorio en el directorio actual.
-- `git status`: Muestra el estado de los archivos (si están listos para subir o no).
+- `git status`: Muestra el estado de los archivos (si están listos para subir o no
 - `git add archivo` o `git add *.exe`: Agrega archivos para el próximo commit.
 - `git commit -m "mensaje"`: Guarda los cambios con un mensaje.
 - `git log`: Muestra el historial de cambios.
 - `git remote add origin <url>`: Agrega la dirección del repositorio remoto (por ejemplo, en GitHub).
 - `git push -u origin master`: Sube los cambios al repositorio remoto.
 - `git clone <url>`: Descarga un repositorio remoto.
-- `git pull origin master`: Trae los últimos cambios del repositorio remoto.
-- `git branch <nombre>`: Crea una nueva rama.
+- `git pull orig in master`: Trae los últimos cambios del repositorio remoto.
 - `git log --graph --all --oneline`: Muestra el historial de forma gráfica y resumida.
+- `git diff`: Muestra las diferencias entre el working directory actual y los cambios staged
 
 Si agregás un archivo **.gitignore**, podés evitar que se suban archivos que no te interesan (como cachés o temporales).
 
@@ -102,9 +103,20 @@ Si agregás un archivo **.gitignore**, podés evitar que se suban archivos que n
 - `--global`: Para tu usuario.
 - `--system`: Para todos los usuarios del sistema.
 
+
+### Comandos Branching
+
+- `git branch`: Muestra una lista de todos los branches del repositorio.
+- `git branch <nombre del branch>`: Crea una nueva rama.
+- `git checkout <nombre del branch>`: Se hace el switch a un branch existente.
+- `git checkout -b <nombre del branch>`: Crea y hace el switch al branch en un solo paso.
+- `git merge <nombre del branch>`: Mergea los cambios del branch especificado al branch actual.
+- `git rebase <nombre del branch>`: Se aplican los cambios del branch especificado al branch actual, en vez de mergear. 
+- `git branch -d <nombre del branch>`: Elimina el branch especificado localmente.
+
 ---
 
-### **Conceptos base de Git**
+### Conceptos base Git
 
 - **Repositorio remoto:** Donde se guarda el código en la nube o en un servidor.
 - **Repositorio local:** Tu copia en la computadora.
@@ -115,7 +127,7 @@ Si agregás un archivo **.gitignore**, podés evitar que se suban archivos que n
 
 ---
 
-### **Manejo de Branches (Git Flow)**
+### Manejo de Branches (Git Flow)
 
 - **Master:** Rama principal, lista para producción.
 - **Develop:** Rama de desarrollo, donde se hacen los cambios.
@@ -125,7 +137,7 @@ Si agregás un archivo **.gitignore**, podés evitar que se suban archivos que n
 
 ---
 
-### **Trunk Based Development vs Git Flow**
+### Trunk Based Development vs Git Flow
 
 **Trunk Based Development**:
 - Todos trabajan sobre la rama principal (main o trunk).
@@ -151,7 +163,7 @@ Si agregás un archivo **.gitignore**, podés evitar que se suban archivos que n
 
 ---
 
-### **Explica la diferencia entre `git reset --soft`, `--mixed` y `--hard`.**
+### `git reset --soft` vs `--mixed` vs `--hard`
 
 `git reset` se usa para deshacer cambios en tu repositorio. La diferencia entre `--soft`, `--mixed` y `--hard` es cómo afectan el área de preparación (staging area) y el directorio de trabajo.
 
@@ -172,7 +184,7 @@ Si agregás un archivo **.gitignore**, podés evitar que se suban archivos que n
 
 ---
 
-### **¿Cómo vinculás los cambios del código con un changelog?**
+## ¿Cómo vinculás los cambios del código con un changelog?
 
 Para vincular los cambios del código con un changelog, lo más común es:
 
