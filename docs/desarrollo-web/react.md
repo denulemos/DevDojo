@@ -532,7 +532,59 @@ useEffect(() => {
 }, [increment])
 ```
 
-Si no tuviéramos el useCallback, el useEffect se dispararía ante cada cambio de la función increment.
+Si no tuviéramos el `useCallback`, el `useEffect` se dispararía ante cada cambio de la función increment.
+
+Hay que **evitar caer en la sobreoptimizacion**
+
+| Usar cuando.. | Evitar cuando.. |
+| --- | --- |
+| Se pasan callbacks a componentes hijos dentro de un `React.memo` | El componente se re-renderiza de todas maneras |
+| Calculos pesados, como filtros | El calculo no es pesado |
+| En los dependency array del `useEffect` | Agregar complejidad sin ningun tipo de valor |
+
+
+Ejemplo de **Sobreoptimizacion**:
+
+```jsx
+const [count, setCount] = useState(0)
+
+const handleClick = useCallback(() => {
+  setCount(prevCount => prevCount + 1)
+}, []);
+
+// el handleClick se encuentra en el mismo contexto del componente, es innecesario
+return (
+  <button onClick={handleClick}>
+    Count: {count}
+  </button>
+)
+```
+
+Ejemplo de **buen uso**:
+
+```jsx 
+// Componente hijo optimizado con memo
+const IncrementChild = memo(({increment}) => {
+  console.log("render");
+  return <button onClick={increment}>Increment</button>
+});
+
+function parentComponent() {
+  const [count, setCount] = useState(0);
+
+  // useCallback estabiliza la funcion
+  const increment = useCallback(() => {
+    setCount(prevCount => prevCount + 1)
+  }, []);
+
+  return (
+    <div>
+      <p>Parent count: {count}</p>
+      <IncrementChild increment={increment}/>
+    </div>
+  )
+}
+```
 
 ---
 
