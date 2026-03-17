@@ -657,12 +657,20 @@ En resumen, migrar a Angular permite crear aplicaciones más rápidas, escalable
 Reactive Extensions for Javascript (RxJS) es una libreria que nos permite trabajar con programacion reactiva en Javascript permitiendo el manejo de flujos asincronos de una forma mas declarativa, reactiva y consistente.
 
 - Manejo de peticiones asincronas, en vez de utilizar Callbacks o Promises anidados, se pueden utilizar Observables para manejar flujos de datos asincronos
-- Cuando tengo varias fuentes de datos que manejar que interactuan entre si, en RxJS puedo utilizar operadores como `map`, `combineLatest`, `map`, `filter` y `switchMap` para manejar estos flujos.
-- RxJS ofrece herramientas como `takeUntil` o `takeWhile` para manejar las subscripciones de una forma eficiente y asi evitar memory leaks
 - Con RxJs puedo manejar tanto flujos de datos sincronicos como asincronicos, y puedo combinarlos de una forma muy sencilla
-- Si necesito coordinar multiples tareas asincronicas o flujos, RxJS me permite hacerlo de una forma muy sencilla con `forkJoin`, `merge`, `concat`, `combineLatest`, `zip`, etc, mejorando la concurrencia (la cual significa que puedo manejar multiples tareas al mismo tiempo)
 
-En parte su uso podria ser reemplazado con Angular Signals en Angular 16, pero RxJS sigue siendo una herramienta muy poderosa para manejar flujos de datos asincronos.
+### Operadores
+
+| Area | Operadores |
+| --- | --- |
+| Creacion | `from, fromEvent, of` |
+| Combinacion | `combineLatest, concat, merge, startWith, withLatestFrom, zip` (Si necesito coordinar multiples tareas asincronicas o flujos) |
+| Filtro | `debounceTime, distinctUntilChanged, filter, take, takeUntil` (manejar las subscripciones de una forma eficiente y asi evitar memory leaks) |
+| Transformacion | `bufferTime, concatMap, map, mergeMap, scan, switchMap` |
+| Utilidad | `tap` |
+| Multicasting | `share` |
+
+- Cuando tengo varias fuentes de datos que manejar que interactuan entre si, en RxJS puedo utilizar operadores como `map`, `combineLatest`, `map`, `filter` y `switchMap` para manejar estos flujos.
 
 ### Observable
 
@@ -707,12 +715,11 @@ Ejemplo mas basico
 let observable = Observable.create((observer) => {
   observer.next("Hello World!");
 });
+
 observable.subscribe(function logMessage(message) {
   console.log(message);
 });
 ```
-
-### `map`
 
 ### Observable vs Promises
 
@@ -763,14 +770,88 @@ Se deberian usar cuando:
 - `BehaviourSubject` cuando solo preciso el ultimo valor
 - `ReplaySubject` cuando quiero realizar una especie de caching y obtener solo valores anteriores. 
 
+Los mismos poseen 3 metodos:
 
-### Porque es importante desuscribirnos de los Observables?
+- `subscribe`: Con este metodo podemos subscribirnos
+- `next`: Podemos pasar nuevos valores, todos los nuevos subscriptores recibiran esto
+- `complete`: Se cierran todas las subscripciones al subject
 
-- **Evitar Memory Leaks** Estas ocurren cuando objetos que ya no estamos usando quedan en memoria, si no te desubscribis de los observables, por su naturaleza, se seguiran ejecutando siempre y cuando tengan subscribers que lo escuchen.
-- **Controlar el Ciclo de Vida del Observable**: Como Angular no lo maneja de manera automatica, es responsabilidad del desarrollador su manejo. Utilizar técnicas de desuscripción adecuadas (como ngOnDestroy o el operador takeUntil) garantiza que los observables solo vivan durante el ciclo de vida necesario y no más.
-- **Evitar el Doble Manejo de Datos**: Si no te desuscribes de un observable, puedes terminar recibiendo datos que ya no necesitas o que no tienen sentido para el componente actual. Esto puede generar lógica extra para manejar estos casos y complicar el código.
+### BehaviourSubject
 
-### Formas de desubscripcion de Observables
+Es una variante de Subject, conoce el valor actual, lo cual el subject normal no hace. Sirve cuando quiero pasarle el valor ya obtenido a un subscriptor que llego un poco mas tarde. 
+
+Su uso mas comun es para ser un cache o store para que los suscriptores puedan leer el ultimo valor obtenido cuando es necesario.
+
+```typescript
+const state1 = { name: "James", age: 33 };
+const state2 = { name: "Anna", age: 27 };
+
+const store = new BehaviorSubject(state1);
+
+const v1 = getValueFromStore();
+console.log(v1.name); // 'James'
+
+updateStore(state2);
+
+const v2 = getValueFromStore();
+console.log(v2.name); // 'Anna'
+
+selectFromStore((state) => state.age).subscribe((v) => console.log(v));
+
+function updateStore(v) {
+  store.next(v);
+}
+
+function getValueFromStore() {
+  return store.value;
+}
+
+function selectFromStore(selector) {
+  return store.asObservable().pipe(map(selector));
+}
+```
+
+### ReplaySubject
+
+Es muy similar a `BehaviourSubjects`, la diferencia es que no solo recuerdan el ultimo valor, si no que recuerdan tantos valores como necesitemos. 
+
+Es usado cuando necesitamos repetir una serie de eventos, muy util por ejemplo para lazy loading, cuando queremos obtener valores que puede ser que hayan sido obtenidos antes de que la ejecucion principal finalice.
+
+```typescript
+const events = setUpListeners();
+emulateLibraryLoad(events);
+
+function emulateLibraryLoad(events) {
+  setTimeout(() => {
+    events.subscribe((event) => console.log(event));
+  }, 3000);
+}
+
+function setUpListeners() {
+  const events = new ReplaySubject();
+
+  const clicks = fromEvent(document, "click");
+  const spacebars = fromEvent(document, "keyup").pipe(
+    filter((event: any) => event.code === "Space")
+  );
+
+  merge(clicks, spacebars)
+    .pipe(tap((event) => events.next(event)))
+    .subscribe();
+
+  return events.asObservable();
+}
+```
+
+### Subjects vs Observables
+
+| Subjects | Observables |
+| --- | --- |
+| `BehaviourSubject` cuando se necesita el ultimo valor obtenido | Solo necesito un Subscriber |
+| `ReplaySubject` cuando necesito mas que el ultimo valor obtenido | No me interesa en que orden llegan los subscriptores, dare valores en orden de llegada |
+| `Subject` no quiero pasar ningun valor, solo quiero agregar un hook al evento | |
+
+### Desubscripcion de Observables
 
 Uso de `ngOnDestroy`
 
@@ -807,7 +888,13 @@ private destroy$ = new Subject<void>();
   }
 ```
 
-### Cual es la diferencia entre un Observable "cold" y "hot"?
+### Porque es importante desuscribirnos de los Observables?
+
+- **Evitar Memory Leaks** Estas ocurren cuando objetos que ya no estamos usando quedan en memoria, si no te desubscribis de los observables, por su naturaleza, se seguiran ejecutando siempre y cuando tengan subscribers que lo escuchen.
+- **Controlar el Ciclo de Vida del Observable**: Como Angular no lo maneja de manera automatica, es responsabilidad del desarrollador su manejo. Utilizar técnicas de desuscripción adecuadas (como ngOnDestroy o el operador takeUntil) garantiza que los observables solo vivan durante el ciclo de vida necesario y no más.
+- **Evitar el Doble Manejo de Datos**: Si no te desuscribes de un observable, puedes terminar recibiendo datos que ya no necesitas o que no tienen sentido para el componente actual. Esto puede generar lógica extra para manejar estos casos y complicar el código.
+
+### Cold Observables
 
 Los **Cold Observables** son Observables que crean un flujo de datos por cada subscriptor, produciendo datos on-demand, es decir, solo cuando alguien se subscribe. El ejemplo mas comun es el llamado a un servicio con HTTP.
 
@@ -822,77 +909,45 @@ httpObservable.subscribe(data => console.log('Subscriber 1:', data));
 httpObservable.subscribe(data => console.log('Subscriber 2:', data));
 ``` 
 
+O por ejemplo, si tenemos una funcion observable que genera un numero random
+
+```typescript
+import { Observable } from "rxjs";
+
+const randomNumberCold$ = new Observable((observer) => {
+  const random = Math.random();
+  observer.next(random);
+  observer.complete();
+});
+
+// Cada subscripcion ejecuta la funcion, entonces se generan dos valores distintos por subscripcion
+
+randomNumberCold$.subscribe(console.log); // 0.8249378778010443
+randomNumberCold$.subscribe(console.log); // 0.36532653367650236
+```
+
+### Hot Observables
+
 Los **Hot Observables** tienen su propio flujo independiente de las subscripciones, un ejemplo puede ser un WebSocket, donde los datos se emiten independientemente de las subscripciones. Tambien puede suceder que si una parte de subscribe de forma muy tardia, se pierda de alguna informacion, no vera ningun historial al respecto.
 
-```typescript
-import { fromEvent } from 'rxjs';
-
-const clicks$ = fromEvent(document, 'click');
-
-clicks$.subscribe(() => console.log('Subscriber 1: Click detected'));
-setTimeout(() => {
-  clicks$.subscribe(() => console.log('Subscriber 2: Click detected (late subscriber)'));
-}, 5000);
-```
-
-### Angular Signals vs Observables
-
-Observables
+- Todos los Observers obtendran la misma informacion, se dice que el Hot observable es **multicast**
+- Tambien refiere a cuando se devuelve un valor que se genera por fuera del observable
 
 ```typescript
-import { Component } from '@angular/core';
-import { Observable, interval } from 'rxjs';
-import { map } from 'rxjs/operators';
+const random = Math.random();
+console.log(random); // 0.05659653519968999
 
-@Component({
-  selector: 'app-observable-example',
-  template: `<p>Contador: {{ counter$ | async }}</p>`,
-})
-export class ObservableExampleComponent {
-  counter$: Observable<number>;
+const randomNumberHot$ = new Observable((observer) => {
+  observer.next(random);
+  observer.complete();
+});
 
-  constructor() {
-    this.counter$ = interval(1000).pipe(map((value) => value + 1));
-  }
-}
+// math.random es ejecutado solo una vez, y se genera independientemente de las subscripciones al observable
+randomNumberHot$.subscribe(console.log); // 0.05659653519968999
+randomNumberHot$.subscribe(console.log); // 0.05659653519968999
 ```
 
-Signals
-
-```typescript
-import { Component, signal, effect } from '@angular/core';
-
-@Component({
-  selector: 'app-signal-example',
-  template: `<p>Contador: {{ counter() }}</p>`,
-})
-export class SignalExampleComponent {
-  counter = signal(0);
-
-  constructor() {
-    setInterval(() => {
-      this.counter.set(this.counter() + 1);
-    }, 1000);
-  }
-}
-```
-
-Comparación
-
-- **Observables**: Necesitan suscripción y, opcionalmente, el uso del `async` pipe para manejar el flujo de datos. Son ideales para manejar flujos complejos o múltiples fuentes de datos.
-- **Signals**: Son más simples y no requieren suscripción explícita. Angular maneja automáticamente la reactividad, lo que los hace ideales para estados locales y cambios simples.
-
-Ambos enfoques pueden coexistir en una aplicación Angular, dependiendo de las necesidades específicas del proyecto.
-
-Algunas de las ventajas del uso de Signals vs Observables son:
-
-- No es necesario subscribirse ni desuscribirse de los Signals, posee un sistema de reactividad automatica que detecta cualquier cambio de input
-- Signals es mucho mas simple y declarativo que RxJS
-- Se evitan re-renderings innecesarios ya que Angular maneja mucho mejor la deteccion de cambios
-
-Sin embargo, si uno planifica trabajar con WebSockets o Eventos Complejos, Observables puede ser una mejor opcion, ya que posee herramientas para manejar la informacion de forma mucho mas especifica.
-
-### ¿Qué es Angular Signals?
+### Signals
 
 Angular signals es una caracteristica que aparecio con Angular 16 en donde se introducen herramientas de reacividad para mejorar la gestion de estados y deteccion de cambios. Reemplaza a algunos elementos nativos y a algunos usos de RxJs
 
@@ -941,6 +996,57 @@ effect(() => {
 
 counter.set(1); // Consola: "Counter value is: 1"
 ```
+
+### Signals vs Observables
+
+Observables
+
+```typescript
+import { Component } from '@angular/core';
+import { Observable, interval } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+@Component({
+  selector: 'app-observable-example',
+  template: `<p>Contador: {{ counter$ | async }}</p>`,
+})
+export class ObservableExampleComponent {
+  counter$: Observable<number>;
+
+  constructor() {
+    this.counter$ = interval(1000).pipe(map((value) => value + 1));
+  }
+}
+```
+
+Signals
+
+```typescript
+import { Component, signal, effect } from '@angular/core';
+
+@Component({
+  selector: 'app-signal-example',
+  template: `<p>Contador: {{ counter() }}</p>`,
+})
+export class SignalExampleComponent {
+  counter = signal(0);
+
+  constructor() {
+    setInterval(() => {
+      this.counter.set(this.counter() + 1);
+    }, 1000);
+  }
+}
+```
+
+Ambos enfoques pueden coexistir en una aplicación Angular, dependiendo de las necesidades específicas del proyecto.
+
+| Signals | Observables |
+| --- | --- |
+| Son más simples y no requieren suscripción explícita. | Necesitan suscripción y, opcionalmente, el uso del `async` pipe para manejar el flujo de datos. |
+| Angular maneja automáticamente la reactividad, lo que los hace ideales para estados locales y cambios simples. | Son ideales para manejar flujos complejos o múltiples fuentes de datos. |
+| No es necesario subscribirse ni desuscribirse de los Signals, posee un sistema de reactividad automatica que detecta cualquier cambio de input | Sin embargo, si uno planifica trabajar con WebSockets o Eventos Complejos, Observables puede ser una mejor opcion, ya que posee herramientas para manejar la informacion de forma mucho mas especifica. |
+| Se evitan re-renderings innecesarios ya que Angular maneja mucho mejor la deteccion de cambios | Se debe manejar el changeDetection |
 
 ---
 
