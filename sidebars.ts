@@ -66,6 +66,13 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: '🤖 LLM',
+      link: { type: 'doc', id: 'landing/llm' },
+      collapsed: true,
+      items: ['claude'],
+    },
+    {
+      type: 'category',
       label: '🤝 Soft Skills',
       link: { type: 'doc', id: 'landing/soft' },
       collapsed: true,

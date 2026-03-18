@@ -1104,39 +1104,23 @@ function pedidosReducer(state = [], action) {
 - Hay muchas herramientas para ver y revisar los cambios.
 - Es fácil de probar y mantener, porque cada parte hace solo una cosa.
 
----
+**Flujo Redux**
 
-### ¿Cual es el flujo de Redux?
-
-
-Store
-
-- Contiene el state y solo hay un Store por app
-
-Dispatch
-
-- Ejecuta una accion, es una funcion que maneja un state
+- Store: Contiene el state y solo hay un Store por app
+- Dispatch: Ejecuta una accion, es una funcion que maneja un state
 
 ```jsx
 dispatch(addProductOk(product))
 ```
 
-Actions
+- Actions: Objetos en JS con tipo y payload (datos que modificaran el state), los componentes no deben modificar el state directamente, se modifica por medio de funciones llamadas Actions
 
-- Objetos en JS con tipo y payload (datos que modificaran el state)
-- Los componentes no deben modificar el state directamente, se modifica por medio de funciones llamadas Actions
-
-Subscribe
-
-- Similar al event listener para el state
-
-Reducer
-
-- Funciones que saben que hacer con las acciones y el payload
+- Subscribe: Similar al event listener para el state
+- Reducer: Funciones que saben que hacer con las acciones y el payload
 
 ---
 
-### Que es ContextAPI?
+### ContextAPI
 
 
 ContextAPI es una herramienta que viene con React de manera nativa que cumple la misma funcion que Redux pero de una manera mucho mas pequenia. 
@@ -1213,7 +1197,6 @@ Las limitaciones que posee ContextApi son
 - Si preciso manejar estados mas complejos, Redux sigue siendo la mejor opcion
 
 ### ¿Cómo manejarías el estado global sin usar Redux ni Context API?
-
 
 Una forma de manejar el estado global sin usar Redux ni Context API es utilizando un enfoque basado en hooks personalizados y el sistema de suscripción de React. Este método permite compartir el estado entre componentes sin necesidad de bibliotecas externas.
 
