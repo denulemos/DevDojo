@@ -64,13 +64,7 @@ const sidebars: SidebarsConfig = {
         'ssr',
       ],
     },
-    {
-      type: 'category',
-      label: '🤖 LLM',
-      link: { type: 'doc', id: 'landing/llm' },
-      collapsed: true,
-      items: ['claude'],
-    },
+
     {
       type: 'category',
       label: '🤝 Soft Skills',
@@ -80,7 +74,22 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: '📚 Teoria',
+      label: '🤝 IA',
+      link: { type: 'doc', id: 'landing/ia' },
+      collapsed: true,
+      items: [
+        {
+          type: 'category',
+          label: '🤖 LLM',
+          link: { type: 'doc', id: 'landing/llm' },
+          collapsed: true,
+          items: ['claude'],
+        },
+      ],
+    },
+    {
+      type: 'category',
+      label: '📚 Teoría',
       link: { type: 'doc', id: 'landing/teoria' },
       collapsed: true,
       items: ['algoritmos', 'desarrollo-web/backend/poo', 'patrones', 'internetredes'],
