@@ -74,13 +74,13 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: '🤝 IA',
+      label: '🤖 IA',
       link: { type: 'doc', id: 'landing/ia' },
       collapsed: true,
       items: [
         {
           type: 'category',
-          label: '🤖 LLM',
+          label: '💬 LLM',
           link: { type: 'doc', id: 'landing/llm' },
           collapsed: true,
           items: ['claude'],
