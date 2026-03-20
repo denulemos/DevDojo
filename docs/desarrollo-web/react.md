@@ -228,9 +228,26 @@ Los componentes de funcion son mas faciles de leer, escribir y testear, y son ma
 | Manejaba el estado con `this.state` | Maneja el estado con `useState` |
 | Manejaba el contexto con `this.context` | Maneja el contexto con `useContext` |
 
+## **Arquitectura**
+
+La Arquitectura en React refiere a como vamos a estructurar una aplicacion React para asegurar que sea **Escalable**, **Mantenible**, **Reutilizable** y **Facil de entender**. Esto es importante para poder trabajar en equipo, para poder escalar la aplicacion a medida que crece, y para poder mantenerla a lo largo del tiempo, especialmente si hablamos de una libreria y no de un framework estructurado.
+
+Una buena arquitectura define:
+
+- La estructura de los componentes
+- State Management
+- Data Flow
+- Estructura de directorios
+- Patrones de integracion de APIs
+- Optimizaciones de Performance
+
+### Core Layers
+
+*En desarrollo...*
+
 ---
 
-## Ciclo de vida y Hooks
+## **LifeCycle y Hooks**
 
 Los **ciclos de vida** de los componentes en React son una serie de métodos especiales que permiten ejecutar código en momentos específicos del ciclo de vida de un componente de clase: cuando se monta (aparece en pantalla), se actualiza (cambia su estado o props) o se desmonta (se elimina del DOM).
 
@@ -241,8 +258,6 @@ Los **ciclos de vida** de los componentes en React son una serie de métodos esp
 React proporciona métodos como `componentDidMount`, `componentDidUpdate` y `componentWillUnmount` para manejar estas etapas. Algunos métodos antiguos están deprecados y requieren el prefijo `UNSAFE_` para ser usados, ya que pueden causar problemas en futuras versiones de React.
 
 Hoy en día, en componentes funcionales, estos ciclos de vida se gestionan principalmente con el hook `useEffect`.
-
----
 
 ### Custom hooks
 
@@ -1051,7 +1066,7 @@ Se debe usar `startTransition()` cuando tengas actualizaciones de estado o rende
 
 ---
 
-## State Management
+## **State Management**
 
 ### Redux
 
@@ -1422,7 +1437,7 @@ Se suele manejar la informacion en un objeto con 3 elementos:
 
 ---
 
-## Patrones de diseño en React
+## **Patrones de diseño**
 
 ### Componentizacion
 
@@ -1706,7 +1721,7 @@ const UncontrolledInput = () => {
 
 ---
 
-## Testing en React
+## Testing
 
 
 - **Jest**: Framework de pruebas por defecto para aplicaciones React creado por Facebook. Soporta pruebas unitarias, de integración y de snapshot.
@@ -1784,7 +1799,7 @@ app.use(helmet());
 
 ---
 
-## Performance
+## **Performance**
 
 - **No hagas que todo se vuelva a dibujar todo el tiempo**
 

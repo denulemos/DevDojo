@@ -58,3 +58,12 @@ Existe la Escalabilidad **vertical** y **horizontal**.
 
 Algunas partes del frontend de una pagina web escalable seran posicionados en un Load Balancer. Esto permite que el sistema distribuya la carga de tal forma que un solo servidor no maneje todo, y si falla, haga caer a todo el sistema. 
 Para hacer esto, se deben tener varios servidores clones, con los mismos recursos disponibles para lidiar con la misma carga. 
+
+### **Como solucionar un problema de entrevista?**
+
+1. **Desarrollar el Scope del Problema**: Hacer preguntas para entender el problema, los requerimientos, las restricciones, etc.. Esto es importante para poder entender el problema y no asumir cosas que no son ciertas. Por ejemplo, si el problema es diseñar un sistema de reservas de vuelos, se pueden hacer preguntas como: ¿Qué tipo de vuelos se van a reservar? ¿Solo vuelos comerciales o también vuelos privados? ¿Qué tipo de usuarios van a usar el sistema? ¿Solo clientes o también agentes de viajes? etc..
+2. **Realizar un disenio abstracto**
+3. **Encontrar cuellos de botella (Bottlenecks) en tu solucion**: Esto es importante para poder mejorar la solución y hacerla mas escalable. Por ejemplo, si el sistema de reservas de vuelos tiene un solo servidor para manejar todas las reservas, esto puede ser un cuello de botella, ya que si el servidor falla, todo el sistema cae. Para solucionar esto, se pueden añadir mas servidores clones para repartir la carga entre ellos.
+
+- Separar el problema en modulos mas simples, por ejemplo, si el problema es diseñar un sistema de reservas de vuelos, se pueden separar en modulos como: busqueda de vuelos, reserva de vuelos, pago, etc.. **Top-down approach**
+- Charlar sobre los trade-offs
