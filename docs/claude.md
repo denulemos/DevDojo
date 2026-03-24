@@ -10,6 +10,33 @@ Se lo describe como mas que un chatbot, si no como un asistente de IA que puede 
 
 Se describe que la mejor forma de comunicarse con Claude es teniendo una conversacion fluida como uno la tendria con cualquier colega mas que preguntas de una sola vez en cada sesion. 
 
+## Projects
+
+Los mismos son marcos de trabajo que se basan sobre un tema en especifico, son utiles cuando estamos trabajando en una feature que requiere mas que una sola pregunta y respuesta, si no que precisa un marco de trabajo mas extenso. 
+
+- **Projects** son workspaces que poseen su propia memoria, historial de chat y base de datos con sus propias instrucciones customizadas. Esto permite manejar distintos flujos de trabajo (Streams de trabajo) 
+- **Project knowledge** es la base de datos de cada proyecto, el **knowledge base**, donde se pueden guardar documentos, archivos, etc.. para que Claude pueda acceder a ellos y utilizarlos durante las conversaciones. Esto es especialmente útil para proyectos complejos donde se necesita tener acceso a mucha información, y donde no queremos subir el mismo documento una y otra vez.
+- **Project Intructions** guian como Claude debe comportarse en cada Stream de trabajo, por ejemplo, el tono, tipo de respuesta, entre otras especificaciones.
+- Cada project escala de manera automatica, cuando el knowledge base alcanza un cierto limite (Es decir, subi mas de cierta cantidad de documentos a modo de contexto), se habilita **RAG (Retrieval Augmented Generation)**, lo que permite que Claude pueda acceder a la información guardada en el knowledge base de manera mas eficiente, sin tener que cargar toda la información en cada sesion para poder mantener una buena calidad de respuesta.
+- Los projects pueden ser compartidos entre varias personas para poder trabajar de manera colaborativa, esto es especialmente util para equipos de trabajo que necesitan compartir información y colaborar en proyectos complejos.
+
+Cada project posee **permisos** dentro del mismo:
+
+- **Owner**: Tiene control total sobre el proyecto, puede editar las instrucciones, agregar o eliminar documentos del knowledge base, invitar o eliminar miembros, etc..
+- **Editor**: Puede editar las instrucciones, agregar o eliminar documentos del knowledge base, pero no puede invitar o eliminar miembros.
+- **Viewer**: Solo puede ver el proyecto, no puede editar las instrucciones, ni agregar o eliminar documentos del knowledge base, ni invitar o eliminar miembros
+
+### Project Instructions
+
+Los Project Intructions le "marcan" a Claude como comportarse en las conversaciones. 
+
+Una buena Project Intruction incluye:
+
+- Contexto sobre el proyecto, por ejemplo, el rol del usuario, los objetivos del proyecto, entre otros.
+- **Intrucciones de proceso** que guian a Claude sobre cómo abordar las tareas, por ejemplo, si se quiere que la IA haga preguntas para aclarar dudas o si se quiere que la IA de sugerencias para mejorar el producto.
+- **Referencias de tono**, por ejemplo, "utilizar tono profesional"
+- **Requerimientos especificos** sobre el output, por ejemplo, "proporcionar una respuesta detallada de al menos 300 palabras" o "utilizar un formato específico para la respuesta".
+
 ## Effective Prompting
 
 Para comunicarse de manera efectiva con Claude, se deben tener en cuenta los siguientes puntos:

@@ -13,7 +13,7 @@ export const data = [
 <IndiceTable data={data}/>
 
 
-### LLM vs IA
+## LLM vs IA
 
 Se suelen usar como sinónimos, pero son dos tipos de sistemas completamente distintos.
 
@@ -21,11 +21,11 @@ La **IA** es todo sistema que intenta simular el razonamiento humano, es decir, 
 
 Es el **universo completo**.
 
-Un **LLM** es un tipo de modelo de lenguaje que se entrena con grandes cantidades de texto para aprender a generar texto coherente y relevante. Por ejemplo, ChatGPT es un LLM que se entrena con grandes cantidades de texto para aprender a generar respuestas coherentes y relevantes a preguntas y solicitudes.
+Un **LLM** es un tipo de modelo de lenguaje que se entrena con grandes cantidades de texto para aprender a generar texto coherente y relevante. Por ejemplo, **ChatGPT es un LLM que se entrena con grandes cantidades de texto para aprender a generar respuestas coherentes y relevantes a preguntas y solicitudes**
 
 Son las **estrellas** de la IA, pero no son la IA completa.
 
-### ¿Cómo funciona la IA?
+## ¿Cómo funciona la IA?
 
 Se reduce a un concepto sencillo: son sistemas que toman decisiones automatizadas para maximizar cualquier objetivo que se les haya asignado.
 
@@ -48,7 +48,26 @@ Los sistemas actuales de LLM fueron desarrollados gracias a 3 pilares:
 - Mayor poder computacional
 - Nuevas técnicas de entrenamiento
 
-### AI generativa
+Todo sistema de IA es una maquina de probabilidades, no de certezas. Esto significa que siempre existe la posibilidad de que el sistema de IA genere una respuesta incorrecta o inexacta, incluso si se le da el mismo input varias veces.
+
+La IA aprende a traves de patrones en los datos, no a través de la comprensión del mundo real. Esto significa que la IA puede generar respuestas que parecen coherentes, pero que son completamente falsas o sin sentido.
+
+## Origenes
+
+Se dice que Ramon Llull, un filósofo y místico del siglo XIII, fue el primer generador de contenido automatizado. Creó un sistema de combinaciones de conceptos para generar nuevas ideas y textos, se dice que este sistema fue una especie de precursor de la Computacion y la IA, el Ars Magna.
+
+- 1921: Karel Capek acuña el término "robot" en su obra de teatro "R.U.R. (Rossum's Universal Robots)".
+- 1950: Alan Turing publica "Computing Machinery and Intelligence", proponiendo el Test de Turing para evaluar la inteligencia de las máquinas.
+- 1956: John McCarthy organiza la conferencia de Dartmouth, donde se acuña el término "Inteligencia Artificial" y se establece como un campo de estudio formal.
+- 1966: Joseph Weizenbaum desarrolla ELIZA, uno de los primeros programas de procesamiento de lenguaje natural, que simula una conversación humana con una voz.
+- 1997: Deep Blue de IBM derrota al campeón mundial de ajedrez Garry Kasparov, marcando un hito en la historia de la IA.
+- 2008: Apple lanza Siri, el primer asistente virtual de voz integrado en un smartphone, popularizando el uso de la IA en dispositivos móviles.
+- 2011: IBM Watson gana el concurso de televisión "Jeopardy!", demostrando avances significativos en el procesamiento de lenguaje natural y la comprensión de preguntas complejas.
+- 2012: Se populariza el uso de redes neuronales profundas (deep learning) para tareas de visión por computadora y procesamiento de lenguaje natural, lo que impulsa un gran avance en el campo de la IA.
+- 2020: OpenAI lanza GPT-3, un modelo de lenguaje con 175 mil millones de parámetros, que demuestra capacidades impresionantes en generación de texto y comprensión del lenguaje natural. 
+- 2026: Se espera que los modelos de IA continúen evolucionando, con mejoras en la eficiencia, la capacidad de razonamiento y la generación de contenido, así como una mayor integración en diversas industrias y aplicaciones.
+
+## AI generativa
 
 La AI generativa es un sistema que, en vez de analizar datos para tomar decisiones, también crea contenido nuevo, como imágenes, vídeos, etc.
 
@@ -61,6 +80,30 @@ Dentro de sus **limitaciones** podemos mencionar:
 
 - Sesgo: Si el modelo se entrena con datos sesgados, puede generar resultados sesgados.
 - Alucinaciones: El modelo puede generar respuestas que parecen coherentes, pero que son completamente falsas
+
+## **Errores comunes en los sistemas de IA**
+
+### Alucinaciones 
+
+Son secuencias de palabras que parecen tener sentido a simple vista, pero que no tienen ninguna base en la realidad. Es decir, se equivocan, es como informacion inventada.
+
+Este error se puede ver mucho en los modelos LLM con topicos tales como **noticias recientes** (2026), en donde si realizamos alguna pregunta sobre una noticia reciente, la IA podria respondernos con inventos o alucinaciones, ya que no tiene acceso a esa informacion, y al no tenerla, intenta adivinar lo que podria ser la respuesta, lo que puede llevar a generar respuestas completamente falsas o sin sentido.
+
+### Errores en resumenes 
+
+Cuando le damos un documento a ChatGPT para que nos realice un resumen, es muy comun que el mismo emita informacion importante sobre estos documentos, y nos de un resumen incorrecto o con informacion faltante, incluso pueden insertar varios puntos que no son reales sobre el documento dado. 
+
+### Bias o sesgo
+
+Los LLM se alimentan no solo de informacion de gente que piensa como nosotros, si no tambien de gente que justamente NO es como nosotros. A veces puede dar informacion que no es del todo justa o que refleja un cierto bias que la sociedad tiene respecto a un tema. **Se representa el punto de vista dominante**
+
+Esto se puede ver mucho en la IA Generativa, si le pedimos que genere una imagen de un doctor y una enfermera, la mayoria de las veces, la IA generativa va a generar una imagen de un doctor hombre y una enfermera mujer, lo que refleja un cierto sesgo de genero que existe en la sociedad respecto a estos roles.
+
+### Exceso de complacencia
+
+Los LLM intentaran tener un comportamiento sumamente complaciente, dandonos la razon en cosas que no necesariamente son correctas, esto se debe a que los LLM fueron entrenados con grandes cantidades de texto de internet, y en internet, la gente suele ser muy complaciente, por lo que el modelo aprende a ser complaciente para generar respuestas que sean bien recibidas por los usuarios.
+
+**Validan ideas y creencias que pueden ser incorrectas**
 
 
 ## **AI Fluency**
