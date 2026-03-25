@@ -2,52 +2,52 @@
 
 Claude es un LLM desarrollado por Anthropic, una empresa de investigación en IA fundada por ex empleados de OpenAI. Se lanzó en marzo de 2023 y se ha posicionado como uno de los principales competidores de ChatGPT.
 
-Se lo describe como mas que un chatbot, si no como un asistente de IA que puede ayudar a las personas a realizar tareas complejas, como escribir código, redactar emails, etc.
+Se lo describe como más que un chatbot, sino como un asistente de IA que puede ayudar a las personas a realizar tareas complejas, como escribir código, redactar emails, etc.
 
-- Fue construido para ser **honesto, seguro y útil**, evitando outputs discriminatorios, ofensivos o peligrosos, esto fue decidido bajo un approach conocido como **Constitutional AI**
+- Fue construido para ser **honesto, seguro y útil**, evitando outputs discriminatorios, ofensivos o peligrosos. Esto fue decidido bajo un approach conocido como **Constitutional AI**.
 - A Claude se lo describe como un asistente que puede ayudar en varios tipos de tarea, desde Coding hasta escribir emails, no solo para responder preguntas simples.
-- Diseniado para reconocer los tonos del usuario con el que se esta comunicando para poder ajustar sus propios tonos acorde a eso, por ejemplo, si el usuario es mas formal, Claude se ajusta a ese tono.
+- Diseñado para reconocer los tonos del usuario con el que se está comunicando para poder ajustar sus propios tonos acorde a eso. Por ejemplo, si el usuario es más formal, Claude se ajusta a ese tono.
 
-Se describe que la mejor forma de comunicarse con Claude es teniendo una conversacion fluida como uno la tendria con cualquier colega mas que preguntas de una sola vez en cada sesion. 
+Se describe que la mejor forma de comunicarse con Claude es teniendo una conversación fluida, como uno la tendría con cualquier colega, más que haciendo preguntas de una sola vez en cada sesión.
 
 ## Projects
 
-Los mismos son marcos de trabajo que se basan sobre un tema en especifico, son utiles cuando estamos trabajando en una feature que requiere mas que una sola pregunta y respuesta, si no que precisa un marco de trabajo mas extenso. 
+Los mismos son marcos de trabajo que se basan sobre un tema en específico. Son útiles cuando estamos trabajando en una feature que requiere más que una sola pregunta y respuesta, sino que precisa un marco de trabajo más extenso.
 
-- **Projects** son workspaces que poseen su propia memoria, historial de chat y base de datos con sus propias instrucciones customizadas. Esto permite manejar distintos flujos de trabajo (Streams de trabajo) 
+- **Projects** son workspaces que poseen su propia memoria, historial de chat y base de datos con sus propias instrucciones customizadas. Esto permite manejar distintos flujos de trabajo (streams de trabajo).
 - **Project knowledge** es la base de datos de cada proyecto, el **knowledge base**, donde se pueden guardar documentos, archivos, etc.. para que Claude pueda acceder a ellos y utilizarlos durante las conversaciones. Esto es especialmente útil para proyectos complejos donde se necesita tener acceso a mucha información, y donde no queremos subir el mismo documento una y otra vez.
-- **Project Intructions** guian como Claude debe comportarse en cada Stream de trabajo, por ejemplo, el tono, tipo de respuesta, entre otras especificaciones.
-- Cada project escala de manera automatica, cuando el knowledge base alcanza un cierto limite (Es decir, subi mas de cierta cantidad de documentos a modo de contexto), se habilita **RAG (Retrieval Augmented Generation)**, lo que permite que Claude pueda acceder a la información guardada en el knowledge base de manera mas eficiente, sin tener que cargar toda la información en cada sesion para poder mantener una buena calidad de respuesta.
-- Los projects pueden ser compartidos entre varias personas para poder trabajar de manera colaborativa, esto es especialmente util para equipos de trabajo que necesitan compartir información y colaborar en proyectos complejos.
+- **Project Instructions** guían cómo Claude debe comportarse en cada stream de trabajo, por ejemplo, el tono, el tipo de respuesta, entre otras especificaciones.
+- Cada project escala de manera automática. Cuando el knowledge base alcanza un cierto límite (es decir, subí más de cierta cantidad de documentos a modo de contexto), se habilita **RAG (Retrieval Augmented Generation)**, lo que permite que Claude pueda acceder a la información guardada en el knowledge base de manera más eficiente, sin tener que cargar toda la información en cada sesión para poder mantener una buena calidad de respuesta.
+- Los projects pueden ser compartidos entre varias personas para poder trabajar de manera colaborativa. Esto es especialmente útil para equipos de trabajo que necesitan compartir información y colaborar en proyectos complejos.
 
 Cada project posee **permisos** dentro del mismo:
 
 - **Owner**: Tiene control total sobre el proyecto, puede editar las instrucciones, agregar o eliminar documentos del knowledge base, invitar o eliminar miembros, etc..
 - **Editor**: Puede editar las instrucciones, agregar o eliminar documentos del knowledge base, pero no puede invitar o eliminar miembros.
-- **Viewer**: Solo puede ver el proyecto, no puede editar las instrucciones, ni agregar o eliminar documentos del knowledge base, ni invitar o eliminar miembros
+- **Viewer**: Solo puede ver el proyecto, no puede editar las instrucciones, ni agregar o eliminar documentos del knowledge base, ni invitar o eliminar miembros.
 
 ### Project Instructions
 
-Los Project Intructions le "marcan" a Claude como comportarse en las conversaciones. 
+Los Project Instructions le "marcan" a Claude cómo comportarse en las conversaciones.
 
-Una buena Project Intruction incluye:
+Una buena Project Instruction incluye:
 
 - Contexto sobre el proyecto, por ejemplo, el rol del usuario, los objetivos del proyecto, entre otros.
-- **Intrucciones de proceso** que guian a Claude sobre cómo abordar las tareas, por ejemplo, si se quiere que la IA haga preguntas para aclarar dudas o si se quiere que la IA de sugerencias para mejorar el producto.
+- **Instrucciones de proceso** que guían a Claude sobre cómo abordar las tareas, por ejemplo, si se quiere que la IA haga preguntas para aclarar dudas o si se quiere que la IA dé sugerencias para mejorar el producto.
 - **Referencias de tono**, por ejemplo, "utilizar tono profesional"
-- **Requerimientos especificos** sobre el output, por ejemplo, "proporcionar una respuesta detallada de al menos 300 palabras" o "utilizar un formato específico para la respuesta".
+- **Requerimientos específicos** sobre el output, por ejemplo, "proporcionar una respuesta detallada de al menos 300 palabras" o "utilizar un formato específico para la respuesta".
 
 ## Skills
 
-Son carpetas de intrucciones, scripts y recursos que Claude carga de manera dinamica para mejorar la performance en algunas tareas especificas y que pueden ser repetitivas. Muy usado en la creacion de PPTs, Excels, etc..
+Son carpetas de instrucciones, scripts y recursos que Claude carga de manera dinámica para mejorar la performance en algunas tareas específicas y que pueden ser repetitivas. Muy usado en la creación de PPTs, Excels, etc.
 
-- **Anthropic Skills**: Son creados y mantenidos por Anthropic, son habilidades generales que pueden ser utilizadas en varios proyectos, por ejemplo, "Summarization", "Code Generation", "Data Analysis", etc..
-- **Custom Skills**: Son creados por los usuarios, pueden ser habilidades especificas para un proyecto en particular, por ejemplo, "Generar un resumen de un documento utilizando un formato específico" o "Generar un código en un lenguaje específico utilizando ciertas librerías".
-- Se pueden obtener Skills de terceros, pero se debe tener cuidado con esto, ya que no se sabe exactamente como fueron creadas estas Skills, y pueden contener errores o ser peligrosas. Es importante revisar el código de estas Skills antes de utilizarlas.
+- **Anthropic Skills**: Son creados y mantenidos por Anthropic. Son habilidades generales que pueden ser utilizadas en varios proyectos, por ejemplo, "Summarization", "Code Generation", "Data Analysis", etc.
+- **Custom Skills**: Son creados por los usuarios. Pueden ser habilidades específicas para un proyecto en particular, por ejemplo, "Generar un resumen de un documento utilizando un formato específico" o "Generar un código en un lenguaje específico utilizando ciertas librerías".
+- Se pueden obtener Skills de terceros, pero se debe tener cuidado con esto, ya que no se sabe exactamente cómo fueron creadas estas Skills y pueden contener errores o ser peligrosas. Es importante revisar el código de estas Skills antes de utilizarlas.
 
-Claude maneja la seleccion de Skills de manera automatica, basado en nuestra conversación, pero tambien se pueden seleccionar manualmente para asegurarnos de que se utilice la habilidad correcta para la tarea que queremos realizar. 
+Claude maneja la selección de Skills de manera automática, basándose en nuestra conversación, pero también se pueden seleccionar manualmente para asegurarnos de que se utilice la habilidad correcta para la tarea que queremos realizar.
 
-**¿Cómo crearlas?** Simplemente conversando con Claude, ejemplo: "Claude, me gustaria crear una Skill para generar resúmenes de documentos utilizando un formato específico, ¿podrías ayudarme a crear esta Skill?"
+**¿Cómo crearlas?** Simplemente conversando con Claude. Ejemplo: "Claude, me gustaría crear una Skill para generar resúmenes de documentos utilizando un formato específico, ¿podrías ayudarme a crear esta Skill?"
 
 ### Skills vs Project Instructions
 
@@ -55,42 +55,42 @@ Claude maneja la seleccion de Skills de manera automatica, basado en nuestra con
 
 | Project Instructions | Skills |
 | --- | --- |
-| Guian el comportamiento de Claude en las conversaciones | Realizan tareas especificas de manera automatica |
-| Pueden incluir instrucciones de proceso, referencias de tono, requerimientos especificos sobre el output, entre otros | Son scripts que pueden ser reutilizados en varios proyectos para realizar tareas especificas |
+| Guían el comportamiento de Claude en las conversaciones | Realizan tareas específicas de manera automática |
+| Pueden incluir instrucciones de proceso, referencias de tono, requerimientos específicos sobre el output, entre otros | Son scripts que pueden ser reutilizados en varios proyectos para realizar tareas específicas |
 | Se enfocan en el contexto y las reglas de la conversación | Se enfocan en la ejecución de tareas específicas, como generar un resumen, analizar datos, generar código, etc.. |
 
 ## Connectors
 
-Los Connectors convierten a Claude en un colega ya que le estamos dando acceso a todo nuestro contexto de herramientas utilizadas diariamente. **Es permitirte a Claude realizar tareas por nosotros**.
+Los Connectors convierten a Claude en un colega, ya que le estamos dando acceso a todo nuestro contexto de herramientas utilizadas diariamente. **Es permitirle a Claude realizar tareas por nosotros**.
 
-Una manera de potenciar los Connectors es mediante **MCP (Model Context Protocol)**, que es un protocolo que permite a los modelos de lenguaje acceder a herramientas externas de manera segura y controlada. Esto permite que Claude pueda interactuar con nuestras herramientas diarias, como Google Drive, Slack, Gmail, entre otras, para realizar tareas por nosotros, como enviar un email, crear un documento, etc.., **Es un estandar abierto**.
+Una manera de potenciar los Connectors es mediante **MCP (Model Context Protocol)**, que es un protocolo que permite a los modelos de lenguaje acceder a herramientas externas de manera segura y controlada. Esto permite que Claude pueda interactuar con nuestras herramientas diarias, como Google Drive, Slack, Gmail, entre otras, para realizar tareas por nosotros, como enviar un email, crear un documento, etc. **Es un estándar abierto**.
 
 Hay 2 tipos de Connectors:
 
-- **Web Connectors**: Permiten a Claude acceder a herramientas web, como Google Drive, Slack, Gmail, entre otras. Esto permite que Claude pueda interactuar con estas herramientas para realizar tareas por nosotros, como enviar un email, crear un documento, etc..
-- **Desktop Connectors**: Permiten a Claude acceder a herramientas de escritorio, como Microsoft Word, Excel, PowerPoint, entre otras. Esto permite que Claude pueda interactuar con estas herramientas para realizar tareas por nosotros, como crear un documento, generar una presentación, etc..
+- **Web Connectors**: Permiten a Claude acceder a herramientas web, como Google Drive, Slack, Gmail, entre otras. Esto permite que Claude pueda interactuar con estas herramientas para realizar tareas por nosotros, como enviar un email, crear un documento, etc.
+- **Desktop Connectors**: Permiten a Claude acceder a herramientas de escritorio, como Microsoft Word, Excel, PowerPoint, entre otras. Esto permite que Claude pueda interactuar con estas herramientas para realizar tareas por nosotros, como crear un documento, generar una presentación, etc.
 
-Podemos darle acceso, por ejemplo, a nuestro Jira para que pueda crear tickets por nosotros, o a nuestro Google Drive para que pueda crear documentos, o a nuestro Slack para que pueda enviar mensajes, etc.. 
+Podemos darle acceso, por ejemplo, a nuestro Jira para que pueda crear tickets por nosotros, o a nuestro Google Drive para que pueda crear documentos, o a nuestro Slack para que pueda enviar mensajes, etc.
 
 Esto nos permite automatizar tareas repetitivas y ahorrar tiempo.
 
-- Claude no puede compartir nada a lo cual vos no le hayas dado acceso, es decir, si le das acceso a un documento de Google Drive, Claude no puede compartir ese documento con nadie mas, ni siquiera con otros proyectos, a menos que le des acceso a ese proyecto también.
-- Claude no puede acceder a nada que no le hayas dado acceso, es decir, si no le das acceso a un documento de Google Drive, Claude no puede acceder a ese documento, ni siquiera para leerlo, por lo que no puede compartirlo con nadie mas.
+- Claude no puede compartir nada a lo cual vos no le hayas dado acceso, es decir, si le das acceso a un documento de Google Drive, Claude no puede compartir ese documento con nadie más, ni siquiera con otros proyectos, a menos que le des acceso a ese proyecto también.
+- Claude no puede acceder a nada a lo que no le hayas dado acceso, es decir, si no le das acceso a un documento de Google Drive, Claude no puede acceder a ese documento, ni siquiera para leerlo, por lo que no puede compartirlo con nadie más.
 
 ## Enterprise Search
 
-Es un Search dedicado a un contexto interno de empresa, muy util para realizar preguntas sobre el funcionamiento organizacional de la empresa.
+Es un Search dedicado a un contexto interno de empresa, muy útil para realizar preguntas sobre el funcionamiento organizacional de la empresa.
 
-Debe ser seteado primero por un Owner de la organizacion para poder ser accedido por otros. 
+Debe ser seteado primero por un Owner de la organización para poder ser accedido por otros.
 
 
 ## Effective Prompting
 
 Para comunicarse de manera efectiva con Claude, se deben tener en cuenta los siguientes puntos:
 
-- **Setear el escenario**: Cual es tu rol y objetivos? Hay algun contexto de trabajo el cual Claude deberia tener en cuenta?
-- **Definir la tarea**: Que accion queres que Claude tome? Analisis, escritura, coding, etc..
-- **Reglas**: Que tono queres que Claude utilice? Querés que te haga preguntas para aclarar dudas? Querés que te de sugerencias para mejorar el producto? etc..
+- **Setear el escenario**: ¿Cuál es tu rol y objetivos? ¿Hay algún contexto de trabajo que Claude debería tener en cuenta?
+- **Definir la tarea**: ¿Qué acción querés que Claude tome? ¿Análisis, escritura, coding, etc.?
+- **Reglas**: ¿Qué tono querés que Claude utilice? ¿Querés que te haga preguntas para aclarar dudas? ¿Querés que te dé sugerencias para mejorar el producto? etc.
 
 Ejemplo de prompt efectivo:
 
@@ -98,14 +98,183 @@ Ejemplo de prompt efectivo:
 
 En este ejemplo, se le da a Claude un contexto claro sobre el rol del usuario, la tarea que se necesita realizar y las reglas de cómo se quiere que se comunique durante la sesión. Esto ayuda a que Claude pueda generar una respuesta más relevante y útil para el usuario.
 
-Estas ideas sobre prompting pueden ayudarnos a incluso solucionar problemas cuando Claude nos da una respuesta que no necesariamente la que esperamos.
+Estas ideas sobre prompting pueden ayudarnos incluso a solucionar problemas cuando Claude nos da una respuesta que no es necesariamente la que esperamos.
 
 | Problema | Solución |
 | --- | --- |
-| La respuesta es muy generica | No se dio el suficiente contexto en la Prompt |
-| La respuesta es muy corta o muy larga | Claude intento adivinar el largo adecuado en el cual responder, esto puede ser especificado en la prompt, por ejemplo, "Por favor, proporciona una respuesta detallada de al menos 300 palabras" |
-| Claude no siguio ningun tipo de formato | Claude entendio lo que querias, pero no COMO lo querias |
-| Claude me dio informacion erronea como si fuera correcta | A veces puede suceder con LLMs, esto se conoce como "alucinaciones", para solucionarlo, se le puede pedir a Claude que revise su respuesta y corrija cualquier error, o se le puede pedir que cite sus fuentes para verificar la información proporcionada. |
+| La respuesta es muy genérica | No se dio el suficiente contexto en la prompt |
+| La respuesta es muy corta o muy larga | Claude intentó adivinar el largo adecuado en el cual responder. Esto puede ser especificado en la prompt, por ejemplo, "Por favor, proporciona una respuesta detallada de al menos 300 palabras" |
+| Claude no siguió ningún tipo de formato | Claude entendió lo que querías, pero no CÓMO lo querías |
+| Claude me dio información errónea como si fuera correcta | A veces puede suceder con LLMs. Esto se conoce como "alucinaciones". Para solucionarlo, se le puede pedir a Claude que revise su respuesta y corrija cualquier error, o se le puede pedir que cite sus fuentes para verificar la información proporcionada. |
 | El tono no es correcto | Ajustar el tono en la prompt, por ejemplo, "Por favor, responde de manera formal y profesional" o "Responde de manera casual y amigable". |
 
-Tambien se recomienda que, si una conversacion no esta yendo en el camino deseado, iniciar una conversacion nueva con una prompt mas clara y especifica, para que Claude pueda entender mejor lo que se necesita en vez de intentar redirigir la conversacion ya existente. 
+También se recomienda que, si una conversación no está yendo en el camino deseado, iniciar una conversación nueva con una prompt más clara y específica, para que Claude pueda entender mejor lo que se necesita en vez de intentar redirigir la conversación ya existente.
+
+## **Claude API**
+
+(Ultimo update: Marzo 2026)
+
+Cuando realizamos una request a la API de Claude, se sigue un flujo de 5 fases:
+
+- Request al servidor
+- Request a Anthropic API
+- Procesamiento en el Modelo
+- Response al servidor
+- Response al cliente
+
+### API Requests
+
+Las request a la API de Anthropic **no deben ser hechas desde el código del cliente, sino desde un servidor que tengamos nosotros** ya que:
+
+- Se requiere una API Key secreta para autenticar al usuario que está haciendo uso de la API
+- Esta key NO debe ser expuesta en el código del cliente por temas de seguridad
+
+Cuando usamos la API de Anthropic podemos usar un SDK (Python, JS, TS, Go, Ruby, entre otras) o una request HTTP básica, y debe tener los siguientes campos:
+
+- `API Key`
+- `Model`: El modelo a utilizar, por ejemplo, `claude-3-sonnet`
+- `Messages`: El mensaje del usuario
+- `Max Tokens`: El límite de tokens que Claude puede generar
+
+Una vez que se recibe la request, la misma se procesa en 4 pasos:
+
+- **Tokenización**: Separar el mensaje del usuario en tokens.
+- **Embedding**: Cada token es convertido en un embedding, una larga lista de números que representan los posibles significados de esa palabra guardada en ese token. Además, una palabra puede tener más de un posible significado.
+- **Contextualización**: Cada embedding es refinado dependiendo del contexto en el cual está. Una palabra puede tener más de un posible significado, y el mismo puede ser obtenido si se tiene en cuenta el contexto.
+- **Generación**: Los embeddings contextualizados pasan por una capa de salida que calcula probabilidades para cada posible palabra siguiente. Claude no siempre elige la palabra con mayor probabilidad: usa una combinación de probabilidad y aleatoriedad controlada para crear respuestas naturales y variadas. Después de seleccionar cada palabra, Claude la agrega a la secuencia y repite todo el proceso para la siguiente palabra.
+
+Este último paso de **Generación** continúa hasta que:
+ 
+- Se alcanzó la mayor cantidad de tokens permitidos
+- La oración se terminó (EOS End of Sequence)
+- Algo detuvo la ejecución
+
+### API Response
+
+Cuando la ejecucion termina, se devuelve una response que incluye:
+
+- `Message`: El texto generado para responder
+- `Usage`: La cantidad de input y output tokens usados
+- `Stop Reason`: La razón por la cual se detuvo la generación, por ejemplo, "max_tokens", "eos", "stop_sequence", entre otras.
+
+### Environement
+
+Para poder usar la API de Anthropic aunque sea para testing se debe:
+
+- Obtener una API Key
+- Instalar Jupyter Notebook
+- Instalar las dependencias necesarias `%pip install anthropic python-dotenv`
+- Crear un archivo `.env` con la variable de entorno `ANTHROPIC_API_KEY` y su valor correspondiente a la API Key obtenida
+- Crear el API Client
+
+```python
+from dotenv import load_dotenv
+load_dotenv()
+
+from anthropic import Anthropic
+
+client = Anthropic()
+model = "claude-sonnet-4-0"
+```
+
+### Primera request a Claude
+
+Para poder enviar una request a la API de Anthropic, se debe usar el metodo `client.messages.create()` y pasarle los siguientes parámetros:
+
+-  `model: string`: El modelo a utilizar, por ejemplo, `claude-3-sonnet`
+-  `messages: []`: El mensaje del usuario
+- `max_tokens: int`: El límite de tokens que Claude puede generar, si lo seteamos en, por ejemplo, 1000, Claude dejara de ejecutar el `Generation` una vez que se hayan generado 1000 tokens, aunque la oración no haya terminado. 
+
+```python
+message = client.messages.create(
+    model=model,
+    max_tokens=1000,
+    messages=[
+        {
+            "role": "user",
+            "content": "What is quantum computing? Answer in one sentence"
+        }
+    ]
+)
+```
+
+Que es eso del `role` que se ve dentro de `messages`? Es el rol del mensaje, que puede ser `user` o `assistant`. Esto es importante para que Claude pueda entender el contexto de la conversación y generar una respuesta adecuada. 
+
+Por ejemplo, si el mensaje tiene el rol de `user`, Claude entenderá que es una pregunta o una solicitud, mientras que si el mensaje tiene el rol de `assistant`, Claude entenderá que es una respuesta o una información adicional.
+
+Luego para obtener la respuesta, podemos acceder a ella directamente con: `message.content[0].text`
+
+### Multi-turn conversations
+
+Las Multi-turn conversations son conversaciones que tienen más de un mensaje, es decir, una conversación fluida entre el usuario y Claude. 
+
+Por default, Claude ni Anthropic API no guardan ningun mensaje. Si queremos que Claude recuerde lo sucedido en algun mensaje anterior, debemos manejarlo. Por default las conversaciones son **stateless**.
+
+Para esto, simplemente se deben agregar más mensajes al array de `messages` con el rol correspondiente. Es por eso que existe el rol `user` y `assistant`, para poder diferenciar entre los mensajes del usuario y los mensajes de Claude, y así poder mantener el contexto de la conversación.
+
+Se sugiere crear las siguientes funciones helper para manejar estos casos:
+
+```python
+def add_user_message(messages, text):
+    user_message = {"role": "user", "content": text}
+    messages.append(user_message)
+
+def add_assistant_message(messages, text):
+    assistant_message = {"role": "assistant", "content": text}
+    messages.append(assistant_message)
+
+def chat(messages):
+    message = client.messages.create(
+        model=model,
+        max_tokens=1000,
+        messages=messages,
+    )
+    return message.content[0].text
+```
+
+Y asi quedaria la configuracion basica de una conversacion fluida con Claude:
+
+```python
+# Start with an empty message list
+messages = []
+
+# Add the initial user question
+add_user_message(messages, "Define quantum computing in one sentence")
+
+# Get Claude's response
+answer = chat(messages)
+
+# Add Claude's response to the conversation history
+add_assistant_message(messages, answer)
+
+# Add a follow-up question
+add_user_message(messages, "Write another sentence")
+
+# Get the follow-up response with full context
+final_answer = chat(messages)
+```
+
+### System Prompts
+
+Estas son una forma de customizar la interaccion de usuario con Claude, por ejemplo, si nuestro chatbot es un asistente de cocina, podemos agregar un System Prompt que le diga a Claude que debe responder como si fuera un chef profesional, y que debe dar consejos de cocina, recetas, etc.. 
+
+Esto ayuda a que Claude pueda generar respuestas más relevantes y útiles para el usuario, ya que tiene un contexto claro sobre el rol que debe desempeñar en la conversación.
+
+Estos prompts pueden ser mandados en conjunto con la request de `messages`
+
+```python
+system_prompt = """You are a helpful assistant that provides cooking advice and recipes."""
+
+message = client.messages.create(
+    model=model,
+    system=system_prompt,
+    max_tokens=1000,
+    messages=[
+        {
+            "role": "user",
+            "content": "What can I make with chicken and rice?"
+        }
+    ]
+)
+```
+

@@ -13,7 +13,6 @@ export const data = [
 
 <IndiceTable data={data}/>
 
-
 ## LLM vs IA
 
 Se suelen usar como sinónimos, pero son dos tipos de sistemas completamente distintos.
@@ -49,16 +48,16 @@ Los sistemas actuales de LLM fueron desarrollados gracias a 3 pilares:
 - Mayor poder computacional
 - Nuevas técnicas de entrenamiento
 
-Todo sistema de IA es una maquina de probabilidades, no de certezas. Esto significa que siempre existe la posibilidad de que el sistema de IA genere una respuesta incorrecta o inexacta, incluso si se le da el mismo input varias veces.
+Todo sistema de IA es una máquina de probabilidades, no de certezas. Esto significa que siempre existe la posibilidad de que el sistema de IA genere una respuesta incorrecta o inexacta, incluso si se le da el mismo input varias veces.
 
-La IA aprende a traves de patrones en los datos, no a través de la comprensión del mundo real. Esto significa que la IA puede generar respuestas que parecen coherentes, pero que son completamente falsas o sin sentido.
+La IA aprende a través de patrones en los datos, no a través de la comprensión del mundo real. Esto significa que la IA puede generar respuestas que parecen coherentes, pero que son completamente falsas o sin sentido.
 
-## Origenes
+## Orígenes
 
-Se dice que Ramon Llull, un filósofo y místico del siglo XIII, fue el primer generador de contenido automatizado. Creó un sistema de combinaciones de conceptos para generar nuevas ideas y textos, se dice que este sistema fue una especie de precursor de la Computacion y la IA, el Ars Magna.
+Se dice que Ramón Llull, un filósofo y místico del siglo XIII, fue el primer generador de contenido automatizado. Creó un sistema de combinaciones de conceptos para generar nuevas ideas y textos. Se dice que este sistema fue una especie de precursor de la computación y la IA: el Ars Magna.
 
 - 1921: Karel Capek acuña el término "robot" en su obra de teatro "R.U.R. (Rossum's Universal Robots)".
-- 1950: Alan Turing publica "Computing Machinery and Intelligence", proponiendo el Test de Turing para evaluar la inteligencia de las máquinas.
+- 1950: Alan Turing publica "Computing Machinery and Intelligence", proponiendo el test de Turing para evaluar la inteligencia de las máquinas.
 - 1956: John McCarthy organiza la conferencia de Dartmouth, donde se acuña el término "Inteligencia Artificial" y se establece como un campo de estudio formal.
 - 1966: Joseph Weizenbaum desarrolla ELIZA, uno de los primeros programas de procesamiento de lenguaje natural, que simula una conversación humana con una voz.
 - 1997: Deep Blue de IBM derrota al campeón mundial de ajedrez Garry Kasparov, marcando un hito en la historia de la IA.
@@ -68,9 +67,28 @@ Se dice que Ramon Llull, un filósofo y místico del siglo XIII, fue el primer g
 - 2020: OpenAI lanza GPT-3, un modelo de lenguaje con 175 mil millones de parámetros, que demuestra capacidades impresionantes en generación de texto y comprensión del lenguaje natural. 
 - 2026: Se espera que los modelos de IA continúen evolucionando, con mejoras en la eficiencia, la capacidad de razonamiento y la generación de contenido, así como una mayor integración en diversas industrias y aplicaciones.
 
-## AI generativa
+## Tokens
 
-La AI generativa es un sistema que, en vez de analizar datos para tomar decisiones, también crea contenido nuevo, como imágenes, vídeos, etc.
+Cuando le mandamos un mensaje a un LLM, el mismo no lee palabras: lee **tokens**, los cuales son unidades de división del texto para poder ser procesado por el LLM.
+
+**Los tokens son fragmentos de texto que un modelo de lenguaje utiliza como unidad básica para leer, interpretar y generar contenido. El modelo piensa en tokens, no en palabras**
+
+Por ejemplo, la frase "Me gusta programar" puede ser separada en tokens como "Me", "gusta", "program" y "ar". Cada token puede estar compuesto de palabras enteras, partes de palabras, espacios o símbolos.
+
+- Determinan cuánto texto puede procesar el modelo a la vez
+- Afectan el costo de uso de las APIs
+- Influyen en la longitud máxima de entrada y salida
+- Cuantos más tokens, más trabajo debe realizar el modelo
+
+En el contexto de tokens tenemos:
+
+- **Input tokens**: Los enviados al modelo
+- **Output tokens**: Los tokens que el modelo responde
+- **Context Window**: La cantidad máxima de tokens que el modelo puede manejar en una interacción
+
+## IA generativa
+
+La IA generativa es un sistema que, en vez de analizar datos para tomar decisiones, también crea contenido nuevo, como imágenes, vídeos, etc.
 
 La misma aprende en 2 etapas:
 
@@ -86,23 +104,23 @@ Dentro de sus **limitaciones** podemos mencionar:
 
 ### Alucinaciones 
 
-Son secuencias de palabras que parecen tener sentido a simple vista, pero que no tienen ninguna base en la realidad. Es decir, se equivocan, es como informacion inventada.
+Son secuencias de palabras que parecen tener sentido a simple vista, pero que no tienen ninguna base en la realidad. Es decir, se equivocan; es como información inventada.
 
-Este error se puede ver mucho en los modelos LLM con topicos tales como **noticias recientes** (2026), en donde si realizamos alguna pregunta sobre una noticia reciente, la IA podria respondernos con inventos o alucinaciones, ya que no tiene acceso a esa informacion, y al no tenerla, intenta adivinar lo que podria ser la respuesta, lo que puede llevar a generar respuestas completamente falsas o sin sentido.
+Este error se puede ver mucho en los modelos LLM con tópicos tales como **noticias recientes** (2026), en donde, si realizamos alguna pregunta sobre una noticia reciente, la IA podría respondernos con inventos o alucinaciones, ya que no tiene acceso a esa información y, al no tenerla, intenta adivinar lo que podría ser la respuesta, lo que puede llevar a generar respuestas completamente falsas o sin sentido.
 
-### Errores en resumenes 
+### Errores en resúmenes
 
-Cuando le damos un documento a ChatGPT para que nos realice un resumen, es muy comun que el mismo emita informacion importante sobre estos documentos, y nos de un resumen incorrecto o con informacion faltante, incluso pueden insertar varios puntos que no son reales sobre el documento dado. 
+Cuando le damos un documento a ChatGPT para que nos realice un resumen, es muy común que el mismo omita información importante sobre estos documentos y nos dé un resumen incorrecto o con información faltante. Incluso puede insertar varios puntos que no son reales sobre el documento dado.
 
 ### Bias o sesgo
 
-Los LLM se alimentan no solo de informacion de gente que piensa como nosotros, si no tambien de gente que justamente NO es como nosotros. A veces puede dar informacion que no es del todo justa o que refleja un cierto bias que la sociedad tiene respecto a un tema. **Se representa el punto de vista dominante**
+Los LLM se alimentan no solo de información de gente que piensa como nosotros, sino también de gente que justamente no es como nosotros. A veces pueden dar información que no es del todo justa o que refleja un cierto bias que la sociedad tiene respecto a un tema. **Se representa el punto de vista dominante**
 
-Esto se puede ver mucho en la IA Generativa, si le pedimos que genere una imagen de un doctor y una enfermera, la mayoria de las veces, la IA generativa va a generar una imagen de un doctor hombre y una enfermera mujer, lo que refleja un cierto sesgo de genero que existe en la sociedad respecto a estos roles.
+Esto se puede ver mucho en la IA generativa. Si le pedimos que genere una imagen de un doctor y una enfermera, la mayoría de las veces la IA generativa va a generar una imagen de un doctor hombre y una enfermera mujer, lo que refleja un cierto sesgo de género que existe en la sociedad respecto a estos roles.
 
 ### Exceso de complacencia
 
-Los LLM intentaran tener un comportamiento sumamente complaciente, dandonos la razon en cosas que no necesariamente son correctas, esto se debe a que los LLM fueron entrenados con grandes cantidades de texto de internet, y en internet, la gente suele ser muy complaciente, por lo que el modelo aprende a ser complaciente para generar respuestas que sean bien recibidas por los usuarios.
+Los LLM intentarán tener un comportamiento sumamente complaciente, dándonos la razón en cosas que no necesariamente son correctas. Esto se debe a que los LLM fueron entrenados con grandes cantidades de texto de internet y, en internet, la gente suele ser muy complaciente, por lo que el modelo aprende a ser complaciente para generar respuestas que sean bien recibidas por los usuarios.
 
 **Validan ideas y creencias que pueden ser incorrectas**
 
@@ -160,18 +178,18 @@ Incluso se le puede **pedir a la IA que mejore tu prompt** mientras trabajas con
 
 ### Discernimiento
 
-Es la forma de identificar si la respuesta recibida de la IA nos fue util. Hay 3 tipos de discernimiento:
+Es la forma de identificar si la respuesta recibida de la IA nos fue útil. Hay 3 tipos de discernimiento:
 
 - **Discernimiento de Producto**: Evaluar la calidad del output.
-- **Discernimiento del Proceso**: Evaluar como la IA proceso o abarco la tarea
-- **Discernimiento de Performance o Desempeño**: Evaluar cómo la IA cumplió con los objetivos y expectativas establecidos, como se comporto a lo largo de la tarea, teniendo en cuenta el estilo de comunicacion.
+- **Discernimiento del Proceso**: Evaluar cómo la IA procesó o abarcó la tarea.
+- **Discernimiento de Performance o Desempeño**: Evaluar cómo la IA cumplió con los objetivos y expectativas establecidos, cómo se comportó a lo largo de la tarea, teniendo en cuenta el estilo de comunicación.
 
 ### Diligencia
 
-Mientras que el Discernimiento y la Descripcion se enfocan en la efectividad y la eficiencia, la Diligencia se enfoca en criterios de seguridad y etica.
+Mientras que el Discernimiento y la Descripción se enfocan en la efectividad y la eficiencia, la Diligencia se enfoca en criterios de seguridad y ética.
 
-- **Diligencia de Creacion** es el tener en cuenta que sistemas de IA se eligen para trabajar y como se elige trabajar con los mismos
-- **Diligencia de Transparencia** es el ser abierto respecto al rol de la IA en tu trabajo u organizacion
-- **Diligencia de Deployment** es el asumir la responsabilidad por los resultados dados por la IA que se comparten con otras personas, es nuestra responsabilidad su revision
+- **Diligencia de Creación** es tener en cuenta qué sistemas de IA se eligen para trabajar y cómo se elige trabajar con los mismos.
+- **Diligencia de Transparencia** es ser abierto respecto al rol de la IA en tu trabajo u organización.
+- **Diligencia de Deployment** es asumir la responsabilidad por los resultados dados por la IA que se comparten con otras personas; es nuestra responsabilidad su revisión.
 
-Diferentes contextos tienen distintas Diligencias, expectativas de verificacion y revision.
+Diferentes contextos tienen distintas diligencias, expectativas de verificación y revisión.
