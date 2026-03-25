@@ -77,7 +77,7 @@ const sidebars: SidebarsConfig = {
       label: '🤖 IA',
       link: { type: 'doc', id: 'landing/ia' },
       collapsed: true,
-      items: ['claude'],
+      items: ['claude', 'mcp'],
     },
     {
       type: 'category',

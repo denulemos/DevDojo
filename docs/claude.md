@@ -37,6 +37,53 @@ Una buena Project Intruction incluye:
 - **Referencias de tono**, por ejemplo, "utilizar tono profesional"
 - **Requerimientos especificos** sobre el output, por ejemplo, "proporcionar una respuesta detallada de al menos 300 palabras" o "utilizar un formato específico para la respuesta".
 
+## Skills
+
+Son carpetas de intrucciones, scripts y recursos que Claude carga de manera dinamica para mejorar la performance en algunas tareas especificas y que pueden ser repetitivas. Muy usado en la creacion de PPTs, Excels, etc..
+
+- **Anthropic Skills**: Son creados y mantenidos por Anthropic, son habilidades generales que pueden ser utilizadas en varios proyectos, por ejemplo, "Summarization", "Code Generation", "Data Analysis", etc..
+- **Custom Skills**: Son creados por los usuarios, pueden ser habilidades especificas para un proyecto en particular, por ejemplo, "Generar un resumen de un documento utilizando un formato específico" o "Generar un código en un lenguaje específico utilizando ciertas librerías".
+- Se pueden obtener Skills de terceros, pero se debe tener cuidado con esto, ya que no se sabe exactamente como fueron creadas estas Skills, y pueden contener errores o ser peligrosas. Es importante revisar el código de estas Skills antes de utilizarlas.
+
+Claude maneja la seleccion de Skills de manera automatica, basado en nuestra conversación, pero tambien se pueden seleccionar manualmente para asegurarnos de que se utilice la habilidad correcta para la tarea que queremos realizar. 
+
+**¿Cómo crearlas?** Simplemente conversando con Claude, ejemplo: "Claude, me gustaria crear una Skill para generar resúmenes de documentos utilizando un formato específico, ¿podrías ayudarme a crear esta Skill?"
+
+### Skills vs Project Instructions
+
+**Los proyectos guardan conocimiento, las skills guardan y realizan procesos**
+
+| Project Instructions | Skills |
+| --- | --- |
+| Guian el comportamiento de Claude en las conversaciones | Realizan tareas especificas de manera automatica |
+| Pueden incluir instrucciones de proceso, referencias de tono, requerimientos especificos sobre el output, entre otros | Son scripts que pueden ser reutilizados en varios proyectos para realizar tareas especificas |
+| Se enfocan en el contexto y las reglas de la conversación | Se enfocan en la ejecución de tareas específicas, como generar un resumen, analizar datos, generar código, etc.. |
+
+## Connectors
+
+Los Connectors convierten a Claude en un colega ya que le estamos dando acceso a todo nuestro contexto de herramientas utilizadas diariamente. **Es permitirte a Claude realizar tareas por nosotros**.
+
+Una manera de potenciar los Connectors es mediante **MCP (Model Context Protocol)**, que es un protocolo que permite a los modelos de lenguaje acceder a herramientas externas de manera segura y controlada. Esto permite que Claude pueda interactuar con nuestras herramientas diarias, como Google Drive, Slack, Gmail, entre otras, para realizar tareas por nosotros, como enviar un email, crear un documento, etc.., **Es un estandar abierto**.
+
+Hay 2 tipos de Connectors:
+
+- **Web Connectors**: Permiten a Claude acceder a herramientas web, como Google Drive, Slack, Gmail, entre otras. Esto permite que Claude pueda interactuar con estas herramientas para realizar tareas por nosotros, como enviar un email, crear un documento, etc..
+- **Desktop Connectors**: Permiten a Claude acceder a herramientas de escritorio, como Microsoft Word, Excel, PowerPoint, entre otras. Esto permite que Claude pueda interactuar con estas herramientas para realizar tareas por nosotros, como crear un documento, generar una presentación, etc..
+
+Podemos darle acceso, por ejemplo, a nuestro Jira para que pueda crear tickets por nosotros, o a nuestro Google Drive para que pueda crear documentos, o a nuestro Slack para que pueda enviar mensajes, etc.. 
+
+Esto nos permite automatizar tareas repetitivas y ahorrar tiempo.
+
+- Claude no puede compartir nada a lo cual vos no le hayas dado acceso, es decir, si le das acceso a un documento de Google Drive, Claude no puede compartir ese documento con nadie mas, ni siquiera con otros proyectos, a menos que le des acceso a ese proyecto también.
+- Claude no puede acceder a nada que no le hayas dado acceso, es decir, si no le das acceso a un documento de Google Drive, Claude no puede acceder a ese documento, ni siquiera para leerlo, por lo que no puede compartirlo con nadie mas.
+
+## Enterprise Search
+
+Es un Search dedicado a un contexto interno de empresa, muy util para realizar preguntas sobre el funcionamiento organizacional de la empresa.
+
+Debe ser seteado primero por un Owner de la organizacion para poder ser accedido por otros. 
+
+
 ## Effective Prompting
 
 Para comunicarse de manera efectiva con Claude, se deben tener en cuenta los siguientes puntos:
