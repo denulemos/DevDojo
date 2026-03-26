@@ -5,7 +5,7 @@ Claude es un LLM desarrollado por Anthropic, una empresa de investigación en IA
 Se lo describe como más que un chatbot, sino como un asistente de IA que puede ayudar a las personas a realizar tareas complejas, como escribir código, redactar emails, etc.
 
 - Fue construido para ser **honesto, seguro y útil**, evitando outputs discriminatorios, ofensivos o peligrosos. Esto fue decidido bajo un approach conocido como **Constitutional AI**.
-- A Claude se lo describe como un asistente que puede ayudar en varios tipos de tarea, desde Coding hasta escribir emails, no solo para responder preguntas simples.
+- A Claude se lo describe como un asistente que puede ayudar en varios tipos de tareas, desde Coding hasta escribir emails, no solo para responder preguntas simples.
 - Diseñado para reconocer los tonos del usuario con el que se está comunicando para poder ajustar sus propios tonos acorde a eso. Por ejemplo, si el usuario es más formal, Claude se ajusta a ese tono.
 
 Se describe que la mejor forma de comunicarse con Claude es teniendo una conversación fluida, como uno la tendría con cualquier colega, más que haciendo preguntas de una sola vez en cada sesión.
@@ -14,15 +14,15 @@ Se describe que la mejor forma de comunicarse con Claude es teniendo una convers
 
 Los mismos son marcos de trabajo que se basan sobre un tema en específico. Son útiles cuando estamos trabajando en una feature que requiere más que una sola pregunta y respuesta, sino que precisa un marco de trabajo más extenso.
 
-- **Projects** son workspaces que poseen su propia memoria, historial de chat y base de datos con sus propias instrucciones customizadas. Esto permite manejar distintos flujos de trabajo (streams de trabajo).
-- **Project knowledge** es la base de datos de cada proyecto, el **knowledge base**, donde se pueden guardar documentos, archivos, etc.. para que Claude pueda acceder a ellos y utilizarlos durante las conversaciones. Esto es especialmente útil para proyectos complejos donde se necesita tener acceso a mucha información, y donde no queremos subir el mismo documento una y otra vez.
+- **Projects** son workspaces que poseen su propia memoria, historial de chat y base de datos con sus propias instrucciones personalizadas. Esto permite manejar distintos flujos de trabajo (streams de trabajo).
+- **Project knowledge** es la base de datos de cada proyecto, la **knowledge base**, donde se pueden guardar documentos, archivos, etc. para que Claude pueda acceder a ellos y utilizarlos durante las conversaciones. Esto es especialmente útil para proyectos complejos donde se necesita tener acceso a mucha información y donde no queremos subir el mismo documento una y otra vez.
 - **Project Instructions** guían cómo Claude debe comportarse en cada stream de trabajo, por ejemplo, el tono, el tipo de respuesta, entre otras especificaciones.
 - Cada project escala de manera automática. Cuando el knowledge base alcanza un cierto límite (es decir, subí más de cierta cantidad de documentos a modo de contexto), se habilita **RAG (Retrieval Augmented Generation)**, lo que permite que Claude pueda acceder a la información guardada en el knowledge base de manera más eficiente, sin tener que cargar toda la información en cada sesión para poder mantener una buena calidad de respuesta.
 - Los projects pueden ser compartidos entre varias personas para poder trabajar de manera colaborativa. Esto es especialmente útil para equipos de trabajo que necesitan compartir información y colaborar en proyectos complejos.
 
 Cada project posee **permisos** dentro del mismo:
 
-- **Owner**: Tiene control total sobre el proyecto, puede editar las instrucciones, agregar o eliminar documentos del knowledge base, invitar o eliminar miembros, etc..
+- **Owner**: Tiene control total sobre el proyecto, puede editar las instrucciones, agregar o eliminar documentos del knowledge base, invitar o eliminar miembros, etc.
 - **Editor**: Puede editar las instrucciones, agregar o eliminar documentos del knowledge base, pero no puede invitar o eliminar miembros.
 - **Viewer**: Solo puede ver el proyecto, no puede editar las instrucciones, ni agregar o eliminar documentos del knowledge base, ni invitar o eliminar miembros.
 
@@ -57,7 +57,7 @@ Claude maneja la selección de Skills de manera automática, basándose en nuest
 | --- | --- |
 | Guían el comportamiento de Claude en las conversaciones | Realizan tareas específicas de manera automática |
 | Pueden incluir instrucciones de proceso, referencias de tono, requerimientos específicos sobre el output, entre otros | Son scripts que pueden ser reutilizados en varios proyectos para realizar tareas específicas |
-| Se enfocan en el contexto y las reglas de la conversación | Se enfocan en la ejecución de tareas específicas, como generar un resumen, analizar datos, generar código, etc.. |
+| Se enfocan en el contexto y las reglas de la conversación | Se enfocan en la ejecución de tareas específicas, como generar un resumen, analizar datos, generar código, etc. |
 
 ## Connectors
 
@@ -112,7 +112,7 @@ También se recomienda que, si una conversación no está yendo en el camino des
 
 ## **Claude API**
 
-(Ultimo update: Marzo 2026)
+(Último update: marzo de 2026)
 
 Cuando realizamos una request a la API de Claude, se sigue un flujo de 5 fases:
 
@@ -151,13 +151,13 @@ Este último paso de **Generación** continúa hasta que:
 
 ### API Response
 
-Cuando la ejecucion termina, se devuelve una response que incluye:
+Cuando la ejecución termina, se devuelve una response que incluye:
 
 - `Message`: El texto generado para responder
 - `Usage`: La cantidad de input y output tokens usados
 - `Stop Reason`: La razón por la cual se detuvo la generación, por ejemplo, "max_tokens", "eos", "stop_sequence", entre otras.
 
-### Environement
+### Environment
 
 Para poder usar la API de Anthropic aunque sea para testing se debe:
 
@@ -179,11 +179,11 @@ model = "claude-sonnet-4-0"
 
 ### Primera request a Claude
 
-Para poder enviar una request a la API de Anthropic, se debe usar el metodo `client.messages.create()` y pasarle los siguientes parámetros:
+Para poder enviar una request a la API de Anthropic, se debe usar el método `client.messages.create()` y pasarle los siguientes parámetros:
 
 -  `model: string`: El modelo a utilizar, por ejemplo, `claude-3-sonnet`
 -  `messages: []`: El mensaje del usuario
-- `max_tokens: int`: El límite de tokens que Claude puede generar, si lo seteamos en, por ejemplo, 1000, Claude dejara de ejecutar el `Generation` una vez que se hayan generado 1000 tokens, aunque la oración no haya terminado. 
+- `max_tokens: int`: El límite de tokens que Claude puede generar. Si lo seteamos en, por ejemplo, 1000, Claude dejará de ejecutar el `Generation` una vez que se hayan generado 1000 tokens, aunque la oración no haya terminado.
 
 ```python
 message = client.messages.create(
@@ -198,7 +198,7 @@ message = client.messages.create(
 )
 ```
 
-Que es eso del `role` que se ve dentro de `messages`? Es el rol del mensaje, que puede ser `user` o `assistant`. Esto es importante para que Claude pueda entender el contexto de la conversación y generar una respuesta adecuada. 
+¿Qué es eso del `role` que se ve dentro de `messages`? Es el rol del mensaje, que puede ser `user` o `assistant`. Esto es importante para que Claude pueda entender el contexto de la conversación y generar una respuesta adecuada.
 
 Por ejemplo, si el mensaje tiene el rol de `user`, Claude entenderá que es una pregunta o una solicitud, mientras que si el mensaje tiene el rol de `assistant`, Claude entenderá que es una respuesta o una información adicional.
 
@@ -208,7 +208,7 @@ Luego para obtener la respuesta, podemos acceder a ella directamente con: `messa
 
 Las Multi-turn conversations son conversaciones que tienen más de un mensaje, es decir, una conversación fluida entre el usuario y Claude. 
 
-Por default, Claude ni Anthropic API no guardan ningun mensaje. Si queremos que Claude recuerde lo sucedido en algun mensaje anterior, debemos manejarlo. Por default las conversaciones son **stateless**.
+Por default, ni Claude ni la Anthropic API guardan ningún mensaje. Si queremos que Claude recuerde lo sucedido en algún mensaje anterior, debemos manejarlo. Por default, las conversaciones son **stateless**.
 
 Para esto, simplemente se deben agregar más mensajes al array de `messages` con el rol correspondiente. Es por eso que existe el rol `user` y `assistant`, para poder diferenciar entre los mensajes del usuario y los mensajes de Claude, y así poder mantener el contexto de la conversación.
 
@@ -232,7 +232,7 @@ def chat(messages):
     return message.content[0].text
 ```
 
-Y asi quedaria la configuracion basica de una conversacion fluida con Claude:
+Y así quedaría la configuración básica de una conversación fluida con Claude:
 
 ```python
 # Start with an empty message list
@@ -256,11 +256,11 @@ final_answer = chat(messages)
 
 ### System Prompts
 
-Estas son una forma de customizar la interaccion de usuario con Claude, por ejemplo, si nuestro chatbot es un asistente de cocina, podemos agregar un System Prompt que le diga a Claude que debe responder como si fuera un chef profesional, y que debe dar consejos de cocina, recetas, etc.. 
+Estas son una forma de personalizar la interacción del usuario con Claude. Por ejemplo, si nuestro chatbot es un asistente de cocina, podemos agregar un System Prompt que le diga a Claude que debe responder como si fuera un chef profesional y que debe dar consejos de cocina, recetas, etc.
 
 Esto ayuda a que Claude pueda generar respuestas más relevantes y útiles para el usuario, ya que tiene un contexto claro sobre el rol que debe desempeñar en la conversación.
 
-Estos prompts pueden ser mandados en conjunto con la request de `messages`
+Estos prompts pueden ser enviados en conjunto con la request de `messages`.
 
 ```python
 system_prompt = """You are a helpful assistant that provides cooking advice and recipes."""
@@ -280,7 +280,7 @@ message = client.messages.create(
 
 ### Temperatura
 
-Como se menciono [aca](./ia#temperatura), la temperatura es un valor decimal entre 0 y 1 que controla el nivel de aleatoriedad en las respuestas generadas por el modelo. Un valor bajo (cercano a 0) hace que el modelo sea más determinista y repetitivo, mientras que un valor alto (cercano a 1) aumenta la creatividad y diversidad de las respuestas.
+Como se mencionó [acá](./landing/ia#temperatura), la temperatura es un valor decimal entre 0 y 1 que controla el nivel de aleatoriedad en las respuestas generadas por el modelo. Un valor bajo (cercano a 0) hace que el modelo sea más determinista y repetitivo, mientras que un valor alto (cercano a 1) aumenta la creatividad y diversidad de las respuestas.
 
 En Claude podemos setear la misma desde nuestro request:
 
@@ -308,26 +308,26 @@ answer = chat(messages, temperature=1.0)
 
 ### Response Streaming
 
-Uno de los challenges ma grandes que se tienen en aplicaciones que consumen Cloude u otros servicios, es que la respuesta completa puede tomar entre 10-30 segundos en generarse completamente. 
+Uno de los challenges más grandes que se tienen en aplicaciones que consumen Claude u otros servicios es que la respuesta completa puede tardar entre 10 y 30 segundos en generarse.
 
-Si esperamos este tiempo, el usuario veria un spinner por esa cantidad de segundos. 
+Si esperamos ese tiempo, el usuario vería un spinner por esa cantidad de segundos.
 
-La solucion a esto es el **Response Streaming** que es mostrarle al usuario en tiempo real los chunks de respuesta a medida que son generados por Claude. 
+La solución a esto es el **Response Streaming**, que consiste en mostrarle al usuario en tiempo real los chunks de respuesta a medida que son generados por Claude.
 
-En la configuracion que hacemos hasta ahora en este documento, estamos esperando ante cada Request-Response-Request, dando a la experiencia del spinner antes mencionada. La "experiencia" del Streaming puede ser habilitada, transformando un poco nuestra comunicacion Servidor-Claude. 
+En la configuración que hacemos hasta ahora en este documento, estamos esperando ante cada Request-Response-Request, lo que da lugar a la experiencia del spinner antes mencionada. La "experiencia" del Streaming puede ser habilitada transformando un poco nuestra comunicación Servidor-Claude.
 
 - Enviamos el mensaje
-- Claude nos responde inmediatamente con una confirmacion de que el mensaje fue recibido
-- Se reciben una serie de eventos que contienen un pedazo pequenio del texto generado
+- Claude nos responde inmediatamente con una confirmación de que el mensaje fue recibido
+- Se reciben una serie de eventos que contienen un pedazo pequeño del texto generado
 
 Todos estos eventos son parte de una sola request. Los tipos de eventos son:
 
-- `MessageStart`: Un nuevo mensaje esta siendo enviado
-- `ContentBlockStart`: Un nuevo bloque de contenido esta comenzando
+- `MessageStart`: Un nuevo mensaje está siendo enviado
+- `ContentBlockStart`: Un nuevo bloque de contenido está comenzando
 - `ContentBlockDelta`: Bloques del texto generado actualmente. Se reciben varios con muchos chunks.
 - `ContentBlockStop`: Un bloque de contenido ha terminado de generarse
-- `MessageDelta`: El mensaje esta completo
-- `MessageStop`: Fin de la informacion sobre el mensaje actual
+- `MessageDelta`: El mensaje está completo
+- `MessageStop`: Fin de la información sobre el mensaje actual
 
 Para habilitar el Streaming, agregamos la propiedad `stream` a nuestro `message`: 
 
@@ -345,6 +345,5 @@ stream = client.messages.create(
 for event in stream:
     print(event)
 ```
-
 
 
