@@ -50,9 +50,9 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: '❤️ Angular',
+          link: { type: 'doc', id: 'landing/angular' },
           collapsed: true,
           items: [
-            'desarrollo-web/angular',
             'desarrollo-web/angular/ejercicios-tecnicos',
           ],
         },

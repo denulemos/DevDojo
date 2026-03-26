@@ -278,3 +278,73 @@ message = client.messages.create(
 )
 ```
 
+### Temperatura
+
+Como se menciono [aca](./ia#temperatura), la temperatura es un valor decimal entre 0 y 1 que controla el nivel de aleatoriedad en las respuestas generadas por el modelo. Un valor bajo (cercano a 0) hace que el modelo sea más determinista y repetitivo, mientras que un valor alto (cercano a 1) aumenta la creatividad y diversidad de las respuestas.
+
+En Claude podemos setear la misma desde nuestro request:
+
+```python
+def chat(messages, system=None, temperature=1.0):
+    params = {
+        "model": model,
+        "max_tokens": 1000,
+        "messages": messages,
+        "temperature": temperature
+    }
+    
+    if system:
+        params["system"] = system
+    
+    message = client.messages.create(**params)
+    return message.content[0].text
+
+# Low temperature - more predictable
+answer = chat(messages, temperature=0.0)
+
+# High temperature - more creative  
+answer = chat(messages, temperature=1.0)
+```
+
+### Response Streaming
+
+Uno de los challenges ma grandes que se tienen en aplicaciones que consumen Cloude u otros servicios, es que la respuesta completa puede tomar entre 10-30 segundos en generarse completamente. 
+
+Si esperamos este tiempo, el usuario veria un spinner por esa cantidad de segundos. 
+
+La solucion a esto es el **Response Streaming** que es mostrarle al usuario en tiempo real los chunks de respuesta a medida que son generados por Claude. 
+
+En la configuracion que hacemos hasta ahora en este documento, estamos esperando ante cada Request-Response-Request, dando a la experiencia del spinner antes mencionada. La "experiencia" del Streaming puede ser habilitada, transformando un poco nuestra comunicacion Servidor-Claude. 
+
+- Enviamos el mensaje
+- Claude nos responde inmediatamente con una confirmacion de que el mensaje fue recibido
+- Se reciben una serie de eventos que contienen un pedazo pequenio del texto generado
+
+Todos estos eventos son parte de una sola request. Los tipos de eventos son:
+
+- `MessageStart`: Un nuevo mensaje esta siendo enviado
+- `ContentBlockStart`: Un nuevo bloque de contenido esta comenzando
+- `ContentBlockDelta`: Bloques del texto generado actualmente. Se reciben varios con muchos chunks.
+- `ContentBlockStop`: Un bloque de contenido ha terminado de generarse
+- `MessageDelta`: El mensaje esta completo
+- `MessageStop`: Fin de la informacion sobre el mensaje actual
+
+Para habilitar el Streaming, agregamos la propiedad `stream` a nuestro `message`: 
+
+```python
+messages = []
+add_user_message(messages, "Write a 1 sentence description of a fake database")
+
+stream = client.messages.create(
+    model=model,
+    max_tokens=1000,
+    messages=messages,
+    stream=True
+)
+
+for event in stream:
+    print(event)
+```
+
+
+
