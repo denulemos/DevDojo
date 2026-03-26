@@ -1,3 +1,0 @@
-# Preguntas generales 
-
-
