@@ -90,11 +90,11 @@ En el contexto de tokens tenemos:
 
 La temperatura es un valor decimal entre 0 y 1 que controla el nivel de aleatoriedad en las respuestas generadas por el modelo. Un valor bajo (cercano a 0) hace que el modelo sea más determinista y repetitivo, mientras que un valor alto (cercano a 1) aumenta la creatividad y diversidad de las respuestas.
 
-La **Temperatura Baja** se recomienda para respuestas más precisas y coherentes, como analisis de informacion.
+La **temperatura baja** se recomienda para respuestas más precisas y coherentes, como análisis de información.
 
-La **Temperatura Alta** se utiliza para generar respuestas más creativas y variadas como chistes y escritura creativa. 
+La **temperatura alta** se utiliza para generar respuestas más creativas y variadas, como chistes y escritura creativa.
 
-La temperatura **no asegura respuestas distintas ante cada intento**, si no que **controla el nivel de aleatoriedad en las respuestas generadas**.
+La temperatura **no asegura respuestas distintas ante cada intento**, sino que **controla el nivel de aleatoriedad en las respuestas generadas**.
 
 ## IA generativa
 
@@ -206,7 +206,7 @@ Diferentes contextos tienen distintas diligencias, expectativas de verificación
 
 ## Prompt Engineering
 
-Es un kit de herramientas para armar prompts efectivos mediante distintas tecnicas como
+Es un kit de herramientas para armar prompts efectivos mediante distintas técnicas, como
 
 - **Multishot prompting**
 - **Estructura XML**
@@ -214,18 +214,18 @@ Es un kit de herramientas para armar prompts efectivos mediante distintas tecnic
 
 ## Prompt Evaluation
 
-Es la medición de la efectividad de los prompts de manera automatica. Para esto se pueden usar distintas métricas como:
+Es la medición de la efectividad de los prompts de manera automática. Para esto se pueden usar distintas métricas, como:
 
 - **Testing de respuesta esperada vs la recibida**
-- **Comparacion de versiones del mismo Prompt**
-- **Revision de Outputs en busca de errores**
+- **Comparación de versiones del mismo Prompt**
+- **Revisión de Outputs en busca de errores**
 
-Existen **Evaluation Pipelines** para automatizar este proceso de evaluación, lo que permite iterar rápidamente sobre los prompts y mejorar su efectividad de manera continua. Esto es necesario aunque sea un poco mas caro, ya que en produccion los usuarios podrian interactuar con nuestro sistema de formas que no habiamos previsto.
+Existen **Evaluation Pipelines** para automatizar este proceso de evaluación, lo que permite iterar rápidamente sobre los prompts y mejorar su efectividad de manera continua. Esto es necesario, aunque sea un poco más caro, ya que en producción los usuarios podrían interactuar con nuestro sistema de formas que no habíamos previsto.
 
 - **Escribir un Prompt en Draft**
-- **Crear un Dataset de evaluacion**
+- **Crear un Dataset de evaluación**
 - **Evaluar el Prompt con el Dataset**
-- **Analizar los resultados con un Grader**: Se evalua la calidad de la respuesta recibida por la IA, se le asigna una puntuacion y se identifican los errores o areas de mejora. Se asigna una puntuacion del 1-10
+- **Analizar los resultados con un Grader**: Se evalúa la calidad de la respuesta recibida por la IA, se le asigna una puntuación y se identifican los errores o áreas de mejora. Se asigna una puntuación del 1-10.
 - **Mejorar el Prompt**
 - **Repetir si es necesario**
 
@@ -251,13 +251,13 @@ Answer the question with ample detail
 """
 ```
 
-Este nuevo prompt puede pasarse de nuevo por el proceso de evaluacion, y se puede obtener otro Score, esto para saber si estamos mejorando o simplemente variando. 
+Este nuevo prompt puede pasarse de nuevo por el proceso de evaluación, y se puede obtener otro score, esto para saber si estamos mejorando o simplemente variando.
 
 ### Ejemplo de cadena de evaluación
 
-Supongamos que queremos desarorllar una aplicacion que ayude a los usuarios a escribir codigo AWS, y este acepta outputs en Python, JSON Config files o Expresiones regulares.
+Supongamos que queremos desarrollar una aplicación que ayude a los usuarios a escribir código AWS, y esta acepta outputs en Python, JSON Config files o expresiones regulares.
 
-El principal requerimiento es que cuando el usuario solicita ayuda con una tarea, el agente devuelva solo codigo, sin explicaciones ni texto adicional. 
+El principal requerimiento es que, cuando el usuario solicita ayuda con una tarea, el agente devuelva solo código, sin explicaciones ni texto adicional.
 
 Comenzamos con este prompt:
 
@@ -268,7 +268,7 @@ Please provide a solution to the following task:
 """
 ```
 
-Luego creamos nuestro **Dataset de Evaluacion**, que es un array de objetos JSON, con tareas como:
+Luego creamos nuestro **Dataset de Evaluación**, que es un array de objetos JSON, con tareas como:
 
 ```json
 [
@@ -282,11 +282,11 @@ Luego creamos nuestro **Dataset de Evaluacion**, que es un array de objetos JSON
 ]
 ```
 
-Se recomienda el uso de **Haiku** para realizar esta tarea, ya que es un modelo mucho mas veloz. 
+Se recomienda el uso de **Haiku** para realizar esta tarea, ya que es un modelo mucho más veloz.
 
-Este Dataset se puede guardar en un `Dataset.json` y se puede cargar en nuestro codigo para realizar la evaluacion de nuestro prompt.
+Este Dataset se puede guardar en un `Dataset.json` y se puede cargar en nuestro código para realizar la evaluación de nuestro prompt.
 
-Luego nos encargamos de *armar el pipeline de evaluacion*:
+Luego nos encargamos de *armar el pipeline de evaluación*:
 
 - Combinamos el prompt con cada una de las tareas del Dataset
 
@@ -305,7 +305,7 @@ Please solve the following task:
     return output
 ```
 
-- Luego, para cada output recibido, se le asigna una puntuacion utilizando un **Grader**:
+- Luego, para cada output recibido, se le asigna una puntuación utilizando un **Grader**:
 
 ```python
 def run_test_case(test_case):
@@ -322,7 +322,7 @@ def run_test_case(test_case):
     }
 ```
 
-Por ahora el 10 estara hardcodeado, pero se puede reemplazar por un sistema de puntuacion automatizado que evalue la calidad de la respuesta recibida por la IA, asignando una puntuacion del 1-10 y identificando los errores o areas de mejora. Ademas debemos **elegir un tipo de Grader**, lo cual abordaremos en la siguiente seccion.
+Por ahora el 10 estará hardcodeado, pero se puede reemplazar por un sistema de puntuación automatizado que evalúe la calidad de la respuesta recibida por la IA, asignando una puntuación del 1-10 e identificando los errores o áreas de mejora. Además, debemos **elegir un tipo de Grader**, lo cual abordaremos en la siguiente sección.
 
 Y finalmente, creamos la funcion que se encarga de correr todo el pipeline:
 
@@ -347,7 +347,7 @@ with open("dataset.json", "r") as f:
 results = run_eval(dataset)
 ```
 
-Cada resultado devuelve un JSON estructruado de la siguiente manera:
+Cada resultado devuelve un JSON estructurado de la siguiente manera:
 
 ```json
 print(json.dumps(results, indent=2))
@@ -365,8 +365,8 @@ print(json.dumps(results, indent=2))
 
 Hay 3 tipos de Graders:
 
-- **Grader Humano**: Un humano evalúa la calidad de la respuesta recibida por la IA, asignando una puntuacion del 1-10 y identificando los errores o areas de mejora.
-- **Code**: Se evalua de manera programatica la calidad de la respuesta recibida por la IA, utilizando criterios como la corrección sintáctica, la eficiencia del código, si el codigo corre y es valido, etc.
+- **Grader Humano**: Un humano evalúa la calidad de la respuesta recibida por la IA, asignando una puntuación del 1-10 e identificando los errores o áreas de mejora.
+- **Code**: Se evalúa de manera programática la calidad de la respuesta recibida por la IA, utilizando criterios como la corrección sintáctica, la eficiencia del código, si el código corre y es válido, etc.
 
 Por ejemplo, para chequear la sintaxis:
 
@@ -395,7 +395,7 @@ def validate_regex(text):
 
 Si la sintaxis es correcta, se devuelve un 10, si no, directamente un 0.
 
-- **Model Grader**: Se utiliza otro modelo de lenguaje para evaluar la calidad de la respuesta recibida por la IA, asignando una puntuacion del 1-10 y identificando los errores o areas de mejora.
+- **Model Grader**: Se utiliza otro modelo de lenguaje para evaluar la calidad de la respuesta recibida por la IA, asignando una puntuación del 1-10 e identificando los errores o áreas de mejora.
 
 ```python
 def grade_by_model(test_case, output):
@@ -423,6 +423,6 @@ def grade_by_model(test_case, output):
 
 Antes de elegir cualquiera de estos Graders, se deben tener en cuenta los siguientes puntos:
 
-- **Que formato quiero?**: Para esto un Code Grader es el más recomendado, ya que devuelve un output estructurado y fácil de analizar.
-- **Que syntax tomo como valido? (JSON, Python, etc..)**: Para esto un Code Grader es el más recomendado, ya que puede evaluar la corrección sintáctica de la respuesta recibida por la IA. 
-- **Como se ejecuto la tarea?**: Para esto un Model Grader es el más recomendado, ya que puede evaluar la calidad de la respuesta recibida por la IA en base a criterios como la relevancia, la coherencia, etc. 
+- **¿Qué formato quiero?**: Para esto, un Code Grader es el más recomendado, ya que devuelve un output estructurado y fácil de analizar.
+- **¿Qué syntax tomo como válido? (JSON, Python, etc.)**: Para esto, un Code Grader es el más recomendado, ya que puede evaluar la corrección sintáctica de la respuesta recibida por la IA.
+- **¿Cómo se ejecutó la tarea?**: Para esto, un Model Grader es el más recomendado, ya que puede evaluar la calidad de la respuesta recibida por la IA en base a criterios como la relevancia y la coherencia.
