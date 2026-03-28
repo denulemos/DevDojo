@@ -5,12 +5,49 @@ title: 🛠️ System Design
 
 ## Rendimiento
 
-Vivimos en un tiempo de inmediatez, donde los usuarios esperan resultados inmediatos. 
+### Response Time
 
-Se deben tener en cuenta dos parametros:
+Dentro del tiempo de respuesta se tiene:
 
-- **Response Time**
-- **Throughput (Numero de peticiones por unidad de tiempo)**
+- **Tiempo de procesamiento**: El tiempo que tarda el servidor en procesar la solicitud y generar una respuesta. Esto puede incluir la ejecución de código, consultas a bases de datos, etc..
+- **Tiempo de espera**: El tiempo que tarda la solicitud en viajar desde el cliente al servidor y viceversa. Esto puede incluir la latencia de la red, el tiempo que tarda el servidor en recibir la solicitud, etc..
+
+Se puede tener un servidor que procese requests de forma muy rapida, pero si esta desplegado muy lejos de nosotros geograficamente, el tiempo de espera puede ser muy alto. Esto se nota mucho si, por ejemplo, el usuario juega en linea.
+
+La solucion para esto es acercar nuestros servidores a los usuarios finales. 
+
+### Throughput
+
+Numero de peticiones por unidad de tiempo que nuestro sistema puede llevar a cabo. Por ejemplo, podemos tener un sistema que procesa peticiones en 100ms, pero si solo puede procesar una peticion a la vez, el throughput sera de 10 peticiones por segundo. 
+
+Si se tiene un sistema que procesa peticiones en 100ms, pero puede procesar 10 peticiones a la vez, el throughput sera de 100 peticiones por segundo.
+
+Esto debe ser controlado si se esperan que hayan picos de trafico, por ejemplo, en un sitio de e-commerce durante el Black Friday.
+
+### Medicion
+
+Se recomienda el uso de **Histogramas** para calcular los **Percentiles** del tiempo de respuesta.
+
+Por ejemplo, se tienen 10 servidores con su tiempo de respuesta en ms. 
+
+| Servidor | Tiempo de respuesta (ms) |
+| --- | --- |
+| Servidor 1 | 30 |
+| Servidor 2 | 50 |
+| Servidor 3 | 20 |
+| Servidor 4 | 155 |
+| Servidor 5 | 30 |
+| Servidor 6 | 205 |
+| Servidor 7 | 30 |
+| Servidor 8 | 25 |
+| Servidor 9 | 15 |
+| Servidor 10 | 35 |
+
+En esta lista podemos ver que el Servidor 4 y 6 poseen un tiempo de respuesta mucho mayor al de los demas. Esto nos dice que algo raro esta sucediendo con estos dos servidores. 
+
+Esto con un grafico del tipo Histograma seria facilmente identificable, siendo las barras mas altas o mas bajas las problematicas.
+
+![Histograma](https://www.addlink.es/images/productos/minitab/2023/minitab-histograma-picos-dispersion.png)
 
 ## Escalabilidad (Vertical vs Horizontal)
 
