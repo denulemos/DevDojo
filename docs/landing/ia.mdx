@@ -212,6 +212,151 @@ Es un kit de herramientas para armar prompts efectivos mediante distintas técni
 - **Estructura XML**
 - Entre otros..
 
+Es escribir un prompt y mejorarlo de manera iterativa, para que el mismo sea cada vez más efectivo.
+
+- Setear una meta: Que queremos lograr con este prompt
+- Crear el primer prompt
+- Evaluar el prompt
+- Aplicar distintas tecnicas para mejorar la performance
+- Re-evaluar si los resultados fueron mejorados 
+
+Los ultimos dos pasos son iterativos, ya que se pueden seguir aplicando distintas técnicas para mejorar la performance del prompt, y luego re-evaluar si los resultados fueron mejorados o no.
+
+La concurrencia puede ser controlada. Se recomienda manejar valores pequenios para evitar un error de quota.
+
+```python
+evaluator = PromptEvaluator(max_concurrent_tasks=5)
+```
+
+### Ejemplo - Agente de Alimentacion
+
+Por ejemplo, tenemos el siguiente prompt que debe encargarse de dar un meal plan a una persona dependiendo de su peso, altura y dieta.
+
+```python
+def run_prompt(prompt_inputs):
+    prompt = f"""
+What should this person eat?
+
+- Height: {prompt_inputs["height"]}
+- Weight: {prompt_inputs["weight"]}
+- Goal: {prompt_inputs["goal"]}
+- Dietary restrictions: {prompt_inputs["restrictions"]}
+"""
+    
+    messages = []
+    add_user_message(messages, prompt)
+    return chat(messages)
+```
+
+Podemos agregarle detalles para que el resultado sea lo mas efectivo posible
+
+```python
+results = evaluator.run_evaluation(
+    run_prompt_function=run_prompt,
+    dataset_file="dataset.json",
+    extra_criteria="""
+The output should include:
+- Daily caloric total
+- Macronutrient breakdown  
+- Meals with exact foods, portions, and timing
+"""
+)
+```
+
+Si usamos la herramienta de evaluacion de **Claude**, obtendremos un HTML con los resultados, cada dataset, respuesta, razonamiento y un score.
+
+```python
+Guidelines:
+1. Include accurate daily calorie amount
+2. Show protein, fat, and carb amounts  
+3. Specify when to eat each meal
+4. Use only foods that fit restrictions
+5. List all portion sizes in grams
+6. Keep budget-friendly if mentioned
+```
+
+### Estructura XML
+
+Cuando enviamos un prompt con informacion especifica, a veces es dificil para la IA entender que queremos que el output tenga una estructura especifica. Para esto, se puede usar una estructura XML, que es un formato de texto que permite definir una estructura de datos de manera clara y legible.
+
+```python
+Here are the last 20 meals this person ate:
+
+<meal_history>
+{meal_history}
+</meal_history>
+
+<athlete_information>
+- Height: 6'2"
+- Weight: 180 lbs
+- Goal: Build muscle
+- Dietary restrictions: Vegetarian
+</athlete_information>
+
+Generate a meal plan based on the athlete information above.
+```
+
+Tambien sirve para cuando queremos agregar codigo:
+
+```python
+Here is the code for the meal plan generator:
+<code>
+def generate_meal_plan(height, weight, goal, restrictions):
+    # code goes here
+</code>
+```
+ 
+No hay etiquetas XML predefinidas, se pueden crear las que se quieran, lo importante es que sean claras y que la IA entienda que el output debe tener esa estructura.
+
+### Ejemplificacion
+
+Dentro de esta tecnica tenemos dos subtenicas, 
+
+- **one-shot**: Dar un solo ejemplo para que la IA entienda el formato deseado, por ejemplo:
+
+```python
+Here is an example of a meal plan for a person with the following information:
+- Height: 5'8"
+- Weight: 150 lbs
+- Goal: Lose weight
+- Dietary restrictions: None
+Daily caloric total: 1500 calories
+Macronutrient breakdown: 40% protein, 30% fat, 30%
+```
+
+- **multi-shot**: Dar varios ejemplos para cubrir distintos escenarios
+
+```python
+Here are some examples of meal plans for people with different information:
+
+Example 1:
+- Height: 5'8"
+- Weight: 150 lbs
+- Goal: Lose weight
+- Dietary restrictions: None
+Daily caloric total: 1500 calories
+Macronutrient breakdown: 40% protein, 30% fat, 30%
+
+Example 2:
+- Height: 6'2"
+- Weight: 180 lbs
+- Goal: Build muscle
+- Dietary restrictions: Vegetarian
+Daily caloric total: 2500 calories
+Macronutrient breakdown: 30% protein, 40% carbs, 30%
+```
+
+```python
+<ideal_output>
+[Your example output here]
+</ideal_output>
+
+This example is well-structured, provides detailed information 
+on food choices and quantities, and aligns with the athlete's 
+goals and restrictions.
+```
+
+
 ## Prompt Evaluation
 
 Es la medición de la efectividad de los prompts de manera automática. Para esto se pueden usar distintas métricas, como:

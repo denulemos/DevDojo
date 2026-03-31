@@ -110,6 +110,29 @@ Estas ideas sobre prompting pueden ayudarnos incluso a solucionar problemas cuan
 
 También se recomienda que, si una conversación no está yendo en el camino deseado, iniciar una conversación nueva con una prompt más clara y específica, para que Claude pueda entender mejor lo que se necesita en vez de intentar redirigir la conversación ya existente.
 
+### Ser especifico
+
+Una de las mejores formas de obtener buenos resultados es siendo especifico en nuestros prompts acerca de lo que deseamos, sin dejar lugar a interpretacion al agente.
+
+![imagen ejemplo](https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2Fa46l9irobhg0f5webscixp0bs%2Fpublic%2F1748623570%2F05_-_003_-_Being_Specific_00.1748623570613.png)
+
+- Se pueden listar puntos especificando que deberia tener el output (o que no deberia tener)
+    - Largo del output
+    - Formato y estructura del output
+    - Elementos a incluir
+    - Tono o estilo del output
+
+
+- Se puede listar que tipo de camino de razonamiento deberia seguir el agente para llegar a la respuesta.
+    - Recomendado para soluciones complejas
+    - Recomendado cuando queremos que Claude tenga en cuenta distintos puntos de vista o que analice distintas variables para llegar a una respuesta
+
+![imagen ejemplo](https://everpath-course-content.s3-accelerate.amazonaws.com/instructor%2Fa46l9irobhg0f5webscixp0bs%2Fpublic%2F1748623571%2F05_-_003_-_Being_Specific_05.1748623571451.png)
+
+En varias ocasiones **se recomienda usar una combinacion de ambos** para llegar a un mejor resultado si asi el problema lo requiere.
+
+
+
 ## **Claude API**
 
 (Último update: marzo de 2026)
