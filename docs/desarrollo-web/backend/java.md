@@ -2,7 +2,7 @@
 
 ## Overloading vs Overriding
 
-**Overloading** es un termino usado para describir cuando dos metodos tienen el **mismo nombre** pero tienen un distinto numero o tipo de parametros. Una misma clase tiene varios métodos con mismo nombre pero distintos parámetros. Se decide en tiempo de compilación.
+**Overloading** es un término usado para describir cuando dos métodos tienen el **mismo nombre** pero distinto número o tipo de parámetros. Una misma clase puede tener varios métodos con el mismo nombre pero distintos parámetros. Se decide en tiempo de compilación.
 
 ```js
 public double compute(Circle c){}
@@ -75,9 +75,9 @@ public int sumar(int a, int b) {
 - `(int a, int b)`: Son los parámetros que recibe la función, cada uno con su tipo de dato.
 - `return resultado;`: Devuelve el valor calculado por la función.
 
-### Como se maneja un parametro que puede ser nulo? (`Optional<>`)
+### ¿Cómo se maneja un parámetro que puede ser nulo? (`Optional<>`)
 
-En Java 8 aparecio `Optional<>` que es un wrapper para un valor que puede ser nulo, pero evita el `null` en si mismo y la excepcion `NullPointerException`.
+En Java 8 apareció `Optional<>`, que es un wrapper para un valor que puede ser nulo, pero evita el `null` en sí mismo y la excepción `NullPointerException`.
 
 ```java
 Optional<String> nombre = obtenerNombreOptional();
@@ -86,7 +86,7 @@ nombre.ifPresent(n -> System.out.println(n.toUpperCase()));
 
 Se ejecuta el `System.out.println(n.toUpperCase())` si el nombre no es nulo (esta presente).
 
-Por ejemplo, en el siguiente codigo se obtiene el nombre de una persona y se imprime en mayusculas si no es nulo, si es nulo se imprime "DESCONOCIDO".
+Por ejemplo, en el siguiente código se obtiene el nombre de una persona y se imprime en mayúsculas si no es nulo; si es nulo, se imprime "DESCONOCIDO".
 
 ```java
 public class EjemploOptional {
@@ -106,11 +106,11 @@ public class EjemploOptional {
 }
 ```
 
-### Se recomienda usar `Optional<>` en parametros de funciones?
+### ¿Se recomienda usar `Optional<>` en parámetros de funciones?
 
 NO se recomienda usar `Optional` como parámetro de un método.
 
-Este codigo: 
+Este código:
 
 ```java
 public void saludar(Optional<String> nombre) {
@@ -118,7 +118,7 @@ public void saludar(Optional<String> nombre) {
 }
 ```
 
-Es bastante mas complejo que:
+Es bastante más complejo que:
 
 ```java
 public void saludar(String nombre) {
@@ -126,21 +126,21 @@ public void saludar(String nombre) {
 }
 ```
 
-`Optional` esta pensado para valores de retorno, no para entradas. Ademas, si se llama al metodo, se debe crear un `Optional`
+`Optional` está pensado para valores de retorno, no para entradas. Además, si se llama al método, se debe crear un `Optional`.
 
 ```java
 saludar(Optional.of("Denisse"));
 ```
 
-Incluso se podria seguir pasando `null` como parametro.
+Incluso se podría seguir pasando `null` como parámetro.
 
 ```java
 saludar(null); // NullPointerException
 ```
 
-Ademas casi todas las librerias y frameworks esperan parametros normales, no `Optional`.
+Además, casi todas las librerías y frameworks esperan parámetros normales, no `Optional`.
 
-SI tiene sentido usarlo cuando son metodos privados.
+Sí tiene sentido usarlo cuando son métodos privados.
 
 ```java
 private void procesarUsuario(Optional<Usuario> usuarioOpt) {
@@ -375,5 +375,4 @@ module com.paquete.negocio {
     //...
 }
 ```
-
 

@@ -6,12 +6,12 @@ title: ❤️ Angular
 import IndiceTable from '@site/src/components/IndiceTable';
 
 export const data = [
-  { tema: '🧱', nombre: 'Ejercicios Tecnicos', link: '../desarrollo-web/angular/ejercicios-tecnicos'},
+  { tema: '🧱', nombre: 'Ejercicios técnicos', link: '../desarrollo-web/angular/ejercicios-tecnicos'},
 ];
 
 <IndiceTable data={data}/>
 
-## Modulos
+## Módulos
 
 **⚠️ En versiones nuevas de Angular (como Angular 15+), ya no es obligatorio usar módulos. Ahora puedes tener componentes "standalone": independientes, sin necesidad de estar dentro de un módulo.**
 
@@ -22,7 +22,7 @@ En Angular, esa casa es tu aplicación, y cada habitación es un módulo (`NgMod
 - Ayudan a organizar el código para que no sea un caos.
 - Agrupan cosas que trabajan juntas, como componentes, servicios, y rutas.
 - Te permiten importar otras librerías (por ejemplo, para mostrar botones, manejar formularios, etc.).
-- Podes tener rutas específicas dentro de un módulo (como si tuvieras un mini-GPS dentro de cada habitación).
+- Podés tener rutas específicas dentro de un módulo (como si tuvieras un mini-GPS dentro de cada habitación).
 
 Supongamos que estás creando una tienda online:
 
@@ -131,7 +131,7 @@ Es la forma que tiene Angular de decir: *“Ey, esta propiedad va a cambiar, as�
 - `value` y `disabled` son propiedades del `<input>`.
 - El `[value]="empresa"` significa: "Poné el valor de esta variable dentro del input", es decir, en el componente tengo una variable con ese mismo nombre.
 
-En cambio, la misma linea de codigo SIN corchetes: 
+En cambio, la misma línea de código sin corchetes:
 
 ```html
 <input type="text" value="empresa" disabled="habilitado" >
@@ -144,27 +144,27 @@ Los toma como texto plano. O sea, va a escribir literalmente "empresa" en el inp
 
 ## ¿Qué es la compilación JIT y AOT en Angular?
 
-Como el codigo TS y HTML precisa ser compilado para ser mostrado en el navegador, se ofrecen dos modos de compilacion
+Como el código TS y HTML precisa ser compilado para ser mostrado en el navegador, se ofrecen dos modos de compilación.
 
 **Just-in-Time (JIT)**
 
-Se compilan las planillas cuando la aplicacion es ejecutada en el navegador, se usa en desarrollo, ya que no es necesario recompilar todo el proyecto para poder ver los cambios. 
+Se compilan las plantillas cuando la aplicación es ejecutada en el navegador. Se usa en desarrollo, ya que no es necesario recompilar todo el proyecto para poder ver los cambios.
 
-- El bundle final es mas grande ya que incluye al compilador de Angular en si mismo
-- La app es mas lenta al iniciar ya que debe compilar en el navegador
-- Es mas facil de depurar ya que el codigo fuente es mas claro, pero menos seguro. 
+- El bundle final es más grande, ya que incluye al compilador de Angular en sí mismo
+- La app es más lenta al iniciar, ya que debe compilar en el navegador
+- Es más fácil de depurar, ya que el código fuente es más claro, pero menos seguro.
 
 Es el activado con `ng serve`
 
 **Ahead-of-Time (AOT)**
 
-Compila el codigo antes de mostrarlo en el navegador, se usa en produccion ya que el rendimiento es optimizado
+Compila el código antes de mostrarlo en el navegador. Se usa en producción, ya que el rendimiento es optimizado.
 
-- Inicio mas rapido ya que el codigo es compilado antes de llegar al browser
-- El bundle final es mas pequeño ya que no incluye al compilador de Angular
-- Es mas dificil de depurar ya que el codigo fuente es mas dificil de leer, pero mas seguro
-- Detecta errores en las plantillas durante la compilacion, evitando fallos en ejecucion
-- La compilacion es mucho mas lenta durante el build
+- Inicio más rápido, ya que el código es compilado antes de llegar al browser
+- El bundle final es más pequeño, ya que no incluye al compilador de Angular
+- Es más difícil de depurar, ya que el código fuente es más difícil de leer, pero más seguro
+- Detecta errores en las plantillas durante la compilación, evitando fallos en ejecución
+- La compilación es mucho más lenta durante el build
 
 Es el activado con `ng build --aot`
 
@@ -172,7 +172,7 @@ Es el activado con `ng build --aot`
 
 ## ¿Cómo se maneja la inyección de dependencias y la inversión de control en Angular?
 
-La inyeccion de dependencias es basicamente el hecho de crear un archivo con servicios que sirvan para ser **inyectados** en otros componentes. 
+La inyección de dependencias es, básicamente, el hecho de crear un archivo con servicios que sirvan para ser **inyectados** en otros componentes.
 
 ```typescript
 @Injectable({
@@ -188,11 +188,11 @@ constructor(private userService: UserService) {}
 
 Se pueden definir distintos niveles de inyección, por ejemplo:
 
-- **root**: El servicio esta disponible globalmente para toda la aplicacion
-- **Nivel de Módulo (providers: [] en @NgModule)**: El servicio esta disponible solo para el módulo en el que se encuentra
-- **Componente**: El servicio esta disponible solo para el componente en el que se encuentra
+- **root**: El servicio está disponible globalmente para toda la aplicación
+- **Nivel de módulo (`providers: []` en `@NgModule`)**: El servicio está disponible solo para el módulo en el que se encuentra
+- **Componente**: El servicio está disponible solo para el componente en el que se encuentra
 
-Gracias a la **Inversion de Control** de Angular, no es necesario hacer un `new` de un servicio, sino que Angular se encarga de hacerlo por nosotros. 
+Gracias a la **inversión de control** de Angular, no es necesario hacer un `new` de un servicio, sino que Angular se encarga de hacerlo por nosotros.
 
 ```typescript	
 export class EjemploComponent {

@@ -98,12 +98,12 @@ El modelo de caja (Box Model) en CSS es la forma en que se representan y se calc
 
 ### **Qué es Sass?**
 
-Es un preprocesador que nos permite escribir codigo CSS de una forma mas dinamica, agregando sintaxis de un lenguaje de programacion, incluyendo variables, funciones, modulos y valores
+Es un preprocesador que nos permite escribir código CSS de una forma más dinámica, agregando sintaxis de un lenguaje de programación, incluyendo variables, funciones, módulos y valores.
 
-Ayuda a tener un codigo modular, simple y escalable.
+Ayuda a tener un código modular, simple y escalable.
 
 * Es completamente compatible con CSS
-* Se puede escribir codigo mucho mas rapidamente
+* Se puede escribir código mucho más rápido
 * Muchos framework actualmente estan construidos con sass
 * Hay mucha documentacion
 
@@ -111,13 +111,13 @@ Ayuda a tener un codigo modular, simple y escalable.
 
 ### **Cual es la diferencia entre .sass y scss?**
 
-La primera no utiliza llaves, solo tabulaciones, que se interpretan como bloques de codigo. La segunda es mas similar a CSS ya que utiliza llaves, y con funcionalidades extra
+La primera no utiliza llaves, solo tabulaciones, que se interpretan como bloques de código. La segunda es más similar a CSS, ya que utiliza llaves y funcionalidades extra.
 
 ---
 
 ### **Sass reemplaza a CSS?**
 
-No, es una herramienta para escribir CSS de forma mas rapida, esto se compila a CSS. Es CSS con "superpoderes".
+No, es una herramienta para escribir CSS de forma más rápida; esto se compila a CSS. Es CSS con "superpoderes".
 
 En el HTML se hace el link al Stylesheet .css que es compilado desde sass.
 
@@ -129,7 +129,7 @@ En el HTML se hace el link al Stylesheet .css que es compilado desde sass.
 // Los comentarios de 2 barras no aparecen en el CSS compilado
 
 /*
- Este tipo de comentarios si aparecen en el codigo CSS compilado
+ Este tipo de comentarios sí aparecen en el código CSS compilado
 */
 ```
 
@@ -319,7 +319,7 @@ div {
 }
 ```
 
-Entonces en SASS podemos usar mixins, que son como funciones que podemos invocar para reutilizar el codigo. Hasta tiene parametros y todo para cambiar los valores
+Entonces, en SASS podemos usar mixins, que son como funciones que podemos invocar para reutilizar el código. Incluso tienen parámetros para cambiar los valores.
 
 ```jsx
 @mixin box-shadow($x, $y, $blur, $c){
@@ -390,7 +390,7 @@ Esto nos sirve para crear clases de forma dinamica
 ### **Funciones en SASS**
 
 
-Se pueden crear funciones en SASS para reutilizar codigo
+Se pueden crear funciones en SASS para reutilizar código
 
 ```jsx
 @function suma($a, $b) {

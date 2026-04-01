@@ -1,6 +1,6 @@
-# Ejercicios tecnicos de Angular
+# Ejercicios técnicos de Angular
 
-### Migrar de Observables a Signals (Facil)
+### Migrar de Observables a Signals (Fácil)
 
 ```typescript
 import { Component } from '@angular/core';
@@ -33,7 +33,7 @@ export class ExampleComponent {
 
 ### Migrar de Observables a Signals (Medio)
 
-Teniendo este codigo hecho en Observables, migrarlo a Signals
+Teniendo este código hecho en Observables, migrarlo a Signals.
 
 Cada 2 segundos emite un número aleatorio entre 0 y 99.
 Si quisieras mostrarlo en la vista, usarías `{{ randomNumber$ | async }}`
@@ -85,7 +85,7 @@ export class RandomNumberComponent {
 }
 ```
 
-### Migrar de Observables a Signals (Dificil)
+### Migrar de Observables a Signals (Difícil)
 
 ```typescript
 import { Component } from '@angular/core';
@@ -137,7 +137,7 @@ export class ToggleComponent {
 
 ### Refactor de two-way binding clásico (`@Input/@Output)` a `model()`
 
-- Teniendo este codigo hecho en two-way binding clásico (`@Input/@Output)`), refactorizarlo a `model()`
+- Teniendo este código hecho en two-way binding clásico (`@Input/@Output)`), refactorizarlo a `model()`
 - Requiere `EventEmitter` y `emit()` en cada cambio de estado.
 
 ```typescript

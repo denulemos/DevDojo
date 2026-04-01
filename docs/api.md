@@ -8,7 +8,7 @@ Por ejemplo, si se tiene una aplicación que informa sobre el clima, esta inform
 
 ## Seguridad en la API
 
-La seguridad de una API se asegura que solo clientes autenticados y autorizados puedan acceder a los recursos. Algunas medidas que se pueden tomar son:
+La seguridad de una API asegura que solo clientes autenticados y autorizados puedan acceder a los recursos. Algunas medidas que se pueden tomar son:
 
 - HTTPS (SSL - TLS Encryption)
 - Authentication ([JWT](#jwt), [OAuth](#oauth), API Keys)
@@ -29,10 +29,10 @@ Por ejemplo, en una app bancaria:
 Las mejores prácticas para esto son:
 
 - Devolver los códigos HTTP correspondientes, hay servicios que devuelven siempre un `200 OK` y envían el error en el payload, esto **no** es correcto.
-- Registrar errores 
+- Registrar errores
 - No exponer stack traces internos del sistema
 
-Se recomienda tener un **manejo de errores centralizado** como un Middleware (ExpressJS) o Spring Boot Global Handler
+Se recomienda tener un **manejo de errores centralizado**, como un middleware en ExpressJS o un Global Handler en Spring Boot.
 
 ## REST API
 
@@ -55,7 +55,7 @@ Estas son reglas que definen cómo una REST API debería funcionar.
 4. Uniform Interface
 5. Layered System
 
-Por ejemplo, se tiene el Cliente frontend -> Backend hecho con NodeJS -> Base de Datos MySQL, cada capa funciona de manera independiente de la otra. 
+Por ejemplo, se tiene el cliente frontend -> backend hecho con NodeJS -> base de datos MySQL; cada capa funciona de manera independiente de la otra.
 
 ## Métodos HTTP
 
@@ -151,11 +151,11 @@ Estos parámetros son opcionales, generalmente son usados en servicios de búsqu
 
 ## Path Parameters
 
-Son variables embebidas en la URL que indican un recurso específico. Son parte de la URL
+Son variables embebidas en la URL que indican un recurso específico. Son parte de la URL.
 
-Por ejemplo: `DELETE /api/orders/123`, indica que hay que eliminar la orden número 123
+Por ejemplo: `DELETE /api/orders/123`, indica que hay que eliminar la orden número 123.
 
-Estos parámetros son obligatorios y representan indicadores únicos de los recursos. 
+Estos parámetros son obligatorios y representan identificadores únicos de los recursos.
 
 ## Versioning - Versionado
 
@@ -357,5 +357,4 @@ Es el tiempo que toma para que una request sea correctamente respondida. Mientra
 - Indexing de la Base de Datos
 - CDN
 - Procesamiento Async
-
 

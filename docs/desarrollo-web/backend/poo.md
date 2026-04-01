@@ -9,7 +9,7 @@
 
 Ejemplos en **Java**
 
-### Que es la programacion orientada a objetos?
+### ¿Qué es la programación orientada a objetos?
 
 La programación orientada a objetos (POO) es un estilo de programación que organiza el código en "objetos". Un objeto es como una caja que contiene datos (llamados atributos) y cosas que puede hacer (llamadas métodos).
 
@@ -274,7 +274,7 @@ public class Main {
 }
 ```
 
-Otra explicacion mas simple es, suponiendo que tengo `Producto p = new Producto()` y `Producto d = new Producto()`, si bien ambos son `Producto`, cuando se invoquen metodos sobre ellos se ejecutara la version sobrescrita de la subclase.
+Otra explicación más simple es la siguiente: suponiendo que tengo `Producto p = new Producto()` y `Producto d = new Producto()`, si bien ambos son `Producto`, cuando se invoquen métodos sobre ellos se ejecutará la versión sobrescrita de la subclase.
 
 ### Sobrescritura - `Override`
 
@@ -399,8 +399,7 @@ public class ProductoElectronico extends Producto {
 
 ### Uso de `this` y `super`
 
-`this` hace referencia al objeto actual, y `super` a la superclase (clase padre), puedo usarlo para llamar la constructor de esta superclase o a un metodo del mismo, evitando la **duplicacion de codigo**
-
+`this` hace referencia al objeto actual, y `super` a la superclase (clase padre). Puedo usarlo para llamar al constructor de esta superclase o a un método de la misma, evitando la **duplicación de código**.
 
 
 

@@ -6,11 +6,11 @@ sidebar_position: 4
 
 ## 🟦 **CSS**
 
-### Qué es la Especificidad (Specificity) de CSS?
+### ¿Qué es la especificidad (specificity) de CSS?
 
 Es como el navegador determina que propiedad de CSS se debe aplicar a un elemento si hay varios en juego o muchos selectores.
 
-Va del mas alto al mas bajo en especificidad:
+Va de la más alta a la más baja en especificidad:
 
 * Estilos inline (Se aplica siempre)
 * IDs
@@ -22,7 +22,7 @@ section p {
     color: red;
 }
 
-// Se va a aplicar este, ya que es el mas reciente en aparecer, y tiene una especificidad mayor
+// Se va a aplicar este, ya que es el más reciente en aparecer y tiene una especificidad mayor
 .p1 {
     color: green;
 }
@@ -48,7 +48,7 @@ El modelo de caja (Box Model) en CSS es la forma en que se representan y se calc
 
 ---
 
-### Que es BEM?
+### ¿Qué es BEM?
 
 BEM (Block Element Modifier) es una metodología para nombrar clases en HTML y CSS que facilita la escritura de código claro, estructurado y fácil de mantener. Su objetivo es dejar explícito qué representa cada clase y cómo se relaciona con la estructura del componente.
 
@@ -68,7 +68,7 @@ Esto ayuda a evitar conflictos de estilos y hace que el código sea más predeci
 
 ---
 
-### Como declaro variables en CSS?
+### ¿Cómo declaro variables en CSS?
 
 Puedes declarar variables en CSS utilizando la pseudo-clase `:root`, que representa el elemento raíz del documento. Así puedes definir variables globales que luego puedes reutilizar en todo tu CSS usando la función `var()`:
 
@@ -88,9 +88,7 @@ En este ejemplo, `--color-3` es una variable CSS que almacena el color negro, y 
 
 ### ¿Qué son las Pseudoclases?
 
-Si vemos los vínculos, tiene un color asignado que podemos cambiarlo por ejemplo si le pasamos el
-mouse por arriba al elemento , eso lo haremos con lo que se llaman pseudo clases pero es necesario
-trabajar de forma interna para poder hacerlo, por ejemplo
+Si vemos los vínculos, tienen un color asignado que podemos cambiar. Por ejemplo, si le pasamos el mouse por arriba al elemento, eso lo haremos con lo que se llaman pseudoclases. Para hacerlo, es necesario trabajar de forma interna; por ejemplo:
 
 ```html
 <head>
@@ -101,7 +99,7 @@ trabajar de forma interna para poder hacerlo, por ejemplo
 ```
 
 En el ejemplo anterior hemos dicho que los vínculos al pasarle el mouse por arriba se verán en otro color, por ejemplo en el caso anterior en pink.
-Tenemos varias pseudo clases:
+Tenemos varias pseudoclases:
 
 * a:hover => cuando pasamos el mouse por arriba del vínculo
 * a:link => cuando aún no hemos visitado al vínculo
@@ -115,20 +113,20 @@ a:hover {text-decoration:underline; }
 
 ## 🟪 **SASS**
 
-### Qué es Sass?
+### ¿Qué es Sass?
 
-Es un preprocesador que nos permite escribir codigo CSS de una forma mas dinamica, agregando sintaxis de un lenguaje de programacion, incluyendo variables, funciones, modulos y valores
+Es un preprocesador que nos permite escribir código CSS de una forma más dinámica, agregando sintaxis de un lenguaje de programación, incluyendo variables, funciones, módulos y valores.
 
-Ayuda a tener un codigo modular, simple y escalable.
+Ayuda a tener un código modular, simple y escalable.
 
 * Es completamente compatible con CSS
-* Se puede escribir codigo mucho mas rapidamente
-* Muchos framework actualmente estan construidos con sass
-* Hay mucha documentacion
+* Se puede escribir código mucho más rápido
+* Muchos frameworks actualmente están construidos con Sass
+* Hay mucha documentación
 
 ---
 
-### Cual es la diferencia entre .sass y scss?
+### ¿Cuál es la diferencia entre `.sass` y `.scss`?
 
 **.sass** y **.scss** son dos sintaxis diferentes para escribir SASS:
 
@@ -159,7 +157,7 @@ Ambas sintaxis se compilan al mismo CSS final, la elección depende de tus prefe
 
 ---
 
-### Interpolacion
+### Interpolación
 
 
 ```scss

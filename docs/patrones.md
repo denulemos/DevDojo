@@ -29,7 +29,7 @@ Por ejemplo, si queremos implementar el Singleton de un restaurante en Java:
  }
  ```
 
-Ejemplo en Javascript
+Ejemplo en JavaScript
 
 ```js
 class Logger {
@@ -86,7 +86,7 @@ public class CardGame {
 }
 ```
 
-Ejemplo en Javascript
+Ejemplo en JavaScript
 
 ```js
 class PaymentFactory {
@@ -115,4 +115,3 @@ payment.pay(100);
 ```
 
 Centraliza la creación de objetos y oculta la clase concreta al resto del código.
-

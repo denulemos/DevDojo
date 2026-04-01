@@ -13,7 +13,7 @@ En el approach **Monolítico** los componentes de la aplicación funcionan todos
 | --- | --- |
 | Multiples equipos pueden trabajar en diversos servicios al mismo tiempo | El manejo de la latencia, tipo de comunicacion y consistencia es complicado |
 | Si un servicio tiene problemas, no afecta al resto del sistema | Mas complejidad de desarrollo, testing y deployment |
-| El sistema puede adaptarse a cambios de workloads | Mantener la consistencia de la informacion entre servicios puede ser complicado | 
+| El sistema puede adaptarse a cambios de workloads | Mantener la consistencia de la información entre servicios puede ser complicado | 
 | Cada microservicio puede funcionar con tecnologias completamente distintas | El manejo de errores puede ser complejo | 
 
 ## Microservicios y Sistemas Real-time
@@ -79,14 +79,14 @@ Si un paso falla, se revierten los pasos anteriores, así se mantiene la consist
 
 ### Event Sourcing Pattern
 
-En vez de guardar el estado actual de una aplicacion, se guardan todos los cambios en forma de secuencia de eventos. 
+En vez de guardar el estado actual de una aplicación, se guardan todos los cambios en forma de secuencia de eventos.
 Cada evento describe un cambio que ocurrio, permitiendo que los servicios puedan reproducir los pasos las veces necesarias bajo repeticion. Se tiene un historial claro.
 Esto provee una auditoria clara y simplifica el proceso de data recovery en caso de ser necesario, si algo falla. 
 
 ## Antipatrones
 
 - Compartir una sola base de datos entre todos los microservicios, comprometiendo la independencia y la escalabilidad.
-- Microservicios que constantemente se comunican ante tareas muy pequeñas, ocasionando un gran peso en el trafico de red y afectando la latencia. 
+- Microservicios que constantemente se comunican ante tareas muy pequeñas, ocasionando un gran peso en el tráfico de red y afectando la latencia.
 - Crear demasiados microservicios con responsabilidades sumamente pequeñas, agregando complejidad innecesaria.
 - Microservicios con limites poco definidos, responsabilidades poco claras.
 - No prestar atencion a la seguridad del sistema, exponiendo los servicios a data breaches.

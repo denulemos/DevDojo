@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# 💛 Javascript
+# 💛 JavaScript
 
 ## **Metodos y Colecciones**
 
@@ -1630,7 +1630,6 @@ async function myAsyncFunction() {
   }
 }
 ```
-
 
 
 

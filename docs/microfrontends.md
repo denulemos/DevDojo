@@ -5,10 +5,10 @@ title: 🧱 Microfrontends
 
 ### Qué son los Microfrontends?
 
-Es dividir una app grande en mini apps que funcionan en conjunto para formar un mismo producto. Se pueden tener varios repositorios de codigo que se conectan luego entre si, cada una con su propia tecnologia y equipo.
+Es dividir una app grande en miniapps que funcionan en conjunto para formar un mismo producto. Se pueden tener varios repositorios de código que se conectan luego entre sí, cada una con su propia tecnología y equipo.
 
 Sus ventajas son:
-- Es facil deployar cambios ya que cada equipo se encarga de un pedazo de la aplicacion sin pisarse con otros.
+- Es fácil desplegar cambios, ya que cada equipo se encarga de un pedazo de la aplicación sin pisarse con otros.
 - Se puede actualizar una parte de la app sin tocar todo
 
 Y sus desventajas:
@@ -62,9 +62,9 @@ Se recomienda su uso en:
 
 Es la base técnica más usada para micro-frontends modernos. **Module Federation es la herramienta, micro-frontends es el patrón/arquitectura**
 
-Es una forma de hacer que el **host** cargue partes de otra aplicacion en tiempo real sin tener que recompilarse, descargando el codigo del **remote** y usandolo como si fuera propio, todo esto durante el runtime.
+Es una forma de hacer que el **host** cargue partes de otra aplicación en tiempo real sin tener que recompilarse, descargando el código del **remote** y usándolo como si fuera propio, todo esto durante el runtime.
 
-Antes si cambiaba una parte de la aplicacion habia que realizar un rebuild y un redeploy de todo, ahora cada equipo deploya su parte, el resto de la app no se entera y hay menos friccion.
+Antes, si cambiaba una parte de la aplicación, había que realizar un rebuild y un redeploy de todo. Ahora cada equipo despliega su parte, el resto de la app no se entera y hay menos fricción.
 
 - App principal: layout + navegación
 - Micro-frontend “Search”

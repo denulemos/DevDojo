@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 ---
-# 💎 Typescript
+# 💎 TypeScript
 
 
 ### Qué es TypeScript?
@@ -12,11 +12,11 @@ Es mantenido por Microsoft
 
 * Ofrece tipado estricto y flexible
 * Mejora la legibilidad del código
-* Nos permite usar características modernas de Javascript sin miedo a la compatibilidad
+* Nos permite usar características modernas de JavaScript sin miedo a la compatibilidad
 * Mejora el intellisense
 * Nos permite la **inyección de dependencias**
 
-Su tipado estricto ayuda a saber como funcionan las cosas, por ejemplo, en este código Javascript
+Su tipado estricto ayuda a saber cómo funcionan las cosas; por ejemplo, en este código JavaScript:
 
 ```jsx
 function calcularISV (productos) {
@@ -34,7 +34,7 @@ function calcularISV (productos) {
 * Como luce un producto
 * Que propiedades debe tener el producto para que el código funcione
 
-Entonces, en Typescript quedaría algo así la firma de nuestro método
+Entonces, en TypeScript quedaría así la firma de nuestro método.
 
 ```tsx
 function calcularISV(productos: Producto[]): [number, number] {}
@@ -58,17 +58,17 @@ interface Producto {
 
 Es el archivo de configuración de TypeScript, en el se definen las reglas de compilación de TypeScript.
 
-Mediante estas configuraciones se **deberia** buscar que Typescript sea lo mas estricto posible.
+Mediante estas configuraciones se **debería** buscar que TypeScript sea lo más estricto posible.
 
 ```json
 {
  "compilerOptions": {
   "target": "es5", // A que versión de JS se compilará
-  "module": "commonjs", // Sistema de modulos
+  "module": "commonjs", // Sistema de módulos
   "strict": true, // Habilita todas las opciones estrictas
   "noImplicitAny": true, // No permite any
-  "esModuleInterop": true, // Permite importar modulos de ES6
-  "skipLibCheck": true, // No revisa las librerias
+  "esModuleInterop": true, // Permite importar módulos de ES6
+  "skipLibCheck": true, // No revisa las librerías
   "forceConsistentCasingInFileNames": true, // Obliga a que los nombres de archivos sean consistentes
  }
 }
@@ -78,7 +78,7 @@ Mediante estas configuraciones se **deberia** buscar que Typescript sea lo mas e
 
 ### Watch Mode
 
-Typescript al ejecutarse es traducido a Javascript. Para que Typescript esté pendiente de los cambios en los archivos y los compile automáticamente, se puede usar el siguiente comando
+TypeScript, al ejecutarse, es traducido a JavaScript. Para que TypeScript esté pendiente de los cambios en los archivos y los compile automáticamente, se puede usar el siguiente comando.
 
 ```bash
 tsc --watch
@@ -89,7 +89,7 @@ tsc --watch
 
 ### Variables
 
-Por defecto, implicitamente Typescript asigna un tipo a las variables, pero se puede asignar un tipo explicito. `any` deberia evitarse a toda costa, a menos que sea un elemento reutilizable.
+Por defecto, implícitamente, TypeScript asigna un tipo a las variables, pero se puede asignar un tipo explícito. `any` debería evitarse a toda costa, a menos que sea un elemento reutilizable.
 
 ```tsx
 let nombre: string = 'Denu'; // Tipo explicito
@@ -768,4 +768,3 @@ function hacerSonido(animal: Perro | Gato) {
 ```
 
 ---
-

@@ -5,27 +5,27 @@ title: 🔒 Seguridad
 
 ### Ciberamenazas actuales
 
-| Nombre | Descripcion |
+| Nombre | Descripción |
 | --- | --- |
-| Malware | Es un programa malicioso que realiza acciones dañinas en un sistema informático de forma intencionada ysin el conocimiento del usuario. |
-| Web-bassed attacks | Es todo tipo de ataque que se realiza a la infraestructura web de una organización. |
-| Phising | Es un conjunto de técnicas que tienecomo objetivo obtener a través de Internet datos privados de los usuarios, especialmente para accedera sus cuentas o datos bancarios. Sebasa en la ingeniería social |
+| Malware | Es un programa malicioso que realiza acciones dañinas en un sistema informático de forma intencionada y sin el conocimiento del usuario. |
+| Web-based attacks | Es todo tipo de ataque que se realiza a la infraestructura web de una organización. |
+| Phishing | Es un conjunto de técnicas que tiene como objetivo obtener, a través de Internet, datos privados de los usuarios, especialmente para acceder a sus cuentas o datos bancarios. Se basa en la ingeniería social. |
 | Web Application Attacks | Son ataques dirigidos a errores de codificación en los sitios web, ejemplo de estos son el XSS, SQL Injection, LFI, etc |
 | SPAM: o “correo basura” | Es un correo electrónico no solicitado que se envía a un gran número de destinatarios con fines publicitarios o comerciales |
-| DDoS | Es la versión distribuida de una ataque de denegación de servicio y tiene como objetivo afectar a la disponibilidad de los servicios de una organización |
+| DDoS | Es la versión distribuida de un ataque de denegación de servicio y tiene como objetivo afectar la disponibilidad de los servicios de una organización. |
 | Identity Theft | O robo de identidad. Tiene como objetivo utilizar de manera ilícita los datos personales de otra persona persiguiendo un fin lucrativo. |
-| Data Breach | Es un incidente en el que se roba o setoma información de un sistema sin el conocimiento o la autorización del propietario del sistema |
-| Insider Threat | Es un riesgo de seguridad que seorigina dentro de la organizaciónobjetivo. Esto no significa que el actor deba ser un empleado o funcionario actual de la organización. |
+| Data Breach | Es un incidente en el que se roba o se toma información de un sistema sin el conocimiento o la autorización del propietario del sistema. |
+| Insider Threat | Es un riesgo de seguridad que se origina dentro de la organización objetivo. Esto no significa que el actor deba ser un empleado o funcionario actual de la organización. |
 | Botnets | Es una red de computadoras zombies secuestradas que están controladas de forma remota por un hacker |
 | Data manipulation attack | El ciberdelincuente no toma posesión de los datos, sino que hace ajustes sutiles y sigilosos a los mismos con el fin de obtener algún tipo de ganancia |
-| Information leakage | O fuga de información, es la transmisión no autorizada de datos desde dentro de una organización aun destino o destinatario externo. |
-| Ransomware | Es un programa malicioso que persigue el cifrado de archivos y/o datos a fin de cobrar un rescate parasu restitución |
-| Cyberespionage | Es la estrategia de irrumpir en sistemas y/o redes informáticas a finde extraer información sensible de un gobierno o corporación |
-| Criptojacking | Es el uso no autorizado de una computadora o red informática ajena afin de minar criptomonedas |
+| Information leakage | O fuga de información, es la transmisión no autorizada de datos desde dentro de una organización a un destino o destinatario externo. |
+| Ransomware | Es un programa malicioso que persigue el cifrado de archivos y/o datos a fin de cobrar un rescate para su restitución. |
+| Cyberespionage | Es la estrategia de irrumpir en sistemas y/o redes informáticas a fin de extraer información sensible de un gobierno o corporación. |
+| Criptojacking | Es el uso no autorizado de una computadora o red informática ajena a fin de minar criptomonedas. |
 | Carga de archivos sin restricciones | Archivos maliciosos se cargan en el servidor y luego se ejecutan. Puede incluir un sistema de archivos sobrecargado o bases de datos, control total del sistema, etc.. |
-| Clickjacking | Un usuario hace click en un link o boton que lleva a un lugar que no corresponde al sitio, y dan datos personales |
-| Ataque XSS | Se inyectan secuencias de comandos maliciosos del lado del navegador en la pagina, codigo JS |
-| SQL Injection | Se inyecta codigo malicioso SQL en los campos de entrada, inputs. |
+| Clickjacking | Un usuario hace clic en un enlace o botón que lleva a un lugar que no corresponde al sitio, y allí entrega datos personales. |
+| Ataque XSS | Se inyectan secuencias de comandos maliciosos del lado del navegador en la página, código JS. |
+| SQL Injection | Se inyecta código malicioso SQL en los campos de entrada. |
 | Session Hijacking | Las comunicaciones entre el servidor y el cliente se interceptan y se roban datos.  |
 | Remote Network Hack | Simula un ataque por internet  |
 | Remote Dial-Up Network Hack | Simula un ataque hacia el pool de modems del cliente  |
@@ -37,12 +37,12 @@ title: 🔒 Seguridad
 
 ### ¿Cuáles son algunas medidas comunes contra los ataques?
 
-* Restringir el acceso a la base de datos: No dejarla expuesta en la red para que cualquiera pueda conectarse. Recomendable tener una lista de IPs u origenes que pueden conectarse a la misma.
-* Guardar de forma segura informacion sensible: No guardar en texto plano informacion sensible por si la BD se ve comprometida. Un ejemplo son las contraseñas, Se recomienda aplicar Hashing con algoritmos especializados.
-* Guardar configuracion en variables de entorno: Como conexiones a bases de datos, keys de servicios, etc.. Que varíe dependiendo del ambiente que estemos usando
-* Asegurar las rutas de la API: Alguien puede intentar con Postman usar nuestra API salteandose validaciones de seguridad. El endpoint deberia validar la autenticacion (token que expire) y la autorizacion (que esta persona tiene los permisos para acceder a esta API, estar autenticado no signfica estar autorizado)
-* Validar del lado de Servidor y de Cliente idealmente: No asumir que los datos vienen del cliente y que este ya los valido. Se deberia validar tanto en cliente como en servidor.
-* No guardar informacion sensible del lado del cliente: No guardar informacion sensible en cookies o Local Storage ya que son almacenamientos de facil acceso.
+* Restringir el acceso a la base de datos: No dejarla expuesta en la red para que cualquiera pueda conectarse. Es recomendable tener una lista de IP u orígenes que puedan conectarse a ella.
+* Guardar de forma segura información sensible: No guardar en texto plano información sensible por si la BD se ve comprometida. Un ejemplo son las contraseñas. Se recomienda aplicar hashing con algoritmos especializados.
+* Guardar configuración en variables de entorno: Como conexiones a bases de datos, keys de servicios, etc. Que varíe dependiendo del ambiente que estemos usando.
+* Asegurar las rutas de la API: Alguien puede intentar usar nuestra API con Postman saltándose validaciones de seguridad. El endpoint debería validar la autenticación (token que expire) y la autorización (que esa persona tenga permisos para acceder a esa API; estar autenticado no significa estar autorizado).
+* Validar del lado del servidor y del cliente, idealmente: No asumir que los datos vienen validados desde el cliente. Se debería validar tanto en cliente como en servidor.
+* No guardar información sensible del lado del cliente: No guardar información sensible en cookies o Local Storage, ya que son almacenamientos de fácil acceso.
 * **Honeypot** Es un dispositivo destinado a ser atacado para estudiar el comportamiento de los atacantes o desviar su atención.
 
 ---

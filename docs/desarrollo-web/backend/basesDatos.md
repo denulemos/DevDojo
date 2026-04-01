@@ -1,8 +1,8 @@
 # 🗄️ Bases de Datos
 
-## Programacion declarativa
+## Programación declarativa
 
-La programacion declarativa se concentra en que cosas hay que hacer y no necesariamente en como hacerlas. Un ejemplo es SQL, donde se le dice a la base de datos que datos queremos, pero no como obtenerlos.
+La programación declarativa se concentra en qué cosas hay que hacer y no necesariamente en cómo hacerlas. Un ejemplo es SQL, donde se le dice a la base de datos qué datos queremos, pero no cómo obtenerlos.
 
 ---
 
@@ -12,7 +12,7 @@ La programacion declarativa se concentra en que cosas hay que hacer y no necesar
 - **Vistas**: Parecidas a la tabla, son para consultas, más rápidas
 - **Índices**: Uno o más columnas de una tabla para encontrar la data más rápido, es como el índice de un libro
 - **Triggers**: Disparadores que ejecutan código de SQL cuando se inserta, borra o se updatea un campo (CRUD (Create, Read, Update, Delete))
-- **Procedures**: Pedazos de código SQL que se ejecuta
+- **Procedures**: Pedazos de código SQL que se ejecutan
 - **Constraints**: Previenen inconsistencia de datos en una columna
 - **Reglas:** Se especifican valores válidos para ser insertados en una tabla o columna.
 
@@ -64,7 +64,7 @@ Las sentencias DDL se utilizan para crear y modificar la estructura de las tabla
 
 ---
 
-## Indices
+## Índices
 
 Imagina que tienes una guía telefónica y quieres encontrar el número de "Denu Lemon":
 
@@ -90,7 +90,7 @@ Desventajas:
 
 ---
 
-## Normalizacion
+## Normalización
 
 Normalización es el proceso de ordenar una base de datos para que no haya datos repetidos, sea más fácil de mantener y evites errores raros cuando guardás, editás o borrás información.
 
@@ -110,21 +110,21 @@ Objetivos principales:
 deben ser del mismo tipo.
 - Ejemplo “Nacimiento” debe tener una fecha.
 
-Hay distintos grados de Normalizacion:
+Hay distintos grados de normalización:
 
 - Primera forma normal
 - Segunda forma normal
-- Tercera formal normal
+- Tercera forma normal
 
 Cada una de estas formas normales tiene sus reglas.
-Una base de datos no es necesario que este siempre en la 3era forma normal, puede ocurrir que para resolver problemas complejos, no se requiera de algún dato en la 3era forma.
+Una base de datos no necesita estar siempre en la tercera forma normal; puede ocurrir que, para resolver problemas complejos, no se requiera llevar algún dato hasta esa forma.
 
 ---
 
 ## **Mejoras de Performance**
 
 - Cada índice creado en la tabla incrementa el tiempo en que se llevan a cabo los insert, updates o deletes, por lo que el número de índices en una tabla no deben de ser muchos. Use sólo los índices necesarios, para PK y para FK, y según el uso de los datos (WHERE, ORDER BY, GROUP BY). Si la tabla es de solo lectura entonces el número de índices se puede incrementar.
-- Manteen los índices lo más pequeño que puedas, reduciéndolo se reducen el número de IO para leerlo (esto depende de la complejidad de claves del índice).
+- Mantén los índices lo más pequeños que puedas; al reducirlos, disminuye la cantidad de I/O necesaria para leerlos.
 - Trata de que los índices creados sean sobre campos de tipo enteros y no de carácter.
 - Si se crean índices compuestos el orden en que se creen es muy importante. Trata de colocar primero la columna que sea más selectiva, es decir donde no se repitan mucho los valores y después la menos selectiva. También debes de tomar en consideración la forma en que escribes tus queries (tener en cuenta el orden de ejecución del query).
 - Los índices clustered funcionan mucho mejor que los nonclustered si se necesitan hacer consultas sobre un rango de valores o se necesitan ordenar datos por medio de GROUP BY o ORDER BY.
