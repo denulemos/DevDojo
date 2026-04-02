@@ -77,11 +77,66 @@ Esto nos permite automatizar tareas repetitivas y ahorrar tiempo.
 - Claude no puede compartir nada a lo cual vos no le hayas dado acceso, es decir, si le das acceso a un documento de Google Drive, Claude no puede compartir ese documento con nadie más, ni siquiera con otros proyectos, a menos que le des acceso a ese proyecto también.
 - Claude no puede acceder a nada a lo que no le hayas dado acceso, es decir, si no le das acceso a un documento de Google Drive, Claude no puede acceder a ese documento, ni siquiera para leerlo, por lo que no puede compartirlo con nadie más.
 
+## MCP
+
+Se pueden extender las habilidades de Claude mediante MCP (Model Context Protocol), que es un protocolo que permite a los modelos de lenguaje acceder a herramientas externas de manera segura y controlada. Esto permite que Claude pueda interactuar con nuestras herramientas diarias, como Google Drive, Slack, Gmail, entre otras, para realizar tareas por nosotros, como enviar un email, crear un documento, etc.
+
+Por ejemplo, uno muy popular es `Playwright MCP`, que permite a Claude interactuar con cualquier sitio web como si fuera un usuario, lo que le permite realizar tareas como hacer reservas, comprar productos, etc.
+
+## Hooks
+
+Si queremos que Claude ejecute todos los test de mi proyecto antes de realizar un push a un repositorio, esto de manera automatizada y todo el tiempo, podemos usar Hooks, que son una forma de conectar a Claude con nuestras herramientas de desarrollo para que pueda ejecutar tareas específicas de manera automática.
+
+Hay dos tipos de Hooks:
+
+- **PreToolUse hooks**: Se ejecutan antes de que se realice una acción específica, por ejemplo, antes de hacer un push a un repositorio, antes de enviar un email, etc.
+
+```json
+"PreToolUse": [
+  {
+    "matcher": "Read",
+    "hooks": [
+      {
+        "type": "command",
+        "command": "node /home/hooks/read_hook.ts"
+      }
+    ]
+  }
+]
+```
+
+- **PostToolUse hooks**: Se ejecutan después de que se realice una acción específica,  por ejemplo, después de hacer un push a un repositorio, después de enviar un email, etc.
+
+```json
+"PostToolUse": [
+  {
+    "matcher": "Write|Edit|MultiEdit",
+    "hooks": [
+      {
+        "type": "command", 
+        "command": "node /home/hooks/edit_hook.ts"
+      }
+    ]
+  }
+]
+```
+
+Estos pueden ser definidos a 3 niveles:
+
+- Global - `~/.claude/settings.json`, afecta a todos los proyectos globales
+- Project - `.claude/settings.json`, compartido a nivel proyecto individual
+- Project (not committed) - `.claude/settings.local.json`, es nuestra configuracion personal, y nadie puede acceder a la misma
+
 ## Enterprise Search
 
 Es un Search dedicado a un contexto interno de empresa, muy útil para realizar preguntas sobre el funcionamiento organizacional de la empresa.
 
 Debe ser seteado primero por un Owner de la organización para poder ser accedido por otros.
+
+## Plan Mode vs Thinking Mode
+
+- **Plan Mode**: Es un modo de pensamiento más estructurado, donde Claude planifica su respuesta antes de generar el texto final. Es útil para tareas complejas que requieren un razonamiento más profundo y una estructura clara en la respuesta. **Recomendado para tareas que se deben realizar en pasos**
+- **Thinking Mode**: Es un modo de pensamiento más fluido, donde Claude genera la respuesta de manera más natural y sin una planificación previa. Es útil para tareas que requieren creatividad o respuestas más informales. **Recomendado para logica compleja**
 
 
 ## Effective Prompting

@@ -25,6 +25,32 @@ Un **LLM** es un tipo de modelo de lenguaje que se entrena con grandes cantidade
 
 Son las **estrellas** de la IA, pero no son la IA completa.
 
+## Que es un Coding Assistant?
+
+Es un sistema que utiliza LLM para resolver tareas complejas de codigo. 
+
+Cuando se le da una task al coding assistant, el mismo toma los siguientes pasos:
+
+1) Recojer Contexto: Reconocer a que refiere el error, que archivos pueden estar involucrados.
+2) Armar un plan: Decidir como resolver el error, por ejemplo, cambiar el codigo y luego correr los tests.
+3) Tomar accion: Implementar el cambio y correr los comandos necesarios. 
+
+El paso numero 1 y 3 son los mas complejos y los cuales requieren el uso de **Tools use**, ya que un coding assistant por si solo no puede leer codigo ni correr comandos. 
+
+### Tool Use
+
+Cuando se le envia una peticion al Coding Assistant, el mismo agrega instrucciones "under the hood" para cumplir con el requerimiento. 
+
+Por ejemplo, `"If you want to read a file, respond with 'ReadFile: name of file'"`, estas instrucciones permiten que el Coding assistant pueda leer archivos, lo cual es fundamental para poder resolver tareas complejas de codigo.
+
+No todos los LLM son buenos en el uso de Tools, por lo que es importante elegir un LLM que tenga buenas capacidades de Tool Use para poder desarrollar un Coding Assistant efectivo.
+
+- Pueden combinar el uso de varias Tools para manejar tareas complejas, por ejemplo, pueden usar una herramienta para leer un archivo, otra para escribir en un archivo y otra para correr comandos.
+- En algunos LLM estos tools pueden ser extensibles, lo que significa que se pueden agregar nuevas herramientas para que el LLM pueda usarlas, por ejemplo, se le puede agregar una herramienta para acceder a una base de datos o para interactuar con una API externa.
+- En el caso de algunos LLM, el uso de Tools ayuda a poder acceder al codigo fuente sin tener que indexarlo, lo cual significa que no es necesario enviar todo el codebase a un servidor externo.
+
+![Tools en Claude](./src/image.png)
+
 ## ¿Cómo funciona la IA?
 
 Se reduce a un concepto sencillo: son sistemas que toman decisiones automatizadas para maximizar cualquier objetivo que se les haya asignado.
