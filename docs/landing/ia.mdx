@@ -37,19 +37,37 @@ Cuando se le da una task al coding assistant, el mismo toma los siguientes pasos
 
 El paso numero 1 y 3 son los mas complejos y los cuales requieren el uso de **Tools use**, ya que un coding assistant por si solo no puede leer codigo ni correr comandos. 
 
-### Tool Use
+## Tools Use
 
 Cuando se le envia una peticion al Coding Assistant, el mismo agrega instrucciones "under the hood" para cumplir con el requerimiento. 
 
 Por ejemplo, `"If you want to read a file, respond with 'ReadFile: name of file'"`, estas instrucciones permiten que el Coding assistant pueda leer archivos, lo cual es fundamental para poder resolver tareas complejas de codigo.
 
-No todos los LLM son buenos en el uso de Tools, por lo que es importante elegir un LLM que tenga buenas capacidades de Tool Use para poder desarrollar un Coding Assistant efectivo.
+No todos los LLM son buenos en el uso de Tools, por lo que es importante elegir un LLM que tenga buenas capacidades de **Tools Use** para poder desarrollar un Coding Assistant efectivo.
 
 - Pueden combinar el uso de varias Tools para manejar tareas complejas, por ejemplo, pueden usar una herramienta para leer un archivo, otra para escribir en un archivo y otra para correr comandos.
 - En algunos LLM estos tools pueden ser extensibles, lo que significa que se pueden agregar nuevas herramientas para que el LLM pueda usarlas, por ejemplo, se le puede agregar una herramienta para acceder a una base de datos o para interactuar con una API externa.
 - En el caso de algunos LLM, el uso de Tools ayuda a poder acceder al codigo fuente sin tener que indexarlo, lo cual significa que no es necesario enviar todo el codebase a un servidor externo.
 
 ![Tools en Claude](./src/image.png)
+
+### Tool Functions
+
+Son funciones Python que son ejecutados cuando nuestro agente decide que se precisa informacion extra para ayudar al usuario. Por ejemplo, si preguntamos "Que hora es?", podemos tener una funcion en Python que obtenga la fecha de hoy, e invocarla.
+
+Estas funciones deben:
+
+- Usar nombres descriptivos, mismo para los parametros.
+- Validar los inputs de forma correcta, y si algo de esto no se cumple, devolver un error claro para que el agente pueda entenderlo y corregirlo.
+- Los mensajes de error deben explicar bien el error, para que el agente pueda entenderlo y corregirlo. Por ejemplo, si se espera un numero entero y se recibe un string, el mensaje de error debe decir `Se esperaba un numero entero, pero se recibió un string`, en lugar de simplemente decir `Error: Invalid input`.
+
+```python
+def get_current_datetime(date_format="%Y-%m-%d %H:%M:%S"):
+    if not date_format:
+        raise ValueError("date_format cannot be empty")
+    return datetime.now().strftime(date_format)
+```
+
 
 ## ¿Cómo funciona la IA?
 
