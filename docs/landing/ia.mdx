@@ -68,6 +68,54 @@ def get_current_datetime(date_format="%Y-%m-%d %H:%M:%S"):
     return datetime.now().strftime(date_format)
 ```
 
+Para que nuestro LLM entienda como usar estas funciones, debemos crear un **JSON Schema** con la descripcion de cada una de las funciones, sus parametros y el formato de los mismos. Por ejemplo:
+
+```json
+{
+  "name": "get_current_datetime",
+  "description": "Returns the current date and time in the specified format.",
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "date_format": {
+        "type": "string",
+        "description": "The format in which to return the date and time. Default is '%Y-%m-%d %H:%M:%S'."
+      }
+    },
+    "required": []
+  }
+}
+```
+
+La estructura posee:
+
+- `name`: El nombre de la función, que es el mismo que se usará para invocarla.
+- `description`: Una descripción clara de lo que hace la función.
+- `input_schema`: Un esquema JSON que describe los parámetros de entrada de la función, incluyendo su tipo, descripción y si son requeridos o no.
+
+```python
+def get_current_datetime(date_format="%Y-%m-%d %H:%M:%S"):
+    if not date_format:
+        raise ValueError("date_format cannot be empty")
+    return datetime.now().strftime(date_format)
+
+get_current_datetime_schema = {
+    "name": "get_current_datetime",
+    "description": "Returns the current date and time formatted according to the specified format",
+    "input_schema": {
+        "type": "object",
+        "properties": {
+            "date_format": {
+                "type": "string",
+                "description": "A string specifying the format of the returned datetime. Uses Python's strftime format codes.",
+                "default": "%Y-%m-%d %H:%M:%S"
+            }
+        },
+        "required": []
+    }
+}
+```
+
 
 ## ¿Cómo funciona la IA?
 

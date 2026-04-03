@@ -10,6 +10,12 @@ Se lo describe como más que un chatbot, sino como un asistente de IA que puede 
 
 Se describe que la mejor forma de comunicarse con Claude es teniendo una conversación fluida, como uno la tendría con cualquier colega, más que haciendo preguntas de una sola vez en cada sesión.
 
+Actualmente (Abril 2026) hay 3 modelos de Claude:
+
+- **Claude Oppus**: Recomendado para pensamiento complejo y arquitectura.
+- **Claude Sonnet**: Recomendado para el "Daily Coding", el mas **Balanceado** entre costo y performance.
+- **Claude Haiku**: Recomendado para tareas más simples y cotidianas, como escribir emails, redactar documentos, etc. **Cost Effective**
+
 ## Projects
 
 Los mismos son marcos de trabajo que se basan sobre un tema en específico. Son útiles cuando estamos trabajando en una feature que requiere más que una sola pregunta y respuesta, sino que precisa un marco de trabajo más extenso.
@@ -82,6 +88,8 @@ Esto nos permite automatizar tareas repetitivas y ahorrar tiempo.
 Se pueden extender las habilidades de Claude mediante MCP (Model Context Protocol), que es un protocolo que permite a los modelos de lenguaje acceder a herramientas externas de manera segura y controlada. Esto permite que Claude pueda interactuar con nuestras herramientas diarias, como Google Drive, Slack, Gmail, entre otras, para realizar tareas por nosotros, como enviar un email, crear un documento, etc.
 
 Por ejemplo, uno muy popular es `Playwright MCP`, que permite a Claude interactuar con cualquier sitio web como si fuera un usuario, lo que le permite realizar tareas como hacer reservas, comprar productos, etc.
+
+![mcp](image-1.png)
 
 ## Hooks
 
