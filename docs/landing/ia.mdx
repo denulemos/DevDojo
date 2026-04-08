@@ -116,6 +116,105 @@ get_current_datetime_schema = {
 }
 ```
 
+Una vez que la tool es ejecutada, debemos obtener los resultados de la misma.
+
+- `tool_use_id`: Un identificador único que debe coincidir con el id del bloque ToolUse al que corresponde este ToolResult.
+- `content`: El output de la función, serializado como un string.
+- `is_error`: Un booleano que indica si ocurrió un error durante la ejecución de la función.
+
+Se pueden usar mas de 2 tools en una misma interacción, por lo que es importante que cada ToolResult tenga un `tool_use_id` único que permita asociarlo con el bloque ToolUse correspondiente.
+
+```json
+{
+  "tool_use_id": "12345",
+  "content": "2024-06-01 12:00:00",
+  "is_error": false
+}
+```
+
+Si tenemos varias tools podemos crear un map con los nombres y las funciones correspondientes
+
+```python
+def run_tool(tool_name, tool_input):
+    if tool_name == "get_current_datetime":
+        return get_current_datetime(**tool_input)
+    elif tool_name == "another_tool":
+        return another_tool(**tool_input)
+    # Add more tools as needed
+```
+
+Y podremos informarle a nuestro LLM sobre la lista de tools que posee disponibles para usar
+
+```python
+response = chat(messages, tools=[
+    get_current_datetime_schema,
+    add_duration_to_datetime_schema,
+    set_reminder_schema
+])
+```
+
+### Multi-Turn Conversations
+
+Tambien puede suceder que ante una sola request, nuestro LLM requiera llamar a tools de manera consecuente para resolver algo. Por ejemplo, ante la pregunta "Que dia va a ser desde hoy 103 dias mas?", el LLM podría necesitar llamar a una tool para obtener la fecha actual, y luego llamar a otra tool para sumar 103 dias a esa fecha, a esto se le dice **Multi-Turn Conversations**
+
+1. El usuario pregunta: "Que dia va a ser desde hoy 103 dias mas?"
+2. El LLM llama a la tool `get_current_datetime` para obtener la fecha actual
+3. El LLM recibe el resultado de la tool `get_current_datetime`, por ejemplo, "2024-06-01 12:00:00"
+4. El LLM llama a la tool `add_days_to_date` con los parametros `date="2024-06-01 12:00:00"` y `days=103` para obtener la fecha resultante de sumar 103 dias a la fecha actual
+5. El LLM recibe el resultado de la tool `add_days_to_date`, por ejemplo, "2024-09-12 12:00:00"
+6. El LLM responde al usuario con la fecha resultante: "El dia que va a ser desde hoy 103 dias mas es el 2024-09-12"
+
+Para manejar esto se requiere un **conversation loop** que continua hasta que nuestro LLM deja de precisar el uso de Tools. 
+
+```python
+def run_conversation(messages):
+    while True:
+        response = chat(messages)
+        
+        add_user_message(messages, response)
+        
+        # Pseudo code
+        if response isn't asking for a tool:
+            break
+            
+        tool_result_blocks = run_tools(response)
+        add_user_message(tool_result_blocks)
+        
+    return messages
+```
+
+El hecho de saber que nuestro LLM quiere usar una tool esta en el `stop_reason` que devuelve el mismo, el cual puede ser `tool_use` o `stop_sequence`.
+
+```python
+if response.stop_reason != "tool_use":
+    break
+```
+
+- El usuario hace una pregunta o solicitud que el LLM no puede resolver con su conocimiento interno
+- El LLM identifica que necesita información adicional o realizar una acción específica para resolver la solicitud del usuario
+- El LLM responde con una solicitud de herramienta, indicando qué herramienta necesita usar y con qué parámetros
+- El sistema ejecuta la herramienta solicitada por el LLM y obtiene el resultado
+- El resultado de la herramienta se envía de vuelta al LLM como parte de la conversación
+
+### Manejo de errores - Fine-grained tool calling
+
+Puede suceder que nuestra tool nos devuelva una respuesta no valida, como un `undefined` inesperado. Estos errores deben ser manejados.
+
+```python
+try:
+    parsed_args = json.loads(chunk.snapshot)
+except json.JSONDecodeError:
+    # Handle invalid JSON appropriately
+    print("Received invalid JSON, continuing...")
+```
+
+Se recomienda implementar esto cuando:
+
+- Necesitas mostrar a los usuarios el progreso en tiempo real sobre la generación de argumentos de las herramientas
+- Quieres comenzar a procesar resultados parciales de las herramientas lo más rápido posible
+- Los retrasos de buffering afectan negativamente tu experiencia de usuario
+- Estás cómodo implementando un manejo robusto de errores JSON
+
 
 ## ¿Cómo funciona la IA?
 

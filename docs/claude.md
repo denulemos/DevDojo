@@ -135,6 +135,59 @@ Estos pueden ser definidos a 3 niveles:
 - Project - `.claude/settings.json`, compartido a nivel proyecto individual
 - Project (not committed) - `.claude/settings.local.json`, es nuestra configuracion personal, y nadie puede acceder a la misma
 
+### Text Editor Tool
+
+Es una herramienta que permite a Claude editar archivos de texto, como código, documentos, etc. Esto es especialmente útil para desarrolladores que quieren que Claude les ayude a escribir código, revisar código, etc. Permite:
+
+- Ver el contenido de archivos o directorios
+- Ver rangos específicos de líneas en un archivo
+- Reemplazar texto en un archivo
+- Crear nuevos archivos
+- Insertar texto en líneas específicas de un archivo
+- Deshacer ediciones recientes en archivos
+
+Podrías preguntarte por qué existe esta herramienta si los editores de código modernos ya tienen asistentes de IA integrados. La herramienta de editor de texto resulta valiosa en escenarios donde:
+
+- Estás construyendo aplicaciones que necesitan editar archivos programáticamente
+- Estás trabajando en entornos sin acceso a editores de código con todas las funciones
+- Quieres integrar capacidades de edición de archivos directamente en tus aplicaciones impulsadas por Claude
+
+Esencialmente, la herramienta de editor de texto te permite replicar gran parte de la funcionalidad de un editor de código avanzado con IA dentro de tus propias aplicaciones, dándote un control detallado sobre cómo Claude interactúa con tu sistema de archivos.
+
+### Web Search Tool
+
+Es una herramienta que permite a Claude realizar búsquedas en la web para obtener información actualizada y relevante para responder a las preguntas de los usuarios. Esto es especialmente útil para tareas que requieren información actualizada, como noticias, eventos actuales, etc.
+
+```python
+web_search_schema = {
+    "type": "web_search_20250305",
+    "name": "web_search", 
+    "max_uses": 5
+}
+```
+
+`max_uses` es la cantidad máxima de veces que se puede usar esta herramienta en una conversación. Esto es útil para evitar que Claude abuse de la herramienta y para controlar el costo asociado con su uso.
+
+Tambien se puede limitar en que dominios realizar las busquedas
+
+```python
+web_search_schema = {
+    "type": "web_search_20250305",
+    "name": "web_search",
+    "max_uses": 5,
+    "allowed_domains": ["nih.gov"]
+}
+```
+
+Cuando Claude utiliza la herramienta de búsqueda web, la respuesta contiene varios tipos de bloques:
+
+- Text blocks - La explicación de Claude sobre lo que está haciendo
+- ServerToolUseBlock - Muestra la consulta de búsqueda exacta que Claude usó
+- WebSearchToolResultBlock - Contiene los resultados de la búsqueda
+- WebSearchResultBlock - Resultados de búsqueda individuales con títulos y URLs
+- Citation blocks - Texto que respalda las afirmaciones de Claude
+
+
 ## Enterprise Search
 
 Es un Search dedicado a un contexto interno de empresa, muy útil para realizar preguntas sobre el funcionamiento organizacional de la empresa.
