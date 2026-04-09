@@ -53,6 +53,25 @@ Esto, con un gráfico del tipo histograma, sería fácilmente identificable, sie
 
 ![Histograma](https://www.addlink.es/images/productos/minitab/2023/minitab-histograma-picos-dispersion.png)
 
+## **Fiabilidad - Tolerancia a fallos**
+
+No sirve si nuestro sistema es escalable y performante si falla constantemente. La **tolerancia a fallos** es la capacidad de un sistema para seguir funcionando correctamente incluso cuando ocurren fallos o errores.
+
+- **Uptime**: Tiempo que nuestro sistema esta operativo
+
+- **Downtime**: Tiempo en que nuestro sistema no esta operativo
+
+**Disponibilidad(%) = Uptime / Tiempo Total**
+
+Si tenemos multiples servicios, se tienen varios tipos de calculos disponibles, ya que las caidas no son lineales (se puede caer solo una region, solo un servidor, etc..) 
+
+**Uptime = (cantidad de servicios operativos / Serviios totales) * tiempo** => no se tiene en cuenta el porcentaje de uso de cada uno.
+
+**Uptime = (numero de peticiones exitosas / Numero de peticiones totales) * tiempo** => se tiene en cuenta el porcentaje de uso de cada servicio, pero no la relevancia de cada uno.
+
+Se debe ponderar cada servicio segun importancia y uso del mismo. Por ejemplo, no es lo mismo un servicio que se encarga de publicar mensajes en Reddit como el login, el segundo es mucho menos usado que el primero en un producto como Reddit. 
+
+
 ## **Escalabilidad**
 
 Significa que puede crecer sin romperse ni volverse muy lento cuando hay picos de tráfico. Simplemente se añaden más recursos sin afectar el rendimiento (CPU, memoria, etc.).

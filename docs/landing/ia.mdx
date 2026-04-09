@@ -301,6 +301,20 @@ Dentro de sus **limitaciones** podemos mencionar:
 - Sesgo: Si el modelo se entrena con datos sesgados, puede generar resultados sesgados.
 - Alucinaciones: El modelo puede generar respuestas que parecen coherentes, pero que son completamente falsas.
 
+## Retrieval Augmented Generation (RAG)
+
+Es una tecnica que nos ayuda a trabajar con documentos grandes que superan la capacidad de una prompt. RAG separa estos documentos en chucks y solo toma las partes necesarias para resolver una request.
+
+Hay que considerar que **las prompts largas son mas costosas y lentas en resolver**, es por eso que no es 100% util agregar todo el contenido del documento directamente en la prompt, por lo que RAG ayuda a reducir costos y mejorar la velocidad de respuesta al solo enviar la información relevante para cada request.
+
+RAG se compone de 3 pasos:
+
+- Indexación: El documento se divide en chucks y se indexa para facilitar su búsqueda.
+- Recuperación: Cuando se recibe una request, se recuperan los chucks relevantes del documento utilizando técnicas de búsqueda.
+- Generación: El modelo de lenguaje genera una respuesta basada en la información recuperada.
+
+Todo esto requiere un preprocesamiento del documento a analizar. **No es una solucion simple, pero es escalable y eficiente para trabajar con documentos grandes.**
+
 ## **Errores comunes en los sistemas de IA**
 
 ### Alucinaciones 
