@@ -9,8 +9,8 @@ title: 🛠️ System Design
 
 Dentro del tiempo de respuesta se tiene:
 
-- **Tiempo de procesamiento**: El tiempo que tarda el servidor en procesar la solicitud y generar una respuesta. Esto puede incluir la ejecución de código, consultas a bases de datos, etc..
-- **Tiempo de espera**: El tiempo que tarda la solicitud en viajar desde el cliente al servidor y viceversa. Esto puede incluir la latencia de la red, el tiempo que tarda el servidor en recibir la solicitud, etc..
+- **Tiempo de procesamiento**: El tiempo que tarda el servidor en procesar la solicitud y generar una respuesta. Esto puede incluir la ejecución de código, consultas a bases de datos, etc.
+- **Tiempo de espera**: El tiempo que tarda la solicitud en viajar desde el cliente al servidor y viceversa. Esto puede incluir la latencia de la red, el tiempo que tarda el servidor en recibir la solicitud, etc.
 
 Se puede tener un servidor que procese requests de forma muy rápida, pero si está desplegado muy lejos geográficamente, el tiempo de espera puede ser muy alto. Esto se nota mucho si, por ejemplo, el usuario juega en línea.
 
@@ -32,7 +32,7 @@ Esto debe ser controlado si se espera que haya picos de tráfico, por ejemplo, e
 
 Se recomienda el uso de **Histogramas** para calcular los **Percentiles** del tiempo de respuesta.
 
-Por ejemplo, se tienen 10 servidores con su tiempo de respuesta en ms. 
+Por ejemplo, se tienen 10 servidores con su tiempo de respuesta en ms.
 
 | Servidor | Tiempo de respuesta (ms) |
 | --- | --- |
@@ -53,24 +53,47 @@ Esto, con un gráfico del tipo histograma, sería fácilmente identificable, sie
 
 ![Histograma](https://www.addlink.es/images/productos/minitab/2023/minitab-histograma-picos-dispersion.png)
 
-## **Fiabilidad - Tolerancia a fallos**
+## **Fiabilidad**
 
 No sirve si nuestro sistema es escalable y performante si falla constantemente. La **tolerancia a fallos** es la capacidad de un sistema para seguir funcionando correctamente incluso cuando ocurren fallos o errores.
 
-- **Uptime**: Tiempo que nuestro sistema esta operativo
+- **Uptime**: Tiempo que nuestro sistema está operativo
 
-- **Downtime**: Tiempo en que nuestro sistema no esta operativo
+- **Downtime**: Tiempo en que nuestro sistema no está operativo
 
 **Disponibilidad(%) = Uptime / Tiempo Total**
 
-Si tenemos multiples servicios, se tienen varios tipos de calculos disponibles, ya que las caidas no son lineales (se puede caer solo una region, solo un servidor, etc..) 
+Si tenemos múltiples servicios, se tienen varios tipos de cálculos disponibles, ya que las caídas no son lineales (se puede caer solo una región, solo un servidor, etc.)
 
-**Uptime = (cantidad de servicios operativos / Serviios totales) * tiempo** => no se tiene en cuenta el porcentaje de uso de cada uno.
+**Uptime = (cantidad de servicios operativos / Servicios totales) * tiempo** => no se tiene en cuenta el porcentaje de uso de cada uno.
 
-**Uptime = (numero de peticiones exitosas / Numero de peticiones totales) * tiempo** => se tiene en cuenta el porcentaje de uso de cada servicio, pero no la relevancia de cada uno.
+**Uptime = (número de peticiones exitosas / número de peticiones totales) * tiempo** => se tiene en cuenta el porcentaje de uso de cada servicio, pero no la relevancia de cada uno.
 
-Se debe ponderar cada servicio segun importancia y uso del mismo. Por ejemplo, no es lo mismo un servicio que se encarga de publicar mensajes en Reddit como el login, el segundo es mucho menos usado que el primero en un producto como Reddit. 
+Se debe ponderar cada servicio según importancia y uso del mismo. Por ejemplo, no es lo mismo un servicio que se encarga de publicar mensajes en Reddit como el login; el segundo es mucho menos usado que el primero en un producto como Reddit.
 
+### Mean Time Between Failures (MTBF)
+
+Es el tiempo medio entre fallos de nuestro sistema.
+
+**Nos interesa un MTBF alto, ya que esto significa que nuestro sistema es más confiable y tiene menos fallos.**
+
+#### Mean Time To Recover (MTTR)
+
+Es el tiempo medio para que el sistema se recupere de un fallo.
+
+**Nos interesa un MTTR bajo, ya que esto significa que nuestro sistema se recupera rápidamente de los fallos.**
+
+### Disponibilidad
+
+¿Qué significa que nuestro sistema tenga **alta disponibilidad**?
+
+Obviamente nuestros clientes quieren que el sistema esté el 100% del tiempo disponible, pero esto no es posible, ya que siempre pueden ocurrir fallos humanos, de hardware, proveedores externos o mantenimiento.
+
+Sin embargo, se puede diseñar un sistema para que tenga una alta disponibilidad, lo que significa que el sistema estará disponible la mayor parte del tiempo posible.
+
+El 100% es inalcanzable, pero se puede apuntar a un 99.999% de disponibilidad, que quiere decir que nuestro sistema estará caído solo 5.26 minutos por año, lo que representa 800 milisegundos por día.
+
+Empezamos a hablar de alta disponibilidad a partir del **99.9% Tres nueves**, que representa un downtime de 8.77 horas por año, o 49 minutos por mes.
 
 ## **Escalabilidad**
 
@@ -93,7 +116,7 @@ Existe la Escalabilidad **vertical** y **horizontal**.
 
 **No hay relación directa entre más recursos y más rendimiento; a veces se pueden tener cuellos de botella que no se solucionan agregando recursos.**
 
-Por ejemplo, si el sistema tiene un cuello de botella en la base de datos, agregar mas CPU al servidor no va a solucionar el problema.
+Por ejemplo, si el sistema tiene un cuello de botella en la base de datos, agregar más CPU al servidor no va a solucionar el problema.
 
 ### Escalable entre múltiples equipos
 
@@ -144,14 +167,97 @@ En los **servicios stateless** no se almacena información del usuario en el ser
 
 Si hace falta guardar algún tipo de información, esta puede almacenarse en las **cookies** o en el **Local Storage** del cliente, o se puede usar un sistema de **tokens (JWT)** para mantener la información del usuario sin necesidad de almacenarla en el servidor.
 
+## **Tolerancia a Fallos**
+
+Los fallos son inevitables, lo importante es cómo los manejamos.
+
+La misma consta de 3 prácticas:
+
+- Prevención
+- Detección
+- Recuperación
+
+### Prevención
+
+Para prevenir los fallos de un sistema se debe entender el **Single Point of Failure (SPoF)**, que es un componente del sistema que, si falla, hará que todo el sistema falle.
+
+- Servidor
+- Base de datos
+- Proveedor de servicios externos
+
+Es importante **eliminar** estos puntos. Se debe aplicar **redundancia**.
+
+- Múltiples servidores (escalado horizontal)
+- Múltiples bases de datos (réplicas)
+
+### Detección
+
+La detección rápida es vital.
+
+- Aviso a interesados
+- Puesta en marcha de estrategias de mitigación (fallbacks, circuit breakers, etc.)
+
+Esto se maneja mediante la **Monitorización** del sistema, que es el proceso de recopilar, analizar y utilizar datos para entender el rendimiento y la salud de un sistema. Esto incluye:
+
+- **Logs**: Registros detallados de eventos que ocurren en el sistema. Pueden ser útiles para diagnosticar problemas y entender el comportamiento del sistema.
+- **Métricas**: Datos cuantitativos que miden el rendimiento del sistema, como el tiempo de respuesta, el throughput, la tasa de errores, etc. Estas métricas pueden ser utilizadas para detectar anomalías y predecir fallos.
+- **Alertas**: Notificaciones que se envían cuando se detecta un problema o una anomalía en el sistema. Las alertas pueden ser configuradas para diferentes niveles de gravedad y pueden ser enviadas a diferentes equipos o personas según el tipo de problema.
+
+### Recuperación
+
+Es importante recuperar el sistema lo antes posible para evitar que los usuarios se vean afectados a gran medida.
+
+- Apagar por completo el sistema para dejar de propagar errores
+- Rollback a una versión anterior estable
+- Copia de seguridad de los datos
+
+La recuperación debe ser lo más sencilla posible, ya que se considera una situación de estrés.
+
+Luego, se debe hacer un **Post Mortem** para entender qué pasó, por qué pasó y cómo evitar que vuelva a pasar.
+
+## **Mantenibilidad**
+
+El desarrollo inicial de un sistema es solo el comienzo.
+
+El sistema debe ser mantenido y actualizado a lo largo del tiempo para corregir errores, agregar nuevas funcionalidades, mejorar el rendimiento, etc.
+
+El producto debe ser **sencillo de mantener** para que los devs puedan trabajar en el mismo y no se convierta en un sistema abandonado, ya que el costo de implementación es mayor a la ganancia.
+
+### Observabilidad
+
+Hacer sencillo el trabajo del equipo de operaciones, que el sistema se mantenga trabajando de la manera más fácil posible.
+
+- Mantener la documentacion actualizada
+- Dar los accesos necesarios a los equipos de operaciones para que puedan monitorear el sistema de manera efectiva
+
+No siempre el mismo equipo de devs compone el equipo de operaciones, por eso es importante que el sistema sea fácil de entender y mantener para cualquier persona que trabaje en él, incluso si no fue el equipo original que lo desarrolló. En este caso se debe **ofrecer soporte para la automatizacion y la integracion del codigo**
+
+Los mismos son responsables de:
+
+- Monitorizar la salud del sistema y restaurarlo lo antes posible si algo sucede. **Es importante que la informacion interna del sistema tenga una buena visibilidad para que el monitoreo sea util**
+- Investigar la razon de los problemas
+- Mantener la infraestructura y herramientas actualizadas
+- Anticipar futuros problemas que puedan suceder, **nuestro sisteam debe ser lo mas predecible posible para minimizar las sorpresas**
+- Mantenimiento, **se debe evitar la dependencia con maquinas individuales**
+
+### Simplicidad
+
+Que si un nuevo dev ingresa a nuestro equipo, pueda entender el sistema de manera fácil y rápida para poder aportar valor de manera más rápida.
+
+### Extensibilidad
+
+Que nuestro sistema pueda ser extendido con nuevas funcionalidades sin necesidad de modificar el código existente, lo que facilita la incorporación de nuevas características y la adaptación a cambios futuros.
+
+Facilitar futuros cambios en nuestro sistema.
+
 ## Load Balancer
 
 Algunas partes del frontend de una página web escalable serán posicionadas detrás de un load balancer. Esto permite que el sistema distribuya la carga para que un solo servidor no maneje todo y, si falla, no haga caer a todo el sistema.
-Para hacer esto, se deben tener varios servidores clones, con los mismos recursos disponibles para lidiar con la misma carga. 
+Para hacer esto, se deben tener varios servidores clones, con los mismos recursos disponibles para lidiar con la misma carga.
 
 ## **¿Cómo solucionar un problema de entrevista?**
 
-1. **Desarrollar el Scope del Problema**: Hacer preguntas para entender el problema, los requerimientos, las restricciones, etc.. Esto es importante para poder entender el problema y no asumir cosas que no son ciertas. Por ejemplo, si el problema es diseñar un sistema de reservas de vuelos, se pueden hacer preguntas como: ¿Qué tipo de vuelos se van a reservar? ¿Solo vuelos comerciales o también vuelos privados? ¿Qué tipo de usuarios van a usar el sistema? ¿Solo clientes o también agentes de viajes? etc..
+1. **Desarrollar el Scope del Problema**: Hacer preguntas para entender el problema, los requerimientos, las restricciones, etc. Esto es importante para poder entender el problema y no asumir cosas que no son ciertas. Por ejemplo, si el problema es diseñar un sistema de reservas de vuelos, se pueden hacer preguntas como: ¿Qué tipo de vuelos se van a reservar? ¿Solo vuelos comerciales o también vuelos privados? ¿Qué tipo de usuarios van a usar el sistema? ¿Solo clientes o también agentes de viajes? etc.
 2. **Realizar un diseño abstracto**
 3. **Encontrar cuellos de botella (bottlenecks) en tu solución**: Esto es importante para poder mejorar la solución y hacerla más escalable. Por ejemplo, si el sistema de reservas de vuelos tiene un solo servidor para manejar todas las reservas, esto puede ser un cuello de botella, ya que si el servidor falla, todo el sistema cae. Para solucionarlo, se pueden añadir más servidores clonados para repartir la carga entre ellos.
 

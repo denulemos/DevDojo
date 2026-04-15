@@ -25,41 +25,41 @@ Un **LLM** es un tipo de modelo de lenguaje que se entrena con grandes cantidade
 
 Son las **estrellas** de la IA, pero no son la IA completa.
 
-## Que es un Coding Assistant?
+## ¿Qué es un Coding Assistant?
 
-Es un sistema que utiliza LLM para resolver tareas complejas de codigo. 
+Es un sistema que utiliza LLM para resolver tareas complejas de código.
 
 Cuando se le da una task al coding assistant, el mismo toma los siguientes pasos:
 
-1) Recojer Contexto: Reconocer a que refiere el error, que archivos pueden estar involucrados.
-2) Armar un plan: Decidir como resolver el error, por ejemplo, cambiar el codigo y luego correr los tests.
-3) Tomar accion: Implementar el cambio y correr los comandos necesarios. 
+1) Recoger contexto: Reconocer a qué refiere el error, qué archivos pueden estar involucrados.
+2) Armar un plan: Decidir cómo resolver el error, por ejemplo, cambiar el código y luego correr los tests.
+3) Tomar acción: Implementar el cambio y correr los comandos necesarios.
 
-El paso numero 1 y 3 son los mas complejos y los cuales requieren el uso de **Tools use**, ya que un coding assistant por si solo no puede leer codigo ni correr comandos. 
+El paso número 1 y 3 son los más complejos y los cuales requieren el uso de **Tools use**, ya que un coding assistant por sí solo no puede leer código ni correr comandos.
 
 ## Tools Use
 
-Cuando se le envia una peticion al Coding Assistant, el mismo agrega instrucciones "under the hood" para cumplir con el requerimiento. 
+Cuando se le envía una petición al Coding Assistant, el mismo agrega instrucciones "under the hood" para cumplir con el requerimiento.
 
-Por ejemplo, `"If you want to read a file, respond with 'ReadFile: name of file'"`, estas instrucciones permiten que el Coding assistant pueda leer archivos, lo cual es fundamental para poder resolver tareas complejas de codigo.
+Por ejemplo, `"If you want to read a file, respond with 'ReadFile: name of file'"`, estas instrucciones permiten que el Coding assistant pueda leer archivos, lo cual es fundamental para poder resolver tareas complejas de código.
 
 No todos los LLM son buenos en el uso de Tools, por lo que es importante elegir un LLM que tenga buenas capacidades de **Tools Use** para poder desarrollar un Coding Assistant efectivo.
 
 - Pueden combinar el uso de varias Tools para manejar tareas complejas, por ejemplo, pueden usar una herramienta para leer un archivo, otra para escribir en un archivo y otra para correr comandos.
 - En algunos LLM estos tools pueden ser extensibles, lo que significa que se pueden agregar nuevas herramientas para que el LLM pueda usarlas, por ejemplo, se le puede agregar una herramienta para acceder a una base de datos o para interactuar con una API externa.
-- En el caso de algunos LLM, el uso de Tools ayuda a poder acceder al codigo fuente sin tener que indexarlo, lo cual significa que no es necesario enviar todo el codebase a un servidor externo.
+- En el caso de algunos LLM, el uso de Tools ayuda a poder acceder al código fuente sin tener que indexarlo, lo cual significa que no es necesario enviar todo el codebase a un servidor externo.
 
 ![Tools en Claude](./src/image.png)
 
 ### Tool Functions
 
-Son funciones Python que son ejecutados cuando nuestro agente decide que se precisa informacion extra para ayudar al usuario. Por ejemplo, si preguntamos "Que hora es?", podemos tener una funcion en Python que obtenga la fecha de hoy, e invocarla.
+Son funciones Python que son ejecutadas cuando nuestro agente decide que se precisa información extra para ayudar al usuario. Por ejemplo, si preguntamos "¿Qué hora es?", podemos tener una función en Python que obtenga la fecha de hoy, e invocarla.
 
 Estas funciones deben:
 
-- Usar nombres descriptivos, mismo para los parametros.
+- Usar nombres descriptivos, mismo para los parámetros.
 - Validar los inputs de forma correcta, y si algo de esto no se cumple, devolver un error claro para que el agente pueda entenderlo y corregirlo.
-- Los mensajes de error deben explicar bien el error, para que el agente pueda entenderlo y corregirlo. Por ejemplo, si se espera un numero entero y se recibe un string, el mensaje de error debe decir `Se esperaba un numero entero, pero se recibió un string`, en lugar de simplemente decir `Error: Invalid input`.
+- Los mensajes de error deben explicar bien el error, para que el agente pueda entenderlo y corregirlo. Por ejemplo, si se espera un número entero y se recibe un string, el mensaje de error debe decir `Se esperaba un número entero, pero se recibió un string`, en lugar de simplemente decir `Error: Invalid input`.
 
 ```python
 def get_current_datetime(date_format="%Y-%m-%d %H:%M:%S"):
@@ -68,7 +68,7 @@ def get_current_datetime(date_format="%Y-%m-%d %H:%M:%S"):
     return datetime.now().strftime(date_format)
 ```
 
-Para que nuestro LLM entienda como usar estas funciones, debemos crear un **JSON Schema** con la descripcion de cada una de las funciones, sus parametros y el formato de los mismos. Por ejemplo:
+Para que nuestro LLM entienda cómo usar estas funciones, debemos crear un **JSON Schema** con la descripción de cada una de las funciones, sus parámetros y el formato de los mismos. Por ejemplo:
 
 ```json
 {
@@ -122,7 +122,7 @@ Una vez que la tool es ejecutada, debemos obtener los resultados de la misma.
 - `content`: El output de la función, serializado como un string.
 - `is_error`: Un booleano que indica si ocurrió un error durante la ejecución de la función.
 
-Se pueden usar mas de 2 tools en una misma interacción, por lo que es importante que cada ToolResult tenga un `tool_use_id` único que permita asociarlo con el bloque ToolUse correspondiente.
+Se pueden usar más de 2 tools en una misma interacción, por lo que es importante que cada ToolResult tenga un `tool_use_id` único que permita asociarlo con el bloque ToolUse correspondiente.
 
 ```json
 {
@@ -155,35 +155,35 @@ response = chat(messages, tools=[
 
 ### Multi-Turn Conversations
 
-Tambien puede suceder que ante una sola request, nuestro LLM requiera llamar a tools de manera consecuente para resolver algo. Por ejemplo, ante la pregunta "Que dia va a ser desde hoy 103 dias mas?", el LLM podría necesitar llamar a una tool para obtener la fecha actual, y luego llamar a otra tool para sumar 103 dias a esa fecha, a esto se le dice **Multi-Turn Conversations**
+También puede suceder que ante una sola request, nuestro LLM requiera llamar a tools de manera consecuente para resolver algo. Por ejemplo, ante la pregunta "¿Qué día va a ser desde hoy 103 días más?", el LLM podría necesitar llamar a una tool para obtener la fecha actual, y luego llamar a otra tool para sumar 103 días a esa fecha, a esto se le dice **Multi-Turn Conversations**
 
-1. El usuario pregunta: "Que dia va a ser desde hoy 103 dias mas?"
+1. El usuario pregunta: "¿Qué día va a ser desde hoy 103 días más?"
 2. El LLM llama a la tool `get_current_datetime` para obtener la fecha actual
 3. El LLM recibe el resultado de la tool `get_current_datetime`, por ejemplo, "2024-06-01 12:00:00"
-4. El LLM llama a la tool `add_days_to_date` con los parametros `date="2024-06-01 12:00:00"` y `days=103` para obtener la fecha resultante de sumar 103 dias a la fecha actual
+4. El LLM llama a la tool `add_days_to_date` con los parámetros `date="2024-06-01 12:00:00"` y `days=103` para obtener la fecha resultante de sumar 103 días a la fecha actual
 5. El LLM recibe el resultado de la tool `add_days_to_date`, por ejemplo, "2024-09-12 12:00:00"
-6. El LLM responde al usuario con la fecha resultante: "El dia que va a ser desde hoy 103 dias mas es el 2024-09-12"
+6. El LLM responde al usuario con la fecha resultante: "El día que va a ser desde hoy 103 días más es el 2024-09-12"
 
-Para manejar esto se requiere un **conversation loop** que continua hasta que nuestro LLM deja de precisar el uso de Tools. 
+Para manejar esto se requiere un **conversation loop** que continúa hasta que nuestro LLM deja de precisar el uso de Tools.
 
 ```python
 def run_conversation(messages):
     while True:
         response = chat(messages)
-        
+
         add_user_message(messages, response)
-        
+
         # Pseudo code
         if response isn't asking for a tool:
             break
-            
+
         tool_result_blocks = run_tools(response)
         add_user_message(tool_result_blocks)
-        
+
     return messages
 ```
 
-El hecho de saber que nuestro LLM quiere usar una tool esta en el `stop_reason` que devuelve el mismo, el cual puede ser `tool_use` o `stop_sequence`.
+El hecho de saber que nuestro LLM quiere usar una tool está en el `stop_reason` que devuelve el mismo, el cual puede ser `tool_use` o `stop_sequence`.
 
 ```python
 if response.stop_reason != "tool_use":
@@ -198,7 +198,7 @@ if response.stop_reason != "tool_use":
 
 ### Manejo de errores - Fine-grained tool calling
 
-Puede suceder que nuestra tool nos devuelva una respuesta no valida, como un `undefined` inesperado. Estos errores deben ser manejados.
+Puede suceder que nuestra tool nos devuelva una respuesta no válida, como un `undefined` inesperado. Estos errores deben ser manejados.
 
 ```python
 try:
@@ -255,7 +255,7 @@ Se dice que Ramón Llull, un filósofo y místico del siglo XIII, fue el primer 
 - 2008: Apple lanza Siri, el primer asistente virtual de voz integrado en un smartphone, popularizando el uso de la IA en dispositivos móviles.
 - 2011: IBM Watson gana el concurso de televisión "Jeopardy!", demostrando avances significativos en el procesamiento de lenguaje natural y la comprensión de preguntas complejas.
 - 2012: Se populariza el uso de redes neuronales profundas (deep learning) para tareas de visión por computadora y procesamiento de lenguaje natural, lo que impulsa un gran avance en el campo de la IA.
-- 2020: OpenAI lanza GPT-3, un modelo de lenguaje con 175 mil millones de parámetros, que demuestra capacidades impresionantes en generación de texto y comprensión del lenguaje natural. 
+- 2020: OpenAI lanza GPT-3, un modelo de lenguaje con 175 mil millones de parámetros, que demuestra capacidades impresionantes en generación de texto y comprensión del lenguaje natural.
 - 2026: Se espera que los modelos de IA continúen evolucionando, con mejoras en la eficiencia, la capacidad de razonamiento y la generación de contenido, así como una mayor integración en diversas industrias y aplicaciones.
 
 ## Tokens
@@ -303,21 +303,21 @@ Dentro de sus **limitaciones** podemos mencionar:
 
 ## Retrieval Augmented Generation (RAG)
 
-Es una tecnica que nos ayuda a trabajar con documentos grandes que superan la capacidad de una prompt. RAG separa estos documentos en chucks y solo toma las partes necesarias para resolver una request.
+Es una técnica que nos ayuda a trabajar con documentos grandes que superan la capacidad de una prompt. RAG separa estos documentos en chunks y solo toma las partes necesarias para resolver una request.
 
-Hay que considerar que **las prompts largas son mas costosas y lentas en resolver**, es por eso que no es 100% util agregar todo el contenido del documento directamente en la prompt, por lo que RAG ayuda a reducir costos y mejorar la velocidad de respuesta al solo enviar la información relevante para cada request.
+Hay que considerar que **las prompts largas son más costosas y lentas en resolver**, es por eso que no es 100% útil agregar todo el contenido del documento directamente en la prompt, por lo que RAG ayuda a reducir costos y mejorar la velocidad de respuesta al solo enviar la información relevante para cada request.
 
 RAG se compone de 3 pasos:
 
-- Indexación: El documento se divide en chucks y se indexa para facilitar su búsqueda.
-- Recuperación: Cuando se recibe una request, se recuperan los chucks relevantes del documento utilizando técnicas de búsqueda.
+- Indexación: El documento se divide en chunks y se indexa para facilitar su búsqueda.
+- Recuperación: Cuando se recibe una request, se recuperan los chunks relevantes del documento utilizando técnicas de búsqueda.
 - Generación: El modelo de lenguaje genera una respuesta basada en la información recuperada.
 
-Todo esto requiere un preprocesamiento del documento a analizar. **No es una solucion simple, pero es escalable y eficiente para trabajar con documentos grandes.**
+Todo esto requiere un preprocesamiento del documento a analizar. **No es una solución simple, pero es escalable y eficiente para trabajar con documentos grandes.**
 
 ## **Errores comunes en los sistemas de IA**
 
-### Alucinaciones 
+### Alucinaciones
 
 Son secuencias de palabras que parecen tener sentido a simple vista, pero que no tienen ninguna base en la realidad. Es decir, se equivocan; es como información inventada.
 
@@ -423,17 +423,17 @@ Es escribir un prompt y mejorarlo de manera iterativa, para que el mismo sea cad
 - Crear el primer prompt
 - Evaluar el prompt
 - Aplicar distintas técnicas para mejorar la performance
-- Re-evaluar si los resultados fueron mejorados 
+- Re-evaluar si los resultados fueron mejorados
 
-Los ultimos dos pasos son iterativos, ya que se pueden seguir aplicando distintas técnicas para mejorar la performance del prompt, y luego re-evaluar si los resultados fueron mejorados o no.
+Los últimos dos pasos son iterativos, ya que se pueden seguir aplicando distintas técnicas para mejorar la performance del prompt, y luego re-evaluar si los resultados fueron mejorados o no.
 
-La concurrencia puede ser controlada. Se recomienda manejar valores pequenios para evitar un error de quota.
+La concurrencia puede ser controlada. Se recomienda manejar valores pequeños para evitar un error de quota.
 
 ```python
 evaluator = PromptEvaluator(max_concurrent_tasks=5)
 ```
 
-### Ejemplo - Agente de Alimentacion
+### Ejemplo - Agente de Alimentación
 
 Por ejemplo, tenemos el siguiente prompt que debe encargarse de dar un meal plan a una persona dependiendo de su peso, altura y dieta.
 
@@ -447,13 +447,13 @@ What should this person eat?
 - Goal: {prompt_inputs["goal"]}
 - Dietary restrictions: {prompt_inputs["restrictions"]}
 """
-    
+
     messages = []
     add_user_message(messages, prompt)
     return chat(messages)
 ```
 
-Podemos agregarle detalles para que el resultado sea lo mas efectivo posible
+Podemos agregarle detalles para que el resultado sea lo más efectivo posible
 
 ```python
 results = evaluator.run_evaluation(
@@ -462,18 +462,18 @@ results = evaluator.run_evaluation(
     extra_criteria="""
 The output should include:
 - Daily caloric total
-- Macronutrient breakdown  
+- Macronutrient breakdown
 - Meals with exact foods, portions, and timing
 """
 )
 ```
 
-Si usamos la herramienta de evaluacion de **Claude**, obtendremos un HTML con los resultados, cada dataset, respuesta, razonamiento y un score.
+Si usamos la herramienta de evaluación de **Claude**, obtendremos un HTML con los resultados, cada dataset, respuesta, razonamiento y un score.
 
 ```python
 Guidelines:
 1. Include accurate daily calorie amount
-2. Show protein, fat, and carb amounts  
+2. Show protein, fat, and carb amounts
 3. Specify when to eat each meal
 4. Use only foods that fit restrictions
 5. List all portion sizes in grams
@@ -482,7 +482,7 @@ Guidelines:
 
 ### Estructura XML
 
-Cuando enviamos un prompt con informacion especifica, a veces es dificil para la IA entender que queremos que el output tenga una estructura especifica. Para esto, se puede usar una estructura XML, que es un formato de texto que permite definir una estructura de datos de manera clara y legible.
+Cuando enviamos un prompt con información específica, a veces es difícil para la IA entender que queremos que el output tenga una estructura específica. Para esto, se puede usar una estructura XML, que es un formato de texto que permite definir una estructura de datos de manera clara y legible.
 
 ```python
 Here are the last 20 meals this person ate:
@@ -501,7 +501,7 @@ Here are the last 20 meals this person ate:
 Generate a meal plan based on the athlete information above.
 ```
 
-Tambien sirve para cuando queremos agregar codigo:
+También sirve para cuando queremos agregar código:
 
 ```python
 Here is the code for the meal plan generator:
@@ -510,12 +510,12 @@ def generate_meal_plan(height, weight, goal, restrictions):
     # code goes here
 </code>
 ```
- 
+
 No hay etiquetas XML predefinidas, se pueden crear las que se quieran, lo importante es que sean claras y que la IA entienda que el output debe tener esa estructura.
 
-### Ejemplificacion
+### Ejemplificación
 
-Dentro de esta tecnica tenemos dos subtenicas, 
+Dentro de esta técnica tenemos dos subtécnicas,
 
 - **one-shot**: Dar un solo ejemplo para que la IA entienda el formato deseado, por ejemplo:
 
@@ -556,8 +556,8 @@ Macronutrient breakdown: 30% protein, 40% carbs, 30%
 [Your example output here]
 </ideal_output>
 
-This example is well-structured, provides detailed information 
-on food choices and quantities, and aligns with the athlete's 
+This example is well-structured, provides detailed information
+on food choices and quantities, and aligns with the athlete's
 goals and restrictions.
 ```
 
@@ -648,7 +648,7 @@ Please solve the following task:
 
 {test_case["task"]}
 """
-    
+
     messages = []
     add_user_message(messages, prompt)
     output = chat(messages)
@@ -661,10 +661,10 @@ Please solve the following task:
 def run_test_case(test_case):
     """Calls run_prompt, then grades the result"""
     output = run_prompt(test_case)
-    
+
     # TODO - Grading
     score = 10
-    
+
     return {
         "output": output,
         "test_case": test_case,
@@ -674,17 +674,17 @@ def run_test_case(test_case):
 
 Por ahora el 10 estará hardcodeado, pero se puede reemplazar por un sistema de puntuación automatizado que evalúe la calidad de la respuesta recibida por la IA, asignando una puntuación del 1-10 e identificando los errores o áreas de mejora. Además, debemos **elegir un tipo de Grader**, lo cual abordaremos en la siguiente sección.
 
-Y finalmente, creamos la funcion que se encarga de correr todo el pipeline:
+Y finalmente, creamos la función que se encarga de correr todo el pipeline:
 
 ```python
 def run_eval(dataset):
     """Loads the dataset and calls run_test_case with each case"""
     results = []
-    
+
     for test_case in dataset:
         result = run_test_case(test_case)
         results.append(result)
-    
+
     return results
 ```
 
@@ -752,21 +752,21 @@ def grade_by_model(test_case, output):
     # Create evaluation prompt
     eval_prompt = """
     You are an expert code reviewer. Evaluate this AI-generated solution.
-    
+
     Task: {task}
     Solution: {solution}
-    
+
     Provide your evaluation as a structured JSON object with:
     - "strengths": An array of 1-3 key strengths
-    - "weaknesses": An array of 1-3 key areas for improvement  
+    - "weaknesses": An array of 1-3 key areas for improvement
     - "reasoning": A concise explanation of your assessment
     - "score": A number between 1-10
     """
-    
+
     messages = []
     add_user_message(messages, eval_prompt)
     add_assistant_message(messages, "```json")
-    
+
     eval_text = chat(messages, stop_sequences=["```"])
     return json.loads(eval_text)
 ```

@@ -10,10 +10,10 @@ Se lo describe como más que un chatbot, sino como un asistente de IA que puede 
 
 Se describe que la mejor forma de comunicarse con Claude es teniendo una conversación fluida, como uno la tendría con cualquier colega, más que haciendo preguntas de una sola vez en cada sesión.
 
-Actualmente (Abril 2026) hay 3 modelos de Claude:
+Actualmente (abril de 2026) hay 3 modelos de Claude:
 
-- **Claude Oppus**: Recomendado para pensamiento complejo y arquitectura.
-- **Claude Sonnet**: Recomendado para el "Daily Coding", el mas **Balanceado** entre costo y performance.
+- **Claude Opus**: Recomendado para pensamiento complejo y arquitectura.
+- **Claude Sonnet**: Recomendado para el "Daily Coding", el más **Balanceado** entre costo y performance.
 - **Claude Haiku**: Recomendado para tareas más simples y cotidianas, como escribir emails, redactar documentos, etc. **Cost Effective**
 
 ## Projects
@@ -121,7 +121,7 @@ Hay dos tipos de Hooks:
     "matcher": "Write|Edit|MultiEdit",
     "hooks": [
       {
-        "type": "command", 
+        "type": "command",
         "command": "node /home/hooks/edit_hook.ts"
       }
     ]
@@ -133,7 +133,7 @@ Estos pueden ser definidos a 3 niveles:
 
 - Global - `~/.claude/settings.json`, afecta a todos los proyectos globales
 - Project - `.claude/settings.json`, compartido a nivel proyecto individual
-- Project (not committed) - `.claude/settings.local.json`, es nuestra configuracion personal, y nadie puede acceder a la misma
+- Project (not committed) - `.claude/settings.local.json`, es nuestra configuración personal, y nadie puede acceder a la misma
 
 ### Text Editor Tool
 
@@ -161,14 +161,14 @@ Es una herramienta que permite a Claude realizar búsquedas en la web para obten
 ```python
 web_search_schema = {
     "type": "web_search_20250305",
-    "name": "web_search", 
+    "name": "web_search",
     "max_uses": 5
 }
 ```
 
 `max_uses` es la cantidad máxima de veces que se puede usar esta herramienta en una conversación. Esto es útil para evitar que Claude abuse de la herramienta y para controlar el costo asociado con su uso.
 
-Tambien se puede limitar en que dominios realizar las busquedas
+También se puede limitar en qué dominios realizar las búsquedas
 
 ```python
 web_search_schema = {
@@ -197,7 +197,7 @@ Debe ser seteado primero por un Owner de la organización para poder ser accedid
 ## Plan Mode vs Thinking Mode
 
 - **Plan Mode**: Es un modo de pensamiento más estructurado, donde Claude planifica su respuesta antes de generar el texto final. Es útil para tareas complejas que requieren un razonamiento más profundo y una estructura clara en la respuesta. **Recomendado para tareas que se deben realizar en pasos**
-- **Thinking Mode**: Es un modo de pensamiento más fluido, donde Claude genera la respuesta de manera más natural y sin una planificación previa. Es útil para tareas que requieren creatividad o respuestas más informales. **Recomendado para logica compleja**
+- **Thinking Mode**: Es un modo de pensamiento más fluido, donde Claude genera la respuesta de manera más natural y sin una planificación previa. Es útil para tareas que requieren creatividad o respuestas más informales. **Recomendado para lógica compleja**
 
 
 ## Effective Prompting
@@ -283,7 +283,7 @@ Una vez que se recibe la request, la misma se procesa en 4 pasos:
 - **Generación**: Los embeddings contextualizados pasan por una capa de salida que calcula probabilidades para cada posible palabra siguiente. Claude no siempre elige la palabra con mayor probabilidad: usa una combinación de probabilidad y aleatoriedad controlada para crear respuestas naturales y variadas. Después de seleccionar cada palabra, Claude la agrega a la secuencia y repite todo el proceso para la siguiente palabra.
 
 Este último paso de **Generación** continúa hasta que:
- 
+
 - Se alcanzó la mayor cantidad de tokens permitidos
 - La oración se terminó (EOS End of Sequence)
 - Algo detuvo la ejecución
@@ -345,7 +345,7 @@ Luego para obtener la respuesta, podemos acceder a ella directamente con: `messa
 
 ### Multi-turn conversations
 
-Las Multi-turn conversations son conversaciones que tienen más de un mensaje, es decir, una conversación fluida entre el usuario y Claude. 
+Las Multi-turn conversations son conversaciones que tienen más de un mensaje, es decir, una conversación fluida entre el usuario y Claude.
 
 Por default, ni Claude ni la Anthropic API guardan ningún mensaje. Si queremos que Claude recuerde lo sucedido en algún mensaje anterior, debemos manejarlo. Por default, las conversaciones son **stateless**.
 
@@ -431,17 +431,17 @@ def chat(messages, system=None, temperature=1.0):
         "messages": messages,
         "temperature": temperature
     }
-    
+
     if system:
         params["system"] = system
-    
+
     message = client.messages.create(**params)
     return message.content[0].text
 
 # Low temperature - more predictable
 answer = chat(messages, temperature=0.0)
 
-# High temperature - more creative  
+# High temperature - more creative
 answer = chat(messages, temperature=1.0)
 ```
 
@@ -468,7 +468,7 @@ Todos estos eventos son parte de una sola request. Los tipos de eventos son:
 - `MessageDelta`: El mensaje está completo
 - `MessageStop`: Fin de la información sobre el mensaje actual
 
-Para habilitar el Streaming, agregamos la propiedad `stream` a nuestro `message`: 
+Para habilitar el Streaming, agregamos la propiedad `stream` a nuestro `message`:
 
 ```python
 messages = []
@@ -484,4 +484,3 @@ stream = client.messages.create(
 for event in stream:
     print(event)
 ```
-
