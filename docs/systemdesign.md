@@ -61,7 +61,7 @@ No sirve si nuestro sistema es escalable y performante si falla constantemente. 
 
 - **Downtime**: Tiempo en que nuestro sistema no está operativo
 
-**Disponibilidad(%) = Uptime / Tiempo Total**
+**Disponibilidad (%) = Uptime / Tiempo total**
 
 Si tenemos múltiples servicios, se tienen varios tipos de cálculos disponibles, ya que las caídas no son lineales (se puede caer solo una región, solo un servidor, etc.)
 
@@ -105,7 +105,7 @@ Un ejemplo puede ser una cafetería: si se tiene un solo barista para 50 cliente
 
 ### Vertical vs Horizontal
 
-Existe la Escalabilidad **vertical** y **horizontal**.
+Existe la escalabilidad **vertical** y **horizontal**.
 
 |Vertical|Horizontal|
 | --- | --- |
@@ -227,28 +227,46 @@ El producto debe ser **sencillo de mantener** para que los devs puedan trabajar 
 
 Hacer sencillo el trabajo del equipo de operaciones, que el sistema se mantenga trabajando de la manera más fácil posible.
 
-- Mantener la documentacion actualizada
+- Mantener la documentación actualizada
 - Dar los accesos necesarios a los equipos de operaciones para que puedan monitorear el sistema de manera efectiva
 
-No siempre el mismo equipo de devs compone el equipo de operaciones, por eso es importante que el sistema sea fácil de entender y mantener para cualquier persona que trabaje en él, incluso si no fue el equipo original que lo desarrolló. En este caso se debe **ofrecer soporte para la automatizacion y la integracion del codigo**
+No siempre el mismo equipo de devs compone el equipo de operaciones, por eso es importante que el sistema sea fácil de entender y mantener para cualquier persona que trabaje en él, incluso si no fue el equipo original que lo desarrolló. En este caso se debe **ofrecer soporte para la automatización y la integración del código**
 
 Los mismos son responsables de:
 
-- Monitorizar la salud del sistema y restaurarlo lo antes posible si algo sucede. **Es importante que la informacion interna del sistema tenga una buena visibilidad para que el monitoreo sea util**
-- Investigar la razon de los problemas
+- Monitorizar la salud del sistema y restaurarlo lo antes posible si algo sucede. **Es importante que la información interna del sistema tenga una buena visibilidad para que el monitoreo sea útil**
+- Investigar la razón de los problemas
 - Mantener la infraestructura y herramientas actualizadas
-- Anticipar futuros problemas que puedan suceder, **nuestro sisteam debe ser lo mas predecible posible para minimizar las sorpresas**
-- Mantenimiento, **se debe evitar la dependencia con maquinas individuales**
+- Anticipar futuros problemas que puedan suceder, **nuestro sistema debe ser lo más predecible posible para minimizar las sorpresas**
+- Mantenimiento, **se debe evitar la dependencia con máquinas individuales**
 
 ### Simplicidad
 
 Que si un nuevo dev ingresa a nuestro equipo, pueda entender el sistema de manera fácil y rápida para poder aportar valor de manera más rápida.
 
+- A medida que el código crece, la calidad baja.
+- Si el código es complejo, la probabilidad de generar nuevos bugs es alta.
+- El código debe ser sencillo de entender, con una buena estructura y organización, para que cualquier persona pueda entenderlo sin necesidad de tener un conocimiento profundo del mismo.
+
+Algunos problemas comunes son:
+
+- Módulos muy acoplados
+- Dependencias innecesarias
+- Nombres de variables o funciones inconsistentes
+- Acciones inesperadas en el código, cuando se ejecuta una función, se espera que haga algo, pero hace otra cosa, lo que puede generar confusión y errores.
+
 ### Extensibilidad
 
 Que nuestro sistema pueda ser extendido con nuevas funcionalidades sin necesidad de modificar el código existente, lo que facilita la incorporación de nuevas características y la adaptación a cambios futuros.
 
-Facilitar futuros cambios en nuestro sistema.
+Facilitar futuros cambios en nuestro sistema, ya que los mismos son inevitables.
+
+Esto se puede lograr mediante:
+
+- **Lado código**: Mantener el código limpio y predecible
+- **Lado organizativo**: Dar lugar a procesos de organización simples y claros para que los devs puedan seguirlos y no se convierta en un caos.
+    - **Cascada**: Primero toma de requisitos, diseño, implementación y mantenimiento. Es un proceso lineal, donde cada etapa se completa antes de pasar a la siguiente. Este proceso es rígido y no permite cambios una vez que se ha pasado a la siguiente etapa. **Poca flexibilidad**
+    - **Ágil**: Se divide el trabajo en sprints, donde se planifica, se ejecuta y se revisa el trabajo de manera iterativa. Este proceso es flexible y permite cambios a medida que se avanza en el proyecto, lo que facilita la adaptación a cambios futuros. **Alta flexibilidad**
 
 ## Load Balancer
 
