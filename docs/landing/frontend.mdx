@@ -16,3 +16,39 @@ export const data = [
 ];
 
 <IndiceTable data={data}/>
+
+## **Performance**
+
+### Code Splitting
+
+Es una técnica de optimización que consiste en dividir el código de una aplicación en partes más pequeñas y cargarlas de manera asíncrona cuando se necesitan. 
+
+Esto mejora el rendimiento al reducir el tiempo de carga inicial y permite que los usuarios accedan a la aplicación más rápidamente.
+
+- **Route Based Splitting**: Divide el código según las rutas de la aplicación, cargando solo lo necesario para cada ruta. En React se hace mediante `React.lazy` y `Suspense`, en Angular con `loadChildren` y en Vue con `defineAsyncComponent`. La mayoria de las apps tienen mas de 10 rutas, y los usuarios solo visitan 2 o 3, por lo que es una **gran mejora de rendimiento**.
+- **Component Based Splitting**: Divide el código según los componentes, cargando solo los componentes necesarios para la vista actual.
+- **Vendor Splitting**: Divide el código de las dependencias externas (librerías) para que se carguen por separado y puedan ser cacheadas por el navegador. Hecho automaticamente por Webpack mediante `optimization.splitChunks`, requiere configuracion. 
+
+Esto se realiza en **Build time** con herramientas como Webpack, Rollup o Vite, y se configura mediante opciones específicas para cada tipo de splitting.
+
+### Lazy Loading
+
+Es el arte de no cargar un recurso hasta que sea necesario. Esto puede aplicarse a imágenes, scripts, estilos, etc.
+
+- En React se puede hacer con `loading="lazy"` en las imágenes, o con `React.lazy` y `Suspense` para componentes. 
+- En Angular se puede hacer con `loadChildren` para rutas y con `defineAsyncComponent` para componentes. 
+- En Vue se puede hacer con `defineAsyncComponent` para componentes.
+
+Esto se realiza en **Runtime** y mejora el rendimiento al reducir el tiempo de carga inicial y permitir que los usuarios accedan a la aplicación más rápidamente.
+
+1. El user va a Profile Page
+2. App carga el bundle `profile.chunk.js` que contiene el código necesario para renderizar la página de perfil.
+3. La UI carga solo cuando se recibe el chunk correspondiente. 
+
+### Pregunta Entrevista: Si la app tarda 8 segundos en cargar, ¿cómo mejorarías el rendimiento?
+
+- Analizar el bundle con `webpack-bundle-analyzer` para identificar los módulos más pesados.
+- Implementar **Route Based Splitting** para cargar solo lo necesario para cada ruta.
+- Si tengo elementos pesados como modals o componentes que no se usan en la vista inicial, implementaría **Component Based Splitting**.
+- Si tengo muchas dependencias externas, implementaría **Vendor Splitting** para que se carguen por separado y puedan ser cacheadas por el navegador.
+- Optimizar las imágenes utilizando formatos modernos como WebP y cargándolas de manera asíncrona con `loading="lazy"`.

@@ -222,6 +222,8 @@ En resumen, dotenv es como una libreta secreta para tus configuraciones, y `proc
 
 Clustering es una técnica que permite aprovechar al máximo los procesadores multinúcleo de un servidor. Por defecto, Node.js utiliza un solo hilo para ejecutar el código, lo que significa que solo puede usar un núcleo del procesador. Con clustering, puedes crear múltiples procesos (llamados "workers") que ejecutan tu aplicación en paralelo, utilizando todos los núcleos disponibles.
 
+Conceptualmente, esto es una forma de aplicar [escalabilidad horizontal](../systemdesign#vertical-vs-horizontal) dentro de una misma máquina.
+
 - Node.js tiene un módulo llamado `cluster` que permite crear varios procesos hijos (workers) que comparten el mismo puerto del servidor.
 - Cada worker es una copia de tu aplicación, pero se ejecuta de manera independiente.
 - Un proceso maestro (master) se encarga de distribuir las solicitudes entre los workers.
@@ -514,28 +516,7 @@ async function obtenerDatos() {
 ```
 
 ### Uso de Clústeres
-El módulo `cluster` de Node.js permite crear múltiples instancias de tu aplicación que pueden ejecutarse en diferentes núcleos del procesador. Esto mejora la capacidad de manejo de solicitudes concurrentes y aprovecha al máximo los recursos del servidor.
-
-```javascript
-const cluster = require('cluster');
-const http = require('http');
-const numCPUs = require('os').cpus().length;
-if (cluster.isMaster) {
-    // Crear
-    for (let i = 0; i < numCPUs; i++) {
-        cluster.fork();
-    }
-    cluster.on('exit', (worker, code, signal) => {
-        console.log(`Worker ${worker.process.pid} murió`);
-    });
-} else {
-    // Código de la aplicación
-    http.createServer((req, res) => {
-        res.writeHead(200);
-        res.end('¡Hola, mundo!');
-    }).listen(8000);
-}
-```
+El módulo `cluster` permite aprovechar más de un núcleo del procesador. La explicación y el ejemplo están en [Clustering](#clustering); el concepto general de escala vertical y horizontal está en [System Design](../systemdesign#vertical-vs-horizontal).
 
 ### Optimización de Consultas a Bases de Datos
 Las consultas a bases de datos pueden ser un cuello de botella en el rendimiento de una aplicación. Aquí hay algunas prácticas para optimizarlas:
@@ -579,7 +560,7 @@ Revisa y optimiza tu código para mejorar el rendimiento. Algunas prácticas inc
 - **Utilizar módulos nativos**: Siempre que sea posible, utiliza módulos nativos de Node.js en lugar de bibliotecas externas, ya que suelen ser más eficientes.
 - **Evitar el uso excesivo de memoria**: Utiliza estructuras de datos eficientes y evita mantener en memoria grandes volúmenes de datos innecesarios.
 
-### Compresion
+### Compresión
 
 La compresión de respuestas HTTP puede reducir el tamaño de los datos enviados al cliente, mejorando la velocidad de carga y reduciendo el uso del ancho de banda.
 - **Gzip**: Utiliza el middleware `compression` de Express para comprimir las respuestas HTTP.
@@ -598,7 +579,7 @@ app.listen(3000, () => {
 ```
 
 ### Monitoreo y Análisis de Rendimiento
-Implementa herramientas de monitoreo para analizar el rendimiento de tu aplicación en producción. Esto te permitirá identificar problemas y optimizar el rendimiento en tiempo real.
+Implementa herramientas de monitoreo para analizar el rendimiento de tu aplicación en producción. El concepto general está en [Observabilidad](../systemdesign#observabilidad); en Node.js, lo importante es exponer métricas útiles del proceso y del event loop.
 - **Herramientas de monitoreo**: Utiliza servicios como New Relic, Datadog o Prometheus para monitorear el rendimiento de tu aplicación y recibir alertas sobre problemas.
 - **Logs de rendimiento**: Implementa un sistema de logging que registre métricas clave, como tiempos de respuesta, uso de memoria y errores, para analizar el rendimiento a lo largo del tiempo.
 
@@ -606,107 +587,22 @@ Implementa herramientas de monitoreo para analizar el rendimiento de tu aplicaci
 
 ## **Escalabilidad**
 
-La **escalabilidad** de una aplicación Node.js se refiere a su capacidad para manejar un número creciente de solicitudes o carga de trabajo sin perder rendimiento ni confiabilidad. Dado que Node.js está basado en un modelo de **event loop** de un solo hilo, tiene ciertas limitaciones en cuanto a cómo manejar múltiples solicitudes simultáneas. Sin embargo, se pueden aplicar varias estrategias para mejorar la escalabilidad de una aplicación Node.js y asegurar que pueda manejar más tráfico y usuarios a medida que crece.
+Los conceptos generales de escalabilidad, load balancers, servicios stateless/stateful y tolerancia a fallos están desarrollados en [System Design](../systemdesign).
 
-A continuación, te detallo algunas de las principales estrategias para hacer que una aplicación Node.js sea escalable:
+Para evitar duplicar contenido:
 
-### Clusters (Escalabilidad Horizontal)
+- [Escalabilidad vertical vs horizontal](../systemdesign#vertical-vs-horizontal): explica cuándo agregar recursos a una máquina y cuándo agregar más instancias.
+- [Servicios stateful](../systemdesign#servicios-stateful) y [servicios stateless](../systemdesign#servicios-stateless): explica por qué conviene evitar guardar estado de sesión en memoria si se quiere escalar horizontalmente.
+- [Load Balancer](../systemdesign#load-balancer): explica cómo distribuir tráfico entre múltiples servidores.
+- [Tolerancia a fallos](../systemdesign#tolerancia-a-fallos): explica redundancia, recuperación y reducción de puntos únicos de fallo.
 
-Aunque Node.js usa un solo hilo para manejar solicitudes, puedes aprovechar todos los núcleos de CPU de tu servidor utilizando el **módulo `cluster`**. Esto permite crear múltiples instancias de tu aplicación Node.js que pueden ejecutarse en diferentes procesos, distribuyendo la carga de trabajo entre varios núcleos de CPU.
+En Node.js, lo específico es cómo aplicar esos conceptos:
 
-- **¿Cómo funciona?** Cada instancia o "worker" del cluster puede manejar su propio conjunto de solicitudes. Si tu servidor tiene varios núcleos de CPU, puedes crear tantos procesos como núcleos haya, lo que mejora el rendimiento y permite que tu aplicación maneje más tráfico.
-  
-- **Implementación básica con `cluster`:**
-  ```javascript
-  const cluster = require('cluster');
-  const http = require('http');
-  const numCPUs = require('os').cpus().length; // Número de núcleos disponibles
-  
-  if (cluster.isMaster) {
-    // Crear un worker para cada núcleo del procesador
-    for (let i = 0; i < numCPUs; i++) {
-      cluster.fork();
-    }
-
-    cluster.on('exit', (worker, code, signal) => {
-      console.log(`Worker ${worker.process.pid} died`);
-    });
-  } else {
-    // Código de la aplicación
-    http.createServer((req, res) => {
-      res.writeHead(200);
-      res.end('Hello World');
-    }).listen(8000);
-  }
-  ```
-
-### Balanceo de Carga - Load Balancer
-
-El **balanceo de carga** se utiliza para distribuir el tráfico entre múltiples instancias de la aplicación en diferentes servidores o máquinas, de modo que ningún servidor se sobrecargue. Esto es especialmente útil para aplicaciones Node.js en entornos de producción distribuidos.
-
-- **Soluciones comunes de balanceo de carga**:
-  - **Nginx o HAProxy**: Puedes usar servidores de balanceo de carga como Nginx o HAProxy para distribuir el tráfico HTTP entre varias instancias de tu aplicación Node.js. Estos servidores pueden distribuir las solicitudes entrantes entre los diferentes procesos de la aplicación (por ejemplo, instancias que están ejecutándose en diferentes máquinas o contenedores).
-
-  - **Load Balancers en la nube**: Servicios como **AWS Elastic Load Balancing** o **Google Cloud Load Balancing** también pueden distribuir las solicitudes entre diferentes servidores.
-
-### Microservicios
-
-Una de las mejores formas de escalar una aplicación Node.js es dividirla en **microservicios**. Los microservicios son una arquitectura que descompone la aplicación en servicios pequeños e independientes, cada uno con su propio dominio de negocio y base de datos. Esto permite que diferentes servicios se escalen de forma independiente según la carga.
-
-- **¿Cómo funciona?** En lugar de una aplicación monolítica, donde todo está en un solo bloque, los microservicios permiten desplegar y escalar cada parte de la aplicación por separado. Si un servicio experimenta una carga alta, puedes escalar solo ese servicio, sin afectar a otros.
-
-- **Beneficios de los microservicios**:
-  - Escalabilidad independiente para cada componente.
-  - Despliegue y mantenimiento más sencillo.
-  - Resiliencia, ya que si un microservicio falla, no afecta a toda la aplicación.
-
-- **Tecnologías asociadas**:
-  - **Docker**: Permite empaquetar microservicios en contenedores que pueden ser ejecutados en cualquier entorno.
-  - **Kubernetes**: Orquestador de contenedores que facilita la gestión y escalado de microservicios.
-
-### Cacheo de Respuestas
-
-Una de las técnicas clave para mejorar la escalabilidad de una aplicación Node.js es el **cacheo**. Al almacenar en caché las respuestas de las solicitudes más comunes o de larga duración, puedes reducir significativamente la carga en el servidor y acelerar el tiempo de respuesta.
-
-- **Cacheo en memoria**: Puedes usar herramientas como **Redis** o **Memcached** para almacenar respuestas en memoria y evitar hacer consultas repetitivas a bases de datos u otras fuentes externas.
-
-- **Cacheo de respuestas HTTP**: Si tu aplicación maneja muchas solicitudes similares, puedes usar herramientas como **Varnish** o configurar **caching HTTP** en el servidor para almacenar respuestas de manera eficiente.
-
-### Optimización de Base de Datos
-
-Las aplicaciones Node.js a menudo dependen de bases de datos para almacenar y recuperar información. La escalabilidad de tu aplicación también depende de cómo escalas y optimizas tu base de datos.
-
-- **Sharding**: Distribuir datos entre varias bases de datos, de modo que cada base de datos maneje solo una parte de los datos. Esto puede ser especialmente útil en bases de datos NoSQL como MongoDB.
-
-- **Replicación**: Configurar replicación para distribuir las consultas entre varias réplicas de bases de datos y mejorar la disponibilidad.
-
-- **Índices**: Asegúrate de que tu base de datos esté optimizada con índices para mejorar el rendimiento de las consultas.
-
-### Event Loop
-
-El **event loop** de Node.js es el mecanismo que maneja todas las solicitudes de entrada y salida de la aplicación. Es importante optimizar el código para evitar bloqueos del event loop, que pueden afectar negativamente el rendimiento y la capacidad de escalado.
-
-- **Operaciones asincrónicas**: Utiliza operaciones asincrónicas siempre que sea posible para evitar bloquear el event loop. Esto incluye hacer uso de **callbacks**, **promesas** o **async/await**.
-
-- **Worker Threads**: En algunas situaciones, podrías necesitar realizar tareas de procesamiento intensivo. Para evitar que el event loop se bloquee, puedes usar **Worker Threads**, que permiten realizar tareas intensivas en segundo plano sin bloquear la ejecución principal.
-
-### Escalabilidad en la Nube
-
-Node.js se integra muy bien con servicios en la **nube** como **AWS**, **Google Cloud** o **Microsoft Azure**, lo que facilita la escalabilidad automática.
-
-- **Autoescalado**: Estos proveedores en la nube permiten configurar el **autoescalado**, lo que significa que, a medida que la demanda de tu aplicación aumenta, los servidores adicionales se crearán automáticamente, y cuando la demanda disminuye, los recursos se liberan.
-
-- **Funcionalidades como AWS Lambda**: Si tu aplicación es pequeña o tiene tareas que no requieren servidores constantes, puedes aprovechar **AWS Lambda** o **Google Cloud Functions** para manejar cargas de trabajo bajo demanda y solo cobrar por el tiempo de ejecución real.
-
-**8. Manejo de Conexiones Simultáneas**
-
-Node.js es ideal para manejar una gran cantidad de conexiones simultáneas gracias a su arquitectura basada en el event loop. Sin embargo, en aplicaciones de alto tráfico, es importante manejar las conexiones de manera eficiente.
-
-- **Conexiones HTTP/2**: Usar HTTP/2 permite mejorar la eficiencia de las conexiones y reducir la latencia de la comunicación entre el cliente y el servidor.
-
-- **Keep-Alive y conexiones persistentes**: Configura conexiones persistentes para reducir la sobrecarga asociada con la apertura y cierre de nuevas conexiones HTTP.
-
-La escalabilidad en Node.js se puede lograr mediante diferentes estrategias que abarcan desde la **optimización del event loop**, la **escala horizontal con clústeres**, hasta el **uso de microservicios** y **caché**. Implementar estas prácticas te permitirá construir aplicaciones que puedan manejar más tráfico, ser más resilientes y ofrecer una experiencia de usuario más rápida y confiable.
+- Usar el módulo `cluster` o un process manager como PM2 para levantar varios workers por máquina. Ver la sección [Clustering](#clustering).
+- Mantener la aplicación lo más stateless posible; si se necesita compartir estado entre workers o instancias, usar una base de datos, Redis u otro almacenamiento externo.
+- Evitar bloquear el event loop con operaciones pesadas; para CPU intensivo, usar `worker_threads`, colas de trabajo o procesos separados.
+- Poner varias instancias Node.js detrás de un load balancer como Nginx, HAProxy o un balanceador cloud.
+- Medir tiempos de respuesta, throughput y errores para decidir cuándo escalar. Ver [Rendimiento](../systemdesign#rendimiento).
 
 ---
 

@@ -1,10 +1,19 @@
 ﻿# 🔌 APIs
 
-## ¿Qué es una API?
-
 Una API (Application Programming Interface) es un conjunto de reglas y protocolos que siguen las aplicaciones para comunicarse entre ellas.
 
+Expone las operaciones que se pueden realizar en nuestra app.
+
 Por ejemplo, si se tiene una aplicación que informa sobre el clima, esta información no está directamente puesta en la aplicación, sino que esta llama a un servicio que provee los datos correspondientes para mostrarlos.
+
+Hay tipos de APIs **publicas, privadas y partners (APIs de pago por uso)**
+
+## Buenas practicas
+
+- **Deben encapsular por completo el sistema**, si tenemos que saber como funciona por dentro quiere decir que hay problemas de disenio
+- Debe estar **desacoplada** de la logica interna del sistema. Las APIs se deben modificar lo minimo posible
+- Las APIs no se modifican, **se versionan**, y si cambian, debe ser retrocompatible. 
+- Si una API se llama varias veces con los mismos parametros, debe devolver el mismo resultado. **Operaciones Idempotentes**
 
 ## Seguridad en la API
 
