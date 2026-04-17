@@ -5,13 +5,15 @@ title: 🛠️ System Design
 
 ## Punto de partida en System Design
 
-Un sistema utilizado por pocos usuarios puede ser construido de manera simple, un punto de partida comun es:
+Un sistema utilizado por pocos usuarios puede ser construido de manera simple, un punto de partida común es:
 
 ![alt text](src/image-2.png)
 
-- Es sencillo, facil de implementar y mantener.
+- Es sencillo, fácil de implementar y mantener.
 - No es escalable, hay un solo servidor web que se encarga de todo.
-- Posee baja fiabilidad, ya que al tener un solo servidor, si el mismo cae, todo cae. 
+- Posee baja fiabilidad, ya que al tener un solo servidor, si el mismo cae, todo cae.
+
+Si agrego más de un servidor, debo usar el [Load Balancer](#load-balancer) para que las requests de nuestros usuarios se distribuyan entre los servidores. El DNS apuntará a la IP del Load Balancer.
 
 ## DNS
 
@@ -19,23 +21,20 @@ Cuando escribimos una URL en el navegador, se hace en un formato particular:
 
 ![alt text](src/image-6.png)
 
-Los dominios son una manera de identificar a que servidor se quiere enviar una peticion. Es como un alias a la direccion IP que seria el nombre real del servidor.
+Los dominios son una manera de identificar a qué servidor se quiere enviar una petición. Es como un alias a la dirección IP que sería el nombre real del servidor.
 
-El DNS posee una tabla donde apunta el dominio a la IP correspondiente
+El DNS posee una tabla donde apunta el dominio a la IP correspondiente.
 
 ![alt text](src/image-9.png)
 
-- **Servidores DNS Gratuitos**: Google (8.8.8.8, 8.8.8.4) y Cloudfare (1.1.1.1, 1.0.0.1), sirve para traducir nombres de dominio en direcciones IP sin tener que pagar por el servicio. Compras un dominio barato en un registrador, pero usas un DNS gratuito como Cloudflare DNS para manejar los registros de forma más cómoda y rápida.
-- **Servidores DNS de Pago**: Ofrecen caracterisitcas mayores como Load Balancer basado en DNS, etc.. Un DNS de pago te sirve cuando el DNS empieza a ser una parte crítica de tu producto, no solo “algo para apuntar el dominio”.
+- **Servidores DNS gratuitos**: Google (8.8.8.8, 8.8.4.4) y Cloudflare (1.1.1.1, 1.0.0.1), sirven para traducir nombres de dominio en direcciones IP sin tener que pagar por el servicio. Compras un dominio barato en un registrador, pero usas un DNS gratuito como Cloudflare DNS para manejar los registros de forma más cómoda y rápida.
+- **Servidores DNS de pago**: Ofrecen características avanzadas como Load Balancer basado en DNS, etc. Un DNS de pago te sirve cuando el DNS empieza a ser una parte crítica de tu producto, no solo “algo para apuntar el dominio”.
     - **Menor latencia global**: redes Anycast más optimizadas para responder rápido desde distintas regiones
     - **Protección DDoS más fuerte**: importante si tu dominio recibe ataques o mucho tráfico.
     - **Failover automático**: si un servidor cae, el DNS puede dejar de apuntar a esa IP y mandar tráfico a otra.
     - **Health checks**: revisa si tu backend, servidor o endpoint está vivo antes de enviarle tráfico.
     - **GeoDNS / georouting**: enviar usuarios de Europa a servidores europeos y usuarios de EE.UU. a servidores de EE.UU.
-    - Entre otras caracteristicas
-
-
-
+    - Entre otras características
 
 ## **Rendimiento**
 
@@ -64,7 +63,7 @@ Esto debe ser controlado si se espera que haya picos de tráfico, por ejemplo, e
 
 ### Medición
 
-Se recomienda el uso de **Histogramas** para calcular los **Percentiles** del tiempo de respuesta.
+Se recomienda el uso de **histogramas** para calcular los **percentiles** del tiempo de respuesta.
 
 Por ejemplo, se tienen 10 servidores con su tiempo de respuesta en ms.
 
@@ -308,11 +307,34 @@ Load Balancing es el proceso de distribuir el tráfico de red entre múltiples s
 
 - No sobrecargar ninguno de ellos.
 - Mejorar la performance reduciendo los tiempos de respuesta.
-- Mejorar la availability/disponibilidad del servicio redirigiendo el tráfico si algún servidor se cae.
+- Mejorar la availability/disponibilidad/fiabilidad del servicio redirigiendo el tráfico si algún servidor se cae.
+
+El Load Balancer será público mientras que nuestros servidores se encontrarán en una red privada. El DNS apunta a la IP del Load Balancer.
 
 Para implementar load balancing, hay **algoritmos** con sus pros y cons.
 
+**Load Balancers populares**:
+
+- NGINX
+- HAProxy
+- Amazon Elastic Load Balancer
+- Azure Load Balancer
+- Google Cloud Load Balancer
+
+![alt text](src/image-22.png)
+
+### Posibles errores
+
+Si el Load Balancer falla, **todo el sistema queda no operativo**, se convierte en nuestro único punto de falla. Una forma de mitigar esto es:
+
+- Se pueden tener múltiples Load Balancers
+- Global Server Load Balancers, son servicios de pago que se pueden usar como Load Balancers.
+- Desplegar nuestro sistema en diversos datacenters en varias regiones
+- Load Balancer en el DNS, pero no conoce el estado de los servidores. Se puede enviar la request a un servidor roto y solo se da cuenta mediante los reintentos.
+
 ### Round Robin
+
+Distribución en forma secuencial.
 
 ![Round Robin](https://substackcdn.com/image/fetch/$s_!jpjg!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F54114fcc-cce5-4f0d-a678-47f8f0339fd4_1304x1076.png)
 
@@ -326,7 +348,7 @@ Supongamos que tenemos 3 servidores.
 **¿Cuándo se usa?**
 
 - Todos los servidores tienen la misma o similar capacidad de procesamiento.
-- Cuando la distribución par entre servidores es importante.
+- Cuando la distribución pareja entre servidores es importante.
 - Cuando la simplicidad es importante.
 
 | Pros | Cons |
@@ -336,6 +358,8 @@ Supongamos que tenemos 3 servidores.
 | Asegura la distribución equitativa | |
 
 ### Weighted Round Robin
+
+Se distribuye por peso.
 
 ![Weighted Round Robin](https://substackcdn.com/image/fetch/$s_!v6Dt!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdb12546e-4905-46b0-89e6-80ab007a6aa2_1570x1110.png)
 
@@ -402,3 +426,51 @@ Es una buena opción cuando se necesita **session persistence (sticky sessions)*
 
 - Separar el problema en módulos más simples. Por ejemplo, si el problema es diseñar un sistema de reservas de vuelos, se puede separar en módulos como búsqueda de vuelos, reserva de vuelos y pago. **Top-down approach**
 - Charlar sobre los trade-offs
+
+## **API Gateway**
+
+Es un entry point que maneja las requests cuando se tienen varios servicios backend y no queremos duplicar código.
+
+- Lógica común de autenticación, seguridad, Rate Limiting, etc. Elimina código y lógica duplicada
+- Facilita el monitoreo
+- Único punto de entrada. Redirige las peticiones al servicio correspondiente
+- Se pueden **cachear** peticiones sin pasar por los servicios. Por ejemplo, peticiones frecuentes.
+- Gestión de tráfico y limitación de acceso. **Mayor observabilidad**
+- Simplifica la lógica del lado del cliente. Sin el API Gateway, el frontend deberá llamar a un servicio distinto dependiendo de lo que se desee usar. Y esto no es práctico.
+
+Cliente -> API Gateway -> Microservicio correspondiente
+
+**Consideraciones**
+
+- Se debe evitar llamar a los servicios de forma directa, siempre se debe pasar por API Gateway, ya que conserva el aislamiento de los servicios
+- Tampoco debe tener lógica de negocio. La misma debe estar solo en los servicios.
+- El rendimiento se verá un poco afectado. Se debe analizar si los beneficios compensan, ya que ahora pasamos por API Gateway, es un paso extra.
+- Es un **único punto de fallo**, se debe monitorizar de cerca, si cae, los clientes no tendrán acceso a ningún servicio.
+
+**API Gateways populares**:
+
+- NGINX
+- Spring Cloud Gateway
+- Express Gateway
+- Amazon API Gateway
+- Azure API Management
+- Google Cloud API Gateway
+
+## **Message Brokers**
+
+Generalmente podemos hablar de la **comunicación síncrona**.
+
+1. El cliente hace una request
+2. El servidor procesa la petición manteniendo la conexión abierta con el cliente
+3. Se devuelve el resultado
+4. Se cierra la conexión
+
+Es muy simple y óptima para tareas de corta duración.
+
+Para tareas largas es un poco más complicado, ya que se pueden dar **picos de tráfico** dada la conexión mantenida durante todo el procesamiento. Para esto se recomienda la **comunicación asíncrona** con Message Brokers.
+
+1. El cliente hace una request
+2. El servidor, en vez de mantener al cliente en una conexión abierta, envía el trabajo a un Message Broker.
+3. El Message Broker guarda el mensaje en una cola.
+4. Un worker consume el mensaje y procesa la tarea.
+5. El resultado se informa luego mediante polling, webhook, WebSocket u otro mecanismo.

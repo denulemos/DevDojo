@@ -273,16 +273,6 @@ Existen dos approaches para la paginación:
 - Offset-based pagination
 - Cursor-based pagination (mejor para datasets más grandes)
 
-## API Gateway
-
-Es un entry point que maneja las requests cuando se tienen varios servicios backend. Se encarga de la autenticación, Rate Limiting, Routing y Logging.
-
-- Facilita el monitoreo
-- Centraliza la seguridad
-- Simplifica la lógica del lado del cliente
-
-Cliente -> API Gateway -> Microservicio correspondiente
-
 ## REST vs SOAP
 
 SOAP (Simple Object Access Protocol) es un protocolo de mensajería basado en XML, muy usado en bancos y en sistemas legacy.
@@ -353,12 +343,6 @@ Soluciona el hecho de que REST a veces devuelve más información de la necesari
 Es un control temporal sobre los request rates cuando la carga del servidor es demasiado alta.
 
 Por ejemplo, si hay un Black Friday en Amazon y se espera un alto flujo de gente, se hace un throttle para evitar que el servidor se caiga.
-
-## Load Balancing
-
-Distribuye las requests a través de múltiples servidores alrededor del mundo para soportar la carga.
-
-[Para más detalles sobre este tema ingresá acá](./loadbalancer.md)
 
 ## API Latency
 
