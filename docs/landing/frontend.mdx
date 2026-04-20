@@ -45,6 +45,13 @@ Esto se realiza en **Runtime** y mejora el rendimiento al reducir el tiempo de c
 2. App carga el bundle `profile.chunk.js` que contiene el código necesario para renderizar la página de perfil.
 3. La UI carga solo cuando se recibe el chunk correspondiente. 
 
+### Critical Rendering Path
+
+Es el paso a paso que el browser lleva a cabo para transformar el HTML, CSS y JS de nuestra aplicacion a pixeles en la pantalla.
+
+![alt text](image.png)
+
+
 ### Pregunta Entrevista: Si la app tarda 8 segundos en cargar, ¿cómo mejorarías el rendimiento?
 
 - Analizar el bundle con `webpack-bundle-analyzer` para identificar los módulos más pesados.
@@ -52,3 +59,4 @@ Esto se realiza en **Runtime** y mejora el rendimiento al reducir el tiempo de c
 - Si tengo elementos pesados como modals o componentes que no se usan en la vista inicial, implementaría **Component Based Splitting**.
 - Si tengo muchas dependencias externas, implementaría **Vendor Splitting** para que se carguen por separado y puedan ser cacheadas por el navegador.
 - Optimizar las imágenes utilizando formatos modernos como WebP y cargándolas de manera asíncrona con `loading="lazy"`.
+

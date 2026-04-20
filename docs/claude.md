@@ -89,7 +89,7 @@ Se pueden extender las habilidades de Claude mediante MCP (Model Context Protoco
 
 Por ejemplo, uno muy popular es `Playwright MCP`, que permite a Claude interactuar con cualquier sitio web como si fuera un usuario, lo que le permite realizar tareas como hacer reservas, comprar productos, etc.
 
-![mcp](image-1.png)
+![mcp](src/image-1.png)
 
 ## Hooks
 
