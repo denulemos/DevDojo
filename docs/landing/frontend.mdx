@@ -51,6 +51,16 @@ Es el paso a paso que el browser lleva a cabo para transformar el HTML, CSS y JS
 
 ![alt text](image.png)
 
+1. Parseo del HTML -> DOM
+2. Descarga del CSS -> CSSOM
+3. Si hay JS en el HTML, el armado del DOM y CSSOM se detiene hasta la descarga total de la misma. Como el JS puede modificar tanto el HTML como el CSS, el browser espera a su ejecucion para continuar con el resto de pasos. -> **Posible bloqueo**
+4. Combinacion del DOM con CSSOm -> Render Tree
+5. Calculo de posiciones -> Layout
+6. Dibujo en pantalla -> Paint
+
+- Es por eso que es importante que nuestro codigo CSS y JS sea lo mas pequenio posible, para que el browser descargue y ejecute el codigo de manera mas rapida. 
+- Se recomienda agregar los scripts al final del HTML o usar `async`/`defer` para que el browser no espere a la descarga y ejecucion del JS.
+
 
 ### Pregunta Entrevista: Si la app tarda 8 segundos en cargar, ¿cómo mejorarías el rendimiento?
 
