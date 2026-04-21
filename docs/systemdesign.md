@@ -474,3 +474,54 @@ Para tareas largas es un poco más complicado, ya que se pueden dar **picos de t
 3. El Message Broker guarda el mensaje en una cola.
 4. Un worker consume el mensaje y procesa la tarea.
 5. El resultado se informa luego mediante polling, webhook, WebSocket u otro mecanismo.
+
+## **Cache**
+
+Es un area de almacenamiento temporal donde se guarda la response de ciertas peticiones repetitivas y costosas para que las siguientes llamadas sean mucho mas rapidas.
+
+La Cache esta hecha para que sea de alta velocidad de acceso y consulta. 
+
+Algunas preguntas que debemos hacernos a la hora de seleccionar un tipo de cache son:
+
+- Ver los costes
+- Realmente se precisa? En donde? Observar metricas
+- Que tipo de sistema tenemos? Write-heavy? Read-heavy? La consistencia eventual es aceptable? 
+- Que tipo de consistencia deseamos? **Considerar que en sistemas de gran escala con caches y BBDD con multiples instancias en distintas regiones del mundo, la consistencia puede ser un problema**
+
+| Característica | **Cache Aside** | **Read Through** | **Write Through** | **Write Behind (Back)** |
+| :--- | :--- | :--- | :--- | :--- |
+| **Responsable de la lógica** | La Aplicación | La propia Caché | La Aplicación / Caché | La Caché (Asíncrono) |
+| **Flujo de Datos** | App → BBDD → Caché | App → Caché → BBDD | App → Caché → BBDD | App → Caché ... → BBDD |
+| **Actualización BBDD** | Manual (por la App) | Automática (Lectura) | Síncrona (Escritura) | **Asíncrona** (Batch) |
+| **Acoplamiento** | **Bajo** (Independientes) | **Alto** | **Alto** | **Alto** |
+| **Latencia de Escritura** | Baja | N/A | **Alta** (Espera BBDD) | **Mínima** (Confirmación inmediata) |
+| **Consistencia** | Eventual / Manual | Alta (en lectura) | **Fuerte** (Síncrona) | Baja (Riesgo de pérdida) |
+| **Uso Ideal** | Read-heavy / General | Read-heavy / Limpieza de código | Consistencia crítica | **Write-heavy** / Alto rendimiento |
+| **Ventaja Principal** | Flexibilidad total | Transparencia para la App | Datos siempre íntegros | Máxima velocidad de escritura |
+
+**Caches Populares:**
+
+- Redis
+- Memcached
+- Spring Cache
+- Caffeine
+- AWS ElastiCache
+- Microsoft Azure Cache for Redis
+
+### Expiration Policy
+
+No es recomendable mantener los datos cacheados demasiado tiempo. Se debe establecer un TTL (Tiempo de vida - Time to Live) de los datos
+
+- Una vez superado, se elimina el dato de la cache
+- Si es muy alto, los datos estaran desactualizados
+- Si es bajo, los datos tendran que ser actualizados continuamente
+
+### Eviction Policy
+
+Es la politica de reemplazo de datos. Si llega un nuevo dato y se encuentra llena, debemos eliminar algun elemento.
+
+La cache no es infinita, y su costo puede ser elevado. 
+
+- **LRU (Least recently used)**: Se elimina el dato que se consulto por ultima vez hace mas tiempo. **La mas popular de todas**
+- **LFU (Least Frequently Used)**: Se elimina el dato menos consultado de todos
+- **FIFO (First In First Out)**: Se elimina el dato que primero se haya insertado
