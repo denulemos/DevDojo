@@ -26,6 +26,48 @@ Mediante estas configuraciones se **debería** buscar que TypeScript sea lo más
 
 ---
 
+### `infer`
+
+Extrae tipos de otros tipos dentro de condicionales. Solo se puede usar dentro de la clausula `extends` de un tipo condicional, y permite capturar dinamicamente partes especificas de un tipo complejo.
+
+Por ejemplo, tengo una funcion y quiero extraer automaticamente su tipo de retorno. Sin `infer`, tendriamos que hacerlo de forma manual, en cambio con `infer` TS lo hace por vos.
+
+```ts
+// Sin infer (manual)
+type GetReturnType<T> = T extends (...args: any[]) => any ? T[???] : never;
+// ¿Cómo acceso al tipo de retorno? Complicado...
+
+// Con infer (automático)
+type GetReturnType<T> = T extends (...args: any[]) => infer R ? R : never;
+
+type MyFuncType = (x: number) => string;
+type Result = GetReturnType<MyFuncType>; // string ✓
+```
+
+`infer R` le dice a Typescript: Si `T` coincide con una funcion, infiere el tipo de retorno y guardalo en R. 
+
+Por ejemplo, si queremos extraer el tipo de un array
+
+```ts
+type GetArrayElement<T> = T extends Array<infer U> ? U : never;
+
+type Numbers = GetArrayElement<number[]>; // number
+type Strings = GetArrayElement<string[]>; // string
+```
+
+O de una Promise
+
+```ts
+type UnpackPromise<P> = P extends Promise<infer T> ? T : never;
+
+type PromiseString = UnpackPromise<Promise<string>>; // string
+type PromiseNumber = UnpackPromise<Promise<number>>; // number
+```
+
+`infer` es especialmente útil cuando trabajas con tipos genéricos complejos o cuando construyes bibliotecas TypeScript que otros desarrolladores usarán
+
+---
+
 ### Watch Mode
 
 TypeScript, al ejecutarse, es traducido a JavaScript. Para que TypeScript esté pendiente de los cambios en los archivos y los compile automáticamente, se puede usar el siguiente comando.
