@@ -8,6 +8,49 @@ const config: Config = {
   title: 'DevDojo',
   tagline: 'Hecho por y para devs (La mayoria, humanos)',
   favicon: 'img/favicon.ico',
+  scripts: [
+    {
+      src: '/js/register-sw.js',
+      async: true,
+    },
+  ],
+  headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'manifest',
+        href: '/manifest.webmanifest',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'theme-color',
+        content: '#D9828F',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'apple-mobile-web-app-capable',
+        content: 'yes',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'apple-mobile-web-app-status-bar-style',
+        content: 'default',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'apple-touch-icon',
+        href: '/icons/icon-192.png',
+      },
+    },
+  ],
 
   // Set the production url of your site here
   url: 'https://devdojodocs.vercel.app',

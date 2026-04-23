@@ -1,0 +1,23 @@
+{
+  "name": "DevDojo",
+  "short_name": "DevDojo",
+  "description": "DevDojo ahora portatil",
+  "start_url": "/docs/landing/devhood",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#fff7f8",
+  "theme_color": "#D9828F",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
