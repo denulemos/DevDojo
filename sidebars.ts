@@ -56,15 +56,15 @@ const sidebars: SidebarsConfig = {
             'desarrollo-web/angular/ejercicios-tecnicos',
           ],
         },
-        'desarrollo-web/javascript/javascript',
-        'desarrollo-web/javascript/typescript',
+        
         'desarrollo-web/react',
         'desarrollo-web/scss',
         'desarrollo-web/html',
         'ssr',
       ],
     },
-
+'desarrollo-web/javascript/javascript',
+        'desarrollo-web/javascript/typescript',
     {
       type: 'category',
       label: '🤝 Soft Skills',

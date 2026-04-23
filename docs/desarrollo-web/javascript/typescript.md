@@ -104,27 +104,6 @@ let arrayVariable: (boolean | string | number)[] = ['Denu', 22, false]
 
 ---
 
-### Objetos
-
-```tsx
-interface Personaje {
- nombre: string;
- edad: number;
- habilidades: string[];
- nacionalidad?: string; // opcional
-}
-
-const personaje: Personaje = {
- nombre: 'Denu',
- edad: 24,
- habilidades: ['volar', 'comer']
-}
-
-personaje.nacionalidad = 'Costa Rica';
-```
-
----
-
 ### Tuples - Tuplas
 
 Una **tupla** en TypeScript es un tipo especial de arreglo donde se conoce el tipo de dato y la cantidad de elementos que contiene. Permite definir una estructura de datos con un número fijo de elementos, cada uno con su propio tipo.
@@ -148,10 +127,151 @@ let tuplaRest: [string, ...number[]] = ['Denu', 1, 2, 3];
 
 ---
 
+## Interfaces
+
+Las interfaces en TypeScript se **no transpilan a código JavaScript**, ya que son un mecanismo exclusivo del tiempo de compilación para mantener el tipado estático y ayudar en la detección de errores durante el desarrollo. 
+
+En otras palabras, las interfaces solo existen en TypeScript mientras se escribe y compila el código, pero al momento de la transpilación final a JavaScript, **se eliminan completamente** porque JavaScript no reconoce ese concepto.
+
+Las interfaces se usan solo para la validación en tiempo de compilación.
+
+Nos permite categorizar objetos, es decir, que un objeto tenga un comportamiento ya esperado. Es un contrato.
+
+```typescript
+interface Product {
+ name: string;
+ price: number;
+}
+
+const beer: Product = {
+ name: 'Imperial',
+ price: 1000
+}
+
+class Beer extends Drink implements Product {
+ private alcohol: number;
+
+ constructor(name: string, price: number, alcohol: number) {
+  super(name, price);
+  this.alcohol = alcohol;
+ }
+}
+```
+
+- **Extensibilidad:** Las interfaces pueden extender otras interfaces, lo que permite la creación de jerarquías de interfaces y la reutilización de definiciones de tipo 
+
+```typescript
+interface Animal {
+ name: string;
+}
+
+interface Dog extends Animal {
+ breed: string;
+}
+```
+
+- **Declaración de Objetos:** Las interfaces son ideales para definir la forma de un objeto y sus propiedades, métodos y tipos de datos esperados.
+
+```typescript
+interface Person {
+ name: string;
+ age: number;
+}
+
+const person: Person = { name: 'Alice', age: 30 };
+```
+
+- **Compatibilidad:** Las interfaces son más adecuadas para definir contratos y acuerdos entre diferentes partes del código, ya que representan un contrato que una clase o un objeto debe cumplir.
+- **Merging:** Las interfaces se pueden fusionar si tienen el mismo nombre, lo que permite agregar propiedades y métodos a una interfaz existente en diferentes archivos.
+
+```typescript
+interface Person {
+ name: string;
+}
+
+interface Person {
+ age: number;
+}
+
+const person: Person = { name: 'Alice', age: 30 };
+```
+
 ---
 
+## **Types**
 
-### `Never`
+- **Unión y Intersección:** Los tipos permiten la creación de tipos de datos más complejos mediante la unión y la intersección de tipos.
+
+```typescript
+type Status = 'active' | 'inactive';
+type User = { name: string; age: number };
+
+type Admin = User & { role: 'admin' };
+```
+
+- **Tipos Primitivos:** Los tipos pueden definir tipos primitivos, literales y tipos de datos más simples que las interfaces.
+
+```typescript
+type ID = number;
+type Status = 'active' | 'inactive';
+```
+
+- **Alias:** Los tipos permiten la creación de alias de tipos, lo que facilita la reutilización de definiciones de tipo y la creación de tipos personalizados.
+- **Compatibilidad:** Los tipos son más adecuados para definir tipos de datos más simples y para realizar transformaciones y operaciones en tipos de datos existentes.
+
+---
+
+### `any`
+
+Es un tipo de dato que puede ser cualquier cosa, es decir, que no tiene un tipo de dato específico. Se debe evitar su uso en la medida de lo posible, ya que puede llevar a errores en tiempo de ejecución y dificultar el mantenimiento del código.
+
+**Desactiva el chequeo de TS**
+
+```tsx
+let variable: any = 'Denu';
+variable = 22;
+variable = true;
+```
+
+En Javascript se traspilaria a
+
+```jsx
+let variable = 'Denu';
+variable = 22;
+variable = true;
+```
+
+--- 
+
+### `unknown`
+
+Es un type "seguro" para valores que existen pero aun no sabemos su type real. **No desactiva el chequeo de TS como any, usa Type Guard**
+
+```ts
+let a: any = 123;
+a.toUpperCase(); // TypeScript lo permite, pero puede romper en runtime
+
+let b: unknown = 123;
+b.toUpperCase(); // TypeScript no lo permite
+
+```
+
+- Usa unknown cuando no sabes el tipo todavía.
+- Usa guards como `typeof`, `instanceof`, `Array.isArray` o validaciones propias para convertirlo en algo utilizable.
+
+```ts
+// unknown: tenés que validar
+let u: unknown = "hola";
+// u.toUpperCase(); // error
+
+if (typeof u === "string") {
+  u.toUpperCase(); // OK
+}
+```
+
+---
+
+### `never`
 
 Es un tipo de dato que representa un valor que nunca ocurre. Se utiliza principalmente para funciones que lanzan excepciones o que nunca terminan de ejecutarse.
 
@@ -169,7 +289,7 @@ function loopInfinito(): never {
 }
 ```
 
-Suele aparecer bastante cuando declaro un Array pero nunca declaro su tipo, y luego intento insertar elementos dentro de la misma
+Aparece seguido en errores de compilacion cuando se declara un array pero, o no se inicializa o no se declara de que tipo es, y se intenta hacer alguna operacion con la misma.
 
 ```tsx
 let arreglo = [];
@@ -178,33 +298,11 @@ arreglo.push(1); // Error - Array no acepta number dentro de su tipo never[]
 
 ---
 
-### `Any`
+### `null` vs `undefined` vs `never`
 
-Es un tipo de dato que puede ser cualquier cosa, es decir, que no tiene un tipo de dato específico. Se debe evitar su uso en la medida de lo posible, ya que puede llevar a errores en tiempo de ejecución y dificultar el mantenimiento del código.
-
-```tsx
-let variable: any = 'Denu';
-variable = 22;
-variable = true;
-```
-
-En Javascript se traspilaria a
-
-```jsx
-let variable = 'Denu';
-variable = 22;
-variable = true;
-```
-
----
-
-### `Null` vs `undefined` vs `never`
-
-`null` y `undefined` son valores que existen tanto en JS como en TS, pero `never` es propio de TS.
-
-`null` es ningun valor en particular, califica como inicializacion en si mismo. 
-`undefined` es el valor por defecto de una variable que no ha sido inicializada.
-`never` es un tipo que representa un valor que nunca sucedera. Aparece seguido en errores de compilacion cuando se declara un array pero, o no se inicializa o no se declara de que tipo es, y se intenta hacer alguna operacion con la misma.
+| `null` | `undefined` | `never` |
+| --- | --- | --- |
+| Ningun valor en particular, califica como inicializacion en si mismo | Valor por defecto de una variable que no ha sido inicializada | Valor que nunca sucedera |
 
 ```typescript
 let a: null = null;
@@ -217,36 +315,37 @@ let c: never = (() => {
 
 ---
 
-### `any` vs `unknown` vs `never`
 
-- `any` : desactiva el chequeo. Podés asignar/callar/operar sin seguridad.
+### Typeguards (`typeof` e `instanceof`)
 
-```ts
-// any: podés hacer cualquier cosa
-let a: any = 5;
-a = "hola";
-a.noExiste(); // no error
-```
+Un type guard (o guardián de tipo) es una forma de decirle a TypeScript:
 
-- `unknown` : acepta cualquier valor, pero no te deja usarlo sin validar (type guard).
+“Tranquilo, yo sé qué tipo de dato tengo acá”.
 
-```ts
-// unknown: tenés que validar
-let u: unknown = "hola";
-// u.toUpperCase(); // error
+Sirve para que TypeScript entienda qué tipo exacto tiene una variable en un momento dado, especialmente cuando puede ser más de uno (por ejemplo, string | number)
 
-if (typeof u === "string") {
-  u.toUpperCase(); // OK
+```typescript
+// Con typeof
+
+function imprimirDoble(valor: string | number) {
+  if (typeof valor === "number") {
+    console.log(valor * 2);
+  } else {
+    console.log(valor.repeat(2));
+  }
 }
 
-```
+// Con instanceof
 
-- `never` : representa “nunca ocurre”. Se usa en funciones que no retornan o en ramas imposibles.
+class Perro { ladrar() {} }
+class Gato { maullar() {} }
 
-```ts
-// never: nunca ocurre
-function crash(): never {
-  throw new Error("boom");
+function hacerSonido(animal: Perro | Gato) {
+  if (animal instanceof Perro) {
+    animal.ladrar(); // 🐶
+  } else {
+    animal.maullar(); // 🐱
+  }
 }
 
 ```
@@ -273,55 +372,7 @@ Es ideal para reemplazar el uso de any. Por ejemplo, si se usa any, se pierde la
 
 ---
 
-
-### Cómo se transpilan las interfaces de TypeScript?
-
-Las interfaces en TypeScript se **no transpilan a código JavaScript**, ya que son un mecanismo exclusivo del tiempo de compilación para mantener el tipado estático y ayudar en la detección de errores durante el desarrollo. En otras palabras, las interfaces solo existen en TypeScript mientras se escribe y compila el código, pero al momento de la transpilación final a JavaScript, **se eliminan completamente** porque JavaScript no reconoce ese concepto.
-
-- Las **interfaces definen "contratos" o "tipos"** para objetos, clases o funciones en TypeScript, especificando qué propiedades y métodos deben existir y qué tipos tienen.
-- Cuando se transpila TypeScript a JavaScript, **todo lo relacionado con las interfaces se elimina**, porque JavaScript no tiene soporte nativo para interfaces o tipos estáticos.
-- Solo el código "real" y ejecutable (funciones, clases, instrucciones) se convierte en JavaScript; las interfaces se usan solo para la validación en tiempo de compilación.
-- Por ejemplo, si defines una interfaz para tipar un objeto, al generar el código JavaScript, no aparecerá ninguna referencia a esa interfaz ni ninguno de sus detalles.
-
-> **Las interfaces TypeScript no se transpilan a JavaScript; son eliminadas durante la compilación, ya que solo sirven para verificar tipos en tiempo de desarrollo, sin generar código runtime.**
-
-Esto permite que el código resultante sea código JavaScript limpio y compatible con cualquier entorno, sin cargas extras por el sistema de tipos de TypeScript.
-
----
-
-### Cómo hago que las props de una interface sean opcionales?
-
-Para hacer todas las propiedades de una interfaz opcionales en TypeScript, puedes utilizar la característica de TypeScript llamada "intersección" junto con el tipo parcial ("Partial").
-
-```typescript
-interface MyInterface {
-  prop1: string;
-  prop2: number;
-}
-
-// Todas las propiedades de MyInterface ahora son opcionales
-type PartialMyInterface = Partial<MyInterface>;
-
-// Ejemplo de uso
-const obj: PartialMyInterface = {}; // Todas las propiedades son opcionales
-```
-
-En este ejemplo, `Partial<MyInterface>` crea un nuevo tipo que tiene todas las propiedades de `MyInterface`, pero las declara como opcionales. Esto permite que cada propiedad pueda ser `undefined` o simplemente omitida al crear un objeto que cumpla con este tipo.
-
-Otra opcion seria agregando un `?` al lado de la propiedad, de esta forma no sera obligatoria su existencia, aunque puede que se necesiten checks extras en el lado del codigo para verificar su no-nulidad
-
-```typescript
-interface MyInterface {
-  prop1?: string;
-  prop2?: number;
-}
-```
----
-
-
-### Union e Intersection
-
-**Union Types:**
+### Union Types
 
 Los tipos de unión (`Union Types`) en TypeScript permiten definir un tipo que puede ser uno de varios tipos diferentes. Se utilizan para representar valores que pueden ser de diferentes tipos en un contexto determinado. Por ejemplo, un tipo de unión se define utilizando el operador de unión `|` entre los tipos que se permiten.
 
@@ -330,7 +381,7 @@ type Status = 'active' | 'inactive';
 type ID = number | string;
 ```
 
-**Intersection Types:**
+### Intersection Types
 
 Los tipos de intersección (`Intersection Types`) en TypeScript permiten combinar varios tipos en uno solo. Se utilizan para crear un nuevo tipo que tiene todas las propiedades y métodos de los tipos combinados. Por ejemplo, un tipo de intersección se define utilizando el operador de intersección `&` entre los tipos que se desean combinar.
 
@@ -346,11 +397,11 @@ type Admin = User & { role: 'admin' };
 ---
 
 
-### Partial, Pick, y Omit
+## **Utility Types**
 
 Los Utility Types en TypeScript son tipos predefinidos que permiten realizar transformaciones y operaciones comunes en tipos de datos existentes. Estos tipos proporcionan funcionalidades útiles para trabajar con tipos de datos de una manera más flexible y reutilizable. Algunos de los Utility Types más comunes en TypeScript son `Partial`, `Pick`, y `Omit`.
 
-**Partial:**
+### `Partial`
 
 El tipo `Partial` en TypeScript se utiliza para hacer todas las propiedades de un tipo dado opcionales. Esto significa que cada propiedad del tipo se convierte en opcional, lo que permite crear objetos que no requieren todas las propiedades del tipo original.
 
@@ -365,7 +416,7 @@ type PartialPerson = Partial<Person>;
 const partialPerson: PartialPerson = {}; // Todas las propiedades son opcionales
 ```
 
-**Pick:**
+### `Pick`
 
 El tipo `Pick` en TypeScript se utiliza para seleccionar un subconjunto de propiedades de un tipo dado y crear un nuevo tipo que contenga solo esas propiedades seleccionadas. Esto permite crear tipos personalizados que contienen solo las propiedades necesarias de un tipo existente.
 
@@ -381,7 +432,7 @@ type PersonName = Pick<Person, 'name'>;
 const personName: PersonName = { name: 'Alice' }; // Solo contiene la propiedad 'name'
 ```
 
-**Omit:**
+### `Omit`
 
 El tipo `Omit` en TypeScript se utiliza para crear un nuevo tipo que excluye una o más propiedades de un tipo dado. Esto permite crear tipos personalizados que contienen todas las propiedades de un tipo existente, excepto las propiedades especificadas.
 
@@ -399,7 +450,7 @@ const personWithoutAddress: PersonWithoutAddress = { name: 'Alice', age: 30 }; /
 
 ---
 
-### Decoradores
+## Decoradores
 
 Para usar decoradores, debes habilitar la opción experimentalDecorators en el archivo tsconfig.json:
 
@@ -536,7 +587,7 @@ class UserService {
 
 ---
 
-### Conditional Types
+## Conditional Types
 
 Los Conditional Types en TypeScript son una característica avanzada que permite definir tipos condicionales basados en una condición booleana. Esto permite crear tipos que se comportan de manera diferente según una condición dada. Los Conditional Types se definen utilizando la palabra clave `extends` y la sintaxis de los tipos condicionales.
 
@@ -552,7 +603,7 @@ type Test2 = IsString<number>; // 'no'
 ---
 
 
-### Parametros REST
+## Parametros REST
 
 
 Una funcion puede recibir tantos argumentos como uno quiera, y los parametros REST son una manera de hacer esto.
@@ -570,7 +621,7 @@ sumar(1, 2, 3, 4, 5, 6, 7, 8, 9, 10); // 55
 ---
 
 
-### Clases
+## Clases
 
 
 ```tsx
@@ -595,7 +646,7 @@ class Person {
 
 ---
 
-### Herencia
+## Herencia
 
 La herencia en TypeScript se logra mediante la palabra clave `extends`. Una clase puede heredar propiedades y métodos de otra clase utilizando la herencia. Aquí tienes un ejemplo de cómo se ve la herencia en TypeScript:
 
@@ -612,159 +663,3 @@ class Beer extends Drink {
 const beer = new Beer('Imperial', 1000, 5);
 ```
 
----
-
-### Interfaces
-
-Nos permite categorizar objetos, es decir, que un objeto tenga un comportamiento ya esperado. Es un contrato.
-
-```typescript
-interface Product {
- name: string;
- price: number;
-}
-
-const beer: Product = {
- name: 'Imperial',
- price: 1000
-}
-
-class Beer extends Drink implements Product {
- private alcohol: number;
-
- constructor(name: string, price: number, alcohol: number) {
-  super(name, price);
-  this.alcohol = alcohol;
- }
-}
-```
-
----
-
-### Types vs Interfaces
-
-Ambos se utilizan para definir tipos en TypeScript, pero tienen algunas diferencias clave en su comportamiento y uso:
-
-**Interfaces**
-
-- **Extensibilidad:** Las interfaces pueden extender otras interfaces, lo que permite la creación de jerarquías de interfaces y la reutilización de definiciones de tipo.
-
-```typescript
-interface Animal {
- name: string;
-}
-
-interface Dog extends Animal {
- breed: string;
-}
-```
-
-- **Declaración de Objetos:** Las interfaces son ideales para definir la forma de un objeto y sus propiedades, métodos y tipos de datos esperados.
-
-```typescript
-interface Person {
- name: string;
- age: number;
-}
-
-const person: Person = { name: 'Alice', age: 30 };
-```
-
-- **Compatibilidad:** Las interfaces son más adecuadas para definir contratos y acuerdos entre diferentes partes del código, ya que representan un contrato que una clase o un objeto debe cumplir.
-- **Merging:** Las interfaces se pueden fusionar si tienen el mismo nombre, lo que permite agregar propiedades y métodos a una interfaz existente en diferentes archivos.
-
-```typescript
-interface Person {
- name: string;
-}
-
-interface Person {
- age: number;
-}
-
-const person: Person = { name: 'Alice', age: 30 };
-```
-
-**Types:**
-
-- **Unión y Intersección:** Los tipos permiten la creación de tipos de datos más complejos mediante la unión y la intersección de tipos.
-
-```typescript
-type Status = 'active' | 'inactive';
-type User = { name: string; age: number };
-
-type Admin = User & { role: 'admin' };
-```
-
-- **Tipos Primitivos:** Los tipos pueden definir tipos primitivos, literales y tipos de datos más simples que las interfaces.
-
-```typescript
-type ID = number;
-type Status = 'active' | 'inactive';
-```
-
-- **Alias:** Los tipos permiten la creación de alias de tipos, lo que facilita la reutilización de definiciones de tipo y la creación de tipos personalizados.
-- **Compatibilidad:** Los tipos son más adecuados para definir tipos de datos más simples y para realizar transformaciones y operaciones en tipos de datos existentes.
-
----
-
-
-### Mapped Types
-
-Mapped Types en TypeScript son una forma de transformar tipos existentes en nuevos tipos utilizando un mecanismo de mapeo. Este es un concepto muy poderoso que te permite crear tipos dinámicamente basados en otros. Los Mapped Types se definen utilizando la sintaxis de los tipos indexados y la palabra clave `in`.
-
-Un ejemplo común de Mapped Types es la creación de un tipo que convierte todas las propiedades de un tipo dado en propiedades opcionales. Esto se puede lograr utilizando un Mapped Type con la palabra clave `Partial`.
-
-```typescript
-interface Person {
- name: string;
- age: number;
-}
-
-// Mapped Type que convierte todas las propiedades de Person en opcionales
-type PartialPerson = {
- [K in keyof Person]?: Person[K];
-};
-
-const partialPerson: PartialPerson = {}; // Todas las propiedades son opcionales
-```
-
-En proyectos complejos, los Mapped Types pueden ser muy útiles para crear tipos dinámicamente basados en otros tipos existentes. Por ejemplo, puedes utilizar Mapped Types para crear tipos que transforman propiedades
-
----
-
-### Typeguards (`typeof` e `instanceof`)
-
-Un type guard (o guardián de tipo) es una forma de decirle a TypeScript:
-
-“Tranquilo, yo sé qué tipo de dato tengo acá”.
-
-Sirve para que TypeScript entienda qué tipo exacto tiene una variable en un momento dado, especialmente cuando puede ser más de uno (por ejemplo, string | number)
-
-```typescript
-// Con typeof
-
-function imprimirDoble(valor: string | number) {
-  if (typeof valor === "number") {
-    console.log(valor * 2);
-  } else {
-    console.log(valor.repeat(2));
-  }
-}
-
-// Con instanceof
-
-class Perro { ladrar() {} }
-class Gato { maullar() {} }
-
-function hacerSonido(animal: Perro | Gato) {
-  if (animal instanceof Perro) {
-    animal.ladrar(); // 🐶
-  } else {
-    animal.maullar(); // 🐱
-  }
-}
-
-```
-
----
