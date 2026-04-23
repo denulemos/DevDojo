@@ -4,56 +4,6 @@ sidebar_position: 1
 # 💎 TypeScript
 
 
-### Qué es TypeScript?
-
-Es un superset de JavaScript, es el mismo JavaScript pero le extiende características, o posee cosas propias.
-
-Es mantenido por Microsoft
-
-* Ofrece tipado estricto y flexible
-* Mejora la legibilidad del código
-* Nos permite usar características modernas de JavaScript sin miedo a la compatibilidad
-* Mejora el intellisense
-* Nos permite la **inyección de dependencias**
-
-Su tipado estricto ayuda a saber cómo funcionan las cosas; por ejemplo, en este código JavaScript:
-
-```jsx
-function calcularISV (productos) {
- let total = 0;
-
- productos.forEach( ({precio}) => {
-  total += precio;
- }
-
- return [total, total * 0.15]
-}
-```
-
-* No sabemos de que tipo de dato son los productos
-* Como luce un producto
-* Que propiedades debe tener el producto para que el código funcione
-
-Entonces, en TypeScript quedaría así la firma de nuestro método.
-
-```tsx
-function calcularISV(productos: Producto[]): [number, number] {}
-```
-
-* Productos es un arreglo del tipo Producto
-* ¿Cómo luce Producto? Se puede definir con una interfaz
-
-```tsx
-interface Producto {
- desc: string;
- precio: number;
-}
-```
-
-* Retorna un arreglo de dos números
-
----
-
 ### TSConfig.json
 
 Es el archivo de configuración de TypeScript, en el se definen las reglas de compilación de TypeScript.
@@ -302,7 +252,7 @@ arreglo.push(1); // Error - Array no acepta number dentro de su tipo never[]
 
 | `null` | `undefined` | `never` |
 | --- | --- | --- |
-| Ningun valor en particular, califica como inicializacion en si mismo | Valor por defecto de una variable que no ha sido inicializada | Valor que nunca sucedera |
+| Ningun valor en particular, califica como inicializacion en si mismo | Valor por defecto de una variable que no ha sido inicializada | Valor que nunca sucederá |
 
 ```typescript
 let a: null = null;
