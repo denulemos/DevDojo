@@ -149,6 +149,18 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
+  webpack: {
+  jsLoader: (isServer) => ({
+    test: /\.(js|mjs|jsx|ts|tsx)$/,
+    exclude: /node_modules/,
+    use: {
+      loader: 'babel-loader',
+      options: {
+        presets: ['@babel/preset-react', '@babel/preset-typescript'],
+      },
+    },
+  }),
+},
 };
 
 export default config;
