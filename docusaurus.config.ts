@@ -2,8 +2,6 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
-
 const config: Config = {
   title: 'DevDojo',
   tagline: 'Hecho por y para devs (La mayoria, humanos)',
@@ -52,51 +50,50 @@ const config: Config = {
     },
   ],
 
-  // Set the production url of your site here
   url: 'https://devdojodocs.vercel.app',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
-  // GitH  ub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'denulemos', // Usually your GitHub org/user name.
-  projectName: 'DevDojo', // Usually your repo name.
+  organizationName: 'denulemos',
+  projectName: 'DevDojo',
 
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
-
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
-  i18n: {
-  defaultLocale: 'es',
-  locales: ['es'], // asegurate que SOLO esté 'es'
-  localeConfigs: {
-    es: {
-      label: 'Español',
+  
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
     },
   },
-},
 
- themes: [
+  i18n: {
+    defaultLocale: 'es',
+    locales: ['es'],
+    localeConfigs: {
+      es: {
+        label: 'Español',
+      },
+    },
+  },
+
+  themes: [
     [
       require.resolve('@easyops-cn/docusaurus-search-local'),
       {
         hashed: true,
         language: ['es', 'en'],
-        docsRouteBasePath: '/docs', 
+        docsRouteBasePath: '/docs',
       },
     ],
   ],
-   stylesheets: [
+
+  stylesheets: [
     'https://fonts.googleapis.com/css2?family=Pacifico&display=swap',
   ],
 
   presets: [
     [
       'classic',
-      {        docs: {
+      {
+        docs: {
           sidebarPath: './sidebars.ts',
           routeBasePath: 'docs',
         },
@@ -106,11 +103,11 @@ const config: Config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
-        },        theme: {
+        },
+        theme: {
           customCss: './src/css/custom.css',
         },
       } satisfies Preset.Options,
@@ -118,7 +115,6 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
     image: 'img/favicon.ico',
     navbar: {
       title: 'DevDojo',
@@ -149,18 +145,6 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
-  webpack: {
-  jsLoader: (isServer) => ({
-    test: /\.(js|mjs|jsx|ts|tsx)$/,
-    exclude: /node_modules/,
-    use: {
-      loader: 'babel-loader',
-      options: {
-        presets: ['@babel/preset-react', '@babel/preset-typescript'],
-      },
-    },
-  }),
-},
 };
 
 export default config;
