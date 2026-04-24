@@ -29,12 +29,12 @@ El DNS posee una tabla donde apunta el dominio a la IP correspondiente.
 
 - **Servidores DNS gratuitos**: Google (8.8.8.8, 8.8.4.4) y Cloudflare (1.1.1.1, 1.0.0.1), sirven para traducir nombres de dominio en direcciones IP sin tener que pagar por el servicio. Compras un dominio barato en un registrador, pero usas un DNS gratuito como Cloudflare DNS para manejar los registros de forma más cómoda y rápida.
 - **Servidores DNS de pago**: Ofrecen características avanzadas como Load Balancer basado en DNS, etc. Un DNS de pago te sirve cuando el DNS empieza a ser una parte crítica de tu producto, no solo “algo para apuntar el dominio”.
-    - **Menor latencia global**: redes Anycast más optimizadas para responder rápido desde distintas regiones
+    - **Menor latencia global**: redes Anycast más optimizadas para responder rápido desde distintas regiones.
     - **Protección DDoS más fuerte**: importante si tu dominio recibe ataques o mucho tráfico.
     - **Failover automático**: si un servidor cae, el DNS puede dejar de apuntar a esa IP y mandar tráfico a otra.
     - **Health checks**: revisa si tu backend, servidor o endpoint está vivo antes de enviarle tráfico.
     - **GeoDNS / georouting**: enviar usuarios de Europa a servidores europeos y usuarios de EE.UU. a servidores de EE.UU.
-    - Entre otras características
+    - Entre otras características.
 
 ## **Rendimiento**
 
@@ -90,13 +90,13 @@ Esto, con un gráfico del tipo histograma, sería fácilmente identificable, sie
 
 No sirve si nuestro sistema es escalable y performante si falla constantemente. La **tolerancia a fallos** es la capacidad de un sistema para seguir funcionando correctamente incluso cuando ocurren fallos o errores.
 
-- **Uptime**: Tiempo que nuestro sistema está operativo
+- **Uptime**: Tiempo que nuestro sistema está operativo.
 
-- **Downtime**: Tiempo en que nuestro sistema no está operativo
+- **Downtime**: Tiempo en que nuestro sistema no está operativo.
 
 **Disponibilidad (%) = Uptime / Tiempo total**
 
-Si tenemos múltiples servicios, se tienen varios tipos de cálculos disponibles, ya que las caídas no son lineales (se puede caer solo una región, solo un servidor, etc.)
+Si tenemos múltiples servicios, se tienen varios tipos de cálculos disponibles, ya que las caídas no son lineales (se puede caer solo una región, solo un servidor, etc.).
 
 **Uptime = (cantidad de servicios operativos / Servicios totales) * tiempo** => no se tiene en cuenta el porcentaje de uso de cada uno.
 
@@ -157,9 +157,9 @@ Debemos tener en cuenta los siguientes puntos:
 
 **Gobernanza clara**
 
-- Core team (dueños del sistema): define estándares, revisa PRs, mantiene roadmap
+- Core team (dueños del sistema): define estándares, revisa PRs, mantiene roadmap.
 - Contribución abierta: cualquier equipo puede aportar, pero con guidelines y templates.
-- RFC liviano para cambios grandes (nuevos patterns, breaking changes, tokens nuevos)
+- RFC liviano para cambios grandes (nuevos patterns, breaking changes, tokens nuevos).
 
 **Tokens primero (la base de la consistencia)**
 
@@ -182,9 +182,9 @@ Esto permite que equipos usen lo mínimo necesario sin romper todo.
 **Calidad y compatibilidad en CI**
 
 Tests:
-- unitarios + visual regression (Chromatic / Playwright screenshots)
-- a11y checks (axe)
-- type tests (TS)
+- unitarios + visual regression (Chromatic / Playwright screenshots).
+- a11y checks (axe).
+- type tests (TS).
 
 **Consumer-driven**: una app grande sirve como canary para detectar breaks.
 
@@ -525,3 +525,15 @@ La cache no es infinita, y su costo puede ser elevado.
 - **LRU (Least recently used)**: Se elimina el dato que se consulto por ultima vez hace mas tiempo. **La mas popular de todas**
 - **LFU (Least Frequently Used)**: Se elimina el dato menos consultado de todos
 - **FIFO (First In First Out)**: Se elimina el dato que primero se haya insertado
+
+## **CDN (Content Delivery Network)**
+
+No importa si nuestra aplicacion en materia de codigo es performante, si los **Recursos estaticos** tardan en cargar, el usuario tendra una mala experiencia. 
+
+Los recursos estaticos pueden ser:
+
+- Imagenes
+- Videos
+- CSS
+- JS
+
