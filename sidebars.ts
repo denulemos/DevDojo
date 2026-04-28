@@ -89,6 +89,15 @@ const sidebars: SidebarsConfig = {
     'accesibilidad',
     'seguridad',
   ],
+  tecnicosSidebar: [
+    {
+      type: 'category',
+      label: '📚 Teoría',
+      link: { type: 'doc', id: 'teoria' },
+      collapsed: true,
+      items: ['algoritmos', 'poo', 'patrones', 'internetredes'],
+    },
+  ],
 };
 
 export default sidebars;

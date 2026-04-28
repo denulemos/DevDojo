@@ -1,5 +1,5 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
@@ -57,7 +57,7 @@ const config: Config = {
   projectName: 'DevDojo',
 
   onBrokenLinks: 'throw',
-  
+
   markdown: {
     hooks: {
       onBrokenMarkdownLinks: 'warn',
@@ -128,6 +128,13 @@ const config: Config = {
           sidebarId: 'tutorialSidebar',
           position: 'left',
           label: 'Dojos',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'tecnicosSidebar',
+          position: 'left',
+          className: 'navbar-item-disabled',
+          label: 'Ejercicios técnicos (Soon)',
         },
         {
           href: 'https://github.com/denulemos/DevDojo',

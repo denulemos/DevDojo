@@ -43,3 +43,10 @@ body {
   margin: 0;
   height: 100%;
 }
+
+.navbar-item-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+  color: var(--ifm-color-emphasis-500) !important;
+}
