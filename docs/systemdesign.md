@@ -537,3 +537,15 @@ Los recursos estaticos pueden ser:
 - CSS
 - JS
 
+Los recursos no se descargan con el HTML, se enlazan con el mismo. Dentro de DevTools, en la parte de recursos, podemos ver la cantidad que son cargados, 100 archivos no es mucho. 
+
+Los recursos se descargan de manera paralela, pero hay un limite de descargas paralelas por navegador. 
+
+Los CDN son una infraestructura distribuida compuesta por servidores en muchas ubicaciones fisicas. 
+
+- Almacenan y entregan recursos de forma rapida y eficiente
+- Optimizan la experiencia del usuario reduciendo la latencia
+- Mejoran la **disponibilidad** del contenido, ya que el contenido es guardado en el servidor mas cercano al usuario. 
+- Optimizado para cachear recursos. Algoritmos de compresion (Brotli, Gzip) y minificacion de JS y CSS, esto **reduce el ancho de banda**
+
+**Es un cache de recursos estaticos**
