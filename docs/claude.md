@@ -419,7 +419,7 @@ message = client.messages.create(
 
 ### Temperatura
 
-Como se mencionó [acá](./landing/ia#temperatura), la temperatura es un valor decimal entre 0 y 1 que controla el nivel de aleatoriedad en las respuestas generadas por el modelo. Un valor bajo (cercano a 0) hace que el modelo sea más determinista y repetitivo, mientras que un valor alto (cercano a 1) aumenta la creatividad y diversidad de las respuestas.
+Como se mencionó [acá](./ia#temperatura), la temperatura es un valor decimal entre 0 y 1 que controla el nivel de aleatoriedad en las respuestas generadas por el modelo. Un valor bajo (cercano a 0) hace que el modelo sea más determinista y repetitivo, mientras que un valor alto (cercano a 1) aumenta la creatividad y diversidad de las respuestas.
 
 En Claude podemos setear la misma desde nuestro request:
 
