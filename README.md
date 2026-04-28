@@ -40,12 +40,12 @@ Se agregan preguntas todas las semanas. Se aceptan sugerencias mediante Pull Req
     - [Claude](./docs/claude)
     - [MCP](./docs/mcp) 
 - [Teoría](./docs/teoria)
-    - [Algoritmos](./docs/algoritmos)
-    - [POO](./docs/poo)
-    - [Patrones de Diseño](./docs/patrones)
-    - [Redes e Internet](./docs/internetredes)
-- [Accesibilidad](./docs/accesibilidad)
-- [Seguridad](./docs/seguridad)
+    - [Algoritmos](./docs/algoritmos.md)
+    - [POO](./docs/poo.md)
+    - [Patrones de Diseño](./docs/patrones.md)
+    - [Redes e Internet](./docs/internetredes.md)
+- [Accesibilidad](./docs/accesibilidad.md)
+- [Seguridad](./docs/seguridad.md)
     
 ¿Cómo veo la tabla con el índice de preguntas?
 
