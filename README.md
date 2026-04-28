@@ -10,9 +10,7 @@
 
 Se agregan preguntas todas las semanas. Se aceptan sugerencias mediante Pull Request.
 
-[Versión DevDojo Web - Mismo contenido, fácil acceso](https://devdojodocs.vercel.app)
-
-DevDojo es ahora una PWA! Puedes descargarlo en tu dispositivo y usarlo como cualquier otra app.
+**DevDojo es ahora una PWA! Puedes descargarlo en tu dispositivo y usarlo como cualquier otra app**
 
 ## Tabla de temas (sigue en desarrollo y reorganización)
 
