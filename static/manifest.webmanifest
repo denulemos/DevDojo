@@ -2,7 +2,7 @@
   "name": "DevDojo",
   "short_name": "DevDojo",
   "description": "DevDojo ahora portatil",
-  "start_url": "/docs/landing/devhood",
+  "start_url": "/docs/devhood",
   "scope": "/",
   "display": "standalone",
   "background_color": "#fff7f8",

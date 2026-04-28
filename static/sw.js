@@ -1,7 +1,7 @@
 const CACHE_NAME = 'devdojo-pwa-v1';
 const APP_SHELL = [
   '/',
-  '/docs/landing/devhood',
+  '/docs/devhood',
   '/manifest.webmanifest',
   '/img/favicon.ico',
   '/icons/icon-192.png',
@@ -47,7 +47,7 @@ self.addEventListener('fetch', (event) => {
         })
         .catch(async () => {
           const cachedPage = await caches.match(request);
-          return cachedPage || caches.match('/docs/landing/devhood');
+          return cachedPage || caches.match('/docs/devhood');
         })
     );
     return;
