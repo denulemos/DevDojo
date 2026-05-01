@@ -315,6 +315,125 @@ RAG se compone de 3 pasos:
 
 Todo esto requiere un preprocesamiento del documento a analizar. **No es una solución simple, pero es escalable y eficiente para trabajar con documentos grandes.**
 
+### Chunck Strategies
+
+Es uno de los pasos mas importantes para que el sistema funcione de manera correcta, ya de que como separamos los documentos depende la calidad de la busqueda y del sistema, y si este es pobre, podemos hacer que la IA devuelva informacion que no tenga nada que ver con lo preguntado en un principio.
+
+Para esto, hay diversas estrategias para realizar esta operacion.
+
+- **Structured-based chuncking**: Cuando controlamos el formato del documento y conocemos que es correcto.
+- **Sentence-based chunking**: Es un buen punto medio para la mayoria de los documentos.
+- **Size-based chunking**: Es el que funciona en cualquier tipo de texto, incluyendo codigo. Tambien cuando buscamos algo simple pero no perfecto.
+
+#### Size-based chunking
+
+Divide el texto en chunks de un tamaño fijo. La forma mas simple de hacerlo, pero puede cortar frases por la mitad, rompiendo el sentido de la informacion. 
+
+Por ejemplo, dividir un texto en chunks de 500 caracteres. Tampoco se toma en cuenta el contexto de los chuncks de alrededor, para esto, se agregan algunos caracteres del chunck anterior a modo de contexto para completar oraciones o palabras de ser necesario.
+
+```python
+def chunk_by_char(text, chunk_size=150, chunk_overlap=20):
+    chunks = []
+    start_idx = 0
+    
+    while start_idx < len(text):
+        end_idx = min(start_idx + chunk_size, len(text))
+        chunk_text = text[start_idx:end_idx]
+        chunks.append(chunk_text)
+        
+        start_idx = (
+            end_idx - chunk_overlap if end_idx < len(text) else len(text)
+        )
+    
+    return chunks
+
+```
+
+#### Structured-based chunking
+
+Divide el texto en chunks según su estructura, como párrafos, oraciones, etc. La forma mas inteligente de hacerlo, ya que se toma en cuenta el contexto de los chuncks de alrededor para completar oraciones o palabras de ser necesario.
+
+```python
+def chunk_by_sentence(text, chunk_size=3, chunk_overlap=1):
+    sentences = text.split('.')
+    chunks = []
+    start_idx = 0
+    
+    while start_idx < len(sentences):
+        end_idx = min(start_idx + chunk_size, len(sentences))
+        chunk_text = '.'.join(sentences[start_idx:end_idx])
+        chunks.append(chunk_text)
+        
+        start_idx = (
+            end_idx - chunk_overlap if end_idx < len(sentences) else len(sentences)
+        )
+    
+    return chunks
+```
+
+Esto es util cuando conocemos la estructura del texto, y ademas sabemos que es correcta. De otra forma, el sistema no va a entender bien la informacion que se le proporciona.
+
+#### Semantic-based chunking
+
+Divide el texto en chunks según su significado, es decir, separa el texto en chunks que tengan sentido semántico. La forma mas inteligente de hacerlo, ya que se toma en cuenta el contexto de los chuncks de alrededor para completar oraciones o palabras de ser necesario.
+
+```python
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+
+text_splitter = RecursiveCharacterTextSplitter(
+    separators=["\n\n", "\n", ".", " "],
+    chunk_size=500,
+    chunk_overlap=20,
+)
+
+chunks = text_splitter.split_text(text)
+```
+
+Este tipo de chunking puede fallar cuando se buscan terminos especificos, ya que se enfoca mas en contexto y no en terminos espeficicos, por ejemplo, buscando un numero de inciente tecnico podriamos recibir informacion relacionada a seguridad que puede no tener que ver con la problematica en particular. 
+
+Para solucionar esto, se recomienda **combinar Semantic-based con Lexical Search usando una tecnica llamada BM25 (Best Match 25)**
+
+- Semantic Search encuentra contenido conceptualmente relacionado
+- Lexical Search encuentra contenido que contiene los terminos buscados
+- BM25 encuentra contenido que contiene los terminos buscados y ademas es conceptualmente relacionado, **los combina**
+
+#### BM25 - Best Match 25
+
+Es un algoritmo de busqueda que encuentra contenido que contiene los terminos buscados y ademas es conceptualmente relacionado, **los combina**.
+
+1. Dividir la pregunta del usuario en terminos individuales, "a INC-2023-Q4-011" se convierte en ["a", "INC-2023-Q4-011"].
+2. Contar la frecuencia de cada termino en el documento. Que tanto se repite cada termino en el documento a consultar.
+3. Cada termino obtiene un puntaje, no es lo mismo buscar "INC-2023-Q4-011" que buscar "a" en el documento. El puntaje de "INC-2023-Q4-011" sera mucho mas alto que el de "a", ya que este segundo se repite mucho mas.
+4. Devolver los documentos que contengan más instancias de los términos con mayor ponderación
+
+Este algoritmo funciona muy bien ya que
+
+- Da mayor importancia a terminos raros y especificos
+- Ignora las palabras comunes que no dan valor a la busqueda
+- Se centra en la frecuencia de los terminos en lugar del significado semantico
+- Funciona bien para terminos tecnicos, identificadores y frases especificas
+
+
+### Text Embeddings
+
+Luego de que separamos el documento en pedazos, el siguiente paso es descubrir cuales chunks son relevantes para responder la pregunta del usuario. Para esto, transformamos cada chunk en un vector, y comparamos con el vector de la pregunta del usuario. El chunk con el vector mas cercano a la pregunta del usuario es el mas relevante.
+
+Por ejemplo, si temos el documento: "El perro es un mamifero, tiene pelo y ladra". Si la pregunta es "Que tipo de animal es el perro?", el vector de la pregunta sera: "mamifero, pelo, ladra", esto ultimo en numeros, por lo que la representacion del vector sera de varios numeros, tales como "[0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]"
+
+No conocemos que representa cada numero, solo sabemos que cada uno representa un score respecto al texto, por ejemplo, que tan "feliz" es el texto, que tanto que charla sobre cierto tema, etc.. Cada significado lo da el modelo y es dependiendo de como fue entrenado.
+
+
+### RAG Pipeline
+
+1. Se da un texto y una pregunta
+2. Se separa el texto en Chunks
+3. Generamos los embeddings 
+4. Guardamos estos embeddings en una base de datos Vectorial, especializada en guardar largas listas de numeros.
+5. Procesamos la pregunta del usuario pasandola por el mismo Pipeline de Embedding.
+6. La base de datos busca los chunks mas relevantes mediante el **algortimo de cosine**
+7. Devolvemos el final prompt
+
+
 ## **Errores comunes en los sistemas de IA**
 
 ### Alucinaciones
