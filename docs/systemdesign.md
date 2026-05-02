@@ -595,3 +595,19 @@ Si mantenemos todos nuestros servidores en una unica ubicacion geografica, podre
 
 - Latencia alta para algunos usuarios que se encuentren lejos, inaceptable para juegos online o sistemas en tiempo real. 
 - Robustez insuficiente, pueden suceder cortes de luz en la zona geograficas donde se encuentre nuestro data center. **Seria aceptable una caida total debido a un fallo en un data center?**
+
+Es un caso parecido al de los CDN, se debe redirigir la peticion del usuario al Data Center mas cercano al mismo. Una forma de manejar esto es mediante el uso de **Global Server Load Balancer (GSLB)**. Este servicio se encarga de redirigir las peticiones de los usuarios a los Data Centers mas cercanos a ellos, y mediante parametros configurables como la latencia del data center y el rendimiento. 
+
+Dentro de cada Data Center, hay un Load Balancer que se encarga de la distribucion de las peticiones entre los servidores de la Region. 
+
+Esto tambien cuesta mucho mas caro y requiere mucho mas mantenimiento. 
+
+### Sincronizacion de Datos
+
+Teniendo muchos Data Centers hace que nos surga el problema de mantener todos sincronizados, si no se tiene la misma infromacion en todos, puede ocasionar que cada uno devuelva informacion distinta. Una practica comun es replicar los mismos datos en todos los data centers. 
+
+- Amazon RDS
+- Cosmos DB
+- MongoDB Atlas
+
+Aca tambien entran en juego los **CI-CD** para tener una forma de distribuir las actualizaciones de manera eficiente a todos los data centers.

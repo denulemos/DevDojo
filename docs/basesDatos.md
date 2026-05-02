@@ -1,127 +1,21 @@
 # 🗄️ Bases de Datos
 
-## Programación declarativa
+## **Bases de datos relacionales - SQL**
+
+Se centran en estructurar los datos en tablas relacionadas entre si. 
+
+- MySQL
+- PostgreSQL
+- SQL Server
+- Oracle Database
+
+Se basan en el lenguaje estructurado de consultas **SQL**, el cual permite realizar operaciones complejas con facilidad. 
+
+### Programación declarativa
 
 La programación declarativa se concentra en qué cosas hay que hacer y no necesariamente en cómo hacerlas. Un ejemplo es SQL, donde se le dice a la base de datos qué datos queremos, pero no cómo obtenerlos.
 
----
-
-## Elementos de una base de datos
-
-- **Tablas**: Contienen la información
-- **Vistas**: Parecidas a la tabla, son para consultas, más rápidas
-- **Índices**: Uno o más columnas de una tabla para encontrar la data más rápido, es como el índice de un libro
-- **Triggers**: Disparadores que ejecutan código de SQL cuando se inserta, borra o se updatea un campo (CRUD (Create, Read, Update, Delete))
-- **Procedures**: Pedazos de código SQL que se ejecutan
-- **Constraints**: Previenen inconsistencia de datos en una columna
-- **Reglas:** Se especifican valores válidos para ser insertados en una tabla o columna.
-
----
-
-## Elementos de Data Control Language (DCL)
-
-- **GRANT**: Da permisos a un usuario
-- **REVOKE**: Quita permisos a un usuario
-- **DENY**: Niega permisos a un usuario
-- **COMMIT**: Guarda los cambios hechos en la base de datos
-- **ROLLBACK**: Revierte los cambios hechos en la base de datos
-- **SAVEPOINT**: Crea un punto de guardado en una transacción para poder hacer rollback a ese punto específico
-- **TRANSACTION**: Inicia una transacción
-- **SET TRANSACTION**: Configura las propiedades de la transacción actual
-- **LOCK**: Bloquea una tabla o fila para evitar que otros usuarios la modifiquen mientras se está trabajando en ella
-- **UNLOCK**: Desbloquea una tabla o fila que fue bloqueada previamente
-- **EXPLAIN**: Muestra el plan de ejecución de una consulta SQL para optimización
-- **ANALYZE**: Recopila estadísticas sobre la distribución de datos en una tabla para ayudar al optimizador de consultas a tomar decisiones informadas
-- **MERGE**: Combina datos de dos tablas en una sola tabla
-- **CALL**: Invoca un procedimiento almacenado en la base de datos
-- **DESCRIBE**: Muestra la estructura de una tabla, incluyendo sus columnas y tipos de datos
-- **SHOW**: Muestra información sobre la base de datos, como tablas, vistas, índices, etc.
-- **USE**: Cambia la base de datos actual en uso
-- **SET**: Configura opciones de sesión para la base de datos
-- **HELP**: Proporciona ayuda sobre comandos y funciones de la base de datos
-
----
-
-## Lenguaje de manipulación de datos (DML)
-
-Las sentencias de lenguaje de manipulación de datos (DML) son utilizadas para gestionar datos dentro de las bases de datos . Algunos ejemplos:
-
-- `SELECT` - para obtener datos de una base de datos.
-- `INSERT` - para insertar datos a una tabla.
-- `UPDATE` - para modificar datos existentes dentro de una tabla.
-- `DELETE` - elimina todos los registros de la tabla; no borra los espacios asignados a los registros.
-
----
-
-## Lenguaje de definición de datos (DDL)
-
-Las sentencias DDL se utilizan para crear y modificar la estructura de las tablas así como otros objetos de la base de datos.
-
-- `CREATE` - para crear objetos en la base de datos.
-- `ALTER` - modifica la estructura de la base de datos.
-- `DROP `- borra objetos de la base de datos.
-- `TRUNCATE` - elimina todos los registros de la tabla, incluyendo todos los espacios asignados a los registros. Además, reinicia los campos autonuméricos.
-
----
-
-## Índices
-
-Imagina que tienes una guía telefónica y quieres encontrar el número de "Denu Lemon":
-
-- Sin índice: Tendrías que revisar página por página hasta encontrar el nombre (esto sería muy lento)
-- Con índice: Vas directamente a la sección "L" y encuentras rápidamente a "Lemon"
-
-En una base de datos funciona igual:
-- Sin índice: La base de datos tiene que revisar TODA la tabla para encontrar lo que buscas
-- Con índice: La base de datos sabe exactamente dónde buscar la información
-
-Ventajas:
-- Hace las búsquedas muchísimo más rápidas
-- Ayuda a encontrar datos duplicados fácilmente
-
-Desventajas:
-- Ocupa más espacio en el disco duro
-- Hace que agregar o modificar datos sea un poco más lento (porque tiene que actualizar también el índice)
-
-¿Cuándo usarlos?
-- Cuando tienes muchos datos en una tabla
-- En columnas que usas frecuentemente para buscar información
-- En columnas que necesitan tener valores únicos
-
----
-
-## Normalización
-
-Normalización es el proceso de ordenar una base de datos para que no haya datos repetidos, sea más fácil de mantener y evites errores raros cuando guardás, editás o borrás información.
-
-Normalizar = dividir la información en tablas lógicas + crear relaciones correctas.
-
-Objetivos principales:
-
-- Evitar datos duplicados.
-- Evitar inconsistencias (que un dato cambie en un lado pero no en otro).
-- Hacer que la base sea más fácil de modificar.
-- Asegurar integridad de la info.
-- Evitar redundancia
-- Evitar problemas de actualización
-- Asegurar la integridad
-- Asegurar que no hayan 2 registros iguales
-- Todos los datos de una determinada propiedad
-deben ser del mismo tipo.
-- Ejemplo “Nacimiento” debe tener una fecha.
-
-Hay distintos grados de normalización:
-
-- Primera forma normal
-- Segunda forma normal
-- Tercera forma normal
-
-Cada una de estas formas normales tiene sus reglas.
-Una base de datos no necesita estar siempre en la tercera forma normal; puede ocurrir que, para resolver problemas complejos, no se requiera llevar algún dato hasta esa forma.
-
----
-
-## **Mejoras de Performance**
+### Performance
 
 - Cada índice creado en la tabla incrementa el tiempo en que se llevan a cabo los insert, updates o deletes, por lo que el número de índices en una tabla no deben de ser muchos. Use sólo los índices necesarios, para PK y para FK, y según el uso de los datos (WHERE, ORDER BY, GROUP BY). Si la tabla es de solo lectura entonces el número de índices se puede incrementar.
 - Mantén los índices lo más pequeños que puedas; al reducirlos, disminuye la cantidad de I/O necesaria para leerlos.
@@ -246,6 +140,134 @@ VALUES (1, 'England')
 - Siempre acceder las tablas en el mismo orden en todos los Store Proceedures y triggers, de esta manera evitamos generar deadlocks asi como también mantener las transacciones lo más pequeñas posibles. También hacer que las aplicaciones reintenten la transacción en caso de generarse un deadlock (error 1205).
 - No hacer llamado de funciones repetitivamente en los Store Proceedures o triggers, en lugar de eso hacer el llamado una sola vez y guardarlo en alguna variable
 - También tener en cuenta el consumo de CPU que generan tus consultas o queries.
+
+## **Bases de datos Not Only SQL - NoSQL**
+
+Hay de diversos tipos:
+
+- **Almacenamiento documentales**: almacenan los datos en documentos como JSON - **MongoDB**, **Couchbase**
+- **Clave Valor**: almacenan los datos en forma de clave valor - **Redis**, **Memcached**, **DynamoDB**
+- **Columnar**: almacenan los datos en forma de columnas - **Cassandra**, **ScyllaDB**
+- **Orientadas a grafos**: almacenan los datos en forma de grafos - **Neo4j**
+- **Series Temporales**: almacenan los datos en forma de series temporales - **InfluxDB**, **TimescaleDB**
+
+
+## Elementos de una base de datos
+
+- **Tablas**: Contienen la información
+- **Vistas**: Parecidas a la tabla, son para consultas, más rápidas
+- **Índices**: Uno o más columnas de una tabla para encontrar la data más rápido, es como el índice de un libro
+- **Triggers**: Disparadores que ejecutan código de SQL cuando se inserta, borra o se updatea un campo (CRUD (Create, Read, Update, Delete))
+- **Procedures**: Pedazos de código SQL que se ejecutan
+- **Constraints**: Previenen inconsistencia de datos en una columna
+- **Reglas:** Se especifican valores válidos para ser insertados en una tabla o columna.
+
+---
+
+## Elementos de Data Control Language (DCL)
+
+- **GRANT**: Da permisos a un usuario
+- **REVOKE**: Quita permisos a un usuario
+- **DENY**: Niega permisos a un usuario
+- **COMMIT**: Guarda los cambios hechos en la base de datos
+- **ROLLBACK**: Revierte los cambios hechos en la base de datos
+- **SAVEPOINT**: Crea un punto de guardado en una transacción para poder hacer rollback a ese punto específico
+- **TRANSACTION**: Inicia una transacción
+- **SET TRANSACTION**: Configura las propiedades de la transacción actual
+- **LOCK**: Bloquea una tabla o fila para evitar que otros usuarios la modifiquen mientras se está trabajando en ella
+- **UNLOCK**: Desbloquea una tabla o fila que fue bloqueada previamente
+- **EXPLAIN**: Muestra el plan de ejecución de una consulta SQL para optimización
+- **ANALYZE**: Recopila estadísticas sobre la distribución de datos en una tabla para ayudar al optimizador de consultas a tomar decisiones informadas
+- **MERGE**: Combina datos de dos tablas en una sola tabla
+- **CALL**: Invoca un procedimiento almacenado en la base de datos
+- **DESCRIBE**: Muestra la estructura de una tabla, incluyendo sus columnas y tipos de datos
+- **SHOW**: Muestra información sobre la base de datos, como tablas, vistas, índices, etc.
+- **USE**: Cambia la base de datos actual en uso
+- **SET**: Configura opciones de sesión para la base de datos
+- **HELP**: Proporciona ayuda sobre comandos y funciones de la base de datos
+
+---
+
+## Lenguaje de manipulación de datos (DML)
+
+Las sentencias de lenguaje de manipulación de datos (DML) son utilizadas para gestionar datos dentro de las bases de datos . Algunos ejemplos:
+
+- `SELECT` - para obtener datos de una base de datos.
+- `INSERT` - para insertar datos a una tabla.
+- `UPDATE` - para modificar datos existentes dentro de una tabla.
+- `DELETE` - elimina todos los registros de la tabla; no borra los espacios asignados a los registros.
+
+---
+
+## Lenguaje de definición de datos (DDL)
+
+Las sentencias DDL se utilizan para crear y modificar la estructura de las tablas así como otros objetos de la base de datos.
+
+- `CREATE` - para crear objetos en la base de datos.
+- `ALTER` - modifica la estructura de la base de datos.
+- `DROP `- borra objetos de la base de datos.
+- `TRUNCATE` - elimina todos los registros de la tabla, incluyendo todos los espacios asignados a los registros. Además, reinicia los campos autonuméricos.
+
+---
+
+## Índices
+
+Imagina que tienes una guía telefónica y quieres encontrar el número de "Denu Lemon":
+
+- Sin índice: Tendrías que revisar página por página hasta encontrar el nombre (esto sería muy lento)
+- Con índice: Vas directamente a la sección "L" y encuentras rápidamente a "Lemon"
+
+En una base de datos funciona igual:
+- Sin índice: La base de datos tiene que revisar TODA la tabla para encontrar lo que buscas
+- Con índice: La base de datos sabe exactamente dónde buscar la información
+
+Ventajas:
+- Hace las búsquedas muchísimo más rápidas
+- Ayuda a encontrar datos duplicados fácilmente
+
+Desventajas:
+- Ocupa más espacio en el disco duro
+- Hace que agregar o modificar datos sea un poco más lento (porque tiene que actualizar también el índice)
+
+¿Cuándo usarlos?
+- Cuando tienes muchos datos en una tabla
+- En columnas que usas frecuentemente para buscar información
+- En columnas que necesitan tener valores únicos
+
+---
+
+## Normalización
+
+Normalización es el proceso de ordenar una base de datos para que no haya datos repetidos, sea más fácil de mantener y evites errores raros cuando guardás, editás o borrás información.
+
+Normalizar = dividir la información en tablas lógicas + crear relaciones correctas.
+
+Objetivos principales:
+
+- Evitar datos duplicados.
+- Evitar inconsistencias (que un dato cambie en un lado pero no en otro).
+- Hacer que la base sea más fácil de modificar.
+- Asegurar integridad de la info.
+- Evitar redundancia
+- Evitar problemas de actualización
+- Asegurar la integridad
+- Asegurar que no hayan 2 registros iguales
+- Todos los datos de una determinada propiedad
+deben ser del mismo tipo.
+- Ejemplo “Nacimiento” debe tener una fecha.
+
+Hay distintos grados de normalización:
+
+- Primera forma normal
+- Segunda forma normal
+- Tercera forma normal
+
+Cada una de estas formas normales tiene sus reglas.
+Una base de datos no necesita estar siempre en la tercera forma normal; puede ocurrir que, para resolver problemas complejos, no se requiera llevar algún dato hasta esa forma.
+
+---
+
+
 
 ---
 
