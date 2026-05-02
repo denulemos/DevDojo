@@ -539,13 +539,59 @@ Los recursos estaticos pueden ser:
 
 Los recursos no se descargan con el HTML, se enlazan con el mismo. Dentro de DevTools, en la parte de recursos, podemos ver la cantidad que son cargados, 100 archivos no es mucho. 
 
+Esto hace que un recurso no este attacheado a un archivo si no a una direccion de CDN. 
+
 Los recursos se descargan de manera paralela, pero hay un limite de descargas paralelas por navegador. 
 
 Los CDN son una infraestructura distribuida compuesta por servidores en muchas ubicaciones fisicas. 
 
 - Almacenan y entregan recursos de forma rapida y eficiente
-- Optimizan la experiencia del usuario reduciendo la latencia
-- Mejoran la **disponibilidad** del contenido, ya que el contenido es guardado en el servidor mas cercano al usuario. 
+- Optimizan la experiencia del usuario reduciendo la latencia, haciendo que el usuario de Europa acceda a los recursos del servidor Europeo y no al de America.
+- Mejoran la **disponibilidad** del contenido, ya que el contenido es guardado en el servidor mas cercano al usuario, y si este falla, se elige el siguiente mas cercano. 
 - Optimizado para cachear recursos. Algoritmos de compresion (Brotli, Gzip) y minificacion de JS y CSS, esto **reduce el ancho de banda**
 
 **Es un cache de recursos estaticos**
+
+Tiene un costo importante, y varia dependiendo de la cantidad de informacion que queremos guardar. A mayor frecuencia de actualizacion de los recursos tambien, mayor el coste. **Compensa solo si tenemos usuarios alrededor del mundo**
+
+Ademas nuestro sistema debe ser **reciliente a fallos del CDN**. Si el CDN falla, los usuarios deben poder acceder a los recursos desde el servidor o tener un fallback, ya que se trata de un servicio de terceros.
+
+**CDN Populares**
+
+- Cloudflare
+- Akamai
+- AWS CloudFront
+- Google Cloud CDN
+- Microsoft Azure CDN
+
+### Estrategia Pull
+
+El CDN realiza una llamada al servidor para obter los recursos estaticos, y los mismos son cacheados. Es una estrategia que no necesita mantenimiento de nuestra parte, de todo se encarga del CDN. 
+
+1. El usuario solicita un recurso al CDN
+2. Si el CDN no tiene el recurso, lo busca en el servidor mas cercano y ahora si, lo almacena
+3. Se devuelve el recurso al usuario desde el CDN 
+
+Esto puede dar problemas, **que sucede si un recurso cacheado se modifica en el servidor?**, se debe establecer una **politica de vencimiento** para no devolver recursos desactualizados.
+
+1. El usuario solicita un recurso al CDN
+2. Si el CDN no tiene el recurso, **o el mismo ya esta expirado**
+3. Si el recurso esta cacheado y expirado, se verifica si fue modificado, y si lo fue, se actualiza en el CDN
+4. Ahora si, se devuelve el recurso al usuario desde el CDN 
+
+Otra desventaja es que, ante una primera request, la performance puede no ser la mejor, ya que se va al servidor. 
+
+### Estrategia Push
+
+El servidor tiene la responsabilidad de enviar los recursos nuevos, o actualizados, al CDN. Si el recurso no existe en el CDN, **se devolvera un error**
+
+- El contenido siempre estara actualizado
+- Todo estara cacheado, desde la primera request
+- **Requiere mayor mantenimiento de nuestra parte** ya que el servidor tiene la responsabilidad del envio de recursos. 
+
+## **Data Centers**
+
+Si mantenemos todos nuestros servidores en una unica ubicacion geografica, podremos enfrentar problemas. 
+
+- Latencia alta para algunos usuarios que se encuentren lejos, inaceptable para juegos online o sistemas en tiempo real. 
+- Robustez insuficiente, pueden suceder cortes de luz en la zona geograficas donde se encuentre nuestro data center. **Seria aceptable una caida total debido a un fallo en un data center?**

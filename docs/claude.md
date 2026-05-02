@@ -536,3 +536,112 @@ Se recomienda su uso cuando notamos que nuestros prompts no nos estan llevando a
 Si se recibe un **Redacted Thinking block** en vez de un texto leible dentro de la respuesta del modelo, significa que el modelo encontro contenido de alta peligrosidad en su linea de pensamiento, por lo que se recomienda revisar nuestro prompt y ajustar las medidas de seguridad si es necesario.
 
 ### Image Support
+
+Se pueden enviar imagenes a Claude para que las procese.
+
+- Se pueden mandar hasta 100 imagenes entre todos los mensajes en un mismo request
+- Max Size de 5 MB
+- Se pueden enviar imagenes por URL o por base64
+
+```python
+with open("image.png", "rb") as f:
+    image_bytes = base64.standard_b64encode(f.read()).decode("utf-8")
+
+add_user_message(messages, [
+    # Image Block
+    {
+        "type": "image",
+        "source": {
+            "type": "base64",
+            "media_type": "image/png",
+            "data": image_bytes,
+        }
+    },
+    # Text Block
+    {
+        "type": "text",
+        "text": "What do you see in this image?"
+    }
+])
+```
+
+Se pueden mejorar los prompts ante imagenes de la siguiente manera:
+
+- Dar guidelines detallados y pasos de analisis
+
+```
+Analyze this image of marbles and determine the exact count using this methodology:
+1. Begin by identifying each unique marble one at a time. Assign each a number as you identify it.
+2. Verify your result by counting with a different method. Start from the bottom-left corner and work row by row, from left to right.
+
+What is the exact, verified number of marbles in this image?
+```
+
+- Usar ejemplos one-shot o multi-shot 
+- Separar el analisis en pasos mas pequeños
+
+Por ejemplo, si mediante una imagen satelital de un hogar quiero reconocer los posibles puntos de riesgo para un seguro, se puede dar el siguiente prompt:
+
+```
+Analyze the attached satellite image of a property with these specific steps:
+
+1. Residence identification: Locate the primary residence on the property by looking for:
+   - The largest roofed structure
+   - Typical residential features (driveway connection, regular geometry)
+   - Distinction from other structures (garages, sheds, pools)
+
+2. Tree overhang analysis: Examine all trees near the primary residence:
+   - Identify any trees whose canopy extends directly over any portion of the roof
+   - Estimate the percentage of roof covered by overhanging branches (0-25%, 25-50%, 50-75%, 75%+)
+   - Note particularly dense areas of overhang
+
+3. Fire risk assessment: For any overhanging trees, evaluate:
+   - Potential wildfire vulnerability (ember catch points, continuous fuel paths to structure)
+   - Proximity to chimneys, vents, or other roof openings if visible
+   - Areas where branches create a "bridge" between wildland vegetation and the structure
+
+4. Defensible space identification: Assess the property's overall vegetative structure:
+   - Identify if trees connect to form a continuous canopy over or near the home
+   - Note any obvious fuel ladders (vegetation that can carry fire from ground to tree to roof)
+
+5. Fire risk rating: Based on your analysis, assign a Fire Risk Rating from 1-4:
+   - Rating 1 (Low Risk): No tree branches overhanging the roof, good defensible space around the home
+   - Rating 2 (Moderate Risk): Minimal overhang (<25% of roof), some separation between tree canopies
+   - Rating 3 (High Risk): Significant overhang (25-50% of roof), connected tree canopies, multiple vulnerability points
+   - Rating 4 (Severe Risk): Extensive overhang (>50% of roof), dense vegetation against structure
+```
+
+Es un prompt detallado que especifica el formato de respuesta.
+
+### PDF Support
+
+```python
+with open("earth.pdf", "rb") as f:
+    file_bytes = base64.standard_b64encode(f.read()).decode("utf-8")
+
+messages = []
+
+add_user_message(
+    messages,
+    [
+        {
+            "type": "document",
+            "source": {
+                "type": "base64",
+                "media_type": "application/pdf",
+                "data": file_bytes,
+            },
+        },
+        {"type": "text", "text": "Summarize the document in one sentence"},
+    ],
+)
+
+chat(messages)
+```
+
+Claude puede procesar la siguiente informacion de los documentos:
+
+- Texto y contenido dentro del documento
+- Imagenes y charts dentro del documento
+- Tablas y su relacion entre su data interna
+- La estructura del documento y su formato
