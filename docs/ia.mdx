@@ -8,7 +8,6 @@ import IndiceTable from '@site/src/components/IndiceTable';
 
 export const data = [
   { tema: '⚡', nombre: 'Claude', link: 'claude' },
-  { tema: '🔌', nombre: 'Model Context Protocol (MCP)', link: 'mcp' },
 ];
 
 <IndiceTable data={data}/>
@@ -37,7 +36,7 @@ Cuando se le da una task al coding assistant, el mismo toma los siguientes pasos
 
 El paso número 1 y 3 son los más complejos y los cuales requieren el uso de **Tools use**, ya que un coding assistant por sí solo no puede leer código ni correr comandos.
 
-## Tools Use
+## **Tools Use**
 
 Cuando se le envía una petición al Coding Assistant, el mismo agrega instrucciones "under the hood" para cumplir con el requerimiento.
 
@@ -315,13 +314,13 @@ RAG se compone de 3 pasos:
 
 Todo esto requiere un preprocesamiento del documento a analizar. **No es una solución simple, pero es escalable y eficiente para trabajar con documentos grandes.**
 
-### Chunck Strategies
+### Chunk Strategies
 
 Es uno de los pasos mas importantes para que el sistema funcione de manera correcta, ya de que como separamos los documentos depende la calidad de la busqueda y del sistema, y si este es pobre, podemos hacer que la IA devuelva informacion que no tenga nada que ver con lo preguntado en un principio.
 
 Para esto, hay diversas estrategias para realizar esta operacion.
 
-- **Structured-based chuncking**: Cuando controlamos el formato del documento y conocemos que es correcto.
+- **Structured-based chunking**: Cuando controlamos el formato del documento y conocemos que es correcto.
 - **Sentence-based chunking**: Es un buen punto medio para la mayoria de los documentos.
 - **Size-based chunking**: Es el que funciona en cualquier tipo de texto, incluyendo codigo. Tambien cuando buscamos algo simple pero no perfecto.
 
@@ -329,7 +328,7 @@ Para esto, hay diversas estrategias para realizar esta operacion.
 
 Divide el texto en chunks de un tamaño fijo. La forma mas simple de hacerlo, pero puede cortar frases por la mitad, rompiendo el sentido de la informacion. 
 
-Por ejemplo, dividir un texto en chunks de 500 caracteres. Tampoco se toma en cuenta el contexto de los chuncks de alrededor, para esto, se agregan algunos caracteres del chunck anterior a modo de contexto para completar oraciones o palabras de ser necesario.
+Por ejemplo, dividir un texto en chunks de 500 caracteres. Tampoco se toma en cuenta el contexto de los chunks de alrededor, para esto, se agregan algunos caracteres del chunk anterior a modo de contexto para completar oraciones o palabras de ser necesario.
 
 ```python
 def chunk_by_char(text, chunk_size=150, chunk_overlap=20):
@@ -351,7 +350,7 @@ def chunk_by_char(text, chunk_size=150, chunk_overlap=20):
 
 #### Structured-based chunking
 
-Divide el texto en chunks según su estructura, como párrafos, oraciones, etc. La forma mas inteligente de hacerlo, ya que se toma en cuenta el contexto de los chuncks de alrededor para completar oraciones o palabras de ser necesario.
+Divide el texto en chunks según su estructura, como párrafos, oraciones, etc. La forma mas inteligente de hacerlo, ya que se toma en cuenta el contexto de los chunks de alrededor para completar oraciones o palabras de ser necesario.
 
 ```python
 def chunk_by_sentence(text, chunk_size=3, chunk_overlap=1):
@@ -375,7 +374,7 @@ Esto es util cuando conocemos la estructura del texto, y ademas sabemos que es c
 
 #### Semantic-based chunking
 
-Divide el texto en chunks según su significado, es decir, separa el texto en chunks que tengan sentido semántico. La forma mas inteligente de hacerlo, ya que se toma en cuenta el contexto de los chuncks de alrededor para completar oraciones o palabras de ser necesario.
+Divide el texto en chunks según su significado, es decir, separa el texto en chunks que tengan sentido semántico. La forma mas inteligente de hacerlo, ya que se toma en cuenta el contexto de los chunks de alrededor para completar oraciones o palabras de ser necesario.
 
 ```python
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -528,7 +527,7 @@ Mientras que el Discernimiento y la Descripción se enfocan en la efectividad y 
 
 Diferentes contextos tienen distintas diligencias, expectativas de verificación y revisión.
 
-## Prompt Engineering
+## **Prompt Engineering**
 
 Es un kit de herramientas para armar prompts efectivos mediante distintas técnicas, como:
 
@@ -681,7 +680,7 @@ goals and restrictions.
 ```
 
 
-## Prompt Evaluation
+## **Prompt Evaluation**
 
 Es la medición de la efectividad de los prompts de manera automática. Para esto se pueden usar distintas métricas, como:
 

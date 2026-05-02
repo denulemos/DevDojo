@@ -484,3 +484,55 @@ stream = client.messages.create(
 for event in stream:
     print(event)
 ```
+
+### Extended Thinking
+
+Es una funcionalidad que le permite al modelo "pensar" antes de responder, especialmente ante problemas complejos, y esta linea de pensamiento puede ser vista por el usuario. 
+
+Cuando esta funcionalidad es habilitada, la respuesta del modelo cambia de un bloque de texto basico a una respuesta estructurada que consta de dos partes:
+
+- **Thinking**: El pensamiento del modelo
+- **Response**: La respuesta final del modelo
+- **Signature**: Un identificador unico para el bloque de contenido, esto se agrega para asegurar que los bloques no fueron modificados entre generacion y generacion, ya que esto puede conducir a direcciones poco seguras. 
+
+El "pensamiento" es un texto que se genera antes de la respuesta final y que contiene el razonamiento que llevó al modelo a esa respuesta.
+
+Es importante remarcar que el thinking no es parte de la respuesta final y no debe ser mostrado al usuario. Solo debe ser mostrado el "Response".
+
+A continuación se muestra un ejemplo de cómo se ve una respuesta con Extended Thinking:
+
+```json
+{
+    "type": "message",
+    "content": [
+        {
+            "type": "Thinking",
+            "text": "El usuario quiere saber qué es el Extended Thinking. Le explicaré qué es y cómo funciona.",
+            "signature": "5b4d86a1-91c1-4879-99a1-d99b93a62c1f"
+        },
+        {
+            "type": "Response",
+            "text": "El Extended Thinking es una funcionalidad que le permite al modelo 'pensar' antes de responder, especialmente ante problemas complejos, y esta linea de pensamiento puede ser vista por el usuario. ",
+            "signature": "5b4d86a1-91c1-4879-99a1-d99b93a62c1f"
+        }
+    ]
+}
+```
+
+Sus **beneficios** son:
+
+- Mejor linea de pensamiento ante problemas complejos
+- Mayor accuracu en problemas complejos
+- Transparencia ante el usuario
+
+Aunque sus **desventajas** son:
+
+- Mayor costo, se paga por los thinking tokens
+- Mayor latencia, ya que el pensamiento toma mas tiempo
+- Mayor complejidad, ya que se debe manejar la respuesta estructurada
+
+Se recomienda su uso cuando notamos que nuestros prompts no nos estan llevando a donde deseamos. 
+
+Si se recibe un **Redacted Thinking block** en vez de un texto leible dentro de la respuesta del modelo, significa que el modelo encontro contenido de alta peligrosidad en su linea de pensamiento, por lo que se recomienda revisar nuestro prompt y ajustar las medidas de seguridad si es necesario.
+
+### Image Support
