@@ -20,7 +20,21 @@ const sidebars: SidebarsConfig = {
       label: '🧠 Arquitectura',
       link: { type: 'doc', id: 'arquitectura' },
       collapsed: true,
-      items: ['microfrontends', 'systemdesign', 'microservicios'],
+      items: ['microfrontends', 'systemdesign', 'microservicios', {
+        type: 'category',
+        label: '⚙️ DevOps',
+        link: { type: 'doc', id: 'devops' },
+        collapsed: true,
+        items: ['versionado', 'cicd'],
+      },
+      {
+        type: 'category',
+        label: '☁️ Cloud',
+        collapsed: true,
+        items: ['aws'],
+      }
+    
+    ],
     },
     {
       type: 'category',
@@ -34,13 +48,7 @@ const sidebars: SidebarsConfig = {
         'api',
       ],
     },
-    {
-      type: 'category',
-      label: '⚙️ DevOps',
-      link: { type: 'doc', id: 'devops' },
-      collapsed: true,
-      items: ['versionado', 'cicd'],
-    },
+
     {
       type: 'category',
       label: '🎨 Frontend',
