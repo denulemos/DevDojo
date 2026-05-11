@@ -29,5 +29,64 @@ Por ejemplo, en este JSON se le asigna a un usuario o grupo el permiso de listar
 
 En AWS se aplica el **principio de minimo privilegio**, es decir, se le asigna a cada usuario o grupo solo los permisos necesarios para realizar su tarea, y no más.
 
+### Politicas
 
+Dentro de los grupos podemos definir politicas que afecten a los usuarios dentro de estas. Pero, si tenemos un usuario que no pertenece a ningun grupo, o que pertenece a varios grupos, y a su vez le asignamos politicas a este usuario, los permisos se intersectionan.
 
+El JSON se veria asi:
+
+```json
+{
+    "Version": "2012-10-17",
+    "Id": "PolicyForXProjectBucket",
+    "Statement": [
+        {
+            "Sid": "1",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::123456789012:user/DevDojo"
+            },
+            "Action": "s3:ListBucket",
+            "Resource": "arn:aws:s3:::nombre-bucket"
+        }, 
+    ]
+}
+```
+
+- **Version**: Version del lenguaje de la politica, siempre incluye un `2012-10-17`.
+- **Id**: Id de la politica, es un identificador unico. (Opcional)
+- **Statement**: Es un array de statements, cada statement es un permiso. (Obligatorio, ya que no tendria sentido definir una politica sin esta)
+- **Sid**: Id del statement, es un identificador unico. (Opcional)
+- **Effect**: Puede ser `Allow` o `Deny`.
+- **Principal**: Usuario o grupo al que se le asigna la politica.
+- **Action**: Acciones que se permiten o deniegan. Puede ser un array.
+- **Resource**: Recursos a los que se aplican las acciones.
+- **Condition**: Condiciones para cuando esta politica esta en efecto (opcional)
+
+Se pueden crear politicas modificando el JSON o un editor visual en AWS.
+
+### Politica de contraseñas
+
+Se pueden establecer politicas de contraseñas, por ejemplo: 
+
+- Longitud minima
+- Requerir tipos de caracteres especificos
+- Permitir a todos los usuarios IAM cambiar sus propias contraseñas
+- Requerir el cambio de contraseña cada cierto tiempo
+- Impedir la reutilizacion de contraseñas anteriores
+
+Las politicas de contraseñas se pueden aplicar a nivel de cuenta raiz o a nivel de usuario IAM. 
+
+La politica de contraseñas a nivel de cuenta raiz afecta a todos los usuarios IAM, mientras que la politica de contraseñas a nivel de usuario IAM afecta solo al usuario IAM al que se le aplica.
+
+### MFA
+
+Los usuarios IAM pueden elegir sus contraseñas, pero por seguridad es recomendable utilizar MFA (Multi-Factor Authentication)
+
+Puede suceder que un usuario pierda su contraseña o haya sido hackeado, dandole acceso a alguien malintencionado a nuestra cuenta de AWS. Por este motivo, es recomendable utilizar MFA.
+
+Se recomienda **establecer una contraseña y un dispositivo de seguridad**
+
+- **Dispositivos virtuales MFA**: Aplicaciones como Google Authenticator, Authy o Microsoft Authenticator.
+- **Clave de seguridad del segundo factor universal U2F**: YubiKey, etc. Es un USB que se conecta al computador y funciona como llave.
+- **Dispositivo MFA de hardware**: Un dispositivo fisico que genera códigos MFA.
