@@ -60,6 +60,80 @@ Como podemos ver, para **evitar la duplicidad de la informacion** la tabla `post
   SELECT u.username, p.title FROM user u JOIN post p ON u.id = p.userId;
 ```
 
+### Inner Join
+
+Solo muestra lo que tiene en comun A y B
+
+```sql
+SELECT loginID
+FROM tabla1 AS e
+   INNER JOIN Ventas.vendedor AS s
+   ON e.idnegocio = s.idnegocio
+```
+
+(El id negocio debe estar en tabla a y b)
+
+### Outer Join (Con left y right join)
+
+El left Join, por ejemplo, con dos tablas A y B, devuelve todo lo de la tabla A y lo que este también en la tabla AB, sí no quiero esto último, agrego un WHERE tabla_b IS NULL . El right join es lo mismo pero con B. El full Join toma absolutamente todo de ambas tablas, agregando el NULL anterior con ambas tablas, ahi es donde se muestran ambas tablas menos lo que tienen en común.
+
+```sql
+SELECT p.nombre, pr.productoid
+FROM produccion.producto p
+LEFT OUTER JOIN
+produccion.producto pr
+ON p.productoid = pr.productoid
+```
+
+### Self Join
+
+Un Join que referencia a la misma tabla.
+
+```sql
+SELECT A.CustomerName AS CustomerName1, B.CustomerName AS CustomerName2, A.City
+FROM Customers A, Customers B
+WHERE A.CustomerID <> B.CustomerID --No se repiten ID
+AND A.City <> B.City --Esta linea hace que no se repitan ciudades
+ORDER BY A.City;
+```
+
+### UNION
+
+Con los set de datos finales se trata de unificar a un set único
+
+Elimina los duplicados entre ambos conjuntos de entrada (**ES UN DISTINCT IMPLÍCITO**).
+
+```sql
+SELECT * a
+UNIÓN ALL
+Select * b
+```
+
+### TOP
+
+Top de los resultados de una query, es decir, las X primeras (En el ejemplo, 10) de un SELECT
+
+```sql
+SELECT TOP (10)
+nombres, apellidos
+FROM tabla1
+```
+
+### EXCEPT
+
+De un set de datos se saca los que no estan en el 2do set de datos a relacionar, todo lo de a de tabla1, menos lo que este también en b tabla2
+
+Retorna filas del conjunto de la izquierda que no están incluidas en el conjunto de la derecha entrada (**ES UN DISTINCT IMPLÍCITO**)
+
+```sql
+SELECT a
+FROM tabla1
+EXCEPT
+SELECT b
+FROM tabla2
+```
+
+
 ### ACID
 
 Son un conjunto de propiedads que garantizan la fiabilidad de las transacciones en bases de datos relacionales.
@@ -346,82 +420,3 @@ Cada una de estas formas normales tiene sus reglas.
 Una base de datos no necesita estar siempre en la tercera forma normal; puede ocurrir que, para resolver problemas complejos, no se requiera llevar algún dato hasta esa forma.
 
 ---
-
-
-
----
-
-## **Consultas y Operaciones**
-
-### Inner Join
-
-Solo muestra lo que tiene en comun A y B
-
-```sql
-SELECT loginID
-FROM tabla1 AS e
-   INNER JOIN Ventas.vendedor AS s
-   ON e.idnegocio = s.idnegocio
-```
-
-(El id negocio debe estar en tabla a y b)
-
-### Outer Join (Con left y right join)
-
-El left Join, por ejemplo, con dos tablas A y B, devuelve todo lo de la tabla A y lo que este también en la tabla AB, sí no quiero esto último, agrego un WHERE tabla_b IS NULL . El right join es lo mismo pero con B. El full Join toma absolutamente todo de ambas tablas, agregando el NULL anterior con ambas tablas, ahi es donde se muestran ambas tablas menos lo que tienen en común.
-
-```sql
-SELECT p.nombre, pr.productoid
-FROM produccion.producto p
-LEFT OUTER JOIN
-produccion.producto pr
-ON p.productoid = pr.productoid
-```
-
-### Self Join
-
-Un Join que referencia a la misma tabla.
-
-```sql
-SELECT A.CustomerName AS CustomerName1, B.CustomerName AS CustomerName2, A.City
-FROM Customers A, Customers B
-WHERE A.CustomerID <> B.CustomerID --No se repiten ID
-AND A.City <> B.City --Esta linea hace que no se repitan ciudades
-ORDER BY A.City;
-```
-
-### UNION
-
-Con los set de datos finales se trata de unificar a un set único
-
-Elimina los duplicados entre ambos conjuntos de entrada (**ES UN DISTINCT IMPLÍCITO**).
-
-```sql
-SELECT * a
-UNIÓN ALL
-Select * b
-```
-
-### TOP
-
-Top de los resultados de una query, es decir, las X primeras (En el ejemplo, 10) de un SELECT
-
-```sql
-SELECT TOP (10)
-nombres, apellidos
-FROM tabla1
-```
-
-### EXCEPT
-
-De un set de datos se saca los que no estan en el 2do set de datos a relacionar, todo lo de a de tabla1, menos lo que este también en b tabla2
-
-Retorna filas del conjunto de la izquierda que no están incluidas en el conjunto de la derecha entrada (**ES UN DISTINCT IMPLÍCITO**)
-
-```sql
-SELECT a
-FROM tabla1
-EXCEPT
-SELECT b
-FROM tabla2
-```
