@@ -35,6 +35,54 @@ Por ejemplo, en una app bancaria:
 - Rate Limiting evita posibles ataques
 - Input Validation previene ataques del tipo SQL Injection
 
+### Authentication vs Authorization
+
+- **Authentication**: Pregunta quién sos
+- **Authorization**: Pregunta qué tenés permitido (ya sabiendo quién sos)
+
+### JWT
+
+JSON Web Token es una herramienta compacta que ofrece un token de seguridad para la transmisión de información entre el cliente y el servidor.
+
+Una vez que un usuario inicia sesión en el sistema, recibe un JWT que le permite acceder a todos los recursos para los cuales tiene permiso, y este es enviado en cada request.
+
+Consiste de 3 partes: **Header.Payload.Signature**
+
+- **Header**: El tipo de token y su algoritmo
+- **Payload**: La información del usuario y sus permisos
+- **Signature**: Verifica la integridad del token
+
+```
+{
+    "userId": 123,
+    "role": "admin",
+    "exp": 23434534
+}
+```
+
+1. El usuario envía sus credenciales (`POST /login`)
+2. El servidor valida estas credenciales
+3. El servidor genera JWT
+4. JWT es enviado al cliente
+5. El cliente guarda este JWT
+6. Este JWT es enviado en todas las request a esa API para identificar al cliente
+
+Este proceso se llama **stateless auth flow**
+
+### OAuth
+
+Es un framework de autorización que permite que aplicaciones third-party accedan a la información del usuario sin exponer ninguna contraseña.
+
+Por ejemplo, el **Login de Google**, en donde la app nunca ve tu contraseña, y recibe un access token de Google.
+
+### Refresh Token
+
+Este sirve para obtener un nuevo access token sin necesidad de pedirle al usuario que haga el login de vuelta.
+
+- Puede tener tiempo de expiración
+- Se puede refrescar cada cierto tiempo
+- No es necesario que el usuario esté iniciando sesión constantemente
+
 ## Manejo de errores
 
 Las mejores prácticas para esto son:
@@ -184,54 +232,6 @@ CORS (Cross-Origin Resource Sharing) es una forma de decirle a los navegadores q
 - Sin CORS, el navegador bloqueará las solicitudes del frontend a la API.
 
 En resumen, CORS es como un portero que decide quién puede entrar a tu API. Con el paquete `cors`, puedes configurarlo fácilmente en Express.
-
-## Authentication vs Authorization
-
-- **Authentication**: Pregunta quién sos
-- **Authorization**: Pregunta qué tenés permitido (ya sabiendo quién sos)
-
-### JWT
-
-JSON Web Token es una herramienta compacta que ofrece un token de seguridad para la transmisión de información entre el cliente y el servidor.
-
-Una vez que un usuario inicia sesión en el sistema, recibe un JWT que le permite acceder a todos los recursos para los cuales tiene permiso, y este es enviado en cada request.
-
-Consiste de 3 partes: **Header.Payload.Signature**
-
-- **Header**: El tipo de token y su algoritmo
-- **Payload**: La información del usuario y sus permisos
-- **Signature**: Verifica la integridad del token
-
-```
-{
-    "userId": 123,
-    "role": "admin",
-    "exp": 23434534
-}
-```
-
-1. El usuario envía sus credenciales (`POST /login`)
-2. El servidor valida estas credenciales
-3. El servidor genera JWT
-4. JWT es enviado al cliente
-5. El cliente guarda este JWT
-6. Este JWT es enviado en todas las request a esa API para identificar al cliente
-
-Este proceso se llama **stateless auth flow**
-
-### OAuth
-
-Es un framework de autorización que permite que aplicaciones third-party accedan a la información del usuario sin exponer ninguna contraseña.
-
-Por ejemplo, el **Login de Google**, en donde la app nunca ve tu contraseña, y recibe un access token de Google.
-
-### Refresh Token
-
-Este sirve para obtener un nuevo access token sin necesidad de pedirle al usuario que haga el login de vuelta.
-
-- Puede tener tiempo de expiración
-- Se puede refrescar cada cierto tiempo
-- No es necesario que el usuario esté iniciando sesión constantemente
 
 ## API Rate Limiting
 
