@@ -1,6 +1,6 @@
 # 🗄️ Bases de Datos
 
-## **Bases de datos relacionales - SQL**
+## **SQL**
 
 Se centran en estructurar los datos en tablas relacionadas entre si. 
 
@@ -9,7 +9,66 @@ Se centran en estructurar los datos en tablas relacionadas entre si.
 - SQL Server
 - Oracle Database
 
-Se basan en el lenguaje estructurado de consultas **SQL**, el cual permite realizar operaciones complejas con facilidad. 
+Se basan en el lenguaje estructurado de consultas **SQL**, el cual permite realizar operaciones complejas con facilidad y consultar los datos de diferentes maneras.
+
+Cada herramienta posee pequeñas diferencias en su sintaxis y funcionalidades, pero en esencia se basan en SQL. No existe un único estándar de SQL.
+
+El esquema de datos es predefinido, es decir, en una tabla que acepta nombres y edades, no podremos guardar direcciones, para esto debemos modificar el schema, esto hace que nuestros datos sean **consistentes** pero menos flexibles. Ademas, se **evita la duplicidad de los datos** mediante la referencia por IDs o Keys.
+
+| Beneficios | Desventajas      |
+| ------ | ---------- |
+| Es un sistema robusto y con muchos anios de uso. ACID asegura la fiabilidad y consistencia total    | Estructura poco flexible ya que esta predefinida      |
+|   Se puede usar SQL, un lenguaje muy potente para realizar consultas complejas | Es mas dificil de escalar  que las bases de datos no relacionales    |
+| Almacenamiento eficiente, se reduce la duplicidad de la informacion    | Lecturas mas lentas dependiendo de los joins que se hagan en la consulta      |
+| Estructura natural para los humanos, es intuitivo incluso para personas fuera del mundo de la informatica | ACID puede hacer que nuestras transacciones sean ligeramente mas lentas     |
+
+Se deben usar cuando:
+
+- Tenemos una estructura de datos bien definida
+- En casos donde las garantias de las transacciones ACID sean totalmente necesarias
+- Si queremos realizar consultas complejas sobre nuestros datos
+
+### ORM
+
+Si bien la estructura de las bases de datos SQL es muy intuitiva para los humanos, es todo lo contrario para los programadores, ya que en nuestro codigo trabajamos con objetos, listas, grafos, etc.
+
+Por esto, es que existen las herramientas **ORM (Object-Relational Mapping)**, las cuales nos permiten trabajar con las bases de datos SQL como si fueran objetos en nuestro codigo.
+
+Un ORM puede realizar un **mapeo de datos** o `mapping`. Por ejemplo, transformar una fila de una tabla en un objeto. O transformar una coleccion de filas en una lista de objetos.
+
+### JOINS
+
+Supongamos tenemos una tabla `user` con `id`, `email` y `username`, y otra tabla `post` con `id`, `title` y `userId` ya que nuestra aplicacion se trata de un foro.
+
+| id | email | username |
+| --- | --- | --- |
+| 1 | [EMAIL_ADDRESS] | denisse |
+| 2 | [EMAIL_ADDRESS] | dev-denisse |
+| 3 | [EMAIL_ADDRESS] | denisse-developer |
+
+| id | title | userId |
+| --- | --- | --- |
+| 1 | post1 | 1 |
+| 2 | post2 | 2 |
+| 3 | post3 | 3 |
+
+Como podemos ver, para **evitar la duplicidad de la informacion** la tabla `post` solo tiene el ID del usuario como referencia, para saber a cual usuario pertenece el post. A esta tecnica se le conoce como `JOIN`, ya que estamos juntando la informacion de dos filas de dos tablas distintas para devolver la informacion completa.
+
+- Ralentizan las lecturas dependiendo del numero de joins que se hagan en una consulta, y en la cantidad de registros en las tablas. 
+
+```sql
+  SELECT u.username, p.title FROM user u JOIN post p ON u.id = p.userId;
+```
+
+### ACID
+
+Son un conjunto de propiedads que garantizan la fiabilidad de las transacciones en bases de datos relacionales.
+
+- **Atomicidad (Atomicity)**: Las transacciones son indivisibles, o se ejecutan todas o ninguna. Una transacción puede implicar una o varias operaciones. Por ejemplo, una transferencia bancaria implica la resta de dinero de una cuenta y la suma a otra. Si alguna de estas operaciones falla, la transacción se revierte a su estado original (`rollback`).
+- **Consistencia (Consistency)**: Si partimos de un estado consistente antes de ejecutar una transaccion, va a seguir consistente cuando se finalice, haya terminado satisactoriamente o no. 
+- **Aislamiento (Isolation)**: Las transacciones se ejecutan de forma independiente. Una transaccion no se vera afectada por otras transacciones concurrentes.
+- **Durabilidad (Durability)**: Las transacciones son permanentes, los efectos de las transacciones confirmadas se mantendran en la base de datos.
+
 
 ### Programación declarativa
 
@@ -141,7 +200,7 @@ VALUES (1, 'England')
 - No hacer llamado de funciones repetitivamente en los Store Proceedures o triggers, en lugar de eso hacer el llamado una sola vez y guardarlo en alguna variable
 - También tener en cuenta el consumo de CPU que generan tus consultas o queries.
 
-## **Bases de datos Not Only SQL - NoSQL**
+## **Not Only SQL - NoSQL**
 
 Hay de diversos tipos:
 
@@ -151,6 +210,27 @@ Hay de diversos tipos:
 - **Orientadas a grafos**: almacenan los datos en forma de grafos - **Neo4j**
 - **Series Temporales**: almacenan los datos en forma de series temporales - **InfluxDB**, **TimescaleDB**
 
+- No hay un esquema predefinido, no necesitamos tener la estructura de los datos por antelacion, es completamente flexible. 
+- No es necesario usar un ORM para trabajar con estas bases de datos ya que en algunos casos ya poseen estructuras en listas, objetos, etc..
+- Pocos soportan ACID
+
+| Ventajas | Desventajas |
+| --- | --- |
+| **Flexibilidad** : No hay un esquema predefinido, no necesitamos tener la estructura de los datos por antelacion, es completamente flexible. | **Inconsistencia** : Los datos no son consistentes en todo momento, pueden variar dependiendo del nodo que se consulte. Falta de transacciones ACID completas |
+| **Escalabilidad y rendimiento** : Gracias al modelo BASE se sacrifica consistencia para ganar rendimiento | **Complejidad** : Es más complejo de gestionar que una base de datos relacional, no hay un esquema predefinido, etc.. La curva de aprendizaje es mas pronunciada, ya que es un sistema menos maduro que SQL |
+| **Disponibilidad** : Debe estar disponible para lecturas y escrituras incluso en fallos parciales. BASE asegura esto.| **Seguridad** : Es más dificil de asegurar que una base de datos relacional, no hay un esquema predefinido, etc.. |
+
+Se debe usar cuando:
+
+- Tenemos sistemas que carecen de una estructura de datos fija o bien definida
+- Sistemas donde la consistencia total no es un problema, y cuando no necesitamos ACID
+- Cuando se necesita mayor performance en las lecturas
+
+### BASE
+
+- **Basically Available**: Disponible en la mayoria de los casos, debe estar disponible para lecturas y escrituras incluso en fallos parciales. No asegura la consistencia de los datos, pero si la consistencia eventual.
+- **Soft state**: Se permite tener informacion en estados intermedios o transitorios, eventualmente llegaran a un estado consistente.
+- **Eventual consistency**: Eventualmente todos los nodos convergen al mismo estado. Lecturas realizadas por distintos usuarios pueden tener distintos resultados.
 
 ## Elementos de una base de datos
 
