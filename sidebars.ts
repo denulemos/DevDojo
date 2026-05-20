@@ -51,7 +51,7 @@ const sidebars: SidebarsConfig = {
           items: [
             {
               type: 'link',
-              label: 'Conceptos Básicos',
+              label: 'Conceptos Básicos (Node)',
               href: '/docs/nodejs#conceptos-basicos',
             },
             {
@@ -188,7 +188,7 @@ const sidebars: SidebarsConfig = {
       items: [
         {
           type: 'link',
-          label: 'Conceptos Básicos',
+          label: 'Conceptos Básicos (TS)',
           href: '/docs/typescript#conceptos-basicos',
         },
         {
