@@ -1,5 +1,7 @@
 # 💚 NodeJS
 
+## Conceptos Básicos {#conceptos-basicos}
+
 ### ¿Qué es Node.js y para qué se utiliza?
 
 Node.js es un entorno de ejecución de JavaScript que se ejecuta en el servidor. Fue construido sobre el motor V8 de Google Chrome, lo que le permite ejecutar código JavaScript fuera del navegador. 
@@ -12,9 +14,7 @@ Algunas de las ventajas de Node.js incluyen:
 - **Escalabilidad**: Su modelo de I/O no bloqueante permite manejar grandes cantidades de solicitudes concurrentes.
 - **Ecosistema**: Con npm, Node.js tiene una de las bibliotecas más grandes y activas del mundo.
 
----
-
-### ¿Cuál es la diferencia entre Node.js y el navegador en cuanto a ejecución de JavaScript?
+### Diferencia entre Node.js y el navegador
 
 En términos simples, la diferencia principal entre Node.js y el navegador al ejecutar JavaScript es **dónde y cómo se ejecuta el código**:
 
@@ -32,10 +32,7 @@ En términos simples, la diferencia principal entre Node.js y el navegador al ej
 
 En resumen, el navegador es para la web y Node.js es para el servidor. Ambos usan JavaScript, pero en contextos muy diferentes.
 
----
-
-### Event Loop en Node.js
-
+### Event Loop
 
 El **Event Loop** en Node.js es un mecanismo fundamental que permite manejar operaciones asíncronas de manera eficiente. Es el encargado de coordinar la ejecución de tareas, la gestión de eventos y las operaciones no bloqueantes.
 
@@ -67,9 +64,7 @@ El Event Loop tiene varias fases, cada una con un propósito específico:
 - Permite manejar miles de conexiones concurrentes con un solo hilo.
 - Es ideal para aplicaciones en tiempo real, como chats o servidores de streaming.
 
----
-
-### Módulos en Node.js - CommonJS y ES Modules
+### Módulos (CommonJS y ES Modules)
 
 Node.js soporta dos sistemas de módulos principales:
 
@@ -117,7 +112,7 @@ Node.js soporta dos sistemas de módulos principales:
 
 En general, CommonJS es ideal para proyectos existentes o cuando se necesita compatibilidad con versiones anteriores de Node.js. Por otro lado, ES Modules es el estándar moderno y se recomienda para nuevos proyectos.
 
---- 
+## Herramientas y Entorno {#herramientas-y-entorno}
 
 ### NPM y NPX
 
@@ -139,8 +134,6 @@ npm (Node Package Manager) es una herramienta que viene con Node.js y se utiliza
 En resumen:
 - Usa **npm** para instalar y gestionar paquetes.
 - Usa **npx** para ejecutar paquetes de manera temporal o probar herramientas sin instalarlas.
-
---- 
 
 ### Nodemon
 
@@ -164,9 +157,7 @@ Nodemon es una herramienta que se utiliza en el desarrollo con Node.js para faci
 - Ideal para desarrollo, ya que no necesitas preocuparte por reiniciar el servidor.
 - Compatible con cualquier aplicación Node.js.
 
----
-
-### Variables de entorno - dotenv
+### Variables de entorno (dotenv)
 
 Dotenv es una biblioteca que permite cargar variables de entorno desde un archivo `.env` a `process.env` en Node.js. Esto es útil para mantener información sensible (como claves API, contraseñas o configuraciones) fuera del código fuente.
 
@@ -216,68 +207,7 @@ Nunca subas tu archivo `.env` al repositorio. Añádelo al archivo `.gitignore` 
 
 En resumen, dotenv es como una libreta secreta para tus configuraciones, y `process.env` es la forma de leer esas notas en tu código.
 
----
-
-### Clustering
-
-Clustering es una técnica que permite aprovechar al máximo los procesadores multinúcleo de un servidor. Por defecto, Node.js utiliza un solo hilo para ejecutar el código, lo que significa que solo puede usar un núcleo del procesador. Con clustering, puedes crear múltiples procesos (llamados "workers") que ejecutan tu aplicación en paralelo, utilizando todos los núcleos disponibles.
-
-Conceptualmente, esto es una forma de aplicar [escalabilidad horizontal](systemdesign#vertical-vs-horizontal) dentro de una misma máquina.
-
-- Node.js tiene un módulo llamado `cluster` que permite crear varios procesos hijos (workers) que comparten el mismo puerto del servidor.
-- Cada worker es una copia de tu aplicación, pero se ejecuta de manera independiente.
-- Un proceso maestro (master) se encarga de distribuir las solicitudes entre los workers.
-
-**¿Cuándo usar clustering?**
-
-- Cuando tu aplicación necesita manejar muchas solicitudes simultáneamente y quieres aprovechar todos los núcleos del procesador.
-- Es útil para aplicaciones con alta carga de trabajo, como servidores web o APIs que reciben muchas conexiones.
-
-**Ejemplo básico de clustering:**
-
-```javascript
-const cluster = require('cluster');
-const http = require('http');
-const numCPUs = require('os').cpus().length;
-
-if (cluster.isMaster) {
-    console.log(`Proceso maestro ${process.pid} está corriendo`);
-
-    // Crear un worker por cada núcleo de CPU
-    for (let i = 0; i < numCPUs; i++) {
-        cluster.fork();
-    }
-
-    cluster.on('exit', (worker, code, signal) => {
-        console.log(`Worker ${worker.process.pid} murió`);
-    });
-} else {
-    // Workers pueden compartir la conexión TCP
-    http.createServer((req, res) => {
-        res.writeHead(200);
-
-        res.end('Hola desde Node.js\n');
-    }).listen(8000);
-
-    console.log(`Worker ${process.pid} está corriendo`);
-}
-```
-
-**Ventajas:**
-
-- Mejora el rendimiento al usar todos los núcleos del procesador.
-- Permite manejar más solicitudes simultáneamente.
-
-**Desventajas:**
-
-- Los workers no comparten memoria, por lo que debes usar soluciones externas (como Redis) para compartir datos entre ellos.
-- Puede ser más complejo de implementar y depurar.
-
-En resumen, clustering es como contratar más empleados (workers) para que trabajen en paralelo y manejen más clientes (solicitudes) al mismo tiempo. Es ideal para aplicaciones que necesitan escalar en servidores con múltiples núcleos.
-
----
-
-## **ExpressJS**
+## ExpressJS {#expressjs}
 
 Express.js es un framework minimalista y flexible para Node.js que facilita la creación de aplicaciones web y APIs. Proporciona una serie de características robustas para el desarrollo del lado del servidor, lo que lo convierte en una de las herramientas más populares en el ecosistema de Node.js.
 
@@ -391,51 +321,7 @@ Crear una API REST simple con Express es fácil y directo. Aquí tienes un ejemp
     - `PUT /items/:id` para actualizar un elemento.
     - `DELETE /items/:id` para eliminar un elemento.
 
-### CORS
-
-CORS (Cross-Origin Resource Sharing) es una forma de decirle a los navegadores que está bien compartir recursos (como datos de una API) entre diferentes dominios. Por defecto, los navegadores bloquean solicitudes de un dominio a otro por razones de seguridad. CORS permite que un servidor diga: "Está bien, este dominio puede acceder a mis datos".
-
-**Ejemplo simple:**
-- Tu API está en `https://mi-api.com`.
-- Tu frontend está en `https://mi-frontend.com`.
-- Sin CORS, el navegador bloqueará las solicitudes del frontend a la API.
-
-1. **Instalar el paquete `cors`:**
-    ```bash
-    npm install cors
-    ```
-
-2. **Usarlo en tu servidor:**
-    ```javascript
-    const express = require('express');
-    const cors = require('cors');
-    const app = express();
-
-    // Permitir CORS para todos los dominios
-    app.use(cors());
-
-    app.get('/datos', (req, res) => {
-         res.json({ mensaje: '¡Hola desde la API!' });
-    });
-
-    app.listen(3000, () => {
-         console.log('Servidor corriendo en http://localhost:3000');
-    });
-    ```
-
-3. **Configurar CORS para dominios específicos (opcional):**
-    ```javascript
-    const corsOptions = {
-         origin: 'https://mi-frontend.com', // Solo este dominio puede acceder
-    };
-    app.use(cors(corsOptions));
-    ```
-
-En resumen, CORS es como un portero que decide quién puede entrar a tu API. Con el paquete `cors`, puedes configurarlo fácilmente en Express.
-
----
-
-## Middleware
+### Middleware
 
 Un **middleware** en Express es simplemente una función que se ejecuta durante el ciclo de vida de una solicitud HTTP. Se utiliza para procesar solicitudes y respuestas antes de que lleguen a la ruta final o después de que la ruta haya respondido.
 
@@ -487,10 +373,67 @@ app.post('/usuarios', validarNombre, (req, res) => {
 
 En resumen, los middlewares son como "filtros" o "intermediarios" que ayudan a procesar las solicitudes y respuestas en Express.
 
+### CORS
 
----
+CORS (Cross-Origin Resource Sharing) es una forma de decirle a los navegadores que está bien compartir recursos (como datos de una API) entre diferentes dominios. Por defecto, los navegadores bloquean solicitudes de un dominio a otro por razones de seguridad. CORS permite que un servidor diga: "Está bien, este dominio puede acceder a mis datos".
 
-## **Performance**
+**Ejemplo simple:**
+- Tu API está en `https://mi-api.com`.
+- Tu frontend está en `https://mi-frontend.com`.
+- Sin CORS, el navegador bloqueará las solicitudes del frontend a la API.
+
+1. **Instalar el paquete `cors`:**
+    ```bash
+    npm install cors
+    ```
+
+2. **Usarlo en tu servidor:**
+    ```javascript
+    const express = require('express');
+    const cors = require('cors');
+    const app = express();
+
+    // Permitir CORS para todos los dominios
+    app.use(cors());
+
+    app.get('/datos', (req, res) => {
+         res.json({ mensaje: '¡Hola desde la API!' });
+    });
+
+    app.listen(3000, () => {
+         console.log('Servidor corriendo en http://localhost:3000');
+    });
+    ```
+
+3. **Configurar CORS para dominios específicos (opcional):**
+    ```javascript
+    const corsOptions = {
+         origin: 'https://mi-frontend.com', // Solo este dominio puede acceder
+    };
+    app.use(cors(corsOptions));
+    ```
+
+En resumen, CORS es como un portero que decide quién puede entrar a tu API. Con el paquete `cors`, puedes configurarlo fácilmente en Express.
+
+### Compresión
+
+La compresión de respuestas HTTP puede reducir el tamaño de los datos enviados al cliente, mejorando la velocidad de carga y reduciendo el uso del ancho de banda.
+- **Gzip**: Utiliza el middleware `compression` de Express para comprimir las respuestas HTTP.
+
+```javascript
+const compression = require('compression');
+const express = require('express');
+const app = express();
+app.use(compression()); // Habilitar compresión de respuestas
+app.get('/', (req, res) => {
+    res.send('¡Hola, mundo comprimido!');
+});
+app.listen(3000, () => {
+    console.log('Servidor corriendo en el puerto 3000');
+});
+```
+
+## Rendimiento y Escalabilidad {#rendimiento-y-escalabilidad}
 
 La **performance** de una aplicación Node.js se refiere a su capacidad para manejar solicitudes y operaciones de manera eficiente, minimizando el tiempo de respuesta y el uso de recursos. Dado que Node.js está diseñado para ser asíncrono y no bloqueante, tiene un rendimiento excelente en comparación con otros entornos de ejecución.
 
@@ -515,8 +458,62 @@ async function obtenerDatos() {
 }
 ```
 
-### Uso de Clústeres
-El módulo `cluster` permite aprovechar más de un núcleo del procesador. La explicación y el ejemplo están en [Clustering](#clustering); el concepto general de escala vertical y horizontal está en [System Design](systemdesign#vertical-vs-horizontal).
+### Clustering
+
+Clustering es una técnica que permite aprovechar al máximo los procesadores multinúcleo de un servidor. Por defecto, Node.js utiliza un solo hilo para ejecutar el código, lo que significa que solo puede usar un núcleo del procesador. Con clustering, puedes crear múltiples procesos (llamados "workers") que ejecutan tu aplicación en paralelo, utilizando todos los núcleos disponibles.
+
+Conceptualmente, esto es una forma de aplicar [escalabilidad horizontal](systemdesign#vertical-vs-horizontal) dentro de una misma máquina.
+
+- Node.js tiene un módulo llamado `cluster` que permite crear varios procesos hijos (workers) que comparten el mismo puerto del servidor.
+- Cada worker es una copia de tu aplicación, pero se ejecuta de manera independiente.
+- Un proceso maestro (master) se encarga de distribuir las solicitudes entre los workers.
+
+**¿Cuándo usar clustering?**
+
+- Cuando tu aplicación necesita manejar muchas solicitudes simultáneamente y quieres aprovechar todos los núcleos del procesador.
+- Es útil para aplicaciones con alta carga de trabajo, como servidores web o APIs que reciben muchas conexiones.
+
+**Ejemplo básico de clustering:**
+
+```javascript
+const cluster = require('cluster');
+const http = require('http');
+const numCPUs = require('os').cpus().length;
+
+if (cluster.isMaster) {
+    console.log(`Proceso maestro ${process.pid} está corriendo`);
+
+    // Crear un worker por cada núcleo de CPU
+    for (let i = 0; i < numCPUs; i++) {
+        cluster.fork();
+    }
+
+    cluster.on('exit', (worker, code, signal) => {
+        console.log(`Worker ${worker.process.pid} murió`);
+    });
+} else {
+    // Workers pueden compartir la conexión TCP
+    http.createServer((req, res) => {
+        res.writeHead(200);
+
+        res.end('Hola desde Node.js\n');
+    }).listen(8000);
+
+    console.log(`Worker ${process.pid} está corriendo`);
+}
+```
+
+**Ventajas:**
+
+- Mejora el rendimiento al usar todos los núcleos del procesador.
+- Permite manejar más solicitudes simultáneamente.
+
+**Desventajas:**
+
+- Los workers no comparten memoria, por lo que debes usar soluciones externas (como Redis) para compartir datos entre ellos.
+- Puede ser más complejo de implementar y depurar.
+
+En resumen, clustering es como contratar más empleados (workers) para que trabajen en paralelo y manejen más clientes (solicitudes) al mismo tiempo. Es ideal para aplicaciones que necesitan escalar en servidores con múltiples núcleos.
 
 ### Optimización de Consultas a Bases de Datos
 Las consultas a bases de datos pueden ser un cuello de botella en el rendimiento de una aplicación. Aquí hay algunas prácticas para optimizarlas:
@@ -560,32 +557,12 @@ Revisa y optimiza tu código para mejorar el rendimiento. Algunas prácticas inc
 - **Utilizar módulos nativos**: Siempre que sea posible, utiliza módulos nativos de Node.js en lugar de bibliotecas externas, ya que suelen ser más eficientes.
 - **Evitar el uso excesivo de memoria**: Utiliza estructuras de datos eficientes y evita mantener en memoria grandes volúmenes de datos innecesarios.
 
-### Compresión
-
-La compresión de respuestas HTTP puede reducir el tamaño de los datos enviados al cliente, mejorando la velocidad de carga y reduciendo el uso del ancho de banda.
-- **Gzip**: Utiliza el middleware `compression` de Express para comprimir las respuestas HTTP.
-
-```javascript
-const compression = require('compression');
-const express = require('express');
-const app = express();
-app.use(compression()); // Habilitar compresión de respuestas
-app.get('/', (req, res) => {
-    res.send('¡Hola, mundo comprimido!');
-});
-app.listen(3000, () => {
-    console.log('Servidor corriendo en el puerto 3000');
-});
-```
-
 ### Monitoreo y Análisis de Rendimiento
 Implementa herramientas de monitoreo para analizar el rendimiento de tu aplicación en producción. El concepto general está en [Observabilidad](systemdesign#observabilidad); en Node.js, lo importante es exponer métricas útiles del proceso y del event loop.
 - **Herramientas de monitoreo**: Utiliza servicios como New Relic, Datadog o Prometheus para monitorear el rendimiento de tu aplicación y recibir alertas sobre problemas.
 - **Logs de rendimiento**: Implementa un sistema de logging que registre métricas clave, como tiempos de respuesta, uso de memoria y errores, para analizar el rendimiento a lo largo del tiempo.
 
----
-
-## **Escalabilidad**
+### Escalabilidad (Conceptos Generales)
 
 Los conceptos generales de escalabilidad, load balancers, servicios stateless/stateful y tolerancia a fallos están desarrollados en [System Design](systemdesign).
 
@@ -603,17 +580,3 @@ En Node.js, lo específico es cómo aplicar esos conceptos:
 - Evitar bloquear el event loop con operaciones pesadas; para CPU intensivo, usar `worker_threads`, colas de trabajo o procesos separados.
 - Poner varias instancias Node.js detrás de un load balancer como Nginx, HAProxy o un balanceador cloud.
 - Medir tiempos de respuesta, throughput y errores para decidir cuándo escalar. Ver [Rendimiento](systemdesign#rendimiento).
-
----
-
-## REST vs GraphQL
-
-| REST | GraphQL |
-| --- | --- |
-| Es un link para cada recurso | Es un solo link para varios recursos, endpoint unico |
-| Puede tener problemas de sobre-recuperación (más información de la necesaria) o sub-recuperación (menos información de la necesaria), lo cual causa que necesitemos varias consultas para tener lo que precisamos, o que tengamos payloads muy pesados | El cliente puede especificar qué campos quiere en la consulta |
-| Es mas facil de desarrollar desde cero pero complicado de escalar | Su inicializacion es compleja, pero si se tienen los datos necesarios, los cambios que se tendrian que hacer serian minimos |
-| Como las consultas son con su propio endpoint y pueden ser dentro de todo predecibles, el catching es mucho mas facil de implementar | Como las consultas son variadas, el catching es complicado de implementar, aunque hay tecnicas especificas | 
-| Se recomienda usar REST cuando la seguridad y el catching son una prioridad, ademas si tengo clientes que buscan servicios predecibles | Se recomienda cuando es importante el minimizar la cantidad de solicitudes hechas en el servidor |
-
----

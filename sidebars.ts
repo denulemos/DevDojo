@@ -27,14 +27,14 @@ const sidebars: SidebarsConfig = {
         collapsed: true,
         items: ['versionado', 'cicd'],
       },
-      {
-        type: 'category',
-        label: '☁️ Cloud',
-        collapsed: true,
-        items: ['aws'],
-      }
-    
-    ],
+        {
+          type: 'category',
+          label: '☁️ Cloud',
+          collapsed: true,
+          items: ['aws'],
+        }
+
+      ],
     },
     {
       type: 'category',
@@ -43,9 +43,80 @@ const sidebars: SidebarsConfig = {
       collapsed: true,
       items: [
         'java',
-        'nodejs',
-        'basesDatos',
-        'api',
+        {
+          type: 'category',
+          label: '💚 NodeJS',
+          link: { type: 'doc', id: 'nodejs' },
+          collapsed: true,
+          items: [
+            {
+              type: 'link',
+              label: 'Conceptos Básicos',
+              href: '/docs/nodejs#conceptos-basicos',
+            },
+            {
+              type: 'link',
+              label: 'Herramientas y Entorno',
+              href: '/docs/nodejs#herramientas-y-entorno',
+            },
+            {
+              type: 'link',
+              label: 'ExpressJS',
+              href: '/docs/nodejs#expressjs',
+            },
+            {
+              type: 'link',
+              label: 'Rendimiento y Escalabilidad',
+              href: '/docs/nodejs#rendimiento-y-escalabilidad',
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: '🗄️ Bases de Datos',
+          link: { type: 'doc', id: 'basesDatos' },
+          collapsed: true,
+          items: [
+            {
+              type: 'link',
+              label: 'SQL',
+              href: '/docs/basesDatos#sql',
+            },
+            {
+              type: 'link',
+              label: 'Not Only SQL - NoSQL',
+              href: '/docs/basesDatos#nosql',
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: '🔌 APIs',
+          link: { type: 'doc', id: 'api' },
+          collapsed: true,
+          items: [
+            {
+              type: 'link',
+              label: 'Arquitecturas y Tipos',
+              href: '/docs/api#arquitecturas-y-tipos',
+            },
+            {
+              type: 'link',
+              label: 'Componentes de una API',
+              href: '/docs/api#componentes-de-una-api',
+            },
+            {
+              type: 'link',
+              label: 'Diseño y Buenas Prácticas',
+              href: '/docs/api#diseno-y-buenas-practicas',
+            },
+            {
+              type: 'link',
+              label: 'Seguridad y Control de Tráfico',
+              href: '/docs/api#seguridad-y-control-de-trafico',
+            },
+          ],
+        },
       ],
     },
 
@@ -71,8 +142,97 @@ const sidebars: SidebarsConfig = {
         'ssr',
       ],
     },
-    'javascript',
-    'typescript',
+    {
+      type: 'category',
+      label: '💛 JavaScript',
+      link: { type: 'doc', id: 'javascript' },
+      collapsed: true,
+      items: [
+        {
+          type: 'link',
+          label: 'Métodos y Colecciones',
+          href: '/docs/javascript#metodos-y-colecciones',
+        },
+        {
+          type: 'link',
+          label: 'Fundamentos del Lenguaje',
+          href: '/docs/javascript#fundamentos-del-lenguaje',
+        },
+        {
+          type: 'link',
+          label: 'Asincronía y Runtime',
+          href: '/docs/javascript#asincronia-y-runtime',
+        },
+        {
+          type: 'link',
+          label: 'Objetos, Módulos y Estructuras',
+          href: '/docs/javascript#objetos-modulos-y-estructuras',
+        },
+        {
+          type: 'link',
+          label: 'Preguntas Frecuentes',
+          href: '/docs/javascript#preguntas-frecuentes',
+        },
+        {
+          type: 'link',
+          label: 'Async Operations',
+          href: '/docs/javascript#async-operations',
+        },
+      ],
+    },
+    {
+      type: 'category',
+      label: '💎 TypeScript',
+      link: { type: 'doc', id: 'typescript' },
+      collapsed: true,
+      items: [
+        {
+          type: 'link',
+          label: 'Conceptos Básicos',
+          href: '/docs/typescript#conceptos-basicos',
+        },
+        {
+          type: 'link',
+          label: 'Interfaces',
+          href: '/docs/typescript#interfaces',
+        },
+        {
+          type: 'link',
+          label: 'Types',
+          href: '/docs/typescript#types',
+        },
+        {
+          type: 'link',
+          label: 'Utility Types',
+          href: '/docs/typescript#utility-types',
+        },
+        {
+          type: 'link',
+          label: 'Decoradores',
+          href: '/docs/typescript#decoradores',
+        },
+        {
+          type: 'link',
+          label: 'Conditional Types',
+          href: '/docs/typescript#conditional-types',
+        },
+        {
+          type: 'link',
+          label: 'Parametros REST',
+          href: '/docs/typescript#parametros-rest',
+        },
+        {
+          type: 'link',
+          label: 'Clases',
+          href: '/docs/typescript#clases',
+        },
+        {
+          type: 'link',
+          label: 'Herencia',
+          href: '/docs/typescript#herencia',
+        },
+      ],
+    },
     {
       type: 'category',
       label: '🤝 Soft Skills',

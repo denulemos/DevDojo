@@ -1,10 +1,10 @@
-﻿---
+---
 sidebar_position: 1
 ---
 
 # 💛 JavaScript
 
-## **Metodos y Colecciones**
+## **Metodos y Colecciones** {#metodos-y-colecciones}
 
 ### Métodos de Strings y Arrays
 
@@ -422,7 +422,7 @@ console.log(array); // Imprime: ['a', 'b', 'c']
 
 ---
 
-## **Fundamentos del Lenguaje**
+## **Fundamentos del Lenguaje** {#fundamentos-del-lenguaje}
 
 ### Spread Operator vs Rest Operator
 
@@ -911,7 +911,7 @@ A las funciones declarativas se les aplica hoisting, a la otra no, hoisting se a
 
 ---
 
-## **Asincronia y Runtime**
+## **Asincronia y Runtime** {#asincronia-y-runtime}
 
 ### Event Loop
 
@@ -989,7 +989,7 @@ En este ejemplo, la funcion dentro de `setTimeout` se ejecutara despues de 2 seg
 
 ---
 
-## **Objetos, Modulos y Estructuras**
+## **Objetos, Modulos y Estructuras** {#objetos-modulos-y-estructuras}
 
 ### `Map` vs `WeakMap`
 
@@ -1310,7 +1310,7 @@ U otro ejemplo es para evitar que el resto de eventos que se ejecutarian por def
 
 ---
 
-## **Preguntas Frecuentes**
+## **Preguntas Frecuentes** {#preguntas-frecuentes}
 
 ### Comparar dos Objetos con `===`, es posible?
 
@@ -1390,7 +1390,7 @@ async function myAsyncFunction() {
 
 ---
 
-## **Async Operations**
+## **Async Operations** {#async-operations}
 
 ### Promises
 

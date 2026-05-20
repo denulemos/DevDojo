@@ -1,6 +1,6 @@
 # 🗄️ Bases de Datos
 
-## **SQL**
+## **SQL** {#sql}
 
 Se centran en estructurar los datos en tablas relacionadas entre si. 
 
@@ -274,7 +274,7 @@ VALUES (1, 'England')
 - No hacer llamado de funciones repetitivamente en los Store Proceedures o triggers, en lugar de eso hacer el llamado una sola vez y guardarlo en alguna variable
 - También tener en cuenta el consumo de CPU que generan tus consultas o queries.
 
-## **Not Only SQL - NoSQL**
+## **Not Only SQL - NoSQL** {#nosql}
 
 Hay de diversos tipos:
 
@@ -364,29 +364,34 @@ Las sentencias DDL se utilizan para crear y modificar la estructura de las tabla
 
 ---
 
-## Índices
+## Indices
 
 Imagina que tienes una guía telefónica y quieres encontrar el número de "Denu Lemon":
 
-- Sin índice: Tendrías que revisar página por página hasta encontrar el nombre (esto sería muy lento)
-- Con índice: Vas directamente a la sección "L" y encuentras rápidamente a "Lemon"
+- **Sin indice**: Tendrías que revisar página por página hasta encontrar el nombre (esto sería muy lento)
+- **Con indice**: Vas directamente a la sección "L" y encuentras rápidamente a "Lemon"
 
 En una base de datos funciona igual:
-- Sin índice: La base de datos tiene que revisar TODA la tabla para encontrar lo que buscas
-- Con índice: La base de datos sabe exactamente dónde buscar la información
 
-Ventajas:
-- Hace las búsquedas muchísimo más rápidas
-- Ayuda a encontrar datos duplicados fácilmente
+- **Sin indice**: La base de datos tiene que revisar TODA la tabla para encontrar lo que busca -> `full table scan`
+- **Con indice**: La base de datos sabe exactamente dónde buscar la información -> `index scan`
 
-Desventajas:
-- Ocupa más espacio en el disco duro
-- Hace que agregar o modificar datos sea un poco más lento (porque tiene que actualizar también el índice)
+Se almacenan en tablas Hash o B-Tree. Se recomienda indexar solo las columnas que se usan frecuentemente para buscar información. No se deben indexar todas las columnas.
 
-¿Cuándo usarlos?
+| Ventajas | Desventajas |
+|----------|-------------|
+| Hace las búsquedas muchísimo más rápidas especialemente si se tienen muchos datos | Ocupa más espacio en el disco duro |
+| Ayuda a encontrar datos duplicados fácilmente | Hace que agregar o modificar datos sea un poco más lento (porque tiene que actualizar también el índice) |
+
+**¿Cuándo usarlos?**
+
 - Cuando tienes muchos datos en una tabla
 - En columnas que usas frecuentemente para buscar información
 - En columnas que necesitan tener valores únicos
+
+---
+
+## Desnormalización
 
 ---
 

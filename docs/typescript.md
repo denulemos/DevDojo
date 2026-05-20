@@ -4,6 +4,8 @@ sidebar_position: 1
 # 💎 TypeScript
 
 
+## Conceptos Básicos {#conceptos-basicos}
+
 ### TSConfig.json
 
 Es el archivo de configuración de TypeScript, en el se definen las reglas de compilación de TypeScript.
@@ -119,7 +121,7 @@ let tuplaRest: [string, ...number[]] = ['Denu', 1, 2, 3];
 
 ---
 
-## Interfaces
+## Interfaces {#interfaces}
 
 Las interfaces en TypeScript se **no transpilan a código JavaScript**, ya que son un mecanismo exclusivo del tiempo de compilación para mantener el tipado estático y ayudar en la detección de errores durante el desarrollo. 
 
@@ -190,7 +192,7 @@ const person: Person = { name: 'Alice', age: 30 };
 
 ---
 
-## **Types**
+## **Types** {#types}
 
 - **Unión y Intersección:** Los tipos permiten la creación de tipos de datos más complejos mediante la unión y la intersección de tipos.
 
@@ -389,7 +391,7 @@ type Admin = User & { role: 'admin' };
 ---
 
 
-## **Utility Types**
+## **Utility Types** {#utility-types}
 
 Los Utility Types en TypeScript son tipos predefinidos que permiten realizar transformaciones y operaciones comunes en tipos de datos existentes. Estos tipos proporcionan funcionalidades útiles para trabajar con tipos de datos de una manera más flexible y reutilizable. Algunos de los Utility Types más comunes en TypeScript son `Partial`, `Pick`, y `Omit`.
 
@@ -442,7 +444,7 @@ const personWithoutAddress: PersonWithoutAddress = { name: 'Alice', age: 30 }; /
 
 ---
 
-## Decoradores
+## Decoradores {#decoradores}
 
 Para usar decoradores, debes habilitar la opción experimentalDecorators en el archivo tsconfig.json:
 
@@ -579,7 +581,7 @@ class UserService {
 
 ---
 
-## Conditional Types
+## Conditional Types {#conditional-types}
 
 Los Conditional Types en TypeScript son una característica avanzada que permite definir tipos condicionales basados en una condición booleana. Esto permite crear tipos que se comportan de manera diferente según una condición dada. Los Conditional Types se definen utilizando la palabra clave `extends` y la sintaxis de los tipos condicionales.
 
@@ -595,7 +597,7 @@ type Test2 = IsString<number>; // 'no'
 ---
 
 
-## Parametros REST
+## Parametros REST {#parametros-rest}
 
 
 Una funcion puede recibir tantos argumentos como uno quiera, y los parametros REST son una manera de hacer esto.
@@ -613,7 +615,7 @@ sumar(1, 2, 3, 4, 5, 6, 7, 8, 9, 10); // 55
 ---
 
 
-## Clases
+## Clases {#clases}
 
 
 ```tsx
@@ -638,7 +640,7 @@ class Person {
 
 ---
 
-## Herencia
+## Herencia {#herencia}
 
 La herencia en TypeScript se logra mediante la palabra clave `extends`. Una clase puede heredar propiedades y métodos de otra clase utilizando la herencia. Aquí tienes un ejemplo de cómo se ve la herencia en TypeScript:
 
