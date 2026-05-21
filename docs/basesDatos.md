@@ -1,5 +1,15 @@
 # 🗄️ Bases de Datos
 
+## Elementos de una base de datos
+
+- **Tablas**: Contienen la información
+- **Vistas**: Parecidas a la tabla, son para consultas, más rápidas
+- **Índices**: Uno o más columnas de una tabla para encontrar la data más rápido, es como el índice de un libro
+- **Triggers**: Disparadores que ejecutan código de SQL cuando se inserta, borra o se updatea un campo (CRUD (Create, Read, Update, Delete))
+- **Procedures**: Pedazos de código SQL que se ejecutan
+- **Constraints**: Previenen inconsistencia de datos en una columna
+- **Reglas:** Se especifican valores válidos para ser insertados en una tabla o columna.
+
 ## **SQL** {#sql}
 
 Se centran en estructurar los datos en tablas relacionadas entre si. 
@@ -306,16 +316,6 @@ Se debe usar cuando:
 - **Soft state**: Se permite tener informacion en estados intermedios o transitorios, eventualmente llegaran a un estado consistente.
 - **Eventual consistency**: Eventualmente todos los nodos convergen al mismo estado. Lecturas realizadas por distintos usuarios pueden tener distintos resultados.
 
-## Elementos de una base de datos
-
-- **Tablas**: Contienen la información
-- **Vistas**: Parecidas a la tabla, son para consultas, más rápidas
-- **Índices**: Uno o más columnas de una tabla para encontrar la data más rápido, es como el índice de un libro
-- **Triggers**: Disparadores que ejecutan código de SQL cuando se inserta, borra o se updatea un campo (CRUD (Create, Read, Update, Delete))
-- **Procedures**: Pedazos de código SQL que se ejecutan
-- **Constraints**: Previenen inconsistencia de datos en una columna
-- **Reglas:** Se especifican valores válidos para ser insertados en una tabla o columna.
-
 ---
 
 ## Elementos de Data Control Language (DCL)
@@ -391,10 +391,6 @@ Se almacenan en tablas Hash o B-Tree. Se recomienda indexar solo las columnas qu
 
 ---
 
-## Desnormalización
-
----
-
 ## Normalización
 
 Normalización es el proceso de ordenar una base de datos para que no haya datos repetidos, sea más fácil de mantener y evites errores raros cuando guardás, editás o borrás información.
@@ -404,24 +400,178 @@ Normalizar = dividir la información en tablas lógicas + crear relaciones corre
 Objetivos principales:
 
 - Evitar datos duplicados.
-- Evitar inconsistencias (que un dato cambie en un lado pero no en otro).
-- Hacer que la base sea más fácil de modificar.
+- Evitar inconsistencias (que un dato cambie en un lado pero no en otro) y a minimiza la redundancia. Si modifiucamos el nombre de una profesion en la tabla original, debemos modificarlo en todas las filas donde se use. 
+- Hacer que la base sea más fácil de modificar, pero no de leer, ya que al dividir la informacion en mas tablas, se nos hace mas necesario realizar mas `joins` para obtener la informacion completa, lo que hace que nuestras consultas sean mas lentas.
 - Asegurar integridad de la info.
-- Evitar redundancia
-- Evitar problemas de actualización
-- Asegurar la integridad
-- Asegurar que no hayan 2 registros iguales
-- Todos los datos de una determinada propiedad
-deben ser del mismo tipo.
-- Ejemplo “Nacimiento” debe tener una fecha.
 
 Hay distintos grados de normalización:
 
-- Primera forma normal
-- Segunda forma normal
-- Tercera forma normal
+- **Primera forma normal**: Cada celda debe contener un solo valor, no un conjunto de valores
 
-Cada una de estas formas normales tiene sus reglas.
-Una base de datos no necesita estar siempre en la tercera forma normal; puede ocurrir que, para resolver problemas complejos, no se requiera llevar algún dato hasta esa forma.
+Esta tabla esta en la **primera forma normal** ya que cada celda tiene un solo valor.
 
----
+| id | job_code | job_name | name | country_code | country |
+| --- | --- | --- | --- | --- | --- |
+| E1 | J1 | Developer | Daniel | US | United States |
+| E1 | J2 | Manager | Daniel | US | United States |
+| E2 | J2 | Developer | Ana | US | United States |
+
+Con el ID del empleado podemos saber el nombre, pais y codigo de pais. Cada empleado puede tener multiples trabajos, como Daniel.
+
+No se necesita el `job_code` para eso, **esta tabla no cumple con la segunda forma normal** ya que no dependen completamente de la PK. 
+
+- **Segunda forma normal**: Cumplir con la primera, y no deben haber dependencias parciales. Todos los atributos no clave deben depender de la clave primaria (PK)
+
+Debemos separar la tabla de empleados y profesiones en dos tablas distintas para cumplir con la segunda forma normal para que todos los campos dependan completamente de sus claves. **Como dado un codigo de pais se puede identificar el pais asociado, no cumple con la tercera forma normal**
+
+| id |  name | country_code | country |
+| --- |  --- | --- | --- |
+| E1 |  Daniel | US | United States |
+| E1 |  Daniel | US | United States |
+| E2 |  Ana | US | United States |
+
+| id | name | 
+| --- | --- |
+| J1 | Developer  |
+| J2 | Manager  |
+| J2 | Developer |
+
+| employee_id | job_id  |
+| --- | --- |
+| E1 | J1 |
+| E1 | J2 | 
+| E2 | J2 | 
+
+- **Tercera forma normal**: Debe cumplir con las 2 anteriores, y ademas un atributo no clave no debe depender de otro atributo no clave. Es decir, no debe haber dependencias transitivas.
+
+Para que nuestras tablas anteriores cumplan con la tercera forma normal, debemos eliminar la columna `country` de la tabla de empleados, ya que dado un codigo de pais se puede identificar el pais asociado.
+
+
+| id |  name | country_id | 
+| --- |  --- | --- | 
+| E1 |  Daniel | US |
+| E1 |  Daniel | US | 
+| E2 |  Ana | US | 
+
+| id | name | 
+| --- | --- |
+| J1 | Developer  |
+| J2 | Manager  |
+| J2 | Developer |
+
+| employee_id | job_id  |
+| --- | --- |
+| E1 | J1 |
+| E1 | J2 | 
+| E2 | J2 | 
+
+| id | name  |
+| --- | --- |
+| ES | Spain |
+| US | United States |
+
+
+## Desnormalización
+
+Se trata de realizar el proceso inverso a la Normalizacion, generalmente duplicando la informacion, reduciendo la consistencia y aumentando la redundancia, pero haciendo las lecturas mucho mas rapidas. 
+
+Esto se realiza cuando vemos que hay consultas seguidas a unas tablas en particular, y si queremos mejorar la performance de estas consultas, la desnormalizacion es una buena opcion, ya que al tener la informacion duplicada, no necesitamos hacer joins para obtener la informacion completa, lo que hace que nuestras consultas sean mucho mas rapidas.
+
+- Mas performance sacrificando consistencia, hay que actualizar los datos en multiples ubicaciones, lo que hace que sea mas propenso a errores, y a tener datos inconsistentes.
+- Se hace uso de mayor espacio de almacenamiento, ya que se esta duplicando la informacion.
+- Se debe aplicar cuando no podemos mejorar la performance con el agregado de indices u optimizando consultas existentes.
+
+**Ejemplo normalizado**
+
+| id | name | author_id | year |
+| --- | --- | --- | --- |
+| B1 | Book 1 | A1 | 2020 |
+| B2 | Book 2 | A2 | 2021 |
+| B3 | Book 3 | A1 | 2022 |
+
+| id | name  |
+| --- | --- |
+| A1 | Author 1 |
+| A2 | Author 2 |
+
+**Ejemplo desnormalizado**
+
+| id | name |author_id|  author_name | year |
+| --- | --- | --- | --- | --- |
+| B1 | Book 1 | A1 |  Author 1 | 2020 |
+| B2 | Book 2 | A2 |  Author 2 | 2021 |
+| B3 | Book 3 | A1 |  Author 1 | 2022 |
+
+## Replicacion de datos
+
+Es el proceso de copiar y mantener datos en múltiples ubicaciones para mejorar la disponibilidad, la tolerancia a fallos y el rendimiento de las consultas.
+
+Si tengo un unico servidor de base de datos en un futuro habra un **cuello de botella** ya que:
+
+- La cantidad de peticiones sera demasiado alto para poder ser procesado por un solo servidor -> **afecta rendimiento**
+- Si este servidor cae, toda la base de datos quedara caida -> **afecta disponibilidad**
+
+La replicacion de datos se hara en un **Modelo Master-Slave**:
+
+- **Master**: Base de datos principal donde se realizan las operaciones de escritura (`INSERT`, `UPDATE`, `DELETE`), y este replica la informacion a todos los servidores **Slave**, se encarga de mantener la consistencia de los datos.
+- **Slave**: Base de datos secundaria que recibe las actualizaciones del master y se utiliza principalmente para operaciones de lectura (`SELECT`).
+
+El numero de servidores depende de la cantidad de lecturas y escrituras. Si se realizan mas lecturas que escrituras, habran mas servidores **Slave**.
+
+- Si un servidor slave cae, no sucede nada, ya que el resto soportara su carga, si tengo uno solo, o todos los slave caen, las peticiones de lectura se redirigen al master, lo que puede afectar el rendimiento, pero no la disponibilidad.
+- Si Master tiene problemas, el proceso es mas complejo. Un Slave sera ascendido a Master y lo reemplazara. Puede suceder que las replicas no esten 100% actualizadas, ocasionando un downtime mientras que la recuperacion de datos se realiza, y este servidor esta listo para ser Master. 
+
+**Beneficios**:
+
+- Mayor rendimiento, se reparte mas la carga.
+- Mayor fiabilidad, si un servidor cae, el resto mantendran la informacion a salvo. 
+- Mayor disponibilidad, si un servidor cae, el resto soportara su carga, ya que hay multiples servidores, **se elimina el unico punto de fallo**.
+
+## Sharding (Particionado de datos)
+
+Si tenemos un sismea con muchas escirturas, la replicacion de datos puede ser insuficiente. Esta tecnica divide la base de datos en partes mas pequeñas llamadas shards, cada shard es un subconjunto de los datos y se aloja en un servidor diferente. Cada shard es independiente y puede ser consultado de forma individual, lo que mejora el rendimiento y la escalabilidad del sistema.
+
+- **Clave de Sharding - Partition Key**: Una o mas columnas que van a determinar como se va a distribuir la informacion entre los distintos shards. Es importante elegir una buena clave de sharding para evitar problemas de rendimiento y balanceo de carga.
+
+**Ejemplo tabla sin sharding**
+
+| id | username |
+| --- | --- |
+| 1 | user1 |
+| 2 | user2 |
+| 3 | user3 |
+| 4 | user4 |
+| 5 | user5 |
+| 6 | user6 |
+| .... | .... |
+| 12 | user12 |
+
+Imaginemos que queremos tener 3 shards distintos, y elegimos como clave de sharding el `id`, entonces la distribucion de los datos seria la siguiente:
+
+| id  | username |
+| --- | --- |
+| 1 | user1 |
+| 4 | user1 |
+| 7 | user1 |
+| 10 | user1 |
+
+| id  | username |
+| --- | --- |
+| 2 | user2 |
+| 5 | user2 |
+| 8 | user2 |
+| 11 | user2 |
+
+
+| id  | username |
+| --- | --- |
+| 3 | user3 |
+| 6 | user3 |
+| 9 | user3 |
+| 12 | user3 |
+
+Cada tabla estara guardada en un servidor, y cada consulta se redirigira al shard correspondiente dependiendo de la clave de sharding.
+
+- **Sharding basado en rango**: Se asignan a cada shard los datos generados en una linea de tiempo, por ejemplo, el shard 1 se encarga de los datos generados en el año 2020, el shard 2 se encarga de los datos generados en el año 2021, etc.. Este tipo de sharding puede generar problemas de balanceo de carga si hay un aumento repentino de datos en un rango de tiempo específico. **es eficiente para consultas de rango, aunque puede haber un desequilibrio de carga si un rango de tiempo tiene muchos datos.**
+- **Sharding basado en hash**: Se aplica una función de hash a la clave de sharding para determinar a qué shard se asigna cada dato. Este tipo de sharding distribuye los datos de manera más uniforme entre los shards, **es eficiente para consultas de igualdad, pero no para consultas de rango.**
+- **Sharding basado en listas**: Se asignan a cada shard un conjunto específico de valores de la clave de sharding, por ejemplo, el shard 1 se encarga de los usuarios con id del 1 al 1000, el shard 2 se encarga de los usuarios con id del 1001 al 2000, etc.. Este tipo de sharding puede generar problemas de balanceo de carga si hay un aumento repentino de datos en un rango específico. **es eficiente para consultas de igualdad, pero no para consultas de rango.**
