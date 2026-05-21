@@ -574,4 +574,25 @@ Cada tabla estara guardada en un servidor, y cada consulta se redirigira al shar
 
 - **Sharding basado en rango**: Se asignan a cada shard los datos generados en una linea de tiempo, por ejemplo, el shard 1 se encarga de los datos generados en el año 2020, el shard 2 se encarga de los datos generados en el año 2021, etc.. Este tipo de sharding puede generar problemas de balanceo de carga si hay un aumento repentino de datos en un rango de tiempo específico. **es eficiente para consultas de rango, aunque puede haber un desequilibrio de carga si un rango de tiempo tiene muchos datos.**
 - **Sharding basado en hash**: Se aplica una función de hash a la clave de sharding para determinar a qué shard se asigna cada dato. Este tipo de sharding distribuye los datos de manera más uniforme entre los shards, **es eficiente para consultas de igualdad, pero no para consultas de rango.**
-- **Sharding basado en listas**: Se asignan a cada shard un conjunto específico de valores de la clave de sharding, por ejemplo, el shard 1 se encarga de los usuarios con id del 1 al 1000, el shard 2 se encarga de los usuarios con id del 1001 al 2000, etc.. Este tipo de sharding puede generar problemas de balanceo de carga si hay un aumento repentino de datos en un rango específico. **es eficiente para consultas de igualdad, pero no para consultas de rango.**
+- **Sharding basado en listas**: Por ejemplo, separar por codigo de pais. Tambien puede causar **desequilibrio de tablas** si no se tiene un buen disenio.
+- **Round Robin**: Se asigna cada nuevo dato al siguiente shard disponible de manera secuencial. Este tipo de sharding es fácil de implementar, pero puede generar problemas de rendimiento si hay un aumento repentino de datos en un shard específico. Ademas puede dar problemas de localizacion de datos, ya que no hay una clave de sharding clara.
+
+**Desafios**
+
+- **Resharding**: Si un shard se llena o se vuelve demasiado grande, es necesario redistribuir los datos entre los shards, lo que puede ser un proceso complejo y costoso en términos de tiempo y recursos. Esto se puede mitigar con el **Consistent Hashing**, que es una técnica que permite agregar o eliminar shards sin necesidad de redistribuir todos los datos, solo los datos que se encuentran en el shard afectado.
+- **Celebrity - Hotspot**: Si unos datos son mas populares que otros, el shard que contiene esos datos puede recibir una cantidad desproporcionada de tráfico, lo que puede afectar el rendimiento del sistema. Esto se puede mitigar con técnicas de balanceo de carga y replicacion de datos. Puede que se necesiten estrategias de shard mas creativas, como basadas en popularidad. 
+- **Realizar consultas**: Los Datos se distribuyen en distintos harsh, por lo que debemos obtener informacion de distintos nodos, lo que puede afectar el rendimiento de las consultas. Esto se puede mitigar con técnicas de caché y optimización de consultas.
+
+## Teorema CAP
+
+En un sistema distribuido de datos es imposible garantizar la **Consistencia, Disponibilidad y Tolerancia a Particiones** al mismo tiempo. Solo se pueden garantizar dos de estas propiedades, por lo que es necesario elegir cuáles son las más importantes para el sistema que se está diseñando.
+
+- **Consistencia (Consistency)**: Todos los nodos ven la misma información al mismo tiempo. Si un dato se actualiza en un nodo, esa actualización se refleja inmediatamente en todos los demás nodos.
+- **Disponibilidad (Availability)**: El sistema siempre responde a las solicitudes, incluso si algunos nodos están caídos. No hay un único punto de fallo, por lo que el sistema sigue funcionando aunque algunos nodos no estén disponibles, provocando que **clientes distintos vean informacion distinta**
+- **Tolerancia a Particiones (Partition Tolerance)**: El sistema sigue funcionando incluso si hay una partición en la red que impide que algunos nodos se comuniquen entre sí. El sistema puede manejar la pérdida de comunicación entre nodos sin afectar su funcionamiento.
+
+Solo se pueden garantizar dos de estas propiedades al mismo tiempo:
+
+- **CA (Consistencia y Disponibilidad)**: El sistema garantiza que todos los nodos ven la misma información al mismo tiempo y siempre responde a las solicitudes, pero no puede manejar particiones en la red. Si hay una partición, el sistema puede volverse inconsistente o no disponible.
+- **CP (Consistencia y Tolerancia a Particiones)**: El sistema garantiza que todos los nodos ven la misma información al mismo tiempo y puede manejar particiones en la red, pero no siempre responde a las solicitudes. Si hay una partición, el sistema puede volverse no disponible.
+- **AP (Disponibilidad y Tolerancia a Particiones)**: El sistema siempre responde a las solicitudes y puede manejar particiones en la red, pero no garantiza que todos los nodos vean la misma información al mismo tiempo. Si hay una partición, el sistema puede volverse inconsistente.
