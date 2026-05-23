@@ -20,7 +20,19 @@ const sidebars: SidebarsConfig = {
       label: '🧠 Arquitectura',
       link: { type: 'doc', id: 'arquitectura' },
       collapsed: true,
-      items: ['microfrontends', 'systemdesign', 'microservicios', {
+      items: ['microfrontends', 'systemdesign', {
+              type: 'link',
+              label: '🧩 Microservicios',
+              href: '/docs/arquitectura#microservicios',
+            }, {
+              type: 'link',
+              label: '🧩 Multilayer - Multicapa',
+              href: '/docs/arquitectura#multilayer',
+            },{
+              type: 'link',
+              label: '🧩 Multi-tier - Multinivel',
+              href: '/docs/arquitectura#multinivel',
+            }, {
         type: 'category',
         label: '⚙️ DevOps',
         link: { type: 'doc', id: 'devops' },
