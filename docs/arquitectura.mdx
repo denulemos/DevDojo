@@ -59,12 +59,18 @@ Cada servicio debe ser de cualquier tamaño deseado (no necesariamente micro, co
 
 En el approach **Monolítico** los componentes de la aplicación funcionan todos juntos en un solo paquete, un solo deploy y un solo repositorio. 
 
+Los microservicios se comunican mediante API Rest o Brokers de Mensajeria en caso de tener comunicacion asincrona.
+
+La capa de presentacion o los clientes deben llamar a distintos microservicios para obtener informacion relacionada, esto se mitiga con **API Gateway**, realizando la llamada a un unico punto, y la Gateway encargandose de redireccionarlo. 
+
 | Beneficios | Desventajas |
 | --- | --- |
 | Multiples equipos pueden trabajar en diversos servicios al mismo tiempo | El manejo de la latencia, tipo de comunicacion y consistencia es complicado |
 | Si un servicio tiene problemas, no afecta al resto del sistema | Mas complejidad de desarrollo, testing y deployment |
-| El sistema puede adaptarse a cambios de workloads | Mantener la consistencia de la información entre servicios puede ser complicado | 
-| Cada microservicio puede funcionar con tecnologias completamente distintas | El manejo de errores puede ser complejo | 
+| El sistema puede adaptarse a cambios de workloads | Mantener la consistencia de la información entre servicios puede ser complicado, se requiere cierta comunicacion entre equipos | 
+| Cada microservicio puede funcionar con tecnologias completamente distintas y escalarse independientemente | El manejo de errores puede ser complejo, aunque mas aislados | 
+
+No se recomienda su implementacion cuando se tiene un equipo pequeño.
 
 ![alt text](src/microservicios.png)
 
@@ -119,6 +125,38 @@ Si un paso falla, se revierten los pasos anteriores, así se mantiene la consist
 - Microservicios con limites poco definidos, responsabilidades poco claras.
 - No prestar atencion a la seguridad del sistema, exponiendo los servicios a data breaches.
 
-## **CQRS**
+## **CQRS (Command Query Responsibility Segregation)**
+
+**Comandos**: Acciones que realizan una modificacion en el estado del sistema y que no devuelven informacion, por ejemplo, escribir un comentario en un post. 
+
+**Consultas**: Acciones que no alteran el estado del sistema, tan solo devuelven datos. Por ejemplo, obtener los ultimos comentarios de un post.
+
+CQRS se divide la app en 2 stacks, uno de lectura (**Query Stack**) y otro de lectura (**Command Stack**). Ambos con un modelo distinto especificamente diseñado para tratar ambos tipos de operaciones. 
+
+Por ejemplo, para los Comandos, un diseño SQL Relacional es muy util, ya que solo seria agregar un campo en una tabla, pero para las consultas no tanto, ya que se puede requerir realizar muchos `joins` para obtener cierta informacion.
+
+En cambio para las consultas, un modelo NoSQL puede ser sumamente practico para obtener la informacion de forma rapida, pero no tanto para los Comandos. 
+
+CQRS nos permite tener ambos sistemas, teniendo un SQL para las operaciones de escritura y NoSQL para las operaciones de lectura. 
+
+Esto puede causar problemas de **Consistencia** entre ambas bases de datos, habiendo metodos de Sincronizacion entre ambas BBDD, aunque si la base de datos se vuelve mas compleja, la sincronizacion se vuelve mas complicada. Esto se soluciona con el **Event Sourcing**
 
 ## **Event Sourcing**
+
+Son sistemas en donde los datos son almacenados como una secuencia de eventos. Por ejemplo, supongamos que se llevaron a cabo estas acciones:
+
+1. Añadir post
+2. Añadir comentario
+3. Modificar post
+4. Eliminar comentario
+
+En el modelo tradicional, se traduciria en una unica accion -> Post sin comentarios
+
+En el event sourcing se almacenaria lo siguiente:
+
+- Añadir post #1
+- Añadir comentario #1
+- Modificar post #1
+- Eliminar comentario #1
+
+
