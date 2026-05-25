@@ -650,7 +650,9 @@ Lo que se debe buscar en este manejo es que sea **mantenible**, **reproducible**
 
 Centralizo el tooling, limito dependencias con reglas, comparto código vía paquetes bien definidos, y automatizo upgrades con overrides y CI para que el monorepo no se vuelva un lío.
 
-## ¿Cómo solucionar un problema de entrevista?
+## Ejercicios practicos
+
+### **Como abarcar un problema de entrevista de diseño de sistemas?**
 
 1. **Desarrollar el Scope del Problema**: Hacer preguntas para entender el problema, los requerimientos, las restricciones, etc. Esto es importante para poder entender el problema y no asumir cosas que no son ciertas. Por ejemplo, si el problema es diseñar un sistema de reservas de vuelos, se pueden hacer preguntas como: ¿Qué tipo de vuelos se van a reservar? ¿Solo vuelos comerciales o también vuelos privados? ¿Qué tipo de usuarios van a usar el sistema? ¿Solo clientes o también agentes de viajes? etc.
 2. **Realizar un diseño abstracto**

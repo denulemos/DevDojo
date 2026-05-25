@@ -141,6 +141,9 @@ CQRS nos permite tener ambos sistemas, teniendo un SQL para las operaciones de e
 
 Esto puede causar problemas de **Consistencia** entre ambas bases de datos, habiendo metodos de Sincronizacion entre ambas BBDD, aunque si la base de datos se vuelve mas compleja, la sincronizacion se vuelve mas complicada. Esto se soluciona con el **Event Sourcing**
 
+- Implementar en sistemas donde la escalabilidad es critica
+- Cuando no es necesaria la consistencia inmediata de la informacion, ya que puede haber un retraso entre la escritura y la lectura de los datos.
+
 ## **Event Sourcing**
 
 Son sistemas en donde los datos son almacenados como una secuencia de eventos. Por ejemplo, supongamos que se llevaron a cabo estas acciones:
@@ -159,4 +162,11 @@ En el event sourcing se almacenaria lo siguiente:
 - Modificar post #1
 - Eliminar comentario #1
 
+Esto permite que el CQRS tenga una sincronizacion mas sencilla, ya que el estado del sistema se puede reconstruir a partir de la secuencia de eventos.
 
+Es habitual ver al Event Sourcing junto con el CQRS, aunque no es necesario, se pueden usar ambos de forma independiente.
+
+- Tratamiento independiente de las lecturas y las escrituras, ambas pueden ser optimizadas
+- Mejor escalabilidad, ya que cada stack puede ser escalado de forma independiente
+- Aniade mucha complejidad al sistema, ya que se deben manejar ambos stacks y la sincronizacion entre ambos.
+- Se puede dar mucha redundancia entre ambos stacks, ya que ambos pueden almacenar la misma informacion de formas distintas.
