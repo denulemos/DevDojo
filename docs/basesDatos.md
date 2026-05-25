@@ -3,11 +3,11 @@
 ## Elementos de una base de datos
 
 - **Tablas**: Contienen la información
-- **Vistas**: Parecidas a la tabla, son para consultas, más rápidas
-- **Índices**: Uno o más columnas de una tabla para encontrar la data más rápido, es como el índice de un libro
-- **Triggers**: Disparadores que ejecutan código de SQL cuando se inserta, borra o se updatea un campo (CRUD (Create, Read, Update, Delete))
-- **Procedures**: Pedazos de código SQL que se ejecutan
-- **Constraints**: Previenen inconsistencia de datos en una columna
+- **Vistas**: Parecidas a la tabla, son para consultas, más rápidas.
+- **Índices**: Una o más columnas de una tabla para encontrar la información más rápido, es como el índice de un libro.
+- **Triggers**: Disparadores que ejecutan código SQL cuando se inserta, borra o se actualiza un campo (CRUD: Create, Read, Update, Delete).
+- **Procedures**: Fragmentos de código SQL que se ejecutan.
+- **Constraints**: Previenen la inconsistencia de datos en una columna.
 - **Reglas:** Se especifican valores válidos para ser insertados en una tabla o columna.
 
 ## **SQL** {#sql}
@@ -62,9 +62,9 @@ Supongamos tenemos una tabla `user` con `id`, `email` y `username`, y otra tabla
 | 2 | post2 | 2 |
 | 3 | post3 | 3 |
 
-Como podemos ver, para **evitar la duplicidad de la informacion** la tabla `post` solo tiene el ID del usuario como referencia, para saber a cual usuario pertenece el post. A esta tecnica se le conoce como `JOIN`, ya que estamos juntando la informacion de dos filas de dos tablas distintas para devolver la informacion completa.
+Como podemos ver, para **evitar la duplicidad de la información** la tabla `post` solo tiene el ID del usuario como referencia, para saber a cuál usuario pertenece el post. A esta técnica se le conoce como `JOIN`, ya que estamos juntando la información de dos filas de dos tablas distintas para devolver la información completa.
 
-- Ralentizan las lecturas dependiendo del numero de joins que se hagan en una consulta, y en la cantidad de registros en las tablas. 
+- Ralentizan las lecturas dependiendo del número de joins que se hagan en una consulta y de la cantidad de registros en las tablas. 
 
 ```sql
   SELECT u.username, p.title FROM user u JOIN post p ON u.id = p.userId;
@@ -109,7 +109,7 @@ ORDER BY A.City;
 
 ### UNION
 
-Con los set de datos finales se trata de unificar a un set único
+Con los sets de datos finales se trata de unificar a un set único
 
 Elimina los duplicados entre ambos conjuntos de entrada (**ES UN DISTINCT IMPLÍCITO**).
 
@@ -121,7 +121,7 @@ Select * b
 
 ### TOP
 
-Top de los resultados de una query, es decir, las X primeras (En el ejemplo, 10) de un SELECT
+Top de los resultados de una query, es decir, las X primeras (en el ejemplo, 10) de un SELECT
 
 ```sql
 SELECT TOP (10)
@@ -131,9 +131,9 @@ FROM tabla1
 
 ### EXCEPT
 
-De un set de datos se saca los que no estan en el 2do set de datos a relacionar, todo lo de a de tabla1, menos lo que este también en b tabla2
+De un set de datos se sacan los que no están en el 2do set de datos a relacionar, todo lo de a de tabla1, menos lo que esté también en b tabla2
 
-Retorna filas del conjunto de la izquierda que no están incluidas en el conjunto de la derecha entrada (**ES UN DISTINCT IMPLÍCITO**)
+Retorna filas del conjunto de la izquierda que no están incluidas en el conjunto de la derecha (**ES UN DISTINCT IMPLÍCITO**)
 
 ```sql
 SELECT a
@@ -146,12 +146,12 @@ FROM tabla2
 
 ### ACID
 
-Son un conjunto de propiedads que garantizan la fiabilidad de las transacciones en bases de datos relacionales.
+Son un conjunto de propiedades que garantizan la fiabilidad de las transacciones en bases de datos relacionales.
 
 - **Atomicidad (Atomicity)**: Las transacciones son indivisibles, o se ejecutan todas o ninguna. Una transacción puede implicar una o varias operaciones. Por ejemplo, una transferencia bancaria implica la resta de dinero de una cuenta y la suma a otra. Si alguna de estas operaciones falla, la transacción se revierte a su estado original (`rollback`).
-- **Consistencia (Consistency)**: Si partimos de un estado consistente antes de ejecutar una transaccion, va a seguir consistente cuando se finalice, haya terminado satisactoriamente o no. 
-- **Aislamiento (Isolation)**: Las transacciones se ejecutan de forma independiente. Una transaccion no se vera afectada por otras transacciones concurrentes.
-- **Durabilidad (Durability)**: Las transacciones son permanentes, los efectos de las transacciones confirmadas se mantendran en la base de datos.
+- **Consistencia (Consistency)**: Si partimos de un estado consistente antes de ejecutar una transacción, va a seguir consistente cuando se finalice, haya terminado satisfactoriamente o no. 
+- **Aislamiento (Isolation)**: Las transacciones se ejecutan de forma independiente. Una transacción no se verá afectada por otras transacciones concurrentes.
+- **Durabilidad (Durability)**: Las transacciones son permanentes, los efectos de las transacciones confirmadas se mantendrán en la base de datos.
 
 
 ### Programación declarativa
@@ -364,23 +364,21 @@ Las sentencias DDL se utilizan para crear y modificar la estructura de las tabla
 
 ---
 
-## Indices
+## Índices
 
 Imagina que tienes una guía telefónica y quieres encontrar el número de "Denu Lemon":
-
-- **Sin indice**: Tendrías que revisar página por página hasta encontrar el nombre (esto sería muy lento)
-- **Con indice**: Vas directamente a la sección "L" y encuentras rápidamente a "Lemon"
+  - **Sin índice**: Tendrías que revisar página por página hasta encontrar el nombre (esto sería muy lento)
+  - **Con índice**: Vas directamente a la sección "L" y encuentras rápidamente a "Lemon"
 
 En una base de datos funciona igual:
-
-- **Sin indice**: La base de datos tiene que revisar TODA la tabla para encontrar lo que busca -> `full table scan`
-- **Con indice**: La base de datos sabe exactamente dónde buscar la información -> `index scan`
+  - **Sin índice**: La base de datos tiene que revisar TODA la tabla para encontrar lo que busca -> `full table scan`
+  - **Con índice**: La base de datos sabe exactamente dónde buscar la información -> `index scan`
 
 Se almacenan en tablas Hash o B-Tree. Se recomienda indexar solo las columnas que se usan frecuentemente para buscar información. No se deben indexar todas las columnas.
 
 | Ventajas | Desventajas |
 |----------|-------------|
-| Hace las búsquedas muchísimo más rápidas especialemente si se tienen muchos datos | Ocupa más espacio en el disco duro |
+| Hace las búsquedas muchísimo más rápidas especialmente si se tienen muchos datos | Ocupa más espacio en el disco duro |
 | Ayuda a encontrar datos duplicados fácilmente | Hace que agregar o modificar datos sea un poco más lento (porque tiene que actualizar también el índice) |
 
 **¿Cuándo usarlos?**
@@ -393,22 +391,21 @@ Se almacenan en tablas Hash o B-Tree. Se recomienda indexar solo las columnas qu
 
 ## Normalización
 
-Normalización es el proceso de ordenar una base de datos para que no haya datos repetidos, sea más fácil de mantener y evites errores raros cuando guardás, editás o borrás información.
+La normalización es el proceso de ordenar una base de datos para que no haya datos repetidos, sea más fácil de mantener y evites errores raros cuando guardás, editás o borrás información.
 
 Normalizar = dividir la información en tablas lógicas + crear relaciones correctas.
 
 Objetivos principales:
-
-- Evitar datos duplicados.
-- Evitar inconsistencias (que un dato cambie en un lado pero no en otro) y a minimiza la redundancia. Si modifiucamos el nombre de una profesion en la tabla original, debemos modificarlo en todas las filas donde se use. 
-- Hacer que la base sea más fácil de modificar, pero no de leer, ya que al dividir la informacion en mas tablas, se nos hace mas necesario realizar mas `joins` para obtener la informacion completa, lo que hace que nuestras consultas sean mas lentas.
-- Asegurar integridad de la info.
+  - Evitar datos duplicados.
+  - Evitar inconsistencias (que un dato cambie en un lado pero no en otro) y minimizar la redundancia. Si modificamos el nombre de una profesión en la tabla original, debemos modificarlo en todas las filas donde se use.
+  - Hacer que la base sea más fácil de modificar, pero no de leer, ya que al dividir la información en más tablas, se nos hace más necesario realizar más `joins` para obtener la información completa, lo que hace que nuestras consultas sean más lentas.
+  - Asegurar integridad de la información.
 
 Hay distintos grados de normalización:
 
 - **Primera forma normal**: Cada celda debe contener un solo valor, no un conjunto de valores
 
-Esta tabla esta en la **primera forma normal** ya que cada celda tiene un solo valor.
+Esta tabla está en la **primera forma normal** ya que cada celda tiene un solo valor.
 
 | id | job_code | job_name | name | country_code | country |
 | --- | --- | --- | --- | --- | --- |
