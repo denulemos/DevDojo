@@ -650,13 +650,50 @@ Lo que se debe buscar en este manejo es que sea **mantenible**, **reproducible**
 
 Centralizo el tooling, limito dependencias con reglas, comparto código vía paquetes bien definidos, y automatizo upgrades con overrides y CI para que el monorepo no se vuelva un lío.
 
-## Ejercicios practicos
+## **Ejercicios practicos**
 
-### **Como abarcar un problema de entrevista de diseño de sistemas?**
+### Como abarcar un problema de entrevista de diseño de sistemas?
 
-1. **Desarrollar el Scope del Problema**: Hacer preguntas para entender el problema, los requerimientos, las restricciones, etc. Esto es importante para poder entender el problema y no asumir cosas que no son ciertas. Por ejemplo, si el problema es diseñar un sistema de reservas de vuelos, se pueden hacer preguntas como: ¿Qué tipo de vuelos se van a reservar? ¿Solo vuelos comerciales o también vuelos privados? ¿Qué tipo de usuarios van a usar el sistema? ¿Solo clientes o también agentes de viajes? etc.
+1. **Desarrollar el Scope del Problema**: Hacer preguntas para entender el problema, los requerimientos, las restricciones, etc. Esto es importante para poder entender el problema y no asumir cosas que no son ciertas. Por ejemplo, si el problema es diseñar un sistema de reservas de vuelos, se pueden hacer preguntas como: 
+
+- ¿Qué tipo de vuelos se van a reservar? 
+- ¿Solo vuelos comerciales o también vuelos privados? 
+- ¿Qué tipo de usuarios van a usar el sistema? 
+- ¿Solo clientes o también agentes de viajes? 
+
 2. **Realizar un diseño abstracto**
 3. **Encontrar cuellos de botella (bottlenecks) en tu solución**: Esto es importante para poder mejorar la solución y hacerla más escalable. Por ejemplo, si el sistema de reservas de vuelos tiene un solo servidor para manejar todas las reservas, esto puede ser un cuello de botella, ya que si el servidor falla, todo el sistema cae. Para solucionarlo, se pueden añadir más servidores clonados para repartir la carga entre ellos.
 
 - Separar el problema en módulos más simples. Por ejemplo, si el problema es diseñar un sistema de reservas de vuelos, se puede separar en módulos como búsqueda de vuelos, reserva de vuelos y pago. **Top-down approach**
 - Charlar sobre los trade-offs
+
+### Disenio de un acortador de URLs (tinyurl)
+
+**Requisitos funcionales**
+- Dada una URL, debemos transformarla en una URL acortada, y devolverla al usuario
+- Dada una URL acortada, debemos redirigir al usuario a la URL original
+
+**Requisitos no funcionales**
+- Carga intensa, debe estar preparado para manejar picos de tráfico
+- Alta disponibilidad, el sistema debe estar disponible la mayor parte del tiempo posible
+
+**Hipotesis y estimaciones**
+
+- Debemos soportar un promedio de 50 millones de URLs nuevas cada dia que deben permanecer en el sistema aunque sean 10 anios = 50M * 365 (dias del anio) * 10 (anios) = 182.5 billones de URLs
+- El tamanio promedio de una URL es de 100 caracteres, cada caracter ocupa un byte, lo que nos da un total de 18.25 TB de almacenamiento solo para las URLs originales
+- El tamanio de la URL debe ser el minimo posible
+- Relacion entre las lecturas y escrituras es de 10:1, se debe suponer que las URL se leen mucho mas de lo que se escriben
+
+**Primer disenio alto nivel**
+
+![alt text](image-1.png)
+
+- Se tiene un Load Balancer que se encarga de distribuir las peticiones entre los servidores
+- Los servidores pueden ser escalados horizontalmente para manejar picos de tráfico
+- Se tiene una base de datos para almacenar las URLs originales y las URLs acortadas
+- Se supone que la capa de autenticacion y autorizacion se encarga en el Load Balancer, o no es necesario
+
+**API Endpoints**
+
+
+
