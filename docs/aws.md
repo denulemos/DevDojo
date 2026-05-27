@@ -9,6 +9,9 @@ Es un servicio global. Cuando creamos una cuenta en AWS, la misma es una cuenta 
 
 - Podemos guardar usuarios en **grupos** (no existe el concepto de subgrupo), y a cada grupo le asignamos permisos. Luego, los usuarios que estén dentro de ese grupo van a tener esos permisos, por ejemplo, grupo de Devs, Operaciones, etc..
 - Los usuarios pueden estar en varios grupos a la vez, y van a tener los permisos de todos los grupos a los que pertenezcan.
+- Se le pueden asignar roles IAM a los servicios de AWS, para que estos puedan interactuar entre si, por ejemplo, un rol para que una instancia EC2 pueda acceder a un bucket de S3.
+    - Roles de instancia EC2
+    - Roles de funcion Lambda
 
 A los usuarios o grupos se le pueden asignar documentos JSON llamados **politicas**
 
@@ -90,6 +93,11 @@ Se recomienda **establecer una contraseña y un dispositivo de seguridad**
 - **Dispositivos virtuales MFA**: Aplicaciones como Google Authenticator, Authy o Microsoft Authenticator.
 - **Clave de seguridad del segundo factor universal U2F**: YubiKey, etc. Es un USB que se conecta al computador y funciona como llave.
 - **Dispositivo MFA de hardware**: Un dispositivo fisico que genera códigos MFA.
+
+### Herramientas de seguridad
+
+- **IAM Credential Report**: Es un reporte que muestra el estado de las credenciales de los usuarios IAM, como si tienen MFA habilitado, si tienen claves de acceso, etc.
+- **IAM Access Advisor**: Es una herramienta que muestra los permisos que tienen los usuarios IAM, cuando se accedio a los mismos por ultima vez, y recomienda eliminar permisos innecesarios.
 
 
 ### Modos de acceder a AWS
