@@ -90,3 +90,21 @@ Se recomienda **establecer una contraseña y un dispositivo de seguridad**
 - **Dispositivos virtuales MFA**: Aplicaciones como Google Authenticator, Authy o Microsoft Authenticator.
 - **Clave de seguridad del segundo factor universal U2F**: YubiKey, etc. Es un USB que se conecta al computador y funciona como llave.
 - **Dispositivo MFA de hardware**: Un dispositivo fisico que genera códigos MFA.
+
+
+### Modos de acceder a AWS
+
+- Consola de administracion de AWS, protegida por contraseña y MFA.
+- AWS CLI, utilizando las credenciales de acceso (Access Key ID y Secret Access Key)
+- AWS SDKs, utilizando las credenciales de acceso (Access Key ID y Secret Access Key)
+
+Las claves de acceso se pueden generar para cada usuario IAM, y se recomienda rotarlas cada cierto tiempo por seguridad.
+
+Las claves de acceso son como contraseñas, y se recomienda no compartirlas ni exponerlas en el codigo fuente. Para esto, se pueden utilizar servicios como AWS Secrets Manager o AWS Systems Manager Parameter Store para almacenar las claves de acceso de forma segura.
+
+## CLI
+
+Es una herramienta que nos permite interactuar con los servicios mediante la Shell. Para utilizarla, es necesario configurarla con las credenciales de acceso (Access Key ID y Secret Access Key) de un usuario IAM.
+
+Es de codigo abierto. 
+

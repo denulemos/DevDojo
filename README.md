@@ -37,7 +37,6 @@ Se agregan preguntas todas las semanas. Se aceptan sugerencias mediante Pull Req
 - [Soft Skills](./docs/soft.mdx)
     - [Comunicación](./docs/comunicacion.mdx)
 - [IA](./docs/ia.mdx)
-    - [Claude](./docs/claude.md)
     - [MCP](./docs/mcp.md) 
 - [Teoría](./docs/teoria.mdx)
     - [Algoritmos](./docs/algoritmos.md)
