@@ -3,7 +3,7 @@ id: aws
 title: "☁️ AWS"
 ---
 
-## IAM (Identity and Access Management)
+## IAM (Identity and Access Management) (Servicio Global)
 
 Es un servicio global. Cuando creamos una cuenta en AWS, la misma es una cuenta **root**, y la misma se recomienda que **no sea utilizada ni compartida**, ya que posee acceso total. En su lugar, se recomienda crear usuarios con permisos específicos para cada tarea, y esto se realiza con IAM.
 
@@ -108,3 +108,23 @@ Es una herramienta que nos permite interactuar con los servicios mediante la She
 
 Es de codigo abierto. 
 
+Se puede instalar en Windows, Linux o MacOS. Para su uso se debe:
+
+- Crear una clave de acceso para un usuario IAM
+- Configurar la CLI con las credenciales de acceso utilizando el comando `aws configure`
+
+Y para ver la lista de usuarios IAM, por ejemplo, se puede utilizar el comando `aws iam list-users`.
+
+## CloudShell (Servicio Regional)
+
+Es una terminal basada en la web que nos permite interactuar con los servicios de AWS sin necesidad de instalar nada en nuestro computador. Es una herramienta muy util para realizar tareas rapidas o para usuarios que no quieren instalar la CLI.
+
+Funciona a nivel de region, es decir, cada region tiene su propia CloudShell, y no esta disponible en todas las regiones. 
+
+Para acceder a CloudShell, se puede hacer desde la consola de AWS, y se recomienda utilizarlo con un usuario IAM que tenga permisos limitados.
+
+## SDK 
+
+Es un conjunto de librerias que nos permiten interactuar con los servicios de AWS desde nuestro codigo. AWS ofrece SDKs para varios lenguajes de programacion, como Java, Python, JavaScript, etc.
+
+Permite acceder a los servicios de AWS desde nuestro codigo, lo que es muy util para automatizar tareas, crear aplicaciones que interactuen con AWS, etc.
