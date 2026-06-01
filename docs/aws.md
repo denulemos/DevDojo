@@ -99,6 +99,14 @@ Se recomienda **establecer una contraseña y un dispositivo de seguridad**
 - **IAM Credential Report**: Es un reporte que muestra el estado de las credenciales de los usuarios IAM, como si tienen MFA habilitado, si tienen claves de acceso, etc.
 - **IAM Access Advisor**: Es una herramienta que muestra los permisos que tienen los usuarios IAM, cuando se accedio a los mismos por ultima vez, y recomienda eliminar permisos innecesarios.
 
+### Buenas practicas
+
+- No usar la cuenta root, si no usuarios IAM. Solo usar root para lo necesario.
+- Cada usuario fisico = un usuario AWS. No compartir usuarios IAM entre varias personas.
+- Asignar usuarios a grupos y asignar permisos a los mismos
+- Establecer una politica de contraseñas fuerte y utilizar MFA
+- Crear y utilizar roles 
+
 
 ### Modos de acceder a AWS
 
