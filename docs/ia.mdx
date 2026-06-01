@@ -286,6 +286,12 @@ La **temperatura alta** se utiliza para generar respuestas más creativas y vari
 
 La temperatura **no asegura respuestas distintas ante cada intento**, sino que **controla el nivel de aleatoriedad en las respuestas generadas**.
 
+## Contexto
+
+El contexto es la información adicional que se le proporciona al modelo para ayudarlo a generar una respuesta más relevante y precisa. Esto puede incluir información sobre el tema de la conversación, el tono deseado, o cualquier otro detalle que pueda ser útil para que el modelo entienda mejor lo que se le está pidiendo.
+
+Si tengo un pipeline de investigacion que investiga diversas fuentes, y algunas de esas fuentes son mucho mas largas que otras fuentes, se recomienda normalizarlas de antemano a un largo especifico, para que no tengan mas importancia sobre otras fuentes, ya que existe el bias de longitud por parte del modelo. 
+
 ## IA generativa
 
 La IA generativa es un sistema que, en vez de analizar datos para tomar decisiones, también crea contenido nuevo, como imágenes, vídeos, etc.
@@ -678,6 +684,15 @@ This example is well-structured, provides detailed information
 on food choices and quantities, and aligns with the athlete's
 goals and restrictions.
 ```
+
+### Ejemplo: Commit messages
+
+Supongamos que tenemos un sistema que escribe mensajes de commit, el prompt ya detalla `mantener los commits cortos`, y los mismos son demasiado largos. Podemos usar el `maxLength` en el strict schema para limitar la cantidad de caracteres que el mensaje de commit puede tener, y así obtener mensajes de commit más cortos y concisos.
+
+Podremos reemplazar el prompt original por otro que diga `maximo 70 caracteres`, y si bien los numeros son mejores que las palabras. 
+
+
+
 
 
 ## **Prompt Evaluation**
@@ -1542,3 +1557,26 @@ Claude puede procesar la siguiente informacion de los documentos:
 - Imagenes y charts dentro del documento
 - Tablas y su relacion entre su data interna
 - La estructura del documento y su formato
+
+## Fork Sessions
+
+Un Fork Session es una copia de una sesión de conversación que se puede compartir con otros colegas para que puedan seguir la conversación y agregar sus propios mensajes. Esto es especialmente útil para proyectos complejos donde se necesita tener acceso a mucha información y donde no queremos subir el mismo documento una y otra vez.
+
+Para que otro colega pueda acceder a nuestra conversacion, le podemos pasar nuestro `session_id` y el mismo puede usarlo para crear un Fork Session y así tener acceso a toda la conversación y al contexto que se ha generado en la misma.
+
+Con el session id, la conversacion puede ser resumida mediante el uso de `--restore`, lo que permite que el nuevo usuario tenga acceso a toda la informacion y contexto generado en la conversacion original sin tener que cargar toda la informacion nuevamente.
+
+## `CLAUDE.md` y `.claude`
+
+Tanto `CLAUDE.md` como `.claude` son archivos de configuración que se utilizan para personalizar el comportamiento de Claude en un proyecto específico.
+
+No poseen historiales de conversacion ni informacion sobre las conversaciones, sino que son usados para configurar aspectos como:
+
+- Project Instructions
+- Skills
+- Connectors
+- Hooks
+- Temperatura
+- System Prompts
+
+Entre otros..
