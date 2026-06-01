@@ -1295,6 +1295,37 @@ export default Counter;
 
 Este enfoque es ideal para aplicaciones pequeñas o medianas donde no se justifica la complejidad de Redux o Context API.
 
+### React Query (`useQuery` y `useMutation`)
+
+React Query apunta al manejo de respuestas de APIs y no tanto a estados de la UI como toggles, formularios, etc... 
+
+Es una herramienta que nos ayuda a manejar el estado de las respuestas de las APIs, como el estado de carga, error, data, entre otros. 
+
+- Posee mucho menos boilerplate que Redux
+- **Caché automática:** Los datos obtenidos se almacenan en caché. Si vuelves a consultar la misma información, React Query puede devolver los datos almacenados sin hacer una nueva petición.
+- **Actualización en segundo plano**: React Query puede actualizar los datos automáticamente en segundo plano, manteniendo tu aplicación sincronizada con el servidor.
+- **Consulta de datos**: Utilizas hooks como `useQuery` para obtener datos de una API. React Query se encarga de hacer la petición y gestionar el estado (loading, error, data).
+- **Gestión de errores y estados**: Proporciona estados como `isLoading`, `isError`, `data`, etc., para que puedas mostrar mensajes o componentes según el estado de la consulta.
+- **Mutaciones**: Para enviar datos al servidor (crear, actualizar, eliminar), se usan hooks como `useMutation`.
+
+```jsx
+import { useQuery } from 'react-query';
+
+function Users() {
+  const { data, isLoading, isError } = useQuery('users', () =>
+    fetch('https://api.example.com/users').then(res => res.json())
+  );
+
+  if (isLoading) return <div>Cargando...</div>;
+  if (isError) return <div>Error al cargar datos</div>;
+
+  return (
+    <ul>
+      {data.map(user => <li key={user.id}>{user.name}</li>)}
+    </ul>
+  );
+}
+```
 
 ---
 
