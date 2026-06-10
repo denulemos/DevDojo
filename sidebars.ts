@@ -20,19 +20,26 @@ const sidebars: SidebarsConfig = {
       label: '🧠 Arquitectura',
       link: { type: 'doc', id: 'arquitectura' },
       collapsed: true,
-      items: ['microfrontends', 'systemdesign', {
+      items: ['systemdesign', 
+        {
+          type: 'category',
+          label: '🧩 Patrones',
+          collapsed: true,
+          items: ['microfrontends', {
               type: 'link',
-              label: '🧩 Microservicios',
+              label: 'Microservicios',
               href: '/docs/arquitectura#microservicios',
             }, {
               type: 'link',
-              label: '🧩 Multilayer - Multicapa',
+              label: 'Multilayer - Multicapa',
               href: '/docs/arquitectura#multilayer',
             },{
               type: 'link',
-              label: '🧩 Multi-tier - Multinivel',
+              label: 'Multi-tier - Multinivel',
               href: '/docs/arquitectura#multinivel',
-            }, {
+            }],
+        }
+        , {
         type: 'category',
         label: '⚙️ DevOps',
         link: { type: 'doc', id: 'devops' },
@@ -109,12 +116,12 @@ const sidebars: SidebarsConfig = {
           items: [
             {
               type: 'link',
-              label: 'Arquitecturas y Tipos',
+              label: 'Tipos',
               href: '/docs/api#arquitecturas-y-tipos',
             },
             {
               type: 'link',
-              label: 'Componentes de una API',
+              label: 'Componentes',
               href: '/docs/api#componentes-de-una-api',
             },
             {
