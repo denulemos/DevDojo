@@ -61,6 +61,7 @@ const sidebars: SidebarsConfig = {
       link: { type: 'doc', id: 'backend' },
       collapsed: true,
       items: [
+        'python',
         'java',
         {
           type: 'category',
