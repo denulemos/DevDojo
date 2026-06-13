@@ -20,32 +20,32 @@ const sidebars: SidebarsConfig = {
       label: '🧠 Arquitectura',
       link: { type: 'doc', id: 'arquitectura' },
       collapsed: true,
-      items: ['systemdesign', 
+      items: ['systemdesign',
         {
           type: 'category',
           label: '🧩 Patrones',
           collapsed: true,
           items: ['microfrontends', {
-              type: 'link',
-              label: 'Microservicios',
-              href: '/docs/arquitectura#microservicios',
-            }, {
+            type: 'link',
+            label: 'Microservicios',
+            href: '/docs/arquitectura#microservicios',
+          }, {
               type: 'link',
               label: 'Multilayer - Multicapa',
               href: '/docs/arquitectura#multilayer',
-            },{
+            }, {
               type: 'link',
               label: 'Multi-tier - Multinivel',
               href: '/docs/arquitectura#multinivel',
             }],
         }
         , {
-        type: 'category',
-        label: '⚙️ DevOps',
-        link: { type: 'doc', id: 'devops' },
-        collapsed: true,
-        items: ['versionado', 'cicd'],
-      },
+          type: 'category',
+          label: '⚙️ DevOps',
+          link: { type: 'doc', id: 'devops' },
+          collapsed: true,
+          items: ['versionado', 'cicd'],
+        },
         {
           type: 'category',
           label: '☁️ Cloud',
@@ -266,10 +266,10 @@ const sidebars: SidebarsConfig = {
       link: { type: 'doc', id: 'ia' },
       collapsed: true,
       items: [{
-              type: 'link',
-              label: 'Claude',
-              href: '/docs/ia#claude',
-            },],
+        type: 'link',
+        label: 'Claude',
+        href: '/docs/ia#claude',
+      },],
     },
     {
       type: 'category',
