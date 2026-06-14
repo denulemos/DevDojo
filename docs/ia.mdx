@@ -1474,3 +1474,59 @@ Los agentes constan de 4 componentes principales:
 - **Tools**:  se usan para recuperar datos y realizar acciones o transacciones mediante llamadas a otras APIs o servicios.
 - **Orchestration**: Es el cerebro del agente. Es el mecanismo para configurar los pasos necesarios para completar una tarea y la lógica para procesar estos pasos y acceder a las herramientas necesarias. Mantiene la memoria y el estado, incluido el enfoque utilizado para planificar y cualquier dato proporcionado o recuperado, así como las herramientas necesarias.
 - **Runtime**: se usa para ejecutar el sistema cuando se invoca después de recibir una pregunta de un usuario final
+
+## GEMINI.md
+
+Se le dice **archivo de contexto** y suelen ser archivos markdown que configuran el contexto instruccional o la memoria que se le da al modelo de Gemini. Permite incluir instrucciones especificas del proyecto, lineamientos de estilo de programacion o informacion general pertinente para que Gemini pueda adaptar sus respuestas.
+
+El archivo se puede ver asi:
+
+```markdown
+# Proyecto: Mi increíble biblioteca TypeScript
+
+## Instrucciones generales:
+
+- Cuando generes nuevo código TypeScript, sigue el estilo de programación existente.
+
+- Asegúrate de que todas las funciones y clases nuevas incluyan comentarios JSDoc.
+
+- Prioriza paradigmas de programación funcional cuando sea apropiado.
+
+- Todo el código debe ser compatible con TypeScript 5.0 y Node.js 20 o versiones posteriores.
+
+## Estilo de programación:
+
+- Usa 2 espacios para la sangría.
+
+- Los nombres de las interfaces deben llevar el prefijo `I` (p. ej., `IUserService`).
+
+- Los miembros de clases privadas deben llevar un guion bajo como prefijo (`_`).
+
+- Usa siempre igualdad estricta (`===` y `!==`).
+```
+
+### Carga Jerarquica
+
+Puede haber mas de un GEMINI.md en el proyecto y el mismo se carga en cierto orden, ya que uno puede anular al anterior.
+
+1. Archivo de contexto global: ` ~/.gemini/GEMINI.md`, proporciona instrucciones para todos los proyectos.
+2. Archivo en la raiz del proyecto o directorios principales, proporciona contexto relevante para un proyecto o un subdirectorio.
+3. Pueden haber contextos dentro de directorios mas pequeños que incluyan reglas aun mas especificas
+
+## Gemini CLI
+
+Posee dos paquetes principales:
+
+- **Paquete de la CLI**: administra la interaccion con el usuario
+    - Procesamiento de entradas
+    - Administracion del historial
+    - Renderizacion de la pantalla
+    - Personalizacion de la UI
+    - Configuracion de la CLI
+- **CORE**: administra la comunicacion con el modelo de Gemini. Es como el backend del CLI. 
+    - API para comunicarse con el modelo a traves de la API de Gemini
+    - Construccion y administracion de instrucciones
+    - Registro de herramientas y logica de ejecucion
+    - Administracion del estado para sesiones y conversaciones
+    - Configuracion del lado del servidor
+- Tambien puede haber un paquete con tools integradas para interactuar con el sistema y con internet. 
