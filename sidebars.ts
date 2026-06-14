@@ -253,13 +253,7 @@ const sidebars: SidebarsConfig = {
         },
       ],
     },
-    {
-      type: 'category',
-      label: '🤝 Soft Skills',
-      link: { type: 'doc', id: 'soft' },
-      collapsed: true,
-      items: ['comunicacion'],
-    },
+    'soft',
     {
       type: 'category',
       label: '🤖 IA',
