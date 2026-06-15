@@ -669,22 +669,22 @@ Centralizo el tooling, limito dependencias con reglas, comparto código vía paq
 
 ### Disenio de un acortador de URLs (tinyurl)
 
-**Requisitos funcionales**
+#### **Requisitos funcionales**
 - Dada una URL, debemos transformarla en una URL acortada, y devolverla al usuario
 - Dada una URL acortada, debemos redirigir al usuario a la URL original
 
-**Requisitos no funcionales**
+#### **Requisitos no funcionales**
 - Carga intensa, debe estar preparado para manejar picos de tráfico
 - Alta disponibilidad, el sistema debe estar disponible la mayor parte del tiempo posible
 
-**Hipotesis y estimaciones**
+#### **Hipotesis y estimaciones**
 
 - Debemos soportar un promedio de 50 millones de URLs nuevas cada dia que deben permanecer en el sistema aunque sean 10 anios = 50M * 365 (dias del anio) * 10 (anios) = 182.5 billones de URLs
 - El tamanio promedio de una URL es de 100 caracteres, cada caracter ocupa un byte, lo que nos da un total de 18.25 TB de almacenamiento solo para las URLs originales
 - El tamanio de la URL debe ser el minimo posible
 - Relacion entre las lecturas y escrituras es de 10:1, se debe suponer que las URL se leen mucho mas de lo que se escriben
 
-**Primer disenio alto nivel**
+#### **Primer disenio alto nivel**
 
 ![alt text](image-1.png)
 
@@ -693,7 +693,34 @@ Centralizo el tooling, limito dependencias con reglas, comparto código vía paq
 - Se tiene una base de datos para almacenar las URLs originales y las URLs acortadas
 - Se supone que la capa de autenticacion y autorizacion se encarga en el Load Balancer, o no es necesario
 
-**API Endpoints**
+#### **API Endpoints**
 
+Nuestra API expone dos operaciones
 
+Uno para crear la URL acortada desde la URL original.
+
+- `POST /api/v1/shortened-url`
+    - Body: `{"url": "ejemplo.com"}`
+    - Response: `{"shortenedUrl": "tinyurl.com/abc123"}`
+
+Genera la URL acortada y la guarda en la base de datos para luego devolverla con un estado 200 OK. 
+
+Otra para obtener la URL original desde la URL acortada, o su ID
+
+- `GET /api/v1/shortened-url/:shortenedUrl` por ejemplo `GET /api/v1/shortened-url/abc123`
+    - Response: `{"url": "ejemplo.com"}`
+
+La misma redirecciona a la URL original mediante HTTP
+
+- `301 Moved Permanently` con el header `Location: ejemplo.com` -> El mas indicado si queremos cachear la redireccion en el navegador del usuario y reducir la carga de los servidores
+- `302 Found` con el header `Location: ejemplo.com` -> El mas indicado si no queremos cachear la redireccion en el navegador del usuario, util si queremos llevar registro de todas las redirecciones
+
+#### **Como acortamos la URL?**
+
+Podemos aplicar un hash a la URL original para poder crear la URL acortada.
+
+- ejemplo.com -> hash -> abc123
+- abc123 -> hash -> tinyurl.com/abc123
+
+Si dos URL distintas dan como resultado el mismo hash a esto se le llama **colision**, y si sucede no podremos mapear la URl original a la URl acortada.
 
