@@ -1450,11 +1450,32 @@ Esta diseñado para devs sin conocimiento previo en AI para que puedan construir
 
 ![alt text]({B58C7173-1767-4019-B4AF-AC4E275D4E3E}.png)
 
+Se debe elegir cuando mi producto posee las siguientes funcionalidades
+
+- **Managed Tool Orchestration**: Necesito que mis agentes puedan usar herramientas de manera autónoma, sin necesidad de que un humano les indique cuándo y cómo usarlas.
+- **Multi-Step Workflows**: Necesito que mis agentes puedan realizar tareas complejas que requieran múltiples pasos, como planificar una estrategia, ejecutar acciones y evaluar resultados.
+- **Multi-Agent Collaboration**: Necesito que mis agentes puedan colaborar entre sí, compartiendo información y delegando tareas para lograr objetivos comunes.
+- **Production Operations**: Necesito una solución que me permita implementar, administrar y escalar mis agentes de IA en producción de forma segura y eficiente.
+
+Para inicializar un nuevo proyecto se debe usar el comando `adk create my_agent` y luego puede ser ejecutado con `adk run my_agent` y con `adk web` podemos ver una version web de nuestro agente.
+
+El loop de desarollo es:
+
+- Escribir el agente
+- Ejecutar `adk web`
+- Enviar un mensaje
+- Ver el trace
+- Ajustar la instruccion o las tools si es necesario
+- Repetir el proceso hasta que el agente cumpla con las expectativas
+
 ### Desarrollo de agentes con ADK
 
 Los conceptos claves del ADK son:
 
 - **Agente**: Es la unidad de trabajador esencial diseñada para tareas especificas, pueden usar modelos de lenguaje para razonamiento complejo o actuar como controladores para administrar flujos de trabajo, delegando tareas o invocando tools en otros agentes cuando es preciso.
+    - **SequentialAgent**: Un agente que sigue una secuencia de pasos predefinidos para completar una tarea.
+    - **ParallelAgent**: Un agente que puede ejecutar múltiples tareas simultáneamente.
+    - **LoopAgent**: Un agente que puede repetir un conjunto de pasos hasta que se cumpla una condición específica.
 - **Artifact Management**: Permite a los agentes guardar, cargar y gestionar artefactos, archivos o datos binarios como imagenes, documentos o informes generados con control de versiones asociados a sesiones o usuarios. 
 - **Tools**: Es lo que le brinda a los agentes diversas capacidades, usar a otros agentes como tools y funciones personalizadas. 
 - **Session Management**: Se controla el contexto de una conversacion (`session`), incluido su historial (`events`) and la memoria que tiene el agente sobre esa conversacion (`state`)
@@ -1466,6 +1487,8 @@ Los conceptos claves del ADK son:
 - **Deployment**: Google se apoya en **Agent Engine** un servicio de GCP donde se implementan, administran y escalan agentes de IA en produccion. Controla la infraestructura para escalar agentes en produccion de forma automatica.
 - **Planning**: Es una capacidad avanzada que permite que los agentes desglocen objetivos complejos en pasos mas pequeños y planeen lograrlos como un ReAct Planner. 
 
+![alt text](image-2.png)
+
 ### Agentes
 
 Los agentes constan de 4 componentes principales:
@@ -1474,6 +1497,67 @@ Los agentes constan de 4 componentes principales:
 - **Tools**:  se usan para recuperar datos y realizar acciones o transacciones mediante llamadas a otras APIs o servicios.
 - **Orchestration**: Es el cerebro del agente. Es el mecanismo para configurar los pasos necesarios para completar una tarea y la lógica para procesar estos pasos y acceder a las herramientas necesarias. Mantiene la memoria y el estado, incluido el enfoque utilizado para planificar y cualquier dato proporcionado o recuperado, así como las herramientas necesarias.
 - **Runtime**: se usa para ejecutar el sistema cuando se invoca después de recibir una pregunta de un usuario final
+
+Para funcionar precisan solo 3 cosas:
+
+- Un Nombre, debe ser unico ya que es usado como referencia para otros agentes en el caso de un sistema multi-agente
+- Un modelo, en el ejemplo se utiliza `gemini-flash-latest`, pero se puede usar cualquier modelo disponible en la plataforma de Google Gen AI, o incluso modelos personalizados. Agregando el `-latest` se envita referir a un modelo con una version especifica como `gemini-flash-1.0`, lo que permite que el agente se actualice automaticamente a medida que se lanzan nuevas versiones del modelo.
+- Una instruccion, es lo mas importante de todo ya que le dice al agente como actuar, debe ser lo mas especifico posible para evitar que el agente se salga de lo que queremos que haga. Por ejemplo, si queremos un agente de billing, la instruccion debe ser algo asi como "You are a billing specialist. Answer questions about account balances, payment history, and invoices." Esto le da al agente un contexto claro sobre su rol y sus responsabilidades.
+
+Por ejemplo, un Agente de Billing se veria algo asi:
+
+```python
+from google.adk import Agent
+
+# Dummy function representing a tool
+def lookup_account(account_id: str):
+    """Retrieves the current balance and status for a given billing account.
+
+    Args:
+        account_id: The unique identifier for the customer account.
+    Returns:
+        dict: The account details, or an error status if not found.
+    """
+    return query_billing_database(account_id)
+
+billing_agent = Agent(
+    name="billing_agent",
+    model="gemini-flash-latest",
+    instruction="You are a billing specialist. Answer questions about account balances, payment history, and invoices.",
+    tools=[lookup_account],
+)
+```
+
+- `lookup_account` es una funcion de Python que ejecuta una Query en la base de datos de Billing
+
+Si se trata de un sistema multi-agente, parametros extra puede que sean necesarios como:
+
+```python 
+billing_agent = Agent(
+    name="billing_agent",
+    model="gemini-flash-latest",
+    description="Answers billing and payment questions.",
+    instruction="...",
+    tools=[lookup_account, list_invoices],
+    output_key="billing_response",
+)
+```
+
+- `description` es lo que usa el agente principal para decidir si referir, o no, al agente especifico. Por ejemplo, si el agente principal recibe una pregunta sobre billing, puede revisar la descripcion de cada agente para decidir a cual referir la pregunta.
+- `tool` es la lista de funciones a las cuales el agente puede llamar
+- `output_key` es el nombre del campo que el agente usará para guardar su respuesta en el estado compartido, lo que permite que otros agentes puedan acceder a esa respuesta si es necesario. Tambien se puede usar `output_schema` para definir un JSON, pero esto no es compatible con todos los modelos. 
+
+### Agent Runtime vs. Agent Sandbox
+
+ADK tiene dos entornos de ejecución para agentes:
+
+- **Agent Runtime**: Es el entorno de ejecución de producción, donde los agentes se ejecutan en un entorno seguro y escalable. Se utiliza para ejecutar agentes en producción y manejar solicitudes de usuarios finales.
+- **Agent Sandbox**: Es un entorno de desarrollo y prueba, donde los agentes se ejecutan en un entorno aislado y controlado. Se utiliza para probar y depurar agentes antes de implementarlos en producción.
+
+### Tools, Context y State
+
+
+
 
 ## GEMINI.md
 
