@@ -1556,7 +1556,21 @@ ADK tiene dos entornos de ejecución para agentes:
 
 ### Tools, Context y State
 
+Cuando agregamos funciones disponibles al array de `tools` de un agente, estas funciones se convierten en herramientas que el agente pueda usar para obtener informacion o realizar acciones. 
+ADK inspecciona la firma de la funcion y construye un JSON Schema que el modelo luego recibe para saber cuando llamarlo y que parametros pasarle. 
 
+Tambien se acepta el uso de MCP Tools, que son herramientas que permiten a los agentes interactuar con servicios externos de manera estandarizada y segura.
+
+```python
+def get_account_balance(account_id: str) -> dict:
+    """Returns the current balance for the given account.
+
+    Args:
+        account_id: The unique identifier for the customer account.
+    Returns:
+        dict: 'balance' (float) on success, or 'error' (str) if not found.
+    """
+```
 
 
 ## GEMINI.md
