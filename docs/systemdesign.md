@@ -693,6 +693,19 @@ Centralizo el tooling, limito dependencias con reglas, comparto código vía paq
 - Se tiene una base de datos para almacenar las URLs originales y las URLs acortadas
 - Se supone que la capa de autenticacion y autorizacion se encarga en el Load Balancer, o no es necesario
 
+**Modelo de datos**
+
+```json
+url {
+    id: long PK, autoincremental,
+    originalUrl: string,
+    shortenedUrl: string,
+}
+```
+
+- **Replicacion de datos entre multiples datacenters** para garantizar la disponibilidad y la tolerancia a fallos
+- **Sharding** no seria necesario ya que nuestra base de datos es bastante basica, pero si es necesario, se puede hacer un sharding por el ID de la URL, ya que es autoincremental y unico. Esto nos permite distribuir las URLs entre multiples bases de datos para mejorar la performance y la disponibilidad.
+
 #### **API Endpoints**
 
 Nuestra API expone dos operaciones
@@ -714,13 +727,66 @@ La misma redirecciona a la URL original mediante HTTP
 
 - `301 Moved Permanently` con el header `Location: ejemplo.com` -> El mas indicado si queremos cachear la redireccion en el navegador del usuario y reducir la carga de los servidores
 - `302 Found` con el header `Location: ejemplo.com` -> El mas indicado si no queremos cachear la redireccion en el navegador del usuario, util si queremos llevar registro de todas las redirecciones
+- Si no se encuentra la URL original en la base de datos, devolvemos un `404 Not Found` con un mensaje de error
 
 #### **Como acortamos la URL?**
+
+**Opcion 1 - Hashing**
+
+El tamanio de la URl acortada debe ser el minimo posible para poder soportar peticiones durante los proximos 10 anios, y que sea facil de recordar para el usuario. Por ejemplo, si usamos un hash de 6 caracteres, podemos generar 62^6 = 56.8 billones de combinaciones posibles, lo que es suficiente para soportar 182.5 billones de URLs en 10 anios.
 
 Podemos aplicar un hash a la URL original para poder crear la URL acortada.
 
 - ejemplo.com -> hash -> abc123
 - abc123 -> hash -> tinyurl.com/abc123
 
+Debemos decidir que algoritmo de hashing queremos utilizar, como MD5, SHA-1, SHA-256, etc. Cada uno tiene sus pros y contras en cuanto a velocidad y seguridad.
+
+Los problemas de estos algoritmos de hashing es que no son perfectos, y pueden generar colisiones, y generan hashes de mayor cantidad de caracteres de los que necesitamos, por lo que debemos truncarlos para poder generar la URL acortada.
+
 Si dos URL distintas dan como resultado el mismo hash a esto se le llama **colision**, y si sucede no podremos mapear la URl original a la URl acortada.
 
+Para esto deberiamos:
+
+- Consultar a la base de datos para comprobar si el hash ya existe
+- Bloquear las demas transacciones para evitar carreras criticas, ya que si no las bloqueamos y hay dos transacciones en paralelo con el mismo hash, estariamos generando un conflicto.
+
+![alt text](image-3.png)
+
+- No es factible para un sistema de alta carga
+
+**Opcion 2 - Generar un ID autoincremental**
+
+![alt text](image-4.png)
+
+No necesitamos un algoritmo de Hashing, debemos generar un identificador unico en un entorno distribuido de forma eficiente.
+
+Solo precisamos un valor unico entre 0000000 y ZZZZZZZ para cada peticion. La primera url tendra el valor 0000001 y asi sucesivamente. 
+
+Para evitar el problema de identificadores repetidos, podemos usar un sistema que de un nuevo ID ante cada peticion. Se recomienda **Redis** que nos da un numero en base 10 que va incrementando de manera segura y eficiente, transformamos ese numero a base 62 y lo guardamos en la base de datos. 
+
+- Existe la posibilidad de que una carrera critica suceda si hay dos peticiones en paralelo, pero Redis se encarga de manejar esto de manera eficiente, ya que es un sistema de almacenamiento en memoria que maneja las operaciones de manera atómica.
+- Puede ser que una URL original tenga varias URL acortadas, pero esto no es un problema, ya que cada URL acortada es unica y se mapea a una URL original.
+
+**Opcion 3 - Generador de rangos**
+
+![alt text](image-5.png)
+
+Range Generator Service solo se encarga de generar rangos de IDs para cada servidor, y cada servidor se encarga de generar los IDs dentro de su rango.
+
+Utilizara una base de datos relacional para evitar devolver rangos repetidos ante varias requests.
+
+Por ejemplo, el servidor 1 puede generar IDs del 1 al 1000000, el servidor 2 puede generar IDs del 1000001 al 2000000, etc. Esto nos permite evitar el problema de identificadores repetidos sin necesidad de usar un sistema externo como Redis.
+
+- Impacta la disponibilidad del sistema, si el Range Generator Service falla, no podremos generar nuevos IDs, lo que puede afectar la capacidad de generar nuevas URLs acortadas. Para mitigar esto, se pueden tener múltiples instancias del Range Generator Service con replicación y failover para garantizar la disponibilidad.
+- Es un sistema más complejo de implementar y mantener, ya que requiere la gestión de rangos y la coordinación entre los servidores para evitar solapamientos en los rangos asignados. Además, se debe asegurar que el sistema de base de datos utilizado para almacenar los rangos sea altamente disponible y escalable para manejar la carga de solicitudes de generación de rangos
+
+#### Disenio final
+
+![alt text](image-6.png)
+
+- Servicios escalados horizontalmente
+- Cache **read-through** para mejorar las lecturas, relacion 10:1 entre lecturas y escrituras. Hay mas ingresos a la URl que creaciones.
+- Despliegue en multiples datacenters para mejorar la disponibilidad y la tolerancia a fallos
+
+### Sistema de chat (Whatsapp, Telegram, etc)

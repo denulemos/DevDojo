@@ -162,7 +162,7 @@ Es un código de 3 dígitos que indica el resultado de una request HTTP.
 - `200` (Éxito): La solicitud fue procesada correctamente.
   - Ejemplos: `200 OK`, `201 Created`, `204 No Content`
 - `300` (Redirección): La solicitud requiere una acción adicional, normalmente una redirección.
-  - Ejemplos: `301 Moved Permanently`, `302 Found`, `307 Temporary Redirect`, `308 Permanent Redirect`
+  - Ejemplos: `301 Moved Permanently`, `302 Found`, `307 Temporary Redirect`, `308 Permanent Redirect`. Tener en cuenta que `301` es cacheable, mientras que `302` no lo es.
 - `400` (Error del cliente): La solicitud tiene un problema del lado del usuario/cliente.
   - Ejemplos: `400 Bad Request`, `401 Unauthorized` (puede faltar token), `403 Forbidden` (autenticado pero no autorizado), `404 Not Found`, `429 Too Many Requests`
 - `500` (Error del servidor): El servidor no pudo procesar la solicitud correctamente.
