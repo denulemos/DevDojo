@@ -1572,6 +1572,69 @@ def get_account_balance(account_id: str) -> dict:
     """
 ```
 
+### Orquestacion Multi-Agent 
+
+Un solo agente es mas que suficiente cuando nuestra tarea cabe en una sola pregunta-respuesta en un contexto limitado, y solo requiere una linea de razonamiento. 
+
+![alt text](image-7.png)
+
+- **Contect window limits**: Un modelo puede razonar solo un texto a la vez, un agente que funciona como customer support debe encargarse de billing, retornos, envios, etc.. lo cual requiere el uso de muchas tools y mucho contexto. Mientras mas contexto e historial es requerido, la respuesta se vuelve mas costosa y lenta, por lo que es mejor dividir la tarea en varios agentes especializados.
+- **Task specialization**: Cada tarea precisa distintas tools y distintos conocimientos, por ejemplo un agente de billing precisa tener acceso a los sistemas de pago, mientras que un agente de envios precisa tener acceso a los sistemas de tracking. Por lo tanto, es mejor tener un agente especializado para cada tarea y asi, separar los scopes.
+- **Parallelism**: A veces tareas que son independientes entre si pueden ocurrir en paralelo, por ejemplo, un agente de billing puede estar procesando una solicitud de pago mientras que un agente de envios esta procesando una solicitud de tracking. Esto permite que los agentes trabajen de manera mas eficiente y rapida. Con un solo agente, estas tareas se harian de manera secuencial, lo que puede ser mas lento y costoso.
+
+La solucion a esto es separar las tareas en agentes especializados con instrucciones y herramientas especificas para cada tarea, y luego tener un agente principal que se encargue de orquestar la interaccion entre los agentes especializados.
+
+ADK provee 3 templates de orquestacion para multi-agente:
+
+- **SequentialAgent**: Ejecuta los agentes uno luego del otro en un orden especifico. Todos los agentes comparten el mismo contexto. Se requiere cuando una tarea tiene dependencias estrictas, por ejemplo un agente precisa si o si la resolucion el agente anterior
+
+```python
+from google.adk.agents.sequential_agent import SequentialAgent  
+
+order_pipeline = SequentialAgent(     
+
+      name="order_pipeline",     
+
+      sub_agents=[validate_agent, pricing_agent, confirm_agent],
+
+)
+```
+
+- **ParallelAgent**: Ejecuta varios sub-agentes de manera concurrente. Se requiere cuando los agentes son independientes entre si y no necesitan compartir contexto ni resultados. Esto minimiza la latencia, ya que se pueden realizar tareas en paralelo y no se bloquean entre si. 
+
+```python
+from google.adk.agents.parallel_agent import ParallelAgent  
+
+lookup_parallel = ParallelAgent(     
+
+       name="account_lookup",     
+
+       sub_agents=[inventory_agent, promotions_agent, account_agent],
+
+)
+```
+
+- **LoopAgent**: Ejecuta un sub-agente de manera repetitiva hasta que se cumpla una condición de salida. Se requiere cuando una tarea necesita ser repetida varias veces, por ejemplo, un agente que necesita procesar una lista de items y no sabe cuántos hay. Se precisa `max_iterations` para evitar loops infinitos, y se termina mediante `exit_loop()`
+
+```python
+from google.adk.agents.loop_agent import LoopAgent  
+
+refine_loop = LoopAgent(     
+
+     name="response_refiner",     
+
+     sub_agents=[draft_agent, quality_agent],     
+
+     max_iterations=5,
+
+)
+```
+
+A veces un solo approach no es suficiente, entonces ADK 2.0 por Google ofrece dos herramientas
+
+- **Graph-powered workflows**: 
+- **Task-based Collaboration**: 
+
 
 ## GEMINI.md
 
