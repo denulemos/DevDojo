@@ -8,6 +8,7 @@ import IndiceTable from '@site/src/components/IndiceTable';
 
 export const data = [
   { tema: '⚡', nombre: 'Claude', link: '#claude' },
+  { tema: '♊️'', nombre: 'Gemini', link: '#gemini' },
 ];
 
 <IndiceTable data={data}/>
@@ -1632,9 +1633,35 @@ refine_loop = LoopAgent(
 
 A veces un solo approach no es suficiente, entonces ADK 2.0 por Google ofrece dos herramientas
 
-- **Graph-powered workflows**: 
-- **Task-based Collaboration**: 
+- **Graph-powered workflows**: Introducen la clase **Workflow**, que permite modelar procesos complejos como un grafo dirigido (Directed Graph). A diferencia de las orquestaciones lineales, un grafo permite una flexibilidad total para diseñar flujos de trabajo sofisticados:
+    - **Nodos**: Representan unidades de trabajo individuales. Un nodo puede ser un Agente, una función de Python, una herramienta (tool) o incluso otro Workflow anidado.
+    - **Aristas (Edges)**: Definen el camino que siguen los datos y el control. Las aristas conectan los nodos y pueden incluir lógica de enrutamiento (routers) para decidir dinámicamente el siguiente paso basado en el estado actual o el output de un nodo.
+    - **Control Híbrido**: Es su mayor ventaja, ya que permite mezclar nodos deterministas (código tradicional para validaciones o cálculos) con nodos generativos (IA para razonamiento), asegurando que los procesos críticos sigan reglas de negocio estrictas.
+    - **Topologías Flexibles**: Puedes expresar flujos secuenciales, ejecuciones en paralelo, bifurcaciones condicionales y ciclos de retroalimentación (loops) dentro de una única estructura coherente.
 
+```python
+from google.adk import Agent, Workflow, Event
+
+root_agent = Workflow(
+    name="support_workflow",
+    edges=[
+        ("START", classifier, router),
+        (classifier, agent_ventas, lambda res: res.category == "ventas"),
+        (classifier, agent_soporte, lambda res: res.category == "soporte"),
+    ]
+)
+```
+
+`edges` define las conexiones y la lógica de transición, permitiendo que el flujo no sea solo una cadena lineal, sino un mapa inteligente de decisiones.
+
+![alt text](image-8.png)
+
+- **Task-based Collaboration**: Introduce un parámetro **mode** en los sub-agentes que proporciona un control granular sobre cómo un agente coordinador delega trabajo a especialistas. Esta técnica permite optimizar la interacción y el consumo de tokens según la naturaleza de la tarea delegada:
+    - **Mode `chat`**: El sub-agente toma el control total de la conversación. Puede interactuar directamente con el usuario durante múltiples turnos para recolectar información o aclarar dudas antes de devolver el control al coordinador. Es ideal para procesos de "onboarding" o configuraciones guiadas.
+    - **Mode `task`**: El sub-agente recibe una tarea específica y trabaja de forma autónoma (usando sus propias herramientas si es necesario) hasta completarla. Al finalizar, entrega un resultado estructurado al coordinador. El usuario no ve el proceso interno del sub-agente, solo el resultado final.
+    - **Mode `single_turn`**: Es la forma más rápida y ligera de delegación. El coordinador envía una solicitud y el sub-agente responde en un único turno, sin mantener historial previo ni realizar loops internos complejos. Es perfecto para tareas de extracción, traducción o validaciones rápidas que pueden ejecutarse en paralelo.
+
+![alt text](image-9.png)
 
 ## GEMINI.md
 
