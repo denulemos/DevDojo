@@ -1726,3 +1726,31 @@ Es una plataforma de GCP para construir, escalar, gobernar y optimizar agentes I
 - **Build**: Posee herramientas para la creacion de agentes. Agent Studio para development low-code, ADK para code-first engineering, sub-agent para sistemas multi-agente entre otros sistemas
 - **Scale**: Infraestructura para ejecutar agentes en produccion. Agent Runtime para deployment, Agent Memory Bank para contextos a largo-plazo, Agent Sessions para trackear conversaciones y Agent Sandbox para ejecutar de manera segura operaciones riesgosas. 
 - **Govern**: 
+
+## `InMemorySessionService`
+
+La clase InMemorySessionService almacena todos los datos de la sesión en la memoria. Esto significa que, si el servidor se reinicia o si se redirecciona al usuario a otro servidor, se perderán los datos de la sesión del usuario.
+
+Cada solicitud que tu cliente envía al agente contiene un ID de sesión que el agente usa para asociar tu entrada con una conversación específica.
+Sin embargo, cuando se detuvo y reinició el servidor, se perdieron todos los datos de la sesión que estaban en la memoria.
+Por lo que ahora, tu cliente envía una solicitud con un ID de sesión que no está en la memoria, y el servidor rechazará el intento de continuar una conversación que no conoce.
+
+![alt text](image-10.png)
+
+```python
+# Create the session service
+if SESSION_SERVICE_PROVIDER == "in_memory":
+    session_service = InMemorySessionService()
+    logger.info(f"Using SESSION_SERVICE_PROVIDER: {SESSION_SERVICE_PROVIDER}")
+```
+
+## `VertexAiSessionService`
+
+Para agregar persistencia de la sesion en la app, se debe reemplazar a `InMemorySessionService` por `VertexAiSessionService`
+
+Cuando es implementado, existe una latencia adicional en el uso del agente. Esto se debe a que los datos de la sesión se leen y escriben en un servicio fuera de la aplicación que entrega el agente, y cada llamada incurre en cierta latencia.
+
+Cuando se probó la app con InMemorySessionService, el restablecimiento del servidor hizo que fallara.
+
+Sin embargo, esta vez, como la sesión se almacenó en el servicio Agent Platform Sessions, el historial de conversaciones estaba disponible y se usó como contexto para formular la respuesta.
+
