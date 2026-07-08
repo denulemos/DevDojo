@@ -1,10 +1,20 @@
 # 🖥️ Server Side Rendering
 
-### Que es Server Side Rendering?
-
 SSR ocurre cuando el HTML es generado en el servidor y no en el cliente. Se usa en frameworks como **Next.Js, Angular Universal, Nuxt** entre otros. 
 
 Es un **patrón de renderizado**, no es un patrón de diseño. No entra en los GoF design patterns, aunque se suele confundir ya que define cómo fluye la responsabilidad, impacta en la performance y la UX, y se aplica a nivel de arquitectura, no solo de código.
+
+### Ventajas
+
+- Mejor SEO, ya que los crawlers pueden leer el HTML
+- Mejor performance, ya que el cliente tiene menos carga
+- Mejor UX, ya que la pagina carga mas rapido
+
+### Desventajas
+
+- Mayor complejidad, ya que se tiene que manejar el servidor
+- Mayor costo, ya que se tiene que pagar por el servidor
+- Mayor tiempo de carga, ya que se tiene que esperar a que el servidor genere el HTML
 
 ---
 
@@ -19,6 +29,7 @@ SSR en React se utiliza generalmente con 3 herramientas:
 El flujo completo de SSR + Hydration seria el siguiente:
 
 `Request → Server (React render) → HTML listo → Browser pinta → JS carga → Hydration → App interactiva`
+
 
 ### Qué es la hydration?
 
@@ -160,3 +171,4 @@ export default function ClientComponent() {
 ```
 
 Se usan mucho con frameworks como Next.js para que tu app sea más rápida y eficiente.
+
