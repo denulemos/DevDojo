@@ -667,24 +667,34 @@ Centralizo el tooling, limito dependencias con reglas, comparto código vía paq
 - Separar el problema en módulos más simples. Por ejemplo, si el problema es diseñar un sistema de reservas de vuelos, se puede separar en módulos como búsqueda de vuelos, reserva de vuelos y pago. **Top-down approach**
 - Charlar sobre los trade-offs
 
-### Disenio de un acortador de URLs (tinyurl)
+Se pueden separar los puntos en distintas categorias:
 
-#### **Requisitos funcionales**
+- **Requisitos funcionales y no funcionales:**
+    - Funcionales: lo que el sistema debe hacer, por ejemplo, en un sistema de reservas de vuelos, debe permitir buscar vuelos, reservar vuelos y pagar.
+    - No funcionales: lo que el sistema debe ser, por ejemplo, en un sistema de reservas de vuelos, debe ser escalable, tolerante a fallos y seguro.
+- **Hipótesis y estimaciones**: hacer estimaciones sobre el tamaño del sistema, la cantidad de usuarios, la cantidad de datos, etc. Esto es importante para poder dimensionar el sistema y hacer que sea escalable. Es decir, traducir lo mas posible a numeros. 
+- **Diseño de alto nivel**: hacer un diseño abstracto del sistema, con los componentes principales y cómo se comunican entre ellos. Esto es importante para poder entender el sistema y cómo funciona. Se puede hacer un diagrama de arquitectura, por ejemplo, con los componentes principales como servidores, bases de datos, colas de mensajes, etc.
+
+### **Diseño de un acortador de URLs (tinyurl)**
+
+#### Requisitos
+
+**Funcionales**
 - Dada una URL, debemos transformarla en una URL acortada, y devolverla al usuario
-- Dada una URL acortada, debemos redirigir al usuario a la URL original
+- Dada una URL acortada, debemos redirigir al usuario a la URL original}
 
-#### **Requisitos no funcionales**
+**No Funcionales**
 - Carga intensa, debe estar preparado para manejar picos de tráfico
 - Alta disponibilidad, el sistema debe estar disponible la mayor parte del tiempo posible
 
-#### **Hipotesis y estimaciones**
+#### Hipotesis y estimaciones
 
 - Debemos soportar un promedio de 50 millones de URLs nuevas cada dia que deben permanecer en el sistema aunque sean 10 anios = 50M * 365 (dias del anio) * 10 (anios) = 182.5 billones de URLs
 - El tamanio promedio de una URL es de 100 caracteres, cada caracter ocupa un byte, lo que nos da un total de 18.25 TB de almacenamiento solo para las URLs originales
 - El tamanio de la URL debe ser el minimo posible
 - Relacion entre las lecturas y escrituras es de 10:1, se debe suponer que las URL se leen mucho mas de lo que se escriben
 
-#### **Primer disenio alto nivel**
+#### Primer diseño alto nivel
 
 ![alt text](image-1.png)
 
@@ -706,7 +716,7 @@ url {
 - **Replicacion de datos entre multiples datacenters** para garantizar la disponibilidad y la tolerancia a fallos
 - **Sharding** no seria necesario ya que nuestra base de datos es bastante basica, pero si es necesario, se puede hacer un sharding por el ID de la URL, ya que es autoincremental y unico. Esto nos permite distribuir las URLs entre multiples bases de datos para mejorar la performance y la disponibilidad.
 
-#### **API Endpoints**
+#### API Endpoints
 
 Nuestra API expone dos operaciones
 
@@ -729,7 +739,7 @@ La misma redirecciona a la URL original mediante HTTP
 - `302 Found` con el header `Location: ejemplo.com` -> El mas indicado si no queremos cachear la redireccion en el navegador del usuario, util si queremos llevar registro de todas las redirecciones
 - Si no se encuentra la URL original en la base de datos, devolvemos un `404 Not Found` con un mensaje de error
 
-#### **Como acortamos la URL?**
+#### Como acortamos la URL?
 
 **Opcion 1 - Hashing**
 
@@ -781,7 +791,7 @@ Por ejemplo, el servidor 1 puede generar IDs del 1 al 1000000, el servidor 2 pue
 - Impacta la disponibilidad del sistema, si el Range Generator Service falla, no podremos generar nuevos IDs, lo que puede afectar la capacidad de generar nuevas URLs acortadas. Para mitigar esto, se pueden tener múltiples instancias del Range Generator Service con replicación y failover para garantizar la disponibilidad.
 - Es un sistema más complejo de implementar y mantener, ya que requiere la gestión de rangos y la coordinación entre los servidores para evitar solapamientos en los rangos asignados. Además, se debe asegurar que el sistema de base de datos utilizado para almacenar los rangos sea altamente disponible y escalable para manejar la carga de solicitudes de generación de rangos
 
-#### Disenio final
+#### Diseño final
 
 ![alt text](image-6.png)
 
@@ -789,4 +799,43 @@ Por ejemplo, el servidor 1 puede generar IDs del 1 al 1000000, el servidor 2 pue
 - Cache **read-through** para mejorar las lecturas, relacion 10:1 entre lecturas y escrituras. Hay mas ingresos a la URl que creaciones.
 - Despliegue en multiples datacenters para mejorar la disponibilidad y la tolerancia a fallos
 
-### Sistema de chat (Whatsapp, Telegram, etc)
+### **Sistema de chat (Whatsapp, Telegram, etc)**
+
+#### Requisitos
+
+**Funcionales**
+- Se pueden enviar mensajes individuales o grupales
+- Estos mensajes pueden ser texto, imagenes o videos
+- Los usuarios podran iniciar sesion en varios dispositivos a la vez
+- Recibos de lectura de los mensajes (el tipico visto de Whatsapp)
+- Ultima hora de conexion
+
+**No Funcionales**
+- Baja latencia, lo mas parecido al tiempo real
+- Alta disponibilidad, el sistema debe estar disponible la mayor parte del tiempo posible
+
+#### Hipotesis y estimaciones
+
+- Limite de 10k caracteres de los mensajes de texto
+- Cada usuario enviaria una media de 150 mensajes diarios de 100 caracteres al dia
+- Se envian 5 archivos multimedia por usuario al dia con un tamaño promedio de 1 MB
+- 100 millones de usuarios activos por dia
+    - 15 billones de mensajes de texto por dia
+    - 500 TB de archivos multimedia por dia (en caso se compriman los archivos multimedia, se puede reducir a 100 TB por dia)
+    - Nuestro sistema precisara 500 TB de almacenamiento por dia, y 15 billones de mensajes de texto por dia, lo que nos da un total de 5.475 PB de almacenamiento por año, y 5.475 billones de mensajes de texto por año.
+
+
+#### Diseño alto nivel
+
+**Protocolo P2P (Peer to Peer)**
+
+Puntos positivos:
+- Los clientes se comunican entre si directamente sin precisar un servidor intermedio, lo que reduce la latencia y mejora la velocidad de entrega de los mensajes.
+
+Puntos negativos:
+- Se necesitan tener demasiadas conexiones
+- Las condiciones de red de los clientes tienden a ser mas inestables, y el P2P depende de la conexion de ambos
+- Es mas complicado de asegurar el envio de mensajes a clientes sin conexion, ya que no hay un servidor central que pueda almacenar y reenviar los mensajes.
+
+Por lo tanto llegamos a la conclusion de que **necesitamos un servidor intermedio** que se encargue de recibir los mensajes de los clientes y enviarlos a los destinatarios.
+
