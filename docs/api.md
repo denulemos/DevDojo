@@ -8,6 +8,47 @@ Por ejemplo, si se tiene una aplicación que informa sobre el clima, esta inform
 
 Hay tipos de APIs **públicas, privadas y partners (APIs de pago por uso)**.
 
+## Qué es la Internet?
+
+Es una red global de computadoras y dispositivos interconectados para el intercambio de información. Es una infraestructura a nivel global que facilita el acceso a recursos.
+
+**Es una red de redes**
+
+Estos dispositivos se comunican a traves de una serie de **protocolos** como el Internet Protocol y el Transmission Control Protocol. 
+
+- **Packet**: Una pequeña unidad de información transmitida en internet.
+- **Router**: Un dispositivo que direcciona estos packets de información entre diferentes redes.
+- **IP Address**:  
+
+## HTTP y HTTPS
+
+Nuestro dispositivo se comunica con los servidores web a traves del protocolo HTTP (Hypertext Transfer Protocol). 
+
+Este protocolo define cómo se formatean y transmiten los mensajes, y cómo los servidores y navegadores deben responder a diversas solicitudes.
+
+Un cliente realiza una peticion a un servidor, y esta peticion incluye una Cabecera con detalles como:
+
+- El tipo de solicitud (GET, POST, PUT, DELETE)
+- El tipo de navegador
+- Las cookies
+- A veces el request body, que contiene datos enviados al servidor (por ejemplo, datos de un formulario).
+
+El servidor procesa la solicitud y envia la respuesta con un HTTP Response.
+
+HTTP es solo un protocolo para transferir datos
+
+- No define como se estructuran las requests o peticiones
+- No define el formato de respuestas
+- No define como se almacenan los datos en el servidor
+
+Aca entra el concepto de las [APIs](./api.md), que es un intermediario que le permite a los clientes comunicarse con los servidores sin preocuparse por los detalles a bajo nivel. 
+
+### Seguridad
+
+HTTP en si mismo tiene un problema de seguridad: envia los datos en texto plano.
+
+Por eso los sitios mas modernos usan HTTS (Hypertext Transfer Protocol Secure), que cifra los datos transmitidos entre el cliente y el servidor usando SSL/TLS. Esto protege la integridad y confidencialidad de los datos, asegurando que no puedan ser interceptados o modificados por terceros.
+
 ## Arquitecturas y Tipos {#arquitecturas-y-tipos}
 
 ### REST API
@@ -21,6 +62,10 @@ Por ejemplo, una aplicación de comida usa las siguientes REST APIs:
 - `GET /orders/{id}`: Obtiene el status de una orden en particular
 - `DELETE /orders/{id}`: Cancela una orden
 
+Es **stateless**, cada solicitud es independiente de la anterior, y no guarda información del cliente entre solicitudes.
+
+Los Endpoint rest suelen devolver mas recursos de los necesarios, lo cual puede causar problemas de sobre-recuperación (más información de la necesaria) o sub-recuperación (menos información de la necesaria), lo cual causa que necesitemos varias consultas para tener lo que precisamos, o que tengamos payloads muy pesados.
+
 #### REST Constraints
 
 Estas son reglas que definen cómo una REST API debería funcionar.
@@ -33,7 +78,7 @@ Estas son reglas que definen cómo una REST API debería funcionar.
 
 Por ejemplo, se tiene el cliente frontend -> backend hecho con NodeJS -> base de datos MySQL; cada capa funciona de manera independiente de la otra.
 
-### REST vs SOAP
+### SOAP
 
 SOAP (Simple Object Access Protocol) es un protocolo de mensajería basado en XML, muy usado en bancos y en sistemas legacy.
 
@@ -47,7 +92,7 @@ SOAP (Simple Object Access Protocol) es un protocolo de mensajería basado en XM
 
 ### GraphQL
 
-Es un lenguaje query que permite al cliente pedir la data exacta que el mismo precisa.
+Es un lenguaje query que permite al cliente pedir la data exacta que el mismo precisa, ni mas ni menos. Esto soluciona el hecho de que REST a veces devuelve más información de la necesaria.
 
 ```
 {
@@ -59,6 +104,9 @@ Es un lenguaje query que permite al cliente pedir la data exacta que el mismo pr
 ```
 
 Soluciona el hecho de que REST a veces devuelve más información de la necesaria.
+
+- Requiere mas procesamiento en el servidor
+- No es tan facil de convertir como REST, ya que requiere un esquema definido y un lenguaje query
 
 ### REST vs GraphQL
 

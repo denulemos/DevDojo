@@ -130,13 +130,6 @@ const config: Config = {
           label: 'Dojos',
         },
         {
-          type: 'docSidebar',
-          sidebarId: 'tecnicosSidebar',
-          position: 'left',
-          className: 'navbar-item-disabled',
-          label: 'Ejercicios técnicos (Soon)',
-        },
-        {
           href: 'https://github.com/denulemos/DevDojo',
           label: 'Github',
           position: 'right',

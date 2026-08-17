@@ -21,20 +21,38 @@ const sidebars: SidebarsConfig = {
       link: { type: 'doc', id: 'arquitectura' },
       collapsed: true,
       items: [
+        'systemdesign', 'patrones',
         {
           type: 'category',
-          label: '🛠️ System Design',
+          label: '🔌 APIs',
+          link: { type: 'doc', id: 'api' },
           collapsed: true,
-          link: { type: 'doc', id: 'systemdesign' },
-          items: [{
-            type: 'link',
-            label: '🔢 Internet y Redes',
-            href: 'internetredes',
-          }],
+          items: [
+            {
+              type: 'link',
+              label: 'Tipos',
+              href: '/docs/api#arquitecturas-y-tipos',
+            },
+            {
+              type: 'link',
+              label: 'Componentes',
+              href: '/docs/api#componentes-de-una-api',
+            },
+            {
+              type: 'link',
+              label: 'Diseño y Buenas Prácticas',
+              href: '/docs/api#diseno-y-buenas-practicas',
+            },
+            {
+              type: 'link',
+              label: 'Seguridad y Control de Tráfico',
+              href: '/docs/api#seguridad-y-control-de-trafico',
+            },
+          ],
         },
         {
           type: 'category',
-          label: '🧩 Patrones',
+          label: '🧩 Patrones de Arquitectura',
           collapsed: true,
           items: ['microfrontends', {
             type: 'link',
@@ -53,7 +71,6 @@ const sidebars: SidebarsConfig = {
         , {
           type: 'category',
           label: '⚙️ DevOps',
-          link: { type: 'doc', id: 'devops' },
           collapsed: true,
           items: ['versionado', 'cicd'],
         },
@@ -119,35 +136,7 @@ const sidebars: SidebarsConfig = {
               href: '/docs/basesDatos#nosql',
             },
           ],
-        },
-        {
-          type: 'category',
-          label: '🔌 APIs',
-          link: { type: 'doc', id: 'api' },
-          collapsed: true,
-          items: [
-            {
-              type: 'link',
-              label: 'Tipos',
-              href: '/docs/api#arquitecturas-y-tipos',
-            },
-            {
-              type: 'link',
-              label: 'Componentes',
-              href: '/docs/api#componentes-de-una-api',
-            },
-            {
-              type: 'link',
-              label: 'Diseño y Buenas Prácticas',
-              href: '/docs/api#diseno-y-buenas-practicas',
-            },
-            {
-              type: 'link',
-              label: 'Seguridad y Control de Tráfico',
-              href: '/docs/api#seguridad-y-control-de-trafico',
-            },
-          ],
-        },
+        }
       ],
     },
 
@@ -279,21 +268,11 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: '📚 Teoría',
-      link: { type: 'doc', id: 'teoria' },
       collapsed: true,
-      items: ['algoritmos', 'poo', 'patrones'],
+      items: ['algoritmos', 'poo'],
     },
     'accesibilidad',
     'seguridad',
-  ],
-  tecnicosSidebar: [
-    {
-      type: 'category',
-      label: '📚 Teoría',
-      link: { type: 'doc', id: 'teoria' },
-      collapsed: true,
-      items: ['algoritmos', 'poo', 'patrones'],
-    },
   ],
 };
 
