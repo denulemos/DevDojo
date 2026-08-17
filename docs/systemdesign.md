@@ -1,17 +1,31 @@
 ---
 id: systemdesign
 title: 🛠️ System Design
+
 ---
 
 ## Punto de partida en System Design
 
-Un sistema utilizado por pocos usuarios puede ser construido de manera simple, un punto de partida común es:
+### Client - Server Architecture
+
+Casi todas las aplicaciones se basan en este concepto
+
+Cliente -- (Request: Almacenar, Recuperar o Modificar datos) --> Server
+Server -- (Response) --> Cliente
 
 ![alt text](src/image-2.png)
 
 - Es sencillo, fácil de implementar y mantener.
 - No es escalable, hay un solo servidor web que se encarga de todo.
 - Posee baja fiabilidad, ya que al tener un solo servidor, si el mismo cae, todo cae.
+
+#### Como sabe el cliente a qué servidor conectarse?
+
+Por su **Direccion IP**. Las computadoras se identifican entre si mediante direcciones IP. Son como numeros de telefono para las computadoras. 
+
+**Cada servidor publico tiene su IP unica**
+
+Cuando un cliente interactua con un servidor, usa este "numero de telefono" para comunicarse con el servidor correspondiente. Pero cuando se va a una pagina web, no se teclea su IP, si no su **Dominio**, y se hace match Dominio-IP mediante el **DNS**. El DNS es como una agenda de contactos, donde se guarda el nombre del contacto y su numero de telefono. (Se puede leer a mas detalle en la seccion [DNS](#DNS))
 
 Si agrego más de un servidor, debo usar el [Load Balancer](#load-balancer) para que las requests de nuestros usuarios se distribuyan entre los servidores. El DNS apuntará a la IP del Load Balancer.
 
@@ -41,11 +55,12 @@ En los **servicios stateless** no se almacena información del usuario en el ser
 
 Si hace falta guardar algún tipo de información, esta puede almacenarse en las **cookies** o en el **Local Storage** del cliente, o se puede usar un sistema de **tokens (JWT)** para mantener la información del usuario sin necesidad de almacenarla en el servidor.
 
+
 ## Pilares de System Design
 
 ### Rendimiento
 
-#### Response Time
+#### Response Time - Latencia
 
 Dentro del tiempo de respuesta se tiene:
 
@@ -271,6 +286,7 @@ Esto se puede lograr mediante:
     - **Cascada**: Primero toma de requisitos, diseño, implementación y mantenimiento. Es un proceso lineal, donde cada etapa se completa antes de pasar a la siguiente. Este proceso es rígido y no permite cambios una vez que se ha pasado a la siguiente etapa. **Poca flexibilidad**
     - **Ágil**: Se divide el trabajo en sprints, donde se planifica, se ejecuta y se revisa el trabajo de manera iterativa. Este proceso es flexible y permite cambios a medida que se avanza en el proyecto, lo que facilita la adaptación a cambios futuros. **Alta flexibilidad**
 
+
 ## Red y Distribución
 
 ### DNS
@@ -281,7 +297,11 @@ Cuando escribimos una URL en el navegador, se hace en un formato particular:
 
 Los dominios son una manera de identificar a qué servidor se quiere enviar una petición. Es como un alias a la dirección IP que sería el nombre real del servidor.
 
-El DNS posee una tabla donde apunta el dominio a la IP correspondiente.
+1. El usuario escribe la URL en el navegador.
+2. El navegador hace una petición al DNS para obtener la IP correspondiente al dominio.
+3. El DNS responde con la IP del servidor. El DNS posee una tabla donde apunta el dominio a la IP correspondiente.
+4. El navegador hace una petición al servidor usando la IP obtenida del DNS.
+5. El servidor responde con el contenido solicitado.
 
 ![alt text](src/image-9.png)
 
@@ -293,6 +313,19 @@ El DNS posee una tabla donde apunta el dominio a la IP correspondiente.
     - **Health checks**: revisa si tu backend, servidor o endpoint está vivo antes de enviarle tráfico.
     - **GeoDNS / georouting**: enviar usuarios de Europa a servidores europeos y usuarios de EE.UU. a servidores de EE.UU.
     - Entre otras características.
+    
+Se puede encontrar la direccion IP de cualquier dominio mediante el comando `ping` en la terminal, por ejemplo:
+
+```bash
+ping google.com
+```
+
+#### Proxy o Reverse Proxy
+
+La peticion que el Cliente hace no siempre va directamente al servidor, a veces pasa por un Proxy o Reverse Proxy.
+
+El Proxy es un intermediario entre el dispositivo y la red. Es un middleware que toma tanto la request como la respuesta, mantiene nuestra IP privada.
+
 
 ### CDN (Content Delivery Network)
 
@@ -598,6 +631,7 @@ La cache no es infinita, y su costo puede ser elevado.
 - **LFU (Least Frequently Used)**: Se elimina el dato menos consultado de todos
 - **FIFO (First In First Out)**: Se elimina el dato que primero se haya insertado
 
+
 ## Organización de Equipos y Repositorios
 
 ### Escalable entre múltiples equipos
@@ -650,7 +684,8 @@ Lo que se debe buscar en este manejo es que sea **mantenible**, **reproducible**
 
 Centralizo el tooling, limito dependencias con reglas, comparto código vía paquetes bien definidos, y automatizo upgrades con overrides y CI para que el monorepo no se vuelva un lío.
 
-## **Ejercicios practicos**
+
+## Ejercicios prácticos
 
 ### Como abarcar un problema de entrevista de diseño de sistemas?
 
@@ -675,7 +710,7 @@ Se pueden separar los puntos en distintas categorias:
 - **Hipótesis y estimaciones**: hacer estimaciones sobre el tamaño del sistema, la cantidad de usuarios, la cantidad de datos, etc. Esto es importante para poder dimensionar el sistema y hacer que sea escalable. Es decir, traducir lo mas posible a numeros. 
 - **Diseño de alto nivel**: hacer un diseño abstracto del sistema, con los componentes principales y cómo se comunican entre ellos. Esto es importante para poder entender el sistema y cómo funciona. Se puede hacer un diagrama de arquitectura, por ejemplo, con los componentes principales como servidores, bases de datos, colas de mensajes, etc.
 
-### **Diseño de un acortador de URLs (tinyurl)**
+### Diseño de un acortador de URLs (TinyURL)
 
 #### Requisitos
 
@@ -798,44 +833,3 @@ Por ejemplo, el servidor 1 puede generar IDs del 1 al 1000000, el servidor 2 pue
 - Servicios escalados horizontalmente
 - Cache **read-through** para mejorar las lecturas, relacion 10:1 entre lecturas y escrituras. Hay mas ingresos a la URl que creaciones.
 - Despliegue en multiples datacenters para mejorar la disponibilidad y la tolerancia a fallos
-
-### **Sistema de chat (Whatsapp, Telegram, etc)**
-
-#### Requisitos
-
-**Funcionales**
-- Se pueden enviar mensajes individuales o grupales
-- Estos mensajes pueden ser texto, imagenes o videos
-- Los usuarios podran iniciar sesion en varios dispositivos a la vez
-- Recibos de lectura de los mensajes (el tipico visto de Whatsapp)
-- Ultima hora de conexion
-
-**No Funcionales**
-- Baja latencia, lo mas parecido al tiempo real
-- Alta disponibilidad, el sistema debe estar disponible la mayor parte del tiempo posible
-
-#### Hipotesis y estimaciones
-
-- Limite de 10k caracteres de los mensajes de texto
-- Cada usuario enviaria una media de 150 mensajes diarios de 100 caracteres al dia
-- Se envian 5 archivos multimedia por usuario al dia con un tamaño promedio de 1 MB
-- 100 millones de usuarios activos por dia
-    - 15 billones de mensajes de texto por dia
-    - 500 TB de archivos multimedia por dia (en caso se compriman los archivos multimedia, se puede reducir a 100 TB por dia)
-    - Nuestro sistema precisara 500 TB de almacenamiento por dia, y 15 billones de mensajes de texto por dia, lo que nos da un total de 5.475 PB de almacenamiento por año, y 5.475 billones de mensajes de texto por año.
-
-
-#### Diseño alto nivel
-
-**Protocolo P2P (Peer to Peer)**
-
-Puntos positivos:
-- Los clientes se comunican entre si directamente sin precisar un servidor intermedio, lo que reduce la latencia y mejora la velocidad de entrega de los mensajes.
-
-Puntos negativos:
-- Se necesitan tener demasiadas conexiones
-- Las condiciones de red de los clientes tienden a ser mas inestables, y el P2P depende de la conexion de ambos
-- Es mas complicado de asegurar el envio de mensajes a clientes sin conexion, ya que no hay un servidor central que pueda almacenar y reenviar los mensajes.
-
-Por lo tanto llegamos a la conclusion de que **necesitamos un servidor intermedio** que se encargue de recibir los mensajes de los clientes y enviarlos a los destinatarios.
-

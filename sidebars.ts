@@ -20,7 +20,18 @@ const sidebars: SidebarsConfig = {
       label: '🧠 Arquitectura',
       link: { type: 'doc', id: 'arquitectura' },
       collapsed: true,
-      items: ['systemdesign',
+      items: [
+        {
+          type: 'category',
+          label: '🛠️ System Design',
+          collapsed: true,
+          link: { type: 'doc', id: 'systemdesign' },
+          items: [{
+            type: 'link',
+            label: '🔢 Internet y Redes',
+            href: 'internetredes',
+          }],
+        },
         {
           type: 'category',
           label: '🧩 Patrones',
@@ -270,7 +281,7 @@ const sidebars: SidebarsConfig = {
       label: '📚 Teoría',
       link: { type: 'doc', id: 'teoria' },
       collapsed: true,
-      items: ['algoritmos', 'poo', 'patrones', 'internetredes'],
+      items: ['algoritmos', 'poo', 'patrones'],
     },
     'accesibilidad',
     'seguridad',
@@ -281,7 +292,7 @@ const sidebars: SidebarsConfig = {
       label: '📚 Teoría',
       link: { type: 'doc', id: 'teoria' },
       collapsed: true,
-      items: ['algoritmos', 'poo', 'patrones', 'internetredes'],
+      items: ['algoritmos', 'poo', 'patrones'],
     },
   ],
 };

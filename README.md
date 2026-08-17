@@ -12,38 +12,57 @@ Se agregan preguntas todas las semanas. Se aceptan sugerencias mediante Pull Req
 
 **DevDojo es ahora una PWA! Puedes descargarlo en tu dispositivo y usarlo como cualquier otra app**
 
-## Tabla de temas (sigue en desarrollo y reorganización)
+## Índice de contenidos
 
+### Arquitectura
 - [Arquitectura](./docs/arquitectura.mdx)
-    - [Microfrontends](./docs/microfrontends.md)
-    - [System Design](./docs/systemdesign.md)
-    - [Microservicios](./docs/microservicios.md)
+  - [Microfrontends](./docs/microfrontends.md)
+  - [System Design](./docs/systemdesign.md)
+  - [Microservicios](./docs/microservicios.md)
+
+### Backend
 - [Backend](./docs/backend.mdx)
-    - [Java](./docs/java.md)
-    - [NodeJS](./docs/nodejs.md)
-    - [Bases de Datos](./docs/basesDatos.md)
-    - [APIs](./docs/api.md)
+  - [Java](./docs/java.md)
+  - [NodeJS](./docs/nodejs.md)
+  - [Bases de Datos](./docs/basesDatos.md)
+  - [APIs](./docs/api.md)
+
+### DevOps
 - [DevOps](./docs/devops.mdx)
-    - [Versionado](./docs/versionado.md)
-    - [CI/CD](./docs/cicd.md)
+  - [Versionado](./docs/versionado.md)
+  - [CI/CD](./docs/cicd.md)
+
+### Frontend
 - [Frontend](./docs/frontend.mdx)
-    - [Angular](./docs/angular.mdx)
-    - [React](./docs/react.md)
-    - [CSS y SCSS](./docs/scss.md)
-    - [HTML](./docs/html.md)
-    - [SSR](./docs/ssr.md)
+  - [Angular](./docs/angular.mdx)
+  - [React](./docs/react.md)
+  - [CSS y SCSS](./docs/scss.md)
+  - [HTML](./docs/html.md)
+  - [SSR](./docs/ssr.md)
+
+### JavaScript y TypeScript
 - [Javascript](./docs/javascript.md)
 - [TypeScript](./docs/typescript.md)
+
+### Soft Skills
 - [Soft Skills](./docs/soft.mdx)
-    - [Comunicación](./docs/comunicacion.mdx)
+  - [Comunicación](./docs/comunicacion.mdx)
+
+### IA
 - [IA](./docs/ia.mdx)
-    - [MCP](./docs/mcp.md) 
+  - [MCP](./docs/mcp.md)
+
+### Teoría
 - [Teoría](./docs/teoria.mdx)
-    - [Algoritmos](./docs/algoritmos.md)
-    - [POO](./docs/poo.md)
-    - [Patrones de Diseño](./docs/patrones.md)
-    - [Redes e Internet](./docs/internetredes.md)
+  - [Algoritmos](./docs/algoritmos.md)
+  - [POO](./docs/poo.md)
+  - [Patrones de Diseño](./docs/patrones.md)
+  - [Redes e Internet](./docs/internetredes.md)
+
+### Accesibilidad
 - [Accesibilidad](./docs/accesibilidad.md)
+
+### Seguridad
 - [Seguridad](./docs/seguridad.md)
     
 ¿Cómo veo la tabla con el índice de preguntas?
