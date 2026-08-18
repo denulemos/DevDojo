@@ -13,58 +13,941 @@ export const data = [
   { tema: '🖥️', nombre: 'Server Side Rendering', link: 'ssr' },
 ];
 
-<IndiceTable data={data}/>
+<IndiceTable data={data} />
 
-## **Performance**
+---
 
-### Code Splitting
+# ⚡ Performance
 
-Es una técnica de optimización que consiste en dividir el código de una aplicación en partes más pequeñas y cargarlas de manera asíncrona cuando se necesitan. 
+El rendimiento frontend consiste en reducir el tiempo que necesita el navegador para descargar, procesar y renderizar una aplicación, y mantener una experiencia fluida mientras el usuario interactúa con ella.
 
-Esto mejora el rendimiento al reducir el tiempo de carga inicial y permite que los usuarios accedan a la aplicación más rápidamente.
+Podemos dividir las optimizaciones principalmente en:
 
-- **Route Based Splitting**: Divide el código según las rutas de la aplicación, cargando solo lo necesario para cada ruta. En React se hace mediante `React.lazy` y `Suspense`, en Angular con `loadChildren` y en Vue con `defineAsyncComponent`. La mayoría de las apps tienen más de 10 rutas, y los usuarios solo visitan 2 o 3, por lo que es una **gran mejora de rendimiento**.
-- **Component Based Splitting**: Divide el código según los componentes, cargando solo los componentes necesarios para la vista actual.
-- **Vendor Splitting**: Divide el código de las dependencias externas (librerías) para que se carguen por separado y puedan ser cacheadas por el navegador. Hecho automáticamente por Webpack mediante `optimization.splitChunks`, requiere configuración. 
+- 📦 **Loading** — cuánto tarda en llegar el contenido.
+- 🖼️ **Rendering** — cuánto tarda el navegador en mostrarlo.
+- ⚙️ **Runtime** — qué tan eficiente es la aplicación mientras se ejecuta.
+- 🌐 **Networking** — cómo se descargan y almacenan los recursos.
+- 📊 **User Experience** — cómo percibe el usuario el rendimiento.
 
-Esto se realiza en **build time** con herramientas como Webpack, Rollup o Vite, y se configura mediante opciones específicas para cada tipo de splitting.
+---
+
+## 📦 Code Splitting
+
+**Code Splitting** es una técnica que permite dividir el JavaScript de una aplicación en múltiples chunks en lugar de enviar todo el código en un único bundle.
+
+El objetivo es evitar descargar código que el usuario todavía no necesita.
+
+### Sin Code Splitting
+
+```text
+Application
+│
+└── main.js
+    ├── Home
+    ├── Profile
+    ├── Settings
+    ├── Admin
+    ├── Reports
+    └── ...
+```
+
+El usuario visita `/home`, pero recibe código necesario para toda la aplicación.
+
+### Con Code Splitting
+
+```text
+Application
+│
+├── main.js
+├── home.chunk.js
+├── profile.chunk.js
+├── settings.chunk.js
+└── admin.chunk.js
+```
+
+El navegador puede descargar inicialmente solo lo necesario para renderizar la primera página.
+
+---
+
+### Route-Based Splitting
+
+Divide el código de acuerdo con las rutas de la aplicación.
+
+Por ejemplo:
+
+```text
+/home
+/profile
+/settings
+/admin
+```
+
+Cada ruta puede tener su propio chunk.
+
+#### Angular
+
+```ts
+const routes: Routes = [
+  {
+    path: 'admin',
+    loadChildren: () =>
+      import('./admin/admin.routes')
+        .then(m => m.ADMIN_ROUTES)
+  }
+];
+```
+
+#### React
+
+```tsx
+const Profile = React.lazy(
+  () => import('./Profile')
+);
+
+<Suspense fallback={<Loading />}>
+  <Profile />
+</Suspense>
+```
+
+Esta estrategia suele ser una de las optimizaciones más importantes porque el usuario normalmente no necesita todas las rutas de la aplicación al mismo tiempo.
+
+---
+
+### Component-Based Splitting
+
+Permite cargar componentes pesados solamente cuando son necesarios.
+
+Por ejemplo:
+
+```text
+Home
+│
+├── Header
+├── Hero
+├── Products
+└── AnalyticsDashboard
+        ↓
+   carga bajo demanda
+```
+
+Es especialmente útil para componentes como:
+
+- Modals complejos.
+- Editores.
+- Gráficos.
+- Mapas.
+- Dashboards.
+- Rich text editors.
+- Componentes utilizados únicamente después de una interacción.
+
+Ejemplo en React:
+
+```tsx
+const AnalyticsDashboard = lazy(
+  () => import('./AnalyticsDashboard')
+);
+```
+
+---
+
+### Vendor Splitting
+
+Consiste en separar dependencias de terceros del código de la aplicación.
+
+Por ejemplo:
+
+```text
+main.js
+app.js
+vendor.js
+```
+
+Esto puede mejorar el caching porque una actualización de nuestro código no necesariamente obliga al navegador a descargar nuevamente todas las dependencias.
+
+La estrategia concreta depende del bundler utilizado:
+
+- Webpack
+- Vite
+- Rollup
+- esbuild
+
+> ⚠️ No siempre es necesario crear manualmente un `vendor.js`. Los bundlers modernos realizan diferentes estrategias de chunking automáticamente.
+
+---
+
+## 💤 Lazy Loading
+
+**Lazy Loading** significa cargar un recurso cuando realmente es necesario, en lugar de cargarlo inmediatamente.
+
+Puede aplicarse a:
+
+- Imágenes.
+- Componentes.
+- Rutas.
+- JavaScript.
+- Videos.
+- Iframes.
+
+Por ejemplo:
+
+```html
+<img
+  src="profile.webp"
+  loading="lazy"
+  alt="Profile"
+/>
+```
+
+El navegador puede retrasar la descarga de la imagen hasta que sea necesario mostrarla.
+
+---
+
+### Lazy Loading de JavaScript
+
+En React:
+
+```tsx
+const Profile = React.lazy(
+  () => import('./Profile')
+);
+```
+
+En Angular:
+
+```ts
+{
+  path: 'profile',
+  loadComponent: () =>
+    import('./profile.component')
+      .then(m => m.ProfileComponent)
+}
+```
+
+---
+
+### Code Splitting vs Lazy Loading
+
+Son conceptos relacionados pero no exactamente iguales.
+
+```text
+Code Splitting
+      ↓
+Divide el código
+      ↓
+Genera múltiples chunks
+
+
+Lazy Loading
+      ↓
+Decide cuándo cargar esos chunks
+```
+
+Por ejemplo:
+
+```text
+Build time
+    ↓
+Code Splitting
+    ↓
+profile.chunk.js
+
+
+Runtime
+    ↓
+Usuario entra a /profile
+    ↓
+Lazy Loading
+    ↓
+Descarga profile.chunk.js
+```
+
+---
+
+# 🖥️ Critical Rendering Path
+
+El **Critical Rendering Path** es el conjunto de pasos que realiza el navegador para transformar los recursos de una página en píxeles visibles.
+
+Simplificando:
+
+```text
+HTML
+ ↓
+DOM
+
+CSS
+ ↓
+CSSOM
+
+DOM + CSSOM
+ ↓
+Render Tree
+ ↓
+Layout
+ ↓
+Paint
+ ↓
+Compositing
+ ↓
+Pixels
+```
+
+### 1. HTML → DOM
+
+El navegador descarga y parsea el HTML para construir el DOM.
+
+### 2. CSS → CSSOM
+
+Las hojas de estilo se parsean para construir el CSSOM.
+
+### 3. DOM + CSSOM → Render Tree
+
+El navegador combina la información del DOM y CSSOM para determinar qué elementos deben renderizarse y cómo.
+
+### 4. Layout
+
+El navegador calcula:
+
+- Tamaño.
+- Posición.
+- Dimensiones.
+- Relaciones entre elementos.
+
+### 5. Paint
+
+Se dibujan los elementos:
+
+- Texto.
+- Colores.
+- Bordes.
+- Sombras.
+- Imágenes.
+
+### 6. Compositing
+
+Finalmente, el navegador combina las diferentes capas para producir la imagen final.
+
+---
+
+## ⚠️ Render Blocking
+
+Algunos recursos pueden retrasar el renderizado inicial.
+
+### CSS
+
+Las hojas de estilo son importantes para construir correctamente el render inicial.
+
+```html
+<link
+  rel="stylesheet"
+  href="styles.css"
+/>
+```
+
+### JavaScript
+
+Un `<script>` tradicional puede bloquear el parser HTML:
+
+```html
+<script src="app.js"></script>
+```
+
+Podemos utilizar:
+
+```html
+<script
+  src="app.js"
+  defer
+></script>
+```
+
+o:
+
+```html
+<script
+  src="analytics.js"
+  async
+></script>
+```
+
+### `defer`
+
+El script se descarga mientras el HTML continúa parseándose y se ejecuta después de que el documento haya sido parseado.
+
+### `async`
+
+El script se descarga de forma independiente y se ejecuta tan pronto como está disponible, por lo que puede interrumpir el parsing del HTML.
+
+Es útil principalmente para scripts independientes, como analytics.
+
+---
+
+# 📊 Core Web Vitals
+
+Los **Core Web Vitals** son métricas utilizadas para evaluar aspectos importantes de la experiencia de usuario.
+
+Los principales son:
+
+### LCP — Largest Contentful Paint
+
+Mide cuánto tarda en renderizarse el elemento de contenido principal.
+
+```text
+Good
+< 2.5s
+
+Needs Improvement
+2.5s – 4s
+
+Poor
+> 4s
+```
+
+Para mejorar LCP podemos:
+
+- Optimizar imágenes.
+- Reducir JavaScript.
+- Mejorar el servidor.
+- Utilizar CDN.
+- Evitar recursos bloqueantes.
+- Preload de recursos críticos cuando corresponda.
+
+---
+
+### INP — Interaction to Next Paint
+
+Mide la capacidad de respuesta de la aplicación frente a las interacciones del usuario.
+
+Por ejemplo:
+
+```text
+Click
+  ↓
+JavaScript
+  ↓
+Render
+  ↓
+Updated UI
+```
+
+Un JavaScript excesivamente pesado puede provocar:
+
+```text
+Click
+  ↓
+████████████████████
+Long Task
+████████████████████
+  ↓
+UI responde tarde
+```
+
+Para mejorarlo:
+
+- Reducir JavaScript.
+- Evitar tareas largas.
+- Dividir trabajo pesado.
+- Utilizar Web Workers cuando corresponda.
+- Evitar renders innecesarios.
+
+---
+
+### CLS — Cumulative Layout Shift
+
+Mide cuánto cambia inesperadamente el layout mientras se carga la página.
+
+Ejemplo:
+
+```text
+Antes
+
+[ IMAGE ]
+
+[ TITLE ]
+
+
+Después
+
+[ IMAGE ]
+
+[ TITLE ]
+
+[ COOKIE BANNER ]
+```
+
+Si el contenido aparece y desplaza elementos existentes, aumenta el CLS.
+
+Una solución habitual es reservar espacio para recursos como imágenes:
+
+```css
+.image {
+  aspect-ratio: 16 / 9;
+}
+```
+
+O definiendo explícitamente sus dimensiones:
+
+```html
+<img
+  width="800"
+  height="450"
+  src="hero.webp"
+  alt="Hero"
+/>
+```
+
+---
+
+# 🖼️ Optimización de imágenes
+
+Las imágenes suelen representar una parte importante del peso total de una página.
+
+### Utilizar formatos modernos
+
+Preferir cuando sea apropiado:
+
+```text
+WebP
+AVIF
+```
+
+sobre formatos más pesados.
+
+---
+
+### Responsive Images
+
+No tiene sentido descargar una imagen de:
+
+```text
+3000 × 2000
+```
+
+si el usuario la visualiza en:
+
+```text
+400 × 300
+```
+
+Podemos utilizar:
+
+```html
+<img
+  src="image-800.webp"
+  srcset="
+    image-400.webp 400w,
+    image-800.webp 800w,
+    image-1200.webp 1200w
+  "
+  sizes="
+    (max-width: 600px) 400px,
+    800px
+  "
+  alt="Example"
+/>
+```
+
+El navegador puede seleccionar una versión adecuada según el dispositivo.
+
+---
 
 ### Lazy Loading
 
-Es el arte de no cargar un recurso hasta que sea necesario. Esto puede aplicarse a imágenes, scripts, estilos, etc.
+Para imágenes que están fuera del viewport:
 
-- En React se puede hacer con `loading="lazy"` en las imágenes, o con `React.lazy` y `Suspense` para componentes. 
-- En Angular se puede hacer con `loadChildren` para rutas y con `defineAsyncComponent` para componentes. 
-- En Vue se puede hacer con `defineAsyncComponent` para componentes.
+```html
+<img
+  src="image.webp"
+  loading="lazy"
+  alt="Example"
+/>
+```
 
-Esto se realiza en **runtime** y mejora el rendimiento al reducir el tiempo de carga inicial y permite que los usuarios accedan a la aplicación más rápidamente.
+Pero no conviene aplicar `lazy` indiscriminadamente.
 
-1. El usuario va a Profile Page.
-2. La app carga el bundle `profile.chunk.js` que contiene el código necesario para renderizar la página de perfil.
-3. La UI carga solo cuando se recibe el chunk correspondiente. 
+Una imagen principal del hero puede ser crítica para LCP y debería cargarse prioritariamente.
 
-### Critical Rendering Path
+---
 
-Es el paso a paso que el navegador lleva a cabo para transformar el HTML, CSS y JS de nuestra aplicación a píxeles en la pantalla.
+# 📦 JavaScript Performance
 
-![alt text](image.png)
+Una de las fuentes más comunes de problemas de rendimiento en aplicaciones modernas es enviar demasiado JavaScript al navegador.
 
-1. Parseo del HTML -> DOM
-2. Descarga del CSS -> CSSOM
-3. Si hay JS en el HTML, el armado del DOM y CSSOM se detiene hasta la descarga total del mismo. Como el JS puede modificar tanto el HTML como el CSS, el navegador espera a su ejecución para continuar con el resto de pasos. -> **Posible bloqueo**
-4. Combinación del DOM con CSSOM -> Render Tree
-5. Cálculo de posiciones -> Layout
-6. Dibujo en pantalla -> Paint
+Debemos preguntarnos:
 
-- Es por eso que es importante que nuestro código CSS y JS sea lo más pequeño posible, para que el navegador descargue y ejecute el código de manera más rápida. 
-- Se recomienda agregar los scripts al final del HTML o usar `async`/`defer` para que el navegador no espere a la descarga y ejecución del JS.
+```text
+¿Cuánto JavaScript envío?
+        ↓
+¿Cuánto necesita realmente el usuario?
+        ↓
+¿Cuánto tiene que parsear?
+        ↓
+¿Cuánto tiene que ejecutar?
+```
+
+Podemos reducirlo mediante:
+
+- Code Splitting.
+- Tree Shaking.
+- Lazy Loading.
+- Eliminación de dependencias innecesarias.
+- Importaciones más específicas.
+- Evitar librerías excesivamente grandes.
+- Compresión.
+- Caching.
+
+Por ejemplo, evitar importar una librería completa cuando solo necesitamos una función:
+
+```ts
+// ❌
+import _ from 'lodash';
+
+// ✅
+import debounce from 'lodash/debounce';
+```
+
+---
+
+# 🌐 Caching y CDN
+
+El navegador puede almacenar recursos para evitar descargarlos nuevamente.
+
+```text
+First visit
+
+Browser
+   ↓
+Server
+   ↓
+app.js
 
 
-### Pregunta Entrevista: Si la app tarda 8 segundos en cargar, ¿cómo mejorarías el rendimiento?
+Next visit
 
-- Analizar el bundle con `webpack-bundle-analyzer` para identificar los módulos más pesados.
-- Implementar **Route Based Splitting** para cargar solo lo necesario para cada ruta.
-- Si tengo elementos pesados como modals o componentes que no se usan en la vista inicial, implementaría **Component Based Splitting**.
-- Si tengo muchas dependencias externas, implementaría **Vendor Splitting** para que se carguen por separado y puedan ser cacheadas por el navegador.
-- Optimizar las imágenes utilizando formatos modernos como WebP y cargándolas de manera asíncrona con `loading="lazy"`.
+Browser
+   ↓
+Cache
+   ↓
+app.js
+```
 
+Una estrategia habitual consiste en utilizar filenames con hashes:
+
+```text
+main.a82f31.js
+main.91bc21.js
+```
+
+Cuando cambia el contenido, cambia el hash.
+
+Esto permite utilizar políticas de cache agresivas:
+
+```text
+main.a82f31.js
+        ↓
+   Cache for long time
+```
+
+Mientras que el nuevo build genera:
+
+```text
+main.b73c92.js
+```
+
+---
+
+## CDN
+
+Un **Content Delivery Network** permite distribuir recursos desde servidores geográficamente cercanos al usuario.
+
+```text
+                 CDN
+          ┌───────┼───────┐
+          ↓       ↓       ↓
+       Europe    USA     Asia
+          ↓       ↓       ↓
+       Users   Users   Users
+```
+
+Esto puede reducir la latencia y mejorar los tiempos de descarga.
+
+---
+
+# ⚙️ Runtime Performance
+
+El rendimiento no termina cuando la aplicación termina de cargar.
+
+También debemos considerar qué sucede mientras el usuario interactúa con ella.
+
+Problemas habituales:
+
+- Re-renders innecesarios.
+- Event handlers costosos.
+- Memory leaks.
+- Operaciones síncronas pesadas.
+- Manipulación excesiva del DOM.
+- Large Lists.
+- Long Tasks.
+
+---
+
+## Large Lists
+
+Renderizar miles de elementos simultáneamente puede ser costoso.
+
+```text
+❌
+
+10.000 items
+      ↓
+10.000 DOM nodes
+```
+
+Una alternativa es utilizar:
+
+### Virtualization
+
+```text
+10.000 items
+
+       ↓
+
+Solo renderizar
+los elementos visibles
+
+       ↓
+
+~20-50 DOM nodes
+```
+
+Esto es especialmente útil para:
+
+- Tablas.
+- Listas.
+- Feeds.
+- Dashboards.
+- Resultados de búsqueda.
+
+---
+
+# 🔍 Cómo medir Performance
+
+No deberíamos optimizar basándonos únicamente en intuición.
+
+Primero:
+
+```text
+Measure
+   ↓
+Identify bottleneck
+   ↓
+Optimize
+   ↓
+Measure again
+```
+
+Herramientas útiles:
+
+### Chrome DevTools
+
+- Performance.
+- Network.
+- Lighthouse.
+- Memory.
+- Coverage.
+
+### Bundle Analyzers
+
+```text
+webpack-bundle-analyzer
+```
+
+Permite visualizar qué dependencias están ocupando más espacio dentro del bundle.
+
+### Lighthouse
+
+Permite analizar:
+
+- Performance.
+- Accessibility.
+- Best Practices.
+- SEO.
+
+---
+
+# 🎯 Pregunta de entrevista
+
+## Si la aplicación tarda 8 segundos en cargar, ¿cómo mejorarías el rendimiento?
+
+Una respuesta senior no debería empezar directamente con:
+
+> "Implementaría lazy loading."
+
+Primero hay que **medir dónde está el problema**.
+
+### 1. Medir
+
+Analizaría:
+
+```text
+Lighthouse
+Chrome DevTools
+Network
+Performance
+Bundle Analyzer
+```
+
+Intentaría determinar si el problema está relacionado con:
+
+```text
+Network
+   ↓
+Server
+   ↓
+Assets
+   ↓
+JavaScript
+   ↓
+Rendering
+   ↓
+Runtime
+```
+
+---
+
+### 2. Analizar el bundle
+
+Utilizaría:
+
+```text
+webpack-bundle-analyzer
+```
+
+o las herramientas equivalentes del bundler utilizado.
+
+Buscaría:
+
+- Dependencias demasiado grandes.
+- Librerías duplicadas.
+- Código que no se utiliza.
+- Imports innecesarios.
+
+---
+
+### 3. Reducir JavaScript inicial
+
+Implementaría:
+
+- Route-based code splitting.
+- Lazy loading.
+- Tree shaking.
+- Eliminación de dependencias innecesarias.
+
+Por ejemplo:
+
+```text
+Initial Bundle
+
+Antes
+████████████████████████ 2.5 MB
+
+Después
+██████████ 900 KB
+```
+
+---
+
+### 4. Optimizar assets
+
+Revisaría:
+
+- Imágenes.
+- Fuentes.
+- CSS.
+- Videos.
+- Iframes.
+
+Utilizaría formatos modernos y lazy loading para recursos que no sean críticos.
+
+---
+
+### 5. Revisar el Critical Rendering Path
+
+Buscaría:
+
+- CSS innecesario.
+- JavaScript bloqueante.
+- Recursos críticos.
+- Fuentes.
+- Preloads incorrectos.
+
+---
+
+### 6. Revisar Core Web Vitals
+
+Analizaría:
+
+```text
+LCP
+INP
+CLS
+```
+
+para entender cómo está experimentando realmente el usuario la aplicación.
+
+---
+
+### 7. Revisar caching y CDN
+
+Comprobaría:
+
+- Browser caching.
+- CDN.
+- Cache headers.
+- Compression.
+- Brotli/Gzip.
+- Assets con content hashing.
+
+---
+
+### 8. Medir nuevamente
+
+Finalmente:
+
+```text
+Baseline
+   ↓
+Optimization
+   ↓
+Measure
+   ↓
+Compare
+```
+
+La optimización debe estar basada en **datos y métricas**, no en aplicar técnicas de performance indiscriminadamente.
+
+---
+
+# 🧠 Resumen
+
+```text
+                    FRONTEND PERFORMANCE
+                           │
+          ┌────────────────┼────────────────┐
+          ↓                ↓                ↓
+       Loading          Rendering         Runtime
+          │                │                │
+    Code Splitting    Critical Path     Long Tasks
+    Lazy Loading      LCP              Re-renders
+    Images            CLS              Memory
+    Caching           CSS              Virtualization
+          │                │                │
+          └────────────────┼────────────────┘
+                           ↓
+                     Core Web Vitals
+                           ↓
+                        Measure
+                           ↓
+                       Optimize
+                           ↓
+                        Measure
+```
