@@ -53,7 +53,7 @@ Se agregan preguntas todas las semanas. Se aceptan sugerencias mediante Pull Req
   - [MCP](./docs/mcp.md)
 
 ### Teoría
-- [Teoría](./docs/teoria.mdx)
+- Teoría
   - [Algoritmos](./docs/algoritmos.md)
   - [POO](./docs/poo.md)
   - [Patrones de Diseño](./docs/patrones.md)
