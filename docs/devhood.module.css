@@ -1,0 +1,586 @@
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+
+  margin-bottom: 4rem;
+  padding: 5rem 2rem;
+
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 24px;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(99, 102, 241, 0.18),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(168, 85, 247, 0.16),
+      transparent 35%
+    ),
+    var(--ifm-background-surface-color);
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.04);
+}
+
+.heroGlow {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      135deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.04) 50%,
+      transparent 100%
+    );
+}
+
+.heroContent {
+  position: relative;
+
+  max-width: 850px;
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+/* =========================================================
+   BADGE
+   ========================================================= */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+
+  margin-bottom: 1.5rem;
+  padding: 0.45rem 0.9rem;
+
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 999px;
+
+  background: var(--ifm-background-surface-color);
+
+  color: var(--ifm-color-emphasis-700);
+
+  font-size: 0.8rem;
+  font-weight: 600;
+
+  box-shadow:
+    0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+/* =========================================================
+   HERO TITLE
+   ========================================================= */
+
+.hero h1 {
+  margin-bottom: 1rem;
+
+  font-size: clamp(2.7rem, 7vw, 5rem);
+  font-weight: 800;
+
+  letter-spacing: -0.055em;
+
+  line-height: 1.05;
+}
+
+.hero h1 span {
+  background:
+    linear-gradient(
+      90deg,
+      #6366f1,
+      #8b5cf6,
+      #ec4899
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+.hero p {
+  max-width: 680px;
+
+  margin: 0 auto 2rem;
+
+  color: var(--ifm-color-emphasis-700);
+
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   HERO BUTTONS
+   ========================================================= */
+
+.heroActions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 1rem;
+
+  flex-wrap: wrap;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 44px;
+
+  padding: 0.75rem 1.25rem;
+
+  border-radius: 10px;
+
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.primaryButton {
+  border: 1px solid var(--ifm-color-primary);
+
+  background: var(--ifm-color-primary);
+
+  color: white;
+}
+
+.secondaryButton {
+  border: 1px solid var(--ifm-color-emphasis-300);
+
+  background: var(--ifm-background-surface-color);
+
+  color: var(--ifm-font-color-base);
+}
+
+.primaryButton:hover,
+.secondaryButton:hover {
+  transform: translateY(-2px);
+
+  text-decoration: none;
+}
+
+.primaryButton:hover {
+  color: white;
+
+  box-shadow:
+    0 8px 25px rgba(99, 102, 241, 0.3);
+}
+
+.secondaryButton:hover {
+  border-color: var(--ifm-color-primary);
+
+  color: var(--ifm-color-primary);
+}
+
+/* =========================================================
+   SECTION TITLES
+   ========================================================= */
+
+.featuredGrid,
+.grid {
+  margin-bottom: 4rem;
+}
+
+/* =========================================================
+   FEATURED GRID
+   ========================================================= */
+
+.featuredGrid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 1.25rem;
+}
+
+/* =========================================================
+   GENERAL GRID
+   ========================================================= */
+
+.grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 1.25rem;
+}
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 250px;
+
+  padding: 1.5rem;
+
+  overflow: hidden;
+
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 18px;
+
+  background: var(--ifm-background-surface-color);
+
+  color: var(--ifm-font-color-base);
+
+  text-decoration: none;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/*
+ * Subtle gradient inside the card.
+ */
+
+.card::before {
+  content: '';
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(99, 102, 241, 0.14),
+      transparent 45%
+    );
+
+  transition: opacity 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+
+  border-color: var(--ifm-color-primary);
+
+  color: var(--ifm-font-color-base);
+
+  text-decoration: none;
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* =========================================================
+   FEATURED CARDS
+   ========================================================= */
+
+.featuredCard {
+  min-height: 290px;
+}
+
+/* =========================================================
+   CARD HEADER
+   ========================================================= */
+
+.cardHeader {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 1.5rem;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 52px;
+  height: 52px;
+
+  border-radius: 14px;
+
+  background: var(--ifm-color-emphasis-100);
+
+  font-size: 1.7rem;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.card:hover .icon {
+  transform: scale(1.08);
+
+  background: var(--ifm-color-emphasis-200);
+}
+
+.arrow {
+  color: var(--ifm-color-emphasis-500);
+
+  font-size: 1.3rem;
+
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease;
+}
+
+.card:hover .arrow {
+  transform: translateX(5px);
+
+  color: var(--ifm-color-primary);
+}
+
+/* =========================================================
+   CARD CONTENT
+   ========================================================= */
+
+.card h3 {
+  position: relative;
+
+  margin-bottom: 0.6rem;
+
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.card p {
+  position: relative;
+
+  margin-bottom: 1.25rem;
+
+  color: var(--ifm-color-emphasis-700);
+
+  line-height: 1.6;
+}
+
+/* =========================================================
+   TOPICS
+   ========================================================= */
+
+.topics {
+  position: relative;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 0.4rem;
+
+  margin-top: auto;
+}
+
+.topic {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 0.25rem 0.55rem;
+
+  border-radius: 6px;
+
+  background: var(--ifm-color-emphasis-100);
+
+  color: var(--ifm-color-emphasis-700);
+
+  font-size: 0.7rem;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   LEARNING PATH
+   ========================================================= */
+
+.learningPath {
+  display: grid;
+
+  gap: 1rem;
+
+  margin-bottom: 4rem;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 1.25rem;
+
+  padding: 1.25rem;
+
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 14px;
+
+  background: var(--ifm-background-surface-color);
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.step:hover {
+  transform: translateX(4px);
+
+  border-color: var(--ifm-color-primary);
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+.step > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 42px;
+  height: 42px;
+
+  border-radius: 10px;
+
+  background: var(--ifm-color-emphasis-100);
+
+  color: var(--ifm-color-primary);
+
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.step strong {
+  display: block;
+
+  margin-bottom: 0.3rem;
+
+  font-size: 1rem;
+}
+
+.step p {
+  margin: 0;
+
+  color: var(--ifm-color-emphasis-700);
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+[data-theme='dark'] .hero {
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(99, 102, 241, 0.22),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(168, 85, 247, 0.2),
+      transparent 35%
+    ),
+    var(--ifm-background-surface-color);
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme='dark'] .card:hover {
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+[data-theme='dark'] .step:hover {
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media screen and (max-width: 996px) {
+  .featuredGrid,
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero {
+    padding: 4rem 1.5rem;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 600px) {
+  .hero {
+    padding: 3rem 1.25rem;
+
+    border-radius: 18px;
+  }
+
+  .hero h1 {
+    font-size: 2.7rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .featuredGrid,
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card,
+  .featuredCard {
+    min-height: auto;
+  }
+
+  .heroActions {
+    flex-direction: column;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+  }
+
+  .step {
+    gap: 1rem;
+  }
+
+  .step > span {
+    min-width: 36px;
+    height: 36px;
+  }
+}

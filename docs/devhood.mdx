@@ -1,23 +1,225 @@
 ---
 id: devhood
-title: Indice
+title: DevDojo
+sidebar_position: 1
 ---
 
-import IndiceTable from '@site/src/components/IndiceTable';
+import styles from './devhood.module.css';
 
-export const data = [
-   { tema: '🧠', nombre: 'Arquitectura', link: 'arquitectura' },
-   { tema: '🖥️', nombre: 'Backend', link: 'backend' },
-   { tema: '🎨', nombre: 'Frontend', link: 'frontend' },
-   { tema: '💛', nombre: 'Javascript', link: 'javascript' },
-   { tema: '💎', nombre: 'Typescript', link: 'typescript' },
-   { tema: '🤝', nombre: 'Soft Skills', link: 'soft' },
-   { tema: '🤖', nombre: 'IA', link: 'ia' },
-   { tema: '🌐', nombre: 'Accesibilidad', link: 'accesibilidad' },
-   { tema: '🔒', nombre: 'Seguridad', link: 'seguridad' },
+export const sections = [
+  {
+    icon: 'architecture',
+    emoji: '🧠',
+    title: 'Arquitectura',
+    description: 'Diseño de sistemas, patrones, APIs, cloud y DevOps.',
+    topics: ['System Design', 'Patrones', 'APIs', 'Microfrontends', 'Cloud'],
+    link: 'arquitectura',
+    featured: true,
+  },
+  {
+    icon: 'backend',
+    emoji: '🖥️',
+    title: 'Backend',
+    description: 'Construcción de APIs, servidores, bases de datos y servicios.',
+    topics: ['Node.js', 'Python', 'Java', 'SQL', 'NoSQL'],
+    link: 'backend',
+    featured: true,
+  },
+  {
+    icon: 'frontend',
+    emoji: '🎨',
+    title: 'Frontend',
+    description: 'Interfaces modernas, frameworks y desarrollo web.',
+    topics: ['Angular', 'React', 'SCSS', 'HTML', 'SSR'],
+    link: 'frontend',
+    featured: true,
+  },
+  {
+    icon: 'javascript',
+    emoji: '💛',
+    title: 'JavaScript',
+    description: 'Fundamentos, asincronía, runtime y estructuras del lenguaje.',
+    topics: ['Fundamentos', 'Asincronía', 'Runtime', 'Colecciones'],
+    link: 'javascript',
+    featured: false,
+  },
+  {
+    icon: 'typescript',
+    emoji: '💎',
+    title: 'TypeScript',
+    description: 'Tipado avanzado, utility types, clases y patrones.',
+    topics: ['Types', 'Interfaces', 'Generics', 'Decoradores'],
+    link: 'typescript',
+    featured: false,
+  },
+  {
+    icon: 'soft',
+    emoji: '🤝',
+    title: 'Soft Skills',
+    description: 'Comunicación, liderazgo, entrevistas y crecimiento profesional.',
+    topics: ['Liderazgo', 'Comunicación', 'Entrevistas', 'Mentoring'],
+    link: 'soft',
+    featured: false,
+  },
+  {
+    icon: 'ai',
+    emoji: '🤖',
+    title: 'Inteligencia Artificial',
+    description: 'Herramientas, conceptos y recursos para trabajar con IA.',
+    topics: ['Claude', 'LLMs', 'Herramientas', 'Prompting'],
+    link: 'ia',
+    featured: false,
+  },
+  {
+    icon: 'theory',
+    emoji: '📚',
+    title: 'Teoría',
+    description: 'Conceptos fundamentales para entender cómo funciona el software.',
+    topics: ['Algoritmos', 'POO', 'Estructuras de datos'],
+    link: 'algoritmos',
+    featured: false,
+  },
+  {
+    icon: 'accessibility',
+    emoji: '🌐',
+    title: 'Accesibilidad',
+    description: 'Construcción de experiencias web accesibles e inclusivas.',
+    topics: ['WCAG', 'ARIA', 'Teclado', 'Screen Readers'],
+    link: 'accesibilidad',
+    featured: false,
+  },
+  {
+    icon: 'security',
+    emoji: '🔒',
+    title: 'Seguridad',
+    description: 'Principios y prácticas para desarrollar aplicaciones seguras.',
+    topics: ['Web Security', 'OWASP', 'Autenticación'],
+    link: 'seguridad',
+    featured: false,
+  },
 ];
 
-<IndiceTable data={data}/>
+export const featuredSections = sections.filter(
+  (section) => section.featured
+);
 
+export const otherSections = sections.filter(
+  (section) => !section.featured
+);
 
+export function SectionCard({ section, featured = false }) {
+  return (
+    <a
+      href={`/docs/${section.link}`}
+      className={`${styles.card} ${
+        featured ? styles.featuredCard : ''
+      }`}
+    >
+      <div className={styles.cardHeader}>
+        <span className={styles.icon}>
+          {section.emoji}
+        </span>
 
+        <span className={styles.arrow}>
+          →
+        </span>
+      </div>
+
+      <h3>{section.title}</h3>
+
+      <p>{section.description}</p>
+
+      <div className={styles.topics}>
+        {section.topics.map((topic) => (
+          <span
+            key={topic}
+            className={styles.topic}
+          >
+            {topic}
+          </span>
+        ))}
+      </div>
+    </a>
+  );
+}
+
+## 🚀 Áreas principales
+
+<div className={styles.featuredGrid}>
+  {featuredSections.map((section) => (
+    <SectionCard
+      key={section.link}
+      section={section}
+      featured={true}
+    />
+  ))}
+</div>
+
+## 📚 Base de conocimiento
+
+<div className={styles.grid}>
+  {otherSections.map((section) => (
+    <SectionCard
+      key={section.link}
+      section={section}
+    />
+  ))}
+</div>
+
+## 🧭 Ruta de aprendizaje
+
+<div className={styles.learningPath}>
+
+  <div className={styles.step}>
+    <span>01</span>
+
+    <div>
+      <strong>Dominá los fundamentos</strong>
+
+      <p>
+        Comenzá por JavaScript y TypeScript para construir
+        una base sólida de conocimientos.
+      </p>
+    </div>
+  </div>
+
+  <div className={styles.step}>
+    <span>02</span>
+
+    <div>
+      <strong>Construí aplicaciones</strong>
+
+      <p>
+        Explorá las tecnologías de Frontend y Backend
+        y entendé cómo trabajan juntas.
+      </p>
+    </div>
+  </div>
+
+  <div className={styles.step}>
+    <span>03</span>
+
+    <div>
+      <strong>Pensá en sistemas</strong>
+
+      <p>
+        Aprendé sobre arquitectura, APIs, patrones de
+        diseño, cloud y DevOps.
+      </p>
+    </div>
+  </div>
+
+  <div className={styles.step}>
+    <span>04</span>
+
+    <div>
+      <strong>Construí mejor software</strong>
+
+      <p>
+        Incorporá accesibilidad, seguridad, soft skills
+        e inteligencia artificial a tu toolkit.
+      </p>
+    </div>
+  </div>
+
+</div>
