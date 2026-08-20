@@ -46,15 +46,15 @@ const sidebars: SidebarsConfig = {
           items: ['arquitectura/patrones/microfrontends', {
             type: 'link',
             label: 'Microservicios',
-            href: 'arquitectura/arquitectura#microservicios',
+            href: '../arquitectura#microservicios',
           }, {
               type: 'link',
               label: 'Multilayer - Multicapa',
-              href: 'arquitectura/arquitectura#multilayer',
+              href: '../arquitectura#multilayer',
             }, {
               type: 'link',
               label: 'Multi-tier - Multinivel',
-              href: 'arquitectura/arquitectura#multinivel',
+              href: '../arquitectura#multinivel',
             }],
         }
         , {

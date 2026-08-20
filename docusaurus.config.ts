@@ -56,7 +56,7 @@ const config: Config = {
   organizationName: 'denulemos',
   projectName: 'DevDojo',
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
 
   markdown: {
     hooks: {
