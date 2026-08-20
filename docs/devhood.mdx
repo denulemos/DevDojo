@@ -1,6 +1,6 @@
 ---
 id: devhood
-title: DevDojo
+title: Indice
 sidebar_position: 1
 ---
 
@@ -21,7 +21,7 @@ export const sections = [
     emoji: '🖥️',
     title: 'Backend',
     description: 'Construcción de APIs, servidores, bases de datos y servicios.',
-    topics: ['Node.js', 'Python', 'Java', 'SQL', 'NoSQL'],
+    topics: ['Node.js', 'Python',  'SQL', 'NoSQL'],
     link: 'backend',
     featured: true,
   },
@@ -50,15 +50,6 @@ export const sections = [
     description: 'Tipado avanzado, utility types, clases y patrones.',
     topics: ['Types', 'Interfaces', 'Generics', 'Decoradores'],
     link: 'typescript',
-    featured: false,
-  },
-  {
-    icon: 'soft',
-    emoji: '🤝',
-    title: 'Soft Skills',
-    description: 'Comunicación, liderazgo, entrevistas y crecimiento profesional.',
-    topics: ['Liderazgo', 'Comunicación', 'Entrevistas', 'Mentoring'],
-    link: 'soft',
     featured: false,
   },
   {
@@ -166,60 +157,3 @@ export function SectionCard({ section, featured = false }) {
   ))}
 </div>
 
-## 🧭 Ruta de aprendizaje
-
-<div className={styles.learningPath}>
-
-  <div className={styles.step}>
-    <span>01</span>
-
-    <div>
-      <strong>Dominá los fundamentos</strong>
-
-      <p>
-        Comenzá por JavaScript y TypeScript para construir
-        una base sólida de conocimientos.
-      </p>
-    </div>
-  </div>
-
-  <div className={styles.step}>
-    <span>02</span>
-
-    <div>
-      <strong>Construí aplicaciones</strong>
-
-      <p>
-        Explorá las tecnologías de Frontend y Backend
-        y entendé cómo trabajan juntas.
-      </p>
-    </div>
-  </div>
-
-  <div className={styles.step}>
-    <span>03</span>
-
-    <div>
-      <strong>Pensá en sistemas</strong>
-
-      <p>
-        Aprendé sobre arquitectura, APIs, patrones de
-        diseño, cloud y DevOps.
-      </p>
-    </div>
-  </div>
-
-  <div className={styles.step}>
-    <span>04</span>
-
-    <div>
-      <strong>Construí mejor software</strong>
-
-      <p>
-        Incorporá accesibilidad, seguridad, soft skills
-        e inteligencia artificial a tu toolkit.
-      </p>
-    </div>
-  </div>
-
-</div>

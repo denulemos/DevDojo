@@ -1,5 +1,0 @@
-﻿---
-id: comunicacion
-title: "🗣️ Comunicación"
----
-

@@ -1,31 +1,20 @@
 import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
-
-/**
- * Creating a sidebar enables you to:
- * - create an ordered group of docs
- * - render a sidebar for each doc of that group
- * - provide next/previous navigation
- *
- * The sidebars can be generated from the filesystem, or explicitly defined here.
- *
- * Create as many sidebars as you want.
- */
 const sidebars: SidebarsConfig = {
   tutorialSidebar: [
     'devhood',
+    'accesibilidad',
     {
       type: 'category',
       label: '🧠 Arquitectura',
-      link: { type: 'doc', id: 'arquitectura' },
+      link: { type: 'doc', id: 'arquitectura/arquitectura' },
       collapsed: true,
       items: [
-        'systemdesign', 'patrones',
+        'arquitectura/systemdesign/systemdesign', 'arquitectura/patrones/patrones',
         {
           type: 'category',
           label: '🔌 APIs',
-          link: { type: 'doc', id: 'api' },
+          link: { type: 'doc', id: 'arquitectura/apis/api' },
           collapsed: true,
           items: [
             {
@@ -54,7 +43,7 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: '🧩 Patrones de Arquitectura',
           collapsed: true,
-          items: ['microfrontends', {
+          items: ['arquitectura/patrones/microfrontends', {
             type: 'link',
             label: 'Microservicios',
             href: '/docs/arquitectura#microservicios',
@@ -72,13 +61,13 @@ const sidebars: SidebarsConfig = {
           type: 'category',
           label: '⚙️ DevOps',
           collapsed: true,
-          items: ['versionado', 'cicd'],
+          items: ['arquitectura/devops/versionado', 'arquitectura/devops/cicd'],
         },
         {
           type: 'category',
           label: '☁️ Cloud',
           collapsed: true,
-          items: ['aws'],
+          items: ['arquitectura/cloud/aws/aws'],
         }
 
       ],
@@ -86,15 +75,13 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: '🖥️ Backend',
-      link: { type: 'doc', id: 'backend' },
       collapsed: true,
       items: [
-        'python',
-        'java',
+        'backend/python/python',
         {
           type: 'category',
           label: '💚 NodeJS',
-          link: { type: 'doc', id: 'nodejs' },
+          link: { type: 'doc', id: 'backend/nodejs/nodejs' },
           collapsed: true,
           items: [
             {
@@ -122,7 +109,7 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: '🗄️ Bases de Datos',
-          link: { type: 'doc', id: 'basesDatos' },
+          link: { type: 'doc', id: 'backend/databases/basesDatos' },
           collapsed: true,
           items: [
             {
@@ -144,28 +131,28 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: '🎨 Frontend',
       collapsed: true,
-      link: { type: 'doc', id: 'frontend' },
+      link: { type: 'doc', id: 'frontend/frontend' },
       items: [
         {
           type: 'category',
           label: '❤️ Angular',
-          link: { type: 'doc', id: 'angular' },
+          link: { type: 'doc', id: 'frontend/angular/angular' },
           collapsed: true,
           items: [
-            'angular/ejercicios-tecnicos',
+            'frontend/angular/ejercicios-tecnicos',
           ],
         },
 
-        'react',
-        'scss',
-        'html',
-        'ssr',
+        'frontend/react/react',
+        'frontend/css/scss',
+        'frontend/html/html',
+        'frontend/ssr/ssr',
       ],
     },
     {
       type: 'category',
       label: '💛 JavaScript',
-      link: { type: 'doc', id: 'javascript' },
+      link: { type: 'doc', id: 'javascript/javascript' },
       collapsed: true,
       items: [
         {
@@ -203,7 +190,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: '💎 TypeScript',
-      link: { type: 'doc', id: 'typescript' },
+      link: { type: 'doc', id: 'typescript/typescript' },
       collapsed: true,
       items: [
         {
@@ -253,26 +240,34 @@ const sidebars: SidebarsConfig = {
         },
       ],
     },
-    'soft',
     {
       type: 'category',
       label: '🤖 IA',
-      link: { type: 'doc', id: 'ia' },
+      link: { type: 'doc', id: 'ia/ia' },
       collapsed: true,
       items: [{
         type: 'link',
-        label: 'Claude',
-        href: '/docs/ia#claude',
-      },],
+        label: '⚡ Claude',
+        href: '/docs/ia/ia#claude',
+      },{
+        type: 'link',
+        label: '♊️ Gemini',
+        href: '/docs/ia/ia#gemini',
+      }
+      ,{
+        type: 'link',
+        label: '✨ OpenIA',
+        href: '/docs/ia/openia',
+      }
+    ],
     },
     {
       type: 'category',
       label: '📚 Teoría',
       collapsed: true,
-      items: ['algoritmos', 'poo'],
+      items: ['teoria/algoritmos/algoritmos', 'teoria/poo/poo'],
     },
-    'accesibilidad',
-    'seguridad',
+    'seguridad/seguridad',
   ],
 };
 
