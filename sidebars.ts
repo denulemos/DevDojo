@@ -20,22 +20,22 @@ const sidebars: SidebarsConfig = {
             {
               type: 'link',
               label: 'Tipos',
-              href: 'arquitectura/apis/api#arquitecturas-y-tipos',
+              href: '#arquitecturas-y-tipos',
             },
             {
               type: 'link',
               label: 'Componentes',
-              href: 'arquitectura/apis/api#componentes-de-una-api',
+              href: '#componentes-de-una-api',
             },
             {
               type: 'link',
               label: 'Diseño y Buenas Prácticas',
-              href: 'arquitectura/apis/api#diseno-y-buenas-practicas',
+              href: '#diseno-y-buenas-practicas',
             },
             {
               type: 'link',
               label: 'Seguridad y Control de Tráfico',
-              href: 'arquitectura/apis/api#seguridad-y-control-de-trafico',
+              href: '#seguridad-y-control-de-trafico',
             },
           ],
         },
@@ -87,22 +87,22 @@ const sidebars: SidebarsConfig = {
             {
               type: 'link',
               label: 'Conceptos Básicos (Node)',
-              href: 'backend/nodejs/nodejs#conceptos-basicos',
+              href: '#conceptos-basicos',
             },
             {
               type: 'link',
               label: 'Herramientas y Entorno',
-              href: 'backend/nodejs/nodejs#herramientas-y-entorno',
+              href: '#herramientas-y-entorno',
             },
             {
               type: 'link',
               label: 'ExpressJS',
-              href: 'backend/nodejs/nodejs#expressjs',
+              href: '#expressjs',
             },
             {
               type: 'link',
               label: 'Rendimiento y Escalabilidad',
-              href: 'backend/nodejs/nodejs#rendimiento-y-escalabilidad',
+              href: '#rendimiento-y-escalabilidad',
             },
           ],
         },
@@ -115,12 +115,12 @@ const sidebars: SidebarsConfig = {
             {
               type: 'link',
               label: 'SQL',
-              href: 'backend/databases/basesDatos#sql',
+              href: '#sql',
             },
             {
               type: 'link',
               label: 'Not Only SQL - NoSQL',
-              href: 'backend/databases/basesDatos#nosql',
+              href: '#nosql',
             },
           ],
         }
@@ -158,32 +158,32 @@ const sidebars: SidebarsConfig = {
         {
           type: 'link',
           label: 'Métodos y Colecciones',
-          href: 'javascript/javascript#metodos-y-colecciones',
+          href: '#metodos-y-colecciones',
         },
         {
           type: 'link',
           label: 'Fundamentos del Lenguaje',
-          href: 'javascript/javascript#fundamentos-del-lenguaje',
+          href: '#fundamentos-del-lenguaje',
         },
         {
           type: 'link',
           label: 'Asincronía y Runtime',
-          href: 'javascript/javascript#asincronia-y-runtime',
+          href: '#asincronia-y-runtime',
         },
         {
           type: 'link',
           label: 'Objetos, Módulos y Estructuras',
-          href: 'javascript/javascript#objetos-modulos-y-estructuras',
+          href: '#objetos-modulos-y-estructuras',
         },
         {
           type: 'link',
           label: 'Preguntas Frecuentes',
-          href: 'javascript/javascript#preguntas-frecuentes',
+          href: '#preguntas-frecuentes',
         },
         {
           type: 'link',
           label: 'Async Operations',
-          href: 'javascript/javascript#async-operations',
+          href: '#async-operations',
         },
       ],
     },
@@ -196,47 +196,47 @@ const sidebars: SidebarsConfig = {
         {
           type: 'link',
           label: 'Conceptos Básicos (TS)',
-          href: 'typescript/typescript#conceptos-basicos',
+          href: '#conceptos-basicos',
         },
         {
           type: 'link',
           label: 'Interfaces',
-          href: 'typescript/typescript#interfaces',
+          href: '#interfaces',
         },
         {
           type: 'link',
           label: 'Types',
-          href: 'typescript/typescript#types',
+          href: '#types',
         },
         {
           type: 'link',
           label: 'Utility Types',
-          href: 'typescript/typescript#utility-types',
+          href: '#utility-types',
         },
         {
           type: 'link',
           label: 'Decoradores',
-          href: 'typescript/typescript#decoradores',
+          href: '#decoradores',
         },
         {
           type: 'link',
           label: 'Conditional Types',
-          href: 'typescript/typescript#conditional-types',
+          href: '#conditional-types',
         },
         {
           type: 'link',
           label: 'Parametros REST',
-          href: 'typescript/typescript#parametros-rest',
+          href: '#parametros-rest',
         },
         {
           type: 'link',
           label: 'Clases',
-          href: 'typescript/typescript#clases',
+          href: '#clases',
         },
         {
           type: 'link',
           label: 'Herencia',
-          href: 'typescript/typescript#herencia',
+          href: '#herencia',
         },
       ],
     },
@@ -248,16 +248,16 @@ const sidebars: SidebarsConfig = {
       items: [{
         type: 'link',
         label: '⚡ Claude',
-        href: 'ia/ia#claude',
+        href: '#claude',
       },{
         type: 'link',
         label: '♊️ Gemini',
-        href: 'ia/ia#gemini',
+        href: '#gemini',
       }
       ,{
         type: 'link',
         label: '✨ OpenIA',
-        href: 'ia/openia',
+        href: './openia',
       }
     ],
     },

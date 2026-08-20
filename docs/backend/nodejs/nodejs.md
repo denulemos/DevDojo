@@ -462,7 +462,7 @@ async function obtenerDatos() {
 
 Clustering es una técnica que permite aprovechar al máximo los procesadores multinúcleo de un servidor. Por defecto, Node.js utiliza un solo hilo para ejecutar el código, lo que significa que solo puede usar un núcleo del procesador. Con clustering, puedes crear múltiples procesos (llamados "workers") que ejecutan tu aplicación en paralelo, utilizando todos los núcleos disponibles.
 
-Conceptualmente, esto es una forma de aplicar [escalabilidad horizontal](systemdesign#vertical-vs-horizontal) dentro de una misma máquina.
+Conceptualmente, esto es una forma de aplicar [escalabilidad horizontal](../../arquitectura/systemdesign/systemdesign#vertical-vs-horizontal) dentro de una misma máquina.
 
 - Node.js tiene un módulo llamado `cluster` que permite crear varios procesos hijos (workers) que comparten el mismo puerto del servidor.
 - Cada worker es una copia de tu aplicación, pero se ejecuta de manera independiente.
@@ -558,20 +558,20 @@ Revisa y optimiza tu código para mejorar el rendimiento. Algunas prácticas inc
 - **Evitar el uso excesivo de memoria**: Utiliza estructuras de datos eficientes y evita mantener en memoria grandes volúmenes de datos innecesarios.
 
 ### Monitoreo y Análisis de Rendimiento
-Implementa herramientas de monitoreo para analizar el rendimiento de tu aplicación en producción. El concepto general está en [Observabilidad](systemdesign#observabilidad); en Node.js, lo importante es exponer métricas útiles del proceso y del event loop.
+Implementa herramientas de monitoreo para analizar el rendimiento de tu aplicación en producción. El concepto general está en [Observabilidad](../../arquitectura/systemdesign/systemdesign#observabilidad); en Node.js, lo importante es exponer métricas útiles del proceso y del event loop.
 - **Herramientas de monitoreo**: Utiliza servicios como New Relic, Datadog o Prometheus para monitorear el rendimiento de tu aplicación y recibir alertas sobre problemas.
 - **Logs de rendimiento**: Implementa un sistema de logging que registre métricas clave, como tiempos de respuesta, uso de memoria y errores, para analizar el rendimiento a lo largo del tiempo.
 
 ### Escalabilidad (Conceptos Generales)
 
-Los conceptos generales de escalabilidad, load balancers, servicios stateless/stateful y tolerancia a fallos están desarrollados en [System Design](systemdesign).
+Los conceptos generales de escalabilidad, load balancers, servicios stateless/stateful y tolerancia a fallos están desarrollados en [System Design](../../arquitectura/systemdesign/systemdesign).
 
 Para evitar duplicar contenido:
 
-- [Escalabilidad vertical vs horizontal](systemdesign#vertical-vs-horizontal): explica cuándo agregar recursos a una máquina y cuándo agregar más instancias.
-- [Servicios stateful](systemdesign#servicios-stateful) y [servicios stateless](systemdesign#servicios-stateless): explica por qué conviene evitar guardar estado de sesión en memoria si se quiere escalar horizontalmente.
-- [Load Balancer](systemdesign#load-balancer): explica cómo distribuir tráfico entre múltiples servidores.
-- [Tolerancia a fallos](systemdesign#tolerancia-a-fallos): explica redundancia, recuperación y reducción de puntos únicos de fallo.
+- [Escalabilidad vertical vs horizontal](../../arquitectura/systemdesign/systemdesign#vertical-vs-horizontal): explica cuándo agregar recursos a una máquina y cuándo agregar más instancias.
+- [Servicios stateful](../../arquitectura/systemdesign/systemdesign#servicios-stateful) y [servicios stateless](../../arquitectura/systemdesign/systemdesign#servicios-stateless): explica por qué conviene evitar guardar estado de sesión en memoria si se quiere escalar horizontalmente.
+- [Load Balancer](../../arquitectura/systemdesign/systemdesign#load-balancer): explica cómo distribuir tráfico entre múltiples servidores.
+- [Tolerancia a fallos](../../arquitectura/systemdesign/systemdesign#tolerancia-a-fallos): explica redundancia, recuperación y reducción de puntos únicos de fallo.
 
 En Node.js, lo específico es cómo aplicar esos conceptos:
 
@@ -579,4 +579,4 @@ En Node.js, lo específico es cómo aplicar esos conceptos:
 - Mantener la aplicación lo más stateless posible; si se necesita compartir estado entre workers o instancias, usar una base de datos, Redis u otro almacenamiento externo.
 - Evitar bloquear el event loop con operaciones pesadas; para CPU intensivo, usar `worker_threads`, colas de trabajo o procesos separados.
 - Poner varias instancias Node.js detrás de un load balancer como Nginx, HAProxy o un balanceador cloud.
-- Medir tiempos de respuesta, throughput y errores para decidir cuándo escalar. Ver [Rendimiento](systemdesign#rendimiento).
+- Medir tiempos de respuesta, throughput y errores para decidir cuándo escalar. Ver [Rendimiento](../../arquitectura/systemdesign/systemdesign#rendimiento).
