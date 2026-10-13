@@ -428,3 +428,20 @@ Una respuesta completa puede tardar 10-30 segundos. En lugar de esperar, el stre
 - `MessageStop`: Fin de la información
 
 Se habilita con la propiedad `stream=True`.
+
+### Extended Thinking
+
+Permite al modelo "pensar" antes de responder ante problemas complejos. La respuesta tiene dos partes:
+
+- Thinking: El razonamiento del modelo (no se muestra al usuario)
+- Response: La respuesta final
+- Signature: Identificador para asegurar que los bloques no fueron modificados
+
+- Beneficios: Mejor razonamiento, mayor accuracy, transparencia.
+- Desventajas: Mayor costo (thinking tokens), mayor latencia, mayor complejidad.
+
+Si se recibe un Redacted Thinking block, significa que el modelo encontró contenido de alta peligrosidad en su pensamiento; se recomienda revisar el prompt
+
+### Fork Sessions
+
+Son copias de una sesión de conversación que se pueden compartir con colegas. Se pasa el `session_id` y el colega lo usa para crear un Fork Session. Con `--restore`, la conversación puede resumirse sin recargar toda la información
