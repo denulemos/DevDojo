@@ -28,6 +28,22 @@ La explotación es usar técnicas ya probadas que funcionan, mientras que la exp
 2. Mayor poder computacional
 3. Nuevas técnicas de entrenamiento
 
+### ¿Cuáles son los 4 componentes principales de un agente?
+
+- Models: Para razonar, planificar y generar respuestas (puede usar más de uno)
+- Tools: Para recuperar datos y realizar acciones mediante APIs o servicios
+- Orchestration: El cerebro; configura pasos, lógica, memoria y estado
+- Runtime: Ejecuta el sistema cuando recibe una pregunta del usuario
+
+### Cuando utilizar Multi-agent vs Single-agent
+
+Cuando hay:
+
+- Context window limits: Demasiado contexto y herramientas para un solo agente
+- Task specialization: Cada tarea necesita tools y conocimientos distintos
+- Parallelism: Tareas independientes que pueden ocurrir en paralelo
+
+
 ### ¿Por qué se dice que la IA es una máquina de probabilidades?
 
 Porque siempre existe la posibilidad de que genere una respuesta incorrecta o inexacta, incluso ante el mismo input repetido. La IA aprende a través de patrones en los datos, no a través de la comprensión del mundo real, por lo que puede generar respuestas que parecen coherentes pero son completamente falsas.
