@@ -5,11 +5,15 @@ title: 🤖 IA
 
 ### IA vs LLM
 
-La IA es el universo completo: todo sistema que intenta simular el razonamiento humano (sistemas de recomendación, reconocimiento de voz, etc.). Un LLM es un tipo específico de modelo de lenguaje entrenado con grandes cantidades de texto para generar texto coherente y relevante. Los LLM son las "estrellas" de la IA, pero no son la IA completa. Se usan como sinónimos erróneamente.
+La IA es el universo completo: todo sistema que intenta simular el razonamiento humano (sistemas de recomendación, reconocimiento de voz, etc.). 
+
+Un LLM es un tipo específico de modelo de lenguaje entrenado con grandes cantidades de texto para generar texto coherente y relevante. 
+
+Los LLM son las "estrellas" de la IA, pero no son la IA completa. Se usan como sinónimos erróneamente.
 
 ### Como funciona la IA?
 
-Son sistemas que toman decisiones automatizadas para maximizar un objetivo asignado. Necesitan 4 elementos básicos:
+Son sistemas que toman decisiones automatizadas para maximizar un objetivo asignado. Necesitan 4 elementos:
 
 - Posibles acciones entre las que elegir
 - Un objetivo a maximizar
@@ -18,35 +22,33 @@ Son sistemas que toman decisiones automatizadas para maximizar un objetivo asign
 
 El aprendizaje automático detecta patrones en grandes cantidades de datos en lugar de seguir instrucciones codificadas manualmente.
 
-### Exploracion vs Explotacion
-
-La explotación es usar técnicas ya probadas que funcionan, mientras que la exploración es arriesgarse a probar algo nuevo con la posibilidad de encontrar mejores opciones. Los sistemas de IA navegan esta tensión siguiendo el principio de optimismo ante la incertidumbre: optan por la opción con mayor potencial de recompensa, incluso si es incierta o arriesgada.
-
-### ¿Cuáles son los 3 pilares que hicieron posible los LLM actuales?
+Los 3 pilares que hicieron posibles los LLM actuales justamente fueron: 
 
 1. Muchos datos para el entrenamiento de modelos
 2. Mayor poder computacional
 3. Nuevas técnicas de entrenamiento
 
-### ¿Cuáles son los 4 componentes principales de un agente?
+#### Exploracion vs Explotacion
 
-- Models: Para razonar, planificar y generar respuestas (puede usar más de uno)
-- Tools: Para recuperar datos y realizar acciones mediante APIs o servicios
-- Orchestration: El cerebro; configura pasos, lógica, memoria y estado
-- Runtime: Ejecuta el sistema cuando recibe una pregunta del usuario
+La explotación es usar técnicas ya probadas que funcionan, mientras que la exploración es arriesgarse a probar algo nuevo con la posibilidad de encontrar mejores opciones. 
 
-### Cuando utilizar Multi-agent vs Single-agent
+Los sistemas de IA navegan esta tensión siguiendo el principio de optimismo ante la incertidumbre: optan por la opción con mayor potencial de recompensa, incluso si es incierta o arriesgada.
 
-Cuando hay:
-
-- Context window limits: Demasiado contexto y herramientas para un solo agente
-- Task specialization: Cada tarea necesita tools y conocimientos distintos
-- Parallelism: Tareas independientes que pueden ocurrir en paralelo
-
-
-### ¿Por qué se dice que la IA es una máquina de probabilidades?
+#### ¿Por qué se dice que la IA es una máquina de probabilidades?
 
 Porque siempre existe la posibilidad de que genere una respuesta incorrecta o inexacta, incluso ante el mismo input repetido. La IA aprende a través de patrones en los datos, no a través de la comprensión del mundo real, por lo que puede generar respuestas que parecen coherentes pero son completamente falsas.
+
+### ¿Cuáles son los 4 componentes principales de un agente?
+
+- **Models**: Para razonar, planificar y generar respuestas (puede usar más de uno)
+- **Tools**: Para recuperar datos y realizar acciones mediante APIs o servicios
+- **Orchestration**: El cerebro; configura pasos, lógica, memoria y estado
+- **Runtime**: Ejecuta el sistema cuando recibe una pregunta del usuario
+
+### Multi-agent vs Single-agent
+
+- **Multi-agent**: Cuando hay tareas complejas que requieren distintos tipos de conocimiento y herramientas, y se pueden dividir en sub-tareas independientes. Cada agente puede especializarse en un área y colaborar con otros agentes para resolver la tarea completa.
+- **Single-agent**: Cuando la tarea es simple y puede ser resuelta por un solo agente con un conjunto limitado de herramientas y conocimientos.
 
 ## **Tokens**
 
@@ -59,59 +61,74 @@ Son fragmentos de texto que un modelo de lenguaje utiliza como unidad básica pa
 
 ### ¿Qué tipos de tokens existen?
 
-- Input tokens: Los enviados al modelo
-- Output tokens: Los que el modelo responde
-- Context Window: La cantidad máxima de tokens que el modelo puede manejar en una interacción
+- **Input tokens**: Los enviados al modelo
+- **Output tokens**: Los que el modelo responde
+- **Context Window**: La cantidad máxima de tokens que el modelo puede manejar en una interacción
 
 ## **Temperatura**
 
-s un valor decimal entre 0 y 1 que controla el nivel de aleatoriedad en las respuestas. Una temperatura baja (cercana a 0) hace al modelo más determinista y repetitivo, recomendada para análisis de información. Una temperatura alta (cercana a 1) aumenta la creatividad y diversidad, recomendada para escritura creativa. Importante: la temperatura no asegura respuestas distintas ante cada intento, sino que controla el nivel de aleatoriedad.
+Es un valor decimal entre 0 y 1 que controla el nivel de aleatoriedad en las respuestas. 
+
+Una temperatura baja (cercana a 0) hace al modelo más determinista y repetitivo, recomendada para análisis de información. 
+
+Una temperatura alta (cercana a 1) aumenta la creatividad y diversidad, recomendada para escritura creativa. 
+
+Importante: la temperatura no asegura respuestas distintas ante cada intento, sino que controla el nivel de aleatoriedad.
 
 ## **Contexto**
 
-Es la información adicional que se le proporciona al modelo para ayudarlo a generar respuestas más relevantes y precisas. Incluye información sobre el tema, el tono deseado, o cualquier detalle útil.
+Es la información adicional que se le proporciona al modelo para ayudarlo a generar respuestas más relevantes y precisas.
 
-### ¿Qué se debe considerar al trabajar con fuentes de distinta longitud en un pipeline de investigación?
-
-Se recomienda normalizarlas a un largo específico antes de procesarlas, para que no tengan más importancia unas sobre otras, ya que existe el bias de longitud por parte del modelo.
+Incluye información sobre el tema, el tono deseado, o cualquier detalle útil.
 
 ## **IA Generativa**
 
 Es un sistema que, además de analizar datos para tomar decisiones, crea contenido nuevo como imágenes, vídeos, texto, etc. Aprende en 2 etapas:
 
-- Pre-training: Analizar patrones a lo largo de millones de ejemplos
-- Fine-tuning: Ajustar el modelo para tareas específicas
-
-### Limitaciones de la IA generativa
-
-- Sesgo: Si el modelo se entrena con datos sesgados, genera resultados sesgados
-- Alucinaciones: Puede generar respuestas que parecen coherentes pero son completamente falsas
+- **Pre-training**: Analizar patrones a lo largo de millones de ejemplos
+- **Fine-tuning**: Ajustar el modelo para tareas específicas
 
 ## **Alucinaciones**
 
-Son secuencias de palabras que parecen tener sentido pero no tienen base en la realidad. Es información inventada. Se ven frecuentemente con tópicos de noticias recientes, donde la IA no tiene acceso a esa información e intenta adivinar, generando respuestas falsas
+Son secuencias de palabras que parecen tener sentido pero no tienen base en la realidad. 
+
+Es información inventada. 
+
+Se ven frecuentemente con tópicos de noticias recientes, donde la IA no tiene acceso a esa información e intenta adivinar, generando respuestas falsas
 
 ## **Sesgo o Bias**
 
-os LLM se alimentan de información de personas diversas, pero a veces generan información que refleja un sesgo social. Se representa el punto de vista dominante. Por ejemplo, si se pide generar una imagen de un doctor y una enfermera, frecuentemente genera un doctor hombre y una enfermera mujer.
+Los LLM se alimentan de información de personas diversas, pero a veces generan información que refleja un sesgo social. Se representa el punto de vista dominante. 
+
+Por ejemplo, si se pide generar una imagen de un doctor y una enfermera, frecuentemente genera un doctor hombre y una enfermera mujer, especialmente en la IA Generativa de imágenes. 
+
+Esto refleja un sesgo de género en la sociedad, no un error del modelo.
 
 ## **Exceso de complacencia**
 
-Los LLM intentan ser extremadamente complacientes, dando la razón al usuario en cosas que no necesariamente son correctas. Fueron entrenados con texto de internet donde la gente suele ser complaciente. Esto significa que validan ideas y creencias que pueden ser incorrectas.
+Los LLM intentan ser extremadamente complacientes, dando la razón al usuario en cosas que no necesariamente son correctas. 
+
+Fueron entrenados con texto de internet donde la gente suele ser complaciente. Esto significa que validan ideas y creencias que pueden ser incorrectas.
 
 ## **Coding Assistant**
 
 Es un sistema que utiliza LLM para resolver tareas complejas de código. Cuando recibe una task, toma 3 pasos:
 
-- Recoger contexto: Reconocer el error y qué archivos están involucrados
-- Armar un plan: Decidir cómo resolver el error
-- Tomar acción: Implementar el cambio y correr comandos necesarios
+- **Recoger contexto**: Reconocer el error y qué archivos están involucrados
+- **Armar un plan**: Decidir cómo resolver el error
+- **Tomar acción**: Implementar el cambio y correr comandos necesarios
 
-Los pasos 1 y 3 requieren Tool Use, ya que un LLM por sí solo no puede leer código ni correr comandos.
+Los pasos 1 y 3 requieren **Tool Use**, ya que un LLM por sí solo no puede leer código ni correr comandos.
 
 ## **Tool Use**
 
-Es la capacidad de un LLM de usar herramientas externas para completar tareas. Funciona mediante instrucciones "under the hood" como "If you want to read a file, respond with 'ReadFile: name of file'". No todos los LLM son buenos en Tool Use. Las herramientas pueden:
+Es la capacidad de un LLM de usar herramientas externas para completar tareas. 
+
+Funciona mediante instrucciones "under the hood" como "If you want to read a file, respond with 'ReadFile: name of file'".
+
+No todos los LLM son buenos en Tool Use. 
+
+Las herramientas pueden:
 
 - Combinarse para tareas complejas
 - Ser extensibles (agregar nuevas herramientas como acceso a BD o APIs)
@@ -141,19 +158,25 @@ Se crea un objeto JSON con:
 
 ### Multi-Turn Tool Use - Conversation Loop
 
-Es cuando una sola request requiere que el LLM llame a tools de manera consecutiva. Por ejemplo, ante "¿Qué día será en 103 días?", el LLM:
+Es cuando una sola request requiere que el LLM llame a tools de manera consecutiva. 
 
-- Llama a get_current_datetime para obtener la fecha actual
+Por ejemplo, ante "¿Qué día será en 103 días?", el LLM:
+
+- Llama a `get_current_datetime` para obtener la fecha actual
 - Recibe el resultado
-- Llama a add_days_to_date con la fecha y 103 días
+- Llama a `add_days_to_date` con la fecha y 103 días
 - Recibe el resultado
 - Responde al usuario
 
-Se implementa con un loop que continúa hasta que el stop_reason del LLM no sea tool_use
+Se implementa con un loop que continúa hasta que el `stop_reason` (Que es porque el LLM ha terminado de usar herramientas) del LLM no sea `tool_use`
 
 ### ¿Cómo se manejan errores en el Tool Use (Fine-grained tool calling)?
 
-Puede suceder que una tool devuelva respuestas no válidas como un undefined inesperado. Se manejan con try-catch sobre el JSON parsing. Se recomienda implementar esto cuando:
+Puede suceder que una tool devuelva respuestas no válidas como un undefined inesperado. 
+
+Se manejan con `try-catch` sobre el JSON parsing. 
+
+Se recomienda implementar esto cuando:
 
 - Se necesita mostrar progreso en tiempo real
 - Se quiere procesar resultados parciales rápidamente
@@ -162,23 +185,37 @@ Puede suceder que una tool devuelva respuestas no válidas como un undefined ine
 
 ## **RAG (Retrieval-Augmented Generation)**
 
-Es una técnica para trabajar con documentos grandes que superan la capacidad de una prompt. RAG separa los documentos en chunks y solo toma las partes necesarias para resolver una request. Es necesario porque las prompts largas son más costosas y lentas.
+Es una técnica para trabajar con documentos grandes que superan la capacidad de una prompt. 
 
-- Indexación: El documento se divide en chunks y se indexa
-- Recuperación: Se recuperan los chunks relevantes usando técnicas de búsqueda
-- Generación: El modelo genera una respuesta basada en la información recuperada
+RAG separa los documentos en chunks y solo toma las partes necesarias para resolver una request. 
+
+Es necesario porque las prompts largas son más costosas y lentas.
+
+- **Indexación**: El documento se divide en chunks y se indexa
+- **Recuperación**: Se recuperan los chunks relevantes usando técnicas de búsqueda
+- **Generación**: El modelo genera una respuesta basada en la información recuperada
 
 Requiere preprocesamiento del documento. No es una solución simple, pero es escalable y eficiente.
 
+1. Se recibe un texto y una pregunta
+2. Se separa el texto en chunks
+3. Se generan los embeddings de cada chunk
+4. Se guardan en una base de datos vectorial
+5. Se procesa la pregunta del usuario por el mismo pipeline de embedding
+6. La base de datos busca los chunks más relevantes mediante el algoritmo de coseno
+7. Se construye y devuelve el prompt final
+
 ### Estrategias de chunking
 
-- Size-based chunking: Divide el texto en chunks de tamaño fijo. Simple pero puede cortar frases. Se agregan caracteres de overlap para contexto. Funciona en cualquier tipo de texto, incluido código.
-- Structured-based chunking: Divide según la estructura del texto (párrafos, oraciones). Útil cuando controlamos y conocemos el formato del documento.
-- Semantic-based chunking: Divide según significado semántico, usando separadores jerárquicos. Es el más inteligente pero puede fallar con términos específicos.
+- **Size-based chunking**: Divide el texto en chunks de tamaño fijo. Simple pero puede cortar frases. Se agregan caracteres de overlap para contexto. Funciona en cualquier tipo de texto, incluido código.
+- **Structured-based chunking**: Divide según la estructura del texto (párrafos, oraciones). Útil cuando controlamos y conocemos el formato del documento.
+- **Semantic-based chunking**: Divide según significado semántico, usando separadores jerárquicos. Es el más inteligente pero puede fallar con términos específicos.
 
 ### BM25
 
-BM25 (Best Match 25) es un algoritmo que combina búsqueda semántica con búsqueda léxica. Funciona así:
+BM25 (Best Match 25) es un algoritmo que combina búsqueda semántica con búsqueda léxica. 
+
+Funciona así:
 
 - Divide la pregunta en términos individuales
 - Cuenta la frecuencia de cada término en el documento
@@ -189,17 +226,12 @@ Es eficaz porque da mayor importancia a términos raros y específicos, ignora p
 
 ### Text Embeddings
 
-Son representaciones vectoriales (listas de números) de cada chunk de texto. Después de separar el documento, se transforma cada chunk en un vector para poder comparar con el vector de la pregunta del usuario. El chunk con el vector más cercano es el más relevante. Cada número representa un score respecto al texto, y su significado depende de cómo fue entrenado el modelo.
+Son representaciones vectoriales (listas de números) de cada chunk de texto. 
 
-### RAG Pipeline
+Después de separar el documento, se transforma cada chunk en un vector para poder comparar con el vector de la pregunta del usuario. 
 
-1. Se recibe un texto y una pregunta
-2. Se separa el texto en chunks
-3. Se generan los embeddings de cada chunk
-4. Se guardan en una base de datos vectorial
-5. Se procesa la pregunta del usuario por el mismo pipeline de embedding
-6. La base de datos busca los chunks más relevantes mediante el algoritmo de coseno
-7. Se construye y devuelve el prompt final
+El chunk con el vector más cercano es el más relevante. Cada número representa un score respecto al texto, y su significado depende de cómo fue entrenado el modelo.
+
 
 ## **AI Fluency**
 
