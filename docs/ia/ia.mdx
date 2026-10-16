@@ -280,22 +280,14 @@ Es el arte de comunicarse efectivamente con la IA. Se compone de:
 
 Es un conjunto de técnicas para diseñar y perfeccionar prompts de manera que los modelos generen respuestas óptimas. Involucra un proceso iterativo:
 
-- Setear una meta
-- Crear el primer prompt (draft)
-- Evaluar el prompt
-- Aplicar técnicas de mejora
-- Re-evaluar los resultados
-
-### Principios de prompting efectivo
-
-- Setear el escenario: Definir rol, contexto y objetivos
-- Dar contexto: Ser claro sobre qué se precisa, por qué y cómo
-- Definir la tarea: Qué acción específica tomar
-- Dar ejemplos (Few-shot prompting): Mostrar formatos esperados
-- Especificar constantes y reglas: Formato, límites, especificaciones
-- Separar en pasos lógicos: Dividir tareas complejas en pasos
-- Permitir que la IA piense primero: Darle espacio para razonar
-- Definir el tono: Formal, casual, conciso, etc.
+- **Setear el escenario**: Definir rol, contexto y objetivos
+- **Dar contexto**: Ser claro sobre qué se precisa, por qué y cómo
+- **Definir la tarea**: Qué acción específica tomar
+- **Dar ejemplos (Few-shot prompting)**: Mostrar formatos esperados
+- **Especificar constantes y reglas**: Formato, límites, especificaciones
+- **Separar en pasos lógicos**: Dividir tareas complejas en pasos
+- **Permitir que la IA piense primero**: Darle espacio para razonar
+- **Definir el tono**: Formal, casual, conciso, etc.
 
 ### ¿Cómo se resuelven problemas comunes en prompts?
 
@@ -323,14 +315,18 @@ Cuando se envía información específica, las etiquetas XML ayudan a la IA a en
 
 ### One-shot y Multi-shot prompting
 
-- One-shot: Dar un solo ejemplo del formato deseado para que la IA lo entienda
-- Multi-shot: Dar varios ejemplos para cubrir distintos escenarios
+- **One-shot**: Dar un solo ejemplo del formato deseado para que la IA lo entienda
+- **Multi-shot**: Dar varios ejemplos para cubrir distintos escenarios
 
 Ambas técnicas ayudan a la IA a entender exactamente el tipo de output esperado.
 
 ### ¿Cómo se pueden controlar outputs que deben cumplir restricciones numéricas (como caracteres máximos)?
 
-Los números son mejores que las palabras ("máximo 70 caracteres" es mejor que "mantener los commits cortos"). También se puede usar maxLength en el strict schema. Sin embargo, sigue siendo probabilístico: no es 100% seguro, pero es mucho más probable que se cumpla
+Los números son mejores que las palabras ("máximo 70 caracteres" es mejor que "mantener los commits cortos"). 
+
+También se puede usar `maxLength` en el strict schema. 
+
+Sin embargo, sigue siendo probabilístico: no es 100% seguro, pero es mucho más probable que se cumpla
 
 ## **Prompt Evaluation**
 
@@ -342,8 +338,6 @@ Es la medición automática de la efectividad de los prompts mediante:
 
 Se usan Evaluation Pipelines para automatizar el proceso e iterar rápidamente.
 
-### Ciclo de evaluación de prompts
-
 1. Escribir un prompt en draft
 2. Crear un dataset de evaluación
 3. Evaluar el prompt con el dataset
@@ -353,9 +347,9 @@ Se usan Evaluation Pipelines para automatizar el proceso e iterar rápidamente.
 
 ### Graders
 
-- Grader Humano: Un humano evalúa y puntúa la respuesta
-- Code Grader: Evaluación programática (sintaxis, si el código corre, etc.)
-- Model Grader: Otro modelo de lenguaje evalúa la calidad de la respuesta
+- **Grader Humano**: Un humano evalúa y puntúa la respuesta
+- **Code Grader**: Evaluación programática (sintaxis, si el código corre, etc.)
+- **Model Grader**: Otro modelo de lenguaje evalúa la calidad de la respuesta
 
 ¿Qué formato quiero? → Code Grader (output estructurado)
 ¿Qué sintaxis es válida? → Code Grader (corrección sintáctica)
