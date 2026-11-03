@@ -46,15 +46,15 @@ const sidebars: SidebarsConfig = {
           items: ['arquitectura/patrones/microfrontends', {
             type: 'link',
             label: 'Microservicios',
-            href: '../arquitectura#microservicios',
+            href: '/docs/arquitectura#microservicios',
           }, {
               type: 'link',
               label: 'Multilayer - Multicapa',
-              href: '../arquitectura#multilayer',
+              href: '/docs/arquitectura#multilayer',
             }, {
               type: 'link',
               label: 'Multi-tier - Multinivel',
-              href: '../arquitectura#multinivel',
+              href: '/docs/arquitectura#multinivel',
             }],
         }
         , {
@@ -245,21 +245,22 @@ const sidebars: SidebarsConfig = {
       label: '🤖 IA',
       link: { type: 'doc', id: 'ia/ia' },
       collapsed: true,
-      items: [{
-        type: 'link',
-        label: '⚡ Claude',
-        href: '#claude',
-      },{
-        type: 'link',
-        label: '♊️ Gemini',
-        href: '#gemini',
-      }
-      ,{
-        type: 'link',
-        label: '✨ OpenIA',
-        href: './openia',
-      }
-    ],
+      items: [
+        { type: 'link', label: 'Tokens', href: '#tokens' },
+        { type: 'link', label: 'Temperatura', href: '#temperatura' },
+        { type: 'link', label: 'Contexto', href: '#contexto' },
+        { type: 'link', label: 'IA Generativa', href: '#ia-generativa' },
+        { type: 'link', label: 'Alucinaciones', href: '#alucinaciones' },
+        { type: 'link', label: 'Sesgo o Bias', href: '#sesgo-o-bias' },
+        { type: 'link', label: 'Exceso de complacencia', href: '#exceso-de-complacencia' },
+        { type: 'link', label: 'Coding Assistant', href: '#coding-assistant' },
+        { type: 'link', label: 'Tool Use', href: '#tool-use' },
+        { type: 'link', label: 'RAG', href: '#rag-retrieval-augmented-generation' },
+        { type: 'link', label: 'AI Fluency', href: '#ai-fluency' },
+        { type: 'link', label: 'Prompt Engineering', href: '#prompt-engineering' },
+        { type: 'link', label: 'Prompt Evaluation', href: '#prompt-evaluation' },
+        { type: 'link', label: 'Claude', href: '#claude' },
+      ],
     },
     {
       type: 'category',

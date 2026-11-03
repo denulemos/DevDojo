@@ -25,7 +25,7 @@ Por su **Direccion IP**. Las computadoras se identifican entre si mediante direc
 
 **Cada servidor publico tiene su IP unica**
 
-Cuando un cliente interactua con un servidor, usa este "numero de telefono" para comunicarse con el servidor correspondiente. Pero cuando se va a una pagina web, no se teclea su IP, si no su **Dominio**, y se hace match Dominio-IP mediante el **DNS**. El DNS es como una agenda de contactos, donde se guarda el nombre del contacto y su numero de telefono. (Se puede leer a mas detalle en la seccion [DNS](#DNS))
+Cuando un cliente interactua con un servidor, usa este "numero de telefono" para comunicarse con el servidor correspondiente. Pero cuando se va a una pagina web, no se teclea su IP, si no su **Dominio**, y se hace match Dominio-IP mediante el **DNS**. El DNS es como una agenda de contactos, donde se guarda el nombre del contacto y su numero de telefono. (Se puede leer a mas detalle en la seccion [DNS](#dns))
 
 Si agrego más de un servidor, debo usar el [Load Balancer](#load-balancer) para que las requests de nuestros usuarios se distribuyan entre los servidores. El DNS apuntará a la IP del Load Balancer.
 
