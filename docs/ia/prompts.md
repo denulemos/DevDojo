@@ -3,102 +3,43 @@ id: prompts
 title: Prompts
 ---
 
-## Contexto
+**La calidad de la salida es proporcional a la calidad de la entrada**
 
-Es la información adicional que se le proporciona al modelo para ayudarlo a generar respuestas más relevantes y precisas.
+Cuando se le da un prompt a una LLM, la misma la utiliza para buscar todas las probabilidades y poder dar la respuesta mas cercana a lo que se le pide. 
 
-Incluye información sobre el tema, el tono deseado, o cualquier detalle útil.
+Por lo tanto, es importante que el prompt sea lo mas claro y conciso posible, para que la LLM pueda entenderlo y dar una respuesta adecuada.
 
-## Prompt Engineering
+**La respuesta se predice en probabilidades**
 
-Es un conjunto de técnicas para diseñar y perfeccionar prompts de manera que los modelos generen respuestas óptimas. Involucra un proceso iterativo:
+### Porque fallan los prompts?
 
-- **Setear el escenario**: Definir rol, contexto y objetivos
-- **Dar contexto**: Ser claro sobre qué se precisa, por qué y cómo
-- **Definir la tarea**: Qué acción específica tomar
-- **Dar ejemplos (Few-shot prompting)**: Mostrar formatos esperados
-- **Especificar constantes y reglas**: Formato, límites, especificaciones
-- **Separar en pasos lógicos**: Dividir tareas complejas en pasos
-- **Permitir que la IA piense primero**: Darle espacio para razonar
-- **Definir el tono**: Formal, casual, conciso, etc.
+Cuando recibimos una respuesta incorrecta de una LLM es porque realizamos mal la pregunta, no tiene nada que ver con el modelo. 
 
-### ¿Cómo se resuelven problemas comunes en prompts?
+Si puede suceder en al enviar un prompt muy generico, modelos como Gemini generen igualmente una respuesta sumamente generica si es que no le damos suficiente contexto de principio. 
 
-| Problema | Solución |
-| :-- | :-- |
-| Respuesta muy genérica | Aportar más contexto y detalles |
-| Respuesta muy corta o larga | Especificar longitud explícitamente |
-| Sin formato | Usar instrucciones de formato claras o etiquetas XML |
-| Información errónea (alucinación) | Pedir citas de fuentes o razonamiento paso a paso |
-| Tono incorrecto | Ajustar el tono explícitamente en el prompt |
+En cambio, otros modelos como Claude, nos va a realizar diversas preguntas para poder entender mejor lo que queremos, y así poder dar una respuesta mas acertada.
 
-Si una conversación larga tomó mal rumbo, es más eficiente iniciar una nueva con un prompt refinado.
+Ejemplo de Prompt para probar esta teoria: "Necesito generar un correo electronico para pedir una cita medica" (Sumamente generico y sin contexto)
 
-### ¿Por qué es importante ser específico en los prompts?
+Se le puede pedir ayuda al LLM para mejorar el contexto, por ejemplo: "Necesito generar un correo electronico para pedir una cita medica, **pedime todos los datos necesarios para poder generar el mejor email posible**" (Ahora el LLM nos va a pedir todos los datos necesarios para poder generar un correo electronico mas acertado y con mejor contexto)
 
-Porque evita que el agente interprete libremente. Se puede:
+### Formula base = Tarea + Contexto + Audiencia + Formato
 
-- Listar qué debe y qué no debe tener el output (largo, formato, elementos, tono)
-- Listar el camino de razonamiento que debe seguir (especialmente para soluciones complejas o múltiples puntos de vista)
-- Combinar ambas técnicas para obtener mejores resultados
+Prompt malo: "Haceme un cuento"
 
-### ¿Para qué sirve la estructura XML en prompts?
+- **Pedir la tarea concreta**: Para que pueda entender que es lo que quiero hacer, y poder generar un resultado mas apegado a lo que estoy buscando
+- **Agregar contexto (informacion relevante, restricciones, etc)**: Para que pueda generar un resultado mas apegado a lo que estoy buscando
+- **Definir la audiencia (quien va a recibir la respuesta)**: Son adultos? Personas tecnicas? Niños? etc. Esto es importante para que la LLM pueda generar un resultado mas adecuado a la audiencia
+- **Definir el formato (si es un email, un codigo, un ensayo, etc)**: Para estructurar la respuesta de manera apropiada, es un JSON? Una carta? Un ensayo? etc. Esto es importante para que la LLM pueda generar un resultado mas adecuado al formato
 
-Cuando se envía información específica, las etiquetas XML ayudan a la IA a entender la estructura deseada. No hay etiquetas predefinidas; se crean las necesarias. Ejemplo: `<meal_history>`, `<athlete_information>`, `<code>`. Esto es útil para separar diferentes tipos de información dentro de un mismo prompt
+Prompt bueno: "Hazme un cuento corto para un nene de 6 a 8 años, que tenga como protagonista a un perro y un gato, y que tenga un final feliz. Que termine con una frase alegre y motivadora. El cuento debe tener un máximo de 200 palabras y debe estar escrito en un lenguaje sencillo y comprensible para un niño de esa edad. El formato debe ser un cuento narrativo."
 
-### One-shot y Multi-shot prompting
+### Formato de Salida
 
-- **One-shot**: Dar un solo ejemplo del formato deseado para que la IA lo entienda
-- **Multi-shot**: Dar varios ejemplos para cubrir distintos escenarios
+Es necesario especificar el formato de salida que queremos, ya que la LLM puede generar una respuesta en un formato que no sea el que necesitamos, nos va a dar como respuesta lo que **generalmente le sirvio a la mayoria de las personas que le hicieron la misma pregunta**, y no lo que necesitamos nosotros.
 
-Ambas técnicas ayudan a la IA a entender exactamente el tipo de output esperado.
 
-### ¿Cómo se pueden controlar outputs que deben cumplir restricciones numéricas (como caracteres máximos)?
 
-Los números son mejores que las palabras ("máximo 70 caracteres" es mejor que "mantener los commits cortos").
 
-También se puede usar `maxLength` en el strict schema.
 
-Sin embargo, sigue siendo probabilístico: no es 100% seguro, pero es mucho más probable que se cumpla
 
-### System Prompts
-
-Son una forma de personalizar la interacción. Por ejemplo, si el chatbot es un asistente de cocina, el System Prompt le dice a Claude que responda como chef profesional. Se envían con la propiedad system en la request de messages.
-
-## Prompt Evaluation
-
-Es la medición automática de la efectividad de los prompts mediante:
-
-- Testing de respuesta esperada vs recibida
-- Comparación de versiones del mismo prompt
-- Revisión de outputs en busca de errores
-
-Se usan Evaluation Pipelines para automatizar el proceso e iterar rápidamente.
-
-1. Escribir un prompt en draft
-2. Crear un dataset de evaluación
-3. Evaluar el prompt con el dataset
-4. Analizar resultados con un Grader (puntuación 1-10)
-5. Mejorar el prompt
-6. Repetir si es necesario
-
-### Graders
-
-- **Grader Humano**: Un humano evalúa y puntúa la respuesta
-- **Code Grader**: Evaluación programática (sintaxis, si el código corre, etc.)
-- **Model Grader**: Otro modelo de lenguaje evalúa la calidad de la respuesta
-
-¿Qué formato quiero? → Code Grader (output estructurado)
-¿Qué sintaxis es válida? → Code Grader (corrección sintáctica)
-¿Cómo se ejecutó la tarea? → Model Grader (relevancia y coherencia)
-
-### Evaluation Pipeline
-
-1. Se crea un dataset JSON con tareas
-2. Se combina el prompt con cada tarea del dataset
-3. Se obtiene el output del modelo para cada tarea
-4. Se evalúa cada output con un Grader
-5. Se obtienen scores y se identifican áreas de mejora
-6. Se refina el prompt y se repite
-
-Se recomienda usar Haiku para la evaluación por ser más veloz y controlar la concurrencia para evitar errores de cuota.
