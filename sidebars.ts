@@ -264,7 +264,7 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: '📚 Teoría',
       collapsed: true,
-      items: ['teoria/algoritmos/algoritmos', 'teoria/poo/poo', 'teoria/agile/agile'],
+      items: ['teoria/algoritmos/algoritmos', 'teoria/poo/poo', 'teoria/Agile/agile'],
     },
     'seguridad/seguridad',
   ],
